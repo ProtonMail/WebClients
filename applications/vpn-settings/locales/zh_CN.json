@@ -3832,6 +3832,18 @@
     "emergency_access": {
       "Trusted contact": [
         "已信任联系人"
+      ],
+      "${ n } day": [
+        "${ n }天"
+      ],
+      "Added on ${ formattedDate }": [
+        "添加于 ${ formattedDate }"
+      ],
+      "Immediate": [
+        "立即"
+      ],
+      "Less than a day": [
+        "少于一天"
       ]
     },
     "Empty group name": {

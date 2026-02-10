@@ -3731,6 +3731,23 @@
     "emergency_access": {
       "Trusted contact": [
         "جهة اتصال موثوق بها"
+      ],
+      "${ n } days": [
+        "${ n } يوم",
+        "${ n } يوم",
+        "${ n } أيام",
+        "${ n } يوم",
+        "${ n } يوم",
+        "${ n } يوم"
+      ],
+      "Added on ${ formattedDate }": [
+        "أُضيف في ${ formattedDate }"
+      ],
+      "Immediate": [
+        "فوري"
+      ],
+      "Less than a day": [
+        "أقل من يوم"
       ]
     },
     "Empty group name": {

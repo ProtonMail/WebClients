@@ -3531,6 +3531,21 @@
     "emergency_access": {
       "Trusted contact": [
         "Zaufany kontakt"
+      ],
+      "${ n } day": [
+        "${ n } dzień",
+        "${ n } dni",
+        "${ n } dni",
+        "${ n } dnia"
+      ],
+      "Added on ${ formattedDate }": [
+        "Dodano ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Natychmiast"
+      ],
+      "Less than a day": [
+        "Mniej niż dzień"
       ]
     },
     "Empty group name": {

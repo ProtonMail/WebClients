@@ -3895,6 +3895,21 @@
     "emergency_access": {
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "${ n } day": [
+        "${ n } дзень",
+        "${ n } дні",
+        "${ n } дзён",
+        "${ n } дзён"
+      ],
+      "Added on ${ formattedDate }": [
+        "Дададзена ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Неадкладна"
+      ],
+      "Less than a day": [
+        "Менш за дзень"
       ]
     },
     "Empty group name": {

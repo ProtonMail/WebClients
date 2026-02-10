@@ -3853,6 +3853,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Αξιόπιστη επαφή"
+      ],
+      "${ n } day": [
+        "${ n } ημέρα",
+        "${ n } ημέρες"
+      ],
+      "Added on ${ formattedDate }": [
+        "Προστέθηκε στις ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Άμεσο"
+      ],
+      "Less than a day": [
+        "Λιγότερο από μία ημέρα"
       ]
     },
     "Empty group name": {

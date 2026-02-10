@@ -3794,6 +3794,19 @@
     "emergency_access": {
       "Trusted contact": [
         "სანდო კონტაქტი"
+      ],
+      "${ n } day": [
+        "${ n } დღე",
+        "${ n } დღე"
+      ],
+      "Added on ${ formattedDate }": [
+        "დამატების თარიღია ${ formattedDate }"
+      ],
+      "Immediate": [
+        "დაუყონებლივ"
+      ],
+      "Less than a day": [
+        "დღეზე ნაკლები"
       ]
     },
     "Empty group name": {

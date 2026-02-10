@@ -3853,6 +3853,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Betroet kontakt"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dage"
+      ],
+      "Added on ${ formattedDate }": [
+        "Tilføjet den ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Øjeblikkelig"
+      ],
+      "Less than a day": [
+        "Mindre end 1 dag"
       ]
     },
     "Empty group name": {

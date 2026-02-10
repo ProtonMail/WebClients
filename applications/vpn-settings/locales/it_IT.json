@@ -3847,6 +3847,19 @@
     "emergency_access": {
       "Trusted contact": [
         "Contatti sicuri"
+      ],
+      "${ n } day": [
+        "${ n } giorno",
+        "${ n } giorni"
+      ],
+      "Added on ${ formattedDate }": [
+        "Aggiunto il ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Immediato"
+      ],
+      "Less than a day": [
+        "Meno di un giorno"
       ]
     },
     "Empty group name": {

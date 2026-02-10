@@ -3874,6 +3874,20 @@
     "emergency_access": {
       "Trusted contact": [
         "Contact aprobat"
+      ],
+      "${ n } day": [
+        "${ n } zi",
+        "${ n } zile",
+        "${ n } de zile"
+      ],
+      "Added on ${ formattedDate }": [
+        "Adăugat la ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Imediat"
+      ],
+      "Less than a day": [
+        "Mai puțin de o zi"
       ]
     },
     "Empty group name": {

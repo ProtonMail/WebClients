@@ -3800,6 +3800,18 @@
     "emergency_access": {
       "Trusted contact": [
         "신뢰하는 연락처"
+      ],
+      "${ n } day": [
+        "${ n }일"
+      ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate }에 추가됨"
+      ],
+      "Immediate": [
+        "즉시"
+      ],
+      "Less than a day": [
+        "하루 미만"
       ]
     },
     "Empty group name": {

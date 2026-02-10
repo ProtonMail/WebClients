@@ -3832,6 +3832,18 @@
     "emergency_access": {
       "Trusted contact": [
         "信頼済みの連絡先"
+      ],
+      "${ n } day": [
+        "${ n } 日"
+      ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate } に追加されました"
+      ],
+      "Immediate": [
+        "すぐに"
+      ],
+      "Less than a day": [
+        "１日未満"
       ]
     },
     "Empty group name": {
