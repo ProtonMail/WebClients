@@ -4675,6 +4675,9 @@
       "Name required": [
         "Név megadása kötelező"
       ],
+      "Network error": [
+        "Hálózati hiba"
+      ],
       "No active sessions": [
         "Nincs aktív munkamenet"
       ],
@@ -6800,10 +6803,6 @@
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } felhasználót találtam",
-        "${ userFound } felhasználót találtam"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } létrehozva"

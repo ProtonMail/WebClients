@@ -516,6 +516,9 @@
       "Disable": [
         "Deaktivieren"
       ],
+      "Disable categories": [
+        "Kategorien deaktivieren"
+      ],
       "Disable recovery phrase": [
         "Wiederherstellungsphrase deaktivieren"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Behalten"
+      ],
+      "Keep categories": [
+        "Kategorien behalten"
       ],
       "Keep Editing": [
         "Bearbeitung fortsetzen"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Failed loading group members": [
+        "Gruppenmitglieder konnten nicht geladen werden"
+      ],
       "Failed to add group member": [
         "Gruppenmitglied konnte nicht hinzugefügt werden"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Name erforderlich"
+      ],
+      "Network error": [
+        "Netzwerkfehler"
       ],
       "No active sessions": [
         "Keine aktiven Sitzungen"
@@ -8724,15 +8736,15 @@
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
+      "${ total } user found": [
+        "${ total } Benutzer gefunden",
+        "${ total } Benutzer gefunden"
+      ],
       "${ url } added.": [
         "${ url } hinzugefügt."
       ],
       "${ url } deleted.": [
         "${ url } gelöscht."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } Benutzer gefunden",
-        "${ userFound } Benutzer gefunden"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } erstellt."
@@ -8952,6 +8964,9 @@
       ],
       "All members have been added.": [
         "Alle Mitglieder wurden hinzugefügt."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle Nachrichten werden im Posteingang angezeigt, und die Tabs der Kategorie und die Tags sind nicht mehr sichtbar. "
       ],
       "All users": [
         "Alle Benutzer"
@@ -11952,6 +11967,9 @@
     "invitation status": {
       "Declined": [
         "Abgelehnt"
+      ],
+      "Owner": [
+        "Besitzer"
       ],
       "Paused": [
         "Angehalten"
@@ -22296,6 +22314,9 @@
       "Disable activity monitor?": [
         "Aktivitätsüberwachung deaktivieren?"
       ],
+      "Disable categories?": [
+        "Kategorien deaktivieren?"
+      ],
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
@@ -23773,6 +23794,9 @@
       ],
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
+      ],
+      "User is a group": [
+        "Benutzer ist eine Gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"

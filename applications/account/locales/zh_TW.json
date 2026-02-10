@@ -4430,6 +4430,9 @@
       "Expired": [
         "已過期"
       ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
@@ -4543,6 +4546,9 @@
       ],
       "Name required": [
         "名稱為必填"
+      ],
+      "Network error": [
+        "網路連線錯誤"
       ],
       "No active sessions": [
         "無使用中工作階段"
@@ -6548,9 +6554,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
-      ],
-      "${ userFound } user found": [
-        "找到 ${ userFound } 位使用者"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
