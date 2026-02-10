@@ -70,7 +70,8 @@ import groupMembers from './organization/group-members.saga';
 import getOrganizationGroups from './organization/organization-groups.saga';
 import getOrganizationSettings from './organization/organization-settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
-import sharesDedupe from './shares/dedupe-shares.sagas';
+import sharesDedupe from './shares/shares-dedupe.saga';
+import sharesNotification from './shares/shares-notification.saga';
 import coupon from './user/coupon.saga';
 import featureFlags from './user/feature-flags.saga';
 import userAccess from './user/user-access.saga';
@@ -166,6 +167,7 @@ const COMMON_SAGAS = [
     vaultMoveAllItems,
     vaultTransferOwner,
     sharesDedupe,
+    sharesNotification,
 ];
 
 export const rootSagaFactory = (platformSagas: PassSaga[]) =>
