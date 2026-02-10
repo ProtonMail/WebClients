@@ -65,6 +65,7 @@ interface Props {
     inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
     disableVerifyCta?: boolean;
     persistPasswordScope?: boolean;
+    canSubmit?: (input: string) => boolean;
 }
 
 const RecoveryPhone = ({
@@ -79,6 +80,7 @@ const RecoveryPhone = ({
     inputProps,
     disableVerifyCta,
     persistPasswordScope = false,
+    canSubmit,
 }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
@@ -117,6 +119,9 @@ const RecoveryPhone = ({
                 onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
+                        return;
+                    }
+                    if (canSubmit && !canSubmit(input)) {
                         return;
                     }
                     if (confirmStep) {

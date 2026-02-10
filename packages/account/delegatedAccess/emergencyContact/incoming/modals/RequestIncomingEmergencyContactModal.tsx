@@ -8,23 +8,26 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 
+import { requestDelegatedAccessThunk } from '../../../incomingActions';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
 import shield from '../../../shared/shield.svg';
+import { useDispatch } from '../../../useDispatch';
 import { getDaysFromMilliseconds } from '../../helper';
 
 interface RequestAccessEmergencyContactModalProps extends Omit<ModalProps, 'children' | 'buttons'> {
     value: EnrichedIncomingDelegatedAccess;
-    onRequestAccess: (value: EnrichedIncomingDelegatedAccess) => void;
-    loading: boolean;
 }
 
-export const RequestIncomingEmergencyContactModal = ({
-    value,
-    onRequestAccess,
-    loading,
-    ...rest
-}: RequestAccessEmergencyContactModalProps) => {
+export const RequestIncomingEmergencyContactModal = ({ value, ...rest }: RequestAccessEmergencyContactModalProps) => {
+    const handleError = useErrorHandler();
+    const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+
     const user = value.parsedIncomingDelegatedAccess.contact.formatted;
     const accessibleTriggerDelayMs = value.parsedIncomingDelegatedAccess.accessibleTriggerDelayMs;
     const days = getDaysFromMilliseconds(value.parsedIncomingDelegatedAccess.accessibleTriggerDelayMs);
@@ -76,7 +79,21 @@ export const RequestIncomingEmergencyContactModal = ({
                     loading={loading}
                     type="button"
                     onClick={() => {
-                        onRequestAccess(value);
+                        void withLoading(
+                            (async function run() {
+                                try {
+                                    await dispatch(
+                                        requestDelegatedAccessThunk({
+                                            id: value.incomingDelegatedAccess.DelegatedAccessID,
+                                        })
+                                    );
+                                    createNotification({ text: c('emergency_access').t`Emergency access requested` });
+                                    rest.onClose?.();
+                                } catch (e) {
+                                    handleError(e);
+                                }
+                            })()
+                        );
                     }}
                 >{c('Action').t`Continue`}</Button>
             </ModalTwoFooter>

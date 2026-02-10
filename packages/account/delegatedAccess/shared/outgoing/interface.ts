@@ -5,7 +5,7 @@ export type EnrichedOutgoingDelegatedAccess = ReturnType<typeof getEnrichedOutgo
 
 export interface AddActionPayload {
     type: 'add';
-    value: 'emergency-contact';
+    value: 'emergency-contact' | 'recovery-contact';
 }
 
 export interface UpsellActionPayload {
@@ -13,7 +13,7 @@ export interface UpsellActionPayload {
 }
 
 export interface DeleteActionPayload {
-    type: 'delete';
+    type: 'delete-emergency-contact' | 'delete-recovery-contact';
     value: EnrichedOutgoingDelegatedAccess;
 }
 
@@ -42,6 +42,16 @@ export interface ViewAccessActionPayload {
     value: EnrichedOutgoingDelegatedAccess;
 }
 
+export interface RecoverActionPayload {
+    type: 'recover' | 'recover-info' | 'recover-token';
+    value: EnrichedOutgoingDelegatedAccess;
+}
+
+export interface ReEnableActionPayload {
+    type: 'enable-recovery-contact' | 'enable-emergency-contact';
+    value: EnrichedOutgoingDelegatedAccess;
+}
+
 export type ActionPayload =
     | AddActionPayload
     | DeleteActionPayload
@@ -50,5 +60,7 @@ export type ActionPayload =
     | ViewAccessActionPayload
     | RefuseAccessActionPayload
     | RevokeAccessActionPayload
-    | UpsellActionPayload;
+    | UpsellActionPayload
+    | RecoverActionPayload
+    | ReEnableActionPayload;
 export type ActionListener = (payload: ActionPayload) => undefined;

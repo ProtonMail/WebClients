@@ -2,6 +2,7 @@ import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
+import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
@@ -16,12 +17,20 @@ import type { KtState } from '../kt';
 import type { OrganizationKeyState } from '../organizationKey';
 import type { UserState } from '../user';
 import type { UserKeysState } from '../userKeys';
-import type { IncomingDelegatedAccessOutput, OutgoingDelegatedAccessOutput } from './interface';
+import type {
+    DelegatedAccessTypeEnum,
+    IncomingDelegatedAccessOutput,
+    IncomingEphemeral,
+    OutgoingDelegatedAccessOutput,
+    OutgoingEphemeral,
+    OutgoingEphemeralKeys,
+} from './interface';
 
 const name = 'delegatedAccess';
 
 export interface DelegatedAccessState
-    extends UserState,
+    extends
+        UserState,
         AddressesState,
         UserKeysState,
         AddressKeysState,
@@ -30,9 +39,11 @@ export interface DelegatedAccessState
         KtState {
     [name]: {
         incomingDelegatedAccess: ModelState<IncomingDelegatedAccessOutput[]> & {
-            ephemeral?: { [key: string]: boolean | undefined };
+            ephemeral?: IncomingEphemeral;
         };
-        outgoingDelegatedAccess: ModelState<OutgoingDelegatedAccessOutput[]>;
+        outgoingDelegatedAccess: ModelState<OutgoingDelegatedAccessOutput[]> & {
+            ephemeral?: OutgoingEphemeral;
+        };
     };
 }
 
@@ -65,6 +76,20 @@ const slice = createSlice({
                 state.incomingDelegatedAccess.ephemeral[id] = action.payload.value;
             }
         },
+        setOutgoingEphemeral: (
+            state,
+            action: PayloadAction<{ id: string; value: boolean; type: OutgoingEphemeralKeys }>
+        ) => {
+            if (!state.outgoingDelegatedAccess.ephemeral) {
+                state.outgoingDelegatedAccess.ephemeral = {};
+            }
+            const id: `${string}-${OutgoingEphemeralKeys}` = `${action.payload.id}-${action.payload.type}`;
+            if (!action.payload.value) {
+                delete state.outgoingDelegatedAccess.ephemeral[id];
+            } else {
+                state.outgoingDelegatedAccess.ephemeral[id] = action.payload.value;
+            }
+        },
         pendingOutgoingList: (state) => {
             state.outgoingDelegatedAccess.error = undefined;
         },
@@ -80,14 +105,27 @@ const slice = createSlice({
         },
         deleteOutgoingItem: (
             state,
-            action: PayloadAction<Pick<OutgoingDelegatedAccessOutput, 'DelegatedAccessID'>>
+            action: PayloadAction<
+                Pick<OutgoingDelegatedAccessOutput, 'DelegatedAccessID'> & { types: DelegatedAccessTypeEnum }
+            >
         ) => {
             if (!state.outgoingDelegatedAccess.value) {
                 return;
             }
-            state.outgoingDelegatedAccess.value = sort(
-                removeById(state.outgoingDelegatedAccess.value, action.payload, 'DelegatedAccessID')
+            const item = state.outgoingDelegatedAccess.value.find(
+                (item) => item.DelegatedAccessID === action.payload.DelegatedAccessID
             );
+            if (!item) {
+                return;
+            }
+            const result = clearBit(item.Types, action.payload.types);
+            if (result === 0) {
+                state.outgoingDelegatedAccess.value = sort(
+                    removeById(state.outgoingDelegatedAccess.value, action.payload, 'DelegatedAccessID')
+                );
+            } else {
+                item.Types = result;
+            }
         },
         upsertOutgoingItem: (state, action: PayloadAction<OutgoingDelegatedAccessOutput>) => {
             if (!state.outgoingDelegatedAccess.value) {
@@ -121,14 +159,27 @@ const slice = createSlice({
         },
         deleteIncomingItem: (
             state,
-            action: PayloadAction<Pick<IncomingDelegatedAccessOutput, 'DelegatedAccessID'>>
+            action: PayloadAction<
+                Pick<IncomingDelegatedAccessOutput, 'DelegatedAccessID'> & { types: DelegatedAccessTypeEnum }
+            >
         ) => {
             if (!state.incomingDelegatedAccess.value) {
                 return;
             }
-            state.incomingDelegatedAccess.value = sort(
-                removeById(state.incomingDelegatedAccess.value, action.payload, 'DelegatedAccessID')
+            const item = state.incomingDelegatedAccess.value.find(
+                (item) => item.DelegatedAccessID === action.payload.DelegatedAccessID
             );
+            if (!item) {
+                return;
+            }
+            const result = clearBit(item.Types, action.payload.types);
+            if (result === 0) {
+                state.incomingDelegatedAccess.value = sort(
+                    removeById(state.incomingDelegatedAccess.value, action.payload, 'DelegatedAccessID')
+                );
+            } else {
+                item.Types = result;
+            }
         },
         incomingEventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<IncomingDelegatedAccessOutput>>) => {
             if (state.incomingDelegatedAccess.value) {

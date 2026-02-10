@@ -1,6 +1,8 @@
 export enum DelegatedAccessStateEnum {
     Disabled = 0,
     Enabled = 1,
+    Accessible = 2,
+    Recoverable = 3,
 }
 
 export enum DelegatedAccessTypeEnum {
@@ -12,6 +14,11 @@ export interface IncomingEphemeral {
     [key: string]: boolean | undefined;
 }
 
+export type OutgoingEphemeralKeys = 'recover' | 'recover-token' | 'enable';
+export interface OutgoingEphemeral {
+    [key: `${string}-${OutgoingEphemeralKeys}`]: boolean | undefined;
+}
+
 export interface IncomingDelegatedAccessOutput {
     DelegatedAccessID: string;
     State: DelegatedAccessStateEnum;
@@ -21,6 +28,7 @@ export interface IncomingDelegatedAccessOutput {
     AccessibleTime: null | number;
     TriggerDelay: number;
     CreateTime: number;
+    RecoveryToken: string | null;
 }
 
 export interface OutgoingDelegatedAccessOutput {
@@ -32,4 +40,6 @@ export interface OutgoingDelegatedAccessOutput {
     AccessibleTime: null | number;
     TriggerDelay: number;
     CreateTime: number;
+    RecoveryToken: string | null;
+    RecoverableTime: null | number;
 }

@@ -4,8 +4,10 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getTrustedContactRoute } from '@proton/account/delegatedAccess/available';
 import { OutgoingEmergencyContactTopBanner } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
+import { IncomingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
+import { OutgoingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
+import { getTrustedContactRoute } from '@proton/account/delegatedAccess/routes';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -189,6 +191,7 @@ const MainContainer = () => {
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isOLESEnabled = useFlag('OlesM1');
     const isCategoryViewEnabled = useFlag('CategoryView');
+    const isRecoveryContactsEnabled = useFlag('SocialRecovery');
 
     const [referralInfo] = useReferralInfo();
 
@@ -256,6 +259,7 @@ const MainContainer = () => {
         isUserGroupsFeatureEnabled,
         showThemeSelection,
         assistantKillSwitch,
+        isRecoveryContactsEnabled,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
         canDisplayPassReports,
@@ -340,6 +344,8 @@ const MainContainer = () => {
 
     const top = (
         <TopBanners app={app}>
+            <IncomingRecoveryContactTopBanner />
+            <OutgoingRecoveryContactTopBanner />
             <OutgoingEmergencyContactTopBanner />
             <UnprivatizationRequestTopBanner />
             <SSODomainUnverifiedBanner app={app} />

@@ -37,8 +37,9 @@ export const ContactCell = ({
                             {email}
                         </span>
                     )}
-                    <span className="block text-sm color-weak">{c('emergency_access')
-                        .t`Added on ${formattedDate}`}</span>
+                    <span className="block text-sm color-weak">
+                        {c('emergency_access').t`Added on ${formattedDate}`}
+                    </span>
                 </div>
             </div>
         </div>

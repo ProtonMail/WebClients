@@ -4,7 +4,7 @@ export type MetaIncomingDelegatedAccess = ReturnType<typeof getMetaIncomingDeleg
 export type EnrichedIncomingDelegatedAccess = ReturnType<typeof getEnrichedIncomingDelegatedAccess>;
 
 export interface DeleteActionPayload {
-    type: 'delete';
+    type: 'delete-emergency-contact' | 'delete-recovery-contact';
     value: EnrichedIncomingDelegatedAccess;
 }
 
@@ -23,9 +23,15 @@ export interface AccessActionPayload {
     value: EnrichedIncomingDelegatedAccess;
 }
 
+export interface RecoverActionPayload {
+    type: 'recover';
+    value: EnrichedIncomingDelegatedAccess;
+}
+
 export type ActionPayload =
     | RequestAccessActionPayload
     | CancelRequestAccessActionPayload
     | DeleteActionPayload
-    | AccessActionPayload;
+    | AccessActionPayload
+    | RecoverActionPayload;
 export type ActionListener = (payload: ActionPayload) => undefined;

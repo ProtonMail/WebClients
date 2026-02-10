@@ -2,6 +2,7 @@ import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
+import { verifySKLSignature } from '@proton/key-transparency/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
@@ -9,17 +10,32 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
-import type { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    DecryptedAddressKey,
+    DecryptedKey,
+    FetchedSignedKeyList,
+} from '@proton/shared/lib/interfaces';
+import { ParsedSignedKeyList, type ReactivateKeysResult } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
+import { reactivateKeysThunk } from '../addressKeys/reactivateKeysActions';
 import { addressesThunk } from '../addresses';
 import { getKTUserContext } from '../kt/actions';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
+import NoAssociatedKeysError from './NoAssociatedKeyError';
+import RetrySignedKeyListError from './RetrySignedKeyListError';
 import ValidationError from './ValidationError';
 import { getIsOutgoingDelegatedAccessAvailable } from './available';
-import { generateDelegatedAccessToken, getEncryptedDelegatedAccessToken } from './crypto';
+import {
+    generateDelegatedAccessToken,
+    getDecryptedDelegatedAccessToken,
+    getEncryptedDelegatedAccessToken,
+    recoverKeys,
+} from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectOutgoingDelegatedAccess } from './index';
 import type { DelegatedAccessTypeEnum, OutgoingDelegatedAccessOutput } from './interface';
 
@@ -262,20 +278,23 @@ export const grantDelegatedAccessThunk = (
     };
 };
 
-const deleteDelegatedAccess = (id: string) => ({
+const deleteDelegatedAccess = (id: string, data: { Types: DelegatedAccessTypeEnum }) => ({
     url: `account/v1/access/${id}/delete`,
     method: 'put',
+    data,
 });
 
 export const deleteDelegatedAccessThunk = ({
     id,
+    types,
 }: {
     id: string;
+    types: DelegatedAccessTypeEnum;
 }): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
-        await api(deleteDelegatedAccess(id));
-        dispatch(delegatedAccessActions.deleteOutgoingItem({ DelegatedAccessID: id }));
+        await api(deleteDelegatedAccess(id, { Types: types }));
+        dispatch(delegatedAccessActions.deleteOutgoingItem({ DelegatedAccessID: id, types }));
     };
 };
 
@@ -296,5 +315,281 @@ export const resetDelegatedAccessThunk = ({
         }>(resetDelegatedAccess(id));
         dispatch(delegatedAccessActions.upsertOutgoingItem(OutgoingDelegatedAccess));
         return OutgoingDelegatedAccess;
+    };
+};
+
+export const recoverDelegatedAccessStep1Thunk = ({
+    outgoingDelegatedAccess,
+}: {
+    outgoingDelegatedAccess: OutgoingDelegatedAccessOutput;
+}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        try {
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: outgoingDelegatedAccess.DelegatedAccessID,
+                    type: 'recover',
+                    value: true,
+                })
+            );
+            const api = getSilentApi(extra.api);
+            const { DelegatedAccess } = await api<{
+                DelegatedAccess: OutgoingDelegatedAccessOutput;
+            }>({
+                url: `account/v1/access/${outgoingDelegatedAccess.DelegatedAccessID}/recover`,
+                method: 'put',
+            });
+            dispatch(delegatedAccessActions.upsertOutgoingItem(DelegatedAccess));
+            return DelegatedAccess;
+        } finally {
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: outgoingDelegatedAccess.DelegatedAccessID,
+                    type: 'recover',
+                    value: false,
+                })
+            );
+        }
+    };
+};
+
+export const updateDelegatedAccess = ({
+    delegatedAccess,
+    api,
+}: {
+    delegatedAccess: OutgoingDelegatedAccessOutput;
+    api: Api;
+}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        try {
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: delegatedAccess.DelegatedAccessID,
+                    type: 'enable',
+                    value: true,
+                })
+            );
+
+            const payload = await dispatch(
+                getAddDelegatedAccessPayloadThunk({
+                    api,
+                    targetEmail: delegatedAccess.TargetEmail,
+                    triggerDelay: delegatedAccess.TriggerDelay,
+                    types: delegatedAccess.Types,
+                })
+            );
+            const { DelegatedAccess } = await api<{ DelegatedAccess: OutgoingDelegatedAccessOutput }>(
+                editDelegatedAccess(delegatedAccess.DelegatedAccessID, payload)
+            );
+            dispatch(delegatedAccessActions.upsertOutgoingItem(DelegatedAccess));
+            return DelegatedAccess;
+        } finally {
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: delegatedAccess.DelegatedAccessID,
+                    type: 'enable',
+                    value: false,
+                })
+            );
+        }
+    };
+};
+
+export const updateAllDelegatedAccesses = ({
+    api,
+}: {
+    api: Api;
+}): ThunkAction<
+    Promise<OutgoingDelegatedAccessOutput[]>,
+    DelegatedAccessState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        // Reactivate all delegated accesses.
+        const delegatedAccesses = await dispatch(listOutgoingDelegatedAccess());
+        return Promise.all(
+            delegatedAccesses.map((delegatedAccess) => {
+                return dispatch(updateDelegatedAccess({ delegatedAccess, api }));
+            })
+        );
+    };
+};
+
+export const verifyRecoveryKeys = async ({
+    signatureAddressKeyID,
+    signedKeyList,
+    address,
+    decryptedAddressKeys,
+}: {
+    signatureAddressKeyID: string;
+    signedKeyList: FetchedSignedKeyList;
+    address: Address;
+    decryptedAddressKeys: DecryptedAddressKey<PrivateKeyReference>[];
+}) => {
+    if (!signedKeyList.Data) {
+        throw new Error('Signed key list not found');
+    }
+    if (!signedKeyList.Signature) {
+        throw new Error('Signed key list signature not found');
+    }
+    const parsedSignedKeyList = new ParsedSignedKeyList(signedKeyList.Data);
+    const signedKeyListItems = parsedSignedKeyList.getParsedSignedKeyList();
+    if (!signedKeyListItems) {
+        throw new Error('Unparseable signed key list');
+    }
+    const signatureAddressKey = address.Keys.find(({ ID }) => ID === signatureAddressKeyID);
+    if (!signatureAddressKey) {
+        throw new Error('Signature address key not found');
+    }
+    if (decryptedAddressKeys.some((key) => key.ID === signatureAddressKey.ID)) {
+        /*
+            TODO: Check if this is needed. We might need to let it pass through to reactivate previous keys?
+            throw new NoAssociatedKeysError('Key is already decrypted, no data to recover');
+         */
+    }
+    const verificationKey = await CryptoProxy.importPublicKey({ armoredKey: signatureAddressKey.PrivateKey });
+    // Verifies that the SKL was signed by the inactive key
+    const timestamp = await verifySKLSignature({
+        verificationKeys: [verificationKey],
+        signedKeyListData: signedKeyList.Data,
+        signedKeyListSignature: signedKeyList.Signature,
+    });
+    if (!timestamp) {
+        throw new Error('Signed key list not verified');
+    }
+    // Verifies that the key used for verification already existed in key transparency before re-activation
+    if (
+        !signedKeyListItems.some(
+            (key) => verificationKey.getSHA256Fingerprints().join(',') === key.SHA256Fingerprints.join(',')
+        )
+    ) {
+        throw new Error('Signature address key not found in signed key list');
+    }
+    return { verificationKeys: [verificationKey] };
+};
+
+interface RecoverDelegatedAccessStep2Output {
+    UserKeys: { UserKeyID: string; PrivateKey: string }[];
+    RecoveryToken: string;
+    SignatureAddressKeyID: string;
+    SignedKeyList: FetchedSignedKeyList | null;
+}
+export const recoverDelegatedAccessStep2Thunk = ({
+    outgoingDelegatedAccess,
+    ignoreVerification,
+}: {
+    outgoingDelegatedAccess: OutgoingDelegatedAccessOutput;
+    ignoreVerification: boolean;
+}): ThunkAction<Promise<ReactivateKeysResult>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        let importedVerificationKeys: PublicKeyReference[] | null = null;
+
+        const state = getState();
+        const loadingKeys = Object.keys(state.delegatedAccess.outgoingDelegatedAccess.ephemeral || {});
+        // Avoid performing multiple recoveries in parallel
+        if (loadingKeys.some((key) => key.endsWith('recover-token'))) {
+            throw new Error('Try again later');
+        }
+
+        try {
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: outgoingDelegatedAccess.DelegatedAccessID,
+                    type: 'recover-token',
+                    value: true,
+                })
+            );
+
+            const api = getSilentApi(extra.api);
+            extra.eventManager.stop();
+
+            const { UserKeys, RecoveryToken, SignatureAddressKeyID, SignedKeyList } =
+                await api<RecoverDelegatedAccessStep2Output>({
+                    url: `account/v1/access/${outgoingDelegatedAccess.DelegatedAccessID}/keys`,
+                    method: 'get',
+                });
+
+            const addresses = await dispatch(addressesThunk());
+            const address = addresses.find((address) => address.ID === outgoingDelegatedAccess.SourceAddressID);
+            if (!address) {
+                throw new Error('Source address not found');
+            }
+
+            const decryptedAddressKeys = await dispatch(addressKeysThunk({ addressID: address.ID }));
+            if (!decryptedAddressKeys.length) {
+                throw new Error('Source address keys not found');
+            }
+
+            // In case the SignedKeyList does not exist, let the user take manual action to proceed.
+            if (!SignedKeyList && !ignoreVerification) {
+                throw new RetrySignedKeyListError();
+            }
+
+            const verificationResult = !SignedKeyList
+                ? { verificationKeys: null }
+                : await verifyRecoveryKeys({
+                      address,
+                      signedKeyList: SignedKeyList,
+                      signatureAddressKeyID: SignatureAddressKeyID,
+                      decryptedAddressKeys,
+                  });
+
+            importedVerificationKeys = verificationResult.verificationKeys;
+
+            const recoveryToken = await getDecryptedDelegatedAccessToken({
+                armoredMessage: RecoveryToken,
+                decryptionKeys: decryptedAddressKeys.map((addressKey) => addressKey.privateKey),
+                verificationKeys: importedVerificationKeys,
+            });
+
+            const [user, userKeys] = await Promise.all([dispatch(userThunk()), dispatch(userKeysThunk())]);
+
+            const recoveredKeys = await recoverKeys({
+                recoveryToken,
+                UserKeys,
+                user,
+                userKeys,
+            });
+
+            const result = await dispatch(
+                reactivateKeysThunk({
+                    keyReactivationRecords: [
+                        {
+                            user,
+                            keysToReactivate: recoveredKeys,
+                        },
+                    ],
+                })
+            );
+
+            const someReactivatedKeys = result.details.some((value) => value.type === 'success');
+            if (!someReactivatedKeys) {
+                throw new NoAssociatedKeysError('No keys reactivated');
+            }
+
+            // Stop it again since the reactivate keys thunk starts it.
+            extra.eventManager.stop();
+
+            // Only update accesses in case data was reactivated
+            await dispatch(updateAllDelegatedAccesses({ api }));
+
+            return result;
+        } finally {
+            extra.eventManager.start();
+
+            // Clean up imported verification keys
+            importedVerificationKeys?.forEach((verificationKey) => {
+                CryptoProxy.clearKey({ key: verificationKey }).catch(noop);
+            });
+
+            dispatch(
+                delegatedAccessActions.setOutgoingEphemeral({
+                    id: outgoingDelegatedAccess.DelegatedAccessID,
+                    type: 'recover-token',
+                    value: false,
+                })
+            );
+        }
     };
 };

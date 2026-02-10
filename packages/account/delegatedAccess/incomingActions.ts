@@ -1,7 +1,6 @@
 import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { getOrganizationTokenThunk } from '@proton/account/organizationKey/actions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -20,11 +19,12 @@ import noop from '@proton/utils/noop';
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
 import { getKTUserContext } from '../kt/actions';
+import { getOrganizationTokenThunk } from '../organizationKey/actions';
 import { userThunk } from '../user';
 import { getIsIncomingDelegatedAccessAvailable } from './available';
-import { getDecryptedDelegatedAccessToken } from './crypto';
+import { getDecryptedDelegatedAccessToken, getReEncryptedRecoveryToken } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectIncomingDelegatedAccess } from './index';
-import type { IncomingDelegatedAccessOutput } from './interface';
+import type { DelegatedAccessTypeEnum, IncomingDelegatedAccessOutput } from './interface';
 
 const queryListIncomingDelegatedAccess = () => ({
     url: `account/v1/access/incoming`,
@@ -121,20 +121,23 @@ export const resetDelegatedAccessThunk = ({
     };
 };
 
-const deleteDelegatedAccess = (id: string) => ({
+const deleteDelegatedAccess = (id: string, data: { Types: DelegatedAccessTypeEnum }) => ({
     url: `account/v1/access/${id}/delete`,
     method: 'put',
+    data,
 });
 
 export const deleteDelegatedAccessThunk = ({
     id,
+    types,
 }: {
     id: string;
+    types: DelegatedAccessTypeEnum;
 }): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
-        await api(deleteDelegatedAccess(id));
-        dispatch(delegatedAccessActions.deleteIncomingItem({ DelegatedAccessID: id }));
+        await api(deleteDelegatedAccess(id, { Types: types }));
+        dispatch(delegatedAccessActions.deleteIncomingItem({ DelegatedAccessID: id, types }));
     };
 };
 
@@ -280,5 +283,75 @@ export const accessDelegatedAccessThunk = ({
                 })
             );
         }
+    };
+};
+
+export const tokenThunk = ({
+    id,
+}: {
+    id: string;
+}): ThunkAction<Promise<string>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        const { UserKeyToken } = await api<{ UserKeyToken: string }>({
+            url: `account/v1/access/${id}/token`,
+            method: 'get',
+        });
+        return UserKeyToken;
+    };
+};
+
+export const recoverThunk = ({
+    incomingDelegatedAccess,
+}: {
+    incomingDelegatedAccess: IncomingDelegatedAccessOutput;
+}): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+
+        const ktUserContext = await dispatch(getKTUserContext());
+        const verifiedApiKeys = await getAndVerifyApiKeys({
+            api,
+            email: incomingDelegatedAccess.SourceEmail,
+            ktUserContext,
+            internalKeysOnly: true,
+            noCache: true,
+        }).catch(noop);
+        if (!verifiedApiKeys) {
+            throw new Error('Source address does not exist');
+        }
+        const encryptionKeys = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey);
+        const primaryAddressKey = encryptionKeys[0];
+        if (!primaryAddressKey) {
+            throw new Error('Source address is not setup');
+        }
+
+        const [addresses, addressKeys] = await Promise.all([
+            dispatch(addressesThunk()),
+            dispatch(addressKeysThunk({ addressID: incomingDelegatedAccess.TargetAddressID })),
+        ]);
+        const address = addresses.find(({ ID }) => ID === incomingDelegatedAccess.TargetAddressID);
+        if (!address) {
+            throw new Error('Address does not exist');
+        }
+        if (!addressKeys?.length) {
+            throw new Error('Address does not have keys');
+        }
+
+        const userKeyToken = await dispatch(tokenThunk({ id: incomingDelegatedAccess.DelegatedAccessID }));
+        const recoveryToken = await getReEncryptedRecoveryToken({
+            armoredMessage: userKeyToken,
+            decryptionKeys: addressKeys.map(({ privateKey }) => privateKey),
+            encryptionKeys: [primaryAddressKey],
+        });
+
+        const { DelegatedAccess } = await api<{ DelegatedAccess: IncomingDelegatedAccessOutput }>({
+            url: `account/v1/access/${incomingDelegatedAccess.DelegatedAccessID}/token`,
+            method: 'put',
+            data: {
+                RecoveryToken: recoveryToken,
+            },
+        });
+        dispatch(delegatedAccessActions.upsertIncomingItem(DelegatedAccess));
     };
 };
