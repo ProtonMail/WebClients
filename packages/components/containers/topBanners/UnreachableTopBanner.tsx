@@ -2,13 +2,15 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { PROTON_WEBSITES } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import TopBanner from './TopBanner';
 
 interface Props {
     errorMessage: string;
+    className?: string;
 }
-const UnreachableTopBanner = ({ errorMessage }: Props) => {
+const UnreachableTopBanner = ({ errorMessage, className }: Props) => {
     // translator: At the end of a longer sentence "Servers are unreachable. Please try again in a few minutes. You can also check our status page"
     const statusPageLink = (
         <Href key="link" href={PROTON_WEBSITES.PROTON_STATUS_PAGE} target="_blank">{c('Error').t`status page`}</Href>
@@ -16,7 +18,7 @@ const UnreachableTopBanner = ({ errorMessage }: Props) => {
     // translator: full sentence "Servers are unreachable. Please try again in a few minutes. You can also check our status page"
     const errorMessageWithStatusPage = c('Error').jt`${errorMessage}. You can also check our ${statusPageLink}`;
 
-    return <TopBanner className="bg-danger">{errorMessageWithStatusPage}</TopBanner>;
+    return <TopBanner className={clsx('bg-danger', className)}>{errorMessageWithStatusPage}</TopBanner>;
 };
 
 export default UnreachableTopBanner;
