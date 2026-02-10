@@ -199,9 +199,6 @@
       "Change email": [
         "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
-      "Change page": [
-        "Αλλαγή σελίδας"
-      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Προσαρμογή"
       ],
-      "Customize categories": [
-        "Προσαρμογή κατηγοριών"
-      ],
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Απενεργοποίηση ψευδωνύμου"
       ],
-      "Disable categories": [
-        "Απενεργοποίηση κατηγοριών"
-      ],
       "Disabling alias": [
         "Γίνεται απενεργοποίηση ψευδωνύμου"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Επεξεργασία διεύθυνσης"
-      ],
-      "Edit categories": [
-        "Επεξεργασία κατηγοριών"
       ],
       "Edit draft": [
         "Τροποποίηση πρόχειρου"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Συμμετάσχετε με ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Διατήρηση κατηγοριών"
       ],
       "Keep inbox as before": [
         "Διατηρήστε τα εισερχόμενά σας όπως πριν"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Αποθήκευση"
-      ],
-      "Save preferences": [
-        "Αποθήκευση προτιμήσεων"
       ],
       "Saving${ ellipsis }": [
         "Γίνεται αποθήκευση${ ellipsis }"
@@ -4604,6 +4586,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Σφάλμα κατά τη μεταφόρτωση συνημμένων. Το μήνυμα δεν έχει σταλεί."
       ],
+      "Failed loading group members": [
+        "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -4706,6 +4691,9 @@
       ],
       "Name is required": [
         "Απαιτείται όνομα"
+      ],
+      "Network error": [
+        "Σφάλμα δικτύου"
       ],
       "Network error: Please check your connection and try again.": [
         "Σφάλμα δικτύου. Παρακαλούμε ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
@@ -6730,9 +6718,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Όλα τα μηνύματα που είναι αποθηκευμένα με αυτήν την ετικέτα θα διαγραφούν οριστικά."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Όλα τα μηνύματα θα εμφανίζονται στα Εισερχόμενα, και οι καρτέλες κατηγοριών και οι ετικέτες δε θα είναι πλέον ορατές. "
-      ],
       "All your calendars are disabled.": [
         "Όλα τα ημερολόγιά σας είναι απενεργοποιημένα."
       ],
@@ -7858,9 +7843,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -9180,9 +9162,6 @@
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Προσθέστε ή αφαιρέστε κατηγορίες. Ρυθμίστε ή απενεργοποιήστε τις ειδοποιήσεις. Προσαρμόστε ανά πάσα στιγμή στο μενού ${ menuIcon }."
-      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -9287,9 +9266,6 @@
       ],
       "Cash": [
         "Μετρητά"
-      ],
-      "Categories": [
-        "Κατηγορίες"
       ],
       "Categories badge": [
         "Ετικέτα κατηγοριών"
@@ -9654,9 +9630,6 @@
       "Notification": [
         "Ειδοποίηση"
       ],
-      "Notifications": [
-        "Ειδοποιήσεις"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Οι ειδοποιήσεις είναι απενεργοποιημένες, για να τις ενεργοποιήσετε αλλάξτε τις ρυθμίσεις του προγράμματος περιήγησης."
       ],
@@ -9770,9 +9743,6 @@
       ],
       "Search in": [
         "Αναζήτηση σε"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Επιλέξτε τις κατηγορίες που θέλετε να συμπεριλάβετε και διαχειριστείτε τις ειδοποιήσεις για νέα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -14777,9 +14747,6 @@
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
       ],
-      "Archive": [
-        "Αρχειοθετημένα"
-      ],
       "Archive all messages?": [
         "Αρχειοθέτηση όλων των μηνυμάτων;"
       ],
@@ -14915,12 +14882,6 @@
       "Customize calendar import": [
         "Προσαρμογή εισαγωγής ημερολογίου"
       ],
-      "Customize categories": [
-        "Προσαρμογή κατηγοριών"
-      ],
-      "Customize categories to fit your needs": [
-        "Προσαρμόστε τις κατηγορίες στις ανάγκες σας"
-      ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
       ],
@@ -14979,9 +14940,6 @@
       ],
       "Desktop": [
         "Υπολογιστής"
-      ],
-      "Disable categories?": [
-        "Απενεργοποίηση κατηγοριών;"
       ],
       "Discover your subscription benefits": [
         "Ανακαλύψτε τα πλεονεκτήματα της συνδρομής σας"
@@ -15583,9 +15541,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Για να κάνετε προεπισκόπηση αυτού του υπολογιστικού φύλλου, ανοίξτε το στο ${ SHEETS_APP_NAME } ή κάντε λήψη του."
-      ],
-      "Trash": [
-        "Διαγραμμένα"
       ],
       "Trash all messages?": [
         "Αποστολή όλων των μηνυμάτων στον κάδο απορριμμάτων;"

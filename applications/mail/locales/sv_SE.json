@@ -199,9 +199,6 @@
       "Change email": [
         "Ändra e-post"
       ],
-      "Change page": [
-        "Ändra sida"
-      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Anpassa"
       ],
-      "Customize categories": [
-        "Anpassa kategorier"
-      ],
       "Customize import": [
         "Anpassa import"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Inaktivera alias"
       ],
-      "Disable categories": [
-        "Inaktivera kategorier"
-      ],
       "Disabling alias": [
         "Inaktiverar alias"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Redigera adress"
-      ],
-      "Edit categories": [
-        "Redigera kategorier"
       ],
       "Edit draft": [
         "Redigera utkast"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Gå med i ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Behåll kategorier"
       ],
       "Keep inbox as before": [
         "Behåll inkorg som förut"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Spara"
-      ],
-      "Save preferences": [
-        "Spara preferenser"
       ],
       "Saving${ ellipsis }": [
         "Sparar${ ellipsis }"
@@ -4598,6 +4580,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Fel vid uppladdning av bilagor. Meddelandet skickas inte."
       ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Misslyckades att kryptera bilaga. Försök igen."
       ],
@@ -4700,6 +4685,9 @@
       ],
       "Name is required": [
         "Namn är obligatoriskt"
+      ],
+      "Network error": [
+        "Nätverksfel"
       ],
       "Network error: Please check your connection and try again.": [
         "Nätverksfel: Kontrollera din anslutning och försök igen."
@@ -6724,9 +6712,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Alla meddelanden lagrade med denna etikett kommer att tas bort permanent."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Alla meddelanden kommer att visas i inkorgen, och kategoriflikarna och etiketterna kommer inte längre att vara synliga. "
-      ],
       "All your calendars are disabled.": [
         "Alla dina kalendrar är inaktiverade."
       ],
@@ -7843,9 +7828,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakta oss för att få hjälp med allt om ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Ta emot aviseringar för ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Mottagare: "
@@ -9156,9 +9138,6 @@
       "Add image URL": [
         "Lägga till bild-URL"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Lägg till eller ta bort kategorier. Ställ in eller stäng av aviseringar. Justera när som helst i ${ menuIcon }-menyn."
-      ],
       "Add to group": [
         "Lägg till i grupp"
       ],
@@ -9263,9 +9242,6 @@
       ],
       "Cash": [
         "Kontant"
-      ],
-      "Categories": [
-        "Kategorier"
       ],
       "Categories badge": [
         "Kategorimärke"
@@ -9627,9 +9603,6 @@
       "Notification": [
         "Avisering"
       ],
-      "Notifications": [
-        "Aviseringar"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
       ],
@@ -9743,9 +9716,6 @@
       ],
       "Search in": [
         "Sök i"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Välj de kategorier som ska inkluderas och hantera aviseringar för ny e-post."
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -14741,9 +14711,6 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
-      "Archive": [
-        "Arkivera"
-      ],
       "Archive all messages?": [
         "Arkivera alla meddelanden?"
       ],
@@ -14879,12 +14846,6 @@
       "Customize calendar import": [
         "Anpassa kalenderimport"
       ],
-      "Customize categories": [
-        "Anpassa kategorier"
-      ],
-      "Customize categories to fit your needs": [
-        "Anpassa kategorier för att passa dina behov"
-      ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
       ],
@@ -14943,9 +14904,6 @@
       ],
       "Desktop": [
         "Stationär dator"
-      ],
-      "Disable categories?": [
-        "Inaktivera kategorier?"
       ],
       "Discover your subscription benefits": [
         "Upptäck dina prenumerationsförmåner"
@@ -15547,9 +15505,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
-      ],
-      "Trash": [
-        "Papperskorg"
       ],
       "Trash all messages?": [
         "Kasta alla meddelanden?"
