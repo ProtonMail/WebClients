@@ -238,6 +238,7 @@ export enum MailFeatureFlag {
 
 enum AdminFeatureFlag {
     UserSecurityModal = 'UserSecurityModal',
+    MLInsiderThreatAPIReportOnly = 'MLInsiderThreatAPIReportOnly'
 }
 
 enum WalletFlag {
