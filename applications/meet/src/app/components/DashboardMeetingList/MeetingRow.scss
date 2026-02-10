@@ -37,13 +37,15 @@ im.$breakpoints: $breakpoints;
 		}
 	}
 
-	.delete-button:hover {
+	.delete-button:hover,
+	.delete-button:focus {
 		border-color: var(--signal-danger) !important;
 		background: var(--signal-danger-minor-2) !important;
 		color: var(--signal-danger) !important;
 	}
 
-	.join-button:hover {
+	.join-button:hover,
+	.join-button:focus {
 		color: var(--text-norm) !important;
 	}
 }
