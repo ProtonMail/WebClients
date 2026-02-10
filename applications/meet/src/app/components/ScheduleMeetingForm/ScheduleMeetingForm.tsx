@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
@@ -327,10 +327,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                 />
             )}
             <div className="flex md:items-center justify-center">
-                <div
-                    className="create-container max-w-custom flex flex-column gap-2"
-                    style={{ '--max-w-custom': '35rem' }}
-                >
+                <div className="create-container w-custom flex flex-column gap-2" style={{ '--w-custom': '35rem' }}>
                     <div className="text-center">
                         <img
                             className="w-custom h-custom mb-2"
@@ -349,7 +346,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         </InlineLinkButton>
                     </div>
                     <div className="w-full flex flex-nowrap items-center gap-4">
-                        <IcTextAlignLeft size={5} />
+                        <IcTextAlignLeft size={5} className="shrink-0" />
                         <InputFieldTwo
                             id="meetingName"
                             name="meetingName"
@@ -417,7 +414,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         timeError={errors.endTime}
                     />
                     <div className="w-full flex flex-nowrap items-center gap-4">
-                        <IcArrowsRotate size={5} />
+                        <IcArrowsRotate size={5} className="shrink-0" />
                         <SelectTwo
                             onChange={(item: { value: string }) => {
                                 setValues({ ...values, recurrence: item.value as string });
