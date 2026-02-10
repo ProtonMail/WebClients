@@ -31,8 +31,9 @@ jest.mock('proton-mail/hooks/mailbox/useMailboxPageTitle', () => ({
 jest.mock('proton-mail/hooks/mailbox/useMailboxFavicon', () => ({
     useMailboxFavicon: jest.fn(),
 }));
-jest.mock('@proton/components', () => ({
-    useInboxDesktopBadgeCount: jest.fn(),
+jest.mock('proton-mail/hooks/useInboxDesktopBadgeCount', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/mailbox/notifications/useNewEmailNotification', () => ({
     __esModule: true,
