@@ -13,8 +13,6 @@ export function logInitialAppInfo() {
         isLinux,
         "version:",
         app.getVersion(),
-        "params",
-        process.argv,
     );
 
     mainLogger.info(
