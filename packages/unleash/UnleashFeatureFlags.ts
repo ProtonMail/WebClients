@@ -191,6 +191,7 @@ enum DocsFeatureFlag {
     DownloadLogs = 'DownloadLogs',
     DocsAppSwitcher = 'DocsAppSwitcher',
     DocsPublicEditing = 'DocsPublicEditing',
+    DriveWebTextFileEdit = 'DriveWebTextFileEdit',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Homepage
