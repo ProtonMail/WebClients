@@ -32,6 +32,7 @@ import metrics from "./utils/metrics";
 import { measureRequestTime } from "./utils/log/measureRequestTime";
 import { initializeFeatureFlagManager } from "./utils/flags/manager";
 import { handleSecondInstance } from "./utils/event-handlers/second-instance";
+import { registerDebugStartOptions } from "./debug/start-options";
 
 (async function () {
     initializeLog();
@@ -67,6 +68,9 @@ import { handleSecondInstance } from "./utils/event-handlers/second-instance";
 
     // Used to make the app run on Parallels Desktop
     // app.commandLine.appendSwitch("no-sandbox");
+
+    // Set debugging start options (such as '--devtools')
+    registerDebugStartOptions();
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
