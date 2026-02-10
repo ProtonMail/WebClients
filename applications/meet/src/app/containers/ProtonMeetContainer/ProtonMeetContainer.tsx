@@ -331,7 +331,11 @@ export const ProtonMeetContainer = ({
         }
     };
 
-    const handleMlsSetup = async (meetingLinkName: string, accessToken: string) => {
+    const handleMlsSetup = async (
+        meetingLinkName: string,
+        accessToken: string,
+        participantsCountValue?: number | null
+    ) => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
 
@@ -347,7 +351,7 @@ export const ProtonMeetContainer = ({
             const joinType = wasmApp.getJoinType(
                 isMeetNewJoinTypeEnabled,
                 isMeetSwitchJoinTypeEnabled,
-                participantsCount ?? 0
+                participantsCountValue ?? 0
             );
             if (joinType === JoinTypeInfo.ExternalProposal) {
                 // eslint-disable-next-line no-console
@@ -496,11 +500,12 @@ export const ProtonMeetContainer = ({
             });
 
             // get participants count from the API so we can know which joinType to use based on the participants count
-            await getQueryParticipantsCount(meetingToken);
+            const participantsCountValue = await getQueryParticipantsCount(meetingToken);
 
             accessTokenRef.current = accessToken;
 
-            const { key: groupKey, epoch } = (await handleMlsSetup(meetingToken, accessToken)) || {};
+            const { key: groupKey, epoch } =
+                (await handleMlsSetup(meetingToken, accessToken, participantsCountValue)) || {};
 
             reportMLSRelatedError(groupKey, epoch);
 
