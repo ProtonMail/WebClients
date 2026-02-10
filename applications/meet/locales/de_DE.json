@@ -41,6 +41,9 @@
       "Close": [
         "Schließen"
       ],
+      "Close this banner": [
+        "Dieses Banner schließen"
+      ],
       "Continue": [
         "Weiter"
       ],
@@ -50,20 +53,35 @@
       "Continue without microphone": [
         "Ohne Mikrofon fortfahren"
       ],
-      "Copied": [
-        "Kopiert"
-      ],
-      "Copy ${ title }": [
-        "${ title } kopieren"
-      ],
       "Copy address": [
         "Adresse kopieren"
       ],
       "Copy link": [
         "Link kopieren"
       ],
+      "Copy link and close": [
+        "Link kopieren und schließen"
+      ],
+      "Copy meeting link": [
+        "Meeting-Link kopieren"
+      ],
       "Create a free account": [
         "Kostenloses Konto erstellen"
+      ],
+      "Create a room": [
+        "Raum erstellen"
+      ],
+      "Create an account": [
+        "Konto erstellen"
+      ],
+      "Create meeting": [
+        "Meeting erstellen"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete meeting": [
+        "Meeting löschen"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName }s Kamera deaktivieren"
@@ -76,6 +94,9 @@
       ],
       "Done": [
         "Fertig"
+      ],
+      "Download app": [
+        "App herunterladen"
       ],
       "Download local participant report": [
         "Lokaler Teilnehmerbericht herunterladen"
@@ -92,6 +113,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit meeting": [
+        "Meeting bearbeiten"
+      ],
       "Edit phone number": [
         "Telefonnummer bearbeiten"
       ],
@@ -103,6 +127,9 @@
       ],
       "Enable video": [
         "Video aktivieren"
+      ],
+      "End meeting": [
+        "Meeting beenden"
       ],
       "End meeting for all": [
         "Meeting für alle beenden"
@@ -137,6 +164,9 @@
       "Join meeting": [
         "Meeting beitreten"
       ],
+      "Join via link": [
+        "Per Link beigetreten"
+      ],
       "Kick out": [
         "Rauswerfen"
       ],
@@ -169,6 +199,9 @@
       ],
       "Noise cancellation": [
         "Geräuschunterdrückung"
+      ],
+      "Open app": [
+        "App öffnen"
       ],
       "Open link": [
         "Link öffnen"
@@ -212,11 +245,23 @@
       "Resend code": [
         "Code erneut senden"
       ],
-      "Save meeting": [
-        "Meeting speichern"
+      "Room": [
+        "Raum"
+      ],
+      "Rotate personal meeting link": [
+        "Persönlichen Meeting-Link neu generieren"
+      ],
+      "Save": [
+        "Speichern"
       ],
       "Schedule": [
         "Planen"
+      ],
+      "Schedule a meeting": [
+        "Meeting planen"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "In ${ CALENDAR_APP_NAME } planen"
       ],
       "Search countries": [
         "Länder durchsuchen"
@@ -242,11 +287,11 @@
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
       ],
-      "Start": [
-        "Starten"
-      ],
       "Start a meeting": [
         "Meeting starten"
+      ],
+      "Start an instant meeting": [
+        "Sofortiges Meeting beginnen"
       ],
       "Start meeting": [
         "Meeting starten"
@@ -259,6 +304,9 @@
       ],
       "Stay in meeting": [
         "Im Meeting bleiben"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Öffne keine Meetings mehr in der Desktop-App"
       ],
       "Stop receiving video": [
         "Eingehendes Video stoppen"
@@ -283,6 +331,9 @@
       ],
       "Turn off incoming video": [
         "Eingehendes Video ausschalten"
+      ],
+      "Upgrade": [
+        "Wechseln"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -322,6 +373,9 @@
       "Close search": [
         "Suche schließen"
       ],
+      "Copy link": [
+        "Link kopieren"
+      ],
       "Copy meeting link": [
         "Meeting-Link kopieren"
       ],
@@ -330,9 +384,6 @@
       ],
       "Go to dashboard": [
         "Zum Dashboard gehen"
-      ],
-      "Leave": [
-        "Verlassen"
       ],
       "Leave Meeting": [
         "Meeting verlassen"
@@ -400,6 +451,11 @@
     "Badge": {
       "Active": [
         "Aktiv"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Über einen TURN-Relaymodus wegen Ihrer Netzwerkbeschränkungen verbunden. Dies kann die Latenz erhöhen und die Anrufqualität beeinträchtigen."
       ]
     },
     "Browser": {
@@ -1339,23 +1395,11 @@
       ]
     },
     "Description": {
-      "An always available meeting room for people you trust.": [
-        "Ein immer verfügbarer Besprechungsraum für Leute, denen du vertraust."
-      ],
-      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
-        "Plane Besprechungen und sende Einladungen mit ${ CALENDAR_APP_NAME }."
-      ],
       "Rotating group encryption key for best security": [
         "Rotierender Gruppen-Verschlüsselungsschlüssel für optimale Sicherheit"
       ],
       "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
         "Einrichtung der Gruppen-Ende-zu-Ende-Verschlüsselung mit erweiterter Messaging Layer Security (MLS)"
-      ],
-      "Start a call immediately then share the link with others.": [
-        "Starte sofort einen Anruf und teile dann den Link mit anderen."
-      ],
-      "Use a link to join a meeting.": [
-        "Einen Link verwenden, um an einem Meeting teilzunehmen."
       ]
     },
     "emergency_access": {
@@ -1373,6 +1417,9 @@
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
+      "Event deleted": [
+        "Termin gelöscht"
+      ],
       "Failed to assign host": [
         "Fehler beim Zuweisen eines Organisators"
       ],
@@ -1384,6 +1431,15 @@
       ],
       "Failed to decrypt session key": [
         "Entschlüsselung des Sitzungsschlüssels fehlgeschlagen"
+      ],
+      "Failed to delete event": [
+        "Fehler beim Löschen des Termins"
+      ],
+      "Failed to delete room": [
+        "Fehler beim Löschen des Raums"
+      ],
+      "Failed to edit room name": [
+        "Fehler beim Bearbeiten des Raumnamens"
       ],
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
@@ -1435,6 +1491,9 @@
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
+      ],
+      "Room deleted": [
+        "Raum gelöscht"
       ],
       "Screen share is not supported on mobile browsers": [
         "Bildschirmteilen wird auf mobilen Browsern nicht unterstützt."
@@ -1567,6 +1626,22 @@
         "Dienste"
       ]
     },
+    "Header": {
+      "Speak freely again - every call is end-to-end encrypted": [
+        "Wieder frei sprechen können – jeder Anruf wird Ende-zu-Ende verschlüsselt"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } oder ${ signInAction } verwenden, um auf deinen persönlichen Raum zuzugreifen und neue Räume zu erstellen"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } oder ${ signInAction } zum Planen von Besprechungen"
+      ],
+      "Your conversations ${ matterWord }": [
+        "Deine Unterhaltungen sind ${ matterWord }"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -1607,8 +1682,8 @@
       "${ presenterName } is presenting": [
         "${ presenterName } präsentiert"
       ],
-      "${ user.DisplayName }'s Meeting": [
-        "${ user.DisplayName }s Meeting"
+      "${ userName }'s Meeting": [
+        "Meeting von ${ userName }"
       ],
       "(You)": [
         "(Du)"
@@ -1661,11 +1736,23 @@
       "Country code": [
         "Ländercode"
       ],
+      "Create a meeting room": [
+        "Besprechungsraum erstellen"
+      ],
+      "Create an account": [
+        "Konto erstellen"
+      ],
       "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
         "Erstelle ein Konto, um Meet mit ${ CALENDAR_APP_NAME } zu verbinden und sofort Besprechungseinladungen zu senden."
       ],
+      "Create an account to have a meeting room that you can use at any time.": [
+        "Erstelle ein Konto, um dir einen Besprechungsraum einzurichten, den du jederzeit nutzen kannst."
+      ],
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Ein Konto erstellen, um einen persönlichen Meeting-Link zu haben, den du für jedes Meeting wiederverwenden kannst."
+      ],
+      "Created on ${ formattedDate }": [
+        "Erstellt am ${ formattedDate }"
       ],
       "Custom combination": [
         "Benutzerdefinierte Kombination"
@@ -1675,6 +1762,12 @@
       ],
       "Default - ${ systemDefault.label }": [
         "Standard – ${ systemDefault.label }"
+      ],
+      "Delete event": [
+        "Termin löschen"
+      ],
+      "Delete room": [
+        "Raum löschen"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
         "Möchtest du, dass andere dich im Meeting ${ deviceContentType }?"
@@ -1687,6 +1780,9 @@
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
+      ],
+      "End Meeting for everyone?": [
+        "Sitzung für alle beenden?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "Ende-zu-Ende-Verschlüsselung ist für Audio und Video aktiv."
@@ -1712,14 +1808,26 @@
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
       ],
-      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
-        "Jeder Anruf, jede Bildschirmfreigabe und jeder Chat ist Ende-zu-Ende-verschlüsselt, um deine wichtigsten Verbindungen zu schützen."
+      "Failed to update meeting name": [
+        "Fehler beim Aktualisieren der Besprechungsbezeichnung"
+      ],
+      "Failed to update meeting password": [
+        "Fehler beim Aktualisieren des Besprechungspassworts"
+      ],
+      "Failed to update meeting schedule": [
+        "Fehler beim Aktualisieren des Sitzungsplans"
       ],
       "Free meeting": [
         "Kostenloses Meeting"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Kostenlose Meetings sind auf 1 Stunde begrenzt. Dieses Gespräch wird bald beendet."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Hole dir einen geschützten Meeting-Link und füge ihn deinem Kalender hinzu"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Hole dir das beste Erlebnis mit der Desktop-App ${ protonMeet }"
       ],
       "Get your personal meeting ID": [
         "Deine persönliche Meeting-ID erhalten"
@@ -1745,6 +1853,9 @@
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } beigetreten"
       ],
+      "Last used on ${ formattedDate }": [
+        "Zuletzt genutzt am ${ formattedDate }"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -1769,11 +1880,11 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "matter": [
+        "wichtig"
+      ],
       "Meet without restrictions": [
         "Meet ohne Einschränkungen"
-      ],
-      "Meeting created": [
-        "Besprechung erstellt"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Meeting ist voll (${ maxParticipants } Teilnehmer)"
@@ -1798,6 +1909,15 @@
       ],
       "Microphone effects": [
         "Mikrofoneffekte"
+      ],
+      "My Meeting": [
+        "Mein Meeting"
+      ],
+      "My meetings": [
+        "Meine Meetings"
+      ],
+      "My rooms": [
+        "Meine Räume"
       ],
       "New": [
         "Neu"
@@ -1834,6 +1954,9 @@
       ],
       "No speaker detected": [
         "Kein Lautsprecher erkannt"
+      ],
+      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
+        "Ab sofort werden deine Meetings in der Desktop-App ${ MEET_APP_NAME } geöffnet"
       ],
       "Open external link": [
         "Externen Link öffnen"
@@ -1898,17 +2021,26 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Richte einen dauerhaften Besprechungsraum für dein Team oder deine Kunden ein"
+      ],
       "Share screen": [
         "Bildschirm teilen"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Teile diesen Link, um andere einzuladen. Du findest ihn auch jederzeit, indem du auf das Info-Symbol in der Symbolleiste klickst."
       ],
+      "Sign in": [
+        "Anmelden"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Einen Anruf in ${ MEET_APP_NAME } starten und den Link teilen, um jeden zum Mitmachen einzuladen. Einfach, sicher und kostenlos."
       ],
       "Stop sharing your screen": [
         "Bildschirmfreigabe beenden"
+      ],
+      "Successfully deleted meeting": [
+        "Besprechung erfolgreich gelöscht"
       ],
       "The host has ended the meeting": [
         "Der Organisator hat das Meeting beendet"
@@ -1927,6 +2059,12 @@
       ],
       "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
         "Dieses Meeting ist durch Ende-zu-Ende-Verschlüsselung mit Messaging Layer Security (MLS) geschützt."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
+      ],
+      "This will end the meeting for all participants.": [
+        "Dadurch wird das Meeting für alle Teilnehmer beendet."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
@@ -1949,6 +2087,12 @@
       "Turn on microphone": [
         "Mikrofon einschalten"
       ],
+      "unlimited meeting": [
+        "unbegrenzte Anzahl von Meetings"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "${ unlimitedMeeting } und Premium-Funktionen freischalten"
+      ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Upgrade, um das 1-Stunden-Limit zu entfernen und den Countdown zu überspringen. Genieße Meetings von bis zu 24 Stunden."
       ],
@@ -1967,11 +2111,20 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
+      "Would you like to delete this event?": [
+        "Möchtest du diesen Termin löschen?"
+      ],
+      "Would you like to delete this room?": [
+        "Möchtest du diesen Raum wirklich löschen?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
+      ],
+      "You can close this tab.": [
+        "Du kannst diesen Tab jetzt schließen."
       ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
@@ -1984,6 +2137,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your always available meeting room": [
+        "Dein jederzeit verfügbarer Besprechungsraum"
       ],
       "Your always available meeting room, share it only with people you trust.": [
         "Dein immer verfügbarer Besprechungsraum. Teile ihn nur mit Leuten, denen du vertraust."
@@ -2041,6 +2197,15 @@
       "Connection Quality": [
         "Verbindungsqualität"
       ],
+      "Copy all activity events": [
+        "Alle Aktivitätsereignisse kopieren"
+      ],
+      "Copy invite link": [
+        "Einladungslink kopieren"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
       "Delete": [
         "Löschen"
       ],
@@ -2056,11 +2221,17 @@
       "Enabled": [
         "Aktiviert"
       ],
+      "Ended": [
+        "Beendet"
+      ],
       "Every day": [
         "Jeden Tag"
       ],
       "Every month": [
         "Jeden Monat"
+      ],
+      "Every week": [
+        "Wöchentlich"
       ],
       "Every weekday": [
         "Jeden Werktag"
@@ -2079,6 +2250,12 @@
       ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
+      ],
+      "Last used": [
+        "Zuletzt genutzt"
+      ],
+      "Meeting details": [
+        "Mehr zum Meeting"
       ],
       "Meeting ID": [
         "Meeting-ID"
@@ -2121,6 +2298,9 @@
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Schedule meeting": [
+        "Meeting planen"
       ],
       "Selected Camera": [
         "Ausgewählte Kamera"
@@ -2173,6 +2353,20 @@
         "Was ist das?"
       ]
     },
+    "meet": {
+      "Create new room": [
+        "Neuen Raum erstellen"
+      ],
+      "Create room and copy link": [
+        "Raum erstellen und Link kopieren"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Besprechungsräume können jederzeit genutzt werden"
+      ],
+      "Save and copy link": [
+        "Link speichern und kopieren"
+      ]
+    },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
         "Dein Browser oder deine Gerätesoftware unterstützt ${ MEET_APP_NAME } nicht. ${ MEET_APP_NAME } benötigt WebAssembly (Wasm), um ausgeführt zu werden. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die Wasm unterstützt, oder versuche es mit einem anderen Browser."
@@ -2206,6 +2400,9 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Room name updated": [
+        "Raumname aktualisiert"
+      ],
       "Successfully rotated your personal meeting": [
         "Dein persönliches Meeting wurde erfolgreich rotiert."
       ],
@@ -2225,6 +2422,9 @@
       "E.g., ": [
         "Z. B. "
       ],
+      "e.g., Design Team, Weekly Standup": [
+        "z. B. Designteam, wöchentliches Statusmeeting"
+      ],
       "Enter meeting title": [
         "Einen Meeting-Titel eingeben"
       ],
@@ -2237,9 +2437,6 @@
       "Find...": [
         "Suchen..."
       ],
-      "https://meet.proton.me/join/id-abc#pwd-123": [
-        "https://meet.proton.me/join/id-abc#pwd-123"
-      ],
       "Loading...": [
         "Wird geladen…"
       ],
@@ -2251,6 +2448,9 @@
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "In ${ CALENDAR_APP_NAME } planen"
+      ],
+      "Search": [
+        "Suchen"
       ],
       "Select": [
         "Auswählen"
@@ -2311,6 +2511,20 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Abmelden ohne Passwortzurücksetzung?"
+      ]
+    },
+    "Sort option": {
+      "Last used": [
+        "Zuletzt verwendet"
+      ],
+      "Newly created": [
+        "Neu erstellt"
+      ],
+      "Past meetings": [
+        "Vergangene Meetings"
+      ],
+      "Upcoming meetings": [
+        "Bevorstehende Sitzungen"
       ]
     },
     "specialoffer: Link": {
@@ -2388,6 +2602,9 @@
       "Chat": [
         "Chat"
       ],
+      "Create new room": [
+        "Neuen Raum erstellen"
+      ],
       "Date": [
         "Datum"
       ],
@@ -2430,9 +2647,6 @@
       "Join meeting": [
         "Meeting beitreten"
       ],
-      "Join with link": [
-        "Mit Link beitreten"
-      ],
       "Joined at epoch ${ log.epoch }": [
         "Mit Epoche ${ log.epoch } beigetreten"
       ],
@@ -2442,8 +2656,14 @@
       "Local Participant": [
         "Lokaler Teilnehmer"
       ],
+      "Meeting created": [
+        "Meeting erstellt"
+      ],
       "Meeting details": [
         "Besprechungsdetails"
+      ],
+      "Meeting edited": [
+        "Meeting bearbeitet"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -2462,9 +2682,6 @@
       ],
       "Personal meeting": [
         "Persönliches Treffen"
-      ],
-      "Personal meeting link": [
-        "Persönlicher Meeting-Link"
       ],
       "Personal meeting room": [
         "Persönlicher Meeting-Raum"
@@ -2487,9 +2704,6 @@
       "Schedule a meeting": [
         "Meeting planen"
       ],
-      "Schedule meeting": [
-        "Meeting planen"
-      ],
       "Secure meeting": [
         "Sicheres Meeting"
       ],
@@ -2505,9 +2719,6 @@
       "Sign out": [
         "Abmelden"
       ],
-      "Start secure meeting": [
-        "Sicheres Meeting starten"
-      ],
       "Starting meeting as the first participant…": [
         "Startet das Meeting als erster Teilnehmer…"
       ],
@@ -2522,9 +2733,6 @@
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
-      ],
-      "Upcoming meetings": [
-        "Anstehende Meetings"
       ],
       "Video": [
         "Video"
@@ -2544,11 +2752,6 @@
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"
-      ]
-    },
-    "Upgrade Button": {
-      "Upgrade": [
-        "Upgrade"
       ]
     },
     "Validation": {

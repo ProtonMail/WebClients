@@ -41,6 +41,9 @@
       "Close": [
         "Sluiten"
       ],
+      "Close this banner": [
+        "Sluit deze banner"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -50,20 +53,35 @@
       "Continue without microphone": [
         "Doorgaan zonder microfoon"
       ],
-      "Copied": [
-        "Gekopieerd"
-      ],
-      "Copy ${ title }": [
-        "Kopieer ${ title }"
-      ],
       "Copy address": [
         "Adres kopiëren"
       ],
       "Copy link": [
         "Link kopiëren"
       ],
+      "Copy link and close": [
+        "Koppeling kopiëren en sluiten"
+      ],
+      "Copy meeting link": [
+        "Kopieer vergadering link"
+      ],
       "Create a free account": [
         "Maak een gratis account aan"
+      ],
+      "Create a room": [
+        "Maak een ruimte"
+      ],
+      "Create an account": [
+        "Een account aanmaken"
+      ],
+      "Create meeting": [
+        "Maak vergadering aan"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Delete meeting": [
+        "Verwijder vergadering"
       ],
       "Disable ${ participantName }'s video": [
         "Video van ${ participantName } uitschakelen"
@@ -76,6 +94,9 @@
       ],
       "Done": [
         "Klaar"
+      ],
+      "Download app": [
+        "App downloaden"
       ],
       "Download local participant report": [
         "Lokale deelnemersrapport downloaden"
@@ -92,6 +113,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "Edit meeting": [
+        "Bewerk vergadering"
+      ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
       ],
@@ -103,6 +127,9 @@
       ],
       "Enable video": [
         "Video inschakelen"
+      ],
+      "End meeting": [
+        "Beëindig vergadering"
       ],
       "End meeting for all": [
         "Vergadering voor iedereen beëindigen"
@@ -137,6 +164,9 @@
       "Join meeting": [
         "Deelnemen aan vergadering"
       ],
+      "Join via link": [
+        "Deelnemen via link"
+      ],
       "Kick out": [
         "Verwijderen"
       ],
@@ -169,6 +199,9 @@
       ],
       "Noise cancellation": [
         "Ruisonderdrukking"
+      ],
+      "Open app": [
+        "Open app"
       ],
       "Open link": [
         "Link openen"
@@ -212,11 +245,23 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
-      "Save meeting": [
-        "Vergadering opslaan"
+      "Room": [
+        "Ruimte"
+      ],
+      "Rotate personal meeting link": [
+        "Roteer persoonlijke vergadering link"
+      ],
+      "Save": [
+        "Opslaan"
       ],
       "Schedule": [
         "Planning"
+      ],
+      "Schedule a meeting": [
+        "Plan een vergadering"
+      ],
+      "Schedule in ${ CALENDAR_APP_NAME }": [
+        "Inplannen in ${ CALENDAR_APP_NAME }"
       ],
       "Search countries": [
         "Zoek landen"
@@ -242,11 +287,11 @@
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
       ],
-      "Start": [
-        "Start"
-      ],
       "Start a meeting": [
         "Start een vergadering"
+      ],
+      "Start an instant meeting": [
+        "Start een directe vergadering"
       ],
       "Start meeting": [
         "Start vergadering"
@@ -259,6 +304,9 @@
       ],
       "Stay in meeting": [
         "Blijf in de vergadering"
+      ],
+      "Stop opening meetings in the desktop app": [
+        "Stop met het openen van vergaderingen in de desktop app"
       ],
       "Stop receiving video": [
         "Video-ontvangst stoppen"
@@ -283,6 +331,9 @@
       ],
       "Turn off incoming video": [
         "Binnenkomend beeld uitschakelen"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Use authentication code": [
         "Authenticatiecode gebruiken"
@@ -322,6 +373,9 @@
       "Close search": [
         "Zoekfunctie sluiten"
       ],
+      "Copy link": [
+        "Kopieer link"
+      ],
       "Copy meeting link": [
         "Vergadering link kopiëren"
       ],
@@ -330,9 +384,6 @@
       ],
       "Go to dashboard": [
         "Ga naar dashboard"
-      ],
-      "Leave": [
-        "Afsluiten"
       ],
       "Leave Meeting": [
         "Vergadering verlaten"
@@ -400,6 +451,11 @@
     "Badge": {
       "Active": [
         "Actief"
+      ]
+    },
+    "Banner": {
+      "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
+        "Verbonden via TURN-relaymodus vanwege uw netwerkbeperkingen. Dit kan de latentie verhogen en de gesprekskwaliteit beïnvloeden."
       ]
     },
     "Browser": {
@@ -1339,23 +1395,11 @@
       ]
     },
     "Description": {
-      "An always available meeting room for people you trust.": [
-        "Een altijd beschikbare vergaderruimte voor mensen die u vertrouwt."
-      ],
-      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
-        "Plan vergaderingen en verzend uitnodigingen met ${ CALENDAR_APP_NAME }."
-      ],
       "Rotating group encryption key for best security": [
         "Roterende groep encryptie sleutel voor optimale beveiliging"
       ],
       "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
         "Instellen van groep end-to-end encryptie met geavanceerde Messaging Layer Security (MLS)"
-      ],
-      "Start a call immediately then share the link with others.": [
-        "Start onmiddellijk een gesprek en deel de link met anderen."
-      ],
-      "Use a link to join a meeting.": [
-        "Gebruik een link om deel te nemen aan een vergadering."
       ]
     },
     "emergency_access": {
@@ -1373,6 +1417,9 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Event deleted": [
+        "Afspraak verwijderd"
+      ],
       "Failed to assign host": [
         "Host toewijzen mislukt"
       ],
@@ -1384,6 +1431,15 @@
       ],
       "Failed to decrypt session key": [
         "Decoderen van de sessiesleutel mislukt."
+      ],
+      "Failed to delete event": [
+        "Afspraak verwijderen mislukt"
+      ],
+      "Failed to delete room": [
+        "Fout bij het verwijderen van de kamer"
+      ],
+      "Failed to edit room name": [
+        "Naam van de ruimte bewerken mislukt"
       ],
       "Failed to join meeting. Please try again later.": [
         "Deelnemen aan de vergadering is mislukt. Probeer het later opnieuw."
@@ -1435,6 +1491,9 @@
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
+      ],
+      "Room deleted": [
+        "Verwijder ruimte"
       ],
       "Screen share is not supported on mobile browsers": [
         "Scherm delen wordt niet ondersteund op mobiele browsers"
@@ -1567,6 +1626,22 @@
         "Diensten"
       ]
     },
+    "Header": {
+      "Speak freely again - every call is end-to-end encrypted": [
+        "Spreek weer vrijuit - elk gesprek is end-to-end versleuteld"
+      ]
+    },
+    "Headline": {
+      "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
+        "${ createAnActionAction } of ${ signInAction } om toegang te krijgen tot uw persoonlijke ruimte en nieuwe ruimtes aan te maken"
+      ],
+      "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
+        "${ createAnActionAction } of ${ signInAction } om vergaderingen te plannen"
+      ],
+      "Your conversations ${ matterWord }": [
+        "Uw gesprekken ${ matterWord }"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -1607,8 +1682,8 @@
       "${ presenterName } is presenting": [
         "${ presenterName } is aan het presenteren"
       ],
-      "${ user.DisplayName }'s Meeting": [
-        "Vergadering van ${ user.DisplayName }"
+      "${ userName }'s Meeting": [
+        "Vergadering van ${ userName }"
       ],
       "(You)": [
         "(U)"
@@ -1664,11 +1739,23 @@
       "Country code": [
         "Landcode"
       ],
+      "Create a meeting room": [
+        "Maak een vergaderruimte aan"
+      ],
+      "Create an account": [
+        "Maak een account aan"
+      ],
       "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
         "Maak een account aan om Meet te verbinden met ${ CALENDAR_APP_NAME } en direct uitnodigingen voor vergaderingen te verzenden."
       ],
+      "Create an account to have a meeting room that you can use at any time.": [
+        "Maak een account aan om een vergaderruimte te hebben die u op elk moment kunt gebruiken."
+      ],
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Maak een account aan om een persoonlijke vergadering link te hebben die u voor elk gesprek kunt hergebruiken."
+      ],
+      "Created on ${ formattedDate }": [
+        "Gemaakt op ${ formattedDate }"
       ],
       "Custom combination": [
         "Aangepaste combinatie"
@@ -1678,6 +1765,12 @@
       ],
       "Default - ${ systemDefault.label }": [
         "Standaard - ${ systemDefault.label }"
+      ],
+      "Delete event": [
+        "Verwijder afspraak"
+      ],
+      "Delete room": [
+        "Verwijder ruimte"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
         "Wilt u dat mensen u ${ deviceContentType } in de vergadering?"
@@ -1690,6 +1783,9 @@
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
+      ],
+      "End Meeting for everyone?": [
+        "Vergadering voor iedereen beëindigen?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end encryptie is actief voor audio en video."
@@ -1715,14 +1811,26 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
-      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
-        "Elk gesprek, schermdeling en chat is end-to-end versleuteld om uw belangrijkste verbindingen te beschermen."
+      "Failed to update meeting name": [
+        "Naam vergadering bijwerken mislukt"
+      ],
+      "Failed to update meeting password": [
+        "Wachtwoord vergadering bijwerken mislukt"
+      ],
+      "Failed to update meeting schedule": [
+        "Bijwerken vergaderingsschema mislukt"
       ],
       "Free meeting": [
         "Gratis vergadering"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Gratis vergaderingen zijn beperkt tot 1 uur. Dit gesprek zal binnenkort worden verbroken."
+      ],
+      "Get a secure meeting link then add it to your calendar": [
+        "Krijg een beveiligde vergadering link en voeg deze vervolgens toe aan uw agenda"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Krijg de beste ervaring met de ${ protonMeet } desktop app"
       ],
       "Get your personal meeting ID": [
         "Ontvang uw persoonlijke vergadering ID"
@@ -1748,6 +1856,9 @@
       "Joined ${ roomNameLabel }": [
         "Deelname aan ${ roomNameLabel }"
       ],
+      "Last used on ${ formattedDate }": [
+        "Laatst gebruikt op ${ formattedDate }"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -1772,11 +1883,11 @@
       "Loading...": [
         "Laden..."
       ],
+      "matter": [
+        "doen ertoe"
+      ],
       "Meet without restrictions": [
         "Meet zonder beperkingen"
-      ],
-      "Meeting created": [
-        "Vergadering aangemaakt"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Vergadering vol (${ maxParticipants } deelnemers)"
@@ -1801,6 +1912,15 @@
       ],
       "Microphone effects": [
         "Microfoon effecten"
+      ],
+      "My Meeting": [
+        "Mijn vergadering"
+      ],
+      "My meetings": [
+        "Mijn vergaderingen"
+      ],
+      "My rooms": [
+        "Mijn ruimtes"
       ],
       "New": [
         "Nieuw"
@@ -1837,6 +1957,9 @@
       ],
       "No speaker detected": [
         "Geen luidspreker gedetecteerd"
+      ],
+      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
+        "Nu worden uw vergaderingen geopend in de desktop app ${ MEET_APP_NAME }"
       ],
       "Open external link": [
         "Externe link openen"
@@ -1901,17 +2024,26 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set up a permanent meeting room for your team or clients": [
+        "Stel een permanente vergaderruimte in voor uw team of klanten"
+      ],
       "Share screen": [
         "Scherm delen"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Deel deze link om andere uit te nodigen. U kunt deze ook altijd vinden door op het informatiepictogram in de werkbalk te klikken."
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen deel te nemen. Eenvoudig, veilig en gratis."
       ],
       "Stop sharing your screen": [
         "Stop met het delen van uw scherm"
+      ],
+      "Successfully deleted meeting": [
+        "Vergadering succesvol verwijderd"
       ],
       "The host has ended the meeting": [
         "De organisator heeft de vergadering beëindigd"
@@ -1930,6 +2062,12 @@
       ],
       "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
         "Deze vergadering is beveiligd met end-to-end encryptie met Messaging Layer Security (MLS)."
+      ],
+      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
+        "Deze vergadering is geopend in de desktop app ${ MEET_APP_NAME }."
+      ],
+      "This will end the meeting for all participants.": [
+        "Dit beëindigt de vergadering voor alle deelnemers."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
@@ -1952,6 +2090,12 @@
       "Turn on microphone": [
         "Microfoon inschakelen"
       ],
+      "unlimited meeting": [
+        "onbeperkte vergadering"
+      ],
+      "Unlock ${ unlimitedMeeting } and premium features": [
+        "Ontgrendel ${ unlimitedMeeting } en premiumfuncties"
+      ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Upgrade om de limiet van 1 uur te verwijderen en het aftellen over te slaan. Geniet van vergaderingen tot 24 uur."
       ],
@@ -1970,11 +2114,20 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
       ],
+      "Would you like to delete this event?": [
+        "Wilt u deze afspraak verwijderen?"
+      ],
+      "Would you like to delete this room?": [
+        "Wilt u deze ruimte verwijderen?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
+      ],
+      "You can close this tab.": [
+        "U kunt dit tabblad sluiten."
       ],
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
@@ -1987,6 +2140,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
+      ],
+      "Your always available meeting room": [
+        "Uw altijd beschikbare vergaderruimte"
       ],
       "Your always available meeting room, share it only with people you trust.": [
         "Uw altijd beschikbare vergaderruimte, deel deze alleen met mensen die u vertrouwt."
@@ -2044,6 +2200,15 @@
       "Connection Quality": [
         "Verbindingskwaliteit"
       ],
+      "Copy all activity events": [
+        "Kopieer alle activiteit evenementen"
+      ],
+      "Copy invite link": [
+        "Kopieer uitnodigingslink"
+      ],
+      "Created": [
+        "Aangemaakt"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -2059,11 +2224,17 @@
       "Enabled": [
         "Ingeschakeld"
       ],
+      "Ended": [
+        "Afgelopen"
+      ],
       "Every day": [
         "Elke dag"
       ],
       "Every month": [
         "Elke maand"
+      ],
+      "Every week": [
+        "Elke week"
       ],
       "Every weekday": [
         "Elke werkdag"
@@ -2082,6 +2253,12 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
+      ],
+      "Last used": [
+        "Laatst gebruikt"
+      ],
+      "Meeting details": [
+        "Vergaderingsgegevens"
       ],
       "Meeting ID": [
         "Vergaderingsnummer"
@@ -2124,6 +2301,9 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Schedule meeting": [
+        "Plan vergadering"
       ],
       "Selected Camera": [
         "Selecteer camera"
@@ -2176,6 +2356,20 @@
         "Wat is dit?"
       ]
     },
+    "meet": {
+      "Create new room": [
+        "Maak nieuwe kamer"
+      ],
+      "Create room and copy link": [
+        "Maak kamer en kopieer link"
+      ],
+      "Meeting rooms can be used at any time": [
+        "Vergaderruimtes kunnen op elk moment worden gebruikt"
+      ],
+      "Save and copy link": [
+        "Opslaan en kopieer link"
+      ]
+    },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
         "Uw browser of apparaat software ondersteunt ${ MEET_APP_NAME } niet. ${ MEET_APP_NAME } vereist WebAssembly (Wasm) om te kunnen functioneren. Update uw browser of apparaat naar een versie die Wasm ondersteunt, of probeer een andere browser te gebruiken."
@@ -2209,6 +2403,9 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
+      "Room name updated": [
+        "Ruimtenaam bijgewerkt"
+      ],
       "Successfully rotated your personal meeting": [
         "Uw persoonlijke vergadering is succesvol geroteerd"
       ],
@@ -2228,6 +2425,9 @@
       "E.g., ": [
         "Bijv., "
       ],
+      "e.g., Design Team, Weekly Standup": [
+        "bijv. Ontwerpteam, Wekelijkse Stand-up"
+      ],
       "Enter meeting title": [
         "Voer vergadering titel in"
       ],
@@ -2240,9 +2440,6 @@
       "Find...": [
         "Zoeken..."
       ],
-      "https://meet.proton.me/join/id-abc#pwd-123": [
-        "https://meet.proton.me/join/id-abc#pwd-123"
-      ],
       "Loading...": [
         "Laden..."
       ],
@@ -2254,6 +2451,9 @@
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Inplannen in ${ CALENDAR_APP_NAME }"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Select": [
         "Selecteer"
@@ -2314,6 +2514,20 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Uitloggen zonder wachtwoord reset?"
+      ]
+    },
+    "Sort option": {
+      "Last used": [
+        "Laatst gebruikt"
+      ],
+      "Newly created": [
+        "Nieuw aangemaakt"
+      ],
+      "Past meetings": [
+        "Eerdere vergaderingen"
+      ],
+      "Upcoming meetings": [
+        "Aankomende vergaderingen"
       ]
     },
     "specialoffer: Link": {
@@ -2391,6 +2605,9 @@
       "Chat": [
         "Chat"
       ],
+      "Create new room": [
+        "Maak nieuwe kamer"
+      ],
       "Date": [
         "Datum"
       ],
@@ -2433,9 +2650,6 @@
       "Join meeting": [
         "Deelnemen aan vergadering"
       ],
-      "Join with link": [
-        "Deelnemen met link"
-      ],
       "Joined at epoch ${ log.epoch }": [
         "Toegetreden op epoch ${ log.epoch }"
       ],
@@ -2445,8 +2659,17 @@
       "Local Participant": [
         "Lokale deelnemer"
       ],
+      "Meeting created": [
+        "Vergadering aangemaakt"
+      ],
       "Meeting details": [
         "Vergaderingsgegevens"
+      ],
+      "Meeting edited": [
+        "Vergadering bewerkt"
+      ],
+      "Messaging Layer Security": [
+        "Messaging Layer Security"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -2462,9 +2685,6 @@
       ],
       "Personal meeting": [
         "Persoonlijke vergadering"
-      ],
-      "Personal meeting link": [
-        "Persoonlijke vergadering link"
       ],
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"
@@ -2487,23 +2707,20 @@
       "Schedule a meeting": [
         "Vergadering plannen"
       ],
-      "Schedule meeting": [
-        "Vergadering plannen"
-      ],
       "Secure meeting": [
         "Veilige vergadering"
       ],
       "Security": [
         "Beveiliging"
       ],
+      "Security code": [
+        "Beveiligingscode"
+      ],
       "Settings": [
         "Instellingen"
       ],
       "Sign out": [
         "Uitloggen"
-      ],
-      "Start secure meeting": [
-        "Start veilige vergadering"
       ],
       "Starting meeting as the first participant…": [
         "Vergadering wordt gestart als de eerste deelnemer..."
@@ -2519,9 +2736,6 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
-      ],
-      "Upcoming meetings": [
-        "Geplande vergaderingen"
       ],
       "Video": [
         "Video"
@@ -2541,11 +2755,6 @@
       ],
       "Recurring meeting": [
         "Terugkerende vergadering"
-      ]
-    },
-    "Upgrade Button": {
-      "Upgrade": [
-        "Upgraden"
       ]
     },
     "Validation": {
