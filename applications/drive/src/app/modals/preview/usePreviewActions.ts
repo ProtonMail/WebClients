@@ -5,6 +5,7 @@ import {
     isSupportedText,
     mimeTypeToOpenInDocsType,
 } from '@proton/shared/lib/helpers/mimetype';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
 import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
@@ -27,7 +28,7 @@ export default function usePreviewActions({
 }) {
     // TODO: Do not use legacy document actions - convert to new document actions.
     const { openDocument, convertDocument, downloadDocument } = useDocumentActions();
-
+    const isTextFileEditEnabled = useFlag('DriveWebTextFileEdit');
     const mimeType = getNodeMimeType(node);
 
     const downloadFile = !node
@@ -102,9 +103,12 @@ export default function usePreviewActions({
         }
     };
 
+    const saveFileEnabled =
+        isTextFileEditEnabled && mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader;
+
     return {
         downloadFile,
-        saveFile: mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader ? saveFile : undefined,
+        saveFile: saveFileEnabled ? saveFile : undefined,
         openInDocs: openInDocsType ? openInDocs : undefined,
     };
 }
