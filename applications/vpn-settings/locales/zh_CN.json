@@ -5548,7 +5548,7 @@
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "您的电子邮件地址和应用程序密码正确。请勿使用常规密码。"
+        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
       ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
@@ -5961,7 +5961,7 @@
         "正在添加 ${ addedServerCount } 台网关服务器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
-        "添加外部电子邮件地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
+        "添加外部邮箱地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "正在添加网关服务器：${ serverNumber } / ${ total }"
@@ -6996,7 +6996,7 @@
         "组织监控器"
       ],
       "Organization Monitor": [
-        "组织监控"
+        "组织监测"
       ],
       "Organization size": [
         "组织规模"
@@ -7914,7 +7914,7 @@
         "您的账户已经是免费版了"
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登入的用户为 ${ username }。"
+        "您当前登录身份为 ${ username }"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
@@ -8252,7 +8252,7 @@
     },
     "Input Error": {
       "Not a valid email address": [
-        "不是一个合法的电子邮件地址"
+        "不是一个合法的邮箱地址"
       ]
     },
     "Input title": {
@@ -8364,10 +8364,10 @@
         "（暂时不可用。请稍后再试。）"
       ],
       "0 of 1 email address available": [
-        "0 个电子邮件地址可用"
+        "无邮箱地址可用"
       ],
       "1 of 1 email address available": [
-        "1 个电子邮件地址可用"
+        "1 个邮箱地址可用"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
@@ -10615,7 +10615,7 @@
         "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+        "使用单个邮箱地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -11371,7 +11371,7 @@
         "组织身份已更新"
       ],
       "Verify your email address ${ email } to set organization identity.": [
-        "验证您的电子邮件地址 ${ email } 以设置组织身份。"
+        "验证您的邮箱地址 ${ email } 以设置组织身份。"
       ]
     },
     "Participant name": {
@@ -12596,7 +12596,7 @@
         "出了些问题"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "电子邮件地址 **${ email }** 已作为 ${ BRAND_NAME } 用户存在。请输入身份供应商提供的用户电子邮件地址。"
+        "邮箱地址 **${ email }** 已作为 ${ BRAND_NAME } 用户存在，请输入身份供应商提供的用户邮箱地址。"
       ]
     },
     "saml: Info": {
@@ -12607,7 +12607,7 @@
         "详细信息"
       ],
       "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
-        "输入身份提供商为 **${ domainName }** 提供的用户电子邮件地址"
+        "输入身份提供商为 **${ domainName }** 提供的用户邮箱地址"
       ],
       "Test in progress...": [
         "正在测试..."
@@ -12621,7 +12621,7 @@
     },
     "saml: Label": {
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ]
     },
     "saml: Title": {
@@ -13733,7 +13733,7 @@
         "您将无法使用 ${ gb } 存储和优先支持。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+        "您将无法使用额外的存储空间、邮箱地址、别名、日历以及优先支持。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
@@ -13951,7 +13951,7 @@
         "从您的设备上备份照片"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "使用自己域名的专业电子邮件地址，建立信任和品牌的知名度。"
+        "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Cancel subscription": [
         "取消订阅"
@@ -15753,7 +15753,7 @@
         "邮箱地址"
       ],
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ],
       "Features": [
         "功能"
@@ -15900,7 +15900,7 @@
         "此邮箱地址只能用于登录您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
-        "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"
+        "执行账户管理操作时，该邮箱地址将显示给所有组织成员。"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
@@ -16193,7 +16193,7 @@
         "管理员"
       ],
       "An invitation will be sent to this email address.": [
-        "邀请将发送到此电子邮件地址。"
+        "邀请将发送到此邮箱地址。"
       ],
       "Cancel": [
         "关闭"
@@ -16211,7 +16211,7 @@
         "创建用户"
       ],
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ],
       "Invitation email": [
         "邀请邮件"
@@ -16220,7 +16220,7 @@
         "名称"
       ],
       "New ${ BRAND_NAME } email address": [
-        "新的 ${ BRAND_NAME } 电子邮件地址"
+        "新的 ${ BRAND_NAME } 邮箱地址"
       ],
       "Optional": [
         "可选的"
@@ -16550,7 +16550,7 @@
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "在向非私人成员添加电子邮件地址之前，你必须 ${ activateLink } 组织密钥。"
+        "在向非私人成员添加邮箱地址之前，你必须 ${ activateLink } 组织密钥。"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
