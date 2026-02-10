@@ -84,7 +84,7 @@ export const TimeInputBlock = ({
                         disabled={!editableTimeZone}
                     >
                         {timeZoneOptions.map((option) => (
-                            <Option key={option.value} value={option.value} title={option.label}>
+                            <Option key={option.value} value={option.value} title={option.label} optionWrapperClassName="px-2">
                                 {option.label}
                             </Option>
                         ))}
