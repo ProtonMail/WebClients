@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accepter et afficher l'élément"
       ],
+      "Accept invitation": [
+        "Accepter l'invitation"
+      ],
       "Account": [
         "Compte"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
       ],
+      "Failed loading group members": [
+        "Le chargement des membres du groupe n'a pas abouti."
+      ],
       "Failed removing the invite.": [
         "L'invitation n'a pas pu être supprimée."
       ],
@@ -1456,8 +1462,17 @@
         "${ forwardedEmailsCount } transféré",
         "${ forwardedEmailsCount } transférés"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } souhaite partager un élément avec un groupe que vous administrez."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } souhaite partager un élément avec le groupe ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } souhaite partager un élément avec vous."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } a été partagé avec un groupe dont vous êtes membre."
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1466,6 +1481,9 @@
       "${ n } item": [
         "${ n } élément",
         "${ n } éléments"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nouveaux partages sont accessibles dans un groupe dont vous êtes membre"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sera toujours accessible."
@@ -1502,6 +1520,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } fuite de données a été détectée.",
         "${ row.breachCount } fuites de données ont été détectées."
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membre)",
+        "(${ membersCount } membres)"
       ],
       "(Empty)": [
         "(Vide)"
@@ -1888,6 +1910,9 @@
       ],
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invite le groupe ${ invitedGroup.Name } à accéder aux éléments dans"
       ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
@@ -2360,6 +2385,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "L'importation pour ${ totalIgnored } élément n'a pas abouti :",
         "L'importation pour les ${ totalIgnored } éléments suivants n'a pas abouti :"
+      ],
+      "The group is invited to a vault.": [
+        "Le groupe est invité à accéder à un coffre-fort."
       ],
       "The secure link has been removed": [
         "Le lien sécurisé a été supprimé."
@@ -4783,6 +4811,9 @@
       ],
       "Vault": [
         "Coffre-fort"
+      ],
+      "Vault shared with a group you administer": [
+        "Coffre-fort partagé avec un groupe que vous administrez"
       ],
       "Vault shared with you": [
         "Coffre-fort partagé avec vous"

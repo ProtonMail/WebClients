@@ -921,7 +921,7 @@
         "Паказаць"
       ],
       "Show all": [
-        "Паказаць усё"
+        "Паказаць усе"
       ],
       "Show more": [
         "Паказаць больш"
@@ -6041,12 +6041,6 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
-      "${ userFound } user found": [
-        "Знойдзены ${ userFound } карыстальнік",
-        "Знойдзены ${ userFound } карыстальнікі",
-        "Знойдзены ${ userFound } карыстальнікаў",
-        "Знойдзены ${ userFound } карыстальнікаў"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } створана"
       ],
@@ -7182,7 +7176,7 @@
         "NetShield - гэта функцыя блакіроўкі рэкламы ад ${ VPN_APP_NAME }, якая абараняе вашу прыладу ад рэкламы, праграм сачэння і шкодных праграм."
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "New activity data will stop being collected and shown.": [
         "Новыя даныя актыўнасці больш не будуць збірацца і паказвацца."
@@ -7605,7 +7599,7 @@
         "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
       ],
       "Signed up": [
-        "Зарэгістраваліся"
+        "Зарэгістравалася"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -8465,6 +8459,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Вашы нядаўнія змены былі апублікаваны. Яны будуць бачныя карыстальнікам у наступныя некалькі гадзін."
+      ],
       "Your recovery phrase": [
         "Ваша фраза аднаўлення"
       ],
@@ -8540,7 +8537,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад тут ${ kbLink }."
+        "У мэтах бяспекі нам трэба спраўдзіць, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8605,6 +8602,9 @@
     "invitation status": {
       "Declined": [
         "Адхілена"
+      ],
+      "Owner": [
+        "Уладальнік"
       ],
       "Paused": [
         "Прыпынена"
@@ -11749,7 +11749,7 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink }, каб дадаць больш карыстальнікаў. Вы таксама можаце выдаліць некаторыя ўліковыя запісы карыстальнікаў, каб вызваліць месца."
+        "${ upgradeLink }, каб дадаць больш карыстальнікаў або выдаліце некаторыя ўліковыя запісы карыстальнікаў."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink }, каб атрымаць больш уліковых запісаў або выдаліце доступ па VPN для некаторых карыстальнікаў."
@@ -12190,7 +12190,7 @@
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
@@ -15223,7 +15223,7 @@
     },
     "Theme": {
       "Auto": [
-        "Аўтаматычная"
+        "Аўта"
       ],
       "Dark": [
         "Цёмная"
@@ -15826,7 +15826,7 @@
         "Назіранне за шлюзом адключана"
       ],
       "Gateway monitor enabled": [
-        "Назіранне за шлюзом уключана"
+        "Назіранне за шлюзам уключана"
       ],
       "Gateways": [
         "Шлюзы"
@@ -15988,7 +15988,7 @@
         "Наладка арганізацыі"
       ],
       "Origin": [
-        "Арыгінальны"
+        "Паходжанне"
       ],
       "Password": [
         "Пароль"
@@ -16639,6 +16639,9 @@
       "User declined invitation": [
         "Карыстальнік адхіліў запрашэнне"
       ],
+      "User is a group": [
+        "Карыстальнік - гэта група"
+      ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
       ]
@@ -16844,7 +16847,7 @@
         "Неабмежаваная прыватнасць для вас і каханага чалавека. Усяго ад ${ priceString }/месяц."
       ],
       "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
-        "Вы можаце абараніць да ${ DUO_MAX_USERS }} асоб з тарыфным планам ${ PLAN_NAMES[PLANS.DUO] } і да ${ FAMILY_MAX_USERS } з тарыфным планам ${ PLAN_NAMES[PLANS.FAMILY] }. Кошт падпіскі ўсяго ${ priceString } у месяц за ўліковы запіс."
+        "Вы можаце абараніць да ${ DUO_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[PLANS.DUO] } і да ${ FAMILY_MAX_USERS } з тарыфным планам ${ PLAN_NAMES[PLANS.FAMILY] }. Кошт падпіскі ўсяго ${ priceString } у месяц за ўліковы запіс."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."

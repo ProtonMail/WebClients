@@ -1161,23 +1161,26 @@
       ]
     },
     "collider_2025: Feature": {
-      "Advanced models": [
-        "Modelos avanzados"
+      "Access all your past conversations anytime": [
+        "Accede a todas tus conversaciones en cualquier momento"
       ],
-      "Large file uploads": [
-        "Cargas de archivos grandes"
+      "Chat as much as you need with no limits": [
+        "Chatea todo lo que necesites sin límites"
       ],
-      "Unlimited chat history": [
-        "Historial de chat ilimitado"
+      "Get answers with real-time web search": [
+        "Obtén respuestas con búsquedas web en tiempo real"
       ],
-      "Unlimited favourite chats": [
-        "Chats favoritos ilimitados"
+      "Organize work in projects with custom instructions": [
+        "Organiza el trabajo en proyectos con instrucciones personalizadas"
       ],
-      "Unlimited weekly chats": [
-        "Chats semanales ilimitados"
+      "Save unlimited conversations as favorites": [
+        "Guarda conversaciones ilimitadas como favoritas"
       ],
-      "Web search": [
-        "Búsqueda web"
+      "Upload and analyze larger files": [
+        "Cargar y analizar archivos más grandes"
+      ],
+      "Use the most advanced AI models": [
+        "Usa los modelos de IA más avanzados"
       ]
     },
     "collider_2025: Guest Signin": {
@@ -1762,8 +1765,8 @@
       "Upgrade": [
         "Mejorar"
       ],
-      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "Tu historial de chat está limitado a 7 días. Para un historial de chat extendido y otras funciones prémium, "
+      "Your chat history is limited to 7 days. For unlimited chat history and other premium features, ": [
+        "Tu historial de chat está limitado a 7 días. Para tener historial ilimitado y otras funciones prémium, "
       ]
     },
     "collider_2025: Upsell Title": {
@@ -1820,6 +1823,9 @@
       ],
       "Describe desired changes...": [
         "Describe los cambios deseados..."
+      ],
+      "Keep these chats": [
+        "Conservar estos chats"
       ],
       "More concise": [
         "Más conciso"
@@ -1913,6 +1919,11 @@
         "Se ha perdido la conexión con la base de datos. Actualiza la página para continuar."
       ]
     },
+    "collider_2025:Icon": {
+      "Expiring soon": [
+        "Caducará pronto"
+      ]
+    },
     "collider_2025:Info": {
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Las IA de las grandes empresas tecnológicas se basan en la recopilación de tus datos. Pero ${ LUMO_SHORT_APP_NAME } es diferente. Fue creada por los científicos responsables de servicios innovadores y centrados en la privacidad como ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }. Y es propiedad de una organización sin ánimo de lucro suiza, cuya misión es avanzar en la privacidad y nunca ganar dinero con los datos del usuario."
@@ -1986,6 +1997,9 @@
       "Earlier": [
         "Anterior"
       ],
+      "Expiring Soon": [
+        "Caducará pronto"
+      ],
       "Favorites": [
         "Favoritos"
       ],
@@ -2006,6 +2020,9 @@
       ],
       "Last 30 days": [
         "Últimos 30 días"
+      ],
+      "Last 5 days": [
+        "Últimos 5 días"
       ],
       "Last 7 days": [
         "Últimos 7 días"
@@ -4278,6 +4295,16 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Loading": {
+      "Loading ${ LUMO_APP_NAME }": [
+        "Cargando ${ LUMO_APP_NAME }"
+      ]
+    },
+    "lumo: Debug View": {
+      "Create Test Chats": [
+        "Crear chats de prueba"
       ]
     },
     "mail_signup_2024: Info": {

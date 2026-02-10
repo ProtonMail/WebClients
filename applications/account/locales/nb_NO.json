@@ -6185,6 +6185,9 @@
       "Expired": [
         "Utløpt"
       ],
+      "Failed loading group members": [
+        "Kunne ikke laste inn gruppemedlemmer"
+      ],
       "Failed to add group member": [
         "Kunne ikke legge til gruppemedlem"
       ],
@@ -6320,6 +6323,9 @@
       ],
       "Name required": [
         "Navn kreves"
+      ],
+      "Network error": [
+        "Nettverksfeil"
       ],
       "No active sessions": [
         "Ingen aktive økter"
@@ -8729,10 +8735,6 @@
       ],
       "${ url } deleted.": [
         "${ url } slettet."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } bruker funnet",
-        "${ userFound } brukere funnet"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } opprettet"
@@ -11791,6 +11793,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planen din er begrenset til 10 versjoner i opptil 7 dager"
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Dine nylige endringer er publisert. De vil være synlige for brukere i løpet av de neste timene."
+      ],
       "Your recovery phrase": [
         "Din gjenopprettingsfrase"
       ],
@@ -11949,6 +11954,9 @@
     "invitation status": {
       "Declined": [
         "Avslått"
+      ],
+      "Owner": [
+        "Eier"
       ],
       "Paused": [
         "Satt på pause"
@@ -23770,6 +23778,9 @@
       ],
       "User declined invitation": [
         "Brukeren avslo invitasjonen"
+      ],
+      "User is a group": [
+        "Brukeren er en gruppe"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

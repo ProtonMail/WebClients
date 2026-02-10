@@ -133,7 +133,7 @@
         "Potrdi"
       ],
       "Archive": [
-        "Arhiv"
+        "Arhiviraj"
       ],
       "As Scheduled": [
         "Kot načrtovano"
@@ -194,9 +194,6 @@
       ],
       "Change email": [
         "Spremeni naslov"
-      ],
-      "Change page": [
-        "Zamenjaj stran"
       ],
       "Change password": [
         "Spremeni geslo"
@@ -369,9 +366,6 @@
       "Customize": [
         "Prilagodi"
       ],
-      "Customize categories": [
-        "Prilagodi kategorije"
-      ],
       "Customize import": [
         "Prilagajanje uvoza"
       ],
@@ -432,9 +426,6 @@
       "Disable alias": [
         "Onemogoči vzdevek"
       ],
-      "Disable categories": [
-        "Onemogoči kategorije"
-      ],
       "Disabling alias": [
         "Onemogočanje vzdevka"
       ],
@@ -485,9 +476,6 @@
       ],
       "Edit address": [
         "Uredi naslov"
-      ],
-      "Edit categories": [
-        "Uredi kategorije"
       ],
       "Edit draft": [
         "Uredi osnutek"
@@ -764,9 +752,6 @@
       ],
       "Italic": [
         "Ležeče"
-      ],
-      "Keep categories": [
-        "Obdrži kategorije"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -1399,7 +1384,7 @@
         "Ustavi prenašanje pomočnika"
       ],
       "Stop generating result": [
-        "Zaustavitev ustvarjanja besedila"
+        "Ustavi ustvarjanje"
       ],
       "Stop marking as read": [
         "Prekini označevati kot prebrano"
@@ -1813,7 +1798,7 @@
         "Hitro in varno. Ne hranimo dnevnikov."
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
-        "Ne vodimo dnevnikov, da zaščitimo vašo zasebnost. Hitrejša obdelava."
+        "Ne hranimo dnevnikov, zato da zaščitimo vašo zasebnost. Hitrejša obdelava."
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Izvajaj v strežnikih ${ BRAND_NAME }"
@@ -2192,7 +2177,7 @@
         "${ participantName } je zahteval posodobitev dogodka, ki več ne obstaja v vašem koledarju."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } je zahteval posodobitev dogodka, ki ne ustreza podrobnostim vašega povabila. Prosimo, preverite podrobnosti povabila v vašem koledarju."
+        "${ participantName } je zahteval posodobitev dogodka, ki ne ustreza podrobnostim vašega povabila. Preverite podrobnosti povabila v vašem koledarju."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je zavrnil/-a povabilo in predlagal/-a nov termin za eno ponovitev tega dogodka."
@@ -3779,10 +3764,10 @@
         "Vsak dan, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }"
+        "Vsak ${ interval } dan, ${ untilString }",
+        "Vsaka ${ interval } dni, ${ untilString }",
+        "Vsake ${ interval } dni, ${ untilString }",
+        "Vsakih ${ interval } dni, ${ untilString }"
       ]
     },
     "Date label": {
@@ -4486,6 +4471,9 @@
       "Name is required": [
         "Zahtevano je ime"
       ],
+      "Network error": [
+        "Omrežna napaka"
+      ],
       "Network error: Please check your connection and try again.": [
         "Napaka v omrežju: Preverite povezavo in poskusite znova."
       ],
@@ -4634,7 +4622,7 @@
         "Podpis ni potrjen"
       ],
       "Signature verification error.": [
-        "Napaka pri preverjanju podpisa.."
+        "Napaka pri preverjanju podpisa."
       ],
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
@@ -4989,7 +4977,7 @@
         "Napaka: ${ errorMessage }"
       ],
       "No results found": [
-        "Ni najdenih rezultatov"
+        "Ni rezultatov"
       ],
       "No results found for \"${ query }\"": [
         "Za \"${ query }\" ni najdenih rezultatov"
@@ -5344,7 +5332,7 @@
         "Neželena pošta"
       ],
       "Trash": [
-        "Smeti"
+        "Smetnjak"
       ]
     },
     "Filter modal operators": {
@@ -7228,6 +7216,9 @@
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Povabite partnerja, prijatelja ali kogar koli, s komer si delite svoj paket ${ protonDuoPlanName }."
       ],
+      "It's better to have:": [
+        "Bolje je imeti:"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
       ],
@@ -7694,7 +7685,7 @@
         "Možnost iskanja, ki vam omogoča varno iskanje ključnih besed v telesu e-poštnih sporočil."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "Ali vam iskanje traja predolgo? ${ dropdownButton } ali ${ toggleOffButton } za to iskanja."
+        "Ali vam iskanje traja predolgo? ${ dropdownButton } ali ${ toggleOffButton } za to iskanje."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Danes zaščitite svoje datoteke z brezplačnim šifriranim shranjevanjem v oblaku."
@@ -7736,7 +7727,7 @@
         "Pošiljanje sporočila"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Pošiljanje sporočil z naslova @pm.me je plačljiva možnost. Sporočilo bo poslano z vašega privzetega naslova, ${ email }"
+        "Pošiljanje sporočil z naslova @pm.me je plačljiva možnost. Sporočilo bo poslano z vašega privzetega naslova ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Poslano z varne e-pošte <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -8150,7 +8141,7 @@
         "Za odklepanje nadgradite na ${ plan }"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Nadgradite naročniški paket za priključitev dodatnih naslovov računu."
+        "Nadgradite paket, da dodate več naslovov računu."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
         "Nadgradite paket za samodejno brisanje sporočil, ki so v smetnjaku ali neželeni pošti več kot 30 dni."
@@ -8180,7 +8171,7 @@
         "Nadgradite naročniški paket, podprite zasebnost in pridobite dodatne zmožnosti."
       ],
       "Upgrade to unlock premium features.": [
-        "Nadgradite naročniški paket za dostop do plačljivih zmožnosti."
+        "Nadgradite za odklepanje premijskih funkcij."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Nadgradite naročniški paket ${ MAIL_APP_NAME } za uporabo s programi Apple Mail, Outlook ali Thunderbird."
@@ -8588,7 +8579,7 @@
         "Vaša fizična lokacija je vidna in se lahko uporablja za omejevanje vašega dostopa do interneta."
       ],
       "Your private writing assistant": [
-        "Vaš osebni pomočnik pri pisanju e-pošte"
+        "Vaš zasebni pomočnik pri pisanju e-pošte"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak mesec."
@@ -8982,7 +8973,7 @@
         "Aplikacija za preverjanje pristnosti"
       ],
       "BCC": [
-        "Skp"
+        "SKP"
       ],
       "Beta Access": [
         "Dostop beta"
@@ -9331,9 +9322,6 @@
       ],
       "Notification": [
         "Obvestilo"
-      ],
-      "Notifications": [
-        "Obvestila"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Potisna obvestila so onemogočena. Če jih želite omogočiti, spremenite nastavitve brskalnika."
@@ -10041,7 +10029,7 @@
         "Neželena pošta"
       ],
       "Trash": [
-        "Smeti"
+        "Smetnjak"
       ]
     },
     "meet_2025: Feature": {
@@ -10099,7 +10087,7 @@
         "Načrtovano pošiljanje razveljavljeno"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Načrtovanje je preklicano. Sporočilo se je premaknilo med osnutke."
+        "Načrtovanje je preklicano. Sporočilo je premaknjeno med osnutke."
       ],
       "Sending undone": [
         "Pošiljanje razveljavljeno"
@@ -11688,7 +11676,7 @@
         "Skrbniška plošča za upravljanje uporabnikov in naročnin"
       ],
       "Advanced account protection": [
-        "Napredni program za zaščito računa"
+        "Napredna zaščita računa"
       ],
       "Team policies": [
         "Pravilniki skupine"
@@ -12025,7 +12013,7 @@
         "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
       ],
       "Start date": [
-        "Start date"
+        "Datum začetka"
       ],
       "Start typing an email address": [
         "Začnite pisati e-poštni naslov"
@@ -12193,6 +12181,9 @@
       ]
     },
     "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
+      ],
       "Invited friends": [
         "Povabljeni prijatelji"
       ],
@@ -12253,7 +12244,7 @@
         "Ni preloženih sporočil"
       ],
       "No unread messages found": [
-        "Ni najdenih neprebranih sporočil"
+        "Ni neprebranih sporočil"
       ]
     },
     "Section": {
@@ -14109,7 +14100,7 @@
         "Omogoči ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
-        "Pridobite moj naslov »@${ PM_DOMAIN }«."
+        "Pridobite svoj naslov »@${ PM_DOMAIN }«."
       ],
       "Open ": [
         "Odpri "
@@ -14205,9 +14196,6 @@
       ],
       "Apply gift code": [
         "Uporabi darilno kodo"
-      ],
-      "Archive": [
-        "Arhiv"
       ],
       "Archive all messages?": [
         "Arhiviraj vsa sporočila?"
@@ -14404,9 +14392,6 @@
       "Desktop": [
         "Namizje"
       ],
-      "Disable categories?": [
-        "Ali želite onemogočiti kategorije?"
-      ],
       "Discover your subscription benefits": [
         "Odkrijte ugodnosti svoje naročnine"
       ],
@@ -14535,6 +14520,9 @@
       ],
       "How to update your email address": [
         "Kako posodobiti vaš e-poštni naslov"
+      ],
+      "How your free trial works": [
+        "Kako deluje vaš brezplačni preizkus"
       ],
       "Human verification": [
         "Ali si človek"
@@ -14979,9 +14967,6 @@
       ],
       "To": [
         "Za"
-      ],
-      "Trash": [
-        "Smetnjak"
       ],
       "Trash all messages?": [
         "Premakni vsa sporočila v smeti?"

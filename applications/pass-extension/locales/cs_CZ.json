@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Přijmout a zobrazit položku"
       ],
+      "Accept invitation": [
+        "Přijmout pozvánku"
+      ],
       "Account": [
         "Účet"
       ],
@@ -1041,6 +1044,9 @@
       "Error reporting problem": [
         "Chyba při hlášení problému"
       ],
+      "Failed loading group members": [
+        "Načtení členů skupiny selhalo"
+      ],
       "Failed removing the invite.": [
         "Odstranění pozvánky selhalo."
       ],
@@ -1485,8 +1491,17 @@
         "${ forwardedEmailsCount } přeposláno",
         "${ forwardedEmailsCount } přeposláno"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } byl sdílen se skupinou, jejímž jste členem"
       ],
       "${ memberCount } member": [
         "${ memberCount } člen",
@@ -1499,6 +1514,9 @@
         "${ n } položky",
         "${ n } položek",
         "${ n } položek"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "Bylo sdíleno ${ newGroupSharesCount } nových sdílení se skupinou, jejíž jste členem"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy přístupný"
@@ -1562,6 +1580,12 @@
         "Zbývají ${ trialDaysLeft } dny",
         "Zbývá ${ trialDaysLeft } dnů",
         "Zbývá ${ trialDaysLeft } dnů"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } člen)",
+        "(${ membersCount } členové)",
+        "(${ membersCount } členů)",
+        "(${ membersCount } členů)"
       ],
       "(Empty)": [
         "(Prázdné)"
@@ -1986,6 +2010,9 @@
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "pozve skupinu ${ invitedGroup.Name } k přístupu k položkám v"
+      ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
       ],
@@ -2086,10 +2113,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2489,6 +2513,9 @@
         "Následující ${ totalIgnored } položky nebylo možné importovat:",
         "Následujících ${ totalIgnored } položek nebylo možné importovat:",
         "Následujících ${ totalIgnored } položek nebylo možné importovat:"
+      ],
+      "The group is invited to a vault.": [
+        "Skupina je pozvána do trezoru."
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz byl odebrán"
@@ -4889,6 +4916,9 @@
       ],
       "Vault": [
         "Trezor"
+      ],
+      "Vault shared with a group you administer": [
+        "Trezor sdílený se skupinou, kterou spravujete"
       ],
       "Vault shared with you": [
         "Trezor sdílený s vámi"

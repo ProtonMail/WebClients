@@ -490,6 +490,9 @@
       "Disable": [
         "Poista käytöstä"
       ],
+      "Disable categories": [
+        "Poista luokat käytöstä"
+      ],
       "Disable recovery phrase": [
         "Poista palautuslauseke käytöstä"
       ],
@@ -858,6 +861,9 @@
       ],
       "Keep": [
         "Säilytä"
+      ],
+      "Keep categories": [
+        "Säilytä luokat"
       ],
       "Keep Editing": [
         "Jatka muokkaamista"
@@ -2236,6 +2242,9 @@
       "Keep your email spam-free": [
         "Pidä sähköpostisi roskapostivapaana"
       ],
+      "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
+        "Opi varmuuskopioimaan tiedostosi pilveen tai ulkoiselle levylle turvaten samalla tietosi."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Opi käyttämään ${ VPN_APP_NAME }:ää reitittimelläsi."
       ],
@@ -2244,6 +2253,9 @@
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Suojaa yrityksenne tietomurroilta ja tee etätyöstä turvallisempaa yritys-VPN:n avulla."
+      ],
+      "Protect your family online and make account sharing easy": [
+        "Suojaa perheesi verkossa ja jaa tilit helposti"
       ],
       "Protect your whole household with 1 device": [
         "Suojaa koko perheesi yhdellä laitteella"
@@ -2259,6 +2271,9 @@
       ],
       "What is an email alias?": [
         "Mikä on sähköpostialias?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Mikä on päästä päähän -salaus ja miten se toimii?"
       ],
       "Which VPN protocol is the best?": [
         "Mikä VPN-protokolla on paras?"
@@ -2827,6 +2842,9 @@
       ],
       "Advanced account and network security in one plan": [
         "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Tekoälyavustaja, joka kunnioittaa liikesalaisuuksia"
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
@@ -4081,6 +4099,11 @@
       "Every ${ interval } day, ${ untilString }": [
         "${ interval } päivän välein, ${ untilString }",
         "${ interval } päivän välein, ${ untilString }"
+      ]
+    },
+    "Dashboard": {
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Säilytä tiedostosi, kuvasi ja dokumenttisi turvassa ${ maxDriveSpace } ilmaisella pilvitallennustilalla."
       ]
     },
     "Day": {
@@ -5522,6 +5545,9 @@
       ],
       "Name required": [
         "Nimi vaaditaan"
+      ],
+      "Network error": [
+        "Verkkovirhe"
       ],
       "No active sessions": [
         "Aktiivisia istuntoja ei ole"
@@ -7814,10 +7840,6 @@
       "${ url } deleted.": [
         "${ url } poistettiin."
       ],
-      "${ userFound } user found": [
-        "Löytyi ${ userFound } käyttäjä",
-        "Löytyi ${ userFound } käyttäjää"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } luotiin"
       ],
@@ -8003,6 +8025,9 @@
       ],
       "All members have been added.": [
         "Kaikki jäsenet on lisätty."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Kaikki viestit tullaan näyttämään saapuneissa, eikä kategorioiden välikehtiä tai tägejä enää näytetä. "
       ],
       "All users": [
         "Kaikki käyttäjät"
@@ -9474,6 +9499,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Suojaa ${ BRAND_NAME }-tilisi"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Suojattu, päästä päähän -salattu videoneuvottelu"
+      ],
       "Securing your account": [
         "Suojataan tiliä"
       ],
@@ -10435,6 +10463,10 @@
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "${ BRAND_NAME }-tilisi on liitetty osoitteeseen ${ externalEmailAddress }."
       ],
@@ -10467,6 +10499,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
+      ],
+      "Your free trial includes 1 dedicated server.": [
+        "Ilmainen kokeilujaksosi sisältää 1 oman palvelimen."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
@@ -10639,9 +10674,17 @@
         "Lisää tunniste"
       ]
     },
+    "Input title": {
+      "What is your organization's name?": [
+        "Mikä on organisaatiosi nimi?"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Kieltäydytty"
+      ],
+      "Owner": [
+        "Omistaja"
       ],
       "Paused": [
         "Pysäytetty"
@@ -10988,6 +11031,10 @@
       ],
       " and ${ l }": [
         " ja ${ l }"
+      ],
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } / ${ maxAddresses } käytettävissä oleva sähköpostiosoite",
+        "${ addressesAvailable } / ${ maxAddresses } käytettävissä olevaa sähköpostiosoitetta"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -12046,6 +12093,9 @@
       "Share your referral link": [
         "Jaa suosittelulinkkisi"
       ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Jaettu ${ MAIL_SHORT_APP_NAME }:n, ${ CALENDAR_SHORT_APP_NAME }:n, ${ PASS_SHORT_APP_NAME }:n ja ${ WALLET_SHORT_APP_NAME }:n kesken."
+      ],
       "Show ${ n } administrator": [
         "Näytä ${ n } ylläpitäjä",
         "Näytä ${ n } ylläpitäjää"
@@ -12283,6 +12333,9 @@
       "Device-based recovery": [
         "Laitteistopohjainen palautus"
       ],
+      "Notification phone number": [
+        "Ilmoituspuhelinnumero"
+      ],
       "Recovery phone number": [
         "Palautusnumero"
       ],
@@ -12298,6 +12351,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Vastaanottaja"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } käytettävissä oleva sähköpostiosoite",
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } käytettävissä olevaa sähköpostiosoitetta"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15151,6 +15210,11 @@
         "Päivitä tilaukseni"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Jatka sovellukseen ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Päästä päähän -salattu"
@@ -16357,6 +16421,10 @@
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
       ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sinulla on **${ daysRemaining } päivä aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin.",
+        "Sinulla on **${ daysRemaining } päivää aikaa** tutustua kaikkiin **${ planTitle }** -palvelun tehokkaisiin ominaisuuksiin."
+      ],
       "your subscription": [
         "tilauksesi"
       ]
@@ -16604,6 +16672,9 @@
       ],
       "Disable recovery by phone": [
         "Poista palautus puhelimitse käytöstä"
+      ],
+      "Disable recovery by phone ": [
+        "Poista palautus puhelimitse käytöstä "
       ],
       "Download ${ size }": [
         "Lataa ${ size }"
@@ -19960,6 +20031,9 @@
       "Device name": [
         "Laitteen nimi"
       ],
+      "Disable categories?": [
+        "Poistetaanko luokat käytöstä?"
+      ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
@@ -20721,6 +20795,9 @@
       "Status": [
         "Tila"
       ],
+      "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
+        "Vahvista tietoturvaasi kaikilla laitteillasi ${ passPlusPlanName } -palvelulla. ${ upgradeButton }"
+      ],
       "Subscription": [
         "Tilaus"
       ],
@@ -21040,6 +21117,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Gmailin muutos estää ${ BRAND_NAME }:a yhdistämästä. Salli yhteys sähköpostitoiminnon palauttamiseksi"
+      ],
       "Account is disconnected": [
         "Yhteys tiliin on katkaistu"
       ],
@@ -21163,6 +21243,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Tämä voi johtua salasanan nollauksesta tai siitä, että käyttäjä ei ole vielä kirjautunut sisään."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Tätä sähköpostiosoitetta voidaan käyttää ainoastaan sisäänkirjautumiseen ${ BRAND_NAME }-tilillesi."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tämä sähköpostiosoite näytetään kaikille organisaation jäsenille tilinhallintatoimintoja suoritettaessa."
       ],
@@ -21224,6 +21307,9 @@
       ],
       "User declined invitation": [
         "Käyttäjä hylkäsi kutsun"
+      ],
+      "User is a group": [
+        "Käyttäjä on ryhmä"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

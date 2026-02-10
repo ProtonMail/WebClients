@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accepteer en bekijk item"
       ],
+      "Accept invitation": [
+        "Accepteer uitnodiging"
+      ],
       "Account": [
         "Account"
       ],
@@ -986,6 +989,9 @@
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
       "Failed removing the invite.": [
         "Het verwijderen van de uitnodiging mislukte."
       ],
@@ -1381,8 +1387,17 @@
         "${ forwardedEmailsCount } doorgestuurd",
         "${ forwardedEmailsCount } doorgestuurd"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } wil een item delen met een groep die u beheert."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } wil een item delen met de groep ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } is gedeeld met een groep waarvan u lid bent"
       ],
       "${ memberCount } member": [
         "${ memberCount } lid",
@@ -1391,6 +1406,9 @@
       "${ n } item": [
         "${ n } item",
         "${ n } items"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nieuwe shares zijn gedeeld met een groep waarvan u lid bent"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } zal altijd toegankelijk zijn"
@@ -1428,6 +1446,10 @@
         "${ row.breachCount } inbreuk gedetecteerd",
         "${ row.breachCount } inbreuken gedetecteerd"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } lid)",
+        "(${ membersCount } leden)"
+      ],
       "(Empty)": [
         "(Leeg)"
       ],
@@ -1436,6 +1458,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Een contactpersoon wordt gemaakt voor elk e-mailadres dat e-mails naar of ontvangt van ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Er wordt een nieuwe versie gedownload. Zodra de download voltooid is, zal deze beschikbaar zijn bij de volgende herstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Een nieuwe versie van ${ PASS_APP_NAME } is beschikbaar. Update het om te genieten van de laatste functies en bugfixes."
@@ -1808,6 +1833,9 @@
       "Invite successfully resent": [
         "Uitnodiging succesvol herverzonden"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "nodigt de groep ${ invitedGroup.Name } voor toegang tot items in"
+      ],
       "invites you to access items in": [
         "nodigt u uit met toegang tot items in"
       ],
@@ -1929,6 +1957,9 @@
       ],
       "No network connection": [
         "Geen netwerkverbinding"
+      ],
+      "No new versions are available at the moment.": [
+        "Momenteel zijn er geen nieuwe versies beschikbaar."
       ],
       "None": [
         "Geen"
@@ -2268,6 +2299,9 @@
         "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
         "De volgende ${ totalIgnored } items konden niet geïmporteerd worden:"
       ],
+      "The group is invited to a vault.": [
+        "De groep wordt uitgenodigd tot een kluis."
+      ],
       "The secure link has been removed": [
         "De beveiligde link is verwijderd"
       ],
@@ -2316,6 +2350,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
+      "This will reload the application.": [
+        "Dit laadt de applicatie opnieuw."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Dit triggert een controle op nieuwe bètaversies."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Om e-mails te blijven ontvangen, zet deze aliassen over naar een ander postvak:"
       ],
@@ -2330,6 +2370,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Probeer nieuwe ${ BRAND_NAME } functies, updates en producten voordat ze openbaar worden gemaakt."
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
@@ -4604,6 +4647,9 @@
       ],
       "Vault": [
         "Kluis"
+      ],
+      "Vault shared with a group you administer": [
+        "Kluis gedeeld met een groep die u beheert"
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"

@@ -198,9 +198,6 @@
       "Change email": [
         "更換電子郵件"
       ],
-      "Change page": [
-        "跳至頁"
-      ],
       "Change password": [
         "變更密碼"
       ],
@@ -384,9 +381,6 @@
       "Customize": [
         "自訂"
       ],
-      "Customize categories": [
-        "自訂類別"
-      ],
       "Customize import": [
         "自訂匯入"
       ],
@@ -438,9 +432,6 @@
       "Disable alias": [
         "停用別名"
       ],
-      "Disable categories": [
-        "停用分類器"
-      ],
       "Disabling alias": [
         "停用別名"
       ],
@@ -491,9 +482,6 @@
       ],
       "Edit address": [
         "編輯位址"
-      ],
-      "Edit categories": [
-        "編輯分類"
       ],
       "Edit draft": [
         "編輯草稿"
@@ -773,9 +761,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "透過 ${ MEET_APP_NAME } 加入"
-      ],
-      "Keep categories": [
-        "保留分類"
       ],
       "Keep inbox as before": [
         "保持收件匣不變"
@@ -1208,9 +1193,6 @@
       ],
       "Save": [
         "儲存"
-      ],
-      "Save preferences": [
-        "儲存偏好設定"
       ],
       "Saving${ ellipsis }": [
         "正在儲存${ ellipsis }"
@@ -4503,6 +4485,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "上載附件時發生錯誤。郵件未能傳送。"
       ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
       ],
@@ -4601,6 +4586,9 @@
       ],
       "Name is required": [
         "名稱為必填"
+      ],
+      "Network error": [
+        "網路連線錯誤"
       ],
       "Network error: Please check your connection and try again.": [
         "網路錯誤：請檢查您的連線，然後重試。"
@@ -6511,9 +6499,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "使用此標籤儲存的所有訊息都將被永久刪除。"
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "所有郵件將顯示在收件匣中，分類索引標籤和標記將不再顯示。 "
-      ],
       "All your calendars are disabled.": [
         "您所有的行事曆停用中。"
       ],
@@ -7596,9 +7581,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "聯繫我們以取得任何關於${ BRAND_NAME }的協助。"
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "替 ${ categoryLabel } 接受通知"
       ],
       "Recipient: ": [
         "收件人 : "
@@ -8855,9 +8837,6 @@
       "Add image URL": [
         "加入圖像路徑"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "新增或移除分類。設定或關閉通知。隨時都可以在 ${ menuIcon } 選單中調整。"
-      ],
       "Add to group": [
         "加入至群組"
       ],
@@ -8962,9 +8941,6 @@
       ],
       "Cash": [
         "現金"
-      ],
-      "Categories": [
-        "分類目錄"
       ],
       "Categories badge": [
         "類別標籤"
@@ -9314,9 +9290,6 @@
       "Notification": [
         "通知"
       ],
-      "Notifications": [
-        "通知"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "通知已關閉，若要啟用它們請變更瀏覽器設定。"
       ],
@@ -9430,9 +9403,6 @@
       ],
       "Search in": [
         "搜尋於"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "選取此類別以包含和管理新電子郵件的通知"
       ],
       "Send auto-reply": [
         "發送自動回覆"
@@ -14147,9 +14117,6 @@
       "Apply gift code": [
         "套用禮品代碼"
       ],
-      "Archive": [
-        "封存檔"
-      ],
       "Archive all messages?": [
         "封存全部訊息?"
       ],
@@ -14285,12 +14252,6 @@
       "Customize calendar import": [
         "自訂行事曆匯入"
       ],
-      "Customize categories": [
-        "自訂類別"
-      ],
-      "Customize categories to fit your needs": [
-        "自訂分類器以符合您的需求"
-      ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
       ],
@@ -14344,9 +14305,6 @@
       ],
       "Desktop": [
         "電腦版應用程式"
-      ],
-      "Disable categories?": [
-        "停用分類？"
       ],
       "Discover your subscription benefits": [
         "探索您訂閱的各項福利"
@@ -14938,9 +14896,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "若要預覽此試算表， 於 ${ SHEETS_APP_NAME } 開啟並下載它。"
-      ],
-      "Trash": [
-        "垃圾桶"
       ],
       "Trash all messages?": [
         "將所有訊息移至垃圾桶？"

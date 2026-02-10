@@ -3549,6 +3549,9 @@
       "Event not found": [
         "მოვლენა ნაპოვნი არაა"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის დამატება ჩავარდა"
       ],
@@ -3675,6 +3678,9 @@
       ],
       "Name required": [
         "სახელი აუცილებელია"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ],
       "No booking page data received": [
         "ჯავშნის გვერდის მონაცემები მიღებული არაა"
@@ -4763,6 +4769,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -5100,6 +5109,10 @@
       ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "ყველა მონაწილე მიიღებს გაუქმების ელფოსტას. რომელი მოვლენის წაშლა გნებავთ?"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -7978,6 +7991,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
+      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -9212,6 +9228,10 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -11908,6 +11928,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"

@@ -2841,6 +2841,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to copy photo to album": [
         "სურათის ალბომში კოპირება ჩავარდა"
       ],
@@ -2922,6 +2925,9 @@
       ],
       "Name is required": [
         "სახელი აუცილებელია"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ],
       "No calendars found to import": [
         "შემოსატანი კალენდრები ვერ ვიპოვე"
@@ -3840,6 +3846,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -4152,6 +4161,10 @@
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
+      ],
       "an anonymous user": [
         "ანონიმური მომხმარებელი"
       ],
@@ -4443,6 +4456,9 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
       ],
       "Get Notified About Comments": [
         "გაფრთხილებების მიღება კომენტარების შესახებ"
@@ -6588,6 +6604,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
+      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -7718,6 +7737,10 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",

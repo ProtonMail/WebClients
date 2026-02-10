@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Aceptar y ver el elemento"
       ],
+      "Accept invitation": [
+        "Aceptar la invitacion"
+      ],
       "Account": [
         "Cuenta"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Error al notificar el problema"
       ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
       "Failed removing the invite.": [
         "Error al eliminar la invitación."
       ],
@@ -1456,8 +1462,17 @@
         "${ forwardedEmailsCount } reenvío",
         "${ forwardedEmailsCount } reenvíos"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } quiere compartir un elemento con un grupo que administras."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } quiere compartir un elemento con el grupo ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } desea compartir un elemento contigo."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } se ha compartido con un grupo al que perteneces"
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -1466,6 +1481,9 @@
       "${ n } item": [
         "${ n } elemento",
         "${ n } elementos"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "Se han compartido ${ newGroupSharesCount } elementos nuevos con un grupo al que perteneces"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } siempre será accesible."
@@ -1503,6 +1521,10 @@
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } miembro)",
+        "(${ membersCount } miembros)"
+      ],
       "(Empty)": [
         "(Vacío)"
       ],
@@ -1511,6 +1533,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Se crea un contacto por cada dirección de correo electrónico que envía o recibe correos electrónicos desde ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Se está descargando una nueva versión. Estará disponible cuando reinicies la aplicación."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
@@ -1886,6 +1911,9 @@
       "Invite successfully resent": [
         "Se ha enviado la invitación."
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invita al grupo ${ invitedGroup.Name } a acceder a los elementos de"
+      ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
       ],
@@ -2013,6 +2041,9 @@
       ],
       "No network connection": [
         "No hay conexión a la red."
+      ],
+      "No new versions are available at the moment.": [
+        "No hay versiones nuevas disponibles en este momento."
       ],
       "None": [
         "Ninguno"
@@ -2352,6 +2383,9 @@
         "No se ha podido importar ${ totalIgnored } elemento:",
         "No se han podido importar los ${ totalIgnored } siguientes elementos:"
       ],
+      "The group is invited to a vault.": [
+        "Se ha invitado al grupo a una caja fuerte."
+      ],
       "The secure link has been removed": [
         "Se ha eliminado el enlace seguro."
       ],
@@ -2400,6 +2434,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
       ],
+      "This will reload the application.": [
+        "Se reiniciará la aplicación."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Esta acción buscará nuevas versiones beta."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para seguir recibiendo correos electrónicos, transfiere estos alias a otro buzón:"
       ],
@@ -2414,6 +2454,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Con la confianza de más de 50,000 empresas y 100 millones de cuentas en todo el mundo."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Prueba antes que nadie las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME }."
       ],
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
@@ -4762,6 +4805,9 @@
       ],
       "Vault": [
         "Caja fuerte"
+      ],
+      "Vault shared with a group you administer": [
+        "Caja fuerte compartida con un grupo que administras"
       ],
       "Vault shared with you": [
         "Caja fuerte compartida contigo"

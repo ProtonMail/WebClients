@@ -1660,6 +1660,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
+        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
+        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "ავტომატური განახლების დრო ${ subscriptionManagerName }"
       ]
@@ -3545,6 +3549,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) ან უფრო ახალი"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3556,6 +3563,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "მობილური"
@@ -4444,6 +4454,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "ანგარიში წაშლილია, ან გამორთულია"
+      ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
       ],
@@ -5494,6 +5507,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -5795,10 +5811,6 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
-      "${ userFound } user found": [
-        "აღმოჩენილია ${ userFound } მომხმარებელი",
-        "აღმოჩენილია ${ userFound } მომხმარებელი"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } შეიქმნა"
       ],
@@ -5978,6 +5990,10 @@
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
       ],
       "Allocated": [
         "გამოყოფილი"
@@ -8195,6 +8211,9 @@
       "Declined": [
         "უარყოფილია"
       ],
+      "Owner": [
+        "მფლობელი"
+      ],
       "Paused": [
         "შეჩერებულია"
       ],
@@ -10126,6 +10145,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
+      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -11641,6 +11663,10 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -14478,11 +14504,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "ავტო"
+      ],
       "Dark": [
         "მუქი"
       ],
       "Light": [
         "ღია"
+      ],
+      "Mode: Auto": [
+        "რეჟიმი: ავტო"
+      ],
+      "Mode: Dark": [
+        "რეჟიმი: მუქი"
+      ],
+      "Mode: Light": [
+        "რეჟიმი: ღია"
+      ],
+      "Sync with system": [
+        "სისტემასთან სინქრონიზაცია"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "${ BRAND_NAME }-ის პარამეტრების გამოყენება"
       ]
     },
     "Themes": {
@@ -15847,6 +15891,9 @@
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
       ],
+      "User is a group": [
+        "მომხმარებელი ჯგუფია"
+      ],
       "Waiting for user to accept the invitation": [
         "მომხმარებლის დადასტურების მოლოდინი"
       ]
@@ -16010,6 +16057,9 @@
       ]
     },
     "Upsell": {
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**დაზოგეთ ${ priceString }-მდე** უფრო გრძელვადიანი გამოწერით. იგივე ფასიანი ფუნქციონალი უფრო დაბალ ფასად."
       ],

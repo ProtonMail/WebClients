@@ -982,12 +982,12 @@
         "Wystąpił problem z zapisaniem Twojej opinii. Spróbuj ponownie później."
       ]
     },
-    "collider_2025: Feature": {
-      "Advanced models": [
-        "Zaawansowane modele"
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Podstawowa historia czatów"
       ],
-      "Web search": [
-        "Wyszukaj w Internecie"
+      "Strict no-logs policy": [
+        "Polityka braku przechowywania logów"
       ]
     },
     "collider_2025: Guest Signin": {
@@ -1287,9 +1287,6 @@
     "collider_2025: Upsell": {
       "Create free account": [
         "Utwórz darmowe konto"
-      ],
-      "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
-        "Twoja historia czatów jest ograniczona do 7 dni. Aby uzyskać rozszerzoną historię czatów i inne funkcje premium, "
       ]
     },
     "collider_2025: Upsell Title": {
@@ -3740,6 +3737,11 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Feature": {
+      "Screen-sharing": [
+        "Udostępnianie ekranu"
+      ]
+    },
     "New Label form": {
       "Color": [
         "Kolor"
@@ -4824,6 +4826,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
+      "Taxes": [
+        "Podatki"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
@@ -4876,6 +4881,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Zachowaj plan ${ planTitle }"
       ]
     },
     "Payments.plan_name": {

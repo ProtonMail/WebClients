@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Acceptera och visa objektet"
       ],
+      "Accept invitation": [
+        "Acceptera inbjudan"
+      ],
       "Account": [
         "Konto"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "Gick inte rapportera problem"
       ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
+      ],
       "Failed removing the invite.": [
         "Misslyckades ta bort inbjudan."
       ],
@@ -1450,8 +1456,17 @@
         "${ forwardedEmailsCount } vidarebefordrat",
         "${ forwardedEmailsCount } vidarebefordrade"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } vill dela ett objekt med en grupp du administrerar."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } vill dela ett objekt med gruppen ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vill dela ett objekt med dig."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } har delats med en grupp du är medlem i"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1460,6 +1475,9 @@
       "${ n } item": [
         "${ n } objekt",
         "${ n } objekt"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nya delningar har delats med en grupp du är medlem i"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } kommer alltid vara åtkomlig"
@@ -1515,6 +1533,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } medlem)",
+        "(${ membersCount } medlemmar)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1929,6 +1951,9 @@
       "Invite successfully resent": [
         "Inbjudan skickad"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "bjuder in gruppen ${ invitedGroup.Name } att komma åt objekt i"
+      ],
       "invites you to access items in": [
         "bjöd in dig för att komma åt objekt i detta valv"
       ],
@@ -2023,10 +2048,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2410,6 +2431,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Följande ${ totalIgnored } objekt kunde inte importeras:",
         "Följande ${ totalIgnored } objekten kunde inte importeras:"
+      ],
+      "The group is invited to a vault.": [
+        "Gruppen är inbjuden till ett valv."
       ],
       "The secure link has been removed": [
         "Den säkra länken har tagits bort"
@@ -4748,6 +4772,9 @@
       ],
       "Vault": [
         "Valv"
+      ],
+      "Vault shared with a group you administer": [
+        "Valv delat med en grupp du administrerar"
       ],
       "Vault shared with you": [
         "Valv delade med dig"

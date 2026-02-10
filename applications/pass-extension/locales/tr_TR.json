@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Kabul et ve ögeyi görüntüle"
       ],
+      "Accept invitation": [
+        "Daveti kabul et"
+      ],
       "Account": [
         "Hesap"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
       ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
       "Failed removing the invite.": [
         "Davet silinemedi."
       ],
@@ -1453,8 +1459,17 @@
         "${ forwardedEmailsCount } iletildi",
         "${ forwardedEmailsCount } iletildi"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }, yönettiğiniz bir grupla bir öğeyi paylaşmak istiyor."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } kullanıcısı ${ invitedGroup.Name } grubu ile bir öğeyi paylaşmak istiyor."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName }, üyesi olduğunuz bir grupla paylaşıldı"
       ],
       "${ memberCount } member": [
         "${ memberCount } üye",
@@ -1463,6 +1478,9 @@
       "${ n } item": [
         "${ n } öge",
         "${ n } öge"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "Üyesi olduğunuz bir gruba ${ newGroupSharesCount } yeni paylaşım yapıldı"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } her zaman erişilebilir olacak"
@@ -1518,6 +1536,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } üye)",
+        "(${ membersCount } üye)"
       ],
       "(Empty)": [
         "(Boş)"
@@ -1938,6 +1960,9 @@
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "${ invitedGroup.Name } grubunu öğelere erişmeye davet eder"
+      ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
       ],
@@ -2034,8 +2059,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2431,6 +2455,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Şu ${ totalIgnored } öge içe aktarılamadı:",
         "Şu ${ totalIgnored } öge içe aktarılamadı:"
+      ],
+      "The group is invited to a vault.": [
+        "Grup bir kasaya davet edildi."
       ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
@@ -4775,6 +4802,9 @@
       ],
       "Vault": [
         "Kasa"
+      ],
+      "Vault shared with a group you administer": [
+        "Yönettiğiniz bir gruba kasanız paylaşıldı"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"

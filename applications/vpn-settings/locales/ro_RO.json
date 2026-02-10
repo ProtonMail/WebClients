@@ -3610,6 +3610,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS 14 (Sonoma) sau mai recent"
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3621,6 +3624,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Dispozitive mobile"
@@ -5962,10 +5968,10 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
-      "${ userFound } user found": [
-        "S-a găsit ${ userFound } utilizator",
-        "S-au găsit ${ userFound } utilizatori",
-        "S-au găsit ${ userFound } de utilizatori"
+      "${ total } user found": [
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }",
+        "Utilizatori găsiți: ${ total }"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } creată"
@@ -7597,7 +7603,7 @@
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
+        "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele din ${ encryptionAndKeysLink }."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Internetul ascuns este o parte ascunsă a internetului unde informațiile personale furate, cum ar fi identitățile, pot fi cumpărate și vândute."
@@ -8347,6 +8353,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Modificările recente au fost publicate. Vor fi vizibile utilizatorilor în următoarele câteva ore."
+      ],
       "Your recovery phrase": [
         "Fraza de recuperare"
       ],
@@ -8484,6 +8493,9 @@
     "invitation status": {
       "Declined": [
         "Refuzată"
+      ],
+      "Owner": [
+        "Proprietar"
       ],
       "Paused": [
         "Suspendată"
@@ -10459,6 +10471,9 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
+      ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
       ],
@@ -10945,6 +10960,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături web către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -16369,6 +16387,9 @@
       ],
       "User declined invitation": [
         "Utilizatorul a refuzat invitația"
+      ],
+      "User is a group": [
+        "Utilizatorul este un grup"
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"

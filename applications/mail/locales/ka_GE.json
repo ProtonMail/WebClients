@@ -199,9 +199,6 @@
       "Change email": [
         "ელფოსტის შეცვლა"
       ],
-      "Change page": [
-        "გვერდის შეცვლა"
-      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "მორგება"
       ],
-      "Customize categories": [
-        "კატეგორიების მორგება"
-      ],
       "Customize import": [
         "შემოტანის მორგება"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "ფსევდონიმის გათიშვა"
       ],
-      "Disable categories": [
-        "კატეგორიების გათიშვა"
-      ],
       "Disabling alias": [
         "ფსევდონიმის გათიშვა"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "მისამართის ჩასწორება"
-      ],
-      "Edit categories": [
-        "კატეგორიების ჩასწორება"
       ],
       "Edit draft": [
         "მონახაზის ჩასწორება"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "გაწევრდით ${ MEET_APP_NAME }-ში"
-      ],
-      "Keep categories": [
-        "კატეგორიების შენარჩუნება"
       ],
       "Keep inbox as before": [
         "საფოსტო ყუთის დატოვება, როგორც იყო"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "შენახვა"
-      ],
-      "Save preferences": [
-        "პარამეტრების შენახვა"
       ],
       "Saving${ ellipsis }": [
         "შენახვა${ ellipsis }"
@@ -4572,6 +4554,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "მისამაგრებელი ფაილების ატვირთვის შეცდომა: შეტყობინება არ გაგზავნილა."
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "მიმაგრებული ფაილის დაშიფვრის შეცდომა. თავიდან სცადეთ."
       ],
@@ -4674,6 +4659,9 @@
       ],
       "Name is required": [
         "სახელი აუცილებელია"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ],
       "Network error: Please check your connection and try again.": [
         "ქსელის შეცდომა: შეამოწმეთ თქვენი შეერთება და თავიდან სცადეთ."
@@ -4882,6 +4870,9 @@
       ],
       "Thanks for the feedback!": [
         "მადლობა გამოხმაურებისთვის!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "ამ ქმედების შესრულება არ შეიძლება ამ საქაღალდეში არსებულ ელფოსტაზე"
       ],
       "The amount due has changed. Please try again.": [
         "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
@@ -6140,6 +6131,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -6647,14 +6641,15 @@
       "All messages stored with this label will be permanently deleted.": [
         "ამ ჭდით შენახული ყველა შეტყობინება სამუდამოდ წაიშლება."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "ყველა შეტყობინება ნაჩვენები იქნება შემომავლებში და კატეგორიის ჩანართები და ჭდეები აღარ გამოჩნდება. "
-      ],
       "All your calendars are disabled.": [
         "თქვენი ყველა კალენდარი გამორთულია."
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey-ის ლოგო"
@@ -7528,6 +7523,9 @@
       "No links cleaned": [
         "ბმულები არ გასუფთავებულა"
       ],
+      "No messages found": [
+        "შეტყობინებები ნაპოვნი არაა"
+      ],
       "No messages to show": [
         "საჩვენებელი შეტყობინებების გარეშე"
       ],
@@ -7750,9 +7748,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
       ],
       "Recipient: ": [
         "მიმღები: "
@@ -9027,9 +9022,6 @@
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "კატეგორიების დამატება ან წაშლა. შეტყობინებების დაყენება ან გამორთვა. ნებისმიერ დროს შეცვალეთ ${ menuIcon } მენიუში."
-      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
@@ -9134,9 +9126,6 @@
       ],
       "Cash": [
         "ხელზე ფული"
-      ],
-      "Categories": [
-        "კატეგორიები"
       ],
       "Categories badge": [
         "კატეგორიების სამკერდე ნიშანი"
@@ -9497,9 +9486,6 @@
       ],
       "Notification": [
         "შეტყობინება"
-      ],
-      "Notifications": [
-        "შეტყობინებები"
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "გაფრთხილებები გამორთულია. მათ ჩასართავად შეცვალეთ ბრაუზერის პარამეტრები."
@@ -10840,6 +10826,9 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
+      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -12069,6 +12058,10 @@
       ],
       "terms and conditions": [
         "პირობები და წესები"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
@@ -14540,9 +14533,6 @@
       "Apply gift code": [
         "სასაჩუქრე კოდის გადატარება"
       ],
-      "Archive": [
-        "არქივი"
-      ],
       "Archive all messages?": [
         "დავაარქივო ყველა შეტყობინება?"
       ],
@@ -14678,12 +14668,6 @@
       "Customize calendar import": [
         "კალენდრის შემოტანის მორგება"
       ],
-      "Customize categories": [
-        "კატეგორიების მორგება"
-      ],
-      "Customize categories to fit your needs": [
-        "მოირგეთ კატეგორიები საჭიროებისამებრ"
-      ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
       ],
@@ -14742,9 +14726,6 @@
       ],
       "Desktop": [
         "სამუშაო მაგიდა"
-      ],
-      "Disable categories?": [
-        "გამოვრთო კატეგორიები?"
       ],
       "Discover your subscription benefits": [
         "აღმოაჩინეთ თქვენი სატარიფო გეგმის უპირატესობები"
@@ -15347,9 +15328,6 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
       ],
-      "Trash": [
-        "ნაგვის ყუთი"
-      ],
       "Trash all messages?": [
         "გადავიტანო ნაგვის ყუთში ყველაფერი?"
       ],
@@ -15456,6 +15434,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"

@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Annehmen und das Element anzeigen"
       ],
+      "Accept invitation": [
+        "Einladung annehmen"
+      ],
       "Account": [
         "Konto"
       ],
@@ -1036,6 +1039,9 @@
       "Error reporting problem": [
         "Fehler beim Melden des Problems."
       ],
+      "Failed loading group members": [
+        "Gruppenmitglieder konnten nicht geladen werden"
+      ],
       "Failed removing the invite.": [
         "Fehler beim Löschen der Einladung."
       ],
@@ -1456,8 +1462,17 @@
         "${ forwardedEmailsCount } weitergeleitet",
         "${ forwardedEmailsCount } weitergeleitet"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } möchte einen Eintrag mit einer Gruppe teilen, die du verwaltest."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } möchte ein Element mit der Gruppe ${ invitedGroup.Name } teilen."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } möchte einen Eintrag mit dir teilen."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } wurde mit einer Gruppe geteilt, deren Mitglied du bist"
       ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
@@ -1466,6 +1481,9 @@
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } neue Freigaben wurden für eine Gruppe vorgenommen, deren Mitglied du bist"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } wird immer zugänglich sein"
@@ -1502,6 +1520,10 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } Datendiebstahl entdeckt",
         "${ row.breachCount } Datendiebstähle entdeckt"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } Mitglied)",
+        "(${ membersCount } Mitglieder)"
       ],
       "(Empty)": [
         "(Leer)"
@@ -1888,6 +1910,9 @@
       ],
       "Invite successfully resent": [
         "Einladung erfolgreich erneut versendet."
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "Lädt die Gruppe ${ invitedGroup.Name } ein, auf Elemente zuzugreifen in"
       ],
       "invites you to access items in": [
         "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"
@@ -2357,6 +2382,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Der folgende ${ totalIgnored } Eintrag konnte nicht importiert werden:",
         "Die folgenden ${ totalIgnored } Einträge konnten nicht importiert werden:"
+      ],
+      "The group is invited to a vault.": [
+        "Die Gruppe ist zu einem Tresor eingeladen."
       ],
       "The secure link has been removed": [
         "Der sichere Link wurde entfernt."
@@ -4780,6 +4808,9 @@
       ],
       "Vault": [
         "Tresor"
+      ],
+      "Vault shared with a group you administer": [
+        "Tresor, der für eine Gruppe freigegeben wurde, deren Administrator du bist"
       ],
       "Vault shared with you": [
         "Mit dir geteilter Tresor"

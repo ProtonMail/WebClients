@@ -6,22 +6,22 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Phát hiện rò rỉ tiềm ẩn liên quan đến ${ name } và ${ remainingCount } rò rỉ khác. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện hành động. ${ link }"
+        "Phát hiện rò rỉ tiềm ẩn liên quan đến ${ name } và ${ remainingCount } rò rỉ khác. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện thao tác. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Phát hiện rò rỉ tiềm ẩn liên quan đến ${ name } và 1 rò rỉ khác. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện hành động. ${ link }"
+        "Phát hiện rò rỉ tiềm ẩn liên quan đến ${ name } và 1 rò rỉ khác. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện thao tác. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Đã phát hiện một rò rỉ tiềm ẩn liên quan đến ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện hành động. ${ link }"
+        "Đã phát hiện một rò rỉ tiềm ẩn liên quan đến ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện thao tác. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Đã phát hiện một rò rỉ tiềm ẩn từ ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện hành động. ${ link }"
+        "Đã phát hiện một rò rỉ tiềm ẩn từ ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện thao tác. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Đã phát hiện một rò rỉ tiềm ẩn từ ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Thông tin của bạn được tìm thấy trong ít nhất một vụ rò rỉ dữ liệu. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện hành động. ${ link }"
+        "Thông tin được tìm thấy trong ít nhất một vụ rò rỉ dữ liệu. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết và thực hiện thao tác. ${ link }"
       ]
     },
     "Action": {
@@ -36,6 +36,9 @@
       ],
       "Accept and view the item": [
         "Chấp nhận và xem mục"
+      ],
+      "Accept invitation": [
+        "Chấp nhận lời mời"
       ],
       "Account": [
         "Tài khoản"
@@ -56,7 +59,7 @@
         "Thêm miền tùy chỉnh"
       ],
       "Add domain": [
-        "Thêm tên miền"
+        "Thêm miền"
       ],
       "Add field": [
         "Thêm trường"
@@ -71,7 +74,7 @@
         "Bổ sung thêm"
       ],
       "Add new item": [
-        "Thêm nội dung mới"
+        "Thêm mục mới"
       ],
       "Add section": [
         "Thêm phần"
@@ -110,19 +113,19 @@
         "Chặn liên hệ"
       ],
       "Bulk delete items from trash": [
-        "Xóa nhiều nội dung khỏi thùng rác"
+        "Xóa nhiều mục khỏi thùng rác"
       ],
       "Bulk move items to another vault": [
-        "Chuyển nhiều nội dung tới kho lưu trữ khác"
+        "Chuyển nhiều mục tới kho khác"
       ],
       "Bulk move items to trash": [
-        "Chuyển nhiều nội dung tới thùng rác"
+        "Chuyển nhiều mục vào thùng rác"
       ],
       "Bulk restore items from trash": [
-        "Khôi phục nhiều nội dung từ thùng rác"
+        "Khôi phục nhiều mục từ thùng rác"
       ],
       "Bulk select items": [
-        "Chọn nhiều nội dung"
+        "Chọn nhiều mục"
       ],
       "Cancel": [
         "Hủy"
@@ -143,10 +146,10 @@
         "Kiểm tra cài đặt"
       ],
       "Choose a file or drag it here": [
-        "Chọn tệp hoặc thả tệp vào đây"
+        "Chọn tệp hoặc kéo thả tệp vào đây"
       ],
       "Clear": [
-        "Dọn sạch"
+        "Xóa"
       ],
       "Clear search": [
         "Xóa tìm kiếm"
@@ -209,7 +212,7 @@
         "Sao chép mã bảo mật"
       ],
       "Copy to clipboard": [
-        "Sao chép vào bộ nhớ tạm"
+        "Sao chép vào bảng tạm"
       ],
       "Copy username": [
         "Sao chép tên người dùng"
@@ -218,10 +221,10 @@
         "Tạo"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Tạo một tài khoản ${ BRAND_NAME }"
+        "Tạo tài khoản ${ BRAND_NAME }"
       ],
       "Create a new vault": [
-        "Tạo một kho lưu trữ mới"
+        "Tạo kho mới"
       ],
       "Create alias": [
         "Tạo biệt danh"
@@ -236,7 +239,7 @@
         "Tạo danh tính"
       ],
       "Create item": [
-        "Thêm"
+        "Tạo mục"
       ],
       "Create login": [
         "Tạo đăng nhập"
@@ -248,10 +251,10 @@
         "Tạo ghi chú"
       ],
       "Create vault": [
-        "Tạo kho lưu trữ"
+        "Tạo kho"
       ],
       "Creating vault": [
-        "Đang tạo kho lưu trữ"
+        "Đang tạo kho"
       ],
       "Custom section": [
         "Mục tùy chỉnh"
@@ -281,7 +284,7 @@
         "Xóa vĩnh viễn"
       ],
       "Delete vault": [
-        "Xóa kho lưu trữ"
+        "Xóa kho"
       ],
       "Deselect": [
         "Bỏ chọn"
@@ -314,10 +317,10 @@
         "Nhân đôi"
       ],
       "Edit": [
-        "Sửa"
+        "Chỉnh sửa"
       ],
       "Edit vault": [
-        "Sửa kho lưu trữ"
+        "Chỉnh sửa kho"
       ],
       "Enable": [
         "Kích hoạt"
@@ -338,7 +341,7 @@
         "Điền mật khẩu"
       ],
       "Filter vault items": [
-        "Phân loại nội dung kho lưu trữ"
+        "Phân loại mục kho"
       ],
       "Generate alias": [
         "Tạo biệt danh"
@@ -347,7 +350,7 @@
         "Tạo mật khẩu"
       ],
       "Generate secure link": [
-        "Tạo liên kết an toàn"
+        "Tạo liên kết bảo mật"
       ],
       "Generated passwords": [
         "Mật khẩu đã tạo"
@@ -413,10 +416,10 @@
         "Tìm hiểu thêm"
       ],
       "Leave": [
-        "Rời khỏi"
+        "Rời"
       ],
       "Leave vault": [
-        "Rời kho lưu trữ"
+        "Rời kho"
       ],
       "Link copied to clipboard": [
         "Liên kết đã sao chép vào bảng tạm"
@@ -428,31 +431,31 @@
         "Khóa ${ PASS_APP_NAME }"
       ],
       "Lock extension": [
-        "Khóa trình mở rộng"
+        "Khóa phần mở rộng"
       ],
       "Make admin": [
-        "Làm quản trị viên"
+        "Đặt thành quản trị viên"
       ],
       "Make default": [
         "Đặt làm mặc định"
       ],
       "Make editor": [
-        "Làm biên tập viên"
+        "Đặt thành biên tập viên"
       ],
       "Make manager": [
-        "Đặt làm quản lý"
+        "Đặt thành người quản lý"
       ],
       "Make viewer": [
-        "Làm người xem"
+        "Đặt thành người xem"
       ],
       "Manage access": [
         "Quản lý quyền truy cập"
       ],
       "Manually sync your data": [
-        "Đồng bộ dữ liệu của bạn bằng tay"
+        "Đồng bộ dữ liệu thủ công"
       ],
       "Mark as resolved": [
-        "Đánh dấu đã xử lý"
+        "Đánh dấu là đã xử lý"
       ],
       "Maximum views": [
         "Số lượt xem tối đa"
@@ -470,16 +473,16 @@
         "Di chuyển"
       ],
       "Move all items": [
-        "Chuyển tất cả nội dung"
+        "Di chuyển tất cả mục"
       ],
       "Move to another vault": [
-        "Chuyển đến kho lưu trữ khác"
+        "Di chuyển đến kho khác"
       ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
       ],
       "Move to Trash": [
-        "Chuyển tới thùng rác"
+        "Di chuyển vào thùng rác"
       ],
       "Multiple select": [
         "Lựa chọn nhiều nội dung"
@@ -593,13 +596,13 @@
         "Khôi phục"
       ],
       "Restore item": [
-        "Khôi phục nội dung"
+        "Khôi phục mục"
       ],
       "Restrict number of views": [
         "Giới hạn số lượt xem"
       ],
       "Resume monitoring": [
-        "Theo dõi trở lại"
+        "Tiếp tục giám sát"
       ],
       "Retry": [
         "Thử lại"
@@ -635,7 +638,7 @@
         "Thiết lập cấp độ truy cập"
       ],
       "Set extra password": [
-        "Thiết lập mật khẩu phụ"
+        "Thiết lập mật khẩu bổ sung"
       ],
       "Setup 2FA": [
         "Thiết lập 2FA"
@@ -650,13 +653,13 @@
         "Chia sẻ liên kết an toàn"
       ],
       "Share vault": [
-        "Chia sẽ kho lưu trữ"
+        "Chia sẽ kho"
       ],
       "Show": [
-        "Hiện"
+        "Hiển thị"
       ],
       "Show advanced options": [
-        "Hiện tùy chọn nâng cao"
+        "Hiển thị tùy chọn nâng cao"
       ],
       "Show Less": [
         "Hiển thị ít hơn"
@@ -674,7 +677,7 @@
         "Có người đã chia sẻ một mục với bạn trên ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
-        "Phân loại nội dung kho lưu trữ"
+        "Phân loại mục kho"
       ],
       "Start from scratch": [
         "Bắt đầu lại từ đầu"
@@ -746,7 +749,7 @@
         "Xác minh"
       ],
       "Via secure link": [
-        "Tạo liên kết an toàn"
+        "Tạo liên kết bảo mật"
       ],
       "View details": [
         "Xem chi tiết"
@@ -827,19 +830,19 @@
         "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA thêm một lớp bảo mật khác cho đăng nhập. ${ PASS_APP_NAME } giúp 2FA dễ dàng hơn bằng cách lưu trữ và tự động điền các mã 2FA của bạn."
+        "2FA thêm một lớp bảo mật khác cho đăng nhập. ${ PASS_APP_NAME } giúp 2FA dễ dàng hơn bằng cách lưu trữ và tự động điền các mã 2FA."
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Thêm các bản ghi DNS CNAME sau vào miền của bạn."
+        "Thêm các bản ghi DNS CNAME sau vào miền."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Thêm bản ghi DNS MX sau vào miền của bạn. Lưu ý rằng có dấu chấm (.) ở cuối các địa chỉ mục tiêu. Nếu nhà đăng ký miền của bạn không cho phép dấu chấm này, vui lòng xóa nó khi thêm bản ghi DNS."
+        "Thêm bản ghi DNS MX sau vào miền. Lưu ý rằng có dấu chấm (.) ở cuối các địa chỉ mục tiêu. Nếu nhà đăng ký miền không cho phép dấu chấm này, vui lòng xóa nó khi thêm bản ghi DNS."
       ],
       "Add the following TXT DNS record to your domain.": [
-        "Thêm bản ghi DNS TXT sau vào miền của bạn."
+        "Thêm bản ghi DNS TXT sau vào miền."
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "Biệt danh email hoạt động giống như địa chỉ email, nhưng giảm thiểu thư rác và giữ ẩn địa chỉ email thực và danh tính của bạn."
+        "Biệt danh email hoạt động giống như địa chỉ email, nhưng giảm thiểu thư rác và giữ ẩn địa chỉ email thực và danh tính."
       ],
       "Change your passwords": [
         "Thay đổi các mật khẩu của bạn"
@@ -848,19 +851,19 @@
         "Tạo mật khẩu duy nhất"
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "DKIM ${ WIKIPEDIA_LINK_DKIM } là phương thức xác thực email được thiết kế để tránh giả mạo email. Rất khuyến khích thiết lập DKIM để giảm khả năng email của bạn rơi vào thư mục Thư rác của người nhận."
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } là phương thức xác thực email được thiết kế để tránh giả mạo email. Rất khuyến khích thiết lập DKIM để giảm khả năng email rơi vào thư mục Thư rác của người nhận."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
         "DMARC ${ WIKIPEDIA_LINK_DMARC } được thiết kế để bảo vệ miền khỏi việc sử dụng trái phép, thường được gọi là giả mạo email. Được xây dựng dựa trên SPF và DKIM, chính sách DMARC cho máy chủ thư nhận biết phải làm gì nếu không có phương thức xác thực nào thông qua."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Nhận thông báo khi email, mật khẩu hay các thông tin cá nhân của bạn bị rò rỉ."
+        "Nhận thông báo khi email, mật khẩu hay các thông tin cá nhân bị rò rỉ."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
-        "Nếu bạn đang sử dụng tên miền phụ, ví dụ ${ subdomainExample }, bạn cần sử dụng ${ dmarcExampleSubdomain } làm miền thay thế."
+        "Nếu đang sử dụng miền phụ, ví dụ ${ subdomainExample }, bạn cần sử dụng ${ dmarcExampleSubdomain } làm miền thay thế."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Nếu bạn đang sử dụng tên miền phụ, ví dụ subdomain.domain.com, bạn cần sử dụng ${ domainKeyExampleSubdomain } làm miền thay thế. Điều đó có nghĩa là, nếu miền của bạn là mail.domain.com, bạn nên nhập ${ domainKeyExampleMail } làm Miền."
+        "Nếu đang sử dụng miền phụ, ví dụ subdomain.domain.com, bạn cần sử dụng ${ domainKeyExampleSubdomain } làm miền thay thế. Điều đó có nghĩa là, nếu miền là mail.domain.com, bạn nên nhập ${ domainKeyExampleMail } làm Miền."
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Nếu sử dụng Cloudflare, vui lòng đảm bảo không chọn tùy chọn Proxy."
@@ -875,22 +878,22 @@
         "Thiết lập 2FA để an toàn hơn"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
-        "Một số nhà đăng ký DNS có thể yêu cầu đường dẫn bản ghi đầy đủ, trong trường hợp này vui lòng sử dụng ${ domain } làm giá trị miền."
+        "Một số công ty đăng ký DNS có thể yêu cầu đường dẫn bản ghi đầy đủ, trong trường hợp này vui lòng sử dụng ${ domain } làm giá trị miền."
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "Một số công ty đăng ký tên miền (Namecheap, Cloudflare, v.v.) cũng có thể sử dụng @ cho miền gốc."
+        "Một số công ty đăng ký miền (Namecheap, Cloudflare, v.v.) cũng có thể sử dụng @ cho miền gốc."
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } là phương thức xác thực email được thiết kế để phát hiện giả mạo địa chỉ người gửi trong quá trình gửi email. Bạn nên thiết lập SPF để giảm khả năng email của bạn rơi vào thư mục Thư rác của người nhận."
+        "SPF ${ WIKIPEDIA_LINK_SPF } là phương thức xác thực email được thiết kế để phát hiện giả mạo địa chỉ người gửi trong quá trình gửi email. Bạn nên thiết lập SPF để giảm khả năng email rơi vào thư mục Thư rác của người nhận."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Bắt đầu giám sát các vi phạm dữ liệu liên quan đến tài khoản được tạo bằng địa chỉ email và các biệt danh hide-my-email của bạn."
+        "Bắt đầu giám sát các vi phạm dữ liệu liên quan đến tài khoản được tạo bằng địa chỉ email và các biệt danh hide-my-email."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web là một phần ẩn của internet nơi thông tin cá nhân bị đánh cắp, như danh tính, có thể được mua và bán."
       ],
       "These items remain at risk": [
-        "Các nội dung này có nguy cơ không an toàn"
+        "Các mục này có nguy cơ không an toàn"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
         "Các kho này sẽ không thể truy cập được và nội dung của chúng sẽ không khả dụng cho Tìm kiếm hoặc Tự động điền."
@@ -899,13 +902,13 @@
         "Tài khoản này không an toàn, hãy tới dịch vụ và thay đổi mật khẩu."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Dịch vụ này hỗ trợ mã bí mật 2FA. Hãy khởi tạo nó để tăng cường bảo mật cho tài khoản của bạn."
+        "Dịch vụ này hỗ trợ 2FA. Hãy kích hoạt để tăng cường bảo mật cho tài khoản."
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
         "Để xác minh quyền sở hữu miền, vui lòng thêm bản ghi TXT sau. Một số nhà đăng ký miền (Namecheap, Cloudflare, v.v.) có thể sử dụng @ cho miền gốc."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Mở khóa các tính năng an toàn nâng cao và nhật kí để bảo vệ sự hiện diện trực tuyến của bạn."
+        "Mở khóa các tính năng an toàn nâng cao và nhật kí để bảo vệ sự hiện diện trực tuyến."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Với ${ PASS_SHORT_APP_NAME } Monitor, đi trước các mối đe dọa bằng cách nhận cảnh báo tức thì nếu thông tin đăng nhập bị xâm phạm. Mở khóa các tính năng bảo mật nâng cao và nhật ký chi tiết để bảo vệ sự hiện diện trực tuyến."
@@ -924,7 +927,7 @@
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "Tệp ${ provider } không thể phân tích cú pháp được. ${ errorDetail }"
+        "Không thể phân tích cú pháp tệp ${ provider }. ${ errorDetail }"
       ],
       "A domain ownership must be verified first.": [
         "Quyền sở hữu miền phải được xác minh trước."
@@ -945,16 +948,16 @@
         "Lỗi xác thực"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Xác thực thất bại. Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để tiếp tục quá trình xuất"
+        "Không xác thực được. Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để tiếp tục quá trình xuất"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Xác thực thất bại. Vui lòng xác nhận mật khẩu sao lưu để tiến hành xuất dữ liệu"
+        "Không xác thực được. Vui lòng xác nhận mật khẩu sao lưu để tiến hành xuất dữ liệu"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Xác thực thất bại. Vui lòng xác nhận mật khẩu bổ sung để tiến hành xuất dữ liệu"
+        "Không xác thực được. Vui lòng xác nhận mật khẩu bổ sung để tiến hành xuất dữ liệu"
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
-        "Xác thực thất bại. Xác nhận mật khẩu thứ hai để tiếp tục xuất dữ liệu"
+        "Không xác thực được. Xác nhận mật khẩu thứ hai để tiếp tục xuất dữ liệu"
       ],
       "Cannot send invitation at the moment": [
         "Hiện tại không thể gửi lời mời"
@@ -969,22 +972,22 @@
         "Không thể rời khỏi mục."
       ],
       "Could not leave vault.": [
-        "Không thể rời khỏi kho lưu trữ."
+        "Không thể rời khỏi kho."
       ],
       "Could not load recommendations at the moment.": [
         "Không thể tải các đề xuất vào lúc này."
       ],
       "Could not open created vault": [
-        "Không thể mở kho lưu trữ đã tạo"
+        "Không thể mở kho đã tạo"
       ],
       "Could not open invited vault": [
-        "Không thể mở kho lưu trữ đã được mời"
+        "Không thể mở kho được mời"
       ],
       "Could not open updated vault": [
-        "Không thể mở kho lưu trữ đã cập nhật"
+        "Không thể mở kho đã cập nhật"
       ],
       "Could not resolve share members": [
-        "Không thể lấy thông tin chia sẻ của thành viên"
+        "Không thể xác định thành viên được chia sẻ"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "Không thể lấy lời mời người dùng cho kho \"${ vaultName }\""
@@ -996,16 +999,16 @@
         "Tệp CSV bị thiếu tiêu đề mong đợi: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Giải mã tệp được xuất từ ${ PASS_APP_NAME } của bạn thất bại. ${ errorDetail }"
+        "Không giải mã được tệp được xuất từ ${ PASS_APP_NAME }. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Xóa nội dung thất bại"
+        "Không xóa được mục"
       ],
       "Deleting item history failed": [
         "Không xóa được lịch sử mục"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Xóa kho lưu trữ ${ payload.content.name } thất bại"
+        "Không xóa được kho \"${ payload.content.name }\""
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Phát hiện ${ errors.length } hàng CSV bị lỗi"
@@ -1017,91 +1020,91 @@
         "Miền không khả dụng, vui lòng thử lại sau"
       ],
       "Editing item failed": [
-        "Chỉnh sửa nội dung thất bại"
+        "Không chỉnh sửa được mục"
       ],
       "Empty CSV file": [
         "File CSV trống"
       ],
       "Emptying trash failed": [
-        "Làm sạch thùng rác thất bại"
+        "Không dọn sạch được thùng rác"
       ],
       "Encrypted JSON not supported": [
-        "Tệp JSON được mã hóa không được hỗ trợ"
+        "Tệp JSON đã mã hóa không được hỗ trợ"
       ],
       "Error reporting problem": [
         "Lỗi khi báo cáo vấn đề"
       ],
       "Failed removing the invite.": [
-        "Lỗi khi gỡ lời mời."
+        "Không xóa được lời mời."
       ],
       "Failed resending invite.": [
-        "Lỗi khi gửi lại lời mời."
+        "Không gửi lại lời mời được."
       ],
       "Failed to add email address": [
-        "Không thể thêm địa chỉ email"
+        "Không thêm được địa chỉ email"
       ],
       "Failed to block the contact": [
-        "Không thể chặn liên hệ"
+        "Không chặn được liên hệ"
       ],
       "Failed to cancel mailbox change": [
-        "Hủy thay đổi hộp thư thất bại"
+        "Không hủy được thay đổi hộp thư"
       ],
       "Failed to change mailbox": [
-        "Thay đổi hộp thư thất bại"
+        "Không thay đổi được hộp thư"
       ],
       "Failed to create domain": [
-        "Không thể tạo miền"
+        "Không tạo được miền"
       ],
       "Failed to create new mailbox": [
-        "Không thể tạo hộp thư mới"
+        "Không tạo được hộp thư mới"
       ],
       "Failed to create the contact": [
-        "Không thể tạo liên hệ"
+        "Không tạo được liên hệ"
       ],
       "Failed to delete domain": [
-        "Không thể xóa miền"
+        "Không xóa được miền"
       ],
       "Failed to delete email address from monitoring": [
-        "Không thể xóa địa chỉ email khỏi giám sát"
+        "Không xóa được địa chỉ email khỏi giám sát"
       ],
       "Failed to delete selected items": [
-        "Lỗi khi xóa các nội dung được chọn"
+        "Không xóa được các mục đã chọn"
       ],
       "Failed to delete the contact": [
-        "Không thể xóa liên hệ"
+        "Không xóa được liên hệ"
       ],
       "Failed to delete the mailbox": [
-        "Không thể xóa hộp thư"
+        "Không xóa được hộp thư"
       ],
       "Failed to edit user's access.": [
         "Lỗi khi chỉnh sửa quyền truy cập của người dùng."
       ],
       "Failed to load breaches for this address": [
-        "Không thể tải các vi phạm cho địa chỉ này"
+        "Không tải được các vi phạm cho địa chỉ này"
       ],
       "Failed to load breaches for this email alias": [
-        "Không thể tải các vi phạm cho biệt danh email này"
+        "Không tải được các vi phạm cho biệt danh email này"
       ],
       "Failed to load domain settings.": [
-        "Không thể tải cài đặt miền."
+        "Không tải được cài đặt miền."
       ],
       "Failed to load item history": [
-        "Tải lịch sử nội dung thất bại"
+        "Không tải được lịch sử mục"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Thất bại khi chuyển toàn bộ nội dung từ \"${ payload.content.name }\""
+        "Không di chuyển được mọi mục từ \"${ payload.content.name }\""
       ],
       "Failed to move items": [
-        "Lỗi khi di chuyển nội dung"
+        "Không thể di chuyển mục"
       ],
       "Failed to move items to trash": [
-        "Lỗi khi chuyển nội dung tới thùng rác"
+        "Không di chuyển được các mục vào thùng rác"
       ],
       "Failed to pin item": [
-        "Không thể ghim mục"
+        "Không ghim được mục"
       ],
       "Failed to remove user's access.": [
-        "Lỗi khi gỡ quyền truy cập của người dùng."
+        "Không xóa được quyền truy cập của người dùng."
       ],
       "Failed to resend verification code": [
         "Không thể gửi lại mã xác minh"
@@ -1113,7 +1116,7 @@
         "Không thể giải quyết các vi phạm cho địa chỉ này"
       ],
       "Failed to restore items from trash": [
-        "Lỗi khi khôi phục nội dung từ thùng rác"
+        "Không khôi phục được mục từ thùng rác"
       ],
       "Failed to set default mailbox": [
         "Không thể đặt hộp thư mặc định"
@@ -1122,7 +1125,7 @@
         "Đồng bộ biệt danh không thành công"
       ],
       "Failed to transfer this vault's ownership.": [
-        "Không thể chuyển chủ sở hửu của kho lưu trữ."
+        "Không chuyển được quyền sở hữu kho."
       ],
       "Failed to unpin item": [
         "Không thể bỏ ghim mục"
@@ -1137,7 +1140,7 @@
         "Không thể cập nhật hộp thư miền."
       ],
       "Failed to update domain name.": [
-        "Không thể cập nhật tên miền."
+        "Không thể cập nhật miền."
       ],
       "Failed to update monitoring settings": [
         "Không thể cập nhật cài đặt giám sát"
@@ -1170,7 +1173,7 @@
         "Không nhập được dữ liệu cho kho \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
-        "Nhập nội dung thất bại"
+        "Không nhập được mục"
       ],
       "Inactive secure links could not be removed.": [
         "Không thể xóa các liên kết bảo mật không hoạt động."
@@ -1185,22 +1188,22 @@
         "Lời mời không thể từ chối"
       ],
       "Item content cannot exceed 40KB": [
-        "Nội dung không được vượt quá 40KB"
+        "Nội dung mục không được vượt quá 40KB"
       ],
       "Item creation failed": [
-        "Tạo nội dung thất bại"
+        "Không tạo được mục"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass sẽ xuất ra một tập tin CSV bị hỏng nếu bất kỳ trường nội dung nào bạn chứa các dấu phẩy, dấu ngoặc kép hoặc nhiều dòng không mong đợi."
+        "LastPass sẽ xuất ra một tập tin CSV bị hỏng nếu bất kỳ trường mục nào chứa các dấu phẩy, dấu ngoặc kép hoặc nhiều dòng không mong đợi."
       ],
       "Moving item failed": [
-        "Dời nội dung thất bại"
+        "Không di chuyển được mục"
       ],
       "Network error": [
         "Lỗi mạng"
       ],
       "Passphrase is incorrect": [
-        "Đăng nhập không chính xác"
+        "Cụm mật khẩu không chính xác"
       ],
       "PIN codes do not match": [
         "Mã PIN không khớp"
@@ -1212,10 +1215,10 @@
         "Yêu cầu tùy chọn biệt danh thất bại"
       ],
       "Restoring item failed": [
-        "Khôi phục nội dung thất bại"
+        "Không khôi phục được mục"
       ],
       "Restoring trashed items failed": [
-        "Khôi phục nội dung đã đưa vào thùng rác thật bại"
+        "Không khôi phục được mục trong thùng rác"
       ],
       "Secure link could not be created.": [
         "Không thể tạo liên kết bảo mật."
@@ -1227,13 +1230,13 @@
         "Không thể kết nối máy chủ. Vui lòng thử mở khóa ${ PASS_SHORT_APP_NAME } sau vài phút nữa."
       ],
       "Settings update failed": [
-        "Cập nhật cài đặt thất bại"
+        "Không cập nhật được cài đặt"
       ],
       "Signature verification failed": [
         "Không xác thực được chữ ký"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Một số kho lưu trữ không thể truy cập được do việc đặt lại mật khẩu. Để khôi phục quyền truy cập, vui lòng kích hoạt lại các khóa tài khoản của bạn. ${ reactivateLink }"
+        "Một số kho không thể truy cập được do việc đặt lại mật khẩu. Để khôi phục quyền truy cập, vui lòng kích hoạt lại các khóa tài khoản. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Đã xảy ra sự cố"
@@ -1251,13 +1254,13 @@
         "Quá nhiều lần thử thất bại. Vui lòng đăng nhập lại."
       ],
       "Trashing item failed": [
-        "Đưa nội dung vào thùng rác thất bại"
+        "Không đưa được mục vào thùng rác"
       ],
       "Try reaching out to the link owner.": [
         "Hãy thử liên hệ với chủ sở hữu liên kết."
       ],
       "Unable to generate an OTP code for this item": [
-        "Không thể tạo mã OTP cho nội dung này"
+        "Không thể tạo mã OTP cho mục này"
       ],
       "Unable to sync": [
         "Không thể đồng bộ"
@@ -1272,7 +1275,7 @@
         "Mục không xác định"
       ],
       "Unlock failure": [
-        "Mở khóa thất bại"
+        "Không mở khóa được"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Định dạng tệp ${ PASS_APP_NAME } không được hỗ trợ"
@@ -1284,16 +1287,16 @@
         "Định dạng tệp Bitwarden không được hỗ trợ"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Cập nhật kho lưu trữ ${ payload.content.name } thất bại"
+        "Không cập nhật được kho ${ payload.content.name }"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Tạo kho lưu trữ ${ payload.content.name } thất bại"
+        "Không tạo được kho \"${ payload.content.name }\""
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Kho lưu trữ \"${ vaultData.name }\" không thể tạo được"
+        "Không tạo được kho \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
-        "Tên kho lưu trữ không khớp"
+        "Tên kho không khớp"
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Xảy ra sự cố khi khởi động ${ PASS_SHORT_APP_NAME }. Nếu vấn đề không được khắc phục, vui lòng liên hệ chăm sóc khách hàng để được trợ giúp."
@@ -1302,7 +1305,7 @@
         "Sai mật khẩu sao lưu"
       ],
       "Wrong extra password": [
-        "Mật khẩu phụ không đúng"
+        "Mật khẩu bổ sung không đúng"
       ],
       "Wrong password": [
         "Sai mật khẩu"
@@ -1314,7 +1317,7 @@
         "Sai mật khẩu cấp hai"
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Bạn đang ngoại tuyến. Vui lòng kết nối lại mạng để mở khóa ${ PASS_SHORT_APP_NAME }."
+        "Đang ngoại tuyến. Vui lòng kết nối lại mạng để mở khóa ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS chưa được thiết lập chính xác. Bản ghi MX nhận được là:"
@@ -1323,7 +1326,7 @@
         "DNS chưa được thiết lập chính xác. Bản ghi TXT nhận được là:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "Mã PIN của bạn đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
+        "Mã PIN đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
       ]
     },
     "Error message": {
@@ -1339,13 +1342,13 @@
     },
     "Feature": {
       "Integrated 2FA authenticator": [
-        "Trình xác thực 2 bước được tích hợp"
+        "Trình xác thực 2FA tích hợp"
       ],
       "Unlimited hide-my-email aliases": [
         "Không giới hạn biệt danh hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Chia sẻ Kho lưu trữ (tối đa ${ MAX_VAULT_MEMBERS } người)"
+        "Chia sẻ kho (tối đa ${ MAX_VAULT_MEMBERS } người)"
       ]
     },
     "file size format": {
@@ -1420,13 +1423,13 @@
     },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
-        "Nội dung \"${ payload.itemName }\" đã bỏ qua"
+        "Đã bỏ qua mục \"${ payload.itemName }\""
       ],
       "\"${ payload.itemName }\" update was dismissed": [
-        "Cập nhật nội dung \"${ payload.itemName }\" đã bỏ qua"
+        "Đã bỏ qua cập nhật mục \"${ payload.itemName }\" "
       ],
       "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } đã chặn"
+        "Đã chặn ${ blockedEmailsCount } "
       ],
       "${ count } time": [
         "${ count } lần"
@@ -1438,7 +1441,7 @@
         "${ count }/${ maxReads } lượt xem"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } đã chuyển tiếp"
+        "Đã chuyển tiếp ${ forwardedEmailsCount }"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } muốn chia sẻ một mục với bạn."
@@ -1447,19 +1450,19 @@
         "${ memberCount } thành viên"
       ],
       "${ n } item": [
-        "${ n } nội dung"
+        "${ n } mục"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } sẽ luôn truy câp được"
+        "${ PASS_APP_NAME } sẽ luôn truy cập được"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của nội dung qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của mục qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } sẽ theo chủ đề hệ thống."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } sẽ tạo địa chỉ chuyển tiếp (còn gọi là biệt danh ngược) mà bạn có thể sao chép vào bảng tạm."
+        "${ PASS_APP_NAME } sẽ tạo địa chỉ chuyển tiếp (còn gọi là biệt danh ngược) có thể sao chép vào bảng tạm."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } sẽ chỉ nhập các đăng nhập, ghi chú, thẻ tín dụng và danh tính."
@@ -1486,7 +1489,7 @@
         "(Trống)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu của bạn với ${ BRAND_NAME }"
+        "7 ngày miễn phí để dùng thử các tính năng cao cấp. Chỉ trong tuần đầu với ${ BRAND_NAME }"
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Một liên hệ được tạo cho mỗi địa chỉ email gửi hoặc nhận email từ ${ aliasEmail }."
@@ -1498,7 +1501,7 @@
         "Xác thực truy cập thành công"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu ${ BRAND_NAME } của bạn."
+        "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu ${ BRAND_NAME }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
         "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu sao lưu."
@@ -1507,10 +1510,10 @@
         "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu bổ sung."
       ],
       "Access to ${ PASS_APP_NAME } will always require your second password.": [
-        "Việc truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu thứ hai của bạn."
+        "Việc truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu thứ hai."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "Truy cập vào ${ PASS_APP_NAME } sẽ cần vân tay hoặc mã PIN thiết bị của bạn."
+        "Truy cập vào ${ PASS_APP_NAME } sẽ cần vân tay hoặc mã PIN thiết bị."
       ],
       "Add your custom email address to monitor:": [
         "Thêm địa chỉ email tùy chỉnh để giám sát:"
@@ -1522,19 +1525,19 @@
         "Sau khi xác nhận, cần chấp nhận lời nhắc cấp quyền cho ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
+        "Sau khi nhập thành công dữ liệu, có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Đã vô hiệu hóa biệt danh thành công. Bạn sẽ không còn nhận được email gửi đến ${ item.aliasEmail } nữa"
+        "Đã vô hiệu hóa biệt danh thành công. Sẽ không còn nhận được email gửi đến ${ item.aliasEmail } nữa"
       ],
       "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Đã kích hoạt biệt danh thành công. Bây giờ bạn có thể nhận email gửi đến ${ item.aliasEmail }"
+        "Đã kích hoạt biệt danh thành công. Bây giờ có thể nhận email gửi đến ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Đồng bộ biệt danh giữa tài khoản ${ BRAND_NAME } và SimpleLogin đang hoạt động."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Biệt danh trong thùng rác vẫn sẽ tiếp tục nhận email. Nếu muốn ngừng nhận email tới địa chỉ này, hãy vô hiệu hóa bí danh."
+        "Biệt danh trong thùng rác vẫn sẽ tiếp tục nhận email. Nếu muốn ngừng nhận email tới địa chỉ này, hãy vô hiệu hóa biệt danh."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "(${ aliasCount }) biệt danh không đồng bộ"
@@ -1549,31 +1552,31 @@
         "Tất cả vi phạm cho địa chỉ này đã được giải quyết"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Đã xử lí tất cả các vụ rò rỉ hiện tại. Bạn sẽ được thông báo khi có các vụ rò rỉ khác trong tương lai."
+        "Tất cả vi phạm hiện tại sẽ được đánh dấu là đã giải quyết. Sẽ được thông báo khi có các vụ rò rỉ khác trong tương lai."
       ],
       "All inactive secure links were removed": [
         "Tất cả liên kết bảo mật không hoạt động đã bị xóa"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Tất cả nội dung từ \"${ payload.content.name }\" đã được chuyển"
+        "Đã di chuyển mọi mục từ \"${ payload.content.name }\""
       ],
       "All items successfully moved": [
-        "Tất cả nội dung đã được chuyển thành công"
+        "Đã di chuyển thành công mọi mục"
       ],
       "All trashed items permanently deleted": [
-        "Tất cả nội dung trong thùng rác đã được xóa"
+        "Đã xóa vĩnh viễn mọi mục trong thùng rác"
       ],
       "All trashed items successfully restored": [
-        "Tất cả nội dung trong thùng rác đã được khôi phục"
+        "Đã khôi phục thành công mọi mục trong thùng rác"
       ],
       "An item previously shared with you was removed": [
-        "Một nội dung đã được chia sẽ cho bạn trước đây đã bị gỡ bỏ"
+        "Một mục đã được chia sẻ với bạn trước đây đã bị xóa"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Bạn có chắc chắn muốn xóa ${ emailJSX } khỏi các hộp thư của mình không?"
+        "Chắc chắn muốn xóa ${ emailJSX } khỏi các hộp thư của mình không?"
       ],
       "Are you sure you want to remove the link?": [
-        "Bạn có chắc muốn loại bỏ liên kết này không?"
+        "Bạn có chắc muốn xóa liên kết này không?"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
         "Các biệt danh tự tạo sẽ tự động thuộc sở hữu của (các) hộp thư sau:"
@@ -1585,7 +1588,7 @@
         "tự động"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Trước khi trích xuất dữ liệu của bạn với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> tắt tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
+        "Trước khi trích xuất dữ liệu với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> vô hiệu hóa tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Khóa sinh trắc học đã đăng ký thành công. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
@@ -1594,19 +1597,19 @@
         "Sinh trắc học đã bị vô hiệu hóa và cần được mở lại."
       ],
       "Breaches detected": [
-        "Phát hiện rò rỉ dữ liệu"
+        "Phát hiện vi phạm"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Đưa các mật khẩu hiện có vào ${ BRAND_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Sử dụng miền riêng của bạn và bạn không cần phải mua thêm giải pháp lưu trữ email nào nữa."
+        "Sử dụng miền riêng và bạn không cần phải mua thêm giải pháp lưu trữ email nào nữa."
       ],
       "Built in 2FA authenticator": [
-        "Trình xác thực 2 bước tích hợp"
+        "Trình xác thực 2FA tích hợp"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Bằng cách thêm miền, có thể tạo các biệt danh như hi@my-domain.com."
+        "Nếu thêm miền, có thể tạo các biệt danh như xin-chào@miền-của-tôi.com."
       ],
       "Can be viewed": [
         "Có thể được xem"
@@ -1624,25 +1627,25 @@
         "Có thể cấp và thu hồi quyền truy cập vào mục này."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Cho phép cấp, thu hồi quyền truy cập và xóa kho lưu trữ này."
+        "Cho phép cấp, thu hồi quyền truy cập và xóa kho này."
       ],
       "Can grant and revoke access to this vault.": [
-        "Cho phép cấp và thu hồi quyền truy cập vào kho lưu trữ này."
+        "Cho phép cấp và thu hồi quyền truy cập vào kho này."
       ],
       "Can view items in this vault.": [
-        "Cho phép xem nội dung trong kho lưu trữ này."
+        "Cho phép xem mục trong kho này."
       ],
       "Can view this item.": [
         "Có thể xem mục này."
       ],
       "Change your password": [
-        "Đổi mật khẩu"
+        "Thay đổi mật khẩu"
       ],
       "Confirm your extra password to proceed with its removal.": [
-        "Xác nhận mật khẩu cấp hai của bạn để tiếp tục với việc gỡ bỏ nó."
+        "Xác nhận mật khẩu cấp hai để tiếp tục với việc gỡ bỏ nó."
       ],
       "Congratulations, your access has been confirmed": [
-        "Chúc mừng, truy cập của bạn đã được xác nhận"
+        "Chúc mừng, truy cập đã được xác nhận"
       ],
       "Copied to clipboard": [
         "Đã sao chép vào bảng tạm"
@@ -1660,7 +1663,7 @@
         "Đã tạo ${ time }."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV cung cấp định dạng thuận tiện để xem dữ liệu. Tuy nhiên do tính đơn giản, một số dữ liệu sẽ không được bao gồm (trường tùy chỉnh, Mã khóa...). Để xuất đầy đủ, nên sử dụng định dạng khác."
+        "CSV cung cấp định dạng thuận tiện để xem dữ liệu. Tuy nhiên do tính đơn giản, một số dữ liệu sẽ không được bao gồm (trường tùy chỉnh, mã khóa...). Để xuất đầy đủ, nên sử dụng định dạng khác."
       ],
       "Current version": [
         "Phiên bản hiện tại"
@@ -1672,7 +1675,7 @@
         "Tên hiển thị mặc định cho các biệt danh được tạo với ${ domainDisplay } trừ khi bị ghi đè bởi tên hiển thị của biệt danh."
       ],
       "Deleted items will be moved here first": [
-        "Các nội dung bị xóa sẽ chuyển đến đây trước"
+        "Các mục bị xóa sẽ chuyển đến đây trước"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "Đang xóa \"${ payload.content.name }\""
@@ -1681,13 +1684,13 @@
         "Không nhận được mã?"
       ],
       "Disabling auto-lock": [
-        "Tắt tự động khóa"
+        "Đang vô hiệu hóa tự động khóa"
       ],
       "Disabling auto-lock failed": [
-        "Tắt tự động khóa thất bại"
+        "Không vô hiệu hóa được tự động khóa"
       ],
       "Disabling offline mode...": [
-        "Đang tắt chế độ ngoại tuyến..."
+        "Đang vô hiệu hóa chế độ ngoại tuyến..."
       ],
       "DNS changes could take up to 24 hours to update.": [
         "Thay đổi DNS có thể mất đến 24 giờ để cập nhật."
@@ -1705,7 +1708,7 @@
         "Biên tập viên"
       ],
       "email": [
-        "e-mail"
+        "email"
       ],
       "Email address successfully deleted from monitoring": [
         "Đã xóa địa chỉ email khỏi giám sát thành công"
@@ -1723,7 +1726,7 @@
         "Gửi email đến địa chỉ này và nó sẽ xuất hiện như được gửi từ ${ exampleEmail } chẳng hạn."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Email gửi đến biệt danh của bạn được chuyển tiếp đến hộp thư của bạn. Một biệt danh có thể có nhiều hơn một hộp thư: hữu ích để chia sẻ biệt danh giữa bạn và bạn bè."
+        "Email gửi đến biệt danh được chuyển tiếp đến hộp thư. Một biệt danh có thể có nhiều hơn một hộp thư: hữu ích để chia sẻ biệt danh giữa bạn và bạn bè."
       ],
       "Emptying trash...": [
         "Đang dọn sạch thùng rác..."
@@ -1738,22 +1741,22 @@
         "Bật chế độ ngoại tuyến để truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ],
       "Enabling biometrics auto-lock": [
-        "Đang bật tự động khóa bằng sinh trắc học"
+        "Đang kích hoạt tự động khóa bằng sinh trắc học"
       ],
       "Enabling biometrics lock failed": [
         "Bật khóa sinh trắc học thất bại"
       ],
       "Enabling offline mode...": [
-        "Đang bật chế độ ngoại tuyến..."
+        "Đang kích hoạt chế độ ngoại tuyến..."
       ],
       "Enabling password auto-lock": [
-        "Bật tự động khóa bằng mật khẩu"
+        "Kích hoạt tự động khóa bằng mật khẩu"
       ],
       "Enabling password lock failed": [
         "Không kích hoạt được khóa bằng mật khẩu"
       ],
       "Enabling PIN auto-lock": [
-        "Bật tự động khóa bằng mã PIN"
+        "Đang kích hoạt tự động khóa bằng mã PIN"
       ],
       "Enter the address you want to email.": [
         "Nhập địa chỉ bạn muốn gửi email."
@@ -1762,10 +1765,10 @@
         "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your extra password": [
-        "Nhập mật khẩu phụ"
+        "Nhập mật khẩu bổ sung"
       ],
       "Enter your PIN code": [
-        "Nhập mã PIN của bạn"
+        "Nhập mã PIN"
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Mỗi khi biệt danh nhận được email từ ai đó, một liên hệ mới sẽ được tạo tự động."
@@ -1798,13 +1801,13 @@
         "Làm theo các bước sau để nhập dữ liệu bằng tệp CSV chung:"
       ],
       "For security reasons, this action requires identity verification.": [
-        "Vì lý do bảo mật, hành động này yêu cầu xác minh danh tính."
+        "Vì lý do bảo mật, thao tác này yêu cầu xác minh danh tính."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Vì lý do bảo mật, bạn cần xác nhận truy cập vào các kho được chia sẻ này"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Vì lý do bảo mật, truy cập của bạn cần được xác nhận"
+        "Vì lý do bảo mật, truy cập cần được xác nhận"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Đã sao chép địa chỉ chuyển tiếp vào bảng tạm. Gửi email đến địa chỉ này và ${ Email } sẽ nhận được."
@@ -1840,7 +1843,7 @@
         "Đã nhập vào ${ date }"
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
-        "Trong ${ PASS_SHORT_APP_NAME }, ghi chú mục được mã hóa bằng khóa mã hóa của mục và chỉ người dùng có quyền truy cập mục mới có thể xem ghi chú. Ngay cả ${ BRAND_NAME } hoặc SimpleLogin cũng không thể xem nó."
+        "Trong ${ PASS_SHORT_APP_NAME }, ghi chú mục đã mã hóa bằng khóa mã hóa của mục và chỉ người dùng có quyền truy cập mục mới có thể xem ghi chú. Ngay cả ${ BRAND_NAME } hoặc SimpleLogin cũng không thể xem nó."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Cài đặt ${ PASS_APP_NAME } cho ${ browser.title } để tự động điền thông tin đăng nhập nhanh chóng."
@@ -1858,19 +1861,19 @@
         "Mời những người cụ thể và thiết lập quyền phù hợp."
       ],
       "Invite successfully removed": [
-        "Đã gỡ lời mời thành công"
+        "Đã xóa lời mời thành công"
       ],
       "Invite successfully resent": [
         "Đã gửi lại lời mời thành công"
       ],
       "invites you to access items in": [
-        "mời bạn truy cập nội dung trong"
+        "mời bạn truy cập mục trong"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
+        "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi phần mở rộng này trước."
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
+        "Đã tạo mục \"${ payload.item.data.metadata.name }\""
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã được cập nhật"
@@ -1879,37 +1882,37 @@
         "Lịch sử mục đã bị xóa vĩnh viễn"
       ],
       "Item moved to trash": [
-        "Đã chuyển nội dung vào thùng rác"
+        "Đã chuyển mục vào thùng rác"
       ],
       "Item permanently deleted": [
-        "Đã xóa vĩnh viễn nội dung"
+        "Đã xóa vĩnh viễn mục"
       ],
       "Item restored": [
-        "Đã khôi phục nội dung"
+        "Đã khôi phục mục"
       ],
       "Item sharing: ${ itemAccessCount } user": [
         "Chia sẻ mục: ${ itemAccessCount } người dùng"
       ],
       "Item successfully excluded from monitoring": [
-        "Nội dung được loại bỏ khỏi giám sát thành công"
+        "Mục được xóa khỏi giám sát thành công"
       ],
       "Item successfully included in monitoring": [
-        "Nội dung được thêm vào giám sát thành công"
+        "Mục được thêm vào giám sát thành công"
       ],
       "Item successfully moved": [
-        "Đã di chuyển nội dung thành công"
+        "Đã di chuyển mục thành công"
       ],
       "Item successfully pinned": [
-        "Đã ghim nội dung thành công"
+        "Đã ghim mục thành công"
       ],
       "Item successfully unpinned": [
-        "Đã bỏ ghim nội dung thành công"
+        "Đã bỏ ghim mục thành công"
       ],
       "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
         "Phím tắt chỉ có thể được sử dụng khi ở trong ứng dụng máy tính ${ PASS_APP_NAME } và đang xem một mục đăng nhập"
       ],
       "Latest breach on ${ formattedDate }": [
-        "Rò rỉ gần nhất ${ formattedDate }"
+        "Vi phạm gần nhất ${ formattedDate }"
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Tìm hiểu những việc cần làm ${ dataLeakedLink }"
@@ -1918,10 +1921,10 @@
         "Đang rời khỏi mục..."
       ],
       "Leaving vault...": [
-        "Đang rời kho lưu trữ..."
+        "Đang rời kho..."
       ],
       "Let's get you started by creating your first item": [
-        "Bắt đầu bằng việc tạo nội dung đầu tiên của bạn"
+        "Bắt đầu bằng việc tạo mục đầu tiên"
       ],
       "Loading": [
         "Đang tải"
@@ -1936,7 +1939,7 @@
         "Ưu tiên thấp"
       ],
       "Manager": [
-        "Quản lý"
+        "Người quản lý"
       ],
       "me": [
         "tôi"
@@ -1951,28 +1954,28 @@
         "Đã cập nhật cài đặt giám sát thành công"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "Không chỉ là trình quản lý mật khẩu, ${ PASS_APP_NAME } còn bảo vệ mật khẩu và địa chỉ email cá nhân thông qua các biệt danh email. Được hỗ trợ bởi cùng công nghệ với ${ MAIL_APP_NAME }, dữ liệu được mã hóa đầu cuối và chỉ người dùng mới có thể truy cập."
+        "Không chỉ là trình quản lý mật khẩu, ${ PASS_APP_NAME } còn bảo vệ mật khẩu và địa chỉ email cá nhân thông qua các biệt danh email. Được hỗ trợ bởi cùng công nghệ với ${ MAIL_APP_NAME }, dữ liệu đã mã hóa đầu cuối và chỉ người dùng mới có thể truy cập."
       ],
       "Move ${ count } item": [
         "Di chuyển ${ count } mục"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
+        "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
         "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
-        "Đang chuyển nội dung"
+        "Đang chuyển mục"
       ],
       "Moving items to another vault will erase their history and all secure links.": [
-        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó và các đường dẫn an toàn."
+        "Di chuyển các mục tới kho khác sẽ xóa lịch sử của nó và các đường dẫn an toàn."
       ],
       "Moving items to another vault will erase their history.": [
-        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
+        "Di chuyển các mục tới kho khác sẽ xóa lịch sử của nó."
       ],
       "Moving items to trash": [
-        "Đang chuyển nội dung tới thùng rác"
+        "Đang di chuyển mục vào thùng rác"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Cần gửi email cho ai đó nhưng không muốn họ thấy địa chỉ email của bạn? Thiết lập biệt danh liên hệ."
@@ -1984,13 +1987,13 @@
         "Đã có phiên bản mới ${ latestVersion }."
       ],
       "No breaches detected": [
-        "Không có vụ rò rỉ dữ liệu nào"
+        "Không có vi phạm dữ liệu nào"
       ],
       "No network connection": [
         "Không có kết nối mạng"
       ],
       "None": [
-        "Không"
+        "Không có"
       ],
       "Not recommended": [
         "Không được khuyến nghị"
@@ -1999,7 +2002,7 @@
         "Chế độ ngoại tuyến"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Chế độ ngoại tuyến không thể được tắt lúc này"
+        "Không thể vô hiệu hóa chế độ ngoại tuyến lúc này"
       ],
       "Offline mode could not be enabled at the moment": [
         "Không thể kích hoạt chế độ ngoại tuyến lúc này"
@@ -2008,19 +2011,19 @@
         "Đã vô hiệu hóa truy cập ngoại tuyến"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
+        "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN. Sẽ bị đăng xuất sau 3 lần thử thất bại."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
-        "Mở cài đặt Safari cho phần mở rộng và xác minh quyền trang web đã được bật cho các miền ${ BRAND_NAME }"
+        "Mở cài đặt Safari cho phần mở rộng và xác minh quyền trang web đã được kích hoạt cho các miền ${ BRAND_NAME }"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Cảnh báo của chúng tôi ưu tiên sự an toàn. Nếu bạn không nhận ra bất kỳ thông tin bị lộ nào, bạn có thể yên tâm bỏ qua báo cáo này."
+        "Cảnh báo của chúng tôi ưu tiên sự an toàn. Nếu không nhận ra bất kỳ thông tin bị lộ nào, có thể yên tâm bỏ qua báo cáo này."
       ],
       "Owner": [
         "Chủ sở hữu"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Đã chuyển chủ sở hữu thành công. Bạn không còn là chủ sở hữu của kho lưu trữ này nữa."
+        "Đã chuyển quyền sở hữu thành công. Bạn không còn là chủ sở hữu của kho này nữa."
       ],
       "Pass Plus trial": [
         "Dùng thử Pass Plus"
@@ -2029,7 +2032,7 @@
         "mật khẩu"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+        "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng để mở khóa ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
@@ -2038,10 +2041,10 @@
         "Đã ngừng"
       ],
       "Permanently deleting selected items": [
-        "Đang xóa vĩnh viễn những nội dung được chọn"
+        "Đang xóa vĩnh viễn những mục được chọn"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+        "Đã đăng ký thành công mã PIN. Sử dụng để mở khóa ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
         "Đang ghim mục..."
@@ -2065,7 +2068,7 @@
         "Vui lòng xác nhận mật khẩu sao lưu để tự động khóa bằng mật khẩu."
       ],
       "Please confirm your backup password in order to enable offline mode": [
-        "Vui lòng xác nhận mật khẩu sao lưu để bật chế độ ngoại tuyến"
+        "Vui lòng xác nhận mật khẩu sao lưu để kích hoạt chế độ ngoại tuyến"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu sao lưu để xuất dữ liệu ${ PASS_APP_NAME }"
@@ -2083,10 +2086,10 @@
         "Vui lòng xác nhận mật khẩu bổ sung để tự động khóa bằng sinh trắc học."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng mật khẩu cấp 2."
+        "Vui lòng xác nhận mật khẩu để tự động khóa bằng mật khẩu bổ sung."
       ],
       "Please confirm your extra password in order to enable offline mode": [
-        "Vui lòng xác nhận mật khẩu bổ sung để bật chế độ ngoại tuyến"
+        "Vui lòng xác nhận mật khẩu bổ sung để kích hoạt chế độ ngoại tuyến"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu bổ sung để xuất dữ liệu ${ PASS_APP_NAME }"
@@ -2095,28 +2098,28 @@
         "Vui lòng xác nhận mật khẩu bổ sung để hủy đăng ký khóa hiện tại."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
-        "Vui lòng xác nhận mật khẩu cấp 2 của bạn để cập nhật thời gian tự động khóa."
+        "Vui lòng xác nhận mật khẩu bổ sung để cập nhật thời gian tự động khóa."
       ],
       "Please confirm your password": [
-        "Xin vui lòng xác nhận mật khẩu của bạn"
+        "Xin vui lòng xác nhận mật khẩu"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng sinh trắc học."
+        "Vui lòng xác nhận mật khẩu để tự động khóa bằng sinh trắc học."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng mật khẩu."
+        "Vui lòng xác nhận mật khẩu để tự động khóa bằng mật khẩu."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Vui lòng xác nhận mật khẩu của bạn để hủy đăng ký phương thức khóa hiện tại."
+        "Vui lòng xác nhận mật khẩu để hủy đăng ký phương thức khóa hiện tại."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
-        "Vui lòng xác nhận mật khẩu của bạn để cập nhật thời gian tự động khóa."
+        "Vui lòng xác nhận mật khẩu để cập nhật thời gian tự động khóa."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại."
+        "Vui lòng xác nhận mã PIN để hủy đăng ký phương thức khóa hiện tại."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
+        "Vui lòng xác nhận mã PIN để chỉnh sửa cài đặt này."
       ],
       "Please confirm your second password": [
         "Vui lòng xác nhận mật khẩu thứ hai"
@@ -2152,28 +2155,28 @@
         "Vui lòng nhập mã PIN hiện tại để tiếp tục"
       ],
       "Please follow the steps below to set up your domain.": [
-        "Vui lòng làm theo các bước bên dưới để thiết lập miền của bạn."
+        "Vui lòng làm theo các bước bên dưới để thiết lập miền."
       ],
       "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Vui lòng giữ ${ PASS_APP_NAME } mở để bảng tạm có thể được xóa tự động."
+        "Vui lòng giữ ${ PASS_APP_NAME } mở để có thể xóa tự động bảng tạm."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Vui lòng giữ cửa sổ này mở trong khi dữ liệu đang được nhập. Quá trình này có thể mất vài phút."
       ],
       "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Vui lòng giữ trình duyệt mở để bảng tạm có thể được xóa tự động."
+        "Vui lòng giữ trình duyệt mở để có thể xóa tự động bảng tạm."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
-        "Vui lòng đảm bảo cửa sổ hoạt động trước đó là nơi muốn tự động nhập và con trỏ đã được đặt vào trường đăng nhập."
+        "Vui lòng đảm bảo cửa sổ đang hoạt động trước đó là nơi muốn tự động nhập và con trỏ đã được đặt vào trường đăng nhập."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "Xin lưu ý rằng sau khi xóa, không thể khôi phục biệt danh. Thay vào đó, bạn có muốn vô hiệu hóa bí danh không?"
+        "Xin lưu ý rằng sau khi xóa, không thể khôi phục biệt danh. Thay vào đó, bạn có muốn vô hiệu hóa biệt danh không?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
         "Xin lưu ý rằng sau khi xóa, không thể khôi phục biệt danh. Biệt danh đã bị vô hiệu hóa và sẽ không chuyển tiếp email đến hộp thư"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
-        "Vui lòng sử dụng tên miền đầy đủ, ví dụ my-domain.com hoặc my-subdomain.my-domain.com nếu bạn đang sử dụng tên miền phụ."
+        "Vui lòng sử dụng miền đầy đủ, ví dụ my-domain.com hoặc my-subdomain.my-domain.com nếu bạn đang sử dụng miền phụ."
       ],
       "Press Enter to copy": [
         "Nhấn Enter để sao chép"
@@ -2200,7 +2203,7 @@
         "Đang đăng ký mật khẩu bổ sung..."
       ],
       "Registering PIN lock failed": [
-        "Đăng ký khóa bằng mã PIN thất bại"
+        "Không đăng ký được khóa bằng mã PIN"
       ],
       "Removing all inactive secure links...": [
         "Đang xóa tất cả liên kết bảo mật không hoạt động..."
@@ -2215,10 +2218,10 @@
         "Việc đặt lại lịch sử sẽ xóa vĩnh viễn tất cả các phiên bản mục trước đây và không thể hoàn tác."
       ],
       "Restoring items from trash": [
-        "Đang khôi phục nội dung từ thùng rác"
+        "Khôi phục mục từ thùng rác"
       ],
       "Restoring trashed items...": [
-        "Đang khôi phục nội dung trong thùng rác..."
+        "Đang khôi phục các mục trong thùng rác..."
       ],
       "Secure links": [
         "Các liên kết bảo mật"
@@ -2227,7 +2230,7 @@
         "Xem thêm thông tin"
       ],
       "Select destination vault": [
-        "Chọn kho lưu trữ đến"
+        "Chọn kho đến"
       ],
       "Select vault to share": [
         "Chọn kho để chia sẻ"
@@ -2236,13 +2239,13 @@
         "Chọn nơi lưu các kho đã nhập."
       ],
       "Selected items permanently deleted": [
-        "Các nội dung được chọn đã được xóa vĩnh viễn"
+        "Các mục được chọn đã được xóa vĩnh viễn"
       ],
       "Selected items successfully moved to trash": [
-        "Các nội dung được chọn đã được chuyển tới thùng rác"
+        "Các mục được chọn đã được chuyển tới thùng rác"
       ],
       "Selected items successfully restored from trash": [
-        "Các nội dung được chọn đã được khôi phục từ thùng rác"
+        "Các mục được chọn đã được khôi phục thành công từ thùng rác"
       ],
       "Servers are unreachable": [
         "Không thể kết nối máy chủ"
@@ -2254,10 +2257,10 @@
         "Phiên hết hạn"
       ],
       "Set by your organization": [
-        "Được thiết lập bới tổ chức của bạn"
+        "Được thiết lập bới tổ chức"
       ],
       "Settings successfully updated": [
-        "Đã cập nhật cài đặt"
+        "Đã cập nhật cài đặt thành công"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
         "Chia sẻ biệt danh với người khác bằng cách thêm hộp thư đến của họ làm hộp thư chuyển tiếp."
@@ -2281,25 +2284,25 @@
         "Chỉ cần sử dụng ${ emailBold } lần tới khi bạn cần biệt danh: nó sẽ được tạo ${ automaticallyBold } ngay lần đầu nhận được email. Để kiểm soát chi tiết hơn, bạn cũng có thể định nghĩa ${ rulesHyperLink }."
       ],
       "Successfully exported all your items": [
-        "Đã xuất thành công tất cả nội dung của bạn"
+        "Đã xuất thành công tất cả mục của bạn"
       ],
       "Successfully left the item": [
         "Đã rời khỏi mục thành công"
       ],
       "Successfully left the vault": [
-        "Rời khỏi kho lưu trữ thành công"
+        "Rời khỏi kho thành công"
       ],
       "Successfully synced all vaults": [
-        "Đã đồng bộ hóa tất cả kho lưu trữ"
+        "Đã đồng bộ thành công mọi kho"
       ],
       "Suggested": [
         "Được đề xuất"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Chuyển sang kho lưu trữ khác hoặc tạo một nội dung trong kho lưu trữ này"
+        "Chuyển sang kho khác hoặc tạo một mục trong kho này"
       ],
       "Syncing your vaults…": [
-        "Đang đồng bộ hóa kho lưu trữ…"
+        "Đang đồng bộ kho…"
       ],
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Chạm vào biểu tượng ${ gearIcon } để tùy chỉnh biệt danh theo ý muốn."
@@ -2317,13 +2320,13 @@
         "Bản xuất sẽ chỉ chứa các kho do bạn sở hữu."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Tệp xuất của bạn được mã hóa bằng PGP và cần một mật khẩu mạnh."
+        "Tệp xuất đã mã hóa bằng PGP và cần cụm mật khẩu mạnh."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Thông tin bị lộ đã rò rỉ từ một dịch vụ bên thứ ba. Thông tin Tài khoản ${ BRAND_NAME } của bạn vẫn an toàn và được mã hóa. ${ learnMoreLink }"
+        "Thông tin bị lộ đã rò rỉ từ một dịch vụ bên thứ ba. Thông tin Tài khoản ${ BRAND_NAME } vẫn an toàn và đã mã hóa. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
+        "Mật khẩu bổ sung sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Không thể nhập ${ totalIgnored } mục sau đây:"
@@ -2338,7 +2341,7 @@
         "Người dùng hiện chưa chấp nhận lời mời."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "File xuất này sẽ không được mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu của bạn. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
+        "Tệp xuất này sẽ không đã mã hóa và tất cả những người có thể truy cập vào file xuất này sẽ thấy được mật khẩu. Vì lý do an toàn, vui lòng xóa file này khi bạn đã sử dụng xong."
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Tính năng này hiện đang thử nghiệm trên Linux. Vui lòng đảm bảo hệ thống đã được cập nhật."
@@ -2347,7 +2350,7 @@
         "Mục này hiện chưa được chia sẻ với ai. Mời mọi người để chia sẻ mục này với những người khác."
       ],
       "This mailbox will use your previous email.": [
-        "Hộp thư này sẽ sử dụng email trước đó của bạn."
+        "Hộp thư này sẽ sử dụng email trước đó."
       ],
       "This operation is irreversible.": [
         "Thao tác này không thể đảo ngược."
@@ -2356,25 +2359,25 @@
         "Thao tác này không thể đảo ngược. Tất cả biệt danh sử dụng miền ${ domainTextBold } sẽ bị xóa. Lưu ý rằng sau khi xóa, các biệt danh không thể khôi phục."
       ],
       "This option is currently not available on your browser.": [
-        "Tùy chọn này hiện không khả dụng trên trình duyệt của bạn."
+        "Tùy chọn này hiện không khả dụng trên trình duyệt."
       ],
       "This option is currently not available on your device.": [
-        "Tùy chọn này hiện không khả dụng trên thiết bị của bạn."
+        "Tùy chọn này hiện không khả dụng trên thiết bị."
       ],
       "This setting is disabled on the organization level": [
-        "Tùy chọn này bị tắt ở cấp độ tổ chức"
+        "Tùy chọn này bị vô hiệu hóa ở cấp độ tổ chức"
       ],
       "This setting is enforced by your organization": [
         "Cài đặt này do tổ chức quy định"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Kho lưu trữ này hiện chưa được chia sẻ với ai. Để chia sẻ, hãy mời thêm người."
+        "Kho này hiện chưa được chia sẻ với ai. Để chia sẻ, hãy mời thêm người."
       ],
       "This version will be added to the history as the newest version.": [
         "Phiên bản này sẽ thêm vào lịch sử như là phiên bản mới nhất."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
-        "Hành động này sẽ từ chối thiết bị **${ name }** đã cố gắng đăng nhập vào tài khoản ${ BRAND_NAME } vào **${ date }**."
+        "Thao tác này sẽ từ chối thiết bị **${ name }** đã cố gắng đăng nhập vào tài khoản ${ BRAND_NAME } vào **${ date }**."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Để tiếp tục nhận email, hãy chuyển các biệt danh này sang hộp thư khác:"
@@ -2383,7 +2386,7 @@
         "Để ẩn địa chỉ email cá nhân, có thể tạo một liên hệ biệt danh để tạo mặt nạ cho địa chỉ."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
+        "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu và tải lên ${ PASS_APP_NAME }. Khi dữ liệu đã được nhập vào, xóa tệp đã xuất ban đầu."
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Để xem lại dữ liệu đã nhập, hãy nhấp vào biểu tượng ${ PASS_APP_NAME } trên thanh công cụ trình duyệt."
@@ -2392,7 +2395,7 @@
         "Được tin dùng bởi hơn 50.000 người dùng doanh nghiệp và 100 triệu tài khoản trên toàn thế giới."
       ],
       "Unable to copy to clipboard": [
-        "Không thể sao chép vào bộ nhớ tạm"
+        "Không thể sao chép vào bảng tạm"
       ],
       "Unconfigured": [
         "Chưa cấu hình"
@@ -2404,13 +2407,13 @@
         "Mở khóa ${ PASS_SHORT_APP_NAME } với sinh trắc học."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
         "Mở khóa ${ PASS_SHORT_APP_NAME } bằng mật khẩu sao lưu của bạn"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
-        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu cấp 2 của bạn."
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu cấp 2."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Mở khóa ${ PASS_SHORT_APP_NAME } bằng mật khẩu thứ hai"
@@ -2440,19 +2443,19 @@
         "Đã cập nhật quyền truy cập của người dùng"
       ],
       "username": [
-        "tên tài khoản"
+        "tên người dùng"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Kho lưu trữ \"${ payload.content.name }\" đã được xóa"
+        "Đã xóa thành công kho \"${ payload.content.name }\""
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Kho lưu trữ \"${ payload.share.content.name }\" đã được tạo"
+        "Đã tạo thành công kho \"${ payload.share.content.name }\""
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Kho lưu trữ \"${ payload.share.content.name }\" đã được cập nhật"
+        "Đã cập nhật thành công kho \"${ payload.share.content.name }\""
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "Kho lưu trữ \"${ share.content.name }\" đã gỡ bỏ"
+        "Đã xóa kho \"${ share.content.name }\""
       ],
       "Vault organization successfully updated": [
         "Đã cập nhật tổ chức kho thành công"
@@ -2467,7 +2470,7 @@
         "Người xem"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ của bạn. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
+        "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "Chúng tôi nhận thấy ${ aliasCount } biệt danh trong SimpleLogin chưa có trong ${ PASS_APP_NAME }. Bạn muốn nhập không?"
@@ -2482,16 +2485,16 @@
         "Khi bạn tạo hoặc chỉnh sửa tài khoản đăng nhập trên ${ PASS_APP_NAME }, trường \"tên người dùng\" sẽ luôn hiển thị."
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "Khi được bật, vẫn có thể truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
+        "Khi được kích hoạt, vẫn có thể truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Khi gửi email từ biệt danh này, email sẽ hiển thị ${ emailSender } là người gửi."
       ],
       "You are about to create:": [
-        "Bạn đang chuẩn bị tạo:"
+        "Đang chuẩn bị tạo:"
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
-        "Bạn cũng có thể xác định mã PIN để mở khóa ${ PASS_APP_NAME }"
+        "Cũng có thể xác định mã PIN để mở khóa ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Có thể sử dụng mật khẩu ${ BRAND_NAME } để truy cập ${ PASS_SHORT_APP_NAME } ngoại tuyến"
@@ -2500,28 +2503,28 @@
         "Không thể đổi hộp thư cho biệt danh này."
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Có ${ aliasCount } biệt danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Có muốn đồng bộ hóa không?"
+        "Có ${ aliasCount } biệt danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Có muốn đồng bộ không?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Còn ${ daysRemaining } ngày để thử tính năng này và những tính năng cao cấp khác."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
+        "Đã vượt quá số lượng kho trong gói đăng ký. Các mục chỉ có thể được di chuyển đến hai kho đầu tiên. Để di chuyển mục giữa tất cả các kho, vui lòng nâng cấp gói đăng ký."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung mới chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để tạo nội dung mới trong tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
+        "Đã vượt quá số lượng kho trong gói đăng ký. Các mục mới chỉ có thể được di chuyển đến hai kho đầu tiên. Để tạo mục mới trong tất cả các kho, vui lòng nâng cấp gói đăng ký."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Đã đạt giới hạn số lượng biệt danh có thể tạo. Nâng cấp gói đăng ký để tạo biệt danh không giới hạn số lượng."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Bạn đã đạt giới hạn thẻ bạn có thể tạo. Tạo không giới hạn thẻ khi bạn nâng cấp gói đăng ký của mình."
+        "Đã đạt giới hạn thẻ có thể tạo. Nâng cấp gói đăng ký để tạo thẻ không giới hạn."
       ],
       "You have reached the limit of vaults you can create.": [
-        "Bạn đã đạt đến giới hạn số lượng kho lưu trữ có thể tạo."
+        "Đã đạt đến giới hạn số lượng kho có thể tạo."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Bạn đã đạt đến độ dài tối đa cho phép là ${ maxLength } ký tự."
+        "Đã đạt đến độ dài tối đa cho phép là ${ maxLength } ký tự."
       ],
       "You may close this tab.": [
         "Có thể đóng tab này."
@@ -2530,52 +2533,52 @@
         "Có thể cần cấp quyền trợ năng cho ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
-        "Bạn cần một kho có quyền chỉnh sửa trước khi có thể nhập các mục."
+        "Cần một kho có quyền chỉnh sửa trước khi có thể nhập các mục."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "Bạn sẽ có thể tùy chỉnh cài đặt miền (biệt danh email nhận tất cả, tên hiển thị mặc định cho biệt danh, v.v.) sau khi xác minh miền của bạn."
+        "Có thể tùy chỉnh cài đặt miền (biệt danh email nhận tất cả, tên hiển thị mặc định cho biệt danh, v.v.) sau khi xác minh miền."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Bạn sẽ bị đăng xuất và phải đăng nhập lại trên các thiết bị khác."
+        "Sẽ bị đăng xuất và phải đăng nhập lại trên các thiết bị khác."
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Bạn sẽ được thông báo về các vi phạm dữ liệu cho các địa chỉ email này."
+        "Sẽ được thông báo về các vi phạm dữ liệu cho các địa chỉ email này."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Bạn sẽ được thông báo về các rò rỉ thông tin cho địa chỉ email này."
+        "Sẽ được thông báo về các rò rỉ thông tin cho địa chỉ email này."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Bạn sẽ không còn được thông báo về các vi phạm dữ liệu cho các địa chỉ email này."
+        "Sẽ không còn được thông báo về các vi phạm dữ liệu cho các địa chỉ email này."
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Bạn sẽ không được thông báo về các rò rỉ thông tin cho địa chỉ email này."
+        "Sẽ không được thông báo về các rò rỉ thông tin cho địa chỉ email này."
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Sẽ không còn quyền truy cập vào chia sẻ, 2FA và các tính năng nâng cao khác trong ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Bạn sẽ không còn quyền truy cập vào chia sẻ, 2FA, thẻ tín dụng và các tính năng nâng cao khác trong ${ PASS_APP_NAME }"
+        "Sẽ không còn quyền truy cập vào chia sẻ, 2FA, thẻ tín dụng và các tính năng nâng cao khác trong ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Bạn sẽ sử dụng mã PIN này để mở khóa ${ PASS_APP_NAME } một khi nó tự động khóa sau một khoảng thời gian không sử dụng."
+        "Sử dụng mã PIN này để mở khóa ${ PASS_APP_NAME } một khi tự động khóa sau một khoảng thời gian không sử dụng."
       ],
       "You're invited to a vault.": [
-        "Bạn được mời vào một kho lưu trữ."
+        "Bạn được mời vào một kho."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Tài khoản bị hạn chế vì tổ chức của bạn yêu cầu xác minh 2FA. Vui lòng bật xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
+        "Tài khoản bị hạn chế vì tổ chức yêu cầu xác minh 2FA. Vui lòng kích hoạt xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
       ],
       "your domain": [
-        "tên miền của bạn"
+        "miền của bạn"
       ],
       "Your files will be encrypted and then saved": [
-        "Các tệp của bạn sẽ được mã hoá và sau đó được lưu"
+        "Sẽ mã hoá và lưu tệp"
       ],
       "Your information was found on ${ displayedDate }": [
         "Thông tin được tìm thấy vào ngày ${ displayedDate }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
-        "Tổ chức của bạn yêu cầu phải bảo mật truy cập của bạn tới ${ PASS_APP_NAME }"
+        "Tổ chức yêu cầu phải bảo mật truy cập tới ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -2606,19 +2609,19 @@
         "${ config.options.wordCount } từ"
       ],
       "${ count } item": [
-        "${ count } nội dung"
+        "${ count } mục"
       ],
       "${ days } day": [
         "${ days } ngày"
       ],
       "${ forwardCount } forward": [
-        "${ forwardCount } chuyển tiếp"
+        "${ forwardCount } lượt chuyển tiếp"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, trong 14 ngày qua."
       ],
       "${ hours } hour": [
-        "${ hours } tiếng"
+        "${ hours } giờ"
       ],
       "${ minutes } minute": [
         "${ minutes } phút"
@@ -2633,7 +2636,7 @@
         "Quản lý ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
-        "phiên bản ${ PASS_SHORT_APP_NAME }"
+        "Phiên bản ${ PASS_SHORT_APP_NAME }"
       ],
       "${ repliedCount } reply": [
         "${ repliedCount } phản hồi"
@@ -2675,7 +2678,7 @@
         "Mã bảo mật 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Mã bảo mật 2FA (TOTP)"
+        "Mã thông báo 2FA (TOTP)"
       ],
       "30 days": [
         "30 ngày"
@@ -2702,7 +2705,7 @@
         "Số tài khoản"
       ],
       "Account Type": [
-        "Dạng Tài Khoản"
+        "Loại tài khoản"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Thêm tiền tố ngẫu nhiên cho miền này khi tạo biệt danh mới."
@@ -2717,7 +2720,7 @@
         "Địa chỉ"
       ],
       "Address details": [
-        "Thông tin địa chỉ"
+        "Chi tiết địa chỉ"
       ],
       "Alias": [
         "Biệt danh"
@@ -2783,7 +2786,7 @@
         "2FA tích hợp"
       ],
       "Capital letters (A-Z)": [
-        "Chữ cái in hoa (A–Z)"
+        "Chữ viết hoa (A–Z)"
       ],
       "Capitalize": [
         "In hoa"
@@ -2798,7 +2801,7 @@
         "Thẻ"
       ],
       "Catch-All": [
-        "Bắt-Tất"
+        "Nhận tất cả"
       ],
       "Checkbox": [
         "Hộp kiểm"
@@ -2825,7 +2828,7 @@
         "Công ty"
       ],
       "Confirm vault name": [
-        "Xác nhận tên kho lưu trữ"
+        "Xác nhận tên kho"
       ],
       "Contact created ${ time } ago.": [
         "Liên hệ được tạo cách đây ${ time }."
@@ -2861,16 +2864,16 @@
         "Tạo đăng nhập"
       ],
       "Create an encrypted note": [
-        "Tạo ghi chú được mã hóa"
+        "Tạo ghi chú đã mã hóa"
       ],
       "Create an Identity": [
-        "Tạo một danh tính"
+        "Tạo danh tính"
       ],
       "Create lock": [
         "Tạo khóa"
       ],
       "Create new vault": [
-        "Tạo kho lưu trữ mới"
+        "Tạo kho mới"
       ],
       "Created at": [
         "Đã tạo lúc"
@@ -2909,13 +2912,13 @@
         "Bác sĩ"
       ],
       "Domain": [
-        "Tên miền"
+        "miền"
       ],
       "Domain:": [
         "Miền:"
       ],
       "Domains": [
-        "Tên miền"
+        "Miền"
       ],
       "Don't remind me again": [
         "Không nhắc lại nữa"
@@ -2936,10 +2939,10 @@
         "EMAIL"
       ],
       "Email (alias)": [
-        "Email (alias)"
+        "Email (biệt danh)"
       ],
       "Email (new alias)": [
-        "Email (alias mới)"
+        "Email (biệt danh mới)"
       ],
       "Email address": [
         "Địa chỉ email"
@@ -2978,7 +2981,7 @@
         "Các trường bổ sung"
       ],
       "Extra password": [
-        "Mật khẩu phụ"
+        "Mật khẩu bổ sung"
       ],
       "Facebook account": [
         "Tài khoản Facebook"
@@ -3032,7 +3035,7 @@
         "Chung"
       ],
       "Generic CSV": [
-        "CSV mặc định"
+        "CSV chung"
       ],
       "Get ${ PASS_SHORT_APP_NAME } Plus": [
         "Nhận ${ PASS_SHORT_APP_NAME } Plus"
@@ -3059,7 +3062,7 @@
         "Cao nhất"
       ],
       "Holder Name": [
-        "Tên chủ sở hữu"
+        "Tên chủ thẻ"
       ],
       "Hospital": [
         "Bệnh viện"
@@ -3140,7 +3143,7 @@
         "Bang/Quốc gia cấp"
       ],
       "Item ID": [
-        "ID nội dung"
+        "ID mục"
       ],
       "Job title": [
         "Chức vụ"
@@ -3215,16 +3218,16 @@
         "Hộp thư"
       ],
       "Make all admins": [
-        "Đặt tất cả làm quản trị viên"
+        "Đặt tất cả thành quản trị viên"
       ],
       "Make all editors": [
-        "Đặt tất cả làm biên tập viên"
+        "Đặt tất cả thành biên tập viên"
       ],
       "Make all managers": [
-        "Đặt tất cả làm quản lý"
+        "Đặt tất cả thành người quản lý"
       ],
       "Make all viewers": [
-        "Đặt tất cả làm người xem"
+        "Đặt tất cả thành người xem"
       ],
       "Make it your own.": [
         "Tạo phong cách riêng."
@@ -3242,7 +3245,7 @@
         "Thuốc"
       ],
       "Member ID": [
-        "ID thành viên"
+        "Mã thành viên"
       ],
       "Member Name": [
         "Tên thành viên"
@@ -3293,7 +3296,7 @@
         "Email mới"
       ],
       "New vault": [
-        "Kho lưu trữ mới"
+        "kho mới"
       ],
       "New-Old": [
         "Mới-Cũ"
@@ -3308,7 +3311,7 @@
         "Không có lịch sử"
       ],
       "None": [
-        "Không"
+        "Không có"
       ],
       "Not selected": [
         "Không được chọn"
@@ -3350,13 +3353,13 @@
         "Chủ sở hữu"
       ],
       "Passkey": [
-        "Khóa truy cập"
+        "Mã khóa"
       ],
       "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
         "Mã khóa là giải pháp thay thế dễ dàng và an toàn cho mật khẩu truyền thống, giúp ngăn chặn các cuộc tấn công lừa đảo và giúp trải nghiệm trực tuyến mượt mà hơn. ${ PASS_APP_NAME } hỗ trợ mã khóa trên mọi nền tảng."
       ],
       "Passphrase": [
-        "Cụm từ mật khẩu"
+        "Cụm mật khẩu"
       ],
       "Passport": [
         "Hộ chiếu"
@@ -3383,7 +3386,7 @@
         "Quyền"
       ],
       "Personal": [
-        "Nhà riêng"
+        "Cá nhân"
       ],
       "Personal details": [
         "Thông tin cá nhân"
@@ -3419,7 +3422,7 @@
         "Tiền tố"
       ],
       "Premium domain": [
-        "Tên miền cao cấp"
+        "Miền cao cấp"
       ],
       "Priority:": [
         "Ưu tiên:"
@@ -3440,7 +3443,7 @@
         "Bảo vệ ${ PASS_APP_NAME } bằng mật khẩu bổ sung"
       ],
       "Public domain": [
-        "Tên miền công cộng"
+        "Miền công cộng"
       ],
       "Public key": [
         "Khóa công khai"
@@ -3449,7 +3452,7 @@
         "Đánh giá chúng tôi"
       ],
       "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
-        "Nhận cảnh báo ngay lập tức nếu thông tin cá nhân bị rò rỉ trong một vụ vi phạm dữ liệu của bên thứ ba. Có thể giám sát nhiều địa chỉ email hoặc tên miền riêng."
+        "Nhận cảnh báo ngay lập tức nếu thông tin cá nhân bị rò rỉ trong một vụ vi phạm dữ liệu của bên thứ ba. Có thể giám sát nhiều địa chỉ email hoặc miền riêng."
       ],
       "Recent": [
         "Gần đây"
@@ -3467,7 +3470,7 @@
         "Báo cáo vấn đề"
       ],
       "Restore all items": [
-        "Khôi phục tất cả nội dung"
+        "Khôi phục tất cả mục"
       ],
       "Reveal password": [
         "Hiện mật khẩu"
@@ -3479,7 +3482,7 @@
         "Số định tuyến"
       ],
       "Second password": [
-        "Mật khẩu thứ 2"
+        "Mật khẩu thứ hai"
       ],
       "Secret": [
         "Bí mật"
@@ -3497,7 +3500,7 @@
         "Lưu trữ, chia sẻ và tự động đăng nhập tài khoản một cách an toàn bằng ${ PASS_APP_NAME }, sử dụng mã hóa đầu cuối được hàng triệu người tin cậy"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
-        "Lưu trữ, chia sẻ và tự động đăng nhập tài khoản của bạn một cách an toàn bằng ${ PASS_APP_NAME }, sử dụng mã hóa đầu cuối được hàng triệu người tin cậy."
+        "Lưu trữ, chia sẻ và tự động đăng nhập tài khoản một cách an toàn bằng ${ PASS_APP_NAME }, sử dụng mã hóa đầu cuối được hàng triệu người tin cậy."
       ],
       "Security": [
         "Bảo mật"
@@ -3509,13 +3512,13 @@
         "Xem quyền của thành viên"
       ],
       "Seed Phrase": [
-        "Cụm từ khôi phục"
+        "Cụm từ khôi phụccụm từ khôi phục"
       ],
       "Select a domain": [
-        "Chọn một miền"
+        "Chọn miền"
       ],
       "Select an email address": [
-        "Chọn một địa chỉ email"
+        "Chọn địa chỉ email"
       ],
       "Select preferred language": [
         "Chọn ngôn ngữ yêu thích"
@@ -3569,7 +3572,7 @@
         "Bảo hiểm xã hội"
       ],
       "Social Security": [
-        "An sinh xã hội"
+        "Bảo hiểm xã hội"
       ],
       "Social security number": [
         "Số bảo hiểm xã hội"
@@ -3584,7 +3587,7 @@
         "Khóa SSH"
       ],
       "SSN": [
-        "Số căn cước công dân"
+        "Số BHXH"
       ],
       "State or province": [
         "Tỉnh thành"
@@ -3650,7 +3653,7 @@
         "Hôm nay"
       ],
       "Total imported items: ": [
-        "Tổng số nội dung đã nhập: "
+        "Tổng số mục đã nhập: "
       ],
       "Total items: ": [
         "Tổng số mục: "
@@ -3686,22 +3689,22 @@
         "Thẻ chưa đặt tên"
       ],
       "Unnamed custom item": [
-        "Mục tùy chỉnh không tên"
+        "Mục tùy chỉnh chưa có tên"
       ],
       "Unnamed identity": [
         "Danh tính không tên"
       ],
       "Unnamed item": [
-        "Nội dung không có tên"
+        "mục không có tên"
       ],
       "Unnamed note": [
         "Ghi chú không có tên"
       ],
       "Unnamed SSH key": [
-        "Khóa SSH không tên"
+        "Khóa SSH chưa có tên"
       ],
       "Unnamed WiFi item": [
-        "Mục WiFi không tên"
+        "Mục WiFi không có tên"
       ],
       "Unspecified": [
         "Không xác định"
@@ -3728,13 +3731,13 @@
         "Giá trị:"
       ],
       "Vault ID": [
-        "ID kho lưu trữ"
+        "ID kho"
       ],
       "Vault, item & link sharing": [
         "Chia sẻ kho, mục và liên kết"
       ],
       "Vaults": [
-        "Kho lưu trữ"
+        "kho"
       ],
       "View details": [
         "Xem chi tiết"
@@ -3785,16 +3788,16 @@
         "Tài khoản Yahoo"
       ],
       "You are about to create": [
-        "Bạn đang chuẩn bị tạo"
+        "Đang chuẩn bị tạo"
       ],
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "Có thể chọn giữa mã PIN, sinh trắc học hoặc mật khẩu tài khoản để mở khóa."
       ],
       "Your domain": [
-        "Tên miền của bạn"
+        "miền của bạn"
       ],
       "Your passwords. Everywhere.": [
-        "Mật khẩu của bạn. Mọi lúc mọi nơi."
+        "Mật khẩu. Mọi lúc mọi nơi."
       ],
       "ZIP": [
         "Mã bưu chính"
@@ -3840,18 +3843,18 @@
     },
     "Message": {
       "${ count } item": [
-        "${ count } nội dung"
+        "${ count } mục"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Bạn có thể kéo và thả các mục đã chọn sang kho khác"
+        "Có thể kéo và thả các mục đã chọn sang kho khác"
       ],
       "You selected ${ semiboldText } in this vault.": [
-        "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này."
+        "Đã chọn ${ semiboldText } trong kho này."
       ]
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "Bắt buộc 2FA cho tổ chức"
+        "Bắt buộc 2FA đối với tổ chức"
       ],
       "SSO integration": [
         "Tích hợp SSO"
@@ -3935,7 +3938,7 @@
         "Đang xuất tệp"
       ],
       "Failed linking files to item": [
-        "Liên kết tệp vào mục thất bại"
+        "Không liên kết được tệp vào mục"
       ],
       "File": [
         "Tệp"
@@ -3944,10 +3947,10 @@
         "Tập tin đính kèm"
       ],
       "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
-        "Nếu được bật, tất cả các tệp sẽ được tải xuống khi xuất. Quá trình này có thể mất chút thời gian tùy thuộc vào kết nối internet."
+        "Nếu được kích hoạt, tất cả các tệp sẽ được tải xuống khi xuất. Quá trình này có thể mất chút thời gian tùy thuộc vào kết nối internet."
       ],
       "If your data contains file attachments, they will not be imported.": [
-        "Nếu dữ liệu có chứa tập tin đính kèm, chúng sẽ không được nhập."
+        "Nếu dữ liệu có chứa tập tin đính kèm thì sẽ không được nhập."
       ],
       "Include file attachments": [
         "Bao gồm tập tin đính kèm"
@@ -3977,7 +3980,7 @@
         "Một số tệp quá lớn, không thể tải lên. Kích thước tối đa cho phép là (${ maxFileSizeInMB })"
       ],
       "The exported file attachments will not be encrypted.": [
-        "Các tập tin đính kèm được xuất sẽ không được mã hóa."
+        "Các tập tin đính kèm được xuất sẽ không đã mã hóa."
       ],
       "The file you are trying to import is empty": [
         "Tệp đang cố gắng nhập là tệp trống"
@@ -3995,7 +3998,7 @@
         "Tải lên tệp từ thiết bị."
       ],
       "You can attach files to items for a better organization": [
-        "Bạn có thể đính kèm tệp vào các mục để tổ chức tốt hơn"
+        "Có thể đính kèm tệp vào các mục để tổ chức tốt hơn"
       ]
     },
     "PassOnboardingOffer": {
@@ -4061,7 +4064,7 @@
         "Nhập mật khẩu"
       ],
       "Enter username": [
-        "Điền tên đăng nhập"
+        "Nhập tên người dùng"
       ],
       "Full Name": [
         "Tên đầy đủ"
@@ -4085,7 +4088,7 @@
         "Mật khẩu"
       ],
       "Pick a vault": [
-        "Chọn một kho lưu trữ"
+        "Chọn một kho"
       ],
       "Please describe the problem and include any error messages": [
         "Vui lòng miêu tả vấn đề đó và gộp mọi thông điệp lỗi"
@@ -4109,7 +4112,7 @@
         "Tìm trong thùng rác"
       ],
       "Select a suffix": [
-        "Chọn một hậu tố"
+        "Chọn hậu tố"
       ],
       "Select option": [
         "Chọn tùy chọn"
@@ -4135,7 +4138,7 @@
         "Đã phát hiện một rò rỉ tiềm ẩn liên quan đến ${ name }. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Thông tin của bạn được tìm thấy trong ít nhất một vụ rò rỉ dữ liệu. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết. ${ link }"
+        "Thông tin được tìm thấy trong ít nhất một vụ rò rỉ dữ liệu. Hãy bật ${ DARK_WEB_MONITORING_NAME } để xem chi tiết. ${ link }"
       ]
     },
     "sso": {
@@ -4143,10 +4146,10 @@
         "Phê duyệt hoặc từ chối ngay"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Nhập mã xác nhận chúng tôi đã gửi đến thiết bị khác của bạn."
+        "Nhập mã xác nhận chúng tôi đã gửi đến thiết bị khác."
       ],
       "If you didn't make this request, cancel it now.": [
-        "Nếu bạn không thực hiện yêu cầu này, hãy huỷ ngay bây giờ."
+        "Nếu không thực hiện yêu cầu này, hãy huỷ ngay bây giờ."
       ],
       "Invalid confirmation code": [
         "Mã xác nhận không hợp lệ"
@@ -4178,7 +4181,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Bật"
+        "Đang hoạt động"
       ],
       "Inactive": [
         "Không hoạt động"
@@ -4204,10 +4207,10 @@
         "Đã kích hoạt đồng bộ biệt danh thành công. Có thể mất một lúc để đồng bộ biệt danh SimpleLogin."
       ],
       "Catch-all setting successfully disabled": [
-        "Đã tắt cài đặt nhận tất cả thành công"
+        "Đã vô hiệu hóa cài đặt nhận tất cả thành công"
       ],
       "Catch-all setting successfully enabled": [
-        "Đã bật cài đặt nhận tất cả thành công"
+        "Đã kích hoạt cài đặt nhận tất cả thành công"
       ],
       "Contact successfully blocked": [
         "Đã chặn liên hệ thành công"
@@ -4231,13 +4234,13 @@
         "Đã cập nhật tên hiển thị thành công"
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "Quyền sở hữu miền đã được xác minh. Bây giờ bạn có thể thiết lập bản ghi MX."
+        "Đã xác minh quyền sở hữu miền. Bây giờ có thể thiết lập bản ghi MX."
       ],
       "Domain successfully deleted": [
         "Đã xóa miền thành công"
       ],
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
-        "Đã xác minh miền thành công. Miền của bạn có thể bắt đầu nhận email và tạo biệt danh"
+        "Đã xác minh miền thành công. Miền có thể bắt đầu nhận email và tạo biệt danh"
       ],
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "Các mục không được chứa quá ${ share.targetMaxMembers } người dùng."
@@ -4249,19 +4252,19 @@
         "Hộp thư đã được xóa thành công"
       ],
       "Mailbox successfully verified": [
-        "Hộp thư đã được xác minh thành công"
+        "Đã xác minh hộp thư thành công"
       ],
       "Mailboxes successfully updated": [
         "Đã cập nhật các hộp thư thành công"
       ],
       "Random prefix generation successfully disabled": [
-        "Đã tắt tạo tiền tố ngẫu nhiên thành công"
+        "Đã vô hiệu hóa tạo tiền tố ngẫu nhiên thành công"
       ],
       "Random prefix generation successfully enabled": [
-        "Đã bật tạo tiền tố ngẫu nhiên thành công"
+        "Đã kích hoạt tạo tiền tố ngẫu nhiên thành công"
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Kho lưu trữ không thể có hơn ${ targetMaxMembers } thành viên."
+        "kho không thể có hơn ${ targetMaxMembers } thành viên."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email xác minh đã được gửi. Vui lòng kiểm tra hộp thư đến để xác minh hộp thư của bạn"
@@ -4301,7 +4304,7 @@
         "Thêm hộp thư"
       ],
       "Alias contacts": [
-        "Danh bạ biệt danh"
+        "Liên hệ biệt danh"
       ],
       "Aliases": [
         "Biệt danh"
@@ -4319,10 +4322,10 @@
         "Phát hiện rò rỉ dữ liệu"
       ],
       "Breaches": [
-        "Các vụ rò rỉ"
+        "Các vi phạm"
       ],
       "Breaches detected for": [
-        "Rò rỉ dữ liệu cho"
+        "Phát hiện vi phạm đối với"
       ],
       "Cancel changing your email?": [
         "Hủy thay đổi email?"
@@ -4337,7 +4340,7 @@
         "Xóa bảng tạm"
       ],
       "Confirm extra password": [
-        "Xác nhận mật khẩu phụ"
+        "Xác nhận mật khẩu bổ sung"
       ],
       "Confirm identity": [
         "Xác nhận danh tính"
@@ -4370,10 +4373,10 @@
         "Địa chỉ tùy chỉnh"
       ],
       "Custom domains": [
-        "Tên miền tùy chỉnh"
+        "Miền tùy chỉnh"
       ],
       "Custom email monitoring": [
-        "Theo dõi địa chỉ email khác"
+        "Giám sát email tùy chỉnh"
       ],
       "Custom emails": [
         "Email tùy chỉnh"
@@ -4403,7 +4406,7 @@
         "Bạn có biết?"
       ],
       "Discard changes?": [
-        "Hủy các thay đổi?"
+        "Hủy bỏ thay đổi?"
       ],
       "DKIM (Optional)": [
         "DKIM (Tùy chọn)"
@@ -4418,7 +4421,7 @@
         "Xác minh quyền sở hữu miền"
       ],
       "Encrypted import": [
-        "Nhập dữ liệu được mã hóa"
+        "Nhập dữ liệu đã mã hóa"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Đang tận hưởng ${ PASS_APP_NAME }?"
@@ -4436,13 +4439,13 @@
         "Nhập mật khẩu bổ sung"
       ],
       "Enter your PIN": [
-        "Nhập mã PIN của bạn"
+        "Nhập mã PIN"
       ],
       "Enter your second password": [
         "Nhập mật khẩu thứ hai của bạn"
       ],
       "Excluded items": [
-        "Các nội dung bị bỏ qua"
+        "Các mục bị bỏ qua"
       ],
       "Get Started": [
         "Bắt Đầu"
@@ -4460,7 +4463,7 @@
         "Nhập - ${ date }"
       ],
       "Import to vault(s)": [
-        "Nhập vào (các) kho lưu trữ"
+        "Nhập vào (các) kho"
       ],
       "Import your data": [
         "Nhập dữ liệu"
@@ -4484,7 +4487,7 @@
         "Tự động điền mới nhất"
       ],
       "Last modified": [
-        "Sửa đổi lần cuối"
+        "Chỉnh sửa đổi lần cuối"
       ],
       "Leave this item?": [
         "Rời khỏi mục này?"
@@ -4502,7 +4505,7 @@
         "Hộp thư"
       ],
       "Mark as resolved?": [
-        "Đánh dấu đã xử lý?"
+        "Đánh dấu là đã xử lý?"
       ],
       "Member limit": [
         "Giới hạn thành viên"
@@ -4520,7 +4523,7 @@
         "Di chuyển ${ count } mục đến ${ vaultName }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
-        "Chuyển ${ trashedItemsCount } mục vào Thùng rác?"
+        "Di chuyển ${ trashedItemsCount } mục vào Thùng rác?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Di chuyển tất cả mục đến \"${ vaultName }\"?"
@@ -4544,7 +4547,7 @@
         "Không có mật khẩu không an toàn"
       ],
       "No items selected": [
-        "Không có nội dung nào được chọn"
+        "Không có mục nào được chọn"
       ],
       "No reused passwords": [
         "Không có mật khẩu tái sử dụng"
@@ -4565,7 +4568,7 @@
         "Quà tặng chào mừng của chúng tôi"
       ],
       "Passkey": [
-        "Khóa truy cập"
+        "Mã khóa"
       ],
       "Password Health": [
         "Tình trạng mật khẩu"
@@ -4583,7 +4586,7 @@
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
       ],
       "Perform autotype?": [
-        "Thực hiện tự động nhập?"
+        "Tự động nhập?"
       ],
       "Permanently remove all items?": [
         "Xóa vĩnh viễn tất cả các mục?"
@@ -4601,7 +4604,7 @@
         "Tạo tiền tố ngẫu nhiên"
       ],
       "Recommended actions": [
-        "Hành động được đề xuất"
+        "thao tác được đề xuất"
       ],
       "Reject device?": [
         "Từ chối thiết bị?"
@@ -4610,7 +4613,7 @@
         "Xóa địa chỉ email?"
       ],
       "Remove extra password": [
-        "Gỡ bỏ mật khẩu phụ"
+        "Gỡ bỏ mật khẩu bổ sung"
       ],
       "Remove secure link?": [
         "Xóa liên kết bảo mật?"
@@ -4619,19 +4622,19 @@
         "Đặt lại lịch sử cho mục này?"
       ],
       "Resolved breaches": [
-        "Các rò rỉ đã được xử lí"
+        "Vi phạm đã được xử lí"
       ],
       "Restore this version?": [
         "Khôi phục phiên bản này?"
       ],
       "Resume monitoring?": [
-        "Theo dõi trở lại?"
+        "Tiếp tục giám sát?"
       ],
       "Reused ${ count } time": [
         "Tái sử dụng ${ count } lần"
       ],
       "Reused passwords": [
-        "Các mật khẩu tái sử dụng"
+        "Mật khẩu tái sử dụng"
       ],
       "Review and share": [
         "Xem lại và chia sẻ"
@@ -4646,7 +4649,7 @@
         "Thiết lập cấp độ truy cập"
       ],
       "Set extra password": [
-        "Thiết lập mật khẩu phụ"
+        "Thiết lập mật khẩu bổ sung"
       ],
       "Set up 2FA for better security": [
         "Thiết lập 2FA để bảo mật tốt hơn"
@@ -4655,7 +4658,7 @@
         "Thiết lập 2FA để an toàn hơn"
       ],
       "Settings": [
-        "Các cài đặt"
+        "Cài đặt"
       ],
       "Setup offline mode": [
         "Thiết lập chế độ ngoại tuyến"
@@ -4688,7 +4691,7 @@
         "Chuyển sang"
       ],
       "Sync alias": [
-        "Đồng bộ hoá alias"
+        "Đồng bộ hoá biệt danh"
       ],
       "Sync your aliases from SimpleLogin": [
         "Đồng bộ biệt danh từ SimpleLogin"
@@ -4709,10 +4712,10 @@
         "Có bản cập nhật"
       ],
       "Vault": [
-        "Kho lưu trữ"
+        "kho"
       ],
       "Vault shared with you": [
-        "Kho lưu trữ được chia sẽ với bạn"
+        "kho được chia sẽ với bạn"
       ],
       "Visible vaults": [
         "Các kho hiển thị"
@@ -4748,7 +4751,7 @@
         "Thông tin bị lộ"
       ],
       "Your vault is empty": [
-        "Kho lưu trữ của bạn trống"
+        "Kho trống"
       ],
       "Your welcome gift": [
         "Quà chào mừng dành cho bạn"
@@ -4811,7 +4814,7 @@
         "Đã yêu cầu mật khẩu ${ BRAND_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
-        "Đã tắt chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
+        "Đã vô hiệu hóa chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
       ],
       "2 consecutive dots are not allowed": [
         "Không được phép dùng 2 dấu chấm liên tiếp"
@@ -4826,7 +4829,7 @@
         "Các biệt danh trong Thùng rác sẽ tiếp tục chuyển tiếp email."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Tất cả nội dung trong thùng rác của bạn sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
+        "Tất cả mục trong thùng rác sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác thao tác này."
       ],
       "An error occurred while exporting your data": [
         "Đã xảy ra lỗi khi xuất dữ liệu"
@@ -4835,13 +4838,13 @@
         "Có lỗi xảy ra trong khi trích xuất dữ liệu."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Bạn có chắc chắn muốn chuyển ${ trashedItemsCount } mục vào Thùng rác không?"
+        "Chắc chắn muốn chuyển ${ trashedItemsCount } mục vào thùng rác không?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Bạn có chắc chắn muốn xóa vĩnh viễn ${ deletedItemsCount } mục không?"
+        "Chắc chắn muốn xóa vĩnh viễn ${ deletedItemsCount } mục không?"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "Bạn có chắc chắn muốn xóa vĩnh viễn mục này không?"
+        "Chắc chắn muốn xóa vĩnh viễn mục này không?"
       ],
       "At least one email address is required": [
         "Cần ít nhất một địa chỉ email"
@@ -4856,10 +4859,10 @@
         "Hiện tại không thể truy xuất hộp thư đến cho biệt danh này"
       ],
       "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
-        "Cảnh báo: Bạn sẽ không thể truy cập tài khoản ${ PASS_APP_NAME } nếu làm mất mật khẩu này."
+        "Cảnh báo: Không thể truy cập tài khoản ${ PASS_APP_NAME } nếu làm mất mật khẩu này."
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Không thể tạo kho lưu trữ \"${ vaultName }\""
+        "Không thể tạo kho \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses:": [
         "Không thể gửi lời mời đến các địa chỉ sau:"
@@ -4883,13 +4886,13 @@
         "Email không được để trống"
       ],
       "Email is required": [
-        "Yêu cầu có email"
+        "Email là bắt buộc"
       ],
       "Empty note": [
         "Ghi chú trống"
       ],
       "Expiration Date is not in the format MM/YY": [
-        "Ngày hết hạn không ở dạng Tháng / Năm"
+        "Ngày hết hạn không ở dạng Tháng/Năm"
       ],
       "Extra password cannot be empty": [
         "Mật khẩu bổ sung không được để trống"
@@ -4904,7 +4907,7 @@
         "Tự động nhập thất bại. Vui lòng đảm bảo ${ PASS_APP_NAME } có các quyền cần thiết và thử lại (${ error })."
       ],
       "Failed to load breaches.": [
-        "Không thể tải các vi phạm."
+        "Không tải được các vi phạm."
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Cấp quyền truy cập bảng tạm để kích hoạt tính năng tự động xóa mật khẩu và dữ liệu đã sao chép."
@@ -4943,13 +4946,13 @@
         "Tên được yêu cầu"
       ],
       "No items": [
-        "Không có nội dung nào"
+        "Không có mục nào"
       ],
       "No items in trash matching": [
-        "Không có nội dung nào trong rác phù hợp"
+        "Không có mục phù hợp trong thùng rác"
       ],
       "No items matching": [
-        "Không có nội dung phù hợp"
+        "Không có mục phù hợp"
       ],
       "No password manager selected": [
         "Không có trình quản lý mật khẩu nào được chọn"
@@ -4997,7 +5000,7 @@
         "Xóa mật khẩu bổ sung sẽ đăng xuất bạn khỏi tất cả thiết bị và kết thúc mọi phiên hoạt động."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Báo cáo không được mã hóa đầu cuối, vui lòng không gửi bất kỳ thông tin nhạy cảm nào."
+        "Báo cáo không đã mã hóa đầu cuối, vui lòng không gửi bất kỳ thông tin nhạy cảm nào."
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
         "Một số mục hiện đang được chia sẻ. Việc xóa các mục này sẽ xóa quyền truy cập của tất cả người dùng khác."
@@ -5030,16 +5033,16 @@
         "Quá nhiều lần thử"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Chuyển quyền sở hữu của kho lưu trữ này cho ${ email }?"
+        "Chuyển quyền sở hữu của kho này cho ${ email }?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Không thể đăng nhập vào ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Kho lưu trữ \"${ vaultName }\" và tất cả nội dung của nó sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
+        "kho \"${ vaultName }\" và tất cả mục của nó sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác thao tác này."
       ],
       "Vault name is required": [
-        "Tên kho lưu trữ là bắt buộc"
+        "Tên kho là bắt buộc"
       ],
       "Verification code is required": [
         "Yêu cầu mã xác minh"
@@ -5048,55 +5051,55 @@
         "Đã đạt đến giới hạn thành viên có thể truy cập mục này."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Bạn đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho lưu trữ này."
+        "Đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho này."
       ],
       "You have reached the limit of users for this item. ${ upgradeLink }": [
         "Đã đạt đến giới hạn người dùng cho mục này. ${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Bạn đã đạt đến số lượng người dùng tối đa trong kho lưu trữ này. ${ upgradeLink }"
+        "Đã đạt đến số lượng người dùng tối đa trong kho này. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Bạn đã đạt đến giới hạn số lượng kho lưu trữ trong gói của mình."
+        "Đã đạt đến giới hạn số lượng kho trong gói của mình."
       ],
       "You have unsaved changes.": [
-        "Bạn có những thay đổi chưa được lưu."
+        "Có thay đổi chưa được lưu."
       ],
       "You must select at least one mailbox": [
-        "Bạn phải chọn ít nhất một hộp thư đến"
+        "Phải chọn ít nhất một hộp thư"
       ],
       "You will lose access to this item and its details. Do you want to continue?": [
-        "Bạn sẽ mất quyền truy cập vào mục này và các chi tiết liên quan. Bạn có muốn tiếp tục không?"
+        "Sẽ mất quyền truy cập vào mục này và các chi tiết liên quan. Vẫn muốn tiếp tục?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Bạn sẽ không thể truy cập kho này nữa. Để tham gia lại, cần một lời mời mới."
+        "Sẽ không thể truy cập kho này nữa. Để tham gia lại, cần một lời mời mới."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
-        "Quản trị viên cần tạo kho cho bạn trước khi bạn có thể tạo mục"
+        "Quản trị viên cần tạo kho cho bạn trước khi có thể tạo mục"
       ],
       "Your organization does not allow creating a vault": [
-        "Tổ chức của bạn không cho phép tạo kho"
+        "Tổ chức không cho phép tạo kho"
       ],
       "Your organization does not allow sharing individual items": [
-        "Tổ chức của bạn không cho phép chia sẻ các mục riêng lẻ"
+        "Tổ chức không cho phép chia sẻ các mục riêng lẻ"
       ],
       "Your session could not be authorized.": [
-        "Phiên làm việc của bạn không thể xác thực được."
+        "Không thể xác thực phiên."
       ],
       "Your session could not be resumed.": [
-        "Phiên làm việc của bạn không thể tiếp tục được."
+        "Không thể tiếp tục phiên."
       ],
       "Your session is inactive.": [
-        "Phiên của bạn không hoạt động."
+        "Phiên không hoạt động."
       ],
       "Your session was locked.": [
-        "Phiên làm việc của bạn đã bị khóa."
+        "Đã khóa phiên."
       ],
       "Your subscription does not allow you to create more vaults.": [
         "Gói đăng ký không cho phép tạo thêm kho."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Gói đăng ký của bạn không cho phép tạo nhiều kho lưu trữ. Tất cả nội dung sẽ được nhập vào kho lưu trữ chính của bạn. Để nhập vào nhiều kho lưu trữ hay nâng cấp gói đăng ký của bạn."
+        "Gói đăng ký không cho phép tạo nhiều kho. Tất cả mục sẽ được nhập vào kho chính. Hãy nâng cấp gói đăng ký để nhập vào nhiều kho."
       ]
     }
   }

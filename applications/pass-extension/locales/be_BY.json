@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Прыняць і паглядзець элемент"
       ],
+      "Accept invitation": [
+        "Прыняць запрашэнне"
+      ],
       "Account": [
         "Уліковы запіс"
       ],
@@ -500,7 +503,7 @@
         "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -1041,6 +1044,9 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
       "Failed removing the invite.": [
         "Збой выдалення запрашэння."
       ],
@@ -1485,8 +1491,17 @@
         "${ forwardedEmailsCount } пераслана",
         "${ forwardedEmailsCount } пераслана"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай, якую вы адмініструеце."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоча абагуліць элемент з вамі."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } абагульваўся з групай, у якую вы ўваходзіце"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1562,6 +1577,12 @@
         "Засталося ${ trialDaysLeft } дні",
         "Засталося ${ trialDaysLeft } дзён",
         "Засталося ${ trialDaysLeft } дзён"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } удзельнік)",
+        "(${ membersCount } удзельнікі)",
+        "(${ membersCount } удзельнікаў)",
+        "(${ membersCount } удзельнікаў)"
       ],
       "(Empty)": [
         "(пуста)"
@@ -1986,6 +2007,9 @@
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "запрашае групу ${ invitedGroup.Name } для доступу да элементаў у"
+      ],
       "invites you to access items in": [
         "запрасіў вас атрымаць доступ да элементаў у"
       ],
@@ -2084,12 +2108,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2490,6 +2508,9 @@
         "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:",
         "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:"
       ],
+      "The group is invited to a vault.": [
+        "Група запрошана ў сховішча."
+      ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
       ],
@@ -2644,7 +2665,7 @@
         "Праверачны код"
       ],
       "Verification code sent.": [
-        "Код спраўджання."
+        "Код спраўджання адпраўлены."
       ],
       "Viewer": [
         "Праглядальнік"
@@ -3491,7 +3512,7 @@
         "Гісторыя пустая"
       ],
       "None": [
-        "Няма"
+        "Адсутнічае"
       ],
       "Not selected": [
         "Не выбрана"
@@ -4890,6 +4911,9 @@
       "Vault": [
         "Сховішча"
       ],
+      "Vault shared with a group you administer": [
+        "Сховішча абагулена з групай, якую вы адмініструеце"
+      ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
       ],
@@ -5173,7 +5197,7 @@
         "Звярніце ўвагу, што псеўданім немагчыма аднавіць пасля яго выдалення"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Спращдзіце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
+        "Спраўдзіце свой адрас электроннай пошты, каб карыстацца псеўданімамі"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
         "Выдаленне вашага дадатковага пароля прывядзе да выхаду з усіх прылад і завершыць усе актыўныя сеансы."

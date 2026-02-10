@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "მიღება და ელემენტის ნახვა"
       ],
+      "Accept invitation": [
+        "მოსაწვევის მიღება"
+      ],
       "Account": [
         "ანგარიში"
       ],
@@ -1021,6 +1024,9 @@
       "Error reporting problem": [
         "პრობლემის გადაგზავნის შეცდომა"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed removing the invite.": [
         "მოწვევის წაშლა ჩავარდა."
       ],
@@ -1441,8 +1447,14 @@
         "${ forwardedEmailsCount } გადაგზავნილია",
         "${ forwardedEmailsCount } გადაგზავნილია"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }-ს სურს, გაუზიაროს ელემენტი ჯგუფს, რომელსაც თქვენ მართავთ."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } უნდა, ელემენტი გაგიზიაროთ."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } გაზიარებულია ჯგუფისთვის, რომლის წევრიც ბრძანდებით"
       ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
@@ -1487,6 +1499,10 @@
       "${ row.breachCount } breach detected": [
         "აღმოჩენილია ${ row.breachCount } გაჟონვა",
         "აღმოჩენილია ${ row.breachCount } გაჟონვა"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } წევრი)",
+        "(${ membersCount } წევრი)"
       ],
       "(Empty)": [
         "(ცარიელი)"
@@ -1859,6 +1875,9 @@
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "იწვევს ჯგუფს ${ invitedGroup.Name } წვდომისთვის ელემენტებზე საცავში"
+      ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომისთვის"
       ],
@@ -1983,6 +2002,9 @@
       ],
       "No network connection": [
         "ქსელთან კავშირი არ არის"
+      ],
+      "No new versions are available at the moment.": [
+        "ამ მომენტისთვის ახალი ვერსიები ხელმისაწვდომი არაა."
       ],
       "None": [
         "არცერთი"
@@ -2313,6 +2335,9 @@
         "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
         "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
       ],
+      "The group is invited to a vault.": [
+        "ჯგუფი მიწვეულია საცავში."
+      ],
       "The secure link has been removed": [
         "დაცული ბმული წაიშალა"
       ],
@@ -2354,6 +2379,12 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "ეს  უარჰყოფს მოწყობილობას **${ name }**, რომელმაც ცადა, თქვენს ${ BRAND_NAME }-ის ანგარიშში შესულიყო. მცდელობის თარიღი: **${ date }**."
+      ],
+      "This will reload the application.": [
+        "ეს აპლიკაციას გადატვირთავს."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "ეს შეამოწმებს ახალი ბეტა გამოშვებების არსებობას."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "ელფოსტის მიღების გასაგრძელებლად გადაიტანეთ ეს ფსევდონიმები სხვა საფოსტო ყუთზე:"
@@ -4699,6 +4730,9 @@
       ],
       "Vault": [
         "საცავი"
+      ],
+      "Vault shared with a group you administer": [
+        "საცავი, გაზიარებული ჯგუფთან, რომელსაც თქვენ მართავთ"
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"

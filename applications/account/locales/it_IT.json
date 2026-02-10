@@ -516,6 +516,9 @@
       "Disable": [
         "Disabilita"
       ],
+      "Disable categories": [
+        "Disattiva le categorie"
+      ],
       "Disable recovery phrase": [
         "Disabilita la frase di recupero"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Mantieni"
+      ],
+      "Keep categories": [
+        "Mantieni le categorie"
       ],
       "Keep Editing": [
         "Continua a modificare"
@@ -6179,6 +6185,9 @@
       "Expired": [
         "Scaduto"
       ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
       "Failed to add group member": [
         "Impossibile aggiungere un membro al gruppo"
       ],
@@ -6314,6 +6323,9 @@
       ],
       "Name required": [
         "Nome obbligatorio"
+      ],
+      "Network error": [
+        "Errore di rete"
       ],
       "No active sessions": [
         "Nessuna sessione attiva"
@@ -6842,6 +6854,9 @@
       ]
     },
     "Error message": {
+      "Account is deleted or disabled": [
+        "Account eliminato o disattivato"
+      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -8715,15 +8730,15 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ total } user found": [
+        "${ total } utente trovato",
+        "${ total } utenti trovati"
+      ],
       "${ url } added.": [
         "${ url } aggiunto."
       ],
       "${ url } deleted.": [
         "${ url } eliminato."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } utente trovato",
-        "${ userFound } utenti trovati"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } creato"
@@ -8943,6 +8958,9 @@
       ],
       "All members have been added.": [
         "Tutti i membri sono stati aggiunti."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tutti i messaggi saranno mostrati nella inbox e le tab delle categorie e i tag non saranno più visibili. "
       ],
       "All users": [
         "Tutti gli utenti"
@@ -11782,6 +11800,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "L'abbonamento è limitato a 10 versioni per un massimo di 7 giorni."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Le tue modifiche recenti sono state pubblicate. Saranno visibili agli utenti nelle prossime ore."
+      ],
       "Your recovery phrase": [
         "La tua frase di recupero"
       ],
@@ -11940,6 +11961,9 @@
     "invitation status": {
       "Declined": [
         "Rifiutato"
+      ],
+      "Owner": [
+        "Proprietario"
       ],
       "Paused": [
         "In pausa"
@@ -15304,6 +15328,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -15810,6 +15837,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -21665,11 +21695,29 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Automatico"
+      ],
       "Dark": [
         "Scuro"
       ],
       "Light": [
         "Chiaro"
+      ],
+      "Mode: Auto": [
+        "Modalità: Auto"
+      ],
+      "Mode: Dark": [
+        "Modalità: Scuro"
+      ],
+      "Mode: Light": [
+        "Modalità: Chiaro"
+      ],
+      "Sync with system": [
+        "Sincronizza con il sistema"
+      ],
+      "Use ${ BRAND_NAME } settings": [
+        "Usa le impostazioni di ${ BRAND_NAME }"
       ]
     },
     "Time unit": {
@@ -22259,6 +22307,9 @@
       ],
       "Disable activity monitor?": [
         "Disattivare monitor attività?"
+      ],
+      "Disable categories?": [
+        "Disattivare le categorie?"
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
@@ -23316,6 +23367,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "Il tuo abbonamento ${ planTitle } è iniziato"
+      ],
       "Your calendar link": [
         "Link del tuo calendario"
       ],
@@ -23734,6 +23788,9 @@
       ],
       "User declined invitation": [
         "L'utente ha rifiutato l'invito"
+      ],
+      "User is a group": [
+        "L'utente è un gruppo"
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"

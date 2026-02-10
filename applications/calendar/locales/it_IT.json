@@ -3581,6 +3581,9 @@
       "Event not found": [
         "Evento non trovato"
       ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Impossibile aggiungere la videoconferenza ${ MEET_APP_NAME } esistente"
       ],
@@ -3707,6 +3710,9 @@
       ],
       "Name required": [
         "Nome obbligatorio"
+      ],
+      "Network error": [
+        "Errore di rete"
       ],
       "No booking page data received": [
         "Nessun dato della pagina di prenotazione ricevuto"
@@ -5491,6 +5497,9 @@
       ],
       "Failed to update meeting password": [
         "Impossibile aggiornare la password della riunione"
+      ],
+      "Failed to update meeting schedule": [
+        "Impossibile aggiornare la pianificazione della riunione"
       ],
       "finance": [
         "dati finanziari"
@@ -8104,6 +8113,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -8535,6 +8547,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -12100,6 +12115,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La tua prova gratuita di ${ planName } termina il giorno ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Il tuo abbonamento ${ planTitle } è iniziato"
       ],
       "Your account is protected": [
         "Il tuo account è protetto"

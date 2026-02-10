@@ -516,6 +516,9 @@
       "Disable": [
         "Uitschakelen"
       ],
+      "Disable categories": [
+        "Categorieën uitschakelen"
+      ],
       "Disable recovery phrase": [
         "Herstelzin uitschakelen"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Behouden"
+      ],
+      "Keep categories": [
+        "Categorieën behouden"
       ],
       "Keep Editing": [
         "Doorgaan met bewerken"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
+      ],
       "Failed to add group member": [
         "Kon geen groepslid toevoegen."
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Naam vereist"
+      ],
+      "Network error": [
+        "Netwerkfout"
       ],
       "No active sessions": [
         "Geen actieve sessies"
@@ -8724,15 +8736,15 @@
       "${ storage } storage": [
         "${ storage } opslag"
       ],
+      "${ total } user found": [
+        "${ total } gebruiker gevonden",
+        "${ total } gebruikers gevonden"
+      ],
       "${ url } added.": [
         "${ url } toegevoegd."
       ],
       "${ url } deleted.": [
         "${ url } verwijderd."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } gebruiker gevonden",
-        "${ userFound } gebruikers gevonden"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } aangemaakt"
@@ -8952,6 +8964,9 @@
       ],
       "All members have been added.": [
         "Alle leden zijn toegevoegd."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle berichten zullen in de inbox worden getoond, en de categorie tabbladen en tags zullen niet langer zichtbaar zijn. "
       ],
       "All users": [
         "Alle gebruikers"
@@ -11791,6 +11806,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
       ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Uw recente wijzigingen zijn gepubliceerd. Ze zijn in de komende uren zichtbaar voor gebruikers."
+      ],
       "Your recovery phrase": [
         "Uw herstelzin"
       ],
@@ -11949,6 +11967,9 @@
     "invitation status": {
       "Declined": [
         "Afgewezen"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "Paused": [
         "Onderbroken"
@@ -22293,6 +22314,9 @@
       "Disable activity monitor?": [
         "Activiteitenmonitor uitschakelen?"
       ],
+      "Disable categories?": [
+        "Categorieën uitschakelen?"
+      ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
       ],
@@ -23770,6 +23794,9 @@
       ],
       "User declined invitation": [
         "Gebruiker weigerde uitnodiging"
+      ],
+      "User is a group": [
+        "Gebruiker is een groep"
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

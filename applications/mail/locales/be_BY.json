@@ -201,9 +201,6 @@
       "Change email": [
         "Змяніць электронную пошту"
       ],
-      "Change page": [
-        "Змяніць старонку"
-      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -387,9 +384,6 @@
       "Customize": [
         "Наладзіць"
       ],
-      "Customize categories": [
-        "Наладзіць катэгорыі"
-      ],
       "Customize import": [
         "Наладзіць імпартаванне"
       ],
@@ -450,9 +444,6 @@
       "Disable alias": [
         "Адключыць псеўданім"
       ],
-      "Disable categories": [
-        "Адключыць катэгорыі"
-      ],
       "Disabling alias": [
         "Адключыць псеўданім"
       ],
@@ -503,9 +494,6 @@
       ],
       "Edit address": [
         "Рэдагаваць адрас"
-      ],
-      "Edit categories": [
-        "Рэдагаваць катэгорыі"
       ],
       "Edit draft": [
         "Рэдагаваць чарнавік"
@@ -792,9 +780,6 @@
       "Join with ${ MEET_APP_NAME }": [
         "Далучыцца пры дапамозе ${ MEET_APP_NAME }"
       ],
-      "Keep categories": [
-        "Захоўваць катэгорыі"
-      ],
       "Keep inbox as before": [
         "Пакінуць папярэдні выгляд паштовай скрыні"
       ],
@@ -1027,7 +1012,7 @@
         "Не, я не хачу далучацца"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "Not saved": [
         "Не захавана"
@@ -1229,9 +1214,6 @@
       ],
       "Save": [
         "Захаваць"
-      ],
-      "Save preferences": [
-        "Захаваць параметры"
       ],
       "Saving${ ellipsis }": [
         "Захаванне ${ ellipsis }"
@@ -4658,6 +4640,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Памылка пры запампоўванні далучэнняў. Паведамленне не адпраўлена."
       ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Не ўдалося зашыфраваць далучэнне. Паспрабуйце яшчэ раз."
       ],
@@ -4762,6 +4747,9 @@
       ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Network error": [
+        "Памылка сеткі"
       ],
       "Network error: Please check your connection and try again.": [
         "Памылка сеткі: праверце сваё падключэнне да сеткі і паспрабуйце яшчэ раз."
@@ -6938,9 +6926,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Усе паведамленні, якія захоўваюцца з гэтай меткай будуць незваротна выдалены."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі катэгорый і тэгі больш не будуць бачныя. "
-      ],
       "All your calendars are disabled.": [
         "Усе вашы календары адключаны."
       ],
@@ -7836,7 +7821,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "newsletter": [
         "рассылка"
@@ -8098,9 +8083,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Атрымліваць апавяшчэнні для ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Атрымальнік: "
@@ -9480,9 +9462,6 @@
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Дадавайце або выдаляйце катэгорыі. Задавайце або адключайце апавяшчэнні. Наладжвайце меню ${ menuIcon } у любы час."
-      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -9587,9 +9566,6 @@
       ],
       "Cash": [
         "Наяўныя"
-      ],
-      "Categories": [
-        "Катэгорыі"
       ],
       "Categories badge": [
         "Значок катэгорый"
@@ -9954,9 +9930,6 @@
       "Notification": [
         "Апавяшчэнне"
       ],
-      "Notifications": [
-        "Апавяшчэнні"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Апавяшчэнні адключаны. Змяніце налады браўзера, каб уключыць іх."
       ],
@@ -10070,9 +10043,6 @@
       ],
       "Search in": [
         "Шукаць у"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Выберыце катэгорыі для ўключэння і кіруйце апавяшчэннямі для новых лістоў."
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
@@ -12635,7 +12605,7 @@
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
@@ -15341,9 +15311,6 @@
       "Apply gift code": [
         "Ужыць падарункавы код"
       ],
-      "Archive": [
-        "Архіў"
-      ],
       "Archive all messages?": [
         "Архіваваць усе паведамленні?"
       ],
@@ -15479,12 +15446,6 @@
       "Customize calendar import": [
         "Наладзіць імпартаванне календара"
       ],
-      "Customize categories": [
-        "Наладжванне катэгорый"
-      ],
-      "Customize categories to fit your needs": [
-        "Наладзьце катэгорыі пад свае патрэбы"
-      ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
       ],
@@ -15553,9 +15514,6 @@
       ],
       "Desktop": [
         "Для камп'ютара"
-      ],
-      "Disable categories?": [
-        "Адключыць катэгорыі?"
       ],
       "Discover your subscription benefits": [
         "Пазнаёмцеся з перавагамі вашай падпіскі"
@@ -16159,9 +16117,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."
-      ],
-      "Trash": [
-        "Сметніца"
       ],
       "Trash all messages?": [
         "Перамясціць у сметніцу ўсе паведамленні?"

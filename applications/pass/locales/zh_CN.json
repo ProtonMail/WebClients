@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "接受并查看项目"
       ],
+      "Accept invitation": [
+        "接受邀请"
+      ],
       "Account": [
         "账户"
       ],
@@ -285,6 +288,12 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Do not show again": [
+        "不再显示"
+      ],
+      "Do not show again when I press": [
+        "当我按下时不再显示"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -758,6 +767,11 @@
         "展开"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "您希望剪贴板在 ${ timeoutDurationHumanReadable } 后自动清除吗？"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
@@ -830,6 +844,9 @@
       ],
       "These items remain at risk": [
         "这些项目仍然处于危险中"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "这些保险库将无法访问，且其内容将不会对搜索或自动填充功能可用。"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "该账户存在漏洞，请访问该服务并更改密码。"
@@ -966,6 +983,9 @@
       ],
       "Error reporting problem": [
         "错误报告"
+      ],
+      "Failed loading group members": [
+        "加载群组成员失败"
       ],
       "Failed removing the invite.": [
         "移除邀请失败。"
@@ -1351,14 +1371,26 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } 已转发"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } 希望与您管理的群组共享一个项目"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } 希望与群组 ${ invitedGroup.Name } 共享一个项目"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "您所在的群组已获得保险库 ${ maybeVaultName } 的共享访问权限"
       ],
       "${ memberCount } member": [
         "${ memberCount } 位成员"
       ],
       "${ n } item": [
         "${ n } 项"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "您所在的群组获得了 ${ newGroupSharesCount } 项新的共享内容"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } 将始终可以访问"
@@ -1375,6 +1407,9 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } 离线模式已启用"
+      ],
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
       ],
@@ -1390,6 +1425,9 @@
       "${ row.breachCount } breach detected": [
         "检测到 ${ row.breachCount } 泄露"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } 位成员)"
+      ],
       "(Empty)": [
         "（空）"
       ],
@@ -1398,6 +1436,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个电子邮件地址都将创建一个联系人。"
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "新版本正在下载！下载完成后，将在下次重启时生效。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
@@ -1425,6 +1466,9 @@
       ],
       "Admin": [
         "管理员"
+      ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "确认后，您需要为 ${ PASS_APP_NAME } 接受一个权限提示"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "成功导入数据后，为安全起见，您可以删除包含密码的 CSV 文件。"
@@ -1552,6 +1596,9 @@
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "已复制到剪贴板（将在 ${ timeoutDurationHumanReadable } 后过期）"
+      ],
       "Coupon successfully applied!": [
         "优惠券已成功应用！"
       ],
@@ -1635,6 +1682,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "启用自动锁定功能，确保数据安全"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "启用离线模式以便在失去网络连接或 ${ BRAND_NAME } 服务器不可达时访问您的 ${ PASS_SHORT_APP_NAME } 数据。"
       ],
       "Enabling biometrics auto-lock": [
         "启用生物识别自动锁定"
@@ -1759,6 +1809,9 @@
       "Invite successfully resent": [
         "已重新发送邀请"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "邀请群组 ${ invitedGroup.Name } 访问项目"
+      ],
       "invites you to access items in": [
         "邀请您访问其中的项目"
       ],
@@ -1876,6 +1929,9 @@
       "No network connection": [
         "无网络连接"
       ],
+      "No new versions are available at the moment.": [
+        "目前没有新版本可用 :P"
+      ],
       "None": [
         "无"
       ],
@@ -1896,6 +1952,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "打开您的扩展程序的 Safari 设置，并验证是否为 ${ BRAND_NAME } 域名启用了网站权限"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
@@ -2038,8 +2097,17 @@
       "Please follow the steps below to set up your domain.": [
         "请按照下面的步骤设置您的域。"
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "请保持 ${ PASS_APP_NAME } 开启，以便自动清除剪贴板"
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "在导入数据时，请不要关闭此窗口。这个过程可能需要几分钟。"
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "请保持浏览器开启，以便自动清除剪贴板"
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "请确保之前活跃的窗口是您想要执行自动输入的位置，并且您的光标已聚焦在登录字段上"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "请注意别名一旦删除就无法恢复。也许您想禁用别名？"
@@ -2200,6 +2268,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "无法导入以下 ${ totalIgnored } 项："
       ],
+      "The group is invited to a vault.": [
+        "该群组已被邀请访问一个保险库"
+      ],
       "The secure link has been removed": [
         "安全链接已删除"
       ],
@@ -2211,6 +2282,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "该导出文件未经加密，任何可以访问您导出文件的人都可以看到您的密码。为了安全起见，请在使用完毕后将其删除。"
+      ],
+      "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
+        "此功能目前在 Linux 上处于实验阶段，请确保您的系统是最新的。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "此项目目前未与任何人共享。请与他人共享。"
@@ -2245,6 +2319,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
+      "This will reload the application.": [
+        "这将重新加载应用程序"
+      ],
+      "This will trigger a check for new beta releases.": [
+        "这将触发检查新的测试版发布"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
@@ -2259,6 +2339,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "在正式发布前，抢先体验新的 ${ BRAND_NAME } 功能、更新和产品。"
       ],
       "Unable to copy to clipboard": [
         "无法复制到剪贴板"
@@ -2350,6 +2433,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "在 ${ PASS_APP_NAME } 上创建/编辑登录时，“用户名” 输入始终可见。"
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "启用后，即使您失去网络连接或 ${ BRAND_NAME } 服务器不可达，您仍可以访问您的 ${ PASS_SHORT_APP_NAME } 数据。"
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "当从此别名发送邮件时，电子邮件将显示 ${ emailSender } 作为发送者。"
       ],
@@ -2392,6 +2478,9 @@
       "You may close this tab.": [
         "您可以关闭此标签页。"
       ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予 ${ PASS_APP_NAME } 辅助功能权限"
+      ],
       "You need a vault with edit permission before you can import items.": [
         "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
       ],
@@ -2412,6 +2501,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "您将不再收到该电子邮件地址的数据泄露通知。"
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA 和其他高级功能"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA、信用卡和其他高级功能"
@@ -2436,6 +2528,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2981,6 +3081,9 @@
       ],
       "Language": [
         "语言"
+      ],
+      "Larger window": [
+        "更大窗口"
       ],
       "Last 2 weeks": [
         "最近两周"
@@ -3778,6 +3881,11 @@
         "${ price }/月"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "将需要您的浏览器授予权限"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "添加 2FA 密钥"
@@ -4100,6 +4208,9 @@
       "Change your lock method": [
         "更改您的锁定方式"
       ],
+      "Clear clipboard": [
+        "清除剪贴板"
+      ],
       "Confirm extra password": [
         "确认额外密码"
       ],
@@ -4210,6 +4321,9 @@
       ],
       "Get Started": [
         "立即体验"
+      ],
+      "Hidden vaults": [
+        "隐藏保险库"
       ],
       "Hide-my-email aliases": [
         "个hide-my-email别名"
@@ -4343,6 +4457,9 @@
       "Pending access to the shared data": [
         "等待访问共享数据"
       ],
+      "Perform autotype?": [
+        "执行自动输入？"
+      ],
       "Permanently remove all items?": [
         "是否永久移除所有项目？"
       ],
@@ -4415,6 +4532,9 @@
       "Settings": [
         "设置"
       ],
+      "Setup offline mode": [
+        "设置离线模式"
+      ],
       "Share vaults with your team": [
         "与您的团队分享保险库"
       ],
@@ -4466,8 +4586,14 @@
       "Vault": [
         "保险库"
       ],
+      "Vault shared with a group you administer": [
+        "保险库已与您管理的群组共享"
+      ],
       "Vault shared with you": [
         "与您共享的保险库"
+      ],
+      "Visible vaults": [
+        "可视化保险库"
       ],
       "Want to learn more?": [
         "想详细了解？"
@@ -4561,6 +4687,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "需要 ${ BRAND_NAME } 密码"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } 离线模式已禁用"
       ],
       "2 consecutive dots are not allowed": [
         "不允许出现 2 个连续的点"

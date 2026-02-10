@@ -199,9 +199,6 @@
       "Change email": [
         "Canvia el correu electrònic"
       ],
-      "Change page": [
-        "Canvia la pàgina"
-      ],
       "Change password": [
         "Canvia la contrasenya"
       ],
@@ -385,9 +382,6 @@
       "Customize": [
         "Personalitza"
       ],
-      "Customize categories": [
-        "Personalitzeu les categories"
-      ],
       "Customize import": [
         "Personalitzar importació"
       ],
@@ -444,9 +438,6 @@
       "Disable alias": [
         "Desactiva l'àlies"
       ],
-      "Disable categories": [
-        "Deshabiliteu les categories"
-      ],
       "Disabling alias": [
         "S'està desactivant l'àlies"
       ],
@@ -497,9 +488,6 @@
       ],
       "Edit address": [
         "Edita l'adreça"
-      ],
-      "Edit categories": [
-        "Editar categories"
       ],
       "Edit draft": [
         "Edita l'esborrany"
@@ -783,9 +771,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Afegiu-vos-hi amb ${ MEET_APP_NAME }"
-      ],
-      "Keep categories": [
-        "Conserveu les categories"
       ],
       "Keep inbox as before": [
         "Manteniu la bústia d'entrada com abans"
@@ -1221,9 +1206,6 @@
       ],
       "Save": [
         "Desa"
-      ],
-      "Save preferences": [
-        "Deseu les preferències"
       ],
       "Saving${ ellipsis }": [
         "S'està desant ${ ellipsis }"
@@ -4604,6 +4586,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Hi ha hagut un error en carregar fitxers adjunts. No s'ha enviat el missatge."
       ],
+      "Failed loading group members": [
+        "No s'han pogut carregar els membres del grup"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Torneu-ho a provar."
       ],
@@ -4706,6 +4691,9 @@
       ],
       "Name is required": [
         "Es requereix un nom."
+      ],
+      "Network error": [
+        "Error de xarxa"
       ],
       "Network error: Please check your connection and try again.": [
         "Hi ha hagut un error de xarxa: comproveu la connexió i torneu-ho a provar."
@@ -6730,9 +6718,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "Tots els missatges emmagatzemats amb aquesta etiqueta s'eliminaran permanentment."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Tots els missatges es mostraran a la safata d'entrada i les pestanyes de categoria i les etiquetes ja no seran visibles. "
-      ],
       "All your calendars are disabled.": [
         "Tots els vostres calendaris estan desactivats."
       ],
@@ -7858,9 +7843,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "Rebeu notificacions de ${ categoryLabel }"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -9180,9 +9162,6 @@
       "Add image URL": [
         "Afegeix l'URL de la imatge"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Afegiu o esborreu categories. Configureu o desactiveu notificacions. Ajusteu en qualsevol moment al menú de ${ menuIcon }."
-      ],
       "Add to group": [
         "Afegeix al grup"
       ],
@@ -9287,9 +9266,6 @@
       ],
       "Cash": [
         "Efectiu"
-      ],
-      "Categories": [
-        "Categories"
       ],
       "Categories badge": [
         "Insígnia de categories"
@@ -9654,9 +9630,6 @@
       "Notification": [
         "Notificació"
       ],
-      "Notifications": [
-        "Notificacions"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notificacions estan desactivades. Per activar-les, canvieu les preferències del navegador."
       ],
@@ -9770,9 +9743,6 @@
       ],
       "Search in": [
         "Cerca a"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "Seleccioneu les categories per incloure i gestionar les notificacions de nous correus electrònics."
       ],
       "Send auto-reply": [
         "Envia una resposta automàtica"
@@ -14777,9 +14747,6 @@
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
-      "Archive": [
-        "Arxiva"
-      ],
       "Archive all messages?": [
         "Voleu arxivar tots els missatges?"
       ],
@@ -14915,12 +14882,6 @@
       "Customize calendar import": [
         "Personalitzeu la importació del calendari"
       ],
-      "Customize categories": [
-        "Personalitzar categories"
-      ],
-      "Customize categories to fit your needs": [
-        "Personalitzeu les categories perquè s'adaptin a les vostres necessitats"
-      ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
       ],
@@ -14979,9 +14940,6 @@
       ],
       "Desktop": [
         "Escriptori"
-      ],
-      "Disable categories?": [
-        "Voleu deshabilitar les categories?"
       ],
       "Discover your subscription benefits": [
         "Descobriu els avantatges de la vostra subscripció"
@@ -15583,9 +15541,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per previsualitzar aquest full de càlcul, obriu-lo a ${ SHEETS_APP_NAME } o descarregueu-lo."
-      ],
-      "Trash": [
-        "Paperera"
       ],
       "Trash all messages?": [
         "Voleu enviar tots els missatges a la paperera?"

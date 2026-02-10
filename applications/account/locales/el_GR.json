@@ -516,6 +516,9 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
+      "Disable categories": [
+        "Απενεργοποίηση κατηγοριών"
+      ],
       "Disable recovery phrase": [
         "Απενεργοποίηση φράσης ανάκτησης"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Διατήρηση"
+      ],
+      "Keep categories": [
+        "Διατήρηση κατηγοριών"
       ],
       "Keep Editing": [
         "Συνεχίστε την Επεξεργασία"
@@ -6185,6 +6191,9 @@
       "Expired": [
         "Ληγμένο"
       ],
+      "Failed loading group members": [
+        "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
       "Failed to add group member": [
         "Αποτυχία προσθήκης μέλους ομάδας"
       ],
@@ -6320,6 +6329,9 @@
       ],
       "Name required": [
         "Απαιτείται όνομα"
+      ],
+      "Network error": [
+        "Σφάλμα δικτύου"
       ],
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
@@ -8724,15 +8736,15 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ total } user found": [
+        "${ total } χρήστης βρέθηκε",
+        "${ total } χρήστες βρέθηκαν"
+      ],
       "${ url } added.": [
         "${ url } προστέθηκε."
       ],
       "${ url } deleted.": [
         "${ url } διαγράφηκε."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } χρήστης βρέθηκε",
-        "${ userFound } χρήστες βρέθηκαν"
       ],
       "${ vaultLink } created": [
         "Η κρύπτη ${ vaultLink } δημιουργήθηκε"
@@ -8952,6 +8964,9 @@
       ],
       "All members have been added.": [
         "Όλα τα μέλη έχουν προστεθεί."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Όλα τα μηνύματα θα εμφανίζονται στα Εισερχόμενα, και οι καρτέλες κατηγοριών και οι ετικέτες δε θα είναι πλέον ορατές. "
       ],
       "All users": [
         "Όλοι οι χρήστες"
@@ -11952,6 +11967,9 @@
     "invitation status": {
       "Declined": [
         "Απορρίφθηκε"
+      ],
+      "Owner": [
+        "Ιδιοκτήτης"
       ],
       "Paused": [
         "Σε παύση"
@@ -22296,6 +22314,9 @@
       "Disable activity monitor?": [
         "Να απενεργοποιηθεί η παρακολούθηση δραστηριότητας;"
       ],
+      "Disable categories?": [
+        "Απενεργοποίηση κατηγοριών;"
+      ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
       ],
@@ -23773,6 +23794,9 @@
       ],
       "User declined invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"
+      ],
+      "User is a group": [
+        "Ο χρήστης είναι μια ομάδα"
       ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"

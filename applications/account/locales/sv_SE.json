@@ -516,6 +516,9 @@
       "Disable": [
         "Inaktivera"
       ],
+      "Disable categories": [
+        "Inaktivera kategorier"
+      ],
       "Disable recovery phrase": [
         "Inaktivera återställningsfras"
       ],
@@ -908,6 +911,9 @@
       ],
       "Keep": [
         "Behåll"
+      ],
+      "Keep categories": [
+        "Behåll kategorier"
       ],
       "Keep Editing": [
         "Fortsätt redigera"
@@ -6133,6 +6139,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
+      ],
       "Failed to add group member": [
         "Misslyckades att lägga till gruppmedlem"
       ],
@@ -6268,6 +6277,9 @@
       ],
       "Name required": [
         "Namn krävs"
+      ],
+      "Network error": [
+        "Nätverksfel"
       ],
       "No active sessions": [
         "Inga aktiva sessioner"
@@ -8674,10 +8686,6 @@
       ],
       "${ url } deleted.": [
         "${ url } borttagen."
-      ],
-      "${ userFound } user found": [
-        "${ userFound } användare hittades",
-        "${ userFound } användare hittades"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } skapad"
@@ -11867,6 +11875,9 @@
       "Declined": [
         "Avböjd"
       ],
+      "Owner": [
+        "Ägare"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -14418,6 +14429,9 @@
       ],
       "Document & spreadsheet editor": [
         "Dokument- och kalkylbladsredigerare"
+      ],
+      "Email writing assistant": [
+        "Skrivassistent för e-post"
       ],
       "Everything from ${ title }, plus...": [
         "Allt från ${ title }, plus …"
@@ -22151,6 +22165,9 @@
       "Disable activity monitor?": [
         "Inaktivera aktivitetsövervakare?"
       ],
+      "Disable categories?": [
+        "Inaktivera kategorier?"
+      ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
       ],
@@ -23628,6 +23645,9 @@
       ],
       "User declined invitation": [
         "Användare avböjde inbjudan"
+      ],
+      "User is a group": [
+        "Användare är en grupp"
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"

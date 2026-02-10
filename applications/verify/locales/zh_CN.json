@@ -1049,6 +1049,9 @@
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
       ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "若需要了解更多移除这些限制的信息，请通过${ mailLink }登录。"
       ],
@@ -1140,6 +1143,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
       ]
     },
     "Link": {
@@ -1323,6 +1329,9 @@
       "Share files with no size limit": [
         "共享文件无大小限制"
       ],
+      "Short domain (@pm.me)": [
+        "短域名 (@pm.me)"
+      ],
       "SMTP submission": [
         "SMTP 投递邮件"
       ],
@@ -1491,7 +1500,7 @@
         "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方SSO提供商。"
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "storage_split: feature": {
@@ -1521,6 +1530,9 @@
     "Title": {
       "Account restricted": [
         "账户受限"
+      ],
+      "Account temporarily locked": [
+        "账户暂时锁定"
       ],
       "Enter your password": [
         "请输入您的密码"

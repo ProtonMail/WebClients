@@ -2763,6 +2763,9 @@
       "Name is required": [
         "Zahtevano je ime"
       ],
+      "Network error": [
+        "Omrežna napaka"
+      ],
       "No calendars found to import": [
         "Ni najdenih koledarjev za uvoz."
       ],
@@ -4408,6 +4411,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Videti je, da ste pred kratkim poskušali naložiti ${ uploadName }. Če nalaganje ni uspelo, ${ replaceFile }. Če nalaganje še vedno poteka, bo zamenjava preklicala nalaganje, ki je v teku."
+      ],
+      "It's better to have:": [
+        "Bolje je imeti:"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
@@ -7496,7 +7502,7 @@
         "Skrbniška plošča za upravljanje uporabnikov in naročnin"
       ],
       "Advanced account protection": [
-        "Napredni program za zaščito računa"
+        "Napredna zaščita računa"
       ],
       "Team policies": [
         "Pravilniki skupine"
@@ -7782,6 +7788,9 @@
       ]
     },
     "Referral": {
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
+      ],
       "Invited friends": [
         "Povabljeni prijatelji"
       ],
@@ -9082,6 +9091,9 @@
       ],
       "How does it work?": [
         "Kako deluje?"
+      ],
+      "How your free trial works": [
+        "Kako deluje vaš brezplačni preizkus"
       ],
       "Human verification": [
         "Ali si človek"

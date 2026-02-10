@@ -198,9 +198,6 @@
       "Change email": [
         "メールアドレスを変更"
       ],
-      "Change page": [
-        "ページの変更"
-      ],
       "Change password": [
         "パスワードを変更"
       ],
@@ -384,9 +381,6 @@
       "Customize": [
         "カスタマイズ"
       ],
-      "Customize categories": [
-        "カテゴリのカスタマイズ"
-      ],
       "Customize import": [
         "インポートをカスタマイズ"
       ],
@@ -441,9 +435,6 @@
       "Disable alias": [
         "エイリアスを無効化"
       ],
-      "Disable categories": [
-        "カテゴリーを無効化"
-      ],
       "Disabling alias": [
         "エイリアスを無効化"
       ],
@@ -494,9 +485,6 @@
       ],
       "Edit address": [
         "アドレスを編集"
-      ],
-      "Edit categories": [
-        "カテゴリを編集"
       ],
       "Edit draft": [
         "下書きを編集"
@@ -779,9 +767,6 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }で参加"
-      ],
-      "Keep categories": [
-        "カテゴリーを保持"
       ],
       "Keep inbox as before": [
         "受信トレイを以前のままに保つ"
@@ -1217,9 +1202,6 @@
       ],
       "Save": [
         "保存"
-      ],
-      "Save preferences": [
-        "設定を保存"
       ],
       "Saving${ ellipsis }": [
         "保存中${ ellipsis }"
@@ -4679,6 +4661,9 @@
       "Name is required": [
         "名前は必須です"
       ],
+      "Network error": [
+        "ネットワークエラーが発生しました"
+      ],
       "Network error: Please check your connection and try again.": [
         "ネットワークエラー: インターネット接続を確認し、もう一度やり直してください。"
       ],
@@ -6623,9 +6608,6 @@
       "All messages stored with this label will be permanently deleted.": [
         "このラベルがついたすべてのメッセージは完全に削除されます。"
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "すべてのメッセージは受信トレイに表示され、カテゴリタブとタグは表示されなくなります。 "
-      ],
       "All your calendars are disabled.": [
         "すべてのカレンダーが無効です。"
       ],
@@ -7732,9 +7714,6 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
-      ],
-      "Receive notifications for ${ categoryLabel }": [
-        "${ categoryLabel }の通知を受け取る"
       ],
       "Recipient: ": [
         "宛先: "
@@ -9024,9 +9003,6 @@
       "Add image URL": [
         "画像 URL を追加"
       ],
-      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "カテゴリを追加・削除、通知をオン・オフにできます。${ menuIcon } メニューでいつでも調整可能です。"
-      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -9131,9 +9107,6 @@
       ],
       "Cash": [
         "現金"
-      ],
-      "Categories": [
-        "カテゴリ"
       ],
       "Categories badge": [
         "カテゴリバッジ"
@@ -9498,9 +9471,6 @@
       "Notification": [
         "通知"
       ],
-      "Notifications": [
-        "通知"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "通知が無効になっています。有効にするには、ブラウザの設定を変更してください。"
       ],
@@ -9614,9 +9584,6 @@
       ],
       "Search in": [
         "検索対象"
-      ],
-      "Select the categories to include and manage notifications for new emails.": [
-        "含めるカテゴリを選択し、新しいメールの通知を管理してください。"
       ],
       "Send auto-reply": [
         "自動返信を送信"
@@ -14483,9 +14450,6 @@
       "Apply gift code": [
         "ギフトコードを使用"
       ],
-      "Archive": [
-        "アーカイブ"
-      ],
       "Archive all messages?": [
         "すべてのメッセージをアーカイブしますか？"
       ],
@@ -14621,12 +14585,6 @@
       "Customize calendar import": [
         "カレンダーのインポートをカスタマイズ"
       ],
-      "Customize categories": [
-        "カテゴリのカスタマイズ"
-      ],
-      "Customize categories to fit your needs": [
-        "お客様のニーズに合わせてカテゴリをカスタマイズ"
-      ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
       ],
@@ -14680,9 +14638,6 @@
       ],
       "Desktop": [
         "デスクトップ"
-      ],
-      "Disable categories?": [
-        "カテゴリーを無効化しますか？"
       ],
       "Discover your subscription benefits": [
         "サブスクリプションの特典をご覧ください"
@@ -15283,9 +15238,6 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "このスプレッドシートを表示するには、 ${ SHEETS_APP_NAME } で開くか、ダウンロードしてください。"
-      ],
-      "Trash": [
-        "ごみ箱"
       ],
       "Trash all messages?": [
         "すべてのメッセージをごみ箱に入れますか？"
