@@ -65,6 +65,7 @@ export const useLockSettings = () => {
                 case 'biometrics': {
                     const res = await dispatch(verifyUnlock({ mode: appLock }));
                     resolve(res.meta.requestStatus === 'fulfilled');
+                    break;
                 }
                 default:
                     return resolve(true);

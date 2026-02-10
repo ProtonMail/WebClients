@@ -105,6 +105,7 @@ export const convertAmount = (
                 case 'SATS':
                     return roundFloat(value * (BITCOIN / SATOSHI), precision);
             }
+            break; // unreachable
         case 'MBTC':
             switch (to) {
                 case 'BTC':
@@ -114,6 +115,7 @@ export const convertAmount = (
                 case 'SATS':
                     return roundFloat(value * (mBITCOIN / SATOSHI), precision);
             }
+            break; // unreachable
         case 'SATS':
             switch (to) {
                 case 'BTC':

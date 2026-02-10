@@ -117,7 +117,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     const creationTime = publicKey.getCreationTime();
     const expirationTime = await publicKey.getExpirationTime();
     const userIDs = publicKey.getUserIDs();
-    const keyContentHash = await SHA256(publicKey.write()).then(bytes => bytes.toHex());
+    const keyContentHash = await SHA256(publicKey.write()).then((bytes) => bytes.toHex());
     // Allow comparing keys without third-party certification
     let keyContentHashNoCerts: string;
     // Check if third-party certs are present
@@ -127,7 +127,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         publicKeyClone.users.forEach((user) => {
             user.otherCertifications = [];
         });
-        keyContentHashNoCerts = await SHA256(publicKeyClone.write()).then(bytes => bytes.toHex());
+        keyContentHashNoCerts = await SHA256(publicKeyClone.write()).then((bytes) => bytes.toHex());
     } else {
         keyContentHashNoCerts = keyContentHash;
     }
@@ -155,7 +155,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         getExpirationTime: () => expirationTime,
         getUserIDs: () => userIDs,
         isWeak: () => isWeak,
-        equals: (otherKey: KeyReference, ignoreOtherCerts = false) =>
+        equals: (otherKey: KeyReference, ignoreOtherCerts) =>
             ignoreOtherCerts
                 ? otherKey._keyContentHash[1] === keyContentHashNoCerts
                 : otherKey._keyContentHash[0] === keyContentHash,
