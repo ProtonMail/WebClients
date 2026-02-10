@@ -173,7 +173,8 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     const { createNotification } = useNotifications();
 
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
-    const username = publicKey.user.name;
+    /** "name" properties may be missing for some relying parties (see globals.d.ts) */
+    const username = publicKey.user?.name ?? publicKey.user?.displayName ?? '';
 
     const form = useFormik<FormValues>({
         initialValues: { name: domain, step: 'select' },
