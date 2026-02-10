@@ -1,11 +1,16 @@
 import { useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@proton/shared/lib/api/telemetry';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
 export const useRecoverySettingsTelemetry = () => {
     const api = useApi();
+
+    const location = useLocation();
+    const appName = getAppFromPathnameSafe(location.pathname);
 
     const commonProps = {
         api,
@@ -15,6 +20,7 @@ export const useRecoverySettingsTelemetry = () => {
 
     const commonDimensions = {
         variant: 'A',
+        app_name: appName,
     };
 
     const sendRecoveryPageLoad = useCallback(() => {
@@ -25,7 +31,7 @@ export const useRecoverySettingsTelemetry = () => {
         });
 
         void telemetryReportsBatchQueue.flush();
-    }, [api]);
+    }, [api, appName]);
 
     const sendRecoverySettingEnabled = useCallback(
         ({
@@ -48,7 +54,7 @@ export const useRecoverySettingsTelemetry = () => {
 
             void telemetryReportsBatchQueue.flush();
         },
-        [api]
+        [api, appName]
     );
 
     return { sendRecoveryPageLoad, sendRecoverySettingEnabled };
