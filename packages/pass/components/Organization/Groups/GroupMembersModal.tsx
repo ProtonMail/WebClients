@@ -1,6 +1,8 @@
 import type { FC, MouseEvent } from 'react';
 import { useState } from 'react';
 
+import { c, msgid } from 'ttag';
+
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
@@ -31,10 +33,14 @@ export const useGroupMembersModal = (email: string, isGroupShare?: boolean) => {
     const [open, setOpen] = useState(false);
     const { isGroup, groupId, name, avatar } = useMemberOrGroupName(email, isGroupShare);
     const { loading, members } = useGroupMembers(groupId);
-    const membersCount = members?.length || 0;
+    const membersCount = members?.length;
+    let label = name;
+    if (membersCount !== undefined) {
+        label += ' ' + c('Info').ngettext(msgid`(${membersCount} member)`, `(${membersCount} members)`, membersCount);
+    }
 
     return {
-        open: isGroup && !!groupId && !loading && membersCount > 0 && open,
+        open: isGroup && !!groupId && !loading && membersCount && membersCount > 0 && open,
         onClick: (event: MouseEvent) => {
             event.preventDefault();
             event.stopPropagation();
@@ -42,7 +48,9 @@ export const useGroupMembersModal = (email: string, isGroupShare?: boolean) => {
         },
         onClose: () => setOpen(false),
         isGroup,
+        groupId,
         name,
+        label,
         avatar,
         members,
         membersCount,

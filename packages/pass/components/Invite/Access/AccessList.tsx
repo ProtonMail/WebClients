@@ -108,7 +108,7 @@ export const AccessList: FC<Props> = ({
 
                 {members?.map((member) => (
                     <ShareMember
-                        key={member.email}
+                        key={member.shareId} // member.email can be 'Private group' and not be unique
                         canManage={canManage}
                         canTransfer={canTransfer}
                         className="rounded-none"
