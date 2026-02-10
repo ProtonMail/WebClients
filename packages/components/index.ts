@@ -811,10 +811,8 @@ export { useHandler, useInterval, useSubscribeEventManager } from './hooks/useHa
 export type { Cancellable } from './hooks/useHandler';
 export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
 export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
-export { default as useInboxDesktopBadgeCount } from './hooks/useInboxDesktopBadgeCount';
 export { default as useIsClosing } from './hooks/useIsClosing';
 export { default as useIsDataRecoveryAvailable } from './hooks/useIsDataRecoveryAvailable';
-export { default as useISESEnabledElectron } from './hooks/useISESEnabledElectron';
 export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp';
 export { default as useIsMnemonicAvailable } from './hooks/useIsMnemonicAvailable';
 export { default as useKeyPress } from './hooks/useKeyPress';
