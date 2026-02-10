@@ -1,4 +1,4 @@
-import type { BrowserOptions } from '@sentry/browser';
+import type { BrowserOptions, Span } from '@sentry/browser';
 import {
     Integrations as SentryIntegrations,
     captureException,
@@ -6,6 +6,7 @@ import {
     init,
     makeFetchTransport,
     captureMessage as sentryCaptureMessage,
+    startInactiveSpan as sentryStartInactiveSpan,
 } from '@sentry/browser';
 import type { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 import type { ErrorEvent, EventHint } from '@sentry/types/types/event';
@@ -18,6 +19,9 @@ import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import type { ProtonConfig } from '../interfaces';
 import { isElectronApp } from './desktop';
+
+export { spanToJSON } from '@sentry/core';
+export type { Span } from '@sentry/browser';
 
 type SentryContext = {
     authHeaders: { [key: string]: string };
@@ -389,6 +393,18 @@ export const captureInitiativeMessage: (initiative: SentryInitiative, message: s
         tags: {
             initiative,
         },
+    });
+};
+
+export const startInactiveSpan = (
+    name: string,
+    initiative: SentryInitiative,
+    tags?: Record<string, string>
+): Span | undefined => {
+    return sentryStartInactiveSpan({
+        name,
+        op: initiative,
+        tags,
     });
 };
 
