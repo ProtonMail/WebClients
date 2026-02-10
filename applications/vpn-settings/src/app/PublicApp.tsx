@@ -187,11 +187,19 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                             clientType={CLIENT_TYPES.VPN}
                                             onPreSubmit={handlePreSubmit}
                                             onLogin={async (args) => {
-                                                onLogin({
-                                                    ...args,
-                                                    path: '/downloads?prompt',
-                                                });
-                                                return completeResult;
+                                                if (
+                                                    initialLocation?.pathname &&
+                                                    ['/appletv', '/tv'].includes(initialLocation?.pathname)
+                                                ) {
+                                                    handleLoginWithDefaultPath(args);
+                                                    return completeResult;
+                                                } else {
+                                                    onLogin({
+                                                        ...args,
+                                                        path: '/downloads?prompt',
+                                                    });
+                                                    return completeResult;
+                                                }
                                             }}
                                             onStartAuth={handleStartAuth}
                                         />
