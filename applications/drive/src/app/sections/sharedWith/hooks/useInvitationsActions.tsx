@@ -5,9 +5,8 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -41,8 +40,8 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                     setVolumeShareIds(volumeId, [shareId]);
                 }
 
-                await getActionEventManager().emit({
-                    type: ActionEventName.ACCEPT_INVITATIONS,
+                await getBusDriver().emit({
+                    type: BusDriverEventName.ACCEPT_INVITATIONS,
                     uids: [node.uid],
                 });
 
@@ -62,8 +61,8 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
         try {
             await drive.rejectInvitation(invitationUid);
 
-            await getActionEventManager().emit({
-                type: ActionEventName.REJECT_INVITATIONS,
+            await getBusDriver().emit({
+                type: BusDriverEventName.REJECT_INVITATIONS,
                 uids: [uid],
             });
 

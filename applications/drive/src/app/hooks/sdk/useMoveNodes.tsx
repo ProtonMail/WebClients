@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import { splitNodeUid, useDrive } from '@proton/drive';
+import type { NodeEventMeta } from '@proton/drive/internal/BusDriver';
 
 import { useMovedItemsNotification } from '../../modals/MoveItemsModal/useMovedItemsNotification';
 import { useDriveEventManager } from '../../store';
-import type { NodeEventMeta } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 export type MoveNodeItem = {

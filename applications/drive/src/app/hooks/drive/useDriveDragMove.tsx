@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -13,8 +14,6 @@ import { useSelection } from '../../components/FileBrowser';
 import type { DragMoveControls } from '../../components/FileBrowser/interface';
 import type { DriveItem } from '../../components/sections/interface';
 import type { LinkInfo } from '../../store/_actions/interface';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { type MoveNodesItemMap, useMoveNodes } from '../sdk/useMoveNodes';
 
 type DragAndDropItem = DriveItem;
@@ -28,7 +27,7 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
     const { moveNodes } = useMoveNodes({ onSuccess });
 
     function onSuccess(items: { uid: string; parentUid: string | undefined }[]) {
-        void getActionEventManager().emit({ type: ActionEventName.MOVED_NODES, items });
+        void getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items });
     }
 
     const selectedItems = React.useMemo(

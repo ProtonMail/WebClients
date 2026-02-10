@@ -1,5 +1,5 @@
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -37,7 +37,7 @@ const addPublicFolderItemToStore = async (uid: string) => {
 };
 
 export const subscribeToPublicFolderEvents = () => {
-    const unsubscribeFromEvents = getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
+    const unsubscribeFromEvents = getBusDriver().subscribe(BusDriverEventName.ALL, async (event) => {
         const store = usePublicFolderStore.getState();
         const { folder } = store;
         if (!folder) {
@@ -51,26 +51,26 @@ export const subscribeToPublicFolderEvents = () => {
             return;
         }
         switch (event.type) {
-            case ActionEventName.RENAMED_NODES:
+            case BusDriverEventName.RENAMED_NODES:
                 for (const item of event.items) {
                     store.updateItem(item.uid, { name: item.newName });
                 }
                 break;
-            case ActionEventName.MOVED_NODES:
+            case BusDriverEventName.MOVED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid !== folder.uid) {
                         store.removeItem(item.uid);
                     }
                 }
                 break;
-            case ActionEventName.UPDATED_NODES:
+            case BusDriverEventName.UPDATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid) {
                         void addPublicFolderItemToStore(item.uid);
                     }
                 }
                 break;
-            case ActionEventName.CREATED_NODES:
+            case BusDriverEventName.CREATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid) {
                         void addPublicFolderItemToStore(item.uid);
@@ -81,7 +81,7 @@ export const subscribeToPublicFolderEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.DELETED_NODES:
+            case BusDriverEventName.DELETED_NODES:
                 for (const uid of event.uids) {
                     store.removeItem(uid);
                 }

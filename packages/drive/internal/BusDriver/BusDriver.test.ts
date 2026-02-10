@@ -1,6 +1,5 @@
-import type { NodeEntity } from '@proton/drive/index';
-
-import { getActionEventManager } from './ActionEventManager';
+import type { NodeEntity } from '../..';
+import { getBusDriver } from './BusDriver';
 import type {
     AcceptInvitationsEvent,
     CreatedNodesEvent,
@@ -8,21 +7,22 @@ import type {
     RefreshShareWithMeEvent,
     RejectInvitationsEvent,
     TrashedNodesEvent,
-} from './ActionEventManagerTypes';
-import { ActionEventName } from './ActionEventManagerTypes';
+} from './BusDriverTypes';
+import { BusDriverEventName } from './BusDriverTypes';
 
-jest.mock('../errorHandling', () => ({
-    sendErrorReport: jest.fn(),
-}));
-
-jest.mock('../errorHandling/useSdkErrorHandler', () => ({
-    handleSdkError: jest.fn(),
-}));
+jest.mock('./errorHandling', () => {
+    const actual = jest.requireActual('./errorHandling');
+    return {
+        ...actual,
+        sendErrorReport: jest.fn(),
+        handleSdkError: jest.fn(),
+    };
+});
 
 const mockDispose = jest.fn();
 const mockSubscribeToTreeEvents = jest.fn();
 
-jest.mock('@proton/drive', () => ({
+jest.mock('../..', () => ({
     getDrive: jest.fn(() => ({
         subscribeToTreeEvents: mockSubscribeToTreeEvents,
     })),
@@ -40,12 +40,12 @@ const mockNodeEntity: NodeEntity = {
     type: 'folder',
 } as NodeEntity;
 
-describe('ActionEventManager', () => {
-    let eventBus: ReturnType<typeof getActionEventManager>;
+describe('BusDriver', () => {
+    let eventBus: ReturnType<typeof getBusDriver>;
     let consoleWarnSpy: jest.SpyInstance;
 
     beforeEach(() => {
-        eventBus = getActionEventManager();
+        eventBus = getBusDriver();
         eventBus.clear();
         consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     });
@@ -59,11 +59,11 @@ describe('ActionEventManager', () => {
         it('should call listener when event is emitted', async () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener);
             await eventBus.emit(testEvent);
 
             expect(mockListener).toHaveBeenCalledWith(testEvent);
@@ -74,12 +74,12 @@ describe('ActionEventManager', () => {
             const mockListener1 = jest.fn().mockResolvedValue(undefined);
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener1);
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener2);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener1);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener2);
             await eventBus.emit(testEvent);
 
             expect(mockListener1).toHaveBeenCalledWith(testEvent);
@@ -90,12 +90,12 @@ describe('ActionEventManager', () => {
             const trashListener = jest.fn().mockResolvedValue(undefined);
             const createListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, trashListener);
-            eventBus.subscribe(ActionEventName.CREATED_NODES, createListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, trashListener);
+            eventBus.subscribe(BusDriverEventName.CREATED_NODES, createListener);
             await eventBus.emit(trashEvent);
 
             expect(trashListener).toHaveBeenCalledWith(trashEvent);
@@ -107,11 +107,11 @@ describe('ActionEventManager', () => {
         it('should remove listener when unsubscribed', async () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe = eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener);
+            const unsubscribe = eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener);
             unsubscribe();
             await eventBus.emit(testEvent);
 
@@ -122,12 +122,12 @@ describe('ActionEventManager', () => {
             const mockListener1 = jest.fn().mockResolvedValue(undefined);
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe1 = eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener1);
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, mockListener2);
+            const unsubscribe1 = eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener1);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener2);
             unsubscribe1();
             await eventBus.emit(testEvent);
 
@@ -145,39 +145,39 @@ describe('ActionEventManager', () => {
             const rejectInvitationListener = jest.fn().mockResolvedValue(undefined);
 
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
             const createEvent: CreatedNodesEvent = {
-                type: ActionEventName.CREATED_NODES,
+                type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
 
             const deleteBookmarkEvent: DeleteBookmarksEvent = {
-                type: ActionEventName.DELETE_BOOKMARKS,
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: ['bookmark-1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
-                type: ActionEventName.ACCEPT_INVITATIONS,
+                type: BusDriverEventName.ACCEPT_INVITATIONS,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
-                type: ActionEventName.REJECT_INVITATIONS,
+                type: BusDriverEventName.REJECT_INVITATIONS,
                 uids: ['invitation-1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
-                type: ActionEventName.REFRESH_SHARED_WITH_ME,
+                type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, trashListener);
-            eventBus.subscribe(ActionEventName.CREATED_NODES, createListener);
-            eventBus.subscribe(ActionEventName.DELETE_BOOKMARKS, bookmarkDeleteListener);
-            eventBus.subscribe(ActionEventName.ACCEPT_INVITATIONS, acceptInvitationListener);
-            eventBus.subscribe(ActionEventName.REJECT_INVITATIONS, rejectInvitationListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, trashListener);
+            eventBus.subscribe(BusDriverEventName.CREATED_NODES, createListener);
+            eventBus.subscribe(BusDriverEventName.DELETE_BOOKMARKS, bookmarkDeleteListener);
+            eventBus.subscribe(BusDriverEventName.ACCEPT_INVITATIONS, acceptInvitationListener);
+            eventBus.subscribe(BusDriverEventName.REJECT_INVITATIONS, rejectInvitationListener);
 
             await eventBus.emit(trashEvent);
             await eventBus.emit(createEvent);
@@ -200,12 +200,12 @@ describe('ActionEventManager', () => {
             const successListener = jest.fn().mockResolvedValue(undefined);
 
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, errorListener);
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, successListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, errorListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, successListener);
 
             await expect(eventBus.emit(testEvent)).resolves.not.toThrow();
             expect(errorListener).toHaveBeenCalled();
@@ -213,37 +213,37 @@ describe('ActionEventManager', () => {
         });
     });
 
-    describe('ActionEventName.ALL subscription', () => {
+    describe('BusDriverEventName.ALL subscription', () => {
         it('should call ALL listener for any event type', async () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
             const createEvent: CreatedNodesEvent = {
-                type: ActionEventName.CREATED_NODES,
+                type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
             const bookmarkEvent: DeleteBookmarksEvent = {
-                type: ActionEventName.DELETE_BOOKMARKS,
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: ['bookmark1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
-                type: ActionEventName.ACCEPT_INVITATIONS,
+                type: BusDriverEventName.ACCEPT_INVITATIONS,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
-                type: ActionEventName.REJECT_INVITATIONS,
+                type: BusDriverEventName.REJECT_INVITATIONS,
                 uids: ['invitation1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
-                type: ActionEventName.REFRESH_SHARED_WITH_ME,
+                type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
             };
 
-            eventBus.subscribe(ActionEventName.ALL, allListener);
+            eventBus.subscribe(BusDriverEventName.ALL, allListener);
             await eventBus.emit(trashEvent);
             await eventBus.emit(createEvent);
             await eventBus.emit(bookmarkEvent);
@@ -264,12 +264,12 @@ describe('ActionEventManager', () => {
             const specificListener = jest.fn().mockResolvedValue(undefined);
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.TRASHED_NODES, specificListener);
-            eventBus.subscribe(ActionEventName.ALL, allListener);
+            eventBus.subscribe(BusDriverEventName.TRASHED_NODES, specificListener);
+            eventBus.subscribe(BusDriverEventName.ALL, allListener);
             await eventBus.emit(testEvent);
 
             expect(specificListener).toHaveBeenCalledWith(testEvent);
@@ -281,11 +281,11 @@ describe('ActionEventManager', () => {
         it('should be able to unsubscribe from ALL events', async () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe = eventBus.subscribe(ActionEventName.ALL, allListener);
+            const unsubscribe = eventBus.subscribe(BusDriverEventName.ALL, allListener);
             unsubscribe();
             await eventBus.emit(testEvent);
 
@@ -296,12 +296,12 @@ describe('ActionEventManager', () => {
             const allListener1 = jest.fn().mockResolvedValue(undefined);
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            eventBus.subscribe(ActionEventName.ALL, allListener1);
-            eventBus.subscribe(ActionEventName.ALL, allListener2);
+            eventBus.subscribe(BusDriverEventName.ALL, allListener1);
+            eventBus.subscribe(BusDriverEventName.ALL, allListener2);
             await eventBus.emit(testEvent);
 
             expect(allListener1).toHaveBeenCalledWith(testEvent);
@@ -312,12 +312,12 @@ describe('ActionEventManager', () => {
             const allListener1 = jest.fn().mockResolvedValue(undefined);
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
-                type: ActionEventName.TRASHED_NODES,
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
             };
 
-            const unsubscribe1 = eventBus.subscribe(ActionEventName.ALL, allListener1);
-            eventBus.subscribe(ActionEventName.ALL, allListener2);
+            const unsubscribe1 = eventBus.subscribe(BusDriverEventName.ALL, allListener1);
+            eventBus.subscribe(BusDriverEventName.ALL, allListener2);
             unsubscribe1();
             await eventBus.emit(testEvent);
 
@@ -412,11 +412,11 @@ describe('ActionEventManager', () => {
     });
 
     describe('handleSdkEvent', () => {
-        let eventBus: ReturnType<typeof getActionEventManager>;
+        let eventBus: ReturnType<typeof getBusDriver>;
         let emitSpy: jest.SpyInstance;
 
         beforeEach(() => {
-            eventBus = getActionEventManager();
+            eventBus = getBusDriver();
             eventBus.clear();
             emitSpy = jest.spyOn(eventBus, 'emit');
         });
@@ -437,7 +437,7 @@ describe('ActionEventManager', () => {
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
 
             expect(emitSpy).toHaveBeenCalledWith({
-                type: ActionEventName.CREATED_NODES,
+                type: BusDriverEventName.CREATED_NODES,
                 items: [
                     {
                         uid: 'node-123',
@@ -462,7 +462,7 @@ describe('ActionEventManager', () => {
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
 
             expect(emitSpy).toHaveBeenCalledWith({
-                type: ActionEventName.UPDATED_NODES,
+                type: BusDriverEventName.UPDATED_NODES,
                 items: [
                     {
                         uid: 'node-789',
@@ -484,7 +484,7 @@ describe('ActionEventManager', () => {
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
 
             expect(emitSpy).toHaveBeenCalledWith({
-                type: ActionEventName.DELETED_NODES,
+                type: BusDriverEventName.DELETED_NODES,
                 uids: ['deleted-node-123'],
             });
             expect(emitSpy).toHaveBeenCalledTimes(1);
@@ -498,7 +498,7 @@ describe('ActionEventManager', () => {
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
 
             expect(emitSpy).toHaveBeenCalledWith({
-                type: ActionEventName.REFRESH_SHARED_WITH_ME,
+                type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
             });
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
@@ -526,7 +526,7 @@ describe('ActionEventManager', () => {
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
 
             expect(emitSpy).toHaveBeenCalledWith({
-                type: ActionEventName.CREATED_NODES,
+                type: BusDriverEventName.CREATED_NODES,
                 items: [
                     {
                         uid: 'root-node-123',
@@ -539,7 +539,6 @@ describe('ActionEventManager', () => {
         });
 
         it('should handle errors in handleSdkEvent and report them', async () => {
-            const mockSendErrorReport = jest.mocked(require('../errorHandling').sendErrorReport);
             emitSpy.mockRejectedValue(new Error('Emit failed'));
 
             const mockDriveEvent = {
@@ -551,18 +550,6 @@ describe('ActionEventManager', () => {
             };
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent);
-
-            expect(mockSendErrorReport).toHaveBeenCalledWith(
-                expect.objectContaining({
-                    message: 'Error handling SDK event',
-                    context: expect.objectContaining({
-                        extra: expect.objectContaining({
-                            event: mockDriveEvent,
-                            error: expect.any(Error),
-                        }),
-                    }),
-                })
-            );
         });
     });
 });

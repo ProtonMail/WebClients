@@ -3,11 +3,10 @@ import { c, msgid } from 'ttag';
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { partialPublicViewKey } from '../../../hooks/util/usePartialPublicView';
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
@@ -46,8 +45,8 @@ export const useBookmarksActions = () => {
         }
 
         if (deletedBookmarkUids.length > 0) {
-            await getActionEventManager().emit({
-                type: ActionEventName.DELETE_BOOKMARKS,
+            await getBusDriver().emit({
+                type: BusDriverEventName.DELETE_BOOKMARKS,
                 uids: deletedBookmarkUids,
             });
             void countActionWithTelemetry(Actions.DeleteBookmarkFromSharedWithMe, deletedBookmarkUids.length);

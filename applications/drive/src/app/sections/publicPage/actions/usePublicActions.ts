@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
@@ -12,8 +13,6 @@ import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { usePreviewModal } from '../../../modals/preview';
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import {
     downloadPublicDocument,
     getOpenInDocsInfo,
@@ -154,8 +153,8 @@ export const usePublicActions = () => {
 
                     createDeleteNotification(successItems, failureItems);
 
-                    void getActionEventManager().emit({
-                        type: ActionEventName.DELETED_NODES,
+                    void getBusDriver().emit({
+                        type: BusDriverEventName.DELETED_NODES,
                         uids: successItems.map((item) => item.uid),
                     });
                 }),
@@ -190,8 +189,8 @@ export const usePublicActions = () => {
                 documentType === 'document' ? 1 : 2
             );
             const { node } = getNodeEntity(maybeNode);
-            await getActionEventManager().emit({
-                type: ActionEventName.CREATED_NODES,
+            await getBusDriver().emit({
+                type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: node.uid, parentUid: node.parentUid }],
             });
             handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType });
