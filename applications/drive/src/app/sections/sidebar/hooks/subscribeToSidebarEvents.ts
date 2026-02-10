@@ -1,7 +1,6 @@
 import { NodeType, getDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { handleSdkError } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -33,23 +32,23 @@ const getSidebarItemFromUid = async (uid: string) => {
 };
 
 export const subscribeToSidebarEvents = () => {
-    void getActionEventManager().subscribeSdkEventsMyUpdates('sidebar');
+    void getBusDriver().subscribeSdkEventsMyUpdates('sidebar');
 
-    const unsubscribeFromEvents = getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
+    const unsubscribeFromEvents = getBusDriver().subscribe(BusDriverEventName.ALL, async (event) => {
         const store = useSidebarStore.getState();
 
         switch (event.type) {
-            case ActionEventName.RENAMED_NODES:
+            case BusDriverEventName.RENAMED_NODES:
                 for (const item of event.items) {
                     store.updateItem(item.uid, { name: item.newName });
                 }
                 break;
-            case ActionEventName.TRASHED_NODES:
+            case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
                     store.removeItem(uid);
                 }
                 break;
-            case ActionEventName.RESTORED_NODES:
+            case BusDriverEventName.RESTORED_NODES:
                 for (const item of event.items) {
                     const sidebarItem = await getSidebarItemFromUid(item.uid);
                     if (item.parentUid && store.getItem(item.parentUid)?.isExpanded) {
@@ -59,7 +58,7 @@ export const subscribeToSidebarEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.MOVED_NODES:
+            case BusDriverEventName.MOVED_NODES:
                 for (const item of event.items) {
                     const itemExists = !!store.getItem(item.uid);
                     if (itemExists && item.parentUid) {
@@ -80,8 +79,8 @@ export const subscribeToSidebarEvents = () => {
                 }
                 break;
 
-            case ActionEventName.UPDATED_NODES:
-            case ActionEventName.CREATED_NODES:
+            case BusDriverEventName.UPDATED_NODES:
+            case BusDriverEventName.CREATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid && store.getItem(item.parentUid)?.isExpanded) {
                         const sidebarItem = await getSidebarItemFromUid(item.uid);
@@ -91,7 +90,7 @@ export const subscribeToSidebarEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.DELETED_NODES:
+            case BusDriverEventName.DELETED_NODES:
                 for (const uid of event.uids) {
                     store.removeItem(uid);
                 }
@@ -101,6 +100,6 @@ export const subscribeToSidebarEvents = () => {
 
     return () => {
         unsubscribeFromEvents();
-        void getActionEventManager().unsubscribeSdkEventsMyUpdates('sidebar');
+        void getBusDriver().unsubscribeSdkEventsMyUpdates('sidebar');
     };
 };

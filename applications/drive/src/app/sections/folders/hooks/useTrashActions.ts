@@ -1,8 +1,7 @@
 import { useDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useListNotifications from '../../../store/_actions/useListNotifications';
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 
 type Item = { uid: string; parentUid: string | undefined };
@@ -13,7 +12,7 @@ export const useTrashActions = () => {
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
         const restored = [];
-        await getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, items });
+        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, items });
 
         try {
             const uids = items.map((t) => t.uid);
@@ -32,7 +31,7 @@ export const useTrashActions = () => {
         const uids = items.map((d) => d.uid);
         const success = [];
         const failures = [];
-        await getActionEventManager().emit({ type: ActionEventName.TRASHED_NODES, uids });
+        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids });
 
         try {
             for await (const result of drive.trashNodes(uids)) {

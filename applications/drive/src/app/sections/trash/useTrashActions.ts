@@ -3,10 +3,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType, useDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNotifications } from './useTrashNotifications';
@@ -44,8 +43,8 @@ export const useTrashActions = () => {
         successPhotoUids: string[];
     }) => {
         return async () => {
-            void getActionEventManager().emit({
-                type: ActionEventName.TRASHED_NODES,
+            void getBusDriver().emit({
+                type: BusDriverEventName.TRASHED_NODES,
                 uids: [...successDriveUids, ...successPhotoUids],
             });
             if (successDriveUids.length) {
@@ -96,8 +95,8 @@ export const useTrashActions = () => {
         // Cannot do optimistic updates in this case because it's common for the restore to fail
         // The most common failure is the parent folder being deleted
         // Additionally the optimistic update breaks e2e which expect a straight failure
-        void getActionEventManager().emit({
-            type: ActionEventName.RESTORED_NODES,
+        void getBusDriver().emit({
+            type: BusDriverEventName.RESTORED_NODES,
             items: successItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
         });
 
@@ -119,7 +118,7 @@ export const useTrashActions = () => {
         const nodesMap = new Map(selectedNodes.map((item) => [item.uid, item]));
         const driveUids = selectedNodes.filter((node) => node.type !== NodeType.Photo).map((n) => n.uid);
         const photoUids = selectedNodes.filter((node) => node.type === NodeType.Photo).map((n) => n.uid);
-        void getActionEventManager().emit({ type: ActionEventName.DELETED_NODES, uids: [...driveUids, ...photoUids] });
+        void getBusDriver().emit({ type: BusDriverEventName.DELETED_NODES, uids: [...driveUids, ...photoUids] });
 
         const filesDeleted = await deletePermanently(driveUids, drive);
         const photoDeleted = await deletePermanently(photoUids, photos);
@@ -140,8 +139,8 @@ export const useTrashActions = () => {
             // TBI in sdk
             // await photos.emptyTrash();
             await deleteNodes(Object.values(photoTrashNodes), false); // polyfill for photos.emptyTrash
-            void getActionEventManager().emit({
-                type: ActionEventName.DELETED_NODES,
+            void getBusDriver().emit({
+                type: BusDriverEventName.DELETED_NODES,
                 uids: [...Object.keys(driveTrashNodes), ...Object.keys(photoTrashNodes)],
             });
             createEmptyTrashNotificationSuccess();

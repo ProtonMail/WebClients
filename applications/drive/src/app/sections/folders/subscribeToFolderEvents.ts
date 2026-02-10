@@ -1,9 +1,8 @@
 import { getDrive } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { logging } from '../../modules/logging';
 import type { LinkShareUrl } from '../../store';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
@@ -32,9 +31,9 @@ const addFolderItemToStore = async (uid: string, folder: FolderViewData, folderS
 };
 
 export const subscribeToFolderEvents = () => {
-    void getActionEventManager().subscribeSdkEventsMyUpdates('folders');
+    void getBusDriver().subscribeSdkEventsMyUpdates('folders');
 
-    const unsubscribeFromEvents = getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
+    const unsubscribeFromEvents = getBusDriver().subscribe(BusDriverEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
         const { folder } = store;
 
@@ -45,17 +44,17 @@ export const subscribeToFolderEvents = () => {
             return;
         }
         switch (event.type) {
-            case ActionEventName.RENAMED_NODES:
+            case BusDriverEventName.RENAMED_NODES:
                 for (const item of event.items) {
                     store.updateItem(item.uid, { name: item.newName });
                 }
                 break;
-            case ActionEventName.TRASHED_NODES:
+            case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
                     store.removeItem(uid);
                 }
                 break;
-            case ActionEventName.RESTORED_NODES:
+            case BusDriverEventName.RESTORED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid) {
                         void addFolderItemToStore(item.uid, folder, store);
@@ -64,7 +63,7 @@ export const subscribeToFolderEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.MOVED_NODES:
+            case BusDriverEventName.MOVED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid !== folder.uid) {
                         store.removeItem(item.uid);
@@ -74,7 +73,7 @@ export const subscribeToFolderEvents = () => {
                 }
                 break;
 
-            case ActionEventName.UPDATED_NODES:
+            case BusDriverEventName.UPDATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
                         void addFolderItemToStore(item.uid, folder, store);
@@ -83,7 +82,7 @@ export const subscribeToFolderEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.CREATED_NODES:
+            case BusDriverEventName.CREATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
                         void addFolderItemToStore(item.uid, folder, store);
@@ -92,7 +91,7 @@ export const subscribeToFolderEvents = () => {
                     }
                 }
                 break;
-            case ActionEventName.DELETED_NODES:
+            case BusDriverEventName.DELETED_NODES:
                 for (const uid of event.uids) {
                     store.removeItem(uid);
                 }
@@ -102,6 +101,6 @@ export const subscribeToFolderEvents = () => {
 
     return () => {
         unsubscribeFromEvents();
-        void getActionEventManager().unsubscribeSdkEventsMyUpdates('folders');
+        void getBusDriver().unsubscribeSdkEventsMyUpdates('folders');
     };
 };

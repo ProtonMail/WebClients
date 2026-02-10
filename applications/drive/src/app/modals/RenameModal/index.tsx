@@ -1,8 +1,7 @@
 import { useModalTwoStatic } from '@proton/components';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { withHoc } from '../../hooks/withHoc';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { RenameModalView, type RenameModalViewProps } from './RenameModalView';
 import { type RenameModalInnerProps, type UseRenameModalProps, useRenameModalState } from './useRenameModalState';
 
@@ -13,8 +12,8 @@ export const useRenameModal = () => {
 
     const handleShowRenameModal = ({ onSuccess, nodeUid }: RenameModalInnerProps) => {
         const handleOnSuccess = async (newName: string) => {
-            await getActionEventManager().emit({
-                type: ActionEventName.RENAMED_NODES,
+            await getBusDriver().emit({
+                type: BusDriverEventName.RENAMED_NODES,
                 items: [{ uid: nodeUid, newName }],
             });
             await onSuccess?.(newName);

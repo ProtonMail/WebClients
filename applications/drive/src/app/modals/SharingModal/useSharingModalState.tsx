@@ -16,6 +16,7 @@ import {
     splitInvitationUid,
     useDrive,
 } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -26,8 +27,6 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
 // TODO: Remove this when events will be managed by sdk
 import { useDriveEventManager } from '../../store';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { getContactNameAndEmail } from './DirectSharing/helpers/getContactNameAndEmail';
@@ -103,8 +102,8 @@ export const useSharingModalState = ({
     //TODO: We need to move that somewhere else to be able to reuse the modal with event system
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
-        await getActionEventManager().emit({
-            type: ActionEventName.UPDATED_NODES,
+        await getBusDriver().emit({
+            type: BusDriverEventName.UPDATED_NODES,
             items: [
                 {
                     uid: nodeUid,

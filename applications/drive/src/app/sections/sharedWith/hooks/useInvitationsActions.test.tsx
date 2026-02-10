@@ -2,9 +2,8 @@ import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -26,8 +25,9 @@ jest.mock('@proton/drive', () => ({
     splitNodeUid: jest.fn(),
 }));
 
-jest.mock('../../../utils/ActionEventManager/ActionEventManager', () => ({
-    getActionEventManager: jest.fn(),
+jest.mock('@proton/drive/internal/BusDriver', () => ({
+    ...jest.requireActual('@proton/drive/internal/BusDriver'),
+    getBusDriver: jest.fn(),
 }));
 
 jest.mock('../../../utils/errorHandling/useSdkErrorHandler', () => ({
@@ -82,7 +82,7 @@ describe('useInvitationsActions', () => {
             handleError: mockHandleError,
         } as any);
 
-        jest.mocked(getActionEventManager).mockReturnValue(mockEventManager as any);
+        jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
         jest.mocked(getNodeEntity).mockReturnValue({
             node: mockNode,
@@ -116,7 +116,7 @@ describe('useInvitationsActions', () => {
             expect(mockGetNode).toHaveBeenCalledWith(uid);
             expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.ACCEPT_INVITATIONS,
+                type: BusDriverEventName.ACCEPT_INVITATIONS,
                 uids: [mockNode.uid],
             });
             expect(mockCreateNotification).toHaveBeenCalledWith({
@@ -237,7 +237,7 @@ describe('useInvitationsActions', () => {
             expect(getDrivePerNodeType).toHaveBeenCalled();
             expect(mockRejectInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: ActionEventName.REJECT_INVITATIONS,
+                type: BusDriverEventName.REJECT_INVITATIONS,
                 uids: [uid],
             });
             expect(mockCreateNotification).toHaveBeenCalledWith({

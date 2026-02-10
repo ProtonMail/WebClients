@@ -1,9 +1,7 @@
 import { useModalTwoStatic } from '@proton/components';
+import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { withHoc } from '../../hooks/withHoc';
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import type { NodeEventMeta } from '../../utils/ActionEventManager/ActionEventManagerTypes';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { MoveItemsModalView, type MoveItemsModalViewProps } from './MoveItemsModalView';
 import type { MoveItemsModalInnerProps } from './useMoveItemsModalState';
 import { type UseMoveItemsModalStateProps, useMoveItemsModalState } from './useMoveItemsModalState';
@@ -21,7 +19,7 @@ export const useMoveItemsModal = () => {
             return;
         }
         const successCallback = async (items: NodeEventMeta[]) => {
-            await getActionEventManager().emit({ type: ActionEventName.MOVED_NODES, items });
+            await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items });
             onSuccess?.(items);
         };
         void showMoveToFolderModal({ shareId, selectedItems, onSuccess: successCallback, ...rest });

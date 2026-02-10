@@ -4,14 +4,13 @@ import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useDocumentActions } from '../store/_documents';
 import { useVolumeLinkView } from '../store/_views/useVolumeLinkView';
-import { getActionEventManager } from '../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../utils/ActionEventManager/ActionEventManagerTypes';
 
 export const VolumeLinkContainer: FC = () => {
     const { volumeId, linkId } = useParams<{ volumeId: string; linkId: string }>();
@@ -57,8 +56,8 @@ export const VolumeLinkContainer: FC = () => {
                     // - invitationId/invitationUid, we only have invitationId and sdk is waiting of invitationUid
                     // - We don't get the mimeType so we can't switch between legacy/sdk accept invitation
                     // - We can't do a single getInvitation on drive sdk
-                    await getActionEventManager().emit({
-                        type: ActionEventName.ACCEPT_INVITATIONS,
+                    await getBusDriver().emit({
+                        type: BusDriverEventName.ACCEPT_INVITATIONS,
                         uids: [generateNodeUid(volumeId, linkId)],
                     });
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');

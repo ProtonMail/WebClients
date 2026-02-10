@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 export const useSharingActions = () => {
@@ -20,8 +19,8 @@ export const useSharingActions = () => {
         const onSubmit = async () => {
             try {
                 await drive.unshareNode(uid);
-                await getActionEventManager().emit({
-                    type: ActionEventName.UPDATED_NODES,
+                await getBusDriver().emit({
+                    type: BusDriverEventName.UPDATED_NODES,
                     items: [{ uid, parentUid, isShared: false }],
                 });
 
@@ -47,8 +46,8 @@ export const useSharingActions = () => {
                 createNotification({
                     text: c('Notification').t`File removed`,
                 });
-                await getActionEventManager().emit({
-                    type: ActionEventName.REMOVE_ME,
+                await getBusDriver().emit({
+                    type: BusDriverEventName.REMOVE_ME,
                     uids: [uid],
                 });
             } catch (e) {
