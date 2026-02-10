@@ -26,8 +26,8 @@ import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
-import { MeetingDuration } from '../MeetingDuration';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
+import { MeetingTitle } from '../MeetingTitle/MeetingTitle';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
@@ -67,7 +67,7 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, roomName, guestMode, isGuestAdmin, meetingLink } = useMeetContext();
+    const { participantNameMap, meetingLink, guestMode, isGuestAdmin } = useMeetContext();
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
@@ -104,12 +104,6 @@ export const MeetingBody = ({
     const screenShareLabel = isLocalScreenShare
         ? c('Info').t`${presenterName} (you) is presenting`
         : c('Info').t`${presenterName} is presenting`;
-    const meetingTitle = (
-        <div className="flex items-center gap-2 flex-nowrap">
-            <div className="flex-1 text-lg text-ellipsis overflow-hidden text-semibold">{roomName}</div>
-            {(isLocalParticipantAdmin || isLocalParticipantHost) && <MeetingDuration />}
-        </div>
-    );
 
     return (
         <div
@@ -128,9 +122,11 @@ export const MeetingBody = ({
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
                     {isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin ? (
-                        <TimeLimitCTAPopup>{meetingTitle}</TimeLimitCTAPopup>
+                        <TimeLimitCTAPopup>
+                            <MeetingTitle />
+                        </TimeLimitCTAPopup>
                     ) : (
-                        meetingTitle
+                        <MeetingTitle />
                     )}
                     <div className="text-ellipsis overflow-hidden">
                         {isVideoEnabled && isMobile() && (
