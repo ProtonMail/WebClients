@@ -7,13 +7,21 @@ import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/
 export const useRecoverySettingsTelemetry = () => {
     const api = useApi();
 
+    const commonProps = {
+        api,
+        measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
+        delay: false,
+    };
+
+    const commonDimensions = {
+        variant: 'A',
+    };
+
     const sendRecoveryPageLoad = useCallback(() => {
         void sendTelemetryReport({
-            api,
-            dimensions: { variant: 'A' },
-            measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
+            ...commonProps,
+            dimensions: { ...commonDimensions },
             event: TelemetryRecoverySettingsEvents.page_load,
-            delay: false,
         });
 
         void telemetryReportsBatchQueue.flush();
@@ -33,11 +41,9 @@ export const useRecoverySettingsTelemetry = () => {
                 | 'recovery_by_phone';
         }) => {
             void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.accountRecoverySettings,
+                ...commonProps,
                 event: TelemetryRecoverySettingsEvents.setting_enabled,
-                dimensions: { setting, variant: 'A' },
-                delay: false,
+                dimensions: { setting, ...commonDimensions },
             });
 
             void telemetryReportsBatchQueue.flush();
