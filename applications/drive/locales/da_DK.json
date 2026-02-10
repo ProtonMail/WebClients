@@ -444,7 +444,7 @@
         "Tøm papirkurv"
       ],
       "enable desktop notifications": [
-        "aktivér skrivebordsmeddelelser"
+        "at aktivere skrivebordsmeddelelser"
       ],
       "Enable drive search": [
         "Aktivér søgning på drev"
@@ -3860,6 +3860,15 @@
       ],
       "We cannot retrieve this item": [
         "Vi kan ikke hente dette element"
+      ],
+      "Failed loading group members": [
+        "Kunne ikke indlæse gruppemedlemmer"
+      ],
+      "Network error": [
+        "Netværksfejl"
+      ],
+      "We were not able to load some search results": [
+        "Vi kunne ikke indlæse nogle søgeresultater"
       ]
     },
     "error": {
@@ -6838,6 +6847,12 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Dette vil annullere eventuelle resterende uploads og downloads. Annullerede uploads gemmes ikke i ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Beregnet hash stemmer ikke overens med XAttr"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
       ]
     },
     "info": {
@@ -8643,6 +8658,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefonsupport (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ brugere)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9005,6 +9023,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i den europæiske åbningstid for kunder med ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } eller flere brugere"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12876,6 +12897,13 @@
       ],
       "Cancel all transfers?": [
         "Annuller alle overførsler?"
+      ],
+      "Found ${ resultCount } result": [
+        "Fandt ${ resultCount } resultat",
+        "Fandt ${ resultCount } resultater"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Dit ${ planTitle }-abonnement er startet"
       ]
     },
     "Today icon tooltip in mini calendar": {

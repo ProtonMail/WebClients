@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Escanear e Baixar (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Definir senha ou data de expiração"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "O compartilhado com criptografia ponta a ponta"
       ]
     },
     "Action: Docs": {
@@ -1352,7 +1358,7 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga renovada automaticamente a cada ${ renewCycle } meses. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
@@ -3854,6 +3860,21 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Failed loading group members": [
+        "Falha ao carregar membros do grupo"
+      ],
+      "Network error": [
+        "Erro de rede"
+      ],
+      "We cannot retrieve this item": [
+        "Não foi possível recuperar este item"
+      ],
+      "We were not able to load some search results": [
+        "Não foi possível carregar alguns resultados de pesquisa"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Desculpe, o upload gratuito não está disponível no momento."
       ]
     },
     "error": {
@@ -6820,6 +6841,33 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }",
         "Todos os seus contatos serão importados, até o limite de ${ maxContact }"
+      ],
+      "Computed hash does not match XAttr": [
+        "Hash computado não corresponde ao XAttr"
+      ],
+      "Link copied": [
+        "Link copiado"
+      ],
+      "owner": [
+        "proprietário"
+      ],
+      "This will cancel any remaining downloads.": [
+        "Isso cancelará todos os downloads restantes."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Isso vai cancelar todos os uploads e downloads restantes. Uploads cancelados não serão salvos no ${ DRIVE_APP_NAME }."
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Para baixar estes arquivos, abra-os no ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME } e exporte-os."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Para ajudar a te proteger, o ${ DRIVE_APP_NAME } pode escanear seus arquivos de uma forma que preserve a privacidade e bloquear arquivos maliciosos. No entanto, ainda é melhor baixar arquivos somente de fontes confiáveis. "
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
+      ],
+      "Who has access": [
+        "Quem tem acesso"
       ]
     },
     "info": {
@@ -7579,6 +7627,27 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Active": [
+        "ativo"
+      ],
+      "admin": [
+        "administrador"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na internet com este link"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Excluir o link e remover o acesso para todos"
+      ],
+      "Not active": [
+        "Não ativo"
       ]
     },
     "Label for contact group color": {
@@ -8679,6 +8748,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Suporte por telefone (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9041,6 +9113,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Você pode ter mais de um administrador. Todos os administradores podem adicionar e gerenciar usuários, mas apenas o administrador principal tem controle sobre o faturamento."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "O suporte por telefone está disponível com a equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } ou mais usuários"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9994,7 +10069,7 @@
         "Mais planos estão disponíveis em outras moedas"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Forneça um método de pagamento para ativar a assinatura após o término da avaliação."
+        "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -10082,6 +10157,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "O desconto é válido para ${ renewalsWithCoupon } renovação.",
+        "O desconto é válido para ${ renewalsWithCoupon } renovações."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido por ${ couponRedemptions } meses. Depois, ele será renovado automaticamente por ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
       ]
     },
     "Payments.Error": {
@@ -10122,7 +10209,7 @@
         "Tem certeza de que deseja continuar?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+        "Se você optar por modificar seu plano ${ planTitle }, você pode perder o acesso a alguns recursos."
       ],
       "Keep ${ planTitle }": [
         "Manter o ${ planTitle }"
@@ -11071,6 +11158,12 @@
       ],
       "Pending": [
         "Pendente"
+      ],
+      "accepted": [
+        "aceito"
+      ],
+      "pending": [
+        "pendente"
       ]
     },
     "Storage": {
@@ -12894,6 +12987,34 @@
       ],
       "Cancel all transfers?": [
         "Cancelar todas as transferências?"
+      ],
+      "Found ${ resultCount } result": [
+        "Encontrado ${ resultCount } resultado",
+        "Encontrados ${ resultCount } resultados"
+      ],
+      "Public link": [
+        "Link público"
+      ],
+      "Public link settings": [
+        "Configurações de link público"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Configurações para ${ sharedFileName }"
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "Isso provavelmente se deve ao fato de a conta ou o endereço terem sido excluídos."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Não foi possível confirmar que o conteúdo do arquivo foi enviado por ${ claimedContentAuthor }. O motivo é: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Não foi possível confirmar que o nome foi criado ou modificado por ${ claimedNameAuthor }. O motivo é: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Não foi possível confirmar que o nó foi criado por ${ claimedKeyAuthor }. O motivo é: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Sua assinatura ${ planTitle } começou"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Scanner et télécharger (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Définir le mot de passe ou la date d'expiration"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Le partage est chiffré de bout en bout"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "Cet élément n'a pas pu être récupéré."
+      ],
+      "Failed loading group members": [
+        "Le chargement des membres du groupe n'a pas abouti."
+      ],
+      "Network error": [
+        "Erreur de réseau "
+      ],
+      "We were not able to load some search results": [
+        "Nous n'avons pas pu charger certains résultats de recherche"
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Ceci annulera tous les transferts restants. Les transferts annulés ne seront pas enregistrés dans ${ DRIVE_APP_NAME }."
+      ],
+      "Computed hash does not match XAttr": [
+        "Le hachage calculé ne correspond pas au XAttr"
+      ],
+      "Link copied": [
+        "Lien copié"
+      ],
+      "owner": [
+        "propriétaire"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Pour vous aider à vous protéger, ${ DRIVE_APP_NAME } peut analyser vos fichiers d'une manière respectueuse de la vie privée et bloquer les fichiers malveillants. Cependant, il est toujours préférable de télécharger des fichiers uniquement à partir de sources de confiance. "
+      ],
+      "Who has access": [
+        "Qui a accès"
       ]
     },
     "info": {
@@ -7597,6 +7627,27 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Active": [
+        "Actif"
+      ],
+      "admin": [
+        "admin"
+      ],
+      "Anyone on the Internet with the link": [
+        "Toute personne sur Internet disposant du lien"
+      ],
+      "can edit": [
+        "peut modifier"
+      ],
+      "can view": [
+        "peut consulter"
+      ],
+      "Delete link and remove access for everyone": [
+        "Supprimer le lien et retirer l'accès pour tous"
+      ],
+      "Not active": [
+        "Inactif"
       ]
     },
     "Label for contact group color": {
@@ -8703,6 +8754,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Support téléphonique (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utilisateurs)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9065,6 +9119,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilisateurs ou plus."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11101,6 +11158,12 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "accepted": [
+        "accepté"
+      ],
+      "pending": [
+        "en attente"
       ]
     },
     "Storage": {
@@ -12936,6 +12999,22 @@
       ],
       "Cancel all transfers?": [
         "Annuler tous les transferts ?"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } résultat trouvé",
+        "${ resultCount } résultats trouvés"
+      ],
+      "Public link": [
+        "Lien public"
+      ],
+      "Public link settings": [
+        "Paramètres de lien public"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Paramètres de ${ sharedFileName }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Votre abonnement ${ planTitle } a commencé."
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1238,6 +1238,12 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "Tara ve indir (${ nbSelected })"
+      ],
+      "Set password or expiration date": [
+        "Parola veya geçerlilik süresi belirleyin"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Paylaşım uçtan uca şifrelenir"
       ]
     },
     "Action: Docs": {
@@ -3860,6 +3866,15 @@
       ],
       "We cannot retrieve this item": [
         "Bu öge alınamadı"
+      ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
+      "Network error": [
+        "Ağ sorunu"
+      ],
+      "We were not able to load some search results": [
+        "Bazı arama sonuçlarını yükleyemedik"
       ]
     },
     "error": {
@@ -6838,6 +6853,21 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "Bu işlem kalan tüm yüklemeleri ve indirmeleri iptal edecek. İptal edilen yüklemeler ${ DRIVE_APP_NAME } içine kaydedilmeyecek."
+      ],
+      "Computed hash does not match XAttr": [
+        "Hesaplanan karma XAttr ile eşleşmiyor"
+      ],
+      "Link copied": [
+        "Bağlantı kopyalandı"
+      ],
+      "owner": [
+        "sahip"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "${ DRIVE_APP_NAME } sizi korumak için dosyalarınızı gizliliğinizi koruyacak şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak yine de dosyaları yalnızca güvenilir kaynaklardan indirmek en iyisidir. "
+      ],
+      "Who has access": [
+        "Erişimi olanlar"
       ]
     },
     "info": {
@@ -7594,6 +7624,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "admin": [
+        "yönetici"
+      ],
+      "Anyone on the Internet with the link": [
+        "İnternette bu bağlantıya sahip olan herkes"
+      ],
+      "can edit": [
+        "düzenlenebilir"
+      ],
+      "can view": [
+        "görüntülenebilir"
+      ],
+      "Delete link and remove access for everyone": [
+        "Bağlantıyı sil ve herkesin erişimini kaldır"
+      ],
+      "Not active": [
+        "Etkin değil"
       ]
     },
     "Label for contact group color": {
@@ -8643,6 +8694,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Telefon desteği (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ kullanıcı)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9005,6 +9059,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11041,6 +11098,12 @@
       ],
       "Pending": [
         "Bekliyor"
+      ],
+      "accepted": [
+        "kabul edildi"
+      ],
+      "pending": [
+        "beklemede"
       ]
     },
     "Storage": {
@@ -12876,6 +12939,22 @@
       ],
       "Cancel all transfers?": [
         "Tüm aktarımlar iptal edilsin mi?"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount } sonuç bulundu",
+        "${ resultCount } sonuç bulundu"
+      ],
+      "Public link": [
+        "Herkese açık bağlantı"
+      ],
+      "Public link settings": [
+        "Herkese açık bağlantı ayarları"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } için ayarlar"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } aboneliğiniz başladı"
       ]
     },
     "Today icon tooltip in mini calendar": {
