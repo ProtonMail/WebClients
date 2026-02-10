@@ -67,7 +67,7 @@ const OnlineTopBanner = ({ className }: Props) => {
     if (safeOnlineStatus) {
         // If the device is known to be online, and the API is unreachable
         if (apiUnreachable) {
-            return <UnreachableTopBanner errorMessage={apiUnreachable} />;
+            return <UnreachableTopBanner errorMessage={apiUnreachable} className={className} />;
         }
         return null;
     }
