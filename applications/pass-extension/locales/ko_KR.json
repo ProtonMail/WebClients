@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "항목 공유 수락 및 확인"
       ],
+      "Accept invitation": [
+        "초대 수락"
+      ],
       "Account": [
         "계정"
       ],
@@ -1521,6 +1524,9 @@
       "Admin": [
         "관리자"
       ],
+      "After confirming, you will need to accept a permission prompt for ${ PASS_APP_NAME }.": [
+        "확인 후, ${ PASS_APP_NAME }에 대한 권한 부여 요청을 수락해야 합니다."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
@@ -1589,6 +1595,9 @@
       ],
       "Automatically copy the generated password to the clipboard": [
         "생성된 비밀번호를 자동으로 클립보드에 복사합니다."
+      ],
+      "Automatically fill in your saved payment information.": [
+        "저장된 결제 정보를 자동으로 입력합니다."
       ],
       "Autosaved on ${ url }": [
         "${ url } (에)서 자동 저장됨"
@@ -1709,6 +1718,9 @@
       ],
       "Disabling offline mode...": [
         "오프라인 모드 비활성화 중..."
+      ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "${ PASS_APP_NAME } 비디오 살펴보기"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS 변경 사항의 업데이트에 최대 24시간이 소요될 수 있습니다."
@@ -1978,7 +1990,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2003,6 +2015,9 @@
       ],
       "No breaches detected": [
         "감지된 침해사례 없음"
+      ],
+      "No credit cards found": [
+        "발견된 신용 카드가 없음"
       ],
       "No identity item found": [
         "발견된 신원 항목 없음"
@@ -2937,6 +2952,9 @@
       ],
       "Created at": [
         "생성일:"
+      ],
+      "Credit-card autofill": [
+        "신용 카드 자동 완성"
       ],
       "Crypto Wallet": [
         "암호화폐 지갑"

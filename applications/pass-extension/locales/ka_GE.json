@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "მიღება და ელემენტის ნახვა"
       ],
+      "Accept invitation": [
+        "მოსაწვევის მიღება"
+      ],
       "Account": [
         "ანგარიში"
       ],
@@ -1016,6 +1019,9 @@
       "Error reporting problem": [
         "პრობლემის გადაგზავნის შეცდომა"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed removing the invite.": [
         "მოწვევის წაშლა ჩავარდა."
       ],
@@ -1438,8 +1444,14 @@
         "${ forwardedEmailsCount } გადაგზავნილია",
         "${ forwardedEmailsCount } გადაგზავნილია"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }-ს სურს, გაუზიაროს ელემენტი ჯგუფს, რომელსაც თქვენ მართავთ."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } უნდა, ელემენტი გაგიზიაროთ."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } გაზიარებულია ჯგუფისთვის, რომლის წევრიც ბრძანდებით"
       ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
@@ -1503,6 +1515,10 @@
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
         "დარჩენილია ${ trialDaysLeft } დღე"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } წევრი)",
+        "(${ membersCount } წევრი)"
       ],
       "(Empty)": [
         "(ცარიელი)"
@@ -1914,6 +1930,9 @@
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "იწვევს ჯგუფს ${ invitedGroup.Name } წვდომისთვის ელემენტებზე საცავში"
+      ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომისთვის"
       ],
@@ -2008,10 +2027,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2392,6 +2407,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
         "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
+      ],
+      "The group is invited to a vault.": [
+        "ჯგუფი მიწვეულია საცავში."
       ],
       "The secure link has been removed": [
         "დაცული ბმული წაიშალა"
@@ -4730,6 +4748,9 @@
       ],
       "Vault": [
         "საცავი"
+      ],
+      "Vault shared with a group you administer": [
+        "საცავი, გაზიარებული ჯგუფთან, რომელსაც თქვენ მართავთ"
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"

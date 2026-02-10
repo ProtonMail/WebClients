@@ -37,6 +37,9 @@
       "Accept and view the item": [
         "Accetta e visualizza l'elemento"
       ],
+      "Accept invitation": [
+        "Accetta l'invito"
+      ],
       "Account": [
         "Account"
       ],
@@ -1031,6 +1034,9 @@
       "Error reporting problem": [
         "Errore nella segnalazione del problema"
       ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
       "Failed removing the invite.": [
         "Rimozione dell'invito non riuscita."
       ],
@@ -1453,8 +1459,17 @@
         "${ forwardedEmailsCount } inoltrata",
         "${ forwardedEmailsCount } inoltrate"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } vuole condividere un elemento con un gruppo che amministri."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } vuole condividere un elemento con il gruppo ${ invitedGroup.Name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vuole condividere un elemento con te."
+      ],
+      "${ maybeVaultName } has been shared with a group you are member of": [
+        "${ maybeVaultName } è stato condiviso con un gruppo di cui fai parte"
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1463,6 +1478,9 @@
       "${ n } item": [
         "${ n } elemento",
         "${ n } elementi"
+      ],
+      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
+        "${ newGroupSharesCount } nuove condivisioni sono state effettuate con un gruppo di cui fai parte"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sarà sempre accessibile"
@@ -1518,6 +1536,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } giorno rimasto",
         "${ trialDaysLeft } giorni rimasti"
+      ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } membro)",
+        "(${ membersCount } membri)"
       ],
       "(Empty)": [
         "(Vuoto)"
@@ -1938,6 +1960,9 @@
       "Invite successfully resent": [
         "Invito reinviato con successo"
       ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "invita il gruppo ${ invitedGroup.Name } ad accedere agli elementi in"
+      ],
       "invites you to access items in": [
         "ti invita ad accedere agli elementi in"
       ],
@@ -2034,8 +2059,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2431,6 +2455,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "Impossibile importare il seguente ${ totalIgnored } elemento:",
         "Impossibile importare i seguenti ${ totalIgnored } elementi:"
+      ],
+      "The group is invited to a vault.": [
+        "Il gruppo è invitato in una cassaforte."
       ],
       "The secure link has been removed": [
         "Il link sicuro è stato rimosso"
@@ -4775,6 +4802,9 @@
       ],
       "Vault": [
         "Cassaforte"
+      ],
+      "Vault shared with a group you administer": [
+        "Cassaforte condivisa con un gruppo che amministri"
       ],
       "Vault shared with you": [
         "Cassaforte condivisa con te"
