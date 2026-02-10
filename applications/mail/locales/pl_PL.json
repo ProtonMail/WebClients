@@ -133,7 +133,7 @@
         "Zastosuj"
       ],
       "Archive": [
-        "Archiwum"
+        "Przenieś do archiwum"
       ],
       "As Scheduled": [
         "Zgodnie z planem"
@@ -197,9 +197,6 @@
       ],
       "Change email": [
         "Zmień adres"
-      ],
-      "Change page": [
-        "Zmień stronę"
       ],
       "Change password": [
         "Zmień hasło"
@@ -1259,6 +1256,9 @@
       ],
       "send auto-reply email": [
         "wyślij automatyczną odpowiedź"
+      ],
+      "Send Feedback": [
+        "Wyślij opinię"
       ],
       "Send read receipt": [
         "Wyślij potwierdzenie odczytu"
@@ -2528,6 +2528,14 @@
       ],
       "Expand": [
         "Rozwiń"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Podstawowa historia czatów"
+      ],
+      "Strict no-logs policy": [
+        "Polityka braku przechowywania logów"
       ]
     },
     "collider_2025: Info": {
@@ -4533,6 +4541,9 @@
       "Name is required": [
         "Nazwa jest wymagana"
       ],
+      "Network error": [
+        "Błąd sieci"
+      ],
       "Network error: Please check your connection and try again.": [
         "Błąd sieci. Sprawdź połączenie i spróbuj ponownie."
       ],
@@ -5760,6 +5771,9 @@
     "Header": {
       "Contacts": [
         "Kontakty"
+      ],
+      "Domain": [
+        "Domena"
       ],
       "Drawer": [
         "Panel boczny"
@@ -9494,9 +9508,6 @@
       "Notification": [
         "Powiadomienie"
       ],
-      "Notifications": [
-        "Powiadomienia"
-      ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Powiadomienia są wyłączone. Zmień ustawienia przeglądarki, aby je włączyć."
       ],
@@ -10207,6 +10218,11 @@
       ],
       "Trash": [
         "Przenieś do kosza"
+      ]
+    },
+    "meet_2025: Feature": {
+      "Screen-sharing": [
+        "Udostępnianie ekranu"
       ]
     },
     "Message": {
@@ -11992,6 +12008,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
+      "Taxes": [
+        "Podatki"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
@@ -12044,6 +12063,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Zachowaj plan ${ planTitle }"
       ]
     },
     "Payments.plan_name": {
@@ -14425,9 +14449,6 @@
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
-      "Archive": [
-        "Archiwum"
-      ],
       "Archive all messages?": [
         "Zarchiwizować wszystkie wiadomości?"
       ],
@@ -15210,9 +15231,6 @@
       ],
       "To preview this spreadsheet, download it.": [
         "Aby wyświetlić podgląd tego arkusza kalkulacyjnego, pobierz go."
-      ],
-      "Trash": [
-        "Kosz"
       ],
       "Trash all messages?": [
         "Usunąć wszystkie wiadomości?"
