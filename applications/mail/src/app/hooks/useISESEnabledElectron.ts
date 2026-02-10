@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-
-import useIsInboxElectronApp from './useIsInboxElectronApp';
 
 /**
  * Helps determine if ES should be enabled depending on feature flag and conversation counts
@@ -29,6 +28,7 @@ const useIsESEnabledElectron = () => {
 
         const threshold = inboxThreshold?.Value || 0;
         setIsInboxEnabledInbox(threshold >= Total);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-99999
     }, [inboxThreshold, conversationCounts]);
 
     return { isESEnabledInbox };
