@@ -72,6 +72,7 @@ export interface MediaManagementContextType {
     initializeMicrophoneVolumeAnalysis: (deviceId: string | null) => Promise<void>;
     cleanupMicrophoneVolumeAnalysis: () => void;
     handlePreviewCameraToggle: (videoElement: HTMLVideoElement) => Promise<void>;
+    cleanupPreviewTrack: () => Promise<void>;
 }
 
 const defaultValues: MediaManagementContextType = {
@@ -116,6 +117,7 @@ const defaultValues: MediaManagementContextType = {
     initializeMicrophoneVolumeAnalysis: () => Promise.resolve(),
     cleanupMicrophoneVolumeAnalysis: () => {},
     handlePreviewCameraToggle: () => Promise.resolve(),
+    cleanupPreviewTrack: () => Promise.resolve(),
 };
 
 export const MediaManagementContext = createContext<MediaManagementContextType>(defaultValues);
