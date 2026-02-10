@@ -1,11 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import useInboxDesktopBadgeCount from '@proton/components/hooks/useInboxDesktopBadgeCount';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+
+import useInboxDesktopBadgeCount from 'proton-mail/hooks/useInboxDesktopBadgeCount';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/mail/store/counts/conversationCountsSlice');
