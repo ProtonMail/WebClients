@@ -19,12 +19,16 @@ const TestTaxCountrySelector = ({
     initialZipCode = null,
     onBillingAddressChange,
     zipCodeValid = true,
+    defaultCollapsed = true,
+    showCountryFlag = false,
 }: {
     initialCountryCode?: string;
     initialStateCode?: string | null;
     initialZipCode?: string | null;
     onBillingAddressChange?: OnBillingAddressChange;
     zipCodeValid?: boolean;
+    defaultCollapsed?: boolean;
+    showCountryFlag?: boolean;
 }) => {
     const taxCountry = useTaxCountry({
         paymentStatus: {
@@ -37,7 +41,7 @@ const TestTaxCountrySelector = ({
         telemetryContext: 'other',
     });
 
-    return <TaxCountrySelector {...taxCountry} />;
+    return <TaxCountrySelector {...taxCountry} defaultCollapsed={defaultCollapsed} showCountryFlag={showCountryFlag} />;
 };
 
 describe('TaxCountrySelector component', () => {
@@ -49,6 +53,20 @@ describe('TaxCountrySelector component', () => {
     it('should render', () => {
         const { container } = render(<TestTaxCountrySelector />);
         expect(container).not.toBeEmptyDOMElement();
+    });
+
+    it('should render with country dropdown expanded and hidden country flag', () => {
+        render(<TestTaxCountrySelector defaultCollapsed={false} initialCountryCode="US" />);
+        const countryDropdown = screen.getByTestId('tax-country-dropdown');
+        expect(countryDropdown).toBeInTheDocument();
+        expect(screen.queryByAltText('United States')).not.toBeInTheDocument();
+    });
+
+    it('should render with country dropdown expanded with country flag', () => {
+        render(<TestTaxCountrySelector defaultCollapsed={false} showCountryFlag={true} initialCountryCode="US" />);
+        const countryDropdown = screen.getByTestId('tax-country-dropdown');
+        expect(countryDropdown).toBeInTheDocument();
+        expect(screen.getByAltText('United States')).toBeInTheDocument();
     });
 
     it.each([

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { type EventLoop, serverEvent, userThunk } from '@proton/account';
+import { unleashReady } from '@proton/account/bootstrap';
 import {
     ApiProvider,
     EventManagerProvider,
@@ -33,13 +34,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import {
-    FlagProvider,
-    UnleashClient,
-    createCustomFetch,
-    createUnleashReadyPromise,
-    getUnleashConfig,
-} from '@proton/unleash';
+import { FlagProvider, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';
@@ -169,7 +164,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                 setupModels(),
                 loadLocales(),
                 loadCryptoWorker({ poolSize: 1 }),
-                createUnleashReadyPromise(unleashClient).promise,
+                unleashReady({ unleashClient }),
             ]);
 
             extendStore({ eventManager });

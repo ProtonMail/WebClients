@@ -48,7 +48,6 @@ import {
     ProrationMode,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
-    type SubscriptionCheckResponse,
     SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
@@ -69,16 +68,14 @@ import {
     getPlanNameFromIDs,
     getPlansMap,
     hasDeprecatedVPN,
-    hasLumoAddonFromPlanIDs,
     hasPlanIDs,
-    isBF2025Offer,
     isFreeSubscription,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
-import { canAddLumoAddon, getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
@@ -129,6 +126,8 @@ import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
+import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
+import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
@@ -218,6 +217,8 @@ interface RenderProps {
     onSubmit: (e: FormEvent) => void;
     step: SUBSCRIPTION_STEPS;
     planIDs: PlanIDs;
+    model: Model;
+    onModelUpdate: (updatedModel: Model) => void;
 }
 
 export interface SubscriptionContainerProps {
@@ -242,7 +243,7 @@ export interface SubscriptionContainerProps {
     onCheck?: (
         data:
             | { model: Model; newModel: Model; type: 'error'; error: any }
-            | { model: Model; newModel: Model; type: 'success'; result: SubscriptionCheckResponse }
+            | { model: Model; newModel: Model; type: 'success'; result: EnrichedCheckResponse }
     ) => void;
     metrics: {
         source: Source;
@@ -261,6 +262,9 @@ export interface SubscriptionContainerProps {
      */
     allowedAddonTypes?: AddonGuard[];
     paymentStatus: PaymentStatus;
+    showShortPlan?: boolean;
+    // Skip plan transition check if they are handled externally
+    skipPlanTransitionChecks?: boolean;
 }
 
 const SubscriptionContainerInner = ({
@@ -295,6 +299,8 @@ const SubscriptionContainerInner = ({
     parent,
     allowedAddonTypes,
     paymentStatus,
+    showShortPlan,
+    skipPlanTransitionChecks,
 }: SubscriptionContainerProps) => {
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -326,7 +332,7 @@ const SubscriptionContainerInner = ({
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
-    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
+    const [additionalCheckResults, setAdditionalCheckResults] = useState<EnrichedCheckResponse[]>();
     const scribeEnabled = useAssistantFeatureEnabled();
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
@@ -471,14 +477,13 @@ const SubscriptionContainerInner = ({
     );
 
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
-    const lumoAddonEnabled =
-        canAddLumoAddon(subscription) &&
-        ((!couponConfig?.hideLumoAddonBanner &&
-            // Hides the Lumo Banner during loading
-            !isBF2025Offer({ coupon: maybeCoupon, planIDs, cycle: model.cycle })) ||
-            // if user already has lumo addon and it was transfered to the new selected plan then display the lumo addon
-            // customizer
-            hasLumoAddonFromPlanIDs(planIDs));
+    const lumoAddonEnabled = showLumoAddonCustomizer({
+        subscription,
+        couponConfig,
+        initialCoupon: maybeCoupon,
+        planIDs: model.planIDs,
+        cycle: model.cycle,
+    });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -858,49 +863,54 @@ const SubscriptionContainerInner = ({
     };
 
     const normalizeModelBeforeCheck = async (newModel: Model) => {
-        const planTransitionForbidden = getIsPlanTransitionForbidden({
-            subscription,
-            plansMap: plansMapRef.current,
-            planIDs: newModel.planIDs,
-        });
-        if (planTransitionForbidden?.type === 'lumo-plus') {
-            newModel.planIDs = planTransitionForbidden.newPlanIDs;
-            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
-            // that the cycle is allowed
-            newModel.cycle = switchCycle(subscription?.Cycle ?? newModel.cycle, newModel.planIDs, newModel.currency);
-        }
-
-        if (planTransitionForbidden?.type === 'plus-to-plus') {
-            setPlusToPlusUpsell({
-                unlockPlan: planTransitionForbidden.newPlanName
-                    ? plansMapRef.current[planTransitionForbidden.newPlanName]
-                    : undefined,
+        if (!skipPlanTransitionChecks) {
+            const planTransitionForbidden = getIsPlanTransitionForbidden({
+                subscription,
+                plansMap: plansMapRef.current,
+                planIDs: newModel.planIDs,
             });
-            setUpsellModal(true);
-            // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
-            newModel.planIDs = getPlanIDs(latestSubscription);
-
-            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
-            // that the cycle is allowed
-            newModel.cycle = switchCycle(newModel.cycle, newModel.planIDs, newModel.currency);
-
-            // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
-            newModel.step = model.step;
-            // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
-        }
-
-        if (planTransitionForbidden?.type === 'visionary-downgrade') {
-            try {
-                // Throws an error in case if user rejects the change
-                await showVisionaryDowngradeWarning();
-            } catch {
-                onCancel?.();
-                return;
+            if (planTransitionForbidden?.type === 'lumo-plus') {
+                newModel.planIDs = planTransitionForbidden.newPlanIDs;
+                // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+                // that the cycle is allowed
+                newModel.cycle = switchCycle(
+                    subscription?.Cycle ?? newModel.cycle,
+                    newModel.planIDs,
+                    newModel.currency
+                );
             }
-        } else {
-            hideVisionaryDowngradeWarning();
-        }
 
+            if (planTransitionForbidden?.type === 'plus-to-plus') {
+                setPlusToPlusUpsell({
+                    unlockPlan: planTransitionForbidden.newPlanName
+                        ? plansMapRef.current[planTransitionForbidden.newPlanName]
+                        : undefined,
+                });
+                setUpsellModal(true);
+                // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
+                newModel.planIDs = getPlanIDs(latestSubscription);
+
+                // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+                // that the cycle is allowed
+                newModel.cycle = switchCycle(newModel.cycle, newModel.planIDs, newModel.currency);
+
+                // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
+                newModel.step = model.step;
+                // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
+            }
+
+            if (planTransitionForbidden?.type === 'visionary-downgrade') {
+                try {
+                    // Throws an error in case if user rejects the change
+                    await showVisionaryDowngradeWarning();
+                } catch {
+                    onCancel?.();
+                    return;
+                }
+            } else {
+                hideVisionaryDowngradeWarning();
+            }
+        }
         newModel.planIDs =
             forceAddonsMinMaxConstraints({
                 selectedPlanIDs: newModel.planIDs,
@@ -941,7 +951,7 @@ const SubscriptionContainerInner = ({
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: PlainPaymentMethodType
-    ): Promise<SubscriptionCheckResponse | undefined> => {
+    ): Promise<EnrichedCheckResponse | undefined> => {
         const copyNewModel: Model = {
             ...newModel,
             initialCheckComplete: true,
@@ -1347,15 +1357,11 @@ const SubscriptionContainerInner = ({
         />
     );
 
-    const showGiftInput =
-        // if the selected modification is forbidden, then it doesn't make sense to show the coupon code input
-        !model.paymentForbiddenReason.forbidden &&
-        // For some coupons, we want explicitly hide the coupon code input
-        !couponConfig?.hidden &&
-        // If the modification causes a scheduled unpaid subscription, then the coupon won't be applied anyways, so we
-        // don't show the coupon code input either
-        checkResult.SubscriptionMode !== SubscriptionMode.ScheduledChargedLater;
-    const gift = showGiftInput && (
+    const gift = canShowGiftCodeInput({
+        paymentForbiddenReason: model.paymentForbiddenReason,
+        couponConfig,
+        checkResult,
+    }) ? (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
@@ -1376,7 +1382,7 @@ const SubscriptionContainerInner = ({
                 loading={loadingGift}
             />
         </>
-    );
+    ) : null;
 
     const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
     const optimisticPlanIDsRef = useRef<any | undefined>();
@@ -1442,6 +1448,7 @@ const SubscriptionContainerInner = ({
                     paymentStatus={paymentStatus}
                     paymentsApi={paymentsApi}
                     coupon={maybeCoupon ?? undefined}
+                    showShortPlan={showShortPlan}
                 />
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
@@ -1630,6 +1637,8 @@ const SubscriptionContainerInner = ({
                 footer,
                 step: model.step,
                 planIDs: model.planIDs,
+                model,
+                onModelUpdate: (updatedModel: Model) => setModel(updatedModel),
             })}
         </>
     );

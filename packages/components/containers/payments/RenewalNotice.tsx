@@ -71,20 +71,13 @@ type RenewalNoticeProps = {
     subscription?: Subscription | FreeSubscription;
 } & Partial<CheckoutModifiers>;
 
-const getRegularRenewalNoticeText = ({
-    checkout,
-    cycle,
-    isCustomBilling,
-    isScheduledChargedImmediately,
-    isScheduledChargedLater,
-    subscription,
-    currency,
-    app,
-}: RenewalNoticeProps & {
-    checkout: PaymentsCheckout;
-    currency: Currency;
-    app: APP_NAMES;
-}) => {
+export function getRenewalTime(
+    subscription: Subscription | FreeSubscription | undefined,
+    cycle: CYCLE,
+    isCustomBilling: boolean | undefined,
+    isScheduledChargedLater: boolean | undefined,
+    isScheduledChargedImmediately: boolean | undefined
+) {
     let unixRenewalTime: number = +addMonths(new Date(), cycle) / 1000;
     // custom billings are renewed at the end of the current subscription.
     // addon downgrades are more tricky. On the first glance they behave like scheduled subscriptions,
@@ -99,7 +92,30 @@ const getRegularRenewalNoticeText = ({
         unixRenewalTime = +addMonths(periodEndMilliseconds, cycle) / 1000;
     }
 
-    const renewalTime = getReadableTime({ value: unixRenewalTime, format: 'PPP' });
+    return getReadableTime({ value: unixRenewalTime, format: 'PPP' });
+}
+
+const getRegularRenewalNoticeText = ({
+    checkout,
+    cycle,
+    isCustomBilling,
+    isScheduledChargedImmediately,
+    isScheduledChargedLater,
+    subscription,
+    currency,
+    app,
+}: RenewalNoticeProps & {
+    checkout: PaymentsCheckout;
+    currency: Currency;
+    app: APP_NAMES;
+}) => {
+    const renewalTime = getRenewalTime(
+        subscription,
+        cycle,
+        isCustomBilling,
+        isScheduledChargedLater,
+        isScheduledChargedImmediately
+    );
 
     if (isScheduledChargedLater && subscription) {
         const autoRenewNote: string | string[] = (() => {

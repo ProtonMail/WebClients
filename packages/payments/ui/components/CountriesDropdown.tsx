@@ -7,6 +7,7 @@ import type { SearcheableSelectProps } from '@proton/components/components/selec
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 
 import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../helpers/countries-sorted';
 
@@ -51,10 +52,27 @@ export const useCountries = ({ allowedCountries, disabledCountries }: CountriesH
     return { countries, country, setCountry, getCountryByCode };
 };
 
+const getCountriesDropdownLabel = (countryItem: CountryItem, showCountryFlag?: boolean) => {
+    const { value, label } = countryItem;
+
+    if (value === DEFAULT_COUNTRIES_SEPARATOR.value) {
+        return <hr className="m-0" />;
+    } else if (showCountryFlag) {
+        return (
+            <span className="flex items-center gap-2">
+                <CountryFlagAndName className="ml-0 mr-0" countryCode={value} countryName={label} />
+            </span>
+        );
+    } else {
+        return label;
+    }
+};
+
 type Props = {
     onChange?: (countryCode: string) => void;
     selectedCountryCode: string;
     autoComplete?: string;
+    showCountryFlag?: boolean;
 } & CountriesHookProps &
     Omit<SearcheableSelectProps<CountryItem>, 'children' | 'value' | 'search' | 'onChange'>;
 
@@ -63,6 +81,7 @@ export const CountriesDropdown = ({
     selectedCountryCode,
     allowedCountries,
     disabledCountries,
+    showCountryFlag,
     ...rest
 }: Props) => {
     const { countries, getCountryByCode } = useCountries({ allowedCountries, disabledCountries });
@@ -95,7 +114,7 @@ export const CountriesDropdown = ({
                     disabled={disabled}
                     data-testid={`country-${value}`}
                 >
-                    {value === DEFAULT_COUNTRIES_SEPARATOR.value ? <hr className="m-0" /> : label}
+                    {getCountriesDropdownLabel(countryItem, showCountryFlag)}
                 </Option>
             );
         }),
