@@ -36,10 +36,13 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const groupsManagement = useGroupsManagement(organization);
     const [user, loadingUser] = useUser();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(groupOwnerInvitesThunk()).catch(noop);
+        if (isUserGroupsGroupOwnerEnabled) {
+            dispatch(groupOwnerInvitesThunk()).catch(noop);
+        }
     }, []);
 
     if (!groupsManagement || loadingUser || !user) {
