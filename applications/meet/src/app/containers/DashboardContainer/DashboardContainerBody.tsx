@@ -8,7 +8,7 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
 import { DashboardMeetingList } from '../../components/DashboardMeetingList/DashboardMeetingList';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { UpsellBanner, UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
+import { UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
 
 import './DashboardContainerBody.scss';
 
@@ -51,7 +51,7 @@ export const DashboardContainerBody = ({
 
     return (
         <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
-            {isGuest ? <UpsellBanner isPaid={false} /> : <UpsellBannerWithUser />}
+            {!isGuest && <UpsellBannerWithUser />}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
                 <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
                 <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
