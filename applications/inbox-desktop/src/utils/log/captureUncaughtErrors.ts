@@ -1,6 +1,7 @@
 import { app, dialog } from "electron";
 import { c } from "ttag";
 import { mainLogger } from "./index";
+import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 
 export function captureUncaughtErrors() {
     process.on("unhandledRejection", (reason) => {
@@ -15,9 +16,9 @@ export function captureUncaughtErrors() {
 export function captureTopLevelRejection(reason: unknown, origin?: NodeJS.UncaughtExceptionOrigin) {
     mainLogger.error("uncaughtException", reason, origin);
     dialog.showErrorBox(
-        c("Error dialog").t`Unexpected error`,
+        c("Error dialog").t`${MAIL_APP_NAME} - Unexpected error`,
         c("Error dialog")
-            .t`Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.`,
+            .t`Due to an error, the ${MAIL_APP_NAME} app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.`,
     );
     app.exit(1);
 }
