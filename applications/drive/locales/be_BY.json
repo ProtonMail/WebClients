@@ -763,7 +763,7 @@
         "Няма канфідэнцыяльных даных"
       ],
       "Not now": [
-        "Не зараз"
+        "Не цяпер"
       ],
       "OK": [
         "OK"
@@ -987,6 +987,9 @@
       "Set as cover": [
         "Задаць у якасці вокладкі"
       ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
       "Set recovery methods": [
         "Задаць спосабы аднаўлення"
       ],
@@ -1022,6 +1025,9 @@
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ],
       "Sharing options": [
         "Параметры сумеснага доступу"
@@ -3410,6 +3416,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
       ],
+      "Failed loading group members": [
+        "Збой загрузкі членаў групы"
+      ],
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
       ],
@@ -3550,6 +3559,9 @@
       ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Network error": [
+        "Памылка сеткі"
       ],
       "No calendars found to import": [
         "Не знойдзены календары для імпартавання"
@@ -5829,13 +5841,16 @@
         "Вялікае імпартаванне можа заняць некалькі дзён."
       ],
       "Last week": [
-        "Апошні тыдзень"
+        "На мінулым тыдні"
       ],
       "Learn more": [
         "Даведацца больш"
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Даведайцеся, што рабіць ${ dataLeakedLink }"
+      ],
+      "Link copied": [
+        "Спасылка скапіявана"
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
@@ -5922,7 +5937,7 @@
         "Праблема з сеткай"
       ],
       "New": [
-        "Новае"
+        "Новы"
       ],
       "No": [
         "Не"
@@ -6013,6 +6028,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
+      ],
+      "owner": [
+        "уладальнік"
       ],
       "password": [
         "пароль"
@@ -6743,6 +6761,9 @@
       "who": [
         "хто"
       ],
+      "Who has access": [
+        "Хто мае доступ"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будзе адноўлены да версіі ад ${ formattedRevisionDate }. Усе астатнія версіі будуць захоўвацца далей."
       ],
@@ -7145,6 +7166,9 @@
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
+      "Active": [
+        "Актыўна"
+      ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
       ],
@@ -7157,6 +7181,9 @@
       "Address": [
         "Адрас"
       ],
+      "admin": [
+        "адміністратар"
+      ],
       "Alias title": [
         "Загаловак псеўданіма"
       ],
@@ -7168,6 +7195,9 @@
       ],
       "Anonymous": [
         "Ананімны"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
       ],
       "App password": [
         "Пароль праграмы"
@@ -7213,6 +7243,12 @@
       ],
       "Calendars": [
         "Календары"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
       ],
       "Cancel download": [
         "Скасаваць спампоўванне"
@@ -7297,6 +7333,9 @@
         "Выдаліць дыскі?",
         "Выдаліць дыскі?",
         "Выдаліць дыскі?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
@@ -7498,6 +7537,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "Not active": [
+        "Не актыўна"
       ],
       "Note": [
         "Нататка"
@@ -10315,7 +10357,7 @@
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцы. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час.",
         "Спецыяльны зніжаны кошт дзейнічае на працягу ${ couponRedemptions } месяцаў. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы час."
       ],
@@ -11415,6 +11457,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "прынята"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     },
     "Storage": {
@@ -12954,6 +13004,12 @@
       "Processing...": [
         "Апрацоўка..."
       ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
       "Public shared link status": [
         "Статус абагульвання публічнай спасылкі"
       ],
@@ -13046,6 +13102,9 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

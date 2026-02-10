@@ -3172,6 +3172,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀請函暫時關閉。請稍後再試。"
       ],
+      "Failed loading group members": [
+        "無法再入群組成員"
+      ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
       ],
@@ -3264,6 +3267,9 @@
       ],
       "Name is required": [
         "名稱為必填"
+      ],
+      "Network error": [
+        "網路連線錯誤"
       ],
       "No calendars found to import": [
         "沒有找到行事曆可以匯入"
@@ -6380,6 +6386,9 @@
       "Calendars": [
         "行事曆"
       ],
+      "can view": [
+        "可以查看"
+      ],
       "Cancel download": [
         "取消下載"
       ],
@@ -8484,6 +8493,9 @@
       "Failed to reject share invitation": [
         "失敗拒絕加入邀請"
       ],
+      "Failed to remove device": [
+        "移除裝置失敗"
+      ],
       "Failed to remove the file": [
         "刪除檔案失敗"
       ],
@@ -10041,6 +10053,11 @@
         "正將您的訂購授權取消，請稍候"
       ]
     },
+    "Status": {
+      "pending": [
+        "待處理"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "取得更多儲存空間"
@@ -10855,6 +10872,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 訂購授權"
       ],
+      "Cancel all transfers?": [
+        "取消全部匯款?"
+      ],
       "Cancel subscription?": [
         "取消訂購授權?"
       ],
@@ -10992,6 +11012,9 @@
       ],
       "Devices": [
         "個裝置"
+      ],
+      "Diagnostics": [
+        "診斷"
       ],
       "Discard": [
         "捨棄"

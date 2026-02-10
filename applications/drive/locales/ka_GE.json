@@ -938,6 +938,9 @@
       "Scan & Download": [
         "სკანირება & გადმოწერა"
       ],
+      "Scan & Download (${ nbSelected })": [
+        "სკანირება და გადმოწერა (${ nbSelected })"
+      ],
       "Search": [
         "ძებნა"
       ],
@@ -974,6 +977,9 @@
       "Set as cover": [
         "ყდად დაყენება"
       ],
+      "Set password or expiration date": [
+        "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
+      ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
       ],
@@ -1009,6 +1015,9 @@
       ],
       "Share your calendar with your team": [
         "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "გაზიარება გამჭოლად დაშიფრულია"
       ],
       "Sharing options": [
         "გაზიარების მორგება"
@@ -3337,6 +3346,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
       ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
       "Failed to copy photo to album": [
         "სურათის ალბომში კოპირება ჩავარდა"
       ],
@@ -3475,6 +3487,9 @@
       ],
       "Name is required": [
         "სახელი აუცილებელია"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ],
       "No calendars found to import": [
         "შემოსატანი კალენდრები ვერ ვიპოვე"
@@ -3753,6 +3768,9 @@
       "Validation error": [
         "გადამოწმების შეცდომა"
       ],
+      "We cannot retrieve this item": [
+        "ამ ელემენტის მიღება შეუძლებელია"
+      ],
       "We were not able to load some invitations": [
         "ჩვენ ვერ ჩავტვირთეთ ზოგიერთი მოწვევა"
       ],
@@ -3773,6 +3791,9 @@
       ],
       "We were not able to load some of your shared items": [
         "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი გაზიარებული ელემენტებიდან"
+      ],
+      "We were not able to load some search results": [
+        "ზოგიერთი ძებნის შედეგის ჩატვირთვა ვერ მოხერხდა"
       ],
       "We were not able to load the folder contents": [
         "ჩვენ ვერ ჩავტვირთეთ საქაღალდის შემცველობა"
@@ -4553,6 +4574,9 @@
       "Two-factor authentication is enabled in your external account.": [
         "თქვენს გარე ანგარიშში ჩართულია 2FA."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
+      ],
       "Use your app password if:": [
         "გამოვიყენოთ აპის პაროლი, თუ:"
       ],
@@ -4959,6 +4983,10 @@
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
+      ],
       "Already in this folder": [
         "უკვე ამ საქაღალდეშია"
       ],
@@ -5111,6 +5139,9 @@
       ],
       "Cloud storage for businesses that take security seriously": [
         "ღრუბლოვანი საცავი ბიზნესებისთვის, რომლებიც სერიოზულად ეკიდებიან უსაფრთხოებას"
+      ],
+      "Computed hash does not match XAttr": [
+        "გამოთვლილი ჰეში არ ემთხვევა XAttr-ს"
       ],
       "Conflict": [
         "კონფლიქტი"
@@ -5576,6 +5607,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "გაიგეთ, რა უნდა გააკეთოთ ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "ბმული დაკოპირებულია"
+      ],
       "Link copied to clipboard": [
         "ბმული დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -5747,6 +5781,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
+      "owner": [
+        "მფლობელი"
       ],
       "password": [
         "პაროლი"
@@ -6161,6 +6198,9 @@
       "This month": [
         "ამ თვეში"
       ],
+      "This will cancel any remaining downloads.": [
+        "ეს ყველა დარჩენილ გადმოწერას გააუქმებს."
+      ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "ეს ყველა დარჩენილ ატვირთვას გააუქმებს. გაუქმებული ფაილები ${ DRIVE_APP_NAME }-ში შენახული არ იქნება."
       ],
@@ -6418,6 +6458,9 @@
       ],
       "who": [
         "ვინ"
+      ],
+      "Who has access": [
+        "ვის აქვს წვდომა"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
@@ -6770,6 +6813,9 @@
       "Account holder": [
         "ანგარიშის მფლობელი"
       ],
+      "Active": [
+        "აქტიური"
+      ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
       ],
@@ -6782,6 +6828,9 @@
       "Address": [
         "მისამართი"
       ],
+      "admin": [
+        "ადმინი"
+      ],
       "Alias title": [
         "ფსევდონიმის სათაური"
       ],
@@ -6793,6 +6842,9 @@
       ],
       "Anonymous": [
         "ანონიმური"
+      ],
+      "Anyone on the Internet with the link": [
+        "ბმულის მქონე ნებისმიერ პირს ინტერნეტში"
       ],
       "App password": [
         "აპის პაროლი"
@@ -6838,6 +6890,12 @@
       ],
       "Calendars": [
         "კალენდრები"
+      ],
+      "can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "can view": [
+        "შეუძლია, ნახოს"
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
@@ -6920,6 +6978,9 @@
       "Delete drive?": [
         "წავშალო დისკი?",
         "წავშალო დისკები?"
+      ],
+      "Delete link and remove access for everyone": [
+        "ბმულის წაშლა და ყველასთვის წვდომის შეწყვეტა"
       ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
@@ -7121,6 +7182,9 @@
       ],
       "New password": [
         "ახალი პაროლი"
+      ],
+      "Not active": [
+        "აქტიური არაა"
       ],
       "Note": [
         "შენიშვნა"
@@ -8258,6 +8322,9 @@
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -9733,6 +9800,10 @@
       "terms and conditions": [
         "პირობები და წესები"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში.",
         "სპეციალურად დაკლებული ფასები ვარგისია პირველ ${ subscriptionLength } თვეში."
@@ -10731,6 +10802,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "დადასტურებულია"
+      ],
+      "pending": [
+        "რიგში"
       ]
     },
     "Storage": {
@@ -11919,6 +11998,10 @@
       "Folder details": [
         "საქაღალდის დეტალები"
       ],
+      "Found ${ resultCount } result": [
+        "ნაპოვნია ${ resultCount } შედეგი",
+        "ნაპოვნია ${ resultCount } შედეგი"
+      ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "გადმოწერე ${ DRIVE_SHORT_APP_NAME } ტელეფონზე"
       ],
@@ -12184,6 +12267,12 @@
       "Processing...": [
         "დამუშავება..."
       ],
+      "Public link": [
+        "საჯარო ბმული"
+      ],
+      "Public link settings": [
+        "საჯარო ბმულის მორგება"
+      ],
       "Public shared link status": [
         "საჯარო გაზიარებული ბმულის სტატუსი"
       ],
@@ -12275,6 +12364,9 @@
       "Settings": [
         "მორგება"
       ],
+      "Settings for ${ sharedFileName }": [
+        "პარამეტრები ${ sharedFileName }-ისთვის"
+      ],
       "SHA1": [
         "SHA1"
       ],
@@ -12349,6 +12441,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "საქაღალდეს აკლია ან აქვს არასწორი ხელმოწერა. მეტი ინფორმაციის მისაღებად გადადით მენიუ (:) -> დეტალები."
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "ეს სავარაუდოდ იმიტომ ხდება, რომ ანგარიში ან მისამართი წაიშალა."
       ],
       "This link is password protected": [
         "ეს ბმული პაროლითაა დაცული"
@@ -12500,6 +12595,9 @@
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
       ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
+      ],
       "Your 3 GB bonus": [
         "თქვენი 3 გბ ბონუსი"
       ],
@@ -12508,6 +12606,9 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "თქვენი გადმოწერა შეიცავს ${ DOCS_APP_NAME } ან ${ SHEETS_APP_NAME } ფაილს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"

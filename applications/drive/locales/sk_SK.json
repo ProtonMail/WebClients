@@ -987,6 +987,9 @@
       "Set as cover": [
         "Nastaviť ako titulnú fotku"
       ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
       ],
@@ -1022,6 +1025,9 @@
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ],
       "Sharing options": [
         "Možnosti zdieľania"
@@ -3410,6 +3416,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Externé pozvánky sú dočasne deaktivované. Skúste to znova neskôr, prosím"
       ],
+      "Failed loading group members": [
+        "Chyba pri načítavaní členov skupiny"
+      ],
       "Failed to copy photo to album": [
         "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
@@ -3550,6 +3559,9 @@
       ],
       "Name is required": [
         "Názov je povinný"
+      ],
+      "Network error": [
+        "Chyba siete"
       ],
       "No calendars found to import": [
         "Neboli nájdené žiadne kalendáre na import"
@@ -5837,6 +5849,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Zistite, čo robiť ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
@@ -6013,6 +6028,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
+      ],
+      "owner": [
+        "vlastník"
       ],
       "password": [
         "heslo"
@@ -6743,6 +6761,9 @@
       "who": [
         "kto"
       ],
+      "Who has access": [
+        "Kto má prístup"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
       ],
@@ -7145,6 +7166,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Active": [
+        "Aktívne"
+      ],
       "Add email address": [
         "Pridať emailovú adresu"
       ],
@@ -7157,6 +7181,9 @@
       "Address": [
         "Adresa"
       ],
+      "admin": [
+        "správca"
+      ],
       "Alias title": [
         "Názov aliasu"
       ],
@@ -7168,6 +7195,9 @@
       ],
       "Anonymous": [
         "Anonymne"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
       ],
       "App password": [
         "Heslo aplikácie"
@@ -7213,6 +7243,12 @@
       ],
       "Calendars": [
         "Kalendáre"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
       ],
       "Cancel download": [
         "Zrušiť sťahovanie"
@@ -7297,6 +7333,9 @@
         "Vymazať disky?",
         "Vymazať disky?",
         "Vymazať disky?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
       ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
@@ -7498,6 +7537,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "Not active": [
+        "Neaktívne"
       ],
       "Note": [
         "Poznámka"
@@ -11366,6 +11408,14 @@
         "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
+    "Status": {
+      "accepted": [
+        "prijaté"
+      ],
+      "pending": [
+        "čakajúce"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Získať viac úložného priestoru"
@@ -12903,6 +12953,12 @@
       "Processing...": [
         "Prebieha spracovanie..."
       ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
       "Public shared link status": [
         "Stav verejného zdieľaného odkazu"
       ],
@@ -12995,6 +13051,9 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"
