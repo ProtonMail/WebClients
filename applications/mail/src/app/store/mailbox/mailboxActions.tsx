@@ -128,6 +128,7 @@ const runAction = async ({
     return promise;
 };
 
+// TODO check if we can change elements: Element[]; to elements: Message[];
 export const markMessagesAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
@@ -164,6 +165,7 @@ export const markMessagesAsRead = createAsyncThunk<
     }
 );
 
+// TODO check if we can change elements: Element[]; to elements: Message[];
 export const markMessagesAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
@@ -200,6 +202,7 @@ export const markMessagesAsUnread = createAsyncThunk<
     }
 );
 
+// TODO check if we can change elements: Element[]; to elements: Conversation[];
 export const markConversationsAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
@@ -229,6 +232,7 @@ export const markConversationsAsRead = createAsyncThunk<
     }
 );
 
+// TODO check if we can change elements: Element[]; to elements: Conversation[];
 export const markConversationsAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     { elements: Element[]; labelID: string; showSuccessNotification?: boolean },

@@ -12,7 +12,7 @@ import {
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
@@ -74,7 +74,7 @@ export const markMessagesAsUnread = (
 export const labelMessages = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: Element[];
+        elements: MessageMetadata[];
         sourceLabelID: string;
         destinationLabelID: string;
         labels: Label[];
@@ -86,7 +86,7 @@ export const labelMessages = (
     const isTargetACategory = isCategoryLabel(destinationLabelID);
 
     elements.forEach((element) => {
-        const selectedMessage = element as Message;
+        const selectedMessage = element;
 
         if (isTargetAFolder) {
             selectedMessage.LabelIDs.forEach((selectedLabelID) => {
