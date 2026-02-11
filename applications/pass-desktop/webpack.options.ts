@@ -22,7 +22,7 @@ const options: Partial<ProtonPackOptions> = {
     overlayWarnings: false,
     overlayErrors: false,
     overlayRuntimeErrors: false,
-    logical: false,
+    noLogicalScss: true,
     analyze: false,
     optimizeAssets: true,
 };
