@@ -233,7 +233,7 @@ const AssistantMessage = ({
 
     return (
         <>
-            <div className="gap-2 relative">
+            <div className="gap-2 relative w-full">
                 {shouldShow && (
                     <div
                         // ref={markdownContainerRef}
@@ -246,7 +246,7 @@ const AssistantMessage = ({
                     >
                         <div
                             ref={markdownContainerRef}
-                            className="markdown-rendering flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                            className="w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
                         >
                             <DebugInfo
                                 isLoading={isLoading || false}
@@ -262,17 +262,15 @@ const AssistantMessage = ({
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
                                     {hasContent || doNotShowEmptyMessage || message.reasoning || hasToolCall ? (
-                                        <div className="w-full">
-                                            <RenderBlocks
-                                                blocks={blocks}
-                                                message={message}
-                                                isGenerating={isGenerating}
-                                                isLastMessage={isLastMessage}
-                                                handleLinkClick={handleLinkClick}
-                                                sourcesContainerRef={sourcesContainerRef}
-                                                reasoning={message.reasoning}
-                                            />
-                                        </div>
+                                        <RenderBlocks
+                                            blocks={blocks}
+                                            message={message}
+                                            isGenerating={isGenerating}
+                                            isLastMessage={isLastMessage}
+                                            handleLinkClick={handleLinkClick}
+                                            sourcesContainerRef={sourcesContainerRef}
+                                            reasoning={message.reasoning}
+                                        />
                                     ) : (
                                         <EmptyMessage />
                                     )}
