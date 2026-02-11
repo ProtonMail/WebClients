@@ -12,7 +12,6 @@ import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import 'proton-mail/helpers/location/applyLocationPerformanceTracker';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
 
 import { APPLY_LOCATION_TYPES } from './interface';
@@ -69,18 +68,6 @@ jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
             undoCreateFilters: jest.fn(),
         })),
     })),
-}));
-
-const mockPerformance = {
-    mark: jest.fn(),
-    clearMarks: jest.fn(),
-    getEntriesByName: jest.fn(),
-    getEntriesByType: jest.fn(),
-    now: jest.fn(),
-};
-
-jest.mock('proton-mail/helpers/location/applyLocationPerformanceTracker', () => ({
-    getApplyLocationTracker: jest.fn(() => mockPerformance),
 }));
 
 const mockedCreateNotification = jest.fn();
