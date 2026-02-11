@@ -5,7 +5,6 @@ import type { MessageState, MessagesState } from '@proton/mail/store/messages/me
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
 
 import {
     markConversationsAsReadPending,
@@ -96,7 +95,7 @@ describe('messagesReducer', () => {
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>;
 
             messagesByConversationID.mockReturnValue([messageState1, messageState2]);
 
@@ -129,7 +128,7 @@ describe('messagesReducer', () => {
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>;
 
             messagesByConversationID.mockReturnValue([messageState1, messageState2]);
 
