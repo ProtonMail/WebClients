@@ -91,14 +91,12 @@ export const markMessagesAsReadPending = (
 ) => {
     const { elements } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement;
-
-        if (selectedMessage.Unread === 0) {
+    elements.forEach((element) => {
+        if (element.Unread === 0) {
             return;
         }
 
-        const messageState = getMessage(state, selectedMessage.ID);
+        const messageState = getMessage(state, element.ID);
 
         if (messageState) {
             if (messageState.data) {
@@ -114,18 +112,16 @@ export const markMessagesAsUnreadPending = (
 ) => {
     const { elements } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement;
-
-        if (selectedMessage.Unread === 1) {
+    elements.forEach((element) => {
+        if (element.Unread === 1) {
             return;
         }
 
-        const messageState = getMessage(state, selectedMessage.ID);
+        const messageState = getMessage(state, element.ID);
 
         if (messageState) {
             if (messageState.data) {
-                (messageState.data as Message).Unread = 1;
+                messageState.data.Unread = 1;
             }
         }
     });
@@ -137,17 +133,15 @@ export const markConversationsAsReadPending = (
 ) => {
     const { elements, labelID } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement;
-
-        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+    elements.forEach((element) => {
+        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
 
         if (conversationLabel?.ContextNumUnread === 0) {
             return;
         }
 
         const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: selectedConversation.ID,
+            ConversationID: element.ID,
         });
 
         // Update all messages attach to the same conversation in message state
@@ -165,9 +159,8 @@ export const markConversationsAsUnreadPending = (
 ) => {
     const { elements, labelID } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement;
-        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+    elements.forEach((element) => {
+        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
 
         if (!!conversationLabel?.ContextNumUnread) {
             // Conversation is already unread, do nothing
@@ -176,7 +169,7 @@ export const markConversationsAsUnreadPending = (
 
         // Get all messages attached to the conversation
         const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: selectedConversation.ID,
+            ConversationID: element.ID,
         });
 
         // Mark the last message as unread
