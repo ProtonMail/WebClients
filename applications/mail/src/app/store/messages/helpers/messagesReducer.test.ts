@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
@@ -36,11 +36,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [{ ID: 'msg1', Unread: 1 } as Message],
+                        elements: [{ ID: 'msg1', Unread: 1 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>;
 
             messageByID.mockReturnValue(messageState);
 
@@ -60,11 +60,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [{ ID: 'msg1', Unread: 0 } as Message],
+                        elements: [{ ID: 'msg1', Unread: 0 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>;
 
             messageByID.mockReturnValue(messageState);
 
