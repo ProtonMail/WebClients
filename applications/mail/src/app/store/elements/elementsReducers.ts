@@ -772,13 +772,13 @@ export const markConversationsAsReadPending = (
 
 export const markConversationsAsUnreadPending = (
     state: Draft<ElementsState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
     const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
+        const selectedConversation = selectedElement;
         const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
 
         if (!!conversationLabel?.ContextNumUnread) {
@@ -821,7 +821,7 @@ export const markConversationsAsReadRejected = (
 
 export const markConversationsAsUnreadRejected = (
     state: Draft<ElementsState>,
-    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<unknown, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const pendingAction = {
         ...action,

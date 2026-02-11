@@ -4,7 +4,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from '../../models/conversation';
-import type { Element } from '../../models/element';
 import {
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,
@@ -332,7 +331,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark read conversation as unread', () => {
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -358,7 +357,7 @@ describe('conversationsReducers', () => {
                     ...mockConversation,
                     Labels: [{ ID: inboxLabelID, ContextNumUnread: 1 }],
                 };
-                const elements: Element[] = [unreadConversation];
+                const elements = [unreadConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -379,7 +378,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should only update the specific label', () => {
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -399,7 +398,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark the last non draft message of the current location as unread', () => {
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -445,7 +444,7 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithOnlyDrafts;
 
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -498,7 +497,7 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithMultipleMessages;
 
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
@@ -539,7 +538,7 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithUnreadMessage;
 
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',

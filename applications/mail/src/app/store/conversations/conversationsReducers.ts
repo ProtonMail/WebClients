@@ -463,7 +463,7 @@ export const markConversationsAsReadPending = (
 
 export const markConversationsAsUnreadPending = (
     state: Draft<ConversationsState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
     const isCurrentLabelIDCategory = isCategoryLabel(labelID);
