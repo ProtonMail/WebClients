@@ -319,7 +319,7 @@ $profile-colors:
 }
 
 .border-card {
-	border: 1px solid var(--border-card);
+	border-color: var(--border-card);
 }
 
 // Global override for checkbox tick color
