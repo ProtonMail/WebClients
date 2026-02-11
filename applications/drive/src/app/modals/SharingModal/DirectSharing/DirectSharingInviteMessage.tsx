@@ -22,7 +22,7 @@ export const DirectSharingInviteMessage = ({
     onToggleIncludeInviteMessage,
 }: Props) => (
     // Wrapped in a div do we return a single element - important for flexbox layout
-    <div>
+    <>
         {includeInviteMessage && (
             <div className="relative">
                 <InputFieldTwo
@@ -62,5 +62,5 @@ export const DirectSharingInviteMessage = ({
                 {inviteMessage.length}/{SHARE_INVITE_MESSAGE_MAX_LENGTH}
             </span>
         </div>
-    </div>
+    </>
 );

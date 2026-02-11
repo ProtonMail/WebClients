@@ -1,9 +1,20 @@
+import { type ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
+import {
+    Checkbox,
+    ModalTwo,
+    ModalTwoContent,
+    useConfirmActionModal,
+    useModalTwoStatic,
+    useNotifications,
+} from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import useFlag from '@proton/unleash/useFlag';
 
 export interface SharingSettingsModalProps {
     sharedFileName: string;
@@ -17,7 +28,21 @@ const SharingSettingsModal = ({
     onExit,
     open,
 }: SharingSettingsModalProps & ModalProps) => {
+    const { createNotification } = useNotifications();
+
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
+    const adminRoleEnabled = useFlag('DriveSharingAdminPermissions');
+
+    const [editorsAsAdmins, setEditorsAsAdmins] = useState(false);
+    const toggleCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+        setEditorsAsAdmins(event.target.checked);
+        if (event.target.checked) {
+            createNotification({
+                text: c('Notification').t`Setting updated. Editors can change permission and share.`,
+                showCloseButton: false,
+            });
+        }
+    };
 
     const handleStopSharing = async () => {
         void showConfirmActionModal({
@@ -35,7 +60,7 @@ const SharingSettingsModal = ({
                 <div className="modal-two-header flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 m-0 mb-5">
                     <div className="flex items-center flex-nowrap gap-2">
                         <Button color="weak" shape="ghost" icon onClick={onClose}>
-                            <Icon name="arrow-left" />
+                            <IcArrowLeft />
                         </Button>
                         <span className="modal-two-header-title h4 text-bold text-ellipsis">
                             {c('Title').t`Settings for ${sharedFileName}`}
@@ -45,6 +70,23 @@ const SharingSettingsModal = ({
                 </div>
 
                 <ModalTwoContent className="mb-7">
+                    {adminRoleEnabled && (
+                        <>
+                            <div
+                                className="flex flex-nowrap justify-space-between items-center"
+                                data-testid="share-modal-settings-editorsAccessSection"
+                            >
+                                <div className="flex flex-column flex-1 p-0 gap-2" data-testid="delete-share-text">
+                                    <span className="text-semibold">{c('Label').t`Access`}</span>
+                                    <span className="color-weak">{c('Label')
+                                        .t`Allow editors to change permissions and share`}</span>
+                                </div>
+                                <Checkbox checked={editorsAsAdmins} onChange={toggleCheckbox} />
+                            </div>
+                            <hr className="my-5 bg-weak" />
+                        </>
+                    )}
+
                     <div
                         className="flex flex-nowrap justify-space-between items-center"
                         data-testid="share-modal-settings-deleteShareSection"

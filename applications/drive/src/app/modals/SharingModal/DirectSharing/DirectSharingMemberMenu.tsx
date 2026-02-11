@@ -42,7 +42,7 @@ export function DirectSharingMemberMenu({
             >
                 <DropdownButton
                     disabled={disabled}
-                    className="self-center color-weak"
+                    className="self-center color-weak px-1"
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}

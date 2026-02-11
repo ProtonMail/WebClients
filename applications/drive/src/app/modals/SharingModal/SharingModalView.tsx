@@ -5,18 +5,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ContactEmailsProvider, FileIcon, Icon, type ModalStateProps, ModalTwo, useToggle } from '@proton/components';
+import { ContactEmailsProvider, FileIcon, type ModalStateProps, ModalTwo, useToggle } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
-import useFlag from '@proton/unleash/useFlag';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import ErrorState from '../../components/modals/ShareLinkModal/ErrorState';
 import { useFlagsDriveDirectSharing } from '../../flags/useFlagsDriveDirectSharing';
 import { useFlagsDrivePublicSharing } from '../../flags/useFlagsDrivePublicSharing';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
+import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
@@ -92,10 +93,7 @@ export const SharingModalView = ({
     const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
     const [publicLinkStateChanging, withPublicLinkStateChanging] = useLoading();
 
-    const adminRoleEnabled = useFlag('DriveSharingAdminPermissions');
-    const [selectedRole, setRole] = useState<DirectSharingRole>(
-        adminRoleEnabled ? MemberRole.Admin : MemberRole.Editor
-    );
+    const [selectedRole, setRole] = useState<DirectSharingRole>(MemberRole.Editor);
     const [inviteMessage, setInviteMessage] = useState('');
     const {
         state: includeInviteMessage,
@@ -136,7 +134,6 @@ export const SharingModalView = ({
                     includeNodeName: includeInviteMessage,
                 },
             });
-            cleanFields();
         });
 
     const handleChangeRole = async (email: string, role: MemberRole) => {
@@ -209,7 +206,7 @@ export const SharingModalView = ({
                     </div>
                 </div>
 
-                <div className="flex flex-column gap-4 px-8">
+                <div className="px-8">
                     <DirectSharingAutocomplete
                         disabled={isDirectSharingDisabled}
                         existingEmails={existingEmails}
@@ -222,7 +219,7 @@ export const SharingModalView = ({
 
                     {!isInvitationWorkflow ? (
                         <>
-                            <span className="color-weak">{c('Info').t`Who has access`}</span>
+                            <p className="color-weak my-4">{c('Info').t`Who has access`}</p>
                             <DirectSharingListing
                                 viewOnly={isDirectSharingDisabled}
                                 linkId={linkId}
@@ -245,19 +242,13 @@ export const SharingModalView = ({
                                 onChangeInviteMessage={setInviteMessage}
                                 onToggleIncludeInviteMessage={toggleIncludeInviteMessage}
                             />
-
-                            <div className="w-full flex justify-space-between pt-5">
-                                <Button disabled={isAdding} onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
-                                <Button
-                                    type="submit"
-                                    color="norm"
-                                    disabled={isSubmitDisabled}
-                                    loading={isAdding}
-                                    onClick={handleSubmitDirectSharing}
-                                >
-                                    {c('Action').t`Share`}
-                                </Button>
-                            </div>
+                            <DirectSharingFooter
+                                onSubmit={handleSubmitDirectSharing}
+                                onCancel={handleCancel}
+                                disabled={isSubmitDisabled}
+                                loading={isAdding}
+                                cleanFields={cleanFields}
+                            />
                         </>
                     )}
                 </div>
@@ -270,8 +261,6 @@ export const SharingModalView = ({
             <ModalTwo
                 className="double-modal"
                 size="large"
-                fullscreenOnMobile
-                as="form"
                 open={open}
                 onClose={onClose}
                 onExit={onExit}
@@ -284,7 +273,7 @@ export const SharingModalView = ({
                 <div className="double-modal-content shadow-lifted mb-3">{renderModalState()}</div>
 
                 {!isInvitationWorkflow && isPublicLinkEnabled && (
-                    <div className="double-modal-content shadow-lifted">
+                    <div className="double-modal-content shadow-lifted shrink-0">
                         <PublicSharing
                             publicLink={publicLink}
                             viewOnly={!isPublicEditModeEnabled}
@@ -298,9 +287,9 @@ export const SharingModalView = ({
                     </div>
                 )}
 
-                <div className="flex items-center justify-center gap-2 pt-5">
-                    <Icon name="lock" />
-                    {c('Action').t`Sharing is end-to-end encrypted`}
+                <div className="flex items-center justify-center gap-2 pt-5 shrink-0">
+                    <IcLockFilled color="white" />
+                    <span className="color-invert">{c('Action').t`Sharing is end-to-end encrypted`}</span>
                 </div>
             </ModalTwo>
 

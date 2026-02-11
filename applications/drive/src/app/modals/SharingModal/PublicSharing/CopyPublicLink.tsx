@@ -25,14 +25,18 @@ export function CopyPublicLink({ url, onClick, disabled }: { url?: string; onCli
     };
 
     return (
-        <div className="flex justify-space-between gap-4">
+        <div className="flex justify-space-between gap-4 w-full">
             <Input
                 ref={inputRef}
                 className={!url || recentlyCopied ? 'border-none' : ''}
-                inputClassName={clsx('overflow-hidden text-ellipsis color-hint', !url && 'bg-weak')}
+                inputClassName={clsx(
+                    'overflow-hidden text-ellipsis color-hint',
+                    !url && 'bg-weak pointer-events-none user-select-none'
+                )}
                 readOnly
                 value={url ?? getAppHref('', APPS.PROTONDRIVE)}
                 data-testid="share-anyone-url"
+                disabled={!url}
             />
             <ButtonWithTextAndIcon
                 color={recentlyCopied ? 'success' : 'norm'}

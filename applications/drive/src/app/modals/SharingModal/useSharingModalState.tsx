@@ -203,7 +203,15 @@ export const useSharingModalState = ({
     const updateShareDirect = async (directShareSettings: Omit<ShareNodeSettings, 'publicLink'>) => {
         try {
             const updatedShareResult = await drive.shareNode(nodeUid, directShareSettings);
-            createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
+            // First the button changes appearance, then comes the notification
+            setTimeout(
+                () =>
+                    createNotification({
+                        // translator: for example '"image.jpg" shared'
+                        text: c('Notification').t`"${name}" shared`,
+                    }),
+                2000
+            );
 
             await updateSharingState(updatedShareResult);
         } catch (e) {

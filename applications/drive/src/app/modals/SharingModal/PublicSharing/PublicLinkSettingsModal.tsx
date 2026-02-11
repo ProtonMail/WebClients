@@ -11,14 +11,15 @@ import {
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalTwoHeader,
     PasswordInputTwo,
     Toggle,
     useConfirmActionModal,
     useModalTwoStatic,
     useToggle,
 } from '@proton/components';
+import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { MAX_SHARED_URL_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { getMinMaxDate } from './helpers/getMinMaxDate';
@@ -120,53 +121,69 @@ const PublicLinkSettingsModal = ({
                 onExit={onExit}
                 open={open}
             >
-                <ModalTwoHeader title={c('Title').t`Public link settings`} />
-                <ModalTwoContent>
-                    <div
-                        className="flex flex-column justify-space-between gap-2  md:items-center md:gap-0 md:flex-row md:h-custom md:items-center "
-                        style={{ '--h-custom': '2.25rem' }}
-                        data-testid="sharing-modal-settings-expirationSection"
-                    >
-                        <Label htmlFor="expirationDateInputId" className={'flex flex-column p-0 text-semibold'}>
-                            {c('Label').t`Set expiration date`}
-                            <span className="color-weak text-normal">{c('Label').t`Public link expiration date`}</span>
-                        </Label>
-                        <div className="flex items-center justify-space-between gap-2 ">
-                            {/* This hack is used to prevent firefox showing autocomplete on the time date picker field */}
-                            <input className="hidden" type="email" />
-                            <DateInputTwo
-                                id="expirationDateInputId"
-                                className="flex-1 grow-2 w-custom max-w-custom"
-                                containerProps={{
-                                    style: { '--w-custom': '12.5rem', '--max-w-custom': '12.5rem' },
-                                }}
-                                disabled={!expirationEnabled}
-                                value={expiration}
-                                onChange={handleChangeExpiration}
-                                displayWeekNumbers={false}
-                                min={min}
-                                max={max}
-                                placeholder={c('Title').t`Date`}
-                                title={c('Title').t`Select link expiration date`}
-                                hasToday={false}
-                                data-testid="expiration-data-input"
-                            />
+                <div className="flex items-center justify-space-between border-bottom border-weak modal-two-header px-8 py-3 m-0 mb-5">
+                    <div className="flex items-center flex-nowrap gap-2">
+                        <Button color="weak" shape="ghost" icon onClick={onClose}>
+                            <IcArrowLeft />
+                        </Button>
+                        <span className="modal-two-header-title h4 text-bold">{c('Title')
+                            .t`Public link settings`}</span>
+                    </div>
+                    <ModalHeaderCloseButton />
+                </div>
 
+                <ModalTwoContent>
+                    <div data-testid="sharing-modal-settings-expirationSection">
+                        <div className="flex justify-space-between gap-2 mb-2">
+                            <Label htmlFor="expirationDateInputId" className="flex flex-column p-0 text-semibold gap-1">
+                                {c('Label').t`Expiry`}
+                                <span className="color-weak text-normal">{c('Label')
+                                    .t`Disable this link on a specific date`}</span>
+                            </Label>
                             <Toggle id="toggleExpiration" checked={expirationEnabled} onChange={toggleExpiration} />
                         </div>
+
+                        {expirationEnabled && (
+                            <div>
+                                {/* This hack is used to prevent firefox showing autocomplete on the time date picker field */}
+                                <input className="hidden" type="email" />
+                                <DateInputTwo
+                                    id="expirationDateInputId"
+                                    className="flex-1 grow-2 w-custom max-w-custom"
+                                    containerProps={{
+                                        style: { '--w-custom': '12.5rem', '--max-w-custom': '12.5rem' },
+                                    }}
+                                    value={expiration}
+                                    onChange={handleChangeExpiration}
+                                    displayWeekNumbers={false}
+                                    min={min}
+                                    max={max}
+                                    placeholder={c('Title').t`Date`}
+                                    title={c('Title').t`Select link expiration date`}
+                                    hasToday={false}
+                                    data-testid="expiration-data-input"
+                                />
+                            </div>
+                        )}
                     </div>
-                    <div
-                        className="mt-5 flex  flex-column justify-space-between gap-2 md:flex-row md:gap-0 md:items-center md:h-custom w-auto md:flex-nowrap md:items-center"
-                        style={{ '--h-custom': '2.25rem' }}
-                        data-testid="sharing-modal-settings-passwordSection"
-                    >
-                        <Label className="flex flex-column p-0 text-semibold" htmlFor="sharing-modal-password">
-                            {c('Label').t`Set link password`}
-                            <span className="color-weak text-normal">{c('Label').t`Public link password`}</span>
-                        </Label>
-                        <div className="flex items-center justify-space-between gap-2 md:flex-nowrap">
+
+                    <hr className="my-5 bg-weak" />
+
+                    <div data-testid="sharing-modal-settings-passwordSection">
+                        <div className="flex justify-space-between gap-2 mb-2">
+                            <Label
+                                htmlFor="sharing-modal-password"
+                                className="flex flex-column p-0 text-semibold gap-1"
+                            >
+                                {c('Label').t`Require password`}
+                                <span className="color-weak text-normal">{c('Label')
+                                    .t`Set a password to limit access via link`}</span>
+                            </Label>
+                            <Toggle id="togglePassword" checked={passwordEnabled} onChange={togglePasswordEnabled} />
+                        </div>
+
+                        {passwordEnabled && (
                             <InputFieldTwo
-                                disabled={!passwordEnabled}
                                 dense
                                 className="items-center"
                                 rootClassName="flex items-center justify-end pr-0 w-custom"
@@ -190,10 +207,10 @@ const PublicLinkSettingsModal = ({
                                 }
                                 placeholder={c('Placeholder').t`Choose password`}
                             />
-                            <Toggle id="togglePassword" checked={passwordEnabled} onChange={togglePasswordEnabled} />
-                        </div>
+                        )}
                     </div>
                 </ModalTwoContent>
+
                 <ModalTwoFooter>
                     <Button onClick={handleClose}>{c('Action').t`Back`}</Button>
                     <Button disabled={isSaveDisabled} loading={isSubmitting} color="norm" type="submit">{c('Action')
