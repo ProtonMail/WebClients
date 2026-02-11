@@ -1,5 +1,9 @@
 .placeholder-button-icon-container,
 .placeholder-button-icon-container:hover {
+	border-color: var(--text-disabled);
 	border-radius: 1.25rem;
 	background: var(--interaction-norm-minor-3);
+
+	/* soft shadow bg */
+	box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
 }
