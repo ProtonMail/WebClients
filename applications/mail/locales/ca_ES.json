@@ -1502,8 +1502,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7377,7 +7376,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8860,6 +8860,9 @@
       ],
       "No messages found": [
         "No s'ha trobat cap missatge"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Aquest missatge té una clau adjunta que encara no s'ha marcat com de confiança."
       ]
     },
     "info": {

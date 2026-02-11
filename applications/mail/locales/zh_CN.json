@@ -52,7 +52,7 @@
         "添加"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -895,7 +895,7 @@
         "更多信息：${ safeTitle }"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "More refine actions": [
         "更多改进操作"
@@ -7155,7 +7155,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8671,6 +8671,9 @@
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "有了新的邮件分类，只有重要邮件会进入您的主收件箱，其他所有邮件都会整理到各个分类中。"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "此消息包含一个尚未被信任的密钥！"
       ]
     },
     "info": {
@@ -10145,7 +10148,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -12569,7 +12572,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ]
     },
     "saml: Error": {
@@ -12667,7 +12670,7 @@
         "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel 现已 **启用** 并正在保护您的帐户。"
+        "Sentinel 现已 **启用** 并正在保护您的账户。"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
@@ -12774,7 +12777,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -13469,7 +13472,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
@@ -13814,7 +13817,7 @@
         "保留自动付款"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+        "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"

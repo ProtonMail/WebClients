@@ -1502,8 +1502,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7377,7 +7376,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8860,6 +8860,9 @@
       ],
       "No messages found": [
         "İleti bulunamadı"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Bu iletiye henüz güvenilirliği onaylanmamış bir anahtar eklenmiş."
       ]
     },
     "info": {

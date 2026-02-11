@@ -1502,8 +1502,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7377,7 +7376,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8860,6 +8860,9 @@
       ],
       "No messages found": [
         "Geen berichten gevonden"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Dit bericht heeft een bijgevoegde sleutel, die nog niet vertrouwd is."
       ]
     },
     "info": {
