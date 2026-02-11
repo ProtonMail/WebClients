@@ -295,6 +295,8 @@ describe('useSharingModalState', () => {
     });
 
     it('should update share node with direct sharing', async () => {
+        jest.useFakeTimers();
+
         const shareNodeSettings = {
             users: [{ email: 'new@example.com', role: MemberRole.Viewer }],
         };
@@ -319,11 +321,13 @@ describe('useSharingModalState', () => {
         });
 
         expect(mockDrive.shareNode).toHaveBeenCalledWith(mockNodeUid, shareNodeSettings);
+        jest.runAllTimers();
         expect(mockedCreateNotification).toHaveBeenCalledWith({
-            type: 'info',
-            text: 'Access updated and shared',
+            text: '"Test File" shared',
         });
         expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+
+        jest.useRealTimers();
     });
 
     it('should update public link and show notification', async () => {
