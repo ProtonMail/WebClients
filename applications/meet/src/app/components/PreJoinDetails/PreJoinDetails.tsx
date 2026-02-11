@@ -95,13 +95,13 @@ export const PreJoinDetails = ({
 
                 <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
                     <InputFieldTwo
-                        label={c('Label').t`Your name`}
+                        label={c('Label').t`Name`}
                         type="text"
                         unstyled
                         inputClassName="rounded-none"
                         value={displayName}
                         onChange={(e) => onDisplayNameChange(e.target.value)}
-                        placeholder={c('Placeholder').t`Type your name`}
+                        placeholder={c('Placeholder').t`Enter your name`}
                         maxLength={64}
                     />
                 </InputFieldStacked>
