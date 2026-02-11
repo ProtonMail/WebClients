@@ -4023,6 +4023,12 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
+      "Network error": [
+        "Eroare de rețea."
       ]
     },
     "error": {
@@ -6562,6 +6568,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "Failed to update meeting schedule": [
+        "Actualizarea planificării conferinței a eșuat."
       ]
     },
     "info": {
@@ -7204,7 +7213,7 @@
         "Opțiuni abonament"
       ],
       "Sync with system": [
-        "Ca cea din sistem"
+        "Ca în sistem"
       ],
       "System information": [
         "Informații sistem"
@@ -8401,6 +8410,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Asistență telefonică (peste ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilizatori)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8771,6 +8783,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } sau mai mulți utilizatori."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9596,6 +9611,21 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
+        "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul special redus de ${ priceWithDiscount } este valabil pentru ${ couponRedemptions } de luni. Apoi va fi reînnoit automat la ${ renewPriceStr } pentru o lună. Puteți anula oricând."
       ]
     },
     "Payments.Error": {
@@ -12361,6 +12391,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Abonamentul ${ planTitle } a început"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
