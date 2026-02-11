@@ -1,11 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
-import { useAuthentication } from '@proton/components';
-import { type NodeEntity, NodeType, getDrive, splitNodeUid } from '@proton/drive';
+import { c } from 'ttag';
+
+import { useAuthentication, useNotifications } from '@proton/components';
+import { type NodeEntity, NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { downloadManager } from '../../managers/download/DownloadManager';
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient, setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';
@@ -15,8 +17,7 @@ interface UsePublicLinkResult {
     isLoading: boolean;
     isPasswordNeeded: boolean;
     customPassword: string;
-    setCustomPassword: (password: string) => void;
-    loadPublicLink: () => void;
+    loadPublicLink: (newCustomPassword?: string) => Promise<void>;
 }
 
 export const loadRootNode = async (url: string, password: string | undefined, isAnonymous: boolean) => {
@@ -33,72 +34,84 @@ export const usePublicLink = (): UsePublicLinkResult => {
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
     const [customPassword, setCustomPassword] = useState('');
     const [rootNode, setRootNode] = useState<NodeEntity>();
-    const [isLoading, setIsLoading] = useState(!rootNode);
+    const [isLoading, setIsLoading] = useState(true);
     const authentication = useAuthentication();
+    const passwordRef = useRef('');
+    const { createNotification } = useNotifications();
+    const { handleError } = useSdkErrorHandler();
+    const loadPublicLink = useCallback(
+        async (newCustomPassword?: string) => {
+            const drive = getDrive();
+            if (!drive) {
+                return;
+            }
 
-    const loadPublicLink = useCallback(async () => {
-        const drive = getDrive();
-        if (!drive) {
-            return;
-        }
+            setIsLoading(true);
+            let isRedirecting = false;
 
-        let cancelled = false;
+            if (newCustomPassword) {
+                passwordRef.current = newCustomPassword;
+            }
 
-        void drive.experimental
-            .getPublicLinkInfo(window.location.href)
-            .then(async (publicLinkInfo) => {
-                if (cancelled) {
+            try {
+                const publicLinkInfo = await drive.experimental.getPublicLinkInfo(window.location.href);
+
+                if (publicLinkInfo.isCustomPasswordProtected && !passwordRef.current) {
+                    setIsPasswordNeeded(true);
                     return;
                 }
 
-                if (publicLinkInfo.isCustomPasswordProtected) {
-                    setIsPasswordNeeded(publicLinkInfo.isCustomPasswordProtected);
-                } else {
-                    const maybeNode = await loadRootNode(
-                        window.location.href,
-                        customPassword,
-                        !authentication.getUID()
-                    );
-                    if (!maybeNode) {
+                const maybeNode = await loadRootNode(
+                    window.location.href,
+                    passwordRef.current || undefined,
+                    !authentication.getUID()
+                );
+
+                if (!maybeNode) {
+                    return;
+                }
+
+                const { node } = getNodeEntity(maybeNode);
+                usePublicAuthStore.getState().setPublicRole(node.directRole);
+
+                if (node.parentUid) {
+                    const maybeParentNode = await getPublicLinkClient().getNode(node.parentUid);
+                    const { node: parentNode } = getNodeEntity(maybeParentNode);
+                    if (parentNode.deprecatedShareId) {
+                        const nodeTypeUrl = node.type === NodeType.Folder ? 'folder' : 'file';
+                        const url = `/${parentNode.deprecatedShareId}/${nodeTypeUrl}/${splitNodeUid(node.uid).nodeId}`;
+                        isRedirecting = true;
+                        window.location.replace(url);
                         return;
                     }
-                    const { node } = getNodeEntity(maybeNode);
-                    usePublicAuthStore.getState().setPublicRole(node.directRole);
-                    if (node.parentUid) {
-                        const maybeParentNode = await getPublicLinkClient().getNode(node.parentUid);
-                        const { node: parentNode } = getNodeEntity(maybeParentNode);
-                        if (parentNode.deprecatedShareId) {
-                            const nodeTypeUrl = node.type === NodeType.Folder ? 'folder' : 'file';
-                            const url = `/${parentNode.deprecatedShareId}/${nodeTypeUrl}/${splitNodeUid(node.uid).nodeId}`;
-                            window.location.replace(url);
-                            return;
-                        }
-                    }
-
-                    setRootNode(node);
                 }
-            })
-            .catch((e) => {
-                handleSdkError(e);
-            })
-            .finally(() => {
-                if (cancelled) {
+
+                setCustomPassword(passwordRef.current);
+                setRootNode(node);
+                setIsPasswordNeeded(false);
+            } catch (e) {
+                if (e instanceof ValidationError && e.code === 2026 && !!newCustomPassword) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Incorrect password. Please try again.`,
+                    });
                     return;
                 }
-                setIsLoading(false);
-            });
-
-        return () => {
-            cancelled = true;
-        };
-    }, [authentication, customPassword]);
+                handleError(e);
+            } finally {
+                if (!isRedirecting) {
+                    setIsLoading(false);
+                }
+            }
+        },
+        [authentication, createNotification, handleError]
+    );
 
     return {
         rootNode,
         isLoading,
         isPasswordNeeded,
         customPassword,
-        setCustomPassword,
         loadPublicLink,
     };
 };

@@ -18,8 +18,11 @@ import { PublicFolderView } from './PublicFolderView';
 import { PublicPageError } from './PublicPageError';
 import { PublicPageLoader } from './PublicPageLoader';
 import { PublicPagePassword } from './PublicPagePassword';
+import ReportAbuseButton from './ReportAbuseButton';
 import { usePublicAuthSession } from './usePublicAuthSession';
 import { usePublicLink } from './usePublicLink';
+
+import './PublicPage.scss';
 
 export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 
@@ -27,8 +30,7 @@ const PublicPageContent = () => {
     const { drive, init } = useDrive();
     const { setTheme } = useTheme();
     const { resumeSession } = usePublicAuthSession();
-    const { rootNode, isLoading, isPasswordNeeded, setCustomPassword, customPassword, loadPublicLink } =
-        usePublicLink();
+    const { rootNode, isLoading, isPasswordNeeded, customPassword, loadPublicLink } = usePublicLink();
     const isPartialView = usePartialPublicView();
 
     useAppTitle(rootNode?.name);
@@ -45,10 +47,11 @@ const PublicPageContent = () => {
 
     useEffect(() => {
         if (drive) {
-            void (async () => {
+            const initializePublicLink = async () => {
                 await resumeSession();
-                loadPublicLink();
-            })();
+                await loadPublicLink();
+            };
+            void initializePublicLink();
         }
     }, [drive, resumeSession, loadPublicLink]);
 
@@ -58,7 +61,7 @@ const PublicPageContent = () => {
     }, [setTheme]);
 
     if (isPasswordNeeded) {
-        return <PublicPagePassword submitPassword={async (password) => setCustomPassword(password)} />;
+        return <PublicPagePassword submitPassword={loadPublicLink} />;
     }
 
     if (isLoading) {
@@ -70,13 +73,14 @@ const PublicPageContent = () => {
     }
 
     return (
-        <div className="h-full px-10 pt-3">
+        <div className="h-full md:px-10 md:pt-3 pb-16 md:pb-0">
             {rootNode.type === NodeType.File ? (
                 <PublicFileView rootNode={rootNode} customPassword={customPassword} isPartialView={isPartialView} />
             ) : (
                 <PublicFolderView rootNode={rootNode} customPassword={customPassword} isPartialView={isPartialView} />
             )}
-            <TransferManager deprecatedRootShareId={undefined} />
+            <TransferManager deprecatedRootShareId={undefined} className="public-page-transfer-manager" />
+            <ReportAbuseButton />
         </div>
     );
 };

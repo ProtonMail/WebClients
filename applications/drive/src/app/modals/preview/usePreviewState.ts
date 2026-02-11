@@ -7,6 +7,8 @@ import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { logger } from './logger';
@@ -38,6 +40,7 @@ export function usePreviewState({
     const [isLoading, withIsLoading] = useLoading(true);
     const [isContentLoading, withIsContentLoading] = useLoading(false);
     const [nodeData, setNodeData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
+    const [role, setRole] = useState<MemberRole>();
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
     const [smallThumbnailUrl, setSmallThumbnailUrl] = useState<string | undefined>(undefined);
@@ -62,8 +65,10 @@ export function usePreviewState({
         void withIsLoading(
             drive
                 .getNode(nodeUid)
-                .then((node) => {
+                .then(async (node) => {
                     setNode(node);
+                    const effectiveRole = await getNodeEffectiveRole(getNodeEntity(node).node, drive);
+                    setRole(effectiveRole);
                 })
                 .catch((error) => {
                     if (shouldIgnoreError(nodeUid, error)) {
@@ -172,7 +177,7 @@ export function usePreviewState({
         onNodeChange?.(nodeUid);
     });
 
-    const actions = usePreviewActions({ drive, nodeUid, node, nodeData });
+    const actions = usePreviewActions({ drive, nodeUid, node, nodeData, role });
 
     const result = {
         node: {

@@ -1,4 +1,4 @@
-import type { MaybeNode } from '@proton/drive';
+import { type MaybeNode, MemberRole } from '@proton/drive';
 import {
     isProtonDocsDocument,
     isProtonDocsSpreadsheet,
@@ -20,11 +20,13 @@ export default function usePreviewActions({
     nodeUid,
     node,
     nodeData,
+    role,
 }: {
     drive: Drive;
     nodeUid: string;
     node?: MaybeNode;
     nodeData?: Uint8Array<ArrayBuffer>[];
+    role?: MemberRole;
 }) {
     // TODO: Do not use legacy document actions - convert to new document actions.
     const { openDocument, convertDocument, downloadDocument } = useDocumentActions();
@@ -104,7 +106,7 @@ export default function usePreviewActions({
     };
 
     const saveFileEnabled =
-        isTextFileEditEnabled && mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader;
+        role !== MemberRole.Viewer && isTextFileEditEnabled && mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader;
 
     return {
         downloadFile,

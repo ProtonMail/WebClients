@@ -4,27 +4,18 @@ import { c } from 'ttag';
 
 import type { BreadcrumbInfo } from '@proton/components/index';
 import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components/index';
-import clsx from '@proton/utils/clsx';
 
 import { SignatureIcon } from '../../components/SignatureIcon';
 import type { BreadcrumbsEvents, CrumbDefinition } from './types';
-import { BreadcrumbRenderingMode } from './types';
 
 export interface BreadcrumbsProps {
     loading: boolean;
     crumbs: CrumbDefinition[];
     events: BreadcrumbsEvents;
-    renderingMode?: BreadcrumbRenderingMode;
     createHandleItemDrop?: (newParentNodeUid: string) => (e: React.DragEvent<Element>) => Promise<void>;
 }
 
-export const Breadcrumbs = ({
-    crumbs,
-    loading,
-    events,
-    createHandleItemDrop,
-    renderingMode = BreadcrumbRenderingMode.Inline,
-}: BreadcrumbsProps) => {
+export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: BreadcrumbsProps) => {
     const [dropTarget, setDropTarget] = useState<string>();
     const { createNotification } = useNotifications();
 
@@ -84,6 +75,5 @@ export const Breadcrumbs = ({
         };
     });
 
-    const isProminent = renderingMode === BreadcrumbRenderingMode.Prominent;
-    return <CollapsingBreadcrumbs className={clsx(isProminent && 'text-4xl')} breadcrumbs={breadcrumbs} />;
+    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
 };

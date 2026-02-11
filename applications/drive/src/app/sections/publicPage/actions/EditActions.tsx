@@ -13,7 +13,7 @@ interface BaseEditActionsProps {
     itemChecker: PublicItemChecker;
     selectedUids: string[];
     onPreview: (uid: string) => void;
-    onDownload: (uids: string[]) => void;
+    onDownload: (uids: string[], shoulScan?: boolean) => void;
     onDetails: (uid: string) => void;
     onRename: (uid: string) => void;
     onDelete: (uids: string[]) => void;
@@ -70,6 +70,13 @@ export function EditActions({
                 onClick={() => onDownload(selectedUids)}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
+            {itemChecker.canScanMalware && (
+                <DownloadButton
+                    onClick={() => onDownload(selectedUids, true)}
+                    withScan
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                />
+            )}
 
             {itemChecker.isSingleSelection && firstItemUid && (
                 <>

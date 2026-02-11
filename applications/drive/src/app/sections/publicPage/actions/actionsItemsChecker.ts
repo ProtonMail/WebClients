@@ -3,6 +3,7 @@ import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
+import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import { NODE_EDIT_EXPIRACY } from '../constants';
 import { usePublicAuthStore } from '../usePublicAuth.store';
 import type { PublicFolderItem } from '../usePublicFolder.store';
@@ -10,6 +11,7 @@ import type { PublicFolderItem } from '../usePublicFolder.store';
 export interface PublicItemChecker {
     hasPreviewAvailable: boolean;
     canEdit: boolean;
+    canScanMalware: boolean;
     isSingleSelection: boolean;
     openInDocsInfo: OpenInDocsType | undefined;
 }
@@ -65,10 +67,11 @@ export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemC
     const openInDocsInfo = firstItem?.mediaType ? getOpenInDocsInfo(firstItem.mediaType) : undefined;
 
     const openableDocsResult = getOpenableDocsInfo(openInDocsInfo, canEdit);
-
+    const scanDisabled = unleashVanillaStore.getState().isEnabled('DriveDownloadScanDisabled');
     return {
         hasPreviewAvailable,
         canEdit,
+        canScanMalware: !scanDisabled,
         isSingleSelection,
         openInDocsInfo: openableDocsResult.ok ? openableDocsResult.value : undefined,
     };

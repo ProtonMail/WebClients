@@ -7,6 +7,7 @@ import { ContextMenuButton } from '../../components/sections/ContextMenu';
 
 interface BaseProps {
     onClick: () => void;
+    withScan?: boolean;
 }
 
 interface ContextMenuProps extends BaseProps {
@@ -20,8 +21,8 @@ interface ToolbarProps extends BaseProps {
 }
 type Props = ContextMenuProps | ToolbarProps;
 
-export const DownloadButton = ({ buttonType, onClick, close }: Props) => {
-    const title = c('Action').t`Download`;
+export const DownloadButton = ({ buttonType, onClick, close, withScan = false }: Props) => {
+    const title = withScan ? c('Action').t`Scan and Download` : c('Action').t`Download`;
     const icon = 'arrow-down-line';
 
     if (buttonType === 'toolbar') {
@@ -30,14 +31,20 @@ export const DownloadButton = ({ buttonType, onClick, close }: Props) => {
                 title={title}
                 icon={<IcArrowDownLine alt={title} />}
                 onClick={onClick}
-                data-testid="toolbar-download"
+                data-testid={`toolbar-download${withScan ? '-scan' : ''}`}
             />
         );
     }
 
     if (buttonType === 'contextMenu') {
         return (
-            <ContextMenuButton name={title} icon={icon} testId="context-menu-download" action={onClick} close={close} />
+            <ContextMenuButton
+                name={title}
+                icon={icon}
+                testId={`context-menu-download${withScan ? '-scan' : ''}`}
+                action={onClick}
+                close={close}
+            />
         );
     }
 };

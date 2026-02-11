@@ -12,7 +12,7 @@ import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePublicPreviewModal } from '../../../modals/preview';
 import {
     downloadPublicDocument,
     getOpenInDocsInfo,
@@ -22,12 +22,13 @@ import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHand
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient } from '../publicLinkClient';
+import { usePublicAuthStore } from '../usePublicAuth.store';
 import { usePublicFolderStore } from '../usePublicFolder.store';
 import { usePublicPageNotifications } from '../usePublicPageNotifications';
 import { getPublicTokenAndPassword } from '../utils/getPublicTokenAndPassword';
 
 export const usePublicActions = () => {
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
@@ -38,11 +39,12 @@ export const usePublicActions = () => {
 
     const handlePreview = (uid: string) => {
         const { getAllFolderItems } = usePublicFolderStore.getState();
+        const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
 
         showPreviewModal({
             drive: getPublicLinkClient(),
             nodeUid: uid,
-            verifySignatures: false,
+            verifySignatures: isLoggedIn,
             previewableNodeUids: getAllFolderItems()
                 .filter((item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size))
                 .map((item) => item.uid),
@@ -50,9 +52,8 @@ export const usePublicActions = () => {
         });
     };
 
-    const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType) => {
+    const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType, customPassword: string | undefined) => {
         const { token, urlPassword } = getPublicTokenAndPassword(window.location.pathname);
-
         void openPublicDocsOrSheetsDocument({
             uid,
             type: openInDocs.type,
@@ -60,6 +61,7 @@ export const usePublicActions = () => {
             openBehavior: 'tab',
             token,
             urlPassword,
+            customPassword,
         });
     };
 
@@ -90,11 +92,12 @@ export const usePublicActions = () => {
 
     const handleDetails = (uid: string) => {
         const { volumeId, nodeId } = splitNodeUid(uid);
+        const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
         showDetailsModal({
             drive: getPublicLinkClient(),
             volumeId,
             linkId: nodeId,
-            verifySignatures: false,
+            verifySignatures: isLoggedIn,
             shareId: '',
         });
     };
@@ -175,7 +178,11 @@ export const usePublicActions = () => {
         });
     };
 
-    const handleCreateDocsOrSheets = async (uid: string, documentType: OpenInDocsType['type']) => {
+    const handleCreateDocsOrSheets = async (
+        uid: string,
+        documentType: OpenInDocsType['type'],
+        customPassword: string | undefined
+    ) => {
         try {
             const date = getPlatformFriendlyDateForFileName();
             // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
@@ -193,7 +200,7 @@ export const usePublicActions = () => {
                 type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: node.uid, parentUid: node.parentUid }],
             });
-            handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType });
+            handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType }, customPassword);
         } catch (e) {
             handleError(e);
         }
