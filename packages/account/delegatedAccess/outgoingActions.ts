@@ -8,6 +8,7 @@ import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@p
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
+import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import type {
@@ -62,7 +63,10 @@ export const listOutgoingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!getIsOutgoingDelegatedAccessAvailable(user)) {
+            // Only enabled on Account because:
+            // 1 emergency contacts requires switch account
+            // 2 recovery contacts requires routes which don't exist in the VPN API bundle, e.g. account/v1/access/${outgoingDelegatedAccess.DelegatedAccessID}/recover, which show up in ReactivateKeysModal
+            if (extraArgument.config?.APP_NAME !== APPS.PROTONACCOUNT || !getIsOutgoingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{
