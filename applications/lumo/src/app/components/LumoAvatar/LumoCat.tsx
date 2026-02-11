@@ -1,37 +1,43 @@
 import { clsx } from 'clsx';
 
 import lumoGhost from '@proton/styles/assets/img/lumo/lumo-sit-side-ghost.svg';
+import useFlag from '@proton/unleash/useFlag';
 
-import { LazyLottie } from '../../../components/LazyLottie';
-import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { getActiveSpecialTheme } from '../../features/themes/utils/themeUtils';
+import { useLumoTheme } from '../../providers/LumoThemeProvider';
+import { LazyLottie } from '../LazyLottie';
 
+// Default Lumo cat animations (shown when no special theme is active)
 const getLumoCatDark = () =>
     import(
-        /* webpackChunkName: "lumo-cat-dark-animation" */
-        '../../../components/Animations/lumo-cat-dark.json'
+        /* webpackChunkName: "lumo-cat-default-dark-animation" */
+        '../../features/themes/assets/default/dark.json'
     );
 const getLumoCatLight = () =>
     import(
-        /* webpackChunkName: "lumo-cat-light-animation" */
-        '../../../components/Animations/lumo-cat.json'
+        /* webpackChunkName: "lumo-cat-default-light-animation" */
+        '../../features/themes/assets/default/light.json'
     );
 
 interface LumoCatProps {
     isSmallScreen: boolean;
     isGhostChatMode: boolean;
-    isLumoSpecialThemeEnabled: boolean;
 }
 
-const LumoCat = ({ isSmallScreen, isGhostChatMode, isLumoSpecialThemeEnabled }: LumoCatProps) => {
+const LumoCat = ({ isSmallScreen, isGhostChatMode }: LumoCatProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
+    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
 
     const getAnimationData = (() => {
+        // Check if there's an active special theme
         if (isLumoSpecialThemeEnabled) {
-            // update with themed animations
-            return isDarkLumoTheme ? getLumoCatDark : getLumoCatLight;
+            const activeTheme = getActiveSpecialTheme();
+            if (activeTheme) {
+                return isDarkLumoTheme ? activeTheme.getAnimationDark : activeTheme.getAnimationLight;
+            }
         }
 
-        // Special theme disabled, show normal variants
+        // Fall back to default cat animations
         return isDarkLumoTheme ? getLumoCatDark : getLumoCatLight;
     })();
 
@@ -39,6 +45,7 @@ const LumoCat = ({ isSmallScreen, isGhostChatMode, isLumoSpecialThemeEnabled }: 
         <div
             className={clsx('lumo-cat-container shrink-0 mt-auto text-center relative', {
                 'mx-auto': isSmallScreen,
+                'special-theme-variant': isLumoSpecialThemeEnabled,
             })}
             style={{ width: isSmallScreen ? 200 : 170, height: isSmallScreen ? 200 : 170 }}
         >
