@@ -23,7 +23,13 @@ const getLabelsModel = async (api: Api) => {
         api(getContactGroup()).then(extractLabels),
         api(getSystemFolders()).then(extractLabels),
     ]);
-    return sortCollection('Order', [...labels, ...folders, ...contactGroups, ...systemFolders]);
+
+    const sortedLabels = sortCollection('Order', [...labels, ...folders, ...contactGroups, ...systemFolders]);
+    performance.mark('end_mail');
+    const performances = performance.measure('mail', 'start_mail', 'end_mail');
+    console.log(performances.duration);
+
+    return sortedLabels;
 };
 
 export interface CategoriesState {
