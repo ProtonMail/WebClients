@@ -92,7 +92,7 @@ export const DeviceSettings = ({
     const filteredSpeakers = useMemo(() => filterDevices(speakers), [speakers]);
     const filteredCameras = useMemo(() => filterDevices(cameras), [cameras]);
 
-    const { activeBreakpoint } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const handleMicrophoneChange = async (deviceId: string) => {
         await onMicrophoneChange(
@@ -152,11 +152,18 @@ export const DeviceSettings = ({
     }
 
     const getInitalsCircleSize = () => {
-        if (isMobile()) {
+        if (viewportWidth.xsmall) {
+            return 'small';
+        }
+        if (viewportWidth['<=small']) {
             return 'medium';
         }
-
-        return activeBreakpoint === 'large' ? 'midLarge' : 'large';
+        if (viewportWidth.medium) {
+            return 'midLarge';
+        }
+        if (viewportWidth['>=large']) {
+            return 'large';
+        }
     };
 
     return (
