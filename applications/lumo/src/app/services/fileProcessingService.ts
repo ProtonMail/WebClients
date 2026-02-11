@@ -103,6 +103,8 @@ export type FileProcessingServiceProps = {
 };
 
 export class FileProcessingService {
+    private static instance: FileProcessingService | null = null;
+    
     private enableImageTools: boolean;
 
     private worker: Worker | null = null;
@@ -117,9 +119,22 @@ export class FileProcessingService {
         }
     >();
 
-    constructor(props: FileProcessingServiceProps) {
+    private constructor(props: FileProcessingServiceProps) {
         this.enableImageTools = props.enableImageTools;
         this.initializeWorker();
+    }
+    /**
+     * Get the singleton instance of the FileProcessingService
+     * @returns The singleton instance of the FileProcessingService
+     */
+    static getInstance(props: FileProcessingServiceProps): FileProcessingService {
+        if (!FileProcessingService.instance) {
+            FileProcessingService.instance = new FileProcessingService(props);
+        } else {
+            // Update enableImageTools if it changed
+            FileProcessingService.instance.enableImageTools = props.enableImageTools;
+        }
+        return FileProcessingService.instance;
     }
 
     private initializeWorker() {
@@ -144,7 +159,7 @@ export class FileProcessingService {
                 this.onMessageError(error);
             });
         } catch (error) {
-            console.error('Failed to initialize file processing worker:', error);
+            console.error('[FileProcessingService] Failed to initialize worker:', error);
             this.worker = null;
         }
     }
@@ -159,7 +174,11 @@ export class FileProcessingService {
     }
 
     private onError(error: ErrorEvent) {
-        console.error('Worker error:', error);
+        console.error('[FileProcessingService] Worker error:', error.message);
+        
+        // Worker failed to initialize - mark it as dead
+        this.worker = null;
+        
         // Reject all pending requests
         this.pendingRequests.forEach(({ reject }) => {
             reject(new Error('Worker error: ' + error.message));
@@ -289,7 +308,7 @@ export class FileProcessingService {
 
     private sendToWorker(request: FileProcessingRequest) {
         if (!this.worker) {
-            throw new Error('Failed to process attachment. Please refresh the page and try again.');
+            throw new Error('File processing worker failed to initialize. Please refresh the page and try again.');
         }
 
         // Message is received in fileProcessingWorker.ts

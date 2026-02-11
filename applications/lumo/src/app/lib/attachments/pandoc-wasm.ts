@@ -6,7 +6,6 @@ import { ConsoleStdout, File, OpenFile, PreopenDirectory, WASI } from '@bjorn3/b
 // import pandocWasmAsset from '../../../assets/pandoc.wasm';
 
 const pandocWasmAsset = new URL('../../assets/pandoc.wasm', import.meta.url).toString();
-console.log({ pandocWasmAsset });
 // const pandocWasmAsset = '/public/pandoc.wasm';
 
 // Add WASM module caching
@@ -14,7 +13,13 @@ let cachedWasmModule: WebAssembly.Module | null = null;
 async function getWasmModule(): Promise<WebAssembly.Module> {
     if (!cachedWasmModule) {
         const response = await fetch(pandocWasmAsset);
-        cachedWasmModule = await WebAssembly.compile(await response.arrayBuffer());
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch pandoc.wasm: ${response.status} ${response.statusText}`);
+        }
+        
+        const arrayBuffer = await response.arrayBuffer();
+        cachedWasmModule = await WebAssembly.compile(arrayBuffer);
     }
     return cachedWasmModule;
 }
@@ -92,13 +97,11 @@ export class PandocConverter {
 
     constructor() {
         PandocConverter.instanceCount++;
-        console.log(`[PandocConverter] Creating instance #${PandocConverter.instanceCount}`);
 
         void logMemoryUsage('Before PandocConverter Init');
 
         this.ready = new Promise(async (resolve, reject) => {
             try {
-                console.log('initPandocWasm: starting');
                 await logMemoryUsage('Before WASM Args Setup');
 
                 const args = ['pandoc.wasm', '+RTS', '-H64m', '-RTS'];
