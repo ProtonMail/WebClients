@@ -1502,8 +1502,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -5073,6 +5072,9 @@
       ],
       "Network error": [
         "Error de red"
+      ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
       ]
     },
     "error": {
@@ -7418,7 +7420,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8858,6 +8861,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Este mensaje tiene una clave adjunta que aún no es de confianza."
       ]
     },
     "info": {

@@ -5029,6 +5029,12 @@
       ],
       "Network error": [
         "ქსელის შეცდომა"
+      ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "ამ ქმედების შესრულება არ შეიძლება ამ საქაღალდეში არსებულ ელფოსტაზე"
       ]
     },
     "error": {
@@ -6166,6 +6172,9 @@
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
       ]
     },
     "Import ICS file from Mail": {
@@ -7319,7 +7328,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8708,6 +8718,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
+      ],
+      "No messages found": [
+        "შეტყობინებები ნაპოვნი არაა"
       ]
     },
     "info": {
@@ -11000,6 +11017,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
       ]
     },
     "new_plans: feature highlight": {
@@ -12120,6 +12140,10 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ]
     },
     "Payments.Error": {
@@ -15483,6 +15507,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
       ]
     },
     "Today icon tooltip in mini calendar": {
