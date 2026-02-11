@@ -12,10 +12,9 @@ import {
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
 
@@ -28,14 +27,12 @@ export const markMessagesAsRead = (
 ) => {
     const { elements } = action.payload;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement;
-
-        if (selectedMessage.Unread === 0) {
+    elements.forEach((element) => {
+        if (element.Unread === 0) {
             return;
         }
 
-        selectedMessage.LabelIDs.forEach((selectedLabelID) => {
+        element.LabelIDs.forEach((selectedLabelID) => {
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
@@ -54,14 +51,12 @@ export const markMessagesAsUnread = (
 ) => {
     const { elements } = action.payload;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement;
-
-        if (selectedMessage.Unread === 1) {
+    elements.forEach((element) => {
+        if (element.Unread === 1) {
             return;
         }
 
-        selectedMessage.LabelIDs.forEach((selectedLabelID) => {
+        element.LabelIDs.forEach((selectedLabelID) => {
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
@@ -86,10 +81,8 @@ export const labelMessages = (
     const isTargetACategory = isCategoryLabel(destinationLabelID);
 
     elements.forEach((element) => {
-        const selectedMessage = element;
-
         if (isTargetAFolder) {
-            selectedMessage.LabelIDs.forEach((selectedLabelID) => {
+            element.LabelIDs.forEach((selectedLabelID) => {
                 if (
                     isSystemFolder(selectedLabelID) ||
                     isCustomFolder(selectedLabelID, folders) ||
@@ -100,7 +93,7 @@ export const labelMessages = (
                     if (updatedMessageCounter) {
                         updatedMessageCounter.Total = safeDecreaseCount(updatedMessageCounter.Total, 1);
 
-                        if (selectedMessage.Unread === 1) {
+                        if (element.Unread === 1) {
                             updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
                         }
                     }
@@ -115,7 +108,7 @@ export const labelMessages = (
                         if (updatedMessageCounter) {
                             updatedMessageCounter.Total = safeDecreaseCount(updatedMessageCounter.Total, 1);
 
-                            if (selectedMessage.Unread === 1) {
+                            if (element.Unread === 1) {
                                 updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
                             }
                         }
@@ -123,13 +116,13 @@ export const labelMessages = (
                 }
             });
         } else if (isTargetACategory) {
-            selectedMessage.LabelIDs.forEach((selectedLabelID) => {
+            element.LabelIDs.forEach((selectedLabelID) => {
                 const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
                 if (updatedMessageCounter && isCategoryLabel(selectedLabelID)) {
                     updatedMessageCounter.Total = safeDecreaseCount(updatedMessageCounter.Total, 1);
 
-                    if (selectedMessage.Unread === 1) {
+                    if (element.Unread === 1) {
                         updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
                     }
                 }
@@ -145,14 +138,14 @@ export const labelMessages = (
             almostAllMailMessageCounter
         ) {
             almostAllMailMessageCounter.Total = safeDecreaseCount(almostAllMailMessageCounter.Total, 1);
-            if (selectedMessage.Unread === 1) {
+            if (element.Unread === 1) {
                 almostAllMailMessageCounter.Unread = safeDecreaseCount(almostAllMailMessageCounter.Unread, 1);
             }
         }
 
         // Additionally, ALL_MAIL unread count needs to be reduced if the message was unread
         const allMailMessageCounter = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
-        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH && selectedMessage.Unread === 1 && allMailMessageCounter) {
+        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH && element.Unread === 1 && allMailMessageCounter) {
             allMailMessageCounter.Unread = safeDecreaseCount(allMailMessageCounter.Unread, 1);
         }
 
@@ -162,7 +155,7 @@ export const labelMessages = (
             updatedMessageCounter.Total = safeIncreaseCount(updatedMessageCounter.Total, 1);
 
             if (
-                selectedMessage.Unread === 1 &&
+                element.Unread === 1 &&
                 destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
                 destinationLabelID !== MAILBOX_LABEL_IDS.SPAM
             ) {
@@ -175,7 +168,7 @@ export const labelMessages = (
 export const unlabelMessages = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: Element[];
+        elements: MessageMetadata[];
         sourceLabelID: string;
         destinationLabelID: string;
         labels: Label[];
@@ -190,13 +183,12 @@ export const unlabelMessages = (
     }
 
     elements.forEach((element) => {
-        const selectedMessage = element as Message;
         const messageCount = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
         if (messageCount) {
             messageCount.Total = safeDecreaseCount(messageCount.Total, 1);
 
-            if (selectedMessage.Unread === 1) {
+            if (element.Unread === 1) {
                 messageCount.Unread = safeDecreaseCount(messageCount.Unread, 1);
             }
         }
