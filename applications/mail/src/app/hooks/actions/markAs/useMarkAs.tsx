@@ -75,9 +75,8 @@ export const useMarkAs = () => {
                         (conversation) => conversation.ID
                     );
 
+                    const messages = elements.filter(isElementMessage);
                     if (isRead) {
-                        const messages = elements.filter(isElementMessage);
-
                         void dispatch(
                             markMessagesAsRead({
                                 elements: messages,
@@ -89,7 +88,7 @@ export const useMarkAs = () => {
                     } else {
                         void dispatch(
                             markMessagesAsUnread({
-                                elements,
+                                elements: messages,
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,

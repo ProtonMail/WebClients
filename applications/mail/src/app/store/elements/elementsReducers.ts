@@ -646,7 +646,7 @@ export const markMessagesAsUnreadPending = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -657,7 +657,7 @@ export const markMessagesAsUnreadPending = (
     const { elements, conversations } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
+        const selectedMessage = selectedElement;
 
         // Already unread, do nothing
         if (selectedMessage.Unread === 1) {

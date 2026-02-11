@@ -4,7 +4,7 @@ import type { ModelState } from '@proton/account';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
-import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
@@ -70,15 +70,13 @@ export const markConversationsAsRead = (
 
 export const markMessagesAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
 ) => {
     const { conversations, elements, labelID } = action.payload;
 
     conversations.forEach((conversation) => {
         const messages = elements.filter(
-            (element) =>
-                (element as Message).ConversationID === conversation.ID &&
-                (element as Message).LabelIDs.includes(labelID)
+            (element) => element.ConversationID === conversation.ID && element.LabelIDs.includes(labelID)
         );
 
         const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);

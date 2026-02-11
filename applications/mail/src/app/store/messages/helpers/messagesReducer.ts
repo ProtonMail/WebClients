@@ -111,12 +111,12 @@ export const markMessagesAsReadPending = (
 
 export const markMessagesAsUnreadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>
 ) => {
     const { elements } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
+        const selectedMessage = selectedElement;
 
         if (selectedMessage.Unread === 1) {
             return;
