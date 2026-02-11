@@ -31,6 +31,7 @@ im.$breakpoints: $breakpoints;
 	&:hover,
 	&:focus-within {
 		background: var(--background-weak);
+		box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
 
 		.hidden-meeting-row-actions {
 			visibility: visible !important;

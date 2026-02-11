@@ -179,7 +179,7 @@ export const MeetingRow = ({
         <>
             <div
                 className={clsx(
-                    'meeting-row border-card w-full flex flex-column *:min-size-auto md:flex-row flex-nowrap justify-center items-start md:items-center md:justify-space-between gap-6 min-h-custom p-4 md:p-6 h-fit-content shrink-0 relative',
+                    'meeting-row border border-card w-full flex flex-column *:min-size-auto md:flex-row flex-nowrap justify-center items-start md:items-center md:justify-space-between gap-6 min-h-custom p-4 md:p-6 h-fit-content shrink-0 relative',
                     isFirst && 'meeting-row--first',
                     isFirst && isRoom && 'personal-meeting-row',
                     isLast && 'meeting-row--last'
