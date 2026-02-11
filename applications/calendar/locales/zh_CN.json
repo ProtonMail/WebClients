@@ -51,7 +51,7 @@
         "添加"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -552,7 +552,7 @@
         "更多选项"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "New event": [
         "新日程"
@@ -955,6 +955,72 @@
       ],
       "Toggle referral": [
         "切换推荐功能"
+      ],
+      "Add a date": [
+        "添加日期"
+      ],
+      "Add another booking range to this day": [
+        "为此日期添加另一个预约时段"
+      ],
+      "Close sidebar": [
+        "关闭侧边栏"
+      ],
+      "Confirm booking": [
+        "确认预约"
+      ],
+      "Copy booking page link": [
+        "复制预约页面链接"
+      ],
+      "Copy link and close": [
+        "复制链接并关闭"
+      ],
+      "Create a booking page": [
+        "创建预约页面"
+      ],
+      "Create a free account": [
+        "创建免费账户"
+      ],
+      "Create a new booking page": [
+        "创建新的预约页面"
+      ],
+      "Create an event": [
+        "创建事件"
+      ],
+      "Delete booking page": [
+        "删除预约页面"
+      ],
+      "Edit booking page": [
+        "编辑预约页面"
+      ],
+      "Expand navigation bar to see bookings": [
+        "展开导航栏以查看预约"
+      ],
+      "Expand navigation bar to see calendars": [
+        "展开导航栏以查看日历"
+      ],
+      "Go to the first available appointment": [
+        "前往第一个可用的预约"
+      ],
+      "Go to the next available appointment": [
+        "前往下一个可用的预约"
+      ],
+      "Remove the booking range": [
+        "移除预约时段"
+      ],
+      "See previous availability": [
+        "查看之前的可用时间"
+      ],
+      "See upcoming availability": [
+        "查看即将到来的可用时间"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "选择 ${ dateHeaderLongString } 的 ${ timeString }"
+      ],
+      "Subscribe now": [
+        "立即订阅"
+      ],
+      "Upgrade for 200GB": [
+        "升级至 200 GB 存储空间"
       ]
     },
     "action": {
@@ -1208,6 +1274,21 @@
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
+      ],
+      "1 user account": [
+        "1 个账户"
+      ],
+      "6 user accounts": [
+        "6 个账户"
+      ],
+      "Admin panel to manage your family": [
+        "用于管理家人的管理员面板"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
       ]
     },
     "BF2024: Offers": {
@@ -1230,6 +1311,18 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 hide-my-email 别名等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
       ]
     },
     "BF2025: Deal details": {
@@ -2737,6 +2830,15 @@
     "Custom frequency option": {
       "event": [
         "事件"
+      ],
+      "Doesn't end": [
+        "不会结束"
+      ],
+      "Ends after": [
+        "结束时间："
+      ],
+      "Ends on": [
+        "结束于"
       ]
     },
     "customer_support.feature.all": {
@@ -2985,6 +3087,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "您将很快收到一封包含详细信息的加密电子邮件"
       ]
     },
     "description": {
@@ -3777,6 +3882,27 @@
       ],
       "This offer is not available in your country": [
         "此优惠在您所在的国家/地区不可用"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "无法使用已禁用的地址创建预约"
+      ],
+      "Failed loading group members": [
+        "加载群组成员失败"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "创建 ${ MEET_APP_NAME } 视频会议失败"
+      ],
+      "Failed to decrypt session key": [
+        "解密会话密钥失败"
+      ],
+      "Location is required": [
+        "地点为必填项"
+      ],
+      "Network error": [
+        "网络错误"
+      ],
+      "No booking page data received": [
+        "未收到预约页面数据"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4203,6 +4329,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
       ]
     },
     "Feature": {
@@ -4573,7 +4702,7 @@
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "您的电子邮件地址和应用程序密码正确。请勿使用常规密码。"
+        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
       ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
@@ -5841,7 +5970,7 @@
         "您即将打开默认浏览器并访问："
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登入的用户为 ${ username }。"
+        "您当前登录身份为 ${ username }"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
@@ -5958,7 +6087,7 @@
         "您的邮箱地址和密码已泄露："
       ],
       "Your email address was exposed:": [
-        "您的电子邮件地址已被泄露："
+        "您的邮箱地址已被泄露："
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -6061,6 +6190,138 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } 分钟"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } 视频通话"
+      ],
+      "Appointment duration": [
+        "预约时长"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "您确定要删除此预约页面吗？"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "请您的管理员升级计划或从预约页面侧边栏中移除一个页面"
+      ],
+      "Booking page deleted": [
+        "预约页面已删除"
+      ],
+      "Booking page example": [
+        "预约页面示例"
+      ],
+      "Booking updated successfully": [
+        "预约更新成功"
+      ],
+      "Cannot create a range across days.": [
+        "无法创建跨天的时段"
+      ],
+      "Cannot create a range in the past.": [
+        "无法创建过去的时段"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
+      "Failed to update meeting name": [
+        "更新会议名称失败"
+      ],
+      "Failed to update meeting password": [
+        "更新会议密码失败"
+      ],
+      "Failed to update meeting schedule": [
+        "更新会议计划失败"
+      ],
+      "Host": [
+        "主持人"
+      ],
+      "How long should an appointment last?": [
+        "预约应持续多长时间？"
+      ],
+      "In which calendar should bookings appear?": [
+        "预约应出现在哪个日历中？"
+      ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "让其他人自动预约您的时间，无需来回发送电子邮件。只需分享一个链接，即可掌控您的可用时间。"
+      ],
+      "Location": [
+        "地点"
+      ],
+      "Manage booking page": [
+        "管理预约页面"
+      ],
+      "No appointments available": [
+        "无可用预约"
+      ],
+      "No appointments available this week": [
+        "本周无可用预约"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "无可用日历，请删除此预约页面"
+      ],
+      "No future appointments available": [
+        "未来无可用预约"
+      ],
+      "Powered by": [
+        "技术支持提供方："
+      ],
+      "Powered by ${ protonButton }": [
+        "由 ${ protonButton } 提供支持"
+      ],
+      "Previously booked events won't be deleted.": [
+        "先前已预约的活动不会被删除"
+      ],
+      "Privacy by default": [
+        "默认保护隐私"
+      ],
+      "Range already exists.": [
+        "时段已存在"
+      ],
+      "Range is too short.": [
+        "时段太短"
+      ],
+      "Range overlaps with an existing range.": [
+        "时段与现有时段重叠"
+      ],
+      "Saving event": [
+        "正在保存事件"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "分享此页面，让其他人可以预约您日历中的时间。您可以在侧边栏的“预约页面”下找到并编辑它。"
+      ],
+      "Take control of your digital life": [
+        "掌控您的数字生活"
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "无法编辑此预约页面，关联的日历已禁用"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "此预约是通过 ${ CALENDAR_APP_NAME } 进行的，它是 ${ BRAND_NAME } 隐私至上产品套件的一部分。"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "要添加新的预约页面，请让您的管理员升级您的计划。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "要添加新的预约页面，请从预约页面侧边栏中移除一个现有的页面。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "要添加新的预约页面，请升级您的计划。"
+      ],
+      "What do you want to call this booking page?": [
+        "您想如何命名此预约页面？"
+      ],
+      "When can appointments be booked?": [
+        "何时可以预约？"
+      ],
+      "Where will the appointment take place?": [
+        "预约将在何处进行？"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "您已达到您计划中允许的预约页面最大数量"
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6755,6 +7016,36 @@
       ],
       "Very Dissatisfied": [
         "非常不满意"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "添加 ${ MEET_APP_NAME } 会议功能"
+      ],
+      "Add Zoom meeting": [
+        "添加 Zoom 会议"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "随时复制链接或在此处管理您的页面"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "创建可共享的页面，让其他人可以预约您的时间。"
+      ],
+      "Full name": [
+        "全称"
+      ],
+      "Repeat weekly": [
+        "每周重复"
+      ],
+      "Unavailable": [
+        "不可用"
+      ],
+      "Video conference": [
+        "视频会议"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
+      ],
+      "Zoom meeting": [
+        "Zoom 会议"
       ]
     },
     "Label for contact group color": {
@@ -6914,6 +7205,9 @@
       ],
       "Terms and conditions": [
         "条款与条件"
+      ],
+      "Booking pages": [
+        "预约页面"
       ]
     },
     "Link label (optional)": {
@@ -6971,7 +7265,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -7928,7 +8222,7 @@
         "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+        "使用单个邮箱地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -8372,6 +8666,15 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "限时优惠，仅首月有效"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "升级您的生产力，仅需 ${ pricingTitle } 即可获得 ${ planName } 计划"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "升级您的存储空间，仅需 ${ pricingTitle } 即可获得 ${ planName } 计划"
       ]
     },
     "Offer fearue": {
@@ -8409,6 +8712,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "无限别名，保护您的身份"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "与非 ${ BRAND_NAME } 用户协作"
+      ],
+      "Edit docs online": [
+        "在线编辑文档"
+      ],
+      "File version history (over 1 week)": [
+        "文件版本历史记录（超过 1 周）"
       ]
     },
     "Onboarding": {
@@ -9081,6 +9393,15 @@
       ],
       "Select country": [
         "选择国家/地区"
+      ],
+      "Email for booking confirmation": [
+        "用于预约确认的邮箱"
+      ],
+      "Enter a short description or additional info": [
+        "请输入简短描述或附加信息"
+      ],
+      "Name of attendee": [
+        "参会者姓名"
       ]
     },
     "Placeholder for contact group name": {
@@ -9112,6 +9433,12 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升级至 ${ upsellPlanTitle }"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 以及更多 ${ BRAND_NAME } 服务。"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "更多 ${ BRAND_NAME } 服务，${ br }仅需一次简单的订阅。"
       ]
     },
     "Progress bar description": {
@@ -9213,6 +9540,27 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您最高可获得 **${ maxRewardAmount }** 积分！"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**如果您在此日期之前取消，** 试用期结束后您将被 **降级** 至 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 套餐。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**如果您不订阅，** 您的服务将被 **降级** 为 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您不取消，** 您的完整套餐将生效，并且您将获得 **${ referrerRewardAmount }** 积分。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**如果您在此日期之前订阅，** 您将获得 **${ referrerRewardAmount }** 积分。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "免费享受 **${ planTitle }** 直至 **${ textDate }**。"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "探索 **${ planTitle }** 套餐所有强大功能的最后机会。"
+      ],
+      "your subscription": [
+        "您的订阅"
       ]
     },
     "Reload event button tooltip": {
@@ -9230,7 +9578,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ]
     },
     "saml: Error": {
@@ -9278,7 +9626,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
+        "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -9308,7 +9656,7 @@
         "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel 现已 **启用** 并正在保护您的帐户。"
+        "Sentinel 现已 **启用** 并正在保护您的账户。"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
@@ -9337,7 +9685,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -9788,6 +10136,12 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
       ]
     },
     "Spotlight": {
@@ -9802,6 +10156,12 @@
       ],
       "Video conferencing is here!": [
         "视频会议就在这里！"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } 现已推出！"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "直接从您的日历安排和加入 ${ MEET_APP_NAME } 通话"
       ]
     },
     "sso": {
@@ -9812,7 +10172,7 @@
         "登录到您的组织"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方SSO提供商。"
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "State": {
@@ -9903,7 +10263,7 @@
         "您将无法使用 ${ gb } 存储和优先支持。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+        "您将无法使用额外的存储空间、邮箱地址、别名、日历以及优先支持。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
@@ -9970,7 +10330,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
@@ -10095,7 +10455,7 @@
         "从您的设备上备份照片"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "使用自己域名的专业电子邮件地址，建立信任和品牌的知名度。"
+        "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Catch-all email address": [
         "通配邮件地址"
@@ -10315,7 +10675,7 @@
         "保留自动付款"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+        "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
@@ -10512,6 +10872,12 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Booking page created": [
+        "预约页面已创建"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "预约页面已创建，链接已复制到剪贴板"
       ]
     },
     "Suffix": {
@@ -11300,7 +11666,7 @@
         "VPN 能为您防护哪些威胁？"
       ],
       "What is a VPN?": [
-        "什么是VPN？\n"
+        "什么是 VPN？\n"
       ],
       "What would you like to import?": [
         "您需要导入哪些信息？"
@@ -11346,6 +11712,57 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "您的 ${ planTitle } 订阅已开始"
+      ],
+      "Account temporarily locked": [
+        "账户暂时锁定"
+      ],
+      "Appointment details": [
+        "预约详情"
+      ],
+      "Cannot create more Booking pages": [
+        "无法创建更多预约页面"
+      ],
+      "Choose a time": [
+        "选择时间"
+      ],
+      "Delete booking page?": [
+        "删除预约页面？"
+      ],
+      "Host": [
+        "主持人"
+      ],
+      "How your free trial works": [
+        "您的免费试用如何运作"
+      ],
+      "Introducing booking pages": [
+        "介绍预约页面"
+      ],
+      "Ready to automate your scheduling?": [
+        "准备好自动化您的日程安排了吗？"
+      ],
+      "The booking feature is currently unavailable.": [
+        "预约功能当前不可用"
+      ],
+      "This booking page can’t be shown.": [
+        "无法显示此预约页面"
+      ],
+      "This booking page has expired.": [
+        "此预约页面已过期"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "升级您的生产力，仅需 ${ formattedPrice } 即可获得 ${ planName } 计划"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "升级您的存储空间，仅需 ${ formattedPrice } 即可获得 ${ planName } 计划"
+      ],
+      "Your booking is confirmed": [
+        "您的预约已确认"
+      ],
+      "Your booking page is ready": [
+        "您的预约页面已准备就绪"
+      ],
+      "Your booking pages live here": [
+        "您的预约页面位于此处"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11552,6 +11969,12 @@
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "加密且安全的 ${ MAIL_APP_NAME } 邮箱地址。您可以仅凭对方的 ${ BRAND_NAME } 名称轻松向任何人发送比特币。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "通过电子邮件安全地交换比特币，代替复杂且易错的 26 字符比特币地址"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -11972,6 +12395,65 @@
       ],
       "Credits will be added to your balance": [
         "积分将添加到您的账户余额"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 分钟"
+      ],
+      "120m": [
+        "120 分钟"
+      ],
+      "30 minutes": [
+        "30 分钟"
+      ],
+      "30m": [
+        "30 分钟"
+      ],
+      "60 minutes": [
+        "60 分钟"
+      ],
+      "60m": [
+        "60 分钟"
+      ],
+      "90 minutes": [
+        "90 分钟"
+      ],
+      "90m": [
+        "90 分钟"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "请确认您的预约"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "预约时段日期"
+      ],
+      "End time of the booking range": [
+        "预约时段结束时间"
+      ],
+      "How long should an appointment last?": [
+        "预约应持续多长时间？"
+      ],
+      "Start time of the booking range": [
+        "预约时段开始时间"
+      ],
+      "What should people know about this appointment?": [
+        "关于此次预约，人们应该了解什么？"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "无可用预约"
+      ],
+      "Please check the link and try again.": [
+        "请检查链接并重试"
+      ],
+      "Please try again later.": [
+        "请稍后重试"
       ]
     }
   }

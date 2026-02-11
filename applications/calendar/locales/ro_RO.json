@@ -4020,6 +4020,12 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed loading group members": [
+        "Eroare la încărcarea membrilor grupului."
+      ],
+      "Network error": [
+        "Eroare de rețea."
       ]
     },
     "error": {
@@ -6551,6 +6557,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting schedule": [
+        "Actualizarea planificării conferinței a eșuat."
       ]
     },
     "info": {
