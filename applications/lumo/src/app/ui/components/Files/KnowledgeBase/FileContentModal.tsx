@@ -11,7 +11,7 @@ import { attachmentDataCache } from '../../../../services/attachmentDataCache';
 import type { Attachment } from '../../../../types';
 import { Role } from '../../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../../util/filetypes';
-import { LazyLumoMarkdown } from '../../LumoMarkdown/LazyMarkdownComponents';
+import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FileContentModalProps extends Omit<ModalProps, 'children'> {
     attachment: Attachment | null;
@@ -354,7 +354,9 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                     className="prose prose-sm max-w-none overflow-auto p-6 --max-h-custom"
                     // style={{ '--max-h-custom': '70vh' }}
                 >
-                    <LazyLumoMarkdown
+                    <LazyProgressiveMarkdownRenderer
+                        content={truncatedContent.content}
+                        isStreaming={false}
                         message={{
                             id: 'file-content',
                             content: truncatedContent.content,
@@ -362,7 +364,6 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                             conversationId: '',
                             createdAt: new Date().toISOString(),
                         }}
-                        content={truncatedContent.content}
                     />
                 </div>
                 {truncatedContent.truncated && (
