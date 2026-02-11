@@ -43,7 +43,8 @@ const modelThunk = createAsyncModelThunk<Model, RetentionPoliciesState, ProtonTh
         }
         return extraArgument
             .api(getRetentionRules())
-            .then(({ RetentionRules }: { RetentionRules: RetentionRule[] }) => RetentionRules);
+            .then(({ RetentionRules }: { RetentionRules: RetentionRule[] }) => RetentionRules)
+            .catch(() => []);
     },
     previous: previousSelector(selectRetentionPolicies),
 });
