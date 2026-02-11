@@ -32,6 +32,7 @@ import debounce from 'lodash/debounce'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import type { Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
+import { CURRENCY_SYMBOL } from './constants'
 
 // local state
 // -----------
@@ -305,12 +306,13 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const localeAuto = useLocaleAuto()
   const localeResolved = kv.locale ?? localeAuto
   const localeCurrency = getCurrencyFromLocale(localeResolved)
+  const localeCurrencySymbol = CURRENCY_SYMBOL({ currency: localeCurrency, locale: localeResolved })
   const locale = {
     account: localeAccount,
     auto: localeAuto,
     value: kv.locale ?? 'auto',
     resolved: localeResolved,
-    currency: localeCurrency,
+    currency: { code: localeCurrency, symbol: localeCurrencySymbol },
   }
 
   const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {

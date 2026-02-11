@@ -1,6 +1,6 @@
 import { functionDescriptions } from '@rowsncolumns/functions'
 import FormulaParser from '@rowsncolumns/fast-formula-parser'
-import { type CanvasGridProps, type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
+import type { CanvasGridProps, CellFormat } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
 
 export const CURRENCY_DEFAULT = 'USD'
@@ -58,28 +58,68 @@ export const FONT_SIZE_DEFAULT = 10 // pt
 export const FONT_SIZE_MIN = 1 // pt
 export const FONT_SIZE_MAX = 400 // pt
 
+function getCurrencySymbol(locale: string | undefined, currency: string) {
+  try {
+    const currencySymbol = new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency,
+      currencyDisplay: 'narrowSymbol',
+    })
+      .formatToParts(1)
+      .find((item) => item.type === 'currency')?.value
+
+    return currencySymbol ?? currency
+  } catch (e) {
+    return currency
+  }
+}
+
 export type PatternSpec = { type: NonNullable<CellFormat['numberFormat']>['type']; pattern: string }
-export function CURRENCY_PATTERN_DEFAULT(symbol: string) {
-  return `"${symbol}"#,##0.00`
-}
-export function CURRENCY_ROUNDED_PATTERN_DEFAULT(symbol: string) {
-  return `"${symbol}"#,##0`
-}
 type CurrencySymbolOptions = { locale: string; currency: string }
 export function CURRENCY_SYMBOL({ locale, currency }: CurrencySymbolOptions) {
   return getCurrencySymbol(locale, currency) ?? CURRENCY_DEFAULT
 }
+
+function isCurrencySuffix(locale: string, currency: string) {
+  try {
+    const parts = new Intl.NumberFormat(locale, { style: 'currency', currency }).formatToParts(1)
+    const currencyIndex = parts.findIndex((p) => p.type === 'currency')
+    const numberIndex = parts.findIndex((p) => p.type === 'integer')
+    return currencyIndex > numberIndex
+  } catch (e) {
+    return false // Fallback to prefix (US style) if something breaks
+  }
+}
+
 type CurrencyPatternOptions = { locale: string; currency: string }
 export function CURRENCY_PATTERN({ locale, currency }: CurrencyPatternOptions) {
-  return CURRENCY_PATTERN_DEFAULT(CURRENCY_SYMBOL({ locale, currency }))
+  const symbol = CURRENCY_SYMBOL({ locale, currency })
+  if (isCurrencySuffix(locale, currency)) {
+    return `#,##0.00 "${symbol}"` // Suffix pattern (Symbol at end)
+  }
+  return `"${symbol}"#,##0.00`
 }
+
 export function CURRENCY_ROUNDED_PATTERN({ locale, currency }: CurrencyPatternOptions) {
-  return CURRENCY_ROUNDED_PATTERN_DEFAULT(CURRENCY_SYMBOL({ locale, currency }))
+  const symbol = CURRENCY_SYMBOL({ locale, currency })
+  if (isCurrencySuffix(locale, currency)) {
+    return `#,##0 "${symbol}"` // Suffix pattern rounded
+  }
+  return `"${symbol}"#,##0`
+}
+
+export function ACCOUNTING_PATTERN({ locale, currency }: CurrencyPatternOptions) {
+  const symbol = CURRENCY_SYMBOL({ locale, currency })
+
+  if (isCurrencySuffix(locale, currency)) {
+    return `_(* #,##0.00_) "${symbol}";_(* (#,##0.00) "${symbol}";_(* "-"?? "${symbol}"_);_(@_)`
+  }
+
+  return `_("${symbol}"* #,##0.00_);_("${symbol}"* (#,##0.00);_("${symbol}"* "-"??_);_(@_)`
 }
 
 type PatternSpecsOptions = { locale: string; currency: string }
 export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
-  const currencySymbol = getCurrencySymbol(locale, currency)
   return {
     GENERAL: { type: 'NUMBER', pattern: 'General' },
     PLAIN_TEXT: { type: 'TEXT', pattern: 'General' },
@@ -88,7 +128,7 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
     SCIENTIFIC: { type: 'SCIENTIFIC', pattern: '0.00E+00' },
     ACCOUNTING: {
       type: 'CURRENCY',
-      pattern: `_("${currencySymbol}"* #,##0.00_);_("${currencySymbol}"* (#,##0.00);_("${currencySymbol}"* "-"??_);_(@_)`,
+      pattern: ACCOUNTING_PATTERN({ locale, currency }),
     },
     FINANCIAL: { type: 'CURRENCY', pattern: '#,##0.00;(#,##0.00)' },
     CURRENCY: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency }) },
@@ -109,6 +149,7 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
 export const NUMBER_PATTERN_EXAMPLE_VALUE = 1000.12
 export const PERCENT_PATTERN_EXAMPLE_VALUE = 0.1012
 export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')
+export const DURATION_PATTERN_EXAMPLE_VALUE = 1.1458333
 
 const IMPLEMENTED_FUNCTION_NAMES = FormulaParser.getImplementedFunctionNames()
 const EXCLUDED_FUNCTION_DATATYPES = ['google']
