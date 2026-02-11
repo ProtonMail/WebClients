@@ -20,6 +20,8 @@ import { getDomain } from '../../interactiveConversation/messageChain/message/to
 import { InlineImageComponent } from './InlineImageComponent';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
+import './LumoMarkdown.scss';
+
 /**
  * Progressive Markdown Renderer
  *
@@ -382,7 +384,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
             return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
         }, [isIos(), isIpad(), isSafari()]);
         return (
-            <div className="progressive-markdown-content">
+            <div className="progressive-markdown-content markdown-rendering">
                 {blocks.map((block) => (
                     <div key={block.key} className={className}>
                         <MarkdownBlock
