@@ -26,8 +26,10 @@ import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import InitiateSessionRecoveryModal from '../account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from './ConfirmDisableSessionRecoveryModal';
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 export const SessionRecoverySection = () => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const api = useApi();
     const dispatch = useDispatch();
 
@@ -53,6 +55,7 @@ export const SessionRecoverySection = () => {
         try {
             await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
             await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            sendRecoverySettingEnabled({ setting: 'session_recovery' });
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',
             });

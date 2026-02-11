@@ -38,9 +38,10 @@ interface Props {
     open: ModalProps['open'];
     onClose: ModalProps['onClose'];
     onExit: ModalProps['onExit'];
+    onSuccess?: () => void;
 }
 
-const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: Props) => {
+const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit, onSuccess }: Props) => {
     const [{ Name, MnemonicStatus }] = useUser();
     const callReactivateEndpoint =
         MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
@@ -71,6 +72,8 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
             const payload = await getPayload(data);
             await api(reactivateMnemonicPhrase(payload));
             await dispatch(userThunk({ cache: CacheType.None }));
+
+            onSuccess?.();
 
             if (confirmStep) {
                 setStep(STEPS.MNEMONIC_PHRASE);
@@ -115,6 +118,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                             await dispatch(userThunk({ cache: CacheType.None }));
                             await api(lockSensitiveSettings());
                             setStep(STEPS.MNEMONIC_PHRASE);
+                            onSuccess?.();
                         } catch (e) {
                             onClose?.();
                         }

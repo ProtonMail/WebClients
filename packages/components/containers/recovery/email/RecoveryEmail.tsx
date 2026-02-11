@@ -63,7 +63,7 @@ interface Props {
     hasNotify: boolean;
     className?: string;
     inputWidth?: string;
-    onSuccess?: () => void;
+    onSuccess?: (updatedUserSettings: UserSettings) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
     inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
@@ -115,7 +115,7 @@ const RecoveryEmail = ({
         }
 
         createNotification({ text: c('Success').t`Email updated` });
-        onSuccess?.();
+        onSuccess?.(UserSettings);
     };
 
     return (

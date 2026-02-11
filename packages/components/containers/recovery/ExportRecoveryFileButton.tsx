@@ -6,9 +6,12 @@ import useDownloadRecoveryFile from '@proton/components/hooks/recoveryFile/useDo
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
+
 interface Props extends Omit<ButtonProps, 'onClick'> {}
 
 const ExportRecoveryFileButton = ({ children = c('Action').t`Download recovery file`, ...rest }: Props) => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const downloadRecoveryFile = useDownloadRecoveryFile();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -16,6 +19,7 @@ const ExportRecoveryFileButton = ({ children = c('Action').t`Download recovery f
     const handleClick = async () => {
         try {
             await downloadRecoveryFile();
+            sendRecoverySettingEnabled({ setting: 'recovery_file_download' });
             createNotification({ text: c('Info').t`Recovery file downloaded` });
         } catch (error) {
             createNotification({
