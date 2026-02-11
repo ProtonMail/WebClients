@@ -15,6 +15,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-banner.svg';
+import clsx from '@proton/utils/clsx';
 
 import { useDriveUpsellModal } from '../../../components/modals/DriveUpsellModal';
 import { CopyPublicLink } from './CopyPublicLink';
@@ -133,9 +134,9 @@ export const PublicSharing = ({
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-column gap-4 px-8">
-                    <div className="flex items-center justify-space-between flex-nowrap">
-                        <div className="flex items-center gap-3">
+                <div className="flex flex-column gap-4 px-8 w-full">
+                    <div className="flex items-center justify-space-between gap-2">
+                        <div className="flex flex-nowrap items-center gap-3">
                             <div
                                 className="flex items-center ratio-square p-2 rounded"
                                 // Background colors not available in bg-* classes
@@ -147,7 +148,7 @@ export const PublicSharing = ({
                             >
                                 <IcGlobe className={!!url ? 'color-success' : 'color-hint'} />
                             </div>
-                            <span className={!url ? undefined : 'color-hint'}>{c('Label')
+                            <span className={clsx(!url ? 'color-hint' : undefined, 'text-ellipsis')}>{c('Label')
                                 .t`Anyone on the Internet with the link`}</span>
                         </div>
 
@@ -168,38 +169,39 @@ export const PublicSharing = ({
                 </div>
 
                 {/* Footer */}
-                <div className="w-full px-5">
-                    <Button
-                        className="w-full flex items-center justify-space-between mt-4"
-                        color="weak"
-                        shape="ghost"
-                        size="small"
-                        data-testid="public-link-settings-button"
-                        onClick={() =>
-                            showPublicLinkSettingsModal({
-                                customPassword: publicLink?.customPassword,
-                                expiration: publicLink?.expirationTime,
-                                onPublicLinkSettingsChange: onUpdate,
-                            })
-                        }
-                        disabled={!url}
-                    >
-                        <div className="flex items-center gap-3">
-                            <div
-                                className="flex items-center ratio-square p-2 rounded"
-                                // Background color not available in bg-* classes
-                                style={{
-                                    background: 'var(--interaction-weak-minor-2)',
-                                }}
-                            >
-                                <IcFormTextboxPassword className="color-hint" />
+                {url && (
+                    <div className="w-full px-5">
+                        <Button
+                            className="w-full flex items-center justify-space-between mt-4"
+                            color="weak"
+                            shape="ghost"
+                            size="small"
+                            data-testid="public-link-settings-button"
+                            onClick={() =>
+                                showPublicLinkSettingsModal({
+                                    customPassword: publicLink?.customPassword,
+                                    expiration: publicLink?.expirationTime,
+                                    onPublicLinkSettingsChange: onUpdate,
+                                })
+                            }
+                        >
+                            <div className="flex items-center gap-3">
+                                <div
+                                    className="flex items-center ratio-square p-2 rounded"
+                                    // Background color not available in bg-* classes
+                                    style={{
+                                        background: 'var(--interaction-weak-minor-2)',
+                                    }}
+                                >
+                                    <IcFormTextboxPassword className="color-hint" />
+                                </div>
+                                <span>{c('Action').t`Set password or expiration date`}</span>
                             </div>
-                            <span>{c('Action').t`Set password or expiration date`}</span>
-                        </div>
 
-                        <IcChevronRight />
-                    </Button>
-                </div>
+                            <IcChevronRight />
+                        </Button>
+                    </div>
+                )}
             </div>
 
             {driveUpsellModal}
