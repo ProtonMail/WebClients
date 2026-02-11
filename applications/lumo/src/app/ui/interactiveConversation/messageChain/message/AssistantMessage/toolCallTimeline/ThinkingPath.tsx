@@ -7,7 +7,7 @@ import { Icon } from '@proton/components';
 
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
-import LumoMarkdown from '../../../../../components/LumoMarkdown/LumoMarkdown';
+import { LazyProgressiveMarkdownRenderer } from '../../../../../components/LumoMarkdown/LazyMarkdownComponents';
 
 import './ThinkingPath.scss';
 import { IconName } from 'packages/icons/types';
@@ -125,14 +125,14 @@ const ReasoningStep = ({
                 />
             </div>
 
-            <div className="flex-1 min-w-0 pt-1">
+            <div className="thinking-step-content">
                 <button
-                    className="thinking-step-toggle flex items-center w-full text-left"
+                    className="thinking-step-toggle"
                     onClick={() => setIsExpanded(!isExpanded)}
                     type="button"
                     aria-expanded={isExpanded}
                 >
-                    <span className="thinking-step-label flex-1">
+                    <span className="thinking-step-label">
                         {isActive
                             ? c('collider_2025:Reasoning').t`Thinking...`
                             : c('collider_2025:Reasoning').t`Thought about this`}
@@ -140,13 +140,18 @@ const ReasoningStep = ({
                     <Icon
                         name="chevron-down"
                         size={3}
-                        className={clsx('thinking-step-chevron shrink-0', isExpanded && 'thinking-step-chevron--expanded')}
+                        className={clsx('thinking-step-chevron', isExpanded && 'thinking-step-chevron--expanded')}
                     />
                 </button>
 
                 {isExpanded && (
                     <div className="thinking-step-details">
-                        <LumoMarkdown message={message} content={content} handleLinkClick={handleLinkClick} />
+                        <LazyProgressiveMarkdownRenderer
+                            content={content}
+                            isStreaming={false}
+                            handleLinkClick={handleLinkClick}
+                            message={message}
+                        />
                     </div>
                 )}
             </div>
@@ -247,34 +252,36 @@ const ToolCallStep = ({
                 />
             </div>
 
-            <div className="flex-1 min-w-0 pt-1">
+            <div className="thinking-step-content">
                 {hasDetails ? (
                     <>
                         <button
-                            className="thinking-step-toggle flex items-center w-full text-left"
+                            className="thinking-step-toggle"
                             onClick={() => setIsExpanded(!isExpanded)}
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span className={clsx('thinking-step-label flex-1 m-0', isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak')}>
+                            <span className={clsx('thinking-step-label', isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak')}>
                                 {label}
                             </span>
-                            {hasError && (
-                                <span className="flex items-center gap-1 text-sm color-danger shrink-0 mr-2">
-                                    <Icon name="exclamation-circle-filled" size={3} />
-                                    Failed
-                                </span>
-                            )}
-                            {webSearchResults && webSearchResults.results.length > 0 && (
-                                <span className="text-sm color-weak shrink-0 mr-2">
-                                    {webSearchResults.results.length} {webSearchResults.results.length === 1 ? 'result' : 'results'}
-                                </span>
-                            )}
-                            <Icon
-                                name="chevron-down"
-                                size={3}
-                                className={clsx('thinking-step-chevron shrink-0', isExpanded && 'thinking-step-chevron--expanded')}
-                            />
+                            <div className="flex items-center gap-2 shrink-0">
+                                {hasError && (
+                                    <span className="flex items-center gap-1 text-sm color-danger">
+                                        <Icon name="exclamation-circle-filled" size={3} />
+                                        Failed
+                                    </span>
+                                )}
+                                {webSearchResults && webSearchResults.results.length > 0 && (
+                                    <span className="text-sm color-weak">
+                                        {webSearchResults.results.length} {webSearchResults.results.length === 1 ? 'result' : 'results'}
+                                    </span>
+                                )}
+                                <Icon
+                                    name="chevron-down"
+                                    size={3}
+                                    className={clsx('thinking-step-chevron', isExpanded && 'thinking-step-chevron--expanded')}
+                                />
+                            </div>
                         </button>
 
                         {isExpanded && (
@@ -308,10 +315,11 @@ const ToolCallStep = ({
                                                 </span>
                                             )}
                                         </div>
-                                        <LumoMarkdown
-                                            message={message}
+                                        <LazyProgressiveMarkdownRenderer
                                             content={imageToolResult.info}
+                                            isStreaming={false}
                                             handleLinkClick={handleLinkClick}
+                                            message={message}
                                         />
                                     </div>
                                 ) : (
