@@ -200,10 +200,9 @@ export const markMessagesAsUnread = createAsyncThunk<
     }
 );
 
-// TODO check if we can change elements: Element[]; to elements: Conversation[];
 export const markConversationsAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
+    { elements: Conversation[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsRead',
