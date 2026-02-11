@@ -21,7 +21,7 @@ import {
 
 export const markConversationsAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: Element[]; labelID: string }>
+    action: PayloadAction<{ elements: Conversation[]; labelID: string }>
 ) => {
     // When we mark a conversation as unread, the latest message of this conversation is marked as unread.
     // This message must be part of the current label (labelID)
@@ -29,7 +29,7 @@ export const markConversationsAsUnread = (
     const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
+        const selectedConversation = selectedElement;
 
         selectedConversation.Labels?.forEach((label) => {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);

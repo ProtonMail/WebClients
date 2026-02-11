@@ -7,7 +7,6 @@ import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mai
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
 import { applyLabelToMessage, removeLabelFromMessage } from 'proton-mail/store/mailbox/locationHelpers';
 
 import { isElementMessage } from '../../../helpers/elements';
@@ -162,12 +161,12 @@ export const markConversationsAsReadPending = (
 
 export const markConversationsAsUnreadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
+        const selectedConversation = selectedElement;
         const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
 
         if (!!conversationLabel?.ContextNumUnread) {
