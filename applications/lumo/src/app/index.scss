@@ -267,7 +267,7 @@ im.$media-expressions: $media-expressions;
 	// placeholder text
 	color: var(--text-weak);
 	content: attr(data-placeholder);
-	float: left;
+	float: inline-start;
 	block-size: 0;
 	pointer-events: none;
 }
@@ -623,6 +623,18 @@ im.$media-expressions: $media-expressions;
 	&#{&} {
 		--size: #{rem(320)};
 	}
+}
+
+// Override subscription modal sizing in lumo to ensure correct width
+// This compensates for CSS loading order issues caused by --prependAsyncCss
+.subscription-modal--medium-width {
+	--size: #{rem(900)} !important;
+	--margin: #{rem(24)} !important;
+}
+
+.subscription-modal--large-width {
+	--size: #{rem(1200)} !important;
+	--margin: #{rem(32)} !important;
 }
 
 @media screen and (width <= 600px) {

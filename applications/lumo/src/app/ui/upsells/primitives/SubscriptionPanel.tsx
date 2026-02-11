@@ -44,11 +44,11 @@ interface SubscriptionPanelProps {
 export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanelProps) => (
     <div
         className={
-            'settings-modal-panel w-full flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap '
+            'settings-modal-panel w-full flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap flex-auto overflow-y-auto'
         }
     >
         {/* Left side - Content */}
-        <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2">
+        <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2 *:min-size-auto">
             {/* Header */}
             <div className="flex items-center gap-2">{logo || <LumoPlusLogoInline height="20px" />}</div>
 
@@ -70,7 +70,7 @@ export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanel
             </ul>
 
             {/* Action area - button or message */}
-            <div className="mt-2 w-fit-content">{children}</div>
+            <div className="mt-0 md:mt-2 w-fit-content">{children}</div>
         </div>
 
         {/* Right side - Lumo cat illustration */}
