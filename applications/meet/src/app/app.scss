@@ -321,3 +321,12 @@ $profile-colors:
 .border-card {
 	border: 1px solid var(--border-card);
 }
+
+// Global override for checkbox tick color
+.checkbox-input:checked + .checkbox-fakecheck {
+	color: black;
+}
+
+.checkbox-input:checked:hover + .checkbox-fakecheck {
+	color: black;
+}
