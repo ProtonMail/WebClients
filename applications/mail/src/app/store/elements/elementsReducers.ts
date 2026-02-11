@@ -595,7 +595,7 @@ export const markMessagesAsReadPending = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -606,7 +606,7 @@ export const markMessagesAsReadPending = (
     const { elements, conversations } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
+        const selectedMessage = selectedElement;
 
         // Already marked as read, do nothing
         if (selectedMessage.Unread === 0) {

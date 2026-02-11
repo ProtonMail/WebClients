@@ -22,14 +22,14 @@ import { getContextNumMessages, getContextNumUnread } from '../../helpers/conver
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: Element[];
+        elements: MessageMetadata[];
         labelID: string;
     }>
 ) => {
     const { elements } = action.payload;
 
     elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
+        const selectedMessage = selectedElement;
 
         if (selectedMessage.Unread === 0) {
             return;

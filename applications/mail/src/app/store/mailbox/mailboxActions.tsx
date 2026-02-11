@@ -128,11 +128,10 @@ const runAction = async ({
     return promise;
 };
 
-// TODO check if we can change elements: Element[]; to elements: Message[];
 export const markMessagesAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;

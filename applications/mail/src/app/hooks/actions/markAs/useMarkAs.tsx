@@ -76,9 +76,11 @@ export const useMarkAs = () => {
                     );
 
                     if (isRead) {
+                        const messages = elements.filter(isElementMessage);
+
                         void dispatch(
                             markMessagesAsRead({
-                                elements,
+                                elements: messages,
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,
