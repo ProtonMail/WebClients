@@ -61,8 +61,8 @@ function getImageDimensions(imageElement: HTMLImageElement | null): ElementDimen
  */
 function sanitizeSVG(contents: Uint8Array<ArrayBuffer>[]): Uint8Array<ArrayBuffer>[] {
     const contentsString = contents.map(uint8ArrayToString).join('');
-    const sanitzedSVG = DOMPurify.sanitize(contentsString);
-    return [stringToUint8Array(sanitzedSVG)];
+    const sanitizedSVG = DOMPurify.sanitize(contentsString);
+    return [stringToUint8Array(sanitizedSVG)];
 }
 
 function calcImageScaleToFitContainer(imageDimensions: ElementDimensions, containerDimensions: DOMRect) {
@@ -105,6 +105,7 @@ const ImagePreview = ({
     const [isLowResImageHidden, setIsLowResImageHidden] = useState(false);
     const [imageStyles, setImageStyles] = useState({});
     const [fullImageDimensions, setFullImageDimensions] = useState<{ width: number; height: number } | null>(null);
+    const [isFallbackToThumbnail, setIsFallbackToThumbnail] = useState(false);
 
     const timeoutId = useRef<ReturnType<typeof setTimeout>>();
 
@@ -138,6 +139,21 @@ const ImagePreview = ({
 
     const handleBrokenImage = () => {
         if (!error) {
+            // Show error if we're in fallback mode (thumbnail also failed)
+            // OR if there was no placeholder to begin with
+            if (isFallbackToThumbnail || !placeholderSrc) {
+                setError(true);
+            }
+        }
+    };
+
+    const handleFullImageError = () => {
+        if (placeholderSrc) {
+            setIsLowResImageHidden(false);
+            setIsFallbackToThumbnail(true);
+            setImageSrc('');
+            clearTimeout(timeoutId.current);
+        } else {
             setError(true);
         }
     };
@@ -155,6 +171,10 @@ const ImagePreview = ({
             setIsHiResImageRendered(true);
         }
 
+        if (isFallbackToThumbnail) {
+            setIsFallbackToThumbnail(false);
+        }
+
         fitImageToContainer(imageHiResRef.current);
         setFullImageDimensions(getImageDimensions(imageHiResRef.current));
     };
@@ -162,6 +182,10 @@ const ImagePreview = ({
     useEffect(() => {
         if (error) {
             setError(false);
+        }
+
+        if (isFallbackToThumbnail) {
+            setIsFallbackToThumbnail(false);
         }
 
         if (!contents) {
@@ -194,7 +218,8 @@ const ImagePreview = ({
 
     return (
         <>
-            <div ref={containerRef} className={'file-preview-container'} onMouseDown={onMouseDown}>
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+            <div ref={containerRef} className="file-preview-container" onMouseDown={onMouseDown}>
                 {error ? (
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
@@ -216,19 +241,21 @@ const ImagePreview = ({
                                         transform: 'scale(0.99)',
                                     }}
                                 />
-                                {imageSrc ? (
-                                    <img
-                                        ref={imageHiResRef}
-                                        onLoad={handleFullImageLoaded}
-                                        onError={handleBrokenImage}
-                                        className={clsx(['file-preview-image file-preview-image-full-size'])}
-                                        style={imageStyles}
-                                        src={imageSrc}
-                                        alt={c('Info').t`${fileName}: full-size image`}
-                                    />
-                                ) : (
-                                    <CircleLoader />
+                                {imageSrc && (
+                                    <picture>
+                                        <source srcSet={imageSrc} />
+                                        <img
+                                            ref={imageHiResRef}
+                                            onLoad={handleFullImageLoaded}
+                                            onError={handleFullImageError}
+                                            className={clsx(['file-preview-image file-preview-image-full-size'])}
+                                            style={imageStyles}
+                                            src={imageSrc}
+                                            alt={c('Info').t`${fileName}: full-size image`}
+                                        />
+                                    </picture>
                                 )}
+                                {!imageSrc && !isFallbackToThumbnail && <CircleLoader />}
                             </>
                         )}
                         {!isLowResImageHidden && placeholderSrc && (
@@ -238,14 +265,15 @@ const ImagePreview = ({
                                 onError={handleBrokenImage}
                                 className={clsx([
                                     'file-preview-image',
-                                    isHiResImageRendered && 'file-preview-image-out',
+                                    isHiResImageRendered && !isFallbackToThumbnail && 'file-preview-image-out',
                                 ])}
                                 style={{
                                     ...imageStyles,
                                     // Blurring an image this way leads to its edges to become transparent.
                                     // To compensate this, we apply scale transformation.
-                                    filter: 'blur(3px)',
-                                    transform: 'scale(1.03)',
+                                    // Only apply blur if we're not in fallback mode
+                                    filter: isFallbackToThumbnail ? 'none' : 'blur(3px)',
+                                    transform: isFallbackToThumbnail ? 'none' : 'scale(1.03)',
                                 }}
                                 src={placeholderSrc}
                                 alt={c('Info').t`${fileName}: low-resolution preview`}
@@ -259,7 +287,7 @@ const ImagePreview = ({
                     </div>
                 )}
             </div>
-            {!isHiResImageRendered && !error && (
+            {!isHiResImageRendered && !isFallbackToThumbnail && !error && (
                 <div className="file-preview-loading w-full mb-8 flex justify-center items-center">
                     <CircleLoader />
                     <span className="ml-4">{c('Info').t`Loading...`}</span>
@@ -267,8 +295,10 @@ const ImagePreview = ({
             )}
             {isZoomEnabled && !error && (
                 <ZoomControl
-                    className={isHiResImageRendered ? '' : 'visibility-hidden'}
-                    onReset={() => fitImageToContainer(imageHiResRef.current)}
+                    className={isHiResImageRendered || isFallbackToThumbnail ? '' : 'visibility-hidden'}
+                    onReset={() =>
+                        fitImageToContainer(isFallbackToThumbnail ? imageLowResRef.current : imageHiResRef.current)
+                    }
                     scale={imageScale}
                     onZoomIn={handleZoomIn}
                     onZoomOut={handleZoomOut}
