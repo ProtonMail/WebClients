@@ -4,6 +4,13 @@
 	box-shadow: none;
 	padding: var(--space-2);
 
+	// Safety net for very small screens
+	@media (height <= 768px) {
+		.modal-two-dialog-container {
+			overflow: scroll;
+		}
+	}
+
 	&-content {
 		background-color: var(--background-norm);
 		padding-block-end: var(--space-8);

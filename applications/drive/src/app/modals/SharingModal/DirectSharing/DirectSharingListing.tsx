@@ -60,44 +60,50 @@ export const DirectSharingListing = ({
     }
 
     return (
-        <>
-            <div className="flex flex-nowrap items-center" data-testid="share-owner">
-                <div className="flex-1 flex flex-nowrap items-center gap-3">
-                    <UserAvatar name={ownerName} className="shrink-0" />
-                    <div className="flex-1 flex flex-column flex-nowrap p-0 m-0">
-                        <div className="max-w-full text-ellipsis">
+        <div className="flex flex-column flex-nowrap gap-4 overflow-auto" style={{ maxHeight: '14rem' }}>
+            <div
+                className="shrink-0 flex flex-nowrap justify-space-between items-center gap-2 w-full"
+                data-testid="share-owner"
+            >
+                <div className="flex flex-nowrap flex-1 items-center gap-3">
+                    <UserAvatar name={ownerName} />
+
+                    <div className="flex flex-column flex-nowrap flex-1">
+                        <div className="text-ellipsis">
                             {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
                         </div>
                         {ownerDisplayName ? (
-                            <div className="text-sm color-weak max-w-full text-ellipsis" title={ownerEmail}>
+                            <div className="text-sm color-weak text-ellipsis" title={ownerEmail}>
                                 {ownerEmail}
                             </div>
                         ) : null}
                     </div>
                 </div>
-                <div className="color-weak mx-2 shrink-0">{c('Info').t`owner`}</div>
+
+                <div className="color-weak shrink-0 mr-2">{c('Info').t`owner`}</div>
             </div>
 
             {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
                 return (
                     <div
                         key={member.uid}
-                        className="flex flex-nowrap justify-space-between items-center"
+                        // No gap here because button has padding
+                        className="shrink-0 flex flex-nowrap justify-space-between items-center w-full"
                         data-testid="share-members"
                     >
-                        <div className="flex flex-nowrap items-center gap-3">
+                        <div className="flex flex-nowrap flex-1 items-center gap-3">
                             <UserAvatar name={displayName || displayEmail} />
-                            <div className="flex flex-column p-0 m-0">
-                                <div className="max-w-full text-ellipsis">
-                                    {displayName ? displayName : displayEmail}
-                                </div>
+
+                            <div className="flex flex-column flex-nowrap flex-1">
+                                <div className="text-ellipsis">{displayName ? displayName : displayEmail}</div>
                                 {displayName ? (
-                                    <div className="text-sm color-weak max-w-full text-ellipsis" title={displayEmail}>
+                                    <div className="text-sm color-weak text-ellipsis" title={displayEmail}>
                                         {displayEmail}
                                     </div>
                                 ) : null}
                             </div>
                         </div>
+
                         <DirectSharingMemberMenu
                             disabled={viewOnly}
                             selectedRole={member.role}
@@ -119,6 +125,6 @@ export const DirectSharingListing = ({
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };

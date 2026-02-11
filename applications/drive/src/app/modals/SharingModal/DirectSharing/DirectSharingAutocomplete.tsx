@@ -48,7 +48,7 @@ export const DirectSharingAutocomplete = ({
 
     return (
         <>
-            <div className="flex justify-space-between items-center flex-nowrap relative">
+            <div className="flex justify-space-between items-center flex-nowrap relative mb-5">
                 <InputFieldTwo
                     as={AddressesInput}
                     autocompleteContainerProps={{
