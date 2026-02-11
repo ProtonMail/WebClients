@@ -56,7 +56,7 @@ export const DashboardContainerBody = ({
                 <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
                 <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
                     <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
-                    <span className="meet-dashboard-subtitle mt-5 mb-5 text-center">{c('Header')
+                    <span className="meet-dashboard-subtitle mt-5 mb-5 text-center text-wrap-balance">{c('Header')
                         .t`Speak freely again - every call is end-to-end encrypted`}</span>
                     <div className="flex justify-center meet-dashboard-cta-wrapper mt-5 mb-5 w-full">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

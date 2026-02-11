@@ -14,8 +14,6 @@ import type { SortOptionObject } from './types';
 import { DashboardMeetingListTab, SortOption } from './types';
 import { groupMeetingsByDay } from './utils';
 
-import './DashboardMeetingList.scss';
-
 interface DashboardMeetingListProps {
     meetings: Meeting[];
     isGuest: boolean;
@@ -84,7 +82,10 @@ export const DashboardMeetingList = ({
 
     return (
         <div className="dashboard-meeting-list w-full flex flex-column flex-nowrap gap-4 pb-4 shrink-0 items-center">
-            <div className="dashboard-meeting-list-container flex flex-column gap-6">
+            <div
+                className="dashboard-meeting-list-container w-full flex flex-column gap-6 md:max-w-custom"
+                style={{ '--md-max-w-custom': '67.5rem' }}
+            >
                 <DashboardMeetingListTabs
                     activeTab={activeTab}
                     setActiveTab={setActiveTab}
