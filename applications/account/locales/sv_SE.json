@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Ignore": [
+        "Ignorera"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } anpassad e-postdomän",
+        "${ domains } anpassade e-postdomäner"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikerad VPN-server",
+        "${ ips } dedikerade VPN-servrar"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI-licens",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenser"
       ]
     },
     "Address action": {
@@ -2608,6 +2623,9 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personliga e-postadress är en viktig del av din digitala identitet. Precis som ditt telefonnummer ger du det inte till alla du möter. Därför är det bra att ha andra e-postadresser som du kan använda för olika ändamål."
+      ],
+      "Helping someone connect to a new WiFi network is a regular occurrence. It’s likely you’ve done it many times at home or work. In this article, we’re going to examine the easiest ways to share WiFi passwords between devices, the risks associated with insecurely sharing your WiFi password, and the safest way to do it.": [
+        "Att hjälpa någon att ansluta till ett nytt WiFi-nätverk är något som händer regelbundet. Du har förmodligen gjort det många gånger hemma eller på jobbet. I denna artikel ska vi undersöka de enklaste sätten att dela WiFi-lösenord mellan enheter, riskerna med att dela ditt WiFi-lösenord på ett osäkert sätt och det säkraste sättet att göra det."
       ]
     },
     "BOSS": {
@@ -3133,6 +3151,30 @@
       "Total for ${ n } month": [
         "Totalt för ${ n } månad",
         "Totalt för ${ n } månader"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dagar"
+      ],
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
+      ],
+      "Forever access": [
+        "Åtkomst för alltid"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Startade ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Startar ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Börjar idag"
       ]
     },
     "Checkout summary": {
@@ -5994,6 +6036,181 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Din nödkontakt ${ name } begär åtkomst till ditt konto."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } kommer inte längre kunna hjälpa dig att återställa dina data efter en lösenordsåterställning."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** är nu din återställningskontakt. De kan hjälpa dig att återställa dina data efter en lösenordsåterställning."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Om de bekräftar**, klicka **Godkänn återställning**. Detta kommer låsa upp deras krypterade data."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Om de inte bad om din hjälp** är det möjligt att någon annan försöker komma åt deras konto. I så fall, ignorera denna begäran."
+      ],
+      "Access account": [
+        "Kom åt konto"
+      ],
+      "Add recovery contact": [
+        "Lägg till återställningskontakt"
+      ],
+      "Approve recovery": [
+        "Godkänn återställning"
+      ],
+      "Approved request": [
+        "Godkänd begäran"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Be en återställningskontakt om hjälp. De kommer få ett e-postmeddelande för att verifiera din begäran och låsa upp dina data."
+      ],
+      "Asking for help": [
+        "Be om hjälp"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Genom att lägga till personer du litar på som återställningskontakter kan vi skicka ett e-postmeddelande till dem för att hjälpa dig om du har problem med att återställa dina data efter en lösenordsåterställning. Du kan också vara en återställningskontakt för andra."
+      ],
+      "Cancel request": [
+        "Avbryt begäran"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Välj någon du litar på som kan hjälpa dig att återställa dina data i händelse av lösenordsåterställning. Återställningskontakter måste redan ha ett ${ BRAND_NAME }-konto."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Anslut med dem för att bekräfta att de behöver hjälp att återställa sina data."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Data har återställts. Du kan nu dekryptera dina befintliga data och krypterade filer."
+      ],
+      "Emergency contact enabled": [
+        "Nödkontakt aktiverad"
+      ],
+      "Enable": [
+        "Aktivera"
+      ],
+      "For ${ email }": [
+        "För ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Kontakta dem nu för att se om de kan hjälpa till och för att personligen berätta att det är du som försöker låsa upp dina data."
+      ],
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Be dem kontrollera i sin inkorg efter ett e-postmeddelande som ber om hjälp med att återställa dina data. E-postmeddelandet innehåller en länk de behöver klicka på för att verifiera din begäran."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Låt ${ user } veta att det verkligen är du som försöker återfå åtkomst."
+      ],
+      "Pending request": [
+        "Väntande begäran"
+      ],
+      "People who have you as a recovery contact": [
+        "Personer som har dig som en återställningskontakt"
+      ],
+      "Proceed anyway": [
+        "Fortsätt ändå"
+      ],
+      "Recover data": [
+        "Återställ data"
+      ],
+      "Recover data now": [
+        "Återställ data nu"
+      ],
+      "Recovery approved": [
+        "Återställning godkänd"
+      ],
+      "Recovery contact added": [
+        "Återställningskontakt tillagd"
+      ],
+      "Recovery contact enabled": [
+        "Återställningskontakt aktiverad"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Återställningskontakt för ${ user } borttagen"
+      ],
+      "Recovery contact removed": [
+        "Återställningskontakt borttagen"
+      ],
+      "Recovery contacts": [
+        "Återställningskontakter"
+      ],
+      "Recovery request sent": [
+        "Återställningsbegäran skickad"
+      ],
+      "Remove recovery contact": [
+        "Ta bort återställningskontakt"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Ta bort dina återställningskontakter för att fortsätta"
+      ],
+      "Request access": [
+        "Begär åtkomst"
+      ],
+      "Review recovery request": [
+        "Granska begäran om återställning"
+      ],
+      "See request": [
+        "Se begäran"
+      ],
+      "Select recovery contact ${ name }": [
+        "Välj återställningskontakt ${ name }"
+      ],
+      "Send email request": [
+        "Skicka e-postbegäran"
+      ],
+      "Send recovery request": [
+        "Skicka begäran om återställning"
+      ],
+      "Set account recovery": [
+        "Ställ in kontoåterställning"
+      ],
+      "Stop being recovery contact": [
+        "Sluta vara återställningskontakt"
+      ],
+      "Stop being recovery contact?": [
+        "Sluta vara återställningskontakt?"
+      ],
+      "Stop being trusted contact": [
+        "Sluta vara betrodd kontakt"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "För att inaktivera denna återställningsmetod, ta bort alla dina återställningskontakter."
+      ],
+      "Unable to recover data": [
+        "Kan inte återställa data"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Vi har mottagit en begäran om att låsa upp krypterade data för din kontakt **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Vi kunde inte verifiera återställningsdata. Fortsätt ändå?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du har inte blivit utsedd som en återställningskontakt för någon än."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Du har nått maximala antalet av ${ limit } återställningskontakt.",
+        "Du har nått maximalt antal av ${ limit } återställningskontakter."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Din återställningskontakt ${ name } godkände din begäran om att låsa upp dina krypterade data."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Din återställningskontakt ${ name } ber om hjälp att återställa sina data."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Din återställningskontakt har hjälpt dig att återställa data."
+      ],
+      "Your recovery contacts": [
+        "Dina återställningskontakter"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Dina återställningskontakter bör vara personer du känner och lätt kan kontakta."
       ]
     },
     "Empty group name": {
@@ -11768,6 +11985,30 @@
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dina senaste ändringar har publicerats. De kommer vara synliga för användare inom de närmaste timmarna."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alla meddelanden kommer att visas i inkorgen, och kategoriflikarna och etiketterna kommer inte längre att vara synliga. "
+      ],
+      "Cancel anytime.": [
+        "Avbryt när som helst."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Löper ut ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
+      ],
+      "Total: ${ totalPrice }": [
+        "Totalt: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Du sparade ${ discountAmount } med ett erbjudande"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Dina betalningsuppgifter är krypterade och säkra"
       ]
     },
     "info": {
@@ -13719,6 +13960,33 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Kontoinnehavare: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Lägg till extra tjänster"
+      ],
+      "Choose your billing": [
+        "Välj din fakturering"
+      ],
+      "More payment methods": [
+        "Fler betalningsmetoder"
+      ],
+      "today": [
+        "idag"
+      ],
+      "Use another payment method": [
+        "Använd annan betalningsmetod"
+      ],
+      "Your credit balance": [
+        "Ditt kreditsaldo"
+      ],
+      "Your plan": [
+        "Ditt paket"
       ]
     },
     "label": {
@@ -14103,6 +14371,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "What's included in your plan": [
+        "Vad som är inkluderat i ditt paket"
       ]
     },
     "Link (Scribe)": {
@@ -17453,6 +17724,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exkl. ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exkl. ${ taxRate } % moms: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkl. ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkl. ${ taxRate } % moms: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20617,6 +20900,24 @@
       ],
       "Billed yearly": [
         "Faktureras årligen"
+      ],
+      "${ discountPercent }% discount applied": [
+        "${ discountPercent } % rabatt tillämpad"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent } % rabatt"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratis"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Bunden till **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Bunden till organisationen **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Nästa faktureringsdatum"
       ]
     },
     "Subscription attribute": {

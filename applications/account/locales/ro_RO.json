@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Ignore": [
+        "Ignorare"
       ]
     },
     "action": {
@@ -1803,6 +1806,21 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "${ domains } custom email domain": [
+        "Domenii personale de e-mail: ${ domains }",
+        "Domenii personale de e-mail: ${ domains }",
+        "Domenii personale de e-mail: ${ domains }"
+      ],
+      "${ ips } dedicated VPN server": [
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
       ]
     },
     "Address action": {
@@ -3187,6 +3205,33 @@
         "Total pentru o lună",
         "Total pentru ${ n } luni",
         "Total pentru ${ n } de luni"
+      ],
+      "${ n } day": [
+        "${ n } zi",
+        "${ n } zile",
+        "${ n } de zile"
+      ],
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ years } year": [
+        "${ years } an",
+        "${ years } ani",
+        "${ years } de ani"
+      ],
+      "Forever access": [
+        "Acces permanent"
+      ],
+      "Started ${ formattedStartDate }": [
+        "A început ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Începe ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Începând de astăzi"
       ]
     },
     "Checkout summary": {
@@ -6079,6 +6124,188 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Contactul de urgență ${ name } vă solicită acces la cont."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } nu va mai putea să vă ajute să vă recuperați datele după o resetare a parolei."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** este acum un contact de recuperare. Acesta vă poate ajuta să vă recuperați datele după o resetare a parolei."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Dacă confirmă**, faceți clic pe **Aprobare recuperare**. Acest lucru le va debloca datele criptate."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Dacă nu v-au solicitat ajutorul**, este posibil ca altcineva să încerce să vă acceseze contul. În acest caz, ignorați această solicitare."
+      ],
+      "Access account": [
+        "Accesare cont"
+      ],
+      "Add recovery contact": [
+        "Adăugare contact de recuperare"
+      ],
+      "Approve recovery": [
+        "Aprobare recuperare"
+      ],
+      "Approved request": [
+        "Solicitare aprobată"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Solicitați ajutor de la un contact de recuperare. Acesta va primi un e-mail pentru a vă verifica solicitarea și a vă debloca datele."
+      ],
+      "Asking for help": [
+        "Solicitare ajutor"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Prin adăugarea persoanelor de încredere ca și contacte de recuperare, le vom putea trimite un e-mail pentru a vă ajuta dacă întâmpinați probleme la recuperarea datelor după o resetare de parolă. Puteți fi, de asemenea, un contact de recuperare pentru alții."
+      ],
+      "Cancel request": [
+        "Anulare solicitare"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Alegeți pe cineva în care aveți încredere să vă ajute să vă recuperați datele în cazul resetării parolei. Contactele de recuperare trebuie să aibă deja un cont ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Conectați-vă cu ei pentru a confirma că au nevoie de ajutor pentru a-și recupera datele."
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Recuperarea datelor a reușit. Acum puteți decripta datele existente și fișierele criptate."
+      ],
+      "Emergency contact enabled": [
+        "Contact de urgență activat"
+      ],
+      "Enable": [
+        "Activare"
+      ],
+      "For ${ email }": [
+        "Pentru ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Contactați-i acum pentru a vedea dacă vă pot ajuta și pentru a-i informa personal că dvs. încercați să vă deblocați datele."
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Rugați-i să-și verifice mesajele primite pentru un e-mail în care li se cere ajutorul pentru recuperarea datelor dvs. Mesajul primit conține o legătură web pe care trebuie să dea clic pentru a vă confirma solicitarea."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Anunțați-l pe ${ user } că sunteți persoana care încearcă să recupereze accesul."
+      ],
+      "Pending request": [
+        "Solicitare în așteptare"
+      ],
+      "People who have you as a recovery contact": [
+        "Persoanele care vă au ca și contact de recuperare"
+      ],
+      "Proceed anyway": [
+        "Continuare oricum"
+      ],
+      "Recover data": [
+        "Recuperare date"
+      ],
+      "Recover data now": [
+        "Recuperare date acum"
+      ],
+      "Recovery approved": [
+        "Recuperare aprobată"
+      ],
+      "Recovery contact added": [
+        "Contact de recuperare adăugat"
+      ],
+      "Recovery contact enabled": [
+        "Contact de recuperare activat"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Contact de recuperare pentru ${ user } eliminat"
+      ],
+      "Recovery contact removed": [
+        "Contact de recuperare eliminat"
+      ],
+      "Recovery contacts": [
+        "Contacte de recuperare"
+      ],
+      "Recovery request sent": [
+        "Solicitare de recuperare trimisă"
+      ],
+      "Remove recovery contact": [
+        "Eliminare contact de recuperare"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Eliminați contactele de recuperare pentru a continua"
+      ],
+      "Request access": [
+        "Solicitare acces"
+      ],
+      "Review recovery request": [
+        "Revizuire solicitare de recuperare"
+      ],
+      "See request": [
+        "Afișare solicitare"
+      ],
+      "Select recovery contact ${ name }": [
+        "Selectare contact de recuperare ${ name }"
+      ],
+      "Send email request": [
+        "Trimitere cerere de e-mail"
+      ],
+      "Send recovery request": [
+        "Trimite solicitare de recuperare"
+      ],
+      "Set account recovery": [
+        "Setare recuperare cont"
+      ],
+      "Stop being recovery contact": [
+        "Încetați să mai fiți contact de recuperare"
+      ],
+      "Stop being recovery contact?": [
+        "Încetați să mai fiți contact de recuperare?"
+      ],
+      "Stop being trusted contact": [
+        "Încetați să mai fiți contact de încredere"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Pentru a dezactiva această metodă de recuperare, eliminați toate contactele de recuperare."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Pentru a utiliza recuperarea prin contact de încredere, trebuie să aveți configurată o metodă de recuperare a contului."
+      ],
+      "Unable to recover data": [
+        "Datele nu se pot recupera"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "S-a primit o cerere de deblocare a datelor criptate ale contactului **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nu s-a putut verifica datele de recuperare. Doriți să continuați oricum?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Încă nu v-a desemnat nimeni ca persoană de contact pentru recuperarea datelor."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Ați atins numărul maxim de contacte de recuperare: ${ limit }",
+        "Ați atins numărul maxim de contacte de recuperare: ${ limit }",
+        "Ați atins numărul maxim de contacte de recuperare: ${ limit }"
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Nu veți mai putea ajuta la recuperarea accesului pentru contul lui ${ user } în cazul unei resetări de parolă."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Contactul de recuperare ${ name } v-a aprobat cererea de deblocare a datelor criptate."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Contactul de recuperare ${ name } solicită ajutor pentru recuperarea datelor sale."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Contactul de recuperare v-a ajutat să recuperați datele."
+      ],
+      "Your recovery contacts": [
+        "Contacte de recuperare"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Contactele de recuperare ar trebui să fie persoane pe care le cunoașteți și le puteți contacta cu ușurință."
       ]
     },
     "Empty group name": {
@@ -11982,6 +12209,27 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Cancel anytime.": [
+        "Anulați oricând."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Expiră la ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de suport, îl puteți folosi aici."
+      ],
+      "Total: ${ totalPrice }": [
+        "Total: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Ați economisit ${ discountAmount } cu o ofertă"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Datele de plată sunt criptate și securizate"
       ]
     },
     "info": {
@@ -13950,6 +14198,33 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } care se termină cu ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Titular cont: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Adăugare servicii suplimentare"
+      ],
+      "Choose your billing": [
+        "Alegeți-vă abonamentul"
+      ],
+      "More payment methods": [
+        "Mai multe metode de plată"
+      ],
+      "today": [
+        "astăzi"
+      ],
+      "Use another payment method": [
+        "Folosire altă metodă de plată"
+      ],
+      "Your credit balance": [
+        "Sold credite"
+      ],
+      "Your plan": [
+        "Plan actual"
       ]
     },
     "label": {
@@ -14335,6 +14610,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "What's included in your plan": [
+        "Ce include planul actual"
       ]
     },
     "Link (Scribe)": {
@@ -17760,6 +18038,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclus ${ taxRate }% taxe: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% taxe: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -21006,6 +21296,36 @@
       ],
       "Billed yearly": [
         "Facturat anual"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Reducere de ${ discountPercent }% aplicată"
+      ],
+      "${ discountPercent }% off": [
+        "Reducere ${ discountPercent }%"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratuit"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Legat de **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Legat de organizația **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Data facturii următoare"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Pentru a continua abonamentul după încheierea perioadei de probare gratuită, adăugați o metodă de plată înainte de ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "Total datorat"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Total datorat la ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Total de plată astăzi"
       ]
     },
     "Subscription attribute": {

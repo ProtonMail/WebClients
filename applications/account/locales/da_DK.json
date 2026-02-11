@@ -1697,6 +1697,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Ignore": [
+        "Ignorer"
       ]
     },
     "action": {
@@ -1789,6 +1792,18 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } brugerdefineret e-maildomæne",
+        "${ domains } brugerdefinerede e-maildomæner"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikeret VPN-server",
+        "${ ips } dedikerede VPN-servere"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licens",
+        "${ seats } ${ LUMO_APP_NAME } AI licenser"
       ]
     },
     "Address action": {
@@ -3163,6 +3178,30 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dage"
+      ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
+      ],
+      "Forever access": [
+        "Evig adgang"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Startet ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Starter ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Starter i dag"
       ]
     },
     "Checkout summary": {
@@ -6040,6 +6079,150 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Din nødkontakt ${ name } anmoder om adgang til din konto."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } vil ikke længere kunne hjælpe dig med at gendanne dine data efter en nulstilling af adgangskoden."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** er nu din gendannelseskontakt. De kan hjælpe dig med at gendanne dine data efter en nulstilling af adgangskoden."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Hvis de bekræfter**, klik **Godkend gendannelse**. Dette vil låse deres krypterede data op."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Hvis de ikke bad om din hjælp**, er det muligt, at en anden forsøger at få adgang til deres konto. Ignorer i så fald denne anmodning."
+      ],
+      "Add recovery contact": [
+        "Tilføj gendannelseskontakt"
+      ],
+      "Approve recovery": [
+        "Godkend gendannelse"
+      ],
+      "Approved request": [
+        "Godkendt anmodning"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Få hjælp fra en gendannelseskontakt. De modtager en e-mail for at bekræfte din anmodning og låse dine data op."
+      ],
+      "Asking for help": [
+        "Anmoder om hjælp"
+      ],
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Data gendannet. Du kan du dekryptere dine eksisterende data og krypterede filer."
+      ],
+      "Emergency contact enabled": [
+        "Nødkontakt aktiveret"
+      ],
+      "Enable": [
+        "Aktivér"
+      ],
+      "For ${ email }": [
+        "Til ${ email }"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Lad ${ user } vide, at det virkelig er dig, der forsøger at genvinde adgang."
+      ],
+      "Pending request": [
+        "Afventende anmodning"
+      ],
+      "People who have you as a recovery contact": [
+        "Personer som har dig som gendannelseskontakt"
+      ],
+      "Proceed anyway": [
+        "Fortsæt alligevel"
+      ],
+      "Recover data": [
+        "Gendan data"
+      ],
+      "Recovery approved": [
+        "Genoprettelse godkendt"
+      ],
+      "Recovery contact added": [
+        "Gendannelseskontakt tilføjet"
+      ],
+      "Recovery contact enabled": [
+        "Gendannelseskontakt aktiveret"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Gendannelseskontakt for ${ user } fjernet"
+      ],
+      "Recovery contact removed": [
+        "Gendannelseskontakt fjernet"
+      ],
+      "Recovery contacts": [
+        "Gendannelseskontakter"
+      ],
+      "Recovery request sent": [
+        "Anmodning om gendannelse sendt"
+      ],
+      "Remove recovery contact": [
+        "Fjern gendannelseskontakt"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Fjern din gendannelseskontakter for at fortsætte"
+      ],
+      "Request access": [
+        "Anmod om adgang"
+      ],
+      "Review recovery request": [
+        "Gennemgå anmodning om gendannelse"
+      ],
+      "See request": [
+        "Se anmodning"
+      ],
+      "Select recovery contact ${ name }": [
+        "Vælg gendannelseskontakt ${ name }"
+      ],
+      "Send email request": [
+        "Send e-mail anmodning"
+      ],
+      "Set account recovery": [
+        "Indstil kontogendannelse"
+      ],
+      "Stop being recovery contact": [
+        "Stop med at være gendannelseskontakt"
+      ],
+      "Stop being recovery contact?": [
+        "Stop med at være gendannelseskontakt?"
+      ],
+      "Stop being trusted contact": [
+        "Stop med at være betroet kontakt"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
+      ],
+      "Unable to recover data": [
+        "Kan ikke gendanne data"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Vi har modtaget en anmodning om at låse de krypterede data op for din kontakt **${ user }**."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du er endnu ikke blevet udpeget som en kontaktperson for gendannelse for nogen."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Du vil ikke længere kunne hjælpe med at gendanne adgangen til kontoen for ${ user } i tilfælde af en nulstillet adgangskode."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Din gendannelseskontakt ${ name } beder om hjælp til at gendanne deres data."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Din gendannelseskontakt har hjulpet dig med at gendanne data."
+      ],
+      "Your recovery contacts": [
+        "Dine gendannelseskontakter"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Dine gendannelseskontakter bør være personer, du kender og nemt kan komme i kontakt med."
       ]
     },
     "Empty group name": {
@@ -11844,6 +12027,27 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Cancel anytime.": [
+        "Opsig når som helst."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Udløber den ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
+      ],
+      "Total: ${ totalPrice }": [
+        "I alt: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Du sparede ${ discountAmount } med et tilbud"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Dine betalingsoplysninger er krypteret og sikre"
       ]
     },
     "info": {
@@ -13804,6 +14008,33 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } slutter med ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Kontoejer: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Tilføj ekstra tjenester"
+      ],
+      "Choose your billing": [
+        "Vælg din fakturering"
+      ],
+      "More payment methods": [
+        "Flere betalingsmetoder"
+      ],
+      "today": [
+        "i dag"
+      ],
+      "Use another payment method": [
+        "Benyt en anden betalingsmetode"
+      ],
+      "Your credit balance": [
+        "Din kreditbalance"
+      ],
+      "Your plan": [
+        "Dit abonnement"
       ]
     },
     "label": {
@@ -14188,6 +14419,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "What's included in your plan": [
+        "Inkluderet i dit abonnement"
       ]
     },
     "Link (Scribe)": {
@@ -17555,6 +17789,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Eksklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Eksklusiv ${ taxRate }% moms: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkl. ${ taxRate }% moms: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20752,6 +20998,36 @@
       ],
       "Billed yearly": [
         "Faktureres årligt"
+      ],
+      "${ discountPercent }% discount applied": [
+        "${ discountPercent }% rabat anvendt"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% rabat"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratis"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Bundet til **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Bundet til organisation **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Næste faktureringsdato"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "For at fortsætte dit abonnement efter prøveperioden udløber, skal du tilføje en betalingsmetode inden ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "I alt"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "I alt til betaling den ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "I alt til betaling nu"
       ]
     },
     "Subscription attribute": {

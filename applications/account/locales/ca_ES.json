@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Ignore": [
+        "Ignoreu-ho"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "${ domains } custom email domain": [
+        "Domini de correu electrònic personalitzat ${ domains }",
+        "dominis de correu electrònic personalitzat ${ domains }"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicat",
+        "${ ips } servidors VPN dedicats"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
+        "${ seats } llicències d'IA ${ LUMO_APP_NAME }"
       ]
     },
     "Address action": {
@@ -3169,6 +3184,30 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dies"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ years } year": [
+        "${ years } any",
+        "${ years } anys"
+      ],
+      "Forever access": [
+        "Accés per sempre"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Va començar el ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Comença el ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Comença avui"
       ]
     },
     "Checkout summary": {
@@ -6046,6 +6085,187 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "El contacte d'emergència ${ name } està sol·licitant accés al vostre compte."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } ja no us podrà ajudar a recuperar les dades després d'un restabliment de contrasenya."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** és ara el vostre contacte de recuperació. Us pot ajudar a recuperar les vostres dades després de restablir la contrasenya."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Si ho confirmen**, feu clic a **Aprovar la recuperació**. Això desbloquejarà les seves dades xifrades."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Si no han demanat la vostra ajuda**, és possible que algú altre estigui intentant accedir al seu compte. En aquest cas, ignoreu aquesta sol·licitud."
+      ],
+      "Access account": [
+        "Accediu al compte"
+      ],
+      "Add recovery contact": [
+        "Afegiu un contacte de recuperació"
+      ],
+      "Approve recovery": [
+        "Aproveu la recuperació"
+      ],
+      "Approved request": [
+        "S'ha aprovat la sol·licitud"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Demaneu ajuda a un contacte de recuperació. Rebrà un correu electrònic per verificar la vostra sol·licitud i desbloquejar-vos les dades."
+      ],
+      "Asking for help": [
+        "Demanar ajuda"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "En afegir persones de confiança com a contactes de recuperació, podrem enviar-los un correu electrònic per ajudar-vos si teniu problemes per recuperar les vostres dades després d'un restabliment de contrasenya. També podeu ser un contacte de recuperació per a d'altres."
+      ],
+      "Cancel request": [
+        "Cancel·leu la sol·licitud"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Trieu algú de confiança perquè us ajudi a recuperar les dades en cas de restabliment de contrasenya. Els contactes de recuperació han de tenir un compte de ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Poseu-vos-hi en contacte per confirmar que necessiten ajuda per recuperar les seves dades."
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Les dades s'han recuperat correctament. Ara podreu desxifrar les vostres dades i els fitxers xifrats que tingueu."
+      ],
+      "Emergency contact enabled": [
+        "S'ha habilitat el contacte d'emergència"
+      ],
+      "Enable": [
+        "Habiliteu-ho"
+      ],
+      "For ${ email }": [
+        "Per a ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Poseu-vos-hi en contacte ara per veure si us poden ajudar i per fer-los saber personalment que sou vós qui intenteu desbloquejar les dades."
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Demaneu-los que revisin la bústia d'entrada per buscar un correu on se'ls demani ajuda per recuperar les vostres dades. El correu conté un enllaç on han de fer clic per verificar la vostra sol·licitud."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Feu saber a ${ user } que sou realment vós qui intenteu recuperar l'accés."
+      ],
+      "Pending request": [
+        "Sol·licitud pendent"
+      ],
+      "People who have you as a recovery contact": [
+        "Persones que us tenen com a contacte de recuperació"
+      ],
+      "Proceed anyway": [
+        "Continueu igualment"
+      ],
+      "Recover data": [
+        "Recupereu les dades"
+      ],
+      "Recover data now": [
+        "Recupereu les dades ara"
+      ],
+      "Recovery approved": [
+        "S'ha aprovat la recuperació"
+      ],
+      "Recovery contact added": [
+        "S'ha afegit el contacte de recuperació"
+      ],
+      "Recovery contact enabled": [
+        "S'ha habilitat el contacte de recuperació"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "S'ha suprimit el contacte de recuperació de ${ user }"
+      ],
+      "Recovery contact removed": [
+        "S'ha esborrat el contacte de recuperació"
+      ],
+      "Recovery contacts": [
+        "Contactes de recuperació"
+      ],
+      "Recovery request sent": [
+        "S'ha enviat la sol·licitud de recuperació"
+      ],
+      "Remove recovery contact": [
+        "Esborreu el contacte de recuperació"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Esborreu els vostres contactes de recuperació per continuar"
+      ],
+      "Request access": [
+        "Sol·liciteu accés"
+      ],
+      "Review recovery request": [
+        "Reviseu la sol·licitud de recuperació"
+      ],
+      "See request": [
+        "Vegeu la sol·licitud"
+      ],
+      "Select recovery contact ${ name }": [
+        "Seleccioneu el contacte de recuperació ${ name }."
+      ],
+      "Send email request": [
+        "Enviar sol·licitud de correu electrònic"
+      ],
+      "Send recovery request": [
+        "Envieu la sol·licitud de recuperació"
+      ],
+      "Set account recovery": [
+        "Configureu la recuperació del compte"
+      ],
+      "Stop being recovery contact": [
+        "Deixeu de ser contacte de recuperació."
+      ],
+      "Stop being recovery contact?": [
+        "Voleu deixar de ser contacte de recuperació?"
+      ],
+      "Stop being trusted contact": [
+        "Deixeu de ser un contacte de confiança"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Per desactivar aquest mètode de recuperació, esborreu tots els vostres contactes de recuperació."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Per a utilitzar la recuperació mitjançant contactes de confiança, heu de tenir configurat un mètode de recuperació del compte."
+      ],
+      "Unable to recover data": [
+        "No s'han pogut recuperar les dades"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Hem rebut una sol·licitud per desbloquejar les dades xifrades del vostre contacte **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "No s'han pogut verificar les dades de recuperació. Voleu continuar igualment?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Encara no us han designat com a contacte de recuperació de ningú."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Heu arribat al màxim d'${ limit } contacte de recuperació.",
+        "Heu arribat al màxim de ${ limit } contactes de recuperació."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Ja no podreu ajudar a recuperar l'accés al compte de ${ user } en cas de restabliment de contrasenya."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "El contacte de recuperació ${ name } us ha aprovat la sol·licitud per desbloquejar les vostres dades xifrades."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "El vostre contacte de recuperació ${ name } demana ajuda per recuperar les seves dades."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "El vostre contacte de recuperació us ha ajudat a recuperar les dades."
+      ],
+      "Your recovery contacts": [
+        "Els vostres contactes de recuperació"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Els vostres contactes de recuperació han de ser persones que conegueu i amb qui us pugueu posar en contacte fàcilment."
       ]
     },
     "Empty group name": {
@@ -11854,6 +12074,27 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Cancel anytime.": [
+        "Cancel·leu-ho en qualsevol moment."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Caduca el ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si heu adquirit un codi de regal o n'heu rebut un de l'equip de suport, el podeu introduir aquí."
+      ],
+      "Total: ${ totalPrice }": [
+        "Total: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Amb una oferta heu estalviat ${ discountAmount }"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Les vostres dades de pagament estan xifrades i són segures"
       ]
     },
     "info": {
@@ -13814,6 +14055,33 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } que acaba en ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Titular del compte: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Afegiu-hi serveis addicionals"
+      ],
+      "Choose your billing": [
+        "Trieu la vostra modalitat de facturació"
+      ],
+      "More payment methods": [
+        "Més mètodes de pagament"
+      ],
+      "today": [
+        "avui"
+      ],
+      "Use another payment method": [
+        "Utilitzeu un altre mètode de pagament"
+      ],
+      "Your credit balance": [
+        "El vostre saldo de crèdit"
+      ],
+      "Your plan": [
+        "El vostre pla"
       ]
     },
     "label": {
@@ -14198,6 +14466,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "What's included in your plan": [
+        "Què inclou el vostre pla"
       ]
     },
     "Link (Scribe)": {
@@ -17565,6 +17836,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "No inclou ${ taxRate }% de ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "No inclou ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclou ${ taxRate }% de ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20765,6 +21048,36 @@
       ],
       "Billed yearly": [
         "Facturació anual"
+      ],
+      "${ discountPercent }% discount applied": [
+        "S'ha aplicat un descompte del ${ discountPercent }%"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% de descompte"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratuït"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Vinculat a **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Vinculat a l'organització **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Pròxima data de facturació"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Per continuar amb la subscripció quan acabi la prova gratuïta, afegiu-hi un mètode de pagament abans del ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "Total a pagar"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Total a pagar el ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Total a pagar avui"
       ]
     },
     "Subscription attribute": {

@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Ignore": [
+        "Ignorieren"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } benutzerdefinierte E-Mail-Domain",
+        "${ domains } benutzerdefinierte E-Mail-Domains"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedizierter VPN-Server",
+        "${ ips } dedizierte VPN-Server"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenzen"
       ]
     },
     "Address action": {
@@ -3169,6 +3184,30 @@
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
+      ],
+      "${ n } day": [
+        "${ n } Tag",
+        "${ n } Tage"
+      ],
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "${ years } year": [
+        "${ years } Jahr",
+        "${ years } Jahre"
+      ],
+      "Forever access": [
+        "Dauerhafter Zugriff"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Begonnen am ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Beginnend am ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Heute beginnend"
       ]
     },
     "Checkout summary": {
@@ -6046,6 +6085,187 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Dein Notfallkontakt ${ name } bittet um Zugriff auf dein Konto."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } wird dir nach einem Zurücksetzen des Passworts nicht mehr helfen können, deine Daten wiederherzustellen."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** ist jetzt dein Wiederherstellungskontakt. Er kann dir helfen, deine Daten nach einem Zurücksetzen des Passworts wiederherzustellen."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Wenn sie bestätigen**, klicke auf **Wiederherstellung genehmigen**. Dies entsperrt deren verschlüsselte Daten."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Wenn sie nicht um Hilfe gebeten haben**, ist es möglich, dass jemand anderes versucht, auf ihr Konto zuzugreifen. Ignoriere diese Anfrage in diesem Fall."
+      ],
+      "Access account": [
+        "Konto zugreifen"
+      ],
+      "Add recovery contact": [
+        "Wiederherstellungskontakt hinzufügen"
+      ],
+      "Approve recovery": [
+        "Wiederherstellung genehmigen"
+      ],
+      "Approved request": [
+        "Genehmigte Anfrage"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Bitte einen Wiederherstellungskontakt um Hilfe. Er erhält eine E-Mail, um deine Anfrage zu überprüfen und deine Daten freizuschalten."
+      ],
+      "Asking for help": [
+        "Um Hilfe bitten"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Indem du Personen, denen du vertraust, als Wiederherstellungskontakte hinzufügst, können wir ihnen eine E-Mail senden, um dir zu helfen, falls du Probleme beim Wiederherstellen deiner Daten nach einem Passwort-Reset hast. Du kannst auch ein Wiederherstellungskontakt für andere sein."
+      ],
+      "Cancel request": [
+        "Anfrage abbrechen"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Wähle eine Person deines Vertrauens, die dir bei der Wiederherstellung deiner Daten im Falle eines Passwort-Resets hilft. Wiederherstellungskontakte müssen bereits ein ${ BRAND_NAME }-Konto haben."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Setze dich mit ihnen in Verbindung, um zu bestätigen, dass sie Hilfe bei der Wiederherstellung ihrer Daten benötigen."
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Daten erfolgreich wiederhergestellt. Du kannst jetzt deine vorhandenen Daten und verschlüsselten Dateien entschlüsseln."
+      ],
+      "Emergency contact enabled": [
+        "Notfallkontakt aktiviert"
+      ],
+      "Enable": [
+        "Aktivieren"
+      ],
+      "For ${ email }": [
+        "Für ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Melde dich jetzt bei ihnen, um zu sehen, ob sie helfen können, und um ihnen persönlich mitzuteilen, dass du es bist, der versucht, auf deine Daten zuzugreifen."
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Lass sie ihren Posteingang nach einer E-Mail durchsuchen, in der um ihre Hilfe bei der Wiederherstellung deiner Daten gebeten wird. Die E-Mail enthält einen Link, auf den sie klicken müssen, um deine Anfrage zu bestätigen."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Lass ${ user } wissen, dass es wirklich du bist, der versucht, den Zugriff wiederherzustellen."
+      ],
+      "Pending request": [
+        "Ausstehende Anfrage"
+      ],
+      "People who have you as a recovery contact": [
+        "Personen, die dich als Wiederherstellungskontakt haben"
+      ],
+      "Proceed anyway": [
+        "Trotzdem fortfahren"
+      ],
+      "Recover data": [
+        "Daten wiederherstellen"
+      ],
+      "Recover data now": [
+        "Daten jetzt wiederherstellen"
+      ],
+      "Recovery approved": [
+        "Wiederherstellung genehmigt"
+      ],
+      "Recovery contact added": [
+        "Wiederherstellungskontakt hinzugefügt"
+      ],
+      "Recovery contact enabled": [
+        "Wiederherstellungskontakt aktiviert"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Wiederherstellungskontakt für ${ user } entfernt"
+      ],
+      "Recovery contact removed": [
+        "Wiederherstellungskontakt entfernt"
+      ],
+      "Recovery contacts": [
+        "Wiederherstellungskontakte"
+      ],
+      "Recovery request sent": [
+        "Wiederherstellungsanfrage gesendet"
+      ],
+      "Remove recovery contact": [
+        "Wiederherstellungskontakt entfernen"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Entferne deine Wiederherstellungskontakte, um fortzufahren."
+      ],
+      "Request access": [
+        "Zugriff anfordern"
+      ],
+      "Review recovery request": [
+        "Wiederherstellungsanfrage prüfen"
+      ],
+      "See request": [
+        "Anfrage ansehen"
+      ],
+      "Select recovery contact ${ name }": [
+        "Wiederherstellungskontakt ${ name } auswählen"
+      ],
+      "Send email request": [
+        "E-Mail-Anfrage senden"
+      ],
+      "Send recovery request": [
+        "Wiederherstellungsanfrage senden"
+      ],
+      "Set account recovery": [
+        "Konto-Wiederherstellung festlegen"
+      ],
+      "Stop being recovery contact": [
+        "Kein Wiederherstellungskontakt mehr sein"
+      ],
+      "Stop being recovery contact?": [
+        "Kein Wiederherstellungskontakt mehr sein?"
+      ],
+      "Stop being trusted contact": [
+        "Vertrauenswürdiger Kontakt zu sein beenden"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Um diese Wiederherstellungsmethode zu deaktivieren, entferne alle deine Wiederherstellungskontakte."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Um die Wiederherstellung durch vertrauenswürdige Kontakte zu nutzen, musst du eine Methode zur Kontowiederherstellung eingerichtet haben."
+      ],
+      "Unable to recover data": [
+        "Daten können nicht wiederhergestellt werden"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Wir haben eine Anfrage erhalten, die verschlüsselten Daten deines Kontakts **${ user }** zu entsperren."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Wir konnten die Wiederherstellungsdaten nicht überprüfen. Trotzdem fortfahren?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Du wurdest noch für niemanden als Wiederherstellungskontakt bestimmt."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Du hast die maximale Anzahl von ${ limit } Wiederherstellungskontakt erreicht.",
+        "Du hast das Maximum von ${ limit } Wiederherstellungskontakten erreicht."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Du wirst nicht mehr in der Lage sein zu helfen, die Wiederherstellung des Zugriffs auf das Konto von ${ user } im Falle eines Passwort-Resets durchzuführen."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Dein Wiederherstellungskontakt ${ name } hat deine Anfrage zum Entsperren deiner verschlüsselten Daten genehmigt."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Dein Wiederherstellungskontakt ${ name } bittet um Hilfe, um seine Daten wiederherzustellen."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Dein Wiederherstellungskontakt hat dir geholfen, Daten wiederherzustellen."
+      ],
+      "Your recovery contacts": [
+        "Deine Wiederherstellungskontakte"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Deine Wiederherstellungskontakte sollten Personen sein, die du kennst und die du leicht erreichen kannst."
       ]
     },
     "Empty group name": {
@@ -11854,6 +12074,27 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Cancel anytime.": [
+        "Jederzeit kündbar."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Gültig bis ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Wenn du einen Geschenkgutschein gekauft oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Total: ${ totalPrice }": [
+        "Total: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Du hast mit diesem Angebot ${ discountAmount } gespart"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Deine Zahlungsdaten sind verschlüsselt und geschützt"
       ]
     },
     "info": {
@@ -13814,6 +14055,33 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } endend auf ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Konteninhaber: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Zusätzliche Dienste hinzufügen"
+      ],
+      "Choose your billing": [
+        "Deine Abrechnung wählen"
+      ],
+      "More payment methods": [
+        "Weitere Zahlungsmethoden"
+      ],
+      "today": [
+        "Heute"
+      ],
+      "Use another payment method": [
+        "Eine andere Zahlungsmethode verwenden"
+      ],
+      "Your credit balance": [
+        "Dein Guthaben"
+      ],
+      "Your plan": [
+        "Dein Abonnement"
       ]
     },
     "label": {
@@ -14198,6 +14466,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "What's included in your plan": [
+        "Dies ist in deinem Abonnement enthalten"
       ]
     },
     "Link (Scribe)": {
@@ -17565,6 +17836,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ohne ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ohne ${ taxRate }% Steuern: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkl. ${ taxRate }% Steuern: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20762,6 +21045,36 @@
       ],
       "Billed yearly": [
         "Wird jährlich abgerechnet"
+      ],
+      "${ discountPercent }% discount applied": [
+        "${ discountPercent }% Rabatt angewendet"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% Rabatt"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } kostenlos"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Verknüpft mit **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "An Organisation **${ nameToDisplay }** gebunden"
+      ],
+      "Next billing date": [
+        "Nächster Abrechnungstermin"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Um das Abonnement nach Ablauf der kostenlosen Testphase fortzusetzen, füge bitte vor dem ${ props.periodEnd } eine Zahlungsmethode hinzu."
+      ],
+      "Total due": [
+        "Total fällig"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Am ${ formattedPeriodEnd } fälliger Gesamtbetrag"
+      ],
+      "Total due today": [
+        "Heute fälliger Gesamtbetrag"
       ]
     },
     "Subscription attribute": {

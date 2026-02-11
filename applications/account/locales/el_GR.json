@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Ignore": [
+        "Αγνόηση"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ domains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } αποκλειστικός διακομιστής VPN",
+        "${ ips } αποκλειστικοί διακομιστές VPN"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
+        "${ seats } ${ LUMO_APP_NAME } άδειες χρήσης AI"
       ]
     },
     "Address action": {
@@ -3169,6 +3184,30 @@
       "Total for ${ n } month": [
         "Σύνολο για ${ n } μήνα",
         "Σύνολο για ${ n } μήνες"
+      ],
+      "${ n } day": [
+        "${ n } ημέρα",
+        "${ n } ημέρες"
+      ],
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ years } year": [
+        "${ years } έτος",
+        "${ years } έτη"
+      ],
+      "Forever access": [
+        "Πρόσβαση για πάντα"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Ξεκίνησε στις ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Ξεκινά στις ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Ξεκινά σήμερα"
       ]
     },
     "Checkout summary": {
@@ -6046,6 +6085,187 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Η επαφή έκτακτης ανάγκης σας ${ name } ζητά πρόσβαση στον λογαριασμό σας."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "Ο χρήστης ${ user } δε θα μπορεί πλέον να σας βοηθήσει να ανακτήσετε τα δεδομένα σας μετά από επαναφορά κωδικού πρόσβασης."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** είναι πλέον η επαφή ανάκτησής σας. Μπορεί να σας βοηθήσει να ανακτήσετε τα δεδομένα σας μετά από επαναφορά κωδικού πρόσβασης."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Εάν επιβεβαιώσουν**, κάντε κλικ στο **Έγκριση ανάκτησης**. Αυτό θα ξεκλειδώσει τα κρυπτογραφημένα δεδομένα τους."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Εάν δεν ζήτησαν τη βοήθειά σας**, είναι πιθανό κάποιος άλλος να προσπαθεί να αποκτήσει πρόσβαση στον λογαριασμό τους. Σε αυτή την περίπτωση, αγνοήστε αυτό το αίτημα."
+      ],
+      "Access account": [
+        "Πρόσβαση στον λογαριασμό"
+      ],
+      "Add recovery contact": [
+        "Προσθήκη επαφής ανάκτησης"
+      ],
+      "Approve recovery": [
+        "Έγκριση ανάκτησης"
+      ],
+      "Approved request": [
+        "Έγκριση αιτήματος"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Ζητήστε βοήθεια από μία επαφή ανάκτησης. Θα λάβουν ένα email για να επαληθεύσουν το αίτημά σας και να ξεκλειδώσουν τα δεδομένα σας."
+      ],
+      "Asking for help": [
+        "Ζήτηση βοήθειας"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Προσθέτοντας άτομα που εμπιστεύεστε ως επαφές ανάκτησης, θα μπορούμε να τους στείλουμε ένα email για να σας βοηθήσουν σε περίπτωση που αντιμετωπίζετε προβλήματα με την ανάκτηση των δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης. Μπορείτε επίσης να γίνετε επαφή ανάκτησης για άλλους."
+      ],
+      "Cancel request": [
+        "Ακύρωση αιτήματος"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Επιλέξτε κάποιον που εμπιστεύεστε για να σας βοηθήσει να ανακτήσετε τα δεδομένα σας σε περίπτωση επαναφοράς του κωδικού πρόσβασης. Οι επαφές ανάκτησης πρέπει να διαθέτουν ήδη λογαριασμό ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Επικοινωνήστε μαζί τους για να επιβεβαιώσετε ότι χρειάζονται βοήθεια για την ανάκτηση των δεδομένων τους."
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Τα δεδομένα ανακτήθηκαν με επιτυχία. Τώρα μπορείτε να αποκρυπτογραφήσετε τα υπάρχοντα δεδομένα και τα κρυπτογραφημένα αρχεία σας."
+      ],
+      "Emergency contact enabled": [
+        "Ενεργοποιημένη επαφής ανάκτησης"
+      ],
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
+      "For ${ email }": [
+        "Για ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Επικοινωνήστε μαζί τους τώρα για να δείτε αν μπορούν να σας βοηθήσουν και για να τους ενημερώσετε προσωπικά ότι είστε εσείς που προσπαθείτε να ξεκλειδώσετε τα δεδομένα σας."
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Ζητήστε τους να ελέγξουν τα εισερχόμενά τους για ένα μήνυμα που τους ζητά βοήθεια για την ανάκτηση των δεδομένων σας. Το μήνυμα περιέχει έναν σύνδεσμο στον οποίο πρέπει να κάνουν κλικ για να επαληθεύσουν το αίτημά σας."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Ενημερώστε τον ${ user } ότι είστε πραγματικά εσείς που προσπαθείτε να ανακτήσετε την πρόσβαση."
+      ],
+      "Pending request": [
+        "Εκκρεμές αίτημα"
+      ],
+      "People who have you as a recovery contact": [
+        "Άτομα που σας έχουν ως επαφή για την ανάκτηση"
+      ],
+      "Proceed anyway": [
+        "Συνέχεια παρ’ όλα αυτά"
+      ],
+      "Recover data": [
+        "Ανάκτηση δεδομένων"
+      ],
+      "Recover data now": [
+        "Ανάκτηση δεδομένων τώρα"
+      ],
+      "Recovery approved": [
+        "Η ανάκτηση εγκρίθηκε"
+      ],
+      "Recovery contact added": [
+        "Η επαφή ανάκτησης προστέθηκε"
+      ],
+      "Recovery contact enabled": [
+        "Η επαφή ανάκτησης ενεργοποιήθηκε"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Η επαφή ανάκτησης για το ${ user } καταργήθηκε"
+      ],
+      "Recovery contact removed": [
+        "Η επαφή ανάκτησης αφαιρέθηκε"
+      ],
+      "Recovery contacts": [
+        "Επαφές ανάκτησης"
+      ],
+      "Recovery request sent": [
+        "Το αίτημα ανάκτησης αποσταλεί"
+      ],
+      "Remove recovery contact": [
+        "Διαγραφή επαφής ανάκτησης"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Αφαιρέστε τις επαφές ανάκτησής σας για να συνεχίσετε"
+      ],
+      "Request access": [
+        "Αίτημα πρόσβασης"
+      ],
+      "Review recovery request": [
+        "Αναθεώρηση αιτήματος ανάκτησης"
+      ],
+      "See request": [
+        "Προβολή αιτήματος"
+      ],
+      "Select recovery contact ${ name }": [
+        "Επιλέξτε επαφή ανάκτησης ${ name }"
+      ],
+      "Send email request": [
+        "Αποστολή αιτήματος μέσω email"
+      ],
+      "Send recovery request": [
+        "Αποστολή αιτήματος ανάκτησης"
+      ],
+      "Set account recovery": [
+        "Ρύθμιση ανάκτησης λογαριασμού"
+      ],
+      "Stop being recovery contact": [
+        "Διακοπή ως επαφή ανάκτησης"
+      ],
+      "Stop being recovery contact?": [
+        "Διακοπή ως επαφή ανάκτησης;"
+      ],
+      "Stop being trusted contact": [
+        "Διακοπή ως αξιόπιστη επαφή"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Για να απενεργοποιήσετε αυτή τη μέθοδο ανάκτησης, διαγράψτε όλες τις επαφές ανάκτησης σας."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Για να χρησιμοποιήσετε την ανάκτηση μέσω αξιόπιστου επαφής, πρέπει να έχετε ορίσει μια μέθοδο ανάκτησης λογαριασμού."
+      ],
+      "Unable to recover data": [
+        "Δεν είναι δυνατή η ανάκτηση των δεδομένων"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Λάβαμε αίτημα για το ξεκλείδωμα των κρυπτογραφημένων δεδομένων της επαφής σας **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Δεν μπορέσαμε να επαληθεύσουμε τα δεδομένα ανάκτησης. Θέλετε να συνεχίσετε;"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Δεν έχετε οριστεί ακόμη ως επαφή ανάκτησης για κανέναν."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφής ανάκτησης.",
+        "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφών ανάκτησης."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Δε θα μπορείτε πλέον να βοηθήσετε στην ανάκτηση της πρόσβασης στον λογαριασμό του ${ user } σε περίπτωση επαναφοράς κωδικού πρόσβασης."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Η επαφή ανάκτησής σας ${ name } ενέκρινε το αίτημά σας για ξεκλείδωμα των κρυπτογραφημένων δεδομένων σας."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Η επαφή ανάκτησης σας, ${ name }, ζητά βοήθεια για την ανάκτηση των δεδομένων του."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Η επαφή ανάκτησής σας, σας βοήθησε να ανακτήσετε τα δεδομένα."
+      ],
+      "Your recovery contacts": [
+        "Οι επαφές σας ανάκτησης"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Οι επαφές σας για την ανάκτηση πρέπει να είναι άτομα που γνωρίζετε και με τα οποία μπορείτε να επικοινωνήσετε εύκολα."
       ]
     },
     "Empty group name": {
@@ -11854,6 +12074,27 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Cancel anytime.": [
+        "Ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Λήγει τον ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Total: ${ totalPrice }": [
+        "Σύνολο: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Εξοικονομήσατε ${ discountAmount } με μια προσφορά"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Τα στοιχεία πληρωμής σας είναι κρυπτογραφημένα και ασφαλή"
       ]
     },
     "info": {
@@ -13814,6 +14055,33 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } που τελειώνει με ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Κάτοχος λογαριασμού: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Προσθέστε επιπλέον υπηρεσίες"
+      ],
+      "Choose your billing": [
+        "Επιλέξτε τον τρόπο χρέωσης σας"
+      ],
+      "More payment methods": [
+        "Περισσότεροι τρόποι πληρωμής"
+      ],
+      "today": [
+        "σήμερα"
+      ],
+      "Use another payment method": [
+        "Χρησιμοποιήστε άλλη μέθοδο πληρωμής"
+      ],
+      "Your credit balance": [
+        "Το πιστωτικό σας υπόλοιπο"
+      ],
+      "Your plan": [
+        "Το πλάνο σας"
       ]
     },
     "label": {
@@ -14198,6 +14466,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "What's included in your plan": [
+        "Τι περιλαμβάνεται στο πλάνο σας"
       ]
     },
     "Link (Scribe)": {
@@ -17565,6 +17836,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20762,6 +21045,36 @@
       ],
       "Billed yearly": [
         "Ετήσια χρέωση"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Εφαρμόστηκε έκπτωση ${ discountPercent }%"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% έκπτωση"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } δωρεάν"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Δεσμευμένο στο **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Συνδεδεμένο με την οργάνωση **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Επόμενη ημερομηνία χρέωσης"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Για να συνεχίσετε τη συνδρομή σας μετά τη λήξη της δωρεάν δοκιμαστικής περιόδου, προσθέστε έναν τρόπο πληρωμής πριν από τις ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "Συνολική οφειλή"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Συνολικό οφειλόμενο ποσό στις ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Συνολικό οφειλόμενο ποσό σήμερα"
       ]
     },
     "Subscription attribute": {
