@@ -24,8 +24,8 @@ im.$media-expressions: $media-expressions;
 		}
 
 		@include im.media('>large') {
-			inline-size: 3.5rem !important;
-			block-size: 3.5rem !important;
+			inline-size: 3.25rem !important;
+			block-size: 3.25rem !important;
 		}
 	}
 }

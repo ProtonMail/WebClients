@@ -33,6 +33,7 @@ export const PreJoinDetails = ({
     instantMeeting,
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
+
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
     const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
@@ -51,69 +52,74 @@ export const PreJoinDetails = ({
 
     return (
         <div
-            className="pre-join-details-container flex flex-nowrap flex-column mt-0 gap-2 lg:gap-4 w-full md:w-custom flex-none md:flex-1 lg:flex-none md:justify-center md:items-center"
-            style={{ '--md-w-custom': '22.625rem' }}
+            className="pre-join-details-container flex flex-nowrap flex-column mt-0 gap-2 lg:py-4 lg:gap-4 w-full md:w-custom flex-none md:flex-1 lg:flex-none md:justify-center md:items-center"
+            style={{ '--md-w-custom': '25rem' }}
         >
-            <div className="text-semibold text-center hidden md:block text-3xl xl:h2">{title}</div>
-            <div className="text-center color-weak hidden md:block">{subtitle}</div>
-            <InputFieldStackedGroup classname="mt-2 mb-2 md:mt-4 md:mb-4 w-full">
-                {!instantMeeting && (
-                    <InputFieldStacked classname="meeting-id-field hidden md:block" isGroupElement>
+            <div className="flex flex-column gap-2">
+                <div className="title text-semibold text-center hidden md:block">{title}</div>
+                <div className="text-center color-weak hidden md:block">{subtitle}</div>
+            </div>
+            <div className="flex flex-column gap-2 lg:gap-4 py-2 lg:py-4 w-full">
+                <InputFieldStackedGroup classname="w-full">
+                    {!instantMeeting && (
+                        <InputFieldStacked classname="meeting-id-field hidden md:block py-4 px-5" isGroupElement>
+                            <InputFieldTwo
+                                label={c('Label').t`Meeting ID`}
+                                type="text"
+                                unstyled
+                                inputClassName="rounded-none"
+                                value={roomId || c('Placeholder').t`Loading...`}
+                                onChange={(e) => e.preventDefault()}
+                                readOnly
+                                tabIndex={-1}
+                            />
+                            <Button
+                                className="copy-button absolute top-custom right-custom w-custom h-custom rounded-full flex items-center justify-center border-none p-0"
+                                style={{
+                                    '--top-custom': '50%',
+                                    '--right-custom': '1rem',
+                                    '--w-custom': '2.5rem',
+                                    '--h-custom': '2.5rem',
+                                    transform: 'translateY(-50%)',
+                                }}
+                                onClick={() => {
+                                    void navigator.clipboard.writeText(shareLink);
+                                    notificationManager.createNotification({
+                                        type: 'info',
+                                        text: c('Notification').t`Copied to clipboard`,
+                                        showCloseButton: false,
+                                    });
+                                }}
+                                aria-label={c('Alt').t`Copy meeting link`}
+                                color="weak"
+                            >
+                                <IcMeetCopy size={4} alt={c('Action').t`Copy meeting link`} />
+                            </Button>
+                        </InputFieldStacked>
+                    )}
+
+                    <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
                         <InputFieldTwo
-                            label={c('Label').t`Meeting ID`}
+                            label={c('Label').t`Name`}
                             type="text"
                             unstyled
                             inputClassName="rounded-none"
-                            value={roomId || c('Placeholder').t`Loading...`}
-                            onChange={(e) => e.preventDefault()}
-                            readOnly
-                            tabIndex={-1}
+                            value={displayName}
+                            onChange={(e) => onDisplayNameChange(e.target.value)}
+                            placeholder={c('Placeholder').t`Enter your name`}
+                            maxLength={64}
                         />
-                        <Button
-                            className="copy-button absolute top-custom right-custom w-custom h-custom rounded-full flex items-center justify-center border-none p-0"
-                            style={{
-                                '--top-custom': '50%',
-                                '--right-custom': '1rem',
-                                '--w-custom': '2.5rem',
-                                '--h-custom': '2.5rem',
-                                transform: 'translateY(-50%)',
-                            }}
-                            onClick={() => {
-                                void navigator.clipboard.writeText(shareLink);
-                                notificationManager.createNotification({
-                                    type: 'info',
-                                    text: c('Notification').t`Copied to clipboard`,
-                                    showCloseButton: false,
-                                });
-                            }}
-                            aria-label={c('Alt').t`Copy meeting link`}
-                        >
-                            <IcMeetCopy size={4} alt={c('Action').t`Copy meeting link`} />
-                        </Button>
                     </InputFieldStacked>
-                )}
-
-                <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
-                    <InputFieldTwo
-                        label={c('Label').t`Name`}
-                        type="text"
-                        unstyled
-                        inputClassName="rounded-none"
-                        value={displayName}
-                        onChange={(e) => onDisplayNameChange(e.target.value)}
-                        placeholder={c('Placeholder').t`Enter your name`}
-                        maxLength={64}
-                    />
-                </InputFieldStacked>
-            </InputFieldStackedGroup>
-            <div className="w-full">
-                <Checkbox
-                    checked={keepDisplayNameOnDevice}
-                    onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
-                    id="keep-display-name-on-device"
-                >
-                    {c('Label').t`Remember my name on this device for future meetings`}
-                </Checkbox>
+                </InputFieldStackedGroup>
+                <div className="w-full py-1">
+                    <Checkbox
+                        checked={keepDisplayNameOnDevice}
+                        onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
+                        id="keep-display-name-on-device"
+                    >
+                        <span className="color-weak ml-2">{c('Label').t`Remember my name on this device`}</span>
+                    </Checkbox>
+                </div>
             </div>
             <Button
                 className="join-button py-4 px-5 md:py-5 rounded-full color-invert"

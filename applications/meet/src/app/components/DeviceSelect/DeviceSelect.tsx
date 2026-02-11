@@ -49,14 +49,11 @@ export const DeviceSelect = <T extends object>({
                 caretClassName="color-weak mr-4 caret-icon"
                 ref={anchorRef}
                 disabled={disabled}
-                className="device-select rounded-full py-10 border-norm bg-weak w-full"
+                className="device-select rounded-full py-10 border-norm w-full"
             >
                 <div className="flex flex-nowrap items-center">
-                    <div
-                        className="flex items-center h-full mr-4 w-custom shrink-0"
-                        style={{ '--w-custom': '1.75rem' }}
-                    >
-                        <Icon name={icon} size={6} className="color-weak" />
+                    <div className="flex items-center h-full mr-3 w-custom shrink-0" style={{ '--w-custom': '1.5rem' }}>
+                        <Icon name={icon} size={5} className="color-weak" />
                     </div>
                     <div className="flex flex-nowrap flex-column">
                         <div className="color-weak text-sm">{title}</div>
