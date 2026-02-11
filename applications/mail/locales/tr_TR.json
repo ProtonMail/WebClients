@@ -1502,8 +1502,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5073,6 +5072,9 @@
       ],
       "Network error": [
         "Ağ sorunu"
+      ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
       ]
     },
     "error": {
@@ -7418,7 +7420,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8858,6 +8861,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Bu iletiye henüz güvenilirliği onaylanmamış bir anahtar eklenmiş."
       ]
     },
     "info": {

@@ -1502,8 +1502,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5067,6 +5066,9 @@
       ],
       "Network error": [
         "Nätverksfel"
+      ],
+      "Failed loading group members": [
+        "Misslyckades att ladda gruppmedlemmar"
       ]
     },
     "error": {
@@ -7406,7 +7408,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8834,6 +8837,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Detta meddelande har en bifogad nyckel som inte blivit betrodd ännu."
       ]
     },
     "info": {

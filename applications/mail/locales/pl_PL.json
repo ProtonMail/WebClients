@@ -133,7 +133,7 @@
         "Zastosuj"
       ],
       "Archive": [
-        "Archiwum"
+        "Przenieś do archiwum"
       ],
       "As Scheduled": [
         "Zgodnie z planem"
@@ -1643,6 +1643,12 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Send Feedback": [
+        "Wyślij opinię"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi"
       ]
     },
     "action": {
@@ -5787,6 +5793,9 @@
       ],
       "Tell us more": [
         "Napisz więcej"
+      ],
+      "Domain": [
+        "Domena"
       ]
     },
     "Hint": {
@@ -7316,7 +7325,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -12027,6 +12039,9 @@
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
+      ],
+      "Taxes": [
+        "Podatki"
       ]
     },
     "Payments.Error": {
@@ -16000,6 +16015,24 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "Podstawowa historia czatów"
+      ],
+      "Strict no-logs policy": [
+        "Polityka braku przechowywania logów"
+      ]
+    },
+    "meet_2025: Feature": {
+      "Screen-sharing": [
+        "Udostępnianie ekranu"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Zachowaj plan ${ planTitle }"
       ]
     }
   }

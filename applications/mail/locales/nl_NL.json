@@ -1502,8 +1502,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -5073,6 +5072,9 @@
       ],
       "Network error": [
         "Netwerkfout"
+      ],
+      "Failed loading group members": [
+        "Kon geen groepslid toevoegen."
       ]
     },
     "error": {
@@ -7418,7 +7420,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7806,7 +7809,7 @@
         "Gebruik een andere browser of download het bestand."
       ],
       "Please wait for the action to be completed": [
-        "Wacht alstublieft tot de actie is voltooid"
+        "Wacht tot de actie is voltooid"
       ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
@@ -8858,6 +8861,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Dit bericht heeft een bijgevoegde sleutel, die nog niet vertrouwd is."
       ]
     },
     "info": {

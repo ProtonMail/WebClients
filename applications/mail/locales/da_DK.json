@@ -1502,8 +1502,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5073,6 +5072,9 @@
       ],
       "Network error": [
         "Netværksfejl"
+      ],
+      "Failed loading group members": [
+        "Kunne ikke indlæse gruppemedlemmer"
       ]
     },
     "error": {
@@ -7418,7 +7420,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8858,6 +8861,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Denne besked har en vedhæftet nøgle, der endnu ikke er betroet."
       ]
     },
     "info": {
