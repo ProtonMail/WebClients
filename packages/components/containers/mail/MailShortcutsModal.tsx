@@ -11,6 +11,8 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
+import { getCategoryCommanderKeyboardShortcut, useCategoriesData } from '@proton/mail';
+import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
@@ -24,11 +26,18 @@ import './MailShortcutsModal.scss';
 const MailShortCutsModal = (props: ModalProps) => {
     const title = getKeyboardShortcutsWithAppName(MAIL_APP_NAME);
     const [mailSettings] = useMailSettings();
-    const mailShortcuts = getShortcuts();
+
+    const { activeCategoriesTabs } = useCategoriesData();
+    const categoriesShortcuts = activeCategoriesTabs.map((tab) => {
+        return {
+            name: getLabelFromCategoryIdInCommander(tab.id),
+            keys: getCategoryCommanderKeyboardShortcut(tab.id),
+        };
+    });
+
+    const mailShortcuts = getShortcuts(categoriesShortcuts);
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
-
-    const { onClose } = props;
 
     return (
         <ModalTwo className="shortcut-modal" {...props}>
@@ -58,7 +67,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="ml-auto" onClick={onClose}>{c('Action').t`Close`}</Button>
+                <Button className="ml-auto" onClick={props.onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
