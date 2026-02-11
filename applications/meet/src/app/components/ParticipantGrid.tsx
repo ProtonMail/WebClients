@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { useActiveBreakpoint } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 
@@ -27,6 +28,22 @@ export const ParticipantGrid = () => {
     const gridTemplateColumns = `repeat(${cols}, 1fr)`;
     const gridTemplateRows = `repeat(${rows}, 1fr)`;
 
+    const { viewportWidth } = useActiveBreakpoint();
+
+    const getViewSize = (numberOfParticipants: number) => {
+        if (viewportWidth.xsmall) {
+            return 'small';
+        }
+        if (viewportWidth['<=small']) {
+            return 'medium';
+        }
+
+        if (numberOfParticipants > 6 || viewportWidth.medium) {
+            return 'midLarge';
+        }
+        return 'large';
+    };
+
     return (
         <div className="flex-1 min-h-0 overflow-y-auto h-full">
             <div
@@ -43,7 +60,7 @@ export const ParticipantGrid = () => {
                         <ParticipantTile
                             key={participant.identity}
                             participant={participant}
-                            viewSize={pagedParticipants.length > 6 ? 'medium' : 'large'}
+                            viewSize={getViewSize(pagedParticipants.length)}
                         />
                     );
                 })}

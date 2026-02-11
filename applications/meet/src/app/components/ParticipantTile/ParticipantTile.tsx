@@ -26,25 +26,28 @@ import './ParticipantTile.scss';
 
 interface ParticipantTileProps {
     participant: Participant;
-    viewSize?: 'small' | 'medium' | 'large';
+    viewSize?: 'small' | 'medium' | 'large' | 'midLarge';
 }
 
 const audioIconSize = {
     small: '1.5rem',
     medium: '1.5rem',
     large: '2rem',
+    midLarge: '2rem',
 };
 
 const positionBySize = {
     small: 0.375,
     medium: 0.5,
     large: 1,
+    midLarge: 1,
 };
 
 const indicatorSizeBySize = {
     small: 24,
     medium: 24,
     large: 32,
+    midLarge: 32,
 };
 
 export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
