@@ -696,7 +696,7 @@ export const markMessagesAsReadRejected = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -718,7 +718,7 @@ export const markMessagesAsUnreadRejected = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;

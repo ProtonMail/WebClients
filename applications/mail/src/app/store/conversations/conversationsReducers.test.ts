@@ -1,7 +1,7 @@
 import type { Draft } from 'immer';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
@@ -93,7 +93,7 @@ describe('conversationsReducers', () => {
     describe('Mark messages as read', () => {
         describe('markMessagesAsReadPending', () => {
             it('should mark unread messages as read and update conversation unread counts', () => {
-                const elements: Element[] = [mockMessage1, mockMessage2];
+                const elements = [mockMessage1, mockMessage2];
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
@@ -116,7 +116,7 @@ describe('conversationsReducers', () => {
 
             it('should skip already read messages', () => {
                 const readMessage = { ...mockMessage1, Unread: 0 };
-                const elements: Element[] = [readMessage];
+                const elements = [readMessage];
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
@@ -137,7 +137,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should handle partial read operations', () => {
-                const elements: Element[] = [mockMessage1]; // Only one message
+                const elements = [mockMessage1]; // Only one message
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
@@ -174,7 +174,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark read messages as unread and update conversation unread counts', () => {
-                const elements: Element[] = [mockMessage1, mockMessage2];
+                const elements = [mockMessage1, mockMessage2];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',
@@ -197,7 +197,7 @@ describe('conversationsReducers', () => {
 
             it('should skip already unread messages', () => {
                 const unreadMessage = { ...mockMessage1, Unread: 1 };
-                const elements: Element[] = [unreadMessage];
+                const elements = [unreadMessage];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',
@@ -223,7 +223,7 @@ describe('conversationsReducers', () => {
                     LabelIDs: ['different-label'],
                     Flags: 1, // FLAG_RECEIVED
                 };
-                const elements: Element[] = [messageWithDifferentLabel];
+                const elements: MessageMetadata[] = [messageWithDifferentLabel];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',

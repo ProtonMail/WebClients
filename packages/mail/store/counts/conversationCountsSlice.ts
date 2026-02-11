@@ -75,25 +75,25 @@ const slice = createSlice({
         },
         markMessagesAsUnreadPending: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },
         markMessagesAsUnreadRejected: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadPending: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadRejected: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },

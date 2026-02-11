@@ -11,8 +11,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
-
-import type { Element } from 'proton-mail/models/element';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { type MailSettingState, mailSettingsThunk } from '../mailSettings';
 import { getCountQueryParams } from './countHelpers';
@@ -60,7 +59,7 @@ const slice = createSlice({
         markMessagesAsReadPending: (
             state,
             action: PayloadAction<{
-                elements: Element[];
+                elements: MessageMetadata[];
                 labelID: string;
             }>
         ) => {
@@ -69,7 +68,7 @@ const slice = createSlice({
         markMessagesAsUnreadPending: (
             state,
             action: PayloadAction<{
-                elements: Element[];
+                elements: MessageMetadata[];
                 labelID: string;
             }>
         ) => {
