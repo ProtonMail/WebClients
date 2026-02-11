@@ -33,3 +33,10 @@ im.$media-expressions: $media-expressions;
 	--scrollshadow-opacity: 0.15;
 	--border-radius-xxl: calc(3 * var(--border-radius) * var(--1px));
 }
+
+.settings-toggle-inactive {
+	.toggle-container::before {
+		--field-norm: var(--interaction-norm-minor-1);
+		--field-hover: var(--interaction-norm-major-1);
+	}
+}
