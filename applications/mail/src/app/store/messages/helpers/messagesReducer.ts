@@ -134,12 +134,12 @@ export const markMessagesAsUnreadPending = (
 
 export const markConversationsAsReadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
+        const selectedConversation = selectedElement;
 
         const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
 

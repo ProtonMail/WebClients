@@ -250,7 +250,7 @@ describe('conversationsReducers', () => {
     describe('Mark conversations as read', () => {
         describe('markConversationsAsReadPending', () => {
             it('should mark unread conversation as read', () => {
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',
@@ -277,7 +277,7 @@ describe('conversationsReducers', () => {
                     ...mockConversation,
                     Labels: [{ ID: inboxLabelID, ContextNumUnread: 0 }],
                 };
-                const elements: Element[] = [readConversation];
+                const elements = [readConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',
@@ -298,7 +298,7 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark all messages associated with the conversation as read', () => {
-                const elements: Element[] = [mockConversation];
+                const elements = [mockConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',

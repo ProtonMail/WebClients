@@ -735,12 +735,12 @@ export const markMessagesAsUnreadRejected = (
 
 export const markConversationsAsReadPending = (
     state: Draft<ElementsState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
+        const selectedConversation = selectedElement;
 
         const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
         if (conversationLabel?.ContextNumUnread === 0) {
@@ -810,7 +810,7 @@ export const markConversationsAsUnreadPending = (
 
 export const markConversationsAsReadRejected = (
     state: Draft<ElementsState>,
-    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<unknown, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const pendingAction = {
         ...action,
