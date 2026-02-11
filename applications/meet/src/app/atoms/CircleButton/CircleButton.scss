@@ -3,12 +3,12 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .circle-button {
-	inline-size: 3.5rem;
-	block-size: 3.5rem;
+	inline-size: 3rem;
+	block-size: 3rem;
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 	}
 }
@@ -19,7 +19,7 @@
 	color: var(--text-invert) !important;
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		--circle-button-bg: var(--interaction-norm-minor-1);
 	}
 }
@@ -28,7 +28,7 @@
 	--circle-button-bg: var(--interaction-weak-minor-1);
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		--circle-button-bg: var(--interaction-weak-minor-2);
 	}
 }
@@ -37,7 +37,7 @@
 	--circle-button-bg: var(--signal-danger-major-3);
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		--circle-button-bg: var(--signal-danger);
 	}
 }
@@ -47,7 +47,7 @@
 	--border-color: var(--circle-button-transparent);
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		--circle-button-bg: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
 	}
 }
@@ -56,7 +56,7 @@
 	--circle-button-bg: var(--interaction-weak);
 
 	&:hover,
-	&:focus {
+	&:focus-visible {
 		--circle-button-bg: var(--interaction-weak-minor-2);
 	}
 }
