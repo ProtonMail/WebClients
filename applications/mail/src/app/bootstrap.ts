@@ -40,7 +40,6 @@ const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
-    performance.mark('start_mail');
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
