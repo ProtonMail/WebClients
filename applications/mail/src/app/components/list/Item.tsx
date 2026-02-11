@@ -1,5 +1,5 @@
 import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
-import { memo, useEffect, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef } from 'react';
 
 import { ItemCheckbox } from '@proton/components';
 import { isCustomLabel } from '@proton/mail/helpers/location';
@@ -12,7 +12,6 @@ import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } fro
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import { getApplyLocationTracker } from 'proton-mail/helpers/location/applyLocationPerformanceTracker';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -126,15 +125,6 @@ const Item = ({
     const firstRecipient = firstRecipients[0];
 
     const filteredThumbnails = filterAttachmentToPreview(element.AttachmentsMetadata || []);
-
-    // We want to measure how much time it takes for an element to disappear from the view with the optimistic
-    // and catch potential optimistic bugs
-    useEffect(() => {
-        return () => {
-            getApplyLocationTracker().measure(element.ID);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
