@@ -10,7 +10,6 @@ import type {
   WrapStrategy,
 } from '@rowsncolumns/spreadsheet'
 import {
-  getCurrencySymbol,
   getProtectedRange,
   isProtectedRange as isProtectedRangeFn,
   getUserSelections,
@@ -19,6 +18,7 @@ import {
 import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
   DATE_PATTERN_EXAMPLE_VALUE,
+  DURATION_PATTERN_EXAMPLE_VALUE,
   NUMBER_PATTERN_EXAMPLE_VALUE,
   PATTERN_SPECS,
   PERCENT_PATTERN_EXAMPLE_VALUE,
@@ -69,12 +69,6 @@ export function useProtonSheetsUIState(
       logger.info('action: set locale', newLocale)
       kv.set('locale', newLocale)
     }),
-  }
-
-  const currencySymbol = getCurrencySymbol(locale.resolved, locale.currency)
-  if (!currencySymbol) {
-    // TODO: handle this more gracefully, default to "$"?
-    throw new Error('Currency symbol not found.')
   }
 
   // focus grid utilities
@@ -343,7 +337,7 @@ export function useProtonSheetsUIState(
   const search = { open: useEvent(state.searchState.onRequestSearch) }
 
   // format
-  const patternSpecs = PATTERN_SPECS({ locale: locale.resolved, currency: locale.currency })
+  const patternSpecs = PATTERN_SPECS({ locale: locale.resolved, currency: locale.currency.code })
   const formatUtils = useFormatUtils(state, patternSpecs, logger)
   const canUnmerge = useMemo(
     () =>
@@ -487,7 +481,7 @@ export function useProtonSheetsUIState(
       longDate: formatUtils.useNumberPatternEntry(patternSpecs.LONG_DATE, DATE_PATTERN_EXAMPLE_VALUE),
       time: formatUtils.useNumberPatternEntry(patternSpecs.TIME, DATE_PATTERN_EXAMPLE_VALUE),
       dateTime: formatUtils.useNumberPatternEntry(patternSpecs.DATE_TIME, DATE_PATTERN_EXAMPLE_VALUE),
-      duration: formatUtils.useNumberPatternEntry(patternSpecs.DURATION, DATE_PATTERN_EXAMPLE_VALUE),
+      duration: formatUtils.useNumberPatternEntry(patternSpecs.DURATION, DURATION_PATTERN_EXAMPLE_VALUE),
     },
     decreaseDecimalPlaces: useEvent(() => {
       logger.info('action: decrease decimal places', state.activeSheetId, state.activeCell)

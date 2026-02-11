@@ -196,14 +196,25 @@ function PaintFormat() {
 }
 
 function FormatAsCurrency() {
+  const currencySymbol = useUI((ui) => ui.locale.currency.symbol)
+
   return (
-    <T.Item
-      icon={Icons.currencyDollar}
-      onClick={useUI.$.format.pattern.currency.default.set}
-      disabled={useUI((ui) => ui.info.isReadonly)}
-    >
-      {s('Format as currency')}
-    </T.Item>
+    <Ariakit.TooltipProvider placement="bottom">
+      <Ariakit.TooltipAnchor
+        render={
+          <T.Item
+            variant="label"
+            onClick={useUI.$.format.pattern.currency.default.set}
+            disabled={useUI((ui) => ui.info.isReadonly)}
+          />
+        }
+      >
+        {/* We can instead use 'w-8' to prevent layout shifts when currency changes from, e.g. '$' to 'BYN' */}
+        <span className="flex min-w-5 justify-center">{currencySymbol}</span>
+      </Ariakit.TooltipAnchor>
+
+      <UI.Tooltip>{s('Format as currency')}</UI.Tooltip>
+    </Ariakit.TooltipProvider>
   )
 }
 
