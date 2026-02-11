@@ -2,15 +2,30 @@ import { c, msgid } from 'ttag';
 
 import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
 import { AccessTarget } from '@proton/pass/lib/access/types';
-import type { Maybe, MaybeNull, NewUserPendingInvite, Share } from '@proton/pass/types';
-import { type InviteBase, NewUserInviteState, type Result } from '@proton/pass/types';
+import type {
+    GroupInviteListItemResponse,
+    InviteDataForUser,
+    InviteVaultDataForUser,
+    Maybe,
+    MaybeNull,
+    NewUserPendingInvite,
+    Share,
+} from '@proton/pass/types';
+import { type InviteBase, NewUserInviteState, type Result, ShareType } from '@proton/pass/types';
 import { and } from '@proton/pass/utils/fp/predicates';
+
+export type InviteBatchResult = Result<{}, { failed: string[] }>;
+export type AbstractInvite = InviteDataForUser | GroupInviteListItemResponse;
 
 export const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
 export const isItemInviteForItem = (itemId: string) => and(isItemTarget, isTargetInvite(itemId));
 export const isInviteReady = (invite: NewUserPendingInvite) => invite.state === NewUserInviteState.READY;
 
-export type InviteBatchResult = Result<{}, { failed: string[] }>;
+/** Guards that the invite targets a vault and has vault data */
+export const isVaultInvite = <T extends AbstractInvite>(
+    invite: T
+): invite is T & { VaultData: InviteVaultDataForUser } =>
+    Boolean(invite.TargetType === ShareType.Vault && invite.VaultData);
 
 export const concatInviteResults = (results: InviteBatchResult[]): InviteBatchResult =>
     results.reduce(

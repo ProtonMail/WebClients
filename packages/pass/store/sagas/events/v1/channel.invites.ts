@@ -2,13 +2,13 @@ import { all, fork, put, select } from 'redux-saga/effects';
 
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
-import { parseInviteVault } from '@proton/pass/lib/invites/invite.parser';
+import { parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, InvitesGetResponse, MaybeNull } from '@proton/pass/types';
-import { InviteType, ShareType } from '@proton/pass/types';
+import { InviteType } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -38,36 +38,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
             /* if invite already decrypted early return */
             const cachedInvite = cachedInvites[invite.InviteToken];
             if (cachedInvite) return cachedInvite;
-
-            const encryptedVault = invite.VaultData;
-            if (!encryptedVault && invite.TargetType !== ShareType.Item) return null;
-
-            const inviteKey =
-                invite.TargetType === ShareType.Item
-                    ? invite.Keys[0]
-                    : invite.Keys.find((key) => key.KeyRotation === encryptedVault!.ContentKeyRotation);
-            if (!inviteKey) return null;
-
-            try {
-                return {
-                    type: InviteType.User,
-                    createTime: invite.CreateTime,
-                    invitedAddressId: invite.InvitedAddressID!,
-                    invitedEmail: invite.InvitedEmail,
-                    invitedGroupId: null,
-                    inviterEmail: invite.InviterEmail,
-                    fromNewUser: invite.FromNewUser,
-                    keys: invite.Keys,
-                    remindersSent: invite.RemindersSent,
-                    targetId: invite.TargetID,
-                    targetType: invite.TargetType,
-                    token: invite.InviteToken,
-                    vault: await parseInviteVault(invite, inviteKey),
-                };
-            } catch (err: unknown) {
-                logger.warn(`[${NAMESPACE}] Could not decrypt invite`, err);
-                return null;
-            }
+            return parseUserInvite(invite);
         })
     );
 
