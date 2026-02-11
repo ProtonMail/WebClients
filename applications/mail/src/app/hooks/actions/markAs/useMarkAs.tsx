@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -68,14 +67,14 @@ export const useMarkAs = () => {
                 handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.MARK_AS, elements, status });
 
                 if (isMessage) {
+                    const messages = elements.filter(isElementMessage);
                     const conversations = uniqueBy(
-                        getConversationsByIDs(elements.map((element) => (element as Message).ConversationID))
+                        getConversationsByIDs(messages.map((message) => message.ConversationID))
                             .filter(isTruthy)
                             .map((conversationState) => conversationState.Conversation),
                         (conversation) => conversation.ID
                     );
 
-                    const messages = elements.filter(isElementMessage);
                     if (isRead) {
                         void dispatch(
                             markMessagesAsRead({
