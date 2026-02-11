@@ -170,11 +170,21 @@ function processCsvFile(fileData: FileData): InternalTextResult {
 }
 
 async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
-    const parseResult = await pdfParse(fileData.data);
-    return {
-        type: 'text',
-        content: parseResult.text,
-    };
+    try {
+        const parseResult = await pdfParse(fileData.data);
+        
+        if (!parseResult || !parseResult.text) {
+            throw new Error('PDF parsing returned empty result');
+        }
+        
+        return {
+            type: 'text',
+            content: parseResult.text,
+        };
+    } catch (error) {
+        workerLogger.error(`PDF parsing failed for ${fileData.name}:`, error);
+        throw new Error(`Failed to parse PDF: ${error instanceof Error ? error.message : String(error)}`);
+    }
 }
 
 async function processExcelFile(fileData: FileData): Promise<InternalTextResult> {
@@ -304,6 +314,3 @@ self.addEventListener('beforeunload', async () => {
         await pandocConverter.cleanup();
     }
 });
-
-// Worker initialized (log suppressed to reduce console noise)
-// workerLogger.log('file processing worker initialized');

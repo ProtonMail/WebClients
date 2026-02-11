@@ -77,7 +77,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     // Show error UI with retry button
     if (error || !attachment) {
         return (
-            <div
+            <span
                 style={{
                     display: 'inline-block',
                     padding: '1rem',
@@ -88,22 +88,22 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     maxWidth: '300px',
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                     <Icon name="exclamation-circle" size={4} />
                     <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Failed to load image</span>
-                </div>
-                {error && <p style={{ margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</p>}
+                </span>
+                {error && <span style={{ display: 'block', margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</span>}
                 <Button size="small" shape="solid" onClick={handleRetry}>
                     Retry
                 </Button>
-            </div>
+            </span>
         );
     }
 
     // Show loading UI
     if (isLoading || !imageDataUrl) {
         return (
-            <div
+            <span
                 style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -116,13 +116,13 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 }}
             >
                 <CircleLoader size="medium" />
-            </div>
+            </span>
         );
     }
 
     return (
         <>
-            <div
+            <span
                 className="inline-image-preview relative cursor-pointer"
                 onClick={() => setShowModal(true)}
                 onMouseEnter={() => setShowDownload(true)}
@@ -139,7 +139,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     }}
                 />
                 {showDownload && (
-                    <div
+                    <span
                         style={{
                             position: 'absolute',
                             bottom: '0.5rem',
@@ -164,9 +164,9 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         >
                             <Icon name="arrow-down-line" size={4} style={{ color: 'white' }} />
                         </Button>
-                    </div>
+                    </span>
                 )}
-            </div>
+            </span>
 
             {showModal &&
                 createPortal(
