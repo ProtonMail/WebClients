@@ -34,7 +34,7 @@ export const useCreateInstantMeeting = () => {
         const { response, passwordBase } = await saveMeeting({
             params: {
                 ...params,
-                meetingName: isPaidUser ? c('Info').t`Secure meeting` : c('Info').t`Free meeting`,
+                meetingName: isPaidUser ? c('Info').t`Premium meeting` : c('Info').t`Free meeting`,
                 customPassword: '',
                 startTime: null,
                 endTime: null,
