@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Loader, useNotifications } from '@proton/components';
 import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
-import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { DriveStartupModals } from '../components/modals/DriveStartupModals';
@@ -19,13 +18,8 @@ import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEv
 import { useFolderStore } from '../sections/folders/useFolder.store';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../utils/errorHandling/useSdkErrorHandler';
-import PreviewContainer from './PreviewContainer';
 
-export const hasValidLinkType = (type: string) => {
-    return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
-};
-
-export function FolderContainer({ type }: { type: LinkURLType }) {
+export function FolderContainer() {
     const [isLoading, withLoading] = useLoading(true);
     const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useLegacyContextShareHandler();
@@ -44,7 +38,7 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
             folder && folder.shareId === shareId && splitNodeUid(folder.uid).nodeId === linkId
         );
 
-        if (isNavigatingToNewFolder && type === LinkURLType.FOLDER) {
+        if (isNavigatingToNewFolder) {
             // TODO: Remove this one we have volumeId/linkId in the URL
             // This is to say to the folder that a new node is loading
             reset();
@@ -73,12 +67,11 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
                     await handleContextShare(abortController.signal, {
                         shareId,
                         linkId,
-                        // LinkURLType only support File/Folder, so we can exclude Album, Photo,...
-                        type: type === LinkURLType.FILE ? NodeType.File : NodeType.Folder,
+                        type: NodeType.Folder,
                     });
                     return;
                 }
-                console.error(Error.isError(err) ? err.message : 'Unknwon issue while retrieving the node');
+                console.error(Error.isError(err) ? err.message : 'Unknown issue while retrieving the folder');
                 createNotification({
                     type: 'error',
                     text: c('Error').t`We cannot retrieve this item`,
@@ -90,17 +83,7 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
         return () => {
             abortController.abort();
         };
-    }, [
-        shareId,
-        type,
-        linkId,
-        withLoading,
-        handleError,
-        navigateToRoot,
-        setFolder,
-        handleContextShare,
-        createNotification,
-    ]);
+    }, [shareId, linkId, withLoading, handleError, navigateToRoot, setFolder, handleContextShare, createNotification]);
 
     useEffect(() => {
         const unsubscribe = subscribeToFolderEvents();
@@ -120,9 +103,8 @@ export function FolderContainer({ type }: { type: LinkURLType }) {
 
     return (
         <>
-            {type === LinkURLType.FOLDER && <FolderView shareId={shareId} nodeUid={nodeUid} />}
+            <FolderView shareId={shareId} nodeUid={nodeUid} />
             <DriveStartupModals />
-            {type === LinkURLType.FILE && <PreviewContainer shareId={shareId} nodeUid={nodeUid} />}
         </>
     );
 }

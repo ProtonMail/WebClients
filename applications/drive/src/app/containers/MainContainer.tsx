@@ -15,7 +15,6 @@ import {
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
-import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -51,6 +50,7 @@ import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
 import { Features, measureFeaturePerformance } from '../utils/telemetry';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
+import { FileContainer } from './FileContainer';
 import { FolderContainer } from './FolderContainer';
 import LocationErrorBoundary from './LocationErrorBoundary';
 import NoAccessContainer from './NoAccessContainer';
@@ -212,8 +212,8 @@ function InitContainer() {
             {photosEnabled && <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />}
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
-            <Route path=":shareId/file/:linkId/*" element={<FolderContainer type={LinkURLType.FILE} />} />
-            <Route path=":shareId/folder/:linkId/*" element={<FolderContainer type={LinkURLType.FOLDER} />} />
+            <Route path=":shareId/file/:linkId/*" element={<FileContainer />} />
+            <Route path=":shareId/folder/:linkId/*" element={<FolderContainer />} />
             <Route
                 path="*"
                 element={
