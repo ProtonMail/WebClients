@@ -27,6 +27,17 @@ export const isVaultInvite = <T extends AbstractInvite>(
 ): invite is T & { VaultData: InviteVaultDataForUser } =>
     Boolean(invite.TargetType === ShareType.Vault && invite.VaultData);
 
+/** Checks if an invite targets a vault the user already owns. Filtering
+ * is necessary because there might be a slight delay between invite
+ * acceptance and database replication, potentially causing accepted
+ * invites to still appear in the results. This check is limited to vault
+ * invites because item `TargetID`s only contain the ItemID and could
+ * collide across shards. */
+export const isAcceptedInvite =
+    (vaultIDs: Set<string>) =>
+    (invite: AbstractInvite): boolean =>
+        isVaultInvite(invite) && vaultIDs.has(invite.TargetID);
+
 export const concatInviteResults = (results: InviteBatchResult[]): InviteBatchResult =>
     results.reduce(
         (acc, result) => {
