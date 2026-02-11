@@ -3985,6 +3985,12 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Failed loading group members": [
+        "Grup üyeleri yüklenemedi"
+      ],
+      "Network error": [
+        "Ağ sorunu"
       ]
     },
     "error": {
@@ -6465,6 +6471,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting schedule": [
+        "Toplantı planı güncellenemedi"
       ]
     },
     "info": {

@@ -3985,6 +3985,12 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Failed loading group members": [
+        "Impossibile caricare i membri del gruppo"
+      ],
+      "Network error": [
+        "Errore di rete"
       ]
     },
     "error": {
@@ -6465,6 +6471,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting schedule": [
+        "Impossibile aggiornare la pianificazione della riunione"
       ]
     },
     "info": {
@@ -8261,6 +8270,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Supporto telefonico (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utenti)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8625,6 +8637,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Il supporto telefonico è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } o più utenti"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12124,6 +12139,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Il tuo abbonamento ${ planTitle } è iniziato"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

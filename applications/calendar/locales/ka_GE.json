@@ -3953,6 +3953,12 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Failed loading group members": [
+        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
+      "Network error": [
+        "ქსელის შეცდომა"
       ]
     },
     "error": {
@@ -4786,6 +4792,9 @@
       ],
       "Your password is correct.": [
         "პაროლი სწორია."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "თქვენი ელფოსტის გარე ანგარიშში ჩართულია 2FA."
       ]
     },
     "Import instructions": {
@@ -6348,6 +6357,13 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ maxContact }"
+      ],
+      "Failed to update meeting schedule": [
+        "შეხვედრის განრიგის განახლება ჩავარდა"
       ]
     },
     "info": {
@@ -8135,6 +8151,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "სატელეფონო მხარდაჭერა (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ მომხმარებელი)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9260,6 +9279,10 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე.",
+        "ფასდაკლება მოქმედებს ${ renewalsWithCoupon } განახლებაზე."
       ]
     },
     "Payments.Error": {
@@ -11932,6 +11955,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "თქვვენი ${ planTitle } გამოწერა დაიწყო"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

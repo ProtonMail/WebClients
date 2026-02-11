@@ -3985,6 +3985,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Failed loading group members": [
+        "Error al cargar los miembros del grupo"
+      ],
+      "Network error": [
+        "Error de red"
       ]
     },
     "error": {
@@ -6465,6 +6471,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting schedule": [
+        "Error al actualizar el horario de la reunión"
       ]
     },
     "info": {

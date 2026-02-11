@@ -916,6 +916,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Onemogoči funkcijo samodejnega dodajanja povezav ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Izklopi samodejno dodajanje"
       ]
     },
     "action": {
@@ -2721,10 +2727,10 @@
         "Vsak dan, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }",
-        "Vsak ${ interval }. dan, ${ untilString }"
+        "Vsak ${ interval } dan, ${ untilString }",
+        "Vsaka ${ interval } dni, ${ untilString }",
+        "Vsake ${ interval } dni, ${ untilString }",
+        "Vsakih ${ interval } dni, ${ untilString }"
       ]
     },
     "Day": {
@@ -3629,6 +3635,18 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Ni uspelo dodati obstoječe video konference ${ MEET_APP_NAME }"
+      ],
+      "Failed to update settings": [
+        "Posodobitev nastavitev ni uspela"
+      ],
+      "Network error": [
+        "Omrežna napaka"
+      ],
+      "You cannot enter the organizer's email": [
+        "Ne morete vnesti e-pošte organizatorja"
       ]
     },
     "error": {
@@ -5921,6 +5939,30 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-poštni stik za rezervacijo: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Koliko vnaprej lahko nekdo rezervira?"
+      ],
+      "It's better to have:": [
+        "Bolje je imeti:"
+      ],
+      "Min. 2 hours before": [
+        "Najmanj 2 uri pred"
+      ],
+      "Min. 48 hours before": [
+        "Najmanj 48 ur pred"
+      ],
+      "Not on the same day": [
+        "Ne na isti dan"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Samodejno smo dodali povezavo ${ MEET_APP_NAME }"
+      ],
+      "Which calendars should block bookings?": [
+        "Kateri koledarji naj blokirajo rezervacije?"
       ]
     },
     "info": {
@@ -6594,6 +6636,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Add notice period": [
+        "Dodaj obdobje obveščanja"
+      ],
+      "Check additional calendars for availability": [
+        "Preveri dodatne koledarje za razpoložljivost"
       ]
     },
     "Label for contact group color": {
@@ -8582,7 +8630,7 @@
         "Skrbniška plošča za upravljanje uporabnikov in naročnin"
       ],
       "Advanced account protection": [
-        "Napredni program za zaščito računa"
+        "Napredna zaščita računa"
       ],
       "Team policies": [
         "Pravilniki skupine"
@@ -9020,6 +9068,9 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
       ]
     },
     "Reload event button tooltip": {
@@ -10338,6 +10389,9 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Samodejno dodajanje povezav ${ MEET_APP_NAME } je onemogočeno"
       ]
     },
     "Suffix": {
@@ -11196,6 +11250,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "How your free trial works": [
+        "Kako deluje vaš brezplačni preizkus"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -3985,6 +3985,12 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Failed loading group members": [
+        "Gruppenmitglieder konnten nicht geladen werden"
+      ],
+      "Network error": [
+        "Netzwerkfehler"
       ]
     },
     "error": {
@@ -6465,6 +6471,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Failed to update meeting schedule": [
+        "Fehler beim Aktualisieren des Sitzungsplans"
       ]
     },
     "info": {
