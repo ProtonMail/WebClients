@@ -20,7 +20,7 @@ export const BackgroundBlurToggle = ({
     return (
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
             <label
-                className={clsx('setting-label text-ellipsis', backgroundBlur ? 'color-norm' : 'color-hint')}
+                className={clsx('setting-label text-ellipsis text-rg', backgroundBlur ? 'color-norm' : 'color-hint')}
                 htmlFor={withTooltip ? 'blur-background-with-tooltip' : 'blur-background'}
             >{c('Action').t`Background blur`}</label>
             {withTooltip ? (
