@@ -42,7 +42,7 @@ export const RoomList = ({
                 />
             ))}
             <button
-                className="add-meeting-room-button p-6 border flex items-center gap-6 flex-column md:flex-row cursor-pointer"
+                className="add-meeting-room-button p-6 border border-dashed flex items-center gap-6 flex-column md:flex-row cursor-pointer"
                 onClick={() => handleNewRoomClick()}
             >
                 <PlaceholderPlusSign />

@@ -5,7 +5,7 @@ import './PlaceholderPlusSign.scss';
 export const PlaceholderPlusSign = () => {
     return (
         <div
-            className="placeholder-button-icon-container border-card flex justify-center items-center w-custom h-custom"
+            className="placeholder-button-icon-container border border-dashed flex justify-center items-center w-custom h-custom"
             style={{ '--w-custom': '3.75rem', '--h-custom': '3.75rem' }}
         >
             <IcPlus className="color-norm" size={4} />
