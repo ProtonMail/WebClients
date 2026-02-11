@@ -19,7 +19,7 @@ export interface DownloadDropdownProps {
 export function DownloadDropdown({
     onDownload,
     onScanAndDownload,
-    nbSelected,
+    nbSelected = 0,
     disabled = false,
     isLoading = false,
 }: DownloadDropdownProps) {
@@ -40,7 +40,7 @@ export function DownloadDropdown({
                     e.stopPropagation();
                 }}
                 disabled={disabled || isLoading}
-                data-testid="download-button"
+                data-testid="dropdown-download-button"
                 color="weak"
                 shape="ghost"
             >
@@ -55,7 +55,7 @@ export function DownloadDropdown({
                             onDownload();
                             close();
                         }}
-                        data-testid="dropdown-download-button"
+                        data-testid="download-button"
                     >
                         <IcArrowDownLine />
                         {buttonTextWithoutScan}

@@ -18,7 +18,6 @@ import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting';
 import { Breadcrumbs } from '../../statelessComponents/Breadcrumbs/Breadcrumbs';
 import type { CrumbDefinition } from '../../statelessComponents/Breadcrumbs/types';
-import { BreadcrumbRenderingMode } from '../../statelessComponents/Breadcrumbs/types';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerConditions,
@@ -117,12 +116,29 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         }))
     );
 
+    const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
+        useShallow((state) => ({
+            folder: state.folder,
+            isLoading: state.isLoading,
+            hasEverLoaded: state.hasEverLoaded,
+            sortField: state.sortField,
+            direction: state.direction,
+            itemUids: state.itemUids,
+        }))
+    );
+
+    const currentFolderUid = folder?.uid || rootNode.uid;
+
     const handleUpload = useCallback(
         (files: FileList) => {
-            return uploadManager.upload(files, rootNode.uid);
+            return uploadManager.upload(files, currentFolderUid);
         },
-        [rootNode.uid]
+        [currentFolderUid]
     );
+
+    const handleDrop = (dataTransfer: DataTransfer) => {
+        void uploadManager.upload(dataTransfer, currentFolderUid);
+    };
 
     const {
         inputRef: fileInputRef,
@@ -141,17 +157,6 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         onUpload: handleUpload,
         forFolders: true,
     });
-
-    const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
-        useShallow((state) => ({
-            folder: state.folder,
-            isLoading: state.isLoading,
-            hasEverLoaded: state.hasEverLoaded,
-            sortField: state.sortField,
-            direction: state.direction,
-            itemUids: state.itemUids,
-        }))
-    );
 
     // TODO: Probably moving it to the store of public folder
     useEffect(() => {
@@ -206,7 +211,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         if (item.mediaType && isNativeProtonDocsAppFile(item.mediaType)) {
             const openInDocsInfo = getOpenInDocsInfo(item.mediaType);
             if (openInDocsInfo) {
-                return handleOpenDocsOrSheets(uid, openInDocsInfo);
+                return handleOpenDocsOrSheets(uid, openInDocsInfo, customPassword);
             }
         }
         if (item.type === NodeType.File || item.type === NodeType.Photo) {
@@ -308,9 +313,6 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         isDraggable: () => false,
         isDoubleClickable: () => true,
     };
-    const handleDrop = (dataTransfer: DataTransfer) => {
-        void uploadManager.upload(dataTransfer, rootNode.uid);
-    };
 
     const isViewer = publicRole === MemberRole.Viewer;
 
@@ -324,11 +326,11 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                 isOpen={contextMenuControls.isOpen}
                 open={contextMenuControls.open}
                 position={contextMenuControls.position}
+                customPassword={customPassword}
             />
             <PublicHeader
                 breadcrumbOrName={
                     <Breadcrumbs
-                        renderingMode={BreadcrumbRenderingMode.Prominent}
                         loading={breadcrumbLoading}
                         crumbs={crumbs}
                         events={{
@@ -344,14 +346,18 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                 }
                 onDownload={() => handleHeaderDownload()}
                 onScanAndDownload={() => handleHeaderDownload(true)}
-                onDetails={() => handleDetails(rootNode.uid)}
+                onDetails={() => handleDetails(currentFolderUid)}
                 onCopyLink={handleCopyLink}
                 onUploadFile={!isViewer ? handleClickFileUpload : undefined}
                 onUploadFolder={!isViewer ? handleClickFolderUpload : undefined}
-                onCreateFolder={!isViewer ? () => handleCreateFolder(rootNode.uid) : undefined}
-                onCreateDocument={!isViewer ? () => handleCreateDocsOrSheets(rootNode.uid, 'document') : undefined}
+                onCreateFolder={!isViewer ? () => handleCreateFolder(currentFolderUid) : undefined}
+                onCreateDocument={
+                    !isViewer ? () => handleCreateDocsOrSheets(currentFolderUid, 'document', customPassword) : undefined
+                }
                 onCreateSpreadsheet={
-                    !isViewer ? () => handleCreateDocsOrSheets(rootNode.uid, 'spreadsheet') : undefined
+                    !isViewer
+                        ? () => handleCreateDocsOrSheets(currentFolderUid, 'spreadsheet', customPassword)
+                        : undefined
                 }
                 nbSelected={selectedItemIds.size}
                 isEmptyView={isEmpty}
@@ -371,7 +377,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     conditions={conditions}
                     sort={sort}
                     loading={isLoading}
-                    caption={rootNode.name}
+                    caption={folder?.uid || rootNode.name}
                     config={{ itemHeight: 52 }}
                     contextMenuControls={{
                         isOpen: contextMenuControls.isOpen,

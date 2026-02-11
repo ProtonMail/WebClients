@@ -9,7 +9,11 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveFreePromo } from '../../hooks/payments/useDriveFreePromo';
 
-export const CreateAccountButton = () => {
+interface CreateAccountButtonProps {
+    isMobile?: boolean;
+}
+
+export const CreateAccountButton = ({ isMobile = false }: CreateAccountButtonProps) => {
     const UPSELL_REF = 'sharepage_upsell';
     const UPSELL_LINK = `${DRIVE_SIGNUP}?plan=${PLANS.DRIVE}&billing=${CYCLE.MONTHLY}&coupon=${COUPON_CODES.TRYDRIVEPLUS2024}&ref=${UPSELL_REF}`;
     const { promoData, hasError } = useDriveFreePromo({ codes: [COUPON_CODES.TRYDRIVEPLUS2024] });
@@ -17,7 +21,7 @@ export const CreateAccountButton = () => {
     const simplePriceString = hasPriceData ? getSimplePriceString(promoData.Currency, promoData.AmountDue) : '';
     const isUpsellingEnabled = useFlag('DriveWebSharePageUpsell');
 
-    return isUpsellingEnabled && hasPriceData && !hasError ? (
+    return isUpsellingEnabled && hasPriceData && !hasError && !isMobile ? (
         <ButtonLike
             className="w-full md:w-auto inline-flex items-center"
             color="norm"
@@ -30,15 +34,8 @@ export const CreateAccountButton = () => {
             {hasPriceData && c('Action').t`Get secure storage for ${simplePriceString}`}
         </ButtonLike>
     ) : (
-        <ButtonLike
-            className="w-full md:w-auto"
-            color="norm"
-            shape="solid"
-            as="a"
-            href={DRIVE_PRICING_PAGE}
-            target="_blank"
-        >
-            {c('Action').t`Create free account`}
+        <ButtonLike className="w-auto" color="norm" shape="solid" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
+            {c('Action').t`Sign up`}
         </ButtonLike>
     );
 };

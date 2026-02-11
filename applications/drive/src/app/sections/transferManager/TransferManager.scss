@@ -21,8 +21,14 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		inset-inline: 1rem;
-		inline-size: calc(100vw - 2rem);
-		max-inline-size: calc(100vw - 2rem);
+		inline-size: 100vw;
+		max-inline-size: 100vw;
+		box-shadow: none;
+		inset-inline-start: 0;
+		inset-block-end: 0;
+		border-radius: 0;
+		border-start-end-radius: var(--border-radius-md);
+		border-start-start-radius: var(--border-radius-md);
 	}
 }
 

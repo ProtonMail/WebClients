@@ -29,7 +29,7 @@ export function UploadCreateDropdown({
     const showDivider = hasUploadActions && hasCreateActions;
 
     return (
-        <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={onClose}>
+        <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={onClose} data-testid="upload-create-dropdown">
             <DropdownMenu>
                 {onUploadFile && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onUploadFile}>
