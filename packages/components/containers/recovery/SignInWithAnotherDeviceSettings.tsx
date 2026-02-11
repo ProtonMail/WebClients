@@ -18,8 +18,10 @@ import { EDM_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import SignInWithAnotherDeviceModal from './SignInWithAnotherDeviceModal';
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 const SignInWithAnotherDeviceSettings = () => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [userSettings] = useUserSettings();
     const [loadingEDM, withLoadingEDM] = useLoading();
     const dispatch = useDispatch();
@@ -37,6 +39,10 @@ const SignInWithAnotherDeviceSettings = () => {
                     ? c('edm').t`QR code sign-in disabled`
                     : c('edm').t`QR code sign-in enabled`,
         });
+
+        if (value === EDM_VALUE.ENABLED) {
+            sendRecoverySettingEnabled({ setting: 'qr_code_sign_in' });
+        }
     };
 
     const allowScanningQrCode = !userSettings?.Flags.EdmOptOut;

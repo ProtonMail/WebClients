@@ -39,6 +39,7 @@ import {
     PrivacySection,
     PrivateMainArea,
     PrivateMainSettingsArea,
+    RecoveryPageTelemetry,
     ReferralInvitesContextProvider,
     RewardSection,
     SentinelSection,
@@ -211,6 +212,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(recovery) && (
                 <Route path={getSectionPath(path, recovery)}>
+                    <RecoveryPageTelemetry />
                     <PrivateMainSettingsArea config={recovery}>
                         <OverviewSection />
                         <AccountRecoverySection />
