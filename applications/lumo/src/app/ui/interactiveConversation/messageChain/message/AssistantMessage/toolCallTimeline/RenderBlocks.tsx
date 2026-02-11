@@ -4,7 +4,7 @@ import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
-import { ToolCallTimeline } from './ToolCallTimeline';
+import TurndownService from 'turndown';
 
 interface RenderBlocksProps {
     blocks: ContentBlock[];
@@ -29,7 +29,6 @@ function preprocessContent(content: string | undefined): string {
         content.endsWith('</div>') ||
         content.endsWith('</p>')
     ) {
-        const TurndownService = require('turndown');
         const turndownService = new TurndownService({
             headingStyle: 'atx',
             codeBlockStyle: 'fenced',
