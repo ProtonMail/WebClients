@@ -15,16 +15,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     disconnect: jest.fn(),
 }));
 
-// Mock the applyLocationPerformanceTracker to avoid Performance API issues in JSDOM
-jest.mock('proton-mail/helpers/location/applyLocationPerformanceTracker', () => ({
-    __esModule: true,
-    APPLY_LABEL_MARK_PREFIX: 'apply-label-start-',
-    getApplyLocationTracker: () => ({
-        mark: jest.fn(),
-        measure: jest.fn(() => null),
-    }),
-}));
-
 // JSDom does not include a full implementation of webcrypto
 global.crypto.subtle = require('crypto').webcrypto.subtle;
 
