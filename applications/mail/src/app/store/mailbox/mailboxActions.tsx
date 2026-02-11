@@ -164,11 +164,10 @@ export const markMessagesAsRead = createAsyncThunk<
     }
 );
 
-// TODO check if we can change elements: Element[]; to elements: Message[];
 export const markMessagesAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
