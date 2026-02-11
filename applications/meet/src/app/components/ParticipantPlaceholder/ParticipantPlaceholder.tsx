@@ -14,10 +14,10 @@ interface ParticipantPlaceholderProps {
 }
 
 const sizeByViewSize = {
-    small: 2.5,
-    medium: 3,
-    midLarge: 4.5,
-    large: 5,
+    small: 2.5, // 40
+    medium: 3, // 48
+    midLarge: 4, // 64
+    large: 5, // 80
 };
 
 export const ParticipantPlaceholder = ({
