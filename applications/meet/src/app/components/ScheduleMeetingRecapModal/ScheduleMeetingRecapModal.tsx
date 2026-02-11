@@ -1,11 +1,10 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -138,67 +137,68 @@ export const ScheduleMeetingRecapModal = ({
     return (
         <TranslucentModal open={open} onClose={onClose}>
             <div className="flex md:items-center justify-center">
-                <div
-                    className="create-container max-w-custom flex flex-column gap-2"
+                <h1
+                    className="create-container max-w-custom flex flex-column gap-2 text-rg"
                     style={{ '--max-w-custom': '35rem' }}
                 >
                     <div className="text-center">
                         <img
-                            className="w-custom h-custom mb-2"
+                            className="w-custom h-custom mb-5"
                             src={scheduleIcon}
-                            alt=""
+                            alt={isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
                             style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
                         />
                     </div>
-                    <div className="text-4xl mb-6 w-full text-center">
-                        {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
-                    </div>
-                </div>
+                    <div className="text-4xl mb-5 w-full text-center text-wrap-balance">{meetingName}</div>
+                </h1>
             </div>
-            <div className="flex flex-column items-center align-center mt-10">
+
+            <p className="color-weak mt-0 text-center w-full">
+                {endsOnSameDay ? (
+                    <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
+                        <span>{formatDate(startTime, timeZone)}</span>
+                        <span>
+                            {formatTimeHHMM(startTime, timeFormat, timeZone)} -{' '}
+                            {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
+                        </span>
+                    </span>
+                ) : (
+                    <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
+                        <span>
+                            {formatDate(startTime, timeZone)} {formatTimeHHMM(startTime, timeFormat, timeZone)} (
+                            {timeZone})
+                        </span>
+                        <span>
+                            {formatDate(endTime, timeZone)} {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
+                        </span>
+                    </span>
+                )}
+            </p>
+            <div className="flex flex-column items-center align-center mt-10 gap-10">
                 <div className="w-full">
                     <Card
-                        className="flex flex-column meeting-details-card pt-4 pl-5 pb-4"
+                        className="flex flex-column meeting-details-card p-6"
                         bordered={false}
                         background={false}
                         rounded={false}
                     >
-                        <p className="meeting-details">{c('Label').t`Meeting details`}</p>
-                        <p className="meeting-title mt-1 mb-3">{meetingName}</p>
-                        <div className="flex flex-column items-start">
-                            {endsOnSameDay ? (
-                                <div className="flex flex-column items-start color-weak">
-                                    <div className="mb-1">{formatDate(startTime, timeZone)}</div>
-                                    <div>
-                                        {formatTimeHHMM(startTime, timeFormat, timeZone)} -{' '}
-                                        {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="flex flex-column items-start color-weak">
-                                    <div className="mb-1">
-                                        {formatDate(startTime, timeZone)}{' '}
-                                        {formatTimeHHMM(startTime, timeFormat, timeZone)} ({timeZone})
-                                    </div>
-                                    <div>
-                                        {formatDate(endTime, timeZone)} {formatTimeHHMM(endTime, timeFormat, timeZone)}{' '}
-                                        ({timeZone})
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                        <div className="flex flex-row justify-between">
-                            <p>
-                                <a
-                                    className="meeting-link"
-                                    href={meetingLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {meetingLink}
-                                </a>
-                                <button
+                        <p className="flex flex-nowrap flex-row items-center gap-2 max-w-full m-0">
+                            <a
+                                className="meeting-link flex-1"
+                                href={meetingLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={meetingLink}
+                            >
+                                {meetingLink}
+                            </a>
+                            <Tooltip title={c('Action').t`Copy meeting link`}>
+                                <Button
+                                    shape="ghost"
+                                    color="norm"
                                     type="button"
+                                    icon
+                                    className="shrink-0"
                                     onClick={() => {
                                         void navigator.clipboard.writeText(meetingLink);
                                         notifications.createNotification({
@@ -207,13 +207,13 @@ export const ScheduleMeetingRecapModal = ({
                                         });
                                     }}
                                 >
-                                    <IcSquares className="ml-2" alt={c('Action').t`Copy meeting link`} />
-                                </button>
-                            </p>
-                        </div>
+                                    <IcSquares alt={c('Action').t`Copy meeting link`} />
+                                </Button>
+                            </Tooltip>
+                        </p>
                     </Card>
                 </div>
-                <div className="flex flex-nowrap flex-row mt-5 gap-4 w-full">
+                <div className="flex flex-nowrap flex-column *:min-size-auto md:flex-row gap-4 w-full">
                     <div className="w-full">
                         <DropdownButton
                             ref={anchorRef}
@@ -224,8 +224,8 @@ export const ScheduleMeetingRecapModal = ({
                             className="w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
                             size="large"
                         >
-                            <span className="inline-flex items-center">
-                                <IcPlus size={4} className="mr-2" />
+                            <span className="inline-flex items-center flex-nowrap gap-2">
+                                <IcPlus size={4} className="shrink-0" />
                                 {c('Label').t`Add to calendar`}
                             </span>
                         </DropdownButton>
