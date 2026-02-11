@@ -19,8 +19,17 @@ export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     emojiPicker: ['Meta', 'E'] as KeyboardKeyType[],
 };
 
-export const getShortcuts = () => {
+export const getShortcuts = (categoriesShortcuts: any[]) => {
     const isSafari = checkIsSafari();
+
+    const inboxShortCut = categoriesShortcuts.length
+        ? categoriesShortcuts
+        : [
+              {
+                  name: c('Keyboard shortcut name').t`Go to Inbox`,
+                  keys: ['G', 'I'],
+              },
+          ];
 
     return [
         {
@@ -82,10 +91,7 @@ export const getShortcuts = () => {
         {
             name: c('Keyboard shortcut section name').t`Folder shortcuts`,
             shortcuts: [
-                {
-                    name: c('Keyboard shortcut name').t`Go to Inbox`,
-                    keys: ['G', 'I'],
-                },
+                ...inboxShortCut,
                 {
                     name: c('Keyboard shortcut name').t`Go to Archive`,
                     keys: ['G', 'A'],
