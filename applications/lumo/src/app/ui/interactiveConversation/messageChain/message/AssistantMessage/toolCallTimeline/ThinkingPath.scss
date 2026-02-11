@@ -6,6 +6,8 @@
 
 .thinking-step {
     position: relative;
+    display: flex;
+    inline-size: 100%;
     padding-inline-start: 2.5rem;
     padding-block: 0.5rem;
     min-block-size: 2.5rem;
@@ -59,8 +61,16 @@
     }
 }
 
+.thinking-step-content {
+    flex: 1;
+    min-inline-size: 0;
+    padding-block-start: 0.25rem;
+}
+
 .thinking-step-toggle {
-    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     inline-size: 100%;
     padding-block: 0.25rem;
     padding-inline: 0.5rem;
@@ -73,6 +83,7 @@
     transition: background-color 0.15s ease;
     color: var(--text-weak);
     font-size: 0.875rem;
+    text-align: start;
 
     &:hover {
         background-color: var(--background-weak);
@@ -85,6 +96,7 @@
 }
 
 .thinking-step-chevron {
+    flex-shrink: 0;
     transition: transform 0.2s ease;
     color: var(--text-weak);
 
@@ -94,6 +106,7 @@
 }
 
 .thinking-step-label {
+    flex: 1;
     font-size: 0.875rem;
     padding-block-start: 0.125rem;
 }
