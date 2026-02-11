@@ -3109,6 +3109,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3941,6 +3944,12 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Network error": [
+        "네트워크 오류"
+      ],
+      "This offer is not available in your country": [
+        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
       ]
     },
     "error": {
@@ -4025,6 +4034,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "사용자의 ${ formattedFilename } 파일이 비어있습니다."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
       ]
     },
     "Error importing event": {
@@ -4760,6 +4772,12 @@
       ],
       "Your password is correct.": [
         "사용자의 비밀번호가 알맞습니다."
+      ],
+      "Two-factor authentication is enabled in your external account.": [
+        "사용자의 외부 계정에 2단계 인증이 활성화되었습니다."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "2단계 인증이 사용자의 외부 계정에 활성화되었습니다."
       ]
     },
     "Import instructions": {
@@ -5304,7 +5322,7 @@
         "${ Name } 캘린더의 이벤트 표시"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
+        "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
       ],
       "Downgrade": [
         "다운그레이드"
@@ -6364,6 +6382,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
       ]
     },
     "info": {
@@ -7408,6 +7429,15 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "${ n } participant": [
+        "참여자 ${ n }명"
+      ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
+      "Meeting recording": [
+        "회의 녹화"
       ]
     },
     "Message": {
@@ -8114,6 +8144,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "전화 지원 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상 사용자)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8478,6 +8511,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "한 명 이상의 관리자를 생성할 수 있습니다. 모든 관리자들은 사용자들을 추가 및 관리할 수 있으나 오직 기본 관리자만이 청구를 관리할 수 있습니다."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "전화 지원은 유럽 표준시 업무 시간 동안 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }명 이상의 사용자가 있는 고객을 대상으로 ${ BRAND_NAME } 고객 지원팀에서 이용할 수 있습니다."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9235,6 +9271,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }은(는) ${ couponRedemptions }개월간 유효합니다. 이후 ${ renewPriceStr }(으)로 1개월간 자동 갱신됩니다. 언제든지 취소할 수 있습니다."
       ]
     },
     "Payments.Error": {
@@ -11892,6 +11937,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle } 구독이 시작되었습니다"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12172,7 +12220,7 @@
         "이 불러오기가 현재 ${ BRAND_NAME } 계정에서의 저장 공간을 초과할 수 있습니다. 불러올 파일들을 선별하는 것을 고려해 보세요."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+        "송구스럽지만, 현재 대기 중인 상담원이 없습니다. 겪고 계신 문제를 아래 양식을 통해 작성해 주시면, 차후 상담원이 돌아왔을 때 살펴보고 연락드리겠습니다."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "메일 서버를 인증할 수 없습니다. 해당 서버를 신뢰하신다면, 이 인증을 건너뛸 수도 있습니다."

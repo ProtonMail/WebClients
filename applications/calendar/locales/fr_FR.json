@@ -3988,6 +3988,12 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Failed loading group members": [
+        "Le chargement des membres du groupe n'a pas abouti."
+      ],
+      "Network error": [
+        "Erreur de réseau "
       ]
     },
     "error": {
@@ -6475,6 +6481,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }",
         "Tous vos contacts seront importés, dans la limite de ${ maxContact }"
+      ],
+      "Failed to update meeting schedule": [
+        "La mise à jour de la réunion n'a pas abouti."
       ]
     },
     "info": {
@@ -8274,6 +8283,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "Support téléphonique (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ utilisateurs)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8641,6 +8653,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } utilisateurs ou plus."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9432,6 +9447,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
+        "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment."
       ]
     },
     "Payments.Error": {
@@ -12143,6 +12170,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Votre abonnement ${ planTitle } a commencé."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
