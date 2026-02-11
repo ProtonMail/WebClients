@@ -95,16 +95,14 @@ export const markMessagesAsUnread = (
 
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
 ) => {
     const { elements, labelID, conversations } = action.payload;
 
     conversations.forEach((conversation) => {
         // Count number of messages associated with the conversation
         const messages = elements.filter(
-            (element) =>
-                (element as Message).ConversationID === conversation.ID &&
-                (element as Message).LabelIDs.includes(labelID)
+            (element) => element.ConversationID === conversation.ID && element.LabelIDs.includes(labelID)
         );
         const messagesCount = messages.length;
 

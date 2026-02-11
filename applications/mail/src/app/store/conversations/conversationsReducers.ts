@@ -350,13 +350,13 @@ export const markMessagesAsReadPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Element[]; labelID: string; showSuccessNotification?: boolean } }
+        { arg: { elements: MessageMetadata[]; labelID: string; showSuccessNotification?: boolean } }
     >
 ) => {
     const { elements } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
+        const selectedMessage = selectedElement;
 
         if (selectedMessage.Unread === 0) {
             return;
