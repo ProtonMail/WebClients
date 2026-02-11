@@ -1697,6 +1697,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Disable categories": [
+        "Адключыць катэгорыі"
       ]
     },
     "action": {
@@ -6106,6 +6109,141 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Ваш кантакт для экстранных выпадкаў ${ name } запытвае доступ да вашага ўліковага запісу."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } больш не зможа дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** цяпер з'яўляецца вашым кантактам для аднаўлення. Ён/яна змогуць дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "Магчыма, што нехта іншы спрабуе атрымаць доступ да іх уліковага запісу, **калі яны не запытвалі дапамогу ў вас**. У такім выпадку праігнаруйце гэты запыт."
+      ],
+      "Add recovery contact": [
+        "Дадаць кантакт для аднаўлення"
+      ],
+      "Approved request": [
+        "Зацверджаны запыт"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Папрасіце дапамогі ў кантакту, якому даверылі аднаўленне. Ён/яна атрымае ліст, каб спраўдзіць запыт і разблакіраваць вашы даныя."
+      ],
+      "Asking for help": [
+        "Запытаць дапамогу"
+      ],
+      "Cancel request": [
+        "Скасаваць запыт"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Даныя паспяхова адноўлены. Цяпер вы можаце расшыфраваць свае існуючыя даныя і зашыфраваныя файлы."
+      ],
+      "Emergency contact enabled": [
+        "Экстранны кантакт уключаны"
+      ],
+      "Enable": [
+        "Уключыць"
+      ],
+      "For ${ email }": [
+        "Для ${ email }"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Дазвольце карыстальніку ${ user } ведаць, што доступ аднаўляеце менавіта вы."
+      ],
+      "Pending request": [
+        "Чакае запыту"
+      ],
+      "People who have you as a recovery contact": [
+        "Людзі, якія дадалі вас у якасці кантакт для аднаўлення"
+      ],
+      "Proceed anyway": [
+        "Працягнуць у любым выпадку"
+      ],
+      "Recover data": [
+        "Аднаўленне даных"
+      ],
+      "Recovery approved": [
+        "Аднаўленне зацверджана"
+      ],
+      "Recovery contact added": [
+        "Кантакт для аднаўлення дададзены"
+      ],
+      "Recovery contact enabled": [
+        "Кантакт для аднаўлення ўключаны"
+      ],
+      "Recovery contact removed": [
+        "Кантакт для аднаўлення выдалены"
+      ],
+      "Recovery contacts": [
+        "Кантакты для аднаўлення"
+      ],
+      "Recovery request sent": [
+        "Запыт на аднаўленне адпраўлены"
+      ],
+      "Remove recovery contact": [
+        "Выдаліць кантакт для аднаўлення"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Выдаліце свае кантакты для аднаўлення, каб працягнуць"
+      ],
+      "Request access": [
+        "Запытаць доступ"
+      ],
+      "Review recovery request": [
+        "Паглядзець запыт на аднаўленне"
+      ],
+      "See request": [
+        "Паглядзець запыт"
+      ],
+      "Select recovery contact ${ name }": [
+        "Выберыце кантакт для аднаўлення ${ name }"
+      ],
+      "Set account recovery": [
+        "Задаць аднаўленне для ўліковага запісу"
+      ],
+      "Stop being recovery contact?": [
+        "Перастаць быць кантактам для аднаўлення?"
+      ],
+      "Stop being trusted contact": [
+        "Перастаць быць давераным кантактам"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
+      ],
+      "Unable to recover data": [
+        "Немагчыма аднавіць даныя"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Атрыманы запыт на разблакіроўку зашыфраваных даных вашага кантакту **${ user }**."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Вас пакуль яшчэ ніхто не прызначыў у якасці кантакту для аднаўлення."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакт для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакты для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "У вас больш не будзе магчымасці дапамагаць аднавіць доступ для ўліковага запісу карыстальніка ${ user } у выпадку, калі ім будзе скінуты пароль."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Ваш кантакт для аднаўлення ${ name } просіць дапамогі ў аднаўленні сваіх даных."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Ваш кантакт для аднаўлення дапамог вам аднавіць даныя."
+      ],
+      "Your recovery contacts": [
+        "Вашы кантакты для аднаўлення"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
       ]
     },
     "Empty group name": {
@@ -12095,6 +12233,15 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі з катэгорыямі і тэгамі больш не будуць бачныя. "
       ]
     },
     "info": {
@@ -14915,7 +15062,7 @@
         "Усе дзеянні фільтра будуць ужыты да ўсіх паведамленняў у вашым уліковым запісе ${ MAIL_APP_NAME }. Лісты з аўтаматычным адказам не будуць адпраўляцца."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
+        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashakampanija.com). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."
@@ -23952,6 +24099,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Disable categories?": [
+        "Адключыць катэгорыі?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

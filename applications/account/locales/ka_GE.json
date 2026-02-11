@@ -1697,6 +1697,15 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Disable categories": [
+        "კატეგორიების გათიშვა"
+      ],
+      "Ignore": [
+        "გამოტოვება"
+      ],
+      "Keep categories": [
+        "კატეგორიების შენარჩუნება"
       ]
     },
     "action": {
@@ -1789,6 +1798,14 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "${ domains } custom email domain": [
+        "ელფოსტის ${ domains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ domains } ხელით მითითებული დომენი"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } გამოყოფილი VPN სერვერი",
+        "${ ips } გამოყოფილი VPN სერვერი"
       ]
     },
     "Address action": {
@@ -3082,6 +3099,30 @@
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
         "ჯამში ${ n } თვის"
+      ],
+      "${ n } day": [
+        "${ n } დღე",
+        "${ n } დღე"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ years } year": [
+        "${ years } წელი",
+        "${ years } წელი"
+      ],
+      "Forever access": [
+        "სამუდამო წვდომა"
+      ],
+      "Started ${ formattedStartDate }": [
+        "დაიწყო ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "${ formattedStartDate }-დან დაიწყება"
+      ],
+      "Starting today": [
+        "დღეიდან"
       ]
     },
     "Checkout summary": {
@@ -5902,6 +5943,111 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "თქვენი სასწრაფო კონტაქტი ${ name } ითხოვს წვდომას თქვენს ანგარიშთან."
+      ],
+      "Access account": [
+        "წვდომა ანგარიშზე"
+      ],
+      "Add recovery contact": [
+        "აღდგენის კონტაქტის დამატება"
+      ],
+      "Approve recovery": [
+        "აღდგენის დადასტურება"
+      ],
+      "Approved request": [
+        "დამტკიცებული მოთხოვნა"
+      ],
+      "Asking for help": [
+        "დახმარების მოთხოვნა"
+      ],
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Emergency contact enabled": [
+        "სასწრაფო კონტაქტი ჩართულია"
+      ],
+      "Enable": [
+        "ჩართვა"
+      ],
+      "For ${ email }": [
+        "${ email }-ისთვის"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Pending request": [
+        "მოთხოვნა რიგში"
+      ],
+      "Proceed anyway": [
+        "მაინც გაგრძელება"
+      ],
+      "Recover data": [
+        "მონაცემების აღდგენა"
+      ],
+      "Recover data now": [
+        "მონაცემების აღდგენა ახლავე"
+      ],
+      "Recovery approved": [
+        "აღდგენა დამტკიცდა"
+      ],
+      "Recovery contact added": [
+        "აღდგენის კონტაქტი დაემატა"
+      ],
+      "Recovery contact enabled": [
+        "აღდგენის კონტაქტი ჩართულია"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "აღდგენის კონტაქტი ${ user }-ისთვის წაიშალა"
+      ],
+      "Recovery contact removed": [
+        "აღდგენის კონტაქტი წაიშალა"
+      ],
+      "Recovery contacts": [
+        "საკონტაქტო ინფორმაცია აღდგენისთვის"
+      ],
+      "Recovery request sent": [
+        "აღდგენის მოთხოვნა გაიგზავნა"
+      ],
+      "Remove recovery contact": [
+        "აღდგენის კონტაქტის წაშლა"
+      ],
+      "Request access": [
+        "წვდომის მოთხოვნა"
+      ],
+      "Review recovery request": [
+        "აღდგენის მოთხოვნის გადახედვა"
+      ],
+      "See request": [
+        "მოთხოვნის ნახვა"
+      ],
+      "Select recovery contact ${ name }": [
+        "აირჩიეთ აღდგენის კონტაქტი ${ name }"
+      ],
+      "Send email request": [
+        "ელგოსტის მოთხოვნის გაგზავნა"
+      ],
+      "Send recovery request": [
+        "აღდგენის მოთხოვნის გაგზავნა"
+      ],
+      "Set account recovery": [
+        "ანგარიშის აღდგენის დაყენება"
+      ],
+      "Stop being recovery contact": [
+        "აღდგენის კონტაქტად ყოფნის შეწყვეტა"
+      ],
+      "Stop being recovery contact?": [
+        "აღდგენის კონტაქტად ყოფნის შეწყვეტა?"
+      ],
+      "Stop being trusted contact": [
+        "სანდო კონტაქტად ყოფნის შეწყვეტა"
+      ],
+      "Unable to recover data": [
+        "მონაცემების აღდგენა შეუძლებელია"
+      ],
+      "Your recovery contacts": [
+        "თქვენი აღდგენის კონტაქტები"
       ]
     },
     "Empty group name": {
@@ -11527,6 +11673,22 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
+      ],
+      "Cancel anytime.": [
+        "გააუქმეთ ნებისმიერ დროს."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "ვადა იწურება ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "Total: ${ totalPrice }": [
+        "სულ: ${ totalPrice }"
       ]
     },
     "info": {
@@ -13453,6 +13615,30 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } დასრულდება ${ Last4 }"
+      ],
+      "Add extra services": [
+        "დამატებითი სერვისების დამატება"
+      ],
+      "Choose your billing": [
+        "აირჩიეთ თქვენი გადახდის ტიპი"
+      ],
+      "More payment methods": [
+        "მეტი გადახდის მეთოდი"
+      ],
+      "today": [
+        "დღეს"
+      ],
+      "Use another payment method": [
+        "გადახდის განსხვავებული მეთოდის გამოყენება"
+      ],
+      "Your credit balance": [
+        "თქვენი საკრედიტო ბალანსი"
+      ],
+      "Your plan": [
+        "თქვენი პაკეტი"
       ]
     },
     "label": {
@@ -13837,6 +14023,9 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ],
+      "What's included in your plan": [
+        "რა შედის თქვენს პაკეტში"
       ]
     },
     "Link (Scribe)": {
@@ -20258,6 +20447,30 @@
       ],
       "Billed yearly": [
         "გადახდა წელიწადში ერთხელ"
+      ],
+      "${ discountPercent }% discount applied": [
+        "გამოყენებულია ფასდაკლება ${ discountPercent }%"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% ფასდაკლება"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } უფასო"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "მიბმული **${ nameToDisplay }**-ზე"
+      ],
+      "Next billing date": [
+        "შემდეგი გადახდის თარიღი"
+      ],
+      "Total due": [
+        "სულ გადასახდელი"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "სულ გადასახდელია ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "სულ გადასახდელი დღეს"
       ]
     },
     "Subscription attribute": {
@@ -22886,6 +23099,9 @@
       ],
       "Your subscriptions": [
         "თქვენი გამოწერები"
+      ],
+      "Disable categories?": [
+        "გამოვრთო კატეგორიები?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

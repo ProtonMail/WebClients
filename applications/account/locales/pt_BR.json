@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Ignore": [
+        "Ignorar"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } domínio de e-mail personalizado",
+        "${ domains } domínios de e-mail personalizados"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licença de IA do ${ LUMO_APP_NAME }",
+        "${ seats } licenças de IA do ${ LUMO_APP_NAME }"
       ]
     },
     "Address action": {
@@ -3169,6 +3184,24 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ],
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dias"
+      ],
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ years } year": [
+        "${ years } ano",
+        "${ years } anos"
+      ],
+      "Forever access": [
+        "Acesso para sempre"
+      ],
+      "Starting today": [
+        "Começando hoje"
       ]
     },
     "Checkout summary": {
@@ -6046,6 +6079,106 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Seu contato de emergência ${ name } está solicitando acesso a sua conta."
+      ],
+      "Access account": [
+        "Acessar conta"
+      ],
+      "Add recovery contact": [
+        "Adicionar contato de recuperação"
+      ],
+      "Approve recovery": [
+        "Aprovar recuperação"
+      ],
+      "Approved request": [
+        "Solicitação aprovada"
+      ],
+      "Asking for help": [
+        "Pedir ajuda"
+      ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Emergency contact enabled": [
+        "Contato de emergência ativado"
+      ],
+      "Enable": [
+        "Ativar"
+      ],
+      "For ${ email }": [
+        "Para ${ email }"
+      ],
+      "Got it": [
+        "Consegui"
+      ],
+      "Pending request": [
+        "Solicitação pendente"
+      ],
+      "Proceed anyway": [
+        "Proceder mesmo assim"
+      ],
+      "Recover data": [
+        "Recuperar dados"
+      ],
+      "Recover data now": [
+        "Recuperar dados agora"
+      ],
+      "Recovery approved": [
+        "Recuperação aprovada"
+      ],
+      "Recovery contact added": [
+        "Contato de recuperação adicionado"
+      ],
+      "Recovery contact enabled": [
+        "Contato de recuperação ativado"
+      ],
+      "Recovery contact removed": [
+        "Contato de recuperação removido"
+      ],
+      "Recovery contacts": [
+        "Contatos de recuperação"
+      ],
+      "Recovery request sent": [
+        "Solicitação de recuperação enviada"
+      ],
+      "Remove recovery contact": [
+        "Remover contato de recuperação"
+      ],
+      "Request access": [
+        "Solicitar acesso"
+      ],
+      "Review recovery request": [
+        "Revisar solicitação de recuperação"
+      ],
+      "See request": [
+        "Ver solicitação"
+      ],
+      "Send email request": [
+        "Enviar solicitação por e-mail?"
+      ],
+      "Send recovery request": [
+        "Enviar solicitação de recuperação"
+      ],
+      "Set account recovery": [
+        "Definir recuperação de conta"
+      ],
+      "Stop being recovery contact": [
+        "Deixar de ser um contato de recuperação"
+      ],
+      "Stop being recovery contact?": [
+        "Deixar de ser um contato de recuperação?"
+      ],
+      "Stop being trusted contact": [
+        "Deixar de ser um contato de confiança"
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Você atingiu o máximo de ${ limit } contato de recuperação",
+        "Você atingiu o máximo de ${ limit } contatos de recuperação."
+      ],
+      "Your recovery contacts": [
+        "Seus contatos de recuperação"
       ]
     },
     "Empty group name": {
@@ -11857,6 +11990,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Cancel anytime.": [
+        "Cancele quando quiser."
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "Total: ${ totalPrice }": [
+        "Total: ${ totalPrice }"
       ]
     },
     "info": {
@@ -13817,6 +13959,27 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Add extra services": [
+        "Adicionar serviços extras"
+      ],
+      "Choose your billing": [
+        "Escolha sua fatura"
+      ],
+      "More payment methods": [
+        "Mais métodos de pagamento"
+      ],
+      "today": [
+        "hoje"
+      ],
+      "Use another payment method": [
+        "Usar outro método de pagamento"
+      ],
+      "Your credit balance": [
+        "Seu saldo de crédito"
+      ],
+      "Your plan": [
+        "Seu plano"
       ]
     },
     "label": {
@@ -17577,6 +17740,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excl ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incl ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incl ${ taxRate }% de impostos: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20774,6 +20946,24 @@
       ],
       "Billed yearly": [
         "Cobrado anualmente"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Desconto de ${ discountPercent }% aplicado"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% de desconto"
+      ],
+      "Next billing date": [
+        "Próxima data de faturamento"
+      ],
+      "Total due": [
+        "Total devido"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Total devido em ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Preço total hoje"
       ]
     },
     "Subscription attribute": {

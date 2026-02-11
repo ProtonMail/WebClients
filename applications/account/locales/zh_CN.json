@@ -103,7 +103,7 @@
         "添加 ${ BRAND_NAME } 地址"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -1015,7 +1015,7 @@
         "更多选项"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "move emails to": [
         "将邮件移至"
@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Ignore": [
+        "忽略"
       ]
     },
     "action": {
@@ -1787,6 +1790,15 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } 个自定义邮箱域名"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 个专属 VPN 服务器"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
       ]
     },
     "Address action": {
@@ -3151,6 +3163,27 @@
       ],
       "Total for ${ n } month": [
         "${ n } 月合计"
+      ],
+      "${ n } day": [
+        "${ n } 天"
+      ],
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "${ years } year": [
+        "${ years } 年"
+      ],
+      "Forever access": [
+        "永久访问权限"
+      ],
+      "Started ${ formattedStartDate }": [
+        "自 ${ formattedStartDate } 起"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "自 ${ formattedStartDate } 起"
+      ],
+      "Starting today": [
+        "从今天开始"
       ]
     },
     "Checkout summary": {
@@ -4792,10 +4825,10 @@
         "返回${ signIn }。"
       ],
       "Didn't create an account?": [
-        "没有创建帐户？"
+        "没有创建账户？"
       ],
       "I didn't create this account": [
-        "我没有创建这个帐户"
+        "我没有创建这个账户"
       ],
       "sign in": [
         "登录"
@@ -6013,6 +6046,186 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "您的紧急联系人 ${ name } 正在请求访问您的账户。"
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "重置密码后，${ user } 将无法再帮助您恢复数据。"
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** 现已成为您的恢复联系人，他们可以在您重置密码后帮助您恢复数据。"
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**如果他们确认**，请点击 **批准恢复**。这将解锁他们的加密数据。"
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**如果他们并未请求您的帮助**，则可能是他人在尝试访问其账户。这种情况下，请忽略此请求。"
+      ],
+      "Access account": [
+        "访问账户"
+      ],
+      "Add recovery contact": [
+        "添加恢复联系人"
+      ],
+      "Approve recovery": [
+        "批准恢复"
+      ],
+      "Approved request": [
+        "已批准请求"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "请向恢复联系人寻求帮助，他们将收到一封电子邮件来验证您的请求并解锁您的数据。"
+      ],
+      "Asking for help": [
+        "正在请求帮助"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "通过添加您信任的人作为恢复联系人，当您在重置密码后恢复数据遇到困难时，我们就能向他们发送邮件以提供帮助。您也可以成为他人的恢复联系人。"
+      ],
+      "Cancel request": [
+        "取消请求"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "请选择一位您信任的人，以便在密码重置时帮助您恢复数据。恢复联系人必须已拥有 ${ BRAND_NAME } 账户。"
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "请与他们联系以确认他们需要帮助来恢复数据！"
+      ],
+      "Contacts": [
+        "联系人"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "数据已成功恢复，您现在可以解密现有数据及加密文件。"
+      ],
+      "Emergency contact enabled": [
+        "紧急联系人已启用"
+      ],
+      "Enable": [
+        "启用"
+      ],
+      "For ${ email }": [
+        "对于 ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "立即与他们联系，确认他们能否提供帮助，并亲自告知他们是您正在尝试解锁数据。"
+      ],
+      "Got it": [
+        "知道了"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "请让他们检查收件箱中关于帮助您恢复数据的邮件，邮件中包含他们需要点击以验证您请求的链接。"
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "让 ${ user } 知道确实是您正在尝试恢复访问权限"
+      ],
+      "Pending request": [
+        "待处理请求"
+      ],
+      "People who have you as a recovery contact": [
+        "将您设为恢复联系人的人员"
+      ],
+      "Proceed anyway": [
+        "仍要继续"
+      ],
+      "Recover data": [
+        "恢复数据"
+      ],
+      "Recover data now": [
+        "立即恢复数据"
+      ],
+      "Recovery approved": [
+        "恢复已批准"
+      ],
+      "Recovery contact added": [
+        "恢复联系人已添加"
+      ],
+      "Recovery contact enabled": [
+        "恢复联系人已启用"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "${ user } 的恢复联系人已移除"
+      ],
+      "Recovery contact removed": [
+        "恢复联系人已移除"
+      ],
+      "Recovery contacts": [
+        "恢复联系人"
+      ],
+      "Recovery request sent": [
+        "恢复请求已发送"
+      ],
+      "Remove recovery contact": [
+        "移除恢复联系人"
+      ],
+      "Remove your recovery contacts to continue": [
+        "请先移除您的恢复联系人才能继续"
+      ],
+      "Request access": [
+        "请求访问"
+      ],
+      "Review recovery request": [
+        "审阅恢复请求"
+      ],
+      "See request": [
+        "查看请求"
+      ],
+      "Select recovery contact ${ name }": [
+        "选择恢复联系人 ${ name }"
+      ],
+      "Send email request": [
+        "发送邮件请求"
+      ],
+      "Send recovery request": [
+        "发送恢复请求"
+      ],
+      "Set account recovery": [
+        "设置账户恢复"
+      ],
+      "Stop being recovery contact": [
+        "停止作为恢复联系人"
+      ],
+      "Stop being recovery contact?": [
+        "停止作为恢复联系人？"
+      ],
+      "Stop being trusted contact": [
+        "停止作为受信联系人"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "要禁用此恢复方式，请移除您所有的恢复联系人！"
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "要使用受信联系人恢复，您必须已设置账户恢复方法。"
+      ],
+      "Unable to recover data": [
+        "无法恢复数据"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "我们收到为您的联系人 **${ user }** 解锁加密数据的请求。"
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "我们无法验证恢复数据，是否仍要继续？"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "您尚未被指定为任何人的恢复联系人！"
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "您已达到 ${ limit } 个恢复联系人的上限"
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "若执行密码重置，您将无法再帮助恢复对 ${ user } 账户的访问权限。"
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "您的恢复联系人 ${ name } 已批准您解锁加密数据的请求。"
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "您的恢复联系人 ${ name } 正在请求帮助以恢复其数据"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "您的恢复联系人已帮助您恢复数据！"
+      ],
+      "Your recovery contacts": [
+        "您的恢复联系人"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "您的恢复联系人应是您认识并能轻松联系到的人！"
       ]
     },
     "Empty group name": {
@@ -6571,7 +6784,7 @@
         "此优惠在您所在的国家/地区不可用"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "要创建非私人用户帐户并使用帐户，您需要恢复您的管理员权限。"
+        "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
       ],
       "Too many requests. Please try again after ${ date }": [
         "请求过多，请在 ${ date } 后重试"
@@ -6863,7 +7076,7 @@
     },
     "Error message, Disable account": {
       "There was a problem disabling your account.": [
-        "禁用您的帐户时出现问题。"
+        "禁用您的账户时出现问题。"
       ]
     },
     "Error message, recovery": {
@@ -7224,10 +7437,10 @@
         "创建和管理家庭成员。"
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "如果用户已经有一个 ${ MAIL_APP_NAME } 地址，请在这里输入。否则他们需要先创建一个帐户。"
+        "如果用户已拥有 ${ MAIL_APP_NAME } 地址，请在此处输入。否则，他们需要先创建一个账户。"
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
-        "如果用户已经有一个 ${ BRAND_NAME }帐户，请在这里输入。否则他们需要先创建一个帐户。"
+        "如果用户已拥有 ${ BRAND_NAME } 账户，请在此处输入。否则，他们需要先创建一个账户。"
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "邀请将被取消，用户将无法加入 ${ organizationName }。"
@@ -7290,7 +7503,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "将用户添加到您的 ${ PLAN_NAMES.visionary2022 } 帐户"
+        "将用户添加到您的 ${ PLAN_NAMES.visionary2022 } 账户"
       ],
       "Change family name": [
         "更改家庭名称"
@@ -7767,7 +7980,7 @@
         "已经有账户了？${ signIn }"
       ],
       "Already have an account? ${ signIn } or ${ switchAccount }": [
-        "已经有一个帐户？ ${ signIn } 或 ${ switchAccount }"
+        "已经有一个账户？ ${ signIn } 或 ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -7870,7 +8083,7 @@
         "支付"
       ],
       "Create your account": [
-        "创建您的帐户"
+        "创建您的账户"
       ],
       "Device": [
         "设备"
@@ -8764,7 +8977,7 @@
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "A recovery file lets you unlock and view your data after account recovery": [
-        "恢复文件可让您在帐户恢复后解锁并查看数据"
+        "恢复文件可让您在账户恢复后解锁并查看数据"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "若不慎忘记密码，恢复密语可用于找回账户并解锁加密邮件"
@@ -11449,7 +11662,7 @@
         "您可以使用下面的切换键在界面上启用照片部分。"
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
-        "您可以强制执行组织成员在创建或重置其 ${ BRAND_NAME } 帐户密码时使用的密码规则。"
+        "您可以为贵组织成员设置密码规则，此规则将在他们创建或重置其 ${ BRAND_NAME } 账户密码时生效。"
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可以以一个套餐价格获取我们的高级隐私服务——仅需 **${ priceString } / 月**。"
@@ -11626,7 +11839,7 @@
         "您的账户已成功更新"
       ],
       "Your account was successfully updated with this promotion": [
-        "您的帐户已成功更新此促销活动"
+        "您的账户已成功应用此促销优惠"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
@@ -11726,6 +11939,27 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Cancel anytime.": [
+        "可随时取消"
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "有效期至 ${ ExpMonth } 年 ${ ExpYear } 月"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN：${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "如果您购买了礼品码或从我们的支持团队收到了礼品码，可以在此处输入。"
+      ],
+      "Total: ${ totalPrice }": [
+        "总计：${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "您通过优惠节省了 ${ discountAmount }"
+      ],
+      "Your payment details are encrypted and secure": [
+        "您的付款信息已加密并安全存储"
       ]
     },
     "info": {
@@ -13678,6 +13912,33 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } 卡号末四位：${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "账户持有人：${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "添加额外服务"
+      ],
+      "Choose your billing": [
+        "选择您的账单周期"
+      ],
+      "More payment methods": [
+        "更多付款方式"
+      ],
+      "today": [
+        "今天"
+      ],
+      "Use another payment method": [
+        "使用其他付款方式"
+      ],
+      "Your credit balance": [
+        "您的信用余额"
+      ],
+      "Your plan": [
+        "您的套餐"
       ]
     },
     "label": {
@@ -14061,6 +14322,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "What's included in your plan": [
+        "您的套餐包含内容"
       ]
     },
     "Link (Scribe)": {
@@ -14116,7 +14380,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -14279,7 +14543,7 @@
         "限时优惠： 年度计划**折扣高达 35%**"
       ],
       "Set up your account with your Porkbun domain.": [
-        "使用您的 Pokbun 域设置您的帐户。"
+        "使用您的 Porkbun 域名来设置账户。"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "诚邀您体验 ${ MAIL_APP_NAME }"
@@ -14520,10 +14784,10 @@
         "${ BRAND_NAME } 账户"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
-        "创建一个 ${ BRAND_NAME } 帐户来使用所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、 ${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }和更多，只需一个登录。 获得一个免费的 ${ BRAND_NAME } 帐户。"
+        "创建一个 ${ BRAND_NAME } 账户，仅需一次登录即可使用所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等。立即获取免费的 ${ BRAND_NAME } 账户。"
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
-        "创建一个 ${ BRAND_NAME } 帐户 | 夺回您的隐私"
+        "创建 ${ BRAND_NAME } 账户 | 重获您的隐私掌控权"
       ],
       "Create a new ${ appName } account": [
         "创建 ${ appName } 账户"
@@ -14535,7 +14799,7 @@
         "体验真正的在线隐私。使用 ${ BRAND_NAME }免费保护您接下来14 天的数据。"
       ],
       "Find your ${ BRAND_NAME } Account username": [
-        "查找您的 ${ BRAND_NAME } 帐户用户名"
+        "查找您的 ${ BRAND_NAME } 账户用户名"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘了 ${ BRAND_NAME } 账户的密码？凭代码、电子邮件或短信重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
@@ -14550,7 +14814,7 @@
         "登录 ${ appName } 账户"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
-        "登录到您的 ${ BRAND_NAME } 帐户以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等等。 没有帐户？免费创建一个帐户。"
+        "登录您的 ${ BRAND_NAME } 账户，以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等。还没有账户？免费创建一个。"
       ]
     },
     "Modal title": {
@@ -16997,7 +17261,7 @@
         "无限制登录、备注、信用卡等功能"
       ],
       "Updating your account": [
-        "正在更新您的帐户"
+        "正在更新您的账户"
       ],
       "Verifying your payment": [
         "确认支付"
@@ -17038,7 +17302,7 @@
         "请求您的组织管理员升级"
       ],
       "Secure your account": [
-        "保护您的帐户"
+        "保护您的账户"
       ]
     },
     "pass_signup_2023: title": {
@@ -17103,7 +17367,7 @@
         "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **恢复短语** 或您的 **旧密码** 解锁。"
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "您帐户上的任何 **双因素身份验证 (2FA)** 方法都将被禁用。"
+        "您账户上的任何 **双因素身份验证 (2FA)** 方法将被禁用。"
       ]
     },
     "passwordless": {
@@ -17370,6 +17634,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "不含 ${ taxRate }% 税费：${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "含 ${ taxRate }% 税费：${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -18510,7 +18786,7 @@
         "密保手机"
       ],
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ],
       "Safeguard account now": [
         "立即保护账户"
@@ -18952,7 +19228,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -20518,6 +20794,36 @@
       ],
       "Billed yearly": [
         "每年付费"
+      ],
+      "${ discountPercent }% discount applied": [
+        "已应用 ${ discountPercent }% 折扣"
+      ],
+      "${ discountPercent }% off": [
+        "立减 ${ discountPercent }%"
+      ],
+      "${ trailCycleText } free": [
+        "免费 ${ trailCycleText }"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "绑定至 **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "绑定至组织 **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "下次账单日期"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "要在免费试用结束后继续订阅，请在 ${ props.periodEnd } 前添加付款方式。"
+      ],
+      "Total due": [
+        "应付总额"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "截至 ${ formattedPeriodEnd } 的应付总额"
+      ],
+      "Total due today": [
+        "今日应付总额"
       ]
     },
     "Subscription attribute": {
@@ -20593,7 +20899,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
@@ -20968,7 +21274,7 @@
         "保留自动付款"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+        "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
@@ -21506,7 +21812,7 @@
         "${ appName } 快捷键"
       ],
       "${ BRAND_NAME } Account password rules": [
-        "${ BRAND_NAME } 帐户密码规则"
+        "${ BRAND_NAME } 账户密码规则"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
@@ -23648,7 +23954,7 @@
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
       ],
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
-        "${ orgName } 的管理员想要为您的帐户启用管理员权限。"
+        "${ orgName } 的管理员希望为您的账户启用管理员访问权限。"
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "**${ orgName }** 组织（**${ adminEmail }**）的管理员希望为您的账户启用管理员访问权限。"
@@ -23705,7 +24011,7 @@
         "拒绝"
       ],
       "Request to manage account sent, awaiting user approval": [
-        "已发送管理帐户申请，等待用户批准"
+        "已发送管理账户申请，等待用户批准"
       ],
       "Request user permission for data access": [
         "请求用户允许访问数据"

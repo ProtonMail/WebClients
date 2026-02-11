@@ -1703,6 +1703,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Ignore": [
+        "Yok say"
       ]
     },
     "action": {
@@ -1795,6 +1798,18 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } özel e-posta etki alanı",
+        "${ domains } özel e-posta etki alanı"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } özelleştirilmiş VPN sunucusu",
+        "${ ips } özelleştirilmiş VPN sunucusu"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
       ]
     },
     "Address action": {
@@ -3169,6 +3184,30 @@
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
+      ],
+      "${ n } day": [
+        "${ n } gün",
+        "${ n } gün"
+      ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ years } year": [
+        "${ years } yıl",
+        "${ years } yıl"
+      ],
+      "Forever access": [
+        "Sonsuza kadar erişim"
+      ],
+      "Started ${ formattedStartDate }": [
+        "${ formattedStartDate } tarihinde başladı"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "${ formattedStartDate } tarihinde başlar"
+      ],
+      "Starting today": [
+        "Bugünden itibaren"
       ]
     },
     "Checkout summary": {
@@ -6046,6 +6085,187 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Acil durum kişiniz ${ name } hesabınıza erişim izni isteğinde bulundu."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } parola sıfırlama işleminden sonra verilerinizi kurtarmanıza yardımcı olamayacak."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** artık kurtarma kişinizdir. Parola sıfırlama işleminden sonra verilerinizi kurtarmanıza yardımcı olabilirler."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Onaylarlarsa**, **Kurtarmayı onayla**'ya tıklayın. Bu işlem şifrelenmiş verilerinin kilidini açacaktır."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Eğer onlar sizin yardımınızı istememişlerse**, başka biri onların hesabına erişmeye çalışıyor olabilir. Bu durumda bu isteği görmezden gelin."
+      ],
+      "Access account": [
+        "Hesaba eriş"
+      ],
+      "Add recovery contact": [
+        "Kurtarma kişisi ekle"
+      ],
+      "Approve recovery": [
+        "Kurtarmayı onayla"
+      ],
+      "Approved request": [
+        "Onaylanan istek"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Kurtarma kişisinden yardım isteyin. İsteğinizi doğrulamak ve verilerinizin kilidini açmak için bir e-posta alacaklar."
+      ],
+      "Asking for help": [
+        "Yardım iste"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Güvendiğiniz kişileri kurtarma kişileri olarak ekleyerek parola sıfırlama işleminden sonra verilerinizi kurtarmakta sorun yaşarsanız onlara size yardımcı olmaları için bir e-posta gönderebiliriz. Siz de başkalarının kurtarma kişisi olabilirsiniz."
+      ],
+      "Cancel request": [
+        "İsteği iptal et"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Parola sıfırlama durumunda verilerinizi kurtarmanıza yardımcı olacak güvenilir birini seçin. Kurtarma kişileri ${ BRAND_NAME } hesabına sahip olmalıdır."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Verilerini kurtarmak için yardıma ihtiyaçları olup olmadığını teyit etmek üzere onlarla iletişime geçin."
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Veriler başarıyla kurtarıldı. Artık mevcut verilerinizin ve şifrelenmiş dosyalarınızın şifresini çözebilirsiniz."
+      ],
+      "Emergency contact enabled": [
+        "Acil durum kişisi etkinleştirildi"
+      ],
+      "Enable": [
+        "Etkinleştir"
+      ],
+      "For ${ email }": [
+        "${ email } için"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Onlarla hemen iletişime geçerek size yardımcı olup olamayacaklarını öğrenin ve verilerinizi kilidini açmaya çalışan kişinin siz olduğunuzu bizzat bildirin."
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Onlara verilerinizi kurtarmak için yardım isteyen bir e-posta olup olmadığını görmeleri için gelen kutularını kontrol etmelerini söyleyin. E-posta, isteğinizi doğrulamak için tıklamaları gereken bir bağlantı içerir."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Erişimi geri kazanmaya çalışanın gerçekten siz olduğunuzu ${ user } kullanıcısına bildirin."
+      ],
+      "Pending request": [
+        "Bekleyen istek"
+      ],
+      "People who have you as a recovery contact": [
+        "Sizi kurtarma kişisi olarak belirleyen kişiler"
+      ],
+      "Proceed anyway": [
+        "Yine de devam et"
+      ],
+      "Recover data": [
+        "Verileri kurtar"
+      ],
+      "Recover data now": [
+        "Verileri şimdi kurtar"
+      ],
+      "Recovery approved": [
+        "Kurtarma onaylandı"
+      ],
+      "Recovery contact added": [
+        "Kurtarma kişisi eklendi"
+      ],
+      "Recovery contact enabled": [
+        "Kurtarma kişisi etkinleştirildi"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "${ user } için kurtarma kişisi kaldırıldı"
+      ],
+      "Recovery contact removed": [
+        "Kurtarma kişisi kaldırıldı"
+      ],
+      "Recovery contacts": [
+        "Kurtarma kişileri"
+      ],
+      "Recovery request sent": [
+        "Kurtarma isteği gönderildi"
+      ],
+      "Remove recovery contact": [
+        "Kurtarma kişisini kaldır"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Devam etmek için kurtarma kişilerinizi kaldırın"
+      ],
+      "Request access": [
+        "Erişim iste"
+      ],
+      "Review recovery request": [
+        "Kurtarma isteğini incele"
+      ],
+      "See request": [
+        "İsteği gör"
+      ],
+      "Select recovery contact ${ name }": [
+        "Kurtarma kişisini seçin: ${ name }"
+      ],
+      "Send email request": [
+        "E-posta isteği gönder"
+      ],
+      "Send recovery request": [
+        "Kurtarma isteği gönder"
+      ],
+      "Set account recovery": [
+        "Hesap kurtarmayı ayarla"
+      ],
+      "Stop being recovery contact": [
+        "Kurtarma kişisi olmaktan çık"
+      ],
+      "Stop being recovery contact?": [
+        "Kurtarma kişisi olmaktan çıkılsın mı?"
+      ],
+      "Stop being trusted contact": [
+        "Güvenilir kişi olmayı bırakın"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Bu kurtarma yöntemini devre dışı bırakmak için tüm kurtarma kişilerinizi kaldırın."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Güvenilir kişi kurtarma özelliğini kullanmak için bir hesap kurtarma yöntemi belirlemiş olmanız gerekir."
+      ],
+      "Unable to recover data": [
+        "Veriler kurtarılamıyor"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "**${ user }** adlı kişinizin şifrelenmiş verilerinin kilidini açmamız için bir talep aldık."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Kurtarma verilerini doğrulayamadık. Yine de devam etmek istiyor musunuz?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Henüz hiç kimse için kurtarma kişisi olarak atanmadınız."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "${ limit } kurtarma bağlantısı maksimum sınırına ulaştınız.",
+        "${ limit } kurtarma bağlantısı maksimum sınırına ulaştınız."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Parola sıfırlaması durumunda ${ user } hesabına erişimin geri kazanılmasına artık yardımcı olamayacaksınız."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Kurtarma kişiniz ${ name } şifrelenmiş verilerinizin kilidini açma talebinizi onayladı."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Kurtarma kişiniz ${ name }, verilerini kurtarmak için yardım istiyor."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Kurtarma kişiniz verilerinizi kurtarmanıza yardımcı oldu."
+      ],
+      "Your recovery contacts": [
+        "Kurtarma kişileriniz"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Kurtarma kişilerinizi tanıdığınız ve kolayca ulaşabileceğiniz kişilerden seçmelisiniz."
       ]
     },
     "Empty group name": {
@@ -11854,6 +12074,27 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Cancel anytime.": [
+        "Dilediğiniz zaman iptal edin."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "${ ExpMonth }/${ ExpYear } tarihinde sona erer"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Hediye kodu satın aldıysanız veya destek ekibimizden bir tane aldıysanız buraya yazabilirsiniz."
+      ],
+      "Total: ${ totalPrice }": [
+        "Toplam: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Bir teklifle ${ discountAmount } tasarruf ettiniz"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Ödeme bilgileriniz şifrelenir ve güvende tutulur"
       ]
     },
     "info": {
@@ -13814,6 +14055,33 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Last4 } ile biten ${ Brand }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Hesap sahibi: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Ekstra hizmetler ekle"
+      ],
+      "Choose your billing": [
+        "Ödeme planınızı seçin"
+      ],
+      "More payment methods": [
+        "Daha fazla ödeme yöntemi"
+      ],
+      "today": [
+        "bugün"
+      ],
+      "Use another payment method": [
+        "Başka bir ödeme yöntemi kullanın"
+      ],
+      "Your credit balance": [
+        "Kredi bakiyeniz"
+      ],
+      "Your plan": [
+        "Tarifeniz"
       ]
     },
     "label": {
@@ -14198,6 +14466,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "What's included in your plan": [
+        "Tarifenize dahil olanlar"
       ]
     },
     "Link (Scribe)": {
@@ -17565,6 +17836,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20762,6 +21045,36 @@
       ],
       "Billed yearly": [
         "Yılda bir faturalanır"
+      ],
+      "${ discountPercent }% discount applied": [
+        "%${ discountPercent } indirim uygulandı"
+      ],
+      "${ discountPercent }% off": [
+        "%${ discountPercent } indirim"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } ücretsiz"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "**${ nameToDisplay }** kişisine bağlı"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "**${ nameToDisplay }** kuruluşuna bağlı"
+      ],
+      "Next billing date": [
+        "Sonraki fatura tarihi"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Ücretsiz deneme süresi sona erdikten sonra aboneliğinizi devam ettirmek için ${ props.periodEnd } tarihinden önce bir ödeme yöntemi ekleyin."
+      ],
+      "Total due": [
+        "Toplam vade"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "${ formattedPeriodEnd } tarihinde ödenecek toplam tutar"
+      ],
+      "Total due today": [
+        "Bugün ödenecek toplam tutar"
       ]
     },
     "Subscription attribute": {

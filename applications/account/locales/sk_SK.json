@@ -1697,6 +1697,15 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Disable categories": [
+        "Deaktivovať kategórie"
+      ],
+      "Ignore": [
+        "Ignorovať"
+      ],
+      "Keep categories": [
+        "Ponechať kategórie"
       ]
     },
     "action": {
@@ -1805,6 +1814,24 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } vlastná emailová doména",
+        "${ domains } vlastné emailové domény",
+        "${ domains } vlastných emailových domén",
+        "${ domains } vlastných emailových domén"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverov",
+        "${ ips } dedikovaných VPN serverov"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } AI licencia",
+        "${ seats }${ LUMO_APP_NAME } AI licencie",
+        "${ seats }${ LUMO_APP_NAME } AI licencií",
+        "${ seats }${ LUMO_APP_NAME } AI licencií"
       ]
     },
     "Address action": {
@@ -3199,6 +3226,33 @@
         "Celkom za ${ n } mesiace",
         "Celkom za ${ n } mesiacov",
         "Celkom za ${ n } mesiacov"
+      ],
+      "${ n } day": [
+        "${ n } deň",
+        "${ n } dni",
+        "${ n } dní",
+        "${ n } dní"
+      ],
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
+      "${ years } year": [
+        "${ years } rok",
+        "${ years } roky",
+        "${ years } rokov",
+        "${ years } rokov"
+      ],
+      "Forever access": [
+        "Prístup navždy"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Začína ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Začína dnes"
       ]
     },
     "Checkout summary": {
@@ -6106,6 +6160,42 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Váš núdzový kontakt ${ name } žiada prístup k vášmu účtu."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** je teraz váš kontaktný údaj pre obnovenie. Môže vám pomôcť obnoviť dáta po resetovaní hesla."
+      ],
+      "Add recovery contact": [
+        "Pridať kontaktnú osobu na obnovenie"
+      ],
+      "Approved request": [
+        "Schválená žiadosť"
+      ],
+      "Cancel request": [
+        "Zrušiť žiadosť"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Enable": [
+        "Povoliť"
+      ],
+      "For ${ email }": [
+        "Pre ${ email }"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Pending request": [
+        "Čakajúca žiadosť"
+      ],
+      "Proceed anyway": [
+        "Aj tak pokračovať"
+      ],
+      "See request": [
+        "Zobraziť žiadosť"
+      ],
+      "Unable to recover data": [
+        "Dáta nie je možné obnoviť"
       ]
     },
     "Empty group name": {
@@ -12095,6 +12185,33 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ total } user found": [
+        "${ total } nájdený používateľ",
+        "${ total } nájdení používatelia",
+        "${ total } nájdených používateľov",
+        "${ total } nájdených používateľov"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všetky správy sa zobrazia v priečinku Doručená pošta a záložky kategórií a značky už nebudú viditeľné. "
+      ],
+      "Cancel anytime.": [
+        "Môžete zrušiť kedykoľvek."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Vyprší ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "Total: ${ totalPrice }": [
+        "Celkom: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Vďaka ponuke ste ušetrili ${ discountAmount }."
+      ],
+      "Your payment details are encrypted and secure": [
+        "Vaše platobné údaje sú šifrované a zabezpečené."
       ]
     },
     "info": {
@@ -14071,6 +14188,33 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Vlastník účtu: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Pridať doplnkové služby"
+      ],
+      "Choose your billing": [
+        "Vyberte si fakturáciu"
+      ],
+      "More payment methods": [
+        "Ďalšie možnosti platby"
+      ],
+      "today": [
+        "dnes"
+      ],
+      "Use another payment method": [
+        "Použite iný spôsob platby"
+      ],
+      "Your credit balance": [
+        "Váš kreditný zostatok"
+      ],
+      "Your plan": [
+        "Váš plán"
       ]
     },
     "label": {
@@ -14457,6 +14601,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "What's included in your plan": [
+        "Čo je zahrnuté vo vašom pláne"
       ]
     },
     "Link (Scribe)": {
@@ -17940,6 +18087,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% dane: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Vrátane ${ taxRate }% dane: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -21235,6 +21394,27 @@
       ],
       "Billed yearly": [
         "Účtované ročne"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Zľava ${ discountPercent }% bola uplatnená"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } zdarma"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Prepojené s **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Prepojené s organizáciou **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Ďalší dátum fakturácie"
+      ],
+      "Total due": [
+        "Celkom splatné"
+      ],
+      "Total due today": [
+        "Celková suma splatná dnes"
       ]
     },
     "Subscription attribute": {
@@ -23952,6 +24132,9 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Disable categories?": [
+        "Deaktivovať kategórie?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
