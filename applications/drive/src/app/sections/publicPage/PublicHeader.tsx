@@ -4,10 +4,10 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { usePopperAnchor } from '@proton/components';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import { MainLogo, usePopperAnchor } from '@proton/components';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
@@ -60,66 +60,115 @@ export const PublicHeader = ({
     const showUploadActions = onUploadFile && onUploadFolder && onCreateFolder;
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [isCreatingNativeProtonDocs, withIsCreatingNativeProtonDocs] = useLoading(false);
+    const { viewportWidth } = useActiveBreakpoint();
+    const isMobile = viewportWidth['<=small'];
+    const isDesktop = viewportWidth['>=xlarge'];
 
     return (
         <>
             {isPartialView && <GoBackButton />}
-            <div className="flex justify-space-between my-4">
-                <div className="flex flex-column">
-                    <div className="flex items-center gap-1">
-                        <DriveLogo to="/" variant="glyph-only" />
-                        {breadcrumbOrName}
-                    </div>
+            <div className="flex justify-space-between">
+                {isDesktop ? (
+                    <div className="flex-column flex mx-0 my-4">
+                        <div className="flex items-center gap-1 text-4xl text-bold">
+                            <MainLogo className="flex items-center" to="/" reloadDocument variant="glyph-only" />
+                            {breadcrumbOrName}
+                        </div>
 
-                    {sharedBy && (
-                        <span className="flex gap-1 ml-11 pl-0.5 color-weak">
-                            {c('Subtitle').t`Shared by ${sharedBy}`}
-                            <span className="text-norm mx-1">&#x2022;</span>
-                            {c('Info').t`End-to-end encrypted`}
-                        </span>
-                    )}
-                </div>
-                <div className="flex gap-2 items-center">
-                    {!isPartialView && (
-                        <>
-                            <Toolbar className="h-auto toolbar--heavy toolbar--in-container">
-                                <CopyLinkButton buttonType="toolbar" onClick={onCopyLink} />
-                                {showUploadActions && (
+                        {sharedBy && (
+                            <span className="flex gap-1 ml-11 pl-0.5 color-weak">
+                                {c('Subtitle').t`Shared by ${sharedBy}`}
+                                <span className="text-norm mx-1">&#x2022;</span>
+                                {c('Info').t`End-to-end encrypted`}
+                            </span>
+                        )}
+                    </div>
+                ) : (
+                    <div className="flex flex-nowrap ml-2 mr-4 mb-1.5 w-full">
+                        <MainLogo
+                            className="flex items-center px-2 pt-1.5 min-w-custom w-auto"
+                            to="/"
+                            reloadDocument
+                            variant="glyph-only"
+                            style={{
+                                '--min-w-custom': '2.25rem',
+                            }}
+                        />
+                        <div className="flex flex-column text-lg lh100">
+                            {breadcrumbOrName}
+                            {sharedBy && (
+                                <span className="text-sm pl-1.5 color-weak text-ellipsis max-w-full">{c('Subtitle')
+                                    .t`Shared by ${sharedBy}`}</span>
+                            )}
+                        </div>
+                    </div>
+                )}
+                <i
+                    className="md:hidden w-full h-custom bg-weak"
+                    style={{
+                        '--h-custom': '0.25rem',
+                    }}
+                />
+                <div className="fixed md:relative bottom-0 left-0 bg-norm px-4 py-4 flex gap-2 justify-space-between md:justify-start items-center w-full md:w-auto">
+                    <>
+                        <Toolbar className="h-auto toolbar--heavy toolbar--in-container">
+                            {!isPartialView && (
+                                <>
+                                    <CopyLinkButton buttonType="toolbar" onClick={onCopyLink} />
+                                    {showUploadActions && (
+                                        <>
+                                            <ToolbarButton
+                                                icon={<IcPlus size={4} />}
+                                                ref={anchorRef}
+                                                onClick={toggle}
+                                                title={c('Action').t`Create`}
+                                                loading={isCreatingNativeProtonDocs}
+                                                data-testid="toolbar-upload-create"
+                                            />
+                                            <UploadCreateDropdown
+                                                onUploadFile={onUploadFile}
+                                                onUploadFolder={onUploadFolder}
+                                                onCreateFolder={onCreateFolder}
+                                                onCreateDocument={() =>
+                                                    withIsCreatingNativeProtonDocs(onCreateDocument)
+                                                }
+                                                onCreateSpreadsheet={() =>
+                                                    withIsCreatingNativeProtonDocs(onCreateSpreadsheet)
+                                                }
+                                                anchorRef={anchorRef}
+                                                isOpen={isOpen}
+                                                onClose={close}
+                                            />
+                                        </>
+                                    )}
+                                    {onDetails && !isMobile && (
+                                        <DetailsButton buttonType="toolbar" onClick={onDetails} />
+                                    )}
+                                </>
+                            )}
+                            <DownloadDropdown
+                                onDownload={onDownload}
+                                onScanAndDownload={onScanAndDownload}
+                                nbSelected={nbSelected}
+                                disabled={isEmptyView}
+                            />
+                        </Toolbar>
+                        {!isPartialView && (
+                            <>
+                                {!isMobile && (
                                     <>
-                                        <ToolbarButton
-                                            icon={<IcPlus size={4} />}
-                                            ref={anchorRef}
-                                            onClick={toggle}
-                                            title={c('Action').t`Create`}
-                                            loading={isCreatingNativeProtonDocs}
-                                        />
-                                        <UploadCreateDropdown
-                                            onUploadFile={onUploadFile}
-                                            onUploadFolder={onUploadFolder}
-                                            onCreateFolder={onCreateFolder}
-                                            onCreateDocument={() => withIsCreatingNativeProtonDocs(onCreateDocument)}
-                                            onCreateSpreadsheet={() =>
-                                                withIsCreatingNativeProtonDocs(onCreateSpreadsheet)
-                                            }
-                                            anchorRef={anchorRef}
-                                            isOpen={isOpen}
-                                            onClose={close}
-                                        />
+                                        <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
+                                        <BookmarkButton customPassword={customPassword} />
                                     </>
                                 )}
-                                {onDetails && <DetailsButton buttonType="toolbar" onClick={onDetails} />}
-                                <DownloadDropdown
-                                    onDownload={onDownload}
-                                    onScanAndDownload={onScanAndDownload}
-                                    nbSelected={nbSelected}
-                                    disabled={isEmptyView}
-                                />
-                            </Toolbar>
-                            <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
-                            <BookmarkButton customPassword={customPassword} />
-                            {userAddress ? <UserInfo userAddress={userAddress} /> : <CreateAccountButton />}
-                        </>
-                    )}
+                                {userAddress ? (
+                                    <UserInfo userAddress={userAddress} />
+                                ) : (
+                                    <CreateAccountButton isMobile={isMobile} />
+                                )}
+                            </>
+                        )}
+                    </>
                 </div>
             </div>
         </>

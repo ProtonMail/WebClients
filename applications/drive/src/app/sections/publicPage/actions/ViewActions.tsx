@@ -11,7 +11,7 @@ interface BaseViewActionsProps {
     itemChecker: PublicItemChecker;
     selectedUids: string[];
     onPreview: (uid: string) => void;
-    onDownload: (uids: string[]) => void;
+    onDownload: (uids: string[], shouldScan?: boolean) => void;
     onDetails: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
@@ -64,6 +64,13 @@ export function ViewActions({
                 onClick={() => onDownload(selectedUids)}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
+            {itemChecker.canScanMalware && (
+                <DownloadButton
+                    onClick={() => onDownload(selectedUids, true)}
+                    withScan
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                />
+            )}
 
             {itemChecker.isSingleSelection && firstItemUid && (
                 <>

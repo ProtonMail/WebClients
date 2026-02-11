@@ -3,7 +3,14 @@ import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemConte
 import { PublicFolderActions } from './actions/PublicFolderActions';
 import { usePublicActions } from './actions/usePublicActions';
 
-export function PublicFolderItemContextMenu({ anchorRef, isOpen, position, open, close }: ContextMenuProps) {
+export function PublicFolderItemContextMenu({
+    anchorRef,
+    isOpen,
+    customPassword,
+    position,
+    open,
+    close,
+}: ContextMenuProps & { customPassword: string | undefined }) {
     const { modals, handlePreview, handleDownload, handleDetails, handleRename, handleDelete, handleOpenDocsOrSheets } =
         usePublicActions();
     return (
@@ -15,7 +22,7 @@ export function PublicFolderItemContextMenu({ anchorRef, isOpen, position, open,
                     onDetails={handleDetails}
                     onDelete={handleDelete}
                     onRename={handleRename}
-                    onOpenDocsOrSheets={handleOpenDocsOrSheets}
+                    onOpenDocsOrSheets={(uid, openInDocs) => handleOpenDocsOrSheets(uid, openInDocs, customPassword)}
                     close={close}
                     buttonType="contextMenu"
                 />

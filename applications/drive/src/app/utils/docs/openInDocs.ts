@@ -1,6 +1,7 @@
 import { splitNodeUid } from '@proton/drive';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -127,21 +128,41 @@ const openDocument = async ({
     }
 };
 
+const getDocsWindow = ({
+    openBehavior,
+    customPassword,
+}: {
+    openBehavior: 'tab' | 'redirect';
+    customPassword: string | undefined;
+}) => {
+    if (openBehavior === 'redirect') {
+        return getCurrentTab();
+    }
+
+    if (customPassword) {
+        return handleDocsCustomPassword(customPassword);
+    }
+
+    return getNewWindow();
+};
+
 const openPublicDocument = async ({
     uid,
     openBehavior = 'tab',
     type,
     token,
     urlPassword,
+    customPassword,
 }: {
     uid: string;
     openBehavior?: 'tab' | 'redirect';
     type: DocumentType | ProtonDocumentType;
     token: string;
     urlPassword: string;
+    customPassword?: string;
 }) => {
-    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
     const { nodeId } = splitNodeUid(uid);
+    const w = getDocsWindow({ openBehavior, customPassword });
     try {
         openDocumentWindow({
             type,
@@ -255,6 +276,7 @@ export const openPublicDocsOrSheetsDocument = async ({
     openBehavior = 'tab',
     token,
     urlPassword,
+    customPassword,
 }: {
     uid: string;
     type: ProtonDocumentType;
@@ -262,9 +284,10 @@ export const openPublicDocsOrSheetsDocument = async ({
     openBehavior?: 'tab' | 'redirect';
     token: string;
     urlPassword: string;
+    customPassword?: string;
 }) => {
     if (isNative) {
-        await openPublicDocument({ uid, type, openBehavior, token, urlPassword });
+        await openPublicDocument({ uid, type, openBehavior, token, urlPassword, customPassword });
     } else {
         await convertDocument({ uid, type });
     }

@@ -21,9 +21,9 @@ export const PublicPagePassword = ({ submitPassword }: PublicPagePasswordProps) 
     };
 
     return (
-        <div className="flex flex-1 items-center py-7 mb-14">
+        <div className="flex flex-1 items-center py-7 mb-14 h-full">
             <div
-                className="password-page--form-container ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
+                className="ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
                 style={{ '--max-w-custom': '30rem' }}
             >
                 <div className="flex justify-center pb-7">

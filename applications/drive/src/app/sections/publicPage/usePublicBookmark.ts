@@ -20,7 +20,7 @@ interface UsePublicBookmarkResult {
     isLoading: boolean;
     isBookmarked: boolean;
     error: boolean;
-    addBookmark: () => Promise<void>;
+    addBookmark: (customPassword?: string) => Promise<void>;
     openInDrive: () => void;
     showSaveForLaterSpotlight: boolean;
 }
@@ -72,9 +72,9 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
         };
     }, [isLoggedIn, bookmarksFeatureDisabled, withLoading, handleError]);
 
-    const handleAddBookmark = async () => {
+    const handleAddBookmark = async (customPassword?: string) => {
         try {
-            await getDrive().createBookmark(window.location.href);
+            await getDrive().createBookmark(window.location.href, customPassword);
             setIsBookmarked(true);
             void countActionWithTelemetry(Actions.AddToBookmark);
             setPublicRedirectSpotlightToPending();

@@ -291,6 +291,7 @@ const DriveExplorer = ({
             onClick={handleContainerClick}
             onKeyDown={handleContainerKeyDown}
             role="application"
+            data-testid="drive-explorer"
         >
             <DriveExplorerHeader
                 selection={selection}

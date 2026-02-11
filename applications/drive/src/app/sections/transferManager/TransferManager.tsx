@@ -6,6 +6,7 @@ import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
+import clsx from '@proton/utils/clsx';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useDriveEventManager } from '../../store';
@@ -19,9 +20,10 @@ import './TransferManager.scss';
 interface TransferManagerProps {
     drawerWidth?: number;
     deprecatedRootShareId: string | undefined;
+    className?: string;
 }
 
-export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: TransferManagerProps) => {
+export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId, className }: TransferManagerProps) => {
     const { items, status } = useTransferManagerState();
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
@@ -107,7 +109,7 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
     return (
         <div
             id="transfer-manager"
-            className="transfer-manager-fixed-position right-custom border border-weak"
+            className={clsx('transfer-manager-fixed-position right-custom border border-weak', className)}
             style={{
                 '--right-custom': `${(drawerWidth + 32) / 16}rem`, // 32 == 2rem
             }}
