@@ -13,8 +13,8 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --no-error-logs --logical --prependAsyncCss",
-        "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test": "jest --silent",
+        "test:ci": "jest --coverage --runInBand --ci --silent",
         "test:watch": "jest --watch"
     },
     "dependencies": {
