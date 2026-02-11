@@ -18,7 +18,7 @@ export function useDrivePreviewModal() {
     // This listener will close the preview modal if the user navigates back
     // to a location that is not a preview.
     const handleLocationChange = useCallback(() => {
-        if (!window.location.href.includes('/file/')) {
+        if (!window.location.pathname.includes('/file/')) {
             setOpen(false);
             window.removeEventListener('popstate', handleLocationChange);
         }
