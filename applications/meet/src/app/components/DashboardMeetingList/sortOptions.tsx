@@ -40,7 +40,7 @@ export const getSortOptions = (): SortOptionObject[] => [
     },
     {
         value: SortOption.Upcoming,
-        label: c('Sort option').t`Upcoming meetings`,
+        label: c('Sort option').t`Upcoming`,
         icon: <IcCalendarToday className="shrink-0 mr-2" />,
         groupBy: 'adjustedStartTime',
         getSubtitle: getCreatedOnSubtitle,
