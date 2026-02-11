@@ -17,14 +17,14 @@ const name = 'categories' as const;
 const extractLabels = ({ Labels = [] }) => Labels;
 
 const getLabelsModel = async (api: Api) => {
-    const [labels = [], folders = [], contactGroups = [], systemFolders = []] = await Promise.all([
-        api(getLabels()).then(extractLabels),
-        api(getFolders()).then(extractLabels),
-        api(getContactGroup()).then(extractLabels),
+    const [systemFolders = [], folders = [], labels = [], contactGroups = []] = await Promise.all([
         api(getSystemFolders()).then(extractLabels),
+        api(getFolders()).then(extractLabels),
+        api(getLabels()).then(extractLabels),
+        api(getContactGroup()).then(extractLabels),
     ]);
 
-    const sortedLabels = sortCollection('Order', [...labels, ...folders, ...contactGroups, ...systemFolders]);
+    const sortedLabels = sortCollection('Order', [...systemFolders, ...folders, ...labels, ...contactGroups]);
     performance.mark('end_mail');
     const performances = performance.measure('mail', 'start_mail', 'end_mail');
     console.log(performances.duration);
