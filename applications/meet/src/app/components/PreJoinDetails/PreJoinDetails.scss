@@ -6,10 +6,13 @@ im.$media-expressions: $media-expressions;
 
 .stacked-field {
 	&#{&} {
-		--stacked-field-border-radius: var(--border-radius-xl);
-		--stacked-field-background: var(--background-weak);
-		--field-focus-background-color: var(--background-weak);
-		--stacked-field-border-color: var(--border-norm);
+		--stacked-field-border-radius: var(--border-radius-xxl);
+		--stacked-field-background: var(--background-card);
+		--field-focus-background-color: var(--background-card);
+		--border-norm: var(--border-card);
+
+		padding-block: var(--space-4);
+		padding-inline: var(--space-6);
 	}
 
 	.field-two-assist {
@@ -29,17 +32,16 @@ im.$media-expressions: $media-expressions;
 }
 
 .copy-button {
-	background-color: var(--interaction-norm-minor-3);
+	background-color: var(--interaction-weak-minor-2);
 	color: var(--interaction-norm);
 
 	&:hover,
 	&:focus {
-		background-color: var(--interaction-norm-minor-2);
+		background-color: var(--interaction-weak-minor-1);
 		color: var(--interaction-norm);
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: var(--interaction-norm);
 	}
 }
