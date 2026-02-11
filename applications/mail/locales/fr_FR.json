@@ -1502,8 +1502,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7377,7 +7376,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8860,6 +8860,9 @@
       ],
       "No messages found": [
         "Aucun message trouvé"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Une clé est attachée à ce message, mais elle n'a pas encore été approuvée."
       ]
     },
     "info": {
