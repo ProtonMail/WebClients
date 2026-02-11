@@ -10,6 +10,7 @@ import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerify
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -49,7 +50,10 @@ export const listIncomingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!getIsIncomingDelegatedAccessAvailable(user)) {
+            // Only enabled on Account because:
+            // 1 emergency contacts requires switch account
+            // 2 recovery contacts requires routes which don't exist in the VPN API bundle, e.g. account/v1/access/${outgoingDelegatedAccess.DelegatedAccessID}/recove
+            if (extraArgument.config?.APP_NAME !== APPS.PROTONACCOUNT || !getIsIncomingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{
