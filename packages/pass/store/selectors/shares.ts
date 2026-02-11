@@ -21,6 +21,7 @@ import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/request/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { logId } from '@proton/pass/utils/logger';
 
@@ -32,6 +33,7 @@ export const selectShareDedupeAndVisibileState = ({ sharesDedupe: { dedupeAndVis
 
 export const selectAllShares = createSelector([selectShareState], (s) => Object.values(s));
 export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
+export const selectAllVaultIDs = createSelector([selectAllVaults], (vaults) => new Set(vaults.map(prop('vaultId'))));
 
 export const selectDedupedShares = createSelector([selectAllShares, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
 export const selectDedupedVaults = createSelector([selectAllVaults, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));

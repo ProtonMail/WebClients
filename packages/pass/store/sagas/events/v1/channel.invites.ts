@@ -3,8 +3,10 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
 import { parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
+import { isAcceptedInvite } from '@proton/pass/lib/invites/invite.utils';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
+import { selectAllVaultIDs } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, InvitesGetResponse, MaybeNull } from '@proton/pass/types';
@@ -32,13 +34,13 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     if (noop) return;
 
     logger.info(`[${NAMESPACE}] ${event.Invites.length} new invite(s) received`);
+    const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
+    const isAcceptedUserInvite = isAcceptedInvite(vaultIDs);
 
     const invites: MaybeNull<Invite>[] = yield Promise.all(
         event.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {
-            /* if invite already decrypted early return */
-            const cachedInvite = cachedInvites[invite.InviteToken];
-            if (cachedInvite) return cachedInvite;
-            return parseUserInvite(invite);
+            if (isAcceptedUserInvite(invite)) return null;
+            return cachedInvites[invite.InviteToken] ?? parseUserInvite(invite);
         })
     );
 
