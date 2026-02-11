@@ -133,11 +133,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadPreload = () => {
             return Promise.all([
+                dispatch(categoriesThunk()),
                 dispatch(mailSettingsThunk()),
                 dispatch(organizationThunk()),
                 dispatch(addressesThunk()),
                 dispatch(contactEmailsThunk()),
-                dispatch(categoriesThunk()),
             ]);
         };
 
@@ -146,8 +146,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(retentionPoliciesThunk()).catch(noop);
         };
 
-        const userPromise = loadUser();
         const preloadPromise = loadPreload();
+        const userPromise = loadUser();
         loadPreloadButIgnored();
 
         const [MainContainer, userData] = await Promise.all([
@@ -170,7 +170,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
-        const [mailSettings, organization] = await preloadPromise;
+        const [, mailSettings, organization] = await preloadPromise;
 
         const OnlyInInboxForCategoriesCounts =
             organization.Settings.MailCategoryViewEnabled && mailSettings.MailCategoryView ? 1 : 0;
