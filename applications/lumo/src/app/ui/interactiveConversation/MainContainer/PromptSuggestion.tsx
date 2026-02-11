@@ -1,15 +1,27 @@
 import { clsx } from 'clsx';
-import { c } from 'ttag';
+
+import useFlag from '@proton/unleash/useFlag';
+
+import { getActiveSpecialTheme } from '../../../features/themes';
 
 import './PromptSuggestion.scss';
 
 interface ThemedPromptProps {
     onClick: (prompt: string) => void;
+    canShow?: boolean;
     className?: string;
 }
-export const ThemedPromptSuggestion = ({ onClick, className }: ThemedPromptProps) => {
-    const prompt = c('collider_2025:Prompt').t`How do people celebrate New Year's Eve around the world?`;
-    const icon = '✨';
+export const ThemedPromptSuggestion = ({ onClick, canShow, className }: ThemedPromptProps) => {
+    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
+    const activeTheme = getActiveSpecialTheme();
+
+    if (!isLumoSpecialThemeEnabled || !canShow || !activeTheme) {
+        return null;
+    }
+
+    // Use theme-specific prompt/icon
+    const prompt = activeTheme.getPromptText();
+    const icon = activeTheme.icon;
 
     return <PromptSuggestion prompt={prompt} icon={icon} onPromptClick={onClick} className={className} />;
 };

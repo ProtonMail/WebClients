@@ -33,7 +33,7 @@ export const PaidSubscriptionPanel = () => {
                 shape="outline"
                 color="weak"
                 size="medium"
-                className="shrink-0 manage-plan sm:mt-12 md:mt-2"
+                className="shrink-0 manage-plan mt-0 md:mt-2"
             >
                 {c('Action').t`Manage`}
             </ButtonLike>

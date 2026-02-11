@@ -3,8 +3,8 @@ import { useCallback, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 
+import { LumoCat } from '../../components/LumoAvatar';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -16,7 +16,6 @@ import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
-import LumoCat from './MainContainer/LumoCat';
 import LumoMainText from './MainContainer/LumoMainText';
 import LumoOnboarding from './MainContainer/Onboarding/LumoOnboarding';
 import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
@@ -40,10 +39,9 @@ const MainContainer = ({
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(true);
-    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
     const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
 
-    // Files panel state
+    // Files panel states
     const [openPanel, setOpenPanel] = useState<{
         type: 'files' | null;
         filterMessage?: Message;
@@ -113,37 +111,18 @@ const MainContainer = ({
                             isSmallScreen={isSmallScreen}
                             isGhostMode={isGhostChatMode}
                         />
-                        {isLumoSpecialThemeEnabled && !isSmallScreen && (
-                            // <PromptSuggestion
-                            //     prompt={c('collider_2025:Prompt').t`What are the origins of Christmas?`}
-                            //     icon="🎄"
-                            //     onPromptClick={handlePromptSuggestionClick}
-                            // />
-                            <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} />
-                        )}
+
+                        <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} canShow={!isSmallScreen} />
                     </div>
-                    <LumoCat
-                        isSmallScreen={isSmallScreen}
-                        isGhostChatMode={isGhostChatMode}
-                        isLumoSpecialThemeEnabled={isLumoSpecialThemeEnabled}
-                    />
+                    <LumoCat isSmallScreen={isSmallScreen} isGhostChatMode={isGhostChatMode} />
                 </div>
+                <ThemedPromptSuggestion
+                    onClick={handlePromptSuggestionClick}
+                    className="align-self-center"
+                    canShow={isSmallScreen && isEditorEmpty}
+                />
 
-                {isLumoSpecialThemeEnabled && isSmallScreen && isEditorEmpty && (
-                    // <PromptSuggestion
-                    //     prompt={c('collider_2025:Prompt').t`What are the origins of Christmas?`}
-                    //     icon="🎄"
-                    //     onPromptClick={handlePromptSuggestionClick}
-                    //     className={clsx('align-self-center')}
-                    // />
-                    <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} className="align-self-center" />
-                )}
-
-                <div
-                    className={clsx('composer-container md:px-4 w-full', {
-                        'themed-margin': isLumoSpecialThemeEnabled && !isGhostChatMode,
-                    })}
-                >
+                <div className="composer-container md:px-4 w-full">
                     <ComposerComponent
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
