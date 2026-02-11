@@ -103,15 +103,17 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             </TableRow>
                             {formattedStartDate && (
                                 <TableRow>
-                                    <TableCell type="header" scope="row" className="color-weak w-1/3">{c('Title')
-                                        .t`Date`}</TableCell>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Date`}</TableCell>
                                     <TableCell>{formattedStartDate}</TableCell>
                                 </TableRow>
                             )}
                             {startTime && (
                                 <TableRow>
-                                    <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">{c('Title')
-                                        .t`Time`}</TableCell>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Time`}</TableCell>
                                     <TableCell className="time-cell">
                                         {startTime} {endTime ? `- ${endTime}` : ''} ({timeZone})
                                     </TableCell>
@@ -135,7 +137,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             </TableRow>
                             {passphrase && (
                                 <TableRow>
-                                    <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">
                                         {c('Title').t`Passphrase`}
                                     </TableCell>
                                     <TableCell>
