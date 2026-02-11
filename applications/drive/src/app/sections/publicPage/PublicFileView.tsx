@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { MemberRole, type NodeEntity } from '@proton/drive';
 
+import { FileName } from '../../components/FileName';
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
@@ -26,9 +27,9 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
 
         // Do not open/convert in case of viewer for non-native docs/sheets files
         if (openInDocsInfo && usePublicAuthStore.getState().publicRole !== MemberRole.Viewer) {
-            handleOpenDocsOrSheets(rootNode.uid, openInDocsInfo);
+            handleOpenDocsOrSheets(rootNode.uid, openInDocsInfo, customPassword);
         }
-    }, [rootNode.uid, rootNode.mediaType, rootNode.parentUid, handleOpenDocsOrSheets]);
+    }, [rootNode.uid, rootNode.mediaType, rootNode.parentUid, handleOpenDocsOrSheets, customPassword]);
 
     const handleContentLoaded = (data: Uint8Array<ArrayBuffer>[], previewMethod?: ContentPreviewMethod) => {
         if (previewMethod === ContentPreviewMethod.Buffer) {
@@ -36,7 +37,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
         }
     };
     const handleDownload = async (shouldScan?: boolean) => {
-        if (contentData) {
+        if (contentData && !shouldScan) {
             const { node } = getNodeEntity(await getPublicLinkClient().getNode(rootNode.uid));
             await downloadManager.downloadFromBuffer(node, contentData);
             return;
@@ -53,16 +54,15 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
         <div className="h-full flex flex-column">
             <PublicHeader
                 breadcrumbOrName={
-                    <h1
+                    <FileName
                         // Custom padding to match breadcrumb style
-                        className="text-4xl text-semibold pl-custom py-custom"
+                        className="pl-custom py-custom"
                         style={{
                             '--pl-custom': '0.315rem',
                             '--py-custom': '0.5625rem',
                         }}
-                    >
-                        {rootNode.name}
-                    </h1>
+                        text={rootNode.name}
+                    />
                 }
                 sharedBy={
                     (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||

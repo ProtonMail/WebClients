@@ -4,7 +4,6 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Spotlight } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -41,7 +40,7 @@ export function BookmarkButton({ customPassword }: BookmarkButtonProps) {
         } else if (isBookmarked) {
             openInDrive();
         } else {
-            await withAdding(addBookmark);
+            await withAdding(() => addBookmark(customPassword));
         }
     };
 
@@ -72,7 +71,6 @@ export function BookmarkButton({ customPassword }: BookmarkButtonProps) {
                         data-testid="save-in-drive-button"
                         className="flex items-center"
                     >
-                        <Icon className="mr-2" name="folder-arrow-in" />
                         {isAdding ? c('Info').t`Saving...` : buttonText}
                     </Button>
                 </Tooltip>

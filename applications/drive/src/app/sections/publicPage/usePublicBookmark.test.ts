@@ -233,7 +233,7 @@ describe('usePublicBookmark', () => {
             });
         });
 
-        it('should create bookmark successfully', async () => {
+        it('should create bookmark without custom password', async () => {
             mockCreateBookmark.mockResolvedValue(undefined);
 
             const { result } = renderHook(() => usePublicBookmark());
@@ -242,11 +242,42 @@ describe('usePublicBookmark', () => {
                 await result.current.addBookmark();
             });
 
-            expect(mockCreateBookmark).toHaveBeenCalledWith(mockBookmarkUrl);
+            expect(mockCreateBookmark).toHaveBeenCalledWith(mockBookmarkUrl, undefined);
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.AddToBookmark);
             expect(setPublicRedirectSpotlightToPending).toHaveBeenCalled();
             expect(result.current.isBookmarked).toBe(true);
             expect(result.current.showSaveForLaterSpotlight).toBe(true);
+        });
+
+        it('should create bookmark with custom password', async () => {
+            const customPassword = 'my-custom-password';
+            mockCreateBookmark.mockResolvedValue(undefined);
+
+            const { result } = renderHook(() => usePublicBookmark());
+
+            await act(async () => {
+                await result.current.addBookmark(customPassword);
+            });
+
+            expect(mockCreateBookmark).toHaveBeenCalledWith(mockBookmarkUrl, customPassword);
+            expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.AddToBookmark);
+            expect(setPublicRedirectSpotlightToPending).toHaveBeenCalled();
+            expect(result.current.isBookmarked).toBe(true);
+            expect(result.current.showSaveForLaterSpotlight).toBe(true);
+        });
+
+        it('should handle errors when adding bookmark', async () => {
+            const error = new Error('Failed to create bookmark');
+            mockCreateBookmark.mockRejectedValue(error);
+
+            const { result } = renderHook(() => usePublicBookmark());
+
+            await act(async () => {
+                await result.current.addBookmark();
+            });
+
+            expect(mockHandleError).toHaveBeenCalledWith(error);
+            expect(result.current.isBookmarked).toBe(false);
         });
     });
 

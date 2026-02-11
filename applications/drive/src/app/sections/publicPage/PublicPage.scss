@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.public-page-transfer-manager {
+	@include im.media('<=small') {
+		// On mobile, position above the fixed header toolbar
+		inset-block-end: 4.25rem;
+	}
+
+	@include im.media('>small') {
+		// On desktop, use default positioning
+		inset-block-end: 2rem;
+	}
+}
