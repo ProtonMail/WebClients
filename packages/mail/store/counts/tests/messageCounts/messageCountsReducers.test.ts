@@ -2,6 +2,7 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { markMessagesAsRead, markMessagesAsUnread } from '../../messageCountsReducers';
 
@@ -35,13 +36,13 @@ describe('messageCountsReducers', () => {
             ID: 'message1',
             Unread: 1,
             LabelIDs: ['label1'],
-        };
+        } as MessageMetadata;
 
         const message2 = {
             ID: 'message2',
             Unread: 1,
             LabelIDs: ['label1'],
-        };
+        } as MessageMetadata;
 
         markMessagesAsRead(state, {
             type: 'mailbox/markMessagesAsRead',
@@ -59,7 +60,7 @@ describe('messageCountsReducers', () => {
             ID: 'message1',
             Unread: 0,
             LabelIDs: ['label2'],
-        };
+        } as MessageMetadata;
 
         markMessagesAsUnread(state, {
             type: 'mailbox/markMessagesAsUnread',

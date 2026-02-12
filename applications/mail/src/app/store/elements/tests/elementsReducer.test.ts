@@ -78,7 +78,7 @@ describe('markMessageAs', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message, conversation],
+                        elements: [message],
                         labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                         conversations: [conversation],
                     },
@@ -158,7 +158,7 @@ describe('markMessageAs', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message, conversation],
+                        elements: [conversation],
                         labelID: MAILBOX_LABEL_IDS.INBOX,
                     },
                 },
@@ -326,7 +326,7 @@ describe('markMessageAs', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message, conversation],
+                        elements: [message],
                         labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                         conversations: [conversation],
                     },

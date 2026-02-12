@@ -18,6 +18,7 @@ import {
     filterElementsInState,
     getElementContextIdentifier,
     getSearchParameters,
+    isElementConversation,
     isElementMessage,
     parseElementContextIdentifier,
     parseLabelIDsInEvent,
@@ -595,7 +596,7 @@ export const markMessagesAsReadPending = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -605,33 +606,32 @@ export const markMessagesAsReadPending = (
 ) => {
     const { elements, conversations } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
-
+    elements.forEach((element) => {
         // Already marked as read, do nothing
-        if (selectedMessage.Unread === 0) {
+        if (element.Unread === 0) {
             return;
         }
 
-        const elementState = state.elements[selectedMessage.ID];
+        const elementState = state.elements[element.ID];
 
         // Update the message selected in element state
-        if (elementState) {
-            (elementState as Message).Unread = 0;
+        if (elementState && isElementMessage(elementState)) {
+            elementState.Unread = 0;
         }
 
-        const conversationElementState = state.elements[selectedMessage.ConversationID] as Conversation;
+        const conversationElementState = state.elements[element.ConversationID];
+        if (!conversationElementState || !isElementConversation(conversationElementState)) {
+            return;
+        }
 
         // Update the conversation element state attach to the same message
-        if (conversationElementState) {
-            conversationElementState.ContextNumUnread = safeDecreaseCount(conversationElementState.ContextNumUnread, 1);
-            conversationElementState.NumUnread = safeDecreaseCount(conversationElementState.NumUnread, 1);
-            conversationElementState.Labels?.forEach((label) => {
-                if (selectedMessage.LabelIDs.includes(label.ID)) {
-                    label.ContextNumUnread = safeDecreaseCount(label.ContextNumUnread, 1);
-                }
-            });
-        }
+        conversationElementState.ContextNumUnread = safeDecreaseCount(conversationElementState.ContextNumUnread, 1);
+        conversationElementState.NumUnread = safeDecreaseCount(conversationElementState.NumUnread, 1);
+        conversationElementState.Labels?.forEach((label) => {
+            if (element.LabelIDs.includes(label.ID)) {
+                label.ContextNumUnread = safeDecreaseCount(label.ContextNumUnread, 1);
+            }
+        });
     });
 
     // When we open a conversation, an action is triggered to mark a message as read
@@ -646,7 +646,7 @@ export const markMessagesAsUnreadPending = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -656,32 +656,31 @@ export const markMessagesAsUnreadPending = (
 ) => {
     const { elements, conversations } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedMessage = selectedElement as Message;
-
+    elements.forEach((element) => {
         // Already unread, do nothing
-        if (selectedMessage.Unread === 1) {
+        if (element.Unread === 1) {
             return;
         }
 
         // Update elements state
-        const elementState = state.elements[selectedMessage.ID];
+        const elementState = state.elements[element.ID];
 
         if (elementState) {
             (elementState as Message).Unread = 1;
         }
 
-        const conversationElementState = state.elements[selectedMessage.ConversationID] as Conversation;
-
-        if (conversationElementState) {
-            conversationElementState.ContextNumUnread = safeIncreaseCount(conversationElementState.ContextNumUnread, 1);
-            conversationElementState.NumUnread = safeIncreaseCount(conversationElementState.NumUnread, 1);
-            conversationElementState.Labels?.forEach((label) => {
-                if (selectedMessage.LabelIDs.includes(label.ID)) {
-                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-                }
-            });
+        const conversationElementState = state.elements[element.ConversationID] as Conversation;
+        if (!conversationElementState || !isElementConversation(conversationElementState)) {
+            return;
         }
+
+        conversationElementState.ContextNumUnread = safeIncreaseCount(conversationElementState.ContextNumUnread, 1);
+        conversationElementState.NumUnread = safeIncreaseCount(conversationElementState.NumUnread, 1);
+        conversationElementState.Labels?.forEach((label) => {
+            if (element.LabelIDs.includes(label.ID)) {
+                label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
+            }
+        });
     });
 
     // When we open a conversation, an action is triggered to mark a message as unread
@@ -696,7 +695,7 @@ export const markMessagesAsReadRejected = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -718,7 +717,7 @@ export const markMessagesAsUnreadRejected = (
         string,
         {
             arg: {
-                elements: Element[];
+                elements: MessageMetadata[];
                 conversations: Conversation[];
                 labelID: string;
                 showSuccessNotification?: boolean;
@@ -735,35 +734,33 @@ export const markMessagesAsUnreadRejected = (
 
 export const markConversationsAsReadPending = (
     state: Draft<ElementsState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
 
-    elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
-
-        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+    elements.forEach((element) => {
+        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
         if (conversationLabel?.ContextNumUnread === 0) {
             return;
         }
-        const elementState = state.elements[selectedConversation.ID];
+        const elementState = state.elements[element.ID];
 
         // Update the conversation element state
-        if (elementState) {
-            (elementState as Conversation).ContextNumUnread = 0;
-            (elementState as Conversation).NumUnread = 0;
-            (elementState as Conversation).Labels?.forEach((label) => {
+        if (elementState && isElementConversation(elementState)) {
+            elementState.ContextNumUnread = 0;
+            elementState.NumUnread = 0;
+            elementState.Labels?.forEach((label) => {
                 label.ContextNumUnread = 0;
             });
         }
 
-        const messagesElementState = Object.values(state.elements).filter(
-            (element) => (element as Message).ConversationID === selectedElement.ID
-        );
+        const messagesElementState = Object.values(state.elements)
+            .filter(isElementMessage)
+            .filter((message) => message.ConversationID === element.ID);
 
         // Update all messages attach to the same conversation in element state
         messagesElementState.forEach((messageElementState) => {
-            (messageElementState as Message).Unread = 0;
+            messageElementState.Unread = 0;
         });
     });
 
@@ -772,14 +769,13 @@ export const markConversationsAsReadPending = (
 
 export const markConversationsAsUnreadPending = (
     state: Draft<ElementsState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const { elements, labelID } = action.meta.arg;
     const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
-    elements.forEach((selectedElement) => {
-        const selectedConversation = selectedElement as Conversation;
-        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+    elements.forEach((element) => {
+        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
 
         if (!!conversationLabel?.ContextNumUnread) {
             // Conversation is already unread, do nothing
@@ -787,22 +783,20 @@ export const markConversationsAsUnreadPending = (
         }
 
         // Update the conversation element state
-        const elementState = state.elements[selectedConversation.ID];
-
-        if (elementState) {
-            (elementState as Conversation).ContextNumUnread = safeIncreaseCount(
-                (elementState as Conversation).ContextNumUnread,
-                1
-            );
-            (elementState as Conversation).NumUnread = safeIncreaseCount((elementState as Conversation).NumUnread, 1);
-            (elementState as Conversation).Labels?.forEach((label) => {
-                if (label.ID === labelID) {
-                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-                } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
-                    label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-                }
-            });
+        const elementState = state.elements[element.ID];
+        if (!elementState || !isElementConversation(elementState)) {
+            return;
         }
+
+        elementState.ContextNumUnread = safeIncreaseCount(elementState.ContextNumUnread, 1);
+        elementState.NumUnread = safeIncreaseCount(elementState.NumUnread, 1);
+        elementState.Labels?.forEach((label) => {
+            if (label.ID === labelID) {
+                label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
+            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+                label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
+            }
+        });
     });
 
     handleBypassFilter(state, elements, MARK_AS_STATUS.UNREAD, state.params.filter.Unread);
@@ -810,7 +804,7 @@ export const markConversationsAsUnreadPending = (
 
 export const markConversationsAsReadRejected = (
     state: Draft<ElementsState>,
-    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<unknown, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const pendingAction = {
         ...action,
@@ -821,7 +815,7 @@ export const markConversationsAsReadRejected = (
 
 export const markConversationsAsUnreadRejected = (
     state: Draft<ElementsState>,
-    action: PayloadAction<unknown, string, { arg: { elements: Element[]; labelID: string } }>
+    action: PayloadAction<unknown, string, { arg: { elements: Conversation[]; labelID: string } }>
 ) => {
     const pendingAction = {
         ...action,
@@ -935,9 +929,8 @@ export const labelMessagesPending = (
 
     elements.forEach((element) => {
         // Update conversation first because we need to have the initial state of the element
-        const conversationElementState = state.elements[element.ConversationID] as Conversation;
-
-        if (conversationElementState) {
+        const conversationElementState = state.elements[element.ConversationID];
+        if (conversationElementState && isElementConversation(conversationElementState)) {
             applyLabelToConversationMessage(
                 element,
                 conversationElementState,
@@ -947,9 +940,8 @@ export const labelMessagesPending = (
             );
         }
 
-        const elementState = state.elements[element.ID] as Message;
-
-        if (!elementState) {
+        const elementState = state.elements[element.ID];
+        if (!elementState || !isElementMessage(elementState)) {
             return;
         }
 
@@ -980,15 +972,14 @@ export const unlabelMessagesPending = (
     const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     elements.forEach((element) => {
-        const conversationElementState = state.elements[element.ConversationID] as Conversation;
+        const conversationElementState = state.elements[element.ConversationID];
 
-        if (conversationElementState) {
+        if (conversationElementState && isElementConversation(conversationElementState)) {
             removeLabelToConversationMessage(element, conversationElementState, destinationLabelID, labels);
         }
 
-        const elementState = state.elements[element.ID] as MessageMetadata;
-
-        if (!elementState) {
+        const elementState = state.elements[element.ID];
+        if (!elementState || !isElementMessage(elementState)) {
             return;
         }
 
@@ -1009,9 +1000,8 @@ export const labelMessagesRejected = (
     const { elements } = action.meta.arg;
 
     elements.forEach((element) => {
-        const elementState = state.elements[element.ID] as MessageMetadata;
-
-        if (!elementState) {
+        const elementState = state.elements[element.ID];
+        if (!elementState || !isElementMessage(elementState)) {
             return;
         }
 
@@ -1040,20 +1030,21 @@ export const labelConversationsPending = (
     const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
-        const conversationState = state.elements[conversation.ID] as Conversation;
-
+        const conversationState = state.elements[conversation.ID];
         if (!conversationState) {
             return;
         }
 
-        applyLabelToConversation(conversationState, sourceLabelID, destinationLabelID, labels, folders);
+        if (isElementConversation(conversationState)) {
+            applyLabelToConversation(conversationState, sourceLabelID, destinationLabelID, labels, folders);
+        }
 
-        const messagesElementState = Object.values(state.elements).filter(
-            (element) => (element as Message).ConversationID === conversation.ID
-        );
+        const messagesElementState = Object.values(state.elements)
+            .filter(isElementMessage)
+            .filter((message) => message.ConversationID === conversation.ID);
 
         messagesElementState.forEach((messageElementState) => {
-            applyLabelToMessage(messageElementState as Message, destinationLabelID, folders, labels);
+            applyLabelToMessage(messageElementState, destinationLabelID, folders, labels);
         });
     });
 
@@ -1080,20 +1071,21 @@ export const unlabelConversationsPending = (
     const elementsBeforeAction = structuredClone(Object.values(state.elements));
 
     conversations.forEach((conversation) => {
-        const conversationState = state.elements[conversation.ID] as Conversation;
-
+        const conversationState = state.elements[conversation.ID];
         if (!conversationState) {
             return;
         }
 
-        removeLabelFromConversation(conversationState, destinationLabelID, labels);
+        if (isElementConversation(conversationState)) {
+            removeLabelFromConversation(conversationState, destinationLabelID, labels);
+        }
 
-        const messagesElementState = Object.values(state.elements).filter(
-            (element) => (element as Message).ConversationID === conversation.ID
-        );
+        const messagesElementState = Object.values(state.elements)
+            .filter(isElementMessage)
+            .filter((message) => message.ConversationID === conversation.ID);
 
         messagesElementState.forEach((messageElementState) => {
-            removeLabelFromMessage(messageElementState as Message, destinationLabelID, labels);
+            removeLabelFromMessage(messageElementState, destinationLabelID, labels);
         });
     });
 

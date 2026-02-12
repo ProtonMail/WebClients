@@ -4,6 +4,7 @@ import type { ModelState } from '@proton/account/interface';
 import { labelMessages } from '@proton/mail/store/counts/messageCountsReducers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {
     CUSTOM_LABEL_ID1,
@@ -33,13 +34,13 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
                 Unread: 0,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -82,7 +83,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -93,7 +94,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.STARRED,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -140,7 +141,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -151,7 +152,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     CUSTOM_LABEL_ID1,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -198,13 +199,13 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
                 Unread: 0,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -247,7 +248,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -258,7 +259,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.STARRED,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -305,7 +306,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -316,7 +317,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     CUSTOM_LABEL_ID1,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -365,13 +366,13 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
                 Unread: 0,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -397,13 +398,13 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
                 Unread: 0,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -436,7 +437,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -447,7 +448,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -481,13 +482,13 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
                 Unread: 0,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -519,7 +520,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -530,7 +531,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.STARRED,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -562,7 +563,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -573,7 +574,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     CUSTOM_LABEL_ID1,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -605,7 +606,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -616,7 +617,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
@@ -655,7 +656,7 @@ describe('message counts - label messages', () => {
                 ID: 'message1',
                 Unread: 1,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: 'message2',
@@ -666,7 +667,7 @@ describe('message counts - label messages', () => {
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ],
-            };
+            } as MessageMetadata;
 
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
