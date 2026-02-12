@@ -184,6 +184,9 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         });
     };
 
+    const shouldShowFailedMessage = entry.status === BaseTransferStatus.Failed && entry.error;
+    const shouldShowInfo = shouldShowFailedMessage || !shouldHideSizeInfo;
+
     return (
         <div
             className="bg-norm flex w-full gap-1 items-center py-2 pl-3 pr-4 h-full min-h-custom group-hover-opacity-container"
@@ -218,7 +221,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                             </Button>
                         </>
                     )}*/}
-                    {!shouldHideSizeInfo && (
+                    {shouldShowInfo && (
                         <>
                             <span aria-hidden="true" className="text-sm text-weak">
                                 &middot;
@@ -227,7 +230,8 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                                 className="text-ellipsis text-nowrap text-sm color-weak text-tabular-nums"
                                 data-testid="transfer-row:transferred-data"
                             >
-                                {transferredTotal}
+                                {shouldShowFailedMessage ? entry.error?.message : ''}
+                                {!shouldHideSizeInfo ? transferredTotal : ''}
                             </span>
                         </>
                     )}
