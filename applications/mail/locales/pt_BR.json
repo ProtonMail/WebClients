@@ -1484,8 +1484,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -5864,7 +5863,7 @@
         "Esse recurso está indisponível no momento"
       ],
       "Update your logins": [
-        "Atualize seus dados"
+        "Atualize seus inícios de sessão"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite a loja de aplicativos iOS ou Android."
@@ -6736,9 +6735,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
-      ],
-      "An unknown public key has been detected for this recipient.": [
-        "Uma chave pública desconhecida foi detectada para este destinatário."
       ],
       "An unsubscribe email will be sent on your behalf.": [
         "Um e-mail de cancelamento de assinatura será enviado em seu nome."
@@ -7721,7 +7717,7 @@
         "Número do telefone"
       ],
       "Plain text": [
-        "Texto Simples"
+        "Texto simples"
       ],
       "Please add at least one recipient.": [
         "Insira pelo menos um destinatário."
@@ -8198,6 +8194,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Isso significa que o seu ISP e os sites que você visita não conseguem conectar suas informações pessoais com sua atividade on-line."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Esta mensagem tem uma chave anexa, que ainda não é confiável."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Esta mensagem foi adequada para se adequar ao fundo escuro."

@@ -1483,10 +1483,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -6734,9 +6730,6 @@
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Una chiave pubblica sconosciuta è stata rilevata per questo destinatario."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Un'email di cancellazione verrà inviata a tuo nome."
       ],
@@ -8195,6 +8188,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Ciò significa che il tuo ISP e i siti web che visiti non possono collegare le tue informazioni personali alla tua attività online."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Questo messaggio ha una chiave allegata che non è stata ancora considerata attendibile."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Questo messaggio è stato modificato per essere conforme a uno sfondo scuro."

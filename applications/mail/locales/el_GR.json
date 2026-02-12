@@ -1484,8 +1484,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -6737,9 +6736,6 @@
       "Amount below minimum (${ amount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Έχει εντοπιστεί ένα άγνωστο δημόσιο κλειδί για αυτόν τον παραλήπτη."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Ένα μήνυμα απεγγραφής θα σταλεί εκ μέρους σας."
       ],
@@ -8198,6 +8194,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Αυτό το μήνυμα έχει συνημμένο ένα κλειδί, το οποίο δεν έχει ακόμη πιστοποιηθεί."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Αυτό το μήνυμα έχει ρυθμιστεί για εμφάνιση σε σκούρο φόντο."
