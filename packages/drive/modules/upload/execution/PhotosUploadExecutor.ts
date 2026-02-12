@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { NodeWithSameNameExistsValidationError } from '../../../index';
 import { type ExtendedAttributesMetadata, generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
+import { useUploadControllerStore } from '../store/uploadController.store';
 import type { PhotosUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
@@ -14,9 +16,21 @@ import { TaskExecutor } from './TaskExecutor';
  * Executes file uploads and emits events
  * NO store access - only emits events
  */
+// TODO: Improve abort check and update thumbnail generator to support abortController
 export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
     async execute(task: PhotosUploadTask): Promise<void> {
-        const abortController = new AbortController();
+        const controllerStore = useUploadControllerStore.getState();
+        const storedController = controllerStore.getController(task.uploadId);
+
+        if (!storedController) {
+            return;
+        }
+
+        const abortController = storedController.abortController;
+
+        if (abortController.signal.aborted) {
+            return;
+        }
 
         try {
             const drivePhotos = UploadDriveClientRegistry.getDrivePhotosClient();
@@ -40,13 +54,28 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 });
                 return;
             }
+
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
+
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             const metadata = await this.createFileUploaderMetadata(
                 task.file,
                 mimeType,
                 mediaInfo,
                 task.isUnfinishedUpload
             );
+
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             const uploader = await drivePhotos.getFileUploader(task.file.name, metadata, abortController.signal);
 
             const stream = createFileStream(task.file);
@@ -63,7 +92,6 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 type: 'file:started',
                 uploadId: task.uploadId,
                 controller,
-                abortController,
                 isForPhotos: true,
             });
 
@@ -78,6 +106,10 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 isForPhotos: true,
             });
         } catch (error) {
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             if (error instanceof NodeWithSameNameExistsValidationError) {
                 this.eventCallback?.({
                     type: 'file:conflict',
@@ -98,7 +130,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
 
     private async generateThumbnails(file: File) {
         const { thumbnailsPromise, mimeTypePromise } = generateThumbnail(file, file.name, file.size, {
-            debug: false,
+            debug: Boolean(getItem('proton-drive-debug', 'false')),
         });
 
         const thumbnailsResult = await thumbnailsPromise;

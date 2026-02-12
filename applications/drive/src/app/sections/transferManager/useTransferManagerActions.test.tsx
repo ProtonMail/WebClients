@@ -25,6 +25,7 @@ jest.mock('../../managers/download/DownloadManager', () => {
 
 jest.mock('@proton/drive/modules/upload', () => {
     return {
+        ...jest.requireActual('@proton/drive/modules/upload'),
         uploadManager: {
             cancelUpload: jest.fn(),
             retryUpload: jest.fn(),

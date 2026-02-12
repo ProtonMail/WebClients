@@ -4,7 +4,11 @@ import { BaseTransferStatus } from '../../../zustand/download/downloadManager.st
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
 export const isCancellable = (entry: TransferManagerEntry): boolean => {
-    return entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending;
+    return (
+        entry.status === BaseTransferStatus.InProgress ||
+        entry.status === BaseTransferStatus.Pending ||
+        entry.status === UploadStatus.Preparing
+    );
 };
 
 export const isRetryable = (entry: TransferManagerEntry): boolean => {

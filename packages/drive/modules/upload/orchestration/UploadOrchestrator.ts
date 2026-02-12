@@ -71,11 +71,12 @@ export class UploadOrchestrator {
         this.conflictManager.removeConflictResolver();
     }
 
-    emitFileQueued(uploadId: string, isForPhotos: boolean): void {
+    emitFileQueued(uploadId: string, isForPhotos: boolean, abortController: AbortController): void {
         void this.eventHandler.handleEvent({
             type: 'file:queued',
             uploadId,
             isForPhotos,
+            abortController,
         });
     }
 
@@ -121,6 +122,7 @@ export class UploadOrchestrator {
                     (item) =>
                         item.status === UploadStatus.Pending ||
                         item.status === UploadStatus.InProgress ||
+                        item.status === UploadStatus.Preparing ||
                         item.status === UploadStatus.ConflictFound
                 );
 
@@ -154,15 +156,17 @@ export class UploadOrchestrator {
      * Execute a single task
      */
     private async executeTask(task: UploadTask): Promise<void> {
-        const queueStore = useUploadQueueStore.getState();
-
         if (task.type === NodeType.Folder) {
             this.capacityManager.reserveFolder();
         } else {
             this.capacityManager.reserveFile(task.uploadId, task.sizeEstimate);
         }
 
-        queueStore.updateQueueItems(task.uploadId, { status: UploadStatus.InProgress });
+        await this.eventHandler.handleEvent({
+            type: 'file:preparing',
+            uploadId: task.uploadId,
+            isForPhotos: task.type === NodeType.Photo,
+        });
 
         if (task.type === NodeType.Folder) {
             await this.folderExecutor.execute(task);

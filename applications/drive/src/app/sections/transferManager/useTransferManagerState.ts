@@ -132,7 +132,11 @@ export const useTransferManagerState = () => {
 
         if (allTransfers.length === 0) {
             status = TransferManagerStatus.Empty;
-        } else if (statesMap.get(BaseTransferStatus.InProgress) || statesMap.get(BaseTransferStatus.Pending)) {
+        } else if (
+            statesMap.get(BaseTransferStatus.InProgress) ||
+            statesMap.get(BaseTransferStatus.Pending) ||
+            statesMap.get(UploadStatus.Preparing)
+        ) {
             status = TransferManagerStatus.InProgress;
         } else if (statesMap.get(BaseTransferStatus.Failed) || statesMap.get(BaseTransferStatus.MalwareDetected)) {
             status = TransferManagerStatus.Failed;
