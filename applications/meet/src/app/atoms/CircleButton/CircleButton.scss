@@ -3,8 +3,10 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .circle-button {
-	inline-size: 3rem;
-	block-size: 3rem;
+	--circle-button-size: 3.5rem;
+
+	inline-size: var(--circle-button-size);
+	block-size: var(--circle-button-size);
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 
 	&:hover,

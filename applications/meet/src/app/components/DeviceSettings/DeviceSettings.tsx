@@ -45,6 +45,8 @@ interface DeviceSettingsProps {
     isLoading: boolean;
 }
 
+const circleButtonStyle = { '--circle-button-size': '3rem' };
+
 export const DeviceSettings = ({
     isCameraEnabled,
     isMicrophoneEnabled,
@@ -232,6 +234,7 @@ export const DeviceSettings = ({
                         indicatorContent={microphoneHasWarning ? '!' : undefined}
                         indicatorStatus={microphoneHasWarning ? 'danger' : 'default'}
                         noBorder={false}
+                        buttonStyle={circleButtonStyle}
                     />
 
                     <CircleButton
@@ -242,6 +245,7 @@ export const DeviceSettings = ({
                         indicatorContent={cameraHasWarning ? '!' : undefined}
                         indicatorStatus={cameraHasWarning ? 'danger' : 'default'}
                         noBorder={false}
+                        buttonStyle={circleButtonStyle}
                     />
                 </div>
             </div>
