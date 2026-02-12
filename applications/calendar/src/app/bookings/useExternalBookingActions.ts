@@ -106,6 +106,7 @@ export const useExternalBookingActions = () => {
                         Ics: submissionData.ics,
                         Type: 'external',
                     },
+                    MeetingLinkName: submissionData.meetingLinkName,
                 })
             );
 
