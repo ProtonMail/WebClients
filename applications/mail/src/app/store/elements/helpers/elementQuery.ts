@@ -25,14 +25,16 @@ const getQueryElementsParameters = ({
     page,
     pageSize,
     params: { labelID, sort, search, filter, newsletterSubscriptionID },
+    disabledCategoriesIDs,
 }: Pick<QueryParams, 'page' | 'pageSize'> & {
     params: ElementsStateParams;
+    disabledCategoriesIDs: string[];
 }): MailboxItemsQueryParams => {
     // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
     let effectiveLabelID: string | string[] = convertCustomViewLabelsToAlmostAllMail(labelID);
 
     // Use [INBOX, CATEGORY_ID] when we're viewing a category to only show elements in both INBOX and CATEGORY_ID
-    effectiveLabelID = convertCategoryLabelToCategoryAndInbox(effectiveLabelID);
+    effectiveLabelID = convertCategoryLabelToCategoryAndInbox(effectiveLabelID, disabledCategoriesIDs);
 
     // Only send NewsletterSubscriptionID when we're actually in the newsletter subscriptions view
     const shouldIncludeNewsletterSubscriptionID = labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS;
@@ -76,12 +78,14 @@ export const queryElementsInBatch = async (
         pageSize,
         params,
         abortController,
+        disabledCategoriesIDs,
     }: {
         api: Api;
         page: number;
         pageSize: number;
         params: ElementsStateParams;
         abortController?: AbortController;
+        disabledCategoriesIDs: string[];
     },
     onSerializedResponse?: (param: { result: QueryResults; page: number }) => void
 ) => {
@@ -91,6 +95,7 @@ export const queryElementsInBatch = async (
         page,
         pageSize,
         params,
+        disabledCategoriesIDs,
     });
 
     abortController?.abort();
