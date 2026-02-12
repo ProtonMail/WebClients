@@ -22,6 +22,8 @@ describe('UploadEventHandler', () => {
     let mockCancelFolderChildren: jest.Mock;
     let mockUpdateQueueItems: jest.Mock;
     let mockSetController: jest.Mock;
+    let mockSetAbortController: jest.Mock;
+    let mockSetUploadController: jest.Mock;
     let mockRemoveController: jest.Mock;
     let mockGetController: jest.Mock;
     let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
@@ -33,6 +35,8 @@ describe('UploadEventHandler', () => {
 
         mockUpdateQueueItems = jest.fn();
         mockSetController = jest.fn();
+        mockSetAbortController = jest.fn();
+        mockSetUploadController = jest.fn();
         mockRemoveController = jest.fn();
         mockGetController = jest.fn();
         mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
@@ -48,6 +52,8 @@ describe('UploadEventHandler', () => {
 
         jest.mocked(useUploadControllerStore.getState).mockReturnValue({
             setController: mockSetController,
+            setAbortController: mockSetAbortController,
+            setUploadController: mockSetUploadController,
             removeController: mockRemoveController,
             getController: mockGetController,
         } as any);
@@ -81,24 +87,35 @@ describe('UploadEventHandler', () => {
         );
     });
 
-    describe('handleEvent - file:started', () => {
-        it('should set controller for started file', async () => {
-            const mockUploadController = {} as any;
+    describe('handleEvent - file:queued', () => {
+        it('should set abort controller for queued file', async () => {
             const mockAbortController = new AbortController();
             const event = {
-                type: 'file:started' as const,
+                type: 'file:queued' as const,
                 uploadId: 'task123',
-                controller: mockUploadController,
                 abortController: mockAbortController,
                 isForPhotos: false,
             };
 
             await handler.handleEvent(event);
 
-            expect(mockSetController).toHaveBeenCalledWith('task123', {
-                uploadController: mockUploadController,
-                abortController: mockAbortController,
-            });
+            expect(mockSetAbortController).toHaveBeenCalledWith('task123', mockAbortController);
+        });
+    });
+
+    describe('handleEvent - file:started', () => {
+        it('should set upload controller for started file', async () => {
+            const mockUploadController = {} as any;
+            const event = {
+                type: 'file:started' as const,
+                uploadId: 'task123',
+                controller: mockUploadController,
+                isForPhotos: false,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockSetUploadController).toHaveBeenCalledWith('task123', mockUploadController);
         });
     });
 
@@ -115,6 +132,7 @@ describe('UploadEventHandler', () => {
 
             expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
                 uploadedBytes: 500,
+                status: UploadStatus.InProgress,
             });
             expect(mockCapacityManager.updateProgress).toHaveBeenCalledWith('task123', 500);
         });
@@ -493,10 +511,16 @@ describe('UploadEventHandler', () => {
             const mockAbortController = new AbortController();
 
             await handler.handleEvent({
+                type: 'file:queued',
+                uploadId: 'task123',
+                abortController: mockAbortController,
+                isForPhotos: false,
+            });
+
+            await handler.handleEvent({
                 type: 'file:started',
                 uploadId: 'task123',
                 controller: mockController,
-                abortController: mockAbortController,
                 isForPhotos: false,
             });
 
@@ -523,7 +547,8 @@ describe('UploadEventHandler', () => {
                 isForPhotos: false,
             });
 
-            expect(mockSetController).toHaveBeenCalledTimes(1);
+            expect(mockSetAbortController).toHaveBeenCalledTimes(1);
+            expect(mockSetUploadController).toHaveBeenCalledTimes(1);
             expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
             expect(mockCapacityManager.updateProgress).toHaveBeenCalledTimes(2);
             expect(mockRemoveController).toHaveBeenCalledTimes(1);
@@ -535,10 +560,16 @@ describe('UploadEventHandler', () => {
             const error = new Error('Upload failed');
 
             await handler.handleEvent({
+                type: 'file:queued',
+                uploadId: 'task123',
+                abortController: mockAbortController,
+                isForPhotos: false,
+            });
+
+            await handler.handleEvent({
                 type: 'file:started',
                 uploadId: 'task123',
                 controller: mockController,
-                abortController: mockAbortController,
                 isForPhotos: false,
             });
 

@@ -5,12 +5,14 @@ import { CryptoProxy } from '@proton/crypto';
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
+import { useUploadControllerStore } from '../store/uploadController.store';
 import type { EventCallback, PhotosUploadTask } from '../types';
 import { PhotosUploadExecutor } from './PhotosUploadExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
+jest.mock('../store/uploadController.store');
 jest.mock('@proton/crypto', () => {
     const actual = jest.requireActual('@proton/crypto');
     return {
@@ -37,6 +39,7 @@ describe('PhotosUploadExecutor', () => {
     let mockUploadFromStream: jest.Mock;
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
+    let mockGetController: jest.Mock;
 
     // TODO: Remove that once jest/node include newly added toHex
     beforeAll(() => {
@@ -56,6 +59,16 @@ describe('PhotosUploadExecutor', () => {
         mockUploadFromStream = jest.fn();
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
+        mockGetController = jest.fn();
+
+        mockGetController.mockReturnValue({
+            abortController: new AbortController(),
+            uploadController: null,
+        });
+
+        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            getController: mockGetController,
+        } as any);
 
         jest.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({

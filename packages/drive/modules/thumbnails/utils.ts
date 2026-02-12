@@ -33,7 +33,7 @@ export function calculateThumbnailSize(
     const ratio = Math.min(
         1,
         thumbnailType === ThumbnailType.Type2
-            ? HD_THUMBNAIL_MAX_SIDE
+            ? HD_THUMBNAIL_MAX_SIDE / Math.max(img.width, img.height)
             : THUMBNAIL_MAX_SIDE / Math.max(img.width, img.height)
     );
     return [Math.ceil(ratio * img.width), Math.ceil(ratio * img.height)];
