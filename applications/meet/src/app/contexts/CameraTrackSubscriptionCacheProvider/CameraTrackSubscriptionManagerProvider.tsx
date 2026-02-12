@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import type { Participant, TrackPublication } from 'livekit-client';
@@ -11,6 +11,7 @@ import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proto
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useParticipantQuality } from '../../hooks/useParticipantQuality';
+import { useStableCallback } from '../../hooks/useStableCallback';
 import type { RegisterCameraTrackFn } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';
 import { CameraTrackSubscriptionManager } from '../../utils/subscriptionManagers/CameraTrackSubscriptionManager';
 
@@ -30,18 +31,21 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const participantQuality = useParticipantQuality();
 
-    const managerRef = useRef(new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
+    const [manager, setManager] = useState(() => new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
 
     useEffect(() => {
-        managerRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+        manager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
     }, [disableVideos, participantsWithDisabledVideos, participantQuality]);
 
     // Handle room disconnection - destroy cache and create a new one
     useEffect(() => {
         const handleDisconnected = () => {
-            managerRef.current?.destroy();
-            managerRef.current = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
-            managerRef.current.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+            manager.destroy();
+
+            const newManager = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
+            newManager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+            newManager.setupReconcileLoop();
+            setManager(newManager);
         };
 
         room.on(RoomEvent.Disconnected, handleDisconnected);
@@ -50,17 +54,22 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         };
     }, [room, disableVideos, participantsWithDisabledVideos, participantQuality]);
 
+    const cleanupManager = useStableCallback(() => {
+        manager.destroy();
+    });
+
     // Cleanup on unmount
     useEffect(() => {
-        managerRef.current?.setupReconcileLoop();
+        manager.setupReconcileLoop();
+
         return () => {
-            managerRef.current?.destroy();
+            cleanupManager();
         };
     }, []);
 
     useEffect(() => {
         const handleTrackUnpublished = (publication: TrackPublication, _participant: Participant) => {
-            managerRef.current?.handleTrackUnpublished(publication);
+            manager.handleTrackUnpublished(publication);
         };
 
         room.on(RoomEvent.TrackUnpublished, handleTrackUnpublished);
@@ -69,17 +78,26 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         };
     }, [room]);
 
-    const register = useCallback<RegisterCameraTrackFn>((publication, participantIdentity, forcePin) => {
-        managerRef.current.register(publication, participantIdentity, forcePin);
-    }, []);
+    const register = useCallback<RegisterCameraTrackFn>(
+        (publication, participantIdentity, forcePin) => {
+            manager.register(publication, participantIdentity, forcePin);
+        },
+        [manager]
+    );
 
-    const unregister = useCallback((publication: TrackPublication | undefined) => {
-        managerRef.current?.unregister(publication);
-    }, []);
+    const unregister = useCallback(
+        (publication: TrackPublication | undefined) => {
+            manager.unregister(publication);
+        },
+        [manager]
+    );
 
-    const removeForcePin = useCallback((publication: TrackPublication) => {
-        managerRef.current?.removeForcePin(publication);
-    }, []);
+    const removeForcePin = useCallback(
+        (publication: TrackPublication) => {
+            manager.removeForcePin(publication);
+        },
+        [manager]
+    );
 
     const value = useMemo<CameraTrackSubscriptionManagerApi>(
         () => ({ register, unregister, removeForcePin }),
