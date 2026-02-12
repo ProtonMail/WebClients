@@ -91,6 +91,7 @@ describe('eligibilityChecker helpers', () => {
         SENTRY_DSN: '',
         SSO_URL: '',
         VERSION_PATH: '',
+        LOGICAL_SCSS: true,
     };
 
     describe('checksAllPass', () => {

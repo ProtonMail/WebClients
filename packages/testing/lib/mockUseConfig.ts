@@ -22,6 +22,7 @@ export const mockUseConfig = (value?: Partial<ReturnType<typeof useConfigModule.
         SENTRY_DSN: '',
         SSO_URL: '',
         VERSION_PATH: '',
+        LOGICAL_SCSS: true,
         ...value,
     });
 

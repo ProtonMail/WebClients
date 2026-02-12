@@ -100,6 +100,7 @@ export const defaultProtonConfig: ProtonConfig = {
     SENTRY_DSN: '',
     SSO_URL: '',
     VERSION_PATH: '/version.json',
+    LOGICAL_SCSS: true,
 };
 
 export const withConfig =
