@@ -4,38 +4,48 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
-import { getPlanName, PLAN_NAMES, PLANS } from '@proton/payments';
+import { PLANS, PLAN_NAMES, getPlanName } from '@proton/payments';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import useFlag from '@proton/unleash/useFlag';
 
 interface Props {
     variant: 'user' | 'organization';
     eligible: boolean;
 }
 
-const B2B_PLANS_MAPPING: Partial<Record<PLANS, PLANS>> = {
-    [PLANS.MAIL_PRO]: PLANS.MAIL_BUSINESS,
-    [PLANS.VPN_PRO]: PLANS.VPN_BUSINESS,
-    [PLANS.DRIVE_PRO]: PLANS.DRIVE_BUSINESS,
-    [PLANS.PASS_PRO]: PLANS.PASS_BUSINESS,
+const useUpgradableOptions = () => {
+    const [subscription] = useSubscription();
+    const bundleProPlan = useBundleProPlan();
+    const currentPlan = getPlanName(subscription);
+    const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
+
+    const workspacePlans = isNewB2BPlanEnabled ? [bundleProPlan, PLANS.BUNDLE_BIZ_2025] : [bundleProPlan];
+
+    const productSpecificB2bPlans = (() => {
+        switch (currentPlan) {
+            case PLANS.VPN_PRO:
+                return [PLANS.VPN_BUSINESS];
+            case PLANS.DRIVE_PRO:
+                return [PLANS.DRIVE_BUSINESS];
+            case PLANS.PASS_PRO:
+                return [PLANS.PASS_BUSINESS];
+            case PLANS.MAIL_PRO:
+                // mail pro don't have product specific b2b plan
+                return isNewB2BPlanEnabled ? [] : [PLANS.MAIL_BUSINESS];
+            default:
+                // show all available product specific b2b plans for users with free subscription
+                return [PLANS.VPN_BUSINESS, PLANS.DRIVE_BUSINESS, PLANS.PASS_BUSINESS];
+        }
+    })();
+
+    return productSpecificB2bPlans.concat(workspacePlans);
 };
 
 const SentinelDescription = ({ variant, eligible }: Props) => {
-    const [subscription] = useSubscription();
-    const bundleProPlan = useBundleProPlan();
+    const upgradeOptions = useUpgradableOptions();
 
-    const plans = (function getSentinelPlans(variant) {
-        if (variant === 'user') {
-            return [PLANS.PASS, PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.FAMILY, bundleProPlan];
-        }
-        const currentPlan = getPlanName(subscription);
-        const b2bPlan = currentPlan ? B2B_PLANS_MAPPING[currentPlan] : null;
-        const b2bPlans = b2bPlan ? [b2bPlan] : Object.values(B2B_PLANS_MAPPING);
-
-        return [...b2bPlans, bundleProPlan];
-    })();
-
-    const planNames = plans.map((plan) => PLAN_NAMES[plan]);
+    const planNames = upgradeOptions.map((plan) => PLAN_NAMES[plan]);
     const firstPlanNames = planNames.slice(0, -1).join(', ');
     const lastPlanName = planNames.at(-1);
 
