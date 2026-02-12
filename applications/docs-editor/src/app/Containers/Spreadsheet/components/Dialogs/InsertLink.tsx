@@ -29,7 +29,13 @@ function InsertLinkPopover() {
   }, [activeCell.columnIndex, activeCell.rowIndex, getHyperlink, sheetId])
   useEffect(() => {
     if (cellHyperlink) {
-      setValue(cellHyperlink)
+      if (typeof cellHyperlink === 'string') {
+        setValue(cellHyperlink)
+      } else if (cellHyperlink.kind === 'external') {
+        setValue(cellHyperlink.url)
+      } else {
+        setValue(cellHyperlink.location)
+      }
     }
   }, [cellHyperlink])
 
