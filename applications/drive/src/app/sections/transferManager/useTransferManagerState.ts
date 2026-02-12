@@ -26,6 +26,7 @@ type TransferManagerBaseEntry = {
     name: string;
     transferredBytes: number;
     lastStatusUpdateTime: Date;
+    error?: Error;
 };
 
 type TransferManagerDownloadEntry = TransferManagerBaseEntry & {
@@ -53,6 +54,7 @@ const mapDownload = (item: DownloadItem): TransferManagerDownloadEntry => ({
     storageSize: item.storageSize ?? 0,
     lastStatusUpdateTime: item.lastStatusUpdateTime,
     malwareDetectionStatus: item.malwareDetectionStatus,
+    error: item.error,
 });
 
 const getUploadTransferredBytes = (item: UploadItem): number => {
@@ -70,6 +72,7 @@ const mapUpload = (item: UploadItem): TransferManagerUploadEntry => ({
     transferredBytes: getUploadTransferredBytes(item),
     clearTextSize: item.type === NodeType.File || item.type === NodeType.Photo ? item.clearTextExpectedSize : 0,
     lastStatusUpdateTime: item.lastStatusUpdateTime,
+    error: item.error,
 });
 
 const getShouldIgnoreTransferProgress = (
