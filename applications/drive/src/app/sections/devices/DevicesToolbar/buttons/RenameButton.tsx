@@ -12,17 +12,14 @@ interface Props {
 }
 
 export const DeviceRenameButton = ({ selectedDevices }: Props) => {
-    const [renameDeviceModal, showRenameDeviceModal] = useRenameDeviceModal();
+    const { renameDeviceModal, showRenameDeviceModal } = useRenameDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 
     const onClick = () => {
         const device = selectedDevices[0];
         if (device) {
-            showRenameDeviceModal({
-                deviceUid: device.uid,
-                deviceName: device.name,
-            });
+            showRenameDeviceModal({ deviceUid: device.uid });
         }
     };
 
