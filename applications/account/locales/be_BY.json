@@ -75,9 +75,6 @@
       "Accept": [
         "Прыняць"
       ],
-      "Access account": [
-        "Доступ да ўліковага запісу"
-      ],
       "activate": [
         "актываваць"
       ],
@@ -515,6 +512,9 @@
       ],
       "Disable": [
         "Адключыць"
+      ],
+      "Disable categories": [
+        "Адключыць катэгорыі"
       ],
       "Disable recovery phrase": [
         "Адключыць фразу аднаўлення"
@@ -1134,9 +1134,6 @@
       "refresh the page": [
         "абнавіць старонку"
       ],
-      "Refuse access": [
-        "Адмовіць у доступе"
-      ],
       "Reject": [
         "Адхіліць"
       ],
@@ -1191,9 +1188,6 @@
       "Request a feature": [
         "Запытаць функцыю"
       ],
-      "Request access": [
-        "Запытаць доступ"
-      ],
       "Request new code": [
         "Запытаць новы код"
       ],
@@ -1240,16 +1234,13 @@
         "Вярнуцца да ўваходу"
       ],
       "Review": [
-        "Прагледзець"
+        "Паглядзець"
       ],
       "Revoke": [
         "Адклікаць"
       ],
       "Revoke ${ name }": [
         "Адклікаць ${ name }"
-      ],
-      "Revoke access": [
-        "Адклікаць доступ"
       ],
       "Revoke all other sessions": [
         "Адклікаць усе іншыя сеансы"
@@ -1479,9 +1470,6 @@
       "Stay": [
         "Застацца"
       ],
-      "Stop being trusted contact": [
-        "Перастаць быць давераным кантактам"
-      ],
       "Stop using single sign-on": [
         "Спыніць выкарыстанне адзінага ўваходу"
       ],
@@ -1651,7 +1639,7 @@
         "Спраўдзіць дамен ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
-        "Прагледзець"
+        "Паглядзець"
       ],
       "View all reports": [
         "Паглядзець усе справаздачы"
@@ -2228,99 +2216,12 @@
         "Прапанова недаступна"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } прасторы ў сховішчы"
-      ],
-      "1 user account": [
-        "1 уліковы запіс карыстальніка"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
-      ],
-      "6 user accounts": [
-        "6 уліковых запісаў карыстальнікаў"
-      ],
-      "Admin panel to manage your family": [
-        "Панэль адміністратара для кіравання вашай сям'ёй"
-      ],
-      "Advanced account protection": [
-        "Пашыраная абарона ўліковага запісу"
-      ],
-      "Easily add or remove users": [
-        "Лёгкае дадаванне або выдаленне карыстальнікаў"
-      ],
-      "One-time payment, lifetime deal": [
-        "Аднаразовая аплата, пажыццёвы доступ"
-      ],
-      "Online document editor": [
-        "Воблачны рэдактар дакументаў"
-      ],
-      "Password health alerts": [
-        "Папярэджанні якасці пароля"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Неабмежаваная колькасць запісаў уваходу, крэдытных картак, псеўданімаў hide-my-email і іншых функцый"
-      ],
       "Use your own email domain": [
         "Выкарыстоўвайце свой ўласны дамен электроннай пошты"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Аплачваецца ${ amount } аднаразова"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Доступ да заблакіраванага змесціва і прыватны прагляд. Уключае больш за 8500 сервераў у больш чым 110 краінах, 10 прылад, высакахуткасныя трансляцыі, блакіроўшчык рэкламы і шкодных праграм, VPN Accelerator і многае іншае."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, ${ DARK_WEB_MONITORING_NAME } і іншыя функцыі."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку для карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
     "BF2025: Deal details": {
@@ -5198,14 +5099,6 @@
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі пажаданнямі"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Пашыраная гісторыя версій"
-      ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ]
-    },
     "Duo offer": {
       "/month": [
         "/месяц"
@@ -5873,11 +5766,20 @@
       "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
         "${ user } выйдзе са свайго ўліковага запісу і ў яго не будзе магчымасці атрымаць доступ да яго яшчэ раз пакуль не наступіць чарговы экстранны доступ."
       ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } больш не зможа дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } больш не зможа запытваць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
       ],
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } не зможа атрымаць доступ да вашага ўліковага запісу пакуль не наступіць чарговы экстранны доступ."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** цяпер з'яўляецца вашым кантактам для аднаўлення. Ён/яна змогуць дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "Магчыма, што нехта іншы спрабуе атрымаць доступ да іх уліковага запісу, **калі яны не запытвалі дапамогу ў вас**. У такім выпадку праігнаруйце гэты запыт."
       ],
       "Access granted": [
         "Доступ дазволены"
@@ -5900,8 +5802,23 @@
       "Add emergency contact": [
         "Дадаць экстранны кантакт"
       ],
+      "Add recovery contact": [
+        "Дадаць кантакт для аднаўлення"
+      ],
       "Added on ${ formattedDate }": [
         "Дададзена ${ formattedDate }"
+      ],
+      "Approved request": [
+        "Зацверджаны запыт"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Папрасіце дапамогі ў кантакту, якому даверылі аднаўленне. Ён/яна атрымае ліст, каб спраўдзіць запыт і разблакіраваць вашы даныя."
+      ],
+      "Asking for help": [
+        "Запытаць дапамогу"
+      ],
+      "Cancel request": [
+        "Скасаваць запыт"
       ],
       "Cancel request?": [
         "Скасаваць запыт?"
@@ -5917,6 +5834,12 @@
       ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "Выберыце тую асобу, якой зможаце даверыць свае даныя. У яе таксама павінен быць уліковы запіс ${ BRAND_NAME }."
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Даныя паспяхова адноўлены. Цяпер вы можаце расшыфраваць свае існуючыя даныя і зашыфраваныя файлы."
       ],
       "Disabled": [
         "Адключана"
@@ -5948,17 +5871,29 @@
       "Emergency contact added": [
         "Экстранны кантакт дададзены"
       ],
+      "Emergency contact enabled": [
+        "Экстранны кантакт уключаны"
+      ],
       "Emergency contact removed": [
         "Экстранны кантакт выдалены"
       ],
+      "Enable": [
+        "Уключыць"
+      ],
       "Enable auto-renew": [
         "Уключыць аўтаматычнае падаўжэнне"
+      ],
+      "For ${ email }": [
+        "Для ${ email }"
       ],
       "Give access now": [
         "Даць доступ"
       ],
       "Give immediate access?": [
         "Даць неадкладны доступ?"
+      ],
+      "Got it": [
+        "Зразумела"
       ],
       "Immediate": [
         "Неадкладна"
@@ -5972,6 +5907,9 @@
       "Less than a minute left": [
         "Засталося менш за хвіліну"
       ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Дазвольце карыстальніку ${ user } ведаць, што доступ аднаўляеце менавіта вы."
+      ],
       "None": [
         "Няма"
       ],
@@ -5981,14 +5919,44 @@
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "Запытвайце экстраны доступ толькі ў **абгрунтаваных сітуацыях**, якія патрабуюць кіравання ўліковым запісам іншага карыстальніка."
       ],
+      "Pending request": [
+        "Чакае запыту"
+      ],
       "People I trust": [
         "Людзі, якім я давяраю"
+      ],
+      "People who have you as a recovery contact": [
+        "Людзі, якія дадалі вас у якасці кантакт для аднаўлення"
       ],
       "People who trust me": [
         "Людзі, якія давяраюць мне"
       ],
+      "Proceed anyway": [
+        "Працягнуць у любым выпадку"
+      ],
       "Protect your legacy with emergency access": [
         "Абараніце свае даныя з дапамогай экстраннага доступу"
+      ],
+      "Recover data": [
+        "Аднаўленне даных"
+      ],
+      "Recovery approved": [
+        "Аднаўленне зацверджана"
+      ],
+      "Recovery contact added": [
+        "Кантакт для аднаўлення дададзены"
+      ],
+      "Recovery contact enabled": [
+        "Кантакт для аднаўлення ўключаны"
+      ],
+      "Recovery contact removed": [
+        "Кантакт для аднаўлення выдалены"
+      ],
+      "Recovery contacts": [
+        "Кантакты для аднаўлення"
+      ],
+      "Recovery request sent": [
+        "Запыт на аднаўленне адпраўлены"
       ],
       "Refuse access": [
         "Адмовіць у доступе"
@@ -5996,11 +5964,20 @@
       "Refuse access?": [
         "Адмовіць у доступе?"
       ],
+      "Remove recovery contact": [
+        "Выдаліць кантакт для аднаўлення"
+      ],
       "Remove trusted contact": [
         "Выдаліць давераны кантакт"
       ],
+      "Remove your recovery contacts to continue": [
+        "Выдаліце свае кантакты для аднаўлення, каб працягнуць"
+      ],
       "Renew to get emergency access again.": [
         "Падоўжыце сваю падпіску, каб зноў атрымаць функцыю экстраннага доступу."
+      ],
+      "Request access": [
+        "Запытаць доступ"
       ],
       "Request access?": [
         "Запытаць доступ?"
@@ -6008,11 +5985,29 @@
       "Requesting access": [
         "Запыт доступу"
       ],
+      "Review recovery request": [
+        "Паглядзець запыт на аднаўленне"
+      ],
       "Revoke access": [
         "Адклікаць доступ"
       ],
       "Revoke access?": [
         "Адклікаць доступ?"
+      ],
+      "See request": [
+        "Паглядзець запыт"
+      ],
+      "Select recovery contact ${ name }": [
+        "Выберыце кантакт для аднаўлення ${ name }"
+      ],
+      "Set account recovery": [
+        "Задаць аднаўленне для ўліковага запісу"
+      ],
+      "Stop being recovery contact?": [
+        "Перастаць быць кантактам для аднаўлення?"
+      ],
+      "Stop being trusted contact": [
+        "Перастаць быць давераным кантактам"
       ],
       "Stop being trusted contact?": [
         "Перастаць быць давераным кантактам?"
@@ -6044,8 +6039,14 @@
       "Time required before automatically granting them access": [
         "Час, які патрэбны на атрыманне дазволу аўтаматычнага доступу"
       ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
+      ],
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "Unable to recover data": [
+        "Немагчыма аднавіць даныя"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -6065,6 +6066,9 @@
       "Wait time saved": [
         "Зэканомлены час чакання"
       ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Атрыманы запыт на разблакіроўку зашыфраваных даных вашага кантакту **${ user }**."
+      ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Мы апавясцім **${ user }**, што вы запыталі экстранны доступ."
       ],
@@ -6077,6 +6081,9 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Вас пакуль яшчэ ніхто не прызначыў у якасці кантакту для аднаўлення."
+      ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
       ],
@@ -6086,8 +6093,17 @@
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў.",
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў."
       ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакт для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакты для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення."
+      ],
       "You will be notified when someone requests emergency access.": [
         "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстранны доступ."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "У вас больш не будзе магчымасці дапамагаць аднавіць доступ для ўліковага запісу карыстальніка ${ user } у выпадку, калі ім будзе скінуты пароль."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Вы больш не зможаце запытваць доступ да ўліковага запісу ${ user } у выпадку экстраннай сітуацыі."
@@ -6106,6 +6122,18 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Ваш кантакт для экстранных выпадкаў ${ name } запытвае доступ да вашага ўліковага запісу."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Ваш кантакт для аднаўлення ${ name } просіць дапамогі ў аднаўленні сваіх даных."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Ваш кантакт для аднаўлення дапамог вам аднавіць даныя."
+      ],
+      "Your recovery contacts": [
+        "Вашы кантакты для аднаўлення"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
       ]
     },
     "Empty group name": {
@@ -7130,19 +7158,9 @@
         "Вы можаце захаваць файл падзей ICS, якія былі паспяхова экспартаваны."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "Сховішча памерам у 3 ТБ"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Перавагі вашага ўліковага запісу"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Прастора сховішча размеркавана паміж удзельнікамі сямейнага тарыфнага плана ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7175,11 +7193,6 @@
       ],
       "View invitation": [
         "Паглядзець запрашэнне"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Да 6 карыстальнікаў"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7444,17 +7457,6 @@
       ],
       "Set family name": [
         "Задаць назву сям'і"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Уключае 2700 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 90 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
     "Feature": {
@@ -8776,7 +8778,7 @@
         "${ name } для Windows"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "${ none }: не пераводзіць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+        "${ none }: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
       ],
       "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
         "${ noTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength }",
@@ -8903,6 +8905,12 @@
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
+      ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
       ],
       "${ url } added.": [
         "Дададзены ${ url }."
@@ -9146,6 +9154,9 @@
       ],
       "All members have been added.": [
         "Усе ўдзельнікі былі дададзены."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі з катэгорыямі і тэгамі больш не будуць бачныя. "
       ],
       "All users": [
         "Усе карыстальнікі"
@@ -14915,7 +14926,7 @@
         "Усе дзеянні фільтра будуць ужыты да ўсіх паведамленняў у вашым уліковым запісе ${ MAIL_APP_NAME }. Лісты з аўтаматычным адказам не будуць адпраўляцца."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
+        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashakampanija.com). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."
@@ -20567,18 +20578,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 карыстальнікаў"
-      ],
-      "All paid Mail and Calendar features": [
-        "Усе платныя функцыі Mail і Calendar"
-      ],
-      "High speed VPN": [
-        "Высакахуткасны VPN"
-      ],
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
@@ -20591,17 +20590,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Прэміяльны ${ appName1 }, ${ appName2 } і ${ appName3 }"
       ],
-      "Premium early access": [
-        "Ранні доступ да новых функцый"
-      ],
-      "Secure cloud storage": [
-        "Бяспечнае воблачнае сховішча"
-      ],
       "Secure streaming": [
         "Бяспечнае патокавае вяшчанне"
-      ],
-      "Support online privacy": [
-        "Падтрыманне прыватнасці ў інтэрнэце"
       ]
     },
     "specialoffer: Footer": {
@@ -20645,74 +20635,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
       "/ month": [
         "/ месяц"
       ],
       "/month": [
         "/месяц"
       ],
-      "1 year": [
-        "1 год"
-      ],
-      "15 months": [
-        "15 месяцаў"
-      ],
-      "2 years": [
-        "2 гады"
-      ],
-      "30 months": [
-        "30 месяцаў"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Аплачваецца ${ amount } за 1 месяц"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Аплачваецца ${ amount } за 12 месяцаў"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Аплачваецца ${ amount } за 15 месяцаў"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Аплачваецца ${ amount } за 24 месяцы"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Аплачваецца ${ amount } за 30 месяцаў"
-      ],
       "Get the deal": [
         "Атрымаць прапанову"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Падаўжаецца праз 2 гады па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
-      ],
       "Save ${ discount }%": [
         "Эканомія ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Стандартная цана ${ amount } за 1 месяц"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Стандартная цана ${ amount } за 12 месяцаў"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Стандартная цана ${ amount } за 15 месяцаў"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Стандартная цана ${ amount } за 24 месяцы"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Стандартная цана ${ amount } за 30 месяцаў"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Спецыяльная прапанова дзейнічае на працягу першых 2 гадоў"
       ]
     },
     "specialoffer: Title": {
@@ -20739,29 +20672,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш чым 60 краінах свету, найвышэйшую хуткасць VPN, 10 падключэнняў на карыстальніка, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш чым 60 краінах свету, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Усе нашы прэміяльныя сэрвісы з максімальнымі магчымасцямі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Ідэальна пасуе для сем'яў або невялікіх каманд. У кожнага карыстальніка будзе свая ўласная паштовая скрыня і псеўданімы. Патрабуецца карыстальніцкі дамен."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Атрымлівайце платныя версіі ўсіх сэрвісаў, якія будуць выпушчаны ў будучым, а таксама ранні доступ да ўсіх будучых функцый і прадуктаў без дадатковай платы."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ]
     },
     "Spotlight": {
@@ -22115,20 +22025,6 @@
         "Падрабязнасці аб падзеях, якія не былі экспартаваны"
       ]
     },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Адрасы"
@@ -22860,6 +22756,9 @@
       ],
       "Disable activity monitor?": [
         "Адключыць манітор актыўнасці?"
+      ],
+      "Disable categories?": [
+        "Адключыць катэгорыі?"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
