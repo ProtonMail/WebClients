@@ -7,7 +7,7 @@
 	// Safety net for very small screens
 	@media (height <= 768px) {
 		.modal-two-dialog-container {
-			overflow: scroll;
+			overflow-y: auto;
 		}
 	}
 
