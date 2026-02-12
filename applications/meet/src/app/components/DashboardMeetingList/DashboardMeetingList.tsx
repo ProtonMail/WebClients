@@ -92,10 +92,12 @@ export const DashboardMeetingList = ({
                     timeBasedMeetingsCount={meetingsObject[DashboardMeetingListTab.TimeBased].length}
                     meetingRoomsCount={roomNumber > 0 ? roomNumber : 1}
                 />
+                {/* Only show the header when there are items available OR is a search text present */}
                 {((activeTab === DashboardMeetingListTab.TimeBased &&
                     meetingsObject[DashboardMeetingListTab.TimeBased].length !== 0) ||
                     (activeTab === DashboardMeetingListTab.MeetingRooms &&
-                        meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1)) && (
+                        meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1) ||
+                    search.length > 0) && (
                     <MeetingListHeader
                         search={search}
                         setSearch={setSearch}
