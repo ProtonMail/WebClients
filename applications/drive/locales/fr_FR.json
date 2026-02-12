@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Activer la recherche dans Drive"
       ],
+      "Encrypted": [
+        "Chiffré"
+      ],
       "Expand": [
         "Développer"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Scanner et télécharger (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Scanner et télécharger"
+      ],
       "Search": [
         "Rechercher"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Partagez votre calendrier avec votre équipe"
       ],
+      "Shared": [
+        "Partagé"
+      ],
       "Sharing is end-to-end encrypted": [
         "Le partage est chiffré de bout en bout"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
+      ],
+      "Sign up": [
+        "S'inscrire"
       ],
       "Skip verification": [
         "Ignorer la vérification"
@@ -6960,6 +6972,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
+      "Access": [
+        "Accès"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
       ],
@@ -6992,6 +7007,9 @@
       ],
       "All": [
         "Tout"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permettre aux éditeurs de modifier les autorisations et de partager"
       ],
       "Anderson": [
         "Durant"
@@ -7150,6 +7168,9 @@
       "Device name": [
         "Nom de l'appareil"
       ],
+      "Disable this link on a specific date": [
+        "Désactiver ce lien à une date spécifique"
+      ],
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
       ],
@@ -7206,6 +7227,9 @@
       ],
       "Expires": [
         "Expire le"
+      ],
+      "Expiry": [
+        "Expiration"
       ],
       "Extended address": [
         "Complément d’adresse"
@@ -7408,12 +7432,6 @@
       "Public keys": [
         "Clés publiques"
       ],
-      "Public link expiration date": [
-        "Date d'expiration du lien public"
-      ],
-      "Public link password": [
-        "Mot de passe du lien public"
-      ],
       "Region": [
         "Région"
       ],
@@ -7426,6 +7444,9 @@
       "Replace existing folder or file": [
         "Remplacer le dossier ou le fichier existant"
       ],
+      "Require password": [
+        "Exiger le mot de passe"
+      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -7435,11 +7456,8 @@
       "Select type of abuse": [
         "Sélectionnez un type d'abus"
       ],
-      "Set expiration date": [
-        "Définir la date d'expiration"
-      ],
-      "Set link password": [
-        "Définir le mot de passe du lien"
+      "Set a password to limit access via link": [
+        "Définir un mot de passe pour limiter l'accès par lien"
       ],
       "Set recovery method": [
         "Définissez une méthode de récupération"
@@ -9161,6 +9179,9 @@
       "\"${ name }\" saved successfully": [
         "« ${ name } » a été enregistré."
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" partagé"
+      ],
       "\"${ name }\" successfully copied": [
         "« ${ name } » a été copié."
       ],
@@ -9402,6 +9423,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les photos sélectionnées sont déjà dans « ${ albumName } »."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Paramètre mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
       ],
       "Share invitation accepted successfully": [
         "L'invitation partagée a été acceptée."
