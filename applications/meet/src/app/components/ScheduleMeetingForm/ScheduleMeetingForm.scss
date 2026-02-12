@@ -64,15 +64,20 @@
 	}
 
 	.input-link {
-		border: 1px solid var(--signal-danger-minor-2);
 		color: var(--ui-purple-interaction-minor-1);
-		background-color: var(--ui-purple-interaction-minor-3);
-		border-radius: 1.5em;
+		background-color: var(--background-card);
+		border-radius: var(--border-radius-xxl);
 	}
 
 	.button-copy {
-		background-color: var(--ui-purple-interaction-minor-1);
-		color: black;
+		background-color: var(--ui-purple-interaction-minor-3);
+		color: var(---ui-purple-interaction-minor-1);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--ui-purple-interaction-minor-2);
+		}
 	}
 }
 

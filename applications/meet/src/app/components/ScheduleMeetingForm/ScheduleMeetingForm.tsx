@@ -346,7 +346,11 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         </InlineLinkButton>
                     </div>
                     <div className="w-full flex flex-nowrap items-center gap-4">
-                        <IcTextAlignLeft size={5} className="shrink-0" />
+                        <IcTextAlignLeft
+                            size={5}
+                            className="shrink-0"
+                            style={{ color: 'var(--interaction-weak-major-3)' }}
+                        />
                         <InputFieldTwo
                             id="meetingName"
                             name="meetingName"
@@ -360,22 +364,25 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                     </div>
                     {meetingLink && (
                         <div className="w-full flex flex-nowrap items-center gap-4">
-                            <IcLink size={5} />
+                            <IcLink size={5} style={{ color: 'var(--interaction-weak-major-3)' }} />
                             <div className="flex flex-row input-link border border-norm p-5">
                                 <div className="flex flex-column flex-1">
-                                    <Href href={meetingLink} className={'text-break-all'}>
+                                    <Href href={meetingLink} className="text-break text-no-decoration">
                                         {meetingLink}
                                     </Href>
                                 </div>
 
                                 <div className="flex flex-column justify-center pl-5">
-                                    <button
-                                        className="refresh-button rounded-50 p-2 ml-2 flex flex-column justify-center items-center border border-norm button-copy"
+                                    <Button
+                                        shape="solid"
+                                        color="norm"
+                                        icon
+                                        className="rounded-50 p-2 ml-2 flex justify-center items-center button-copy"
                                         title={c('Action').t`Copy link`}
                                         onClick={handleCopyLink}
                                     >
-                                        <IcSquares size={6} alt={c('Alt').t`Copy link`} />
-                                    </button>
+                                        <IcSquares size={4} alt={c('Alt').t`Copy link`} />
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -414,7 +421,11 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         timeError={errors.endTime}
                     />
                     <div className="w-full flex flex-nowrap items-center gap-4">
-                        <IcArrowsRotate size={5} className="shrink-0" />
+                        <IcArrowsRotate
+                            size={5}
+                            className="shrink-0"
+                            style={{ color: 'var(--interaction-weak-major-3)' }}
+                        />
                         <SelectTwo
                             onChange={(item: { value: string }) => {
                                 setValues({ ...values, recurrence: item.value as string });
