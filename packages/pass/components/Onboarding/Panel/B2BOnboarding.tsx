@@ -17,7 +17,7 @@ import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/Onboard
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultSelect, VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import { selectB2BOnboardingState, selectWritableVaults } from '@proton/pass/store/selectors';
-import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
 
 import './B2BOnboarding.scss';
@@ -42,14 +42,15 @@ export const B2BOnboarding: FC = () => {
             {
                 imageSrc: onboardingImport,
                 title: c('Title').t`Import your data`,
-                description: c('Info').t`Bring your existing passwords into ${BRAND_NAME}.`,
+                description: c('Info').t`Bring your existing passwords into ${PASS_APP_NAME}.`,
                 onClick: () => openSettings?.('import'),
                 actionDone: vaultImported,
             },
             {
                 imageSrc: onboardingVault,
                 title: c('Title').t`Create a vault`,
-                description: c('Info').t`Get the most out of Pass by creating a vault for each team or project.`,
+                description: c('Info')
+                    .t`Get the most out of ${PASS_APP_NAME} by creating a vault for each team or project.`,
                 onClick: vaultActions.create,
                 actionDone: vaultCreated,
             },
