@@ -27,6 +27,7 @@ import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicA
 import useInstance from '@proton/hooks/useInstance';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -101,6 +102,29 @@ const handlePreSubmit = async () => {
     await cryptoWorkerPromise;
 };
 
+const saveInitialLocation = (location: H.Location) => {
+    setItem(
+        'initialLocation',
+        JSON.stringify({
+            pathname: location.pathname,
+            search: location.search,
+            hash: location.hash,
+        })
+    );
+};
+
+const getInitialLocation = (): H.Location | undefined => {
+    const saved = getItem('initialLocation');
+    if (!saved) {
+        return undefined;
+    }
+    try {
+        return JSON.parse(saved);
+    } catch {
+        return undefined;
+    }
+};
+
 const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps) => {
     const { unauthenticatedApi, unleashClient } = useInstance(() => {
         const unauthenticatedApi = createUnauthenticatedApi(api);
@@ -114,7 +138,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
     const history = useHistory();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
-    const [initialLocation, setInitialLocation] = useState<H.Location | undefined>();
+    const [initialLocation, setInitialLocation] = useState<H.Location | undefined>(getInitialLocation);
 
     const paths = getPaths(location.localePrefix);
 
@@ -242,6 +266,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                         <Effect
                                             onEffect={() => {
                                                 setInitialLocation(location);
+                                                saveInitialLocation(location);
                                             }}
                                         >
                                             <Redirect to={paths.login} />
