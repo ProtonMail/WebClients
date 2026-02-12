@@ -5,6 +5,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import { useActiveBreakpoint } from '@proton/components/index';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import type { PopUpControls } from '@proton/meet/store/slices/uiStateSlice';
@@ -49,6 +50,8 @@ export const ToggleButton = ({
 
     const rect = containerRef.current?.getBoundingClientRect() ?? { top: 0, left: 0 };
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <div className="relative" ref={containerRef}>
             <Tooltip
@@ -64,14 +67,24 @@ export const ToggleButton = ({
                     className={clsx(
                         isOn && 'toggle-button-body-on',
                         !isOn && 'toggle-button-body-off',
-                        'user-select-none flex flex-nowrap items-center gap-4 text-norm pl-6 pr-1 rounded-full w-custom h-custom'
+                        'pl-3 sm:pl-4 md:pl-6',
+                        'user-select-none flex flex-nowrap items-center gap-4 text-norm pr-1 rounded-full w-custom sm:w-custom md:w-custom h-custom'
                     )}
-                    style={{ '--w-custom': '7rem', '--h-custom': '3.5rem' }}
+                    style={{
+                        '--w-custom': '5.5rem',
+                        '--sm-w-custom': '6rem',
+                        '--md-w-custom': '7rem',
+                        '--h-custom': '3.5rem',
+                    }}
                     onClick={onClick}
                     onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                     aria-label={ariaLabel}
                 >
-                    {isOn ? <OnIconComponent size={6} /> : <OffIconComponent size={6} />}
+                    {isOn ? (
+                        <OnIconComponent size={viewportWidth.xsmall ? 5 : 6} />
+                    ) : (
+                        <OffIconComponent size={viewportWidth.xsmall ? 5 : 6} />
+                    )}
                 </button>
             </Tooltip>
 
@@ -95,7 +108,11 @@ export const ToggleButton = ({
                 }}
                 aria-label={secondaryAriaLabel}
             >
-                {isOpen ? <IcChevronUp size={6} /> : <IcChevronDown size={6} />}
+                {isOpen ? (
+                    <IcChevronUp size={viewportWidth.xsmall ? 5 : 6} />
+                ) : (
+                    <IcChevronDown size={viewportWidth.xsmall ? 5 : 6} />
+                )}
             </Button>
             {hasWarning && (
                 <div
