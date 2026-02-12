@@ -3792,6 +3792,34 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } დღე",
+        "${ n } დღე"
+      ],
+      "Added on ${ formattedDate }": [
+        "დამატების თარიღია ${ formattedDate }"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Immediate": [
+        "დაუყონებლივ"
+      ],
+      "Less than a day": [
+        "დღეზე ნაკლები"
+      ],
+      "Recovery request sent": [
+        "აღდგენის მოთხოვნა გაიგზავნა"
+      ],
+      "Remove your recovery contacts to continue": [
+        "გასაგრძელებლად წაშალეთ თქვენი აღდგენის კონტაქტები"
+      ],
+      "Select recovery contact ${ name }": [
+        "აირჩიეთ აღდგენის კონტაქტი ${ name }"
+      ],
+      "Send email request": [
+        "ელგოსტის მოთხოვნის გაგზავნა"
+      ],
       "Trusted contact": [
         "სანდო კონტაქტი"
       ]
@@ -5810,6 +5838,10 @@
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
+      ],
+      "${ total } user found": [
+        "აღმოჩენილია ${ total } მომხმარებელი",
+        "აღმოჩენილია ${ total } მომხმარებელი"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } შეიქმნა"

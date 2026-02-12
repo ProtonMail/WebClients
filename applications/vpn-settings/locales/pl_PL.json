@@ -3529,6 +3529,21 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dzień",
+        "${ n } dni",
+        "${ n } dni",
+        "${ n } dnia"
+      ],
+      "Added on ${ formattedDate }": [
+        "Dodano ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Natychmiast"
+      ],
+      "Less than a day": [
+        "Mniej niż dzień"
+      ],
       "Trusted contact": [
         "Zaufany kontakt"
       ]

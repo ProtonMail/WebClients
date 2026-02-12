@@ -3851,8 +3851,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } gün",
+        "${ n } gün"
+      ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate } tarihinde eklendi"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Kurtarma kişisinden yardım isteyin. İsteğinizi doğrulamak ve verilerinizin kilidini açmak için bir e-posta alacaklar."
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Onlarla hemen iletişime geçerek size yardımcı olup olamayacaklarını öğrenin ve verilerinizi kilidini açmaya çalışan kişinin siz olduğunuzu bizzat bildirin."
+      ],
+      "Immediate": [
+        "Hemen"
+      ],
+      "Less than a day": [
+        "Bir günden daha az"
+      ],
+      "Recovery request sent": [
+        "Kurtarma isteği gönderildi"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Devam etmek için kurtarma kişilerinizi kaldırın"
+      ],
+      "Select recovery contact ${ name }": [
+        "Kurtarma kişisini seçin: ${ name }"
+      ],
+      "Send email request": [
+        "E-posta isteği gönder"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Bu kurtarma yöntemini devre dışı bırakmak için tüm kurtarma kişilerinizi kaldırın."
+      ],
       "Trusted contact": [
         "Güvenilir kişi"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Kurtarma kişiniz verilerinizi kurtarmanıza yardımcı oldu."
       ]
     },
     "Empty group name": {

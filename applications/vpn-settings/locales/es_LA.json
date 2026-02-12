@@ -3851,8 +3851,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } día",
+        "${ n } días"
+      ],
+      "Added on ${ formattedDate }": [
+        "Añadido el ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Pida ayuda a un contacto de recuperación. Recibirán un correo electrónico para verificar su solicitud y desbloquear sus datos."
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Póngase en contacto con ellos ahora para ver si pueden ayudarle y para informarles personalmente que es usted quien intenta desbloquear sus datos."
+      ],
+      "Immediate": [
+        "Inmediato"
+      ],
+      "Less than a day": [
+        "Menos de un día"
+      ],
+      "Recovery request sent": [
+        "Solicitud de recuperación enviada"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Elimine sus contactos de recuperación para continuar"
+      ],
+      "Select recovery contact ${ name }": [
+        "Seleccionar contacto de recuperación ${ name }"
+      ],
+      "Send email request": [
+        "Enviar solicitud por correo electrónico"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Para desactivar este método de recuperación, elimine todos sus contactos de recuperación."
+      ],
       "Trusted contact": [
         "Contacto de confianza"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Su contacto de recuperación ha ayudado a recuperar sus datos."
       ]
     },
     "Empty group name": {
@@ -5894,6 +5934,10 @@
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
+      ],
+      "${ total } user found": [
+        "${ total } usuario encontrado",
+        "${ total } usuarios encontrados"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } creado"

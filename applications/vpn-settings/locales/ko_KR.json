@@ -3798,6 +3798,18 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n }일"
+      ],
+      "Added on ${ formattedDate }": [
+        "${ formattedDate }에 추가됨"
+      ],
+      "Immediate": [
+        "즉시"
+      ],
+      "Less than a day": [
+        "하루 미만"
+      ],
       "Trusted contact": [
         "신뢰하는 연락처"
       ]
@@ -16075,7 +16087,7 @@
         "나와 소중한 사람을 위한 무제한 개인정보 보호. 단 매월 ${ priceString }부터."
       ],
       "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
-        "${ PLAN_NAMES[PLANS.DUO] }로 최대 ${ DUO_MAX_USERS }명, ${ PLAN_NAMES[PLANS.FAMILY] }로 최대 ${ FAMILY_MAX_USERS }까지 보호할 수 있습니다. 계정당 매월 ${ priceString }부터 시작합니다."
+        "${ PLAN_NAMES[PLANS.DUO] }로 최대 ${ DUO_MAX_USERS }명, ${ PLAN_NAMES[PLANS.FAMILY] }로 최대 ${ FAMILY_MAX_USERS }명까지 보호할 수 있어요. 계정당 시작가 매월 단${ priceString }!"
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있어요."

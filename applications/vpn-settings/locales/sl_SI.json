@@ -3300,6 +3300,18 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dan",
+        "${ n } dni",
+        "${ n } dni",
+        "${ n } dni"
+      ],
+      "Immediate": [
+        "Takoj"
+      ],
+      "Less than a day": [
+        "Manj kot en dan"
+      ],
       "Trusted contact": [
         "Zaupanja vreden stik"
       ]
