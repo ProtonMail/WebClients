@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { NodeEntity } from '@proton/drive/index';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
@@ -9,8 +11,9 @@ import { downloadLogDebug } from './downloadLogger';
 import { getNodeStorageSize } from './getNodeStorageSize';
 
 function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
+    const errorMessage = c('Info').t`Unexpected download error`;
     const { updateDownloadItem } = useDownloadManagerStore.getState();
-    const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
+    const errorToHandle = error instanceof Error ? error : new Error(errorMessage);
     updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToHandle });
 
     sendErrorReport(

@@ -24,7 +24,7 @@ import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
-import { queueDownloadRequest } from './utils/queueDownloadRequest';
+import { queueDownloadRequest, queueFailedDownloadRequest } from './utils/queueDownloadRequest';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
@@ -183,25 +183,33 @@ export class DownloadManager {
         const isPhotoDownload = !!options.isPhoto;
         let nodes: NodeEntity[] = [];
         let containsUnsupportedFile: boolean | undefined;
-
-        if (isPhotoDownload) {
-            ({ nodes, containsUnsupportedFile } = await hydratePhotos(nodeUids));
-            this.addPhotosListeners();
-        } else {
-            ({ nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids));
-            this.addListeners();
+        try {
+            if (isPhotoDownload) {
+                ({ nodes, containsUnsupportedFile } = await hydratePhotos(nodeUids));
+                this.addPhotosListeners();
+            } else {
+                ({ nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids));
+                this.addListeners();
+            }
+        } catch (error) {
+            // hydrate can throw error if node is missing, in this case we add the failed entry in store
+            const downloadId = queueFailedDownloadRequest({
+                nodes,
+                requestedDownloads: this.requestedDownloads,
+            });
+            if (downloadId) {
+                handleDownloadError(downloadId, nodes, error);
+            }
         }
 
         if (!nodes.length) {
             return;
         }
-        const { addDownloadItem } = useDownloadManagerStore.getState();
 
         const downloadId = queueDownloadRequest({
             nodes,
             isPhoto: isPhotoDownload,
             containsUnsupportedFile,
-            addDownloadItem,
             requestedDownloads: this.requestedDownloads,
             scheduleSingleFile: (id, node) => this.scheduleSingleFileDownload(id, node),
             scheduleArchive: (id, queuedNodes) => this.scheduleArchiveDownload(id, queuedNodes),
