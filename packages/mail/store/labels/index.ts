@@ -17,13 +17,14 @@ const name = 'categories' as const;
 const extractLabels = ({ Labels = [] }) => Labels;
 
 const getLabelsModel = async (api: Api) => {
-    const [labels = [], folders = [], contactGroups = [], systemFolders = []] = await Promise.all([
-        api(getLabels()).then(extractLabels),
-        api(getFolders()).then(extractLabels),
-        api(getContactGroup()).then(extractLabels),
+    const [systemFolders = [], folders = [], labels = [], contactGroups = []] = await Promise.all([
         api(getSystemFolders()).then(extractLabels),
+        api(getFolders()).then(extractLabels),
+        api(getLabels()).then(extractLabels),
+        api(getContactGroup()).then(extractLabels),
     ]);
-    return sortCollection('Order', [...labels, ...folders, ...contactGroups, ...systemFolders]);
+
+    return sortCollection('Order', [...systemFolders, ...folders, ...labels, ...contactGroups]);
 };
 
 export interface CategoriesState {
