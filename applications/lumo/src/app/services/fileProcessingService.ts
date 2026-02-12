@@ -317,8 +317,21 @@ export class FileProcessingService {
 
     cleanup() {
         if (this.worker) {
-            this.worker.terminate();
-            this.worker = null;
+            // Send cleanup message to worker before terminating
+            try {
+                this.worker.postMessage({ type: 'cleanup' });
+            } catch (e) {
+                // Worker may already be terminated
+                console.warn('Failed to send cleanup message to worker:', e);
+            }
+            
+            // Give worker a brief moment to cleanup, then terminate
+            setTimeout(() => {
+                if (this.worker) {
+                    this.worker.terminate();
+                    this.worker = null;
+                }
+            }, 100);
         }
 
         // Reject all pending requests

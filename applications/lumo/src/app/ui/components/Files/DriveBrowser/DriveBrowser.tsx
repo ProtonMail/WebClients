@@ -455,6 +455,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                         });
                                     }
                                 } else if (result.type === 'error') {
+                                    const processingResult = result;
                                     console.warn(
                                         `[DriveBrowser] File processing failed for ${file.name}: ${result.message}`
                                     );
@@ -464,7 +465,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                     });
                                     createNotification({
                                         text: c('collider_2025: Warning')
-                                            .t`Failed to index file for search: ${result.message}`,
+                                            .t`Failed to index file for search: ${processingResult.message}`,
                                         type: 'warning',
                                     });
                                 } else {

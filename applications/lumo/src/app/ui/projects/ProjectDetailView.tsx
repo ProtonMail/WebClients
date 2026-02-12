@@ -26,7 +26,6 @@ import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
-import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
@@ -629,9 +628,7 @@ export const ProjectDetailView = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <PandocProvider>
-                    <ProjectDetailViewInner />
-                </PandocProvider>
+                <ProjectDetailViewInner />
             </WebSearchProvider>
         </DragAreaProvider>
     );
