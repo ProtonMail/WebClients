@@ -3851,8 +3851,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dagen"
+      ],
+      "Added on ${ formattedDate }": [
+        "Toegevoegd op ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Vraag een herstelcontact om hulp. Zij ontvangen een e-mail om uw verzoek te verifiëren en uw gegevens te ontgrendelen."
+      ],
+      "Contacts": [
+        "Contactpersonen"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Contacteer hen op om te zien of zij kunnen helpen, en om hen persoonlijk te laten weten dat u het bent die uw gegevens probeert te ontgrendelen."
+      ],
+      "Immediate": [
+        "Onmiddellijk"
+      ],
+      "Less than a day": [
+        "Minder dan een dag"
+      ],
+      "Recovery request sent": [
+        "Verzoek tot herstel verzonden"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Verwijder uw herstelcontacten om door te gaan"
+      ],
+      "Select recovery contact ${ name }": [
+        "Herstelcontact ${ name } selecteren"
+      ],
+      "Send email request": [
+        "E-mailverzoek verzenden"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Om deze herstelmethode uit te schakelen, verwijdert u al uw herstelcontacten."
+      ],
       "Trusted contact": [
         "Vertrouwd contact"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Uw herstelcontact heeft u geholpen bij het herstellen van gegevens."
       ]
     },
     "Empty group name": {

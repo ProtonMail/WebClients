@@ -2695,6 +2695,17 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dan",
+        "${ n } dana",
+        "${ n } dana"
+      ],
+      "Added on ${ formattedDate }": [
+        "Dodano ${ formattedDate }"
+      ],
+      "Less than a day": [
+        "Manje od jednog dana"
+      ],
       "Trusted contact": [
         "Pouzdani kontakt"
       ]

@@ -3851,8 +3851,45 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dage"
+      ],
+      "Added on ${ formattedDate }": [
+        "Tilføjet den ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Få hjælp fra en gendannelseskontakt. De modtager en e-mail for at bekræfte din anmodning og låse dine data op."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Immediate": [
+        "Øjeblikkelig"
+      ],
+      "Less than a day": [
+        "Mindre end 1 dag"
+      ],
+      "Recovery request sent": [
+        "Anmodning om gendannelse sendt"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Fjern din gendannelseskontakter for at fortsætte"
+      ],
+      "Select recovery contact ${ name }": [
+        "Vælg gendannelseskontakt ${ name }"
+      ],
+      "Send email request": [
+        "Send e-mail anmodning"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
+      ],
       "Trusted contact": [
         "Betroet kontakt"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Din gendannelseskontakt har hjulpet dig med at gendanne data."
       ]
     },
     "Empty group name": {

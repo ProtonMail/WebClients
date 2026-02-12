@@ -3851,8 +3851,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dies"
+      ],
+      "Added on ${ formattedDate }": [
+        "S'ha afegit el ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Demaneu ajuda a un contacte de recuperació. Rebrà un correu electrònic per verificar la vostra sol·licitud i desbloquejar-vos les dades."
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Poseu-vos-hi en contacte ara per veure si us poden ajudar i per fer-los saber personalment que sou vós qui intenteu desbloquejar les dades."
+      ],
+      "Immediate": [
+        "Immediat"
+      ],
+      "Less than a day": [
+        "Menys d'un dia"
+      ],
+      "Recovery request sent": [
+        "S'ha enviat la sol·licitud de recuperació"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Esborreu els vostres contactes de recuperació per continuar"
+      ],
+      "Select recovery contact ${ name }": [
+        "Seleccioneu el contacte de recuperació ${ name }."
+      ],
+      "Send email request": [
+        "Enviar sol·licitud de correu electrònic"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Per desactivar aquest mètode de recuperació, esborreu tots els vostres contactes de recuperació."
+      ],
       "Trusted contact": [
         "Contacte de confiança"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "El vostre contacte de recuperació us ha ajudat a recuperar les dades."
       ]
     },
     "Empty group name": {

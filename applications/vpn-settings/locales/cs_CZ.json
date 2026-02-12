@@ -3893,6 +3893,30 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } den",
+        "${ n } dny",
+        "${ n } dnů",
+        "${ n } dnů"
+      ],
+      "Added on ${ formattedDate }": [
+        "Přidáno ${ formattedDate }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Spojte se s nimi hned teď a zjistěte, zda vám mohou pomoci, a dejte jim osobně vědět, že jste to vy, kdo se snaží odemknout svá data."
+      ],
+      "Immediate": [
+        "Okamžitě"
+      ],
+      "Less than a day": [
+        "Méně než den"
+      ],
+      "Recovery request sent": [
+        "Žádost o obnovení byla odeslána"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Odeberte své kontakty pro obnovení, abyste mohli pokračovat"
+      ],
       "Trusted contact": [
         "Důvěryhodný kontakt"
       ]
@@ -6040,6 +6064,12 @@
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
+      ],
+      "${ total } user found": [
+        "Nalezen ${ total } uživatel",
+        "Nalezeni ${ total } uživatelé",
+        "Nalezeno ${ total } uživatelů",
+        "Nalezeno ${ total } uživatelů"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } byl vytvořen"
