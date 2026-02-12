@@ -1572,9 +1572,6 @@
       "All trashed items successfully restored": [
         "Semua item yang dibuang berhasil dipulihkan"
       ],
-      "An item previously shared with you was removed": [
-        "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Apakah Anda yakin ingin menghapus ${ emailJSX } dari kotak surat Anda?"
       ],
@@ -2468,9 +2465,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Brankas \"${ share.content.name }\" telah dihapus"
       ],
       "Vault organization successfully updated": [
         "Organisasi brankas berhasil diperbarui"
@@ -3832,7 +3826,7 @@
         "apabila data Anda sampai dibocorkan"
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "Pelajari lebih lanjut"
       ]
     },
     "Log preference": {

@@ -801,7 +801,7 @@
         "Вярнуцца да ўваходу"
       ],
       "Review": [
-        "Прагледзець"
+        "Паглядзець"
       ],
       "Revoke": [
         "Адклікаць"
@@ -1116,7 +1116,7 @@
         "Спраўдзіць дамен ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
-        "Прагледзець"
+        "Паглядзець"
       ],
       "View all reports": [
         "Паглядзець усе справаздачы"
@@ -3893,8 +3893,44 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } дзень",
+        "${ n } дні",
+        "${ n } дзён",
+        "${ n } дзён"
+      ],
+      "Added on ${ formattedDate }": [
+        "Дададзена ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Папрасіце дапамогі ў кантакту, якому даверылі аднаўленне. Ён/яна атрымае ліст, каб спраўдзіць запыт і разблакіраваць вашы даныя."
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Immediate": [
+        "Неадкладна"
+      ],
+      "Less than a day": [
+        "Менш за дзень"
+      ],
+      "Recovery request sent": [
+        "Запыт на аднаўленне адпраўлены"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Выдаліце свае кантакты для аднаўлення, каб працягнуць"
+      ],
+      "Select recovery contact ${ name }": [
+        "Выберыце кантакт для аднаўлення ${ name }"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
+      ],
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Ваш кантакт для аднаўлення дапамог вам аднавіць даныя."
       ]
     },
     "Empty group name": {
@@ -5919,7 +5955,7 @@
         "${ n } адрасоў"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "${ none }: не пераводзіць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+        "${ none }: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
       ],
       "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
         "${ noTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength }",
@@ -6040,6 +6076,12 @@
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
+      ],
+      "${ total } user found": [
+        "Знойдзены ${ total } карыстальнік",
+        "Знойдзена ${ total } карыстальнікі",
+        "Знойдзена ${ total } карыстальнікаў",
+        "Знойдзена ${ total } карыстальнікаў"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } створана"
@@ -10106,7 +10148,7 @@
     },
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashacampaniya.by). Наш майстар дапаможа вам з працэсам наладжвання."
+        "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashakampanija.com). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
       "View ${ PASS_APP_NAME } activity across your organization.": [
         "Паглядзець дзейнасць ${ PASS_APP_NAME } па ўсёй вашай арганізацыі."

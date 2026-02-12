@@ -1961,6 +1961,9 @@
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
         "Nu worden uw vergaderingen geopend in de desktop app ${ MEET_APP_NAME }"
       ],
+      "Only meetings you created appear here": [
+        "Alleen vergaderingen die u hebt aangemaakt, worden hier weergegeven"
+      ],
       "Open external link": [
         "Externe link openen"
       ],
@@ -1991,6 +1994,9 @@
       "Poor connection": [
         "Slechte verbinding"
       ],
+      "Premium meeting": [
+        "Premium vergadering"
+      ],
       "Recording saved": [
         "Opname opgeslagen"
       ],
@@ -2002,9 +2008,6 @@
       ],
       "Schedule your next meeting": [
         "Plan uw volgende vergadering"
-      ],
-      "Secure meeting": [
-        "Veilige vergadering"
       ],
       "Select a camera": [
         "Selecteer een camera"
@@ -2257,9 +2260,6 @@
       "Last used": [
         "Laatst gebruikt"
       ],
-      "Meeting details": [
-        "Vergaderingsgegevens"
-      ],
       "Meeting ID": [
         "Vergaderingsnummer"
       ],
@@ -2296,8 +2296,8 @@
       "Phone number": [
         "Telefoonnummer"
       ],
-      "Remember my name on this device for future meetings": [
-        "Onthoud mijn naam op dit apparaat voor toekomstige vergaderingen"
+      "Remember my name on this device": [
+        "Onthoud mijn naam op dit apparaat"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -2331,9 +2331,6 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
-      ],
-      "Your name": [
-        "Uw naam"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
@@ -2460,9 +2457,6 @@
       ],
       "Type an encrypted message...": [
         "Typ een versleuteld bericht..."
-      ],
-      "Type your name": [
-        "Typ uw naam"
       ]
     },
     "Safety review": {
@@ -2526,8 +2520,8 @@
       "Past meetings": [
         "Eerdere vergaderingen"
       ],
-      "Upcoming meetings": [
-        "Aankomende vergaderingen"
+      "Upcoming": [
+        "Aankomend"
       ]
     },
     "specialoffer: Link": {

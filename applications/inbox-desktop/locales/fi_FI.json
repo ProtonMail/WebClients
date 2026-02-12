@@ -139,11 +139,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Sovellus sulkeutuu virheen takia. Yritä käynnistää se uudelleen, ja jos ongelma jatkuu, ota meihin yhteyttä. Virheen tiedot löytyvät sovelluslokista."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Odottamaton virhe"
       ],
-      "Unexpected error": [
-        "Odottamaton virhe"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "${ MAIL_APP_NAME } sulkeutuu virheen takia. Yritä käynnistää se uudelleen, ja jos ongelma jatkuu, ota meihin yhteyttä. Virheen tiedot löytyvät sovelluslokista."
       ]
     },
     "error screen": {

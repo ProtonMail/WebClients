@@ -1394,9 +1394,6 @@
       "All trashed items successfully restored": [
         "Усі елементи успішно відновлено"
       ],
-      "An item previously shared with you was removed": [
-        "Елемент, до якого раніше було надано доступ, було видалено"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Ви впевнені, що хочете вилучити ${ emailJSX } зі своїх поштових скриньок?"
       ],
@@ -2128,9 +2125,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховище \"${ payload.share.content.name }\" успішно оновлено"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Сховище \"${ share.content.name }\" видалено"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Спільний доступ до сховища: ${ vaultMembersCount } учасник",

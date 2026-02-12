@@ -52,7 +52,7 @@
         "添加"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -907,7 +907,7 @@
         "更多信息：${ safeTitle }"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "More refine actions": [
         "更多改进操作"
@@ -4076,7 +4076,7 @@
         "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "升级后，除现有电子邮件地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 电子邮件地址。"
+        "升级后，除现有邮箱地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 邮箱地址。"
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
         "使用 ${ MAIL_APP_NAME } 登录在线服务，因为与其他电子邮件提供商不同，我们绝不会跟踪您的数据并与第三方共享。"
@@ -6143,7 +6143,7 @@
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "您的电子邮件地址和应用程序密码正确。请勿使用常规密码。"
+        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
       ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
@@ -6631,9 +6631,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "金额 (${ amount }) 过小。"
-      ],
-      "An unknown public key has been detected for this recipient.": [
-        "检测到此收件人的一枚未知公钥。"
       ],
       "An unsubscribe email will be sent on your behalf.": [
         "系统将代表您发送一封取消订阅邮件。"
@@ -7974,7 +7971,7 @@
         "下载次数是在线预览和实际下载的总次数。"
       ],
       "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
-        "该电子邮件地址 ${ boldNoReplyEmail } 似乎不接受回复。您确定要发送信息吗？"
+        "该邮箱地址 ${ boldNoReplyEmail } 似乎不接受回复，您确定要发送信息吗？"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "由于加密和签名的开销，加密后的数据会稍大一些，但这能确保数据的安全。"
@@ -8074,6 +8071,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "此消息包含一个尚未被信任的密钥！"
       ],
       "This message has been adjusted to comply with a dark background.": [
         "此邮件已调整为适配深色背景。"
@@ -8454,7 +8454,7 @@
         "您即将打开默认浏览器并访问："
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登入的用户为 ${ username }。"
+        "您当前登录身份为 ${ username }"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
@@ -8610,7 +8610,7 @@
         "您的邮箱地址和密码已泄露："
       ],
       "Your email address was exposed:": [
-        "您的电子邮件地址已被泄露："
+        "您的邮箱地址已被泄露："
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -10160,7 +10160,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -11164,7 +11164,7 @@
         "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+        "使用单个邮箱地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -12634,7 +12634,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ]
     },
     "saml: Error": {
@@ -12702,7 +12702,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
+        "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -12732,7 +12732,7 @@
         "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel 现已 **启用** 并正在保护您的帐户。"
+        "Sentinel 现已 **启用** 并正在保护您的账户。"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
@@ -12839,7 +12839,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -13486,7 +13486,7 @@
         "您将无法使用 ${ gb } 存储和优先支持。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+        "您将无法使用额外的存储空间、邮箱地址、别名、日历以及优先支持。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
@@ -13534,7 +13534,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
@@ -13659,7 +13659,7 @@
         "从您的设备上备份照片"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "使用自己域名的专业电子邮件地址，建立信任和品牌的知名度。"
+        "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Catch-all email address": [
         "通配邮件地址"
@@ -13879,7 +13879,7 @@
         "保留自动付款"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+        "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"

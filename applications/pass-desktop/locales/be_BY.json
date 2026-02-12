@@ -1503,9 +1503,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоча абагуліць элемент з вамі."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } абагульваўся з групай, у якую вы ўваходзіце"
-      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -1652,9 +1649,6 @@
       ],
       "All trashed items successfully restored": [
         "Усе выдаленыя элементы паспяхова адноўлены"
-      ],
-      "An item previously shared with you was removed": [
-        "Раней абагулены з вамі элемент быў выдалены"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Вы сапраўды хочаце выдаліць ${ emailJSX } са сваіх паштовых скрынь?"
@@ -2570,9 +2564,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховішча \"${ payload.share.content.name }\" паспяхова абноўлена"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Сховішча \"${ share.content.name }\" было выдалена"
       ],
       "Vault organization successfully updated": [
         "Арганізацыя сховішча паспяхова абноўлена"

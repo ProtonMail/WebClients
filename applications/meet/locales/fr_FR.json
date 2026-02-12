@@ -1961,6 +1961,9 @@
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
         "Désormais, vos réunions seront ouvertes dans l'application de bureau ${ MEET_APP_NAME }"
       ],
+      "Only meetings you created appear here": [
+        "Seules les réunions que vous avez créées apparaissent ici"
+      ],
       "Open external link": [
         "Ouvrir le lien externe"
       ],
@@ -1991,6 +1994,9 @@
       "Poor connection": [
         "Connexion médiocre"
       ],
+      "Premium meeting": [
+        "Réunion premium"
+      ],
       "Recording saved": [
         "L'enregistrement a été enregistré."
       ],
@@ -2002,9 +2008,6 @@
       ],
       "Schedule your next meeting": [
         "Planifiez votre prochaine réunion"
-      ],
-      "Secure meeting": [
-        "Réunion sécurisée"
       ],
       "Select a camera": [
         "Sélectionner une caméra"
@@ -2257,9 +2260,6 @@
       "Last used": [
         "Dernière utilisation"
       ],
-      "Meeting details": [
-        "Informations sur la réunion"
-      ],
       "Meeting ID": [
         "Identifiant de la réunion"
       ],
@@ -2296,8 +2296,8 @@
       "Phone number": [
         "Numéro de téléphone"
       ],
-      "Remember my name on this device for future meetings": [
-        "Mémoriser mon nom sur cet appareil pour les prochaines réunions"
+      "Remember my name on this device": [
+        "Se souvenir de mon nom sur cet appareil"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -2331,9 +2331,6 @@
       ],
       "What happened?": [
         "Que s'est-il passé ?"
-      ],
-      "Your name": [
-        "Votre nom"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -2437,6 +2434,9 @@
       "Enter time": [
         "Saisissez l'horaire"
       ],
+      "Enter your name": [
+        "Saisissez votre nom"
+      ],
       "Find...": [
         "Rechercher..."
       ],
@@ -2460,9 +2460,6 @@
       ],
       "Type an encrypted message...": [
         "Écrivez un message chiffré..."
-      ],
-      "Type your name": [
-        "Saisissez votre nom"
       ]
     },
     "Safety review": {
@@ -2526,8 +2523,8 @@
       "Past meetings": [
         "Réunions passées"
       ],
-      "Upcoming meetings": [
-        "Réunions à venir"
+      "Upcoming": [
+        "À venir"
       ]
     },
     "specialoffer: Link": {

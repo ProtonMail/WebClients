@@ -1468,9 +1468,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker å dele et element med deg."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } er delt med en gruppe du er medlem av"
-      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -1478,9 +1475,6 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } nye delinger er delt med en gruppe du er medlem av"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil alltid være tilgjengelig"
@@ -1633,9 +1627,6 @@
       ],
       "All trashed items successfully restored": [
         "Alle papirkurvelementer gjenopprettet"
-      ],
-      "An item previously shared with you was removed": [
-        "Et element som tidligere er delt med deg, ble fjernet."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Er du sikker på at du vil fjerne ${ emailJSX } fra postboksene dine?"
@@ -2057,6 +2048,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2593,9 +2588,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Hvelv \"${ payload.share.content.name }\" oppdatert"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Hvelv \"${ share.content.name }\" ble fjernet."
       ],
       "Vault organization successfully updated": [
         "Hvelvorganisasjonen ble oppdatert"

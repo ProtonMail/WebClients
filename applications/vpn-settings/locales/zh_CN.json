@@ -60,7 +60,7 @@
         "添加 ${ BRAND_NAME } 地址"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -642,7 +642,7 @@
         "更多选项"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "Need help?": [
         "需要帮助？"
@@ -3295,7 +3295,7 @@
         "创建可通过单一地址发送电子邮件的群组。"
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "创建新用户帐户或通过 SSO（单点登录）SCIM 配置导入用户。"
+        "创建新用户账户，或通过 SSO（单点登录）SCIM 配置导入用户。"
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
@@ -3830,8 +3830,47 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n }天"
+      ],
+      "Added on ${ formattedDate }": [
+        "添加于 ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "请向恢复联系人寻求帮助，他们将收到一封电子邮件来验证您的请求并解锁您的数据。"
+      ],
+      "Contacts": [
+        "联系人"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "立即与他们联系，确认他们能否提供帮助，并亲自告知他们是您正在尝试解锁数据。"
+      ],
+      "Immediate": [
+        "立即"
+      ],
+      "Less than a day": [
+        "少于一天"
+      ],
+      "Recovery request sent": [
+        "恢复请求已发送"
+      ],
+      "Remove your recovery contacts to continue": [
+        "请先移除您的恢复联系人才能继续"
+      ],
+      "Select recovery contact ${ name }": [
+        "选择恢复联系人 ${ name }"
+      ],
+      "Send email request": [
+        "发送邮件请求"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "要禁用此恢复方式，请移除您所有的恢复联系人！"
+      ],
       "Trusted contact": [
         "已信任联系人"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "您的恢复联系人已帮助您恢复数据！"
       ]
     },
     "Empty group name": {
@@ -4264,7 +4303,7 @@
         "此优惠在您所在的国家/地区不可用"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "要创建非私人用户帐户并使用帐户，您需要恢复您的管理员权限。"
+        "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
       ],
       "Too many requests. Please try again after ${ date }": [
         "请求过多，请在 ${ date } 后重试"
@@ -4755,10 +4794,10 @@
         "创建和管理家庭成员。"
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "如果用户已经有一个 ${ MAIL_APP_NAME } 地址，请在这里输入。否则他们需要先创建一个帐户。"
+        "如果用户已拥有 ${ MAIL_APP_NAME } 地址，请在此处输入。否则，他们需要先创建一个账户。"
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
-        "如果用户已经有一个 ${ BRAND_NAME }帐户，请在这里输入。否则他们需要先创建一个帐户。"
+        "如果用户已拥有 ${ BRAND_NAME } 账户，请在此处输入。否则，他们需要先创建一个账户。"
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "邀请将被取消，用户将无法加入 ${ organizationName }。"
@@ -4818,7 +4857,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "将用户添加到您的 ${ PLAN_NAMES.visionary2022 } 帐户"
+        "将用户添加到您的 ${ PLAN_NAMES.visionary2022 } 账户"
       ],
       "Change family name": [
         "更改家庭名称"
@@ -5548,7 +5587,7 @@
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "您的电子邮件地址和应用程序密码正确。请勿使用常规密码。"
+        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
       ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
@@ -5913,7 +5952,7 @@
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "A recovery file lets you unlock and view your data after account recovery": [
-        "恢复文件可让您在帐户恢复后解锁并查看数据"
+        "恢复文件可让您在账户恢复后解锁并查看数据"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "若不慎忘记密码，恢复密语可用于找回账户并解锁加密邮件"
@@ -5961,7 +6000,7 @@
         "正在添加 ${ addedServerCount } 台网关服务器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
-        "添加外部电子邮件地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
+        "添加外部邮箱地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "正在添加网关服务器：${ serverNumber } / ${ total }"
@@ -6996,7 +7035,7 @@
         "组织监控器"
       ],
       "Organization Monitor": [
-        "组织监控"
+        "组织监测"
       ],
       "Organization size": [
         "组织规模"
@@ -7914,7 +7953,7 @@
         "您的账户已经是免费版了"
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登入的用户为 ${ username }。"
+        "您当前登录身份为 ${ username }"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
@@ -7953,7 +7992,7 @@
         "您可以修改一次地址，以确保使用正确的邮箱验证。"
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
-        "您可以强制执行组织成员在创建或重置其 ${ BRAND_NAME } 帐户密码时使用的密码规则。"
+        "您可以为贵组织成员设置密码规则，此规则将在他们创建或重置其 ${ BRAND_NAME } 账户密码时生效。"
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可以以一个套餐价格获取我们的高级隐私服务——仅需 **${ priceString } / 月**。"
@@ -8088,7 +8127,7 @@
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
-        "您的帐户已成功更新此促销活动"
+        "您的账户已成功应用此促销优惠"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
@@ -8252,7 +8291,7 @@
     },
     "Input Error": {
       "Not a valid email address": [
-        "不是一个合法的电子邮件地址"
+        "不是一个合法的邮箱地址"
       ]
     },
     "Input title": {
@@ -8364,10 +8403,10 @@
         "（暂时不可用。请稍后再试。）"
       ],
       "0 of 1 email address available": [
-        "0 个电子邮件地址可用"
+        "无邮箱地址可用"
       ],
       "1 of 1 email address available": [
-        "1 个电子邮件地址可用"
+        "1 个邮箱地址可用"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
@@ -9499,7 +9538,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -10615,7 +10654,7 @@
         "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+        "使用单个邮箱地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -11371,7 +11410,7 @@
         "组织身份已更新"
       ],
       "Verify your email address ${ email } to set organization identity.": [
-        "验证您的电子邮件地址 ${ email } 以设置组织身份。"
+        "验证您的邮箱地址 ${ email } 以设置组织身份。"
       ]
     },
     "Participant name": {
@@ -12547,7 +12586,7 @@
         "如果您丢失了登录信息并需要重置账户，**重要的是**您必须同时使用**账户恢复和数据恢复方法**，否则您可能无法访问任何电子邮件、联系人、文件或密码。"
       ],
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ],
       "Safeguard account now": [
         "立即保护账户"
@@ -12596,7 +12635,7 @@
         "出了些问题"
       ],
       "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
-        "电子邮件地址 **${ email }** 已作为 ${ BRAND_NAME } 用户存在。请输入身份供应商提供的用户电子邮件地址。"
+        "邮箱地址 **${ email }** 已作为 ${ BRAND_NAME } 用户存在，请输入身份供应商提供的用户邮箱地址。"
       ]
     },
     "saml: Info": {
@@ -12607,7 +12646,7 @@
         "详细信息"
       ],
       "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
-        "输入身份提供商为 **${ domainName }** 提供的用户电子邮件地址"
+        "输入身份提供商为 **${ domainName }** 提供的用户邮箱地址"
       ],
       "Test in progress...": [
         "正在测试..."
@@ -12621,7 +12660,7 @@
     },
     "saml: Label": {
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ]
     },
     "saml: Title": {
@@ -12818,7 +12857,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -13733,7 +13772,7 @@
         "您将无法使用 ${ gb } 存储和优先支持。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+        "您将无法使用额外的存储空间、邮箱地址、别名、日历以及优先支持。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
@@ -13826,7 +13865,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
@@ -13951,7 +13990,7 @@
         "从您的设备上备份照片"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "使用自己域名的专业电子邮件地址，建立信任和品牌的知名度。"
+        "使用自己域名的专业邮箱地址，建立信任和品牌的知名度。"
       ],
       "Cancel subscription": [
         "取消订阅"
@@ -14201,7 +14240,7 @@
         "保留自动付款"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。此外，如果您忘记手动付款，且所有付款方式的自动付款功能都被禁用，我们可能会自动降级您的帐户，这将导致您失去许多功能。"
+        "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
@@ -14614,7 +14653,7 @@
     },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
-        "${ BRAND_NAME } 帐户密码规则"
+        "${ BRAND_NAME } 账户密码规则"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
@@ -14662,7 +14701,7 @@
         "访问控制"
       ],
       "Account": [
-        "帐户"
+        "账户"
       ],
       "Account recovery": [
         "账户恢复"
@@ -15753,7 +15792,7 @@
         "邮箱地址"
       ],
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ],
       "Features": [
         "功能"
@@ -15900,7 +15939,7 @@
         "此邮箱地址只能用于登录您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
-        "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"
+        "执行账户管理操作时，该邮箱地址将显示给所有组织成员。"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
@@ -16083,7 +16122,7 @@
         "私人用户"
       ],
       "Request to manage account sent, awaiting user approval": [
-        "已发送管理帐户申请，等待用户批准"
+        "已发送管理账户申请，等待用户批准"
       ],
       "Request user permission for data access": [
         "请求用户允许访问数据"
@@ -16193,7 +16232,7 @@
         "管理员"
       ],
       "An invitation will be sent to this email address.": [
-        "邀请将发送到此电子邮件地址。"
+        "邀请将发送到此邮箱地址。"
       ],
       "Cancel": [
         "关闭"
@@ -16211,7 +16250,7 @@
         "创建用户"
       ],
       "Email": [
-        "电子邮件地址"
+        "邮箱地址"
       ],
       "Invitation email": [
         "邀请邮件"
@@ -16220,7 +16259,7 @@
         "名称"
       ],
       "New ${ BRAND_NAME } email address": [
-        "新的 ${ BRAND_NAME } 电子邮件地址"
+        "新的 ${ BRAND_NAME } 邮箱地址"
       ],
       "Optional": [
         "可选的"
@@ -16550,7 +16589,7 @@
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "在向非私人成员添加电子邮件地址之前，你必须 ${ activateLink } 组织密钥。"
+        "在向非私人成员添加邮箱地址之前，你必须 ${ activateLink } 组织密钥。"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"

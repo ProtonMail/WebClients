@@ -1396,9 +1396,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } is gedeeld met een groep waarvan u lid bent"
-      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -1406,9 +1403,6 @@
       "${ n } item": [
         "${ n } item",
         "${ n } items"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } nieuwe shares zijn gedeeld met een groep waarvan u lid bent"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } zal altijd toegankelijk zijn"
@@ -1537,8 +1531,8 @@
       "All trashed items successfully restored": [
         "Alle verwijderde items succesvol hersteld"
       ],
-      "An item previously shared with you was removed": [
-        "Een item dat eerder gedeeld was met u, werd verwijderd"
+      "An item previously shared with you was removed.": [
+        "Een item dat eerder met u gedeeld was, is verwijderd."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Weet u zeker dat u ${ emailJSX } wilt verwijderen uit uw mailboxen?"
@@ -1932,7 +1926,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2434,8 +2429,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Kluis \"${ payload.share.content.name }\" succesvol bijgewerkt"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Kluis \"${ share.content.name }\" werd verwijderd"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Kluis \"${ share.content.name }\" is verwijderd."
       ],
       "Vault organization successfully updated": [
         "Kluisorganisatie succesvol bijgewerkt"
@@ -2518,6 +2513,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "U heeft een kluis nodig met editeer toelatingen om items te kunnen importeren"
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "U heeft geen toegang meer tot sommige kluizen of items omdat de toegang van uw groep ${ groupName } is verwijderd."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "U heeft nu toegang tot \"Item ${ itemName }\" omdat uw groep ${ groupName } toegang heeft gekregen."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "U heeft nu toegang tot \"kluis ${ vaultName }\" omdat uw groep ${ groupName } toegang heeft gekregen."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "U kunt uw domein instellingen aanpassen (catch-all e-mail aliassen, standaard weergavenaam voor aliassen enz...) na het verifiëren van uw domein."

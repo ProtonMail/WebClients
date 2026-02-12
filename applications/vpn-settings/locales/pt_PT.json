@@ -3394,6 +3394,12 @@
         "E-mail de verificação enviado para ${ address }"
       ]
     },
+    "emergency_access": {
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dias"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Sem nome"

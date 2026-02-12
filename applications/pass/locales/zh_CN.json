@@ -50,7 +50,7 @@
         "添加"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add current URL": [
         "添加当前 URL"
@@ -837,7 +837,7 @@
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "开始监测与您的电子邮件地址和 hide-my-email 别名创建的账户相关的数据泄露。"
+        "开始监测与您的邮箱地址和 hide-my-email 别名创建的账户相关的数据泄露。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "暗网是互联网的一个隐蔽部分，在这里可以买卖被盗的个人信息，比如身份信息。"
@@ -864,7 +864,7 @@
         "使用 ${ PASS_SHORT_APP_NAME } 监视器，在您的凭证受到威胁时，您会收到即时警报，从而在威胁面前保持领先。解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "您的电子邮件地址在至少一次数据泄露事件中被泄露。"
+        "您的邮箱地址在至少一次数据泄露事件中被泄露。"
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "您的个人信息在第三方服务数据泄露事件中被泄露。"
@@ -994,7 +994,7 @@
         "重新发送邀请失败。"
       ],
       "Failed to add email address": [
-        "无法添加电子邮件地址"
+        "无法添加邮箱地址"
       ],
       "Failed to block the contact": [
         "无法屏蔽联系人"
@@ -1018,7 +1018,7 @@
         "删除域失败"
       ],
       "Failed to delete email address from monitoring": [
-        "从监测中删除电子邮件地址失败"
+        "从监测中删除邮箱地址失败"
       ],
       "Failed to delete selected items": [
         "删除失败"
@@ -1114,7 +1114,7 @@
         "更新项目的监测标志失败"
       ],
       "Failed updating monitoring status for this email address": [
-        "更新此电子邮件地址的监测状态失败"
+        "更新此邮箱地址的监测状态失败"
       ],
       "File could not be parsed": [
         "文件无法解析"
@@ -1380,17 +1380,11 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "您所在的群组已获得保险库 ${ maybeVaultName } 的共享访问权限"
-      ],
       "${ memberCount } member": [
         "${ memberCount } 位成员"
       ],
       "${ n } item": [
         "${ n } 项"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "您所在的群组获得了 ${ newGroupSharesCount } 项新的共享内容"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } 将始终可以访问"
@@ -1435,7 +1429,7 @@
         "7 天免费试用高级功能。仅在您使用 ${ BRAND_NAME } 的第一个星期。"
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
-        "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个电子邮件地址都将创建一个联系人。"
+        "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个邮箱地址都将创建一个联系人。"
       ],
       "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
         "新版本正在下载！下载完成后，将在下次重启时生效。"
@@ -1462,7 +1456,7 @@
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
       ],
       "Add your custom email address to monitor:": [
-        "添加您的自定义电子邮件地址进行监控："
+        "添加您的自定义邮箱地址进行监控："
       ],
       "Admin": [
         "管理员"
@@ -1515,8 +1509,8 @@
       "All trashed items successfully restored": [
         "所有回收站中的项目已成功恢复"
       ],
-      "An item previously shared with you was removed": [
-        "之前与您共享的项目已被删除"
+      "An item previously shared with you was removed.": [
+        "一个先前与您共享的项目已被移除"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "您确定要从您的邮箱中删除 ${ emailJSX } 吗？"
@@ -1657,13 +1651,13 @@
         "电子邮箱"
       ],
       "Email address successfully deleted from monitoring": [
-        "从监测中成功删除电子邮件地址"
+        "从监测中成功删除邮箱地址"
       ],
       "Email address successfully excluded from monitoring": [
-        "成功将电子邮件地址排除在监测范围之外"
+        "成功将邮箱地址排除在监测范围之外"
       ],
       "Email address successfully included in monitoring": [
-        "电子邮件地址成功纳入监测"
+        "邮箱地址成功纳入监测"
       ],
       "Email headers illustration": [
         "电子邮件头部示意图"
@@ -1905,6 +1899,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
+      ],
       "Moving items": [
         "正在移动"
       ],
@@ -1918,7 +1915,7 @@
         "将项目移动至回收站"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
-        "需要给某人发送电子邮件，但又不想让对方看到您的电子邮件地址？设置联系人别名。"
+        "需要给某人发送电子邮件，但又不想让对方看到您的邮箱地址？设置联系人别名。"
       ],
       "Never": [
         "从不"
@@ -2212,7 +2209,7 @@
         "共享的项目邀请"
       ],
       "Sign in to your account": [
-        "登录到您的帐户"
+        "登录到您的账户"
       ],
       "Signing you in": [
         "正在登录"
@@ -2329,7 +2326,7 @@
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "要隐藏您的个人电子邮件地址，您可以创建一个别名联系人来掩盖您的地址。"
+        "要隐藏您的个人邮箱地址，您可以创建一个别名联系人来掩盖您的地址。"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "要从其他密码管理器迁移数据，请访问密码管理器，导出您的数据，然后上传到 ${ PASS_APP_NAME }。导入数据后，删除导出文件。"
@@ -2403,8 +2400,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保险库 “${ payload.share.content.name }” 成功更新"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "保险库 “${ share.content.name }” 已删除"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "保险库“${ share.content.name }”已被移除"
       ],
       "Vault organization successfully updated": [
         "保险库组织已成功更新"
@@ -2484,6 +2481,15 @@
       "You need a vault with edit permission before you can import items.": [
         "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
       ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "由于您所在的群组 ${ groupName } 的访问权限已被移除，您不再能够访问某些保险库或项目。"
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "由于您所在的群组 ${ groupName } 已被授予访问权限，您现在可以访问“项目 ${ itemName }”"
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "由于您所在的群组 ${ groupName } 已被授予访问权限，您现在可以访问“保险库 ${ vaultName }”。"
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "验证域名后，您就可以自定义域名设置（通配邮箱别名、别名的默认显示名称等）。"
       ],
@@ -2491,16 +2497,16 @@
         "您将被注销并需要在所有其他设备上重新登录。"
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "您将收到这些电子邮件地址的数据泄露通知。"
+        "您将收到这些邮箱地址的数据泄露通知。"
       ],
       "You will be notified of data breaches for this email address.": [
-        "您将收到有关此电子邮件地址数据泄露的通知。"
+        "您将收到有关此邮箱地址数据泄露的通知。"
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "您将不再收到这些电子邮件地址的数据泄露通知。"
+        "您将不再收到这些邮箱地址的数据泄露通知。"
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "您将不再收到该电子邮件地址的数据泄露通知。"
+        "您将不再收到该邮箱地址的数据泄露通知。"
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA 和其他高级功能"
@@ -2639,13 +2645,13 @@
         "A-Z"
       ],
       "Account": [
-        "帐户"
+        "账户"
       ],
       "Account Number": [
         "账户号码"
       ],
       "Account Type": [
-        "帐户类型"
+        "账户类型"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "创建新别名时，请为该域添加一个随机前缀。"
@@ -3122,7 +3128,7 @@
         "限时"
       ],
       "LinkedIn account": [
-        "LinkedIn 帐户"
+        "LinkedIn 账户"
       ],
       "Login": [
         "登录"
@@ -3671,7 +3677,7 @@
         "X-用户名"
       ],
       "Yahoo account": [
-        "Yahoo 帐户"
+        "Yahoo 账户"
       ],
       "You are about to create": [
         "你即将创建"
@@ -4482,7 +4488,7 @@
         "剔除设备？"
       ],
       "Remove email address?": [
-        "移除电子邮件地址？"
+        "移除邮箱地址？"
       ],
       "Remove extra password": [
         "移除额外密码"
@@ -4722,7 +4728,7 @@
         "确定要永久删除此项目吗？"
       ],
       "At least one email address is required": [
-        "至少需要一个电子邮件地址"
+        "至少需要一个邮箱地址"
       ],
       "Cannot contain a dot at the beginning": [
         "开头不能包含点"
@@ -4734,7 +4740,7 @@
         "暂时无法通过别名获取邮箱"
       ],
       "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
-        "注意： 如果丢失此密码，您将无法访问 ${ PASS_APP_NAME } 帐户。"
+        "注意： 如果丢失此密码，您将无法访问 ${ PASS_APP_NAME } 账户。"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "无法创建保险库 “${ vaultName }”"
@@ -4779,7 +4785,7 @@
         "额外密码至少要有 8 个字符"
       ],
       "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
-        "自动填充失败。请确保 ${ PASS_APP_NAME } 拥有所需权限，并重试（${ error }）。"
+        "自动填充失败，请确保 ${ PASS_APP_NAME } 具有必要的权限并重试 (${ error })。"
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"
@@ -4800,7 +4806,7 @@
         "无效的邮箱地址。"
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "不允许邀请组织外的电子邮件地址。"
+        "不允许邀请组织外的邮箱地址。"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大长度为 ${ maxLength } 个字符"
@@ -4890,7 +4896,7 @@
         "此别名 \"${ aliasEmail }\" 目前用于登录 \"${ relatedLoginName }\"。"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "该电子邮件地址将不再受到数据泄露监测。"
+        "该邮箱地址将不再受到数据泄露监测。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "此项目目前是共享的。删除它将取消所有其他用户的访问权限。"

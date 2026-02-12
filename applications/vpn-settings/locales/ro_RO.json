@@ -3872,8 +3872,49 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } zi",
+        "${ n } zile",
+        "${ n } de zile"
+      ],
+      "Added on ${ formattedDate }": [
+        "Adăugat la ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Solicitați ajutor de la un contact de recuperare. Acesta va primi un e-mail pentru a vă verifica solicitarea și a vă debloca datele."
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Contactați-i acum pentru a vedea dacă vă pot ajuta și pentru a-i informa personal că dvs. încercați să vă deblocați datele."
+      ],
+      "Immediate": [
+        "Imediat"
+      ],
+      "Less than a day": [
+        "Mai puțin de o zi"
+      ],
+      "Recovery request sent": [
+        "Solicitare de recuperare trimisă"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Eliminați contactele de recuperare pentru a continua"
+      ],
+      "Select recovery contact ${ name }": [
+        "Selectare contact de recuperare ${ name }"
+      ],
+      "Send email request": [
+        "Trimitere cerere de e-mail"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Pentru a dezactiva această metodă de recuperare, eliminați toate contactele de recuperare."
+      ],
       "Trusted contact": [
         "Contact aprobat"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Contactul de recuperare v-a ajutat să recuperați datele."
       ]
     },
     "Empty group name": {

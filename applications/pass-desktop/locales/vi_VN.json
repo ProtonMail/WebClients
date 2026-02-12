@@ -1569,9 +1569,6 @@
       "All trashed items successfully restored": [
         "Đã khôi phục thành công mọi mục trong thùng rác"
       ],
-      "An item previously shared with you was removed": [
-        "Một mục đã được chia sẻ với bạn trước đây đã bị xóa"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Chắc chắn muốn xóa ${ emailJSX } khỏi các hộp thư của mình không?"
       ],
@@ -2453,9 +2450,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Đã cập nhật thành công kho \"${ payload.share.content.name }\""
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Đã xóa kho \"${ share.content.name }\""
       ],
       "Vault organization successfully updated": [
         "Đã cập nhật tổ chức kho thành công"

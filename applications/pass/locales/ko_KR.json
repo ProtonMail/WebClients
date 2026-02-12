@@ -1473,9 +1473,6 @@
       "All trashed items successfully restored": [
         "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
       ],
-      "An item previously shared with you was removed": [
-        "사용자가 이전에 공유한 항목이 삭제되었습니다."
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "메일함에서 ${ emailJSX }을(를) 정말 삭제하시겠어요?"
       ],
@@ -1858,7 +1855,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2348,9 +2345,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
       ],
       "Vault organization successfully updated": [
         "보관함 조직이 성공적으로 업데이트되었습니다."

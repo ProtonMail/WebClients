@@ -1484,8 +1484,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -6737,9 +6736,6 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Bu alıcı için bilinmeyen bir herkese açık anahtar algılandı."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Size aboneliği sonlandırma e-postası gönderilecek."
       ],
@@ -8198,6 +8194,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Bu durumda, internet hizmeti sağlayıcınız ve ziyaret ettiğiniz siteler kişisel bilgilerinizi çevrim içi etkinliğinizle ilişkilendiremez."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Bu iletiye henüz güvenilirliği onaylanmamış bir anahtar eklenmiş."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Bu ileti, koyu bir arka plana uyacak şekilde ayarlandı."

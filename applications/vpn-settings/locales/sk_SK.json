@@ -3893,6 +3893,24 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } deň",
+        "${ n } dni",
+        "${ n } dní",
+        "${ n } dní"
+      ],
+      "Added on ${ formattedDate }": [
+        "Pridané dňa ${ formattedDate }"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Immediate": [
+        "Okamžite"
+      ],
+      "Less than a day": [
+        "Menej než deň"
+      ],
       "Trusted contact": [
         "Dôveryhodný kontakt"
       ]
@@ -6040,6 +6058,12 @@
       ],
       "${ storage } storage": [
         "${ storage } úložisko"
+      ],
+      "${ total } user found": [
+        "${ total } nájdený používateľ",
+        "${ total } nájdení používatelia",
+        "${ total } nájdených používateľov",
+        "${ total } nájdených používateľov"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } bol vytvorený"
@@ -10003,10 +10027,10 @@
         "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
       ],
       "${ n } active meeting at a time": [
-        "${ n } aktívne stretnutie naraz",
-        "${ n } aktívne stretnutia naraz",
-        "${ n } aktívnych stretnutí naraz",
-        "${ n } aktívnych stretnutí naraz"
+        "${ n } aktívna schôdza",
+        "${ n } aktívne schôdze naraz",
+        "${ n } aktívnych schôdzí naraz",
+        "${ n } aktívnych schôdzí naraz"
       ],
       "${ n } participant": [
         "${ n } účastník",
@@ -10039,19 +10063,19 @@
         "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
-        "Jeden aktívny hovor naraz"
+        "Len jedna aktívna schôdza naraz"
       ],
       "Screen-sharing": [
         "Zdieľanie obrazovky"
       ],
       "Unlimited meetings per day": [
-        "Neobmedzený počet stretnutí za deň"
+        "Neobmedzený počet schôdzok denne"
       ],
       "Up to ${ n } meeting per day": [
-        "Až ${ n } stretnutie za deň",
-        "Až ${ n } stretnutia za deň",
-        "Až ${ n } stretnutí za deň",
-        "Až ${ n } stretnutí za deň"
+        "Až ${ n } schôdzka za deň",
+        "Až ${ n } schôdzky za deň",
+        "Až ${ n } schôdzí za deň",
+        "Až ${ n } schôdzí za deň"
       ],
       "Up to ${ n } participant": [
         "Až do ${ n } účastníka",
@@ -16102,7 +16126,7 @@
         "SAML overenie"
       ],
       "Schedule meetings in one click": [
-        "Naplánujte si stretnutia jedným kliknutím"
+        "Naplánujte si schôdzky jedným kliknutím"
       ],
       "Search for additional servers": [
         "Hľadať ďalšie servery"

@@ -1484,8 +1484,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -6731,9 +6730,6 @@
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "En okänd offentlig nyckel har upptäckts för denna mottagare."
-      ],
       "and": [
         "och"
       ],
@@ -8180,6 +8176,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det innebär att din internetleverantör och de webbplatser du besöker inte kan koppla samman din personliga information med din onlineaktivitet."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Detta meddelande har en bifogad nyckel som inte blivit betrodd ännu."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Detta meddelande har justerats för att överensstämma med en mörk bakgrund."

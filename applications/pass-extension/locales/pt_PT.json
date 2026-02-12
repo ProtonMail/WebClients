@@ -1533,9 +1533,6 @@
       "All trashed items successfully restored": [
         "Todos os itens no lixo foram restaurados."
       ],
-      "An item previously shared with you was removed": [
-        "Um item anteriormente partilhado consigo foi removido"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Tem a certeza que deseja remover ${ emailJSX } das suas caixas de correio?"
       ],
@@ -1943,7 +1940,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2444,9 +2442,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "O cofre \"${ payload.share.content.name }\" foi atualizado."
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "O cofre \"${ share.content.name }\" foi removido."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Partilha de cofres: ${ vaultMembersCount } membro",

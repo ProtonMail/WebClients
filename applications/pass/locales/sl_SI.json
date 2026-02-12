@@ -1160,9 +1160,6 @@
       "All trashed items successfully restored": [
         "Vsi predmeti v smetnjaku so bili obnovljeni."
       ],
-      "An item previously shared with you was removed": [
-        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen"
-      ],
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
@@ -1666,9 +1663,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" je bil posodobljen"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Trezor \"${ share.content.name }\" je bil odstranjen"
       ],
       "Verification code sent.": [
         "Koda za preverjanje je poslana."

@@ -1483,10 +1483,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -6737,9 +6733,6 @@
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Für diesen Empfänger wurde ein unbekannter öffentlicher Schlüssel erkannt."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Eine E-Mail zur Abmeldung wird in deinem Namen versendet."
       ],
@@ -8198,6 +8191,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Das bedeutet, dass dein Internetdienstanbieter und die von dir besuchten Websites deine persönlichen Daten nicht mit deinen Online-Aktivitäten in Verbindung bringen können."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Diese Nachricht hat einen angehängten Schlüssel, dem noch nicht vertraut wurde."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Diese Nachricht wurde so angepasst, dass sie einem dunklen Hintergrund entspricht."

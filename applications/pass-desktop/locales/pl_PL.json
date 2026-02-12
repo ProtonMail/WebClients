@@ -1555,9 +1555,6 @@
       "All trashed items successfully restored": [
         "Wszystkie usunięte elementy zostały przywrócone"
       ],
-      "An item previously shared with you was removed": [
-        "Poprzednio udostępniony element został usunięty"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Czy na pewno chcesz usunąć ${ emailJSX } ze swoich skrzynek pocztowych?"
       ],
@@ -2424,9 +2421,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Sejf \"${ payload.share.content.name }\" został zaktualizowany"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Sejf \"${ share.content.name }\" został usunięty"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Udostępnianie sejfu: ${ vaultMembersCount } użytkownik",

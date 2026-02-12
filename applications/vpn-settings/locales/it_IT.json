@@ -3845,6 +3845,19 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } giorno",
+        "${ n } giorni"
+      ],
+      "Added on ${ formattedDate }": [
+        "Aggiunto il ${ formattedDate }"
+      ],
+      "Immediate": [
+        "Immediato"
+      ],
+      "Less than a day": [
+        "Meno di un giorno"
+      ],
       "Trusted contact": [
         "Contatti sicuri"
       ]

@@ -1471,9 +1471,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vol compartir un element amb vosaltres."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } s'ha compartit amb un grup del qual sou membre"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -1481,9 +1478,6 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elements"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "S'han compartit ${ newGroupSharesCount } elements nous amb un grup del qual sou membres"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sempre serà accessible"
@@ -1612,8 +1606,8 @@
       "All trashed items successfully restored": [
         "S'han restaurat tots els elements de la paperera."
       ],
-      "An item previously shared with you was removed": [
-        "S'ha esborrat un element compartit amb vós anteriorment."
+      "An item previously shared with you was removed.": [
+        "S'ha eliminat un element que s'havia compartit prèviament amb vós."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Esteu segur que voleu eliminar ${ emailJSX } de les vostres bústies de correu?"
@@ -2521,8 +2515,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "S'ha actualitzat la caixa forta \"${ payload.share.content.name }\""
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "S'ha esborrat la caixa forta \"${ share.content.name }\"."
+      "Vault \"${ share.content.name }\" was removed.": [
+        "La caixa forta \"${ share.content.name }\" s'ha esborrat."
       ],
       "Vault organization successfully updated": [
         "S'ha actualitzat correctament l'organització de la caixa forta"
@@ -2605,6 +2599,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Ja no teniu accés a algunes caixes fortes o elements perquè s'ha esborrat l'accés del vostre grup ${ groupName }."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Ara teniu accés a \"${ itemName }\" perquè el vostre grup ${ groupName } l'ha obtingut."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Ara teniu accés a \"caixa forta ${ vaultName }\" perquè s'ha concedit accés al vostre grup ${ groupName }."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic d'arreplega, nom per a mostrar predeterminat per als àlies, etc.) després de verificar-lo."
