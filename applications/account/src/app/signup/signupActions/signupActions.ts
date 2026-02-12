@@ -1,23 +1,16 @@
 import { MAX_CHARS_API } from '@proton/account';
-import { getInitialStorage, getStorageRange } from '@proton/account/organization/storage';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
-import {
-    type PaymentsVersion,
-    SubscriptionMode,
-    getIsPassB2BPlan,
-    getIsVpnB2BPlan,
-    hasPlanIDs,
-} from '@proton/payments';
+import { type PaymentsVersion, SubscriptionMode, hasPlanIDs } from '@proton/payments';
 import { createSubscription } from '@proton/payments/core/api/createSubscription';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
+import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -37,10 +30,8 @@ import {
     getDecryptedUserKeysHelper,
     handleSetupKeys,
 } from '@proton/shared/lib/keys';
-import { getOrganization } from '@proton/shared/lib/organization/api';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
-import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
 import generateDeferredMnemonicData from '../../containers/recoveryPhrase/generateDeferredMnemonicData';
@@ -283,13 +274,7 @@ export const handleSetupOrg = async ({
     if (hasPaidVpn(user)) {
         await api(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
     }
-    const organization = await getOrganization({ api }).catch(noop);
-    if (organization && !getIsPassB2BPlan(organization.PlanName) && !getIsVpnB2BPlan(organization.PlanName)) {
-        const storageRange = getStorageRange(selfMember, organization);
-        const initialStorage = getInitialStorage(organization, storageRange);
-        const storageValue = clamp(initialStorage, storageRange.min, storageRange.max);
-        await api(updateQuota(selfMemberID, storageValue)).catch(noop);
-    }
+
     // Slice the org name (to ensure the request passes validation), specifically for VPN B2B signup where it's passed as a query param and not validated.
     await api(updateOrganizationName(orgName.slice(0, MAX_CHARS_API.ORG_NAME)));
 

@@ -1,8 +1,10 @@
 import type { MutableRefObject } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import DomainModal from '@proton/components/containers/domains/DomainModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -19,6 +21,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const organizationUnprivatizationModals = useOrganizationUnprivatizationModals();
     const [organization] = useOrganization();
     const hasRemoteMembers = useFlag('MembersRemote');
+    const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
 
     return (
         <SettingsSectionWide>
@@ -27,7 +30,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             {organizationModals.modals}
 
             <SettingsParagraph large className="flex items-center mb-6 gap-2">
-                <UserAndAddressesSectionIntro />
+                <UserAndAddressesSectionIntro onOpenNewDomainModal={setNewDomainModalOpen} />
             </SettingsParagraph>
 
             {organization && organization.UsedMembers > paginatedMemberThreshold && hasRemoteMembers ? (
@@ -35,6 +38,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             ) : (
                 <MembersLocal app={app} />
             )}
+            {renderNewDomain && <DomainModal {...newDomainModalProps} />}
         </SettingsSectionWide>
     );
 };
