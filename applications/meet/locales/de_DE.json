@@ -1688,6 +1688,9 @@
       "(You)": [
         "(Du)"
       ],
+      "<Removed dangerous URL>": [
+        "<Removed dangerous URL>"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -1958,6 +1961,9 @@
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
         "Ab sofort werden deine Meetings in der Desktop-App ${ MEET_APP_NAME } geöffnet"
       ],
+      "Only meetings you created appear here": [
+        "Nur Besprechungen, die du erstellt hast, werden hier angezeigt"
+      ],
       "Open external link": [
         "Externen Link öffnen"
       ],
@@ -1988,6 +1994,9 @@
       "Poor connection": [
         "Schlechte Verbindung"
       ],
+      "Premium meeting": [
+        "Premium-Meeting"
+      ],
       "Recording saved": [
         "Aufzeichnung gespeichert"
       ],
@@ -1999,9 +2008,6 @@
       ],
       "Schedule your next meeting": [
         "Dein nächstes Meeting planen"
-      ],
-      "Secure meeting": [
-        "Sicheres Meeting"
       ],
       "Select a camera": [
         "Kamera auswählen"
@@ -2254,9 +2260,6 @@
       "Last used": [
         "Zuletzt genutzt"
       ],
-      "Meeting details": [
-        "Mehr zum Meeting"
-      ],
       "Meeting ID": [
         "Meeting-ID"
       ],
@@ -2293,8 +2296,8 @@
       "Phone number": [
         "Telefonnummer"
       ],
-      "Remember my name on this device for future meetings": [
-        "Merke dir meinen Namen auf diesem Gerät für zukünftige Meetings"
+      "Remember my name on this device": [
+        "Meinen Namen auf diesem Gerät merken"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -2328,9 +2331,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "Your name": [
-        "Dein Name"
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
@@ -2434,6 +2434,9 @@
       "Enter time": [
         "Uhrzeit eingeben"
       ],
+      "Enter your name": [
+        "Deinen Namen eingeben"
+      ],
       "Find...": [
         "Suchen..."
       ],
@@ -2457,9 +2460,6 @@
       ],
       "Type an encrypted message...": [
         "Eine verschlüsselte Nachricht eingeben..."
-      ],
-      "Type your name": [
-        "Gib deinen Namen ein"
       ]
     },
     "Safety review": {
@@ -2523,8 +2523,8 @@
       "Past meetings": [
         "Vergangene Meetings"
       ],
-      "Upcoming meetings": [
-        "Bevorstehende Sitzungen"
+      "Upcoming": [
+        "Anstehend"
       ]
     },
     "specialoffer: Link": {

@@ -1825,6 +1825,9 @@
       "No speaker detected": [
         "No se detectan altavoces"
       ],
+      "Only meetings you created appear here": [
+        "Aquí solo aparecen las reuniones que has creado tú"
+      ],
       "Open external link": [
         "Abrir enlace externo"
       ],
@@ -1855,6 +1858,9 @@
       "Poor connection": [
         "Conexión débil"
       ],
+      "Premium meeting": [
+        "Reunión prémium"
+      ],
       "Recording saved": [
         "Grabación guardada"
       ],
@@ -1866,9 +1872,6 @@
       ],
       "Schedule your next meeting": [
         "Programa tu próxima reunión"
-      ],
-      "Secure meeting": [
-        "Reunión segura"
       ],
       "Select a camera": [
         "Seleccionar una cámara"
@@ -2115,8 +2118,8 @@
       "Phone number": [
         "Número de teléfono"
       ],
-      "Remember my name on this device for future meetings": [
-        "Recuerda mi nombre en este dispositivo para futuras reuniones"
+      "Remember my name on this device": [
+        "Recordar mi nombre en este dispositivo"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -2147,9 +2150,6 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
-      ],
-      "Your name": [
-        "Tu nombre"
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
@@ -2233,6 +2233,9 @@
       "Enter time": [
         "Ingresar hora"
       ],
+      "Enter your name": [
+        "Escribe tu nombre"
+      ],
       "Find...": [
         "Buscar..."
       ],
@@ -2256,9 +2259,6 @@
       ],
       "Type an encrypted message...": [
         "Escribe un mensaje cifrado..."
-      ],
-      "Type your name": [
-        "Escribe tu nombre"
       ]
     },
     "Safety review": {
@@ -2310,6 +2310,11 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "¿Quieres cerrar sesión sin restablecimiento de contraseña?"
+      ]
+    },
+    "Sort option": {
+      "Upcoming": [
+        "Próximamente"
       ]
     },
     "specialoffer: Link": {

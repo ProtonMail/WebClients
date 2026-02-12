@@ -1961,6 +1961,9 @@
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
         "Artık toplantılarınız ${ MEET_APP_NAME } masaüstü uygulamasında açılacak"
       ],
+      "Only meetings you created appear here": [
+        "Yalnızca sizin oluşturduğunuz toplantılar burada görünür"
+      ],
       "Open external link": [
         "Dış bağlantıyı aç"
       ],
@@ -1991,6 +1994,9 @@
       "Poor connection": [
         "Bağlantı kötü"
       ],
+      "Premium meeting": [
+        "Premium toplantı"
+      ],
       "Recording saved": [
         "Görüşme kaydedildi"
       ],
@@ -2002,9 +2008,6 @@
       ],
       "Schedule your next meeting": [
         "Bir sonraki görüşmenizi zamanlayın"
-      ],
-      "Secure meeting": [
-        "Güvenli görüşme"
       ],
       "Select a camera": [
         "Bir kamera seçin"
@@ -2257,9 +2260,6 @@
       "Last used": [
         "Son kullanılan"
       ],
-      "Meeting details": [
-        "Toplantı detayları"
-      ],
       "Meeting ID": [
         "Görüşme kimliği"
       ],
@@ -2296,8 +2296,8 @@
       "Phone number": [
         "Telefon numarası"
       ],
-      "Remember my name on this device for future meetings": [
-        "Gelecekteki görüşmeler için bu aygıtta adımı hatırla"
+      "Remember my name on this device": [
+        "Bu aygıtta adımı hatırla"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -2331,9 +2331,6 @@
       ],
       "What happened?": [
         "Ne oldu?"
-      ],
-      "Your name": [
-        "Adınız"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -2437,6 +2434,9 @@
       "Enter time": [
         "Zamanı yazın"
       ],
+      "Enter your name": [
+        "Adınızı yazın"
+      ],
       "Find...": [
         "Bul..."
       ],
@@ -2460,9 +2460,6 @@
       ],
       "Type an encrypted message...": [
         "Şifrelenmiş bir ileti yazın..."
-      ],
-      "Type your name": [
-        "Adınızı yazın"
       ]
     },
     "Safety review": {
@@ -2526,8 +2523,8 @@
       "Past meetings": [
         "Geçmiş toplantılar"
       ],
-      "Upcoming meetings": [
-        "Yaklaşan toplantılar"
+      "Upcoming": [
+        "Yaklaşan"
       ]
     },
     "specialoffer: Link": {
