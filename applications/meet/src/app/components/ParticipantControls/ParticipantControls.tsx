@@ -173,7 +173,7 @@ export const ParticipantControls = () => {
                     )}
                 </div>
 
-                <div className="participant-controls-buttons flex flex-nowrap gap-2">
+                <div className="participant-controls-buttons flex flex-nowrap gap-1 sm:gap-2">
                     {!isMobile() ? (
                         <>
                             <ToggleButton
@@ -321,9 +321,15 @@ export const ParticipantControls = () => {
                         <InfoButton />
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
-                        {isMobile() ? <ChatButton /> : <ScreenShareButton />}
-                        {!isMobile() && (
+                        {isMobile() ? (
+                            <ChatButton />
+                        ) : (
                             <div className="hidden sm:block">
+                                <ScreenShareButton />
+                            </div>
+                        )}
+                        {!isMobile() && (
+                            <div className="hidden md:block">
                                 <InfoButton />
                             </div>
                         )}
