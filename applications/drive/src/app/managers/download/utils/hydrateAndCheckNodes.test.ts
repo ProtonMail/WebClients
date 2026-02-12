@@ -86,4 +86,16 @@ describe('hydrateAndCheckNodes', () => {
         expect(mockIsProtonDocsDocument).toHaveBeenNthCalledWith(2, unsupportedNode.mediaType);
         expect(result).toEqual({ nodes: [supportedNode, unsupportedNode], containsUnsupportedFile: true });
     });
+
+    it('throws when a requested node is missing', async () => {
+        const iterateNodes = jest.fn();
+        const drive = { iterateNodes };
+        mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
+
+        const missingNode = { ok: false, error: { missingUid: 'missing-uid' } };
+        iterateNodes.mockReturnValue(createAsyncIterable([missingNode]));
+
+        await expect(hydrateAndCheckNodes(['missing-uid'])).rejects.toThrow(`Requested item doesn't exist anymore`);
+        expect(mockGetNodeEntity).not.toHaveBeenCalled();
+    });
 });

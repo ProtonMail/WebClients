@@ -1,6 +1,6 @@
 import { type NodeEntity, NodeType } from '@proton/drive';
 
-import { type DownloadItemInput, DownloadStatus, IssueStatus } from '../../../zustand/download/downloadManager.store';
+import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
 import type { DownloadOptions } from '../downloadTypes';
 import { getNodeStorageSize } from './getNodeStorageSize';
 
@@ -8,12 +8,35 @@ type QueueDownloadRequestParams = DownloadOptions & {
     nodes: NodeEntity[];
     isPhoto: boolean;
     containsUnsupportedFile?: boolean;
-    addDownloadItem: (item: DownloadItemInput) => string;
     requestedDownloads: Map<string, NodeEntity[]>;
     scheduleSingleFile: (downloadId: string, node: NodeEntity) => void;
     scheduleArchive: (downloadId: string, nodes: NodeEntity[]) => void;
     getArchiveName: (nodes: NodeEntity[]) => string;
 };
+
+export function queueFailedDownloadRequest({
+    nodes,
+    requestedDownloads,
+}: {
+    nodes: NodeEntity[];
+    requestedDownloads: Map<string, NodeEntity[]>;
+}): string | undefined {
+    if (!nodes.length) {
+        return undefined;
+    }
+    const { addDownloadItem } = useDownloadManagerStore.getState();
+
+    const node = nodes[0];
+    const downloadId = addDownloadItem({
+        name: node.name,
+        storageSize: getNodeStorageSize(node),
+        downloadedBytes: 0,
+        status: DownloadStatus.Failed,
+        nodeUids: [node.uid],
+    });
+    requestedDownloads.set(downloadId, nodes);
+    return downloadId;
+}
 
 export function queueDownloadRequest({
     nodes,
@@ -21,7 +44,6 @@ export function queueDownloadRequest({
     containsUnsupportedFile,
     albumName,
     revisionUid,
-    addDownloadItem,
     requestedDownloads,
     scheduleSingleFile,
     scheduleArchive,
@@ -37,6 +59,7 @@ export function queueDownloadRequest({
     const isSingleFileDownload = nodes.length === 1 && nodes[0].type === targetType;
     const unsupportedStatus = containsUnsupportedFile ? IssueStatus.Detected : undefined;
     const signatureIssueAllDecision = skipSignatureCheck ? IssueStatus.Approved : undefined;
+    const { addDownloadItem } = useDownloadManagerStore.getState();
 
     if (isSingleFileDownload) {
         if (unsupportedStatus) {

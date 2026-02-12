@@ -63,7 +63,7 @@ export type DownloadItem = {
     name: string;
     storageSize: number | undefined;
     thumbnailUrl?: string;
-    error?: Error | unknown;
+    error?: Error;
     speedBytesPerSecond?: number;
     status: DownloadStatusKeys;
     nodeUids: string[];
