@@ -1500,6 +1500,9 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Ignore": [
+        "تجاهل"
       ]
     },
     "action": {
@@ -5173,6 +5176,183 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "جهة اتصال الطوارئ الخاصة بك ${ name } تطلب الوصول إلى حسابك."
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "لن يتمكن ${ user } من مساعدتك في استعادة بياناتك بعد إعادة تعيين كلمة المرور."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** أصبحت الآن جهة اتصال الاسترداد الخاصة بك. يمكنها مساعدتك في استعادة بياناتك بعد إعادة تعيين كلمة المرور."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**إذا أكدوا**، فانقر فوق **الموافقة على الاسترداد**. سيؤدي ذلك إلى فتح بياناتهم المشفرة."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**إذا لم يطلبوا مساعدتك**، فمن الممكن أن يحاول شخص آخر الوصول إلى حسابه. في هذه الحالة، تجاهل هذا الطلب."
+      ],
+      "Access account": [
+        "الوصول إلى الحساب"
+      ],
+      "Add recovery contact": [
+        "إضافة جهة اتصال الاسترداد"
+      ],
+      "Approve recovery": [
+        "الموافقة على التعافي"
+      ],
+      "Approved request": [
+        "تمت الموافقة على الطلب"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "اطلب المساعدة من جهة اتصال الاسترداد. سيحصلون على بريد إلكتروني للتحقق من طلبك وفتح بياناتك."
+      ],
+      "Asking for help": [
+        "طلب المساعدة"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "من خلال إضافة الأشخاص الذين تثق بهم كجهات اتصال للاسترداد، سنكون قادرين على إرسال بريد إلكتروني إليهم لمساعدتك إذا كنت تواجه مشكلة في استعادة بياناتك بعد إعادة تعيين كلمة المرور. يمكنك أيضا أن تكون جهة اتصال استرداد للآخرين."
+      ],
+      "Cancel request": [
+        "إلغاء الطلب"
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "اختر شخصا تثق به لمساعدتك في استعادة بياناتك في حالة إعادة تعيين كلمة المرور. يجب أن يكون لدى جهات اتصال الاسترداد بالفعل حساب ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "تواصل معهم للتأكد من أنهم بحاجة إلى مساعدة لاستعادة بياناتهم."
+      ],
+      "Contacts": [
+        "جهات الاتصال"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "تم استرداد البيانات بنجاح. يمكنك الآن فك تشفير بياناتك الحالية والملفات المشفرة."
+      ],
+      "Emergency contact enabled": [
+        "تم تمكين الاتصال في حالات الطوارئ"
+      ],
+      "Enable": [
+        "تمكين"
+      ],
+      "For ${ email }": [
+        "لـ ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "تواصل معهم الآن لمعرفة ما إذا كان بإمكانهم المساعدة، ولإعلامهم شخصيا بأنك تحاول فتح بياناتك."
+      ],
+      "Got it": [
+        "فهمت"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "اطلب منهم التحقق من صندوق الوارد لديهم للعثور على رسالة تطلب مساعدتهم في استعادة بياناتك. تحتوي الرسالة على رابط يجب عليهم النقر عليه للتحقق من طلبك."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "أخبر ${ user } بأنك أنت فعلاً من يحاول استعادة الوصول."
+      ],
+      "Pending request": [
+        "طلب معلق"
+      ],
+      "People who have you as a recovery contact": [
+        "الأشخاص الذين أدرجوك كجهة اتصال للاسترداد"
+      ],
+      "Proceed anyway": [
+        "استمر على أي حال"
+      ],
+      "Recover data": [
+        "استعادة البيانات"
+      ],
+      "Recover data now": [
+        "استرجع البيانات الآن"
+      ],
+      "Recovery approved": [
+        "تمت الموافقة على الاسترداد"
+      ],
+      "Recovery contact added": [
+        "تمت إضافة جهة اتصال الاسترداد"
+      ],
+      "Recovery contact enabled": [
+        "تم تمكين جهة اتصال الاسترداد"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "تمت إزالة جهة اتصال الاسترداد ل ${ user }"
+      ],
+      "Recovery contact removed": [
+        "تمت إزالة جهة اتصال الاسترداد"
+      ],
+      "Recovery contacts": [
+        "جهات اتصال الاسترداد"
+      ],
+      "Recovery request sent": [
+        "تم إرسال طلب الاسترداد"
+      ],
+      "Remove recovery contact": [
+        "إزالة جهة اتصال الاسترداد"
+      ],
+      "Remove your recovery contacts to continue": [
+        "قم بإزالة جهات اتصال الاسترداد للمتابعة"
+      ],
+      "Request access": [
+        "طلب الوصول"
+      ],
+      "Review recovery request": [
+        "مراجعة طلب الاسترداد"
+      ],
+      "See request": [
+        "انظر الطلب"
+      ],
+      "Select recovery contact ${ name }": [
+        "حدد جهة اتصال الاسترداد ${ name }"
+      ],
+      "Send email request": [
+        "أرسل طلب بريد إلكتروني"
+      ],
+      "Send recovery request": [
+        "إرسال طلب الاسترداد"
+      ],
+      "Set account recovery": [
+        "تعيين استرداد الحساب"
+      ],
+      "Stop being recovery contact": [
+        "توقف عن أن تكون جهة اتصال الاسترداد"
+      ],
+      "Stop being recovery contact?": [
+        "إيقاف كونك جهة اتصال للاسترداد؟"
+      ],
+      "Stop being trusted contact": [
+        "توقف عن أن تكون جهة اتصال موثوقة"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "لاستخدام استرداد جهات الاتصال الموثوق بها، يجب أن يكون لديك طريقة استرداد الحساب المحددة."
+      ],
+      "Unable to recover data": [
+        "غير قادر على استعادة البيانات"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "تلقينا طلبا لإلغاء قفل البيانات المشفرة لجهة الاتصال الخاصة بك **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "لم نتمكن من التحقق من بيانات الاسترداد. المضي قدما على أي حال؟"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "لم يتم تعيينك كجهة اتصال استرداد لأي شخص حتى الآن."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "لن تتمكن بعد الآن من المساعدة في استعادة الوصول إلى حساب ${ user } في حالة إعادة تعيين كلمة المرور."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "وافقت جهة اتصال الاسترداد الخاصة بك ${ name } على طلبك لإلغاء قفل بياناتك المشفرة."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "جهة اتصال الاسترداد الخاصة بك ${ name } تطلب مساعدتك لاستعادة بياناتها."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "ساعدتك جهة اتصال الاسترداد الخاصة بك على استعادة البيانات."
+      ],
+      "Your recovery contacts": [
+        "جهات اتصال الاسترداد الخاصة بك"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "يجب أن تكون جهات اتصال الاسترداد الخاصة بك أشخاصا تعرفهم ويمكنك الاتصال بهم بسهولة."
       ]
     },
     "Empty group name": {
