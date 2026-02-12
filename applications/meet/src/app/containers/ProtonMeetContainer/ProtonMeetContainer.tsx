@@ -204,7 +204,7 @@ export const ProtonMeetContainer = ({
 
     const notifications = useNotifications();
 
-    const keyRotationSchedulerRef = useRef(new KeyRotationScheduler(keyProvider));
+    const [keyRotationScheduler] = useState(() => new KeyRotationScheduler(keyProvider));
 
     const isGuestAdminRef = useRef(false);
 
@@ -283,7 +283,7 @@ export const ProtonMeetContainer = ({
         try {
             reportMLSRelatedError(key, epoch);
             if (isMeetSeamlessKeyRotationEnabled) {
-                await keyRotationSchedulerRef.current.schedule(key, epoch);
+                await keyRotationScheduler.schedule(key, epoch);
             } else {
                 await keyProvider.setKeyWithEpoch(key, epoch);
             }
@@ -525,7 +525,7 @@ export const ProtonMeetContainer = ({
             if (isMeetSeamlessKeyRotationEnabled) {
                 // eslint-disable-next-line no-console
                 console.log('Enabled seamless key rotation');
-                await keyRotationSchedulerRef.current.schedule(groupKey, epoch);
+                await keyRotationScheduler.schedule(groupKey, epoch);
             } else {
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
@@ -565,7 +565,7 @@ export const ProtonMeetContainer = ({
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
                 if (isMeetSeamlessKeyRotationEnabled) {
-                    keyRotationSchedulerRef.current.clean();
+                    keyRotationScheduler.clean();
                 } else {
                     keyProvider.cleanCurrent();
                 }
@@ -870,7 +870,7 @@ export const ProtonMeetContainer = ({
 
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
-            keyRotationSchedulerRef.current.clean();
+            keyRotationScheduler.clean();
         }
 
         setJoinedRoom(false);
@@ -898,7 +898,7 @@ export const ProtonMeetContainer = ({
 
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
-            keyRotationSchedulerRef.current.clean();
+            keyRotationScheduler.clean();
         }
         setJoinedRoom(false);
         keyProvider.cleanCurrent();

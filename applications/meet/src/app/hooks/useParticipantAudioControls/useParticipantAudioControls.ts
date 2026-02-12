@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 
@@ -12,9 +12,8 @@ export const useParticipantAudioControls = () => {
     const room = useRoomContext();
     const reportError = useMeetErrorReporting();
 
-    const audioTrackSubscriptionManager = useMemo(
-        () => new AudioTrackSubscriptionManager(MAX_SUBSCRIBED_MICROPHONE_TRACKS, room, reportError),
-        [room, reportError]
+    const [audioTrackSubscriptionManager] = useState(
+        () => new AudioTrackSubscriptionManager(MAX_SUBSCRIBED_MICROPHONE_TRACKS, room, reportError)
     );
 
     useEffect(() => {
@@ -23,5 +22,5 @@ export const useParticipantAudioControls = () => {
         return () => {
             audioTrackSubscriptionManager.cleanup();
         };
-    }, [audioTrackSubscriptionManager]);
+    }, []);
 };
