@@ -1,4 +1,4 @@
-import type { KeyboardEvent, MutableRefObject } from 'react';
+import type { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
@@ -47,6 +47,7 @@ export interface SelectTwoProps<V> extends SelectProps<V> {
     dropdownClassName?: string;
     offset?: number;
     fullWidth?: boolean;
+    dropdownHeading?: ReactNode;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
@@ -75,6 +76,7 @@ const SelectTwo = <V extends any>({
     dropdownClassName,
     offset = 4,
     fullWidth,
+    dropdownHeading,
     ...rest
 }: SelectTwoProps<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -232,6 +234,9 @@ const SelectTwo = <V extends any>({
                     allowOptionToggling && 'select-dropdown--togglable',
                 ])}
             >
+                {dropdownHeading && (
+                    <div className="select-dropdown-heading px-4 py-2 color-weak">{dropdownHeading}</div>
+                )}
                 <SelectOptions selected={selectedIndexes} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}
                 </SelectOptions>
