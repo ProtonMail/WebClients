@@ -54,7 +54,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
@@ -92,7 +92,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
@@ -125,7 +125,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
@@ -163,7 +163,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
@@ -201,7 +201,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
@@ -234,7 +234,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
@@ -274,7 +274,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
@@ -311,7 +311,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -352,7 +352,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         labels: customLabels,
@@ -394,7 +394,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
@@ -436,7 +436,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
@@ -478,7 +478,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                         labels: customLabels,
@@ -519,7 +519,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: CUSTOM_LABEL_ID1,
                         labels: customLabels,
@@ -557,7 +557,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -596,7 +596,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -636,7 +636,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -676,7 +676,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -713,7 +713,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -747,7 +747,7 @@ describe('labelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.SPAM,
                         destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
@@ -812,7 +812,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                             labels: customLabels,
@@ -904,7 +904,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                             labels: customLabels,
@@ -1007,7 +1007,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                             labels: customLabels,
@@ -1111,7 +1111,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                             labels: customLabels,
@@ -1215,7 +1215,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                             labels: customLabels,
@@ -1322,7 +1322,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
                             destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                             labels: customLabels,
@@ -1415,7 +1415,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.SPAM,
                             destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                             labels: customLabels,
@@ -1504,7 +1504,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                             labels: customLabels,
@@ -1604,7 +1604,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: CUSTOM_LABEL_ID1,
                             labels: customLabels,
@@ -1711,7 +1711,7 @@ describe('labelMessagesPending', () => {
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements: [message],
+                            messages: [message],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                             labels: customLabels,

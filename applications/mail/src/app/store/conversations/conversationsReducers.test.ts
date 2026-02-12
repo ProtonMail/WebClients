@@ -92,14 +92,14 @@ describe('conversationsReducers', () => {
     describe('Mark messages as read', () => {
         describe('markMessagesAsReadPending', () => {
             it('should mark unread messages as read and update conversation unread counts', () => {
-                const elements = [mockMessage1, mockMessage2];
+                const messages = [mockMessage1, mockMessage2];
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -115,14 +115,14 @@ describe('conversationsReducers', () => {
 
             it('should skip already read messages', () => {
                 const readMessage = { ...mockMessage1, Unread: 0 };
-                const elements = [readMessage];
+                const messages = [readMessage];
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -136,14 +136,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should handle partial read operations', () => {
-                const elements = [mockMessage1]; // Only one message
+                const messages = [mockMessage1]; // Only one message
 
                 markMessagesAsReadPending(state, {
                     type: 'markMessagesAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -173,14 +173,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark read messages as unread and update conversation unread counts', () => {
-                const elements = [mockMessage1, mockMessage2];
+                const messages = [mockMessage1, mockMessage2];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -196,14 +196,14 @@ describe('conversationsReducers', () => {
 
             it('should skip already unread messages', () => {
                 const unreadMessage = { ...mockMessage1, Unread: 1 };
-                const elements = [unreadMessage];
+                const messages = [unreadMessage];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -222,14 +222,14 @@ describe('conversationsReducers', () => {
                     LabelIDs: ['different-label'],
                     Flags: 1, // FLAG_RECEIVED
                 };
-                const elements: MessageMetadata[] = [messageWithDifferentLabel];
+                const messages: MessageMetadata[] = [messageWithDifferentLabel];
 
                 markMessagesAsUnreadPending(state, {
                     type: 'markMessagesAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            messages,
                             labelID: inboxLabelID,
                         },
                     },
@@ -249,14 +249,14 @@ describe('conversationsReducers', () => {
     describe('Mark conversations as read', () => {
         describe('markConversationsAsReadPending', () => {
             it('should mark unread conversation as read', () => {
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -276,14 +276,14 @@ describe('conversationsReducers', () => {
                     ...mockConversation,
                     Labels: [{ ID: inboxLabelID, ContextNumUnread: 0 }],
                 };
-                const elements = [readConversation];
+                const conversations = [readConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -297,14 +297,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark all messages associated with the conversation as read', () => {
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsReadPending(state, {
                     type: 'markConversationsAsRead/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -331,14 +331,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark read conversation as unread', () => {
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -357,14 +357,14 @@ describe('conversationsReducers', () => {
                     ...mockConversation,
                     Labels: [{ ID: inboxLabelID, ContextNumUnread: 1 }],
                 };
-                const elements = [unreadConversation];
+                const conversations = [unreadConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -378,14 +378,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should only update the specific label', () => {
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -398,14 +398,14 @@ describe('conversationsReducers', () => {
             });
 
             it('should mark the last non draft message of the current location as unread', () => {
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -444,14 +444,14 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithOnlyDrafts;
 
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -497,14 +497,14 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithMultipleMessages;
 
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },
@@ -538,14 +538,14 @@ describe('conversationsReducers', () => {
                 };
                 state[conversationID] = conversationWithUnreadMessage;
 
-                const elements = [mockConversation];
+                const conversations = [mockConversation];
 
                 markConversationsAsUnreadPending(state, {
                     type: 'markConversationsAsUnread/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            elements,
+                            conversations,
                             labelID: inboxLabelID,
                         },
                     },

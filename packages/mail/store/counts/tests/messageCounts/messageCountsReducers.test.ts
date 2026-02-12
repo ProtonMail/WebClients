@@ -46,7 +46,7 @@ describe('messageCountsReducers', () => {
 
         markMessagesAsRead(state, {
             type: 'mailbox/markMessagesAsRead',
-            payload: { elements: [message1, message2], labelID: 'label1' },
+            payload: { messages: [message1, message2], labelID: 'label1' },
         });
 
         expect(state.value).toEqual([
@@ -64,7 +64,7 @@ describe('messageCountsReducers', () => {
 
         markMessagesAsUnread(state, {
             type: 'mailbox/markMessagesAsUnread',
-            payload: { elements: [message1], labelID: 'label2' },
+            payload: { messages: [message1], labelID: 'label2' },
         });
 
         expect(state.value).toEqual([

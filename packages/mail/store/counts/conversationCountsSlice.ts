@@ -62,13 +62,13 @@ const slice = createSlice({
         },
         markConversationsAsReadPending: (
             state,
-            action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+            action: PayloadAction<{ conversations: Conversation[]; labelID: string }>
         ) => {
             markConversationsAsRead(state, action);
         },
         markConversationsAsUnreadPending: (
             state,
-            action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+            action: PayloadAction<{ conversations: Conversation[]; labelID: string }>
         ) => {
             markConversationsAsUnread(state, action);
         },
@@ -80,32 +80,32 @@ const slice = createSlice({
         },
         markMessagesAsUnreadPending: (
             state,
-            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },
         markMessagesAsUnreadRejected: (
             state,
-            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadPending: (
             state,
-            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadRejected: (
             state,
-            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },
         labelMessagesPending: (
             state,
             action: PayloadAction<{
-                elements: MessageMetadata[];
+                messages: MessageMetadata[];
                 destinationLabelID: string;
                 conversations: Conversation[];
                 labels: Label[];
@@ -117,7 +117,7 @@ const slice = createSlice({
         unlabelMessagesPending: (
             state,
             action: PayloadAction<{
-                elements: MessageMetadata[];
+                messages: MessageMetadata[];
                 conversations: Conversation[];
                 destinationLabelID: string;
                 labels: Label[];

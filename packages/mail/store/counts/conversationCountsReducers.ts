@@ -20,15 +20,15 @@ import {
 
 export const markConversationsAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+    action: PayloadAction<{ conversations: Conversation[]; labelID: string }>
 ) => {
     // When we mark a conversation as unread, the latest message of this conversation is marked as unread.
     // This message must be part of the current label (labelID)
-    const { elements, labelID } = action.payload;
+    const { conversations, labelID } = action.payload;
     const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
-    elements.forEach((element) => {
-        element.Labels?.forEach((label) => {
+    conversations.forEach((conversation) => {
+        conversation.Labels?.forEach((label) => {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
             if (!conversationCounter) {
                 return;
@@ -45,12 +45,12 @@ export const markConversationsAsUnread = (
 
 export const markConversationsAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+    action: PayloadAction<{ conversations: Conversation[]; labelID: string }>
 ) => {
-    const { elements } = action.payload;
+    const { conversations } = action.payload;
 
-    elements.forEach((element) => {
-        element?.Labels?.forEach((conversationLabel) => {
+    conversations.forEach((conversation) => {
+        conversation?.Labels?.forEach((conversationLabel) => {
             if (conversationLabel?.ContextNumUnread === 0) {
                 return;
             }
@@ -66,18 +66,18 @@ export const markConversationsAsRead = (
 
 export const markMessagesAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
 ) => {
-    const { conversations, elements, labelID } = action.payload;
+    const { conversations, messages, labelID } = action.payload;
 
     conversations.forEach((conversation) => {
-        const messages = elements.filter(
-            (element) => element.ConversationID === conversation.ID && element.LabelIDs.includes(labelID)
+        const filteredMessages = messages.filter(
+            (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
         );
 
         const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
 
-        if (conversationLabel?.ContextNumUnread === 0 && messages.length > 0) {
+        if (conversationLabel?.ContextNumUnread === 0 && filteredMessages.length > 0) {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
@@ -89,16 +89,16 @@ export const markMessagesAsUnread = (
 
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
 ) => {
-    const { elements, labelID, conversations } = action.payload;
+    const { messages, labelID, conversations } = action.payload;
 
     conversations.forEach((conversation) => {
         // Count number of messages associated with the conversation
-        const messages = elements.filter(
-            (element) => element.ConversationID === conversation.ID && element.LabelIDs.includes(labelID)
+        const filteredMessages = messages.filter(
+            (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
         );
-        const messagesCount = messages.length;
+        const messagesCount = filteredMessages.length;
 
         const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
 
@@ -115,14 +115,14 @@ export const markMessagesAsRead = (
 export const labelMessagesPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         destinationLabelID: string;
         conversations: Conversation[];
         labels: Label[];
         folders: Folder[];
     }>
 ) => {
-    const { elements, conversations, destinationLabelID, labels, folders } = action.payload;
+    const { messages, conversations, destinationLabelID, labels, folders } = action.payload;
     const conversationCounterTarget = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
     if (!conversationCounterTarget) {
@@ -130,7 +130,7 @@ export const labelMessagesPending = (
     }
 
     conversations.forEach((conversation) => {
-        const messagesFromConversation = elements.filter((element) => element.ConversationID === conversation.ID);
+        const messagesFromConversation = messages.filter((message) => message.ConversationID === conversation.ID);
         const unreadMessagesFromConversation = messagesFromConversation.filter((element) => element.Unread);
 
         // Decrease
@@ -539,13 +539,13 @@ export const unlabelConversationsPending = (
 export const unlabelMessagesPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         conversations: Conversation[];
         destinationLabelID: string;
         labels: Label[];
     }>
 ) => {
-    const { elements, conversations, destinationLabelID, labels } = action.payload;
+    const { messages, conversations, destinationLabelID, labels } = action.payload;
     const isLabel = isCustomLabel(destinationLabelID, labels) || destinationLabelID === MAILBOX_LABEL_IDS.STARRED;
 
     if (!isLabel) {
@@ -559,7 +559,7 @@ export const unlabelMessagesPending = (
     }
 
     conversations.forEach((conversation) => {
-        const messagesFromConversation = elements.filter((element) => element.ConversationID === conversation.ID);
+        const messagesFromConversation = messages.filter((message) => message.ConversationID === conversation.ID);
         const unreadMessagesFromConversation = messagesFromConversation.filter((element) => element.Unread);
         const messagesFromConversationInLabel = messagesFromConversation.filter((element) =>
             element.LabelIDs.includes(destinationLabelID)
