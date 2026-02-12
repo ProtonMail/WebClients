@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { getItem } from '@proton/shared/lib/helpers/storage';
+
 import {
     NodeWithSameNameExistsValidationError,
     type ProtonDriveClient,
@@ -8,6 +10,7 @@ import {
 import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
+import { useUploadControllerStore } from '../store/uploadController.store';
 import type { FileUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
@@ -16,12 +19,27 @@ import { TaskExecutor } from './TaskExecutor';
  * Executes file uploads and emits events
  * NO store access - only emits events
  */
+// TODO: Improve abort check and update thumbnail generator to support abortController
 export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
     async execute(task: FileUploadTask): Promise<void> {
-        const abortController = new AbortController();
+        const storedController = useUploadControllerStore.getState().getController(task.uploadId);
+
+        if (!storedController) {
+            return;
+        }
+
+        const abortController = storedController.abortController;
+
+        if (abortController.signal.aborted) {
+            return;
+        }
 
         try {
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
+
+            if (abortController.signal.aborted) {
+                return;
+            }
 
             const metadata = await this.createFileUploaderMetadata(
                 task.file,
@@ -29,6 +47,10 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 mediaInfo,
                 task.isUnfinishedUpload
             );
+
+            if (abortController.signal.aborted) {
+                return;
+            }
 
             const drive = UploadDriveClientRegistry.getDriveClient();
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
@@ -47,7 +69,6 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 type: 'file:started',
                 uploadId: task.uploadId,
                 controller,
-                abortController,
                 isForPhotos: false,
             });
 
@@ -62,6 +83,10 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 isForPhotos: false,
             });
         } catch (error) {
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             if (error instanceof NodeWithSameNameExistsValidationError) {
                 this.eventCallback?.({
                     type: 'file:conflict',
@@ -82,7 +107,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
 
     private async generateThumbnails(file: File) {
         const { thumbnailsPromise, mimeTypePromise } = generateThumbnail(file, file.name, file.size, {
-            debug: false,
+            debug: Boolean(getItem('proton-drive-debug', 'false')),
         });
 
         const thumbnailsResult = await thumbnailsPromise;
