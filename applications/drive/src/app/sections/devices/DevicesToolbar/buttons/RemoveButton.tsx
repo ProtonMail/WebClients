@@ -12,17 +12,14 @@ interface Props {
 }
 
 export const DeviceRemoveButton = ({ selectedDevices }: Props) => {
-    const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
+    const { removeDeviceModal, showRemoveDeviceModal } = useRemoveDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 
     const onClick = () => {
         const device = selectedDevices[0];
         if (device) {
-            showRemoveDeviceModal({
-                deviceUid: device.uid,
-                deviceName: device.name,
-            });
+            showRemoveDeviceModal({ deviceUid: device.uid });
         }
     };
 
