@@ -1582,9 +1582,6 @@
       "All trashed items successfully restored": [
         "Wszystkie usunięte elementy zostały przywrócone"
       ],
-      "An item previously shared with you was removed": [
-        "Poprzednio udostępniony element został usunięty"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Czy na pewno chcesz usunąć ${ emailJSX } ze swoich skrzynek pocztowych?"
       ],
@@ -2003,7 +2000,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2508,9 +2508,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Sejf \"${ payload.share.content.name }\" został zaktualizowany"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Sejf \"${ share.content.name }\" został usunięty"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Udostępnianie sejfu: ${ vaultMembersCount } użytkownik",
