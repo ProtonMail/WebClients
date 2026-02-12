@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Drive arama özelliğini aç"
       ],
+      "Encrypted": [
+        "Şifrelenmiş"
+      ],
       "Expand": [
         "Genişlet"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Tara ve indir (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Tara ve İndir"
+      ],
       "Search": [
         "Arama"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"
       ],
+      "Shared": [
+        "Paylaşılan"
+      ],
       "Sharing is end-to-end encrypted": [
         "Paylaşım uçtan uca şifrelenir"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
+      ],
+      "Sign up": [
+        "Hesap açın"
       ],
       "Skip verification": [
         "Doğrulamayı atla"
@@ -6960,6 +6972,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "Access": [
+        "Erişim"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
       ],
@@ -6989,6 +7004,9 @@
       ],
       "All": [
         "Tümü"
+      ],
+      "Allow editors to change permissions and share": [
+        "Düzenleyicilerin izinleri değiştirmesine ve paylaşmasına izin ver"
       ],
       "Anderson": [
         "Kaya"
@@ -7147,6 +7165,9 @@
       "Device name": [
         "Aygıt adı"
       ],
+      "Disable this link on a specific date": [
+        "Bu bağlantıyı belirli bir tarihte devre dışı bırak"
+      ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
@@ -7203,6 +7224,9 @@
       ],
       "Expires": [
         "Geçerlilik süresi sonu"
+      ],
+      "Expiry": [
+        "Sona erme"
       ],
       "Extended address": [
         "Açık adres"
@@ -7405,12 +7429,6 @@
       "Public keys": [
         "Herkese açık anahtarlar"
       ],
-      "Public link expiration date": [
-        "Herkese açık bağlantının geçerlilik sonu tarihi"
-      ],
-      "Public link password": [
-        "Herkese açık bağlantı parolası"
-      ],
       "Region": [
         "Bölge"
       ],
@@ -7423,6 +7441,9 @@
       "Replace existing folder or file": [
         "Var olan klasörün veya dosyanın üzerine yaz"
       ],
+      "Require password": [
+        "Parola gerekli"
+      ],
       "Reveal password": [
         "Parolayı görüntüle"
       ],
@@ -7432,11 +7453,8 @@
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
       ],
-      "Set expiration date": [
-        "Geçerlilik süresi olsun"
-      ],
-      "Set link password": [
-        "Bağlantı parolası ayarla"
+      "Set a password to limit access via link": [
+        "Bağlantı üzerinden erişimi sınırlamak için bir şifre belirleyin"
       ],
       "Set recovery method": [
         "Kurtarma yöntemini ayarlayın"
@@ -9101,6 +9119,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" kaydedildi"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" paylaşıldı"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" kopyalandı"
       ],
@@ -9342,6 +9363,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Seçilmiş fotoğraflar “${ albumName }” albümünde zaten var."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Ayarlar güncellendi. Düzenleyiciler izinleri değiştirebilir ve paylaşabilir."
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"

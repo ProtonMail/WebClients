@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Käytä levyhakua"
       ],
+      "Encrypted": [
+        "Salattu"
+      ],
       "Expand": [
         "Laajenna"
       ],
@@ -938,6 +941,9 @@
       "Scan & Download (${ nbSelected })": [
         "Skannaa ja lataa (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Skannaa ja lataa"
+      ],
       "Search": [
         "Hae"
       ],
@@ -1010,6 +1016,9 @@
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
       ],
+      "Shared": [
+        "Jaettu"
+      ],
       "Sharing options": [
         "Jakovalinnat"
       ],
@@ -1039,6 +1048,9 @@
       ],
       "Sign out of all accounts": [
         "Kirjaa kaikki tilit ulos"
+      ],
+      "Sign up": [
+        "Rekisteröidy"
       ],
       "Skip verification": [
         "Ohita vahvistus"
@@ -6771,6 +6783,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access": [
+        "Käyttöoikeus"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
       ],
@@ -6794,6 +6809,9 @@
       ],
       "All": [
         "Kaikki"
+      ],
+      "Allow editors to change permissions and share": [
+        "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
       ],
       "Anderson": [
         "Andersson"
@@ -6940,6 +6958,9 @@
       "Device name": [
         "Laitteen nimi"
       ],
+      "Disable this link on a specific date": [
+        "Poista tämä linkki käytöstä tiettynä päivänä"
+      ],
       "Do you have any suggestions for our team?": [
         "Onko sinulla ehdotuksia tiimillemme?"
       ],
@@ -6996,6 +7017,9 @@
       ],
       "Expires": [
         "Erääntyy"
+      ],
+      "Expiry": [
+        "Erääntyminen"
       ],
       "Extended address": [
         "Laajennettu osoite"
@@ -7189,12 +7213,6 @@
       "Public keys": [
         "Julkiset avaimet"
       ],
-      "Public link expiration date": [
-        "Julkisen linkin erääntymispäivä"
-      ],
-      "Public link password": [
-        "Julkisen linkin salasana"
-      ],
       "Region": [
         "Alue"
       ],
@@ -7207,6 +7225,9 @@
       "Replace existing folder or file": [
         "Korvaa olemassa oleva kansio tai tiedosto"
       ],
+      "Require password": [
+        "Vaadi salasanaa"
+      ],
       "Reveal password": [
         "Näytä salasana"
       ],
@@ -7216,11 +7237,8 @@
       "Select type of abuse": [
         "Valitse väärinkäytön tyyppi"
       ],
-      "Set expiration date": [
-        "Aseta erääntymisaika"
-      ],
-      "Set link password": [
-        "Aseta linkin salasana"
+      "Set a password to limit access via link": [
+        "Aseta salasana rajoittaaksesi pääsyä linkin kautta"
       ],
       "Set recovery method": [
         "Määritä palautustapa"
@@ -8834,6 +8852,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" tallennettiin"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" jaettu"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" siirrettiin"
       ],
@@ -9047,6 +9068,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valitut kuvat ovat jo albumissa \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"

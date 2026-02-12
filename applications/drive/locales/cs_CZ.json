@@ -465,6 +465,9 @@
       "Enable drive search": [
         "Povolit hledání na disku"
       ],
+      "Encrypted": [
+        "Šifrováno"
+      ],
       "Expand": [
         "Rozbalit"
       ],
@@ -951,6 +954,9 @@
       "Scan & Download (${ nbSelected })": [
         "Skenovat a stáhnout (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Skenovat a stáhnout"
+      ],
       "Search": [
         "Vyhledat"
       ],
@@ -1026,6 +1032,9 @@
       "Share your calendar with your team": [
         "Sdílet kalendář se svým týmem"
       ],
+      "Shared": [
+        "Sdílené"
+      ],
       "Sharing is end-to-end encrypted": [
         "Sdílení je koncově šifrované"
       ],
@@ -1058,6 +1067,9 @@
       ],
       "Sign out of all accounts": [
         "Odhlásit se ze všech účtů"
+      ],
+      "Sign up": [
+        "Zaregistrovat se"
       ],
       "Skip verification": [
         "Přeskočit ověření"
@@ -7160,6 +7172,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
+      "Access": [
+        "Přístup"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
       ],
@@ -7189,6 +7204,9 @@
       ],
       "All": [
         "Vše"
+      ],
+      "Allow editors to change permissions and share": [
+        "Umožnit editorům měnit oprávnění a sdílet"
       ],
       "Anderson": [
         "Příjmení"
@@ -7349,6 +7367,9 @@
       "Device name": [
         "Název zařízení"
       ],
+      "Disable this link on a specific date": [
+        "Zakázat tento odkaz k určitému datu"
+      ],
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
       ],
@@ -7405,6 +7426,9 @@
       ],
       "Expires": [
         "Vyprší"
+      ],
+      "Expiry": [
+        "Vypršení platnosti"
       ],
       "Extended address": [
         "Rozšířená adresa"
@@ -7607,12 +7631,6 @@
       "Public keys": [
         "Veřejné klíče"
       ],
-      "Public link expiration date": [
-        "Vypršení platnosti veřejného odkazu"
-      ],
-      "Public link password": [
-        "Heslo veřejného odkazu"
-      ],
       "Region": [
         "Kraj"
       ],
@@ -7625,6 +7643,9 @@
       "Replace existing folder or file": [
         "Nahradit existující složku nebo soubor"
       ],
+      "Require password": [
+        "Požadovat heslo"
+      ],
       "Reveal password": [
         "Zobrazit heslo"
       ],
@@ -7634,11 +7655,8 @@
       "Select type of abuse": [
         "Vyberte typ zneužití"
       ],
-      "Set expiration date": [
-        "Nastavit datum pro vypršení platnosti"
-      ],
-      "Set link password": [
-        "Nastavit heslo odkazu"
+      "Set a password to limit access via link": [
+        "Nastavit heslo pro omezení přístupu přes odkaz"
       ],
       "Set recovery method": [
         "Nastavit metodu obnovení"
@@ -9375,6 +9393,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" úspěšně uloženo"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" nasdíleno"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" úspěšně zkopírováno"
       ],
@@ -9668,6 +9689,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotky jsou již v albu \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."
       ],
       "Share invitation accepted successfully": [
         "Pozvánka ke sdílení úspěšně přijata"

@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Activa la cerca de la unitat"
       ],
+      "Encrypted": [
+        "Xifrat"
+      ],
       "Expand": [
         "Amplia"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Escanegeu i descarregueu (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Escanegeu-ho i descarregueu-ho"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Compartiu el calendari amb el vostre equip"
       ],
+      "Shared": [
+        "S'ha compartit"
+      ],
       "Sharing is end-to-end encrypted": [
         "La compartició està xifrada d’extrem a extrem"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Tanca tots els comptes"
+      ],
+      "Sign up": [
+        "Crea un compte"
       ],
       "Skip verification": [
         "Omet la verificació"
@@ -6960,6 +6972,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "Access": [
+        "Accés"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
       ],
@@ -6992,6 +7007,9 @@
       ],
       "All": [
         "Tot"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permet als editors canviar els permisos i compartir"
       ],
       "Anderson": [
         "Pujol"
@@ -7150,6 +7168,9 @@
       "Device name": [
         "Nom del dispositiu"
       ],
+      "Disable this link on a specific date": [
+        "Desactiveu aquest enllaç en una data específica"
+      ],
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
       ],
@@ -7206,6 +7227,9 @@
       ],
       "Expires": [
         "Expira"
+      ],
+      "Expiry": [
+        "Caducitat"
       ],
       "Extended address": [
         "Adreça completa"
@@ -7408,12 +7432,6 @@
       "Public keys": [
         "Claus públiques"
       ],
-      "Public link expiration date": [
-        "Data de caducitat de l'enllaç públic"
-      ],
-      "Public link password": [
-        "Contrasenya de l'enllaç públic"
-      ],
       "Region": [
         "Regió"
       ],
@@ -7426,6 +7444,9 @@
       "Replace existing folder or file": [
         "Substituïu la carpeta o el fitxer existent"
       ],
+      "Require password": [
+        "Es requereix contrasenya"
+      ],
       "Reveal password": [
         "Mostra la contrasenya"
       ],
@@ -7435,11 +7456,8 @@
       "Select type of abuse": [
         "Seleccioneu el tipus d'abús"
       ],
-      "Set expiration date": [
-        "Definir data d'expiració"
-      ],
-      "Set link password": [
-        "Estableix la contrasenya de l'enllaç"
+      "Set a password to limit access via link": [
+        "Establiu una contrasenya per limitar l'accés mitjançant l'enllaç"
       ],
       "Set recovery method": [
         "Estableix un mètode de recuperació"
@@ -9161,6 +9179,9 @@
       "\"${ name }\" saved successfully": [
         "S'ha desat \"${ name }\""
       ],
+      "\"${ name }\" shared": [
+        "S'ha compartit \"${ name }\""
+      ],
       "\"${ name }\" successfully copied": [
         "«${ name }» s'ha copiat correctament"
       ],
@@ -9402,6 +9423,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les fotos seleccionades ja són a «${ albumName }»."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "S'ha actualitzat la configuració. Els editors poden canviar els permisos i compartir-los."
       ],
       "Share invitation accepted successfully": [
         "S'ha acceptat la invitació per a compartir."
