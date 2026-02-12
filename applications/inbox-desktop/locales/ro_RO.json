@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Din cauza unei erori, aplicația se va închide. Încercați să o rulați din nou și, dacă problema persistă, contactați-ne. Informații despre eroare pot fi găsite în jurnalul aplicației."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Eroare neașteptată"
       ],
-      "Unexpected error": [
-        "Eroare neașteptată."
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Din cauza unei erori, aplicația ${ MAIL_APP_NAME } se va închide. Încercați să o rulați din nou și, dacă problema persistă, contactați-ne. Informații despre eroare pot fi găsite în jurnalul aplicației."
       ]
     },
     "error screen": {

@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Kvůli chybě se aplikace ukončí. Zkuste ji spustit znovu, a pokud problém přetrvává, kontaktujte nás. Informace o chybě naleznete v logu aplikace."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Neočekávaná chyba"
       ],
-      "Unexpected error": [
-        "Neočekávaná chyba"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Kvůli chybě se aplikace ${ MAIL_APP_NAME } zavře. Zkuste ji spustit znovu a pokud problém přetrvává, kontaktujte nás. Informace o chybě naleznete v aplikačním logu."
       ]
     },
     "error screen": {
