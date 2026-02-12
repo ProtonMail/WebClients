@@ -47,3 +47,18 @@ export const setESUserChoice = (userID: string, esUserChoice: boolean) => {
         esUserChoice,
     }));
 };
+
+export const clearUserSettings = (userID: string) => {
+    const storedSettings = store.get(USER_SETTINGS);
+
+    if (!storedSettings || !storedSettings[userID]) {
+        return;
+    }
+
+    delete storedSettings[userID];
+    store.set(USER_SETTINGS, storedSettings);
+};
+
+export const clearAllUserSettings = () => {
+    store.delete(USER_SETTINGS);
+};
