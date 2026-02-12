@@ -282,8 +282,17 @@ const sendResponse = (response: FileProcessingResponse) => {
 };
 
 // Handle messages from the main thread
-self.addEventListener('message', async (event: MessageEvent<FileProcessingRequest>) => {
-    const { id, file, isLumoPaid = false } = event.data;
+self.addEventListener('message', async (event: MessageEvent<FileProcessingRequest | { type: 'cleanup' }>) => {
+    // Handle cleanup message
+    if ('type' in event.data && event.data.type === 'cleanup') {
+        if (pandocConverter) {
+            await pandocConverter.cleanup();
+            pandocConverter = null;
+        }
+        return;
+    }
+
+    const { id, file, isLumoPaid = false } = event.data as FileProcessingRequest;
 
     try {
         const result = await processFile(file, isLumoPaid);
@@ -305,12 +314,5 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
             message: errorMessage,
         };
         sendResponse(response);
-    }
-});
-
-// Handle worker cleanup
-self.addEventListener('beforeunload', async () => {
-    if (pandocConverter) {
-        await pandocConverter.cleanup();
     }
 });

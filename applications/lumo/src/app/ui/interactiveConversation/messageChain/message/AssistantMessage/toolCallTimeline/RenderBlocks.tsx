@@ -4,7 +4,11 @@ import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
-import TurndownService from 'turndown';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const TurndownServiceModule = require('turndown');
+// Handle both CommonJS and ES module exports
+const TurndownService = TurndownServiceModule.default || TurndownServiceModule;
 
 interface RenderBlocksProps {
     blocks: ContentBlock[];
