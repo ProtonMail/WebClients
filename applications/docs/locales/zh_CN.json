@@ -52,7 +52,7 @@
         "添加"
       ],
       "Add account": [
-        "添加帐户"
+        "添加账户"
       ],
       "Add address": [
         "添加地址"
@@ -517,7 +517,7 @@
         "更多信息：${ safeTitle }"
       ],
       "More options for accounts": [
-        "更多帐户选项"
+        "更多账户选项"
       ],
       "Move": [
         "移动"
@@ -3859,7 +3859,7 @@
         "该邮箱需要应用专用密码才能导出数据."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "您的电子邮件地址和应用程序密码正确。请勿使用常规密码。"
+        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
       ],
       "Your email address and password are correct.": [
         "您输入的邮箱地址和密码正确。"
@@ -5133,7 +5133,7 @@
         "您即将打开默认浏览器并访问："
       ],
       "You are currently signed in as ${ username }.": [
-        "您当前登入的用户为 ${ username }。"
+        "您当前登录身份为 ${ username }"
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "您当前正在以只读模式查看此文档。请联系所有者以请求编辑和评论权限。"
@@ -5238,10 +5238,10 @@
         "您的邮箱地址和密码已泄露："
       ],
       "Your email address was exposed:": [
-        "您的电子邮件地址已被泄露："
+        "您的邮箱地址已被泄露："
       ],
       "Your email address will be visible as the link's owner on the share page": [
-        "您的电子邮件地址将作为链接所有者出现在分享页面上"
+        "您的邮箱地址将作为链接所有者出现在分享页面上"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -5989,7 +5989,7 @@
         "您的 ${ mailStorage } 已满。要发送或接收电子邮件，请释放空间或 ${ cta }。"
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
-        "您的帐户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
+        "您的账户有可能被删除。为了避免数据丢失，请要求您的管理员升级计划。 ${ cta }"
       ],
       "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
         "您的存储空间已满。若要继续使用 ${ BRAND_NAME } 产品，请释放空间或 ${ cta }。"
@@ -6985,7 +6985,7 @@
         "与同事、亲友轻松分享日程安排"
       ],
       "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
+        "使用单个邮箱地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -8051,7 +8051,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "审查帐户安全"
+        "审查账户安全"
       ]
     },
     "saml: Error": {
@@ -8099,7 +8099,7 @@
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
+        "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8129,7 +8129,7 @@
         "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel 现已 **启用** 并正在保护您的帐户。"
+        "Sentinel 现已 **启用** 并正在保护您的账户。"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
@@ -8155,7 +8155,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "传统地址密钥无法恢复帐户"
+        "传统地址密钥无法恢复账户"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -8702,7 +8702,7 @@
         "您将无法使用 ${ gb } 存储和优先支持。"
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "您将无法使用额外的存储空间、电子邮件地址、别名、日历以及优先支持。"
+        "您将无法使用额外的存储空间、邮箱地址、别名、日历以及优先支持。"
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "您将无法获得最快的 VPN 速度、10 台设备的保护、高速流媒体、广告拦截器和恶意软件保护以及优先支持。"
@@ -8739,7 +8739,7 @@
         "登录 Apple App Store 账户，然后选择 ${ subscriptions }。"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "只需登录到您的 Play 商店帐户，然后按 ${ subscriptions }。"
+        "只需登录到您的 Play 商店账户，然后按 ${ subscriptions }。"
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 管理您的订阅"
