@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useActiveBreakpoint } from '@proton/components';
 import { IcBug } from '@proton/icons/icons/IcBug';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
+import { IcMeetScreenShare } from '@proton/icons/icons/IcMeetScreenShare';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
@@ -19,6 +21,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDebugOverlayContext } from '../../containers/MeetContainer';
+import { useMeetContext } from '../../contexts/MeetContext';
 import { SlideClosable } from '../SlideClosable/SlideClosable';
 
 import './MenuButton.scss';
@@ -27,10 +30,24 @@ export const MenuButton = () => {
     const dispatch = useMeetDispatch();
     const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = (sidebarToOpen: MeetingSideBars) => {
         dispatch(toggleSideBarStateAction(sidebarToOpen));
+        setIsOpen(false);
+    };
+
+    const { isScreenShare, stopScreenShare, startScreenShare, isLocalScreenShare } = useMeetContext();
+    const isSharing = !!isScreenShare && isLocalScreenShare;
+
+    const handleClickScreenShare = () => {
+        if (isSharing) {
+            stopScreenShare();
+        } else {
+            void startScreenShare();
+        }
         setIsOpen(false);
     };
 
@@ -55,6 +72,15 @@ export const MenuButton = () => {
             label: c('Alt').t`Meeting details`,
             onClick: () => handleClick(MeetingSideBars.MeetingDetails),
         },
+        ...(viewportWidth.xsmall
+            ? [
+                  {
+                      icon: IcMeetScreenShare,
+                      label: c('Alt').t`Screen share`,
+                      onClick: () => handleClickScreenShare(),
+                  },
+              ]
+            : []),
         ...(isDebugEnabled
             ? [
                   {
