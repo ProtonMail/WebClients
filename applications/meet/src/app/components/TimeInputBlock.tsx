@@ -33,7 +33,11 @@ export const TimeInputBlock = ({
 }) => {
     return (
         <div className="w-full flex flex-nowrap items-center gap-4">
-            <IcClock className={clsx('shrink-0', !showIcon && 'visibility-hidden')} size={5} />
+            <IcClock
+                className={clsx('shrink-0', !showIcon && 'visibility-hidden')}
+                size={5}
+                style={{ color: 'var(--interaction-weak-major-3)' }}
+            />
             <div className="flex-1 flex flex-column *:min-size-auto md:flex-row flex-nowrap items-center gap-2">
                 <div className="flex-1 flex flex-nowrap items-center gap-2">
                     <DateInputTwo
@@ -84,7 +88,12 @@ export const TimeInputBlock = ({
                         disabled={!editableTimeZone}
                     >
                         {timeZoneOptions.map((option) => (
-                            <Option key={option.value} value={option.value} title={option.label} optionWrapperClassName="px-2">
+                            <Option
+                                key={option.value}
+                                value={option.value}
+                                title={option.label}
+                                optionWrapperClassName="px-2"
+                            >
                                 {option.label}
                             </Option>
                         ))}
