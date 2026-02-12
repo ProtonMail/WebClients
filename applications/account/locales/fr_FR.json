@@ -75,9 +75,6 @@
       "Accept": [
         "Accepter"
       ],
-      "Access account": [
-        "Accéder au compte"
-      ],
       "activate": [
         "activer"
       ],
@@ -855,6 +852,9 @@
       "Hide plan features": [
         "Masquer les fonctionnalités de l'offre"
       ],
+      "Ignore": [
+        "Ignorer"
+      ],
       "Import": [
         "Importer"
       ],
@@ -1140,9 +1140,6 @@
       "refresh the page": [
         "actualiser la page"
       ],
-      "Refuse access": [
-        "Refuser l'accès"
-      ],
       "Reject": [
         "Refuser"
       ],
@@ -1197,9 +1194,6 @@
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
-      "Request access": [
-        "Demander l'accès"
-      ],
       "Request new code": [
         "Demander un nouveau code"
       ],
@@ -1253,9 +1247,6 @@
       ],
       "Revoke ${ name }": [
         "Révoquer ${ name }"
-      ],
-      "Revoke access": [
-        "Révoquer l'accès"
       ],
       "Revoke all other sessions": [
         "Révoquer toutes les autres sessions"
@@ -1484,9 +1475,6 @@
       ],
       "Stay": [
         "Rester"
-      ],
-      "Stop being trusted contact": [
-        "Cesser d'être un contact approuvé"
       ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
@@ -1757,6 +1745,14 @@
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
       ],
+      "${ domains } custom email domain": [
+        "${ domains } domaine de messagerie personnalisé",
+        "${ domains } domaines de messagerie personnalisés"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } serveur VPN dédié",
+        "${ ips } serveurs VPN dédiés"
+      ],
       "${ ips } server": [
         "${ ips } serveur",
         "${ ips } serveurs"
@@ -1783,6 +1779,10 @@
       "${ quantity } custom domain": [
         "${ quantity } domaine personnalisé",
         "${ quantity } domaines personnalisés"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licence IA ${ LUMO_APP_NAME }",
+        "${ seats } licences IA ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
@@ -2214,95 +2214,12 @@
         "Offre non disponible"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'espace de stockage"
-      ],
-      "1 user account": [
-        "1 compte utilisateur"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "6 user accounts": [
-        "6 comptes utilisateur"
-      ],
-      "Admin panel to manage your family": [
-        "Panneau d'administration pour gérer votre famille"
-      ],
-      "Advanced account protection": [
-        "Protection avancée des comptes"
-      ],
-      "Easily add or remove users": [
-        "Ajoutez ou retirez facilement des utilisateurs"
-      ],
-      "One-time payment, lifetime deal": [
-        "Paiement unique, offre à vie"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Password health alerts": [
-        "Alertes de sécurité des mots de passe"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes de vos fichiers"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre illimité de dossiers, labels et filtres"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Connexions, cartes de crédit, alias « hide-my-email » illimités et plus encore"
-      ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Facturé ${ amount } en une fois"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Renouvellement après 1 mois à ${ regularAmount }"
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprend plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
-        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore.",
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
       ]
     },
     "BF2025: Deal details": {
@@ -3159,9 +3076,33 @@
       ]
     },
     "Checkout row": {
+      "${ n } day": [
+        "${ n } jour",
+        "${ n } jours"
+      ],
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "${ years } year": [
+        "${ years } an",
+        "${ years } ans"
+      ],
+      "Forever access": [
+        "Accès permanent"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Commencé le ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "À partir du ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "À partir d'aujourd'hui"
       ],
       "Total": [
         "Total"
@@ -5156,14 +5097,6 @@
         "Des solutions sur mesure pour les grandes entreprises ayant des besoins spécifiques"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Historique des versions plus détaillé"
-      ],
-      "Priority support": [
-        "Assistance prioritaire"
-      ]
-    },
     "Duo offer": {
       "/month": [
         "/mois"
@@ -5819,11 +5752,26 @@
       "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
         "${ user } sera déconnecté de votre compte et ne pourra plus y accéder avant le prochain accès d'urgence."
       ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } ne pourra plus vous aider à récupérer vos données après une réinitialisation du mot de passe."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } ne pourra plus demander l'accès à votre compte en cas d'urgence."
       ],
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } ne pourra pas accéder à votre compte avant le prochain accès d'urgence."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** est maintenant votre contact de récupération. Il peut vous aider à récupérer vos données après une réinitialisation de mot de passe."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**S'ils confirment**, cliquez sur **Approuver la récupération**. Cela déverrouillera leurs données chiffrées."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**S'ils n'ont pas demandé votre aide**, il est possible que quelqu'un d'autre essaie d'accéder à leur compte. Dans ce cas, ignorez cette demande."
+      ],
+      "Access account": [
+        "Accéder au compte"
       ],
       "Access granted": [
         "L'accès a été autorisé."
@@ -5846,8 +5794,29 @@
       "Add emergency contact": [
         "Ajouter un contact d'urgence"
       ],
+      "Add recovery contact": [
+        "Ajouter un contact de récupération"
+      ],
       "Added on ${ formattedDate }": [
         "Ajouté le ${ formattedDate }"
+      ],
+      "Approve recovery": [
+        "Approuver la récupération"
+      ],
+      "Approved request": [
+        "Demande approuvée"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Demandez de l'aide à un contact de récupération. Il recevra un message pour vérifier votre demande et débloquer vos données."
+      ],
+      "Asking for help": [
+        "Demander de l'aide"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "En ajoutant des personnes de confiance comme contacts de récupération, nous pourrons leur envoyer un e-mail afin qu'elles vous aident si vous rencontrez des difficultés pour récupérer vos données après une réinitialisation de mot de passe. Vous pouvez également être un contact de récupération pour d'autres personnes."
+      ],
+      "Cancel request": [
+        "Annuler la demande"
       ],
       "Cancel request?": [
         "Annuler la demande ?"
@@ -5861,8 +5830,20 @@
       "Change wait time": [
         "Modifier le temps d'attente"
       ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Choisissez une personne de confiance pour vous aider à récupérer vos données en cas de réinitialisation du mot de passe. Les contacts de récupération doivent déjà avoir un compte ${ BRAND_NAME }."
+      ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "Choisissez quelqu'un à qui vous pouvez confier vos données en toute confiance. Cette personne doit déjà posséder un compte ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Connectez-vous avec eux pour confirmer qu'ils ont besoin d'aide pour récupérer leurs données."
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Données récupérées avec succès. Vous pouvez maintenant déchiffrer vos données existantes et vos fichiers chiffrés."
       ],
       "Disabled": [
         "Désactivé"
@@ -5894,17 +5875,35 @@
       "Emergency contact added": [
         "Le contact d'urgence a été ajouté."
       ],
+      "Emergency contact enabled": [
+        "Contact d'urgence activé"
+      ],
       "Emergency contact removed": [
         "Le contact d'urgence a été retiré."
       ],
+      "Enable": [
+        "Activer"
+      ],
       "Enable auto-renew": [
         "Activer le renouvellement automatique"
+      ],
+      "For ${ email }": [
+        "Pour ${ email }"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Contactez-les maintenant pour voir s'ils peuvent vous aider, et pour leur faire savoir personnellement que c'est bien vous qui essayez de déverrouiller vos données."
       ],
       "Give access now": [
         "Accorder l'accès maintenant"
       ],
       "Give immediate access?": [
         "Donner un accès immédiat ?"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Demandez-leur de vérifier leur boîte de réception pour trouver l'e-mail leur demandant de l'aide pour récupérer vos données. L'e-mail contient un lien sur lequel ils doivent cliquer pour vérifier votre demande."
       ],
       "Immediate": [
         "Immédiat"
@@ -5918,6 +5917,9 @@
       "Less than a minute left": [
         "Il reste moins d'une minute"
       ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Faites savoir à ${ user } que c'est bien vous qui tentez de récupérer l'accès."
+      ],
       "None": [
         "Aucun"
       ],
@@ -5927,14 +5929,50 @@
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "Ne demandez l'accès d'urgence que lorsqu'il y a une situation **valide** vous obligeant à gérer le compte d'un autre utilisateur."
       ],
+      "Pending request": [
+        "Demande en attente"
+      ],
       "People I trust": [
         "Les personnes que j'approuve"
+      ],
+      "People who have you as a recovery contact": [
+        "Les personnes qui vous ont désigné comme contact de récupération"
       ],
       "People who trust me": [
         "Les personnes qui m'ont approuvé"
       ],
+      "Proceed anyway": [
+        "Continuer quand même"
+      ],
       "Protect your legacy with emergency access": [
         "Protégez vos données existantes avec l'accès d'urgence"
+      ],
+      "Recover data": [
+        "Récupérer les données"
+      ],
+      "Recover data now": [
+        "Récupérer les données maintenant"
+      ],
+      "Recovery approved": [
+        "Récupération approuvée"
+      ],
+      "Recovery contact added": [
+        "Contact de récupération ajouté"
+      ],
+      "Recovery contact enabled": [
+        "Contact de récupération activé"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Contact de récupération pour ${ user } retiré"
+      ],
+      "Recovery contact removed": [
+        "Contact de récupération retiré"
+      ],
+      "Recovery contacts": [
+        "Contacts de récupération"
+      ],
+      "Recovery request sent": [
+        "Demande de récupération envoyée"
       ],
       "Refuse access": [
         "Refuser l'accès"
@@ -5942,11 +5980,20 @@
       "Refuse access?": [
         "Refuser l'accès ?"
       ],
+      "Remove recovery contact": [
+        "Retirer le contact de récupération"
+      ],
       "Remove trusted contact": [
         "Retirer le contact de confiance"
       ],
+      "Remove your recovery contacts to continue": [
+        "Retirez vos contacts de récupération pour continuer"
+      ],
       "Renew to get emergency access again.": [
         "Renouvelez pour obtenir à nouveau un accès d'urgence."
+      ],
+      "Request access": [
+        "Demander l'accès"
       ],
       "Request access?": [
         "Demander l'accès?"
@@ -5954,11 +6001,38 @@
       "Requesting access": [
         "Demande d'accès"
       ],
+      "Review recovery request": [
+        "Examiner la demande de récupération"
+      ],
       "Revoke access": [
         "Révoquer l'accès"
       ],
       "Revoke access?": [
         "Révoquer l'accès ?"
+      ],
+      "See request": [
+        "Voir la demande"
+      ],
+      "Select recovery contact ${ name }": [
+        "Sélectionner le contact de récupération ${ name }"
+      ],
+      "Send email request": [
+        "Envoyer une demande par e-mail"
+      ],
+      "Send recovery request": [
+        "Envoyer la demande de récupération"
+      ],
+      "Set account recovery": [
+        "Définir la récupération du compte"
+      ],
+      "Stop being recovery contact": [
+        "Cesser d'être un contact de récupération"
+      ],
+      "Stop being recovery contact?": [
+        "Cesser d'être un contact de récupération ?"
+      ],
+      "Stop being trusted contact": [
+        "Cesser d'être un contact approuvé"
       ],
       "Stop being trusted contact?": [
         "Cesser d'être un contact approuvé?"
@@ -5988,8 +6062,17 @@
       "Time required before automatically granting them access": [
         "Temps d’attente avant de leur accorder automatiquement l’accès"
       ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Pour désactiver cette méthode de récupération, retirez tous vos contacts de récupération."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Pour utiliser la récupération par contact approuvé, vous devez avoir configuré une méthode de récupération de compte."
+      ],
       "Trusted contact": [
         "Contacts de confiance"
+      ],
+      "Unable to recover data": [
+        "Impossible de récupérer les données"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -6009,6 +6092,12 @@
       "Wait time saved": [
         "Temps d'attente enregistré"
       ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Nous avons reçu une demande de déverrouillage des données chiffrées de votre contact **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nous n'avons pas pu vérifier les données de récupération. Continuer quand même ?"
+      ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Nous informerons **${ user }** que vous avez demandé l'accès d'urgence."
       ],
@@ -6021,6 +6110,9 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Vous pouvez retirer leur accès à tout moment pour récupérer le contrôle exclusif de votre compte."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Personne ne vous a encore désigné comme contact de récupération."
+      ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
       ],
@@ -6028,8 +6120,15 @@
         "Vous avez atteint le maximum de ${ limit } contact d'urgence.",
         "Vous avez atteint le maximum de ${ limit } contacts d'urgence."
       ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Vous avez atteint le maximum de ${ limit } contact de récupération.",
+        "Vous avez atteint le nombre maximum de ${ limit } contacts de récupération."
+      ],
       "You will be notified when someone requests emergency access.": [
         "Vous recevrez une notification lorsque quelqu'un demandera un accès d'urgence."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "Vous ne pourrez plus aider à récupérer l'accès au compte de ${ user } en cas de réinitialisation du mot de passe."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Vous ne pourrez plus demander l'accès au compte de ${ user } en cas d'urgence."
@@ -6046,6 +6145,21 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Votre contact d'urgence ${ name } demande d'accéder à votre compte."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Votre contact de récupération ${ name } a approuvé votre demande de déverrouiller vos données chiffrées."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Votre contact de récupération ${ name } demande de l'aide pour récupérer ses données."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Votre contact de récupération vous a aidé à récupérer des données."
+      ],
+      "Your recovery contacts": [
+        "Vos contacts de récupération"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Vos contacts de rétablissement doivent être des personnes que vous connaissez et que vous pouvez contacter facilement."
       ]
     },
     "Empty group name": {
@@ -7056,19 +7170,9 @@
         "Vous pouvez enregistrer un fichier ICS contenant les événements qui ont été exportés avec succès."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 To d'espace de stockage total"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Les avantages de votre compte"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espace de stockage est partagé entre les membres de la famille et entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7101,11 +7205,6 @@
       ],
       "View invitation": [
         "Voir l'invitation"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Jusqu'à 6 utilisateurs"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7363,17 +7462,6 @@
       ],
       "Set family name": [
         "Choisissez le nom de la famille"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Cela comprend 2 700 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 90 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
       ]
     },
     "Feature": {
@@ -9206,6 +9294,9 @@
       "Cancel anytime": [
         "Annulez quand vous le voulez"
       ],
+      "Cancel anytime.": [
+        "Résiliez à tout moment."
+      ],
       "Can’t access your recovery email?": [
         "Vous ne pouvez plus accéder à votre adresse e-mail de récupération ?"
       ],
@@ -9673,6 +9764,9 @@
       "expires ${ expirationDate }": [
         "expire le ${ expirationDate }"
       ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Expire le ${ ExpMonth }/${ ExpYear }"
+      ],
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
       ],
@@ -9796,6 +9890,9 @@
       "High Priority": [
         "Priorité élevée"
       ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN : ${ formattedIBAN }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
       ],
@@ -9858,6 +9955,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ VPN_APP_NAME }."
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez utiliser une méthode de récupération de données pour déverrouiller vos données."
@@ -11161,6 +11261,9 @@
       "Total VPN connections": [
         "Nombre total de connexions VPN"
       ],
+      "Total: ${ totalPrice }": [
+        "Total : ${ totalPrice }"
+      ],
       "trusted device": [
         "appareil approuvée"
       ],
@@ -11680,6 +11783,9 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Vous devez avoir un calendrier personnel afin d'importer vos évènements depuis un fichier ICS."
       ],
+      "You saved ${ discountAmount } with an offer": [
+        "Vous avez économisé ${ discountAmount } grâce à une offre"
+      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Nous vous recommandons d'exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer les données qu'elle a chiffrées."
       ],
@@ -11799,6 +11905,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Les messages de votre organisation sont protégés par un chiffrement de bout en bout grâce à la clé de l'organisation. Cette empreinte peut être utilisée pour vérifier que tous les administrateurs de votre compte ont la même clé."
+      ],
+      "Your payment details are encrypted and secure": [
+        "Vos informations de paiement sont chiffrées et sécurisées"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vos informations de paiement sont protégées par le chiffrement TLS et les lois suisses sur la protection de la vie privée."
@@ -12403,6 +12512,9 @@
         "${ addressesAvailable } adresse e-mail disponible sur ${ maxAddresses }",
         "${ addressesAvailable } adresses e-mail disponibles sur ${ maxAddresses }"
       ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } se finissant par ${ Last4 }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
@@ -12491,6 +12603,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Titulaire du compte : ${ sepaDetails.AccountName }"
+      ],
       "Account storage": [
         "Espace de stockage du compte"
       ],
@@ -12505,6 +12620,9 @@
       ],
       "Add all organization members": [
         "Ajouter tous les membres de l'organisation"
+      ],
+      "Add extra services": [
+        "Ajouter des services supplémentaires"
       ],
       "Add group member": [
         "Ajouter un membre au groupe"
@@ -12736,6 +12854,9 @@
       ],
       "Choose a name for the generated certificate file": [
         "Choisissez un nom pour le fichier de certificat à générer."
+      ],
+      "Choose your billing": [
+        "Choisissez votre facturation"
       ],
       "City": [
         "Ville"
@@ -13268,6 +13389,9 @@
       "Moderate NAT": [
         "NAT modéré"
       ],
+      "More payment methods": [
+        "Plus de moyens de paiement"
+      ],
       "Most popular": [
         "Le plus populaire"
       ],
@@ -13686,6 +13810,9 @@
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
       ],
+      "today": [
+        "aujourd'hui"
+      ],
       "Token name": [
         "Nom du jeton"
       ],
@@ -13724,6 +13851,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use another payment method": [
+        "Utiliser un autre moyen de paiement"
       ],
       "Use email categories": [
         "Utiliser les catégories de messages"
@@ -13809,11 +13939,17 @@
       "Your calendar URL": [
         "URL de votre calendrier"
       ],
+      "Your credit balance": [
+        "Votre solde de crédit"
+      ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "Your plan": [
+        "Votre abonnement"
       ],
       "ZIP code": [
         "Code postal"
@@ -14198,6 +14334,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
+      ],
+      "What's included in your plan": [
+        "Ce qui est inclus dans votre abonnement"
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
@@ -17437,6 +17576,12 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
+      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
       ],
@@ -17448,6 +17593,12 @@
       ],
       "I'm purchasing as a business": [
         "J'achète en tant qu'entreprise."
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluant ${ taxRate } % de taxes : ${ taxAmount }"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
@@ -20120,18 +20271,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 To"
-      ],
-      "6 users": [
-        "6 utilisateurs"
-      ],
-      "All paid Mail and Calendar features": [
-        "Toutes les fonctionnalités des abonnements payants Mail et Calendar"
-      ],
-      "High speed VPN": [
-        "VPN haut débit"
-      ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
       ],
@@ -20144,17 +20283,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } et ${ appName3 } version premium"
       ],
-      "Premium early access": [
-        "Accès premium en avant-première"
-      ],
-      "Secure cloud storage": [
-        "Stockage cloud sécurisé"
-      ],
       "Secure streaming": [
         "Streaming sécurisé"
-      ],
-      "Support online privacy": [
-        "Soutenez la protection de la vie privée en ligne"
       ]
     },
     "specialoffer: Footer": {
@@ -20198,72 +20328,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
       "/ month": [
         "/mois"
       ],
       "/month": [
         "/mois"
       ],
-      "1 year": [
-        "1 an"
-      ],
-      "15 months": [
-        "15 mois"
-      ],
-      "2 years": [
-        "2 ans"
-      ],
-      "30 months": [
-        "30 mois"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Facturé ${ amount } pour 1 mois"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Facturé ${ amount } pour 12 mois"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Facturé ${ amount } pour 15 mois"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Facturé ${ amount } pour 24 mois"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Facturé ${ amount } pour 30 mois"
-      ],
       "Get the deal": [
         "Profitez de l'offre"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Renouvellement après 1 an au prix réduit de ${ discountedAmount } au lieu de ${ regularAmount } (${ discount } % de réduction)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Renouvellement après 2 ans au prix réduit de ${ discountedAmount } au lieu de ${ regularAmount } (${ discount } % de réduction)"
-      ],
       "Save ${ discount }%": [
         "Économisez ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Le prix habituel est de ${ amount } pour 1 mois"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Le prix habituel est de ${ amount } pour 12 mois"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Le prix habituel est de ${ amount } pour 15 mois"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Le prix habituel est de ${ amount } pour 24 mois"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Le prix habituel est de ${ amount } pour 30 mois"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "L’offre spéciale est valable pendant les 2 premières années."
       ]
     },
     "specialoffer: Title": {
@@ -20290,29 +20365,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN par utilisateur, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « hide-my-email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Idéal pour les familles ou les petites équipes, chacun pouvant disposer de sa propre boite de réception et de ses propres alias. Nécessite un domaine personnalisé."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Profitez sans frais supplémentaires des versions payantes de tous nos futurs services respectueux de la vie privée, ainsi que d'un accès en avant-première à nos nouvelles fonctionnalités et à nos nouveaux produits."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
       ]
     },
     "Spotlight": {
@@ -20760,6 +20812,15 @@
       ]
     },
     "Subscription": {
+      "${ discountPercent }% discount applied": [
+        "${ discountPercent } % de réduction appliquée"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent } % de réduction"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratuit"
+      ],
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
       ],
@@ -20768,6 +20829,27 @@
       ],
       "Billed yearly": [
         "Facturé annuellement"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Lié à **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Attaché à l'organisation **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Prochaine date de facturation"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Pour continuer votre abonnement après la fin de l'essai gratuit, ajoutez un moyen de paiement avant le ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "Total à payer"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Total à payer le ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Total à payer aujourd'hui"
       ]
     },
     "Subscription attribute": {
@@ -21602,20 +21684,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Informations sur les événements qui n'ont pas pu être exportés"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
       ]
     },
     "Tab in domain modal": {

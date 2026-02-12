@@ -75,9 +75,6 @@
       "Accept": [
         "承認する"
       ],
-      "Access account": [
-        "アカウントにアクセス"
-      ],
       "activate": [
         "有効にする"
       ],
@@ -1134,9 +1131,6 @@
       "refresh the page": [
         "ページを更新"
       ],
-      "Refuse access": [
-        "アクセスを拒否する"
-      ],
       "Reject": [
         "拒否"
       ],
@@ -1191,9 +1185,6 @@
       "Request a feature": [
         "機能を提案"
       ],
-      "Request access": [
-        "アクセスをリクエストする"
-      ],
       "Request new code": [
         "新しいコードのリクエスト"
       ],
@@ -1247,9 +1238,6 @@
       ],
       "Revoke ${ name }": [
         "${ name } を失効させる"
-      ],
-      "Revoke access": [
-        "アクセスの失効"
       ],
       "Revoke all other sessions": [
         "ほかのすべてのセッションを取り消す"
@@ -1478,9 +1466,6 @@
       ],
       "Stay": [
         "終了しない"
-      ],
-      "Stop being trusted contact": [
-        "信頼済みの連絡先を停止"
       ],
       "Stop using single sign-on": [
         "シングル サインオンの使用を停止する"
@@ -2198,93 +2183,12 @@
         "オファーは利用できません"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan }と${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
-      "1 user account": [
-        "1 ユーザーアカウント"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB ストレージ：お客様の現在のプランの40倍"
-      ],
-      "6 user accounts": [
-        "6 ユーザーアカウント"
-      ],
-      "Admin panel to manage your family": [
-        "家族を管理するための管理者パネル"
-      ],
-      "Advanced account protection": [
-        "高度なアカウント保護"
-      ],
-      "Easily add or remove users": [
-        "簡単にユーザーを追加または削除できます"
-      ],
-      "One-time payment, lifetime deal": [
-        "一度きりの支払いで、一生涯のアクセス"
-      ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
-      "Password health alerts": [
-        "パスワードの健全性アラート"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
-      ],
-      "Unlimited folders, labels and filters": [
-        "無制限のフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "無制限のログイン、クレジットカードやhide-my-emailエイリアスなど"
-      ],
       "Use your own email domain": [
         "独自メールドメインを使用する"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "一度に${ amount }が請求されます"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "${ regularAmount }で1ヶ月後に自動更新されます。"
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "ブロックされたコンテンツにアクセスし、プライベートに参照します。110 以上の国、10 以上のデバイス、高速ストリーミング、広告ブロッカー、マルウェア保護、VPN Acceleratorなど、8,500 以上のサーバーが含まれています。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "すべてのデバイスでセキュアなログイン。無制限のhide-my-email エイリアス、共有、統合2FA、 ${ DARK_WEB_MONITORING_NAME } などが含まれています。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "メールとスケジュールをエンドツーエンド暗号化で保護します。${ addresses } のメールアドレス、カスタムメールドメインのサポート、${ BRAND_NAME } Scribe 執筆アシスタント、無制限のhide-my-emailエイリアスなどが含まれています。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "メールとスケジュールをエンドツーエンドの暗号化で保護します。${ addresses }のメールアドレス、カスタムメールドメインのサポート、無制限のhide-my-emailエイリアスなどが含まれています。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、${ BRAND_NAME }執筆アシスタント、無制限のide-my-emailなどが含まれています。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "メールとスケジュールをエンドツーエンド暗号化で保護します。15 のメールアドレス、カスタムメールドメインのサポート、無制限のide-my-emailなどが含まれています。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。オンライン文書エディタ、写真のバックアップ、バージョン履歴、暗号化済みファイル共有などが含まれています。"
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
       ]
     },
     "BF2025: Deal details": {
@@ -5126,14 +5030,6 @@
         "大規模な組織の特別なニーズに対応したオーダーメイドのソリューション"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "拡張バージョン履歴"
-      ],
-      "Priority support": [
-        "優先サポート"
-      ]
-    },
     "Duo offer": {
       "/month": [
         "/ 月"
@@ -7004,19 +6900,9 @@
         "エクスポートできた予定のICSファイルを保存することができます。"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "合計 3 TB のストレージ"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "アカウントのメリット"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は家族メンバー間で ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "familyOffer_2023:Action": {
@@ -7049,11 +6935,6 @@
       ],
       "View invitation": [
         "招待状を確認する"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "最大6人のユーザー"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7303,17 +7184,6 @@
       ],
       "Set family name": [
         "家族名の設定"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 つの独自メールドメイン対応、90 個のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
     "Feature": {
@@ -19850,18 +19720,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
-      "All paid Mail and Calendar features": [
-        "有料の Mail と Calendar の全機能"
-      ],
-      "High speed VPN": [
-        "高速 VPN"
-      ],
       "Highest VPN speed": [
         "最高速 VPN"
       ],
@@ -19874,17 +19732,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "プレミアム${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "プレミアム早期アクセス"
-      ],
-      "Secure cloud storage": [
-        "安全なクラウドストレージ"
-      ],
       "Secure streaming": [
         "安全なストリーミング"
-      ],
-      "Support online privacy": [
-        "オンラインプライバシーをサポート"
       ]
     },
     "specialoffer: Footer": {
@@ -19928,71 +19777,17 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } ヶ月"
-      ],
       "/ month": [
         "/ 月"
       ],
       "/month": [
         "/ 月"
       ],
-      "1 year": [
-        "1年"
-      ],
-      "15 months": [
-        "15 か月"
-      ],
-      "2 years": [
-        "2年"
-      ],
-      "30 months": [
-        "30 か月"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "1 か月毎に ${ amount } の支払い"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "12 か月毎に ${ amount } の支払い"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "15 か月毎に ${ amount } の支払い"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "24 か月毎に ${ amount } の支払い"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "30 か月毎に ${ amount } の支払い"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "1年後に割引価格 ${ discountedAmount } (標準価格 ${ regularAmount } から ${ discount }%割引) で契約更新"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2年後に割引価格 ${ discountedAmount } (標準価格 ${ regularAmount } から ${ discount }%割引) で契約更新"
-      ],
       "Save ${ discount }%": [
         "${ discount }% 割引"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "標準価格では 1 か月毎に ${ amount }"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "標準価格では 12 か月毎に ${ amount }"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "標準価格では 15 か月毎に ${ amount }"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "標準価格では 24 か月毎に ${ amount }"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "標準価格では 30 か月毎に ${ amount }"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "特別オファーは最初の2年間有効です"
       ]
     },
     "specialoffer: Title": {
@@ -20019,29 +19814,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、ユーザー毎に 10 の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "すべてのプレミアムサービスを高い自由度で利用できます。100 のメールアドレス、10 の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3 つの独自メールドメイン対応、15 のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "私たちが今後リリースする全ての有料プライバシーサービスの機能/製品および早期アクセスを追加コストなしで利用できます。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
     "Spotlight": {
@@ -21300,20 +21072,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "エクスポートできなかったイベントについての詳細"
-      ]
-    },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 の保管庫、統合された2要素認証、クレジットカードの自動入力などが含まれます。"
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 のメールアドレス、10 の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
       ]
     },
     "Tab in domain modal": {
