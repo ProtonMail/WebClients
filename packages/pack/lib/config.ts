@@ -103,6 +103,9 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
         : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
 
+    // No logical SCSS is opt-out, to make code easier in config the option is reversed
+    const logicalScss = !protonPackOptions.noLogicalScss;
+
     const defineWebpackConfig: WebpackOptions['defineWebpackConfig'] = {
         API_URL: !appData.apiProxy && appData.api ? appData.api : '/api',
         APP_NAME: appData.appName,
@@ -113,6 +116,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         COMMIT: buildData.commit,
         DATE_VERSION: buildData.date,
         LOCALES: LOCALES,
+        LOGICAL_SCSS: logicalScss,
         SENTRY_DESKTOP_DSN: appData.sentryDesktopDsn ?? '',
         SENTRY_DSN: appData.sentryDsn,
         SSO_URL: appData.sso,
@@ -137,7 +141,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         inlineIcons: protonPackOptions.inlineIcons === true,
         isProduction,
         isRelease,
-        noLogicalScss: protonPackOptions.noLogicalScss ?? false,
+        noLogicalScss: !logicalScss,
         optimizeAssets: protonPackOptions.optimizeAssets ?? false,
         overlayErrors: protonPackOptions.overlayErrors ?? false,
         overlayRuntimeErrors: protonPackOptions.overlayRuntimeErrors ?? false,
