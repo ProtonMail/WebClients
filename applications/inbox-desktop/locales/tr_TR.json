@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Bir sorun nedeniyle uygulama kapatılacak. Yeniden çalıştırmayı deneyin ve sorun sürerse bizimle görüşün. Sorunla ilgili bilgiler uygulama günlüğünde bulunabilir."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Beklenmeyen hata"
       ],
-      "Unexpected error": [
-        "Beklenmeyen bir sorun çıktı"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Bir hata nedeniyle ${ MAIL_APP_NAME } uygulaması kapanacak. Tekrar çalıştırmayı deneyin ve sorun devam ederse bizimle iletişime geçin. Hatayla ilgili bilgiler uygulama günlüğünde bulunabilir."
       ]
     },
     "error screen": {

@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Appen lukker på grund af en fejl. Prøv at køre den igen, og kontakt os, hvis problemet fortsætter. Oplysninger om fejlen kan findes i applikationsloggen."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Uventet fejl"
       ],
-      "Unexpected error": [
-        "Uventet fejl"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "På grund af en fejl lukkes ${ MAIL_APP_NAME }-appen ned. Prøv at starte den igen, og kontakt os, hvis problemet fortsætter. Oplysninger om fejlen kan findes i applikationsloggen."
       ]
     },
     "error screen": {

@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "由于出现错误，应用程序将关闭。请尝试重新运行，如果问题仍然存在，请联系我们。有关错误的信息可在应用程序日志中找到。"
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - 意外错误"
       ],
-      "Unexpected error": [
-        "非预期错误"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "由于出现错误，${ MAIL_APP_NAME } 应用程序将关闭。请尝试重新运行，如果问题仍然存在，请联系我们。有关该错误的详细信息可在应用程序日志中找到。"
       ]
     },
     "error screen": {
