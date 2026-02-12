@@ -59,7 +59,7 @@ const slice = createSlice({
         markMessagesAsReadPending: (
             state,
             action: PayloadAction<{
-                elements: MessageMetadata[];
+                messages: MessageMetadata[];
                 labelID: string;
             }>
         ) => {
@@ -68,7 +68,7 @@ const slice = createSlice({
         markMessagesAsUnreadPending: (
             state,
             action: PayloadAction<{
-                elements: MessageMetadata[];
+                messages: MessageMetadata[];
                 labelID: string;
             }>
         ) => {

@@ -838,7 +838,7 @@ describe('Update context Total', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
@@ -917,7 +917,7 @@ describe('Update context Total', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
@@ -1002,7 +1002,7 @@ describe('Update context Total', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
@@ -1067,7 +1067,7 @@ describe('Update context Total', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: CUSTOM_LABEL_ID1,
                         labels: customLabels,
