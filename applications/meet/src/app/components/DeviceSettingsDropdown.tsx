@@ -21,7 +21,7 @@ export const DeviceSettingsDropdown = ({
 }: DeviceSettingsDropdownProps) => {
     return (
         <Dropdown
-            className="device-selector-dropdown border border-card rounded-xl shadow-none meet-radius meet-scrollbar py-2 overflow-x-hidden overflow-y-auto"
+            className="meet-dropdown device-selector-dropdown border border-card rounded-xl shadow-none meet-radius meet-scrollbar py-2 overflow-x-hidden overflow-y-auto"
             isOpen={true}
             anchorRef={anchorRef}
             onClose={onClose}
