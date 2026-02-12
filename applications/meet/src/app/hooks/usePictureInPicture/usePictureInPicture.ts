@@ -76,7 +76,8 @@ export function usePictureInPicture({
     const { register, removeForcePin } = useCameraTrackSubscriptionManager();
 
     // PiP session manager for resource management
-    const sessionManager = useRef(new PiPSessionManager());
+    const [sessionManager] = useState(() => new PiPSessionManager());
+
     const preventBlur = useRef(false);
 
     const isPipActiveRef = useRef(isPipActive);
@@ -97,14 +98,14 @@ export function usePictureInPicture({
 
     const pipCleanup = async () => {
         stopRendering();
-        await sessionManager.current.destroy();
+        await sessionManager.destroy();
     };
 
     const pictureInPictureWarmup = async () => {
         if (isMobile()) {
             return;
         }
-        await sessionManager.current.pictureInPictureWarmup();
+        await sessionManager.pictureInPictureWarmup();
     };
 
     // Stop PiP - properly async and awaits cleanup
@@ -125,10 +126,10 @@ export function usePictureInPicture({
         }
 
         // Initialize session with canvas and video elements
-        const { canvas } = sessionManager.current.init(displayableWithAvailableTracks);
+        const { canvas } = sessionManager.init(displayableWithAvailableTracks) || {};
 
         startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
-        await sessionManager.current.setupVideoStream();
+        await sessionManager.setupVideoStream();
     };
 
     // Start PiP
@@ -143,18 +144,18 @@ export function usePictureInPicture({
             }
 
             if (isSafari()) {
-                const video = sessionManager.current.getVideo();
+                const video = sessionManager.getVideo();
                 if (video?.paused) {
                     video.play().catch(() => {});
                 }
 
-                await sessionManager.current.requestPictureInPicture();
+                await sessionManager.requestPictureInPicture();
                 await pipSetup();
             } else {
                 await pipSetup();
 
                 if (!isFirefox()) {
-                    await sessionManager.current.requestPictureInPicture();
+                    await sessionManager.requestPictureInPicture();
                 }
             }
 
@@ -164,7 +165,7 @@ export function usePictureInPicture({
             setupMediaSession();
 
             // Listen for PiP end - properly await the async stopPiP
-            sessionManager.current.addPiPEndListener(() => {
+            sessionManager.addPiPEndListener(() => {
                 void stopPiP();
             });
 
@@ -204,10 +205,10 @@ export function usePictureInPicture({
 
     // Unified effect to handle rendering when PiP is active
     useEffect(() => {
-        if (!isPipActive || !sessionManager.current.isInitialized()) {
+        if (!isPipActive || !sessionManager.isInitialized()) {
             return;
         }
-        const canvas = sessionManager.current.getCanvas();
+        const canvas = sessionManager.getCanvas();
         if (canvas) {
             const tracksToUnregister = prevTracksForDisplayRef.current.filter(
                 (track) =>
@@ -231,7 +232,7 @@ export function usePictureInPicture({
             stopRendering();
             startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
         }
-    }, [isPipActive, tracksKey, messages, startRendering, stopRendering]);
+    }, [sessionManager, isPipActive, tracksKey, messages, startRendering, stopRendering]);
 
     useEffect(() => {
         if (!isChromiumBased() || isMobile() || !pipEnabled) {
@@ -338,7 +339,7 @@ export function usePictureInPicture({
         startPiP,
         stopPiP,
         isPipActive,
-        canvas: sessionManager.current.getCanvas(),
+        canvas: sessionManager.getCanvas(),
         tracksLength: tracksForDisplay.length,
         pictureInPictureWarmup,
         pipCleanup,
