@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import {
     labelAll as labelAllRequest,
     markAllMessagesAsRead,
@@ -59,7 +60,9 @@ export const load = createAsyncThunk<
         { page, pageSize = DEFAULT_MAIL_PAGE_SIZE, abortController, count = 1 }: QueryParams,
         { dispatch, getState, extra }
     ) => {
-        const params = (getState() as MailState).elements.params;
+        const state = getState() as MailState;
+        const params = state.elements.params;
+
         const onSerializedResponse = ({ result, page }: { result: QueryResults; page: number }) => {
             dispatch(
                 showSerializedElements({
@@ -70,6 +73,7 @@ export const load = createAsyncThunk<
             );
         };
 
+        const disabledCategoriesIDs = selectDisabledCategoriesIDs(state);
         const result = await queryElementsInBatch(
             {
                 api: extra.api,
@@ -77,6 +81,7 @@ export const load = createAsyncThunk<
                 pageSize,
                 params,
                 abortController,
+                disabledCategoriesIDs,
             },
             onSerializedResponse
         ).catch((error: any | undefined) => {
@@ -116,7 +121,7 @@ export const load = createAsyncThunk<
 
         const taskLabels = Object.keys(result.TasksRunning || {});
         const taskRunning = {
-            ...(getState() as MailState).elements.taskRunning,
+            ...state.elements.taskRunning,
         };
 
         if (taskLabels.length) {
