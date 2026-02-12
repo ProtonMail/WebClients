@@ -11,7 +11,7 @@ import {
     handleLogout,
 } from '@proton/shared/lib/authentication/logout';
 import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { invokeInboxDesktopLogout } from '@proton/shared/lib/desktop/ipc-helpers/logout';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
@@ -56,7 +56,7 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
                     await getSilentApi(listenerApi.extra.api)(revoke()).catch(noop);
                 }
             } finally {
-                invokeInboxDesktopIPC({ type: 'userLogout' }).catch(noop);
+                invokeInboxDesktopLogout(action.payload.type === 'all', sessions.users.at(0)?.id ?? '').catch(noop);
 
                 handleLogout({
                     appName: listenerApi.extra.config.APP_NAME,
