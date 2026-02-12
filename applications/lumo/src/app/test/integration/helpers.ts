@@ -207,6 +207,7 @@ export async function setupTestEnvironment({
         CLIENT_SECRET: 'test-secret',
         LOCALES: {},
         SSO_URL: '',
+        LOGICAL_SCSS: true,
     };
 
     const api = createApi({ config: testConfig });

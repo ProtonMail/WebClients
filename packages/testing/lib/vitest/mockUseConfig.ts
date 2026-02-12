@@ -17,6 +17,7 @@ export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
         SENTRY_DSN: '',
         SSO_URL: '',
         VERSION_PATH: '',
+        LOGICAL_SCSS: false,
         ...value,
     });
     return spy;
