@@ -3,9 +3,11 @@ import { useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useLoading from '@proton/hooks/useLoading';
 import { IcMeetSend } from '@proton/icons/icons/IcMeetSend';
 import clsx from '@proton/utils/clsx';
 
@@ -19,6 +21,8 @@ interface ChatMessageProps {
 
 export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
     const [message, setMessage] = useState('');
+
+    const [chatMessageLoading, withChatMessageLoading] = useLoading();
 
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -36,6 +40,16 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         return '2.25rem'; // default height
     }, [message]);
 
+    const handleChatMessageSubmit = async () => {
+        const result = await onMessageSend(message);
+
+        if (result) {
+            setMessage('');
+        }
+
+        return result;
+    };
+
     useHotkeys(
         textareaRef,
         [
@@ -44,13 +58,13 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                 async (e) => {
                     if (!e.shiftKey && message.trim() !== '') {
                         e.preventDefault();
-                        const result = await onMessageSend(message);
+
+                        const result = await withChatMessageLoading(handleChatMessageSubmit);
 
                         if (!result) {
                             return;
                         }
 
-                        setMessage('');
                         textareaRef.current?.focus();
                     }
                 },
@@ -90,23 +104,15 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         'rounded-full border-none w-custom h-custom p-0 flex items-center justify-center color-norm shrink-0',
                         'send-message-button'
                     )}
-                    onClick={async () => {
-                        const result = await onMessageSend(message);
-
-                        if (!result) {
-                            return;
-                        }
-
-                        setMessage('');
-                    }}
+                    onClick={() => withChatMessageLoading(handleChatMessageSubmit)}
                     style={{
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
                     aria-label={c('Action').t`Send an encrypted message`}
-                    disabled={!trimMessage(message)}
+                    disabled={!trimMessage(message) || chatMessageLoading}
                 >
-                    <IcMeetSend size={5} className="color-invert ml-0.5" />
+                    {chatMessageLoading ? <CircleLoader /> : <IcMeetSend size={5} className="color-invert ml-0.5" />}
                 </Button>
             </div>
         </div>
