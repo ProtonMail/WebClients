@@ -23,6 +23,7 @@ import { createAttachmentFromPastedContent, getPasteConversionMessage } from '..
 import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
+import { SketchOverlay } from '../../features/drawingcanvas';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea, type ComposerEditorAreaProps } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
@@ -109,6 +110,7 @@ const ComposerComponentInner = ({
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
+    const [showDrawingModal, setShowDrawingModal] = useState(false);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -155,6 +157,34 @@ const ComposerComponentInner = ({
     const handleUploadButtonClick = useCallback(() => {
         setShowUploadMenu(!showUploadMenu);
     }, [showUploadMenu]);
+
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
+
+    const handleDrawingExport = useCallback(
+        async (imageData: string) => {
+            // Convert base64 to File
+            const base64Data = imageData.split(',')[1];
+            const byteCharacters = atob(base64Data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: 'image/png' });
+            const file = new File([blob], `sketch-${Date.now()}.png`, { type: 'image/png' });
+
+            // Process the file as an attachment
+            await handleFileProcessing(file);
+
+            createNotification({
+                text: c('collider_2025: Info').t`Sketch added as attachment`,
+                type: 'success',
+            });
+        },
+        [handleFileProcessing, createNotification]
+    );
 
     // Add click event listener for voice entry click telemetry (on mobile)
     useEffect(() => {
@@ -374,6 +404,7 @@ const ComposerComponentInner = ({
                             handleFileInputChange={handleFileInputChange}
                             handleOpenFileDialog={handleOpenFileDialog}
                             handleBrowseDrive={handleBrowseDrive}
+                            handleDrawSketch={handleDrawSketch}
                             showUploadMenu={showUploadMenu}
                             setShowUploadMenu={setShowUploadMenu}
                             handleUploadButtonClick={handleUploadButtonClick}
@@ -398,6 +429,14 @@ const ComposerComponentInner = ({
             {fileToView && (
                 <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
             )}
+
+            {/* Drawing Canvas Overlay */}
+            <SketchOverlay
+                isOpen={showDrawingModal}
+                onClose={() => setShowDrawingModal(false)}
+                onExport={handleDrawingExport}
+                mode="blank"
+            />
         </>
     );
 };

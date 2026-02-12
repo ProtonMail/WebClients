@@ -1,8 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
-import useFlag from '@proton/unleash/useFlag';
-
 import { PandocProvider } from '../providers/PandocProvider';
 import { MainLayout } from '../ui/MainLayout';
 import ConversationSkeleton from '../ui/components/ConversationSkeleton';
@@ -17,7 +15,6 @@ const ProjectDetailView = lazy(() =>
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const isLumoProjectsEnabled = useFlag('LumoProjects');
 
     return (
         <EligibilityGuard>
@@ -26,10 +23,8 @@ export function InnerApp() {
                     <MainLayout>
                         <Suspense fallback={<ConversationSkeleton />}>
                             <Switch>
-                                {isLumoProjectsEnabled && <Route exact path="/projects" component={ProjectsView} />}
-                                {isLumoProjectsEnabled && (
-                                    <Route path="/projects/:projectId" component={ProjectDetailView} />
-                                )}
+                                <Route exact path="/projects" component={ProjectsView} />
+                                <Route path="/projects/:projectId" component={ProjectDetailView} />
                                 <Route exact path="/" component={ConversationPage} />
                                 <Route path="/c/:conversationId" component={ConversationPage} />
                             </Switch>

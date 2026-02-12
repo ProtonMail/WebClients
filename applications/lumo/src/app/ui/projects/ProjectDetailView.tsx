@@ -20,10 +20,10 @@ import {
 import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
-import useFlag from '@proton/unleash/useFlag';
 
 import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
@@ -121,9 +121,7 @@ const ProjectDetailViewInner = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
     const { personalization } = usePersonalization();
-    const ffSmoothRendering = useFlag('LumoSmoothedRendering');
-    const ffExternalTools = useFlag('LumoTooling');
-    const ffImageTools = useFlag('LumoImageTools');
+    const { smoothRendering: ffSmoothRendering, externalTools: ffExternalTools, imageTools: ffImageTools } = useLumoFlags();
 
     // Editable title state
     const [isEditingTitle, setIsEditingTitle] = useState(false);

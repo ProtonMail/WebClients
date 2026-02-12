@@ -2,7 +2,6 @@ import { useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
@@ -28,6 +27,7 @@ import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessage
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
+import { useLumoFlags } from './useLumoFlags';
 import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
 import { useTierErrors } from './useTierErrors';
@@ -78,9 +78,7 @@ export const useLumoActions = ({
     const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
-    const ffSmoothRendering = useFlag('LumoSmoothedRendering');
-    const ffExternalTools = useFlag('LumoTooling');
-    const ffImageTools = useFlag('LumoImageTools');
+    const { smoothRendering: ffSmoothRendering, externalTools: ffExternalTools, imageTools: ffImageTools } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);

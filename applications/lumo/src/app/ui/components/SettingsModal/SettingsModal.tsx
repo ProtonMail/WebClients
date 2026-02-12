@@ -1,54 +1,54 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import { clsx } from 'clsx';
-import { c } from 'ttag';
+import {clsx} from 'clsx';
+import {c} from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ModalOwnProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { format } from '@proton/shared/lib/date-fns-utc';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import {useUser} from '@proton/account/user/hooks';
+import {Avatar} from '@proton/atoms/Avatar/Avatar';
+import {Button} from '@proton/atoms/Button/Button';
+import {ButtonLike} from '@proton/atoms/Button/ButtonLike';
+import type {ModalOwnProps} from '@proton/components';
+import {Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig} from '@proton/components';
+import type {IconName} from '@proton/icons/types';
+import {LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
+import {format} from '@proton/shared/lib/date-fns-utc';
+import {dateLocale} from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
-import useFlag from '@proton/unleash/useFlag';
 
-import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
-import { useLumoPlan } from '../../../hooks/useLumoPlan';
-import { useLumoUserSettings } from '../../../hooks';
-import { useMessageSearch } from '../../../hooks/useMessageSearch';
-import { DbApi } from '../../../indexedDb/db';
-import { useIsGuest } from '../../../providers/IsGuestProvider';
-import { useLumoTheme } from '../../../providers/LumoThemeProvider';
-import { useLumoSelector } from '../../../redux/hooks';
-import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
-import { selectSpaceMap } from '../../../redux/slices/core/spaces';
-import { SearchService } from '../../../services/search/searchService';
-import type { Conversation, Message, SpaceId } from '../../../types';
-import { getInitials } from '../../../util/username';
-import { LumoSettingsPanelUpsell } from '../../upsells/composed/LumoSettingsPanelUpsell';
+import {useDriveFolderIndexing} from '../../../hooks/useDriveFolderIndexing';
+import {useLumoFlags} from '../../../hooks/useLumoFlags';
+import {useLumoPlan} from '../../../hooks/useLumoPlan';
+import {useLumoUserSettings} from '../../../hooks';
+import {useMessageSearch} from '../../../hooks/useMessageSearch';
+import {DbApi} from '../../../indexedDb/db';
+import {useIsGuest} from '../../../providers/IsGuestProvider';
+import {useLumoTheme} from '../../../providers/LumoThemeProvider';
+import {useLumoSelector} from '../../../redux/hooks';
+import {selectAttachments, selectConversations, selectMessages} from '../../../redux/selectors';
+import {selectSpaceMap} from '../../../redux/slices/core/spaces';
+import {SearchService} from '../../../services/search/searchService';
+import type {Conversation, Message, SpaceId} from '../../../types';
+import {getInitials} from '../../../util/username';
+import {LumoSettingsPanelUpsell} from '../../upsells/composed/LumoSettingsPanelUpsell';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
-import { IndexingStatusBanner } from '../Files/DriveBrowser/IndexingStatusBanner';
-import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
+import {IndexingStatusBanner} from '../Files/DriveBrowser/IndexingStatusBanner';
+import {LumoLogoThemeAware} from '../LumoLogoThemeAware';
 import LumoThemeButton from '../LumoThemeButton';
-import { SignInLinkButton } from '../SignInLink';
+import {SignInLinkButton} from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
-import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
+import {PaidSubscriptionPanel} from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
-import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
+import {SearchIndexManagement} from './SearchIndex/SearchIndexManagement';
 
 import './SettingsModal.scss';
 
 const SettingsSectionItem = ({
-    icon,
-    text,
-    subtext,
-    button,
-    useEllipsisOnContent,
-}: {
+                                 icon,
+                                 text,
+                                 subtext,
+                                 button,
+                                 useEllipsisOnContent,
+                             }: {
     icon: IconName;
     text: string | React.ReactNode;
     subtext?: string | React.ReactNode;
@@ -70,7 +70,7 @@ const SettingsSectionItem = ({
     return (
         <div className="flex flex-row flex-nowrap gap-4 items-start p-2">
             <Avatar color="weak" className="settings-section-icon">
-                <Icon className="shrink-0 color-weak" name={icon} size={5} />
+                <Icon className="shrink-0 color-weak" name={icon} size={5}/>
             </Avatar>
             <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
@@ -112,13 +112,13 @@ const SettingsItems: SettingsItem[] = [
         getText: () => c('collider_2025: Settings Item').t`Personalization`,
         guest: true,
     },
-    { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
+    {id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true},
 ];
 const LumoSettingsSidebar = ({
-    activePanel,
-    onPanelChange,
-    isGuest,
-}: {
+                                 activePanel,
+                                 onPanelChange,
+                                 isGuest,
+                             }: {
     activePanel: string;
     onPanelChange: (panel: string) => void;
     isGuest: boolean;
@@ -126,12 +126,12 @@ const LumoSettingsSidebar = ({
     return (
         <div
             className="flex flex-column gap-6 md:max-w-custom md:w-custom"
-            style={{ '--md-max-w-custom': '14rem', '--md-w-custom': '10rem' }}
+            style={{'--md-max-w-custom': '14rem', '--md-w-custom': '10rem'}}
         >
             {/* Lumo Logo */}
             <div className="hidden md:flex gap-2">
-                <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
-                <LumoLogoThemeAware height="32px" />
+                <img src={lumoAvatarNeutral} alt="Lumo" height="50px"/>
+                <LumoLogoThemeAware height="32px"/>
             </div>
 
             {/* Navigation Items */}
@@ -149,7 +149,7 @@ const LumoSettingsSidebar = ({
                             disabled={isGuest && !item.guest}
                             aria-pressed={activePanel === item.id}
                         >
-                            <Icon className="shrink-0" name={item.icon} />
+                            <Icon className="shrink-0" name={item.icon}/>
                             <span className="text-ellipsis">{item.getText()}</span>
                         </Button>
                     </li>
@@ -161,23 +161,22 @@ const LumoSettingsSidebar = ({
 
 /** Guest-safe General settings panel - only shows theme and about */
 const GeneralSettingsPanelGuest = () => {
-    const { DATE_VERSION } = useConfig();
-    const { isDarkLumoTheme } = useLumoTheme();
-    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
-    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+    const {DATE_VERSION} = useConfig();
+    const {isDarkLumoTheme} = useLumoTheme();
+    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', {locale: dateLocale})} UTC` : '';
 
     return (
         <div className="flex flex-column gap-4">
-            {isLumoDarkModeEnabled && (
-                <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                    <SettingsSectionItem
-                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                        text={c('collider_2025: Title').t`Theme`}
-                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                    />
-                    <LumoThemeButton />
-                </div>
-            )}
+
+            <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                <SettingsSectionItem
+                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                    text={c('collider_2025: Title').t`Theme`}
+                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                />
+                <LumoThemeButton/>
+            </div>
+
             <SettingsSectionItem
                 icon="info-circle"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
@@ -188,14 +187,13 @@ const GeneralSettingsPanelGuest = () => {
 };
 
 /** Full General settings panel for authenticated users */
-const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { DATE_VERSION } = useConfig();
-    const { isDarkLumoTheme } = useLumoTheme();
-    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
-    const isLumoToolingEnabled = useFlag('LumoTooling');
+const GeneralSettingsPanelAuth = ({onClose}: { onClose?: () => void }) => {
+    const {DATE_VERSION} = useConfig();
+    const {isDarkLumoTheme} = useLumoTheme();
+    const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
-    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const {lumoUserSettings, updateSettings} = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
 
@@ -204,7 +202,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const messages = useLumoSelector(selectMessages);
     const spaceMap = useLumoSelector(selectSpaceMap);
     const attachments = useLumoSelector(selectAttachments);
-    const { indexingStatus: messageIndexingStatus } = useMessageSearch();
+    const {indexingStatus: messageIndexingStatus} = useMessageSearch();
     const {
         rehydrateFolders,
         isIndexing: isDriveIndexing,
@@ -272,22 +270,21 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
         }
     }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, attachments]);
 
-    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', {locale: dateLocale})} UTC` : '';
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
     const hasError = indexError || messageIndexingStatus.error;
 
     return (
         <div className="flex flex-column gap-4">
-            {isLumoDarkModeEnabled && (
-                <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                    <SettingsSectionItem
-                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                        text={c('collider_2025: Title').t`Theme`}
-                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                    />
-                    <LumoThemeButton />
-                </div>
-            )}
+
+            <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                <SettingsSectionItem
+                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                    text={c('collider_2025: Title').t`Theme`}
+                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                />
+                <LumoThemeButton/>
+            </div>
 
             {/* Project conversations in history toggle */}
             <SettingsSectionItem
@@ -353,7 +350,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     </div>
                 }
                 button={
-                    <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
+                    <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing}/>
                 }
             />
 
@@ -361,7 +358,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 icon="speech-bubble"
                 text={c('collider_2025: Title').t`Delete everything`}
                 subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
-                button={<DeleteAllButton onClose={onClose} />}
+                button={<DeleteAllButton onClose={onClose}/>}
             />
             <SettingsSectionItem
                 icon="info-circle"
@@ -382,7 +379,7 @@ const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boo
 };
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoB2B, hasLumoPlus } = useLumoPlan();
+    const {hasLumoSeat, isVisionary, hasLumoB2B, hasLumoPlus} = useLumoPlan();
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
@@ -411,19 +408,19 @@ const AccountSettingsPanel = () => {
                         </div>
                         <span className="color-weak text-sm text-left">{user.Email}</span>
                     </div>
-                    <Icon name="chevron-right" className="color-weak shrink-0 mt-2" size={4} />
+                    <Icon name="chevron-right" className="color-weak shrink-0 mt-2" size={4}/>
                 </ButtonLike>
             </div>
-            {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
+            {hasLumoPlus ? <PaidSubscriptionPanel/> : <LumoSettingsPanelUpsell/>}
         </>
     );
 };
 
 const AccountSettingsPanelGuest = () => {
-    const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
+    const createLink = <CreateFreeAccountLink key="create-free-account-link"/>;
     return (
         <>
-            <LumoSettingsPanelUpsell />
+            <LumoSettingsPanelUpsell/>
             <SettingsSectionItem
                 icon="user"
                 text={c('collider_2025: Title').t`Guest`}
@@ -432,7 +429,7 @@ const AccountSettingsPanelGuest = () => {
                     c('collider_2025: Description')
                         .jt`Sign in to access your account and unlock more features. Don't have one? ${createLink}`
                 }
-                button={<SignInLinkButton color="weak" shape="outline" />}
+                button={<SignInLinkButton color="weak" shape="outline"/>}
             />
         </>
     );
@@ -442,7 +439,7 @@ interface SettingsModalProps extends ModalOwnProps {
     initialPanel?: string;
 }
 
-const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModalProps) => {
+const SettingsModal = ({initialPanel = 'account', ...modalProps}: SettingsModalProps) => {
     const [activePanel, setActivePanel] = useState(initialPanel);
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
@@ -459,7 +456,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                     title={c('Action').t`Close`}
                     className="modal-close-button"
                 >
-                    <Icon name="cross" size={6} />
+                    <Icon name="cross" size={6}/>
                 </Button>
 
                 <div className="modal-main-container">
@@ -484,13 +481,14 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {/* Panel content */}
                             <div
                                 className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
-                                style={{ minHeight: 0 }}
+                                style={{minHeight: 0}}
                             >
                                 {activePanel === 'account' &&
-                                    (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
-                                {activePanel === 'personalization' && <PersonalizationPanel />}
+                                    (isGuest ? <AccountSettingsPanelGuest/> : <AccountSettingsPanel/>)}
+                                {activePanel === 'personalization' && <PersonalizationPanel/>}
                                 {activePanel === 'general' &&
-                                    (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
+                                    (isGuest ? <GeneralSettingsPanelGuest/> :
+                                        <GeneralSettingsPanelAuth onClose={closeModal}/>)}
                             </div>
                         </div>
                     </div>
@@ -514,7 +512,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                         disabled={isGuest && !item.guest}
                                         aria-pressed={activePanel === item.id}
                                     >
-                                        <Icon className="shrink-0" name={item.icon} size={4} />
+                                        <Icon className="shrink-0" name={item.icon} size={4}/>
                                         <span className="text-sm">{item.getText()}</span>
                                     </Button>
                                 ))}
@@ -524,10 +522,11 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                         {/* Tab content */}
                         <div className="mobile-tab-content flex flex-column flex-1">
                             {activePanel === 'account' &&
-                                (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
-                            {activePanel === 'personalization' && <PersonalizationPanel />}
+                                (isGuest ? <AccountSettingsPanelGuest/> : <AccountSettingsPanel/>)}
+                            {activePanel === 'personalization' && <PersonalizationPanel/>}
                             {activePanel === 'general' &&
-                                (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
+                                (isGuest ? <GeneralSettingsPanelGuest/> :
+                                    <GeneralSettingsPanelAuth onClose={closeModal}/>)}
                         </div>
                     </div>
                 </div>

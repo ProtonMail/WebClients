@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { SignInLink } from './SignInLink';
@@ -35,7 +35,7 @@ const AuthenticatedHighLoadWarningMessage = () => {
 // Component is being kept fairly simple as it will only be shown conditionally based on FF
 const HighLoadWarning = () => {
     const [showBanner, setShowBanner] = useState(false);
-    const showLumoHighLoadWarning = useFlag('LumoHighLoad');
+    const { highLoad: showLumoHighLoadWarning } = useLumoFlags();
     const isGuest = useIsGuest();
 
     const getDismissalTimestamp = useCallback(() => {

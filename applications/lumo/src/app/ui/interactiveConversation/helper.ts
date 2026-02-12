@@ -80,7 +80,7 @@ export type UiContext = {
 };
 
 export type SettingsContext = {
-    personalization: PersonalizationSettings;
+    personalization?: PersonalizationSettings;
 };
 
 function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: string) {
@@ -893,8 +893,8 @@ export function generateFakeConversationToShowTierError({
 }
 
 // Helper function to generate personalization prompt from state
-export function formatPersonalization(personalization: PersonalizationSettings): string {
-    if (!personalization.enableForNewChats) {
+export function formatPersonalization(personalization: PersonalizationSettings | undefined): string {
+    if (!personalization || !personalization.enableForNewChats) {
         return '';
     }
 

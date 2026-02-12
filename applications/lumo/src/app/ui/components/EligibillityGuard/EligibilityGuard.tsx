@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
 import { useModalState } from '@proton/components';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectEligibilityStatusState } from '../../../redux/slices/meta/eligibilityStatus';
@@ -16,13 +15,9 @@ interface Props {
 
 // This is meant to be a temporary component to block non-eligible users while FF is enabled.
 const EligibilityGuard = ({ children }: Props) => {
-    const isLumoEarlyAccessEnabled = useFlag('LumoEarlyAccess');
     const { eligibility, recentlyJoined } = useLumoSelector(selectEligibilityStatusState);
     const [inviteModalProps] = useModalState();
 
-    if (!isLumoEarlyAccessEnabled) {
-        return <>{children}</>;
-    }
 
     switch (eligibility) {
         case LUMO_ELIGIBILITY.Eligible: {

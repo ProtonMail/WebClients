@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 
-import useFlag from '@proton/unleash/useFlag';
-
+import { useLumoFlags } from './useLumoFlags';
 import { FileProcessingService } from '../services/fileProcessingService';
 
 export function useFileProcessing() {
-    const ffImageTools = useFlag('LumoImageTools');
+    const { imageTools: ffImageTools } = useLumoFlags();
     
     // Get singleton instance (creates it if it doesn't exist)
     const fileProcessingService = useMemo(

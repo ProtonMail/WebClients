@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
 
-import useFlag from '@proton/unleash/useFlag';
-
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { getActiveSpecialTheme } from '../../../features/themes';
 
 import './PromptSuggestion.scss';
@@ -12,7 +11,7 @@ interface ThemedPromptProps {
     className?: string;
 }
 export const ThemedPromptSuggestion = ({ onClick, canShow, className }: ThemedPromptProps) => {
-    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
+    const { specialTheme: isLumoSpecialThemeEnabled } = useLumoFlags();
     const activeTheme = getActiveSpecialTheme();
 
     if (!isLumoSpecialThemeEnabled || !canShow || !activeTheme) {
