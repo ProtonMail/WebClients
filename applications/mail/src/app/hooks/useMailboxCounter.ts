@@ -2,6 +2,8 @@ import { useConversationCounts, useFolders, useLabels, useMessageCounts, useSyst
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
+
 import { getCounterMap } from './useMailboxCounter.helpers';
 
 export type LocationCountMap = Record<string, SafeLabelCount>;
@@ -12,6 +14,8 @@ export const useMailboxCounter = (): [LocationCountMap, boolean] => {
     const [labels, labelsLoading] = useLabels();
     const [folders, foldersLoading] = useFolders();
     const [systemFolders, systemFoldersLoading] = useSystemFolders();
+
+    const { disabledCategoriesIDs } = useCategoriesView();
 
     const [conversationCounts, conversationCountsLoading] = useConversationCounts();
     const [messageCounts, messageCountsLoading] = useMessageCounts();
@@ -24,6 +28,12 @@ export const useMailboxCounter = (): [LocationCountMap, boolean] => {
     }
 
     const allLocations = [...labels, ...folders, ...systemFolders];
-    const counterMap = getCounterMap(allLocations, conversationCounts, messageCounts, mailSettings);
+    const counterMap = getCounterMap(
+        allLocations,
+        conversationCounts,
+        messageCounts,
+        mailSettings,
+        disabledCategoriesIDs
+    );
     return [counterMap, loading];
 };
