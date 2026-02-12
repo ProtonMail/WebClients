@@ -6,7 +6,6 @@ import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import {
-    ADDON_NAMES,
     ADDON_PREFIXES,
     CYCLE,
     type Currency,
@@ -964,15 +963,14 @@ export const resolveUpsellsToDisplay = ({
                         isRecommended: true,
                     }),
                 ];
-            case hasMailPro(subscription) ||
-                hasMailBusiness(subscription) ||
-                hasDriveBusiness(subscription) ||
-                hasDrivePro(subscription): {
-                const params = {
-                    ...upsellsPayload,
-                    hasDriveBusinessPlan: hasDriveBusiness(subscription),
-                };
-                return [getBundleProUpsell(params), getBundleBizUpsell(params)];
+            case hasMailPro(subscription) || hasMailBusiness(subscription): {
+                return [
+                    getBundleProUpsell({
+                        ...upsellsPayload,
+                        hasDriveBusinessPlan: hasDriveBusiness(subscription),
+                        isRecommended: true,
+                    }),
+                ];
             }
 
             case hasVpnPro(subscription):
@@ -985,22 +983,11 @@ export const resolveUpsellsToDisplay = ({
             case hasLumoBusiness(subscription): {
                 const description = c('lumo_signup_2025: Info')
                     .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`;
-                return [
-                    getBundleProUpsell({
-                        ...upsellsPayload,
-                        addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
-                        description,
-                    }),
-                    getBundleBizUpsell({ ...upsellsPayload, description }),
-                ];
+                return [getBundleBizUpsell({ ...upsellsPayload, description, isRecommended: true })];
             }
 
-            case hasMeetBusiness(subscription): {
-                return [
-                    getBundleProUpsell({ ...upsellsPayload, isRecommended: true }),
-                    getBundleBizUpsell(upsellsPayload),
-                ];
-            }
+            case hasDriveBusiness(subscription) || hasDrivePro(subscription) || hasMeetBusiness(subscription):
+                return [getBundleBizUpsell({ ...upsellsPayload, isRecommended: true })];
 
             // If user has the old bundlepro2022 and there is bundlebiz2025 available then it means that we renamed our
             // bundlepro2024 to Workspace Standard and added the new features to it. In this case it makes sense to

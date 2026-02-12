@@ -87,7 +87,7 @@ export const OrganizationEvents = () => {
     useEffect(() => {
         // Fetch organization logs only if organization policy is enforced
         if (isEnforced) {
-            fetchOrganizationEvents();
+            void fetchOrganizationEvents();
         }
     }, [isEnforced]);
 
@@ -109,7 +109,7 @@ export const OrganizationEvents = () => {
     useEffect(() => {
         // Fetch organization logs only if organization policy is enforced
         if (isEnforced) {
-            withLoading(fetchOrganizationLogs({ ...query, Page: page - 1 }).catch(noop));
+            void withLoading(fetchOrganizationLogs({ ...query, Page: page - 1 }).catch(noop));
         }
     }, [page, query, sortDirection, reloadTrigger, isEnforced]);
 
@@ -142,7 +142,7 @@ export const OrganizationEvents = () => {
             });
         }
 
-        downloadEvents(response);
+        void downloadEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -222,7 +222,7 @@ export const OrganizationEvents = () => {
     }
 
     return organization.Settings.OrganizationPolicy.Enforced === 0 ? (
-        <B2BOrganizationUpsellBanner organizationMonitor={true} organization={organization} />
+        <B2BOrganizationUpsellBanner organization={organization} />
     ) : (
         <SettingsSectionWide customWidth="90em">
             <div className="flex flex-row justify-space-between items-center my-4">
