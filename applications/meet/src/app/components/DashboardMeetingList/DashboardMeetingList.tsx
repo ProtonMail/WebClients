@@ -6,6 +6,7 @@ import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';
 import { GuestUserPrompt } from './GuestUserPrompt';
 import { MeetingListHeader } from './MeetingListHeader';
+import { NoResultsPlaceholder } from './NoResultsPlaceholder';
 import { RoomList } from './RoomList';
 import { TimeBasedMeetingList } from './TimeBasedMeetingList';
 import { TimeBasedMeetingsPlaceholder } from './TimeBasedMeetingsPlaceholder';
@@ -112,13 +113,16 @@ export const DashboardMeetingList = ({
                 )}
 
                 {meetingsObject[DashboardMeetingListTab.TimeBased].length === 0 &&
-                    activeTab === DashboardMeetingListTab.TimeBased && (
+                    activeTab === DashboardMeetingListTab.TimeBased &&
+                    (search.length > 0 ? (
+                        <NoResultsPlaceholder />
+                    ) : (
                         <TimeBasedMeetingsPlaceholder
                             handleScheduleClick={handleScheduleClick}
                             handleScheduleInCalendar={handleScheduleInCalendar}
                             isGuest={isGuest}
                         />
-                    )}
+                    ))}
 
                 {activeTab === DashboardMeetingListTab.TimeBased &&
                     meetingsObject[DashboardMeetingListTab.TimeBased].length > 0 && (
