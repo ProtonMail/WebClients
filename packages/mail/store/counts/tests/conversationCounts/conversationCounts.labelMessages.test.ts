@@ -73,7 +73,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -138,7 +138,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -203,7 +203,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -268,7 +268,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -344,7 +344,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -420,7 +420,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -496,7 +496,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
@@ -549,7 +549,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     conversations: [conversation],
                     labels: customLabels,
@@ -605,7 +605,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     conversations: [conversation],
                     labels: customLabels,
@@ -680,7 +680,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
@@ -765,7 +765,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
@@ -850,7 +850,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
@@ -935,7 +935,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
@@ -1009,7 +1009,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
@@ -1079,7 +1079,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
@@ -1151,7 +1151,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     conversations: [conversation],
                     labels: customLabels,
@@ -1207,7 +1207,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: CUSTOM_LABEL_ID1,
                     conversations: [conversation],
                     labels: customLabels,
@@ -1276,7 +1276,7 @@ describe('conversation counts - label messages', () => {
             labelMessagesPending(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     conversations: [conversation],
                     labels: customLabels,

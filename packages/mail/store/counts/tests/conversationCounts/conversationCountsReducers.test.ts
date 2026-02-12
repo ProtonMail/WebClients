@@ -65,7 +65,7 @@ describe('conversationCountsReducers', () => {
 
             markConversationsAsRead(state, {
                 type: 'mailbox/markConversationsAsRead',
-                payload: { elements: [conversation1, conversation2], labelID: labelID1 },
+                payload: { conversations: [conversation1, conversation2], labelID: labelID1 },
             });
 
             expect(state.value).toEqual([
@@ -83,7 +83,7 @@ describe('conversationCountsReducers', () => {
 
             markConversationsAsRead(state, {
                 type: 'mailbox/markConversationsAsRead',
-                payload: { elements: [conversation1], labelID: labelID1 },
+                payload: { conversations: [conversation1], labelID: labelID1 },
             });
 
             expect(state.value).toEqual([
@@ -119,7 +119,7 @@ describe('conversationCountsReducers', () => {
 
             markConversationsAsUnread(state, {
                 type: 'mailbox/markConversationsAsUnread',
-                payload: { elements: [conversation1, conversation2], labelID: labelID1 },
+                payload: { conversations: [conversation1, conversation2], labelID: labelID1 },
             });
 
             expect(state.value).toEqual([
@@ -173,7 +173,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsUnread(state, {
                 type: 'mailbox/markMessagesAsUnread',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     labelID: labelID1,
                     conversations: [conversation1, conversation2],
                 },
@@ -201,7 +201,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsUnread(state, {
                 type: 'mailbox/markMessagesAsUnread',
                 payload: {
-                    elements: [message1],
+                    messages: [message1],
                     labelID: labelID1,
                     conversations: [conversation1],
                 },
@@ -236,7 +236,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
                 payload: {
-                    elements: messages,
+                    messages: messages,
                     labelID: labelID1,
                     conversations: [conversation1],
                 },
@@ -261,7 +261,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
                 payload: {
-                    elements: messages,
+                    messages: messages,
                     labelID: labelID1,
                     conversations: [conversation1],
                 },
@@ -293,7 +293,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
                 payload: {
-                    elements: messages,
+                    messages: messages,
                     labelID: labelID1,
                     conversations: [conversation1, conversation2],
                 },
@@ -319,7 +319,7 @@ describe('conversationCountsReducers', () => {
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
                 payload: {
-                    elements: messages,
+                    messages: messages,
                     labelID: labelID1,
                     conversations: [conversation1],
                 },

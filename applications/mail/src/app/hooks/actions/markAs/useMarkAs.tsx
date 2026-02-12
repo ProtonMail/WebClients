@@ -78,7 +78,7 @@ export const useMarkAs = () => {
                     if (isRead) {
                         void dispatch(
                             markMessagesAsRead({
-                                elements: messages,
+                                messages,
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,
@@ -87,7 +87,7 @@ export const useMarkAs = () => {
                     } else {
                         void dispatch(
                             markMessagesAsUnread({
-                                elements: messages,
+                                messages,
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,
@@ -98,7 +98,7 @@ export const useMarkAs = () => {
                     if (isRead) {
                         void dispatch(
                             markConversationsAsRead({
-                                elements,
+                                conversations: elements,
                                 labelID,
                                 showSuccessNotification: !silent,
                             })
@@ -106,7 +106,7 @@ export const useMarkAs = () => {
                     } else {
                         void dispatch(
                             markConversationsAsUnread({
-                                elements,
+                                conversations: elements,
                                 labelID,
                                 showSuccessNotification: !silent,
                             })

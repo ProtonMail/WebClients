@@ -87,16 +87,16 @@ export const updateFromElements = (
 
 export const markMessagesAsReadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>
 ) => {
-    const { elements } = action.meta.arg;
+    const { messages } = action.meta.arg;
 
-    elements.forEach((element) => {
-        if (element.Unread === 0) {
+    messages.forEach((message) => {
+        if (message.Unread === 0) {
             return;
         }
 
-        const messageState = getMessage(state, element.ID);
+        const messageState = getMessage(state, message.ID);
 
         if (messageState) {
             if (messageState.data) {
@@ -108,16 +108,16 @@ export const markMessagesAsReadPending = (
 
 export const markMessagesAsUnreadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>
 ) => {
-    const { elements } = action.meta.arg;
+    const { messages } = action.meta.arg;
 
-    elements.forEach((element) => {
-        if (element.Unread === 1) {
+    messages.forEach((message) => {
+        if (message.Unread === 1) {
             return;
         }
 
-        const messageState = getMessage(state, element.ID);
+        const messageState = getMessage(state, message.ID);
 
         if (messageState) {
             if (messageState.data) {
@@ -129,19 +129,19 @@ export const markMessagesAsUnreadPending = (
 
 export const markConversationsAsReadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>
 ) => {
-    const { elements, labelID } = action.meta.arg;
+    const { conversations, labelID } = action.meta.arg;
 
-    elements.forEach((element) => {
-        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
+    conversations.forEach((conversation) => {
+        const conversationLabel = conversation?.Labels?.find((label) => label.ID === labelID);
 
         if (conversationLabel?.ContextNumUnread === 0) {
             return;
         }
 
         const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: element.ID,
+            ConversationID: conversation.ID,
         });
 
         // Update all messages attach to the same conversation in message state
@@ -155,12 +155,12 @@ export const markConversationsAsReadPending = (
 
 export const markConversationsAsUnreadPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>
+    action: PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>
 ) => {
-    const { elements, labelID } = action.meta.arg;
+    const { conversations, labelID } = action.meta.arg;
 
-    elements.forEach((element) => {
-        const conversationLabel = element?.Labels?.find((label) => label.ID === labelID);
+    conversations.forEach((conversations) => {
+        const conversationLabel = conversations?.Labels?.find((label) => label.ID === labelID);
 
         if (!!conversationLabel?.ContextNumUnread) {
             // Conversation is already unread, do nothing
@@ -169,7 +169,7 @@ export const markConversationsAsUnreadPending = (
 
         // Get all messages attached to the conversation
         const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: element.ID,
+            ConversationID: conversations.ID,
         });
 
         // Mark the last message as unread
@@ -188,13 +188,13 @@ export const labelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { messages: MessageMetadata[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
-    const { elements, destinationLabelID, labels, folders } = action.meta.arg;
+    const { messages, destinationLabelID, labels, folders } = action.meta.arg;
 
-    elements.forEach((element) => {
-        const messageState = getMessage(state, element.ID);
+    messages.forEach((message) => {
+        const messageState = getMessage(state, message.ID);
 
         if (!messageState || !messageState.data) {
             return;
@@ -209,13 +209,13 @@ export const unlabelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: MessageMetadata[]; destinationLabelID: string; labels: Label[] } }
+        { arg: { messages: MessageMetadata[]; destinationLabelID: string; labels: Label[] } }
     >
 ) => {
-    const { elements, destinationLabelID, labels } = action.meta.arg;
+    const { messages, destinationLabelID, labels } = action.meta.arg;
 
-    elements.forEach((element) => {
-        const messageState = getMessage(state, element.ID);
+    messages.forEach((message) => {
+        const messageState = getMessage(state, message.ID);
 
         if (!messageState || !messageState.data) {
             return;

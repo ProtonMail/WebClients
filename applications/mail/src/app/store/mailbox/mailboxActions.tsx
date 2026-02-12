@@ -131,7 +131,7 @@ const runAction = async ({
 export const markMessagesAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
@@ -139,26 +139,26 @@ export const markMessagesAsRead = createAsyncThunk<
     MailThunkExtra
 >(
     'mailbox/markMessagesAsRead',
-    async ({ elements, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
+    async ({ messages, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
         try {
-            dispatch(messageCountsActions.markMessagesAsReadPending({ elements, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsReadPending({ elements, labelID, conversations }));
+            dispatch(messageCountsActions.markMessagesAsReadPending({ messages, labelID }));
+            dispatch(conversationCountsActions.markMessagesAsReadPending({ messages, labelID, conversations }));
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
-                          elementsCount: elements.length,
+                          elementsCount: messages.length,
                           status: MARK_AS_STATUS.READ,
                       })
                     : undefined,
-                elements,
+                elements: messages,
                 action: (chunk) => markMessageAsRead(chunk.map((element: Element) => element.ID)),
             });
             return result;
         } catch (error) {
-            dispatch(messageCountsActions.markMessagesAsReadRejected({ elements, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsReadRejected({ elements, labelID, conversations }));
+            dispatch(messageCountsActions.markMessagesAsReadRejected({ messages, labelID }));
+            dispatch(conversationCountsActions.markMessagesAsReadRejected({ messages, labelID, conversations }));
             throw error;
         }
     }
@@ -167,7 +167,7 @@ export const markMessagesAsRead = createAsyncThunk<
 export const markMessagesAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
@@ -175,26 +175,26 @@ export const markMessagesAsUnread = createAsyncThunk<
     MailThunkExtra
 >(
     'mailbox/markMessagesAsUnread',
-    async ({ elements, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
+    async ({ messages, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
         try {
-            dispatch(messageCountsActions.markMessagesAsUnreadPending({ elements, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsUnreadPending({ elements, labelID, conversations }));
+            dispatch(messageCountsActions.markMessagesAsUnreadPending({ messages, labelID }));
+            dispatch(conversationCountsActions.markMessagesAsUnreadPending({ messages, labelID, conversations }));
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: true,
-                          elementsCount: elements.length,
+                          elementsCount: messages.length,
                           status: MARK_AS_STATUS.UNREAD,
                       })
                     : undefined,
-                elements,
+                elements: messages,
                 action: (chunk) => markMessageAsUnread(chunk.map((element: Element) => element.ID)),
             });
             return result;
         } catch (error) {
-            dispatch(messageCountsActions.markMessagesAsUnreadRejected({ elements, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsUnreadRejected({ elements, labelID, conversations }));
+            dispatch(messageCountsActions.markMessagesAsUnreadRejected({ messages, labelID }));
+            dispatch(conversationCountsActions.markMessagesAsUnreadRejected({ messages, labelID, conversations }));
             throw error;
         }
     }
@@ -202,28 +202,28 @@ export const markMessagesAsUnread = createAsyncThunk<
 
 export const markConversationsAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Conversation[]; labelID: string; showSuccessNotification?: boolean },
+    { conversations: Conversation[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsRead',
-    async ({ elements, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
+    async ({ conversations, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
         try {
-            dispatch(conversationCountsActions.markConversationsAsReadPending({ elements, labelID }));
+            dispatch(conversationCountsActions.markConversationsAsReadPending({ conversations, labelID }));
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
-                          elementsCount: elements.length,
+                          elementsCount: conversations.length,
                           status: MARK_AS_STATUS.READ,
                       })
                     : undefined,
-                elements,
+                elements: conversations,
                 action: (chunk) => markConversationsAsReadApi(chunk.map((element: Element) => element.ID)),
             });
             return result;
         } catch (error) {
-            dispatch(conversationCountsActions.markConversationsAsReadRejected({ elements, labelID }));
+            dispatch(conversationCountsActions.markConversationsAsReadRejected({ conversations, labelID }));
             throw error;
         }
     }
@@ -231,23 +231,23 @@ export const markConversationsAsRead = createAsyncThunk<
 
 export const markConversationsAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Conversation[]; labelID: string; showSuccessNotification?: boolean },
+    { conversations: Conversation[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsUnread',
-    async ({ elements, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
+    async ({ conversations, labelID, showSuccessNotification = true }, { extra, dispatch }) => {
         try {
-            dispatch(conversationCountsActions.markConversationsAsUnreadPending({ elements, labelID }));
+            dispatch(conversationCountsActions.markConversationsAsUnreadPending({ conversations, labelID }));
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
                     ? getNotificationTextMarked({
                           isMessage: false,
-                          elementsCount: elements.length,
+                          elementsCount: conversations.length,
                           status: MARK_AS_STATUS.UNREAD,
                       })
                     : undefined,
-                elements,
+                elements: conversations,
                 action: (chunk) =>
                     markConversationsAsUnreadApi(
                         chunk.map((element: Element) => element.ID),
@@ -256,7 +256,7 @@ export const markConversationsAsUnread = createAsyncThunk<
             });
             return result;
         } catch (error) {
-            dispatch(conversationCountsActions.markConversationsAsUnreadRejected({ elements, labelID }));
+            dispatch(conversationCountsActions.markConversationsAsUnreadRejected({ conversations, labelID }));
             throw error;
         }
     }
@@ -265,7 +265,7 @@ export const markConversationsAsUnread = createAsyncThunk<
 export const labelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
@@ -280,7 +280,7 @@ export const labelMessages = createAsyncThunk<
     'mailbox/labelMessages',
     async (
         {
-            elements,
+            messages,
             labels,
             folders,
             destinationLabelID,
@@ -292,10 +292,10 @@ export const labelMessages = createAsyncThunk<
         { extra, dispatch }
     ) => {
         try {
-            dispatch(messageCountsActions.labelMessagesPending({ elements, destinationLabelID, labels, folders }));
+            dispatch(messageCountsActions.labelMessagesPending({ messages, destinationLabelID, labels, folders }));
             dispatch(
                 conversationCountsActions.labelMessagesPending({
-                    elements,
+                    messages,
                     destinationLabelID,
                     conversations,
                     labels,
@@ -308,14 +308,14 @@ export const labelMessages = createAsyncThunk<
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelAdded({
                           isMessage: true,
-                          elementsCount: elements.length,
+                          elementsCount: messages.length,
                           destinationLabelID,
-                          isComingFromSpam: elements.some((element) => hasLabel(element, MAILBOX_LABEL_IDS.SPAM)),
+                          isComingFromSpam: messages.some((element) => hasLabel(element, MAILBOX_LABEL_IDS.SPAM)),
                           labels,
                           folders,
                       })
                     : undefined,
-                elements,
+                elements: messages,
                 action: (chunk) =>
                     labelMessagesApi({
                         IDs: chunk.map((element: Element) => element.ID),
@@ -337,7 +337,7 @@ export const labelMessages = createAsyncThunk<
 export const unlabelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: MessageMetadata[];
+        messages: MessageMetadata[];
         conversations: Conversation[];
         sourceLabelID: string;
         destinationLabelID: string;
@@ -350,14 +350,14 @@ export const unlabelMessages = createAsyncThunk<
 >(
     'mailbox/unlabelMessages',
     async (
-        { elements, labels, folders, destinationLabelID, showSuccessNotification = true, conversations, onActionUndo },
+        { messages, labels, folders, destinationLabelID, showSuccessNotification = true, conversations, onActionUndo },
         { extra, dispatch }
     ) => {
         try {
-            dispatch(messageCountsActions.unlabelMessagesPending({ elements, destinationLabelID, labels, folders }));
+            dispatch(messageCountsActions.unlabelMessagesPending({ messages, destinationLabelID, labels, folders }));
             dispatch(
                 conversationCountsActions.unlabelMessagesPending({
-                    elements,
+                    messages,
                     conversations,
                     destinationLabelID,
                     labels,
@@ -368,13 +368,13 @@ export const unlabelMessages = createAsyncThunk<
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelRemoved({
                           isMessage: true,
-                          elementsCount: elements.length,
+                          elementsCount: messages.length,
                           destinationLabelID,
                           labels,
                           folders,
                       })
                     : undefined,
-                elements,
+                elements: messages,
                 action: (chunk) =>
                     unlabelMessagesApi({
                         IDs: chunk.map((element: Element) => element.ID),
