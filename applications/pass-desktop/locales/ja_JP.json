@@ -1569,9 +1569,6 @@
       "All trashed items successfully restored": [
         "ごみ箱の項目がすべて正常に復元されました"
       ],
-      "An item previously shared with you was removed": [
-        "以前にあなたと共有したアイテムが削除されました"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "メールボックスから${ emailJSX }を本当に削除してもよろしいですか？"
       ],
@@ -2450,9 +2447,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保管庫「${ payload.share.content.name }」が正常に更新されました"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "保管庫「${ share.content.name }」が削除されました"
       ],
       "Vault organization successfully updated": [
         "保管庫の組織を更新しました"

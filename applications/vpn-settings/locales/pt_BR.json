@@ -3851,6 +3851,31 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dia",
+        "${ n } dias"
+      ],
+      "Added on ${ formattedDate }": [
+        "Adicionado em ${ formattedDate }"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Immediate": [
+        "Imediato"
+      ],
+      "Less than a day": [
+        "Menos de um dia"
+      ],
+      "Recovery request sent": [
+        "Solicitação de recuperação enviada"
+      ],
+      "Select recovery contact ${ name }": [
+        "Selecionar contato de recuperação ${ name }"
+      ],
+      "Send email request": [
+        "Enviar solicitação por e-mail?"
+      ],
       "Trusted contact": [
         "Contato confiável"
       ]

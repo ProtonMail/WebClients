@@ -3851,8 +3851,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } jour",
+        "${ n } jours"
+      ],
+      "Added on ${ formattedDate }": [
+        "Ajouté le ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Demandez de l'aide à un contact de récupération. Il recevra un message pour vérifier votre demande et débloquer vos données."
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Contactez-les maintenant pour voir s'ils peuvent vous aider, et pour leur faire savoir personnellement que c'est bien vous qui essayez de déverrouiller vos données."
+      ],
+      "Immediate": [
+        "Immédiat"
+      ],
+      "Less than a day": [
+        "Moins d’un jour"
+      ],
+      "Recovery request sent": [
+        "Demande de récupération envoyée"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Retirez vos contacts de récupération pour continuer"
+      ],
+      "Select recovery contact ${ name }": [
+        "Sélectionner le contact de récupération ${ name }"
+      ],
+      "Send email request": [
+        "Envoyer une demande par e-mail"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Pour désactiver cette méthode de récupération, retirez tous vos contacts de récupération."
+      ],
       "Trusted contact": [
         "Contacts de confiance"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Votre contact de récupération vous a aidé à récupérer des données."
       ]
     },
     "Empty group name": {

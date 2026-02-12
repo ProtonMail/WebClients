@@ -523,7 +523,7 @@
         "Kembali ke album \"${ albumName }\""
       ],
       "Go to ${ planOrAppName }": [
-        "Tuju ${ planOrAppName }"
+        "Buka ${ planOrAppName }"
       ],
       "Go to label": [
         "Buka label"
@@ -1026,6 +1026,9 @@
       "Sign out of all accounts": [
         "Keluar dari seluruh akun"
       ],
+      "Sign up": [
+        "Daftar"
+      ],
       "Skip verification": [
         "Lewati verifikasi"
       ],
@@ -1526,7 +1529,7 @@
         "Masalah aplikasi"
       ],
       "Authenticator problem": [
-        "Kesalahan autentikator"
+        "Masalah autentikator"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -1727,7 +1730,7 @@
         "Riwayat obrolan dasar"
       ],
       "Built and based in Europe": [
-        "Dirancang dan berbasis di Eropa"
+        "Dibuat dan berbasis di Eropa"
       ],
       "Compliance with data protection regulations": [
         "Patuh terhadap peraturan perlindungan data"
@@ -4170,7 +4173,7 @@
     },
     "Feature": {
       "Encrypted cloud storage for files, photos and documents": [
-        "Penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
+        "Penyimpanan cloud terenkripsi untuk file, foto, dan dokumen"
       ],
       "More premium features": [
         "Fitur premium lainnya"
@@ -6287,7 +6290,7 @@
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Tingkatkan untuk mempertahankan berbagai keutamaan ${ planTitle } Anda."
+        "Tingkatkan untuk mempertahankan berbagai manfaat ${ planTitle } Anda."
       ],
       "upgrade your storage": [
         "tingkatkan ruang penyimpanan Anda"
@@ -7195,12 +7198,6 @@
       "Public keys": [
         "Kunci publik"
       ],
-      "Public link expiration date": [
-        "Tanggal kedaluwarsa tautan publik"
-      ],
-      "Public link password": [
-        "Kata sandi tautan publik"
-      ],
       "Region": [
         "Provinsi"
       ],
@@ -7221,12 +7218,6 @@
       ],
       "Select type of abuse": [
         "Pilih jenis penyalahgunaan"
-      ],
-      "Set expiration date": [
-        "Atur tanggal kedaluwarsa"
-      ],
-      "Set link password": [
-        "Atur kata sandi tautan"
       ],
       "Set recovery method": [
         "Tentukan metode pemulihan"
@@ -7508,7 +7499,7 @@
         "apabila data Anda sampai dibocorkan"
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "Pelajari lebih lanjut"
       ],
       "Pay invoice": [
         "Bayar faktur"
@@ -8232,7 +8223,7 @@
         "Enkripsi end-to-end"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
-        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
+        "Manfaat ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent cepat"
@@ -9824,7 +9815,7 @@
         "Kredit yang belum terpakai dari paket langganan Anda sebelumnya"
       ],
       "Credits will be added to your balance": [
-        "Kredit akan ditambahkan ke tabungan Anda"
+        "Kredit akan ditambahkan ke saldo Anda"
       ]
     },
     "Payments.ModificationWarning": {
@@ -12357,7 +12348,7 @@
         "Untuk mempratinjau, unduh lembar kerja ini."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
+        "Untuk mempratinjau spreadsheet ini, buka di ${ SHEETS_APP_NAME } atau unduh."
       ],
       "Total size": [
         "Ukuran total"

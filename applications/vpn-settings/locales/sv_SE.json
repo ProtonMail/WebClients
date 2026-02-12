@@ -3839,8 +3839,48 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dagar"
+      ],
+      "Added on ${ formattedDate }": [
+        "Tillagd den ${ formattedDate }"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Be en återställningskontakt om hjälp. De kommer få ett e-postmeddelande för att verifiera din begäran och låsa upp dina data."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Kontakta dem nu för att se om de kan hjälpa till och för att personligen berätta att det är du som försöker låsa upp dina data."
+      ],
+      "Immediate": [
+        "Omedelbart"
+      ],
+      "Less than a day": [
+        "Mindre än en dag"
+      ],
+      "Recovery request sent": [
+        "Återställningsbegäran skickad"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Ta bort dina återställningskontakter för att fortsätta"
+      ],
+      "Select recovery contact ${ name }": [
+        "Välj återställningskontakt ${ name }"
+      ],
+      "Send email request": [
+        "Skicka e-postbegäran"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "För att inaktivera denna återställningsmetod, ta bort alla dina återställningskontakter."
+      ],
       "Trusted contact": [
         "Betrodd kontakt"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Din återställningskontakt har hjälpt dig att återställa data."
       ]
     },
     "Empty group name": {
@@ -5876,6 +5916,10 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ total } user found": [
+        "${ total } användare hittades",
+        "${ total } användare hittades"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } skapad"
@@ -8199,6 +8243,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "Dina senaste ändringar har publicerats. De kommer vara synliga för användare inom de närmaste timmarna."
       ],
       "Your recovery phrase": [
         "Din återställningsfras"

@@ -154,11 +154,11 @@
       ]
     },
     "Error dialog": {
-      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "Door een fout wordt de app afgesloten. Probeer het opnieuw uit te voeren en neem contact met ons op als het probleem zich blijft voordoen. Informatie over de fout kan worden gevonden in het applicatielogboek."
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - Onverwachte fout"
       ],
-      "Unexpected error": [
-        "Onverwachte fout"
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Door een fout wordt de ${ MAIL_APP_NAME } app afgesloten. Probeer deze opnieuw te starten en neem contact met ons op als het probleem zich blijft voordoen. Informatie over de fout vindt u in het applicatielogboek."
       ]
     },
     "error screen": {

@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Aktivera enhets-sökning"
       ],
+      "Encrypted": [
+        "Krypterad"
+      ],
       "Expand": [
         "Expandera"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Skanna och ladda ner (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Skanna och ladda ner"
+      ],
       "Search": [
         "Sök"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Dela din kalender med ditt team"
       ],
+      "Shared": [
+        "Delad"
+      ],
       "Sharing is end-to-end encrypted": [
         "Delning är end-to-end-krypterad"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Logga ut från alla konton"
+      ],
+      "Sign up": [
+        "Registrera"
       ],
       "Skip verification": [
         "Hoppa över verifiering"
@@ -6927,6 +6939,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
+      "Access": [
+        "Åtkomst"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
       ],
@@ -7110,6 +7125,9 @@
       ],
       "Device name": [
         "Enhetsnamn"
+      ],
+      "Disable this link on a specific date": [
+        "Inaktivera denna länk på ett specifikt datum"
       ],
       "Do you have any suggestions for our team?": [
         "Har du några förslag till vårt team?"
@@ -7369,12 +7387,6 @@
       "Public keys": [
         "Offentliga nycklar"
       ],
-      "Public link expiration date": [
-        "Utgångsdatum för offentlig länk"
-      ],
-      "Public link password": [
-        "Offentligt länklösenord"
-      ],
       "Region": [
         "Region"
       ],
@@ -7387,6 +7399,9 @@
       "Replace existing folder or file": [
         "Ersätt befintlig mapp eller fil"
       ],
+      "Require password": [
+        "Kräv lösenord"
+      ],
       "Reveal password": [
         "Visa lösenord"
       ],
@@ -7396,11 +7411,8 @@
       "Select type of abuse": [
         "Välj typ av missbruk"
       ],
-      "Set expiration date": [
-        "Ange utgångsdatum"
-      ],
-      "Set link password": [
-        "Välj länklösenord"
+      "Set a password to limit access via link": [
+        "Ställ in ett lösenord för att begränsa åtkomst via länk"
       ],
       "Set recovery method": [
         "Ställ in återställningsmetod"
@@ -9118,6 +9130,9 @@
       ],
       "\"${ name }\" saved successfully": [
         "”${ name }” har sparats"
+      ],
+      "\"${ name }\" shared": [
+        "“${ name }“ delad"
       ],
       "\"${ name }\" successfully copied": [
         "”${ name }” kopierades"

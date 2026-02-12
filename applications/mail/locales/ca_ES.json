@@ -1484,8 +1484,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -6737,9 +6736,6 @@
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "S'ha detectat una clau pública desconeguda per aquest receptor."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "S'enviarà un correu electrònic en nom vostre per anul·lar la subscripció."
       ],
@@ -8198,6 +8194,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Això vol dir que el vostre proveïdor d'accés a internet i els llocs web que visiteu no poden connectar la vostra informació personal amb la vostra activitat en línia."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Aquest missatge té una clau adjunta que encara no s'ha marcat com de confiança."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Aquest missatge s'ha modificat perquè s'ajusti a un fons fosc."

@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Ativar pesquisa de drive"
       ],
+      "Encrypted": [
+        "Criptografado"
+      ],
       "Expand": [
         "Expandir"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Escanear e Baixar (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Escanear e Baixar"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"
       ],
+      "Shared": [
+        "Compartilhado"
+      ],
       "Sharing is end-to-end encrypted": [
         "O compartilhado com criptografia ponta a ponta"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Encerrar sessão de todas as contas"
+      ],
+      "Sign up": [
+        "Registre-se"
       ],
       "Skip verification": [
         "Pular verificação"
@@ -6960,6 +6972,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
+      "Access": [
+        "Acesso"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
       ],
@@ -6992,6 +7007,9 @@
       ],
       "All": [
         "Todos"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitir que editores alterem permissões e compartilhem"
       ],
       "Anderson": [
         "Braga"
@@ -7149,6 +7167,9 @@
       ],
       "Device name": [
         "Nome do dispositivo"
+      ],
+      "Disable this link on a specific date": [
+        "Desativar este link em uma data específica"
       ],
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
@@ -7408,12 +7429,6 @@
       "Public keys": [
         "Chaves públicas"
       ],
-      "Public link expiration date": [
-        "Data de expiração do link público"
-      ],
-      "Public link password": [
-        "Senha do link público"
-      ],
       "Region": [
         "Estado"
       ],
@@ -7426,6 +7441,9 @@
       "Replace existing folder or file": [
         "Substituir pasta ou arquivo existente"
       ],
+      "Require password": [
+        "Exigir senha"
+      ],
       "Reveal password": [
         "Mostrar senha"
       ],
@@ -7435,11 +7453,8 @@
       "Select type of abuse": [
         "Selecione a categoria de abuso"
       ],
-      "Set expiration date": [
-        "Definir data de expiração"
-      ],
-      "Set link password": [
-        "Definir senha do link"
+      "Set a password to limit access via link": [
+        "Defina uma senha para limitar o acesso por link"
       ],
       "Set recovery method": [
         "Definir método de recuperação"
@@ -9154,6 +9169,9 @@
       ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvo"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" compartilhado"
       ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" copiado"

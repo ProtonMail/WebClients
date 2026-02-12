@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
       ],
+      "Encrypted": [
+        "Κρυπτογραφημένο"
+      ],
       "Expand": [
         "Ανάπτυξη"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Σάρωση & Λήψη (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Σάρωση και Λήψη"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -1016,6 +1022,9 @@
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
       ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
       "Sharing is end-to-end encrypted": [
         "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ],
@@ -1048,6 +1057,9 @@
       ],
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
+      ],
+      "Sign up": [
+        "Εγγραφείτε"
       ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
@@ -6960,6 +6972,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
+      "Access": [
+        "Πρόσβαση"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
       ],
@@ -6989,6 +7004,9 @@
       ],
       "All": [
         "Όλα"
+      ],
+      "Allow editors to change permissions and share": [
+        "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν"
       ],
       "Anderson": [
         "Anderson"
@@ -7147,6 +7165,9 @@
       "Device name": [
         "Όνομα συσκευής"
       ],
+      "Disable this link on a specific date": [
+        "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
+      ],
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
@@ -7203,6 +7224,9 @@
       ],
       "Expires": [
         "Λήγει"
+      ],
+      "Expiry": [
+        "Λήξη"
       ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
@@ -7405,12 +7429,6 @@
       "Public keys": [
         "Δημόσια κλειδιά"
       ],
-      "Public link expiration date": [
-        "Ημερομηνία λήξης δημόσιου συνδέσμου"
-      ],
-      "Public link password": [
-        "Κωδικός πρόσβασης δημόσιου συνδέσμου"
-      ],
       "Region": [
         "Περιοχή"
       ],
@@ -7423,6 +7441,9 @@
       "Replace existing folder or file": [
         "Αντικατάσταση υπάρχοντος φακέλου ή αρχείου"
       ],
+      "Require password": [
+        "Απαίτηση κωδικού πρόσβασης"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -7432,11 +7453,8 @@
       "Select type of abuse": [
         "Επιλογή τύπου κατάχρησης"
       ],
-      "Set expiration date": [
-        "Ορισμός ημερομηνίας λήξης"
-      ],
-      "Set link password": [
-        "Ορισμός συνθηματικού για το σύνδεσμο"
+      "Set a password to limit access via link": [
+        "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
       ],
       "Set recovery method": [
         "Ορισμός μεθόδου ανάκτησης"
@@ -9101,6 +9119,9 @@
       "\"${ name }\" saved successfully": [
         "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" κοινοποιήθηκε"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" αντιγράφηκε επιτυχώς"
       ],
@@ -9342,6 +9363,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Οι επιλεγμένες φωτογραφίες υπάρχουν ήδη στο \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες μπορούν να αλλάξουν τα δικαιώματα και να κοινοποιήσουν."
       ],
       "Share invitation accepted successfully": [
         "Η πρόσκληση κοινής χρήσης έγινε αποδεκτή"

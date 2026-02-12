@@ -1565,9 +1565,6 @@
       "All trashed items successfully restored": [
         "Все элементы из корзины успешно восстановлены"
       ],
-      "An item previously shared with you was removed": [
-        "Элемент, которым ранее поделились с вами, был удален"
-      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Вы уверены, что хотите удалить ${ emailJSX } из своих почтовых ящиков?"
       ],
@@ -1978,6 +1975,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2482,9 +2485,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Хранилище \"${ payload.share.content.name }\" успешно обновлено"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Хранилище \"${ share.content.name }\" было удалено"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Совместное использование хранилища ${ vaultMembersCount } пользователем",
