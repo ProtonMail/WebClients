@@ -131,7 +131,7 @@ const runAction = async ({
 export const markMessagesAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
@@ -167,7 +167,7 @@ export const markMessagesAsRead = createAsyncThunk<
 export const markMessagesAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
+        elements: MessageMetadata[];
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
@@ -202,7 +202,7 @@ export const markMessagesAsUnread = createAsyncThunk<
 
 export const markConversationsAsRead = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
+    { elements: Conversation[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsRead',
@@ -231,7 +231,7 @@ export const markConversationsAsRead = createAsyncThunk<
 
 export const markConversationsAsUnread = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
-    { elements: Element[]; labelID: string; showSuccessNotification?: boolean },
+    { elements: Conversation[]; labelID: string; showSuccessNotification?: boolean },
     MailThunkExtra
 >(
     'mailbox/markConversationsAsUnread',

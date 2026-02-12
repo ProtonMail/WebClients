@@ -14,7 +14,6 @@ import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
 
 import { type MailSettingState, mailSettingsThunk } from '../mailSettings';
 import {
@@ -61,10 +60,16 @@ const slice = createSlice({
         set: (state, action: PayloadAction<LabelCount[]>) => {
             state.value = action.payload;
         },
-        markConversationsAsReadPending: (state, action: PayloadAction<{ elements: Element[]; labelID: string }>) => {
+        markConversationsAsReadPending: (
+            state,
+            action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+        ) => {
             markConversationsAsRead(state, action);
         },
-        markConversationsAsUnreadPending: (state, action: PayloadAction<{ elements: Element[]; labelID: string }>) => {
+        markConversationsAsUnreadPending: (
+            state,
+            action: PayloadAction<{ elements: Conversation[]; labelID: string }>
+        ) => {
             markConversationsAsUnread(state, action);
         },
         markConversationsAsReadRejected: (state, action) => {
@@ -75,25 +80,25 @@ const slice = createSlice({
         },
         markMessagesAsUnreadPending: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },
         markMessagesAsUnreadRejected: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadPending: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsRead(state, action);
         },
         markMessagesAsReadRejected: (
             state,
-            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+            action: PayloadAction<{ elements: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
         },
