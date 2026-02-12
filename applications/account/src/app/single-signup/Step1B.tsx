@@ -2,7 +2,7 @@ import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -19,12 +19,6 @@ import {
     useModalState,
 } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import {
-    getCountries,
-    getNetShield,
-    getProtectDevices,
-    getStreaming,
-} from '@proton/components/containers/payments/features/vpn';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -79,13 +73,12 @@ import {
     type APP_NAMES,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
-    VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
-import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
+import { getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -105,6 +98,7 @@ import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
+import DollarOfferModal from './DollarOfferModal';
 import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
 import GuaranteeCard from './GuaranteeCard';
@@ -113,7 +107,6 @@ import Layout from './Layout';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummaryB';
 import SignIntoLink from './SignIntoLink';
-import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import swissFlag from './flag.svg';
 import { getPlanInformation } from './getPlanInformationB';
@@ -123,25 +116,6 @@ import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import RatingsSection from './ratings/RatingsSection';
-
-const getYears = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} year`, `${n} years`, n);
-const getMonths = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} month`, `${n} months`, n);
-export const getBilledText = (cycle: CYCLE): string | null => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('vpn_2step: billing').t`Billed monthly`;
-        case CYCLE.YEARLY:
-            return getYears(1);
-        case CYCLE.TWO_YEARS:
-            return getYears(2);
-        case CYCLE.FIFTEEN:
-            return getMonths(15);
-        case CYCLE.THIRTY:
-            return getMonths(30);
-        default:
-            return null;
-    }
-};
 
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
@@ -200,7 +174,6 @@ const Step1B = ({
     onCurrencyChange,
     model,
     setModel,
-    upsellShortPlan,
     hideFreePlan,
     upsellImg,
     measure,
@@ -671,8 +644,6 @@ const Step1B = ({
         taxCountry,
     });
 
-    const upsellPlanName = upsellShortPlan?.title || '';
-
     const termsHref = (() => {
         return getLocaleTermsURL(APPS.PROTONVPN_SETTINGS);
     })();
@@ -782,7 +753,6 @@ const Step1B = ({
             },
     ].filter(isTruthy);
 
-    const freeName = `${VPN_SHORT_APP_NAME} Free`;
     const appName = VPN_APP_NAME;
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE;
@@ -1625,41 +1595,15 @@ const Step1B = ({
                 )}
             </div>
             {renderUpsellModal && (
-                <UpsellModal
+                <DollarOfferModal
                     img={upsellImg}
-                    title={c('vpn_2step: info').t`Try ${upsellPlanName} risk-free`}
-                    info={c('Info').t`If it’s not right for you, we’ll refund you.`}
-                    features={[
-                        getStreaming(true),
-                        getCountries(
-                            getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries)
-                        ),
-                        getProtectDevices(VPN_CONNECTIONS),
-                        getNetShield(true),
-                    ]}
-                    footer={
-                        <>
-                            <div className="flex flex-column gap-2">
-                                <Button
-                                    fullWidth
-                                    color="norm"
-                                    shape="outline"
-                                    onClick={() => {
-                                        upsellModalProps.onClose();
-                                        void handleChangePlanIds({}, PLANS.FREE);
-                                    }}
-                                >
-                                    {c('Info').t`Continue with ${freeName}`}
-                                </Button>
-                                <Button fullWidth color="norm" onClick={handleCloseUpsellModal}>
-                                    {c('Info').t`Get ${upsellPlanName}`}
-                                </Button>
-                            </div>
-                            <div className="text-center mt-6">
-                                <Guarantee />
-                            </div>
-                        </>
-                    }
+                    currency={options.currency}
+                    measure={measure}
+                    onGetDeal={handleCloseUpsellModal}
+                    onContinueFree={() => {
+                        upsellModalProps.onClose();
+                        void handleChangePlanIds({}, PLANS.FREE);
+                    }}
                     {...upsellModalProps}
                 />
             )}
