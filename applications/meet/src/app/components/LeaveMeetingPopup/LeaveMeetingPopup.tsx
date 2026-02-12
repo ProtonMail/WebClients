@@ -74,7 +74,7 @@ export const LeaveMeetingPopup = () => {
         <>
             <Button
                 ref={anchorRef}
-                className={clsx(isLargerThanMd ? 'px-8 py-4' : 'px-7 py-3', 'leave-button border-none shrink-0')}
+                className={clsx('px-4 py-2 sm:px-7 sm:py-3 lg:px-8 lg:py-4', 'leave-button border-none shrink-0')}
                 pill={true}
                 size="large"
                 onClick={handleButtonClick}
