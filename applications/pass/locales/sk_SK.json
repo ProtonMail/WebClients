@@ -1428,9 +1428,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vami zdieľať položku."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } bol zdieľaný so skupinou, ktorej ste členom"
-      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členovia",
@@ -1442,9 +1439,6 @@
         "${ n } položky",
         "${ n } položiek ",
         "${ n } položiek "
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } nových zdieľaní bolo zdieľaných so skupinou, ktorej ste členom"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy dostupný"
@@ -1580,9 +1574,6 @@
       ],
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
-      ],
-      "An item previously shared with you was removed": [
-        "Položka predtým zdieľaná s vami bola odstránená"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Skutočne chcete odstrániť ${ emailJSX } zo svojich poštových schránok?"
@@ -1982,6 +1973,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2486,9 +2483,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" bol úspešne aktualizovaný"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Trezor \"${ share.content.name }\" bol odstránený"
       ],
       "Vault organization successfully updated": [
         "Organizácia trezoru bola úspešne aktualizovaná"
