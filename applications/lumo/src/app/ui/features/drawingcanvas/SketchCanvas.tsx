@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import clsx from 'clsx';
 import type { CanvasConfig, DrawingMode, ExportOptions } from './types';
-import { Canvas } from './Canvas';
-import { Toolbar } from './Toolbar';
+import { Canvas } from './canvas';
+import { Toolbar } from './toolbar';
 import { useHistory } from './hooks/useHistory';
 import { exportCanvasAsDataURL } from './utils/export';
 

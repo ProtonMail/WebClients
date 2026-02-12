@@ -76,8 +76,8 @@ import { SketchOverlay } from '@proton/lumo/ui/features/drawingcanvas';
 drawingcanvas/
 ├── index.ts                   # Clean exports
 ├── SketchCanvas.tsx           # Main canvas component
-├── Canvas.tsx                 # Canvas rendering
-├── Toolbar.tsx                # Toolbar UI
+├── canvas.tsx                 # Canvas rendering
+├── toolbar.tsx                # Toolbar UI
 ├── SketchOverlay.tsx          # Full-screen overlay
 ├── types.ts                   # TypeScript types
 ├── hooks/
