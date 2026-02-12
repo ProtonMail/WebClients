@@ -3,7 +3,7 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
 import { parseGroupInvite } from '@proton/pass/lib/invites/invite.parser';
-import { isAcceptedInvite } from '@proton/pass/lib/invites/invite.utils';
+import { isAcceptedInvite, partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { eventChannelFactory } from '@proton/pass/store/sagas/events/v1/channel.factory';
@@ -11,10 +11,9 @@ import { channelEvents, channelInitalize } from '@proton/pass/store/sagas/events
 import { selectAllVaultIDs } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, GroupInvitesListResponse, MaybeNull } from '@proton/pass/types';
+import type { Api, GroupInvitesListResponse, Maybe, MaybeNull } from '@proton/pass/types';
 import { InviteType } from '@proton/pass/types';
-import type { Invite } from '@proton/pass/types/data/invites';
-import { partition } from '@proton/pass/utils/array/partition';
+import type { GroupInvite } from '@proton/pass/types/data/invites';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -39,14 +38,15 @@ function* onGroupInvitesEvent(event: EventManagerEvent<GroupInvitesGetResponse>)
     const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
     const isAcceptedGroupInvite = isAcceptedInvite(vaultIDs);
 
-    const invites: MaybeNull<Invite>[] = yield Promise.all(
-        event.Invites.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {
+    const invites: MaybeNull<GroupInvite>[] = yield Promise.all(
+        event.Invites.Invites.map<Promise<MaybeNull<GroupInvite>>>(async (invite) => {
             if (isAcceptedGroupInvite(invite)) return null;
-            return cachedInvites[invite.InviteToken] ?? parseGroupInvite(invite);
+            const cached = cachedInvites[invite.InviteToken] as Maybe<GroupInvite>;
+            return cached ?? parseGroupInvite(invite);
         })
     );
 
-    const [owners, orgs] = partition(invites.filter(truthy), (invite) => invite?.type === InviteType.GroupOwner);
+    const [owners, orgs] = partitionGroupInvites(invites.filter(truthy));
     yield put(syncInvites({ type: InviteType.GroupOwner, invites: toMap(owners, 'token') }));
     yield put(syncInvites({ type: InviteType.GroupOrg, invites: toMap(orgs, 'token') }));
 }

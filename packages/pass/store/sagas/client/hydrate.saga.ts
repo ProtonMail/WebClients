@@ -34,7 +34,7 @@ type HydrateCacheOptions = {
     onError?: (err: unknown) => Generator;
 };
 
-export type HydrationResult = { fromCache: boolean; version?: string };
+export type HydrationResult = { fromCache: boolean; version?: string; state: MaybeNull<State> };
 
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
@@ -133,6 +133,7 @@ export function* hydrate(
         return {
             fromCache,
             version: encryptedCache?.version,
+            state: next,
         };
     } catch (err) {
         logger.warn(`[Hydration] Error occured`, err);
@@ -140,6 +141,6 @@ export function* hydrate(
         if (config.onError) yield config.onError?.(err);
         else throw err;
 
-        return { fromCache: false };
+        return { fromCache: false, state: null };
     }
 }

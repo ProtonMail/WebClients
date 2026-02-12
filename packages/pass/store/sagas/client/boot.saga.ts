@@ -59,7 +59,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
-        const { fromCache, version }: HydrationResult = yield hydrate(
+        const { fromCache, version, state }: HydrationResult = yield hydrate(
             { online, merge: (existing, incoming) => merge(existing, incoming, { excludeEmpty: true }) },
             options
         );
@@ -68,7 +68,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        const result: Maybe<SyncResult> = fromCache ? undefined : yield sync(options);
+        const syncResult: Maybe<SyncResult> = fromCache ? undefined : yield sync(state, options);
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot
@@ -76,7 +76,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         const hydratedSettings = (yield select(selectProxiedSettings)) as ProxiedSettings;
         yield options.onSettingsUpdated?.(hydratedSettings);
 
-        yield put(bootSuccess(result));
+        yield put(bootSuccess(syncResult));
         yield put(draftsGarbageCollect());
         yield put(passwordHistoryGarbageCollect());
 

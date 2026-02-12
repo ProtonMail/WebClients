@@ -9,9 +9,9 @@ import type { InviteState } from '@proton/pass/store/reducers';
 import { selectAllVaultIDs } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, InvitesGetResponse, MaybeNull } from '@proton/pass/types';
+import type { Api, InvitesGetResponse, Maybe, MaybeNull } from '@proton/pass/types';
 import { InviteType } from '@proton/pass/types';
-import type { Invite } from '@proton/pass/types/data/invites';
+import type { UserInvite } from '@proton/pass/types/data/invites';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -37,10 +37,11 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
     const isAcceptedUserInvite = isAcceptedInvite(vaultIDs);
 
-    const invites: MaybeNull<Invite>[] = yield Promise.all(
-        event.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {
+    const invites: MaybeNull<UserInvite>[] = yield Promise.all(
+        event.Invites.map<Promise<MaybeNull<UserInvite>>>(async (invite) => {
             if (isAcceptedUserInvite(invite)) return null;
-            return cachedInvites[invite.InviteToken] ?? parseUserInvite(invite);
+            const cached = cachedInvites[invite.InviteToken] as Maybe<UserInvite>;
+            return cached ?? parseUserInvite(invite);
         })
     );
 
