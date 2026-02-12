@@ -34,7 +34,7 @@ module.exports = ({
     writeSRI,
     warningLogs,
     errorLogs,
-    logical,
+    noLogicalScss,
     cssName,
     analyze,
     defineWebpackConfig,
@@ -256,7 +256,7 @@ module.exports = ({
                 )
             ),
 
-        logical && new PostCssLogicalWebpackPlugin(),
+        !noLogicalScss && new PostCssLogicalWebpackPlugin(),
 
         analyze &&
             new BundleAnalyzerPlugin({

@@ -5,14 +5,14 @@
     "license": "GPL-3.0",
     "main": "index.html",
     "scripts": {
-        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --logical --prependAsyncCss",
+        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --prependAsyncCss",
         "check-types": "tsc",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --no-error-logs --logical --prependAsyncCss",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --no-error-logs --prependAsyncCss",
         "test": "jest --silent",
         "test:ci": "jest --coverage --runInBand --ci --silent",
         "test:watch": "jest --watch"

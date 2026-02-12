@@ -32,7 +32,7 @@ const addGlobalOptions = (program) => {
         .option('--no-api-proxy', '')
         .option('--inline-icons', false)
         .option('--handleSupportAndErrors', '', false)
-        .option('--logical', '', false)
+        .option('--noLogicalScss', '', false)
         .option('--benchmarkBuild', '', false)
         .option(
             '--prependAsyncCss',

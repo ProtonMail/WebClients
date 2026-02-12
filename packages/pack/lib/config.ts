@@ -137,7 +137,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         inlineIcons: protonPackOptions.inlineIcons === true,
         isProduction,
         isRelease,
-        logical: protonPackOptions.logical ?? false,
+        noLogicalScss: protonPackOptions.noLogicalScss ?? false,
         optimizeAssets: protonPackOptions.optimizeAssets ?? false,
         overlayErrors: protonPackOptions.overlayErrors ?? false,
         overlayRuntimeErrors: protonPackOptions.overlayRuntimeErrors ?? false,
