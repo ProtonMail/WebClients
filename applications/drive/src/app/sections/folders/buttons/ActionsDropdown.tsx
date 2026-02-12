@@ -38,7 +38,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const { renameModal, showRenameModal } = useRenameModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;

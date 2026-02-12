@@ -30,7 +30,7 @@ import { getPublicTokenAndPassword } from '../utils/getPublicTokenAndPassword';
 export const usePublicActions = () => {
     const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const { renameModal, showRenameModal } = useRenameModal();
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createDeleteNotification } = usePublicPageNotifications();

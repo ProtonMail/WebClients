@@ -21,7 +21,7 @@ export function SharedByMeItemContextMenu({
     selectedBrowserItems: SharedByMeItem[];
 }) {
     const [previewModal, showPreviewModal] = usePreviewModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const { renameModal, showRenameModal } = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
