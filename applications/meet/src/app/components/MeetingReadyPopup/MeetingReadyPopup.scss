@@ -14,6 +14,7 @@ im.$media-expressions: $media-expressions;
 	.link-container {
 		background: var(--meeting-list-placeholder-button-background);
 		border: 1px solid #2f3043;
+		border-radius: var(--border-radius-xxl);
 	}
 
 	.meeting-ready-popup {
@@ -26,6 +27,67 @@ im.$media-expressions: $media-expressions;
 		padding-block-start: 4rem !important;
 		background: var(--popup-background) !important;
 		backdrop-filter: blur(22px) !important;
+		overflow: visible;
+		border: 1px solid var(--popup-border-color);
+		transform: translateY(-8px); // only for the popup caret
+		&::after {
+			content: '';
+			position: absolute;
+			inset-inline: 2.5rem;
+			inset-block-end: -1px;
+			block-size: 1px;
+			background: var(--popup-border-color);
+
+			/* hole in center for the triangle */
+			mask: linear-gradient(
+				to right,
+				black calc(50% - var(--caret-size)),
+				transparent calc(50% - var(--caret-size)),
+				transparent calc(50% + var(--caret-size)),
+				black calc(50% + var(--caret-size))
+			);
+		}
+	}
+
+	// had to use some crazy tricks to get the triangle to work
+	.popup-caret {
+		position: absolute;
+		inset-inline-start: 50%;
+		inset-block-start: 100%;
+		transform: translateX(-50%);
+		inline-size: 0;
+		block-size: 0;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			inset-inline-start: 50%;
+			transform: translateX(-50%);
+			clip-path: polygon(50% 100%, 0 0, 100% 0);
+		}
+
+		&::before {
+			inset-block-start: 0;
+			inline-size: calc(var(--caret-size) * 2 + 2px);
+			block-size: calc(var(--caret-size) + 2px);
+			background: var(--popup-border-color);
+		}
+
+		&::after {
+			inset-block-start: -1px;
+			inline-size: calc(var(--caret-size) * 2);
+			block-size: var(--caret-size);
+			background: var(--popup-background);
+			backdrop-filter: none;
+		}
+	}
+
+	/* background triangle */
+	.popup-caret .popup-caret,
+	.popup-caret::before,
+	.popup-caret::after {
+		isolation: isolate;
 	}
 
 	.meeting-ready-popup-meeting-link {
