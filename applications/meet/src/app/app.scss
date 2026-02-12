@@ -127,11 +127,22 @@ $profile-colors:
 	}
 }
 
-.device-selector-dropdown {
-	max-inline-size: 50vw;
+.meet-dropdown {
 	backdrop-filter: blur(24px);
 	background-color: rgb(0 0 0 / 0.14);
 	box-shadow: 0 4px 24px 0 rgb(0 0 0 / 0.16);
+
+	.dropdown-content {
+		&,
+		&::before,
+		&::after {
+			background-color: transparent;
+		}
+	}
+}
+
+.device-selector-dropdown {
+	max-inline-size: 50vw;
 
 	@include im.media('<=small') {
 		inline-size: calc(100vw - 3rem);
@@ -140,12 +151,6 @@ $profile-colors:
 
 	.dropdown-content {
 		max-inline-size: 50vw;
-
-		&,
-		&::before,
-		&::after {
-			background-color: transparent;
-		}
 
 		@include im.media('<=small') {
 			max-inline-size: calc(100vw - 3rem) !important;
