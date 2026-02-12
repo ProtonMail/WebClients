@@ -34,7 +34,7 @@ interface BaseSharedByMeActionsProps {
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>[1];
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
-    showRenameModal: ReturnType<typeof useRenameModal>[1];
+    showRenameModal: ReturnType<typeof useRenameModal>['showRenameModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }

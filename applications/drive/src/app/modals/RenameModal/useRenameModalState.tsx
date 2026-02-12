@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
-import { type NodeEntity, NodeType, getDrive, splitNodeUid } from '@proton/drive';
+import { type NodeEntity, NodeType, getDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import type { RenameModalViewProps } from './RenameModalView';
@@ -16,7 +16,6 @@ import type { Drive } from './interface';
 export type RenameModalInnerProps = {
     nodeUid: string;
     drive?: Drive;
-    onSuccess?: (newName: string) => Promise<void>;
 };
 
 export type UseRenameModalProps = ModalStateProps &
@@ -51,10 +50,8 @@ export const useRenameModalState = ({
     nodeUid,
     drive = getDrive(),
     onClose,
-    onSuccess,
     ...modalProps
 }: UseRenameModalProps): RenameModalViewProps => {
-    const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
     const [node, setNode] = useState<null | NodeEntity>(null);
@@ -102,15 +99,16 @@ export const useRenameModalState = ({
 
     const handleSubmit = async (newName: string) => {
         const nodeUid = node.uid;
-        const volumeId = splitNodeUid(nodeUid).volumeId;
         const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
         const unhandledErrorNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
         await drive
             .renameNode(nodeUid, newName)
             .then(async () => {
-                await events.pollEvents.volumes(volumeId); // TODO:EVENTS
                 createNotification({ text: successNotificationText, preWrap: true });
-                await onSuccess?.(newName);
+                await getBusDriver().emit({
+                    type: BusDriverEventName.RENAMED_NODES,
+                    items: [{ uid: nodeUid, newName }],
+                });
                 onClose();
             })
             .catch((e) => {
