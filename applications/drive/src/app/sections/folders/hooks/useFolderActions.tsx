@@ -60,7 +60,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
-    const [renameModal, showRenameModal] = useRenameModal();
+    const { renameModal, showRenameModal } = useRenameModal();
     const [moveModal, showMoveModal] = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 
