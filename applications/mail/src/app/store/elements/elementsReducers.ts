@@ -756,7 +756,7 @@ export const markConversationsAsReadPending = (
 
         const messagesElementState = Object.values(state.elements)
             .filter(isElementMessage)
-            .filter((element) => element.ConversationID === element.ID);
+            .filter((message) => message.ConversationID === element.ID);
 
         // Update all messages attach to the same conversation in element state
         messagesElementState.forEach((messageElementState) => {
@@ -1041,7 +1041,7 @@ export const labelConversationsPending = (
 
         const messagesElementState = Object.values(state.elements)
             .filter(isElementMessage)
-            .filter((element) => element.ConversationID === conversation.ID);
+            .filter((message) => message.ConversationID === conversation.ID);
 
         messagesElementState.forEach((messageElementState) => {
             applyLabelToMessage(messageElementState, destinationLabelID, folders, labels);
@@ -1082,7 +1082,7 @@ export const unlabelConversationsPending = (
 
         const messagesElementState = Object.values(state.elements)
             .filter(isElementMessage)
-            .filter((element) => element.ConversationID === conversation.ID);
+            .filter((message) => message.ConversationID === conversation.ID);
 
         messagesElementState.forEach((messageElementState) => {
             removeLabelFromMessage(messageElementState, destinationLabelID, labels);
