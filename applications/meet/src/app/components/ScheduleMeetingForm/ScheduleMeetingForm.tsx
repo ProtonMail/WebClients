@@ -16,6 +16,7 @@ import { useNotifications } from '@proton/components/index';
 import { useLoading } from '@proton/hooks/index';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
@@ -278,7 +279,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
     };
 
     const repeatOptions = [
-        { label: c('Label').t`No repeat`, value: 'NO_REPEAT' },
+        { label: c('Label').t`Does not repeat`, value: 'NO_REPEAT' },
         { label: c('Label').t`Every day`, value: 'FREQ=DAILY' },
         {
             label: c('Label').t`Every weekday`,
@@ -427,14 +428,35 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                             style={{ color: 'var(--interaction-weak-major-3)' }}
                         />
                         <SelectTwo
+                            className="select-two-repeat"
+                            dropdownClassName="select-two-repeat-dropdown meet-radius"
                             onChange={(item: { value: string }) => {
                                 setValues({ ...values, recurrence: item.value as string });
                             }}
                             value={values.recurrence}
+                            dropdownHeading={
+                                <div className="select-dropdown-heading-inner text-uppercase text-sm">{c('Label')
+                                    .t`Repeat event`}</div>
+                            }
                         >
                             {repeatOptions.map((option) => (
-                                <Option key={option.value} value={option.value} title={option.label}>
-                                    {option.label}
+                                <Option
+                                    key={option.value}
+                                    value={option.value}
+                                    title={option.label}
+                                    className="flex flex-row items-center"
+                                >
+                                    <span className="flex-1">
+                                        {option.label}{' '}
+                                        {option.sublabel && (
+                                            <span className="ml-1 text-sm color-hint">{option.sublabel}</span>
+                                        )}
+                                    </span>
+                                    {values.recurrence === option.value && (
+                                        <span className="text-sm shrink-0 select-two-repeat-check-container">
+                                            <IcCheckmark size={4} />
+                                        </span>
+                                    )}
                                 </Option>
                             ))}
                         </SelectTwo>
