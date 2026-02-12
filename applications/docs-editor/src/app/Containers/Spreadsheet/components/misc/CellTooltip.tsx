@@ -198,6 +198,16 @@ function NoteEditor({
   )
 }
 
+function getLink(hyperlink: NonNullable<CellTooltipProps['hyperlink']>) {
+  if (typeof hyperlink === 'string') {
+    return hyperlink
+  } else if (hyperlink.kind === 'external') {
+    return hyperlink.url
+  } else {
+    return hyperlink.location
+  }
+}
+
 function LinkInfo({
   hyperlink,
   onRequestCloseNote,
@@ -205,14 +215,15 @@ function LinkInfo({
   sheetId,
   onRemoveLink,
 }: {
-  hyperlink: string
+  hyperlink: NonNullable<CellTooltipProps['hyperlink']>
   onRequestCloseNote?: () => void
   cell: CellInterface
   sheetId: number
   onRemoveLink: NonNullable<CellTooltipProps['onRemoveLink']>
 }) {
   const { application } = useApplication()
-  const url = hyperlink.startsWith('http') ? hyperlink : 'https://' + hyperlink
+  const link = getLink(hyperlink)
+  const url = link.startsWith('http') ? link : 'https://' + link
   const isReadonly = useUI((state) => state.info.isReadonly)
 
   const { createNotification } = useNotifications()
@@ -250,7 +261,7 @@ function LinkInfo({
             })
           }}
         >
-          {hyperlink}
+          {link}
         </a>
         <div className="flex items-center gap-1">
           <Button legacyIconName="squares" onClick={copyLink} disabled={isReadonly}>
