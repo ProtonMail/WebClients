@@ -15,7 +15,8 @@
 	background: #16161fcc !important;
 	box-shadow: 0 4px 16px 0 #00000040 !important;
 	backdrop-filter: blur(80px) !important;
-	border: 1px solid var(--circle-button-transparent) !important;
+	border: 1px solid rgb(255 255 255 / 0.08) !important;
+	border-radius: var(--border-radius-xxl) !important;
 
 	--selection-background-color: transparent !important;
 	--selection-text-color: var(--interaction-norm) !important;
