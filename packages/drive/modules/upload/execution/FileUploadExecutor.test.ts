@@ -3,12 +3,14 @@ import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/dri
 import { generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
+import { useUploadControllerStore } from '../store/uploadController.store';
 import type { EventCallback, FileUploadTask } from '../types';
 import { FileUploadExecutor } from './FileUploadExecutor';
 
 jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
+jest.mock('../store/uploadController.store');
 jest.mock('../utils/createFileStream', () => ({
     createFileStream: jest.fn(() => {
         return new ReadableStream({
@@ -27,6 +29,7 @@ describe('FileUploadExecutor', () => {
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
     let mockGetFileRevisionUploader: jest.Mock;
+    let mockGetController: jest.Mock;
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -36,6 +39,16 @@ describe('FileUploadExecutor', () => {
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
         mockGetFileRevisionUploader = jest.fn();
+        mockGetController = jest.fn();
+
+        mockGetController.mockReturnValue({
+            abortController: new AbortController(),
+            uploadController: null,
+        });
+
+        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            getController: mockGetController,
+        } as any);
 
         jest.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({

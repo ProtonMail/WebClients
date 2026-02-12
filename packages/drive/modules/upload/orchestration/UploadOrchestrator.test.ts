@@ -268,19 +268,6 @@ describe('UploadOrchestrator', () => {
             expect(mockReleaseFolder).toHaveBeenCalled();
         });
 
-        it('should mark tasks as InProgress before execution', async () => {
-            const fileTask = createFileTask();
-            mockGetQueue.mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Pending }]).mockReturnValue([]);
-            mockGetNextTasks.mockReturnValueOnce([fileTask]).mockReturnValue([]);
-            mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
-
-            const startPromise = orchestrator.start();
-            await jest.runAllTimersAsync();
-            await startPromise;
-
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.InProgress });
-        });
-
         it('should wait when no tasks available but uploads active', async () => {
             mockGetCurrentLoad.mockReturnValue({ activeFiles: 1, activeFolders: 0 });
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);

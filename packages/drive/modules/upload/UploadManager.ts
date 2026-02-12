@@ -158,6 +158,7 @@ export class UploadManager {
 
         if (isForPhotos) {
             for (const file of filesArray) {
+                const abortController = new AbortController();
                 const uploadId = queueStore.addItem({
                     type: NodeType.Photo,
                     file,
@@ -168,7 +169,7 @@ export class UploadManager {
                     batchId,
                     isForPhotos,
                 });
-                this.orchestrator.emitFileQueued(uploadId, true);
+                this.orchestrator.emitFileQueued(uploadId, true, abortController);
             }
         } else {
             if (!parentUid) {
@@ -177,6 +178,7 @@ export class UploadManager {
             }
             if (!hasStructure) {
                 for (const file of filesArray) {
+                    const abortController = new AbortController();
                     const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
@@ -187,12 +189,13 @@ export class UploadManager {
                         status: UploadStatus.Pending,
                         batchId,
                     });
-                    this.orchestrator.emitFileQueued(uploadId, false);
+                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
                 }
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filesArray);
 
                 for (const file of standaloneFiles) {
+                    const abortController = new AbortController();
                     const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
@@ -203,7 +206,7 @@ export class UploadManager {
                         status: UploadStatus.Pending,
                         batchId,
                     });
-                    this.orchestrator.emitFileQueued(uploadId, false);
+                    this.orchestrator.emitFileQueued(uploadId, false, abortController);
                 }
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
@@ -229,10 +232,13 @@ export class UploadManager {
             return;
         }
 
+        const abortController = new AbortController();
+        this.orchestrator.emitFileQueued(uploadId, item.type === NodeType.Photo, abortController);
+
         queueStore.updateQueueItems(uploadId, {
             status: UploadStatus.Pending,
             error: undefined,
-            uploadedBytes: item.type === NodeType.File ? 0 : undefined,
+            uploadedBytes: item.type === NodeType.File || item.type === NodeType.Photo ? 0 : undefined,
         });
 
         void this.orchestrator.start();
@@ -362,6 +368,7 @@ export class UploadManager {
         }
 
         for (const file of node.files) {
+            const abortController = new AbortController();
             const uploadId = queueStore.addItem({
                 type: NodeType.File,
                 file,
@@ -373,7 +380,7 @@ export class UploadManager {
                 status: UploadStatus.Pending,
                 batchId,
             });
-            this.orchestrator.emitFileQueued(uploadId, false);
+            this.orchestrator.emitFileQueued(uploadId, false, abortController);
         }
     }
 }

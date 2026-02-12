@@ -26,7 +26,9 @@ export class UploadEventHandler {
         private cancelFolderChildren: (uploadId: string) => void
     ) {
         this.eventHandlers = {
-            'file:queued': () => {},
+            'file:queued': (event: Extract<UploadEvent, { type: 'file:queued' }>) => this.handleFileQueued(event),
+            'file:preparing': (event: Extract<UploadEvent, { type: 'file:preparing' }>) =>
+                this.handleFilePreparing(event),
             'file:started': (event: Extract<UploadEvent, { type: 'file:started' }>) => this.handleFileStarted(event),
             'file:progress': (event: Extract<UploadEvent, { type: 'file:progress' }>) => this.handleFileProgress(event),
             'file:complete': (event: Extract<UploadEvent, { type: 'file:complete' }>) => this.handleFileComplete(event),
@@ -70,12 +72,21 @@ export class UploadEventHandler {
         }
     }
 
+    private handleFileQueued(event: FileUploadEvent & { type: 'file:queued' }): void {
+        const controllerStore = useUploadControllerStore.getState();
+        controllerStore.setAbortController(event.uploadId, event.abortController);
+    }
+
+    private handleFilePreparing(event: FileUploadEvent & { type: 'file:preparing' }): void {
+        const queueStore = useUploadQueueStore.getState();
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.Preparing,
+        });
+    }
+
     private handleFileStarted(event: FileUploadEvent & { type: 'file:started' }): void {
         const controllerStore = useUploadControllerStore.getState();
-        controllerStore.setController(event.uploadId, {
-            uploadController: event.controller,
-            abortController: event.abortController,
-        });
+        controllerStore.setUploadController(event.uploadId, event.controller);
     }
 
     private handleFileProgress(event: FileUploadEvent & { type: 'file:progress' }): void {
@@ -89,6 +100,7 @@ export class UploadEventHandler {
 
         queueStore.updateQueueItems(event.uploadId, {
             uploadedBytes: event.uploadedBytes,
+            status: UploadStatus.InProgress,
         });
         this.capacityManager.updateProgress(event.uploadId, event.uploadedBytes);
     }

@@ -1,12 +1,12 @@
 import type { NodeType, NodeWithSameNameExistsValidationError, UploadController } from '@protontech/drive-sdk';
 
 export type FileUploadEvent =
-    | { type: 'file:queued'; uploadId: string; isForPhotos: boolean }
+    | { type: 'file:queued'; uploadId: string; isForPhotos: boolean; abortController: AbortController }
+    | { type: 'file:preparing'; uploadId: string; isForPhotos: boolean }
     | {
           type: 'file:started';
           uploadId: string;
           controller: UploadController;
-          abortController: AbortController;
           isForPhotos: boolean;
       }
     | { type: 'file:progress'; uploadId: string; uploadedBytes: number; isForPhotos: boolean }
@@ -111,6 +111,7 @@ export enum UploadConflictType {
 
 export enum UploadStatus {
     Pending = BaseTransferStatus.Pending,
+    Preparing = 'preparing',
     InProgress = BaseTransferStatus.InProgress,
     Finished = BaseTransferStatus.Finished,
     Failed = BaseTransferStatus.Failed,
