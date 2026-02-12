@@ -3,7 +3,7 @@ import { devtools } from 'zustand/middleware';
 
 import type { Device } from '@proton/drive';
 
-import { getDeviceName } from './getDeviceName';
+import { getDeviceName } from '../../utils/sdk/getNodeName';
 
 // SDK Device has a more complex type for "name" prop than what we need
 export type StoreDevice = Omit<Device, 'name'> & {

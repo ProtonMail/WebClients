@@ -1,25 +1,12 @@
 import { c } from 'ttag';
 
-import { type Device, useDrive } from '@proton/drive';
-
 import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { useRemoveDeviceModal } from '../../../modals/RemoveDeviceModal';
 import { useRenameDeviceModal } from '../../../modals/RenameDeviceModal';
-import { getDeviceName } from '../getDeviceName';
-
-const useGetDeviceByUid = (): ((uid: string) => Promise<Device | undefined>) => {
-    const { drive } = useDrive();
-
-    return async (uid: string) => {
-        for await (const device of drive.iterateDevices()) {
-            if (device.uid === uid) {
-                return device;
-            }
-        }
-    };
-};
+import { getDeviceByUid } from '../../../utils/sdk/getDeviceByUid';
+import { getDeviceName } from '../../../utils/sdk/getNodeName';
 
 export function DevicesItemContextMenu({
     selectedDevicesUid,
@@ -31,18 +18,14 @@ export function DevicesItemContextMenu({
 }: ContextMenuProps & {
     selectedDevicesUid: string[];
 }) {
-    const getDeviceByUid = useGetDeviceByUid();
-    const [renameDeviceModal, showRenameDeviceModal] = useRenameDeviceModal();
+    const { renameDeviceModal, showRenameDeviceModal } = useRenameDeviceModal();
     const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
     const isOnlyOneItem = selectedDevicesUid.length === 1;
 
     const onRename = async () => {
         const device = await getDeviceByUid(selectedDevicesUid[0]);
         if (device) {
-            showRenameDeviceModal({
-                deviceUid: device.uid,
-                deviceName: getDeviceName(device),
-            });
+            showRenameDeviceModal({ deviceUid: device.uid });
         }
     };
 

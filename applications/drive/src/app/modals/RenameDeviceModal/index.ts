@@ -1,29 +1,15 @@
 import { useModalTwoStatic } from '@proton/components';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { withHoc } from '../../hooks/withHoc';
 import { RenameDeviceModalView, type RenameDeviceModalViewProps } from './RenameDeviceModalView';
-import type { UseRenameDeviceInnerProps } from './useRenameDeviceModalState';
 import { type UseRenameDeviceModalProps, useRenameDeviceModalState } from './useRenameDeviceModalState';
 
-export const RenameDeviceModal = withHoc<UseRenameDeviceModalProps, RenameDeviceModalViewProps>(
+const RenameDeviceModal = withHoc<UseRenameDeviceModalProps, RenameDeviceModalViewProps>(
     useRenameDeviceModalState,
     RenameDeviceModalView
 );
 
 export const useRenameDeviceModal = () => {
     const [renameDeviceModal, showRenameDeviceModal] = useModalTwoStatic(RenameDeviceModal);
-
-    const handleShowRenameModal = ({ onSubmit, ...rest }: UseRenameDeviceInnerProps) => {
-        const submitCallback = async (newName: string) => {
-            await getBusDriver().emit({
-                type: BusDriverEventName.RENAMED_DEVICES,
-                items: [{ deviceUid: rest.deviceUid, newName }],
-            });
-            await onSubmit?.(newName);
-        };
-        showRenameDeviceModal({ onSubmit: submitCallback, ...rest });
-    };
-
-    return [renameDeviceModal, handleShowRenameModal] as const;
+    return { renameDeviceModal, showRenameDeviceModal };
 };
