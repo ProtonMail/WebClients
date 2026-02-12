@@ -3649,7 +3649,7 @@
         "Nepodarilo sa vytvoriť ${ MEET_APP_NAME } videokonferenciu"
       ],
       "Failed to create meeting": [
-        "Stretnutie sa nepodarilo vytvoriť"
+        "Schôdzku sa nepodarilo vytvoriť"
       ],
       "Failed to decrypt session key": [
         "Nepodarilo sa dešifrovať kľúč relácie"
@@ -5649,10 +5649,13 @@
         "Platnosť vypršala"
       ],
       "Failed to update meeting name": [
-        "Aktualizácia názvu stretnutia zlyhala"
+        "Aktualizácia názvu schôdzky zlyhala"
       ],
       "Failed to update meeting password": [
-        "Aktualizácia hesla stretnutia zlyhala"
+        "Aktualizácia hesla schôdzky zlyhala"
+      ],
+      "Failed to update meeting schedule": [
+        "Nepodarilo sa aktualizovať rozvrh schôdzky"
       ],
       "finance": [
         "financie"
@@ -6856,7 +6859,7 @@
         "Pridať do skupiny"
       ],
       "Add Zoom meeting": [
-        "Pridať Zoom stretnutie"
+        "Pridať Zoom schôdzku"
       ],
       "Address": [
         "Adresa"
@@ -7384,7 +7387,7 @@
         "PSČ"
       ],
       "Zoom meeting": [
-        "Zoom stretnutie"
+        "Zoom schôdzka"
       ]
     },
     "label": {
@@ -7686,10 +7689,10 @@
         "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
       ],
       "${ n } active meeting at a time": [
-        "${ n } aktívne stretnutie naraz",
-        "${ n } aktívne stretnutia naraz",
-        "${ n } aktívnych stretnutí naraz",
-        "${ n } aktívnych stretnutí naraz"
+        "${ n } aktívna schôdza",
+        "${ n } aktívne schôdze naraz",
+        "${ n } aktívnych schôdzí naraz",
+        "${ n } aktívnych schôdzí naraz"
       ],
       "${ n } participant": [
         "${ n } účastník",
@@ -7722,19 +7725,19 @@
         "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
-        "Jeden aktívny hovor naraz"
+        "Len jedna aktívna schôdza naraz"
       ],
       "Screen-sharing": [
         "Zdieľanie obrazovky"
       ],
       "Unlimited meetings per day": [
-        "Neobmedzený počet stretnutí za deň"
+        "Neobmedzený počet schôdzok denne"
       ],
       "Up to ${ n } meeting per day": [
-        "Až ${ n } stretnutie za deň",
-        "Až ${ n } stretnutia za deň",
-        "Až ${ n } stretnutí za deň",
-        "Až ${ n } stretnutí za deň"
+        "Až ${ n } schôdzka za deň",
+        "Až ${ n } schôdzky za deň",
+        "Až ${ n } schôdzí za deň",
+        "Až ${ n } schôdzí za deň"
       ],
       "Up to ${ n } participant": [
         "Až do ${ n } účastníka",
@@ -12344,7 +12347,7 @@
         "Uložiť zmeny"
       ],
       "Schedule meetings in one click": [
-        "Naplánujte si stretnutia jedným kliknutím"
+        "Naplánujte si schôdzky jedným kliknutím"
       ],
       "Security center": [
         "Centrum zabezpečenia"
