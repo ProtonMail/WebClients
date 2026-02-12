@@ -388,6 +388,10 @@ export enum PLANS {
     PASS = 'pass2023',
     MAIL = 'mail2022',
     MAIL_PRO = 'mailpro2022',
+    /**
+     * @deprecated.
+     * Unless you know exactly what you are doing, don't use this plan. This plan is deprecated and will be removed in the future.
+     */
     MAIL_BUSINESS = 'mailbiz2024',
     /**
      * @deprecated.

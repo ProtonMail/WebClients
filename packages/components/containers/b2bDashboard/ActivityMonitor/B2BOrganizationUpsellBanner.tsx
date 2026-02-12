@@ -13,10 +13,9 @@ import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 interface Props {
     organization?: Organization;
-    organizationMonitor?: boolean;
 }
 
-const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Props) => {
+const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -29,6 +28,17 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
             defaultAudience: Audience.B2B,
             plan: organization?.PlanName,
         });
+    const monitorLink = (
+        <Href
+            href="https://proton.me/support/business-activity-monitor"
+            title={c('Info').t`Activity Monitor`}
+            // key is required for ttag translation interpolation
+            key="monitor-link"
+        >{
+            /* translator: the full sentence is "Upgrade to unlock the activity monitor", where "activity monitor" is a link text, so it should be in lower case */
+            c('Link').t`activity monitor`
+        }</Href>
+    );
 
     return (
         <SettingsSectionWide>
@@ -39,19 +49,15 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
                 icon={<img src={illustration} alt="" width={40} height={40} />}
                 description={
                     <div>
-                        <b>{c('Info').t`Gain visibility across your organization`}</b>
+                        <b>{c('Info').t`Get visibility into account access`}</b>
                         <div>
-                            {c('Info').t`Upgrade to Professional or a higher plan to unlock`}{' '}
-                            {organizationMonitor ? (
-                                <b>{c('Info').t`Organization Monitor`}</b>
-                            ) : (
-                                <b>{c('Info').t`Accounts`}</b>
-                            )}
-                            {c('Info').t` and other security features.`}{' '}
-                            <Href
-                                href="https://proton.me/support/business-activity-monitor"
-                                title={c('Info').t`Learn more about Activity Monitor`}
-                            >{c('Link').t`Learn more`}</Href>
+                            {c('Info')
+                                .t`Monitor login activity, detect unauthorized access and close security and compliance gaps. `}
+                            <br />
+                            {
+                                /* translator: full sentence is "Upgrade to unlock the activity monitor" */
+                                c('Info').jt`Upgrade to unlock the ${monitorLink}.`
+                            }
                         </div>
                     </div>
                 }
@@ -63,7 +69,7 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
                             onClick={getCustomizeSubscriptionOpener('upsells')}
                             title={c('Title').t`View organization events by upgrading to Professional`}
                         >
-                            {c('Action').t`Upgrade to Professional`}
+                            {c('Action').t`Upgrade`}
                         </Button>
                     )
                 }
