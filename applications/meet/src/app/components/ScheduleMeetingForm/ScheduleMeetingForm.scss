@@ -81,6 +81,51 @@
 	}
 }
 
+.select-two-repeat {
+	.select-two-repeat-check-container {
+		display: none;
+	}
+
+	&.select-two-repeat:focus,
+	&.select-two-repeat:focus-within,
+	&.select-two-repeat[aria-expanded='true']:not([aria-controls]) {
+		// specificity inferno
+		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1) !important;
+	}
+
+	// a bit of reset to get it like we want
+	&-dropdown {
+		padding-inline: var(--space-2);
+		padding-block: var(--space-4);
+
+		.select-two-repeat-check-container {
+			color: var(--interaction-norm);
+		}
+
+		.dropdown-content {
+			border-radius: 0;
+		}
+
+		.dropdown-item-button {
+			padding-block: var(--space-3);
+			border-radius: var(--border-radius-xl);
+
+			&.dropdown-item--is-selected {
+				background-color: transparent !important;
+				pointer-events: unset !important;
+			}
+
+			&,
+			&.dropdown-item--is-selected {
+				&:hover,
+				&:focus-visible {
+					background-color: var(--interaction-norm-minor-3) !important;
+				}
+			}
+		}
+	}
+}
+
 .field {
 	&:focus {
 		box-shadow: 0 0 0 0.063rem var(--interaction-norm) !important;
