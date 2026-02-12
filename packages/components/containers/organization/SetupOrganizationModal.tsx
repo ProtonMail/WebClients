@@ -26,6 +26,7 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
@@ -105,15 +106,9 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const errorHandler = useErrorHandler();
 
     const handlePreStorageStep = async () => {
-        if (hasExternalMemberCapableB2BPlan) {
-            // If user setting up organization for VPN B2B plan then the storage step must be skipped.
-            return finalizeOrganizationCreation();
-        }
-        if (hasPassFamily(subscription)) {
-            if (!selfMemberID) {
-                throw new Error('Missing member id');
-            }
-            await silentApi(updateQuota(selfMemberID, storageValue));
+        // If user setting up organization for VPN B2B or Pass Family plan then the storage step must be skipped.
+        // Additionally, if it is a single user org with max 1 member and all the storage assigned to the user we can skip storage
+        if (hasExternalMemberCapableB2BPlan || hasPassFamily(subscription) || disableStorageSelection(organization)) {
             return finalizeOrganizationCreation();
         }
         setStep(STEPS.STORAGE);
@@ -222,6 +217,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                             totalStorage={getTotalStorage(selfMember, organization)}
                             range={storageRange}
                             onChange={handleChange('storage')}
+                            validator={validator}
                         />
                     </>
                 ),

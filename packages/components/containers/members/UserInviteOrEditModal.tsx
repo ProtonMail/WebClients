@@ -15,6 +15,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
@@ -277,11 +278,12 @@ const UserInviteOrEditModal = ({
                 {allowStorageConfiguration && (
                     <MemberStorageSelector
                         value={model.storage}
-                        disabled={submitting}
+                        disabled={submitting || disableStorageSelection(organization)}
                         sizeUnit={storageSizeUnit}
                         range={storageRange}
                         totalStorage={totalStorage}
                         onChange={handleChange('storage')}
+                        validator={validator}
                     />
                 )}
             </ModalContent>
