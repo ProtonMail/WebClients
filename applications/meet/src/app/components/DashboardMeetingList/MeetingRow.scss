@@ -7,6 +7,10 @@ im.$breakpoints: $breakpoints;
 	border-radius: 0;
 	border-color: var(--border-card);
 
+	+ .meeting-row {
+		border-block-start: none;
+	}
+
 	&--first {
 		border-start-start-radius: 2rem;
 		border-start-end-radius: 2rem;
