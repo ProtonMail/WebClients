@@ -3,14 +3,12 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
-import { updateQuota } from '@proton/shared/lib/api/members';
 import {
     leaveOrganisation as leaveOrganisationConfig,
     updateOrganizationName as updateOrganizationNameConfig,
 } from '@proton/shared/lib/api/organization';
-import clamp from '@proton/utils/clamp';
 
-import { type MemberState, memberThunk } from '../member';
+import type { MemberState } from '../member';
 import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
     type RotateOrganizationKeysState,
@@ -19,27 +17,6 @@ import {
 } from '../organizationKey/actions';
 import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { userThunk } from '../user';
-import { getInitialStorage, getStorageRange } from './storage';
-
-export const setDefaultStorage = (): ThunkAction<
-    Promise<void>,
-    OrganizationState & MemberState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch, _, extra) => {
-        const [selfMember, organization] = await Promise.all([
-            dispatch(memberThunk({ cache: CacheType.None })),
-            dispatch(organizationThunk()),
-        ]);
-
-        const storageRange = getStorageRange(selfMember, organization);
-        const initialStorage = getInitialStorage(organization, storageRange);
-        const storageValue = clamp(initialStorage, storageRange.min, storageRange.max);
-
-        await extra.api(updateQuota(selfMember.ID, storageValue));
-    };
-};
 
 export const setKeys = (): ThunkAction<
     Promise<void>,
@@ -85,7 +62,6 @@ export const initOrganization = ({
     return async (dispatch) => {
         await dispatch(updateOrganizationName({ name }));
         await dispatch(setKeys());
-        await dispatch(setDefaultStorage());
     };
 };
 

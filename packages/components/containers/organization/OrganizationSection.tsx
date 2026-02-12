@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { setupUser } from '@proton/account/addresses/actions';
-import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -41,7 +40,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
-import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import OrganizationSectionUpsell from './OrganizationSectionUpsell';
@@ -64,7 +62,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [organizationKey] = useOrganizationKey();
     const [user] = useUser();
     const dispatch = useDispatch();
-    const [customDomains] = useCustomDomains();
     const [subscription] = useSubscription();
     const [loading, withLoading] = useLoading();
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
@@ -72,7 +69,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
     const [setupOrganizationNameProps /* setSetupOrganizationNameModal */, , renderSetupOrganizationNameModal] = // TODO enable where needed
         useModalState();
-    const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
     const errorHandler = useErrorHandler();
 
@@ -104,7 +100,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         }
     }, []);
 
-    if (!organization || !user || !subscription || !customDomains) {
+    if (!organization || !user || !subscription) {
         return <Loader />;
     }
 
@@ -123,8 +119,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     />
                 );
             })}
-
-            {renderNewDomain && <DomainModal {...newDomainModalProps} />}
 
             {renderOrganizationLogoModal && (
                 <OrganizationLogoModal app={app} size="large" organization={organization} {...organizationLogoModal} />
@@ -161,25 +155,6 @@ const OrganizationSection = ({ app, organization }: Props) => {
             {(() => {
                 if (!hasMemberCapablePlan || !isOrgActive) {
                     return <OrganizationSectionUpsell app={app} />;
-                }
-
-                if (organization.RequiresDomain && customDomains.length === 0) {
-                    return (
-                        <SettingsSection>
-                            <SettingsParagraph>
-                                {c('Info')
-                                    .t`Create email addresses for other people, manage ${MAIL_APP_NAME} for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). `}
-                            </SettingsParagraph>
-                            <ButtonLike
-                                color="norm"
-                                onClick={() => {
-                                    setNewDomainModalOpen(true);
-                                }}
-                            >
-                                {c('Action').t`Add domain`}
-                            </ButtonLike>
-                        </SettingsSection>
-                    );
                 }
 
                 if (!organization.RequiresKey && !organization.Name) {

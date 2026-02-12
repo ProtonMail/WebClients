@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -8,14 +9,18 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan, hasBundleBiz2025 } from '@proton/payments';
-import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
-const UserAndAddressesSectionIntro = () => {
+interface Props {
+    onOpenNewDomainModal: (open: boolean) => void;
+}
+const UserAndAddressesSectionIntro = ({ onOpenNewDomainModal }: Props) => {
     const [user] = useUser();
     const [members] = useMembers();
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
+    const [customDomains] = useCustomDomains();
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
@@ -66,6 +71,20 @@ const UserAndAddressesSectionIntro = () => {
 
             return null;
         };
+
+        if (organization?.RequiresDomain && customDomains?.length === 0) {
+            return (
+                <>
+                    <p className="m-0 lg:max-w-4/5">
+                        {c('Message')
+                            .t`Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${MAIL_APP_NAME} for a business, school, or group.`}
+                    </p>
+                    <Button shape="outline" color="norm" size="small" onClick={() => onOpenNewDomainModal(true)}>
+                        {c('Action').t`Add domain`}
+                    </Button>
+                </>
+            );
+        }
 
         // bundlebiz2025 has AI features included for all members, so we don't need to show the writing assistant usage info
         if (maxAI > 0 && !hasBundleBiz2025(subscription)) {

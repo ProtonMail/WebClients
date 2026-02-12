@@ -58,7 +58,7 @@ import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
-import { getPrivateLabel } from './helper';
+import { disableStorageSelection, getPrivateLabel } from './helper';
 
 interface Props extends ModalProps<'form'> {
     member: EnhancedMember;
@@ -666,12 +666,14 @@ const SubUserEditModal = ({
 
                     {allowStorageConfiguration && (
                         <MemberStorageSelector
+                            disabled={disableStorageSelection(organization)}
                             className="mb-5"
                             value={model.storage}
                             sizeUnit={storageSizeUnit}
                             totalStorage={getTotalStorage(member, organization)}
                             range={getStorageRange(member, organization)}
                             onChange={(storage) => updatePartialModel({ storage })}
+                            validator={validator}
                         />
                     )}
                     {showAddressesSection && (
