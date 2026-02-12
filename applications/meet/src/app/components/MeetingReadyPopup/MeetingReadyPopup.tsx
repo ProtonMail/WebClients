@@ -62,7 +62,7 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                         .t`Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.`}</div>
                 </div>
 
-                <div className="link-container flex flex-column bg-norm border border-norm p-4 meet-radius">
+                <div className="link-container flex flex-column bg-norm border border-norm p-6">
                     <div className="color-weak">{c('Info').t`Meeting link`}</div>
                     <Href href={meetingLink} className="meeting-ready-popup-meeting-link text-break-all">
                         {meetingLink}
@@ -84,6 +84,8 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                 >
                     {c('Action').t`Copy link and close`}
                 </Button>
+
+                <div className="popup-caret"></div>
             </div>
         </WrapperComponent>
     );

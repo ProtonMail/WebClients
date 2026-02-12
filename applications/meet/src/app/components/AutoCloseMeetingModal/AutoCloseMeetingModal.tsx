@@ -44,6 +44,12 @@ export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMe
         return `${mins}:${secsStr}`;
     }
 
+    const timeLeft = (
+        <span key="time-left" className="text-tabular-nums">
+            {formatCountDown(autoCloseTimeInSeconds - timeAlone)}
+        </span>
+    );
+
     return (
         <>
             {timeAlone >= showAutoCloseAfterSeconds && (
@@ -56,7 +62,7 @@ export const AutoCloseMeetingModal = ({ participantCount, onLeave }: AutoCloseMe
                         className="flex flex-column justify-space-between p-4 mx-4 pb-0 gap-4 text-center bg-norm pt-custom"
                         style={{ '--pt-custom': '3rem' }}
                     >
-                        <div className="text-3xl text-semibold">{`Meeting will end in ${formatCountDown(autoCloseTimeInSeconds - timeAlone)}`}</div>
+                        <div className="text-3xl text-semibold">{c('Info').jt`Meeting will end in ${timeLeft}`}</div>
                         <div className="color-weak">{c('meet_2025')
                             .t`Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?`}</div>
 
