@@ -102,9 +102,14 @@ export const MeetingListHeader = ({
                     isOpen={isOpen}
                     anchorRef={anchorRef}
                     onClose={close}
-                    className="create-meeting-dropdown meet-radius"
+                    originalPlacement="bottom-end"
+                    className="meet-dropdown create-meeting-dropdown meet-radius"
+                    size={{ width: '14rem' }}
                 >
-                    <DropdownMenu className="flex flex-column items-start py-2 px-1 flex-nowrap meet-radius">
+                    <DropdownMenu className="flex flex-column items-start p-2 flex-nowrap meet-radius">
+                        <div className="color-hint meet-font-weight text-uppercase text-sm block pb-2 pt-4 px-4">
+                            {c('Info').t`Sort by`}
+                        </div>
                         {sortOptions.map((option) => (
                             <DropdownMenuButton
                                 key={option.value}

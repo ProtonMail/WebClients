@@ -59,7 +59,7 @@ const AudioSettingsDropdownComponent = ({
         <DeviceSettingsDropdown anchorRef={anchorRef} anchorPosition={anchorPosition} onClose={onClose}>
             <div className="flex flex-column gap-4 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
-                    <div className="color-weak meet-font-weight text-uppercase text-sm">
+                    <div className="color-hint meet-font-weight text-uppercase text-sm">
                         {!noMicrophoneDetected ? c('Info').t`Select a microphone` : c('Info').t`No microphone detected`}
                     </div>
                     {microphoneState.systemDefault && (
@@ -103,7 +103,7 @@ const AudioSettingsDropdownComponent = ({
                 </div>
                 {!noMicrophoneDetected && (
                     <div className="flex flex-column gap-4">
-                        <div className="color-weak meet-font-weight text-uppercase text-sm">{c('Info')
+                        <div className="color-hint meet-font-weight text-uppercase text-sm">{c('Info')
                             .t`Microphone effects`}</div>
                         <div className="w-full pl-8 pr-4 ml-0.5">
                             <NoiseCancellingToggle
@@ -117,7 +117,7 @@ const AudioSettingsDropdownComponent = ({
 
                 {!isSafari() && (
                     <div className="flex flex-column gap-2">
-                        <div className="color-weak meet-font-weight text-uppercase text-sm">
+                        <div className="color-hint meet-font-weight text-uppercase text-sm">
                             {!noSpeakerDetected ? c('Info').t`Select a speaker` : c('Info').t`No speaker detected`}
                         </div>
                         {speakerState.systemDefault && (
