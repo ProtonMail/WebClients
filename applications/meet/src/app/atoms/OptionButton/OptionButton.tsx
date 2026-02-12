@@ -8,7 +8,7 @@ interface OptionButtonProps {
     showIcon: boolean;
     label: string;
     onClick: () => void;
-    Icon: (props: Pick<IconProps, 'size'>) => JSX.Element;
+    Icon: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
     iconSize?: IconProps['size'];
     loading?: boolean;
 }
@@ -16,7 +16,7 @@ interface OptionButtonProps {
 export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize, loading }: OptionButtonProps) => {
     return (
         <Button
-            className="option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0 text-lg meet-font-weight rounded-xl pr-2"
+            className="option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0 text-rg meet-font-weight rounded-xl pr-2"
             onClick={onClick}
             shape="ghost"
             style={{ '--max-w-custom': '25rem' }}
@@ -25,7 +25,11 @@ export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize, loading
                 className="flex items-center justify-center w-custom min-w-custom w-4 mr-2"
                 style={{ '--w-custom': '2rem', '--min-w-custom': '2rem' }}
             >
-                {loading ? <CircleLoader /> : showIcon && Icon && <Icon size={iconSize ?? 5} />}
+                {loading ? (
+                    <CircleLoader />
+                ) : (
+                    showIcon && Icon && <Icon size={iconSize ?? 5} style={{ color: 'var(--interaction-norm)' }} />
+                )}
             </div>
             <span className="text-ellipsis">{label}</span>
         </Button>

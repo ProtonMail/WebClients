@@ -56,7 +56,7 @@ const VideoSettingsDropdownComponent = ({
         >
             <div className="flex flex-column gap-2 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
-                    <div className="color-weak meet-font-weight">
+                    <div className="color-weak meet-font-weight text-uppercase text-sm">
                         {noCameraDetected ? c('Info').t`No camera detected` : c('Info').t`Select a camera`}
                     </div>
                     {cameraState.systemDefault && (
@@ -97,8 +97,9 @@ const VideoSettingsDropdownComponent = ({
                     ))}
                 </div>
                 <div className="flex flex-column gap-4">
-                    <div className="color-weak meet-font-weight">{c('Info').t`Video effects`}</div>
-                    <div className="w-full pl-10 pr-4">
+                    <div className="color-weak meet-font-weight text-uppercase text-sm">{c('Info')
+                        .t`Video effects`}</div>
+                    <div className="w-full pl-8 pr-4 ml-0.5">
                         <BackgroundBlurToggle
                             backgroundBlur={backgroundBlur}
                             loadingBackgroundBlur={loadingBackgroundBlur}
