@@ -149,7 +149,7 @@ export const ScheduleMeetingRecapModal = ({
                             style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
                         />
                     </div>
-                    <div className="text-4xl mb-5 w-full text-center text-wrap-balance">{meetingName}</div>
+                    <div className="text-4xl mb-5 w-full text-center text-wrap-balance text-break">{meetingName}</div>
                 </h1>
             </div>
 
