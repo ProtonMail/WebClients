@@ -1468,9 +1468,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } souhaite partager un élément avec vous."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } a été partagé avec un groupe dont vous êtes membre."
-      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -1478,9 +1475,6 @@
       "${ n } item": [
         "${ n } élément",
         "${ n } éléments"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } nouveaux partages sont accessibles dans un groupe dont vous êtes membre"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sera toujours accessible."
@@ -1634,7 +1628,7 @@
       "All trashed items successfully restored": [
         "Tous les éléments mis à la corbeille ont été restaurés."
       ],
-      "An item previously shared with you was removed": [
+      "An item previously shared with you was removed.": [
         "Un élément partagé avec vous a été retiré."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
@@ -2059,7 +2053,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2597,7 +2592,7 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Le coffre-fort « ${ payload.share.content.name } » a été mis à jour."
       ],
-      "Vault \"${ share.content.name }\" was removed": [
+      "Vault \"${ share.content.name }\" was removed.": [
         "Le coffre-fort « ${ share.content.name } » a été retiré."
       ],
       "Vault organization successfully updated": [
@@ -2681,6 +2676,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Vous devez disposer d'un coffre-fort avec des droits de modification pour importer des éléments."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Vous n'avez plus accès à certains coffres-forts ou objets car l'accès de votre groupe ${ groupName } a été retiré."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Vous avez désormais accès à « Élément ${ itemName } » car votre groupe ${ groupName } s'est vu accorder l'accès."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Vous avez désormais accès à « Coffre-fort ${ vaultName } » car votre groupe ${ groupName } s'est vu accorder l'accès."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-all, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."

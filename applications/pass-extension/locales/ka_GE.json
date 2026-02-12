@@ -1450,9 +1450,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } უნდა, ელემენტი გაგიზიაროთ."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } გაზიარებულია ჯგუფისთვის, რომლის წევრიც ბრძანდებით"
-      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -1609,9 +1606,6 @@
       ],
       "All trashed items successfully restored": [
         "ყველა ელემენტი ნაგვის ყუთიდან, წარმატებით, აღდგა"
-      ],
-      "An item previously shared with you was removed": [
-        "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "მართლა გნებავთ წაშალოთ ${ emailJSX } თქვენი საფოსტო ყუთებიდან?"
@@ -2027,6 +2021,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2542,9 +2540,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "საცავი \"${ payload.share.content.name }\" წარმატებით განახლდა"
-      ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "საცავი \"${ share.content.name }\" წაიშალა"
       ],
       "Vault organization successfully updated": [
         "საცავის ორგანიზაცია წარმატებით განახლდა"
