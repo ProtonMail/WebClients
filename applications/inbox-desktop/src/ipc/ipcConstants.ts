@@ -23,6 +23,7 @@ export const DESKTOP_FEATURES = {
     SnapSupport: true,
     BugReportLogAttachments: true,
     PrintDialog: true,
+    UserLogoutV2: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {

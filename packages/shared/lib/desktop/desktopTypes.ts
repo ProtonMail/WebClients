@@ -40,7 +40,8 @@ export type IPCInboxDesktopFeature =
     | 'ClearAppModal'
     | 'SnapSupport'
     | 'BugReportLogAttachments'
-    | 'PrintDialog';
+    | 'PrintDialog'
+    | 'UserLogoutV2';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -56,7 +57,7 @@ export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserC
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }
-    | { type: 'userLogout'; payload?: undefined }
+    | { type: 'userLogout'; payload?: undefined } // Deprecated by `userLogoutV2`; older desktop clients still rely on the message.
     | { type: 'clearAppData'; payload?: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
     | { type: 'subscriptionModalOpened'; payload: 'subscriptionModalStarted' | 'subscriptionModalFinished' }
@@ -80,7 +81,9 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'reportTestingError'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
     | { type: 'toggleAppCache'; payload: boolean }
-    | { type: 'togglePrintDialog'; payload: string };
+    | { type: 'togglePrintDialog'; payload: string }
+    | { type: 'userLogoutV2'; payload: string }
+    | { type: 'logoutAllUsers'; payload?: undefined };
 export type IPCInboxClientGetAsyncDataMessage = {
     type: 'getElectronLogs';
     args: [maxSize?: number];
