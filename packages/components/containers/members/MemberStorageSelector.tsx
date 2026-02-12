@@ -11,10 +11,9 @@ import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import clamp from '@proton/utils/clamp';
 import generateUID from '@proton/utils/generateUID';
 
-import InputField from '../../components/v2/field/InputField';
+import { InputField } from '../../components/v2/field/InputField';
 
 interface Props {
     range: ReturnType<typeof getStorageRange>;
@@ -25,6 +24,7 @@ interface Props {
     className?: string;
     disabled?: boolean;
     orgInitialization?: boolean;
+    validator: (validations: string[]) => string;
 }
 
 const getNumberWithPrecision = (value: number, precision: number) => {
@@ -93,9 +93,15 @@ const getValueInBytes = (value: number, sizeInUnits: number) => {
     return value * sizeInUnits;
 };
 
+const maxValueValidator = (value: number, maximumValue: number, displayMaxValue: string) => {
+    // translator: Maximum 1024.0 GB allowed or Maximum 450.5 GB allowed
+    return value > maximumValue ? c('Error').t`Maximum ${displayMaxValue} allowed` : '';
+};
+
 const MemberStorageSelector = ({
     range,
     value,
+    validator,
     onChange,
     sizeUnit,
     totalStorage,
@@ -114,6 +120,7 @@ const MemberStorageSelector = ({
     const min = getNumberWithPrecision(getValueInUnit(range.min, sizeUnit), precision);
     const max = getNumberWithPrecision(getValueInUnit(range.max, sizeUnit), precision);
     const step = getNumberWithPrecision(getValueInUnit(stepInBytes, sizeUnit), precision);
+    const maxInBytes = Math.floor(getValueInBytes(max, sizeUnit));
 
     const parsedValueInUnit = getNumberWithPrecision(Number.parseFloat(tmpValue), 1) || 0;
     const parsedValueInBytes = Math.floor(getValueInBytes(parsedValueInUnit, sizeUnit));
@@ -126,6 +133,11 @@ const MemberStorageSelector = ({
 
     const segments = getSegments(totalStorage, parsedValueInBytes);
     const unit = getUnit(sizeUnit);
+    const maxValueInHumanSize = humanSize({
+        bytes: maxInBytes,
+        unit,
+        fraction: precision,
+    });
 
     const handleSafeChange = (value: number) => {
         if (Number.isNaN(value)) {
@@ -133,9 +145,8 @@ const MemberStorageSelector = ({
             setTmpValue(getDisplayedValue(actualValue, precision));
             return;
         }
-        const safeValue = clamp(value, min, max);
-        setTmpValue(getDisplayedValue(safeValue, precision));
-        onChange(clamp(Math.floor(getValueInBytes(safeValue, sizeUnit)), range.min, range.max));
+        setTmpValue(getDisplayedValue(value, precision));
+        onChange(Math.floor(getValueInBytes(value, sizeUnit)));
     };
 
     const sizeElementWidth = 1;
@@ -155,6 +166,7 @@ const MemberStorageSelector = ({
                     <InputField
                         label={c('Label').t`Account storage`}
                         disableChange={disabled}
+                        error={validator([maxValueValidator(parsedValueInUnit, max, maxValueInHumanSize)])}
                         value={tmpValue}
                         aria-label={c('Label').t`Account storage`}
                         data-testid="member-storage-selector"
@@ -229,20 +241,21 @@ const MemberStorageSelector = ({
                     )}
                 </div>
             </div>
-            <div className="mt-2 pr-2 md:pr-0">
-                <Slider
-                    marks
-                    disabled={disabled}
-                    min={min}
-                    max={max}
-                    step={step}
-                    aria-label={c('Label').t`Account storage`}
-                    aria-describedby={uid}
-                    value={parsedValueInUnit}
-                    getDisplayedValue={(value) => getDisplayedValue(value, precision)}
-                    onChange={handleSafeChange}
-                />
-            </div>
+            {!disabled && (
+                <div className="mt-2 pr-2 md:pr-0">
+                    <Slider
+                        marks
+                        min={min}
+                        max={max}
+                        step={step}
+                        aria-label={c('Label').t`Account storage`}
+                        aria-describedby={uid}
+                        value={parsedValueInUnit}
+                        getDisplayedValue={(value) => getDisplayedValue(value, precision)}
+                        onChange={handleSafeChange}
+                    />
+                </div>
+            )}
         </div>
     );
 };
