@@ -1492,10 +1492,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -6947,9 +6944,6 @@
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Pro tohoto příjemce byl zjištěn neznámý veřejný klíč."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Vaším jménem bude odeslán e-mail o odhlášení odběru."
       ],
@@ -8446,6 +8440,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To znamená, že ISP a webové stránky, které navštěvujete, nemohou spojit vaše osobní údaje s vaší online aktivitou."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Tato zpráva má připojený klíč, který nebyl dosud označen jako důvěryhodný."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Tato zpráva byla upravena tak, aby odpovídala tmavému pozadí."

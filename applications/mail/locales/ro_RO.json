@@ -1487,11 +1487,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Cheie de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -6842,9 +6837,6 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "S-a detectat o cheie publică necunoscută pentru acest destinatar."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "V fi trimis un e-mail de dezabonare în numele dvs."
       ],
@@ -8322,6 +8314,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Aceasta înseamnă că ISP-ul și site-urile web pe care le vizitați nu vă pot corela informațiile personale cu activitatea dvs. online."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Acest mesaj are o cheie atașată, care nu a fost încă aprobată."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Acest mesaj a fost adaptat pentru a se potrivi la fundalul întunecat."

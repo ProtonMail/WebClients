@@ -1484,8 +1484,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -6486,8 +6485,8 @@
         "${ numOccurrences } forekomster fundet"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } forekomst fundet i mail-indholdet",
-        "${ numOccurrences } forekomster fundet i mail-indholdet"
+        "${ numOccurrences } forekomst fundet i mailens indhold",
+        "${ numOccurrences } forekomster fundet i mailens indhold"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "Med ${ PASS_APP_NAME } kan du gemme adgangskoder, noter og andre følsomme oplysninger med end-to-end-kryptering. Tilgængelig på ${ ios }, ${ android } og i din ${ browser }."
@@ -6551,7 +6550,7 @@
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulæst",
-        "${ subscription.UnreadMessageCount } ulæst"
+        "${ subscription.UnreadMessageCount } ulæste"
       ],
       "${ total } conversation": [
         "${ total } samtale",
@@ -6736,9 +6735,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
-      ],
-      "An unknown public key has been detected for this recipient.": [
-        "En ukendt offentlig nøgle er fundet for denne modtager."
       ],
       "An unsubscribe email will be sent on your behalf.": [
         "En afmeldings-e-mail vil blive sendt på dine vegne."
@@ -8199,6 +8195,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
       ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Denne besked har en vedhæftet nøgle, der endnu ikke er betroet."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Denne besked er blevet tilpasset, så den er i overensstemmelse med en mørk baggrund."
       ],
@@ -8653,8 +8652,8 @@
         "Du har **${ count } beskeder** gemt i denne mappe"
       ],
       "You have **${ count } message** tagged with this label": [
-        "Du har **${ count } besked** mærket med denne etikette",
-        "Du har **${ count } beskeder** mærket med denne etikette"
+        "Du har **${ count } besked** mærket med denne etiket",
+        "Du har **${ count } beskeder** mærket med denne etiket"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -8690,8 +8689,8 @@
         "Du valgte **${ count } beskeder** fra denne mappe"
       ],
       "You selected **${ count } message** with this label": [
-        "Du valgte **${ count } besked** med denne etikette",
-        "Du valgte **${ count } beskeder** med denne etikette"
+        "Du valgte **${ count } besked** med denne etiket",
+        "Du valgte **${ count } beskeder** med denne etiket"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Du valgte **${ elementsCount } samtale** i ${ location }",
@@ -12967,7 +12966,7 @@
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Vi har opdaget fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
-        "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsag:"
+        "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsager:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har opdaget nogle fejl. Din e-mail kan ikke sendes til en eller flere af de indtastede e-mailadresser af de følgende årsager:"
@@ -12979,7 +12978,7 @@
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
-        "Følgende adresser er ikke gyldig: ${ invalidAddresses }"
+        "Følgende adresser er ikke gyldige: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "Vi har registreret nogle advarsler. Følgende e-mailadresse modtager muligvis ikke e-mails:",
@@ -14213,8 +14212,8 @@
         "${ elementsCount } beskeder flyttet til ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } besked flyttet til spam og afsender tilføjet din spam-liste.",
-        "${ elementsCount } beskeder flyttet til spam og afsendere tilføjet din spam-liste."
+        "${ elementsCount } besked flyttet til spam og afsender tilføjet din spamliste.",
+        "${ elementsCount } beskeder flyttet til spam og afsendere tilføjet din spamliste."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } besked fjernet fra ${ labelName }.",

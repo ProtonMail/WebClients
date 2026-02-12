@@ -1492,10 +1492,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -6947,9 +6944,6 @@
       "Amount below minimum (${ amount }).": [
         "Suma nižšia ako minimum (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Pre tohto príjemcu bol zistený neznámy verejný kľúč."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Email na odhlásenie odberu bude odoslaný vo vašom mene."
       ],
@@ -8446,6 +8440,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To znamená, že poskytovateľ internetových služieb a navštívené webové lokality nemôžu spájať vaše osobné údaje s vašou online aktivitou."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Táto správa má pripojený kľúč, ktorý ešte nebol overený."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Táto správa bola upravená tak, aby zodpovedala tmavému pozadiu."
@@ -10686,10 +10683,10 @@
         "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
       ],
       "${ n } active meeting at a time": [
-        "${ n } aktívne stretnutie naraz",
-        "${ n } aktívne stretnutia naraz",
-        "${ n } aktívnych stretnutí naraz",
-        "${ n } aktívnych stretnutí naraz"
+        "${ n } aktívna schôdza",
+        "${ n } aktívne schôdze naraz",
+        "${ n } aktívnych schôdzí naraz",
+        "${ n } aktívnych schôdzí naraz"
       ],
       "${ n } participant": [
         "${ n } účastník",
@@ -10722,19 +10719,19 @@
         "Nahrávanie schôdze"
       ],
       "One active meeting at a time": [
-        "Jeden aktívny hovor naraz"
+        "Len jedna aktívna schôdza naraz"
       ],
       "Screen-sharing": [
         "Zdieľanie obrazovky"
       ],
       "Unlimited meetings per day": [
-        "Neobmedzený počet stretnutí za deň"
+        "Neobmedzený počet schôdzok denne"
       ],
       "Up to ${ n } meeting per day": [
-        "Až ${ n } stretnutie za deň",
-        "Až ${ n } stretnutia za deň",
-        "Až ${ n } stretnutí za deň",
-        "Až ${ n } stretnutí za deň"
+        "Až ${ n } schôdzka za deň",
+        "Až ${ n } schôdzky za deň",
+        "Až ${ n } schôdzí za deň",
+        "Až ${ n } schôdzí za deň"
       ],
       "Up to ${ n } participant": [
         "Až do ${ n } účastníka",

@@ -1484,8 +1484,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -6737,9 +6736,6 @@
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Une clé publique inconnue a été détectée pour ce destinataire."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Un message de désabonnement sera envoyé en votre nom."
       ],
@@ -8198,6 +8194,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Cela signifie que votre FAI et les sites internet que vous visitez ne peuvent pas lier vos informations personnelles à vos activités en ligne."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Une clé est attachée à ce message, mais elle n'a pas encore été approuvée."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Ce message a été ajusté pour être adapté à un fond sombre."

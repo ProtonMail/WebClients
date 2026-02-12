@@ -136,7 +136,7 @@
         "Terapkan"
       ],
       "Archive": [
-        "Arsip"
+        "Arsipkan"
       ],
       "As Scheduled": [
         "Sebagaimana Terjadwal"
@@ -316,7 +316,7 @@
         "Lanjut tanpa kategori"
       ],
       "Contract composer": [
-        "Ciutkan komposer"
+        "Ciutkan penulis pesan"
       ],
       "Copy address": [
         "Salin alamat"
@@ -628,7 +628,7 @@
         "Dapatkan kode verifikasi"
       ],
       "Go to ${ planOrAppName }": [
-        "Tuju ${ planOrAppName }"
+        "Buka ${ planOrAppName }"
       ],
       "Go to label": [
         "Buka label"
@@ -880,7 +880,7 @@
         "Pesan untuk penerima ini"
       ],
       "Minimize composer": [
-        "Minimalkan komposer"
+        "Minimalkan penulis pesan"
       ],
       "Modify": [
         "Ubah"
@@ -2089,7 +2089,7 @@
         "Masalah aplikasi"
       ],
       "Authenticator problem": [
-        "Kesalahan autentikator"
+        "Masalah autentikator"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -2567,7 +2567,7 @@
         "Riwayat obrolan dasar"
       ],
       "Built and based in Europe": [
-        "Dirancang dan berbasis di Eropa"
+        "Dibuat dan berbasis di Eropa"
       ],
       "Compliance with data protection regulations": [
         "Patuh terhadap peraturan perlindungan data"
@@ -4561,7 +4561,7 @@
         "Kontak gagal dibuka"
       ],
       "Failed to update secret passphrase": [
-        "Frasa sandi rahasia gagal diperbarui"
+        "Frasa sandi secret gagal diperbarui"
       ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
@@ -4777,7 +4777,7 @@
         "Kunci utama yang diambil untuk pengguna ${ BRAND_NAME } tidak valid untuk pengiriman"
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "Gagal mengunduh asisten penulisan. Jika menggunakan mode privat, beralihlah ke mode normal atau jalankan asisten penulisan di server."
+        "Gagal mengunduh asisten penulisan. Jika menggunakan mode pribadi, beralihlah ke mode normal atau jalankan asisten penulisan di server."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Terjadi kesalahan dalam mengunduh asisten penulisan. Silakan coba lagi."
@@ -5423,7 +5423,7 @@
     },
     "Feature": {
       "Encrypted cloud storage for files, photos and documents": [
-        "Penyimpanan cloud terenkripsi untuk berkas, foto, dan dokumen"
+        "Penyimpanan cloud terenkripsi untuk file, foto, dan dokumen"
       ],
       "More premium features": [
         "Fitur premium lainnya"
@@ -5789,7 +5789,7 @@
         "Masuk ke aplikasi seluler untuk menuntaskan langkah ini"
       ],
       "Storage unlocked": [
-        "Penyimpanan tambahan terbuka"
+        "Penyimpanan terbuka"
       ],
       "Tasks to complete count": [
         "Jumlah tugas untuk diselesaikan"
@@ -6609,9 +6609,6 @@
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
-      "An unknown public key has been detected for this recipient.": [
-        "Kunci publik tidak dikenal terdeteksi untuk penerima ini."
-      ],
       "An unsubscribe email will be sent on your behalf.": [
         "Email berhenti berlangganan akan dikirim atas nama Anda."
       ],
@@ -6721,7 +6718,7 @@
         "Blokir pengirim"
       ],
       "Body: ": [
-        "Isi: "
+        "Badan: "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman daring yang lebih konsisten bagi para pengguna Anda."
@@ -6970,7 +6967,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
-        "Pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa ke ${ firstRecipients } karena pengaturan penerima."
+        "Pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa ke ${ firstRecipients } karena konfigurasi penerima."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
         "Karena konfigurasi penerima Anda, pesan ini tidak dapat dikirim dengan tanggal kedaluwarsa."
@@ -7105,7 +7102,7 @@
         "Untuk informasi lebih lanjut dan untuk menghapus batasan yang berlaku, silakan masuk pada ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
+        "Untuk akses kapan saja dan pengalaman seluler yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Untuk keamanan tambahan, Anda dapat mengatur frasa sandi. Frasa sandi ini tidak akan disertakan dalam undangan kalender, jadi ingat untuk membagikannya secara terpisah kepada tamu Anda."
@@ -7243,7 +7240,7 @@
         "Meliputi email pemasaran dan notifikasi aplikasi yang tidak mendesak."
       ],
       "Includes marketing emails like offers and product announcements.": [
-        "Termasuk email pemasaaran seperti penawaran dan pengumuman produk."
+        "Termasuk email pemasaran seperti penawaran dan pengumuman produk."
       ],
       "Includes news recaps and other non-promotional content. ": [
         "Meliputi rekap berita dan konten non-promosional lainnya. "
@@ -7963,7 +7960,7 @@
         "Pesan ini telah kedaluwarsa"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Pesan asli yang Anda coba teruskan / balas sedang berada dalam proses pengiriman. Apabila Anda melanjutkan, Anda tidak akan lagi dapat mengurungkan pengiriman pesan asli ini."
+        "Pesan asli yang Anda coba teruskan/balas sedang berada dalam proses pengiriman. Apabila Anda melanjutkan, Anda tidak akan lagi dapat mengurungkan pengiriman pesan asli ini."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Alamat pengirim pesan asli ini sudah tidak valid lagi. Pesan ini akan dikirim melalui alamat bawaan ${ defaultEmail } Anda."
@@ -8197,7 +8194,7 @@
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), tuju menu Pengaturan."
+        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), buka menu Pengaturan."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk mencari konten pesan Anda"
@@ -8242,7 +8239,7 @@
         "Tingkatkan akun Anda untuk membuat lebih banyak folder, filter, dan alamat."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Tingkatkan untuk mempertahankan berbagai keutamaan ${ planTitle } Anda."
+        "Tingkatkan untuk mempertahankan berbagai manfaat ${ planTitle } Anda."
       ],
       "Upgrade to level up your privacy.": [
         "Tingkatkan akun Anda untuk membawa privasi Anda ke jenjang selanjutnya."
@@ -9383,7 +9380,7 @@
         "Kelola alamat saya"
       ],
       "Mark as": [
-        "Tandai"
+        "Tandai sebagai"
       ],
       "Marked as read": [
         "Ditandai sudah dibaca"
@@ -9689,7 +9686,7 @@
         "Kata sandi lemah"
       ],
       "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Kami tengah menyempurnakan bagaimana suatu email dikategorikan. Tanggapan Anda membantu fitur ini menjadi lebih cerdas dan akurat."
+        "Kami tengah menyempurnakan bagaimana suatu email dikategorikan. Masukan Anda membantu fitur ini menjadi lebih cerdas dan akurat."
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -9955,7 +9952,7 @@
         "Label"
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "Pelajari lebih lanjut"
       ],
       "Less": [
         "Lebih sedikit"
@@ -10696,7 +10693,7 @@
         "Enkripsi end-to-end"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
-        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
+        "Manfaat ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent cepat"
@@ -11601,7 +11598,7 @@
         "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "Untuk akses email kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
+        "Untuk akses email kapan saja dan pengalaman seluler yang lebih optimal, unduh aplikasi ${ mobileAppAppStoreLink } atau ${ mobileAppGooglePlayLink } kami."
       ],
       "Get notified if your password is compromised.": [
         "Dapatkan notifikasi pada saat kata sandi Anda dibocorkan."
@@ -11625,7 +11622,7 @@
         "Selanjutnya"
       ],
       "Protection from trackers": [
-        "Perlindungan pelacak"
+        "Perlindungan dari pelacak"
       ],
       "Replay introduction": [
         "Ulangi pengenalan"
@@ -11646,7 +11643,7 @@
         "Selamat datang di ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "Privasi sudah menjadi standar."
+        "Privasi sudah menjadi bawaan."
       ],
       "You are all set!": [
         "Anda kini telah siap!"
@@ -11756,7 +11753,7 @@
         "Makanan dan minuman"
       ],
       "Gaming": [
-        "Permainan"
+        "Game"
       ],
       "Most popular": [
         "Terpopuler"
@@ -12071,7 +12068,7 @@
         "Kredit yang belum terpakai dari paket langganan Anda sebelumnya"
       ],
       "Credits will be added to your balance": [
-        "Kredit akan ditambahkan ke tabungan Anda"
+        "Kredit akan ditambahkan ke saldo Anda"
       ]
     },
     "Payments.ModificationWarning": {
@@ -12323,7 +12320,7 @@
         "Subjek"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Umumkan acara yang akan datang di suatu buletin\""
+        "Beri tahukan asisten penulisan apa yang harus ditulis. Contoh: \"Umumkan acara yang akan datang di suatu buletin\""
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
         "Beritahukan asisten penulisan yang harus ditulis. Contoh: \"Batalkan keanggotaan gym saya\""
@@ -13268,7 +13265,7 @@
         "Alamat ini sekarang menjadi alamat utama Anda. Buka menu tarik-turun untuk mengirim dari alamat lain. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
-        "Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk menerima notifikasi apabila data Anda dibocorkan dari layanan pihak ketiga."
+        "Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk menerima notifikasi apabila data Anda terbocorkan dari layanan pihak ketiga."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara bawaan dan memblokir pengirim pesan untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
@@ -14446,7 +14443,7 @@
         "Blokir pengirim"
       ],
       "Built for privacy": [
-        "Dirancang untuk privasi"
+        "Dibuat untuk privasi"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
@@ -15196,7 +15193,7 @@
         "Untuk mempratinjau, unduh lembar kerja ini."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
+        "Untuk mempratinjau spreadsheet ini, buka di ${ SHEETS_APP_NAME } atau unduh."
       ],
       "Trash all messages?": [
         "Buang seluruh pesan?"
