@@ -66,7 +66,7 @@ import MemberToggleContainer from './MemberToggleContainer';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
-import { getPrivateLabel } from './helper';
+import { disableStorageSelection, getPrivateLabel } from './helper';
 
 enum Step {
     SINGLE,
@@ -417,12 +417,14 @@ const SubUserCreateModal = ({
 
                 {allowStorageConfiguration && (
                     <MemberStorageSelector
+                        disabled={disableStorageSelection(organization)}
                         className="mb-5"
                         value={model.storage}
                         sizeUnit={storageSizeUnit}
                         range={storageRange}
                         totalStorage={getTotalStorage({}, organization)}
                         onChange={handleChange('storage')}
+                        validator={validator}
                     />
                 )}
 
