@@ -354,8 +354,12 @@ export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
     return labelID;
 };
 
-export const convertCategoryLabelToCategoryAndInbox = (labelID: string) => {
+export const convertCategoryLabelToCategoryAndInbox = (labelID: string, disabledCategoriesIDs: string[]) => {
     if (isCategoryLabel(labelID)) {
+        if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+            return [MAILBOX_LABEL_IDS.INBOX, labelID, ...disabledCategoriesIDs];
+        }
+
         return [MAILBOX_LABEL_IDS.INBOX, labelID];
     }
 
