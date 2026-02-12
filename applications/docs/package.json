@@ -5,7 +5,7 @@
   "author": "",
   "main": "index.ts",
   "scripts": {
-    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets --babelLoader",
+    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets --babelLoader --noLogicalScss ",
     "check-types": "tsc",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
@@ -14,7 +14,7 @@
     "lint": "eslint --quiet",
     "lint:warning": "eslint",
     "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --optimizeAssets --babelLoader",
+    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --optimizeAssets --babelLoader --noLogicalScss",
     "test": "jest --coverage=false",
     "test:ci": "jest --runInBand --ci",
     "test:watch": "jest --watch --coverage=false"

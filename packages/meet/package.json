@@ -8,7 +8,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --noLogicalScss",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run --coverage --coverage.provider=v8",
         "test:ui": "yarn test --ui",

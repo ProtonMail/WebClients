@@ -2,7 +2,7 @@
     "name": "proton-authenticator",
     "scripts": {
         "build:desktop": "cross-env NODE_ENV=production API_ENV=proton.me tools/build.sh",
-        "build:web": "cross-env NODE_ENV=production API_ENV=proton.me webpack --config webpack.config.ts",
+        "build:web": "cross-env NODE_ENV=production API_ENV=proton.me webpack --config webpack.config.ts --noLogicalScss",
         "check-types": "tsc",
         "generate:api-types": "yarn workspace @proton/pass generator:openapi \"https://$API/api/internal/doc?page=authenticator\" > ./src/lib/api/types.ts",
         "i18n:extract:desktop": "proton-i18n extract",
@@ -13,7 +13,7 @@
         "lint": "eslint --quiet",
         "make": "tauri bundle -v && bash tools/rename-after-make.sh",
         "start:desktop": "tauri dev --features devtools",
-        "start:web": "cross-env API_ENV=proton.black webpack serve --config webpack.config.ts",
+        "start:web": "cross-env API_ENV=proton.black webpack serve --config webpack.config.ts --noLogicalScss",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci --passWithNoTests"
     },

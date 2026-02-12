@@ -7,7 +7,7 @@
     "main": "index.ts",
     "scripts": {
         "analyze": "yarn build:web --analyze",
-        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets",
+        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets --noLogicalScss",
         "check-types": "tsc",
         "i18n:extract:local": "yarn workspace @proton/i18n build && yarn build:web && proton-i18n extract",
         "i18n:extract:web": "proton-i18n extract",
@@ -17,7 +17,7 @@
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --handleSupportAndErrors --optimizeAssets",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --handleSupportAndErrors --optimizeAssets --noLogicalScss",
         "test": "jest",
         "test:ci": "jest --coverage=false --runInBand --ci",
         "test:watch": "jest --watch --coverage=false"
