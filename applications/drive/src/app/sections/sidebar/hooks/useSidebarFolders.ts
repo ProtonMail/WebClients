@@ -6,8 +6,8 @@ import { NodeType, useDrive } from '@proton/drive/index';
 
 import { handleSdkError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { getDeviceName } from '../../../utils/sdk/getNodeName';
 import { useDeviceStore } from '../../devices/devices.store';
-import { getDeviceName } from '../../devices/getDeviceName';
 import type { SidebarItem } from './useSidebar.store';
 import { useSidebarStore } from './useSidebar.store';
 
