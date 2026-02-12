@@ -3,26 +3,26 @@ import { c, msgid } from 'ttag';
 import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
 import { AccessTarget } from '@proton/pass/lib/access/types';
 import type {
-    GroupInviteListItemResponse,
-    InviteDataForUser,
+    AbstractInviteResponse,
+    GroupInvite,
+    GroupOwnerInvite,
     InviteVaultDataForUser,
-    Maybe,
     MaybeNull,
     NewUserPendingInvite,
     Share,
 } from '@proton/pass/types';
-import { type InviteBase, NewUserInviteState, type Result, ShareType } from '@proton/pass/types';
+import { type InviteBase, InviteType, NewUserInviteState, type Result, ShareType } from '@proton/pass/types';
+import { partition } from '@proton/pass/utils/array/partition';
 import { and } from '@proton/pass/utils/fp/predicates';
 
 export type InviteBatchResult = Result<{}, { failed: string[] }>;
-export type AbstractInvite = InviteDataForUser | GroupInviteListItemResponse;
 
 export const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
 export const isItemInviteForItem = (itemId: string) => and(isItemTarget, isTargetInvite(itemId));
 export const isInviteReady = (invite: NewUserPendingInvite) => invite.state === NewUserInviteState.READY;
 
 /** Guards that the invite targets a vault and has vault data */
-export const isVaultInvite = <T extends AbstractInvite>(
+export const isVaultInviteResponse = <T extends AbstractInviteResponse>(
     invite: T
 ): invite is T & { VaultData: InviteVaultDataForUser } =>
     Boolean(invite.TargetType === ShareType.Vault && invite.VaultData);
@@ -35,8 +35,13 @@ export const isVaultInvite = <T extends AbstractInvite>(
  * collide across shards. */
 export const isAcceptedInvite =
     (vaultIDs: Set<string>) =>
-    (invite: AbstractInvite): boolean =>
-        isVaultInvite(invite) && vaultIDs.has(invite.TargetID);
+    (invite: AbstractInviteResponse): boolean =>
+        isVaultInviteResponse(invite) && vaultIDs.has(invite.TargetID);
+
+export const isGroupInvite = (invite?: MaybeNull<InviteBase>): invite is GroupInvite => Boolean(invite?.invitedGroupId);
+
+export const partitionGroupInvites = (invites: GroupInvite[]) =>
+    partition(invites, (invite): invite is GroupOwnerInvite => invite.type === InviteType.GroupOwner);
 
 export const concatInviteResults = (results: InviteBatchResult[]): InviteBatchResult =>
     results.reduce(
@@ -83,6 +88,3 @@ export const getLimitReachedText = (share: Share, target: AccessTarget) => {
         }
     }
 };
-
-export const isGroupInvite = (invite: Maybe<MaybeNull<InviteBase>>): invite is InviteBase =>
-    invite?.invitedGroupId !== undefined && invite.invitedGroupId !== null;

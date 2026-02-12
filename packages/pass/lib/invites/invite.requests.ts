@@ -5,12 +5,17 @@ import { api } from '@proton/pass/lib/api/api';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
 import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
-import type { GroupInviteListItemResponse, InviteDataForUser } from '@proton/pass/types';
+import type { ShareId } from '@proton/pass/types';
 import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
-import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
+import type {
+    GroupInvite,
+    Invite,
+    NewUserPendingInvite,
+    PendingInvite,
+    UserInvite,
+} from '@proton/pass/types/data/invites';
 import type {
     GroupInviteAcceptIntent,
     InviteAcceptIntent,
@@ -28,21 +33,37 @@ import type {
 import type { Maybe } from '@proton/pass/types/utils';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
+
+import { parseGroupInvite, parseUserInvite } from './invite.parser';
+import type { InviteBatchResult } from './invite.utils';
+import { isAcceptedInvite } from './invite.utils';
 
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
 
 /** Retrieves all user invites */
-export const getInvites = async (): Promise<InviteDataForUser[]> => {
-    const res = await api({ url: `pass/v1/invite`, method: 'get' });
-    return res.Invites;
+export const getUserInvites = async (vaultIDs: Set<ShareId>): Promise<UserInvite[]> => {
+    const { Invites } = await api({ url: `pass/v1/invite`, method: 'get' });
+    const userInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseUserInvite));
+    return userInvites.filter(truthy);
 };
 
 /** Retrieves all group invites */
-export const getGroupInvites = async (): Promise<GroupInviteListItemResponse[]> => {
-    const res = await api({ url: `pass/v1/invite/group`, method: 'get' });
-    return res.Invites.Invites;
+export const getGroupInvites = async (vaultIDs: Set<ShareId>): Promise<GroupInvite[]> => {
+    const { Invites } = (await api({ url: `pass/v1/invite/group`, method: 'get' })).Invites;
+    const groupInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseGroupInvite));
+    return groupInvites.filter(truthy);
+};
+
+/** Retrieves all invites (user + groups), filters accepted, and parses.
+ * `vaultIDs` filters stale invites targeting already-owned vaults (BE delay).
+ * `resolveGroups` gates the group-invites request behind B2B + groups. */
+export const allInvites = async (vaultIDs: Set<string>, resolveGroups: boolean): Promise<Invite[]> => {
+    const userInvites: Invite[] = await getUserInvites(vaultIDs);
+    const groupInvites = resolveGroups ? await getGroupInvites(vaultIDs) : [];
+    return userInvites.concat(groupInvites);
 };
 
 export const loadInvites = async (shareId: string): Promise<InviteData> => {
