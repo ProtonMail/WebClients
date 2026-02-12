@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingReadyPopupOpen, setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -21,6 +22,8 @@ interface MeetingReadyPopupProps {
 export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPopupProps) => {
     const dispatch = useMeetDispatch();
     const meetingReadyPopupOpen = useMeetSelector(selectMeetingReadyPopupOpen);
+
+    const notifications = useNotifications();
 
     const WrapperComponent = useMemo(
         () =>
@@ -71,7 +74,12 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                     size="large"
                     onClick={async () => {
                         void navigator.clipboard.writeText(meetingLink);
-                        setMeetingReadyPopupOpen(false);
+                        dispatch(setMeetingReadyPopupOpen(false));
+                        notifications.createNotification({
+                            type: 'success',
+                            text: c('Info').t`Link copied to clipboard`,
+                            showCloseButton: false,
+                        });
                     }}
                 >
                     {c('Action').t`Copy link and close`}
