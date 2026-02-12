@@ -1428,9 +1428,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } byl sdílen se skupinou, jejímž jste členem"
-      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členové",
@@ -1442,9 +1439,6 @@
         "${ n } položky",
         "${ n } položek",
         "${ n } položek"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "Bylo sdíleno ${ newGroupSharesCount } nových sdílení se skupinou, jejíž jste členem"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy přístupný"
@@ -1581,8 +1575,8 @@
       "All trashed items successfully restored": [
         "Všechny položky z koše úspěšně obnoveny"
       ],
-      "An item previously shared with you was removed": [
-        "Položka dříve sdílená s vámi byla odebrána"
+      "An item previously shared with you was removed.": [
+        "Položka dříve sdílená s vámi byla odebrána."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Jste si jisti, že chcete odebrat ${ emailJSX } z vašich e-mailových schránek?"
@@ -1984,7 +1978,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2490,8 +2487,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" úspěšně aktualizován"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Trezor \"${ share.content.name }\" byl odebrán"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" byl odebrán."
       ],
       "Vault organization successfully updated": [
         "Organizace trezoru úspěšně aktualizována"
@@ -2582,6 +2579,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Před importem položek potřebujete trezor s oprávněním k úpravám."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Již nemáte přístup k některým trezorům nebo položkám, protože přístup vaší skupiny \"${ groupName }\" byl odebrán."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Nyní máte přístup k \"Položka ${ itemName }\", protože vaše skupina ${ groupName } získala přístup."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Nyní máte přístup k \"Trezoru ${ vaultName }\", protože vaše skupina ${ groupName } získala přístup."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po ověření domény budete moci upravit nastavení domény (doménový koš e-mailových aliasů, výchozí zobrazované jméno pro aliasy atd...)."

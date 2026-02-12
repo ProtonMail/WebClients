@@ -1447,8 +1447,8 @@
       "All trashed items successfully restored": [
         "Kaikki roskakorin kohteet palautettiin"
       ],
-      "An item previously shared with you was removed": [
-        "Sinulle aiemmin jaettu kohde on poistettu"
+      "An item previously shared with you was removed.": [
+        "Sinulle aiemmin jaettu kohde on poistettu."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Oletko varma, että haluat poistaa aliaksen ${ emailJSX } postilaatikoistasi?"
@@ -1831,6 +1831,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2278,8 +2282,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Holvi \"${ payload.share.content.name }\" päivitettiin"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Holvi \"${ share.content.name }\" poistettiin"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Holvi \"${ share.content.name }\" poistettiin."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Holvin jakaminen: ${ vaultMembersCount } jäsen",
@@ -2353,6 +2357,15 @@
       ],
       "You may close this tab.": [
         "Voit sulkea tämän välilehden."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Sinulla ei ole enää pääsyä joihinkin holveihin tai kohteisiin, koska ryhmäsi ${ groupName } käyttöoikeudet on poistettu."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Sinulla on nyt pääsy kohteeseen ”${ itemName }”, koska ryhmällesi ${ groupName } on myönnetty pääsyoikeus."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Sinulla on nyt pääsy holviin ”${ vaultName }”, koska ryhmällesi ${ groupName } on myönnetty pääsyoikeus."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Voit mukauttaa verkkotunnuksen asetuksia (nappaa kaikki -sähköpostialiakset, aliasten oletusnäyttönimi, jne...) verkkotunnuksesi vahvistamisen jälkeen."

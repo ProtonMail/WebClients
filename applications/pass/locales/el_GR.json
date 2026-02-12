@@ -1396,9 +1396,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "Η ${ maybeVaultName } έχει κοινοποιηθεί σε μια ομάδα της οποίας είστε μέλος."
-      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -1406,9 +1403,6 @@
       "${ n } item": [
         "${ n } στοιχείο",
         "${ n } στοιχεία"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } νέες κοινοποιήσεις έχουν μοιραστεί με μια ομάδα της οποίας είστε μέλος"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
@@ -1537,8 +1531,8 @@
       "All trashed items successfully restored": [
         "Όλα τα διαγραμμένα στοιχεία αποκαταστάθηκαν με επιτυχία"
       ],
-      "An item previously shared with you was removed": [
-        "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε"
+      "An item previously shared with you was removed.": [
+        "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε το ${ emailJSX } από τα γραμματοκιβώτιά σας;"
@@ -1930,6 +1924,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2431,8 +2429,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Η κρύπτη \"${ payload.share.content.name }\" ενημερώθηκε με επιτυχία"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Η κρύπτη \"${ share.content.name }\" καταργήθηκε."
       ],
       "Vault organization successfully updated": [
         "Η οργάνωση της κρύπτης ενημερώθηκε με επιτυχία"
@@ -2515,6 +2513,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Χρειάζεστε μια θυρίδα αποθήκευσης με δικαίωμα επεξεργασίας για να μπορέσετε να εισαγάγετε στοιχεία."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Δεν έχετε πλέον πρόσβαση σε ορισμένες κρύπτες ή αντικείμενα, επειδή η πρόσβαση της ομάδας σας ${ groupName } καταργήθηκε."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Τώρα έχετε πρόσβαση στο \"Στοιχείο ${ itemName }\" επειδή η ομάδα σας ${ groupName } έχει λάβει πρόσβαση."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Τώρα έχετε πρόσβαση στη \"Κρύπτη ${ vaultName }\" επειδή η ομάδα σας ${ groupName } έχει λάβει πρόσβαση."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Θα μπορείτε να προσαρμόσετε τις ρυθμίσεις του τομέα σας (ψευδώνυμα ηλεκτρονικού ταχυδρομείου, προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα κλπ.) αφού επαληθεύσετε τον τομέα σας."
