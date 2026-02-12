@@ -94,7 +94,7 @@ export const useApplyLocation = () => {
         if (removeLabel) {
             return dispatch(
                 unlabelMessages({
-                    elements: messages,
+                    messages,
                     conversations: conversationsFromMessages,
                     destinationLabelID,
                     sourceLabelID,
@@ -111,7 +111,7 @@ export const useApplyLocation = () => {
         } else {
             return dispatch(
                 labelMessages({
-                    elements: messages,
+                    messages,
                     conversations: conversationsFromMessages,
                     destinationLabelID,
                     sourceLabelID,

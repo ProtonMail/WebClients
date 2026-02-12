@@ -49,7 +49,7 @@ describe('unlabelMessagesPending', () => {
             payload: undefined,
             meta: {
                 arg: {
-                    elements: [message],
+                    messages: [message],
                     destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
@@ -88,7 +88,7 @@ describe('unlabelMessagesPending', () => {
             payload: undefined,
             meta: {
                 arg: {
-                    elements: [message],
+                    messages: [message],
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
@@ -127,7 +127,7 @@ describe('unlabelMessagesPending', () => {
             payload: undefined,
             meta: {
                 arg: {
-                    elements: [message],
+                    messages: [message],
                     destinationLabelID: CUSTOM_LABEL_ID1,
                     sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
@@ -201,7 +201,7 @@ describe('unlabelMessagesPending', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message],
+                        messages: [message],
                         destinationLabelID: CUSTOM_LABEL_ID1,
                         sourceLabelID: MAILBOX_LABEL_IDS.STARRED,
                         labels: customLabels,

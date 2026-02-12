@@ -66,7 +66,7 @@ describe('elementsReducers', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [message1, message2],
+                        messages: [message1, message2],
                         conversations: [conversation1],
                         labelID,
                     },
@@ -93,7 +93,7 @@ describe('elementsReducers', () => {
                 payload: undefined,
                 meta: {
                     arg: {
-                        elements: [conversation1],
+                        conversations: [conversation1],
                         labelID,
                     },
                 },

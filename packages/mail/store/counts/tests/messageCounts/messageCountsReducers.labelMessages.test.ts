@@ -45,7 +45,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
@@ -99,7 +99,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
@@ -157,7 +157,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
@@ -210,7 +210,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
@@ -264,7 +264,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
@@ -322,7 +322,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
@@ -377,7 +377,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
@@ -409,7 +409,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: CUSTOM_LABEL_ID1,
                     labels: customLabels,
@@ -453,7 +453,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     labels: customLabels,
@@ -493,7 +493,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
@@ -536,7 +536,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
@@ -579,7 +579,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
@@ -622,7 +622,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
@@ -672,7 +672,7 @@ describe('message counts - label messages', () => {
             labelMessages(state, {
                 type: 'mailbox/labelMessages',
                 payload: {
-                    elements: [message1, message2],
+                    messages: [message1, message2],
                     sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     labels: customLabels,

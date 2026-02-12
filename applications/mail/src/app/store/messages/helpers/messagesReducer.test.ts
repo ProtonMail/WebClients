@@ -35,11 +35,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [{ ID: 'msg1', Unread: 1 } as MessageMetadata],
+                        messages: [{ ID: 'msg1', Unread: 1 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>;
 
             messageByID.mockReturnValue(messageState);
 
@@ -59,11 +59,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [{ ID: 'msg1', Unread: 0 } as MessageMetadata],
+                        messages: [{ ID: 'msg1', Unread: 0 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: MessageMetadata[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>;
 
             messageByID.mockReturnValue(messageState);
 
@@ -91,11 +91,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [conversation],
+                        conversations: [conversation],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
 
             messagesByConversationID.mockReturnValue([messageState1, messageState2]);
 
@@ -124,11 +124,11 @@ describe('messagesReducer', () => {
             const action = {
                 meta: {
                     arg: {
-                        elements: [conversation],
+                        conversations: [conversation],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { elements: Conversation[]; labelID: string } }>;
+            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
 
             messagesByConversationID.mockReturnValue([messageState1, messageState2]);
 
