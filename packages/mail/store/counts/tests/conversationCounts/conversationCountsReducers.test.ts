@@ -2,6 +2,7 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {
     markConversationsAsRead,
@@ -155,14 +156,14 @@ describe('conversationCountsReducers', () => {
                 ConversationID: conversationID1,
                 LabelIDs: [labelID1],
                 Unread: 0,
-            };
+            } as MessageMetadata;
 
             const message2 = {
                 ID: messageID2,
                 ConversationID: conversationID2,
                 LabelIDs: [labelID1, labelID2],
                 Unread: 0,
-            };
+            } as MessageMetadata;
 
             state.value = [
                 { LabelID: labelID1, Unread: 0, Total: 5 },
@@ -195,7 +196,7 @@ describe('conversationCountsReducers', () => {
                 ConversationID: conversationID1,
                 LabelIDs: [labelID1],
                 Unread: 0,
-            };
+            } as MessageMetadata;
 
             markMessagesAsUnread(state, {
                 type: 'mailbox/markMessagesAsUnread',
@@ -230,7 +231,7 @@ describe('conversationCountsReducers', () => {
             const messages = [
                 { ConversationID: conversationID1, ID: 'msg1', LabelIDs: [labelID1], Unread: 1 },
                 { ConversationID: conversationID1, ID: 'msg2', LabelIDs: [labelID1], Unread: 1 },
-            ];
+            ] as MessageMetadata[];
 
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
@@ -253,7 +254,9 @@ describe('conversationCountsReducers', () => {
                 Labels: [{ ID: labelID1, ContextNumUnread: 2 }],
             };
 
-            const messages = [{ ConversationID: conversationID1, ID: 'msg1', LabelIDs: [labelID1], Unread: 1 }];
+            const messages = [
+                { ConversationID: conversationID1, ID: 'msg1', LabelIDs: [labelID1], Unread: 1 },
+            ] as MessageMetadata[];
 
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
@@ -285,7 +288,7 @@ describe('conversationCountsReducers', () => {
                 { ConversationID: conversationID1, ID: 'msg1', LabelIDs: [labelID1], Unread: 1 },
                 { ConversationID: conversationID2, ID: 'msg2', LabelIDs: [labelID1], Unread: 1 },
                 { ConversationID: conversationID2, ID: 'msg3', LabelIDs: [labelID1], Unread: 1 },
-            ];
+            ] as MessageMetadata[];
 
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
@@ -311,7 +314,7 @@ describe('conversationCountsReducers', () => {
             const messages = [
                 { ConversationID: conversationID1, ID: 'msg1', LabelIDs: [labelID1], Unread: 1 },
                 { ConversationID: 'other-conversation', ID: 'msg2', LabelIDs: [labelID1], Unread: 1 },
-            ];
+            ] as MessageMetadata[];
 
             markMessagesAsRead(state, {
                 type: 'mailbox/markMessagesAsRead',
