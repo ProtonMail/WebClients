@@ -13,7 +13,6 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import {
@@ -209,11 +208,9 @@ const InteractiveConversationComponentInner = () => {
 export const InteractiveConversationComponent = () => {
     return (
         <DragAreaProvider>
-            <PandocProvider>
-                <WebSearchProvider>
-                    <InteractiveConversationComponentInner />
-                </WebSearchProvider>
-            </PandocProvider>
+            <WebSearchProvider>
+                <InteractiveConversationComponentInner />
+            </WebSearchProvider>
         </DragAreaProvider>
     );
 };

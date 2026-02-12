@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-rou
 
 import useFlag from '@proton/unleash/useFlag';
 
+import { PandocProvider } from '../providers/PandocProvider';
 import { MainLayout } from '../ui/MainLayout';
 import ConversationSkeleton from '../ui/components/ConversationSkeleton';
 import EligibilityGuard from '../ui/components/EligibillityGuard/EligibilityGuard';
@@ -20,21 +21,23 @@ export function InnerApp() {
 
     return (
         <EligibilityGuard>
-            <Router basename={url}>
-                <MainLayout>
-                    <Suspense fallback={<ConversationSkeleton />}>
-                        <Switch>
-                            {isLumoProjectsEnabled && <Route exact path="/projects" component={ProjectsView} />}
-                            {isLumoProjectsEnabled && (
-                                <Route path="/projects/:projectId" component={ProjectDetailView} />
-                            )}
-                            <Route exact path="/" component={ConversationPage} />
-                            <Route path="/c/:conversationId" component={ConversationPage} />
-                        </Switch>
-                    </Suspense>
-                </MainLayout>
-                <PerformanceMonitor />
-            </Router>
+            <PandocProvider>
+                <Router basename={url}>
+                    <MainLayout>
+                        <Suspense fallback={<ConversationSkeleton />}>
+                            <Switch>
+                                {isLumoProjectsEnabled && <Route exact path="/projects" component={ProjectsView} />}
+                                {isLumoProjectsEnabled && (
+                                    <Route path="/projects/:projectId" component={ProjectDetailView} />
+                                )}
+                                <Route exact path="/" component={ConversationPage} />
+                                <Route path="/c/:conversationId" component={ConversationPage} />
+                            </Switch>
+                        </Suspense>
+                    </MainLayout>
+                    <PerformanceMonitor />
+                </Router>
+            </PandocProvider>
         </EligibilityGuard>
     );
 }

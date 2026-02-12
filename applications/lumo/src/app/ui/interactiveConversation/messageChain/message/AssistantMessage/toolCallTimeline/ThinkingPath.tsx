@@ -10,7 +10,7 @@ import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../components/LumoMarkdown/LazyMarkdownComponents';
 
 import './ThinkingPath.scss';
-import { IconName } from '@proton/icons/types';
+import type { IconName } from '@proton/icons/types';
 
 /**
  * Get icon name for tool call type.
