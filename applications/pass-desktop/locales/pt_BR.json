@@ -1471,9 +1471,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } deseja compartilhar um item com você."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } foi compartilhado com um grupo do qual você faz parte"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
@@ -1481,9 +1478,6 @@
       "${ n } item": [
         "${ n } item",
         "${ n } itens"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } novos compartilhamentos foram feitos com um grupo do qual você faz parte"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sempre será acessível."
@@ -1611,9 +1605,6 @@
       ],
       "All trashed items successfully restored": [
         "Todos os itens da lixeira foram restaurados"
-      ],
-      "An item previously shared with you was removed": [
-        "Um item compartilhado anteriormente com você foi removido"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Tem certeza de que deseja remover ${ emailJSX } de suas caixas de correio?"
@@ -2521,8 +2512,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Cofre \"${ payload.share.content.name }\" atualizado"
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "O cofre \"${ share.content.name }\" foi removido"
+      "Vault \"${ share.content.name }\" was removed.": [
+        "O cofre \"${ share.content.name }\" foi removido."
       ],
       "Vault organization successfully updated": [
         "Cofre da organização atualizado com sucesso"

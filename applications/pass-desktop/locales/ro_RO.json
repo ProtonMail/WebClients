@@ -1487,9 +1487,6 @@
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
       ],
-      "${ maybeVaultName } has been shared with a group you are member of": [
-        "${ maybeVaultName } a fost partajat cu un grup din care faceți parte"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -1499,9 +1496,6 @@
         "${ n } articol",
         "${ n } articole",
         "${ n } de articole"
-      ],
-      "${ newGroupSharesCount } new shares have been shared with a group you are member of": [
-        "${ newGroupSharesCount } partajări noi au fost partajate cu un grup din care faceți parte."
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } va fi disponibil oricând"
@@ -1634,7 +1628,7 @@
       "All trashed items successfully restored": [
         "Toate articolele din gunoi au fost restaurate."
       ],
-      "An item previously shared with you was removed": [
+      "An item previously shared with you was removed.": [
         "Un articol care v-a fost partajat a fost eliminat."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
@@ -2546,8 +2540,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Seiful „${ payload.share.content.name }” a fost actualizat."
       ],
-      "Vault \"${ share.content.name }\" was removed": [
-        "Seiful „${ share.content.name }” a fost șters."
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Seiful „${ share.content.name }\" a fost eliminat."
       ],
       "Vault organization successfully updated": [
         "Organizarea seifului a fost actualizată cu succes."
@@ -2634,6 +2628,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Aveți nevoie de un seif cu permisiune de editare înainte de a putea importa articole."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Nu mai aveți acces la anumite seifuri sau elemente deoarece accesul grupului ${ groupName } a fost eliminat."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Acum aveți acces la „Seiful ${ itemName }\" deoarece grupul ${ groupName } de care aparțineți a primit acces."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Acum aveți acces la \"Seiful ${ vaultName }\" deoarece grupul ${ groupName } de care aparțineți a primit acces."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Veți putea să vă personalizați setările domeniului (alias e-mail de agregare mesaje, numele afișat implicit pentru aliasuri etc...) după verificarea domeniului."
