@@ -19,14 +19,15 @@ import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectUser } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { User } from '@proton/shared/lib/interfaces';
 
 function* syncWorker(options: RootSagaOptions) {
     yield put(stopEventPolling());
 
-    const user: User = yield select(selectUser);
+    const user: MaybeNull<User> = yield select(selectUser);
     if (!user) return;
 
     try {
@@ -45,7 +46,8 @@ function* syncWorker(options: RootSagaOptions) {
             yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
-        yield put(syncSuccess(yield call(sync, options)));
+        const state = (yield select()) as State;
+        yield put(syncSuccess(yield call(sync, state, options)));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {

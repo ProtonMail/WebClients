@@ -3,21 +3,22 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type {
+    AbstractInviteResponse,
+    GroupInvite,
     GroupInviteListItemResponse,
-    Invite,
     InviteVaultData,
     KeyRotationKeyPair,
     MaybeNull,
+    UserInvite,
 } from '@proton/pass/types';
 import { type InviteDataForUser, InviteType, ShareType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import type { AbstractInvite } from './invite.utils';
-import { isVaultInvite } from './invite.utils';
+import { isVaultInviteResponse } from './invite.utils';
 
 /** Resolves the encryption key for the invite based on its target
  * type. Returns `null` if the invite data is invalid. */
-export const parseInviteKey = (invite: AbstractInvite): MaybeNull<KeyRotationKeyPair> => {
+export const parseInviteKey = (invite: AbstractInviteResponse): MaybeNull<KeyRotationKeyPair> => {
     const encryptedVault = invite.VaultData;
     if (!encryptedVault && invite.TargetType !== ShareType.Item) return null;
 
@@ -32,8 +33,8 @@ export const parseInviteKey = (invite: AbstractInvite): MaybeNull<KeyRotationKey
 export const parseUserInviteVault = async (
     invite: InviteDataForUser,
     inviteKey: KeyRotationKeyPair
-): Promise<MaybeNull<InviteVaultData>> => {
-    if (!isVaultInvite(invite)) return null;
+): Promise<InviteVaultData> => {
+    if (!isVaultInviteResponse(invite)) throw new Error('Not a vault invite');
 
     const encodedVault = await PassCrypto.readVaultInvite({
         encryptedVaultContent: invite.VaultData.Content,
@@ -53,8 +54,8 @@ export const parseUserInviteVault = async (
 export const parseGroupInviteVault = async (
     invite: GroupInviteListItemResponse,
     inviteKey: KeyRotationKeyPair
-): Promise<MaybeNull<InviteVaultData>> => {
-    if (!isVaultInvite(invite)) return null;
+): Promise<InviteVaultData> => {
+    if (!isVaultInviteResponse(invite)) throw new Error('Not a vault invite');
 
     const encodedVault = await PassCrypto.readGroupVaultInvite({
         encryptedVaultContent: invite.VaultData.Content,
@@ -72,12 +73,12 @@ export const parseGroupInviteVault = async (
 };
 
 /** Parses a raw user invite API response into an `Invite` object */
-export const parseUserInvite = async (invite: InviteDataForUser): Promise<MaybeNull<Invite>> => {
+export const parseUserInvite = async (invite: InviteDataForUser): Promise<MaybeNull<UserInvite>> => {
     try {
         const inviteKey = parseInviteKey(invite);
         if (!inviteKey) return null;
 
-        return {
+        const parsed = {
             type: InviteType.User,
             createTime: invite.CreateTime,
             invitedAddressId: invite.InvitedAddressID!,
@@ -88,10 +89,18 @@ export const parseUserInvite = async (invite: InviteDataForUser): Promise<MaybeN
             keys: invite.Keys,
             remindersSent: invite.RemindersSent,
             targetId: invite.TargetID,
-            targetType: invite.TargetType,
             token: invite.InviteToken,
-            vault: await parseUserInviteVault(invite, inviteKey),
-        };
+        } as const;
+
+        switch (invite.TargetType) {
+            case ShareType.Vault:
+                const vault = await parseUserInviteVault(invite, inviteKey);
+                return { ...parsed, targetType: invite.TargetType, vault };
+            case ShareType.Item:
+                return { ...parsed, targetType: invite.TargetType, vault: null };
+            default:
+                return null;
+        }
     } catch (err) {
         logger.warn(`[Invite::User] Could not decrypt invite`, err);
         return null;
@@ -99,12 +108,12 @@ export const parseUserInvite = async (invite: InviteDataForUser): Promise<MaybeN
 };
 
 /** Parses a raw group invite API response into an `Invite` object */
-export const parseGroupInvite = async (invite: GroupInviteListItemResponse): Promise<MaybeNull<Invite>> => {
+export const parseGroupInvite = async (invite: GroupInviteListItemResponse): Promise<MaybeNull<GroupInvite>> => {
     try {
         const inviteKey = parseInviteKey(invite);
         if (!inviteKey) return null;
 
-        return {
+        const parsed = {
             type: invite.IsGroupOwner ? InviteType.GroupOwner : InviteType.GroupOrg,
             createTime: invite.CreateTime,
             invitedAddressId: invite.InvitedAddressID!,
@@ -115,10 +124,18 @@ export const parseGroupInvite = async (invite: GroupInviteListItemResponse): Pro
             keys: invite.Keys,
             remindersSent: invite.RemindersSent,
             targetId: invite.TargetID,
-            targetType: invite.TargetType,
             token: invite.InviteToken,
-            vault: await parseGroupInviteVault(invite, inviteKey),
-        };
+        } as const;
+
+        switch (invite.TargetType) {
+            case ShareType.Vault:
+                const vault = await parseGroupInviteVault(invite, inviteKey);
+                return { ...parsed, targetType: invite.TargetType, vault };
+            case ShareType.Item:
+                return { ...parsed, targetType: invite.TargetType, vault: null };
+            default:
+                return null;
+        }
     } catch (err) {
         logger.warn(`[Invite::Group] Could not decrypt invite`, err);
         return null;
