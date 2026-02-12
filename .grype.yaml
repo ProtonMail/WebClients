@@ -24,6 +24,16 @@ ignore:
           name: golang.org/x/crypto
           type: go-module
           version: v0.0.0-20220829220503-c86fa9a7ed90
+    - vulnerability: CVE-2025-22871
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2025-22871
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
     - vulnerability: CVE-2024-24790
       package:
           name: stdlib
