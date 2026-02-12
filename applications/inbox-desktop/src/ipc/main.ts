@@ -20,7 +20,7 @@ import {
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
-import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
+import { clearAllUserSettings, clearUserSettings, getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
 import {
     checkDefaultMailto,
     getDefaultMailto,
@@ -36,6 +36,7 @@ import telemetry from "../utils/telemetry";
 import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { showPrintDialog } from "../utils/printing/print";
+import { handleLogoutIPC } from "../utils/logout/logout";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -118,10 +119,13 @@ export const handleIPCCalls = () => {
                 resetHiddenViews();
                 telemetry.userLogin();
                 break;
-            case "userLogout":
-                resetHiddenViews();
-                resetBadge();
-                telemetry.userLogout();
+            case "userLogoutV2":
+                handleLogoutIPC();
+                clearUserSettings(payload);
+                break;
+            case "logoutAllUsers":
+                handleLogoutIPC();
+                clearAllUserSettings();
                 break;
             case "clearAppData":
                 resetBadge();
