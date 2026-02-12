@@ -10,6 +10,7 @@ import { ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { Currency } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import noop from '@proton/utils/noop';
 
 import swissFlag from './flag.svg';
 import type { Measure } from './interface';
@@ -37,7 +38,7 @@ const DollarOfferModal = ({ currency, onGetDeal, onContinueFree, img, measure, .
                 upsell_from: 'free_signup_click',
             },
         });
-    }, [measure]);
+    }, []);
 
     const handleGetDealClick = async () => {
         // Wait for telemetry to complete before redirect
@@ -47,15 +48,16 @@ const DollarOfferModal = ({ currency, onGetDeal, onContinueFree, img, measure, .
                 upsell_to: 'vpn2024_dollar_offer_accepted',
                 upsell_from: 'dollar_offer_modal',
             },
-        });
+        }).catch(noop);
         onGetDeal();
     };
 
-    const handleContinueFreeClick = () => {
-        void measure({
+    const handleContinueFreeClick = async () => {
+        // Wait for telemetry to complete before redirect
+        await measure({
             event: TelemetryAccountSignupEvents.planSelect,
             dimensions: { plan: 'free_from_dollar_offer' as any },
-        });
+        }).catch(noop);
         onContinueFree();
     };
 
