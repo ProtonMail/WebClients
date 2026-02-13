@@ -6,11 +6,27 @@ import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
 export type LocationCountMap = Record<string, SafeLabelCount>;
 
+const getDisabledCategoriesCounts = (
+    disabledCategoriesIDs: string[],
+    resultCounterMap: Record<string, SafeLabelCount>
+) => {
+    return disabledCategoriesIDs.reduce(
+        (acc, id) => {
+            return {
+                Total: acc.Total + (resultCounterMap[id]?.Total || 0),
+                Unread: acc.Unread + (resultCounterMap[id]?.Unread || 0),
+            };
+        },
+        { Total: 0, Unread: 0 }
+    );
+};
+
 export const getCounterMap = (
     labels: Label[],
     conversationCounters: LabelCount[],
     messageCounters: LabelCount[],
-    mailSettings: MailSettings
+    mailSettings: MailSettings,
+    disabledCategoriesIDs: string[]
 ) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
 
@@ -27,6 +43,18 @@ export const getCounterMap = (
             LabelID: labelID,
             Total: count?.Total || 0,
             Unread: count?.Unread || 0,
+        };
+    }
+
+    // We need to add the disabled categories totals to the default category
+    if (disabledCategoriesIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
+        const initialCount = resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
+        const disabledCounts = getDisabledCategoriesCounts(disabledCategoriesIDs, resultCounterMap);
+
+        resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
+            LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+            Total: initialCount.Total + disabledCounts.Total,
+            Unread: initialCount.Unread + disabledCounts.Unread,
         };
     }
 
