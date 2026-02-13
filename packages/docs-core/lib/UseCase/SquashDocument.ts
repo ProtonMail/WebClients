@@ -62,7 +62,30 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     private eventBus: InternalEventBusInterface,
   ) {}
 
+  isSquashingEnabled(documentType: DocumentType) {
+    if (!this.unleashClient.isReady()) {
+      return false
+    }
+    if (documentType === 'doc') {
+      return (
+        this.unleashClient.isEnabled('DocsClientSquashingEnabled') &&
+        !this.unleashClient.isEnabled('DocsClientSquashingDisabled')
+      )
+    }
+    if (documentType === 'sheet') {
+      return (
+        this.unleashClient.isEnabled('SheetsClientSquashingEnabled') &&
+        !this.unleashClient.isEnabled('SheetsClientSquashingDisabled')
+      )
+    }
+    return false
+  }
+
   async execute(dto: SquashDocumentDTO): Promise<Result<boolean>> {
+    if (!this.isSquashingEnabled(dto.documentType)) {
+      return Result.fail('Squashing is not enabled for this document type')
+    }
+
     const startTime = Date.now()
 
     const { nodeMeta, commitId, keys } = dto
@@ -323,6 +346,10 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
   async squashEverythingInBaseCommit(dto: SquashDocumentDTO): Promise<Result<boolean>> {
     const { nodeMeta, commitId, keys, documentType } = dto
+
+    if (!this.isSquashingEnabled(documentType)) {
+      return Result.fail('Squashing is not enabled for this document type')
+    }
 
     this.logger.info(`[Squash] Squashing everything in base commit...`)
 
