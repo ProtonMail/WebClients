@@ -11,7 +11,7 @@ export const getCategorySystemFolder = (category: CategoryTab): SystemFolder => 
     return {
         labelID: category.id,
         ID: category.id,
-        icon: category.filledIcon,
+        icon: category.outlinedIcon,
         text: label,
         visible: true,
         order: 0,
