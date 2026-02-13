@@ -119,9 +119,11 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
                 </span>
 
                 <div className="flex flex-row items-center gap-2 flex-nowrap">
-                    <span className={`color-weak shrink-0 text-xs`}>
-                        {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
-                    </span>
+                    {(file.subtitle || file.type === NodeType.File) && (
+                        <span className={`color-weak shrink-0 text-xs`}>
+                            {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
+                        </span>
+                    )}
 
                     {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}
 
