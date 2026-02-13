@@ -14,11 +14,14 @@ const MemberHierarchy = {
 
 type Drive = Pick<ProtonDriveClient, 'getNode'>;
 
+// An explicit role, never Inherited
+export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>;
+
 export const getNodeEffectiveRole = async (
     node: NodeEntity,
     drive: Drive,
     role: MemberRole = MemberRole.Inherited
-): Promise<MemberRole.Admin | MemberRole.Editor | MemberRole.Viewer> => {
+): Promise<EffectiveRole> => {
     if (role === MemberRole.Admin || node.directRole === MemberRole.Admin) {
         return MemberRole.Admin;
     }

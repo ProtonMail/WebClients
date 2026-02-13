@@ -7,10 +7,12 @@ let objectCount = 0;
  * useMemoArrayNoMatterTheOrder does not change the result if the array
  * is different but contains the same objects even if the order of the
  * items is different.
+ *
+ * refreshMarker An optional number to increment to help with refreshing the memoized value.
  */
-export function useMemoArrayNoMatterTheOrder<T>(items: T[]): T[] {
+export function useMemoArrayNoMatterTheOrder<T>(items: T[], refreshMarker?: number): T[] {
     const id = getArrayIdNoMatterTheOrder(items);
-    return useMemo(() => items, [id]);
+    return useMemo(() => items, [id, refreshMarker]);
 }
 
 /**

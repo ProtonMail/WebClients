@@ -1,17 +1,17 @@
 import { useCallback } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { useNotifications } from '@proton/components';
 import type { MaybeMissingNode, MaybeNode, MissingNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import { shouldTrackError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import { useSearchViewStore } from '../../../zustand/search/searchView.store';
+import { useSearchViewStore } from '../store';
 
 const isMissingNode = (result: MaybeMissingNode): result is { ok: false; error: MissingNode } => {
     return result.ok === false && result.error && 'missingUid' in result.error;
@@ -41,23 +41,50 @@ const isNodeOrAncestorTrashed = async (node: NodeEntity, drive: ProtonDriveClien
     return false;
 };
 
+const addNodeToStore = async (maybeNode: MaybeNode, drive: ProtonDriveClient): Promise<boolean> => {
+    const { node } = getNodeEntity(maybeNode);
+
+    // The legacy search library indexes trashed items.
+    // We need to filter them out after loading since trash information
+    // is only available after fetching the metadata.
+    const isNodeOrAncestorInTrash = await isNodeOrAncestorTrashed(node, drive);
+    if (isNodeOrAncestorInTrash) {
+        return false;
+    }
+
+    const locationPromise = getFormattedNodeLocation(drive, maybeNode);
+    const nodeRolePromise = getNodeEffectiveRole(node, drive);
+    const [location, role] = await Promise.all([locationPromise, nodeRolePromise]);
+
+    const signatureResult = getSignatureIssues(maybeNode);
+
+    // Add item to the store.
+    useSearchViewStore.getState().addSearchResultItem({
+        nodeUid: node.uid,
+        parentUid: node.parentUid,
+        name: node.name,
+        type: node.type,
+        role,
+        mediaType: node.mediaType,
+        thumbnailId: node.activeRevision?.uid || node.uid,
+        size: node.totalStorageSize,
+        modificationTime: node.modificationTime || node.creationTime,
+        location,
+        haveSignatureIssues: !signatureResult.ok,
+    });
+
+    return true;
+};
+
 // Load nodes by UID from the SDK, convert them to UI presentation objects and store them in the store.
 export const useSearchViewNodesLoader = () => {
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const { addSearchResultItem, setLoading, cleanupStaleItems } = useSearchViewStore(
-        useShallow((state) => ({
-            addSearchResultItem: state.addSearchResultItem,
-            setLoading: state.setLoading,
-            cleanupStaleItems: state.cleanupStaleItems,
-        }))
-    );
-
     const loadNodes = useCallback(
         async (nodeUids: string[], abortSignal: AbortSignal) => {
-            setLoading(true);
+            useSearchViewStore.getState().setLoading(true);
             const loadedUids = new Set<string>();
             try {
                 let showErrorNotification = false;
@@ -65,41 +92,17 @@ export const useSearchViewNodesLoader = () => {
                 for await (const maybeMissingNode of drive.iterateNodes(nodeUids, abortSignal)) {
                     try {
                         if (!isMaybeNode(maybeMissingNode)) {
-                            handleError(maybeMissingNode.error, {
-                                showNotification: false,
-                            });
-                            showErrorNotification = true;
+                            // The search index engine does not do a good job at tracking deleted nodes.
+                            // We silence these errors for now but when integrating the new search index,
+                            // we should
                             continue;
                         }
-
                         const maybeNode = maybeMissingNode satisfies MaybeNode;
-                        const { node } = getNodeEntity(maybeNode);
-
-                        // The legacy search library indexes trashed items.
-                        // We need to filter them out after loading since trash information
-                        // is only available after fetching the metadata.
-                        const isNodeOrAncestorInTrash = await isNodeOrAncestorTrashed(node, drive);
-                        if (isNodeOrAncestorInTrash) {
-                            continue;
+                        const addedToStore = await addNodeToStore(maybeNode, drive);
+                        if (addedToStore) {
+                            const { node } = getNodeEntity(maybeNode);
+                            loadedUids.add(node.uid);
                         }
-
-                        const location = await getFormattedNodeLocation(drive, maybeNode);
-                        const signatureResult = getSignatureIssues(maybeNode);
-
-                        // Add item to the store.
-                        addSearchResultItem({
-                            nodeUid: node.uid,
-                            name: node.name,
-                            type: node.type,
-                            mediaType: node.mediaType,
-                            thumbnailId: node.activeRevision?.uid || node.uid,
-                            size: node.totalStorageSize,
-                            modificationTime: node.modificationTime || node.creationTime,
-                            location,
-                            haveSignatureIssues: !signatureResult.ok,
-                        });
-
-                        loadedUids.add(node.uid);
                     } catch (e) {
                         handleError(e, {
                             showNotification: false,
@@ -121,12 +124,13 @@ export const useSearchViewNodesLoader = () => {
                 handleError(e, { fallbackMessage: c('Error').t`We were not able to load some search results` });
             } finally {
                 // Remove previously loaded node uids from previous search queries.
-                cleanupStaleItems(loadedUids);
-                setLoading(false);
+                useSearchViewStore.getState().cleanupStaleItems(loadedUids);
+                useSearchViewStore.getState().setLoading(false);
+                useSearchViewStore.getState().markStoreAsDirty(false);
             }
         },
 
-        [setLoading, cleanupStaleItems, drive, addSearchResultItem, handleError, createNotification]
+        [drive, handleError, createNotification]
     );
 
     return {

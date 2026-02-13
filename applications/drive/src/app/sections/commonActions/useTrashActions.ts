@@ -1,8 +1,8 @@
 import { useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import useListNotifications from '../../../store/_actions/useListNotifications';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import useListNotifications from '../../store/_actions/useListNotifications';
+import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
 type Item = { uid: string; parentUid: string | undefined };
 
