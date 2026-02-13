@@ -14,4 +14,5 @@ export enum WebsocketConnectionEvent {
   Saved = 'saved',
   ImportUpdateSuccessful = 'import-update-successful',
   Destroyed = 'destroyed',
+  WillPublishDocumentUpdate = 'will-publish-document-update',
 }

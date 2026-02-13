@@ -17,6 +17,8 @@ import {
   decompressDocumentUpdate,
   isCompressedDocumentUpdate,
 } from '@proton/docs-core/lib/utils/document-update-compression'
+import { Tooltip } from '@proton/docs-shared/components/ui/ui'
+import * as Ariakit from '@ariakit/react'
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -172,7 +174,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
     <div
       id="debug-menu"
       className={clsx(
-        'fixed bottom-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1',
+        'fixed bottom-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left',
         isSpreadsheet ? 'right-2' : 'left-2',
       )}
       data-testid="debug-menu"
@@ -216,9 +218,6 @@ export function DebugMenu({ docController, editorController, documentState, docu
         <Button size="small" onClick={copyYDocAsJSON}>
           Copy Y.Doc as JSON
         </Button>
-        <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
-          Download Logs as JSON
-        </Button>
         {isDocument && (
           <>
             <Button size="small" onClick={copyEditorJSON}>
@@ -236,17 +235,55 @@ export function DebugMenu({ docController, editorController, documentState, docu
             </Button>
           </>
         )}
+        <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
+          Download state as JSON
+          <Ariakit.TooltipProvider>
+            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+            <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
+          </Ariakit.TooltipProvider>
+        </Button>
         <Button size="small" onClick={downloadYJSStateAsUpdate}>
           Download YJS state as single update
+          <Ariakit.TooltipProvider>
+            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+            <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
+          </Ariakit.TooltipProvider>
         </Button>
-        {docController && (
-          <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
-            Download All Updates as ZIP
-          </Button>
-        )}
         <Button size="small" onClick={downloadBaseCommit}>
           Download base commit updates
+          <Ariakit.TooltipProvider>
+            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+            <Tooltip>Downloads the updates from the base commit only</Tooltip>
+          </Ariakit.TooltipProvider>
         </Button>
+        {docController && (
+          <>
+            <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
+              Download all updates as ZIP
+              <Ariakit.TooltipProvider>
+                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                <Tooltip>Downloads all updates as a ZIP file</Tooltip>
+              </Ariakit.TooltipProvider>
+            </Button>
+            <Button size="small" onClick={() => docController.downloadUpdatesInformation()}>
+              Download update debug information
+              <Ariakit.TooltipProvider>
+                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
+              </Ariakit.TooltipProvider>
+            </Button>
+            <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
+              Download obfuscated updates
+              <Ariakit.TooltipProvider>
+                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                <Tooltip>
+                  Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
+                  data
+                </Tooltip>
+              </Ariakit.TooltipProvider>
+            </Button>
+          </>
+        )}
       </div>
     </div>
   )

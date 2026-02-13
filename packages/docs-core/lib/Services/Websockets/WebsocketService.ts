@@ -511,7 +511,7 @@ export class WebsocketService implements WebsocketServiceInterface {
    */
   async prepareAndBroadcastDocumentUpdate(
     nodeMeta: NodeMeta | PublicNodeMeta,
-    mergedUpdate: Uint8Array<ArrayBuffer>,
+    updateContentBeforeCompressionAndChunking: Uint8Array<ArrayBuffer>,
     broadcastUpdate: (
       isChunk: boolean,
       content: Uint8Array<ArrayBuffer>,
@@ -519,10 +519,12 @@ export class WebsocketService implements WebsocketServiceInterface {
     ) => Promise<void>,
     source?: BroadcastSource,
   ): Promise<void> {
-    let update = mergedUpdate
+    let update = updateContentBeforeCompressionAndChunking
     if (isDocumentUpdateCompressionEnabled(this.unleashClient, this.documentType)) {
-      update = compressDocumentUpdate(mergedUpdate)
-      this.logger.info(`Compressed merged update from ${mergedUpdate.byteLength} bytes to ${update.byteLength} bytes`)
+      update = compressDocumentUpdate(updateContentBeforeCompressionAndChunking)
+      this.logger.info(
+        `Compressed merged update from ${updateContentBeforeCompressionAndChunking.byteLength} bytes to ${update.byteLength} bytes`,
+      )
     }
 
     const record = this.getConnectionRecord(nodeMeta.linkId)
@@ -537,6 +539,16 @@ export class WebsocketService implements WebsocketServiceInterface {
       timestamp: Date.now(),
       version: DocumentUpdateVersion.V1,
     }
+
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.WillPublishDocumentUpdate]>({
+      type: WebsocketConnectionEvent.WillPublishDocumentUpdate,
+      payload: {
+        document: nodeMeta,
+        content: updateContentBeforeCompressionAndChunking, // We don't compressed content here as this will be stored locally for version history + debug purposes
+        timestamp: metadata.timestamp,
+        authorAddress: metadata.authorAddress ?? '',
+      },
+    })
 
     const encryptedContent = await this.encryptMessage(
       update,
