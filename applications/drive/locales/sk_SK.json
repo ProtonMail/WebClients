@@ -1250,6 +1250,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Encrypted": [
+        "Šifrované"
+      ],
+      "Shared": [
+        "Zdieľané"
       ]
     },
     "Action: Docs": {
@@ -7030,6 +7036,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Preparing": [
+        "Príprava"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Požadovaná položka už neexistuje"
+      ],
+      "Unexpected download error": [
+        "Neočakávaná chyba sťahovania"
       ]
     },
     "info": {
@@ -7789,6 +7804,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Access": [
+        "Prístup"
+      ],
+      "Allow editors to change permissions and share": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať"
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovať tento odkaz k určitému dátumu"
+      ],
+      "Expiry": [
+        "Platnosť"
+      ],
+      "Require password": [
+        "Vyžadovať heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ]
     },
     "Label for contact group color": {
@@ -9710,6 +9743,12 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" zdieľané"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Nastavenie aktualizované. Editori môžu zmeniť povolenia a zdieľať."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

@@ -1247,6 +1247,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
+      "Scan and Download": [
+        "Сканіраваць і спампаваць"
+      ],
+      "Shared": [
+        "Абагуленыя"
       ]
     },
     "Action: Docs": {
@@ -7027,6 +7036,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Preparing": [
+        "Падрыхтоўка"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Запытаны элемент больш не існуе"
+      ],
+      "Unexpected download error": [
+        "Нечаканая памылка спампоўкі"
       ]
     },
     "info": {
@@ -7440,7 +7458,7 @@
         "Ад: ${ fromEmail }"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -7786,6 +7804,24 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Access": [
+        "Доступ"
+      ],
+      "Allow editors to change permissions and share": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць"
+      ],
+      "Disable this link on a specific date": [
+        "Адключыць гэту спасылку на ўказаную дату"
+      ],
+      "Expiry": [
+        "Тэрмін дзеяння"
+      ],
+      "Require password": [
+        "Патрабаваць пароль"
+      ],
+      "Set a password to limit access via link": [
+        "Задаць пароль для абмежавання доступу праз спасылку"
       ]
     },
     "Label for contact group color": {
@@ -9758,6 +9794,12 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" абагулены"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9806,7 +9848,7 @@
         "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -11344,7 +11386,7 @@
         "Аплачваецца ${ amount } за 30 месяцаў"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
