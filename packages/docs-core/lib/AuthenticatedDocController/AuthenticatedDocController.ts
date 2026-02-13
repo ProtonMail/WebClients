@@ -27,6 +27,9 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import type { DocumentUpdate } from '@proton/docs-proto'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
+import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import { decodeUpdate, obfuscateUpdate } from 'yjs'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -69,18 +72,15 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       }
     })
 
-    this.documentState.subscribeToEvent('EditorRequestsPropagationOfUpdate', (payload) => {
-      if (this.isDestroyed) {
-        return
-      }
-
-      if (payload.message.type.wrapper === 'du') {
-        this.receivedOrSentDUs.push({
-          content: payload.message.content,
-          timestamp: Date.now(),
-        })
-      }
-    })
+    this.eventBus.addEventCallback<
+      WebsocketConnectionEventPayloads[WebsocketConnectionEvent.WillPublishDocumentUpdate]
+    >((payload) => {
+      this.receivedOrSentDUs.push({
+        content: payload.content,
+        timestamp: payload.timestamp,
+        authorAddress: payload.authorAddress ?? '',
+      })
+    }, WebsocketConnectionEvent.WillPublishDocumentUpdate)
 
     this.documentState.subscribeToEvent('CommitInitialConversionContent', (payload) => {
       if (this.isDestroyed) {
@@ -489,5 +489,110 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     void this.driveCompat.openMoveToFolderModal(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
+  public async downloadUpdatesInformation() {
+    const entries: {
+      timestamp: number
+      authorAddress: string
+      size: number
+      structCount: number
+      structClientIds: number[]
+      structTypes: string[]
+      deleteSet: Record<number, number>
+    }[] = []
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (baseCommit) {
+      for (const message of baseCommit.messages) {
+        let content = message.content
+        if (isCompressedDocumentUpdate(content)) {
+          content = decompressDocumentUpdate(content)
+        }
+        const info = await getUpdateInfo(content)
+        entries.push({
+          timestamp: message.timestamp,
+          authorAddress: message.authorAddress ?? '',
+          size: content.byteLength,
+          ...info,
+        })
+      }
+    }
+    for (const update of this.receivedOrSentDUs) {
+      const info = await getUpdateInfo(update.content)
+      entries.push({
+        timestamp: update.timestamp,
+        authorAddress: update.authorAddress,
+        size: update.content.byteLength,
+        ...info,
+      })
+    }
+    const json = JSON.stringify(entries, null, 2)
+    const blob = new Blob([json], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'updates-information.json'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  public async downloadObfuscatedUpdates() {
+    const JSZip = (await import('jszip')).default
+    const zip = new JSZip()
+
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (baseCommit) {
+      for (const message of baseCommit.messages) {
+        let content = message.content
+        if (isCompressedDocumentUpdate(content)) {
+          content = decompressDocumentUpdate(content)
+        }
+        const obfuscated = obfuscateUpdate(content)
+        zip.file(`${message.timestamp}.bin`, obfuscated)
+      }
+    }
+
+    for (const update of this.receivedOrSentDUs) {
+      const obfuscated = obfuscateUpdate(update.content)
+      zip.file(`${update.timestamp}.bin`, obfuscated)
+    }
+
+    const zipBlob = await zip.generateAsync({ type: 'blob' })
+    const zipUrl = URL.createObjectURL(zipBlob)
+    const zipLink = document.createElement('a')
+    zipLink.href = zipUrl
+    zipLink.download = 'all-updates-obfuscated.zip'
+    document.body.appendChild(zipLink)
+    zipLink.click()
+    document.body.removeChild(zipLink)
+    URL.revokeObjectURL(zipUrl)
+  }
+
   deinit() {}
+}
+
+async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
+  const decoded = decodeUpdate(content)
+  const structClientIds = new Set<number>()
+  const structTypes = new Set<string>()
+  let structCount = 0
+  for (const struct of decoded.structs) {
+    structClientIds.add(struct.id.client)
+    structTypes.add(struct.constructor.name)
+    structCount++
+  }
+  const deleteCountsPerClientId: Record<number, number> = {}
+  for (const [clientId, items] of decoded.ds.clients) {
+    deleteCountsPerClientId[clientId] = items.length
+  }
+  const hash = await window.crypto.subtle.digest('SHA-1', content)
+  const hashHex = Array.from(new Uint8Array(hash))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
+  return {
+    structCount,
+    structClientIds: Array.from(structClientIds),
+    structTypes: Array.from(structTypes),
+    deleteSet: deleteCountsPerClientId,
+    hash: hashHex,
+  }
 }

@@ -39,4 +39,9 @@ export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.ImportUpdateSuccessful]: BaseWebsocketPayload & {
     uuid: string
   }
+  [WebsocketConnectionEvent.WillPublishDocumentUpdate]: BaseWebsocketPayload & {
+    content: Uint8Array<ArrayBuffer>
+    timestamp: number
+    authorAddress: string
+  }
 }

@@ -46,6 +46,7 @@ describe('AuthenticatedDocController', () => {
       } as unknown as jest.Mocked<GetNode>,
       {
         addEventHandler: jest.fn(),
+        addEventCallback: jest.fn(),
         publish: jest.fn(),
       } as unknown as jest.Mocked<InternalEventBusInterface>,
       {
