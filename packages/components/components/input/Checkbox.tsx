@@ -28,6 +28,12 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     indeterminate?: boolean;
     labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
     labelProps?: LabelHTMLAttributes<HTMLLabelElement> & { 'data-testid': string };
+    /**
+     * Gap class utility between the checkbox and the children.
+     * @see "applications/storybook/src/stories/cssUtilities/Gap.stories.tsx" for the allowed values.
+     * @default gap-2
+     */
+    gap?: string;
 }
 
 const Checkbox = (
@@ -45,6 +51,7 @@ const Checkbox = (
         children,
         labelOnClick,
         labelProps,
+        gap = 'gap-2',
         ...rest
     }: CheckboxProps,
     ref: Ref<HTMLInputElement>
@@ -63,7 +70,12 @@ const Checkbox = (
         <label
             {...labelProps}
             htmlFor={id}
-            className={clsx('checkbox-container', !className?.includes('expand-click-area') && 'relative', className)}
+            className={clsx(
+                'checkbox-container',
+                !className?.includes('expand-click-area') && 'relative',
+                gap,
+                className
+            )}
             title={title}
             onClick={labelOnClick}
         >
@@ -76,10 +88,7 @@ const Checkbox = (
                 checked={checked}
                 {...rest}
             />
-            <span
-                className={clsx('checkbox-fakecheck', children ? 'mr-2' : '')}
-                style={{ borderColor, background: backgroundColor, color }}
-            >
+            <span className="checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
                 {indeterminate === false ? (
                     <Icon className="checkbox-fakecheck-img" size={4} name="checkmark" color={color} />
                 ) : (

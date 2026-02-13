@@ -34,18 +34,25 @@ interface TableHeaderProps {
 const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }: TableHeaderProps) => (
     <TableRow>
         <TableCell>
-            <div className="flex gap-4 w-full items-center">
-                <Checkbox checked={entities.length <= selectedEntities.length} onChange={onSelectAllEntities} />
-                <span className="text-bold">{label}</span>
-                {selectedEntities.length > 0 && (
-                    <span className="text-sm color-weak">
-                        {c('Info').ngettext(
-                            msgid`${selectedEntities.length} selected`,
-                            `${selectedEntities.length} selected`,
-                            selectedEntities.length
+            <div className="w-full">
+                <Checkbox
+                    checked={entities.length <= selectedEntities.length}
+                    onChange={onSelectAllEntities}
+                    gap="gap-4"
+                >
+                    <div className="flex gap-4 items-center">
+                        <span className="text-bold">{label}</span>
+                        {selectedEntities.length > 0 && (
+                            <span className="text-sm color-weak">
+                                {c('Info').ngettext(
+                                    msgid`${selectedEntities.length} selected`,
+                                    `${selectedEntities.length} selected`,
+                                    selectedEntities.length
+                                )}
+                            </span>
                         )}
-                    </span>
-                )}
+                    </div>
+                </Checkbox>
             </div>
         </TableCell>
     </TableRow>
@@ -63,18 +70,26 @@ interface AddEntitiesTableRowProps {
 const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, description }: AddEntitiesTableRowProps) => (
     <TableRow key={id}>
         <TableCell>
-            <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
-                <Checkbox id={`user-${id}`} checked={checked} onChange={() => onSelectEntity(entity as any)} />
-                <span
-                    className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
-                    aria-hidden="true"
+            <div className="w-full">
+                <Checkbox
+                    id={`user-${id}`}
+                    checked={checked}
+                    onChange={() => onSelectEntity(entity as any)}
+                    gap="gap-4"
                 >
-                    <span className="m-auto">{avatar}</span>
-                </span>
-                <div className="flex flex-column">
-                    <span>{entity.Name}</span>
-                    <span className="text-sm color-weak">{description}</span>
-                </div>
+                    <div className="flex flex-column md:flex-row flex-nowrap gap-4">
+                        <span
+                            className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
+                            aria-hidden="true"
+                        >
+                            <span className="m-auto">{avatar}</span>
+                        </span>
+                        <div className="flex flex-column">
+                            <span>{entity.Name}</span>
+                            <span className="text-sm color-weak">{description}</span>
+                        </div>
+                    </div>
+                </Checkbox>
             </div>
         </TableCell>
     </TableRow>
