@@ -23,12 +23,14 @@ describe('MoveToFolderDropdownHelper', () => {
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-                        icon: 'inbox-filled',
+                        outlinedIcon: 'inbox',
+                        filledIcon: 'inbox-filled',
                     },
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-                        icon: 'megaphone-filled',
+                        outlinedIcon: 'megaphone',
+                        filledIcon: 'megaphone-filled',
                     },
                 ],
             });
@@ -50,12 +52,14 @@ describe('MoveToFolderDropdownHelper', () => {
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-                        icon: 'inbox-filled',
+                        outlinedIcon: 'inbox',
+                        filledIcon: 'inbox-filled',
                     },
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-                        icon: 'megaphone-filled',
+                        outlinedIcon: 'megaphone',
+                        filledIcon: 'megaphone-filled',
                     },
                 ],
             });
