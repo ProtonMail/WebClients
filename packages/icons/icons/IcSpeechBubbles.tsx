@@ -18,7 +18,14 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcSpeechBubble = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
+export const IcSpeechBubbles = ({
+    alt,
+    title,
+    size = 4,
+    className = '',
+    viewBox = '0 0 16 16',
+    ...rest
+}: IconProps) => {
     return (
         <>
             <svg
