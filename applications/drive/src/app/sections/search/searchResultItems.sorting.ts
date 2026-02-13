@@ -1,8 +1,8 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { SortField } from '../../modules/sorting/types';
-import type { SearchResultItemUI } from '../../zustand/search/searchView.store';
 import { defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
+import type { SearchResultItemUI } from './store';
 
 export const defaultSort = {
     sortField: SortField.location,

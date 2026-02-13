@@ -3,15 +3,15 @@ import { when } from 'jest-when';
 
 // Import mocked modules
 import { useNotifications } from '@proton/components';
-import type { ProtonDriveClient } from '@proton/drive/index';
+import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
-import { shouldTrackError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import type { EffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
 import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
-import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import { createMockNodeEntity } from '../../../utils/test/nodeEntity';
-import { useSearchViewStore } from '../../../zustand/search/searchView.store';
+import { createMockDegradedNode, createMockNodeEntity } from '../../../utils/test/nodeEntity';
+import { useSearchViewStore } from '../store';
 import { useSearchViewNodesLoader } from './useSearchViewLoader';
 
 // Mock dependencies
@@ -20,38 +20,28 @@ jest.mock('@proton/components', () => ({
 }));
 
 jest.mock('@proton/drive/index', () => ({
+    ...jest.requireActual('@proton/drive/index'),
     useDrive: jest.fn(),
 }));
 
 jest.mock('../../../utils/errorHandling/useSdkErrorHandler', () => ({
+    ...jest.requireActual('../../../utils/errorHandling/useSdkErrorHandler'),
     useSdkErrorHandler: jest.fn(),
-    shouldTrackError: jest.fn(),
-}));
-
-jest.mock('../../../utils/sdk/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(),
 }));
 
 jest.mock('../../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getSignatureIssues', () => ({
-    getSignatureIssues: jest.fn(),
-}));
-
-jest.mock('../../../zustand/search/searchView.store', () => ({
-    useSearchViewStore: jest.fn(),
+jest.mock('../../../utils/sdk/getNodeEffectiveRole', () => ({
+    getNodeEffectiveRole: jest.fn(),
 }));
 
 const mockedUseNotifications = jest.mocked(useNotifications);
 const mockedUseDrive = jest.mocked(useDrive);
 const mockedUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
-const mockedGetNodeEntity = jest.mocked(getNodeEntity);
 const mockedGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
-const mockedGetSignatureIssues = jest.mocked(getSignatureIssues);
-const mockedUseSearchViewStore = jest.mocked(useSearchViewStore);
-const mockedShouldTrackError = jest.mocked(shouldTrackError);
+const mockedGetNodeEffectiveRole = jest.mocked(getNodeEffectiveRole);
 
 describe('useSearchViewLoader', () => {
     let mockDrive: Partial<ProtonDriveClient>;
@@ -60,6 +50,7 @@ describe('useSearchViewLoader', () => {
     let mockAddSearchResultItem: jest.Mock;
     let mockSetLoading: jest.Mock;
     let mockCleanupStaleItems: jest.Mock;
+    let mockMarkStoreAsDirty: jest.Mock;
     let mockAbortSignal: AbortSignal;
 
     beforeEach(() => {
@@ -70,6 +61,7 @@ describe('useSearchViewLoader', () => {
         mockAddSearchResultItem = jest.fn();
         mockSetLoading = jest.fn();
         mockCleanupStaleItems = jest.fn();
+        mockMarkStoreAsDirty = jest.fn();
         mockAbortSignal = new AbortController().signal;
 
         mockDrive = {
@@ -89,15 +81,15 @@ describe('useSearchViewLoader', () => {
             handleError: mockHandleError,
         } as any);
 
-        mockedUseSearchViewStore.mockReturnValue({
+        jest.spyOn(useSearchViewStore, 'getState').mockReturnValue({
             addSearchResultItem: mockAddSearchResultItem,
             setLoading: mockSetLoading,
             cleanupStaleItems: mockCleanupStaleItems,
+            markStoreAsDirty: mockMarkStoreAsDirty,
         } as any);
 
         mockedGetFormattedNodeLocation.mockResolvedValue('/some/location');
-        mockedGetSignatureIssues.mockReturnValue({ ok: true } as any);
-        mockedShouldTrackError.mockReturnValue(false);
+        mockedGetNodeEffectiveRole.mockResolvedValue('viewer' as EffectiveRole);
     });
 
     describe('loadNodes', () => {
@@ -109,27 +101,29 @@ describe('useSearchViewLoader', () => {
                 yield mockMaybeNode;
             });
 
-            mockedGetNodeEntity.mockReturnValue({ node: mockNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['node-1'], mockAbortSignal);
 
             await waitFor(() => {
                 expect(mockSetLoading).toHaveBeenCalledWith(true);
-                expect(mockAddSearchResultItem).toHaveBeenCalledWith({
-                    nodeUid: 'node-1',
-                    name: mockNode.name,
-                    type: mockNode.type,
-                    mediaType: mockNode.mediaType,
-                    thumbnailId: mockNode.activeRevision?.uid,
-                    size: mockNode.totalStorageSize,
-                    modificationTime: mockNode.modificationTime,
-                    location: '/some/location',
-                    haveSignatureIssues: false,
-                });
+                expect(mockAddSearchResultItem).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        nodeUid: 'node-1',
+                        name: mockNode.name,
+                        type: mockNode.type,
+                        role: 'viewer',
+                        mediaType: mockNode.mediaType,
+                        thumbnailId: mockNode.activeRevision?.uid,
+                        size: mockNode.totalStorageSize,
+                        modificationTime: mockNode.modificationTime,
+                        location: '/some/location',
+                        haveSignatureIssues: false,
+                    })
+                );
                 expect(mockCleanupStaleItems).toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
@@ -141,8 +135,6 @@ describe('useSearchViewLoader', () => {
                 yield mockMaybeNode;
             });
 
-            mockedGetNodeEntity.mockReturnValue({ node: trashedNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['node-1'], mockAbortSignal);
@@ -150,6 +142,7 @@ describe('useSearchViewLoader', () => {
             await waitFor(() => {
                 expect(mockAddSearchResultItem).not.toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
@@ -167,10 +160,6 @@ describe('useSearchViewLoader', () => {
                 .calledWith('parent-1')
                 .mockResolvedValue(mockParentMaybeNode);
 
-            mockedGetNodeEntity
-                .mockReturnValueOnce({ node: childNode } as any)
-                .mockReturnValueOnce({ node: parentNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['child-1'], mockAbortSignal);
@@ -178,6 +167,7 @@ describe('useSearchViewLoader', () => {
             await waitFor(() => {
                 expect(mockAddSearchResultItem).not.toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
@@ -201,11 +191,6 @@ describe('useSearchViewLoader', () => {
                 .calledWith('grandparent-1')
                 .mockResolvedValue(mockGrandparentMaybeNode);
 
-            mockedGetNodeEntity
-                .mockReturnValueOnce({ node: childNode } as any)
-                .mockReturnValueOnce({ node: parentNode } as any)
-                .mockReturnValueOnce({ node: grandparentNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['child-1'], mockAbortSignal);
@@ -213,10 +198,11 @@ describe('useSearchViewLoader', () => {
             await waitFor(() => {
                 expect(mockAddSearchResultItem).not.toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
-        it('should handle missing nodes and show error notification', async () => {
+        it('should handle missing nodes and skip them', async () => {
             const missingNode = {
                 ok: false,
                 error: { missingUid: 'missing-1' },
@@ -231,14 +217,10 @@ describe('useSearchViewLoader', () => {
             await result.current.loadNodes(['missing-1'], mockAbortSignal);
 
             await waitFor(() => {
-                expect(mockHandleError).toHaveBeenCalledWith(missingNode.error, {
-                    showNotification: false,
-                });
-                expect(mockCreateNotification).toHaveBeenCalledWith({
-                    type: 'error',
-                    text: expect.any(String),
-                });
+                expect(mockHandleError).not.toHaveBeenCalled();
+                expect(mockCreateNotification).not.toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
@@ -256,10 +238,6 @@ describe('useSearchViewLoader', () => {
                 yield missingNode;
             });
 
-            mockedGetNodeEntity
-                .mockReturnValueOnce({ node: validNode } as any)
-                .mockReturnValueOnce({ node: trashedNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['node-1', 'node-2', 'node-3'], mockAbortSignal);
@@ -272,36 +250,9 @@ describe('useSearchViewLoader', () => {
                         nodeUid: 'node-1',
                     })
                 );
-                expect(mockCreateNotification).toHaveBeenCalled();
+                expect(mockCreateNotification).not.toHaveBeenCalled();
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
-            });
-        });
-
-        it('should handle errors during node processing', async () => {
-            const mockNode = createMockNodeEntity({ uid: 'node-1' });
-            const mockMaybeNode = { ok: true, value: mockNode };
-
-            mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-                yield mockMaybeNode;
-            });
-
-            mockedGetNodeEntity.mockImplementation(() => {
-                throw new Error('Processing error');
-            });
-
-            const { result } = renderHook(() => useSearchViewNodesLoader());
-
-            await result.current.loadNodes(['node-1'], mockAbortSignal);
-
-            await waitFor(() => {
-                expect(mockHandleError).toHaveBeenCalledWith(expect.any(Error), {
-                    showNotification: false,
-                });
-                expect(mockCreateNotification).toHaveBeenCalledWith({
-                    type: 'error',
-                    text: expect.any(String),
-                });
-                expect(mockSetLoading).toHaveBeenCalledWith(false);
+                expect(mockMarkStoreAsDirty).toHaveBeenCalledWith(false);
             });
         });
 
@@ -309,8 +260,6 @@ describe('useSearchViewLoader', () => {
             mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
                 throw new Error('Abort error');
             });
-
-            mockedShouldTrackError.mockReturnValue(true);
 
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
@@ -324,15 +273,21 @@ describe('useSearchViewLoader', () => {
         });
 
         it('should handle nodes with signature issues', async () => {
-            const mockNode = createMockNodeEntity({ uid: 'node-1' });
-            const mockMaybeNode = { ok: true, value: mockNode };
+            const mockNode = createMockDegradedNode({ uid: 'node-1' });
+            const mockMaybeNode = {
+                ok: false,
+                error: {
+                    ...mockNode,
+                    keyAuthor: {
+                        ok: false,
+                        error: { error: 'Unverified author error' },
+                    },
+                },
+            } satisfies MaybeNode;
 
             mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
                 yield mockMaybeNode;
             });
-
-            mockedGetNodeEntity.mockReturnValue({ node: mockNode } as any);
-            mockedGetSignatureIssues.mockReturnValue({ ok: false, error: 'Signature invalid' } as any);
 
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
@@ -356,8 +311,6 @@ describe('useSearchViewLoader', () => {
                 yield mockMaybeNode;
             });
 
-            mockedGetNodeEntity.mockReturnValue({ node: mockNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['node-1'], mockAbortSignal);
@@ -378,8 +331,6 @@ describe('useSearchViewLoader', () => {
             mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
                 yield mockMaybeNode;
             });
-
-            mockedGetNodeEntity.mockReturnValue({ node: mockNode } as any);
 
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
@@ -402,10 +353,6 @@ describe('useSearchViewLoader', () => {
                 yield { ok: true, value: mockNode1 };
                 yield { ok: true, value: mockNode2 };
             });
-
-            mockedGetNodeEntity
-                .mockReturnValueOnce({ node: mockNode1 } as any)
-                .mockReturnValueOnce({ node: mockNode2 } as any);
 
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
@@ -433,29 +380,26 @@ describe('useSearchViewLoader', () => {
                 yield missingNode;
             });
 
-            mockedGetNodeEntity
-                .mockReturnValueOnce({ node: validNode } as any)
-                .mockReturnValueOnce({ node: trashedNode } as any);
-
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
             await result.current.loadNodes(['node-1', 'node-2', 'node-3'], mockAbortSignal);
 
             await waitFor(() => {
-                const loadedUids = mockCleanupStaleItems.mock.calls[0][0];
-                expect(loadedUids).toBeInstanceOf(Set);
-                expect(loadedUids.has('node-1')).toBe(true);
-                expect(loadedUids.has('node-2')).toBe(false);
-                expect(loadedUids.has('node-3')).toBe(false);
+                expect(mockSetLoading).toHaveBeenCalledWith(false);
             });
+
+            const loadedUids = mockCleanupStaleItems.mock.calls[0][0];
+            expect(loadedUids).toBeInstanceOf(Set);
+            expect(loadedUids.size).toBe(1);
+            expect(loadedUids.has('node-1')).toBe(true);
+            expect(loadedUids.has('node-2')).toBe(false);
+            expect(loadedUids.has('node-3')).toBe(false);
         });
 
         it('should always set loading to false even if an error occurs', async () => {
             mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
                 throw new Error('Unexpected error');
             });
-
-            mockedShouldTrackError.mockReturnValue(false);
 
             const { result } = renderHook(() => useSearchViewNodesLoader());
 
@@ -464,6 +408,54 @@ describe('useSearchViewLoader', () => {
             await waitFor(() => {
                 expect(mockSetLoading).toHaveBeenCalledWith(true);
                 expect(mockSetLoading).toHaveBeenCalledWith(false);
+            });
+        });
+
+        it('should include admin role when node has admin role', async () => {
+            const mockNode = createMockNodeEntity({ uid: 'node-1' });
+            const mockMaybeNode = { ok: true, value: mockNode };
+
+            mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+                yield mockMaybeNode;
+            });
+
+            mockedGetNodeEffectiveRole.mockResolvedValue('admin' as EffectiveRole);
+
+            const { result } = renderHook(() => useSearchViewNodesLoader());
+
+            await result.current.loadNodes(['node-1'], mockAbortSignal);
+
+            await waitFor(() => {
+                expect(mockAddSearchResultItem).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        nodeUid: 'node-1',
+                        role: 'admin',
+                    })
+                );
+            });
+        });
+
+        it('should include editor role when node has editor role', async () => {
+            const mockNode = createMockNodeEntity({ uid: 'node-1' });
+            const mockMaybeNode = { ok: true, value: mockNode };
+
+            mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+                yield mockMaybeNode;
+            });
+
+            mockedGetNodeEffectiveRole.mockResolvedValue('editor' as EffectiveRole);
+
+            const { result } = renderHook(() => useSearchViewNodesLoader());
+
+            await result.current.loadNodes(['node-1'], mockAbortSignal);
+
+            await waitFor(() => {
+                expect(mockAddSearchResultItem).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        nodeUid: 'node-1',
+                        role: 'editor',
+                    })
+                );
             });
         });
     });
