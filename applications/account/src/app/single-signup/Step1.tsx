@@ -1054,6 +1054,7 @@ const Step1 = ({
     const loadingPaymentsForm = model.loadingDependencies;
 
     const [isFormValid, setIsFormValid] = useState(false);
+    const signupBasePath = APP_NAME === APPS.PROTONVPN_SETTINGS ? '/signup' : '/vpn/signup';
 
     return (
         <Layout
@@ -1564,14 +1565,14 @@ const Step1 = ({
                             currency: options.currency,
                             coupon: 'VPNPLUSFREE2024',
                         });
-                        window.location.href = `/signup?${params.toString()}`;
+                        window.location.href = `${signupBasePath}?${params.toString()}`;
                     }}
                     onContinueFree={() => {
                         // Redirect to free URL
                         const params = new URLSearchParams({
                             plan: PLANS.FREE,
                         });
-                        window.location.href = `/signup?${params.toString()}`;
+                        window.location.href = `${signupBasePath}?${params.toString()}`;
                     }}
                     {...upsellModalProps}
                 />
