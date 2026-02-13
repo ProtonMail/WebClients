@@ -1,3 +1,4 @@
+import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
 import { Role } from '../../types';
@@ -143,7 +144,7 @@ export class SearchService {
     }
 
     private ensureWorker() {
-        if (this.worker || !this.userId) return;
+        if (!ENABLE_FOUNDATION_SEARCH || this.worker || !this.userId) return;
         try {
             this.worker = new Worker(new URL('../../workers/search/searchWorker.ts', import.meta.url), {
                 type: 'module',
@@ -217,12 +218,14 @@ export class SearchService {
                 return;
             }
 
-            const jsonString =
-                typeof blob === 'string'
-                    ? blob
-                    : blob instanceof Uint8Array
-                      ? new TextDecoder('utf-8').decode(blob)
-                      : undefined;
+            let jsonString = undefined;
+
+            if (typeof blob === 'string') {
+                jsonString = blob;
+            } else if (blob instanceof Uint8Array) {
+                jsonString = new TextDecoder('utf-8').decode(blob);
+            }
+
             if (!jsonString) {
                 this.driveDocuments = [];
                 this.bm25Index = new BM25Index();
@@ -323,11 +326,11 @@ export class SearchService {
 
     async getAllConversations(state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
         const { conversations, spaces } = state;
-        
+
         // Apply retention policy (7-day limit for free users)
         const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
         const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
-        
+
         const results: SearchResult[] = accessibleConversations.map((conversation) => {
             const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
             const timestamp = new Date(conversation.createdAt).getTime();
@@ -404,11 +407,11 @@ export class SearchService {
 
         const results: SearchResult[] = [];
         const { conversations, messages, spaces } = state;
-        
+
         // Apply retention policy (7-day limit for free users)
         const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
         const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
-        const accessibleConversationIds = new Set(accessibleConversations.map(c => c.id));
+        const accessibleConversationIds = new Set(accessibleConversations.map((c) => c.id));
 
         const workerResults = await this.searchWithWorker(normalizedQuery);
         const foundConversationIds = new Set<string>();
