@@ -33,6 +33,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
+import { RolesAndPermissionsSection } from './components/RolesAndPermissionsSection';
 import type { getOrganizationAppRoutes } from './routes';
 
 const OrganizationSettingsRouter = ({
@@ -71,6 +72,7 @@ const OrganizationSettingsRouter = ({
             activityMonitor,
             groups,
             accessControl,
+            rolesAndPermissions,
             sharedServers,
             migrationAssistant,
         },
@@ -191,6 +193,13 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={accessControl}>
                         <AccessControlSettingsSection />
                         <FeatureAccessSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(rolesAndPermissions) && (
+                <Route path={getSectionPath(path, rolesAndPermissions)}>
+                    <PrivateMainSettingsArea config={rolesAndPermissions}>
+                        <RolesAndPermissionsSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

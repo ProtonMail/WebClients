@@ -54,6 +54,7 @@ interface Props {
     isRetentionPoliciesEnabled: boolean;
     isGroupOwner: boolean | null;
     isOLESEnabled?: boolean;
+    isRolesAndPermissionsEnabled?: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -77,6 +78,7 @@ export const getOrganizationAppRoutes = ({
     isRetentionPoliciesEnabled,
     isGroupOwner,
     isOLESEnabled,
+    isRolesAndPermissionsEnabled,
 }: Props): SidebarConfig => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -159,6 +161,13 @@ export const getOrganizationAppRoutes = ({
         isOrgActive &&
         isOrgConfigured &&
         (hasBundleBiz2025(subscription) || hasVisionary(subscription) || hasBundlePro2024(subscription));
+
+    const canShowRolesAndPermissionsSection =
+        isRolesAndPermissionsEnabled &&
+        canHaveOrganization &&
+        isOrgActive &&
+        isOrgConfigured &&
+        (hasBundleBiz2025(subscription) || hasVisionary(subscription));
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -244,7 +253,8 @@ export const getOrganizationAppRoutes = ({
                 to: '/organization-keys',
                 icon: 'buildings',
                 available:
-                    canHaveOrganization && (isPartOfFamily
+                    canHaveOrganization &&
+                    (isPartOfFamily
                         ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
                         : (hasActiveOrganizationKey || hasActiveOrganization) &&
                           organization &&
@@ -323,9 +333,8 @@ export const getOrganizationAppRoutes = ({
                 to: '/multi-user-support',
                 icon: 'users',
                 available:
-                    canHaveOrganization && (isPartOfFamily
-                        ? !hasActiveOrganization
-                        : !hasActiveOrganizationKey && canHaveOrganization),
+                    canHaveOrganization &&
+                    (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization),
                 subsections: [
                     {
                         id: 'schedule-call',
@@ -427,6 +436,18 @@ export const getOrganizationAppRoutes = ({
                         id: 'feature-access',
                         text: c('Title').t`Feature access`,
                         available: canShowVideoConferenceSection || canShowScribeSection,
+                    },
+                ],
+            },
+            rolesAndPermissions: {
+                id: 'rolesAndPermissions',
+                text: c('Title').t`Roles and permissions`,
+                to: '/roles-and-permissions',
+                icon: 'users-plus',
+                available: canShowRolesAndPermissionsSection,
+                subsections: [
+                    {
+                        id: 'roles',
                     },
                 ],
             },
