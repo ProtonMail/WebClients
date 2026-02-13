@@ -17,7 +17,7 @@ import {
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
