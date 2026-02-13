@@ -5,7 +5,7 @@ import type { Location } from 'history';
 
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

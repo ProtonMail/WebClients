@@ -2,7 +2,8 @@ import type { TypedStartListening } from '@reduxjs/toolkit';
 
 import { addressesThunk, subscriptionThunk, userSettingsThunk, userThunk } from '@proton/account';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
-import { categoriesThunk, mailSettingsThunk } from '@proton/mail';
+import { categoriesThunk } from '@proton/mail/store/labels';
+import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { TelemetryHeartbeatEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';

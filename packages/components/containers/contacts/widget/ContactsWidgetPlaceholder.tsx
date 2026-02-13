@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { getPlaceholderSrc } from '@proton/mail';
+import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import noContactsImgDark from '@proton/styles/assets/img/placeholders/contacts-empty-cool-dark.svg';
 import noContactsImgLight from '@proton/styles/assets/img/placeholders/contacts-empty-cool-light.svg';
 import noContactsImgWarm from '@proton/styles/assets/img/placeholders/contacts-empty-warm-light.svg';

@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { MailSettingState } from '@proton/mail';
+import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 

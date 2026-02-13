@@ -17,7 +17,8 @@ import ConfirmSortModal from '@proton/components/containers/labels/modals/Confir
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { categoriesThunk, useFolders } from '@proton/mail';
+import { categoriesThunk } from '@proton/mail/store/labels';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';

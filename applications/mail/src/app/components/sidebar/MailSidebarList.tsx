@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
 import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
-import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
+import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

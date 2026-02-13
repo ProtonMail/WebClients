@@ -17,7 +17,7 @@ import {
 } from '@proton/encrypted-search';
 import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import { useGetMessageCounts } from '@proton/mail';
+import { useGetMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';

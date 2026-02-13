@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { create } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

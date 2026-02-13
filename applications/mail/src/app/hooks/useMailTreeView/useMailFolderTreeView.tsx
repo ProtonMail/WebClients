@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 

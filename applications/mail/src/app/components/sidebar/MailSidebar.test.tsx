@@ -6,7 +6,7 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/test';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { conversationCountsActions } from '@proton/mail';
+import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';

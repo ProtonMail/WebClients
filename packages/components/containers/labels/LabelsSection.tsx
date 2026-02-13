@@ -16,7 +16,8 @@ import ConfirmSortModal from '@proton/components/containers/labels/modals/Confir
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { categoriesThunk, useLabels } from '@proton/mail';
+import { categoriesThunk } from '@proton/mail/store/labels';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { orderLabels } from '@proton/shared/lib/api/labels';

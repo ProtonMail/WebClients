@@ -1,4 +1,4 @@
-import type { CategoryTab } from '@proton/mail';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 

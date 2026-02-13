@@ -14,20 +14,27 @@ const mockUseMailSettings = useMailSettings as jest.Mock;
 jest.mock('proton-mail/components/categoryView/useCategoriesView');
 const mockUseCategoriesView = useCategoriesView as jest.Mock;
 
-jest.mock('@proton/mail', () => ({
-    ...jest.requireActual('@proton/mail'),
+jest.mock('@proton/mail/store/labels/hooks', () => ({
     useLabels: jest.fn(),
     useFolders: jest.fn(),
     useSystemFolders: jest.fn(),
+}));
+
+jest.mock('@proton/mail/store/counts/conversationCountsSlice', () => ({
     useConversationCounts: jest.fn(),
+}));
+
+jest.mock('@proton/mail/store/counts/messageCountsSlice', () => ({
     useMessageCounts: jest.fn(),
 }));
 
-const mockUseFolders = jest.requireMock('@proton/mail').useFolders;
-const mockUseLabels = jest.requireMock('@proton/mail').useLabels;
-const mockUseSystemFolders = jest.requireMock('@proton/mail').useSystemFolders;
-const mockUseConversationCounts = jest.requireMock('@proton/mail').useConversationCounts;
-const mockUseMessageCounts = jest.requireMock('@proton/mail').useMessageCounts;
+const mockUseFolders = jest.requireMock('@proton/mail/store/labels/hooks').useFolders;
+const mockUseLabels = jest.requireMock('@proton/mail/store/labels/hooks').useLabels;
+const mockUseSystemFolders = jest.requireMock('@proton/mail/store/labels/hooks').useSystemFolders;
+const mockUseConversationCounts = jest.requireMock(
+    '@proton/mail/store/counts/conversationCountsSlice'
+).useConversationCounts;
+const mockUseMessageCounts = jest.requireMock('@proton/mail/store/counts/messageCountsSlice').useMessageCounts;
 
 const getCount = (labelID: string, unread: number, total: number) => {
     return { LabelID: labelID, Unread: unread, Total: total };

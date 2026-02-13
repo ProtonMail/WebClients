@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 
 interface MailboxListScreenReaderHeadingProps {
     conversationMode: boolean;

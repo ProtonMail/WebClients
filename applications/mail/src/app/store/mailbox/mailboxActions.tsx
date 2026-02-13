@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { conversationCountsActions, messageCountsActions } from '@proton/mail';
+import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
+import { messageCountsActions } from '@proton/mail/store/counts/messageCountsSlice';
 import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import {
     labelConversations as labelConversationsApi,

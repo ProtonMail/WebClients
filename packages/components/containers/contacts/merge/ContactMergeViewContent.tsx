@@ -8,7 +8,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';

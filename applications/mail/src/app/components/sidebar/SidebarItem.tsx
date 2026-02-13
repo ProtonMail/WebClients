@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { IconName, IconSize } from '@proton/icons/types';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
