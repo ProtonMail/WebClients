@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -19,26 +20,13 @@ export type CreateFolderModalInnerProps = {
     onSuccess?: ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => void;
 };
 
-export type UseCreateFolderModalStateProps = ModalStateProps &
-    CreateFolderModalInnerProps & {
-        // Here only for retro compatibility, should be removed once the SDK migration is done
-        folder?: { shareId: string; linkId: string };
-        createFolder?: (
-            abortSignal: AbortSignal,
-            shareId: string,
-            parentLinkId: string,
-            name: string
-        ) => Promise<string>;
-    };
+export type UseCreateFolderModalStateProps = ModalStateProps & CreateFolderModalInnerProps;
 
 export const useCreateFolderModalState = ({
     drive = getDrive(),
     parentFolderUid,
     onSuccess,
     onClose,
-    // Here only for retro compatibility, should be removed once the SDK migration is done
-    createFolder,
-    folder,
     ...modalProps
 }: UseCreateFolderModalStateProps) => {
     const [folderName, setFolderName] = useState('');
@@ -80,6 +68,10 @@ export const useCreateFolderModalState = ({
 
             const { node } = getNodeEntity(newFolder);
             const { nodeId } = splitNodeUid(node.uid);
+            await getBusDriver().emit({
+                type: BusDriverEventName.CREATED_NODES,
+                items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
+            });
             onSuccess?.({ uid: node.uid, nodeId, name });
             createNotification({
                 type: 'success',
