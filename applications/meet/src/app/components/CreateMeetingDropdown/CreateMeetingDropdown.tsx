@@ -35,7 +35,7 @@ export const CreateMeetingDropdown = ({
                 shape="ghost"
                 className={clsx(
                     className,
-                    'rounded-full border-none flex items-center justify-center create-meeting-dropdown-button text-rg px-6 py-4'
+                    'rounded-full border-none flex items-center justify-center create-meeting-dropdown-button text-rg pl-5 pr-6 py-4'
                 )}
                 size="large"
             >

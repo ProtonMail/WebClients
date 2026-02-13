@@ -74,7 +74,7 @@ export const DashboardContainerBody = ({
                                 size="large"
                                 onClick={onJoinWithLinkClick}
                             >
-                                <span className="inline-flex items-center mx-2">
+                                <span className="inline-flex items-center mr-2">
                                     <IcLink size={4} className="shrink-0 mr-2" />
                                     {c('Action').t`Join via link`}
                                 </span>
