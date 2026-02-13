@@ -192,6 +192,7 @@ const MainContainer = () => {
     const isOLESEnabled = useFlag('OlesM1');
     const isCategoryViewEnabled = useFlag('CategoryView');
     const isRecoveryContactsEnabled = useFlag('SocialRecovery');
+    const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
 
     const [referralInfo] = useReferralInfo();
 
@@ -292,6 +293,7 @@ const MainContainer = () => {
         isGroupOwner,
         isOLESEnabled,
         isCategoryViewEnabled,
+        isRolesAndPermissionsEnabled,
     });
 
     useEffect(() => {

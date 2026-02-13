@@ -67,6 +67,7 @@ export const getRoutes = ({
     isGroupOwner,
     isOLESEnabled,
     isCategoryViewEnabled,
+    isRolesAndPermissionsEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -137,6 +138,7 @@ export const getRoutes = ({
             isRetentionPoliciesEnabled,
             isOLESEnabled,
             isGroupOwner,
+            isRolesAndPermissionsEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
