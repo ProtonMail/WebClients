@@ -116,18 +116,18 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (baseCommit) {
       for (const message of baseCommit.messages) {
-        const content = message.content
+        let content = message.content
         if (isCompressedDocumentUpdate(content)) {
-          const decompressed = decompressDocumentUpdate(content)
-          zip.file(`${message.timestamp}.bin`, decompressed)
-        } else {
-          zip.file(`${message.timestamp}.bin`, content)
+          content = decompressDocumentUpdate(content)
         }
+        const hash = await getUpdateHash(content)
+        zip.file(`${message.timestamp}-${hash}.bin`, content)
       }
     }
 
     for (const update of this.receivedOrSentDUs) {
-      zip.file(`${update.timestamp}.bin`, update.content)
+      const hash = await getUpdateHash(update.content)
+      zip.file(`${update.timestamp}-${hash}.bin`, update.content)
     }
 
     const zipBlob = await zip.generateAsync({ type: 'blob' })
@@ -546,14 +546,16 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         if (isCompressedDocumentUpdate(content)) {
           content = decompressDocumentUpdate(content)
         }
+        const hashBeforeObfuscating = await getUpdateHash(content)
         const obfuscated = obfuscateUpdate(content)
-        zip.file(`${message.timestamp}.bin`, obfuscated)
+        zip.file(`${message.timestamp}-${hashBeforeObfuscating}.bin`, obfuscated)
       }
     }
 
     for (const update of this.receivedOrSentDUs) {
+      const hashBeforeObfuscating = await getUpdateHash(update.content)
       const obfuscated = obfuscateUpdate(update.content)
-      zip.file(`${update.timestamp}.bin`, obfuscated)
+      zip.file(`${update.timestamp}-${hashBeforeObfuscating}.bin`, obfuscated)
     }
 
     const zipBlob = await zip.generateAsync({ type: 'blob' })
@@ -584,15 +586,20 @@ async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
   for (const [clientId, items] of decoded.ds.clients) {
     deleteCountsPerClientId[clientId] = items.length
   }
-  const hash = await window.crypto.subtle.digest('SHA-1', content)
-  const hashHex = Array.from(new Uint8Array(hash))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('')
+  const hash = await getUpdateHash(content)
   return {
     structCount,
     structClientIds: Array.from(structClientIds),
     structTypes: Array.from(structTypes),
     deleteSet: deleteCountsPerClientId,
-    hash: hashHex,
+    hash,
   }
+}
+
+async function getUpdateHash(content: Uint8Array<ArrayBuffer>) {
+  const hash = await window.crypto.subtle.digest('SHA-1', content)
+  const hashHex = Array.from(new Uint8Array(hash))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
+  return hashHex
 }
