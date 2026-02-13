@@ -23,8 +23,8 @@ export const subscribeToTrashEvents = () => {
     void eventManager.subscribeSdkEventsMyUpdates('trashFiles');
     void eventManager.subscribePhotosEventsMyUpdates('trashPhotos');
     const unsubscribeFromEvents = eventManager.subscribe(BusDriverEventName.ALL, async (event) => {
-        const trashPhotoStore = useTrashStore.getState();
-        const trashFilesStore = useTrashPhotosStore.getState();
+        const trashPhotoStore = useTrashPhotosStore.getState();
+        const trashFilesStore = useTrashStore.getState();
         trashLogDebug('trash event', { event });
         switch (event.type) {
             case BusDriverEventName.RESTORED_NODES:
