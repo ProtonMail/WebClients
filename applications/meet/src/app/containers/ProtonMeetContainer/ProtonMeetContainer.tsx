@@ -19,6 +19,7 @@ import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
@@ -810,7 +811,7 @@ export const ProtonMeetContainer = ({
     };
 
     const setup = async () => {
-        if (meetOpenLinksInDesktopApp && getDesktopAppPreference() && token && !isInstantJoin) {
+        if (meetOpenLinksInDesktopApp && getDesktopAppPreference() && token && !isInstantJoin && !isElectronApp) {
             setOpenedInDesktopApp(true);
 
             tryOpenInDesktopApp(shareLink);
