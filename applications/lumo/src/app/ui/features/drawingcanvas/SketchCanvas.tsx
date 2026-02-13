@@ -12,7 +12,7 @@ interface SketchCanvasProps {
     width?: number;
     height?: number;
     onExport?: (imageData: string, mode: DrawingMode) => void;
-    onClose?: () => void;
+    onClose: () => void;
     className?: string;
 }
 
