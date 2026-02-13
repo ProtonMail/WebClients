@@ -6,13 +6,28 @@
 		background: var(--interaction-norm);
 	}
 
-	.input {
-		&:focus-within {
-			box-shadow: unset !important;
+	.meeting-link-input {
+		border: 1px solid var(--border-card);
+		background: var(--background-card);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: var(--interaction-default-hover);
+		}
+
+		&.focus,
+		&:not(.disabled):focus-within {
+			box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1);
+		}
+
+		&::placeholder {
+			color: var(--text-disabled);
 		}
 	}
 
-	.meeting-link-input::placeholder {
-		color: var(--text-disabled);
+	.meeting-link-input-error {
+		margin-block-start: -1.5rem;
+		line-height: 1rem;
 	}
 }
