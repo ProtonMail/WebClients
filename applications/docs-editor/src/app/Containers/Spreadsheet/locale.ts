@@ -101,6 +101,7 @@ const LABEL_NEEDS_LANGUAGE = [
   'nb-no',
   'nn-no',
   'cy-gb',
+  'ca-es',
 ]
 
 export function getLocaleRegionLabel(locale: string, accountLocale: string) {
