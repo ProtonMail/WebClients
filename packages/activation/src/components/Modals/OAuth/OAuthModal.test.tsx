@@ -10,14 +10,16 @@ import ProviderCard from '../../SettingsArea/ProviderCards/ProviderCard';
 
 const server = setupServer();
 
-jest.mock('@proton/mail/store/importerConfig/hooks', () => () => [
-    {
-        'oauth.google.client_id': 'string',
-        'oauth.outlook.client_id': 'string',
-        'oauth.zoom.client_id': 'string',
-    },
-    false,
-]);
+jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
+    useApiEnvironmentConfig: () => [
+        {
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
+        },
+        false,
+    ],
+}));
 
 jest.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
