@@ -214,6 +214,10 @@ enum DocsFeatureFlag {
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',
     SheetsUpdateCompressionEnabled = 'SheetsUpdateCompressionEnabled',
     SheetsUpdateChunkingEnabled = 'SheetsUpdateChunkingEnabled',
+    DocsClientSquashingEnabled = 'DocsClientSquashingEnabled',
+    SheetsClientSquashingEnabled = 'SheetsClientSquashingEnabled',
+    DocsClientSquashingDisabled = 'DocsClientSquashingDisabled',
+    SheetsClientSquashingDisabled = 'SheetsClientSquashingDisabled',
 }
 
 export enum MailFeatureFlag {
