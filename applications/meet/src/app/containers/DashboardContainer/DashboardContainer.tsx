@@ -40,7 +40,7 @@ export const DashboardContainer = () => {
     const [editedRoom, setEditedRoom] = useState<Meeting | null>(null);
     const [selectedMeeting, setSelectedMeeting] = useState<Meeting | undefined>();
 
-    const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting } =
+    const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
         useDependencySetup(false);
 
     const goToApp = useAppLink();
@@ -113,6 +113,7 @@ export const DashboardContainer = () => {
                 }}
                 handleRotatePersonalMeeting={setupNewPersonalMeeting}
                 loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                meetingsListStatus={meetingsListStatus}
             />
             {upsellModalType && (
                 <CTAModal

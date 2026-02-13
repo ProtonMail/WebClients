@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -56,29 +58,38 @@ interface DashboardMeetingListTabsProps {
     setActiveTab: (tab: DashboardMeetingListTab) => void;
     timeBasedMeetingsCount: number;
     meetingRoomsCount: number;
+    isStuck: boolean;
 }
 
-export const DashboardMeetingListTabs = ({
-    activeTab,
-    setActiveTab,
-    timeBasedMeetingsCount,
-    meetingRoomsCount,
-}: DashboardMeetingListTabsProps) => {
-    return (
-        <div className="dashboard-meeting-list-tabs flex align-items-center justify-start shrink-0">
-            <TabButton
-                isActive={activeTab === DashboardMeetingListTab.TimeBased}
-                handleClick={() => setActiveTab(DashboardMeetingListTab.TimeBased)}
-                tabName={c('Info').t`My meetings`}
-                tabCounter={timeBasedMeetingsCount}
-                tooltipTitle={c('Info').t`Only meetings you created appear here`}
-            />
-            <TabButton
-                isActive={activeTab === DashboardMeetingListTab.MeetingRooms}
-                handleClick={() => setActiveTab(DashboardMeetingListTab.MeetingRooms)}
-                tabName={c('Info').t`My rooms`}
-                tabCounter={meetingRoomsCount}
-            />
-        </div>
-    );
-};
+export const DashboardMeetingListTabs = forwardRef(
+    (
+        { activeTab, setActiveTab, timeBasedMeetingsCount, meetingRoomsCount, isStuck }: DashboardMeetingListTabsProps,
+        ref: React.ForwardedRef<HTMLDivElement>
+    ) => {
+        return (
+            <div
+                ref={ref}
+                className={clsx(
+                    'dashboard-meeting-list-tabs flex align-items-center justify-start shrink-0',
+                    isStuck && 'is-stuck'
+                )}
+            >
+                <TabButton
+                    isActive={activeTab === DashboardMeetingListTab.TimeBased}
+                    handleClick={() => setActiveTab(DashboardMeetingListTab.TimeBased)}
+                    tabName={c('Info').t`My meetings`}
+                    tabCounter={timeBasedMeetingsCount}
+                    tooltipTitle={c('Info').t`Only meetings you created appear here`}
+                />
+                <TabButton
+                    isActive={activeTab === DashboardMeetingListTab.MeetingRooms}
+                    handleClick={() => setActiveTab(DashboardMeetingListTab.MeetingRooms)}
+                    tabName={c('Info').t`My rooms`}
+                    tabCounter={meetingRoomsCount}
+                />
+            </div>
+        );
+    }
+);
+
+DashboardMeetingListTabs.displayName = 'DashboardMeetingListTabs';
