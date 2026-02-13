@@ -4,7 +4,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 
-const RAW_TO_CATEGORY = {
+const RAW_TO_CATEGORY: Record<string, CategoryTab> = {
     '24': {
         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
@@ -23,12 +23,12 @@ const RAW_TO_CATEGORY = {
     '25': {
         id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
         colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
-        filledIcon: 'news',
+        filledIcon: 'news-filled',
     },
     '26': {
         id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.RED,
-        filledIcon: 'credit-cards',
+        filledIcon: 'credit-cards-filled',
     },
     '22': {
         id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
