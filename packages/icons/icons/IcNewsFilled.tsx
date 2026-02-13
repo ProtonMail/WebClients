@@ -18,7 +18,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcNews = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
+export const IcNewsFilled = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
     return (
         <>
             <svg
@@ -31,12 +31,12 @@ export const IcNews = ({ alt, title, size = 4, className = '', viewBox = '0 0 16
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M8.5 8a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h2Zm4 2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2Zm0-2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2Zm0-2a.5.5 0 0 1 0 1h-6a.5.5 0 0 1 0-1h6Zm0-2a.5.5 0 0 1 0 1h-6a.5.5 0 0 1 0-1h6Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V3a2 2 0 0 1 2-2h7ZM3 7a1 1 0 0 0-1 1v5l.005.102A1 1 0 0 0 4 13V7H3Zm3-5a1 1 0 0 0-1 1v10c0 .351-.063.687-.174 1H13a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6Z"
+                    d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 0 2-2V3a2 2 0 0 1 2-2h7ZM6.5 8a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2Zm4 2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2Zm0-2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2Zm-4-2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0-2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Z"
                     clipRule="evenodd"
                 ></path>
+                <path d="M3 13a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1h1v6Z"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
