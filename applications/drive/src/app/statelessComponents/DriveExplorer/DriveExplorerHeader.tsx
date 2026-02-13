@@ -150,10 +150,11 @@ export const DriveExplorerHeader = ({
                                 <TableHeaderCell className="m-0 w-0" />
                             )}
                             {!(selectedCount && selectedCount > 0) &&
-                                cells.map((cell) => {
+                                cells.map((cell, index) => {
                                     if (cell.disabled) {
                                         return null;
                                     }
+                                    const showLoader = loading && index === 0;
                                     return (
                                         <SortableHeaderCell
                                             key={cell.id}
@@ -161,7 +162,7 @@ export const DriveExplorerHeader = ({
                                             currentSortField={sort?.sortBy}
                                             currentSortDirection={sort?.sortDirection}
                                             onSort={handleSort(cell)}
-                                            loading={loading}
+                                            loading={showLoader}
                                         />
                                     );
                                 })}
