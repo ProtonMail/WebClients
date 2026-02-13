@@ -252,7 +252,8 @@ export const createActivationService = () => {
 
             const canCreateItems = selectCanCreateItems(ctx.service.store.getState());
             const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
-            const features = await ctx.service.featureFlags.resolve();
+            // Note: in the future we can modify this to add featureFlags variants in the extension content script
+            const { features } = await ctx.service.featureFlags.resolve();
 
             return { state: ctx.getState(), features, settings };
         }
