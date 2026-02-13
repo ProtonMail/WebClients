@@ -5,7 +5,6 @@ import { DbApi } from '../../indexedDb/db';
 import { SearchEngine } from './SearchEngine';
 import { LumoCryptoAdapter } from './adapters/CryptoAdapter';
 import { LumoDatabaseAdapter } from './adapters/DatabaseAdapter';
-import { ENABLE_FOUNDATION_SEARCH } from './config';
 
 export enum MessageType {
     Search,
@@ -101,10 +100,6 @@ let searchEngine: SearchEngine | null = null;
 let currentSearchIndexKey: string | null = null;
 
 function getSearchEngine(userId: string, searchIndexKey: string): SearchEngine | null {
-    if (!ENABLE_FOUNDATION_SEARCH) {
-        return null;
-    }
-
     if (!searchEngine || searchEngine.userId != userId) {
         const userDbApi = new DbApi(userId);
         const cryptoAdapter = new LumoCryptoAdapter(
