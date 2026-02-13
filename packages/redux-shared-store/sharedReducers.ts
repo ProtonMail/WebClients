@@ -33,14 +33,12 @@ import {
     welcomeFlagsReducer,
 } from '@proton/account';
 import { featuresReducer } from '@proton/features';
-import {
-    categoriesReducer,
-    contactEmailsReducer,
-    contactReducer,
-    contactsReducer,
-    importerConfigReducer,
-    mailSettingsReducer,
-} from '@proton/mail';
+import { categoriesReducer } from '@proton/mail/store/labels';
+import { contactEmailsReducer } from '@proton/mail/store/contactEmails';
+import { contactReducer } from '@proton/mail/store/contacts/contactSlice';
+import { contactsReducer } from '@proton/mail/store/contacts';
+import { importerConfigReducer } from '@proton/mail/store/importerConfig';
+import { mailSettingsReducer } from '@proton/mail/store/mailSettings';
 import { selectPersistModel } from '@proton/redux-utilities';
 
 export const sharedReducers = {

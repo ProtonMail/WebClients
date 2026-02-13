@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, SidebarListItem } from '@proton/components';
-import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

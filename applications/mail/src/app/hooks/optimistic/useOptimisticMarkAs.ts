@@ -1,13 +1,9 @@
 import { useHistory } from 'react-router-dom';
 
 import { useHandler } from '@proton/components';
-import {
-    conversationCountsActions,
-    messageCountsActions,
-    selectConversationCounts,
-    selectMessageCounts,
-} from '@proton/mail';
 import { isSystemLocation } from '@proton/mail/helpers/location';
+import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';

@@ -6,7 +6,7 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

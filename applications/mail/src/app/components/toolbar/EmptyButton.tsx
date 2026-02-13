@@ -5,7 +5,7 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
-import { useLabels } from '@proton/mail';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isCustomLabel, labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

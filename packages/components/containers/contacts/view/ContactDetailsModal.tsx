@@ -15,7 +15,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';

@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IllustrationPlaceholder, SkeletonLoader, useTheme } from '@proton/components';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { getPlaceholderSrc } from '@proton/mail';
+import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
