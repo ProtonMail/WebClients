@@ -24,7 +24,7 @@ export const useCategoriesShortcuts = () => {
     const moveToCategoriesOption: CommanderItemInterface[] =
         categoryViewAccess && activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((category) => ({
-                  icon: category.filledIcon,
+                  icon: category.outlinedIcon,
                   label: getLabelFromCategoryIdInCommander(category.id),
                   value: category.id,
                   action: () => navigateTo(category.id),
