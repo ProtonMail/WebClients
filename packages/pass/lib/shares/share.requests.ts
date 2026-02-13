@@ -33,9 +33,11 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         method: 'get',
     })
         .then(({ EventID }) => EventID!)
-        .catch(() => {
+        .catch((err) => {
             logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
-            return '';
+            /** FIXME: this should be properly handled in case share is no longer
+             * accessible for the user. eg:`PassErrorCode.DISABLED_SHARE` */
+            throw err;
         });
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>

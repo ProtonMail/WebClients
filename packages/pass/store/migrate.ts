@@ -1,3 +1,4 @@
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import type { FiltersState } from '@proton/pass/store/reducers';
 import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
@@ -124,6 +125,9 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
         /** v1.34.x permission migration */
         share.permission = match.permission ?? 0b1111111;
     }
+
+    /** v1.35.x migration */
+    if (!state.settings.syncStrategy) state.settings.syncStrategy = SyncStrategy.LEGACY;
 
     return state;
 };

@@ -33,6 +33,7 @@ export const selectClipboardTTL = ({ settings }: State) => settings.clipboard?.t
 export const selectAliasTrashAcknowledged = ({ settings }: State) => settings.aliasTrashAcknowledged;
 export const selectAutofillSettings = ({ settings }: State) => settings.autofill;
 export const selectPendingBrowserAutofill = ({ settings }: State) => settings.pendingBrowserAutofill;
+export const selectSyncStrategy = ({ settings }: State) => settings.syncStrategy;
 
 export const selectOfflineEnabled = ({ settings }: State) => settings.offlineEnabled ?? false;
 export const selectExtraPasswordEnabled = ({ settings }: State) => settings.extraPassword ?? false;
