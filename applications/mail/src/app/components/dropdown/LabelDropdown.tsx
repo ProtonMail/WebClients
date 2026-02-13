@@ -18,7 +18,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useLabels } from '@proton/mail';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';

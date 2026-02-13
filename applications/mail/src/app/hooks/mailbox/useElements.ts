@@ -3,7 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import isDeepEqual from 'lodash/isEqual';
 
-import { useConversationCounts, useGetConversationCounts, useGetMessageCounts, useMessageCounts } from '@proton/mail';
+import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

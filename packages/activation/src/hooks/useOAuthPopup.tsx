@@ -5,7 +5,7 @@ import {
     OAUTH_PROVIDER,
     type OAuthProps,
 } from '@proton/activation/src/interface';
-import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
+import { useApiEnvironmentConfig } from '@proton/mail/store/importerConfig/hooks';
 import { GSUITE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { useFlag } from '@proton/unleash';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { useFolders, useLabels } from '@proton/mail';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';

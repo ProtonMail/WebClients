@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';

@@ -6,7 +6,9 @@ import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
 import { breachesCountReducer, securityCenterReducer } from '@proton/components';
-import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
+import { conversationCountsReducer } from '@proton/mail/store/counts/conversationCountsSlice';
+import { filtersReducer } from '@proton/mail/store/filters';
+import { messageCountsReducer } from '@proton/mail/store/counts/messageCountsSlice';
 import { sharedReducers } from '@proton/redux-shared-store';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';

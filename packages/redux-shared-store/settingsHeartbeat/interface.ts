@@ -7,7 +7,8 @@ import type {
     UserKeysState,
     UserSettingsState,
 } from '@proton/account';
-import type { CategoriesState, MailSettingState } from '@proton/mail';
+import type { CategoriesState } from '@proton/mail/store/labels';
+import type { MailSettingState } from '@proton/mail/store/mailSettings';
 
 export interface RequiredState
     extends AddressKeysState,

@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';

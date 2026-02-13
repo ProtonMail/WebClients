@@ -7,12 +7,11 @@ import { mailTestRender } from 'proton-mail/helpers/test/render';
 import { activeSubscription } from '../../testData';
 import { ModalMoveToFolder } from './ModalMoveToFolder';
 
-jest.mock('@proton/mail', () => ({
-    ...jest.requireActual('@proton/mail'),
+jest.mock('@proton/mail/store/labels/hooks', () => ({
     useFolders: jest.fn(),
 }));
 
-const mockUseFolders = jest.requireMock('@proton/mail').useFolders;
+const mockUseFolders = jest.requireMock('@proton/mail/store/labels/hooks').useFolders;
 
 describe('ModalBlockSender', () => {
     beforeEach(() => {

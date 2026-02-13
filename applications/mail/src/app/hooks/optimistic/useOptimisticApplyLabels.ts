@@ -1,13 +1,8 @@
 import { useHandler } from '@proton/components';
-import {
-    conversationCountsActions,
-    messageCountsActions,
-    selectConversationCounts,
-    selectMessageCounts,
-    useFolders,
-    useLabels,
-} from '@proton/mail';
 import { isCustomLabel } from '@proton/mail/helpers/location';
+import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

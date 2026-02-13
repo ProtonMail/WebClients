@@ -1,6 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -15,8 +17,6 @@ const mockUseLocation = jest.fn(() => ({ pathname: '/inbox' }));
 const mockUseFlag = jest.fn();
 const mockDispatch = jest.fn();
 const mockSetModalOpen = jest.fn((value: boolean) => value);
-const mockUseConversationCounts = jest.fn(() => [[{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Total: 0 }], false]);
-const mockUseMessageCounts = jest.fn(() => [[{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Total: 0 }], false]);
 const mockPreliminaryVerifications = jest.fn();
 
 jest.mock('react-router-dom', () => ({
@@ -63,10 +63,11 @@ jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
     useMailSettings: () => [{ ViewMode: 0 }, false],
 }));
 
-jest.mock('@proton/mail', () => ({
-    useConversationCounts: () => mockUseConversationCounts(),
-    useMessageCounts: () => mockUseMessageCounts(),
-}));
+jest.mock('@proton/mail/store/counts/conversationCountsSlice');
+const mockUseConversationCounts = useConversationCounts as jest.Mock;
+
+jest.mock('@proton/mail/store/counts/messageCountsSlice');
+const mockUseMessageCounts = useMessageCounts as jest.Mock;
 
 jest.mock('./useSendVerifications', () => ({
     useSendVerifications: () => ({

@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Icon, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { CategoryTab } from '@proton/mail';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

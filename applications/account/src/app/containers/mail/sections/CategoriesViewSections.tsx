@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Info, useModalState } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { CategoryTab } from '@proton/mail';
-import { useCategoriesData } from '@proton/mail';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

@@ -1,3 +1,4 @@
+import { createRequire } from 'module';
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 const jestConfig: JestConfigWithTsJest = {
@@ -5,10 +6,26 @@ const jestConfig: JestConfigWithTsJest = {
     testTimeout: 10000,
     preset: 'ts-jest',
     transform: {
-        '^.+\\.tsx?$': [
-            'ts-jest',
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
             {
-                babelConfig: './babel.config.js',
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+                env: {
+                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
+                },
             },
         ],
     },

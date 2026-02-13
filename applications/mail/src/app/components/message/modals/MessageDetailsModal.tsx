@@ -5,7 +5,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ContactEditProps, ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { FeatureCode, useFeatures } from '@proton/features';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

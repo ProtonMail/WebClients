@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { FloatingButton, PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { IcPen } from '@proton/icons/icons/IcPen';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
