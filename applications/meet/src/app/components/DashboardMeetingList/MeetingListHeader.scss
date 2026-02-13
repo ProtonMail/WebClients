@@ -5,27 +5,21 @@ im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
 .meeting-list-header {
-	position: sticky;
 	inset-block-start: -1px;
 	z-index: 10;
-	transition: padding 0.2s ease;
 
 	&.is-stuck {
-		padding-block: 1rem;
-		background: rgb(22 22 31 / 0.4);
-		backdrop-filter: blur(22px);
-		inline-size: 100vw !important;
-		transform: translateX(-1.5rem);
-		padding-inline: 1.5rem;
+		position: fixed;
+		inline-size: 100vw;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		padding-inline: 3.75rem;
+		padding-block: 1.25rem;
+		background-color: rgb(0 0 0 / 0.16);
+		backdrop-filter: blur(12px);
 
-		@include im.media('>medium') {
-			transform: translateX(-2.5rem);
-			padding-inline: 2.5rem;
-		}
-
-		@include im.media('>large') {
-			transform: translateX(-3.75rem);
-			padding-inline: 3.75rem;
+		@include im.media('<=small') {
+			padding-inline: 1.5rem;
 		}
 	}
 

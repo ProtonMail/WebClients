@@ -18,12 +18,19 @@ import { saveRotatePersonalMeetingDisable } from '../utils/disableRotatePersonal
 import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
 
 const DECRYPTION_BATCH_SIZE = 5;
+export enum MeetingListStatus {
+    InitialLoading = 0,
+    InitialDecrypting = 1,
+    Done = 2,
+    Error = 3,
+}
 
-export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void, boolean] => {
+export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void, boolean, MeetingListStatus] => {
     const personalMeetingName = c('Title').t`Personal meeting room`;
 
     const [meetings, setMeetings] = useState<Meeting[] | null>(null);
     const [personalMeeting, setPersonalMeeting] = useState<Meeting | null>(null);
+    const [status, setStatus] = useState<MeetingListStatus>(MeetingListStatus.InitialLoading);
 
     const notifications = useNotifications();
     const [loadingRotatePersonalMeeting, withLoadingRotatePersonalMeeting] = useLoading();
@@ -82,19 +89,23 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 )
             );
 
+            if (MeetingListStatus.InitialLoading === status) {
+                setStatus(MeetingListStatus.InitialDecrypting);
+            }
             const decryptionTasks = filteredMeetings.map((meeting: Meeting) => () => getDecryptedMeeting(meeting));
             const decryptedMeetings = await runInQueue(decryptionTasks, DECRYPTION_BATCH_SIZE);
 
             const validDecryptedMeetings: Meeting[] = decryptedMeetings.filter(isTruthy) as Meeting[];
 
             setMeetings(validDecryptedMeetings);
-
+            setStatus(MeetingListStatus.Done);
             const personalMeeting =
                 validDecryptedMeetings.find((m: Meeting) => m.Type === MeetingType.PERSONAL) || null;
             setPersonalMeeting(personalMeeting);
         } catch (error) {
             setPersonalMeeting(null);
             setMeetings([]);
+            setStatus(MeetingListStatus.Error);
         }
     };
 
@@ -170,5 +181,5 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         void setupPersonalMeeting();
     }, [meetings]);
 
-    return [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting] as const;
+    return [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, status] as const;
 };
