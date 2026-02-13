@@ -12,14 +12,9 @@ const getDisabledCategoriesCounts = (
 ) => {
     return disabledCategoriesIDs.reduce(
         (acc, id) => {
-            const count = resultCounterMap[id];
-            if (!count) {
-                return acc;
-            }
-
             return {
-                Total: acc.Total + count.Total,
-                Unread: acc.Unread + count.Unread,
+                Total: acc.Total + (resultCounterMap[id]?.Total || 0),
+                Unread: acc.Unread + (resultCounterMap[id]?.Unread || 0),
             };
         },
         { Total: 0, Unread: 0 }
@@ -54,12 +49,12 @@ export const getCounterMap = (
     // We need to add the disabled categories totals to the default category
     if (disabledCategoriesIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
         const initialCount = resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
-        const disabledTotals = getDisabledCategoriesCounts(disabledCategoriesIDs, resultCounterMap);
+        const disabledCounts = getDisabledCategoriesCounts(disabledCategoriesIDs, resultCounterMap);
 
         resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
             LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-            Total: initialCount.Total + disabledTotals.Total,
-            Unread: initialCount.Unread + disabledTotals.Unread,
+            Total: initialCount.Total + disabledCounts.Total,
+            Unread: initialCount.Unread + disabledCounts.Unread,
         };
     }
 
