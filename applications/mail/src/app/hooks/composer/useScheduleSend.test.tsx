@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
