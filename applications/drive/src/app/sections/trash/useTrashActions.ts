@@ -135,10 +135,10 @@ export const useTrashActions = () => {
 
     const emptyTrash = async () => {
         try {
-            await drive.emptyTrash();
-            // TBI in sdk
-            // await photos.emptyTrash();
-            await deleteNodes(Object.values(photoTrashNodes), false); // polyfill for photos.emptyTrash
+            const myfilesEmptyTrashPromise = drive.emptyTrash();
+            const photosEmptyTrashPromise = photos.emptyTrash();
+            await Promise.all([myfilesEmptyTrashPromise, photosEmptyTrashPromise]);
+
             void getBusDriver().emit({
                 type: BusDriverEventName.DELETED_NODES,
                 uids: [...Object.keys(driveTrashNodes), ...Object.keys(photoTrashNodes)],
