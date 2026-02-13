@@ -33,7 +33,7 @@ export const getInboxCategoriesItems = ({
             ? activeCategoriesTabs.map((category) => ({
                   ID: category.id,
                   Name: getLabelFromCategoryId(category.id),
-                  icon: category.icon,
+                  icon: category.filledIcon,
                   folderIconProps: {
                       className: categoryColorClassName,
                       color: category.colorShade,

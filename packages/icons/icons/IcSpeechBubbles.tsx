@@ -18,7 +18,14 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcNews = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
+export const IcSpeechBubbles = ({
+    alt,
+    title,
+    size = 4,
+    className = '',
+    viewBox = '0 0 16 16',
+    ...rest
+}: IconProps) => {
     return (
         <>
             <svg
@@ -31,10 +38,9 @@ export const IcNews = ({ alt, title, size = 4, className = '', viewBox = '0 0 16
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M8.5 8a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h2Zm4 2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2Zm0-2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2Zm0-2a.5.5 0 0 1 0 1h-6a.5.5 0 0 1 0-1h6Zm0-2a.5.5 0 0 1 0 1h-6a.5.5 0 0 1 0-1h6Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V3a2 2 0 0 1 2-2h7ZM3 7a1 1 0 0 0-1 1v5l.005.102A1 1 0 0 0 4 13V7H3Zm3-5a1 1 0 0 0-1 1v10c0 .351-.063.687-.174 1H13a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6Z"
+                    d="M8.5 9a2.5 2.5 0 0 1 2.5 2.5V13l2 2H3.5A2.5 2.5 0 0 1 1 12.5v-1A2.5 2.5 0 0 1 3.5 9h5Zm-5 1a1.5 1.5 0 0 0-1.492 1.347L2 11.5v1A1.5 1.5 0 0 0 3.5 14h7.086L10 13.414V11.5a1.5 1.5 0 0 0-1.347-1.492L8.5 10h-5Zm7-9A2.5 2.5 0 0 1 13 3.5v2.214L15 8H3.5A2.5 2.5 0 0 1 1 5.5v-2A2.5 2.5 0 0 1 3.5 1h7Zm-7 1a1.5 1.5 0 0 0-1.492 1.347L2 3.5v2A1.5 1.5 0 0 0 3.5 7h9.297L12 6.09V3.5A1.5 1.5 0 0 0 10.5 2h-7Z"
                     clipRule="evenodd"
                 ></path>
             </svg>
