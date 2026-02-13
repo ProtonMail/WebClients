@@ -1,6 +1,10 @@
 import { all, call } from 'redux-saga/effects';
 
-import { processGroupInvitesChanged, processInvitesChanged } from '@proton/pass/lib/events/v2/user-events.invites';
+import {
+    processGroupInvitesChanged,
+    processInvitesChanged,
+    processSharesWithInvitesToCreate,
+} from '@proton/pass/lib/events/v2/user-events.invites';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { RootSagaOptions } from '@proton/pass/store/types';
@@ -59,6 +63,7 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
         call(processOrganizationInfoChanged, event.OrganizationInfoChanged, options),
         call(processInvitesChanged, event.InvitesChanged),
         call(processGroupInvitesChanged, event.GroupInvitesChanged),
+        call(processSharesWithInvitesToCreate, event.SharesWithInvitesToCreate),
     ]);
 
     return results.every(Boolean);

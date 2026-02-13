@@ -65,10 +65,10 @@ const mapShareMembers = (response: ActiveShareGetResponse[]) =>
         isGroupShare: member.IsGroupShare,
     }));
 
-export const loadShareItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>
+export const loadItemMembers = async (shareId: string, itemId: string): Promise<ShareMember[]> =>
     api({ url: `pass/v1/share/${shareId}/user/item/${itemId}`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
 
-export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> =>
+export const loadVaultMembers = async (shareId: string): Promise<ShareMember[]> =>
     api({ url: `pass/v1/share/${shareId}/user`, method: 'get' }).then((r) => mapShareMembers(r.Shares));
 
 export const removeUserAccess = async ({ shareId, userShareId }: ShareRemoveMemberAccessIntent) =>
