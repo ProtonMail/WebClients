@@ -44,7 +44,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
         handleClick: folderClick,
         handleChange: folderChange,
     } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();

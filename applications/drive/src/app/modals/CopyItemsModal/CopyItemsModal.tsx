@@ -45,7 +45,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
     const [isCopying, setIsCopying] = useState(false);
     const copyItems = useCopyItems();
     const { handleError } = useSdkErrorHandler();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
 
     useEffect(() => {
         setIsLoading(true);

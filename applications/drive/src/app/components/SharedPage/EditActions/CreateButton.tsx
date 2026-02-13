@@ -2,25 +2,27 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, MimeIcon, usePopperAnchor } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { usePublicActions } from '../../../store';
 import { useDriveDocsPublicSharingFF, useIsSheetsEnabled, useOpenDocument } from '../../../store/_documents';
-import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 
 interface Props {
     token: string;
     linkId: string;
+    volumeId: string;
 }
 
-export const CreateButton = ({ token, linkId }: Props) => {
-    const { createFolder, createDocument } = usePublicActions();
+export const CreateButton = ({ token, linkId, volumeId }: Props) => {
+    const { createDocument } = usePublicActions();
     const { urlPassword } = usePublicToken();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { openDocumentWindow } = useOpenDocument();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
@@ -44,15 +46,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex items-center gap-2"
-                        onClick={() =>
-                            showCreateFolderModal({
-                                folder: {
-                                    shareId: token,
-                                    linkId,
-                                },
-                                createFolder,
-                            })
-                        }
+                        onClick={() => showCreateFolderModal({ parentFolderUid: generateNodeUid(volumeId, linkId) })}
                     >
                         <IcFolderPlus />
                         {c('Action').t`New folder`}
