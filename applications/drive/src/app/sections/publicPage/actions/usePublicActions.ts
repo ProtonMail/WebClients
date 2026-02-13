@@ -12,6 +12,7 @@ import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
+import { type AbuseReportPrefill, useReportAbuseModal } from '../../../modals/ReportAbuseModal';
 import { useDrivePublicPreviewModal } from '../../../modals/preview';
 import {
     downloadPublicDocument,
@@ -33,6 +34,7 @@ export const usePublicActions = () => {
     const { renameModal, showRenameModal } = useRenameModal();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { createDeleteNotification } = usePublicPageNotifications();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
@@ -206,6 +208,17 @@ export const usePublicActions = () => {
         }
     };
 
+    const handleReportAbuse = (nodeUid: string, customPassword: string = '', prefilled?: AbuseReportPrefill) => {
+        const { urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+        showReportAbuseModal({
+            publicLinkPassword: urlPassword + customPassword,
+            publicLinkUrl: window.location.href,
+            nodeUid,
+            drive: getPublicLinkClient(),
+            prefilled,
+        });
+    };
+
     return {
         modals: {
             previewModal,
@@ -213,6 +226,7 @@ export const usePublicActions = () => {
             renameModal,
             createFolderModal,
             confirmModal,
+            reportAbuseModal,
         },
         handlePreview,
         handleDownload,
@@ -223,5 +237,6 @@ export const usePublicActions = () => {
         handleCopyLink,
         handleCreateFolder,
         handleCreateDocsOrSheets,
+        handleReportAbuse,
     };
 };

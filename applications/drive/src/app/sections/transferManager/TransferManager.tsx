@@ -8,6 +8,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { uploadManager } from '@proton/drive/modules/upload';
 import clsx from '@proton/utils/clsx';
 
+import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useDriveEventManager } from '../../store';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
@@ -21,9 +22,15 @@ interface TransferManagerProps {
     drawerWidth?: number;
     deprecatedRootShareId: string | undefined;
     className?: string;
+    onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 }
 
-export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId, className }: TransferManagerProps) => {
+export const TransferManager = ({
+    drawerWidth = 0,
+    deprecatedRootShareId,
+    className,
+    onReportAbuse,
+}: TransferManagerProps) => {
     const { items, status } = useTransferManagerState();
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
@@ -119,7 +126,11 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId, classN
 
                 {!isMinimized && (
                     <div className="mt-3" data-testid="drive-transfers-manager:list">
-                        <TransferManagerList items={items} deprecatedRootShareId={deprecatedRootShareId} />
+                        <TransferManagerList
+                            items={items}
+                            deprecatedRootShareId={deprecatedRootShareId}
+                            onReportAbuse={onReportAbuse}
+                        />
                     </div>
                 )}
                 {uploadConflictModal}
