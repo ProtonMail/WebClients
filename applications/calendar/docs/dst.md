@@ -2,10 +2,10 @@
 
 ## Important concepts
 
--   UTC - Coordinated Universal Time. This is the standard in the internet world, and also called "Zulu time" (Zulu is the code-name for the letter Z in the military/navy). A time, written as an ISO 8601 string, `1999-05-05T12:00:00.000Z` is a UTC time. We can roughly think of it as GMT time (although there are some slight differences, see "Learn More" section).
+- UTC - Coordinated Universal Time. This is the standard in the internet world, and also called "Zulu time" (Zulu is the code-name for the letter Z in the military/navy). A time, written as an ISO 8601 string, `1999-05-05T12:00:00.000Z` is a UTC time. We can roughly think of it as GMT time (although there are some slight differences, see "Learn More" section).
 
--   UNIX Timestamp - Number of seconds since `1970-01-01T00:00:00.000Z`. Leap seconds are not counted here, i.e.: every day is assumed to have 24 \* 60 \* 60 seconds (which is not true if you use the definition of UTC second, see "Learn More" section).
--   JS (Javascript) Date - A class in JS for representing a date. It can be constructed from a UNIX timestamp in milliseconds as
+- UNIX Timestamp - Number of seconds since `1970-01-01T00:00:00.000Z`. Leap seconds are not counted here, i.e.: every day is assumed to have 24 \* 60 \* 60 seconds (which is not true if you use the definition of UTC second, see "Learn More" section).
+- JS (Javascript) Date - A class in JS for representing a date. It can be constructed from a UNIX timestamp in milliseconds as
 
 ```JS
 new Date(UNIXTimestampInMilliseconds)
@@ -51,13 +51,13 @@ If DST did not exist, to move from a fake UTC time to real UTC time and vice ver
 
 Another issue that we we have to face with DST is the fact that certain timezoned dates do not exist or are ambiguous. Those are the dates where DST shifts:
 
--   DST shift of +1 hour. In this case there is a one-range hour which does not exist. For instance, in the 'Europe/Zurich' timezone, all dates between 31st March 2019 2:00:00 and 31st March 2019 2:59:59 do not exist.
--   DST shift of -1 hour. In this case, there is a one-range hour that is ambiguous. For instance, in the 'Europe/Zurich' timezone, the dates between 27th October 2019 2:00:00 and 27th October 2019 2:59:59 happen twice, once before the shift and once afterwards.
+- DST shift of +1 hour. In this case there is a one-range hour which does not exist. For instance, in the 'Europe/Zurich' timezone, all dates between 31st March 2019 2:00:00 and 31st March 2019 2:59:59 do not exist.
+- DST shift of -1 hour. In this case, there is a one-range hour that is ambiguous. For instance, in the 'Europe/Zurich' timezone, the dates between 27th October 2019 2:00:00 and 27th October 2019 2:59:59 happen twice, once before the shift and once afterwards.
 
 Our policy for dealing with these dates is as follows:
 
--   Whenever we come across a date that does not exist, we assume it means the corresponding DST-shifted date.
--   Whenever we come across a date that is ambiguous, of the two corresponding dates, we assume it means the latest one.
+- Whenever we come across a date that does not exist, we assume it means the corresponding DST-shifted date.
+- Whenever we come across a date that is ambiguous, of the two corresponding dates, we assume it means the latest one.
 
 ## Learn more
 
@@ -73,4 +73,5 @@ Traditionally we have not measured the time with atomic clocks, but through astr
 Because it would be annoying that in the far future UTC 14:00 be in the middle of the night, the trick is to allow the number of seconds in a day to vary. If a few times per decade we simply declare some days to have 24 _ 60 _ 60 + 1 seconds, we can manage to keep the difference between UTC and UT1 time always under one second. This extra second is called a leap second[^2].
 
 [^1]: A second is (currently) defined as the duration of 9192631770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom.
+
 [^2]: You can find a table of past leap seconds in https://en.wikipedia.org/wiki/Leap_second .
