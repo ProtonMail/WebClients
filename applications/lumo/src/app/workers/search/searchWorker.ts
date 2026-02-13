@@ -1,6 +1,5 @@
 import init, { enableTracing, setPanicHook } from '@proton/proton-foundation-search';
 
-import { ENABLE_FOUNDATION_SEARCH } from './config';
 import { decryptUint8Array, encryptUint8Array } from '../../crypto';
 import { DbApi } from '../../indexedDb/db';
 import { SearchEngine } from './SearchEngine';
@@ -101,10 +100,6 @@ let searchEngine: SearchEngine | null = null;
 let currentSearchIndexKey: string | null = null;
 
 function getSearchEngine(userId: string, searchIndexKey: string): SearchEngine | null {
-    if (!ENABLE_FOUNDATION_SEARCH) {
-        return null;
-    }
-
     if (!searchEngine || searchEngine.userId != userId) {
         const userDbApi = new DbApi(userId);
         const cryptoAdapter = new LumoCryptoAdapter(
@@ -166,13 +161,13 @@ self.addEventListener('message', async (event: MessageEvent) => {
 
     if (isPopulateRequest(event.data)) {
         // Handle populate requests
-        await serialized(() => populate(event.data));
+        await serialized(event.data.userId, () => populate(event.data));
     } else if (isIndexConversationRequest(event.data)) {
         // Handle indexing requests
-        await serialized(() => index(event.data));
+        await serialized(event.data.userId, () => index(event.data));
     } else if (isStatusRequest(event.data)) {
         // Handle initial status requests with a cleanup
-        await serialized(() => cleanup(event.data));
+        await serialized(event.data.userId, () => cleanup(event.data));
     } else if (isSearchRequest(event.data)) {
         // Handle search requests immediately
         await immediately(() => search(event.data));
@@ -191,16 +186,19 @@ async function initialize() {
 const writeQueue: (() => Promise<void>)[] = [() => initialization!];
 let writing: boolean = false;
 /** Serializes the write work for the engine */
-async function serialized(task: () => Promise<void>) {
+async function serialized(userId: string, task: () => Promise<void>) {
     writeQueue.push(task);
 
     if (writing) return;
 
     writing = true;
     try {
-        let task;
-        while ((task = writeQueue.shift())) {
-            await task();
+        while (writeQueue.length) {
+            await navigator.locks.request(`search-indexing ${userId}`, async (_lock) => {
+                const task = writeQueue.shift();
+                if (!task) return;
+                await task();
+            });
         }
     } finally {
         writing = false;
