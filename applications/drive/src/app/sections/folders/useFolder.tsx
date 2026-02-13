@@ -22,7 +22,6 @@ export function useFolder() {
     const isSheetsEnabled = useIsSheetsEnabled();
     const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
-
     const handleFolderError = useCallback(
         (error?: Error) => {
             if (!error) {

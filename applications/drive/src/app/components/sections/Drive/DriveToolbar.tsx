@@ -60,7 +60,7 @@ const DriveToolbar = ({
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
-    const { createFolder, trashLinks, renameLink } = useActions();
+    const { trashLinks, renameLink } = useActions();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
@@ -88,10 +88,7 @@ const DriveToolbar = ({
                 <>
                     {isEditor && !isLinkReadOnly ? (
                         <>
-                            <CreateNewFolderButton
-                                createFolder={createFolder}
-                                activeFolder={{ volumeId, shareId, linkId }}
-                            />
+                            <CreateNewFolderButton activeFolder={{ volumeId, shareId, linkId }} />
                             {isEditEnabled && <CreateNewFileButton />}
                             {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
                                 <CreateNewDocumentButton

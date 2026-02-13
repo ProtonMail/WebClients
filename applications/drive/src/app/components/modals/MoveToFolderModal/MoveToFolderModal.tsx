@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { MoveItemsModal } from '../../../modals/MoveItemsModal';
 import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 import type { DecryptedLink } from '../../../store';
@@ -12,7 +14,6 @@ import { useActions, useTreeForModals } from '../../../store';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
-import { useCreateFolderModal } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
@@ -24,7 +25,7 @@ interface Props {
 }
 
 const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
-    const { moveLinks, createFolder } = useActions();
+    const { moveLinks } = useActions();
     const {
         rootItems,
         expand,
@@ -34,7 +35,7 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { viewportWidth } = useActiveBreakpoint();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal({ forceLegacy: true });
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, {
@@ -63,18 +64,19 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
         }
 
         const targetLinkId = selectedItemParentLinkId || rootItems[0]?.link.linkId || selectedItems[0]?.parentLinkId;
+        const targetVolumeId = rootItems[0]?.link.volumeId;
 
         if (!targetLinkId) {
             return;
         }
 
+        const activeFolderUid = generateNodeUid(targetVolumeId, targetLinkId);
         void showCreateFolderModal({
-            folder: { shareId: shareId, linkId: targetLinkId },
+            parentFolderUid: activeFolderUid,
             onSuccess: async ({ nodeId }) => {
                 expand(targetLinkId);
                 setSelectedFolder(nodeId);
             },
-            createFolder,
         });
     };
 

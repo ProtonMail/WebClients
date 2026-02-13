@@ -113,7 +113,7 @@ export function SharedPageContentHeader({
                 {isFolderView && !viewOnly && (
                     <>
                         <UploadButton volumeId={rootLink.volumeId} token={token} linkId={linkId} />
-                        <CreateButton token={token} linkId={linkId} />
+                        <CreateButton token={token} linkId={linkId} volumeId={rootLink.volumeId} />
                     </>
                 )}
                 {!hideSaveToDrive && !isPartialView && (
