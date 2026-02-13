@@ -11,7 +11,7 @@ import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import logo from '@proton/styles/assets/img/meet/logo-with-name.png';
+import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
 import './PageHeader.scss';
@@ -84,7 +84,7 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
                     onClick={() => history.push('/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
-                    <img className="logo cursor-pointer " src={logo} alt="" />
+                    <img className="logo cursor-pointer" src={logo} alt="" />
                 </button>
                 <button
                     className="logo-button interactive rounded-full block md:hidden p-1 flex items-center justify-center"
