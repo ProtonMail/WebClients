@@ -83,6 +83,16 @@ export type SettingsContext = {
     personalization?: PersonalizationSettings;
 };
 
+const DEFAULT_PERSONALIZATION: PersonalizationSettings = {
+    nickname: '',
+    jobRole: '',
+    personality: 'default',
+    traits: [],
+    lumoTraits: '',
+    additionalContext: '',
+    enableForNewChats: true,
+};
+
 function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: string) {
     return (dispatch: LumoDispatch) => {
         const { conversationId, spaceId } = c;
@@ -297,8 +307,6 @@ export function sendMessage({
                 referencedFileNames
             );
 
-            const personalizationPrompt = formatPersonalization(s.personalization);
-
             // If we have RAG attachments, store them and add to the user message
             let updatedLinearChain = linearChain;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
@@ -363,7 +371,7 @@ export function sendMessage({
             const turns = prepareTurns(
                 updatedLinearChain,
                 c.contextFilters,
-                s.personalization,
+                s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
                 ragResult?.context,
                 c
@@ -460,8 +468,6 @@ export function regenerateMessage({
                 allAttachments
             );
 
-            const personalizationPrompt = formatPersonalization(s.personalization);
-
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
@@ -527,7 +533,7 @@ export function regenerateMessage({
             const turns = prepareTurns(
                 updatedMessagesWithContext,
                 c.contextFilters,
-                s.personalization,
+                s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
                 ragResult?.context,
                 c
@@ -637,8 +643,6 @@ export function retrySendMessage({
             referencedFileNames
         );
 
-        const personalizationPrompt = formatPersonalization(personalization);
-
         // If we have RAG attachments, store them and add to the user message
         let updatedLinearChain = linearChain;
         if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
@@ -708,7 +712,7 @@ export function retrySendMessage({
         const turns = prepareTurns(
             updatedLinearChain,
             c.contextFilters,
-            s.personalization,
+            s.personalization ?? DEFAULT_PERSONALIZATION,
             p.projectInstructions,
             ragResult?.context,
             c2

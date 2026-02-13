@@ -14,8 +14,6 @@ import type { WhatsNewFeature } from './types';
 
 import './WhatsNew.scss';
 
-const WHATS_NEW_FEATURE_FLAG = 'WhatsNewV1p3' as const;
-
 const WhatsNew = () => {
     const { whatsNew} = useLumoFlags();
     const { isDarkLumoTheme, isAutoMode } = useLumoTheme();

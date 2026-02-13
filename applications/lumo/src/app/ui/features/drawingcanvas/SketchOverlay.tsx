@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import type { DrawingMode } from './types';
 import { SketchCanvas } from './SketchCanvas';
@@ -18,17 +18,12 @@ export const SketchOverlay = ({
     mode = 'blank',
     baseImage,
 }: SketchOverlayProps) => {
-    const [isExporting, setIsExporting] = useState(false);
-
     const handleExport = (imageData: string, drawingMode: DrawingMode) => {
-        setIsExporting(true);
         try {
             onExport(imageData, drawingMode);
             onClose();
         } catch (error) {
             console.error('Error exporting drawing:', error);
-        } finally {
-            setIsExporting(false);
         }
     };
 

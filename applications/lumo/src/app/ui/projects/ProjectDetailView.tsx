@@ -234,8 +234,9 @@ const ProjectDetailViewInner = () => {
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                         },
-                        personalizationSettings: personalization,
-                        enableExternalToolsToggled: isWebSearchButtonToggled,
+                        settingsContext: {
+                            personalization,
+                        },
                     })
                 );
                 console.log('Message sent successfully');

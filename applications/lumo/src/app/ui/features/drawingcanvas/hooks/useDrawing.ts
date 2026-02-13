@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import type { Point, Stroke } from '../types';
+import type { Stroke } from '../types';
 import { getCanvasCoordinates } from '../utils/rendering';
 
 interface UseDrawingProps {
