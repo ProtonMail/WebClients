@@ -4,6 +4,7 @@ import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/d
 export interface VersionHistoryUpdate {
   content: Uint8Array<ArrayBuffer>
   timestamp: number
+  authorAddress: string
 }
 
 export type VersionHistoryBatch = VersionHistoryUpdate[]
@@ -17,11 +18,13 @@ export function getVersionHistoryUpdatesFromCommit(commit: DecryptedCommit): Ver
       updates.push({
         content: decompressed,
         timestamp: message.timestamp,
+        authorAddress: message.authorAddress,
       })
     } else {
       updates.push({
         content,
         timestamp: message.timestamp,
+        authorAddress: message.authorAddress,
       })
     }
   }
