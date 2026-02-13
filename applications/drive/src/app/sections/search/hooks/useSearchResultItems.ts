@@ -17,7 +17,7 @@ import { useUserSettings } from '../../../store';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { useSearchViewStore } from '../../../zustand/search/searchView.store';
+import { useSearchViewStore } from '../store';
 
 export const useSearchResultItems = () => {
     const { navigateToLink, navigateToAlbum } = useDriveNavigation();
