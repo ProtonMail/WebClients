@@ -2,15 +2,16 @@ import { useEffect, useMemo } from 'react';
 import * as React from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
-import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
@@ -46,7 +47,6 @@ export function FolderContextMenu({
     const isEditEnabled = useIsEditEnabled();
 
     const { activeFolder } = useActiveShare();
-    const { createFolder } = useActions();
     const {
         inputRef: fileInput,
         handleClick: fileClick,
@@ -57,7 +57,7 @@ export function FolderContextMenu({
         handleClick: folderClick,
         handleChange: folderChange,
     } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
@@ -76,7 +76,7 @@ export function FolderContextMenu({
 
     const shouldShowShareButton = isAdmin && (isActiveLinkReadOnly || isActiveLinkRoot);
     const shouldShowShareLinkButton = isAdmin && !isActiveLinkReadOnly && !isActiveLinkRoot;
-
+    const activeFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
     return (
@@ -91,7 +91,7 @@ export function FolderContextMenu({
                 {!isActiveLinkReadOnly && (
                     <CreateNewFolderButton
                         close={close}
-                        action={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
+                        action={() => showCreateFolderModal({ parentFolderUid: activeFolderUid })}
                     />
                 )}
                 {isDocsEnabled && !isActiveLinkReadOnly && !isActiveLinkInDeviceShare && (

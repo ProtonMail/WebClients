@@ -38,7 +38,7 @@ export const useMoveItemsModalState = ({
         toggleExpand,
         isLoaded: isTreeLoaded,
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
     const { activeFolder } = useActiveShare();
 

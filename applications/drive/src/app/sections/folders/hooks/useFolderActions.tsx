@@ -53,7 +53,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
 
     // Modal hooks
     const [previewModal, showPreviewModal] = usePreviewModal();
-    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
+    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useSharingModal();
