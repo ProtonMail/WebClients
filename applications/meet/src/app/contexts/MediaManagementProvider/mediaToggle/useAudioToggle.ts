@@ -140,6 +140,7 @@ export const useAudioToggle = (
                 autoGainControl: { ideal: true },
                 noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
                 channelCount: { ideal: 1 },
+                dtx: false,
             };
 
             try {

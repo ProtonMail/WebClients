@@ -64,6 +64,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                     screenShareEncoding: screenShareQuality.encoding,
                     screenShareSimulcastLayers: [],
                     videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
+                    dtx: false,
                 },
                 disconnectOnPageLeave: false,
                 singlePeerConnection: isMeetSinglePeerConnectionEnabled,
