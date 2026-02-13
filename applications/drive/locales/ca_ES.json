@@ -6538,7 +6538,7 @@
         "Tenim problemes tècnics. Les accions relacionades amb els àlbums estan desactivades temporalment."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "No s'ha pogut verificar que ${ nameAuthor } hagi carregat ${ node.name }. El següent podria haver estat manipulat: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu."
+        "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -6846,6 +6846,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Preparing": [
+        "En preparació"
+      ],
+      "Requested item doesn't exist anymore": [
+        "L'element sol·licitat ja no existeix"
+      ],
+      "Unexpected download error": [
+        "Hi ha hagut un error de descàrrega inesperat"
       ]
     },
     "info": {
