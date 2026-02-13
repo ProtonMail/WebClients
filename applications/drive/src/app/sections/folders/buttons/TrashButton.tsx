@@ -5,7 +5,7 @@ import { useLoading } from '@proton/hooks';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { noSelection } from '../../../components/sections/ToolbarButtons/utils';
-import { useTrashActions } from '../hooks/useTrashActions';
+import { useTrashActions } from '../../commonActions/useTrashActions';
 import type { FolderButtonProps } from './types';
 
 type Item = {

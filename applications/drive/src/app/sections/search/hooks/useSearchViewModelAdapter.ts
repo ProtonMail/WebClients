@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
@@ -31,6 +31,8 @@ export const useSearchViewModelAdapter = () => {
 
     const { createNotification } = useNotifications();
 
+    const [refreshMarker, setRefreshMarker] = useState(0);
+
     // The search view is based on url params.
     const location = useLocation();
     const query = extractSearchParameters(location);
@@ -52,7 +54,7 @@ export const useSearchViewModelAdapter = () => {
     // on each render) but containing (often) the same uids inside.
     // We need a shallow array encapsulation to prevent rerenders for those cases.
     // We don't care about order since they will reorder by the UI component alter.
-    const cachedUnorderedResults = useMemoArrayNoMatterTheOrder(results);
+    const cachedUnorderedResults = useMemoArrayNoMatterTheOrder(results, refreshMarker);
 
     // Search results contain only node IDs (linkId), but complete UIDs require both volume ID and node ID.
     // Extract the root volume ID from the default share to construct full UIDs via generateNodeUid.
@@ -64,7 +66,7 @@ export const useSearchViewModelAdapter = () => {
         return cachedUnorderedResults.map((esLink) => generateNodeUid(rootFolderVolumeId, esLink.linkId));
     }, [cachedUnorderedResults, rootFolderVolumeId]);
 
-    useEffect(() => {
+    const doSearch = useCallback(() => {
         if (!dbExists) {
             return;
         }
@@ -77,11 +79,20 @@ export const useSearchViewModelAdapter = () => {
         });
     }, [dbExists, query]);
 
+    useEffect(() => {
+        doSearch();
+    }, [doSearch, refreshMarker]); // Use refreshMarker as a dep to refresh the search when required.
+
+    const refresh = useCallback(() => {
+        setRefreshMarker((prev) => prev + 1);
+    }, []);
+
     return {
         isSearchEnabled: dbExists,
         isComputingSearchIndex: isEnablingSearch,
         enableSearch: enableSearchAction,
         isSearching,
         resultUids: searchResultUids,
+        refresh,
     };
 };

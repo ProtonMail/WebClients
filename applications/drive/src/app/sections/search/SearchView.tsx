@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components/index';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
+import { useContextMenuStore } from '../../modules/contextMenu';
+import { useSelectionStore } from '../../modules/selection';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerConditions,
@@ -15,11 +18,14 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { EnableSearchView } from './EnableSearchView';
 import { NoSearchResultsView } from './NoSearchResultsView';
+import { SearchContextMenu } from './SearchContextMenu';
 import { getCellDefinitions, getGridDefinition } from './SearchDriveExplorerDefinitions';
 import { SearchResultViewToolbar } from './Toolbar';
 import { useSearchResultItems } from './hooks/useSearchResultItems';
 import { useSearchViewNodesLoader } from './hooks/useSearchViewLoader';
 import { useSearchViewModelAdapter } from './hooks/useSearchViewModelAdapter';
+import { useSearchViewStore } from './store';
+import { subscribeSearchStoreToEvents } from './subscribeSearchStoreToEvents';
 
 const SearchResultTitle = ({ loading, resultCount }: { loading: boolean; resultCount: number }) => {
     return (
@@ -32,8 +38,17 @@ const SearchResultTitle = ({ loading, resultCount }: { loading: boolean; resultC
 };
 
 export const SearchView = () => {
-    const { isSearchEnabled, isComputingSearchIndex, enableSearch, isSearching, resultUids } =
-        useSearchViewModelAdapter();
+    const {
+        isSearchEnabled,
+        isComputingSearchIndex,
+        enableSearch,
+        isSearching,
+        resultUids,
+        refresh: refreshSearchResults,
+    } = useSearchViewModelAdapter();
+
+    const contextMenuControls = useContextMenuStore();
+    const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const {
         sortedItemUids,
@@ -44,12 +59,15 @@ export const SearchView = () => {
         handleRenderItem,
         layout,
         previewModal,
-        selectionControls,
     } = useSearchResultItems();
 
     const { viewportWidth } = useActiveBreakpoint();
 
     const { loadNodes } = useSearchViewNodesLoader();
+
+    // The store can go in a dirty state when one of the search results has changed
+    // (renamed, moved, trashed, deleted, etc).
+    const isStoreDirty = useSearchViewStore((state) => state.dirty);
 
     // Load nodes for current search query.
     useEffect(() => {
@@ -62,6 +80,36 @@ export const SearchView = () => {
         };
     }, [loadNodes, resultUids]);
 
+    useEffect(() => {
+        // Store is dirty:
+        //  -> it triggers a refresh of the search results
+        //  -> new results trigger a new load
+        //  -> loader sync the store and undirty it.
+        if (isStoreDirty) {
+            refreshSearchResults();
+        }
+    }, [isStoreDirty, refreshSearchResults]);
+
+    useEffect(() => {
+        // Make the search view react to Web Drive events.
+        const unsubscribe = subscribeSearchStoreToEvents();
+        return () => {
+            unsubscribe();
+        };
+    }, []);
+
+    const { selectedItemIds } = useSelectionStore(
+        useShallow((state) => ({
+            selectedItemIds: state.selectedItemIds,
+        }))
+    );
+
+    // Initialize selection store.
+    // TODO: Find a better, non-view/useEffect dependent place.
+    useEffect(() => {
+        useSelectionStore.getState().setAllItemIds(new Set(sortedItemUids));
+    }, [sortedItemUids]);
+
     if (!isSearchEnabled) {
         return <EnableSearchView enableSearch={enableSearch} isComputingSearchIndex={isComputingSearchIndex} />;
     }
@@ -70,9 +118,18 @@ export const SearchView = () => {
         return <NoSearchResultsView />;
     }
 
+    const selectionStore = useSelectionStore.getState();
     const selection: DriveExplorerSelection = {
-        selectedItems: new Set(selectionControls.selectedItemIds),
-        selectionMethods: selectionControls,
+        selectedItems: selectedItemIds,
+        selectionMethods: {
+            selectionState: selectionStore.getSelectionState(),
+            selectItem: selectionStore.selectItem,
+            toggleSelectItem: selectionStore.toggleSelectItem,
+            toggleRange: selectionStore.toggleRange,
+            toggleAllSelected: selectionStore.toggleAllSelected,
+            clearSelections: selectionStore.clearSelections,
+            isSelected: selectionStore.isSelected,
+        },
     };
 
     const sort: DriveExplorerSort = {
@@ -91,8 +148,14 @@ export const SearchView = () => {
         onItemRender: (uid) => {
             handleRenderItem({ id: uid });
         },
-        // TODO: Close context menu on item click
-        // TODO: Handle context menu event
+        onItemClick: () => {
+            if (contextMenuControls.isOpen) {
+                contextMenuControls.close();
+            }
+        },
+        onItemContextMenu: (uid, event) => {
+            contextMenuControls.handleContextMenu(event);
+        },
     };
 
     const conditions: DriveExplorerConditions = {
@@ -111,10 +174,16 @@ export const SearchView = () => {
         <FileBrowserStateProvider itemIds={sortedItemUids}>
             <ToolbarRow
                 titleArea={<SearchResultTitle loading={isDriveExplorerLoading} resultCount={sortedItemUids.length} />}
-                // TODO: Pass selected ids to toolbar and implement
-                toolbar={<SearchResultViewToolbar uids={[]} />}
+                toolbar={<SearchResultViewToolbar uids={[...selectedItemIds]} />}
             />
             <div className="flex flex-1">
+                <SearchContextMenu
+                    anchorRef={contextMenuAnchorRef}
+                    close={contextMenuControls.close}
+                    isOpen={contextMenuControls.isOpen}
+                    open={contextMenuControls.open}
+                    position={contextMenuControls.position}
+                />
                 <DriveExplorer
                     itemIds={sortedItemUids}
                     loading={isDriveExplorerLoading}
@@ -126,6 +195,11 @@ export const SearchView = () => {
                     caption={c('Title').t`Search results`}
                     events={events}
                     conditions={conditions}
+                    contextMenuControls={{
+                        isOpen: contextMenuControls.isOpen,
+                        showContextMenu: contextMenuControls.handleContextMenu,
+                        close: contextMenuControls.close,
+                    }}
                 />
                 {previewModal}
             </div>

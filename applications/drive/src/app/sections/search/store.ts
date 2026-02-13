@@ -6,12 +6,15 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortField } from '../../modules/sorting';
 import { type SortConfig, sortItems } from '../../modules/sorting';
-import { defaultSort, getSearchResultItemSortValue } from '../../sections/search/searchResultItems.sorting';
+import type { EffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
+import { defaultSort, getSearchResultItemSortValue } from './searchResultItems.sorting';
 
 export type SearchResultItemUI = {
     nodeUid: string;
+    parentUid: string | undefined;
     name: string;
     type: NodeType;
+    role: EffectiveRole;
     size: number | undefined;
     mediaType: string | undefined;
     thumbnailId: string | undefined;
@@ -24,6 +27,11 @@ export type SearchViewStore = {
     // All the UI item to be rendered but not sorted.
     searchResultItems: Map<string, SearchResultItemUI>;
     sortedItemUids: string[];
+
+    // Whether some node loaded in the view was modified. The store state
+    // is not in sync anymore with the backend. Nodes will need to be
+    // re-fetched to sync the state.
+    dirty: boolean;
 
     sortField: SortField;
     direction: SORT_DIRECTION;
@@ -42,6 +50,8 @@ export type SearchViewStore = {
 
     getSearchResultItem: (uid: string) => SearchResultItemUI | undefined;
     getAllSearchResultItems: () => SearchResultItemUI[];
+
+    markStoreAsDirty: (dirty: boolean) => void;
 };
 
 export const getKeyUid = (item: SearchResultItemUI) => item.nodeUid;
@@ -52,12 +62,21 @@ export const useSearchViewStore = create<SearchViewStore>()(
         (set, get) => ({
             searchResultItems: new Map(),
             hasEverLoaded: false,
+            dirty: false,
 
             sortField: defaultSort.sortField,
             direction: defaultSort.direction,
             sortConfig: defaultSort.sortConfig || [],
             sortedItemUids: [],
             loading: false,
+
+            markStoreAsDirty: (dirty) => {
+                set(() => {
+                    return {
+                        dirty,
+                    };
+                });
+            },
 
             addSearchResultItem: (item: SearchResultItemUI) => {
                 set((state) => {
