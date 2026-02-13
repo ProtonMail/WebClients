@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.public-header-toolbar {
+	@include im.media('<medium') {
+		z-index: map.get($z-indexes, 'mobile-navigation');
+	}
+}
