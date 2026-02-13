@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { DAY, MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
 
 import { canShowBanner } from '../../utils/canShowBanner';
@@ -23,7 +24,7 @@ interface OpenDesktopAppBannerProps {
 export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps) => {
     const meetDesktopAppBannerEnabled = useFlag('MeetDesktopAppBannerEnabled');
     const [visible, setVisible] = useState(
-        () => canShowBanner(STORAGE_KEY) && !getDesktopAppPreference() && meetDesktopAppBannerEnabled
+        () => !isElectronApp && canShowBanner(STORAGE_KEY) && !getDesktopAppPreference() && meetDesktopAppBannerEnabled
     );
 
     const notifications = useNotifications();
