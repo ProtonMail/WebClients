@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { LabelModel } from '@proton/components';
-import type { CategoryTab } from '@proton/mail';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

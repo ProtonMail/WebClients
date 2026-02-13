@@ -2,7 +2,7 @@ import type { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useLabels } from '@proton/mail';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import type { MailboxActions } from 'proton-mail/router/interface';

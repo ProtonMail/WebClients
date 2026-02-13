@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { useSubscribeEventManager } from '@proton/components';
-import { useCategoriesData, useFolders } from '@proton/mail';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';

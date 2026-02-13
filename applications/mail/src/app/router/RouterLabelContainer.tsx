@@ -4,7 +4,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';

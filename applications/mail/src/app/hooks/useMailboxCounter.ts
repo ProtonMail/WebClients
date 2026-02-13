@@ -1,4 +1,6 @@
-import { useConversationCounts, useFolders, useLabels, useMessageCounts, useSystemFolders } from '@proton/mail';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
 

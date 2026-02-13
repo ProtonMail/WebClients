@@ -16,7 +16,7 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 

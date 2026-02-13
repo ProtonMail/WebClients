@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useApi } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
-import { useSystemFolders } from '@proton/mail';
+import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

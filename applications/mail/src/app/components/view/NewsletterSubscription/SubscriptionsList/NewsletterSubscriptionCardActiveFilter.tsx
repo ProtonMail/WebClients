@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
