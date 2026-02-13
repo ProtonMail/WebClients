@@ -10,6 +10,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
+import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { DashboardContainerBody } from './DashboardContainerBody';
 
 export const GuestDashboardContainer = () => {
@@ -57,6 +58,7 @@ export const GuestDashboardContainer = () => {
                 }}
                 handleScheduleInCalendar={() => {}}
                 meetings={[]}
+                meetingsListStatus={MeetingListStatus.Done}
             />
             {upsellModalType && (
                 <CTAModal
