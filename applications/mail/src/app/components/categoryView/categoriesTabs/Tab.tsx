@@ -66,7 +66,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         >
             <Icon
                 className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
-                name={category.icon}
+                name={category.filledIcon}
             />
             <span
                 title={getLabelFromCategoryId(category.id)}
