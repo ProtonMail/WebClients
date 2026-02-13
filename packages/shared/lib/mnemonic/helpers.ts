@@ -3,7 +3,6 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { getHasMigratedAddressKeys } from '../../lib/keys';
 import { isPrivate, isSelf } from '../../lib/user/helpers';
-import { MNEMONIC_STATUS } from '../interfaces';
 import type { Address, Api, DecryptedKey, User } from '../interfaces';
 import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
@@ -72,14 +71,5 @@ export const generateMnemonicPayload = async ({
 
 export const getIsMnemonicAvailable = ({ addresses, user }: { addresses: Address[]; user: User }) => {
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
-    const isNonPrivateUser = !isPrivate(user);
-    return hasMigratedKeys && !isNonPrivateUser && isSelf(user);
-};
-
-export const getCanReactiveMnemonic = (user: User) => {
-    return (
-        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
-        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED
-    );
+    return hasMigratedKeys && isPrivate(user) && isSelf(user);
 };
