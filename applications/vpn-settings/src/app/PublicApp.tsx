@@ -125,6 +125,8 @@ const getInitialLocation = (): H.Location | undefined => {
     }
 };
 
+const clearInitialLocation = () => setItem('initialLocation', '');
+
 const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps) => {
     const { unauthenticatedApi, unleashClient } = useInstance(() => {
         const unauthenticatedApi = createUnauthenticatedApi(api);
@@ -152,6 +154,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
         const previousSearch = initialLocation?.search || '';
         const path = initialLocation?.pathname || (User && isMember(User) ? '/account-password' : '/dashboard');
         const pathWithSearch = `${path}${previousSearch}${previousHash}`;
+        clearInitialLocation();
         return onLogin({ ...session, path: pathWithSearch });
     };
 
