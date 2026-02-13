@@ -1,4 +1,4 @@
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import {
     isCustomFolder,
     isCustomLabel,

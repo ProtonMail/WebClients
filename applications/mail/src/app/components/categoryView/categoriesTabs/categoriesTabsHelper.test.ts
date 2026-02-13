@@ -1,5 +1,5 @@
-import type { CategoryTab } from '@proton/mail';
-import { CATEGORIES_COLOR_SHADES } from '@proton/mail';
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mockActiveCategoriesData } from '../testUtils/helpers';

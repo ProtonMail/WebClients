@@ -9,7 +9,7 @@ import ReportsTable from './ReportsTable';
 
 const server = setupServer();
 
-jest.mock('@proton/components/hooks/useApiEnvironmentConfig', () => () => [
+jest.mock('@proton/mail/store/importerConfig/hooks', () => () => [
     {
         'oauth.google.client_id': 'string',
         'oauth.outlook.client_id': 'string',

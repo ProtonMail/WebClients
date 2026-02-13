@@ -3,7 +3,8 @@ import { renderHook } from '@testing-library/react';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { PLANS } from '@proton/payments';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -16,9 +17,17 @@ import { useGetStartedChecklist } from 'proton-mail/containers/onboardingCheckli
 import { AudienceType } from './onboardingInterface';
 import { useCategoriesOnboarding } from './useCategoriesOnboarding';
 
-jest.mock('@proton/mail');
-const mockUseMessageCounts = useMessageCounts as jest.Mock;
+jest.mock('@proton/mail/store/labels/hooks', () => ({
+    useLabels: jest.fn(),
+    useFolders: jest.fn(),
+    useSystemFolders: jest.fn(),
+}));
+
+jest.mock('@proton/mail/store/counts/conversationCountsSlice');
 const mockUseConversationCounts = useConversationCounts as jest.Mock;
+
+jest.mock('@proton/mail/store/counts/messageCountsSlice');
+const mockUseMessageCounts = useMessageCounts as jest.Mock;
 
 jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.Mock;

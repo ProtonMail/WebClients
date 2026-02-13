@@ -42,7 +42,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';

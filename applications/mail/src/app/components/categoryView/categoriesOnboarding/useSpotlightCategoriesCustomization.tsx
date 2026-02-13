@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import { IcSliders2 } from '@proton/icons/icons/IcSliders2';
-import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

@@ -2,7 +2,7 @@ import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/components';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { isCustomFolder } from '@proton/mail/helpers/location';
 import {
     type TelemetryEvents,

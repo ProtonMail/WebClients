@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState, useTheme } from '@proton/components';
-import { getPlaceholderSrc } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
 import noSpamSvgCool from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';

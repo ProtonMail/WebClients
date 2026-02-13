@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useGetLabels } from '@proton/mail';
+import { useGetLabels } from '@proton/mail/store/labels/hooks';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';

@@ -1,10 +1,6 @@
 import { useHandler } from '@proton/components';
-import {
-    conversationCountsActions,
-    messageCountsActions,
-    selectConversationCounts,
-    selectMessageCounts,
-} from '@proton/mail';
+import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 

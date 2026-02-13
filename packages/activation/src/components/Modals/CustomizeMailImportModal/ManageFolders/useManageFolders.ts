@@ -1,4 +1,4 @@
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 import type { FolderMapItem, MailImportFields } from '../CustomizeMailImportModal.interface';
 import { formatItems, formatMapping, renameChildFolders } from './useManageFolders.helpers';

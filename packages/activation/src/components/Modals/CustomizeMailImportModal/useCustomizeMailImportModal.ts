@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
-import { useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 import type { FolderMapItem, MailImportFields } from './CustomizeMailImportModal.interface';
 

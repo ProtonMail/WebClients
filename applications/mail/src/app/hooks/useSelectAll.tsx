@@ -1,5 +1,7 @@
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
+import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
+import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useFlag } from '@proton/unleash';
 

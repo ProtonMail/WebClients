@@ -43,7 +43,7 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
-import { useFolders } from '@proton/mail';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { getCurrentFolderID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {

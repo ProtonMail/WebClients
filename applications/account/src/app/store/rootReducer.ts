@@ -17,7 +17,9 @@ import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
-import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
+import { filtersReducer } from '@proton/mail/store/filters';
+import { incomingAddressForwardingsReducer } from '@proton/mail/store/forwarding/incoming';
+import { outgoingAddressForwardingsReducer } from '@proton/mail/store/forwarding/outgoing';
 import { sharedReducers } from '@proton/redux-shared-store';
 
 export const rootReducer = combineReducers({

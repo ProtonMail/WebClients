@@ -17,7 +17,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useContactEmailsSortedByName from '@proton/components/hooks/useContactEmailsSortedByName';
-import { useContactGroups } from '@proton/mail';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
