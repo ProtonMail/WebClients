@@ -6,7 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -17,15 +17,14 @@ import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
-import { useReportAbuseModal } from '../../../components/modals/ReportAbuseModal/ReportAbuseModal';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
+import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
 import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal/SignatureIssueModal';
 import {
     BaseTransferStatus,
     IssueStatus,
     useDownloadManagerStore,
 } from '../../../zustand/download/downloadManager.store';
-import { getMalwareReportComment, useMalwareReport } from '../useMalwareReport/useMalwareReport';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { isCancellable, isRetryable, isShareable } from '../utils/transferStatus';
@@ -33,6 +32,7 @@ import { isCancellable, isRetryable, isShareable } from '../utils/transferStatus
 type Props = {
     entry: TransferManagerEntry;
     onShare?: () => void;
+    onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
 const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
@@ -84,14 +84,12 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     return null;
 };
 
-export const TransferItem = ({ entry, onShare }: Props) => {
+export const TransferItem = ({ entry, onShare, onReportAbuse }: Props) => {
     // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const { cancelTransfer, retryTransfer } = useTransferManagerActions();
     const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
     const [signatureIssueModal, showSignatureIssueModal] = useSignatureIssueModal();
-    const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
-    const { submitMalwareReport } = useMalwareReport();
     const onlyShowTransferredBytes = !totalSize;
     // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
     const transferredBytes = Math.min(totalSize, entry.transferredBytes);
@@ -164,24 +162,12 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     };
 
     const reportMalware = async () => {
-        if (!item?.malwareInfo) {
+        if (!item?.malwareInfo || !onReportAbuse) {
             return;
         }
-        return showReportAbuseModal({
-            linkInfo: {
-                name: item.malwareInfo.name,
-                mimeType: item.malwareInfo.mediaType,
-                size: item.malwareInfo.size,
-                linkId: splitNodeUid(item.malwareInfo.uid).nodeId,
-            },
-            onSubmit: (params) => {
-                alert('Feature not yet implemented');
-                return submitMalwareReport(params);
-            },
-            prefilled: {
-                Category: 'malware',
-                Comment: getMalwareReportComment(item.name, item.malwareInfo.message),
-            },
+        onReportAbuse(item.malwareInfo.uid, {
+            category: AbuseCategoryType.Malware,
+            comment: item.malwareInfo.message,
         });
     };
 
@@ -260,18 +246,20 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 )}
                 {entry.status === BaseTransferStatus.MalwareDetected && (
                     <div className="flex gap-1">
-                        <Tooltip title={c('Action').t`Report`}>
-                            <Button
-                                icon
-                                className="group-hover:opacity-100"
-                                color="weak"
-                                shape="outline"
-                                onClick={() => reportMalware()}
-                                data-testid="drive-transfers-manager:item-controls-cancel"
-                            >
-                                <IcExclamationCircle size={4} />
-                            </Button>
-                        </Tooltip>
+                        {onReportAbuse && (
+                            <Tooltip title={c('Action').t`Report`}>
+                                <Button
+                                    icon
+                                    className="group-hover:opacity-100"
+                                    color="weak"
+                                    shape="outline"
+                                    onClick={() => reportMalware()}
+                                    data-testid="drive-transfers-manager:item-controls-report"
+                                >
+                                    <IcExclamationCircle size={4} />
+                                </Button>
+                            </Tooltip>
+                        )}
 
                         <Tooltip title={c('Action').t`Download anyway`}>
                             <Button
@@ -280,7 +268,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                                 color="weak"
                                 shape="outline"
                                 onClick={() => downloadAnyway()}
-                                data-testid="drive-transfers-manager:item-controls-cancel"
+                                data-testid="drive-transfers-manager:item-controls-download-anyway"
                             >
                                 {c('Action').t`Download anyway`}
                             </Button>
@@ -300,7 +288,6 @@ export const TransferItem = ({ entry, onShare }: Props) => {
             </div>
             {containsDocumentModal}
             {signatureIssueModal}
-            {reportAbuseModal}
         </div>
     );
 };

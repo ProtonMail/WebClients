@@ -30,6 +30,12 @@ export const loadRootNode = async (url: string, password: string | undefined, is
     return rootNode;
 };
 
+const redirectToPrivateApp = (deprecatedShareId: string, nodeId: string, type: NodeType, returnPath?: string) => {
+    const nodeTypeUrl = type === NodeType.Folder ? 'folder' : 'file';
+    const url = `/${deprecatedShareId}/${nodeTypeUrl}/${nodeId}${returnPath ? `?r=${returnPath}` : ''}`;
+    window.location.replace(url);
+};
+
 export const usePublicLink = (): UsePublicLinkResult => {
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
     const [customPassword, setCustomPassword] = useState('');
@@ -73,17 +79,20 @@ export const usePublicLink = (): UsePublicLinkResult => {
 
                 const { node } = getNodeEntity(maybeNode);
                 usePublicAuthStore.getState().setPublicRole(node.directRole);
-
                 if (node.parentUid) {
                     const maybeParentNode = await getPublicLinkClient().getNode(node.parentUid);
                     const { node: parentNode } = getNodeEntity(maybeParentNode);
                     if (parentNode.deprecatedShareId) {
-                        const nodeTypeUrl = node.type === NodeType.Folder ? 'folder' : 'file';
-                        const url = `/${parentNode.deprecatedShareId}/${nodeTypeUrl}/${splitNodeUid(node.uid).nodeId}`;
                         isRedirecting = true;
-                        window.location.replace(url);
+                        redirectToPrivateApp(parentNode.deprecatedShareId, splitNodeUid(node.uid).nodeId, node.type);
                         return;
                     }
+                } else if (node.membership !== undefined && node.deprecatedShareId) {
+                    const returnPath =
+                        node.type === NodeType.File || node.type === NodeType.Photo ? '/shared-with-me' : '';
+                    isRedirecting = true;
+                    redirectToPrivateApp(node.deprecatedShareId, splitNodeUid(node.uid).nodeId, node.type, returnPath);
+                    return;
                 }
 
                 setCustomPassword(passwordRef.current);

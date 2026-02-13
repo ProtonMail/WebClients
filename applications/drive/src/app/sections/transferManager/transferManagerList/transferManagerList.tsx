@@ -5,6 +5,7 @@ import { FixedSizeList } from 'react-window';
 import { useActiveBreakpoint, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
+import type { AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
 import { TransferItem } from '../transferItem/transferItem';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
@@ -18,10 +19,11 @@ type RowData = {
     items: TransferManagerEntry[];
     share: (entry: TransferManagerEntry, deprecatedRootShareId: string) => void;
     deprecatedRootShareId: string | undefined;
+    onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
 const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<RowData>) => {
-    const { items, share, deprecatedRootShareId } = data;
+    const { items, share, deprecatedRootShareId, onReportAbuse } = data;
     const entry = items[index];
     // TODO: add conditional styling depending on some special cases like malaware detection
 
@@ -30,6 +32,7 @@ const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<Ro
             <TransferItem
                 entry={entry}
                 onShare={deprecatedRootShareId ? () => share(entry, deprecatedRootShareId) : undefined}
+                onReportAbuse={onReportAbuse}
             />
         </div>
     );
@@ -40,9 +43,10 @@ TransferListRow.displayName = 'TransferListRow';
 type TransferManagerListProps = {
     items: TransferManagerEntry[];
     deprecatedRootShareId: string | undefined;
+    onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
-export const TransferManagerList = ({ items, deprecatedRootShareId }: TransferManagerListProps) => {
+export const TransferManagerList = ({ items, deprecatedRootShareId, onReportAbuse }: TransferManagerListProps) => {
     const listContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(listContainerRef);
     const { viewportWidth } = useActiveBreakpoint();
@@ -69,7 +73,7 @@ export const TransferManagerList = ({ items, deprecatedRootShareId }: TransferMa
                     <FixedSizeList
                         height={listHeight}
                         itemCount={items.length}
-                        itemData={{ items, share, deprecatedRootShareId }}
+                        itemData={{ items, share, deprecatedRootShareId, onReportAbuse }}
                         itemSize={itemSize}
                         width={listWidth}
                         itemKey={(index, { items }) => items[index].id}

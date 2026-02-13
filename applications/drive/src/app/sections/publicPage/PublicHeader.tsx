@@ -21,6 +21,8 @@ import { GoBackButton } from './GoBackButton';
 import { UserInfo } from './UserInfo';
 import { usePublicAuthStore } from './usePublicAuth.store';
 
+import './PublicHeader.scss';
+
 export interface PublicHeaderProps {
     breadcrumbOrName: ReactNode;
     sharedBy: string | undefined;
@@ -94,7 +96,7 @@ export const PublicHeader = ({
                                 '--min-w-custom': '2.25rem',
                             }}
                         />
-                        <div className="flex flex-column text-lg lh100">
+                        <div className="flex flex-column text-lg">
                             {breadcrumbOrName}
                             {sharedBy && (
                                 <span className="text-sm pl-1.5 color-weak text-ellipsis max-w-full">{c('Subtitle')
@@ -109,7 +111,7 @@ export const PublicHeader = ({
                         '--h-custom': '0.25rem',
                     }}
                 />
-                <div className="fixed md:relative bottom-0 left-0 bg-norm px-4 py-4 flex gap-2 justify-space-between md:justify-start items-center w-full md:w-auto">
+                <div className="public-header-toolbar fixed md:relative bottom-0 left-0 bg-norm px-4 py-4 flex gap-2 justify-space-between md:justify-start items-center w-full md:w-auto">
                     <>
                         <Toolbar className="h-auto toolbar--heavy toolbar--in-container">
                             {!isPartialView && (
