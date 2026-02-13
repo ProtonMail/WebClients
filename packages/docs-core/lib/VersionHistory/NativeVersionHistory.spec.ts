@@ -10,6 +10,7 @@ describe('NativeVersionHistory', () => {
         {
           content: new Uint8Array(),
           timestamp: +new Date('2023-01-01T01:00'),
+          authorAddress: 'test@example.com',
         },
       ],
       'doc',
