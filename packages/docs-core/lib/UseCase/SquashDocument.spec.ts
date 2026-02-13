@@ -84,7 +84,14 @@ describe('SquashDocument', () => {
 
     unleashClient = {
       isReady: jest.fn().mockReturnValue(true),
-      isEnabled: jest.fn().mockReturnValue(true),
+      isEnabled: jest.fn().mockImplementation((feature: string) => {
+        if (feature === 'DocsClientSquashingEnabled') {
+          return true
+        }
+        if (feature === 'DocsClientSquashingDisabled') {
+          return false
+        }
+      }),
     } as unknown as UnleashClient
 
     cacheService = {
