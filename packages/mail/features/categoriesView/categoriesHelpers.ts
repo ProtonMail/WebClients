@@ -8,37 +8,37 @@ const RAW_TO_CATEGORY = {
     '24': {
         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
         colorShade: CATEGORIES_COLOR_SHADES.IRIS,
-        icon: 'inbox-filled',
+        filledIcon: 'inbox-filled',
     },
     '20': {
         id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
         colorShade: CATEGORIES_COLOR_SHADES.CYAN,
-        icon: 'person-filled-2',
+        filledIcon: 'person-filled-2',
     },
     '21': {
         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-        icon: 'megaphone-filled',
+        filledIcon: 'megaphone-filled',
     },
     '25': {
         id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
         colorShade: CATEGORIES_COLOR_SHADES.ORANGE,
-        icon: 'news',
+        filledIcon: 'news',
     },
     '26': {
         id: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
         colorShade: CATEGORIES_COLOR_SHADES.RED,
-        icon: 'credit-cards',
+        filledIcon: 'credit-cards',
     },
     '22': {
         id: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
         colorShade: CATEGORIES_COLOR_SHADES.PINK,
-        icon: 'bell-filled-2',
+        filledIcon: 'bell-filled-2',
     },
     '23': {
         id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
         colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-        icon: 'speech-bubbles-filled',
+        filledIcon: 'speech-bubbles-filled',
     },
 } as const;
 
