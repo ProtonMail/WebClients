@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { NodeType, NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
+import { NodeType, NodeWithSameNameExistsValidationError } from '../../../index';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
@@ -31,7 +32,7 @@ const getResolutionData = async (
                 isUnfinishedUpload: error.isUnfinishedUpload,
             };
         case UploadConflictStrategy.Rename:
-            const drive = getDrive();
+            const drive = UploadDriveClientRegistry.getDriveClient();
             const availableName = await drive.getAvailableName(parentUid, name);
             return { action: UploadConflictStrategy.Rename, newName: availableName };
         default:

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import { useAppTitle, useTheme } from '@proton/components';
+import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -19,6 +19,8 @@ import { PublicPageError } from './PublicPageError';
 import { PublicPageLoader } from './PublicPageLoader';
 import { PublicPagePassword } from './PublicPagePassword';
 import ReportAbuseButton from './ReportAbuseButton';
+import { usePublicActions } from './actions/usePublicActions';
+import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicAuthSession } from './usePublicAuthSession';
 import { usePublicLink } from './usePublicLink';
 
@@ -32,6 +34,8 @@ const PublicPageContent = () => {
     const { resumeSession } = usePublicAuthSession();
     const { rootNode, isLoading, isPasswordNeeded, customPassword, loadPublicLink } = usePublicLink();
     const isPartialView = usePartialPublicView();
+    const { handleReportAbuse, modals } = usePublicActions();
+    const { viewportWidth } = useActiveBreakpoint();
 
     useAppTitle(rootNode?.name);
 
@@ -79,8 +83,27 @@ const PublicPageContent = () => {
             ) : (
                 <PublicFolderView rootNode={rootNode} customPassword={customPassword} isPartialView={isPartialView} />
             )}
-            <TransferManager deprecatedRootShareId={undefined} className="public-page-transfer-manager" />
-            <ReportAbuseButton />
+            <TransferManager
+                deprecatedRootShareId={undefined}
+                className="public-page-transfer-manager"
+                onReportAbuse={(nodeUid, prefill) =>
+                    handleReportAbuse(nodeUid, customPassword, {
+                        ...prefill,
+                        email: usePublicAuthStore.getState().getUserMainAddress()?.email,
+                    })
+                }
+            />
+            {!viewportWidth['<=small'] && (
+                <ReportAbuseButton
+                    className="ml-0.5 mb-0.5 fixed left-0 bottom-0"
+                    onClick={() =>
+                        handleReportAbuse(rootNode.uid, customPassword, {
+                            email: usePublicAuthStore.getState().getUserMainAddress()?.email,
+                        })
+                    }
+                />
+            )}
+            {modals.reportAbuseModal}
         </div>
     );
 };
