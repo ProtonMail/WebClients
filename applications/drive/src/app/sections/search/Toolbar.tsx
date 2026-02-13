@@ -6,7 +6,9 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useSelectionStore } from '../../modules/selection';
-import { useSearchViewStore } from '../../zustand/search/searchView.store';
+import { SearchActions } from './actions/SearchActions';
+import { useSearchActions } from './actions/useSearchActions';
+import { useSearchViewStore } from './store';
 
 interface SearchResultToolbarProps {
     uids: string[];
@@ -28,19 +30,34 @@ export const SearchResultViewToolbar = ({ uids }: SearchResultToolbarProps) => {
         .map((uid) => useSearchViewStore.getState().getSearchResultItem(uid))
         .filter(isTruthy);
 
+    const actions = useSearchActions();
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
         }
 
-        // TODO: render toolbar actions
-        return null;
+        return (
+            <SearchActions
+                buttonType="toolbar"
+                onPreview={actions.handlePreview}
+                onDetails={actions.handleDetails}
+                onDownload={actions.handleDownload}
+                onRename={actions.handleRename}
+                onTrash={actions.handleTrash}
+                onOpenDocsOrSheets={actions.handleOpenDocsOrSheets}
+            />
+        );
     };
 
     return (
         <>
             <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
-                <div className="gap-2 flex flex-nowrap shrink-0">{renderSelectionActions()}</div>
+                <div className="gap-2 flex flex-nowrap shrink-0">
+                    {renderSelectionActions()}
+                    {actions.modals.previewModal}
+                    {actions.modals.detailsModal}
+                    {actions.modals.renameModal}
+                </div>
                 <span className="ml-auto flex flex-nowrap shrink-0">
                     {selectedItems.length ? <Vr className="hidden lg:flex mx-2" /> : null}
                     <LayoutButton />
