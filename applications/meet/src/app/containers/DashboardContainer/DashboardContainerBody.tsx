@@ -6,7 +6,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
-import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingList';
+import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingListLoading';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
 import type { MeetingListStatus } from '../../hooks/useMeetingList';

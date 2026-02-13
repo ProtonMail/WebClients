@@ -1,9 +1,7 @@
 import { useRef, useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
-import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';
 import { GuestUserPrompt } from './GuestUserPrompt';
@@ -18,7 +16,7 @@ import { DashboardMeetingListTab, SortOption } from './types';
 import { useSticky } from './useSticky';
 import { groupMeetingsByDay } from './utils';
 
-interface DashboardMeetingListProps {
+export interface DashboardMeetingListProps {
     meetings: Meeting[];
     isGuest: boolean;
     handleScheduleInCalendar: () => void;
@@ -165,26 +163,4 @@ export const DashboardMeetingList = ({
             </div>
         </div>
     );
-};
-
-export const DashboardMeetingListLoading = ({
-    meetingsListStatus,
-    ...props
-}: { meetingsListStatus: MeetingListStatus } & DashboardMeetingListProps) => {
-    if (
-        meetingsListStatus === MeetingListStatus.InitialLoading ||
-        meetingsListStatus === MeetingListStatus.InitialDecrypting
-    ) {
-        const loadingText =
-            meetingsListStatus === MeetingListStatus.InitialLoading ? 'Loading meetings...' : 'Decrypting meetings...';
-
-        return (
-            <div className="flex flex-column flex-nowrap items-center justify-center gap-4 py-8">
-                <CircleLoader size="large" className="color-primary" />
-                <span className="text-rg color-weak">{loadingText}</span>
-            </div>
-        );
-    }
-
-    return <DashboardMeetingList {...props} />;
 };
