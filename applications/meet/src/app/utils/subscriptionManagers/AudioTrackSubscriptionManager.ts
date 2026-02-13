@@ -46,11 +46,18 @@ export class AudioTrackSubscriptionManager {
     private activeRecoveries = new Set<string>();
     private lastPacketCounts = new Map<string, number>();
     private firstSeenWithoutStats = new Map<string, number>();
+    private consecutiveHighConcealment = new Map<string, number>();
+    private lastConcealmentStats = new Map<
+        string,
+        { concealedSamples: number; totalSamplesReceived: number; timestamp: number }
+    >();
     private isRoomReconnecting = false;
     private MAX_RECOVERY_ATTEMPTS = 3;
     private RECOVERY_COOLDOWN = 5_000;
     private HEALTH_CHECK_INTERVAL = 3_000;
     private MISSING_STATS_GRACE_PERIOD = 5_000;
+    private CONCEALMENT_RATIO_THRESHOLD = 0.3;
+    private RECENT_CONCEALMENT_THRESHOLD = 0.6;
 
     constructor(capacity: number, room: Room, reportError?: (label: string, options?: unknown) => void) {
         this.microphoneCapacity = capacity;
@@ -247,6 +254,8 @@ export class AudioTrackSubscriptionManager {
         this.activeRecoveries.clear();
         this.lastPacketCounts.clear();
         this.firstSeenWithoutStats.clear();
+        this.consecutiveHighConcealment.clear();
+        this.lastConcealmentStats.clear();
         this.isRoomReconnecting = false;
     };
 
@@ -308,6 +317,8 @@ export class AudioTrackSubscriptionManager {
 
         if (attempts >= this.MAX_RECOVERY_ATTEMPTS) {
             const context = {
+                localParticipant: this.room.localParticipant.identity,
+                room: this.room.name,
                 participant: participant.identity,
                 trackSid: publication.trackSid,
                 attempts,
@@ -374,6 +385,8 @@ export class AudioTrackSubscriptionManager {
         this.activeRecoveries.delete(trackKey);
         this.lastPacketCounts.delete(trackKey);
         this.firstSeenWithoutStats.delete(`firstSeen-${trackKey}`);
+        this.consecutiveHighConcealment.delete(trackKey);
+        this.lastConcealmentStats.delete(trackKey);
 
         const timeout = this.recoveryTimeouts.get(trackKey);
         if (timeout) {
@@ -437,6 +450,8 @@ export class AudioTrackSubscriptionManager {
                     const missingDuration = Date.now() - firstSeenTime;
                     if (missingDuration > this.MISSING_STATS_GRACE_PERIOD) {
                         const context = {
+                            localParticipant: this.room.localParticipant.identity,
+                            room: this.room.name,
                             participant: participant.identity,
                             trackSid: publication.trackSid,
                             missingDuration,
@@ -471,6 +486,8 @@ export class AudioTrackSubscriptionManager {
                     !publication.isMuted
                 ) {
                     const context = {
+                        localParticipant: this.room.localParticipant.identity,
+                        room: this.room.name,
                         participant: participant.identity,
                         trackSid: publication.trackSid,
                         packetsReceived,
@@ -499,6 +516,160 @@ export class AudioTrackSubscriptionManager {
             // eslint-disable-next-line no-console
             console.error('Error checking broken transceivers:', error);
             this.reportError?.('AudioTrackSubscriptionManager: Error checking broken transceivers', {
+                level: 'error',
+                context: { error },
+            });
+        }
+    };
+
+    private checkAudioConcealment = async () => {
+        if (this.room.state !== ConnectionState.Connected) {
+            return;
+        }
+
+        try {
+            const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
+            if (!subscriberPC) {
+                return;
+            }
+
+            const stats = await subscriberPC.getStats();
+            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+            let tracksWithHighConcealment = 0;
+
+            for (const item of currentCacheValues) {
+                const { publication, participant } = item;
+                const track = publication.track;
+                const trackKey = `${participant.sid}-${publication.trackSid}`;
+
+                // Skip if not subscribed, muted, already recovering, or no track
+                if (!publication.isSubscribed || publication.isMuted || this.activeRecoveries.has(trackKey) || !track) {
+                    continue;
+                }
+
+                const trackId = track.mediaStreamTrack?.id;
+                if (!trackId) {
+                    continue;
+                }
+
+                // Look for inbound-rtp stats for this audio track
+                for (const [, value] of stats) {
+                    if (value.type === 'inbound-rtp' && value.kind === 'audio' && value.trackIdentifier === trackId) {
+                        const concealedSamples = value.concealedSamples || 0;
+                        const totalSamplesReceived = value.totalSamplesReceived || 0;
+                        const silentConcealedSamples = value.silentConcealedSamples || 0;
+                        const concealmentEvents = value.concealmentEvents || 0;
+
+                        // Only check if we have received enough samples
+                        if (totalSamplesReceived < 1000) {
+                            continue;
+                        }
+
+                        const concealmentRatio = concealedSamples / totalSamplesReceived;
+                        const silentRatio = concealedSamples > 0 ? silentConcealedSamples / concealedSamples : 0;
+
+                        // Delta-based detection: Check recent concealment rate
+                        const lastStats = this.lastConcealmentStats.get(trackKey);
+                        let recentConcealmentRatio = 0;
+                        let hasRecentData = false;
+
+                        if (lastStats) {
+                            const newConcealedSamples = concealedSamples - lastStats.concealedSamples;
+                            const newTotalSamples = totalSamplesReceived - lastStats.totalSamplesReceived;
+
+                            // We set the samples size to, at least, 500 for meaningful measurement
+                            if (newTotalSamples >= 500) {
+                                recentConcealmentRatio = newConcealedSamples / newTotalSamples;
+                                hasRecentData = true;
+                            }
+                        }
+
+                        // Store current stats for next delta calculation
+                        this.lastConcealmentStats.set(trackKey, {
+                            concealedSamples,
+                            totalSamplesReceived,
+                            timestamp: Date.now(),
+                        });
+
+                        // Trigger if either:
+                        // 1. Recent samples show severe concealment (80%+) - immediate trigger
+                        // 2. Cumulative concealment is high (30%+) after 2 consecutive checks - gradual degradation
+                        const recentConcealmentCritical =
+                            hasRecentData && recentConcealmentRatio > this.RECENT_CONCEALMENT_THRESHOLD;
+                        const cumulativeConcealmentHigh = concealmentRatio > this.CONCEALMENT_RATIO_THRESHOLD;
+
+                        if (recentConcealmentCritical || cumulativeConcealmentHigh) {
+                            tracksWithHighConcealment++;
+
+                            // Track consecutive high concealment checks
+                            const consecutiveCount = (this.consecutiveHighConcealment.get(trackKey) || 0) + 1;
+                            this.consecutiveHighConcealment.set(trackKey, consecutiveCount);
+
+                            // Immediate trigger if recent concealment is critical
+                            // Or trigger after 2 consecutive checks if cumulative is high
+                            const shouldTrigger = recentConcealmentCritical || consecutiveCount >= 2;
+
+                            if (shouldTrigger) {
+                                const context = {
+                                    localParticipant: this.room.localParticipant.identity,
+                                    room: this.room.name,
+                                    participant: participant.identity,
+                                    trackSid: publication.trackSid,
+                                    concealmentRatio: concealmentRatio.toFixed(3),
+                                    recentConcealmentRatio: hasRecentData ? recentConcealmentRatio.toFixed(3) : 'N/A',
+                                    silentRatio: silentRatio.toFixed(3),
+                                    concealedSamples,
+                                    totalSamplesReceived,
+                                    concealmentEvents,
+                                    consecutiveChecks: consecutiveCount,
+                                    triggerReason: recentConcealmentCritical
+                                        ? 'recent_samples_critical'
+                                        : 'cumulative_high',
+                                };
+
+                                // eslint-disable-next-line no-console
+                                console.warn('Detected high audio concealment', context);
+
+                                this.reportError?.('AudioTrackSubscriptionManager: High audio concealment detected', {
+                                    level: 'warning',
+                                    context,
+                                });
+
+                                void this.attemptRecovery(publication, participant, trackKey);
+                            }
+                        } else {
+                            // Concealment is back to normal
+                            this.consecutiveHighConcealment.delete(trackKey);
+
+                            // If track recovered and was in recovery, cleanup recovery state
+                            if (this.recoveryAttempts.has(trackKey)) {
+                                // eslint-disable-next-line no-console
+                                console.log('Audio concealment recovered successfully, cleaning up recovery state');
+                                this.cleanupRecovery(trackKey);
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+
+            // Log if multiple tracks have high concealment
+            if (tracksWithHighConcealment >= 3) {
+                this.reportError?.(
+                    'AudioTrackSubscriptionManager: Multiple tracks with high concealment (E2EE overload)',
+                    {
+                        level: 'warning',
+                        context: {
+                            affectedTracks: tracksWithHighConcealment,
+                            totalSubscribedTracks: currentCacheValues.length,
+                        },
+                    }
+                );
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Error checking audio concealment:', error);
+            this.reportError?.('AudioTrackSubscriptionManager: Error checking audio concealment', {
                 level: 'error',
                 context: { error },
             });
@@ -570,6 +741,7 @@ export class AudioTrackSubscriptionManager {
     setupHealthCheckLoop = () => {
         this.healthCheckInterval = setInterval(() => {
             void this.checkBrokenTransceivers();
+            void this.checkAudioConcealment();
         }, this.HEALTH_CHECK_INTERVAL);
     };
 
@@ -595,6 +767,8 @@ export class AudioTrackSubscriptionManager {
         this.activeRecoveries.clear();
         this.lastPacketCounts.clear();
         this.firstSeenWithoutStats.clear();
+        this.consecutiveHighConcealment.clear();
+        this.lastConcealmentStats.clear();
         this.cleanupEventListeners();
         this.cleanupReconcileLoop();
         this.cleanupHealthCheckLoop();
