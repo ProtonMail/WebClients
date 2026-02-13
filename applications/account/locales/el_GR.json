@@ -6862,6 +6862,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Μέγιστα ${ displayMaxValue } επιτρέπονται"
       ]
     },
     "error": {
@@ -12005,6 +12008,18 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Activity Monitor": [
+        "Παρακολούθηση Δραστηριότητας"
+      ],
+      "Get visibility into account access": [
+        "Αποκτήστε ορατότητα στην πρόσβαση λογαριασμού"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Παρακολουθήστε τη δραστηριότητα σύνδεσης, εντοπίστε μη εξουσιοδοτημένες προσβάσεις και καλύψτε τα κενά ασφάλειας και συμμόρφωσης. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Αναβαθμίστε για να ξεκλειδώσετε το ${ monitorLink }."
       ]
     },
     "info": {
@@ -14379,6 +14394,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "activity monitor": [
+        "παρακολούθηση δραστηριότητας"
       ]
     },
     "Link (Scribe)": {
@@ -14831,6 +14849,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Η δωρεάν δοκιμή σας έληξε. Η πρόσβαση στον λογαριασμό σας θα απενεργοποιηθεί σύντομα. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Συνδέστε τον προσαρμοσμένο τομέα σας (π.χ. yourcompany.com) για να δημιουργήσετε διευθύνσεις ηλεκτρονικού ταχυδρομείου για άλλα άτομα, να διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, ένα σχολείο ή μια ομάδα."
       ]
     },
     "Message display when a new app version is available": {
@@ -25160,6 +25181,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } για τον πρώτο μήνα. Ανανέωση με ${ regularPrice }/μήνα, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Αποκτήστε το VPN Plus για μόνο ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Ειδική προσφορά: Εξοικονομήστε 90% από το premium πλάνο μας"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Συνέχεια με Free"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
       ]
     }
   }

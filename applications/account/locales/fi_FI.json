@@ -5907,6 +5907,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Enintään ${ displayMaxValue } sallittu"
       ]
     },
     "error": {
@@ -13040,6 +13043,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Yhdistä oma verkkotunnuksesi (esim. yrityksesi.com) luodaksesi sähköpostiosoitteita muille henkilöille, hallinnoidaksesi ${ MAIL_APP_NAME }-palvelua yritykselle, koululle tai ryhmälle."
       ]
     },
     "Message display when a new app version is available": {

@@ -1663,6 +1663,18 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } dominio de correo electrónico personalizado",
+        "${ domains } dominios de correo electrónico personalizados"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME } AI",
+        "${ seats } licencias de ${ LUMO_APP_NAME } AI"
       ]
     },
     "Address action": {
@@ -2898,6 +2910,30 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total para ${ n } meses"
+      ],
+      "${ n } day": [
+        "${ n } día",
+        "${ n } días"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ years } year": [
+        "${ years } año",
+        "${ years } años"
+      ],
+      "Forever access": [
+        "Acceso permanente"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Desde el ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "A partir del ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Comenzando hoy"
       ]
     },
     "Checkout summary": {
@@ -6405,6 +6441,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Se permite un máximo de ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -11253,6 +11292,27 @@
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Pásate a un plan superior para desbloquear ${ monitorLink }."
+      ],
+      "Cancel anytime.": [
+        "Cancela en cualquier momento."
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Caduca el ${ ExpMonth }/${ ExpYear }"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si has comprado un código de regalo o has recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
+      ],
+      "Total: ${ totalPrice }": [
+        "Total: ${ totalPrice }"
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Has ahorrado ${ discountAmount } con una oferta"
+      ],
+      "Your payment details are encrypted and secure": [
+        "Tus detalles de pago están cifrados y seguros"
       ]
     },
     "info": {
@@ -13004,6 +13064,33 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } terminada en ${ Last4 }"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Titular de la cuenta: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Añadir servicios adicionales"
+      ],
+      "Choose your billing": [
+        "Ciclo de facturación"
+      ],
+      "More payment methods": [
+        "Más métodos de pago"
+      ],
+      "today": [
+        "hoy"
+      ],
+      "Use another payment method": [
+        "Utiliza otro método de pago"
+      ],
+      "Your credit balance": [
+        "Tu saldo de crédito"
+      ],
+      "Your plan": [
+        "Tu plan"
       ]
     },
     "label": {
@@ -13361,6 +13448,9 @@
       ],
       "activity monitor": [
         "monitor de actividad"
+      ],
+      "What's included in your plan": [
+        "Qué incluye tu plan"
       ]
     },
     "Link (Scribe)": {
@@ -13810,6 +13900,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Conecta tu dominio personalizado (ej. tuempresa.com) para crear direcciones de correo electrónico para otras personas, administra ${ MAIL_APP_NAME } para un negocio, escuela o grupo."
       ]
     },
     "Message display when a new app version is available": {
@@ -16595,6 +16688,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excl. ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incl. ${ taxRate }% de impuestos: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -19705,6 +19810,36 @@
       ],
       "Billed yearly": [
         "Facturación anual"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Descuento del ${ discountPercent }% aplicado"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% de descuento"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } gratis"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Vinculado a **${ nameToDisplay }**"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Vinculado a la organización **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Próxima fecha de facturación"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Para continuar con tu suscripción cuando termine la prueba gratuita, añade un método de pago antes del ${ props.periodEnd }."
+      ],
+      "Total due": [
+        "Total a pagar"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Total a pagar el ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Total a pagar hoy"
       ]
     },
     "Subscription attribute": {
@@ -23668,6 +23803,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } el primer mes. Se renueva a ${ regularPrice }/mes, podrás cancelar cuando quieras."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Obtén VPN Plus por solo ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Bajo la protección de las leyes de privacidad suizas"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Oferta especial: Ahorra 90% en nuestro plan prémium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuar gratis"
+      ],
+      "Get the deal": [
+        "Aprovechar oferta"
       ]
     }
   }

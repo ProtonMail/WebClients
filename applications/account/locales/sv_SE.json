@@ -14740,6 +14740,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Din gratis provperiod har avslutats. Åtkomst till ditt konto kommer snart att inaktiveras. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Anslut din anpassade domän (t.ex. dittföretag.com) för att skapa e-postadresser för andra personer, hantera ${ MAIL_APP_NAME } för ett företag, skola eller grupp."
       ]
     },
     "Message display when a new app version is available": {
@@ -25021,6 +25024,22 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } för den första månaden. Förnyas med ${ regularPrice }/månad, avbryt när som helst."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Skaffa VPN Plus för endast ${ offerPrice }"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsätt med gratis"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
       ]
     }
   }

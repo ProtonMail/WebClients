@@ -6042,6 +6042,9 @@
       ],
       "ZIP code is required": [
         "الرمز البريدي مطلوب"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "الحد الأقصى المسموح به هو ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -11024,6 +11027,18 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "Activity Monitor": [
+        "مراقب النشاط"
+      ],
+      "Get visibility into account access": [
+        "احصل على رؤية للوصول إلى الحساب"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "راقب نشاط تسجيل الدخول، واكتشف أي وصول غير مُصرَّح به، وأغلق الثغرات الأمنية وثغرات الامتثال. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "قم بالترقية لفتح ${ monitorLink }."
       ]
     },
     "info": {
@@ -12977,6 +12992,9 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ],
+      "activity monitor": [
+        "مراقب النشاط"
       ]
     },
     "Link label (optional)": {
@@ -13312,6 +13330,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "انتهت فترتك التجريبية المجانية. سيتم تعطيل الوصول إلى حسابك قريبًا. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "قم بتوصيل نطاقك المخصص (على سبيل المثال yourcompany.com) لإنشاء عناوين بريد إلكتروني لأشخاص آخرين، وإدارة ${ MAIL_APP_NAME } لنشاط تجاري أو مدرسة أو مجموعة."
       ]
     },
     "Message display when a new app version is available": {
@@ -21864,6 +21885,9 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Roles and permissions": [
+        "الأدوار والأذونات"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23389,6 +23413,33 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "أمّن ملفاتك بتخزين سحابي مشفر. يشمل سجل الإصدارات، ومشاركة الملفات المشفرة، والمزيد.\n"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "الدور هو مجموعة من الأذونات التي يمكنك تعيينها لأعضاء مؤسستك."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } للشهر الأول. يتجدد بسعر ${ regularPrice }/شهريًا، ويمكنك الإلغاء في أي وقت."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "احصل على VPN Plus مقابل ${ offerPrice } فقط"
+      ],
+      "Protected by Swiss privacy laws": [
+        "محمي بموجب قوانين الخصوصية السويسرية"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "عرض خاص: وفر 90٪ من خطتنا المميزة"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "المتابعة باستخدام الخطة المجانية"
+      ],
+      "Get the deal": [
+        "احصل على الصفقة"
       ]
     }
   }

@@ -6819,6 +6819,9 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "最大允许 ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -11872,6 +11875,18 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Activity Monitor": [
+        "活动监视器"
+      ],
+      "Get visibility into account access": [
+        "获取账户访问可见性"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "监测登录活动、检测未授权访问并填补安全与合规漏洞。"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "升级以解锁 ${ monitorLink }！"
       ]
     },
     "info": {
@@ -14237,6 +14252,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "activity monitor": [
+        "活动监视器"
       ]
     },
     "Link (Scribe)": {
@@ -14678,6 +14696,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "连接您的自定义域名（例如 yourcompany.com）即可为他人创建邮箱地址，为企业、学校或团体管理 ${ MAIL_APP_NAME }。"
       ]
     },
     "Message display when a new app version is available": {
@@ -24819,6 +24840,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "首月仅需 ${ offerPrice }，后续每月 ${ regularPrice } 续费，可随时取消！"
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "仅需 ${ offerPrice } 获取 VPN Plus"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隐私法保护"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "特别优惠：高级套餐享 90% 折扣"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "继续使用免费版"
+      ],
+      "Get the deal": [
+        "获取优惠"
       ]
     }
   }
