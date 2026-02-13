@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
+import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';
 import { GuestUserPrompt } from './GuestUserPrompt';
@@ -13,6 +15,7 @@ import { TimeBasedMeetingsPlaceholder } from './TimeBasedMeetingsPlaceholder';
 import { getSortOptions } from './sortOptions';
 import type { SortOptionObject } from './types';
 import { DashboardMeetingListTab, SortOption } from './types';
+import { useSticky } from './useSticky';
 import { groupMeetingsByDay } from './utils';
 
 interface DashboardMeetingListProps {
@@ -73,6 +76,21 @@ export const DashboardMeetingList = ({
         meetingRooms: meetingRooms,
     };
 
+    const shouldShowSearchBar =
+        // Show search bar when we are in my meetings tab and there are meetings
+        (activeTab === DashboardMeetingListTab.TimeBased &&
+            meetingsObject[DashboardMeetingListTab.TimeBased].length !== 0) ||
+        // OR when we are in my rooms tab and there are more than 1 room (we don't count the Personal meeting)
+        (activeTab === DashboardMeetingListTab.MeetingRooms &&
+            meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1) ||
+        // OR when is a search in progress because it could return no results but we still want to show the search bar
+        search.length > 0;
+
+    // Sticky positioning
+    const stickyRef = useRef<HTMLDivElement>(null);
+    const previousElementRef = useRef<HTMLDivElement>(null);
+    const { isStuck } = useSticky({ stickyRef, previousElementRef, shouldUseSticky: shouldShowSearchBar });
+
     const meetingsByDay = groupMeetingsByDay(timeBasedMeetings, selectedSortOption?.groupBy ?? 'adjustedStartTime');
 
     const sortedMeetingsByDayEntries = Object.entries(meetingsByDay).sort((a, b) => {
@@ -92,13 +110,11 @@ export const DashboardMeetingList = ({
                     setActiveTab={setActiveTab}
                     timeBasedMeetingsCount={meetingsObject[DashboardMeetingListTab.TimeBased].length}
                     meetingRoomsCount={roomNumber > 0 ? roomNumber : 1}
+                    ref={previousElementRef}
+                    isStuck={isStuck}
                 />
-                {/* Only show the header when there are items available OR is a search text present */}
-                {((activeTab === DashboardMeetingListTab.TimeBased &&
-                    meetingsObject[DashboardMeetingListTab.TimeBased].length !== 0) ||
-                    (activeTab === DashboardMeetingListTab.MeetingRooms &&
-                        meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1) ||
-                    search.length > 0) && (
+
+                {shouldShowSearchBar && (
                     <MeetingListHeader
                         search={search}
                         setSearch={setSearch}
@@ -109,6 +125,8 @@ export const DashboardMeetingList = ({
                         }
                         sortOptions={sortOptions}
                         activeTab={activeTab}
+                        isStuck={isStuck}
+                        ref={stickyRef}
                     />
                 )}
 
@@ -147,4 +165,26 @@ export const DashboardMeetingList = ({
             </div>
         </div>
     );
+};
+
+export const DashboardMeetingListLoading = ({
+    meetingsListStatus,
+    ...props
+}: { meetingsListStatus: MeetingListStatus } & DashboardMeetingListProps) => {
+    if (
+        meetingsListStatus === MeetingListStatus.InitialLoading ||
+        meetingsListStatus === MeetingListStatus.InitialDecrypting
+    ) {
+        const loadingText =
+            meetingsListStatus === MeetingListStatus.InitialLoading ? 'Loading meetings...' : 'Decrypting meetings...';
+
+        return (
+            <div className="flex flex-column flex-nowrap items-center justify-center gap-4 py-8">
+                <CircleLoader size="large" className="color-primary" />
+                <span className="text-rg color-weak">{loadingText}</span>
+            </div>
+        );
+    }
+
+    return <DashboardMeetingList {...props} />;
 };

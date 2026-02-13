@@ -1,4 +1,16 @@
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+
 .dashboard-meeting-list-tabs {
+	&.is-stuck {
+		margin-block-end: 5rem;
+
+		@include im.media('<=small') {
+			margin-block-end: 13.75rem;
+		}
+	}
+
 	.meeting-list-tab-counter {
 		background: var(--background-card);
 		font-size: 0.75rem;

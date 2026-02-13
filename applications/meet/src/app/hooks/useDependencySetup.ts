@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import { useGetMeetUserSettings } from '@proton/meet/store/hooks/useMeetUserSettings';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useMeetingList } from './useMeetingList';
+import { MeetingListStatus, useMeetingList } from './useMeetingList';
 
 const useAuthenticatedDependencySetup = () => {
-    const [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting] = useMeetingList();
+    const [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus] =
+        useMeetingList();
     const getUserSettings = useGetMeetUserSettings();
 
     useEffect(() => {
@@ -15,7 +16,7 @@ const useAuthenticatedDependencySetup = () => {
         }
     }, [personalMeeting]);
 
-    return { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting };
+    return { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus };
 };
 
 const useUnauthenticatedDependencySetup = () => {
@@ -24,6 +25,7 @@ const useUnauthenticatedDependencySetup = () => {
         personalMeeting: null,
         setupNewPersonalMeeting: () => null,
         loadingRotatePersonalMeeting: false,
+        meetingsListStatus: MeetingListStatus.Done,
     };
 };
 

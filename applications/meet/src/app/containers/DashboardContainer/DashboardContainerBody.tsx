@@ -6,9 +6,10 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
-import { DashboardMeetingList } from '../../components/DashboardMeetingList/DashboardMeetingList';
+import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingList';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
+import type { MeetingListStatus } from '../../hooks/useMeetingList';
 
 import './DashboardContainerBody.scss';
 
@@ -24,6 +25,7 @@ interface DashboardContainerBodyProps {
     handleNewRoomClick: (room?: Meeting) => void;
     handleRotatePersonalMeeting?: () => void;
     loadingRotatePersonalMeeting?: boolean;
+    meetingsListStatus: MeetingListStatus;
 }
 
 export const DashboardContainerBody = ({
@@ -37,6 +39,7 @@ export const DashboardContainerBody = ({
     handleNewRoomClick,
     handleRotatePersonalMeeting,
     loadingRotatePersonalMeeting,
+    meetingsListStatus,
 }: DashboardContainerBodyProps) => {
     const getHeadline = () => {
         // translator: this word is part of the full sentence "Your conversations matter" but we need to emphasize matter with a purple color
@@ -79,7 +82,8 @@ export const DashboardContainerBody = ({
                         </div>
                     </div>
                 </div>
-                <DashboardMeetingList
+                <DashboardMeetingListLoading
+                    meetingsListStatus={meetingsListStatus}
                     meetings={meetings}
                     isGuest={isGuest}
                     handleScheduleInCalendar={handleScheduleInCalendar}
