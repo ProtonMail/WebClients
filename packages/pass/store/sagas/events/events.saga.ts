@@ -2,8 +2,9 @@ import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { all, call, cancel, fork, select, take } from 'redux-saga/effects';
 
-import { SYNC_VERSION } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { SYNC_STRATEGY } from '@proton/pass/lib/events/sync';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
@@ -21,26 +22,26 @@ import { userEventsChannel } from './v2/channel.user-events';
 
 type EventChannel = (api: Api, options: RootSagaOptions) => Generator;
 
-/** Switch event channel polling mechanism depending on `SYNC_VERSION`.
+/** Switch event channel polling mechanism depending on `SYNC_STRATEGY`.
  * For legacy V1: standard shares, invites polling
  * For modern V2: leverage new user events processor */
 function* getEventChannels(): Generator<unknown, EventChannel[]> {
-    switch (SYNC_VERSION) {
-        case 1:
+    switch (SYNC_STRATEGY) {
+        case SyncStrategy.LEGACY:
             const channels = [userChannel, shareChannels, sharesChannel, invitesChannel];
             const loadGroupInvites: boolean = yield select(selectLoadGroupInvites);
             if (loadGroupInvites) channels.push(groupInvitesChannel);
 
             return channels;
 
-        case 2:
+        case SyncStrategy.USER_EVENTS:
             return [userChannel, userEventsChannel];
     }
 }
 
 function* eventsWorker(options: RootSagaOptions): Generator {
     const channels: EventChannel[] = yield call(getEventChannels);
-    logger.info(`[ServerEvents] Creating polling channels [version=${SYNC_VERSION}]`);
+    logger.info(`[ServerEvents] Creating polling channels [strategy=${SYNC_STRATEGY}]`);
     yield all(channels.map((channel) => fork(channel, api, options)));
 }
 

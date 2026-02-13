@@ -132,7 +132,9 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassItemCloning]: false,
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.PassRenameAdminToManager]: false,
+    [PassFeature.PassUserEventsV1]: false,
     [PassFeature.PassWebInternalAlpha]: false,
+    [PassFeature.PassWebPrfUnlock]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -161,4 +163,3 @@ export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Autofill model version. May be dynamically set in the future */
 export const MODEL_VERSION = '1';
-export const SYNC_VERSION: 1 | 2 = 2;

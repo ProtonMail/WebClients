@@ -4,6 +4,7 @@ import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
@@ -51,6 +52,7 @@ export type SettingsState = {
      * This flag is used during the reload after getting the permission to trigger browser
      * privacy. We store a timestamp here to validate the pending request. */
     pendingBrowserAutofill?: number;
+    syncStrategy: SyncStrategy;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -71,6 +73,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passwordOptions: null,
     showUsernameField: false,
     theme: EXTENSION_BUILD ? undefined : PASS_DEFAULT_THEME,
+    syncStrategy: SyncStrategy.LEGACY,
 });
 
 const getInitialState = (): SettingsState => ({

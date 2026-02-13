@@ -1,5 +1,6 @@
-import { SYNC_VERSION } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { SYNC_STRATEGY } from '@proton/pass/lib/events/sync';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { Maybe, Share, ShareContent, ShareGetResponse, ShareType } from '@proton/pass/types';
@@ -17,7 +18,10 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
 
     try {
         const encryptedShareKeys = PassCrypto.canOpenShare(shareId) ? undefined : await getAllShareKeys(shareId);
-        const eventId = SYNC_VERSION === 1 ? (options?.eventId ?? (await getShareLatestEventId(shareId))) : undefined;
+        const eventId =
+            SYNC_STRATEGY === SyncStrategy.LEGACY
+                ? (options?.eventId ?? (await getShareLatestEventId(shareId)))
+                : undefined;
 
         const share = await PassCrypto.openShare<T>({ encryptedShare, encryptedShareKeys });
 
