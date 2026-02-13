@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
-import { LogLevel, Room, setLogLevel } from 'livekit-client';
+import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
@@ -12,10 +13,11 @@ import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQual
 import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
+import { isLiveKitLogAllowedToSendToSentry } from '../../utils/isLiveKitLogAllowedToSendToSentry';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
-    const isLogExtensionSetup = useRef(false);
+    const reportMeetError = useMeetErrorReporting();
 
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
@@ -69,10 +71,20 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     );
 
     useEffect(() => {
-        if (!isLogExtensionSetup.current && isLiveKitDebugReportingAllowed) {
-            isLogExtensionSetup.current = true;
-
+        if (isLiveKitDebugReportingAllowed) {
             setLogLevel(LogLevel.debug);
+
+            setLogExtension((level, msg, context) => {
+                if (isLiveKitLogAllowedToSendToSentry(level, msg, context)) {
+                    reportMeetError(`[LiveKit][${room.name}][${room.localParticipant?.identity}] - ${msg}`, {
+                        // In our case this is the ID of the room
+                        room: room.name,
+                        // Including the local participant identity to be able to identify the local participant compared to the others
+                        localParticipant: room.localParticipant?.identity,
+                        context,
+                    });
+                }
+            });
         }
     }, []);
 
