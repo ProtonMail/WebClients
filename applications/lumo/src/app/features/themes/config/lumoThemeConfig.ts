@@ -34,7 +34,7 @@ export const LUMO_SPECIAL_THEMES: LumoThemeConfig[] = [
                 /* webpackChunkName: "lumo-valentines-light-animation" */
                 '../assets/valentines/light.json'
             ),
-        getPromptText: () => c('collider_2025:Prompt').t`How do people celebrate Valentine's Day around the world?`,
+        getPromptText: () => c('collider_2025:Prompt').t`How the world celebrates Valentine's Day`,
         icon: '💕',
     },
 ];
