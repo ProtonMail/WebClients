@@ -419,6 +419,7 @@ export type IconName =
     | 'size-arrow-down'
     | 'spam'
     | 'sort-alphabetically'
+    | 'speech-bubble'
     | 'speech-bubbles'
     | 'speech-bubbles-filled'
     | 'sliders'
