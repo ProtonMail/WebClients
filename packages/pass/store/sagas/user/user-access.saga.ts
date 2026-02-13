@@ -1,6 +1,7 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
-import { SYNC_VERSION } from '@proton/pass/constants';
+import { SYNC_STRATEGY } from '@proton/pass/lib/events/sync';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import {
@@ -32,7 +33,7 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
 
         const access: HydratedAccessState = yield getUserAccess();
 
-        if (SYNC_VERSION === 1) {
+        if (SYNC_STRATEGY === SyncStrategy.LEGACY) {
             /** Sync pending aliases from SimpleLogin. If we're in sync v2
              * we rely on the `PendingAliasToCreateChanged` user event. */
             const { aliasSyncEnabled, pendingAliasToSync } = access.userData;
