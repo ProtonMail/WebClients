@@ -76,7 +76,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                   value: category.id,
                   text: getLabelFromCategoryId(category.id),
                   url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
-                  icon: category.icon,
+                  icon: category.filledIcon,
                   className: categoryColorClassName,
                   color: category.colorShade,
               };

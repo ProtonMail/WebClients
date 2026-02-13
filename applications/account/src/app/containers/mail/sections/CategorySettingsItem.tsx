@@ -42,7 +42,7 @@ export const CategorySettingsItem = ({ category, loading, onUpdate }: CategoryIt
 
             <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
                 <Icon
-                    name={category.icon}
+                    name={category.filledIcon}
                     className="mt-0.5 mail-category-color self-center"
                     data-color={category.colorShade}
                 />

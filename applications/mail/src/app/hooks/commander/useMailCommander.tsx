@@ -11,6 +11,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
+import { useCategoriesShortcuts } from 'proton-mail/components/categoryView/useCategoriesShortcuts';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
@@ -22,6 +23,8 @@ export const useMailCommander = () => {
     const onCompose = useOnCompose();
     const [mailSettings] = useMailSettings();
     const { createLabel } = useLabelActionsContext();
+
+    const { moveToCategoriesOption } = useCategoriesShortcuts();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
@@ -64,13 +67,7 @@ export const useMailCommander = () => {
                 },
                 shortcuts: ['/'],
             },
-            {
-                icon: 'inbox',
-                label: c('Commander action').t`Go to Inbox`,
-                value: 'inbox',
-                action: () => navigateTo(MAILBOX_LABEL_IDS.INBOX),
-                shortcuts: ['G', 'I'],
-            },
+            ...moveToCategoriesOption,
             {
                 icon: 'file-lines',
                 label: c('Commander action').t`Go to Drafts`,
