@@ -58,6 +58,19 @@ export const FONT_SIZE_DEFAULT = 10 // pt
 export const FONT_SIZE_MIN = 1 // pt
 export const FONT_SIZE_MAX = 400 // pt
 
+function getTimePattern(locale: string) {
+  const formatter = new Intl.DateTimeFormat(locale, { hour: 'numeric', minute: 'numeric' })
+  const parts = formatter.formatToParts(new Date())
+
+  const usesAmPm = parts.some((p) => p.type === 'dayPeriod')
+
+  if (usesAmPm) {
+    return `[$-${locale}]h:mm AM/PM;@` // US Style
+  }
+
+  return `[$-${locale}]h:mm;@` // 24-Hour Style
+}
+
 function getCurrencySymbol(locale: string | undefined, currency: string) {
   try {
     const currencySymbol = new Intl.NumberFormat(locale, {
@@ -141,7 +154,7 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
     INR: { type: 'CURRENCY', pattern: CURRENCY_PATTERN({ locale, currency: 'INR' }) },
     DATE: { type: 'DATE', pattern: getDefaultDateFormat(locale) },
     LONG_DATE: { type: 'DATE', pattern: getLongDateFormat(locale) },
-    TIME: { type: 'DATE_TIME', pattern: `[$-${locale}]h:mm AM/PM;@` },
+    TIME: { type: 'DATE_TIME', pattern: getTimePattern(locale) },
     DATE_TIME: { type: 'DATE_TIME', pattern: `[$-${locale}]${getDefaultDateFormat(locale)} hh:mm:ss` },
     DURATION: { type: 'TIME', pattern: `[$-${locale}][h]:mm:ss` },
   } satisfies Record<string, PatternSpec>
