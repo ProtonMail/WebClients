@@ -6905,6 +6905,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maxim ${ displayMaxValue } permis"
       ]
     },
     "error": {
@@ -12138,6 +12141,18 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Activity Monitor": [
+        "Monitorizare activitate"
+      ],
+      "Get visibility into account access": [
+        "Obțineți vizibilitate asupra accesării contului"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Monitorizați activitatea de conectare, detectați accesul neautorizat și închideți breșele de securitate și conformitate. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Îmbunătățiți-vă planul pentru a debloca funcția ${ monitorLink }."
       ]
     },
     "info": {
@@ -14521,6 +14536,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "activity monitor": [
+        "monitorizare activitate"
       ]
     },
     "Link (Scribe)": {
@@ -14984,6 +15002,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Conectați-vă domeniul personal (de ex. companiamea.com) pentru a crea adrese de e-mail pentru alte persoane și pentru a gestiona ${ MAIL_APP_NAME } pentru o afacere, o școală sau un grup."
       ]
     },
     "Message display when a new app version is available": {
@@ -25498,6 +25519,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } pentru prima lună. Se reînnoiește cu ${ regularPrice }/lună, puteți anula oricând."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Luați VPN Plus cu doar ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Ofertă specială: economisiți 90% la planul nostru premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuă cu gratuit"
+      ],
+      "Get the deal": [
+        "Luați oferta"
       ]
     }
   }

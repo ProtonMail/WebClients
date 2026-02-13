@@ -1685,6 +1685,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Ignore": [
+        "Ігнараваць"
       ]
     },
     "action": {
@@ -1793,6 +1796,24 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } карыстальніцкі дамен электроннай пошты",
+        "${ domains } карыстальніцкія дамены электроннай пошты",
+        "${ domains } карыстальніцкіх даменаў электроннай пошты",
+        "${ domains } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } вылучаны сервер VPN",
+        "${ ips } вылучаныя серверы VPN",
+        "${ ips } вылучаных сервераў VPN",
+        "${ ips } вылучаных сервераў VPN"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ]
     },
     "Address action": {
@@ -3142,6 +3163,36 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "${ n } day": [
+        "${ n } дзень",
+        "${ n } дні",
+        "${ n } дзён",
+        "${ n } дзён"
+      ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } гады",
+        "${ years } гадоў",
+        "${ years } гадоў"
+      ],
+      "Forever access": [
+        "Доступ назаўсёды"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Пачата ${ formattedStartDate }"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Пачынаючы з ${ formattedStartDate }"
+      ],
+      "Starting today": [
+        "Пачынаючы з сённяшняга дня"
       ]
     },
     "Checkout summary": {
@@ -6176,6 +6227,24 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "Націсніце **зацвердзіць аднаўленне**, **калі яны пацвердзяць**. Гэта разблакіруе іх зашыфраваныя даныя."
+      ],
+      "Access account": [
+        "Доступ да ўліковага запісу"
+      ],
+      "Approve recovery": [
+        "Зацвердзіць аднаўленне"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Кантакт для аднаўлення ${ user } выдалены"
+      ],
+      "Send email request": [
+        "Адправіць запыт на электронную пошту"
+      ],
+      "Stop being recovery contact": [
+        "Перастаць быць кантактам для аднаўлення"
       ]
     },
     "Empty group name": {
@@ -6846,6 +6915,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Максімальны дазволены аб'ём складае ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -12148,6 +12220,33 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Activity Monitor": [
+        "Манітор актыўнасці"
+      ],
+      "Cancel anytime.": [
+        "Скасаваць можна ў любы час."
+      ],
+      "Get visibility into account access": [
+        "Атрымайце агляд доступу да ўліковага запісу"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Падарункавы код можна ўвесці ў гэта поле, калі вы купілі яго або атрымалі яго ад нашай службы падтрымкі."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Сачыце за актыўнасцю ўваходаў, выяўляйце несанкцыянаваны доступ, закрывайце прабелы ў бяспецы і адпаведнасці патрабванням. "
+      ],
+      "Total: ${ totalPrice }": [
+        "Усяго: ${ totalPrice }"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць ${ monitorLink }."
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "Дзякуючы прапанове вы зэканомілі ${ discountAmount }."
       ]
     },
     "info": {
@@ -13367,7 +13466,7 @@
         "Атрымайце ўсё ў бясплатнай версіі, а таксама:"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -14124,6 +14223,27 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "Уладальнік уліковага запісу: ${ sepaDetails.AccountName }"
+      ],
+      "Add extra services": [
+        "Дадаць дадатковыя сэрвісы"
+      ],
+      "Choose your billing": [
+        "Выберыце свой рахунак"
+      ],
+      "More payment methods": [
+        "Іншыя спосабы аплаты"
+      ],
+      "today": [
+        "сёння"
+      ],
+      "Use another payment method": [
+        "Выкарыстоўваць іншы спосаб аплаты"
+      ],
+      "Your credit balance": [
+        "Ваша рэшта крэдытаў"
       ]
     },
     "label": {
@@ -14510,6 +14630,12 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "activity monitor": [
+        "манітор актыўнасці"
+      ],
+      "What's included in your plan": [
+        "Што ўваходзіць у ваш тарыфны план"
       ]
     },
     "Link (Scribe)": {
@@ -14984,6 +15110,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваш бясплатны пробны перыяд завяршыўся. Доступ да вашых уліковых запісаў будзе неўзабаве адключаны. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Падключыце свой карыстальніцкі дамен (напрыклад, vashakampaniya.com), каб ствараць адрасы электроннай пошты для іншых людзей, кіраваць ${ MAIL_APP_NAME } для бізнесу, школай або групай."
       ]
     },
     "Message display when a new app version is available": {
@@ -16689,7 +16818,7 @@
         "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -17993,6 +18122,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Без уліку ${ taxRate }% падатака ${ taxName }: ${ taxAmount }"
+      ],
+      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Без уліку${ taxRate }% падатка: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "З улікам ${ taxRate }% падатака ${ taxName }: ${ taxAmount }"
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "З улікам падаткаў у памеры ${ taxRate }%: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20705,7 +20846,7 @@
         "/месяц"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Save ${ discount }%": [
         "Эканомія ${ discount }%"
@@ -21265,6 +21406,33 @@
       ],
       "Billed yearly": [
         "Аплачваецца штогод"
+      ],
+      "${ discountPercent }% discount applied": [
+        "Ужыта скідка ў памеры ${ discountPercent }%"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% скідкай"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } бясплатна"
+      ],
+      "Bound to **${ nameToDisplay }**": [
+        "Звязана з **${ nameToDisplay }**"
+      ],
+      "Next billing date": [
+        "Дата наступнай аплаты"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Дадайце спосаб аплаты да ${ props.periodEnd }, каб працягнуць сваю падпіску пасля завяршэння бясплатнага пробнага перыяду."
+      ],
+      "Total due": [
+        "Агульны плацеж"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "Агульная сума да аплаты на ${ formattedPeriodEnd }"
+      ],
+      "Total due today": [
+        "Агульная сума да аплаты сёння"
       ]
     },
     "Subscription attribute": {
@@ -25638,6 +25806,22 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "dollar_offer": {
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Спецыяльная прапанова: зэканомце 90% з нашым прэміяльным тарыфным плане"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Працягнуць на бясплатнай аснове"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
       ]
     }
   }

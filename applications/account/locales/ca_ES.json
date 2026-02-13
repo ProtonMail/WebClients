@@ -6135,7 +6135,7 @@
         "S'ha desat el temps d'espera"
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
-        "Hem rebut una sol·licitud per desbloquejar les dades xifrades del vostre contacte **${ user }**."
+        "Hem rebut una sol·licitud per desbloquejar les dades xifrades del teu contacte **${ user }**."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "No s'han pogut verificar les dades de recuperació. Voleu continuar igualment?"
@@ -6862,6 +6862,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "El màxim permès és ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -12016,7 +12019,7 @@
         "Monitoreu l'activitat d'inici de sessió, detecteu accessos no autoritzats i tapeu forats de seguretat i compliment. "
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
-        "Milloreu el pla per desbloquejar el ${ monitorLink }."
+        "Millora per activar ${ monitorLink }."
       ]
     },
     "info": {
@@ -14846,6 +14849,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Connecteu el vostre domini personalitzat (per exemple, lavostraempresa.com) per crear adreces de correu electrònic per a d'altres persones i gestioneu ${ MAIL_APP_NAME } per a una empresa, escola o grup."
       ]
     },
     "Message display when a new app version is available": {
@@ -23606,6 +23612,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Roles and permissions": [
+        "Càrrecs i permisos"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25178,6 +25187,33 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Un càrrec és un grup de permisos que podeu assignar als membres de la vostra organització."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } el primer mes. Es renovarà per ${ regularPrice }/mes, ho podreu cancel·lar quan vulgueu."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Obtingueu VPN Plus per només ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sota la protecció de les lleis de privacitat suïsses"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Oferta especial: Estalvieu un 90 % en el nostre pla prèmium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continueu amb la versió gratuïta"
+      ],
+      "Get the deal": [
+        "Aprofiteu l'oferta"
       ]
     }
   }

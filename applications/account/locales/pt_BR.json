@@ -3146,6 +3146,9 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Começando ${ formattedStartDate }"
       ]
     },
     "Checkout summary": {
@@ -11918,6 +11921,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Activity Monitor": [
+        "Monitor de atividades"
+      ],
+      "Expires on ${ ExpMonth }/${ ExpYear }": [
+        "Expira em ${ ExpMonth }/${ ExpYear }"
       ]
     },
     "info": {
@@ -25073,6 +25082,22 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ]
+    },
+    "dollar_offer": {
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Obtenha o VPN Plus por apenas ${ offerPrice }"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Oferta especial: Economize 90% no seu plano premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuar com o plano gratuito"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
       ]
     }
   }

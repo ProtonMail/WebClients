@@ -6862,6 +6862,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximum ${ displayMaxValue } autorisé"
       ]
     },
     "error": {
@@ -12013,10 +12016,10 @@
         "Surveillance des activités"
       ],
       "Get visibility into account access": [
-        "Obtenez de la visibilité sur l'accès au compte"
+        "Obtenez une visibilité sur l'accès au compte"
       ],
       "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
-        "Surveillez les connexions, détectez les accès non autorisés et comblez les lacunes en matière de sécurité et de conformité. "
+        "Surveillez l’activité de connexion, détectez les accès non autorisés et comblez les lacunes en matière de sécurité et de conformité. "
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Passez à la version supérieure pour débloquer ${ monitorLink }."
@@ -14849,6 +14852,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Votre essai gratuit est terminé. L'accès à votre compte sera bientôt désactivé. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Connectez votre domaine personnalisé (par ex. votreentreprise.com) pour créer des adresses e-mail pour d'autres personnes, gérez ${ MAIL_APP_NAME } pour une entreprise, une école ou un groupe."
       ]
     },
     "Message display when a new app version is available": {
@@ -23609,6 +23615,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Roles and permissions": [
+        "Rôles et permissions"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25181,6 +25190,33 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Un rôle est un groupe de permissions que vous pouvez attribuer aux membres de votre organisation."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } le premier mois. Renouvellement à ${ regularPrice }/mois, annulation à tout moment."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Profitez de VPN Plus pour seulement ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protégé par les lois suisses sur les données personnelles"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Offre spéciale : Économisez 90 % sur notre abonnement premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuer avec la version gratuite"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
       ]
     }
   }

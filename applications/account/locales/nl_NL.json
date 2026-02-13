@@ -6862,6 +6862,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximaal ${ displayMaxValue } toegestaan"
       ]
     },
     "error": {
@@ -14828,6 +14831,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Verbind uw eigen domein (bijv. uwbedrijf.com) om e-mailadressen voor andere personen aan te maken en ${ MAIL_APP_NAME } te beheren voor een bedrijf, school of groep."
       ]
     },
     "Message display when a new app version is available": {

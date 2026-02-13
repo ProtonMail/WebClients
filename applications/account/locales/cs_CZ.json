@@ -3170,8 +3170,8 @@
       "${ years } year": [
         "${ years } rok",
         "${ years } roky",
-        "${ years } roků",
-        "${ years } roků"
+        "${ years } let",
+        "${ years } let"
       ],
       "Forever access": [
         "Trvalý přístup"
@@ -3184,6 +3184,9 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ],
+      "Starting ${ formattedStartDate }": [
+        "Začíná ${ formattedStartDate }"
       ]
     },
     "Checkout summary": {
@@ -6115,7 +6118,7 @@
         "Doba čekání uložena"
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
-        "Nebyli jsme schopni ověřit data pro obnovení. Pořád pokračovat?"
+        "Nebyli jsme schopni ověřit data pro obnovení. Přesto pokračovat?"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Budeme informovat **${ user }**, že jste požádali o nouzový přístup."
@@ -6173,6 +6176,81 @@
       ],
       "Your recovery contacts": [
         "Vaše kontakty pro obnovení"
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } již nebude schopen/schopna vám pomoci s obnovením dat po resetování hesla."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Pokud potvrdí**, klikněte na **Schválit obnovení**. Tím odemknete jejich šifrovaná data."
+      ],
+      "Approved request": [
+        "Schválená žádost"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Požádejte o pomoc kontaktní osobu pro obnovení. Obdrží e-mail s ověřením vaší žádosti a odemknutím dat."
+      ],
+      "Asking for help": [
+        "Požádat o pomoc"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Emergency contact enabled": [
+        "Nouzový konktakt aktivován"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Recover data": [
+        "Obnovit data"
+      ],
+      "Recovery approved": [
+        "Obnovení schváleno"
+      ],
+      "Recovery contact added": [
+        "Kontakt pro obnovení byl přidán"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontakt pro obnovení uživatele ${ user } byl odebrán"
+      ],
+      "Recovery contact removed": [
+        "Kontakt pro obnovení odebrán"
+      ],
+      "Recovery contacts": [
+        "Kontakty pro obnovení"
+      ],
+      "Remove recovery contact": [
+        "Odebrat kontakt pro obnovení"
+      ],
+      "Review recovery request": [
+        "Zkontrolovat žádost o obnovení"
+      ],
+      "Select recovery contact ${ name }": [
+        "Vybrat kontakt pro obnovení ${ name }"
+      ],
+      "Set account recovery": [
+        "Nastavit obnovení účtu"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Chcete-li tuto metodu obnovení zakázat, odeberte všechny své kontakty pro obnovení."
+      ],
+      "Unable to recover data": [
+        "Data nelze obnovit"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Obdrželi jsme požadavek na odemčení šifrovaných dat vašeho kontaktu **${ user }**."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Zatím nejste pro nikoho určeni jako kontakt pro obnovení."
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "V případě resetování hesla již nebudete moci pomoci obnovit přístup k účtu uživatele ${ user }."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Váš kontakt pro obnovení vám pomohl obnovit data."
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Vaše kontakty pro obnovení by měli být lidé, které znáte a snadno se s nimi spojíte."
       ]
     },
     "Empty group name": {
@@ -6843,6 +6921,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximální povolená hodnota ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -12160,6 +12241,18 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "Get visibility into account access": [
+        "Získat přehled o přístupu k účtu"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Pokud jste zakoupili dárkový kód nebo jej obdrželi od našeho týmu podpory, můžete jej zadat zde."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Sledujte přihlašovací aktivitu, detekujte neoprávněný přístup a eliminujte mezery v zabezpečení a dodržování předpisů. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Upgradujte pro odemčení ${ monitorLink }."
       ]
     },
     "info": {
@@ -12713,7 +12806,7 @@
         "${ addressesAvailable } z ${ maxAddresses } e-mailových addres k dispozici"
       ],
       "${ Brand } ending with ${ Last4 }": [
-        "${ Brand } končící ${ Last4 }"
+        "${ Brand } končící na ${ Last4 }"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -14154,6 +14247,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Add extra services": [
+        "Přidat další služby"
       ]
     },
     "label": {
@@ -14540,6 +14636,12 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ],
+      "activity monitor": [
+        "monitor aktivity"
+      ],
+      "What's included in your plan": [
+        "Co je zahrnuto ve vašem tarifu"
       ]
     },
     "Link (Scribe)": {
@@ -15014,6 +15116,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Připojte svou vlastní doménu (např. vasefirma.com) a vytvořte e-mailové adresy pro jiné uživatele, spravujte ${ MAIL_APP_NAME } pro firmu, školu nebo skupinu."
       ]
     },
     "Message display when a new app version is available": {
@@ -18029,6 +18134,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -21309,7 +21417,22 @@
         "Přiřazeno organizaci **${ nameToDisplay }**"
       ],
       "Total due": [
-        "Celkem k úhradě"
+        "Celková částka"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent } % sleva"
+      ],
+      "${ trailCycleText } free": [
+        "${ trailCycleText } zdarma"
+      ],
+      "Next billing date": [
+        "Datum další platby"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Chcete-li pokračovat v předplatném po skončení bezplatného zkušebního období, přidejte platební metodu před ${ props.periodEnd }."
+      ],
+      "Total due today": [
+        "Celkem splatné dnes"
       ]
     },
     "Subscription attribute": {
@@ -25686,6 +25809,16 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "dollar_offer": {
+      "Special offer: Save 90% off our premium plan": [
+        "Speciální nabídka: Ušetřete 90 % z ceny našeho prémiového plánu"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Pokračovat s bezplatným tarifem"
       ]
     }
   }

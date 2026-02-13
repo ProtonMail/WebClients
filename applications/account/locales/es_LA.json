@@ -6862,6 +6862,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Se permite un máximo de ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -12008,6 +12011,18 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Activity Monitor": [
+        "Monitor de actividad"
+      ],
+      "Get visibility into account access": [
+        "Supervise el acceso a la cuenta"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Supervise la actividad de inicio de sesión, detecte accesos no autorizados y resuelva brechas de seguridad y cumplimiento. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Actualice a un mejor plan para desbloquear ${ monitorLink }."
       ]
     },
     "info": {
@@ -14382,6 +14397,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "activity monitor": [
+        "monitor de actividad"
       ]
     },
     "Link (Scribe)": {
@@ -14834,6 +14852,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La prueba gratuita ha terminado. El acceso a la cuenta pronto será desactivado. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Conecte su dominio personalizado (ej. suempresa.com) para crear direcciones de correo para otras personas, gestione ${ MAIL_APP_NAME } para un negocio, escuela o grupo."
       ]
     },
     "Message display when a new app version is available": {
@@ -25163,6 +25184,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Asegure los archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } el primer mes. Se renueva por ${ regularPrice }/mes, cancele cuando quiera."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Obtenga VPN Plus por solo ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Bajo la protección de las leyes de privacidad suizas"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Oferta especial: Ahorre 90% en su plan premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Seguir con el plan gratuito"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
       ]
     }
   }

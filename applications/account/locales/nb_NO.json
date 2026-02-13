@@ -1774,6 +1774,18 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "${ domains } custom email domain": [
+        "${ domains } egendefinert e-postdomene",
+        "${ domains } egendefinerte e-postdomener"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikert VPN-tjener",
+        "${ ips } dedikerte VPN-tjener"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-lisens",
+        "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ]
     },
     "Address action": {
@@ -3107,6 +3119,21 @@
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
         "Totalt for ${ n } måneder"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dager"
+      ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
+      ],
+      "Forever access": [
+        "Tilgang for alltid"
       ]
     },
     "Checkout summary": {
@@ -5976,6 +6003,55 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Nødkontakten ${ name } ber om tilgang til kontoen din."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Hvis de ikke ba om hjelpen din**, er det mulig at noen andre prøver å få tilgang til kontoen deres. I så fall, ignorer denne forespørselen."
+      ],
+      "Enable": [
+        "Aktiver"
+      ],
+      "For ${ email }": [
+        "For ${ email }"
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Gi ${ user } beskjed om at det faktisk er du som prøver å få tilbake tilgangen."
+      ],
+      "Pending request": [
+        "Venter på forespørsel"
+      ],
+      "People who have you as a recovery contact": [
+        "Personer som har deg som gjenopprettingskontakt"
+      ],
+      "Proceed anyway": [
+        "Fortsett uansett"
+      ],
+      "Recovery contact enabled": [
+        "Gjenopprettingskontakt aktivert"
+      ],
+      "Recovery request sent": [
+        "Gjenopprettingsforespørsel sendt"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Fjern kontakter for gjenoppretting for å fortsette"
+      ],
+      "Request access": [
+        "Be om tilgang"
+      ],
+      "See request": [
+        "Se forespørsel"
+      ],
+      "Stop being recovery contact?": [
+        "Slutte å være kontakt for gjenoppretting?"
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Du har nådd maksgrensen på ${ limit } gjenopprettingskontakt.",
+        "Du har nådd maksgrensen på ${ limit } gjenopprettingskontakter."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Kontakten din for gjenoppretting ${ name } ber om hjelp til å gjenopprette dataene sine."
+      ],
+      "Your recovery contacts": [
+        "Dine gjenopprettingskontakter"
       ]
     },
     "Empty group name": {
@@ -6636,6 +6712,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maksimalt ${ displayMaxValue } tillatt"
       ]
     },
     "error": {
@@ -11751,6 +11830,22 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
+      "Get visibility into account access": [
+        "Få innsikt i kontotilgang"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
+      ],
+      "Total: ${ totalPrice }": [
+        "Totalt: ${ totalPrice }"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Oppgrader for å låse opp ${ monitorLink }."
       ]
     },
     "info": {
@@ -13711,6 +13806,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Choose your billing": [
+        "Velg fakturering"
+      ],
+      "today": [
+        "i dag"
+      ],
+      "Your credit balance": [
+        "Din kredittsaldo"
       ]
     },
     "label": {
@@ -14095,6 +14199,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "activity monitor": [
+        "aktivitetsovervåkeren"
       ]
     },
     "Link (Scribe)": {
@@ -14547,6 +14654,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Prøveperioden er avsluttet. Tilgang til kontoen din vil snart bli deaktivert. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Koble til ditt egendefinerte domene (f.eks. dinbedrift.com) for å opprette e-postadresser for andre personer, administrere ${ MAIL_APP_NAME } for en bedrift, skole eller gruppe."
       ]
     },
     "Message display when a new app version is available": {
@@ -17462,6 +17572,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkl. ${ taxRate }% mva: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20636,6 +20749,12 @@
       ],
       "Billed yearly": [
         "Faktureres årlig"
+      ],
+      "${ discountPercent }% discount applied": [
+        "${ discountPercent }% rabatt brukt"
+      ],
+      "Total due": [
+        "Totalt å betale"
       ]
     },
     "Subscription attribute": {
@@ -24831,6 +24950,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsett med gratis"
       ]
     }
   }

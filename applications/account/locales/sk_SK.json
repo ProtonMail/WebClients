@@ -3193,6 +3193,9 @@
         "Celkom za ${ n } mesiace",
         "Celkom za ${ n } mesiacov",
         "Celkom za ${ n } mesiacov"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Začalo sa ${ formattedStartDate }"
       ]
     },
     "Checkout summary": {
@@ -6131,6 +6134,150 @@
       ],
       "Recover data": [
         "Obnoviť dáta"
+      ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } vám už nebude môcť pomôcť obnoviť vaše údaje po resetovaní hesla."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Ak potvrdia**, kliknite na **Schváliť obnovenie**. Tým sa odomknú ich šifrované údaje."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Ak vás o pomoc nepožiadali**, je možné, že sa niekto iný pokúša získať prístup k ich účtu. V takom prípade túto žiadosť ignorujte."
+      ],
+      "Access account": [
+        "Prístup k účtu"
+      ],
+      "Approve recovery": [
+        "Schváliť obnovenie"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Požiadajte o pomoc kontaktnú osobu na obnovenie účtu. Tá dostane email s požiadavkou overenia vašej žiadosti a odblokovania vašich údajov."
+      ],
+      "Asking for help": [
+        "Žiadosť o pomoc"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Ak pridáte osoby, ktorým dôverujete, ako kontakty na obnovenie účtu, budeme im môcť poslať email, aby vám pomohli, ak budete mať problémy s obnovením prístupu po resetovaní hesla. Aj vy môžete byť kontaktom pre obnovenie pre iných."
+      ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Vyberte si niekoho, komu dôverujete, aby vám pomohol obnoviť vaše údaje v prípade resetovania hesla. Kontakty pre obnovenie už musia mať ${ BRAND_NAME } účet."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Spojte sa s nimi a overte si, či potrebujú pomoc s obnovením svojich údajov."
+      ],
+      "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
+        "Údaje boli úspešne obnovené. Teraz môžete dešifrovať svoje existujúce dáta a zašifrované súbory."
+      ],
+      "Emergency contact enabled": [
+        "Núdzový kontakt povolený"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Obráťte sa na nich teraz, aby ste zistili, či vám môžu pomôcť, a aby ste im osobne oznámili, že sa snažíte odomknúť svoje údaje."
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Nech vo svojej schránke skontrolujú email s prosbou o pomoc pri obnovení vašich údajov. Email obsahuje odkaz, na ktorý musia kliknúť, aby potvrdili vašu žiadosť."
+      ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Dajte ${ user } vedieť, že ste to naozaj vy, kto sa snaží získať prístup späť."
+      ],
+      "People who have you as a recovery contact": [
+        "Ľudia, ktorí vás majú ako kontaktnú osobu na obnovenie účtu"
+      ],
+      "Recover data now": [
+        "Obnoviť dáta ihneď"
+      ],
+      "Recovery approved": [
+        "Obnova schválená"
+      ],
+      "Recovery contact added": [
+        "Kontaktná osoba na obnovenie účtu pridaná"
+      ],
+      "Recovery contact enabled": [
+        "Kontaktná osoba na obnovenie účtu je povolená"
+      ],
+      "Recovery contact for ${ user } removed": [
+        "Kontaktná osoba na obnovenie účtu pre ${ user } bola odobraná"
+      ],
+      "Recovery contact removed": [
+        "Kontaktná osoba na obnovenie účtu odobraná"
+      ],
+      "Recovery contacts": [
+        "Kontaktné osoby na obnovenie účtu"
+      ],
+      "Recovery request sent": [
+        "Žiadosť o obnovenie účtu bola odoslaná"
+      ],
+      "Remove recovery contact": [
+        "Odstrániť kontakt na obnovenie účtu"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Odstráňte svoje kontakty na obnovenie účtu, aby ste mohli pokračovať"
+      ],
+      "Request access": [
+        "Požiadať o prístup"
+      ],
+      "Review recovery request": [
+        "Skontrolovať žiadosť o obnovenie"
+      ],
+      "Select recovery contact ${ name }": [
+        "Vyberte kontaktnú osobu na obnovenie účtu ${ name }"
+      ],
+      "Send email request": [
+        "Odoslať žiadosť emailom"
+      ],
+      "Send recovery request": [
+        "Odoslať žiadosť o obnovenie"
+      ],
+      "Set account recovery": [
+        "Nastaviť obnovenie účtu"
+      ],
+      "Stop being recovery contact": [
+        "Prestať byť kontaktnou osobou na obnovenie účtu"
+      ],
+      "Stop being recovery contact?": [
+        "Prestať byť kontaktnou osobou na obnovenie účtu?"
+      ],
+      "Stop being trusted contact": [
+        "Prestať byť dôveryhodným kontaktom"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Ak chcete túto metódu obnovenia deaktivovať, odstráňte všetky svoje kontakty na obnovenie účtu."
+      ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Ak chcete používať obnovenie prostredníctvom dôveryhodného kontaktu, musíte mať nastavenú metódu obnovenia účtu."
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Dostali sme žiadosť o odblokovanie šifrovaných údajov vášho kontaktu **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Nebolo možné overiť údaje o obnovení účtu. Pokračovať aj tak?"
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Zatiaľ ste neboli určený ako kontaktná osoba pre prípad obnovy účtu pre nikoho."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "Dosiahli ste maximálny počet ${ limit } kontaktu na obnovu účtu",
+        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu",
+        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu",
+        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu"
+      ],
+      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
+        "V prípade resetovania hesla už nebudete môcť pomôcť s obnovením prístupu k účtu používateľa ${ user }."
+      ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Vaša kontaktná osoba pre obnovenie účtu ${ name } schválila vašu žiadosť o odblokovanie šifrovaných údajov."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Vaša kontaktná osoba pre obnovenie účtu ${ name } žiada o pomoc pri obnovení svojich údajov."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Váš kontakt na obnovu účtu vám pomohol obnoviť dáta."
+      ],
+      "Your recovery contacts": [
+        "Vaše kontakty na obnovu účtu"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Vaše kontakty na obnovenie účtu by mali byť ľudia, ktorých poznáte a ktorých môžete ľahko kontaktovať."
       ]
     },
     "Empty group name": {
@@ -6801,6 +6948,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximálne povolené ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -12124,6 +12274,18 @@
       ],
       "Activity Monitor": [
         "Monitor aktivity"
+      ],
+      "Get visibility into account access": [
+        "Získajte prehľad o prístupe k účtu"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Ak ste zakúpili darčekový kód alebo ste ho obdržali od našej podpory, môžete ho sem vložiť."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Monitorujte aktivity prihlásenia, odhaľujte neoprávnené prístupy a odstraňujte medzery v oblasti bezpečnosti a dodržiavania predpisov. "
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Zvýšte úroveň pre prístup k ${ monitorLink }."
       ]
     },
     "info": {
@@ -14516,6 +14678,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "activity monitor": [
+        "monitoru aktivity"
       ]
     },
     "Link (Scribe)": {
@@ -14990,6 +15155,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaša bezplatná skúšobná verzia sa skončila. Prístup k vášmu účtu bude čoskoro deaktivovaný. ${ action }"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Pripojte svoju vlastnú doménu (napr. vašafirma.sk), aby ste mohli vytvárať emailové adresy pre ďalších ľudí, spravovať ${ MAIL_APP_NAME } pre firmu, školu alebo skupinu."
       ]
     },
     "Message display when a new app version is available": {
@@ -21307,6 +21475,12 @@
       ],
       "Total due on ${ formattedPeriodEnd }": [
         "Celkom splatné do ${ formattedPeriodEnd }"
+      ],
+      "${ discountPercent }% off": [
+        "${ discountPercent }% zľava"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Ak chcete pokračovať v predplatnom po skončení bezplatnej skúšobnej doby, pridajte spôsob platby pred ${ props.periodEnd }."
       ]
     },
     "Subscription attribute": {
@@ -25683,6 +25857,28 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } za prvý mesiac. Obnovenie za ${ regularPrice }/mesiac, zrušiť môžete kedykoľvek."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Získajte VPN Plus len za ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Špeciálna ponuka: Ušetrite 90 % na našom prémiovom pláne"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Pokračovať bezplatne"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
       ]
     }
   }
