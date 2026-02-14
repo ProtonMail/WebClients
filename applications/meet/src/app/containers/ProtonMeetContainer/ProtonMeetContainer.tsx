@@ -844,16 +844,22 @@ export const ProtonMeetContainer = ({
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
 
         if (guestMode) {
-            dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
-            history.push('/dashboard');
-            return;
+            dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
         }
 
-        if (user && !paidUser) {
+        if (isLocalParticipantHost && !paidUser) {
+            dispatch(setUpsellModalType(UpsellModalTypes.HostFreeAccount));
+        }
+
+        if (isLocalParticipantHost && paidUser) {
+            dispatch(setUpsellModalType(UpsellModalTypes.HostPaidAccount));
+        }
+
+        if (!isLocalParticipantHost && user && !paidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (user && paidUser) {
+        if (!isLocalParticipantHost && user && paidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 

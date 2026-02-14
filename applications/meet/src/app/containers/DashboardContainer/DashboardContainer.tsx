@@ -117,6 +117,7 @@ export const DashboardContainer = () => {
             />
             {upsellModalType && (
                 <CTAModal
+                    open={!!upsellModalType}
                     ctaModalType={upsellModalType}
                     onClose={() => dispatch(setUpsellModalType(null))}
                     rejoin={previousMeetingLink ? handleRejoin : undefined}

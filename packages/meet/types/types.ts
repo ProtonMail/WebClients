@@ -18,6 +18,9 @@ export enum UpsellModalTypes {
     Room = 'room',
     PersonalMeeting = 'personalMeeting',
     StartMeeting = 'startMeeting',
+    HostFreeAccount = 'hostFreeAccount',
+    HostPaidAccount = 'hostPaidAccount',
+    GuestAccount = 'guestAccount',
     FreeAccount = 'freeAccount',
     PaidAccount = 'paidAccount',
 }
