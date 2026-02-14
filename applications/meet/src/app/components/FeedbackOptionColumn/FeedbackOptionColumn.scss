@@ -1,0 +1,16 @@
+.feedback-option-button {
+	font-size: 0.875em;
+	background: transparent;
+	border: 1px solid var(--border-card);
+	border-radius: 2rem;
+	padding-inline: 1rem;
+
+	&:active {
+		background: var(--border-card);
+	}
+
+	&.is-selected {
+		background: var(--interaction-weak);
+		border-color: var(--interaction-weak);
+	}
+}
