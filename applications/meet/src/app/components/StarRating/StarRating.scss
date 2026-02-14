@@ -1,0 +1,35 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.star-rating {
+	&-button {
+		padding: 0.5rem;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		transition: transform 0.1s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--focus-outline);
+			outline-offset: 2px;
+		}
+
+		svg {
+			color: rgb(255 255 255 / 0.24);
+			fill: currentcolor;
+		}
+
+		&--filled {
+			svg {
+				color: #f6b828;
+				fill: url(#starGradient);
+			}
+		}
+	}
+}
