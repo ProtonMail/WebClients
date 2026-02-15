@@ -19,24 +19,42 @@
 	color: black;
 	background: var(--interaction-norm);
 	border: 1px solid #ffffff0a;
+
+	&:hover,
+	&:active {
+		color: black;
+		background: #c1b8ff;
+	}
 }
 
-.done-button:hover,
-.done-button:active {
-	color: black;
-	background: #c1b8ff;
+.meeting-icon--added .meeting-icon-check {
+	animation: checkAnimation 0.5s cubic-bezier(0.42, 1.15, 0.64, 1) both;
+	animation-delay: 0.25s;
+	transform-origin: center;
+
+	@keyframes checkAnimation {
+		0% {
+			opacity: 0;
+			transform: scale(0);
+		}
+
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
 }
 
 .calendar-dropdown-button {
 	background-color: var(--background-card);
 	border: 1px solid var(--border-norm);
 	color: white;
-}
 
-.calendar-dropdown-button:hover,
-.calendar-dropdown-button:active {
-	background-color: var(--border-norm);
-	color: #a0a0a0;
+	&:hover,
+	&:active {
+		background-color: var(--border-norm);
+		color: #a0a0a0;
+	}
 }
 
 .calendar-dropdown {
@@ -68,9 +86,9 @@
 		font-weight: 500;
 		white-space: nowrap;
 	}
-}
 
-.calendar-dropdown::before,
-.calendar-dropdown::after {
-	background: #16161fcc !important;
+	&::before,
+	&::after {
+		background: #16161fcc !important;
+	}
 }
