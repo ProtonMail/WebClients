@@ -28,7 +28,7 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
         return 'redirect';
     }
 
-    const api = createApi({ config, sendLocaleHeaders: true });
+    const api = createApi({ config });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
 
