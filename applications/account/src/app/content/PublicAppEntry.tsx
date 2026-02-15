@@ -28,7 +28,7 @@ import { PublicAppInitial } from './PublicAppInitial';
 import { PublicAppThemeProvider } from './theme/PublicAppThemeProvider';
 
 const bootstrapApp = () => {
-    const api = createApi({ config, sendLocaleHeaders: true });
+    const api = createApi({ config });
     const initialSessions = getPersistedSessions();
     const initialSessionsLength = initialSessions.length;
     writeAccountSessions(initialSessions);

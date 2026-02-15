@@ -34,7 +34,7 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
         return 'redirect';
     }
 
-    const api = createApi({ config, sendLocaleHeaders: true });
+    const api = createApi({ config });
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const authentication = createAuthentication();
     init({ config, authentication, locales });

@@ -107,7 +107,7 @@ const createApi = ({
     config,
     defaultHeaders,
     noErrorState,
-    sendLocaleHeaders,
+    sendLocaleHeaders = true,
 }: {
     sendLocaleHeaders?: boolean;
     defaultHeaders?: any;
