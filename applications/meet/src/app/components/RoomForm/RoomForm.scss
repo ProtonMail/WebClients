@@ -11,7 +11,10 @@
 	}
 
 	.input-submit {
-		background-color: var(--theme-color) !important;
+		&:not(:disabled) {
+			background-color: var(--theme-color) !important;
+		}
+
 		color: var(--text-invert) !important;
 	}
 
