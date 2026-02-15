@@ -132,15 +132,34 @@
 	}
 }
 
-.create-container-dropdown {
+.select-two-timezone-select {
 	box-shadow: none !important;
-	border-radius: 1rem !important;
+
+	&[aria-expanded='true']:not([aria-controls]),
+	&:focus,
+	&:focus-within {
+		border-color: none !important;
+		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1) !important;
+	}
+}
+
+.create-container-dropdown {
+	border-radius: var(--border-radius-xxl) !important;
 	border: 1px solid var(--border-norm) !important;
+	overflow: hidden;
+
+	body &:has(.minicalendar) {
+		padding: 0.5rem;
+	}
 
 	.minicalendar {
 		.today-icon {
 			border-radius: var(--border-radius-full) !important;
 		}
+	}
+
+	.minicalendar-grid {
+		padding-block-end: 0 !important;
 	}
 
 	.minicalendar-day {
@@ -183,12 +202,38 @@
 		}
 	}
 
+	// tz
+	&.select-two-timezone-dropdown {
+		padding-block-start: 0;
+
+		.field {
+			block-size: auto !important;
+			padding-block: var(--space-3) !important;
+			border-radius: var(--border-radius-xl) !important;
+			padding-inline-start: 2.4rem !important;
+		}
+
+		.left-icon {
+			inset-block-start: 0.45rem !important;
+			inset-inline-start: 0.75rem !important;
+		}
+
+		.timezone-name {
+			color: var(--text-weak);
+		}
+
+		.timezone-separator {
+			visibility: hidden;
+		}
+	}
+
 	.dropdown-content {
 		border-radius: 1rem !important;
 	}
 
 	.dropdown-item-button {
 		border-radius: var(--border-radius-xl);
+		padding-block: var(--space-3);
 		background-color: var(--interaction-norm-minor-2);
 
 		&:hover {
