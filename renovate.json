@@ -51,6 +51,10 @@
             "matchPackageNames": ["/redux/"]
         },
         {
+            "groupName": "babel",
+            "matchPackageNames": ["/babel/"]
+        },
+        {
             "groupName": "pass-desktop and inbox-desktop exclusions",
             "enabled": false,
             "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]
