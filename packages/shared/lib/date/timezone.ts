@@ -1,3 +1,5 @@
+import React, { type ReactNode } from 'react';
+
 import { findTimeZone, getTimeZoneLinks, getUTCOffset, getZonedTime } from '@protontech/timezone-support';
 
 import isTruthy from '@proton/utils/isTruthy';
@@ -157,9 +159,21 @@ type GetTimeZoneOptions = (
     options?: { formatter?: (a1: FormatterProps) => string }
 ) => {
     text: string;
+    formattedText: ReactNode;
     value: string;
     key: string;
 }[];
+
+const formattedFormatter = ({ utcOffset, name }: FormatterProps): ReactNode =>
+    React.createElement(
+        React.Fragment,
+        null,
+        React.createElement('span', null, utcOffset),
+        ' ',
+        React.createElement('span', { className: 'timezone-separator' }, '•'),
+        ' ',
+        React.createElement('span', { className: 'timezone-name' }, name)
+    );
 
 const getTimeZoneDisplayName = (ianaName: string) => {
     if (ianaName === 'Europe/Kiev') {
@@ -197,6 +211,7 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
 
             return {
                 text: formatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
+                formattedText: formattedFormatter({ name, utcOffset: `GMT${formatTimezoneOffset(offset)}` }),
                 value: ianaName,
                 key: ianaName,
             };
