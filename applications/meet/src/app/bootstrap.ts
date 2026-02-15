@@ -296,7 +296,7 @@ const assertNoSessions = async (api: ApiWithListener) => {
 };
 
 export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManager: NotificationsManager) => {
-    const api = createApi({ config, sendLocaleHeaders: true });
+    const api = createApi({ config });
 
     api.addEventListener((event) => {
         if (event.type === 'notification') {
