@@ -14,14 +14,81 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
 import { useFlag } from '@proton/unleash';
+import clsx from '@proton/utils/clsx';
 
 import { formatDate, formatTimeHHMM } from '../../utils/timeFormat';
 import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
 import { calendarDateFormats } from './utils';
 
 import './ScheduleMeetingRecapModal.scss';
+
+const SvgAddedIcon = ({ className }: { className?: string }) => (
+    <svg
+        width="64"
+        height="57"
+        viewBox="0 0 64 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={clsx('mb-5', className)}
+    >
+        <rect y="4.84375" width="57.6363" height="37.4764" rx="9.68644" fill="#B9ABFF" />
+        <path
+            d="M53.874 16.9434C55.9518 16.9435 57.6365 18.6283 57.6367 20.7061V46.7881C57.6367 52.1377 53.2997 56.4744 47.9502 56.4746H9.68652C4.33685 56.4746 0 52.1378 0 46.7881V20.7061C0.000178701 18.6282 1.68478 16.9434 3.7627 16.9434H53.874Z"
+            fill="#413969"
+        />
+        <rect
+            x="13.2139"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 13.2139 0)"
+            fill="#9581FF"
+        />
+        <rect
+            x="25.0527"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 25.0527 0)"
+            fill="#9581FF"
+        />
+        <rect
+            x="36.8918"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 36.8918 0)"
+            fill="#9581FF"
+        />
+        <rect
+            x="48.7307"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 48.7307 0)"
+            fill="#9581FF"
+        />
+        <rect x="7.76367" y="23.2539" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="7.76367" y="23.2539" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="18.9885" y="23.2539" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="30.2131" y="23.2539" width="6.91969" height="5.38136" rx="2.69068" fill="#9581FF" />
+        <rect x="41.438" y="23.2539" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="7.76367" y="31.8633" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="18.9885" y="31.8633" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="30.2131" y="31.8633" width="6.91969" height="5.38136" rx="2.69068" fill="#413969" />
+        <rect x="41.438" y="31.8633" width="6.91969" height="5.38136" rx="2.69068" fill="#413969" />
+        <rect x="7.76367" y="40.4746" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="18.9885" y="40.4746" width="6.91969" height="5.38136" rx="2.69068" fill="#B9ABFF" />
+        <rect x="30.2131" y="40.4746" width="6.91969" height="5.38136" rx="2.69068" fill="#413969" />
+        <rect x="41.438" y="40.4746" width="6.91969" height="5.38136" rx="2.69068" fill="#413969" />
+        <path
+            d="M64 25.6547L42.6874 51.2686L28.26 39.2455L32.1251 34.6063L41.9098 42.761L59.3582 21.793L64 25.6547Z"
+            fill="#9581FF"
+            className="meeting-icon-check"
+        />
+    </svg>
+);
 
 interface ScheduleMeetingModalProps {
     open: boolean;
@@ -142,12 +209,10 @@ export const ScheduleMeetingRecapModal = ({
                     style={{ '--max-w-custom': '35rem' }}
                 >
                     <div className="text-center">
-                        <img
-                            className="w-custom h-custom mb-5"
-                            src={scheduleIcon}
-                            alt={isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
-                            style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
-                        />
+                        <SvgAddedIcon className={!isEdit ? 'meeting-icon--added' : undefined} />
+                        <span className="sr-only">
+                            {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
+                        </span>
                     </div>
                     <div className="text-4xl mb-5 w-full text-center text-wrap-balance text-break">{meetingName}</div>
                 </h1>
