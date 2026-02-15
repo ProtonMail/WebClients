@@ -47,7 +47,6 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
     const api = createApi({
         config,
         defaultHeaders,
-        sendLocaleHeaders: true,
     });
     const authentication = bootstrap.createAuthentication({ mode: 'standalone' });
     bootstrap.init({ config, authentication, locales });
