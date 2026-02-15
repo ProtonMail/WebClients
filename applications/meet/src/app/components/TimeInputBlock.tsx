@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
@@ -25,7 +27,7 @@ export const TimeInputBlock = ({
     setValues: (values: FormValues) => void;
     showTimezones: boolean;
     timeOptions: { value: string; label: string }[];
-    timeZoneOptions: { value: string; label: string }[];
+    timeZoneOptions: { value: string; label: string; formattedText: ReactNode }[];
     timeFormat: SETTINGS_TIME_FORMAT;
     showIcon?: boolean;
     editableTimeZone?: boolean;
@@ -39,7 +41,10 @@ export const TimeInputBlock = ({
                 style={{ color: 'var(--interaction-weak-major-3)' }}
             />
             <div className="flex-1 flex flex-column *:min-size-auto md:flex-row flex-nowrap items-center gap-2">
-                <div className="flex-1 flex flex-nowrap items-center gap-2">
+                <div
+                    className={clsx('flex-1 flex flex-nowrap items-center gap-2 ', showTimezones && 'grow-custom')}
+                    style={{ '--grow-custom': '1.25' }}
+                >
                     <DateInputTwo
                         id={`${name}Date`}
                         name={`${name}Date`}
@@ -71,12 +76,12 @@ export const TimeInputBlock = ({
                 {showTimezones && (
                     <SearchableSelect
                         name="timeZone"
-                        className="w-full flex-1"
+                        className="w-full flex-1 select-two-timezone-select"
                         onChange={(item: { value: string }) => {
                             setValues({ ...values, timeZone: item.value as string });
                         }}
                         value={values.timeZone}
-                        dropdownClassName="create-container-dropdown py-2"
+                        dropdownClassName="create-container-dropdown select-two-timezone-dropdown py-2"
                         search={true}
                         originalPlacement="bottom-start"
                         availablePlacements={['bottom-start']}
@@ -94,7 +99,7 @@ export const TimeInputBlock = ({
                                 title={option.label}
                                 optionWrapperClassName="px-2"
                             >
-                                {option.label}
+                                {option.formattedText}
                             </Option>
                         ))}
                     </SearchableSelect>

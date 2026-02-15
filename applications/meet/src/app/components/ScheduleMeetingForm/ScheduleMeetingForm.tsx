@@ -43,7 +43,11 @@ import { combineDateAndTime, getInitialValues, validate } from './utils';
 import './ScheduleMeetingForm.scss';
 
 const minutes = ['00', '15', '30', '45'];
-const timeZoneSelectOptions = getTimeZoneOptions().map((option) => ({ label: option.text, value: option.value }));
+const timeZoneSelectOptions = getTimeZoneOptions().map((option) => ({
+    label: option.text,
+    value: option.value,
+    formattedText: option.formattedText,
+}));
 
 interface ScheduleMeetingFormProps {
     open: boolean;
