@@ -26,11 +26,15 @@ im.$media-expressions: $media-expressions;
 	.search-input {
 		border: 1px solid var(--border-norm) !important;
 		background: var(--background-card);
+		box-shadow: none !important;
 
-		&:hover,
+		&:hover {
+			background: var(--background-weak);
+		}
+
 		&:active,
-		&:focus {
-			background: var(--interaction-default-hover);
+		&:focus-within {
+			background: var(--background-card) !important;
 		}
 	}
 
