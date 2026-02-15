@@ -33,7 +33,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
-import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
+import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.svg';
 
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
