@@ -7928,6 +7928,18 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ]
     },
     "PGP key encryption warning": {
