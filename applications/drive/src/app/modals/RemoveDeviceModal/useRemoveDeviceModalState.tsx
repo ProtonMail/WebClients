@@ -1,37 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
+import { getDrive } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
+import { getDeviceName } from '../../utils/sdk/getNodeName';
 
 export const deviceNameValidator = (value: string, deviceName: string) =>
     value !== deviceName ? c('Error').t`Device name does not match` : '';
 
 export type UseRemoveDeviceInnerProps = {
     deviceUid: string;
-    deviceName: string;
+    drive?: ProtonDriveClient;
     onClose?: () => void;
-    onSubmit?: () => void;
 };
 export type UseRemoveDeviceModalProps = ModalStateProps & UseRemoveDeviceInnerProps;
 
 export const useRemoveDeviceModalState = ({
     deviceUid,
-    deviceName,
+    drive = getDrive(),
     onClose,
-    onSubmit,
     ...modalProps
 }: UseRemoveDeviceModalProps) => {
-    const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
     const [submitting, withSubmitting] = useLoading();
-
+    const [deviceName, setDeviceName] = useState<string>('');
     const { validator, onFormSubmit } = useFormErrors();
     const [model, setModel] = useState(() => {
         return {
@@ -39,13 +40,24 @@ export const useRemoveDeviceModalState = ({
         };
     });
 
+    useEffect(() => {
+        const getDeviceFromUid = async () => {
+            const device = await getDeviceByUid(deviceUid);
+            if (device) {
+                setDeviceName(getDeviceName(device));
+            }
+        };
+
+        void getDeviceFromUid();
+    }, [deviceUid, drive]);
+
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
             return;
         }
         const successNotificationText = c('Notification').t`Device removed`;
         const unhandledErrorNotificationText = c('Notification').t`Failed to remove device`;
-        onSubmit?.();
+        await getBusDriver().emit({ type: BusDriverEventName.REMOVED_DEVICES, deviceUids: [deviceUid] });
         await drive
             .deleteDevice(deviceUid)
             .then(async () => {

@@ -6,7 +6,6 @@ import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemCo
 import { useRemoveDeviceModal } from '../../../modals/RemoveDeviceModal';
 import { useRenameDeviceModal } from '../../../modals/RenameDeviceModal';
 import { getDeviceByUid } from '../../../utils/sdk/getDeviceByUid';
-import { getDeviceName } from '../../../utils/sdk/getNodeName';
 
 export function DevicesItemContextMenu({
     selectedDevicesUid,
@@ -19,7 +18,7 @@ export function DevicesItemContextMenu({
     selectedDevicesUid: string[];
 }) {
     const { renameDeviceModal, showRenameDeviceModal } = useRenameDeviceModal();
-    const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
+    const { removeDeviceModal, showRemoveDeviceModal } = useRemoveDeviceModal();
     const isOnlyOneItem = selectedDevicesUid.length === 1;
 
     const onRename = async () => {
@@ -32,10 +31,7 @@ export function DevicesItemContextMenu({
     const onRemove = async () => {
         const device = await getDeviceByUid(selectedDevicesUid[0]);
         if (device) {
-            showRemoveDeviceModal({
-                deviceUid: device.uid,
-                deviceName: getDeviceName(device),
-            });
+            showRemoveDeviceModal({ deviceUid: device.uid });
         }
     };
 
