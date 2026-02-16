@@ -1,35 +1,58 @@
-import { Badge } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Badge.mdx';
+import { Badge, CLASSNAMES } from '@proton/components/components/badge/Badge';
+import type { BadgeType } from '@proton/components/components/badge/Badge';
 
-export default {
-    component: Badge,
+const meta: Meta<typeof Badge> = {
     title: 'Components/Badge',
+    args: {
+        children: 'Badge',
+        type: 'primary',
+    },
+    component: Badge,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component: 'Generally used to display a badge with a type and a tooltip.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Badge>;
+
+export const Default: Story = {};
+
+export const AllTypes: Story = {
+    render: () => (
+        <div className="flex flex-col gap-8 m-10">
+            {Object.keys(CLASSNAMES).map((type) => (
+                <Badge key={type} type={type as BadgeType}>
+                    {type}
+                </Badge>
+            ))}
+        </div>
+    ),
+};
+
+export const WithTooltip: Story = {
+    args: {
+        tooltip: 'Boo!',
+        tooltipOpenDelay: 100,
     },
 };
 
-export const Basic = () => <Badge type="primary">Primary</Badge>;
+export const WithUrl: Story = {
+    args: {
+        url: 'https://www.proton.ch',
+    },
+};
 
-export const Colors = () => (
-    <>
-        <Badge>Badge</Badge>
-        <Badge type="primary">Primary</Badge>
-        <Badge type="error">Error</Badge>
-        <Badge type="success">Success</Badge>
-        <Badge type="origin">Origin</Badge>
-        <Badge type="light">Origin</Badge>
-        <Badge type="warning">Warning</Badge>
-    </>
-);
-
-export const WithClassName = () => <Badge className="text-bold">Bold</Badge>;
-
-export const WithTooltip = () => (
-    <Badge tooltip="Boo!" type="warning">
-        Hover me
-    </Badge>
-);
+export const WithClassName: Story = {
+    args: {
+        className: 'text-bold',
+    },
+};

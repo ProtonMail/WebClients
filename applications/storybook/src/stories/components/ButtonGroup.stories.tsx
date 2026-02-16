@@ -1,183 +1,74 @@
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonGroup, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import { ButtonLikeShapeEnum, ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 
-import mdx from './ButtonGroup.mdx';
+const Buttons = ['One', 'Two', 'Three'].map((text) => <Button key={text}>{text}</Button>);
 
-export default {
+const meta: Meta<typeof ButtonGroup> = {
+    title: 'Components/ButtonGroup',
+    args: {
+        children: Buttons,
+        color: 'weak',
+        shape: 'outline',
+        size: 'medium',
+        pill: false,
+        removeBackgroundColorOnGroup: false,
+        separators: true,
+        individualButtonColor: false,
+    },
     component: ButtonGroup,
-    title: 'Components/Button Group',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component: 'Generally used to display a group of buttons.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ButtonGroup>;
+
+export const Default: Story = {};
+
+export const AllPills: Story = {
+    args: {
+        pill: true,
     },
 };
 
-export const BasicGroup = ({ ...args }) => {
-    const [selectedButton, setSelectedButton] = useState(2);
-
-    const buttons = [
-        {
-            text: 'Bulbasaur',
-        },
-        {
-            text: 'Another',
-        },
-        {
-            text: 'A third button',
-        },
-        {
-            text: 'How about one more',
-        },
-        {
-            text: 'Delete',
-            color: 'danger' as const,
-        },
-    ];
-
-    return (
-        <ButtonGroup {...args} individualButtonColor={true}>
-            {buttons.map(({ text, color }, i) => {
-                return (
-                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)} color={color}>
-                        {text}
-                    </Button>
-                );
-            })}
-        </ButtonGroup>
-    );
-};
-
-BasicGroup.args = {};
-
-type ButtonGroupProps = React.ComponentProps<typeof ButtonGroup>;
-
-const shapes: Required<ButtonGroupProps>['shape'][] = ['solid', 'outline', 'ghost'];
-
-const colors: Required<ButtonGroupProps>['color'][] = ['norm', 'weak'];
-
-const sizes: Required<ButtonGroupProps>['size'][] = ['small', 'medium', 'large'];
-
-const buttonContainerClassName = 'flex flex-1 items-center justify-center border';
-
-export const Sandbox = () => {
-    const [selectedShape, setSelectedShape] = useState<Required<ButtonGroupProps>['shape']>('solid');
-    const [selectedColor, setSelectedColor] = useState<Required<ButtonGroupProps>['color']>('weak');
-    const [selectedSize, setSelectedSize] = useState<Required<ButtonGroupProps>['size']>('medium');
-    const [selectedButton, setSelectedButton] = useState(0);
-
-    const buttons = [
-        {
-            text: selectedShape,
-        },
-        {
-            text: selectedColor,
-        },
-        {
-            text: selectedSize,
-        },
-    ];
-
-    const buttonGroup = (
-        <ButtonGroup shape={selectedShape} color={selectedColor} size={selectedSize}>
-            {buttons.map(({ text }, i) => {
-                return (
-                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)}>
-                        {text}
-                    </Button>
-                );
-            })}
-        </ButtonGroup>
-    );
-
-    return (
-        <div className="flex *:min-size-auto flex-column md:flex-row py-7">
-            <div className="flex flex-column flex-nowrap md:flex-1">
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Color</strong>
-                    <RadioGroup
-                        name="selected-color"
-                        onChange={(v) => setSelectedColor(v)}
-                        value={selectedColor}
-                        options={colors.map((color) => ({ value: color, label: color }))}
-                    />
-                </div>
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Shape</strong>
-                    <RadioGroup
-                        name="selected-shape"
-                        onChange={(v) => setSelectedShape(v)}
-                        value={selectedShape}
-                        options={shapes.map((shape) => ({ value: shape, label: shape }))}
-                    />
-                </div>
-                <div className="mr-8 mb-4">
-                    <strong className="block mb-4">Size</strong>
-                    <RadioGroup
-                        name="selected-size"
-                        onChange={(v) => setSelectedSize(v)}
-                        value={selectedSize}
-                        options={sizes.map((size) => ({ value: size, label: size }))}
-                    />
-                </div>
-            </div>
-            <div className={buttonContainerClassName}>{buttonGroup}</div>
-        </div>
-    );
-};
-
-export const Variants = () => {
-    const [selectedButton, setSelectedButton] = useState(0);
-
-    const buttons = [
-        {
-            text: 'Lorem',
-        },
-        {
-            text: 'Ipsum',
-        },
-    ];
-
-    return (
-        <Table className="color-norm">
-            <TableHeader>
-                <TableRow>
-                    <TableCell>
-                        <></>
-                    </TableCell>
-                    {colors.map((color) => (
-                        <TableCell key={color} scope="col">
-                            {color}
-                        </TableCell>
-                    ))}
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {shapes.map((shape) => (
-                    <TableRow key={shape}>
-                        <TableCell>{shape}</TableCell>
-                        {colors.map((color) => (
-                            <TableCell key={color}>
-                                <ButtonGroup shape={shape} color={color} pill>
-                                    {buttons.map(({ text }, i) => {
-                                        return (
-                                            <Button
-                                                key={i}
-                                                selected={selectedButton === i}
-                                                onClick={() => setSelectedButton(i)}
-                                            >
-                                                {text}
-                                            </Button>
-                                        );
-                                    })}
-                                </ButtonGroup>
-                            </TableCell>
+export const AllSizes: Story = {
+    render: () => (
+        <>
+            {Object.values(ButtonLikeSizeEnum).map((size) => (
+                <div className="flex flex-col gap-6 m-6" key={size}>
+                    <ButtonGroup key={size} color="norm" size={size}>
+                        {[size, size, size].map((text) => (
+                            <Button key={text}>{text}</Button>
                         ))}
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    );
+                    </ButtonGroup>
+                </div>
+            ))}
+        </>
+    ),
+};
+
+export const AllShapes: Story = {
+    render: () => (
+        <>
+            {Object.values(ButtonLikeShapeEnum).map((shape) => (
+                <div className="flex flex-col gap-6 m-6" key={shape}>
+                    <ButtonGroup key={shape} color="norm" shape={shape}>
+                        {[shape, shape, shape].map((text) => (
+                            <Button key={text}>{text}</Button>
+                        ))}
+                    </ButtonGroup>
+                </div>
+            ))}
+        </>
+    ),
 };

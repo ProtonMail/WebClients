@@ -2,8 +2,7 @@ import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 import { Children, Fragment, cloneElement, forwardRef, isValidElement } from 'react';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import type { ThemeColor } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
@@ -22,7 +21,7 @@ export interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'color'> {
     removeBackgroundColorOnGroup?: Boolean;
 }
 
-const ButtonGroup = forwardRef<HTMLDivElement, Props>(
+export const ButtonGroup = forwardRef<HTMLDivElement, Props>(
     (
         {
             children,

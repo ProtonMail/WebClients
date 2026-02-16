@@ -1,26 +1,122 @@
-import { Canvas, ColorItem, ColorPalette, Meta, Primary, Story } from '@storybook/addon-docs/blocks';
-
-import { Alert } from '@proton/components';
+import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Core Concepts/Colors" />
 
 # Colors
 
-<Alert type="warning">
-    This page is only intended to give a overview of all colors in the different themes. Not all colors are to be used
-    in development. Please refer to <a href="?path=/docs/core-concepts-theming-taxonomy--page">theming taxonomy</a> for
-    usage of css variables and <a href="?path=/docs/css-utilities-colors--background-colors">color helpers</a> for an
-    over of available CSS utility classes.
-</Alert>
+This page is only intended to give a overview of all colors in the different themes. Not all colors are to be used in development. Please refer to [theming taxonomy](?path=/docs/core-concepts-theming-taxonomy--page) for usage of css variables and [color helpers](?path=/docs/css-utilities-colors--background-colors) for an over of available CSS utility classes.
 
-## Base Colors On Standard Background
-
-<Story id="core-concepts-colors--base-standard" />
-
-## Base Colors On Prominent Background
-
-<Story id="core-concepts-colors--base-prominent" />
-
-<div class="hidden">
-    <Primary />
-</div>
+<ColorPalette>
+    <ColorItem
+        title="Primary"
+        subtitle="Protons primary color"
+        colors={['var(--primary)', 'var(--primary-contrast)']}
+    />
+    <ColorItem
+        title="Background"
+        subtitle="Theme background colors"
+        colors={[
+            'var(--background-norm)',
+            'var(--background-weak)',
+            'var(--background-strong)',
+            'var(--background-invert)',
+        ]}
+    />
+    <ColorItem
+        title="Text"
+        subtitle="Theme text colors"
+        colors={[
+            'var(--text-norm)',
+            'var(--text-weak)',
+            'var(--text-hint)',
+            'var(--text-disabled)',
+            'var(--text-invert)',
+        ]}
+    />
+    <ColorItem title="Border" subtitle="Theme border colors" colors={['var(--border-norm)', 'var(--border-weak)']} />
+    <hr />
+    <ColorItem
+        title="Signal Danger"
+        subtitle=""
+        colors={[
+            'var(--signal-danger-minor-2)',
+            'var(--signal-danger-minor-1)',
+            'var(--signal-danger)',
+            'var(--signal-danger-major-1)',
+            'var(--signal-danger-major-2)',
+            'var(--signal-danger-major-3)',
+            'var(--signal-danger-contrast)',
+        ]}
+    />
+    <ColorItem
+        title="Signal Warning"
+        subtitle=""
+        colors={[
+            'var(--signal-warning-minor-2)',
+            'var(--signal-warning-minor-1)',
+            'var(--signal-warning)',
+            'var(--signal-warning-major-1)',
+            'var(--signal-warning-major-2)',
+            'var(--signal-warning-major-3)',
+            'var(--signal-warning-contrast)',
+        ]}
+    />
+    <ColorItem
+        title="Signal Success"
+        subtitle=""
+        colors={[
+            'var(--signal-success-minor-2)',
+            'var(--signal-success-minor-1)',
+            'var(--signal-success)',
+            'var(--signal-success-major-1)',
+            'var(--signal-success-major-2)',
+            'var(--signal-success-major-3)',
+            'var(--signal-success-contrast)',
+        ]}
+    />
+    <ColorItem
+        title="Signal Info"
+        subtitle=""
+        colors={[
+            'var(--signal-info-minor-2)',
+            'var(--signal-info-minor-1)',
+            'var(--signal-info)',
+            'var(--signal-info-major-1)',
+            'var(--signal-info-major-2)',
+            'var(--signal-info-major-3)',
+            'var(--signal-info-contrast)',
+        ]}
+    />
+    <hr />
+    <ColorItem
+        title="Interaction Default"
+        subtitle=""
+        colors={['var(--interaction-default)', 'var(--interaction-default-hover)', 'var(--interaction-default-active)']}
+    />
+    <ColorItem
+        title="Interaction Norm"
+        subtitle=""
+        colors={[
+            'var(--interaction-norm-minor-2)',
+            'var(--interaction-norm-minor-1)',
+            'var(--interaction-norm)',
+            'var(--interaction-norm-major-1)',
+            'var(--interaction-norm-major-2)',
+            'var(--interaction-norm-major-3)',
+            'var(--interaction-norm-contrast)',
+        ]}
+    />
+    <ColorItem
+        title="Interaction Weak"
+        subtitle=""
+        colors={[
+            'var(--interaction-weak-minor-2)',
+            'var(--interaction-weak-minor-1)',
+            'var(--interaction-weak)',
+            'var(--interaction-weak-major-1)',
+            'var(--interaction-weak-major-2)',
+            'var(--interaction-weak-major-3)',
+            'var(--interaction-weak-contrast)',
+        ]}
+    />
+</ColorPalette>
