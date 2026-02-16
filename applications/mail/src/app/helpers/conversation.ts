@@ -31,7 +31,15 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation | undefined) => conversation?.NumAttachments || 0;
+export const getNumAttachments = (conversation: Conversation | undefined) => {
+    if (conversation?.NumAttachments) {
+        return conversation.NumAttachments;
+    } else if (conversation?.AttachmentInfo) {
+        return Object.values(conversation?.AttachmentInfo).reduce((total, { attachment }) => total + attachment, 0);
+    } else {
+        return 0;
+    }
+};
 
 export const hasAttachments = (conversation: Conversation | undefined) => getNumAttachments(conversation) > 0;
 

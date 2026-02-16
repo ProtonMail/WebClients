@@ -14,6 +14,7 @@ import {
     getSender,
     getRecipients as messageGetRecipients,
     hasAttachments as messageHasAttachments,
+    numAttachments as messageNumAttachments,
 } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import diff from '@proton/utils/diff';
@@ -160,7 +161,7 @@ export const hasAttachments = (element: Element) =>
     isElementMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
 
 export const getNumAttachments = (element: Element) =>
-    isElementMessage(element) ? element?.NumAttachments || 0 : conversationNumAttachments(element);
+    isElementMessage(element) ? messageNumAttachments(element) : conversationNumAttachments(element);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
