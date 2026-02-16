@@ -15,7 +15,6 @@ import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
 import { getContactNameAndEmail } from './helpers/getContactNameAndEmail';
 
 interface Props {
-    linkId: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
     members: DirectMember[];

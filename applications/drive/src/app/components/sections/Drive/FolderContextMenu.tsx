@@ -8,12 +8,12 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
@@ -60,7 +60,7 @@ export function FolderContextMenu({
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -86,7 +86,7 @@ export function FolderContextMenu({
             {createFolderModal}
             {createFileModal}
             {fileSharingModal}
-            {linkSharingModal}
+            {sharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 {!isActiveLinkReadOnly && (
                     <CreateNewFolderButton
@@ -136,7 +136,7 @@ export function FolderContextMenu({
                             close={close}
                             shareId={shareId}
                             showFileSharingModal={showFileSharingModal}
-                            showLinkSharingModal={showLinkSharingModal}
+                            showSharingModal={showSharingModal}
                         />
                     </>
                 )}
@@ -146,9 +146,8 @@ export function FolderContextMenu({
                         <ShareLinkButton
                             volumeId={activeFolder.volumeId}
                             close={close}
-                            shareId={activeFolder.shareId}
                             linkId={activeFolder.linkId}
-                            showLinkSharingModal={showLinkSharingModal}
+                            showSharingModal={showSharingModal}
                         />
                     </>
                 )}

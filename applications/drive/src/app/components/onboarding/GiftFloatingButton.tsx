@@ -23,9 +23,9 @@ import clsx from '@proton/utils/clsx';
 
 import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useFileUploadInput } from '../../store';
 import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
-import { useLinkSharingModal } from '../modals/ShareLinkModal/ShareLinkModal';
 import useChecklist from './useChecklist';
 
 import './GiftFloatingButton.scss';
@@ -102,7 +102,7 @@ function WelcomeActionsSpotlight({
     const [showPopup, setShowPopup] = useLocalState(true, 'welcome-actions-spotlight');
     const [showList, setShowList] = useState(false);
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
 
     const toggleOpen = () => {
         setShowPopup(false); // Any click will remove automatic popup.
@@ -141,7 +141,7 @@ function WelcomeActionsSpotlight({
                 completedActions={completedActions}
                 onActionDone={toggleOpen}
                 showFileSharingModal={showFileSharingModal}
-                showLinkSharingModal={showLinkSharingModal}
+                showSharingModal={showSharingModal}
             />
         </div>
     );
@@ -156,7 +156,7 @@ function WelcomeActionsSpotlight({
                 icon={showList ? 'cross' : 'gift'}
             />
             {fileSharingModal}
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 }
@@ -203,12 +203,12 @@ function WelcomeActions({
     completedActions,
     onActionDone,
     showFileSharingModal,
-    showLinkSharingModal,
+    showSharingModal,
 }: {
     completedActions: ChecklistKey[];
     onActionDone: () => void;
     showFileSharingModal: ReturnType<typeof useFileSharingModal>[1];
-    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
 }) {
     const getIconName = (actionName: ChecklistKey, iconName: IconName) => {
         return completedActions.includes(actionName) ? 'checkmark' : iconName;
@@ -248,7 +248,7 @@ function WelcomeActions({
                 title={c('Label').t`Share a file, folder, or album`}
                 text={c('Info').t`It’s easy and secure`}
                 action={() => {
-                    void showFileSharingModal({ shareId: activeFolder.shareId, showLinkSharingModal });
+                    void showFileSharingModal({ shareId: activeFolder.shareId, showSharingModal });
                     onActionDone();
                 }}
             />

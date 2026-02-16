@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { type DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
+import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -20,7 +22,6 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import useOpenPreview from '../../useOpenPreview';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
@@ -48,7 +49,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     parentLinkId: string;
     isShared?: boolean;
     isAdmin: boolean;
-    showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
+    showLinkSharingModal?: ReturnType<typeof useSharingModal>['showSharingModal'];
     volumeId: string;
 }
 
@@ -95,15 +96,14 @@ function Drive({ activeFolder, folderView }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
-    const { activeShareId } = useActiveShare();
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
-        [items, selectionControls!.selectedItemIds]
+        () => getSelectedItems(items, selectionControls?.selectedItemIds || []),
+        [items, selectionControls?.selectedItemIds]
     );
 
     const openPreview = useOpenPreview();
@@ -113,15 +113,11 @@ function Drive({ activeFolder, folderView }: Props) {
         id: item.linkId,
         // TODO: Improve this, we should not pass showLinkSharingModal here
         onShareClick: item.isShared
-            ? () =>
-                  showLinkSharingModal({
-                      volumeId: item.volumeId,
-                      linkId: item.linkId,
-                      shareId: activeShareId,
-                  })
+            ? () => showSharingModal({ nodeUid: generateNodeUid(item.volumeId, item.linkId) })
             : undefined,
         isAdmin,
     }));
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */
@@ -266,7 +262,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 onViewContextMenu={browserContextMenu.handleContextMenu}
                 getDragMoveControls={folderView.isActiveLinkReadOnly ? undefined : getDragMoveControls}
             />
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 }

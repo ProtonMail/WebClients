@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom-v5-compat'
 import { c } from 'ttag';
 
 import { FilePreview, Loader, NavigationControl } from '@proton/components';
-import { getDrive, splitNodeUid } from '@proton/drive';
+import { generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -12,12 +12,12 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import { DeprecatedSignatureIcon as SignatureIcon } from '../components/SignatureIcon';
 import { useDetailsModal } from '../components/modals/DetailsModal';
-import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import { useFlagsDriveSDKPreview } from '../flags/useFlagsDriveSDKPreview';
 import { useFlagsDriveSheet } from '../flags/useFlagsDriveSheet';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useDriveNavigation from '../hooks/drive/useNavigate';
+import { useSharingModal } from '../modals/SharingModal/SharingModal';
 import { Preview } from '../modals/preview';
 import { useActions, useFileView } from '../store';
 import { useOpenInDocs } from '../store/_documents';
@@ -97,7 +97,7 @@ function PreviewContainerDeprecated() {
     } = useDriveNavigation();
     const { setFolder } = useActiveShare();
     const [detailsModal, showDetailsModal] = useDetailsModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { query: lastQuery } = useSearchResults();
     const { saveFile } = useActions();
 
@@ -134,7 +134,7 @@ function PreviewContainerDeprecated() {
     // Open sharing modal through URL parameter - needed for Proton Docs
     useEffect(() => {
         if (isShareAction && link) {
-            showLinkSharingModal({ volumeId: link.volumeId, shareId, linkId });
+            showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId) });
         }
     }, []);
 
@@ -267,7 +267,7 @@ function PreviewContainerDeprecated() {
                 onShare={
                     !isAdmin || isLinkLoading || !link || !!link?.trashed
                         ? undefined
-                        : () => showLinkSharingModal({ volumeId: link.volumeId, shareId, linkId })
+                        : () => showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId) })
                 }
                 onOpenInDocs={
                     openInDocs.canOpen
@@ -295,7 +295,7 @@ function PreviewContainerDeprecated() {
                 sheetsEnabled={sheetsEnabled}
             />
             {detailsModal}
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 }

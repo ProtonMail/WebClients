@@ -11,9 +11,9 @@ import generateUID from '@proton/utils/generateUID';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useActions } from '../../../store';
 
 type Item = {
@@ -39,7 +39,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const { renameModal, showRenameModal } = useRenameModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;
     const { trashLinks } = useActions();
@@ -59,7 +59,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
-            action: () => showLinkSharingModal({ volumeId, shareId, linkId: selectedLinkIds[0] }),
+            action: () => showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]) }),
         },
         {
             hidden: !isEditor,
@@ -143,7 +143,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             {detailsModal}
             {moveToFolderModal}
             {renameModal}
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 };

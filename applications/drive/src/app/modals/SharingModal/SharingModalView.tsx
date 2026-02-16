@@ -32,7 +32,6 @@ export interface SharingModalViewProps extends ModalStateProps {
 
     name: string;
     mediaType?: string;
-    linkId: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
     directMembers: DirectMember[];
@@ -74,7 +73,6 @@ export const SharingModalView = ({
     isLoading,
     name,
     mediaType,
-    linkId,
     ownerEmail,
     ownerDisplayName,
     directMembers,
@@ -222,7 +220,6 @@ export const SharingModalView = ({
                             <p className="color-weak my-4">{c('Info').t`Who has access`}</p>
                             <DirectSharingListing
                                 viewOnly={isDirectSharingDisabled}
-                                linkId={linkId}
                                 isLoading={isLoading}
                                 ownerEmail={ownerEmail}
                                 ownerDisplayName={ownerDisplayName}

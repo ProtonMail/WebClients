@@ -18,6 +18,7 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -27,7 +28,7 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type {
     OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
@@ -312,7 +313,7 @@ const ToolbarRightActionsAlbumGallery = ({
     isAlbumPhotosLoading,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { viewportWidth } = useActiveBreakpoint();
     const showIconOnly = !viewportWidth['>=large'];
     const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
@@ -397,12 +398,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     showIconOnly={showIconOnly}
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
-                        showLinkSharingModal({
-                            volumeId: album.volumeId,
-                            shareId: album.rootShareId,
-                            linkId: album.linkId,
-                            isAlbum: true,
-                        });
+                        showSharingModal({ nodeUid: generateNodeUid(album.volumeId, album.linkId) });
                     }}
                 />
             )}
@@ -422,7 +418,7 @@ const ToolbarRightActionsAlbumGallery = ({
                 showDeleteAlbumButton={album.permissions.isAdmin && !driveAlbumsDisabled}
                 showLeaveAlbumButton={!album.permissions.isOwner && !driveAlbumsDisabled}
             />
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 };

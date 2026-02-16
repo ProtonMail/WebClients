@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -17,7 +16,7 @@ import { isCancellable, isRetryable } from './utils/transferStatus';
 export const useTransferManagerActions = () => {
     const downloadManager = DownloadManager.getInstance();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const [sharingModal, showSharingModal] = useSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { getUploadItem } = useUploadQueueStore(useShallow((state) => ({ getUploadItem: state.getItem })));
     const { clearDownloads, updateDownloadItem, getDownloadItem } = useDownloadManagerStore(
         useShallow((state) => {
@@ -110,19 +109,10 @@ export const useTransferManagerActions = () => {
         });
     };
 
-    const share = async (
-        entry: TransferManagerEntry,
-        /** @deprecated: Should be removed once everything is migrated to sdk */
-        deprecatedShareId: string
-    ) => {
+    const share = async (entry: TransferManagerEntry) => {
         const uploadedItem = getUploadItem(entry.id);
         if (uploadedItem && uploadedItem.nodeUid) {
-            const { nodeId, volumeId } = splitNodeUid(uploadedItem.nodeUid);
-            showSharingModal({
-                volumeId: volumeId,
-                linkId: nodeId,
-                shareId: deprecatedShareId,
-            });
+            showSharingModal({ nodeUid: uploadedItem.nodeUid });
         }
     };
 

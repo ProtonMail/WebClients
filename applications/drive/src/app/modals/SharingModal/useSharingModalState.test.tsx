@@ -4,7 +4,8 @@ import { when } from 'jest-when';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import { MemberRole, generateNodeUid, splitInvitationUid, useDrive } from '@proton/drive/index';
+import { MemberRole, generateNodeUid, splitInvitationUid, splitNodeUid } from '@proton/drive/index';
+import { getBusDriver } from '@proton/drive/internal/BusDriver';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,23 +13,31 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
-import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { type DirectMember, MemberType } from './interfaces';
 import { useSharingModalState } from './useSharingModalState';
 
 const mockVolumeId = 'volume-123';
-const mockShareId = 'share-456';
 const mockLinkId = 'link-789';
+const mockUid = `${mockVolumeId}~${mockLinkId}`;
+const mockShareId = 'share-456';
 const mockNodeUid = 'volume-123~link-789';
 const mockInvitationUid = 'invitation-uid-456';
 const mockInvitationId = 'invitation-id-789';
 const mockEmail = 'test@example.com';
 
+const mockDrive = {
+    getSharingInfo: jest.fn(),
+    getNode: jest.fn(),
+    unshareNode: jest.fn(),
+    shareNode: jest.fn(),
+    resendInvitation: jest.fn(),
+};
+
 const mockProps = {
-    volumeId: mockVolumeId,
+    nodeUid: mockUid,
     shareId: mockShareId,
-    linkId: mockLinkId,
+    drive: mockDrive as any,
     onClose: jest.fn(),
     open: true,
     onExit: jest.fn(),
@@ -85,11 +94,10 @@ const mockUser = {
 const mockedCreateNotification = jest.fn();
 const mockedUseUser = jest.mocked(useUser);
 const mockedUseNotifications = jest.mocked(useNotifications);
-const mockedUseDrive = jest.mocked(useDrive);
 const mockedGenerateNodeUid = jest.mocked(generateNodeUid);
 const mockedSplitInvitationUid = jest.mocked(splitInvitationUid);
+const mockedSplitNodeUid = jest.mocked(splitNodeUid);
 const mockedUseLoading = jest.mocked(useLoading);
-const mockedUseDriveEventManager = jest.mocked(useDriveEventManager);
 const mockedUseFlagsDriveDocsPublicSharing = jest.mocked(useFlagsDriveDocsPublicSharing);
 const mockedUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockedGetAppHref = jest.mocked(getAppHref);
@@ -102,8 +110,8 @@ jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');
 jest.mock('../../flags/useFlagsDriveDocsPublicSharing');
-jest.mock('../../store');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('@proton/drive/internal/BusDriver');
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
@@ -133,19 +141,7 @@ const expectedDirectMembers: DirectMember[] = [
 ];
 
 describe('useSharingModalState', () => {
-    const mockDrive = {
-        getSharingInfo: jest.fn(),
-        getNode: jest.fn(),
-        unshareNode: jest.fn(),
-        shareNode: jest.fn(),
-        resendInvitation: jest.fn(),
-    };
-    const mockInternal = {};
-    const mockEvents = {
-        pollEvents: {
-            volumes: jest.fn(),
-        },
-    };
+    const mockBusEmit = jest.fn();
 
     const mockHandleError = jest.fn();
 
@@ -154,14 +150,11 @@ describe('useSharingModalState', () => {
         mockedUseNotifications.mockReturnValue({
             createNotification: mockedCreateNotification,
         } as any);
-        mockedUseDrive.mockReturnValue({
-            drive: mockDrive,
-            internal: mockInternal,
-        } as any);
         const mockedWithLoading = jest.fn((promise) => promise);
         const mockedSetIsLoading = jest.fn();
         mockedUseLoading.mockReturnValue([false, mockedWithLoading, mockedSetIsLoading]);
-        mockedUseDriveEventManager.mockReturnValue(mockEvents as any);
+        jest.mocked(getBusDriver).mockReturnValue({ emit: mockBusEmit } as any);
+        when(mockedSplitNodeUid).calledWith(mockUid).mockReturnValue({ volumeId: mockVolumeId, nodeId: mockLinkId });
         mockedUseFlagsDriveDocsPublicSharing.mockReturnValue({
             isDocsPublicSharingEnabled: true,
         });
@@ -262,7 +255,7 @@ describe('useSharingModalState', () => {
             type: 'info',
             text: 'Access updated',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should unshare node and show notification for member', async () => {
@@ -291,7 +284,7 @@ describe('useSharingModalState', () => {
             type: 'info',
             text: 'Access for the member removed',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should update share node with direct sharing', async () => {
@@ -325,7 +318,7 @@ describe('useSharingModalState', () => {
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: '"Test File" shared',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
 
         jest.useRealTimers();
     });
@@ -373,7 +366,7 @@ describe('useSharingModalState', () => {
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: 'Public link access updated',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should update public link settings without role change', async () => {
@@ -445,7 +438,7 @@ describe('useSharingModalState', () => {
         expect(mockDrive.shareNode).toHaveBeenCalledWith(mockNodeUid, {
             publicLink: { role: MemberRole.Viewer },
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should resend invitation', async () => {
@@ -511,7 +504,7 @@ describe('useSharingModalState', () => {
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: 'The link to your item was deleted',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should expose public link properties correctly', async () => {
@@ -551,7 +544,7 @@ describe('useSharingModalState', () => {
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: 'You stopped sharing this item',
         });
-        expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
+        expect(mockBusEmit).toHaveBeenCalled();
     });
 
     it('should determine owner display name correctly when user is admin', async () => {

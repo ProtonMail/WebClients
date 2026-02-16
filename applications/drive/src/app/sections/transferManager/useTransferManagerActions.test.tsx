@@ -100,7 +100,10 @@ describe('useTransferManagerActions', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         jest.mocked(useConfirmActionModal).mockReturnValue([mockConfirmModal, mockShowConfirmModal]);
-        jest.mocked(useSharingModal).mockReturnValue([mockSharingModal, mockShowSharingModal]);
+        jest.mocked(useSharingModal).mockReturnValue({
+            sharingModal: mockSharingModal,
+            showSharingModal: mockShowSharingModal,
+        });
         jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager);
     });
 
