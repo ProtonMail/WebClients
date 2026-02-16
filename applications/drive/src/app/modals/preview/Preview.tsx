@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import { splitNodeUid } from '@proton/drive';
+import { splitNodeUid } from '@proton/drive/index';
 
-import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useSharingModal } from '../SharingModal/SharingModal';
 import type { Drive } from './interface';
 import { SignatureInformation, SignatureStatus } from './signatures';
 import { usePreviewState } from './usePreviewState';
@@ -64,7 +64,7 @@ export function Preview({
 
     const sheetsEnabled = useFlagsDriveSheet();
 
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
 
     const rootRef = useRef<HTMLDivElement>(null);
 
@@ -77,10 +77,7 @@ export function Preview({
             verifySignatures,
         });
     };
-
-    const onShare = preview.canShare
-        ? () => showLinkSharingModal({ volumeId, shareId: deprecatedContextShareId, linkId: nodeId })
-        : undefined;
+    const onShare = preview.canShare ? () => showSharingModal({ nodeUid }) : undefined;
 
     return (
         <>
@@ -123,7 +120,7 @@ export function Preview({
                 {...photos}
             />
             {detailsModal}
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 }

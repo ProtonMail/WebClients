@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
+import type { ProtonDriveClient } from '@proton/drive';
 import {
     type DegradedNode,
     MemberRole,
@@ -12,9 +13,9 @@ import {
     NodeType,
     type ShareNodeSettings,
     type ShareResult,
-    generateNodeUid,
+    getDrive,
     splitInvitationUid,
-    useDrive,
+    splitNodeUid,
 } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import useLoading from '@proton/hooks/useLoading';
@@ -25,8 +26,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
-// TODO: Remove this when events will be managed by sdk
-import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { getContactNameAndEmail } from './DirectSharing/helpers/getContactNameAndEmail';
@@ -34,11 +33,8 @@ import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
 export type SharingModalInnerProps = {
-    volumeId: string;
-    shareId: string;
-    linkId: string;
-    onPublicLinkToggle?: (enabled: boolean) => void;
-    isAlbum?: boolean;
+    nodeUid: string;
+    drive?: ProtonDriveClient;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -60,16 +56,12 @@ const getIsShared = (shareResult: ShareResult) => {
 };
 
 export const useSharingModalState = ({
-    volumeId,
-    linkId,
+    nodeUid,
+    drive = getDrive(),
     onClose,
-    onPublicLinkToggle,
-    // TODO: Remove this in favor of getting the album type from the loaded node.
-    isAlbum,
     open,
     onExit,
 }: UseSharingModalProps): SharingModalViewProps => {
-    const events = useDriveEventManager();
     const [contactEmails] = useContactEmails();
 
     const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
@@ -79,10 +71,6 @@ export const useSharingModalState = ({
     const { createNotification } = useNotifications();
 
     const [user] = useUser();
-
-    const { drive } = useDrive();
-
-    const nodeUid = useMemo(() => generateNodeUid(volumeId, linkId), [volumeId, linkId]);
 
     const [isLoading, withLoading] = useLoading();
 
@@ -96,10 +84,16 @@ export const useSharingModalState = ({
     const [parentUid, setParentUid] = useState<string | undefined>(undefined);
 
     const [mediaType, setMediaType] = useState<string | undefined>();
+    const [isAlbum, setIsAlbum] = useState<boolean | undefined>();
 
-    const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(!isAlbum);
+    const getIsPublicLinkEnabled = () => {
+        if (mediaType && isProtonDocsDocument(mediaType)) {
+            return isDocsPublicSharingEnabled;
+        }
+        return !isAlbum;
+    };
+    const isPublicLinkEnabled = getIsPublicLinkEnabled();
 
-    //TODO: We need to move that somewhere else to be able to reuse the modal with event system
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
         await getBusDriver().emit({
@@ -113,8 +107,6 @@ export const useSharingModalState = ({
             ],
         });
         setSharingInfo(shareResult);
-        //TODO: Remove when we will get rid of legacy
-        void events.pollEvents.volumes(volumeId);
     };
 
     const unshareNode = async (email: string) => {
@@ -219,11 +211,10 @@ export const useSharingModalState = ({
         }
     };
 
-    const stopSharingWithPollEvents = async () => {
+    const stopSharing = async () => {
         try {
             const updatedShareResult = await drive.unshareNode(nodeUid);
             await updateSharingState(updatedShareResult);
-            await events.pollEvents.volumes(volumeId);
             createNotification({ text: c('Notification').t`You stopped sharing this item` });
         } catch (e) {
             handleError(e, {
@@ -264,6 +255,7 @@ export const useSharingModalState = ({
                 setName(getNodeName(node));
                 setParentUid(nodeInfo.parentUid);
                 setMediaType(nodeInfo.type === NodeType.Folder ? 'Folder' : nodeInfo.mediaType);
+                setIsAlbum(nodeInfo.type === NodeType.Album);
 
                 const ownerEmail = getOwnerEmail(nodeInfo);
                 if (ownerEmail) {
@@ -278,21 +270,18 @@ export const useSharingModalState = ({
                         setOwnerDisplayName(contactName);
                     }
                 }
-
-                if (nodeInfo.mediaType && isProtonDocsDocument(nodeInfo.mediaType)) {
-                    setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
-                }
             } catch (e) {
                 handleError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, handleError, isDocsPublicSharingEnabled, nodeUid, user.DisplayName, withLoading]);
+    }, [drive, handleError, nodeUid, user.DisplayName, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
+        const { volumeId, nodeId } = splitNodeUid(nodeUid);
         textToClipboard(
-            getAppHref(`/${volumeId}/${linkId}?invitation=${invitationId}&email=${email}`, APPS.PROTONDRIVE)
+            getAppHref(`/${volumeId}/${nodeId}?invitation=${invitationId}&email=${email}`, APPS.PROTONDRIVE)
         );
         createNotification({ text: c('Info').t`Invite link copied` });
     };
@@ -327,7 +316,6 @@ export const useSharingModalState = ({
         open,
         onExit,
         onClose,
-        linkId,
         name,
         mediaType,
         ownerDisplayName,
@@ -352,8 +340,7 @@ export const useSharingModalState = ({
             updateSharePublic,
             resendInvitation,
             copyInvitationLink,
-            onPublicLinkToggle,
-            stopSharing: stopSharingWithPollEvents,
+            stopSharing,
         },
     };
 };

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { MemberRole, NodeType, getDrive, splitNodeUid } from '@proton/drive';
+import { MemberRole, NodeType, generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -20,7 +20,6 @@ import FileBrowser, {
 } from '../../../components/FileBrowser';
 import { GridViewItemWithThumbnail } from '../../../components/GridViewItemWithThumbnail';
 import { NameCell } from '../../../components/cells/NameCell';
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import { ModifiedCell, ShareOptionsCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
@@ -31,6 +30,7 @@ import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailL
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { usePreviewModal } from '../../../modals/preview';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
 import { useDocumentActions } from '../../../store';
@@ -63,7 +63,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     parentLinkId: string;
     isShared?: boolean;
     isAdmin: boolean;
-    showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
+    showLinkSharingModal?: ReturnType<typeof useSharingModal>['showSharingModal'];
     volumeId: string;
 }
 
@@ -129,7 +129,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
             getThumbnail: state.getThumbnail,
@@ -160,7 +160,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         cachedThumbnailUrl: getThumbnail(node.thumbnailId)?.sdUrl,
         // TODO:FILEBROWSER Not super ideal but to avoid passing onShareClick inside the item we need to modify FB
         onShareClick: node.isShared
-            ? () => showLinkSharingModal({ volumeId: node.volumeId, shareId: shareId, linkId: node.linkId })
+            ? () => showSharingModal({ nodeUid: generateNodeUid(node.volumeId, node.linkId) })
             : undefined,
     }));
 
@@ -345,7 +345,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 onViewContextMenu={browserContextMenu.handleContextMenu}
                 getDragMoveControls={permissions.canEdit ? getDragMoveControls : undefined}
             />
-            {linkSharingModal}
+            {sharingModal}
             {previewModal}
         </>
     );

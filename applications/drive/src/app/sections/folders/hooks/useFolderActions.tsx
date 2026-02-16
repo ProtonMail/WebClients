@@ -56,7 +56,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
@@ -128,22 +128,14 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const createShareLink = () => {
         if (selectedItems.length === 1) {
             const item = selectedItems[0];
-            showLinkSharingModal({
-                volumeId: item.volumeId,
-                shareId: item.rootShareId,
-                linkId: item.linkId,
-            });
+            showSharingModal({ nodeUid: generateNodeUid(item.volumeId, item.linkId) });
         } else {
             // In case nothing is selected we share the active folder
-            showLinkSharingModal({
-                volumeId,
-                shareId,
-                linkId,
-            });
+            showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId) });
         }
     };
 
-    const createShare = () => showFileSharingModal({ shareId, showLinkSharingModal });
+    const createShare = () => showFileSharingModal({ shareId, showSharingModal: showSharingModal });
 
     const getPublicLinkInfo = async () => {
         if (selectedItems.length === 1) {
@@ -166,7 +158,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         // Modal actions
         actions: {
             showPreviewModal: showPreview,
-            showLinkSharingModal: createShareLink,
+            showSharingModal: createShareLink,
             showDetailsModal: showDetails,
             showRenameModal: renameAction,
             showMoveModal: moveAction,
@@ -185,7 +177,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             createFolderModal,
             createFileModal,
             fileSharingModal,
-            linkSharingModal,
+            sharingModal,
             detailsModal,
             filesDetailsModal,
             revisionsModal,

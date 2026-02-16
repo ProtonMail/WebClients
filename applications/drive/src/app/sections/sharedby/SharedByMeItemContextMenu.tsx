@@ -2,10 +2,10 @@ import { useConfirmActionModal } from '@proton/components';
 
 import type { ContextMenuProps } from '../../components/FileBrowser';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
-import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import type { SharedByMeItem } from './useSharedByMe.store';
@@ -24,7 +24,8 @@ export function SharedByMeItemContextMenu({
     const { renameModal, showRenameModal } = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
+
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     return (
@@ -36,7 +37,7 @@ export function SharedByMeItemContextMenu({
                     buttonType="contextMenu"
                     showPreviewModal={showPreviewModal}
                     showDetailsModal={showDetailsModal}
-                    showLinkSharingModal={showLinkSharingModal}
+                    showSharingModal={showSharingModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     showRenameModal={showRenameModal}
                     showConfirmModal={showConfirmModal}
@@ -46,7 +47,7 @@ export function SharedByMeItemContextMenu({
             {renameModal}
             {detailsModal}
             {filesDetailsModal}
-            {linkSharingModal}
+            {sharingModal}
             {confirmModal}
         </>
     );

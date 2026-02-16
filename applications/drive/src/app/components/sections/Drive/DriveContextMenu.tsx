@@ -5,6 +5,7 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
@@ -13,7 +14,6 @@ import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal/RevisionsModal';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import {
     CopyLinkButton,
     DetailsButton,
@@ -58,7 +58,7 @@ export function DriveItemContextMenu({
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
 
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
 
@@ -79,8 +79,7 @@ export function DriveItemContextMenu({
                 {isAdmin && isOnlyOneItem && (
                     <ShareLinkButton
                         volumeId={selectedLink.volumeId}
-                        shareId={selectedLink.rootShareId}
-                        showLinkSharingModal={showLinkSharingModal}
+                        showSharingModal={showSharingModal}
                         linkId={selectedLink.linkId}
                         close={close}
                     />
@@ -121,7 +120,7 @@ export function DriveItemContextMenu({
             {detailsModal}
             {moveToFolderModal}
             {renameModal}
-            {linkSharingModal}
+            {sharingModal}
             {revisionsModal}
         </>
     );

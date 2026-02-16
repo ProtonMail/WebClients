@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { getDrive } from '@proton/drive';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -12,12 +12,12 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink, useActions } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModalDeprecated } from '../../../modals/RenameModal';
-import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     volumeId: string;
@@ -35,7 +35,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
@@ -55,7 +55,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
-            action: () => showLinkSharingModal({ volumeId, shareId, linkId: selectedLinkIds[0] }),
+            action: () => showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]) }),
         },
         {
             hidden: !isEditor,
@@ -149,7 +149,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             {detailsModal}
             {moveToFolderModal}
             {renameModal}
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 };
