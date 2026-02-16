@@ -27,6 +27,7 @@ export const notificationLogger = Logger.scope("notification");
 export const flagManagerLogger = Logger.scope("flag-manager");
 export const networkLogger = Logger.scope("network");
 export const printLogger = Logger.scope("print");
+export const ioStreamLogger = Logger.scope("io-stream");
 
 const protonDomains = ["proton.ch", "proton.me", "protonmail.com", "pm.me"];
 
