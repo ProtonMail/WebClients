@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
-import { DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
+import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -162,7 +162,10 @@ export const ProtonMeetContainer = ({
 
     const [connectionLost, setConnectionLost] = useState(false);
     const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
+    const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
+    const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
 
+    const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const accessTokenRef = useRef<string | null>(null);
 
     const {
@@ -607,12 +610,42 @@ export const ProtonMeetContainer = ({
                 originalOnTokenRefresh?.(token);
             };
 
+            // Tracks WebSocket/media connection status at the transport layer
+            // If connectionLost is true, the MLS modal takes precedence and banner is hidden
+            room.on(RoomEvent.ConnectionStateChanged, (state: ConnectionState) => {
+                const previousState = liveKitConnectionStateRef.current;
+                liveKitConnectionStateRef.current = state;
+                setLiveKitConnectionState(state);
+
+                if (
+                    state === ConnectionState.Connected &&
+                    previousState !== null &&
+                    previousState !== ConnectionState.Connected
+                ) {
+                    // Show brief "Reconnected" message only if MLS health check hasn't failed
+                    setShowReconnectedMessage(true);
+                    setTimeout(() => {
+                        setShowReconnectedMessage(false);
+                        // Don't clear state immediately - let MLS health check run first
+                        setTimeout(() => {
+                            setLiveKitConnectionState(null);
+                            liveKitConnectionStateRef.current = null;
+                        }, 1000);
+                    }, 3000);
+                } else if (state === ConnectionState.Connected) {
+                    setShowReconnectedMessage(false);
+                }
+            });
+
             room.on(RoomEvent.Disconnected, (reason?: DisconnectReason) => {
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
 
                 setJoinedRoom(false);
+                setLiveKitConnectionState(null);
+                setShowReconnectedMessage(false);
+                liveKitConnectionStateRef.current = null;
 
                 joinedRoomLoggedRef.current = false;
                 void wasmApp?.leaveMeeting();
@@ -1107,6 +1140,10 @@ export const ProtonMeetContainer = ({
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
                         isUsingTurnRelay={isUsingTurnRelay}
+                        liveKitConnectionState={liveKitConnectionState}
+                        showReconnectedMessage={showReconnectedMessage}
+                        setShowReconnectedMessage={setShowReconnectedMessage}
+                        setLiveKitConnectionState={setLiveKitConnectionState}
                     />
                 ) : (
                     <PrejoinContainer

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
 import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
-import type { Participant } from 'livekit-client';
+import { ConnectionState, type Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -46,6 +46,11 @@ interface MeetingBodyProps {
     screenShareTrack: TrackReference;
     screenShareParticipant: Participant;
     isUsingTurnRelay: boolean;
+    liveKitConnectionState: ConnectionState | null;
+    showReconnectedMessage: boolean;
+    setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
+    setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
+    isDisconnected: boolean;
 }
 
 export const MeetingBody = ({
@@ -54,6 +59,11 @@ export const MeetingBody = ({
     screenShareTrack,
     screenShareParticipant,
     isUsingTurnRelay,
+    liveKitConnectionState,
+    showReconnectedMessage,
+    setShowReconnectedMessage,
+    setLiveKitConnectionState,
+    isDisconnected,
 }: MeetingBodyProps) => {
     useMeetingInitialisation();
     const isLargerThanMd = useIsLargerThanMd();
@@ -101,6 +111,19 @@ export const MeetingBody = ({
         ? c('Info').t`${presenterName} (you) is presenting`
         : c('Info').t`${presenterName} is presenting`;
 
+    const getConnectionStatusMessage = (
+        showReconnectedMessage: boolean,
+        liveKitConnectionState: ConnectionState | null
+    ) => {
+        if (showReconnectedMessage) {
+            return c('Info').t`Reconnected successfully`;
+        }
+        if (liveKitConnectionState === ConnectionState.SignalReconnecting) {
+            return c('Info').t`Connection interrupted. Reconnecting...`;
+        }
+        return c('Info').t`Reconnecting to meeting...`;
+    };
+
     return (
         <div
             className={clsx(
@@ -115,6 +138,20 @@ export const MeetingBody = ({
                 )
                     .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
             )}
+            {!isDisconnected &&
+                (liveKitConnectionState === ConnectionState.SignalReconnecting ||
+                    liveKitConnectionState === ConnectionState.Reconnecting ||
+                    showReconnectedMessage) && (
+                    <TopBanner
+                        className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
+                        onClose={() => {
+                            setShowReconnectedMessage(false);
+                            setLiveKitConnectionState(null);
+                        }}
+                    >
+                        {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
+                    </TopBanner>
+                )}
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
                     <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
