@@ -171,7 +171,18 @@ export const requireReadReceipt = (message?: Partial<Message>) => {
 export const getListUnsubscribe = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe');
 export const getListUnsubscribePost = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe-Post');
 export const getAttachments = (message?: Partial<Message>) => message?.Attachments || [];
-export const hasAttachments = (message?: Partial<Message>) => !!(message?.NumAttachments && message.NumAttachments > 0);
+export const numAttachments = (message?: Partial<Message>) => {
+    if (message?.NumAttachments) {
+        return message.NumAttachments;
+    } else if (message?.AttachmentInfo) {
+        return Object.values(message?.AttachmentInfo).reduce((total, { attachment }) => total + attachment, 0);
+    } else {
+        return 0;
+    }
+};
+export const hasAttachments = (message?: Partial<Message>) => {
+    return numAttachments(message) > 0;
+};
 export const attachmentsSize = (message?: Partial<Message>) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
 export const getHasOnlyIcsAttachments = (attachmentInfo?: Partial<Record<MIME_TYPES, AttachmentInfo>>) => {
