@@ -1238,6 +1238,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Set password or expiration date": [
+        "Indstil adgangskode eller udløbsdato"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er end-to-end-krypteret"
       ]
     },
     "Action: Docs": {
@@ -1346,8 +1352,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5055,8 +5061,8 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "Already in this folder": [
         "Allerede i denne mappe"
@@ -5233,7 +5239,7 @@
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
@@ -6831,6 +6837,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Link copied": [
+        "Link kopieret"
+      ],
+      "owner": [
+        "ejer"
+      ],
+      "Preparing": [
+        "Forbereder"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Det ønskede element eksisterer ikke længere"
+      ],
+      "Unexpected download error": [
+        "Uventet downloadfejl"
+      ],
+      "Who has access": [
+        "Hvem har adgang"
       ]
     },
     "info": {
@@ -7575,6 +7599,27 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "admin": [
+        "administrator"
+      ],
+      "Anyone on the Internet with the link": [
+        "Enhver på internettet med linket"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slet link og fjern adgang for alle"
+      ],
+      "Not active": [
+        "Ikke aktiv"
       ]
     },
     "Label for contact group color": {
@@ -10412,7 +10457,7 @@
       ],
       "Friend joined": [
         "Ven tilmeldte sig",
-        "Venner tilmelde sig"
+        "Venner tilmeldte sig"
       ],
       "Friend subscribed": [
         "En ven abonnerede",
@@ -12843,6 +12888,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har 5 GB lagerplads"
+      ],
+      "Public link": [
+        "Offentligt link"
+      ],
+      "Public link settings": [
+        "Indstillinger for offentligt link"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Indstillinger for ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13150,6 +13204,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "accepteret"
+      ],
+      "pending": [
+        "afventer"
       ]
     }
   }

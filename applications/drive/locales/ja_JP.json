@@ -5277,7 +5277,7 @@
         "重複した鍵がアップデートされました"
       ],
       "Each code can only be used once": [
-        "各コードは1度のみ使用可能です"
+        "各コードは 1 回のみ使用可能です"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -5328,7 +5328,7 @@
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "認証コードを入力してください。${ digit }桁です。"
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -6468,7 +6468,7 @@
         "${ deviceName } を同期されたデバイスとして削除すると、このデバイスから自分の端末に追加されたすべてのフォルダーは、${ DRIVE_APP_NAME } から完全に削除されます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "は${ formattedRevisionDate }のバージョンに復元されます。他のバージョンもすべて保存されたままになります。"
