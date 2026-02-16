@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { ContextMenuProps } from '../../../components/FileBrowser';
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import {
     ContextMenuButton,
@@ -12,6 +11,7 @@ import {
     PreviewButton,
 } from '../../../components/sections/ContextMenu';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useTrashActions } from '../useTrashActions';
 import { useTrashNotifications } from '../useTrashNotifications';
@@ -47,7 +47,7 @@ export function TrashItemContextMenu({
         selectedItem.photoProperties?.albums.every((album) => album.albumLinkId !== selectedItem.parentLinkId);
 
     const hasDownloadAvailable = !selectedItems.some((item) => !item.isFile);
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { confirmModal, createDeleteConfirmModal } = useTrashNotifications();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { restoreNodes, deleteNodes } = useTrashActions();

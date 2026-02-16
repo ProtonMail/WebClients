@@ -20,7 +20,7 @@ export function SharedWithMeContextMenu({
     selectedBrowserItems: SharedWithMeListingItemUI[];
 }) {
     const [previewModal, showPreviewModal] = usePreviewModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 

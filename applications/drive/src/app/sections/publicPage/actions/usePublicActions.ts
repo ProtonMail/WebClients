@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { NodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -30,7 +30,7 @@ import { getPublicTokenAndPassword } from '../utils/getPublicTokenAndPassword';
 
 export const usePublicActions = () => {
     const [previewModal, showPreviewModal] = useDrivePublicPreviewModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -93,22 +93,12 @@ export const usePublicActions = () => {
     };
 
     const handleDetails = (uid: string) => {
-        const { volumeId, nodeId } = splitNodeUid(uid);
         const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
-        showDetailsModal({
-            drive: getPublicLinkClient(),
-            volumeId,
-            linkId: nodeId,
-            verifySignatures: isLoggedIn,
-            shareId: '',
-        });
+        showDetailsModal({ nodeUid: uid, drive: getPublicLinkClient(), verifySignatures: isLoggedIn });
     };
 
     const handleRename = (uid: string) => {
-        showRenameModal({
-            nodeUid: uid,
-            drive: getPublicLinkClient(),
-        });
+        showRenameModal({ nodeUid: uid, drive: getPublicLinkClient() });
     };
 
     const handleDelete = (uids: string[]) => {

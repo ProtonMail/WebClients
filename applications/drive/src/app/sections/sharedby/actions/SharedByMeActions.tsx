@@ -32,7 +32,7 @@ import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 interface BaseSharedByMeActionsProps {
     selectedItems: SharedByMeItem[];
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
-    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
+    showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
     showRenameModal: ReturnType<typeof useRenameModal>['showRenameModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;

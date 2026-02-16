@@ -22,7 +22,6 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { DetailsModal } from '../../modals/DetailsModal';
 import type { useLinkPath } from '../../store';
 import { type SignatureIssues, useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
@@ -448,10 +447,6 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
         </Row>
     );
 }
-
-export const useDetailsModal = () => {
-    return useModalTwoStatic(DetailsModal);
-};
 
 export const usePublicDetailsModal = () => {
     return useModalTwoStatic(PublicDetailsModal);

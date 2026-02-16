@@ -57,7 +57,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const { sharingModal, showSharingModal } = useSharingModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const { renameModal, showRenameModal } = useRenameModal();
@@ -114,12 +114,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const showDetails = () => {
         if (selectedItems.length === 1) {
             const item = selectedItems[0];
-            void showDetailsModal({
-                drive,
-                volumeId: item.volumeId,
-                shareId: item.rootShareId,
-                linkId: item.linkId,
-            });
+            void showDetailsModal({ nodeUid: item.uid });
         } else if (selectedItems.length > 1) {
             void showFilesDetailsModal({ selectedItems });
         }

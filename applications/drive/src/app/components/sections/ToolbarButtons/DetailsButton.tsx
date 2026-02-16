@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { getDrive } from '@proton/drive';
+import { generateNodeUid } from '@proton/drive';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
-import { useDetailsModal } from '../../modals/DetailsModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { noSelection } from './utils';
 
@@ -20,7 +20,7 @@ interface Props {
 
 const DetailsButton = ({ selectedBrowserItems }: Props) => {
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
 
     if (noSelection(selectedBrowserItems)) {
         return null;
@@ -34,10 +34,7 @@ const DetailsButton = ({ selectedBrowserItems }: Props) => {
                 onClick={() => {
                     if (selectedBrowserItems.length === 1) {
                         void showDetailsModal({
-                            drive: getDrive(), // TODO: pass Drive client from context
-                            volumeId: selectedBrowserItems[0].volumeId,
-                            shareId: selectedBrowserItems[0].rootShareId,
-                            linkId: selectedBrowserItems[0].linkId,
+                            nodeUid: generateNodeUid(selectedBrowserItems[0].volumeId, selectedBrowserItems[0].linkId),
                         });
                     } else if (selectedBrowserItems.length > 1) {
                         void showFilesDetailsModal({ selectedItems: selectedBrowserItems });
