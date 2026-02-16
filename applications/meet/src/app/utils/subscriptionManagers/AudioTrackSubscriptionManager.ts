@@ -10,6 +10,8 @@ import {
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import type { LiveKitLogCollector } from '../liveKitLogCollector/LiveKitLogCollector';
+
 interface PublicationItem {
     publication: RemoteTrackPublication;
     participant: RemoteParticipant;
@@ -36,6 +38,7 @@ export const sortAudioPublications = <T extends PublicationItem>(publications: T
 export class AudioTrackSubscriptionManager {
     private microphoneCapacity: number;
     private room: Room;
+    private logCollector: LiveKitLogCollector | null;
     private reportError?: (label: string, options?: unknown) => void;
     private subscribedMicrophoneTrackPublications: Map<string, PublicationItem> = new Map();
     private lastSortingResult: PublicationItem[] = [];
@@ -59,10 +62,16 @@ export class AudioTrackSubscriptionManager {
     private CONCEALMENT_RATIO_THRESHOLD = 0.3;
     private RECENT_CONCEALMENT_THRESHOLD = 0.6;
 
-    constructor(capacity: number, room: Room, reportError?: (label: string, options?: unknown) => void) {
+    constructor(
+        capacity: number,
+        room: Room,
+        reportError: (label: string, options?: unknown) => void,
+        logCollector: LiveKitLogCollector | null
+    ) {
         this.microphoneCapacity = capacity;
         this.room = room;
         this.reportError = reportError;
+        this.logCollector = logCollector;
     }
 
     addToCache(publication: RemoteTrackPublication, participant: RemoteParticipant) {
@@ -495,10 +504,14 @@ export class AudioTrackSubscriptionManager {
                     };
                     // eslint-disable-next-line no-console
                     console.warn('Detected stalled audio', context);
-                    this.reportError?.('AudioTrackSubscriptionManager: Detected stalled audio', {
+
+                    const stalledAudioMessage = 'AudioTrackSubscriptionManager: Detected stalled audio';
+                    this.reportError?.(stalledAudioMessage, {
                         level: 'warning',
                         context,
                     });
+
+                    void this.reportBroaderContext(stalledAudioMessage);
 
                     void this.attemptRecovery(publication, participant, trackKey);
                     continue;
@@ -630,10 +643,15 @@ export class AudioTrackSubscriptionManager {
                                 // eslint-disable-next-line no-console
                                 console.warn('Detected high audio concealment', context);
 
-                                this.reportError?.('AudioTrackSubscriptionManager: High audio concealment detected', {
+                                const highAudioConcealmentMessage =
+                                    'AudioTrackSubscriptionManager: High audio concealment detected';
+
+                                this.reportError?.(highAudioConcealmentMessage, {
                                     level: 'warning',
                                     context,
                                 });
+
+                                void this.reportBroaderContext(highAudioConcealmentMessage);
 
                                 void this.attemptRecovery(publication, participant, trackKey);
                             }
@@ -655,16 +673,18 @@ export class AudioTrackSubscriptionManager {
 
             // Log if multiple tracks have high concealment
             if (tracksWithHighConcealment >= 3) {
-                this.reportError?.(
-                    'AudioTrackSubscriptionManager: Multiple tracks with high concealment (E2EE overload)',
-                    {
-                        level: 'warning',
-                        context: {
-                            affectedTracks: tracksWithHighConcealment,
-                            totalSubscribedTracks: currentCacheValues.length,
-                        },
-                    }
-                );
+                const e2eeOverloadMessage =
+                    'AudioTrackSubscriptionManager: Multiple tracks with high concealment (E2EE overload)';
+
+                this.reportError?.(e2eeOverloadMessage, {
+                    level: 'warning',
+                    context: {
+                        affectedTracks: tracksWithHighConcealment,
+                        totalSubscribedTracks: currentCacheValues.length,
+                    },
+                });
+
+                void this.reportBroaderContext(e2eeOverloadMessage);
             }
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -724,6 +744,58 @@ export class AudioTrackSubscriptionManager {
                 item.publication.setEnabled(true);
             }
         });
+    };
+
+    getAudioStatsSnapshot = async () => {
+        const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
+        if (!subscriberPC) {
+            return [];
+        }
+
+        const stats = await subscriberPC.getStats();
+        const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+
+        const audioStats: any[] = [];
+
+        for (const item of currentCacheValues) {
+            const { publication, participant } = item;
+            const track = publication.track;
+
+            const trackId = track?.mediaStreamTrack?.id;
+            if (!trackId) {
+                continue;
+            }
+
+            for (const [, value] of stats) {
+                if (value.type === 'inbound-rtp' && value.kind === 'audio' && value.trackIdentifier === trackId) {
+                    audioStats.push({ value, participant: participant.identity, publication: publication.trackSid });
+                }
+            }
+        }
+
+        return audioStats;
+    };
+
+    reportBroaderContext = async (baseMessage: string) => {
+        const audioStats = await this.getAudioStatsSnapshot();
+
+        if (audioStats.length > 0) {
+            this.reportError?.(`${baseMessage} - WebRTC stats`, {
+                level: 'warning',
+                context: { audioStats },
+            });
+        }
+
+        if (this.logCollector && this.logCollector.getLogs().length > 0) {
+            this.reportError?.(`${baseMessage} - Room logs`, {
+                level: 'warning',
+                context: {
+                    localParticipant: this.room.localParticipant.identity,
+                    room: this.room.name,
+                    logs: this.logCollector.getLogs(),
+                },
+            });
+        }
     };
 
     setupReconcileLoop = () => {

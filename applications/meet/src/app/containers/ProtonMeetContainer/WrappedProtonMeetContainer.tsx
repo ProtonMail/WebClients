@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
-import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
@@ -13,18 +12,10 @@ import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQual
 import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
+import { LiveKitLogCollector } from '../../utils/liveKitLogCollector/LiveKitLogCollector';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
-    const roomRef = useRef<Room>();
-
-    const reportMeetError = useMeetErrorReporting();
-
-    const isLogExtensionSetup = useRef(false);
-
-    const keyProviderRef = useRef(new ProtonMeetKeyProvider());
-    const workerRef = useRef<Worker | null>(null);
-
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
@@ -32,79 +23,81 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
 
-    useEffect(() => {
-        if (!isLogExtensionSetup.current && isLiveKitDebugReportingAllowed) {
-            isLogExtensionSetup.current = true;
+    const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
+    const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
+    const [room] = useState(
+        () =>
+            new Room({
+                e2ee: {
+                    keyProvider,
+                    worker,
+                },
+                videoCaptureDefaults: {
+                    resolution: isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.PortraitView].resolution
+                        : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
+                },
+                dynacast: true,
+                adaptiveStream: isMeetHigherBitrate,
+                publishDefaults: {
+                    simulcast: true,
+                    backupCodec: isMeetVp9Allowed,
+                    degradationPreference: 'maintain-framerate',
+                    videoEncoding: {
+                        ...(isMeetHigherBitrate
+                            ? qualityConstants[QualityScenarios.PortraitView].encoding
+                            : legacyQualityConstants[QualityScenarios.PortraitView].encoding),
+                        priority: 'medium',
+                    },
+                    videoSimulcastLayers: [
+                        isMeetHigherBitrate
+                            ? qualityConstants[QualityScenarios.SmallView]
+                            : legacyQualityConstants[QualityScenarios.SmallView],
+                        isMeetHigherBitrate
+                            ? qualityConstants[QualityScenarios.MediumView]
+                            : legacyQualityConstants[QualityScenarios.MediumView],
+                    ],
+                    audioPreset: { maxBitrate: audioQuality, priority: 'high' },
+                    screenShareEncoding: screenShareQuality.encoding,
+                    screenShareSimulcastLayers: [],
+                    videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
+                    dtx: false,
+                },
+                disconnectOnPageLeave: false,
+                singlePeerConnection: isMeetSinglePeerConnectionEnabled,
+            })
+    );
 
+    const [liveKitLogCollector] = useState(() => new LiveKitLogCollector(room));
+
+    useEffect(() => {
+        if (isLiveKitDebugReportingAllowed) {
             setLogLevel(LogLevel.debug);
 
             setLogExtension((level, msg, context) => {
-                reportMeetError(`[LiveKit][room: ${roomRef.current?.name}] ${msg}`, { level, context });
+                liveKitLogCollector.addLog(level, msg, context);
             });
         }
     }, []);
 
-    if (!roomRef.current) {
-        workerRef.current = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
-        roomRef.current = new Room({
-            e2ee: {
-                keyProvider: keyProviderRef.current,
-                worker: workerRef.current,
-            },
-            videoCaptureDefaults: {
-                resolution: isMeetHigherBitrate
-                    ? qualityConstants[QualityScenarios.PortraitView].resolution
-                    : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
-            },
-            dynacast: true,
-            adaptiveStream: isMeetHigherBitrate,
-            publishDefaults: {
-                simulcast: true,
-                backupCodec: isMeetVp9Allowed,
-                degradationPreference: 'maintain-framerate',
-                videoEncoding: {
-                    ...(isMeetHigherBitrate
-                        ? qualityConstants[QualityScenarios.PortraitView].encoding
-                        : legacyQualityConstants[QualityScenarios.PortraitView].encoding),
-                    priority: 'medium',
-                },
-                videoSimulcastLayers: [
-                    isMeetHigherBitrate
-                        ? qualityConstants[QualityScenarios.SmallView]
-                        : legacyQualityConstants[QualityScenarios.SmallView],
-                    isMeetHigherBitrate
-                        ? qualityConstants[QualityScenarios.MediumView]
-                        : legacyQualityConstants[QualityScenarios.MediumView],
-                ],
-                audioPreset: { maxBitrate: audioQuality, priority: 'high' },
-                screenShareEncoding: screenShareQuality.encoding,
-                screenShareSimulcastLayers: [],
-                videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
-            },
-            disconnectOnPageLeave: false,
-            singlePeerConnection: isMeetSinglePeerConnectionEnabled,
-        });
-    }
-
     useEffect(() => {
         return () => {
-            if (workerRef.current) {
-                workerRef.current.terminate();
-                workerRef.current = null;
+            if (worker) {
+                worker.terminate();
             }
         };
     }, []);
 
     return (
-        <RoomContext.Provider value={roomRef.current}>
-            <SubscriptionManagementProvider>
+        <RoomContext.Provider value={room}>
+            <SubscriptionManagementProvider logCollector={liveKitLogCollector}>
                 <MediaManagementProvider>
                     <UIStateProvider instantMeeting={false}>
                         {guestMode ? (
                             <ProtonMeetContainer
                                 guestMode={true}
-                                room={roomRef.current}
-                                keyProvider={keyProviderRef.current}
+                                room={room}
+                                keyProvider={keyProvider}
                                 hasSubscription={false}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
@@ -112,8 +105,8 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                         ) : (
                             <ProtonMeetContainerWithUser
                                 guestMode={false}
-                                room={roomRef.current}
-                                keyProvider={keyProviderRef.current}
+                                room={room}
+                                keyProvider={keyProvider}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
                             />

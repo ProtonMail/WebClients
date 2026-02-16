@@ -292,7 +292,7 @@ describe('AudioTrackSubscriptionManager', () => {
         vi.clearAllMocks();
         mockRoom = createMockRoom();
         mockReportError = vi.fn();
-        cache = new AudioTrackSubscriptionManager(80, mockRoom as any, mockReportError);
+        cache = new AudioTrackSubscriptionManager(80, mockRoom as any, mockReportError, null);
         cache.listenToRoomEvents();
     });
 
@@ -1721,6 +1721,164 @@ describe('AudioTrackSubscriptionManager', () => {
                     }),
                 })
             );
+        });
+
+        it('should report broader context in case of audio issues', async () => {
+            // Create a mock log collector
+            const mockLogCollector = {
+                getLogs: vi.fn().mockReturnValue([
+                    { timestamp: Date.now() - 5000, level: 'info', message: 'Participant joined' },
+                    { timestamp: Date.now() - 3000, level: 'warn', message: 'Network quality degraded' },
+                    { timestamp: Date.now() - 1000, level: 'error', message: 'Track subscription failed' },
+                ]),
+            };
+
+            // Create a new cache instance with the log collector
+            const cacheWithLogs = new AudioTrackSubscriptionManager(
+                80,
+                mockRoom as any,
+                mockReportError,
+                mockLogCollector as any
+            );
+            cacheWithLogs.listenToRoomEvents();
+
+            // Create 3 participants with audio tracks
+            const micPub1 = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant1 = createMockParticipant('participant-1', [micPub1]);
+
+            const micPub2 = createMockPublication({ trackSid: 'mic-2', isSubscribed: true });
+            const participant2 = createMockParticipant('participant-2', [micPub2]);
+
+            const micPub3 = createMockPublication({ trackSid: 'mic-3', isSubscribed: true });
+            const participant3 = createMockParticipant('participant-3', [micPub3]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant1);
+            mockRoom.remoteParticipants.set('participant-2', participant2);
+            mockRoom.remoteParticipants.set('participant-3', participant3);
+
+            cacheWithLogs.addToCache(micPub1 as any, participant1 as any);
+            cacheWithLogs.addToCache(micPub2 as any, participant2 as any);
+            cacheWithLogs.addToCache(micPub3 as any, participant3 as any);
+
+            const trackId1 = micPub1.track?.mediaStreamTrack?.id;
+            const trackId2 = micPub2.track?.mediaStreamTrack?.id;
+            const trackId3 = micPub3.track?.mediaStreamTrack?.id;
+
+            // Set up WebRTC stats for all three tracks
+            // Track 1 has high concealment (the problematic track)
+            // Tracks 2 and 3 have normal stats (for broader context)
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId1,
+                concealedSamples: 6000,
+                totalSamplesReceived: 10000,
+                silentConcealedSamples: 5800,
+                concealmentEvents: 30,
+            });
+            mockStats.set('inbound-rtp-2', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId2,
+                concealedSamples: 100,
+                totalSamplesReceived: 10000,
+                silentConcealedSamples: 90,
+                concealmentEvents: 5,
+            });
+            mockStats.set('inbound-rtp-3', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId3,
+                concealedSamples: 150,
+                totalSamplesReceived: 10000,
+                silentConcealedSamples: 140,
+                concealmentEvents: 8,
+            });
+
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check - mark as having high concealment
+            await (cacheWithLogs as any).checkAudioConcealment();
+
+            // Second check - should trigger recovery and broader context reporting
+            await (cacheWithLogs as any).checkAudioConcealment();
+            await vi.runAllTimersAsync();
+
+            // Should have triggered recovery
+            expect(micPub1.setSubscribed).toHaveBeenCalledWith(false);
+            expect(micPub1.setSubscribed).toHaveBeenCalledWith(true);
+
+            // Verify the primary error was reported
+            expect(mockReportError).toHaveBeenCalledWith(
+                'AudioTrackSubscriptionManager: High audio concealment detected',
+                expect.objectContaining({
+                    level: 'warning',
+                    context: expect.objectContaining({
+                        participant: participant1.identity,
+                        trackSid: micPub1.trackSid,
+                    }),
+                })
+            );
+
+            // Verify broader context was reported: WebRTC stats for all audio tracks
+            expect(mockReportError).toHaveBeenCalledWith(
+                'AudioTrackSubscriptionManager: High audio concealment detected - WebRTC stats',
+                expect.objectContaining({
+                    level: 'warning',
+                    context: expect.objectContaining({
+                        audioStats: expect.arrayContaining([
+                            expect.objectContaining({
+                                participant: 'participant-1',
+                                publication: 'mic-1',
+                                value: expect.objectContaining({
+                                    type: 'inbound-rtp',
+                                    kind: 'audio',
+                                    concealedSamples: 6000,
+                                }),
+                            }),
+                            expect.objectContaining({
+                                participant: 'participant-2',
+                                publication: 'mic-2',
+                                value: expect.objectContaining({
+                                    type: 'inbound-rtp',
+                                    kind: 'audio',
+                                    concealedSamples: 100,
+                                }),
+                            }),
+                            expect.objectContaining({
+                                participant: 'participant-3',
+                                publication: 'mic-3',
+                                value: expect.objectContaining({
+                                    type: 'inbound-rtp',
+                                    kind: 'audio',
+                                    concealedSamples: 150,
+                                }),
+                            }),
+                        ]),
+                    }),
+                })
+            );
+
+            // Verify broader context was reported: Room logs
+            expect(mockReportError).toHaveBeenCalledWith(
+                'AudioTrackSubscriptionManager: High audio concealment detected - Room logs',
+                expect.objectContaining({
+                    level: 'warning',
+                    context: expect.objectContaining({
+                        localParticipant: 'local-participant',
+                        room: undefined, // Room name is not set in the mock
+                        logs: expect.arrayContaining([
+                            expect.objectContaining({ level: 'info', message: 'Participant joined' }),
+                            expect.objectContaining({ level: 'warn', message: 'Network quality degraded' }),
+                            expect.objectContaining({ level: 'error', message: 'Track subscription failed' }),
+                        ]),
+                    }),
+                })
+            );
+
+            // Verify the log collector was called
+            expect(mockLogCollector.getLogs).toHaveBeenCalled();
         });
     });
 });
