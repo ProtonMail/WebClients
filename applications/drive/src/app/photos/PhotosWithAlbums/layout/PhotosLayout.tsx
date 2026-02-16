@@ -20,12 +20,12 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import PortalPreview from '../../../components/PortalPreview';
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { usePhotosPreviewModal } from '../../../modals/preview';
 import {
     type OnFileUploadSuccessCallbackData,
@@ -63,7 +63,7 @@ export const PhotosLayout = () => {
     const { pathname } = useLocation();
     const { createNotification } = useNotifications();
     const { removeMe } = useSharedWithMeActions();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
     const photosView = usePhotosWithAlbumsView();
     const [previewModal, showPreviewModal] = usePhotosPreviewModal();
 
@@ -495,8 +495,8 @@ export const PhotosLayout = () => {
     const openSharePhotoModal = useCallback(() => {
         const link = selectedItems[0];
 
-        showLinkSharingModal({ volumeId: link.volumeId, shareId: link.rootShareId, linkId: link.linkId });
-    }, [showLinkSharingModal, selectedItems]);
+        showSharingModal({ nodeUid: generateNodeUid(link.volumeId, link.linkId) });
+    }, [showSharingModal, selectedItems]);
 
     const onAddAlbumPhotos = useCallback(
         async (albumShareId: string, albumLinkId: string, linkIds: string[]) => {
@@ -617,11 +617,11 @@ export const PhotosLayout = () => {
     */
     useEffect(() => {
         setLayoutModals({
-            linkSharing: showLinkSharingModal,
+            linkSharing: showSharingModal,
             deleteAlbum: showDeleteAlbumModal,
             createAlbum: createAlbumModal,
         });
-    }, [setLayoutModals, showLinkSharingModal, showDeleteAlbumModal, createAlbumModal]);
+    }, [setLayoutModals, showSharingModal, showDeleteAlbumModal, createAlbumModal]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -806,10 +806,8 @@ export const PhotosLayout = () => {
                         (isDecryptedLink(previewItem) && previewItem?.trashed) || !canChangeSharePhotoInPreview
                             ? undefined
                             : () =>
-                                  showLinkSharingModal({
-                                      volumeId: previewItem.volumeId,
-                                      shareId: previewShareId,
-                                      linkId: previewItem.linkId,
+                                  showSharingModal({
+                                      nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
                                   })
                     }
                     onDetails={onShowDetails}
@@ -902,7 +900,7 @@ export const PhotosLayout = () => {
             <Outlet context={photosView} />
 
             {/** Modals that are necessary on all views */}
-            {linkSharingModal}
+            {sharingModal}
             {detailsModal}
 
             {/** Modals that are necessary only on album and album gallery view */}

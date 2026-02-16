@@ -1,28 +1,27 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
+import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 
 interface Props {
     volumeId: string;
-    shareId: string;
     linkId: string;
-    isAlbum?: boolean;
 }
 
-const ShareLinkButton = ({ volumeId, shareId, linkId, isAlbum }: Props) => {
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+const ShareLinkButton = ({ volumeId, linkId }: Props) => {
+    const { sharingModal, showSharingModal } = useSharingModal();
     return (
         <>
             <ToolbarButton
                 title={c('Action').t`Share`}
                 icon={<IcUserPlus alt={c('Action').t`Share`} />}
-                onClick={() => showLinkSharingModal({ volumeId, shareId, linkId, isAlbum })}
+                onClick={() => showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId) })}
                 data-testid="toolbar-share-link"
             />
-            {linkSharingModal}
+            {sharingModal}
         </>
     );
 };

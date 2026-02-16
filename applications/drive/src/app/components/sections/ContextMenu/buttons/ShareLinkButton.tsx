@@ -1,33 +1,26 @@
 import { c } from 'ttag';
 
-import type { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
+import { generateNodeUid } from '@proton/drive/index';
+
+import type { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     volumeId: string;
-    shareId: string;
     linkId: string;
-    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
     isSharedWithMe?: boolean;
     isAlbum?: boolean;
     close: () => void;
 }
 
-const ShareLinkButton = ({
-    volumeId,
-    shareId,
-    linkId,
-    showLinkSharingModal,
-    isSharedWithMe,
-    isAlbum,
-    close,
-}: Props) => {
+const ShareLinkButton = ({ volumeId, linkId, showSharingModal, isSharedWithMe, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
             icon={isSharedWithMe ? 'users' : 'user-plus'}
             testId="context-menu-share-link"
-            action={() => showLinkSharingModal({ shareId, linkId, volumeId, isAlbum })}
+            action={() => showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId) })}
             close={close}
         />
     );

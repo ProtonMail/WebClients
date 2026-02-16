@@ -46,7 +46,7 @@ export function FolderContextMenu({
             showCreateFolderModal,
             showCreateFileModal,
             showFileSharingModal,
-            showLinkSharingModal,
+            showSharingModal,
             createNewDocument,
             createNewSheet,
         },
@@ -78,7 +78,7 @@ export function FolderContextMenu({
             {modals.createFolderModal}
             {modals.createFileModal}
             {modals.fileSharingModal}
-            {modals.linkSharingModal}
+            {modals.sharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 {permissions.canCreateNode && (
                     <CreateNewFolderButton type="context" close={close} onClick={showCreateFolderModal} />
@@ -107,7 +107,7 @@ export function FolderContextMenu({
                             close={close}
                             shareId={shareId}
                             showFileSharingModal={showFileSharingModal}
-                            showLinkSharingModal={showLinkSharingModal}
+                            showSharingModal={showSharingModal}
                         />
                     </>
                 )}
@@ -117,9 +117,8 @@ export function FolderContextMenu({
                         <ShareLinkButton
                             volumeId={activeFolder.volumeId}
                             close={close}
-                            shareId={activeFolder.shareId}
                             linkId={activeFolder.linkId}
-                            showLinkSharingModal={showLinkSharingModal}
+                            showSharingModal={showSharingModal}
                         />
                     </>
                 )}

@@ -4,26 +4,22 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, useModalTwoStatic } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
+import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink } from '../../../store';
 import { useTreeForModals } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
-import type { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
 import { ModalContent } from './ModalContent';
 
 interface Props {
     shareId: string;
-    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
     onClose?: () => void;
 }
 
-const SelectedFileToShareModal = ({
-    shareId,
-    onClose,
-    showLinkSharingModal,
-    ...modalProps
-}: Props & ModalStateProps) => {
+const SelectedFileToShareModal = ({ shareId, onClose, showSharingModal, ...modalProps }: Props & ModalStateProps) => {
     const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useTreeForModals(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
@@ -37,7 +33,7 @@ const SelectedFileToShareModal = ({
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            void showLinkSharingModal({ shareId, linkId: selectedFile.linkId, volumeId: selectedFile.volumeId });
+            void showSharingModal({ nodeUid: generateNodeUid(selectedFile.volumeId, selectedFile.linkId) });
             onClose?.();
         }
     };

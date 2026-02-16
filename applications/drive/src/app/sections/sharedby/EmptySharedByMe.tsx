@@ -7,7 +7,7 @@ import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg
 
 import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
 import { useFileSharingModal } from '../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
-import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 
 type Props = {
     shareId?: string;
@@ -15,11 +15,11 @@ type Props = {
 
 export const EmptySharedByMe: FC<Props> = ({ shareId }) => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
 
     const onShareFile = () => {
         if (shareId) {
-            void showFileSharingModal({ shareId, showLinkSharingModal });
+            void showFileSharingModal({ shareId, showSharingModal });
         }
     };
 
@@ -48,7 +48,7 @@ export const EmptySharedByMe: FC<Props> = ({ shareId }) => {
                 </Button>
             </div>
             {fileSharingModal}
-            {linkSharingModal}
+            {sharingModal}
         </DriveEmptyView>
     );
 };

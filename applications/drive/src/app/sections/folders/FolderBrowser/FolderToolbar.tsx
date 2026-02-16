@@ -69,7 +69,7 @@ export const FolderToolbar = ({
             createNewDocument,
             createNewSheet,
             showDetailsModal,
-            showLinkSharingModal,
+            showSharingModal,
             showFileSharingModal,
         },
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
@@ -120,7 +120,7 @@ export const FolderToolbar = ({
                     ) : null}
 
                     {shouldShowShareButton && <ShareToolbarButton onClick={showFileSharingModal} />}
-                    {shouldShowShareLinkButton && <ShareLinkButton type="toolbar" onClick={showLinkSharingModal} />}
+                    {shouldShowShareLinkButton && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
                 </>
             );
         }
@@ -136,7 +136,7 @@ export const FolderToolbar = ({
                     <>
                         {shouldShowShareLinkButton && selectedItem && (
                             <>
-                                <ShareLinkButton type="toolbar" onClick={showLinkSharingModal} />
+                                <ShareLinkButton type="toolbar" onClick={showSharingModal} />
                                 <Vr />
                             </>
                         )}
@@ -183,7 +183,7 @@ export const FolderToolbar = ({
             {modals.createFolderModal}
             {modals.detailsModal}
             {modals.filesDetailsModal}
-            {modals.linkSharingModal}
+            {modals.sharingModal}
             {modals.fileSharingModal}
         </Toolbar>
     );

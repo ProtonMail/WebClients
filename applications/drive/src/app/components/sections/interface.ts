@@ -1,6 +1,6 @@
+import type { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import type { EncryptedLink, ExtendedInvitationDetails, LinkShareUrl, SignatureIssues } from '../../store';
 import type { FileBrowserBaseItem } from '../FileBrowser';
-import type { useLinkSharingModal } from '../modals/ShareLinkModal/ShareLinkModal';
 
 export interface DriveItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
@@ -18,7 +18,7 @@ export interface DriveItem extends FileBrowserBaseItem {
     parentLinkId: string;
     isShared?: boolean;
     isAdmin: boolean;
-    showLinkSharingModal?: ReturnType<typeof useLinkSharingModal>[1];
+    showLinkSharingModal?: ReturnType<typeof useSharingModal>['showSharingModal'];
     volumeId: string;
 }
 

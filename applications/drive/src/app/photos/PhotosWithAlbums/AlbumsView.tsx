@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -234,7 +235,7 @@ export const AlbumsView: FC = () => {
                         navigateToAlbum(shareId, linkId);
                     }}
                     onItemShare={(linkId) => {
-                        modals.linkSharing?.({ volumeId, shareId, linkId, isAlbum: true });
+                        modals.linkSharing?.({ nodeUid: generateNodeUid(volumeId, linkId) });
                     }}
                     onItemRename={(linkId) => {
                         setRenameAlbumLinkId(linkId);
