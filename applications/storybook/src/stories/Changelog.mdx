@@ -1,7 +1,7 @@
-import { Description, Meta } from '@storybook/addon-docs/blocks';
+import { Markdown, Meta } from '@storybook/addon-docs/blocks';
 
-import changelog from '../../CHANGELOG.md';
+import CHANGELOG from '../../CHANGELOG.md?raw';
 
 <Meta title="Changelog" />
 
-<Description>{changelog}</Description>
+<Markdown>{CHANGELOG}</Markdown>

@@ -1,44 +1,49 @@
-import { Alert } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Alert.mdx';
+import Alert from '@proton/components/components/alert/Alert';
 
-export default {
-    component: Alert,
+const meta: Meta<typeof Alert> = {
     title: 'Components/Alert',
+    argTypes: {
+        type: {
+            control: 'select',
+            options: ['info', 'error', 'warning', 'success'],
+        },
+    },
+    args: {
+        children: 'This is an alert',
+    },
+    component: Alert,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component: 'Generally used to display different types of alerts.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Alert>;
+
+export const Default: Story = {};
+
+export const Error: Story = {
+    args: {
+        type: 'error',
     },
 };
 
-export const Basic = () => (
-    <Alert>
-        Lorem Ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati
-        enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?
-    </Alert>
-);
+export const Warning: Story = {
+    args: {
+        type: 'warning',
+    },
+};
 
-export const Types = () => (
-    <>
-        <Alert className="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
-            obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis
-            quos?
-        </Alert>
-        <Alert className="mb-4" type="error">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo corporis ea nobis nesciunt sed sit architecto
-            atque. Vero, corrupti non nobis, officia blanditiis magnam ex sapiente et expedita, animi tenetur!
-        </Alert>
-        <Alert className="mb-4" type="warning">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores tempora ea eos corporis facilis facere,
-            nemo sunt. Eos, blanditiis laboriosam expedita voluptatem eaque vero esse, minima temporibus, ab ad
-            nesciunt?
-        </Alert>
-        <Alert className="mb-4" type="success">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit doloribus nobis eos iusto. Ducimus numquam
-            laborum aliquid culpa! Dolor voluptatem modi inventore error, qui repudiandae consequatur autem vitae illum
-            voluptatibus?
-        </Alert>
-    </>
-);
+export const Success: Story = {
+    args: {
+        type: 'success',
+    },
+};
