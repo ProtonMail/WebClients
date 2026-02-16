@@ -4,7 +4,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
-const CLASSNAMES = {
+export const CLASSNAMES = {
     default: 'badge-label-norm',
     origin: 'badge-label-strong',
     light: 'badge-label-weak',
@@ -27,7 +27,7 @@ export interface Props {
     'data-testid'?: string;
 }
 
-const Badge = ({
+export const Badge = ({
     children,
     type = 'default',
     url,

@@ -13,7 +13,7 @@ test.describe('visual tests', () => {
 
         test(testName, async ({ page }) => {
             await page.clock.setFixedTime(fixedDateTime);
-            await page.goto(`/iframe.html?viewMode=story&id=${id}`);
+            await page.goto(`/iframe.html?id=${id}`);
             await page.waitForLoadState('load');
             await page.addStyleTag({
                 content: `
