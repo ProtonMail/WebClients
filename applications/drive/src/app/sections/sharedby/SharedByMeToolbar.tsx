@@ -6,10 +6,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
-import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
@@ -27,7 +27,8 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
     const { renameModal, showRenameModal } = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
+
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const selectionControls = useSelection();
     const { getSharedByMeItem } = useSharedByMeStore(
@@ -49,7 +50,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
                 selectedItems={selectedItems}
                 showPreviewModal={showPreviewModal}
                 showDetailsModal={showDetailsModal}
-                showLinkSharingModal={showLinkSharingModal}
+                showSharingModal={showSharingModal}
                 showFilesDetailsModal={showFilesDetailsModal}
                 showRenameModal={showRenameModal}
                 showConfirmModal={showConfirmModal}
@@ -69,7 +70,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
             {renameModal}
             {detailsModal}
             {filesDetailsModal}
-            {linkSharingModal}
+            {sharingModal}
             {confirmModal}
         </Toolbar>
     );

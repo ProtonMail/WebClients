@@ -108,9 +108,7 @@ const DriveToolbar = ({
                     ) : null}
 
                     {shouldShowShareButton && <ShareButton shareId={shareId} />}
-                    {shouldShowShareLinkButton && (
-                        <ShareLinkButton volumeId={volumeId} shareId={shareId} linkId={linkId} />
-                    )}
+                    {shouldShowShareLinkButton && <ShareLinkButton volumeId={volumeId} linkId={linkId} />}
                 </>
             );
         }
@@ -132,11 +130,7 @@ const DriveToolbar = ({
                     <>
                         {shouldShowShareLinkButton && selectedItem && (
                             <>
-                                <ShareLinkButton
-                                    volumeId={selectedItem.volumeId}
-                                    shareId={selectedItem.rootShareId}
-                                    linkId={selectedItem.linkId}
-                                />
+                                <ShareLinkButton volumeId={selectedItem.volumeId} linkId={selectedItem.linkId} />
                                 <Vr />
                             </>
                         )}

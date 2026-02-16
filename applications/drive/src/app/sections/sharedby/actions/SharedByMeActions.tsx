@@ -4,7 +4,6 @@ import { NodeType, splitNodeUid } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import type { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import {
     DetailsButton as ContextDetailsButton,
     DownloadButton as ContextDownloadButton,
@@ -20,6 +19,7 @@ import {
 } from '../../../components/sections/ToolbarButtons';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useRenameModal } from '../../../modals/RenameModal';
+import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { usePreviewModal } from '../../../modals/preview';
 import { useActions } from '../../../store';
 import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
@@ -33,7 +33,7 @@ interface BaseSharedByMeActionsProps {
     selectedItems: SharedByMeItem[];
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>[1];
-    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
+    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
     showRenameModal: ReturnType<typeof useRenameModal>['showRenameModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
@@ -59,7 +59,7 @@ export const SharedByMeActions = ({
     showDetailsModal,
     showRenameModal,
     showFilesDetailsModal,
-    showLinkSharingModal,
+    showSharingModal,
     showConfirmModal,
 }: SharedByMeActionsProps) => {
     const itemChecker = createItemChecker(selectedItems);
@@ -106,7 +106,6 @@ export const SharedByMeActions = ({
                         <Vr />
                         <ToolbarShareLinkButton
                             volumeId={splitedSingleItemUid.volumeId}
-                            shareId={singleItem.rootShareId}
                             linkId={splitedSingleItemUid.nodeId}
                         />
                     </>
@@ -163,9 +162,8 @@ export const SharedByMeActions = ({
             {itemChecker.canShare && splitedSingleItemUid && singleItem && (
                 <ContextShareLinkButton
                     volumeId={splitedSingleItemUid.volumeId}
-                    shareId={singleItem.rootShareId}
                     linkId={splitedSingleItemUid.nodeId}
-                    showLinkSharingModal={showLinkSharingModal}
+                    showSharingModal={showSharingModal}
                     isAlbum={singleItem.type === NodeType.Album}
                     close={close}
                 />

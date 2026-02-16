@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useConfig } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import useFlag from '@proton/unleash/useFlag';
@@ -130,7 +131,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useEffect(() => {
         if (album && albumShareId) {
             if (searchParams.has('openShare')) {
-                modals.linkSharing?.({ volumeId: album.volumeId, shareId: albumShareId, linkId: album.linkId });
+                modals.linkSharing?.({ nodeUid: generateNodeUid(album.volumeId, album.linkId) });
                 searchParams.delete('openShare');
                 setSearchParams(searchParams);
             }
@@ -189,10 +190,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         photoCount={photoCount}
                         onShare={() => {
                             modals.linkSharing?.({
-                                volumeId: album.volumeId,
-                                shareId: albumShareId,
-                                linkId: album.linkId,
-                                isAlbum: true,
+                                nodeUid: generateNodeUid(album.volumeId, album.linkId),
                             });
                         }}
                         onAddAlbumPhotos={() => {

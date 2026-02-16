@@ -67,7 +67,7 @@ export function FolderItemContextMenu({
             showRenameModal,
             showCopyModal,
             showMoveModal,
-            showLinkSharingModal,
+            showSharingModal,
             getPublicLinkInfo,
         },
         modals,
@@ -99,7 +99,7 @@ export function FolderItemContextMenu({
                 <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
                 {canCopyPublicLink && <CopyLinkContextButton getPublicLinkInfo={getPublicLinkInfo} close={close} />}
                 {isAdmin && isOnlyOneItem && (
-                    <ShareLinkButton type="context" onClick={showLinkSharingModal} close={close} />
+                    <ShareLinkButton type="context" onClick={showSharingModal} close={close} />
                 )}
                 <ContextSeparator />
                 {permissions.canMove ? (
@@ -132,7 +132,7 @@ export function FolderItemContextMenu({
             {modals.previewModal}
             {modals.detailsModal}
             {modals.filesDetailsModal}
-            {modals.linkSharingModal}
+            {modals.sharingModal}
             {modals.revisionsModal}
             {modals.renameModal}
             {modals.moveModal}
