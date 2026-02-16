@@ -32,6 +32,7 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
     getScrollElement: () => parentRef.current,
     estimateSize: () => 36,
     overscan: 5,
+    measureElement: (element) => element?.getBoundingClientRect().height,
   })
 
   const onCheck = (value: string) => {
@@ -77,10 +78,11 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
             const isVisible = visibleValues ? visibleValues.indexOf(value) !== -1 : true
 
             return (
-              <Ariakit.CheckboxProvider>
+              <Ariakit.CheckboxProvider key={virtualItem.key}>
                 <Ariakit.Checkbox
+                  ref={rowVirtualizer.measureElement}
+                  data-index={virtualItem.index}
                   render={<Button />}
-                  key={virtualItem.key}
                   checked={isVisible}
                   onClick={() => {
                     if (isVisible) {
@@ -90,20 +92,19 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
                     }
                   }}
                   value={value}
-                  className="group flex h-9 items-center gap-2 text-start text-sm"
+                  className="group flex gap-2 py-1.5 text-start text-sm"
                   style={{
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
-                    height: `${virtualItem.size}px`,
                     transform: `translateY(${virtualItem.start}px)`,
                   }}
                 >
-                  <span className="-mt-1 opacity-0 group-aria-checked:opacity-100">
+                  <span className="mt-0 shrink-0 opacity-0 group-aria-checked:opacity-100">
                     <UI.Icon legacyName="checkmark" />
                   </span>
-                  {value}
+                  <span className="line-clamp-3">{value}</span>
                 </Ariakit.Checkbox>
               </Ariakit.CheckboxProvider>
             )
