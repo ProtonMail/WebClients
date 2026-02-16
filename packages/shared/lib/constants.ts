@@ -400,6 +400,7 @@ export const SSO_PATHS = {
     PASS_SIGNUP: '/pass/signup',
     PASS_SIGNUP_B2B: '/pass/signup/business',
     PASS_SIGN_IN: '/pass',
+    PASS_EXTENSION_ONBOARDING: '/pass/extension-onboarding',
     DOCS_SIGNUP: '/docs/signup',
     DOCS_SIGN_IN: '/docs',
     WALLET_SIGNUP: '/wallet/signup',
