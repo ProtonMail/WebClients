@@ -28,6 +28,7 @@ export enum PermissionPromptStatus {
 
 export interface UIState {
     meetingReadyPopupOpen: boolean;
+    showDuration: boolean;
     sideBarState: {
         [MeetingSideBars.Participants]: boolean;
         [MeetingSideBars.AssignHost]: boolean;
@@ -42,6 +43,7 @@ export interface UIState {
 
 const initialState: UIState = {
     meetingReadyPopupOpen: false,
+    showDuration: false,
     sideBarState: {
         [MeetingSideBars.Participants]: false,
         [MeetingSideBars.AssignHost]: false,
@@ -65,6 +67,9 @@ const slice = createSlice({
     name: 'uiState',
     initialState,
     reducers: {
+        toggleShowDuration: (state) => {
+            state.showDuration = !state.showDuration;
+        },
         setMeetingReadyPopupOpen: (state, action: PayloadAction<boolean>) => {
             state.meetingReadyPopupOpen = action.payload;
         },
@@ -116,6 +121,7 @@ const slice = createSlice({
 
 export const {
     setMeetingReadyPopupOpen,
+    toggleShowDuration,
     toggleSideBarState,
     closeSideBar,
     closeAllSideBars,
@@ -132,5 +138,6 @@ export const selectSideBarState = (state: MeetState) => state.uiState.sideBarSta
 export const selectPopupState = (state: MeetState) => state.uiState.popupState;
 export const selectPermissionPromptStatus = (state: MeetState) => state.uiState.permissionPromptStatus;
 export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDeviceDetected;
+export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
 
 export const uiStateReducer = { uiState: slice.reducer };

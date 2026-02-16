@@ -40,12 +40,15 @@ im.$media-expressions: $media-expressions;
 .time-limit-cta-popup {
 	inline-size: 90vw;
 	border-radius: 2.5rem;
+	background-color: var(--background-norm);
 
 	@include im.media('>small') {
 		inline-size: 24.125rem;
 	}
 
 	.upgrade-icon-container {
+		inline-size: 4rem;
+		block-size: 4rem;
 		background: var(--background-card);
 	}
 
@@ -68,4 +71,11 @@ im.$media-expressions: $media-expressions;
 			background: rgb(255 255 255 / 0.1);
 		}
 	}
+}
+
+.meeting-name {
+	color: var(--meeting-title-color) !important;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5rem;
 }

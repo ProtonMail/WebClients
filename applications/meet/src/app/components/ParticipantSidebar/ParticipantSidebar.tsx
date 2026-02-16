@@ -1,15 +1,15 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPage, setPage as setPageAction } from '@proton/meet/store/slices/meetingState';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import clsx from '@proton/utils/clsx';
 
+import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
@@ -22,66 +22,47 @@ export const ParticipantSidebar = ({
     participantSideBarOpen: boolean;
     setParticipantSideBarOpen: (open: boolean) => void;
 }) => {
-    const [isParticipantSidebarHovered, setIsParticipantSidebarHovered] = useState(false);
-
-    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useSortedParticipantsContext();
+    const { pagedParticipants, pagedParticipantsWithoutSelfView, pageCount, pageCountWithoutSelfView } =
+        useSortedParticipantsContext();
+    const page = useMeetSelector(selectPage);
+    const dispatch = useMeetDispatch();
+    const setPage = (page: number) => dispatch(setPageAction(page));
 
     const { selfView } = useMeetSelector(selectMeetSettings);
 
+    const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
+
     const participants = selfView ? pagedParticipants : pagedParticipantsWithoutSelfView;
 
+    const ButtonIcon = participantSideBarOpen ? IcChevronRight : IcMeetParticipants;
+
     return (
-        <div
-            className="h-full overflow-y-auto hide-scrollbar relative shrink-0"
-            onMouseEnter={() => setIsParticipantSidebarHovered(true)}
-            onMouseLeave={() => setIsParticipantSidebarHovered(false)}
-            style={{ overflow: participantSideBarOpen ? 'hidden' : 'visible' }}
-        >
-            {(isParticipantSidebarHovered || !participantSideBarOpen) && (
-                <Button
-                    className="participant-sidebar-button absolute top-custom right-0 shrink-0 min-w-custom min-h-custom max-w-custom max-h-custom bg-weak"
-                    onClick={() => setParticipantSideBarOpen(!participantSideBarOpen)}
-                    shape="outline"
-                    size="small"
-                    style={{
-                        '--min-w-custom': '2.75rem',
-                        '--min-h-custom': '2.75rem',
-                        '--max-w-custom': '2.75rem',
-                        '--max-h-custom': '2.75rem',
-                        '--top-custom': '50%',
-                        transform: 'translateY(-50%)',
-                    }}
-                    title={participantSideBarOpen ? c('Action').t`Hide participants` : c('Action').t`Show participants`}
-                >
-                    {participantSideBarOpen ? (
-                        <IcChevronRight className="shrink-0" size={6} />
-                    ) : (
-                        <IcChevronLeft className="shrink-0" size={6} />
-                    )}
-                </Button>
-            )}
-            {participantSideBarOpen && (
-                <div className={clsx('h-full flex items-start flex-column flex-nowrap')}>
-                    {participants.map((participant) => {
-                        return (
-                            <div
-                                key={participant.identity}
-                                className="w-custom h-custom"
-                                style={{
-                                    aspectRatio: '16/9',
-                                    width: 'auto',
-                                    '--h-custom': `${(100 / SCREEN_SHARE_PAGE_SIZE).toFixed(2)}%`,
-                                    boxSizing: 'border-box',
-                                    padding: '0.125rem',
-                                    breakInside: 'avoid',
-                                }}
-                            >
-                                <ParticipantTile participant={participant} viewSize="small" />
-                            </div>
-                        );
-                    })}
-                </div>
-            )}
+        <div className="participant-sidebar relative" style={{ '--items-per-page': SCREEN_SHARE_PAGE_SIZE }}>
+            <Button
+                className="participant-sidebar__toggle absolute bg-weak border-none"
+                onClick={() => setParticipantSideBarOpen(!participantSideBarOpen)}
+                title={participantSideBarOpen ? c('Action').t`Hide participants` : c('Action').t`Show participants`}
+            >
+                <ButtonIcon size={6} />
+            </Button>
+            <div className={clsx('participant-sidebar__list hide-scrollbar', !participantSideBarOpen && 'inactive')}>
+                {currentPageCount > 1 && (
+                    <div
+                        className={clsx(
+                            'participant-sidebar__pagination-container absolute flex justify-center items-center w-full z-up',
+                            !participantSideBarOpen && 'inactive'
+                        )}
+                    >
+                        <Pagination totalPages={currentPageCount} currentPage={page} onPageChange={setPage} />
+                    </div>
+                )}
+                {participantSideBarOpen &&
+                    participants.map((participant) => (
+                        <div key={participant.identity} className="participant-sidebar__list__item">
+                            <ParticipantTile participant={participant} viewSize="small" />
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 };

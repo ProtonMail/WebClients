@@ -10,7 +10,6 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPage, setPage } from '@proton/meet/store/slices/meetingState';
-import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import {
     MeetingSideBars,
     PermissionPromptStatus,
@@ -38,12 +37,11 @@ import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
-import { MeetingTitle } from '../MeetingTitle/MeetingTitle';
+import { MeetingName } from '../MeetingName/MeetingName';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
-import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
 import { MenuButton } from './MenuButton';
@@ -53,9 +51,8 @@ import './ParticipantControls.scss';
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { isScreenShare, guestMode, isGuestAdmin } = useMeetContext();
+    const { isScreenShare, guestMode } = useMeetContext();
     const page = useMeetSelector(selectPage);
-    const { selfView } = useMeetSelector(selectMeetSettings);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
 
@@ -66,9 +63,7 @@ export const ParticipantControls = () => {
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
 
-    const { pageCount, pageCountWithoutSelfView } = useSortedParticipantsContext();
-
-    const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
+    const { pageCount } = useSortedParticipantsContext();
 
     const prevDevicePermissionsRef = useRef<{ camera?: PermissionState; microphone?: PermissionState }>({
         camera: 'prompt',
@@ -140,12 +135,6 @@ export const ParticipantControls = () => {
         cameraTooltipTitle = isCameraEnabled ? c('Info').t`Turn off camera` : c('Info').t`Turn on camera`;
     }
 
-    const meetingTitle = (
-        <div className="flex items-baseline gap-2 pl-4 flex-nowrap">
-            <MeetingTitle />
-        </div>
-    );
-
     return (
         <div className="w-full flex flex-nowrap flex-column relative">
             <AudioPlaybackPrompt />
@@ -166,14 +155,10 @@ export const ParticipantControls = () => {
                 style={{ '--h-custom': '5rem' }}
             >
                 <div className={clsx('lg:flex flex-1 justify-start', isLargerThanMd || isNarrowHeight ? '' : 'hidden')}>
-                    {hasAdminPermission || isGuestAdmin ? (
-                        <TimeLimitCTAPopup>{meetingTitle}</TimeLimitCTAPopup>
-                    ) : (
-                        meetingTitle
-                    )}
+                    <MeetingName classNames={{ root: 'pl-4 h3', duration: 'ml-2' }} />
                 </div>
 
-                <div className="participant-controls-buttons flex flex-nowrap gap-1 sm:gap-2">
+                <div className="participant-controls-buttons flex flex-nowrap w-full lg:w-auto gap-1 sm:gap-2 items-center">
                     {!isMobile() ? (
                         <>
                             <ToggleButton
@@ -339,10 +324,10 @@ export const ParticipantControls = () => {
 
                     <LeaveMeetingPopup />
                 </div>
-                <div className={clsx(isLargerThanMd || isNarrowHeight ? '' : 'hidden', 'flex flex-1 justify-end')}>
-                    {currentPageCount > 1 && (
+                <div className="flex flex-1 justify-end">
+                    {isLargerThanMd && !isScreenShare && pageCount > 1 && (
                         <Pagination
-                            totalPages={currentPageCount}
+                            totalPages={pageCount}
                             currentPage={page}
                             onPageChange={(page) => dispatch(setPage(page))}
                         />
