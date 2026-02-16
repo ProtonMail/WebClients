@@ -44,7 +44,7 @@ export const OpenInDocsOrSheetsButton = ({ buttonType, onClick, close, type, isN
         return (
             <ToolbarButton
                 title={title}
-                icon={<MimeIcon className="mr-2" name={iconName} />}
+                icon={<MimeIcon name={iconName} />}
                 onClick={onClick}
                 data-testid={`toolbar-open-${type}`}
             />
