@@ -1,5 +1,5 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { SidebarListItem } from '@proton/components';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCalendarListFilled } from '@proton/icons/icons/IcCalendarListFilled';
 

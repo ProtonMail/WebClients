@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import { useGetUser } from '@proton/account/user/hooks';
-import { useGetVerificationPreferences } from '@proton/components';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';

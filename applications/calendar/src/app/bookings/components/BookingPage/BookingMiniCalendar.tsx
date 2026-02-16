@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { startOfMonth, startOfToday } from 'date-fns';
 
-import { Loader, LocalizedMiniCalendar } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

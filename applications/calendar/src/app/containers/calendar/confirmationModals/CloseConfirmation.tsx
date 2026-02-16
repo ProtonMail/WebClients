@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface CloseConfirmationModalProps {
     onClose: () => void;

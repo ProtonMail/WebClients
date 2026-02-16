@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { AppLink, ReloadSpinner } from '@proton/components';
+import AppLink from '@proton/components/components/link/AppLink';
+import ReloadSpinner from '@proton/components/components/spinner/ReloadSpinner';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';

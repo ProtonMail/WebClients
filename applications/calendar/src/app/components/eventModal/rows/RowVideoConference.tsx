@@ -5,21 +5,19 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/videoConferencing/protonMeetHelpers';
 import { ProtonMeetRow } from '@proton/calendar/protonMeetIntegration/ProtonMeetRow';
-import { ZoomRow } from '@proton/calendar/zoomIntegration/ZoomRow';
 import { useProtonMeetIntegration } from '@proton/calendar/protonMeetIntegration/hooks';
+import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/videoConferencing/protonMeetHelpers';
+import { ZoomRow } from '@proton/calendar/zoomIntegration/ZoomRow';
 import { useZoomIntegration } from '@proton/calendar/zoomIntegration/hooks';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    IconRow,
-    ProtonLogo,
-    Spotlight,
-    ZoomUpsellModal,
-} from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import IconRow from '@proton/components/components/iconRow/IconRow';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import ZoomUpsellModal from '@proton/components/components/upsell/modals/ZoomUpsellModal';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';

@@ -2,7 +2,7 @@ import type { CSSProperties, KeyboardEvent, Ref } from 'react';
 import { useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { CalendarEventDateHeader } from '@proton/components';
+import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
@@ -97,9 +97,7 @@ const FullDayEvent = ({
 
     const content = (
         <div className="flex flex-nowrap flex-1 items-center">
-            {!isAllDay ? (
-                <IcCircleFilled className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} />
-            ) : null}
+            {!isAllDay ? <IcCircleFilled className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} /> : null}
 
             {isOutsideStart ? <IcChevronLeft size={3} className="shrink-0" /> : null}
 

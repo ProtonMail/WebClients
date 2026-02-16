@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { usePopperAnchor } from '@proton/components';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import useFlag from '@proton/unleash/useFlag';

@@ -6,21 +6,19 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import {
-    GenericError,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    Prompt,
-    SettingsLink,
-    useApi,
-    useConfig,
-    useDrawer,
-    useModalState,
-} from '@proton/components';
+import { useGetCalendars } from '@proton/calendar/calendars/hooks';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Modal from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import GenericError from '@proton/components/containers/error/GenericError';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { getThemeStyle } from '@proton/components/index';
+import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { BookingAuthApp } from './authenticated/BookingAuthApp';

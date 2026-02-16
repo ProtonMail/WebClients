@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useActiveBreakpoint } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { TimeZoneSelector } from '@proton/components/components/timezoneSelector/TimeZoneSelector';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { getTimezone } from '@proton/shared/lib/date/timezone';

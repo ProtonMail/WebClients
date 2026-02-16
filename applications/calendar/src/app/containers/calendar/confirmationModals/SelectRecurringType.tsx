@@ -2,7 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { Radio, Row } from '@proton/components';
+import Row from '@proton/components/components/container/Row';
+import Radio from '@proton/components/components/input/Radio';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

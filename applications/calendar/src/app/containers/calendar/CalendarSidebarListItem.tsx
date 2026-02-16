@@ -4,18 +4,16 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Checkbox,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownMenuLink,
-    Icon,
-    SettingsLink,
-    SidebarListItem,
-    SidebarListItemContent,
-    SidebarListItemLabel,
-    SimpleDropdown,
-} from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import SidebarListItemLabel from '@proton/components/components/sidebar/SidebarListItemLabel';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,

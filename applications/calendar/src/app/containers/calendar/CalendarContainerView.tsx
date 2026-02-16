@@ -8,36 +8,34 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    AppLink,
-    ContactDrawerAppButton,
-    DrawerApp,
-    DrawerAppFooter,
-    DrawerAppHeader,
-    DrawerAppHeaderCustomTitle,
-    DrawerSidebar,
-    DrawerVisibilityButton,
-    ErrorBoundary,
-    FloatingButton,
-    LocalizedMiniCalendar,
-    PrivateAppContainer,
-    PrivateHeader,
-    PrivateMainArea,
-    QuickSettingsAppButton,
-    ReferralAppButton,
-    SmartBanner,
-    ToolbarButton,
-    TopBanners,
-    UserDropdown,
-    useActiveBreakpoint,
-    useDrawer,
-    useNotifications,
-    useOpenDrawerOnLoad,
-    useToggle,
-} from '@proton/components';
+import FloatingButton from '@proton/components/components/button/FloatingButton';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import ContactDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/ContactDrawerAppButton';
+import QuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/QuickSettingsAppButton';
+import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
+import AppLink from '@proton/components/components/link/AppLink';
+import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
+import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
+import DrawerAppFooter from '@proton/components/containers/drawer/DrawerAppFooter';
+import DrawerAppHeader from '@proton/components/containers/drawer/DrawerAppHeader';
+import DrawerAppHeaderCustomTitle from '@proton/components/containers/drawer/DrawerAppHeaderCustomTitle';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useToggle from '@proton/components/hooks/useToggle';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
