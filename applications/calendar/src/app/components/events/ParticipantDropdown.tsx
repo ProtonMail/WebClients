@@ -2,7 +2,10 @@ import type { RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, useNotifications } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';

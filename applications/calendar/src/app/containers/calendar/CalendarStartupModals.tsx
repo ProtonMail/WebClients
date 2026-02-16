@@ -1,11 +1,9 @@
-import {
-    type StartupModal,
-    StartupModals,
-    useCancellationReminderModal,
-    useLightLabellingFeatureModal,
-    useTrialEndedModal,
-} from '@proton/components';
+import StartupModals from '@proton/components/components/startupModals/StartupModals';
+import { useCancellationReminderModal } from '@proton/components/components/startupModals/startupModalHooks';
+import { useLightLabellingFeatureModal } from '@proton/components/components/startupModals/startupModalHooks';
+import { useTrialEndedModal } from '@proton/components/components/startupModals/startupModalHooks';
 import { useNetPromoterScoreModal } from '@proton/components/components/startupModals/startupModalHooks';
+import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 

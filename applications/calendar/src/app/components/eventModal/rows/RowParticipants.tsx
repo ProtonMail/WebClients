@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { MemoizedIconRow as IconRow } from '@proton/components';
+import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { PARTICIPANTS_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';

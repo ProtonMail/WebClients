@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import { useContactEmailsCache, useGetVerificationPreferences } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { toInternalAttendee } from '@proton/shared/lib/calendar/attendees';
 import {

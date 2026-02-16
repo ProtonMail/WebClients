@@ -4,7 +4,10 @@ import { useEffect, useRef } from 'react';
 import { differenceInMilliseconds, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useApi, useContactEmailsCache, useGetCalendarEventRaw, useHasSuspendedCounter } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useApi from '@proton/components/hooks/useApi';
+import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
+import useHasSuspendedCounter from '@proton/components/hooks/useHasSuspendedCounter';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';

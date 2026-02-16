@@ -4,15 +4,13 @@ import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    Badge,
-    ColorPicker,
-    Spotlight,
-    UpsellModal,
-    useModalState,
-    useSpotlightOnFeature,
-    useSpotlightShow,
-} from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import ColorPicker from '@proton/components/components/input/ColorPicker';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';

@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { DateInput, MemoizedIconRow as IconRow, TimeInput } from '@proton/components';
+import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
+import DateInput from '@proton/components/components/input/DateInput';
+import TimeInput from '@proton/components/components/input/TimeInput';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';

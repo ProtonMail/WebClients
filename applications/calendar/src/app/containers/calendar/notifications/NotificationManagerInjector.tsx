@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useNotifications } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
 import { extendStore } from '../../../store/store';
 

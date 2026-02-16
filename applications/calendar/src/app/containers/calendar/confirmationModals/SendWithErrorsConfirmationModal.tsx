@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';

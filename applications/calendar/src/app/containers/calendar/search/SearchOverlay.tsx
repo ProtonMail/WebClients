@@ -10,15 +10,13 @@ import { useLayoutEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { HotkeyTuple } from '@proton/components';
-import {
-    getCustomSizingClasses,
-    useDropdownArrowNavigation,
-    useFocusTrap,
-    useHotkeys,
-    useIsClosing,
-} from '@proton/components';
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { Portal } from '@proton/components/components/portal';
+import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
+import useDropdownArrowNavigation from '@proton/components/hooks/useDropdownArrowNavigation';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useIsClosing from '@proton/components/hooks/useIsClosing';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, Label, useNotifications } from '@proton/components/index';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import clsx from '@proton/utils/clsx';
 

@@ -2,8 +2,8 @@ import type { MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { useUserSettings } from '@proton/account/index';
-import { useApi } from '@proton/components';
 import type { DateTuple } from '@proton/components/components/miniCalendar/interface';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi, getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

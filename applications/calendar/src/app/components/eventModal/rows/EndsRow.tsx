@@ -3,7 +3,9 @@ import { type ReactNode, useState } from 'react';
 import { isValid } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DateInput, IntegerInput, RadioGroup } from '@proton/components';
+import DateInput from '@proton/components/components/input/DateInput';
+import IntegerInput from '@proton/components/components/input/IntegerInput';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';

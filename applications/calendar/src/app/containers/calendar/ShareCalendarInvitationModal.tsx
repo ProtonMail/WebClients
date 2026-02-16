@@ -3,17 +3,15 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    CalendarLimitReachedModal,
-    Prompt,
-    ShareCalendarWithSignatureVerificationErrorModal,
-    useCalendarShareInvitationActions,
-    useContactEmailsCache,
-    useModalState,
-    useNotifications,
-    useSettingsLink,
-} from '@proton/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
+import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { Subscription } from '@proton/payments';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
