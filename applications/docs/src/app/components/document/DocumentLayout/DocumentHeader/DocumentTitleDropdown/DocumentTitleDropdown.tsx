@@ -539,16 +539,7 @@ export function DocumentTitleDropdown({
             >
               <Icon name="brand-proton-sheets" className="color-weak mr-2" />
               {c('sheets_2025:Action').t`New spreadsheet`}
-              {isMakingNewSheetDocument ? (
-                <CircleLoader size="small" className="ml-auto" />
-              ) : (
-                <span
-                  className={clsx(
-                    'ml-auto flex h-4 shrink-0 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
-                    'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
-                  )}
-                >{c('Info').t`New`}</span>
-              )}
+              {isMakingNewSheetDocument ? <CircleLoader size="small" className="ml-auto" /> : null}
             </DropdownMenuButton>
           ) : null}
 
