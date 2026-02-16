@@ -36,6 +36,7 @@ import {
     hasVPNPassBundle,
     hasVisionary,
 } from '@proton/payments';
+import { isExFamilyTrial } from '@proton/payments/core/subscription/helpers';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -128,6 +129,9 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasMeetFree = isFree && app === APPS.PROTONMEET;
     const hasLumoPlus = hasLumo(subscription);
+
+    // For users on Ex-Family Unlimited trial, show Unlimited 1m + 12m upsell
+    const exFamilyTrial = isExFamilyTrial(subscription);
 
     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
     const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus || hasMeetFree;
@@ -316,6 +320,20 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         {...unlimitedBannerGradientUpsells}
                     />
                 </>
+            ),
+        },
+        {
+            enabled: exFamilyTrial,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
             ),
         },
         {
