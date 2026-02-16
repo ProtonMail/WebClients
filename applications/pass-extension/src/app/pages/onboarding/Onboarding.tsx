@@ -3,7 +3,6 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { Localized } from '@proton/pass/components/Core/Localized';
 
-import { InstallationSuccess } from './Views/InstallationSuccess';
 import { ResumeSession } from './Views/ResumeSession';
 import { Welcome } from './Views/Welcome';
 
@@ -18,9 +17,6 @@ export const Onboarding: FC = () => (
                         <ResumeSession />
                     </Route>
                 )}
-                <Route path="/success">
-                    <InstallationSuccess />
-                </Route>
                 <Route path="/welcome">
                     <Welcome />
                 </Route>

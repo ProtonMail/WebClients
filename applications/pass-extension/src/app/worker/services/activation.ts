@@ -1,3 +1,4 @@
+import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
@@ -13,6 +14,7 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { requestFork } from '@proton/pass/lib/auth/fork';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
@@ -31,6 +33,8 @@ import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
@@ -136,7 +140,23 @@ export const createActivationService = () => {
             const hasSession = (await ctx.service.storage.local.getItem('ps')) !== null;
 
             if (!hasSession) {
-                const url = browser.runtime.getURL('/onboarding.html#/success');
+                const fork = (forkType: ForkType) =>
+                    requestFork({
+                        host: config.SSO_URL,
+                        app: APPS.PROTONPASSBROWSEREXTENSION,
+                        forkType,
+                        plan: BUILD_TARGET === 'safari' && forkType === ForkType.SIGNUP ? 'free' : undefined,
+                    });
+
+                const loginUrl = fork(ForkType.LOGIN).url;
+                const signupUrl = fork(ForkType.SIGNUP).url;
+
+                const searchParams = new URLSearchParams();
+                searchParams.append('loginUrl', loginUrl);
+                searchParams.append('signupUrl', signupUrl);
+
+                const url = `${config.SSO_URL}${SSO_PATHS.PASS_EXTENSION_ONBOARDING}?${searchParams.toString()}`;
+
                 await browser.tabs.create({ url }).catch(noop);
                 void ctx.service.settings.onInstall();
                 void ctx.service.spotlight.onInstall();
