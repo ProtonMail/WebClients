@@ -10,20 +10,24 @@ const dateToCategory = (timestamp: number): PhotoGroup => {
     }
 
     const date = fromUnixTime(timestamp);
+    if (isNaN(date.getTime())) {
+        return c('Info').t`Unknown date`;
+    }
 
     if (isThisMonth(date)) {
         return c('Info').t`This month`;
     } else if (isThisYear(date)) {
         return getMonthFormatter().format(date);
     }
-
     return getMonthYearFormatter().format(date);
 };
 
 // For sorting, we will try to obtain captureTime in the following order:
 // captureTime (almost guaranteed to be there) -> createTime (if decrypted) -> negative date fallback
-const captureTime = (link: PhotoLink) =>
-    link.activeRevision?.photo?.captureTime || ('createTime' in link && link.createTime) || -1;
+const captureTime = (link: PhotoLink): number => {
+    const time = link.activeRevision?.photo?.captureTime || ('createTime' in link ? link.createTime : undefined);
+    return typeof time === 'number' && time >= 0 ? time : -1;
+};
 
 export const sortWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
     const result: PhotoGridItem[] = [];
