@@ -48,7 +48,7 @@
     "react-dom": "^18.3.1",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "react-router-dom-v5-compat": "^6.30.0",
+    "react-router-dom-v5-compat": "^6.30.3",
     "ttag": "^1.8.12",
     "yjs": "^13.6.15"
   },
@@ -64,11 +64,11 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "@types/react": "^18.3.27",
+    "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/uuid": "^9.0.8",
-    "autoprefixer": "^10.4.23",
+    "autoprefixer": "^10.4.24",
     "babel-jest": "^30.2.0",
     "babel-plugin-transform-require-context": "^0.1.1",
     "core-js": "^3.48.0",
@@ -83,6 +83,6 @@
     "sass": "^1.80.3",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3",
-    "webpack": "^5.104.1"
+    "webpack": "^5.105.2"
   }
 }

@@ -15,10 +15,10 @@ name = "proton_authenticator_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2.5.3", features = [] }
+tauri-build = { version = "2.5.5", features = [] }
 
 [dependencies]
-tauri = { version = "2.9.5", features = [] }
+tauri = { version = "2.10.2", features = [] }
 tauri-plugin-opener = "2.5.3"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
@@ -29,8 +29,8 @@ keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sy
 tauri-plugin-process = "2.3.1"
 tauri-plugin-log = "2.8.0"
 log = "0.4.29"
-tauri-plugin-http = { version = "2.5.6", features = ["unsafe-headers", "dangerous-settings"] }
-rand = { version = "0.9.2" }
+tauri-plugin-http = { version = "2.5.7", features = ["unsafe-headers", "dangerous-settings"] }
+rand = { version = "0.10.0" }
 base64 = { version = "0.22.1" }
 specta = { version = "2.0.0-rc.22" }
 specta-typescript = "0.0.9"
@@ -43,8 +43,8 @@ block2 = "0.6.2"
 objc2 = "0.6.3"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-tauri-plugin-single-instance = "2.3.7"
-tauri-plugin-updater = "2.9.0"
+tauri-plugin-single-instance = "2.4.0"
+tauri-plugin-updater = "2.10.0"
 tauri-plugin-window-state = "2.4.1"
 
 [target.'cfg(windows)'.dependencies]

@@ -17,9 +17,9 @@
     "dependencies": {
         "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
-        "@types/react": "^18.3.27",
+        "@types/react": "^18.3.28",
         "cross-env": "^10.1.0",
-        "livekit-client": "2.17.0",
+        "livekit-client": "2.17.1",
         "react": "^18.3.1",
         "ttag": "^1.8.12"
     },
@@ -32,7 +32,7 @@
         "@vitest/coverage-v8": "3.2.4",
         "@vitest/ui": "3.2.4",
         "eslint": "^9.39.2",
-        "happy-dom": "^20.3.7",
+        "happy-dom": "^20.6.1",
         "prettier": "^3.8.1",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4"
