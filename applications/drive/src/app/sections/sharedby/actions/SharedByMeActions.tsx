@@ -1,30 +1,30 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';
+import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import {
     DetailsButton as ContextDetailsButton,
     DownloadButton as ContextDownloadButton,
-    OpenInDocsButton as ContextOpenInDocsButton,
     PreviewButton as ContextPreviewButton,
     ShareLinkButton as ContextShareLinkButton,
 } from '../../../components/sections/ContextMenu/buttons';
 import {
     DetailsButton as ToolbarDetailsButton,
     DownloadButton as ToolbarDownloadButton,
-    OpenInDocsButton as ToolbarOpenInDocsButton,
     PreviewButton as ToolbarPreviewButton,
     RenameButton as ToolbarRenameButton,
     ShareLinkButton as ToolbarShareLinkButton,
 } from '../../../components/sections/ToolbarButtons';
-import { useOpenInDocs } from '../../../hooks/docs/useOpenInDocs';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useRenameModal } from '../../../modals/RenameModal';
 import type { usePreviewModal } from '../../../modals/preview';
 import { useActions } from '../../../store';
+import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
+import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { StopSharingButton } from '../buttons/StopSharingButton';
 import type { SharedByMeItem } from '../useSharedByMe.store';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
@@ -67,15 +67,6 @@ export const SharedByMeActions = ({
 
     const { renameLink } = useActions();
 
-    const openInDocs = useOpenInDocs(
-        singleItem
-            ? {
-                  uid: singleItem.nodeUid,
-                  mediaType: singleItem.mediaType,
-                  parentUid: singleItem.parentUid,
-              }
-            : undefined
-    );
     const hasPreviewAvailable = itemChecker.hasPreviewAvailable(isPreviewAvailable);
     const legacyItems = mapToLegacyFormat(selectedItems);
 
@@ -84,11 +75,29 @@ export const SharedByMeActions = ({
         return null;
     }
 
+    const openInDocsInfo = itemChecker.openInDocsInfo;
+
+    const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType) => {
+        void openDocsOrSheetsDocument({
+            uid,
+            type: openInDocs.type,
+            isNative: openInDocs.isNative,
+            openBehavior: 'tab',
+        });
+    };
+
     if (buttonType === 'toolbar') {
         return (
             <>
                 <ToolbarPreviewButton selectedBrowserItems={legacyItems} />
-                <ToolbarOpenInDocsButton selectedBrowserItems={legacyItems} />
+                {singleItem && openInDocsInfo && (
+                    <OpenInDocsOrSheetsButton
+                        isNative={openInDocsInfo.isNative}
+                        type={openInDocsInfo.type}
+                        onClick={() => handleOpenDocsOrSheets(singleItem.nodeUid, openInDocsInfo)}
+                        buttonType="toolbar"
+                    />
+                )}
                 {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
                 {itemChecker.canRename && <ToolbarRenameButton selectedLinks={legacyItems} renameLink={renameLink} />}
                 <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
@@ -125,8 +134,13 @@ export const SharedByMeActions = ({
                     close={close}
                 />
             )}
-            {itemChecker.isOnlyOneFile && openInDocs.canOpen && (
-                <ContextOpenInDocsButton {...openInDocs} close={close} />
+            {openInDocsInfo && singleItem && (
+                <OpenInDocsOrSheetsButton
+                    isNative={openInDocsInfo.isNative}
+                    type={openInDocsInfo.type}
+                    onClick={() => handleOpenDocsOrSheets(singleItem.nodeUid, openInDocsInfo)}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                />
             )}
             {itemChecker.canDownload && <ContextDownloadButton selectedBrowserItems={legacyItems} close={close} />}
             {itemChecker.canRename && splitedSingleItemUid && singleItem && (
