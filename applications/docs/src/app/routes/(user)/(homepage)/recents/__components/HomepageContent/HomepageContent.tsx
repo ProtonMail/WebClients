@@ -6,7 +6,7 @@ import { ContextMenuProvider } from './DocContextMenu/context'
 import { Icon, useAuthentication } from '@proton/components'
 import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
-import { forwardRef, Fragment, useEffect } from 'react'
+import { forwardRef, useEffect } from 'react'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
@@ -17,7 +17,6 @@ import { APPS } from '@proton/shared/lib/constants'
 import { useApplication } from '~/utils/application-context'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useIsSheetsEnabled } from '~/utils/misc'
-import { useSheetsAnnouncementModal } from './SheetsAnnouncementModal'
 
 export function HomepageContent() {
   return (
@@ -26,7 +25,6 @@ export function HomepageContent() {
       <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">
         <HomepageView />
       </div>
-      <Modals />
     </ContextMenuProvider>
   )
 }
@@ -242,9 +240,4 @@ function PreloadImages({ urls }: PreloadImagesProps) {
   }, [urls])
 
   return null
-}
-
-function Modals() {
-  const [sheetsAnnouncementModal] = useSheetsAnnouncementModal()
-  return <Fragment>{sheetsAnnouncementModal}</Fragment>
 }
