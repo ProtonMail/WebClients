@@ -1,5 +1,7 @@
 import { NodeType, splitNodeUid } from '@proton/drive';
+import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
+import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import type { SharedByMeItem } from '../useSharedByMe.store';
 
 export interface ItemTypeChecker {
@@ -14,6 +16,7 @@ export interface ItemTypeChecker {
     canRename: boolean;
     canShare: boolean;
     canStopSharing: boolean;
+    openInDocsInfo: OpenInDocsType | undefined;
     items: SharedByMeItem[];
 }
 
@@ -44,6 +47,7 @@ export const createItemChecker = (items: SharedByMeItem[]): ItemTypeChecker => {
 
     const singleItem = items.at(0);
     const isOnlyOneItem = items.length === 1 && !!singleItem;
+    const openInDocsInfo = singleItem?.mediaType ? getOpenInDocsInfo(singleItem.mediaType) : undefined;
 
     return {
         hasFiles: metadata.hasFiles,
@@ -64,6 +68,7 @@ export const createItemChecker = (items: SharedByMeItem[]): ItemTypeChecker => {
         canRename: isOnlyOneItem,
         canShare: isOnlyOneItem,
         canStopSharing: isOnlyOneItem && !!singleItem?.shareId,
+        openInDocsInfo,
         items,
     };
 };
