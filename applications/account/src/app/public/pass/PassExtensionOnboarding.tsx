@@ -1,93 +1,177 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';
 
-import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
-import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { chromeAPI } from '@proton/pass/lib/globals/browser';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
-import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
+import { PassLogo, useNotifications } from '@proton/components';
+import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
+import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import passIconIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
-import './InstallationSuccess.scss';
+import { SetTheme } from '../../content/theme/SetTheme';
+import Layout from '../Layout';
+import Main from '../Main';
+import connectIllustration from './pass-extension-onboarding-connect-illustration.svg';
+import extensionMenuIcon from './pass-extension-onboarding-menu.svg';
+import pinTutorialGif from './pass-extension-onboarding-pin-tutorial.gif';
+import extensionPinIcon from './pass-extension-onboarding-pin.svg';
+
+import './PassExtensionOnboarding.scss';
 
 const getSteps = () => [
     {
         key: 'open',
-        icon: '/assets/extension-menu.svg',
+        icon: extensionMenuIcon,
         description: c('Info').t`Open the Extensions menu`,
     },
     {
         key: 'pin',
-        icon: '/assets/extension-pin.svg',
+        icon: extensionPinIcon,
         description: c('Info').t`Pin ${PASS_APP_NAME} to your toolbar`,
     },
     {
         key: 'access',
-        icon: '/assets/protonpass-icon.svg',
+        icon: passIconIcon,
         description: c('Info').t`Click the icon to open it anytime.`,
     },
 ];
 
-export const InstallationSuccess: FC = () => {
-    const login = useRequestForkWithPermissions({ replace: true });
-    const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(BUILD_TARGET === 'safari' ? true : null);
+const PassThemeLayout: FC<PropsWithChildren> = ({ children }) => (
+    <>
+        <SetTheme theme={ThemeTypes.PassDark} />
+        <Layout toApp={APPS.PROTONPASS}>
+            <Main>{children}</Main>
+        </Layout>
+    </>
+);
 
+const PassExtensionOnboarding: FC = () => {
+    const [extensionDetected, setExtensionDetected] = useState<boolean | null>(null);
+    const [currentStep, setCurrentStep] = useState<'pinning' | 'authentication'>(
+        isSafari() ? 'authentication' : 'pinning'
+    );
     const { createNotification } = useNotifications();
 
-    const nextStep = (): Promise<boolean> | true =>
-        BUILD_TARGET === 'chrome'
-            ? chromeAPI.action
-                  .getUserSettings()
-                  .then((setting) => setting.isOnToolbar)
-                  .catch(() => true)
-            : true;
+    // Get fork URLs passed by Pass extension.
+    const searchParams = new URLSearchParams(window.location.search);
+    const loginUrl = searchParams.get('loginUrl');
+    const signupUrl = searchParams.get('signupUrl');
+
+    const helpUrl = (() => {
+        if (isSafari()) {
+            return 'https://proton.me/support/pass-setup#Safari';
+        }
+        if (isFirefox()) {
+            return 'https://proton.me/support/pass-setup#How-to-install-Proton-Pass-for-Firefox';
+        }
+        return 'https://proton.me/support/pass-setup';
+    })();
 
     useEffect(() => {
-        if (isPinned === false) {
+        sendExtensionMessage({ type: 'pass-installed' }, { app: APPS.PROTONPASSBROWSEREXTENSION, maxTimeout: 2000 })
+            .then((response) => {
+                setExtensionDetected(response.type === 'success');
+            })
+            .catch(() => {
+                setExtensionDetected(false);
+            });
+    }, []);
+
+    const handleContinue = () => {
+        setCurrentStep('authentication');
+    };
+
+    const handleSignIn = () => {
+        if (loginUrl) {
+            window.location.href = loginUrl;
+        } else {
+            // Should not happen unless user manually removed the url params
             createNotification({
-                text: c('Error').t`Please pin the extension or select "Continue without pinning".`,
-                type: 'error',
-                showCloseButton: false,
+                text: c('Warning')
+                    .t`Could not login. Please open ${PASS_APP_NAME} browser extension and login from there.`,
+                type: 'warning',
             });
         }
-    }, [isPinned]);
+    };
 
-    const handleNextStepClick = async () => {
-        setIsPinned(null);
-        setIsPinned(await nextStep());
+    const handleSignUp = () => {
+        if (signupUrl) {
+            window.location.href = signupUrl;
+        } else {
+            createNotification({
+                text: c('Warning')
+                    .t`Could not sign up. Please open ${PASS_APP_NAME} browser extension and sign up from there.`,
+                type: 'warning',
+            });
+        }
     };
 
     const steps = getSteps();
 
+    if (extensionDetected === null) {
+        return (
+            <PassThemeLayout>
+                <div className="text-center">
+                    <CircleLoader size="large" />
+                    <div className="text-lg mt-4 text-bold">{c('Info')
+                        .t`Verifying ${PASS_APP_NAME} browser extension...`}</div>
+                </div>
+            </PassThemeLayout>
+        );
+    }
+
+    // Could not communicate with extension.
+    // May happen on Safari or Firefox if permission was not granted.
+    if (extensionDetected === false) {
+        return (
+            <PassThemeLayout>
+                <h1 className="h3 text-bold mb-4">{c('Title').t`${PASS_APP_NAME} is missing permissions`}</h1>
+                <div className="text-lg mb-6">
+                    {c('Info')
+                        .t`Please open your browser extension settings and allow ${PASS_APP_NAME} extension to access website data. Then, reload this page.`}{' '}
+                    <Href href={helpUrl} className="text-underline text-no-cut" key="learn-more-link">
+                        {c('Link').t`Learn more`}
+                    </Href>
+                </div>
+                <div className="flex justify-center">
+                    <Button color="norm" size="large" onClick={() => location.reload()}>
+                        {c('Action').t`Reload page`}
+                    </Button>
+                </div>
+            </PassThemeLayout>
+        );
+    }
+
     return (
         <>
-            <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
+            <SetTheme theme={ThemeTypes.PassDark} />
             <div className="pass-onboarding ui-prominent w-full min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
                 <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
                         <div className="flex flex-column">
-                            <OnboardingHeader />
+                            <PassLogo />
                             <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">
                                 {c('Title').jt`Welcome to your new password manager!`}
                             </h1>
                         </div>
 
-                        {BUILD_TARGET !== 'safari' ? (
+                        {!isSafari() && (
                             <div className="flex items-center gap-2 mb-4">
-                                <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
-                                <hr className="pass-installation--white-separator my-2 flex flex-auto" />
+                                <span className="text-bold">
+                                    {currentStep === 'pinning' ? c('Info').t`Step 1 of 2` : c('Info').t`Step 2 of 2`}
+                                </span>
+                                <hr className="pass-onboarding--white-separator my-2 flex flex-auto" />
                             </div>
-                        ) : null}
+                        )}
 
                         <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">
-                            {!isPinned && (
+                            {currentStep === 'pinning' && (
                                 <>
                                     <div className="flex flex-nowrap flex-column">
                                         <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
@@ -102,7 +186,7 @@ export const InstallationSuccess: FC = () => {
                                                 {steps.map(({ key, icon, description }, idx) => (
                                                     <li key={key} className="flex mb-5 items-center">
                                                         <div
-                                                            className="pass-installation--dot rounded-50 text-center mr-3 relative"
+                                                            className="pass-onboarding--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
                                                         >
                                                             <span className="absolute inset-center">{idx + 1}</span>
@@ -131,33 +215,22 @@ export const InstallationSuccess: FC = () => {
                                             shape="solid"
                                             color="norm"
                                             className="mt-5 mb-2 w-full"
-                                            onClick={handleNextStepClick}
-                                            aria-label={c('Action').t`Done`}
+                                            onClick={handleContinue}
+                                            aria-label={c('Action').t`Continue`}
                                         >
-                                            <span className="flex justify-center px-4">{c('Action').t`Done`}</span>
+                                            <span className="flex justify-center px-4">{c('Action').t`Continue`}</span>
                                         </Button>
-                                        {BUILD_TARGET === 'chrome' && (
-                                            <Button
-                                                pill
-                                                onClick={() => setIsPinned(true)}
-                                                shape="ghost"
-                                                aria-label={c('Action').t`Continue without pinning`}
-                                                color="norm"
-                                            >
-                                                {c('Action').t`Continue without pinning`}
-                                            </Button>
-                                        )}
                                     </div>
 
                                     <div className="flex">
-                                        <img src="/assets/pin-tutorial.gif" alt="" width="325" />
+                                        <img src={pinTutorialGif} alt="" width="325" />
                                     </div>
                                 </>
                             )}
 
-                            {isPinned && (
+                            {currentStep === 'authentication' && (
                                 <>
-                                    <div className={`${SubTheme.VIOLET} flex flex-nowrap flex-column`}>
+                                    <div className="flex flex-nowrap flex-column">
                                         <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
                                             {c('Title').jt`Connect your ${BRAND_NAME} Account`}
                                         </h2>
@@ -169,7 +242,7 @@ export const InstallationSuccess: FC = () => {
                                             shape="solid"
                                             color="norm"
                                             className="mb-2"
-                                            onClick={() => login()}
+                                            onClick={handleSignIn}
                                             aria-label={c('Action').t`Sign in`}
                                         >
                                             <span className="flex justify-center px-4">
@@ -180,7 +253,7 @@ export const InstallationSuccess: FC = () => {
                                             pill
                                             shape="outline"
                                             color="weak"
-                                            onClick={() => login(ForkType.SIGNUP)}
+                                            onClick={handleSignUp}
                                             aria-label={c('Action').t`Create an account`}
                                         >
                                             <span className="flex justify-center px-4">
@@ -191,9 +264,9 @@ export const InstallationSuccess: FC = () => {
 
                                     <div className="flex justify-center items-center">
                                         <img
-                                            src="assets/onboarding-connect-illustration.svg"
+                                            src={connectIllustration}
                                             alt=""
-                                            className="pass-installation--connect-illustration"
+                                            className="pass-onboarding--connect-illustration"
                                             width="428"
                                         />
                                     </div>
@@ -206,3 +279,5 @@ export const InstallationSuccess: FC = () => {
         </>
     );
 };
+
+export default PassExtensionOnboarding;
