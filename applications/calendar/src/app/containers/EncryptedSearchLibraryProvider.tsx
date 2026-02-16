@@ -5,13 +5,11 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import {
-    useApi,
-    useCalendarModelEventManager,
-    useContactEmailsCache,
-    useEventManager,
-    useGetCalendarEventRaw,
-} from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';

@@ -5,7 +5,12 @@ import { addMinutes, format } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { DriveLogo, LumoLogo, MailLogo, PassLogo, ProtonLogo, VpnLogo } from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import LumoLogo from '@proton/components/components/logo/LumoLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';

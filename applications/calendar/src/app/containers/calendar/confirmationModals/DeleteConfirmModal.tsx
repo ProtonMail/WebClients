@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';

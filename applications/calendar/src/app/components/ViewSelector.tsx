@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, ToolbarButton } from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import clsx from '@proton/utils/clsx';
 

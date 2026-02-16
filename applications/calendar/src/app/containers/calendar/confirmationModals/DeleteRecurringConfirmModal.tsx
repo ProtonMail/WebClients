@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, Prompt } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';

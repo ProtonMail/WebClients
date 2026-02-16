@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
@@ -136,11 +137,7 @@ const CalendarSearchInput = (
                             disabled={!isSearchActive}
                             inputContainerClassName="self-center"
                             prefix={
-                                loading ? (
-                                    <IcArrowRotateRight className="location-refresh-rotate" />
-                                ) : (
-                                    prefixInputSearch
-                                )
+                                loading ? <IcArrowRotateRight className="location-refresh-rotate" /> : prefixInputSearch
                             }
                             suffix={
                                 inputValue.length ? (

@@ -3,14 +3,12 @@ import { memo, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    AddressesAutocompleteTwo,
-    Alert,
-    Details,
-    Summary,
-    useBusySlotsAvailable,
-    useContactEmailsCache,
-} from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
+import Details from '@proton/components/components/container/Details';
+import Summary from '@proton/components/components/container/Summary';
+import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';

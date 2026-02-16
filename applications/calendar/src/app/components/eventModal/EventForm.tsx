@@ -3,13 +3,11 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    MemoizedIconRow as IconRow,
-    Notifications,
-    NotificationsInDrawer,
-    useModalStateObject,
-} from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
+import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';

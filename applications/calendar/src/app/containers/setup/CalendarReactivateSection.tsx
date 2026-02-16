@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarTableRows from './CalendarTableRows';

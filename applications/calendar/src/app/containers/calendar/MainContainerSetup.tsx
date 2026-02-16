@@ -3,7 +3,8 @@ import { Redirect, Route, Switch } from 'react-router';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { ContactEmailsProvider, useCalendarsInfoListener } from '@proton/components';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useCalendarsInfoListener from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import type { Subscription } from '@proton/payments';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,

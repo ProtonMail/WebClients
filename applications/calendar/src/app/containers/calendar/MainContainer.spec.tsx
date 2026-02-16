@@ -6,7 +6,8 @@ import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { CacheProvider, useContactEmailsCache } from '@proton/components';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import {
     CALENDAR_DISPLAY,

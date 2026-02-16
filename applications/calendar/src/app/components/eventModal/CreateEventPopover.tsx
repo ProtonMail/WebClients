@@ -6,7 +6,8 @@ import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useActiveBreakpoint, useBusySlotsAvailable } from '@proton/components';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';

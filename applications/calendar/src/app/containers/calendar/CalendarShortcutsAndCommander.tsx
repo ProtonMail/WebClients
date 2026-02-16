@@ -2,7 +2,10 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { CalendarShortcutsModal, Commander, type CommanderItemInterface, useModalState } from '@proton/components';
+import Commander from '@proton/components/components/commander/Commander';
+import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import CalendarShortcutsModal from '@proton/components/containers/calendar/shortcutsModal/CalendarShortcutsModal';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';

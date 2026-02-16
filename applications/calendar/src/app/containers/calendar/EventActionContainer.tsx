@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { LoaderPage, useNotifications } from '@proton/components';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ACTION_VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';

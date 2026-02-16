@@ -3,7 +3,7 @@ import type { ComponentProps } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { SpotlightProvider } from '@proton/components';
+import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import { mockUseSpotlightOnFeature } from '@proton/testing';
 
 import CalendarSearchInput from './CalendarSearchInput';
