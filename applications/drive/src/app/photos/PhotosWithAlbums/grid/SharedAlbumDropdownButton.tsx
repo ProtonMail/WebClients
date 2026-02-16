@@ -10,7 +10,7 @@ import {
     useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -31,16 +31,14 @@ interface SharedAlbumDropdownButtonProps {
 export const SharedAlbumDropdownButton = ({ volumeId, linkId, shareId }: SharedAlbumDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const onShowDetails = useCallback(() => {
         if (!shareId) {
             return;
         }
         showDetailsModal({
             drive: getDriveForPhotos(),
-            volumeId: volumeId,
-            shareId: shareId,
-            linkId: linkId,
+            nodeUid: generateNodeUid(volumeId, linkId),
         });
     }, [linkId, shareId]);
 

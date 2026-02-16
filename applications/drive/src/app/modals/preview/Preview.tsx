@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
 
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -36,7 +35,6 @@ type PhotosProps = {
 
 export function Preview({
     drive,
-    deprecatedContextShareId,
     nodeUid,
     previewableNodeUids,
     onNodeChange,
@@ -58,9 +56,7 @@ export function Preview({
         photos.isForPhotos = true;
     }
 
-    const [detailsModal, showDetailsModal] = useDetailsModal();
-
-    const { volumeId, nodeId } = splitNodeUid(nodeUid);
+    const { detailsModal, showDetailsModal } = useDetailsModal();
 
     const sheetsEnabled = useFlagsDriveSheet();
 
@@ -69,13 +65,7 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({
-            drive,
-            volumeId,
-            shareId: deprecatedContextShareId,
-            linkId: nodeId,
-            verifySignatures,
-        });
+        showDetailsModal({ nodeUid, drive, verifySignatures });
     };
     const onShare = preview.canShare ? () => showSharingModal({ nodeUid }) : undefined;
 

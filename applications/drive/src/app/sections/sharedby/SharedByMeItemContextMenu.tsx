@@ -22,7 +22,7 @@ export function SharedByMeItemContextMenu({
 }) {
     const [previewModal, showPreviewModal] = usePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { sharingModal, showSharingModal } = useSharingModal();
 

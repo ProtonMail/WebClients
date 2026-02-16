@@ -13,7 +13,7 @@ interface BaseSharedWithMeActionsProps {
     selectedItems: SharedWithMeListingItemUI[];
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
-    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
+    showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showCopyModal: (items: DirectShareItem[]) => void;
 }

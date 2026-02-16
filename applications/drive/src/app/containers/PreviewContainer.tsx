@@ -11,12 +11,12 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import { DeprecatedSignatureIcon as SignatureIcon } from '../components/SignatureIcon';
-import { useDetailsModal } from '../components/modals/DetailsModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import { useFlagsDriveSDKPreview } from '../flags/useFlagsDriveSDKPreview';
 import { useFlagsDriveSheet } from '../flags/useFlagsDriveSheet';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useDriveNavigation from '../hooks/drive/useNavigate';
+import { useDetailsModal } from '../modals/DetailsModal';
 import { useSharingModal } from '../modals/SharingModal/SharingModal';
 import { Preview } from '../modals/preview';
 import { useActions, useFileView } from '../store';
@@ -96,7 +96,7 @@ function PreviewContainerDeprecated() {
         navigateToSearch,
     } = useDriveNavigation();
     const { setFolder } = useActiveShare();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const { query: lastQuery } = useSearchResults();
     const { saveFile } = useActions();
@@ -260,9 +260,7 @@ function PreviewContainerDeprecated() {
                 videoStreaming={videoStreaming}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
                 onDetails={
-                    !link
-                        ? undefined
-                        : () => showDetailsModal({ drive: getDrive(), volumeId: link.volumeId, shareId, linkId })
+                    !link ? undefined : () => showDetailsModal({ nodeUid: generateNodeUid(link.volumeId, linkId) })
                 }
                 onShare={
                     !isAdmin || isLinkLoading || !link || !!link?.trashed

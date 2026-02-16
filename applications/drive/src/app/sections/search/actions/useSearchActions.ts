@@ -1,4 +1,4 @@
-import { getDrive, splitNodeUid } from '@proton/drive';
+import { getDrive } from '@proton/drive';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
@@ -13,7 +13,7 @@ import { useSearchViewStore } from '../store';
 
 export const useSearchActions = () => {
     const [previewModal, showPreviewModal] = usePreviewModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const drive = getDrive();
     const { navigateToNodeUid } = useDriveNavigation();
@@ -66,21 +66,11 @@ export const useSearchActions = () => {
     };
 
     const handleDetails = (uid: string) => {
-        const { volumeId, nodeId } = splitNodeUid(uid);
-        showDetailsModal({
-            drive,
-            volumeId,
-            linkId: nodeId,
-            verifySignatures: false,
-            shareId: '',
-        });
+        showDetailsModal({ nodeUid: uid, verifySignatures: false });
     };
 
     const handleRename = (uid: string) => {
-        showRenameModal({
-            nodeUid: uid,
-            drive,
-        });
+        showRenameModal({ nodeUid: uid });
     };
 
     const handleTrash = async (uids: string[]) => {

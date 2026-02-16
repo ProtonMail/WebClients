@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
-import { getDrive } from '@proton/drive/index';
+import { generateNodeUid } from '@proton/drive/index';
 
-import type { useDetailsModal } from '../../../modals/DetailsModal';
+import type { useDetailsModal } from '../../../../modals/DetailsModal/';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     selectedBrowserItems: { volumeId: string; rootShareId: string; linkId: string }[];
-    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
+    showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>[1];
     close: () => void;
 }
@@ -22,10 +22,7 @@ const DetailsButton = ({ selectedBrowserItems, showDetailsModal, showFilesDetail
             action={() => {
                 if (selectedBrowserItems.length === 1) {
                     void showDetailsModal({
-                        drive: getDrive(), // TODO: pass Drive client from context
-                        volumeId: selectedBrowserItems[0].volumeId,
-                        shareId: selectedBrowserItems[0].rootShareId,
-                        linkId: selectedBrowserItems[0].linkId,
+                        nodeUid: generateNodeUid(selectedBrowserItems[0].volumeId, selectedBrowserItems[0].linkId),
                     });
                 } else if (selectedBrowserItems.length > 1) {
                     void showFilesDetailsModal({ selectedItems: selectedBrowserItems });
