@@ -8,10 +8,17 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { Toggle } from '@proton/components/index';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
-import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import {
+    MeetingSideBars,
+    selectShowDuration,
+    selectSideBarState,
+    toggleShowDuration,
+    toggleSideBarState,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
@@ -30,10 +37,11 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
 
-    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation } =
+    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation, paidUser } =
         useMeetContext();
 
     const sideBarState = useMeetSelector(selectSideBarState);
+    const showDuration = useMeetSelector(selectShowDuration);
 
     const timeZone = currentMeeting?.Timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -239,6 +247,26 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                         </TableRow>
                                     );
                                 })}
+                            </TableBody>
+                        </Table>
+                    </div>
+                )}
+                {!!paidUser && (
+                    <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
+                        <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting settings`}</h3>
+                        <Table className="mb-0">
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/2 pl-0">
+                                        {c('Title').t`Show duration`}
+                                    </TableCell>
+                                    <TableCell className="text-right">
+                                        <Toggle
+                                            checked={showDuration}
+                                            onChange={() => dispatch(toggleShowDuration())}
+                                        />
+                                    </TableCell>
+                                </TableRow>
                             </TableBody>
                         </Table>
                     </div>
