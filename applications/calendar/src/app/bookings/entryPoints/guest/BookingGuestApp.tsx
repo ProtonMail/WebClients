@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import {
-    ApiContext,
-    ApiProvider,
-    AuthenticationProvider,
-    ErrorBoundary,
-    LoaderPage,
-    ModalsChildren,
-    NotificationsChildren,
-    ProtonApp,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ApiContext from '@proton/components/containers/api/apiContext';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

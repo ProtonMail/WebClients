@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
@@ -26,7 +26,7 @@ interface Props {
 const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }: Props) => {
     const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
-        // eslint-disable-next-line react-hooks/exhaustive-deps 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [now, dateLocale]);
 
     const { previous, next } = getNavigationArrowsText(view);

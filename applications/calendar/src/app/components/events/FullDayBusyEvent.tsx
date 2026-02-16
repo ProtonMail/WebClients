@@ -1,7 +1,7 @@
 import type { CSSProperties, Ref } from 'react';
 import { useMemo } from 'react';
 
-import { useContactEmailsCache } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';

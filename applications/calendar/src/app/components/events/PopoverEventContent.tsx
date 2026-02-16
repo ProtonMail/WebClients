@@ -4,16 +4,14 @@ import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    IconRow,
-    Info,
-    useContactEmailsCache,
-    useContactModals,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import IconRow from '@proton/components/components/iconRow/IconRow';
+import Info from '@proton/components/components/link/Info';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';

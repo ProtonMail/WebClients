@@ -1,4 +1,4 @@
-import { RadioGroup } from '@proton/components';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import capitalize from '@proton/utils/capitalize';
 

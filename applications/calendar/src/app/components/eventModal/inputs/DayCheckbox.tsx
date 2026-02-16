@@ -1,6 +1,6 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { InputButtonProps } from '@proton/components';
-import { InputButton } from '@proton/components';
+import type { InputButtonProps } from '@proton/components/components/input/InputButton';
+import InputButton from '@proton/components/components/input/InputButton';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<InputButtonProps, 'title'> {

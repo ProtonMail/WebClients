@@ -2,7 +2,8 @@ import type { Ref } from 'react';
 import { forwardRef, useRef } from 'react';
 import * as React from 'react';
 
-import { useFocusTrap, useHotkeys } from '@proton/components';
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 

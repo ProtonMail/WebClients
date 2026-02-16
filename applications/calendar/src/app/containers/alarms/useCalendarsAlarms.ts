@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';

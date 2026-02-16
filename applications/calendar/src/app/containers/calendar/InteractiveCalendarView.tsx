@@ -15,25 +15,23 @@ import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
 import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/videoConferencing/constants';
 import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '@proton/calendar/videoConferencing/telemetry';
-import {
-    Dropzone,
-    ImportModal,
-    useActiveBreakpoint,
-    useApi,
-    useBeforeUnload,
-    useCalendarModelEventManager,
-    useConfig,
-    useContactEmailsCache,
-    useGetCalendarEventRaw,
-    useGetEncryptionPreferences,
-    useGetVerificationPreferences,
-    useNotifications,
-    usePreventCloseTab,
-    useRelocalizeText,
-} from '@proton/components';
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
+import useConfig from '@proton/components/hooks/useConfig';
+import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
+import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { type SessionKey, serverTime } from '@proton/crypto';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';

@@ -5,7 +5,8 @@ import { getUnixTime } from 'date-fns';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider, useSubscribedCalendars } from '@proton/components';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

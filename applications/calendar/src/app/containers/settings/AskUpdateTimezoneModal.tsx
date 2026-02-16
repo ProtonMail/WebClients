@@ -4,7 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { Checkbox, Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 

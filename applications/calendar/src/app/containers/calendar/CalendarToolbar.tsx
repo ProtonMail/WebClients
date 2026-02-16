@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { TimeZoneSelector, Toolbar, useElementBreakpoints } from '@proton/components';
+import TimeZoneSelector from '@proton/components/components/timezoneSelector/TimeZoneSelector';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
+import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 
 interface Props {
     dateCursorButtons?: ReactNode;

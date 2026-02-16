@@ -2,7 +2,11 @@ import React, { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenuButton, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';

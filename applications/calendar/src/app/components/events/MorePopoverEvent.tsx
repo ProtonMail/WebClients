@@ -1,6 +1,6 @@
 import type { CSSProperties, Ref } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 

@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { BasicModal, Form, useBusySlotsAvailable } from '@proton/components';
+import Form from '@proton/components/components/form/Form';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';

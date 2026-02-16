@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
-import { NotificationsProvider } from '@proton/components';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 
 import { useCalendarDispatch } from '../../store/hooks';
 import type { UseCalendarActionsOnLoadParameters } from './useCalendarActionsOnLoad';

@@ -3,14 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-} from '@proton/components';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import encryptedEventSvg from '@proton/styles/assets/img/illustrations/encrypted-event.svg';

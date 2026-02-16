@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
