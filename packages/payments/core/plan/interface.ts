@@ -59,11 +59,12 @@ export interface FreePlanDefault extends Plan {
     MaxBaseRewardSpace: number;
 }
 
-export interface SubscriptionPlan
-    extends Omit<Plan, 'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'> {
+export interface SubscriptionPlan extends Omit<
+    Plan,
+    'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'
+> {
     // TODO: improve
     Offer?: 'default' | string;
-    External?: number;
 }
 
 export type BasePlansMap<T extends Plan> = {
