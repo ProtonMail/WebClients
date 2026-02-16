@@ -33,10 +33,12 @@ import { measureRequestTime } from "./utils/log/measureRequestTime";
 import { initializeFeatureFlagManager } from "./utils/flags/manager";
 import { handleSecondInstance } from "./utils/event-handlers/second-instance";
 import { registerDebugStartOptions } from "./debug/start-options";
+import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
 
 (async function () {
     initializeLog();
     captureUncaughtErrors();
+    registerIOStreamErrorHandlers();
     await initializeSentry();
     logInitialAppInfo();
     handleStartupMailto();
