@@ -20,14 +20,13 @@ import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
+import { MeetingName } from '../MeetingName/MeetingName';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
-import { MeetingTitle } from '../MeetingTitle/MeetingTitle';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
@@ -38,7 +37,6 @@ import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
-import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
 
 import './MeetingBody.scss';
 
@@ -67,7 +65,7 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, guestMode, isGuestAdmin } = useMeetContext();
+    const { participantNameMap, meetingLink, guestMode } = useMeetContext();
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
@@ -80,8 +78,6 @@ export const MeetingBody = ({
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
-
-    const { isLocalParticipantHost, isLocalParticipantAdmin } = useIsLocalParticipantAdmin();
 
     useEffect(() => {
         if (isScreenShare && screenShareTrack?.publication?.track && screenShareVideoRef.current) {
@@ -121,13 +117,7 @@ export const MeetingBody = ({
             )}
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
-                    {isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin ? (
-                        <TimeLimitCTAPopup>
-                            <MeetingTitle />
-                        </TimeLimitCTAPopup>
-                    ) : (
-                        <MeetingTitle />
-                    )}
+                    <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
                     <div className="text-ellipsis overflow-hidden">
                         {isVideoEnabled && isMobile() && (
                             <CircleButton
@@ -154,57 +144,51 @@ export const MeetingBody = ({
                     (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
                 )}
             >
-                {isScreenShare && (
-                    <div
-                        className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
-                        style={{
-                            flexGrow: isLargerThanMd ? defaultScreenShareFlexGrow : smallScreenScreenShareFlexGrow,
-                            flexBasis: 0,
-                        }}
-                    >
-                        <div className="absolute top-0 left-0 w-full h-full" />
-                        <VideoTrack
-                            key={screenShareTrack?.publication?.track?.sid}
-                            className="screen-share-video w-full h-full block object-contain"
-                            trackRef={screenShareTrack}
-                            autoPlay
-                            playsInline
-                            muted={isLocalScreenShare}
-                            manageSubscription={false}
-                        />
-                        <div
-                            className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
-                            style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
-                        >
-                            <SecurityShield
-                                title={c('Info').t`End-to-end encryption is active for screen share`}
-                                size={3}
-                                tooltipPlacement="top-start"
-                            />
-                            {screenShareLabel}
-                        </div>
-                    </div>
-                )}
-                {isScreenShare && isLargerThanMd ? (
-                    <ParticipantSidebar
-                        participantSideBarOpen={participantSideBarOpen}
-                        setParticipantSideBarOpen={setParticipantSideBarOpen}
-                    />
-                ) : (
+                {isScreenShare ? (
                     <>
-                        {(isLargerThanMd || !isSideBarOpen) && !isScreenShare && (
+                        <div
+                            className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
+                            style={{
+                                flexGrow: isLargerThanMd ? defaultScreenShareFlexGrow : smallScreenScreenShareFlexGrow,
+                                flexBasis: 0,
+                            }}
+                        >
+                            <VideoTrack
+                                key={screenShareTrack?.publication?.track?.sid}
+                                className="screen-share-video w-full h-full block object-contain"
+                                trackRef={screenShareTrack}
+                                autoPlay
+                                playsInline
+                                muted={isLocalScreenShare}
+                                manageSubscription={false}
+                            />
                             <div
-                                className="h-full shrink-0"
-                                style={{
-                                    flexGrow: 8,
-                                    flexBasis: 0,
-                                }}
+                                className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
+                                style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
                             >
-                                <ParticipantGrid />
+                                <SecurityShield
+                                    title={c('Info').t`End-to-end encryption is active for screen share`}
+                                    size={3}
+                                    tooltipPlacement="top-start"
+                                />
+                                {screenShareLabel}
                             </div>
+                        </div>
+                        {isLargerThanMd && (
+                            <ParticipantSidebar
+                                participantSideBarOpen={participantSideBarOpen}
+                                setParticipantSideBarOpen={setParticipantSideBarOpen}
+                            />
                         )}
                     </>
+                ) : (
+                    (isLargerThanMd || !isSideBarOpen) && (
+                        <div className="h-full shrink-0" style={{ flexGrow: 8, flexBasis: 0 }}>
+                            <ParticipantGrid />
+                        </div>
+                    )
                 )}
+
                 {isSideBarOpen && (
                     <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
                         <Participants />
