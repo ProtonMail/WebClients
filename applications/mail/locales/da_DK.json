@@ -676,7 +676,7 @@
         "Skjul"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
-        "Gem ${ BRAND_NAME }'s Scribe-skriveassistent"
+        "Gem ${ BRAND_NAME }s Scribe-skriveassistent"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -833,7 +833,7 @@
         "Indlæser${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mailapplikation"
+        "Gør ${ MAIL_APP_NAME } til din standard-e-mailapplikation"
       ],
       "Make it friendly": [
         "Gør det venligt"
@@ -1902,8 +1902,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4921,8 +4921,8 @@
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
-        "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
+        "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen\nmed et program som for eksempel GnuPG.",
+        "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne\nmed et program som for eksempel GnuPG."
       ],
       "The email addresses do not match": [
         "E-mailadresserne stemmer ikke overens"
@@ -6432,7 +6432,7 @@
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } samtale vil blive markeret som ulæst.",
-        "${ elementsCount } samtaler vil blive markeret som ulæst."
+        "${ elementsCount } samtaler vil blive markeret som ulæste."
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } samtale vil blive flyttet",
@@ -6503,8 +6503,8 @@
         "${ numOccurrences } forekomster fundet"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } forekomst fundet i mail-indholdet",
-        "${ numOccurrences } forekomster fundet i mail-indholdet"
+        "${ numOccurrences } forekomst fundet i mailens indhold",
+        "${ numOccurrences } forekomster fundet i mailens indhold"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "Med ${ PASS_APP_NAME } kan du gemme adgangskoder, noter og andre følsomme oplysninger med end-to-end-kryptering. Tilgængelig på ${ ios }, ${ android } og i din ${ browser }."
@@ -6568,7 +6568,7 @@
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulæst",
-        "${ subscription.UnreadMessageCount } ulæst"
+        "${ subscription.UnreadMessageCount } ulæste"
       ],
       "${ total } conversation": [
         "${ total } samtale",
@@ -6745,8 +6745,8 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6929,7 +6929,7 @@
         "Ryd valg"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Rydning af browserdata deaktiverer også beskedindholdsøgning på denne enhed. Alle beskeder skal downloades igen for at kunne søge i dem."
+        "Rydning af browserdata deaktiverer også søgning efter indhold i beskeder på denne enhed. Alle beskeder skal downloades igen for at kunne søge i dem."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Rydder browserdata (herunder hentede beskeder, ...)"
@@ -6962,7 +6962,7 @@
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -8141,7 +8141,7 @@
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "Den originale afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
+        "Den oprindelige afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
@@ -8677,8 +8677,8 @@
         "Du har **${ count } beskeder** gemt i denne mappe"
       ],
       "You have **${ count } message** tagged with this label": [
-        "Du har **${ count } besked** mærket med denne etikette",
-        "Du har **${ count } beskeder** mærket med denne etikette"
+        "Du har **${ count } besked** mærket med denne etiket",
+        "Du har **${ count } beskeder** mærket med denne etiket"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -8714,8 +8714,8 @@
         "Du valgte **${ count } beskeder** fra denne mappe"
       ],
       "You selected **${ count } message** with this label": [
-        "Du valgte **${ count } besked** med denne etikette",
-        "Du valgte **${ count } beskeder** med denne etikette"
+        "Du valgte **${ count } besked** med denne etiket",
+        "Du valgte **${ count } beskeder** med denne etiket"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Du valgte **${ elementsCount } samtale** i ${ location }",
@@ -12807,7 +12807,7 @@
       ],
       "Friend joined": [
         "Ven tilmeldte sig",
-        "Venner tilmelde sig"
+        "Venner tilmeldte sig"
       ],
       "Friend subscribed": [
         "En ven abonnerede",
@@ -13006,7 +13006,7 @@
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Vi har opdaget fejl. Din e-mail kan ikke sendes til den indtastede e-mailadresse af følgende årsag:",
-        "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsag:"
+        "Vi har opdaget fejl. Din e-mail kan ikke sendes til nogen af de indtastede e-mailadresser af følgende årsager:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har opdaget nogle fejl. Din e-mail kan ikke sendes til en eller flere af de indtastede e-mailadresser af de følgende årsager:"
@@ -13018,7 +13018,7 @@
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
-        "Følgende adresser er ikke gyldig: ${ invalidAddresses }"
+        "Følgende adresser er ikke gyldige: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
         "Vi har registreret nogle advarsler. Følgende e-mailadresse modtager muligvis ikke e-mails:",
@@ -13572,7 +13572,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Se, hvad der er inkluderet i dit abonnement og nyd fordelene"
+        "Se, hvad der er inkluderet i dit abonnement og drag nytte af fordelene."
       ],
       "Discover your subscription benefits": [
         "Opdag fordelene ved dit abonnement"
@@ -14252,8 +14252,8 @@
         "${ elementsCount } beskeder flyttet til ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } besked flyttet til spam og afsender tilføjet din spam-liste.",
-        "${ elementsCount } beskeder flyttet til spam og afsendere tilføjet din spam-liste."
+        "${ elementsCount } besked flyttet til spam og afsender tilføjet din spamliste.",
+        "${ elementsCount } beskeder flyttet til spam og afsendere tilføjet din spamliste."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } besked fjernet fra ${ labelName }.",
@@ -14317,7 +14317,7 @@
         "Samtale markeret som ulæst."
       ],
       "Conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "Samtale flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste."
+        "Samtale flyttet til ${ labelName } og afsender tilføjet din liste over ikkespam."
       ],
       "Conversation moved to ${ labelName }.": [
         "Samtale flyttet til ${ labelName }."
