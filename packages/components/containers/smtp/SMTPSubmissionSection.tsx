@@ -132,7 +132,7 @@ const SMTPSubmissionSection = () => {
             return;
         }
         void withLoadingTokens(fetchTokens());
-    }, [submissionTokenAvailable, tokenEligible]);
+    }, [submissionTokenAvailable, tokenEligible, isSMPTEligible]);
 
     if (loadingOrganization || loadingTokenEligible) {
         return (
