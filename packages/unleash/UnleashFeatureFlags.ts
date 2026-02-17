@@ -109,6 +109,7 @@ enum AccountFlag {
     MembersRemote = 'MembersRemote',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
+    UseZendeskV2 = 'UseZendeskV2',
 }
 
 enum PaymentsFlag {
