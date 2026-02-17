@@ -43,16 +43,21 @@ import { isAcceptedInvite } from './invite.utils';
 
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
 
+export const getUserInvitesQuery = () => ({ url: `pass/v1/invite`, method: 'get' }) as const;
+export const getUserInvites = () => api(getUserInvitesQuery());
+export const getGroupInvitesQuery = () => ({ url: `pass/v1/invite/group`, method: 'get' }) as const;
+export const getGroupInvites = () => api(getGroupInvitesQuery());
+
 /** Retrieves all user invites */
-export const getUserInvites = async (vaultIDs: Set<ShareId>): Promise<UserInvite[]> => {
-    const { Invites } = await api({ url: `pass/v1/invite`, method: 'get' });
+export const resolveUserInvites = async (vaultIDs: Set<ShareId>): Promise<UserInvite[]> => {
+    const { Invites } = await getUserInvites();
     const userInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseUserInvite));
     return userInvites.filter(truthy);
 };
 
 /** Retrieves all group invites */
-export const getGroupInvites = async (vaultIDs: Set<ShareId>): Promise<GroupInvite[]> => {
-    const { Invites } = (await api({ url: `pass/v1/invite/group`, method: 'get' })).Invites;
+export const resolveGroupInvites = async (vaultIDs: Set<ShareId>): Promise<GroupInvite[]> => {
+    const { Invites } = (await getGroupInvites()).Invites;
     const groupInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseGroupInvite));
     return groupInvites.filter(truthy);
 };
@@ -61,8 +66,8 @@ export const getGroupInvites = async (vaultIDs: Set<ShareId>): Promise<GroupInvi
  * `vaultIDs` filters stale invites targeting already-owned vaults (BE delay).
  * `resolveGroups` gates the group-invites request behind B2B + groups. */
 export const allInvites = async (vaultIDs: Set<string>, resolveGroups: boolean): Promise<Invite[]> => {
-    const userInvites: Invite[] = await getUserInvites(vaultIDs);
-    const groupInvites = resolveGroups ? await getGroupInvites(vaultIDs) : [];
+    const userInvites: Invite[] = await resolveUserInvites(vaultIDs);
+    const groupInvites = resolveGroups ? await resolveGroupInvites(vaultIDs) : [];
     return userInvites.concat(groupInvites);
 };
 
