@@ -1,15 +1,22 @@
-import { EllipsisLoader } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './EllipsisLoader.mdx';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 
-export default {
-    component: EllipsisLoader,
+const meta: Meta<typeof EllipsisLoader> = {
     title: 'Components/Ellipsis Loader',
+    component: EllipsisLoader,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component: 'An animated ellipsis indicator used to show that content is loading.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => <EllipsisLoader />;
+export default meta;
+
+type Story = StoryObj<typeof EllipsisLoader>;
+
+export const Default: Story = {};
