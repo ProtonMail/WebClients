@@ -7,12 +7,13 @@ import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
+
+import { MeetSignIn } from '../SignIn/SignIn';
 
 import './PageHeader.scss';
 
@@ -25,25 +26,6 @@ interface PageHeaderProps {
 export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
     const location = useLocation();
     const history = useHistory();
-
-    const handleSignIn = (returnUrl: string) =>
-        requestFork({
-            fromApp: APPS.PROTONMEET,
-            forkType: ForkType.LOGIN,
-            extra: {
-                returnUrl,
-            },
-        });
-
-    const handleSignInClick = () => {
-        const hash = window.location.hash;
-
-        if (hash && !isUrlPasswordValid(hash)) {
-            return window.location.pathname.replace('/guest', '');
-        }
-
-        handleSignIn(window.location.pathname.replace('/guest', '') + window.location.hash);
-    };
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
@@ -106,14 +88,9 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
                         <div className="flex items-center sign-in-header-button-container">
                             {guestMode ? (
                                 <>
-                                    <Button
-                                        className="sign-in-header-button rounded-full py-2"
-                                        onClick={handleSignInClick}
-                                        size="medium"
-                                        shape="ghost"
-                                    >
+                                    <MeetSignIn className="sign-in-header-button rounded-full py-2">
                                         {c('Action').t`Sign in`}
-                                    </Button>
+                                    </MeetSignIn>
                                     <Button
                                         className="create-account-header-button rounded-full py-2"
                                         onClick={handleSignUpClick}
