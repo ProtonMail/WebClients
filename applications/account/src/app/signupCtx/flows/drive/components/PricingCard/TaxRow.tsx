@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Price } from '@proton/components';
-import { type RequiredCheckResponse, formatTax } from '@proton/payments';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
+import { TaxInclusive } from '@proton/payments/core/subscription/constants';
+import { formatTax } from '@proton/payments/core/tax';
 
 interface TaxRowProps {
     checkResult: RequiredCheckResponse;
@@ -19,21 +21,30 @@ export const TaxRow = ({ checkResult }: Partial<TaxRowProps>) => {
 
     const { rate: taxRate, currency, taxName: suggestedTaxName, amount, taxesQuantity } = formattedTax;
 
-    const price = (
+    const taxAmountElement = (
         <Price key="price" currency={currency} data-testid="taxAmount">
             {amount}
         </Price>
     );
 
-    const taxName = taxesQuantity > 1 ? c('Payments').t`Taxes` : suggestedTaxName;
-
     return (
         <div className="flex justify-space-between gap-2" data-testid="tax">
             <span>
-                {taxName} {taxRate}
-                {'%'}
+                {(() => {
+                    if (checkResult.TaxInclusive === TaxInclusive.INCLUSIVE) {
+                        const multipleInclusiveTaxesText = c('Payments').t`Including ${taxRate}% taxes`;
+                        const singleInclusiveTaxesText = c('Payments').t`Including ${taxRate}% ${suggestedTaxName}`;
+
+                        return taxesQuantity > 1 ? multipleInclusiveTaxesText : singleInclusiveTaxesText;
+                    } else if (checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE) {
+                        const multipleExclusiveTaxesText = c('Payments').t`${taxRate}% taxes`;
+                        const singleExclusiveTaxesText = `${taxRate}% ${suggestedTaxName}`;
+
+                        return taxesQuantity > 1 ? multipleExclusiveTaxesText : singleExclusiveTaxesText;
+                    }
+                })()}
             </span>
-            <span>{price}</span>
+            <span>{taxAmountElement}</span>
         </div>
     );
 };

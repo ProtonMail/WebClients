@@ -14,11 +14,12 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
+import { useEditBillingAddressModal } from '@proton/payments/ui/containers/EditBillingAddress/useEditBillingAddressModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useEditBillingAddressModal } from './EditBillingAddress/useEditBillingAddressModal';
+import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';
 import InvoiceGroup from './InvoiceGroup';
 import InvoiceTextModal from './InvoiceTextModal';
 import TransactionGroup from './TransactionGroup';
@@ -40,11 +41,8 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const [owner, setOwner] = useState(InvoiceOwner.User);
 
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
-    const {
-        openBillingAddressModal,
-        editBillingAddressModal,
-        loading: loadingBillingAddressModal,
-    } = useEditBillingAddressModal();
+    const { openEditInvoiceModal, editInvoiceModal, loading: loadingEditInvoiceModal } = useEditInvoiceModal();
+    const { openBillingAddressModal, editBillingAddressModal, loadingByKey } = useEditBillingAddressModal();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -101,6 +99,8 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
         void hook.request();
     }, [document, owner]);
 
+    const editBillingAddressLoadingKey = 'editBillingAddress';
+
     const invoiceEditButtons = hook.type === 'invoices' && hook.invoices.length > 0 && (
         <DropdownActions
             size="medium"
@@ -109,14 +109,15 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',
-                    onClick: () => openBillingAddressModal({ editExistingInvoice: false }),
-                    loading: loadingBillingAddressModal,
+                    onClick: () => openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey }),
+                    loading: loadingByKey[editBillingAddressLoadingKey],
                 },
                 {
                     text: c('Action').t`Edit invoice note`,
                     'data-testid': 'editInvoiceNote',
                     key: 'editInvoiceNote',
                     onClick: () => setInvoiceModalOpen(true),
+                    loading: loadingEditInvoiceModal,
                 },
             ].filter(isTruthy)}
         />
@@ -203,13 +204,14 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     <InvoiceGroup
                         {...(hook as InvoicesHook)}
                         app={app}
-                        onEdit={(invoice) => openBillingAddressModal({ editExistingInvoice: true, invoice })}
+                        onEdit={(invoice) => openEditInvoiceModal({ invoice })}
                     />
                 )}
             </SettingsSectionWide>
 
             {renderInvoiceModal && <InvoiceTextModal {...invoiceModalProps} />}
 
+            {editInvoiceModal}
             {editBillingAddressModal}
         </>
     );

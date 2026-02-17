@@ -12,14 +12,8 @@ import { getVPNAppFeature } from '@proton/components/containers/payments/feature
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import {
-    type FreePlanDefault,
-    PLANS,
-    type Plan,
-    type PlansMap,
-    type SubscriptionPlan,
-    getCheckout,
-} from '@proton/payments';
+import { type FreePlanDefault, PLANS, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../../signup/interfaces';
@@ -119,7 +113,7 @@ const UpsellModal = ({
     })();
 
     const checkout = subscriptionData
-        ? getCheckout({
+        ? getCheckoutUi({
               planIDs: subscriptionData.planIDs,
               plansMap,
               checkResult: subscriptionData.checkResult,

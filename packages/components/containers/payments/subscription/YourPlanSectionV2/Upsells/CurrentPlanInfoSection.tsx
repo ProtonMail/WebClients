@@ -15,7 +15,8 @@ import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/S
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { Currency, Cycle, FreePlanDefault, FullPlansMap, PlansMap } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getSubscriptionPlanTitle } from '@proton/payments';
-import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -54,14 +55,14 @@ interface SaveLabelProps {
 }
 
 const SaveLabel = ({ plan, cycle, currency }: SaveLabelProps) => {
-    const payments = usePaymentsPreloaded();
+    const payments = usePayments();
 
     if (!plan || !cycle) {
         return null;
     }
 
     const price = payments.getPriceOrFallback(getPlanToCheck({ planIDs: { [plan]: 1 }, cycle, currency }));
-    const discountPercent = price.uiData.discountPercent;
+    const discountPercent = price.checkoutUi.discountPercent;
 
     if (!discountPercent) {
         return null;

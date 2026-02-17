@@ -2,19 +2,20 @@ import { type ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Input } from '@proton/atoms/Input/Input';
+import Label from '@proton/components/components/label/Label';
 import clsx from '@proton/utils/clsx';
 
-import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import type { TaxCountryHook } from '../hooks/useTaxCountry';
-import { CountriesDropdown, type CountriesHookProps, useCountries } from './CountriesDropdown';
-import { InputWithSelectorPrefix, WarningIcon } from './InputWithSelectorPrefix';
-import { StateSelector } from './StateSelector';
+import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../../../core/countries';
+import type { TaxCountryHook } from '../../hooks/useTaxCountry';
+import { CountriesDropdown, type CountriesHookProps } from '../CountriesDropdown';
+import { InputWithSelectorPrefix, WarningIcon } from '../InputWithSelectorPrefix';
+import { StateSelector } from '../StateSelector';
+import { CollapsedTaxCountrySelector } from './CollapsedTaxCountrySelector';
 
-import './TaxCountrySelector.scss';
+import './InlineTaxCountrySelector.scss';
 
-export type TaxCountrySelectorProps = TaxCountryHook &
+export type InlineTaxCountrySelectorProps = TaxCountryHook &
     CountriesHookProps & {
         className?: string;
         labelClassName?: string;
@@ -22,20 +23,15 @@ export type TaxCountrySelectorProps = TaxCountryHook &
         spacingClassName?: string;
         forceExpand?: boolean;
         defaultCollapsed: boolean;
-        showCountryFlag: boolean;
     };
 
-export const TaxCountrySelector = ({
+export const InlineTaxCountrySelector = ({
     selectedCountryCode,
     setSelectedCountry,
     setFederalStateCode,
     federalStateCode,
     setZipCode,
     zipCode,
-    className,
-    labelClassName,
-    buttonClassName,
-    spacingClassName = 'pt-1 mb-1',
     billingAddressStatus,
     billingAddressErrorMessage,
     zipCodeBackendValid,
@@ -43,8 +39,8 @@ export const TaxCountrySelector = ({
     disabledCountries,
     offerUnavailableErrorMessage,
     defaultCollapsed,
-    showCountryFlag,
-}: TaxCountrySelectorProps) => {
+    className,
+}: InlineTaxCountrySelectorProps) => {
     const showStateCode = isCountryWithStates(selectedCountryCode);
     const showZipCode = isCountryWithRequiredPostalCode(selectedCountryCode);
 
@@ -68,27 +64,8 @@ export const TaxCountrySelector = ({
         );
     }, [selectedCountryCode, showStateCode, federalStateCode, showZipCode, zipCode, billingAddressStatus.valid]);
 
-    const { getCountryByCode } = useCountries({ allowedCountries, disabledCountries });
-    const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isCountriesDropdownOpen, setIsCountriesDropdownOpen] = useState(false);
     const [isStatesDropdownOpen, setIsStatesDropdownOpen] = useState(false);
-
-    const collapsedText = (() => {
-        if (selectedCountry?.label) {
-            let text = selectedCountry.label;
-            if (federalStateCode && showStateCode) {
-                text += `, ${getStateName(selectedCountryCode, federalStateCode)}`;
-            }
-
-            if (zipCode && showZipCode) {
-                text += `, ${zipCode}`;
-            }
-
-            return text;
-        }
-
-        return c('Action').t`Select country`;
-    })();
 
     const showBoth = showStateCode && showZipCode;
 
@@ -134,28 +111,24 @@ export const TaxCountrySelector = ({
 
     return (
         <div className={clsx('field-two-container tax-country-selector', className)}>
-            <div className={spacingClassName} data-testid="billing-country">
-                <span className="text-bold">{c('Payments').t`Billing Country`}</span>
-                {collapsed && (
-                    <>
-                        <span className={clsx('text-bold mr-2', labelClassName)}>:</span>
-                        <InlineLinkButton
-                            onClick={() => {
-                                setCollapsed(false);
-                                if (!isCountryWithStates(selectedCountryCode)) {
-                                    setIsCountriesDropdownOpen(true);
-                                }
-                            }}
-                            data-testid="billing-country-collapsed"
-                            className={buttonClassName}
-                        >
-                            {collapsedText}
-                        </InlineLinkButton>
-                    </>
-                )}
-            </div>
+            {collapsed && (
+                <CollapsedTaxCountrySelector
+                    onClick={() => {
+                        setCollapsed(false);
+                        if (!isCountryWithStates(selectedCountryCode)) {
+                            setIsCountriesDropdownOpen(true);
+                        }
+                    }}
+                    federalStateCode={federalStateCode}
+                    zipCode={zipCode}
+                    selectedCountryCode={selectedCountryCode}
+                />
+            )}
             {!collapsed && (
                 <>
+                    <Label className="mb-1 inline-block" htmlFor="tax-country">
+                        <span className="text-bold">{c('Payments').t`Billing Country`}</span>
+                    </Label>
                     <CountriesDropdown
                         selectedCountryCode={selectedCountryCode}
                         onChange={setSelectedCountry}
@@ -165,7 +138,6 @@ export const TaxCountrySelector = ({
                         onClose={() => setIsCountriesDropdownOpen(false)}
                         data-testid="tax-country-dropdown"
                         className={clsx('country-selector', shouldStackCountriesField && 'country-selector-stacked')}
-                        showCountryFlag={showCountryFlag}
                         allowedCountries={allowedCountries}
                         disabledCountries={disabledCountries}
                     />
@@ -192,5 +164,3 @@ export const TaxCountrySelector = ({
         </div>
     );
 };
-
-export default TaxCountrySelector;

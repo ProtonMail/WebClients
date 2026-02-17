@@ -7,8 +7,9 @@ import SubscriptionCheckoutCycleItem from '@proton/components/containers/payment
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
 import type { SubscriptionCheckResponse } from '@proton/payments';
-import { PLANS, getIsCustomCycle } from '@proton/payments';
-import { usePaymentsInner } from '@proton/payments/ui';
+import { PLANS } from '@proton/payments';
+import { getIsCustomCycle } from '@proton/payments/core/checkout';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 
 import { runAdditionalCycleChecks } from '../helpers';
 
@@ -18,7 +19,7 @@ interface Props {
 
 const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
     const {
-        uiData,
+        checkoutUi,
         checkResult,
         plansMap,
         selectCycle,
@@ -28,9 +29,8 @@ const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
         loading,
         coupon,
         couponConfig,
-    } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { cycle, planIDs, currency } = checkout;
+    } = usePayments();
+    const { cycle, planIDs, currency } = checkoutUi;
     const disableCycleSelector = getIsCustomCycle(cycle) || selectedPlan.name === PLANS.PASS_LIFETIME;
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>([]);
     const appName = useAppName();

@@ -14,9 +14,9 @@ import {
     PLANS,
     type Plan,
     type SubscriptionCheckResponse,
-    getOptimisticCheckResult,
     getPlansMap,
 } from '@proton/payments';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -70,6 +70,9 @@ function mockCheckResult(checkData: Partial<SubscriptionCheckResponse> = {}) {
 
             return {
                 ...result,
+                // getOptimisticCheckResult sets AmountDue to 0 for tax-exclusive mode;
+                // tests need a non-zero AmountDue so that payment method selectors render.
+                AmountDue: result.Amount,
                 ...checkData,
             };
         },

@@ -1,5 +1,6 @@
 import Price from '@proton/components/components/price/Price';
-import { CYCLE, getCheckout } from '@proton/payments';
+import { CYCLE } from '@proton/payments';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES } from '@proton/payments/core/constants';
 
 import type { CouponConfig } from './interface';
@@ -12,7 +13,7 @@ export const monthlyNudgeConfig: CouponConfig = {
             return null;
         }
 
-        const checkout = getCheckout(config);
+        const checkout = getCheckoutUi(config);
 
         return (
             <Price className="ml-2 text-strike" currency={checkout.currency} suffix={suffix}>

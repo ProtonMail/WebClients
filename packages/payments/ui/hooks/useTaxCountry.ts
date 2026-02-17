@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useFlag } from '@proton/unleash';
 
 import {
@@ -13,7 +14,7 @@ import {
 } from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import type { PaymentStatus } from '../../core/interface';
+import type { PaymentStatus, PaymentsApi } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
@@ -32,6 +33,7 @@ interface HookProps {
     telemetryContext: PaymentTelemetryContext;
     allowedCountries?: string[];
     disabledCountries?: string[];
+    paymentsApi?: PaymentsApi;
 }
 
 export interface TaxCountryHook {
@@ -48,6 +50,8 @@ export interface TaxCountryHook {
     allowedCountries?: string[];
     disabledCountries?: string[];
     offerUnavailableErrorMessage?: OfferUnavailableErrorMessage;
+    paymentsApi: PaymentsApi;
+    billingAddressChangedInModal: (billingAddress: BillingAddress) => void;
 }
 
 function getBillingAddressFromProps(props: HookProps): BillingAddress {
@@ -90,6 +94,9 @@ function getBillingAddressFromProps(props: HookProps): BillingAddress {
 
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
+
+    const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
+    const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
 
     const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
@@ -277,6 +284,11 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         [props.previousValidZipCode, props.zipCodeBackendValid]
     );
 
+    const billingAddressChangedInModal = (billingAddress: BillingAddress) => {
+        setTaxBillingAddress(billingAddress);
+        billingAddressChanged(billingAddress);
+    };
+
     return {
         selectedCountryCode,
         setSelectedCountry,
@@ -291,5 +303,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         allowedCountries: props.allowedCountries,
         disabledCountries: props.disabledCountries,
         offerUnavailableErrorMessage,
+        paymentsApi,
+        billingAddressChangedInModal,
     };
 };

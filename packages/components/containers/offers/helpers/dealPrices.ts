@@ -1,13 +1,6 @@
 import type { Currency } from '@proton/payments';
-import {
-    CYCLE,
-    type PaymentsApi,
-    type Plan,
-    getOptimisticCheckResult,
-    getPlanByName,
-    getPlansMap,
-    hasCycle,
-} from '@proton/payments';
+import { CYCLE, type PaymentsApi, type Plan, getPlanByName, getPlansMap, hasCycle } from '@proton/payments';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 
 import type { DealWithPrices, OfferConfig } from '../interface';
 

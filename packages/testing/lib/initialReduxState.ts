@@ -1,5 +1,7 @@
 import type { OrganizationState, PaymentStatusState, SubscriptionState } from '@proton/account';
-import { DEFAULT_TAX_BILLING_ADDRESS, type PaymentStatus, type Subscription } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
+import type { PaymentStatus } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 export const getSubscriptionState = (value: Subscription = {} as any): SubscriptionState['subscription'] => {

@@ -6,7 +6,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { PaymentTelemetryPayload } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
-import { type BillingAddressProperty, normalizeBillingAddress } from '../billing-address/billing-address';
+import { type BillingAddressProperty, getBillingAddressPayload } from '../billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '../constants';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 import type {
@@ -59,6 +59,10 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
             payload[key] = (data as any)[key];
         }
     });
+
+    if (!payload.VatId) {
+        delete payload.VatId;
+    }
 
     return payload as SubscribeData;
 }
@@ -130,7 +134,11 @@ const createSubscriptionQuery = (
 
     // This covers both buyProduct + v4 and v5 createSubscription.
     if ('BillingAddress' in sanitizedData && sanitizedData.BillingAddress) {
-        sanitizedData.BillingAddress = normalizeBillingAddress(sanitizedData.BillingAddress, hasZipCodeValidation);
+        sanitizedData.BillingAddress = getBillingAddressPayload({
+            billingAddress: sanitizedData.BillingAddress,
+            vatId: sanitizedData.VatId,
+            hasZipCodeValidation,
+        });
     }
 
     if (isLifetimePlanSelected(sanitizedData.Plans)) {
@@ -221,7 +229,7 @@ function reportWrongBillingAddress(data: SubscribeData) {
     } catch {}
 }
 
-export const createSubscription = async (
+export const createPaymentSubscription = async (
     api: Api,
     data: SubscribeData,
     {
@@ -246,7 +254,6 @@ export const createSubscription = async (
         paymentMethodValue: PaymentMethodType | undefined;
     }
 ) => {
-    const config = createSubscriptionQuery(data, product, version, hasZipCodeValidation);
     const telemetryProps: Omit<PaymentTelemetryPayload, 'stage'> = {
         userCurrency,
         subscription,
@@ -262,16 +269,20 @@ export const createSubscription = async (
         paymentMethodValue,
     };
 
+    const createSubscriptionQueryConfig = createSubscriptionQuery(data, product, version, hasZipCodeValidation);
+
+    reportWrongBillingAddress(data);
+
     try {
         reportWrongBillingAddress(data);
-        const response = await api<{ Subscription: Subscription }>(config);
+        const createSubscriptionResponse = await api<{ Subscription: Subscription }>(createSubscriptionQueryConfig);
 
         checkoutTelemetry.reportPayment({
             stage: 'payment_success',
             ...telemetryProps,
         });
 
-        return response;
+        return createSubscriptionResponse;
     } catch (error) {
         checkoutTelemetry.reportPayment({
             stage: 'payment_declined',

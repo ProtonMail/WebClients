@@ -11,7 +11,7 @@ import { show30DaysMoneyBackGuarantee } from '@proton/components/containers/paym
 import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
 import { hasPlanIDs, isSubscriptionCheckForbiddenWithReason } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { usePaymentsInner } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -22,16 +22,8 @@ const SubscriptionCheckoutPlanMoreInformation = () => {
     const app = useAppName();
     const [showGiftCodeForm, setShowGiftCodeForm] = useState(false);
     const [planInformationModal, setPlanInformationModal, renderPlanInformationModal] = useModalState();
-    const {
-        uiData: { checkout },
-        selectedPlan,
-        subscription,
-        plansMap,
-        loading,
-        selectCoupon,
-        couponConfig,
-    } = usePaymentsInner();
-    const { cycle, planIDs, checkResult } = checkout;
+    const { checkoutUi, selectedPlan, subscription, plansMap, loading, selectCoupon, couponConfig } = usePayments();
+    const { cycle, planIDs, checkResult } = checkoutUi;
     const { Coupon } = checkResult;
 
     // Hide Gift form when cycle changes

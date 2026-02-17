@@ -56,6 +56,7 @@ export interface OptimisticOptions {
     checkResult: EnrichedCheckResponse;
     coupon?: string;
     trial?: boolean;
+    vatNumber?: string;
 }
 
 export const enum Steps {
@@ -130,6 +131,7 @@ export interface Options {
     skipUpsell?: boolean;
     trial?: boolean;
     ValidateZipCode?: boolean;
+    VatId: string | undefined;
 }
 
 export interface Upsell {

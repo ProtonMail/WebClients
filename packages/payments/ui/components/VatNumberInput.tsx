@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { useEditBillingAddressModal } from '@proton/components/containers/invoices/EditBillingAddress/useEditBillingAddressModal';
 
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
@@ -71,111 +70,60 @@ export function getAddVatNumberText(countryCode: string): string {
     return names[countryCode] ?? c('Payments.VAT number name').t`Add VAT number`;
 }
 
-export function getEditVatNumberText(countryCode: string): string {
-    const names: Record<string, string> = {
-        US: c('Payments.VAT number name').t`Edit EIN`,
-        CA: c('Payments.VAT number name').t`Edit Business Number`,
-        AU: c('Payments.VAT number name').t`Edit ABN`,
-    };
-
-    return names[countryCode] ?? c('Payments.VAT number name').t`Edit VAT number`;
-}
-
 type Props = VatNumberHook & {
     taxCountry: TaxCountryHook;
+    onInlineClick: () => void | Promise<void>;
+    loadingBillingAddressModal?: boolean;
 };
 
 export const VatNumberInput = ({
     vatNumber,
     setVatNumber,
     enableVatNumber,
-    setEnableVatNumberPreference,
     taxCountry,
-    loading,
+    loadingBillingDetails,
     renderVatNumberInput,
-    vatUpdated,
-    paymentsApi,
     isAuthenticated,
+    onInlineClick,
+    loadingBillingAddressModal,
 }: Props) => {
-    const { openBillingAddressModal, editBillingAddressModal } = useEditBillingAddressModal();
-
-    if (!renderVatNumberInput) {
+    if (!renderVatNumberInput || !enableVatNumber) {
         return null;
     }
 
-    const mustEditVatNumberInModal = isAuthenticated;
+    if (loadingBillingDetails) {
+        return <SkeletonLoader className="w-full" height="5em" />;
+    }
+
+    if (isAuthenticated) {
+        return (
+            <div data-testid="billing-country" className="mb-4">
+                <span className="text-bold">{c('Payments').t`VAT number`}</span>
+                <>
+                    <span className="text-bold mr-2">:</span>
+                    <InlineLinkButton onClick={onInlineClick} data-testid="vat-id-collapsed" className="mt-2">
+                        {vatNumber ? vatNumber : getAddVatNumberText(taxCountry.selectedCountryCode)}
+                    </InlineLinkButton>
+                    {loadingBillingAddressModal && <CircleLoader size="small" className="ml-2" />}
+                </>
+            </div>
+        );
+    }
 
     return (
-        <>
-            {editBillingAddressModal}
-
-            <div className="mb-4">
-                {!mustEditVatNumberInModal && (
-                    <Checkbox
-                        checked={enableVatNumber}
-                        onChange={() => setEnableVatNumberPreference(!enableVatNumber)}
-                        data-testid="vat-id-checkbox"
-                    >
-                        {c('Payments').t`I'm purchasing as a business`}
-                    </Checkbox>
-                )}
-                {(() => {
-                    if (!enableVatNumber) {
-                        return null;
-                    }
-
-                    if (loading) {
-                        return <SkeletonLoader className="w-full mt-4" height="5em" />;
-                    }
-
-                    if (!mustEditVatNumberInModal) {
-                        return (
-                            <InputFieldTwo
-                                rootClassName="mt-4"
-                                label={getVatNumberName(taxCountry.selectedCountryCode)}
-                                hint={c('info').t`Optional`}
-                                assistiveText={
-                                    // translator: This is a hint for the VAT number field
-                                    c('Payments').t`This number will be shown on all future invoices`
-                                }
-                                onValue={setVatNumber}
-                                value={vatNumber}
-                                placeholder={getVatPlaceholder(taxCountry.selectedCountryCode)}
-                                data-testid="vat-id-input"
-                            />
-                        );
-                    }
-
-                    return (
-                        <div data-testid="billing-country">
-                            <span className="text-bold">{c('Payments').t`VAT number`}</span>
-                            <>
-                                <span className="text-bold mr-2">:</span>
-                                <InlineLinkButton
-                                    onClick={async () => {
-                                        try {
-                                            await openBillingAddressModal({
-                                                editExistingInvoice: false,
-                                                editVatOnly: true,
-                                                paymentsApi,
-                                                initialFullBillingAddress: {
-                                                    CountryCode: taxCountry.selectedCountryCode,
-                                                },
-                                            });
-
-                                            await vatUpdated();
-                                        } catch {}
-                                    }}
-                                    data-testid="vat-id-collapsed"
-                                    className="mt-2"
-                                >
-                                    {vatNumber ? vatNumber : getAddVatNumberText(taxCountry.selectedCountryCode)}
-                                </InlineLinkButton>
-                            </>
-                        </div>
-                    );
-                })()}
-            </div>
-        </>
+        <div className="mb-4">
+            <InputFieldTwo
+                label={getVatNumberName(taxCountry.selectedCountryCode)}
+                hint={c('info').t`Optional`}
+                assistiveText={
+                    // translator: This is a hint for the VAT number field
+                    c('Payments').t`This number will be shown on all future invoices`
+                }
+                onValue={setVatNumber}
+                value={vatNumber}
+                placeholder={getVatPlaceholder(taxCountry.selectedCountryCode)}
+                data-testid="vat-id-input"
+            />
+        </div>
     );
 };

@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
-import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PayButton, usePaymentOptimistic, useTaxCountry } from '@proton/payments/ui';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -118,12 +118,6 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         allowedCountries: greenlandOfferCountryCodes,
-    });
-
-    const vatNumber = useVatNumber({
-        selectedPlanName: payments.selectedPlan.getPlanName(),
-        onChange: payments.setVatNumber,
-        taxCountry,
     });
 
     const validatePayment = () => {
@@ -239,7 +233,6 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                     hideFirstLabel
                     onCurrencyChange={payments.selectCurrency}
                     taxCountry={taxCountry}
-                    vatNumber={vatNumber}
                 />
             </div>
 

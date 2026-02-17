@@ -1,3 +1,4 @@
+import { isBF2025Offer } from '@proton/payments/core/checkout';
 import { canAddLumoAddon } from '@proton/payments/core/subscription/helpers';
 import {
     type CYCLE,
@@ -5,7 +6,6 @@ import {
     type PlanIDs,
     type Subscription,
     hasLumoAddonFromPlanIDs,
-    isBF2025Offer,
 } from '@proton/payments/index';
 
 import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';

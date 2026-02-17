@@ -2,7 +2,6 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Badge from '@proton/components/components/badge/Badge';
@@ -30,12 +29,10 @@ import {
     ChargebeeCreditCardWrapper,
     type ChargebeePaypalButtonProps,
     ChargebeeSavedCardWrapper,
-    TaxCountrySelector,
-    usePaymentsInner,
 } from '@proton/payments/ui';
+import { TaxFields } from '@proton/payments/ui/components/TaxFields';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
-
-import { VatNumberInput } from './VatNumberInput';
 
 interface AmountProps {
     amount: number | undefined;
@@ -99,11 +96,9 @@ const PaymentMethodForm = ({
     taxCountry,
 }: PropsWithChildren<Props>) => {
     const [user] = useUser();
-    const [organization] = useOrganization();
     const { UID } = useAuthentication();
-    const { uiData, subscription } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { couponDiscount, checkResult, discountPerCycle } = checkout;
+    const { checkoutUi, subscription } = usePayments();
+    const { couponDiscount, checkResult, discountPerCycle } = checkoutUi;
     const {
         selectedMethodValue,
         iframeHandles,
@@ -129,12 +124,7 @@ const PaymentMethodForm = ({
         directDebit,
     };
 
-    const billingCountryInput = paymentMethodRequired && showTaxCountry && taxCountry && (
-        <TaxCountrySelector className="mb-2" {...taxCountry} defaultCollapsed={false} showCountryFlag={true} />
-    );
-    const vatInput = showTaxCountry && taxCountry && vatNumber && (
-        <VatNumberInput taxCountry={taxCountry} {...vatNumber} />
-    );
+    const taxFields = <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} />;
 
     const { loading: loadingHookProps, ...bitcoinProps } = bitcoinChargebee;
     const loadingBitcoin = useStableLoading([loadingHookProps]);
@@ -152,8 +142,7 @@ const PaymentMethodForm = ({
                             themeCode={themeCode}
                             suffix={
                                 <>
-                                    {billingCountryInput}
-                                    {vatInput}
+                                    {taxFields}
                                     <div className="flex flex-column items-center gap-3 my-4">
                                         <DiscountBadge amount={discountAmount} currency={currency} />
                                     </div>
@@ -169,10 +158,7 @@ const PaymentMethodForm = ({
                 )}
                 {selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY && (
                     <>
-                        <div className="mt-2">
-                            {billingCountryInput}
-                            {vatInput}
-                        </div>
+                        <div className="mt-2">{taxFields}</div>
                         <TotalAmountWithDiscount
                             amountDue={checkResult.AmountDue}
                             currency={currency}
@@ -183,10 +169,7 @@ const PaymentMethodForm = ({
                 )}
                 {selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY && (
                     <>
-                        <div className="mt-2">
-                            {billingCountryInput}
-                            {vatInput}
-                        </div>
+                        <div className="mt-2">{taxFields}</div>
                         <TotalAmountWithDiscount
                             amountDue={checkResult.AmountDue}
                             currency={currency}
@@ -204,10 +187,7 @@ const PaymentMethodForm = ({
                         />
                         <SepaDirectDebit {...sharedCbProps} />
 
-                        <div className="my-4">
-                            {billingCountryInput}
-                            {vatInput}
-                        </div>
+                        <div className="my-4">{taxFields}</div>
                         {children}
                     </>
                 )}
@@ -219,8 +199,7 @@ const PaymentMethodForm = ({
                             {...bitcoinProps}
                         />
                         <div className="mt-4">
-                            {billingCountryInput}
-                            {vatInput}
+                            {taxFields}
                             <TotalAmountWithDiscount
                                 amountDue={checkResult.AmountDue}
                                 currency={currency}
@@ -238,8 +217,7 @@ const PaymentMethodForm = ({
                 )}
                 {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL && (
                     <>
-                        {billingCountryInput}
-                        {vatInput}
+                        {taxFields}
                         <PayPalView method={selectedMethodValue} amount={amount} currency={currency}>
                             <div className="flex gap-2 items-center flex-nowrap mb-4">
                                 <IcArrowOutFromRectangle className="color-weak shrink-0" size={8} />
@@ -257,8 +235,7 @@ const PaymentMethodForm = ({
                 {savedMethod && (
                     <>
                         <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
-                        {billingCountryInput}
-                        {vatInput}
+                        {taxFields}
                         {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ? (
                             <div className="flex flex-column items-center gap-3 my-4">
                                 <DiscountBadge amount={discountAmount} currency={currency} />
@@ -295,14 +272,8 @@ const PaymentMethodForm = ({
             <div className="mt-4">
                 <NoPaymentRequiredNote
                     hasPaymentMethod={!!methods.savedMethods?.length}
-                    organization={organization}
                     subscription={subscription}
-                    taxCountry={
-                        <>
-                            {billingCountryInput}
-                            {vatInput}
-                        </>
-                    }
+                    taxFields={taxFields}
                 />
                 {children}
             </div>
