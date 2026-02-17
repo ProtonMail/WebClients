@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -9,8 +11,10 @@ import useAppLink from '@proton/components/components/link/useAppLink';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/index';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -18,6 +22,8 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { formatDate, formatTimeHHMM } from '../../utils/timeFormat';
+import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
+import { DeleteMeetingModal } from '../DeleteMeetingModal/DeleteMeetingModal';
 import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
 import { calendarDateFormats } from './utils';
 
@@ -95,11 +101,14 @@ interface ScheduleMeetingModalProps {
     onClose: () => void;
     meetingLink: string;
     meetingName: string;
+    meetingId: string;
     startTime: Date;
     endTime: Date;
     timeZone: string;
     rrule: string | null;
     isEdit: boolean;
+    backToEditMeeting: () => void;
+    meetingIsDecrypting: boolean;
 }
 
 export const ScheduleMeetingRecapModal = ({
@@ -107,11 +116,14 @@ export const ScheduleMeetingRecapModal = ({
     onClose,
     meetingLink,
     meetingName,
+    meetingId,
     startTime,
     endTime,
     timeZone,
     rrule,
     isEdit = false,
+    backToEditMeeting,
+    meetingIsDecrypting,
 }: ScheduleMeetingModalProps) => {
     const isProtonCalendarDeepLinkEnabled = useFlag('MeetProtonCalendarDeepLink');
     const [user] = useUser();
@@ -120,6 +132,7 @@ export const ScheduleMeetingRecapModal = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const goToApp = useAppLink();
     const notifications = useNotifications();
+    const [isDeleteMeetingModalOpen, setIsDeleteMeetingModalOpen] = useState(false);
 
     const endsOnSameDay = (() => {
         const formatter = new Intl.DateTimeFormat(dateLocale.code, {
@@ -202,7 +215,40 @@ export const ScheduleMeetingRecapModal = ({
     };
 
     return (
-        <TranslucentModal open={open} onClose={onClose}>
+        <TranslucentModal
+            open={open}
+            onClose={onClose}
+            headerButtons={
+                <>
+                    <ConditionalTooltip title={meetingIsDecrypting ? c('Info').t`Meeting is decrypting...` : undefined}>
+                        <Button
+                            color="weak"
+                            shape="outline"
+                            pill
+                            className="header-button h-custom flex items-center gap-2 px-5"
+                            style={{ '--h-custom': '2.5rem' }}
+                            onClick={backToEditMeeting}
+                            disabled={meetingIsDecrypting}
+                        >
+                            <IcPenSquare size={4} className="shrink-0" />
+                            Edit
+                        </Button>
+                    </ConditionalTooltip>
+
+                    <Button
+                        color="danger"
+                        shape="outline"
+                        pill
+                        className="header-button h-custom flex items-center gap-2 px-5"
+                        style={{ '--h-custom': '2.5rem' }}
+                        onClick={() => setIsDeleteMeetingModalOpen(true)}
+                    >
+                        <IcTrash size={4} className="shrink-0" />
+                        Delete
+                    </Button>
+                </>
+            }
+        >
             <div className="flex md:items-center justify-center">
                 <h1
                     className="create-container max-w-custom flex flex-column gap-2 text-rg"
@@ -214,7 +260,7 @@ export const ScheduleMeetingRecapModal = ({
                             {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
                         </span>
                     </div>
-                    <div className="create-container-title mb-5 w-full text-center text-wrap-balance text-break">
+                    <div className="create-container-title mb-3 w-full text-center text-wrap-balance text-break">
                         {meetingName}
                     </div>
                 </h1>
@@ -345,6 +391,18 @@ export const ScheduleMeetingRecapModal = ({
                     >{c('Action').t`Done`}</Button>
                 </div>
             </div>
+            {isDeleteMeetingModalOpen && (
+                <DeleteMeetingModal
+                    meetingId={meetingId}
+                    onClose={() => {
+                        setIsDeleteMeetingModalOpen(false);
+                    }}
+                    onDelete={() => {
+                        onClose();
+                    }}
+                    isRoom={false}
+                />
+            )}
         </TranslucentModal>
     );
 };
