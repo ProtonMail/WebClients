@@ -75,7 +75,7 @@
         "添加信用卡/借记卡"
       ],
       "Add email": [
-        "添加电子邮箱"
+        "添加邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -864,7 +864,7 @@
         "登出"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "Skip": [
         "跳过"
@@ -3907,7 +3907,7 @@
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
+        "无法加载 VPN 控制面板！请检查您的网络连接，然后重试。"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -4413,12 +4413,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Security key": [
         "安全密钥"
@@ -5349,13 +5349,13 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
@@ -5382,7 +5382,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -6132,7 +6132,7 @@
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "Where will the appointment take place?": [
         "预约将在何处进行？"
