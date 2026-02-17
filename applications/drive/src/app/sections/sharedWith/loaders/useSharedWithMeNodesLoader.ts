@@ -43,27 +43,17 @@ export const useSharedWithMeNodesLoader = () => {
                         const { node } = getNodeEntity(sharedWithMeMaybeNode);
                         const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
                         if (!node.deprecatedShareId) {
-                            handleError(
-                                new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
-                                    tags: { component: 'drive-sdk' },
-                                    extra: { uid: node.uid },
-                                }),
-                                { showNotification: false }
-                            );
+                            handleError(new Error('The shared with me node has missing deprecatedShareId'), {
+                                showNotification: false,
+                                extra: { nodeUid: node.uid },
+                            });
                             continue;
                         }
                         if (!node.membership) {
-                            handleError(
-                                new EnrichedError('Shared with me node have missing membership', {
-                                    tags: { component: 'drive-sdk' },
-                                    extra: {
-                                        uid: node.uid,
-                                        message:
-                                            'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
-                                    },
-                                }),
-                                { showNotification: false }
-                            );
+                            handleError(new Error('Shared with me node has missing membership'), {
+                                showNotification: false,
+                                extra: { nodeUid: node.uid },
+                            });
                             continue;
                         }
                         const { volumeId } = splitNodeUid(node.uid);
