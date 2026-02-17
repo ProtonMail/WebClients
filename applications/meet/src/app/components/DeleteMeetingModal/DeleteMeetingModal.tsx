@@ -13,10 +13,11 @@ import './DeleteMeetingModal.scss';
 interface DeleteMeetingModalProps {
     meetingId: string;
     onClose: () => void;
+    onDelete?: () => void;
     isRoom: boolean;
 }
 
-export const DeleteMeetingModal = ({ meetingId, onClose, isRoom }: DeleteMeetingModalProps) => {
+export const DeleteMeetingModal = ({ meetingId, onClose, onDelete, isRoom }: DeleteMeetingModalProps) => {
     const notifications = useNotifications();
     const deleteMeeting = useDeleteMeeting();
 
@@ -26,6 +27,7 @@ export const DeleteMeetingModal = ({ meetingId, onClose, isRoom }: DeleteMeeting
         try {
             await deleteMeeting.deleteMeeting(meetingId);
             onClose();
+            onDelete?.();
 
             const notificationText = isRoom ? c('Error').t`Room deleted` : c('Error').t`Event deleted`;
 

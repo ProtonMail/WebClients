@@ -38,7 +38,7 @@ export const DashboardContainer = () => {
     const history = useHistory();
 
     const [editedRoom, setEditedRoom] = useState<Meeting | null>(null);
-    const [selectedMeeting, setSelectedMeeting] = useState<Meeting | undefined>();
+    const [selectedMeetingId, setSelectedMeetingId] = useState<string | undefined>();
 
     const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
         useDependencySetup(false);
@@ -74,7 +74,7 @@ export const DashboardContainer = () => {
             return;
         }
 
-        setSelectedMeeting(meeting);
+        setSelectedMeetingId(meeting?.ID);
         openScheduleMeetingModal(true);
     };
 
@@ -92,6 +92,10 @@ export const DashboardContainer = () => {
     const handleRejoin = () => {
         history.push('/join');
     };
+
+    const selectedMeeting = selectedMeetingId
+        ? meetings?.find((meeting) => meeting.ID === selectedMeetingId)
+        : undefined;
 
     return (
         <>
@@ -161,6 +165,7 @@ export const DashboardContainer = () => {
                 open={isScheduleMeetingModalOpen}
                 onClose={handleScheduleMeetingModalClose}
                 meeting={selectedMeeting}
+                onMeetingCreated={setSelectedMeetingId}
             />
         </>
     );

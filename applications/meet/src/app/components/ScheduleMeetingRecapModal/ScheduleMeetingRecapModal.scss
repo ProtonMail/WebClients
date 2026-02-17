@@ -21,6 +21,7 @@
 	border: 1px solid #ffffff0a;
 	padding: 0.8rem;
 	font-size: 1rem;
+	line-height: 1.5rem;
 
 	&:hover,
 	&:active {
@@ -101,6 +102,11 @@
 }
 
 .meeting-link {
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+.header-button {
 	font-size: 0.875rem;
 	font-weight: 500;
 }
