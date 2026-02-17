@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
+import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
 import { DashboardMeetingListTab } from './types';
 
 import './DashboardMeetingListTabs.scss';
@@ -17,17 +17,6 @@ interface TabButtonProps {
     tabCounter: number;
     tooltipTitle?: string;
 }
-
-const ConditionalTooltip = ({ children, title }: { children: React.ReactElement; title?: string }) => {
-    if (!title) {
-        return children;
-    }
-    return (
-        <Tooltip title={title} openDelay={200} closeDelay={200}>
-            {children}
-        </Tooltip>
-    );
-};
 
 const TabButton = ({ isActive, handleClick, tabName, tabCounter, tooltipTitle }: TabButtonProps) => {
     return (
