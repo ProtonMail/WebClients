@@ -205,6 +205,11 @@ export const useFileHandling = ({
 
             const selectedFiles = Array.from(e.target.files);
             selectedFiles.forEach(handleFileProcessing);
+
+            // Reset the input value so the same file can be selected again
+            if (e.target) {
+                e.target.value = '';
+            }
         },
         [handleFileProcessing]
     );
