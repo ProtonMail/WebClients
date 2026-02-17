@@ -40,7 +40,7 @@ export const useGroupMembersModal = (email: string, isGroupShare?: boolean) => {
     }
 
     return {
-        open: isGroup && !!groupId && !loading && membersCount && membersCount > 0 && open,
+        open: isGroup && !!groupId && !loading && !!membersCount && membersCount > 0 && open,
         onClick: (event: MouseEvent) => {
             event.preventDefault();
             event.stopPropagation();
