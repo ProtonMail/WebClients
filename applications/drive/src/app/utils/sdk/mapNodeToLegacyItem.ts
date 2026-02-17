@@ -1,4 +1,4 @@
-import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
 import {
     type MaybeNode,
     type NodeEntity,
@@ -74,10 +74,7 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
     return node.activeRevision?.contentAuthor.ok && node.activeRevision.contentAuthor.value === null;
 };
 
-export const getRootNode = async (
-    node: NodeEntity,
-    drive: ProtonDriveClient | ProtonDrivePhotosClient
-): Promise<NodeEntity> => {
+export const getRootNode = async (node: NodeEntity, drive: Pick<ProtonDriveClient, 'getNode'>): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);
@@ -90,7 +87,7 @@ export const getRootNode = async (
 export const mapNodeToLegacyItem = async (
     maybeNode: MaybeNode,
     defaultShareId: string,
-    drive: ProtonDriveClient | ProtonDrivePhotosClient = getDrive(),
+    drive: Pick<ProtonDriveClient, 'getNode'> = getDrive(),
     loadedRootNode?: NodeEntity
 ): Promise<LegacyItem> => {
     let node: NodeEntity;

@@ -3,6 +3,8 @@ import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { getDrive, getDriveForPhotos } from '@proton/drive';
+
 import { SharedByMeView } from '../sections/sharedby/SharedByMeView';
 import { useSharedByMeNodesLoader } from '../sections/sharedby/loaders/useSharedByMeNodesLoader';
 import { useSharedByMeStore } from '../sections/sharedby/useSharedByMe.store';
@@ -20,7 +22,8 @@ const SharedLinksContainer = () => {
     useEffect(() => {
         const abortController = new AbortController();
         void subscribeToEvents('sharedLinksContainer');
-        void loadSharedByMeNodes(abortController.signal);
+        void loadSharedByMeNodes(abortController.signal, getDrive());
+        void loadSharedByMeNodes(abortController.signal, getDriveForPhotos());
 
         return () => {
             abortController.abort();
