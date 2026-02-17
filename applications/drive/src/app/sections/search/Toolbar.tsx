@@ -44,6 +44,7 @@ export const SearchResultViewToolbar = ({ uids }: SearchResultToolbarProps) => {
                 onDownload={actions.handleDownload}
                 onRename={actions.handleRename}
                 onTrash={actions.handleTrash}
+                onGoToParent={actions.handleGoToParent}
                 onOpenDocsOrSheets={actions.handleOpenDocsOrSheets}
             />
         );
