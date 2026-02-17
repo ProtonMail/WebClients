@@ -214,7 +214,9 @@ export const ScheduleMeetingRecapModal = ({
                             {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
                         </span>
                     </div>
-                    <div className="text-4xl mb-5 w-full text-center text-wrap-balance text-break">{meetingName}</div>
+                    <div className="create-container-title mb-5 w-full text-center text-wrap-balance text-break">
+                        {meetingName}
+                    </div>
                 </h1>
             </div>
 
@@ -240,7 +242,7 @@ export const ScheduleMeetingRecapModal = ({
                 )}
             </p>
             <div className="flex flex-column items-center align-center mt-10 gap-10">
-                <div className="w-full">
+                <div className="w-full md:w-4/5">
                     <Card
                         className="flex flex-column meeting-details-card p-6"
                         bordered={false}
@@ -263,7 +265,7 @@ export const ScheduleMeetingRecapModal = ({
                                     color="norm"
                                     type="button"
                                     icon
-                                    className="shrink-0"
+                                    className="button-copy-meeting-link shrink-0 rounded-full"
                                     onClick={() => {
                                         void navigator.clipboard.writeText(meetingLink);
                                         notifications.createNotification({
@@ -278,7 +280,7 @@ export const ScheduleMeetingRecapModal = ({
                         </p>
                     </Card>
                 </div>
-                <div className="flex flex-nowrap flex-column *:min-size-auto md:flex-row gap-4 w-full">
+                <div className="flex flex-nowrap flex-column *:min-size-auto gap-2 w-full md:w-4/5">
                     <div className="w-full">
                         <DropdownButton
                             ref={anchorRef}
@@ -286,7 +288,7 @@ export const ScheduleMeetingRecapModal = ({
                             onClick={toggle}
                             hasCaret={false}
                             shape="ghost"
-                            className="w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
+                            className="text-semibold w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
                             size="large"
                         >
                             <span className="inline-flex items-center flex-nowrap gap-2">
@@ -335,7 +337,7 @@ export const ScheduleMeetingRecapModal = ({
                         </Dropdown>
                     </div>
                     <Button
-                        className="done-button rounded-full w-full"
+                        className="done-button text-semibold rounded-full w-full"
                         onClick={() => {
                             onClose();
                         }}
