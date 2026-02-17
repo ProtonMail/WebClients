@@ -59,6 +59,10 @@ im.$media-expressions: $media-expressions;
 
 .cta-modal-title {
 	font-size: 2em;
+
+	&.upsell-modal-title {
+		font-size: 2.25em;
+	}
 }
 
 .cta-modal-subtitle {
@@ -142,4 +146,37 @@ im.$media-expressions: $media-expressions;
 .add-details-button {
 	font-size: 0.875em;
 	text-decoration: none !important;
+}
+
+.sign-in-button-container {
+	font-weight: 500;
+
+	.sign-in-button {
+		color: var(--interaction-norm);
+		font-weight: 600;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: transparent;
+			color: var(--text-norm);
+		}
+	}
+}
+
+.upsell-modal {
+	.upsell-modal-button {
+		line-height: 1.5rem;
+		background: linear-gradient(316deg, var(--interaction-norm) 21.43%, #d1cbff 115.05%) !important;
+	}
+
+	&.meet-glow-effect {
+		&::before {
+			margin-inline-start: -25vw;
+		}
+
+		&::after {
+			margin-inline-end: -25vw;
+		}
+	}
 }
