@@ -78,11 +78,14 @@ const getBookingGeneralProperties = async ({
     const title = `${bookingDetails.summary} (${attendeeName})`;
 
     if (!bookingDetails.withProtonMeetLink) {
-        return modelToGeneralProperties({
-            uid,
-            title,
-            location: bookingDetails.location.trim(),
-        });
+        return {
+            meetingLinkName: null,
+            properties: modelToGeneralProperties({
+                uid,
+                title,
+                location: bookingDetails.location.trim(),
+            }),
+        };
     }
 
     const startDate = fromUnixTime(timeslot.startTime);
@@ -103,14 +106,19 @@ const getBookingGeneralProperties = async ({
         noPasswordSave: true,
     });
 
-    const meetingLink = getMeetingLink(response.Meeting.MeetingLinkName, passwordBase);
+    const meetingLinkName = response.Meeting.MeetingLinkName;
+
+    const meetingLink = getMeetingLink(meetingLinkName, passwordBase);
     const fullLink = getAppHref(meetingLink, APPS.PROTONMEET);
 
-    return modelToGeneralProperties({
-        uid,
-        title,
-        location: fullLink,
-    });
+    return {
+        meetingLinkName,
+        properties: modelToGeneralProperties({
+            uid,
+            title,
+            location: fullLink,
+        }),
+    };
 };
 
 const getBookingTimePartVevent = (vevent: VcalVeventComponent) => {
@@ -231,13 +239,14 @@ export const prepareBookingSubmission = async ({
     const canonicalEmail = canonicalEmailMap[attendeeEmail] || canonicalizeEmailByGuess(attendeeEmail);
     const attendeeToken = await generateAttendeeToken(canonicalEmail, uid);
 
-    const generalProperties = await getBookingGeneralProperties({
+    const { meetingLinkName, properties: generalProperties } = await getBookingGeneralProperties({
         timeslot,
         bookingDetails,
         saveMeeting,
         uid,
         attendeeName,
     });
+
     const organizerProperties = modelToOrganizerProperties({ organizer: { email: organizerEmail, cn: organizerName } });
     const attendeeProperties = modelToAttendeeProperties({
         attendees: [
@@ -304,5 +313,6 @@ export const prepareBookingSubmission = async ({
             body: emailBody,
         },
         ics: fullIcs,
+        meetingLinkName,
     };
 };
