@@ -28,6 +28,8 @@ interface PrejoinContainerProps {
     setDisplayName: (displayName: string) => void;
     isInstantJoin: boolean;
     userId?: string;
+    isPersonalRoom?: boolean;
+    isLoadingMeetings?: boolean;
 }
 
 export const PrejoinContainer = ({
@@ -44,6 +46,8 @@ export const PrejoinContainer = ({
     setDisplayName,
     isInstantJoin,
     userId,
+    isPersonalRoom = false,
+    isLoadingMeetings = false,
 }: PrejoinContainerProps) => {
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
@@ -157,8 +161,10 @@ export const PrejoinContainer = ({
                             keepDisplayName={hasStoredDisplayName}
                             onDisplayNameChange={setDisplayName}
                             onJoinMeeting={handleJoinMeeting}
+                            isPersonalRoom={isPersonalRoom}
                             shareLink={shareLink}
                             instantMeeting={instantMeeting}
+                            isLoadingMeetings={isLoadingMeetings}
                         />
                     )}
                 </div>

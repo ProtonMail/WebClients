@@ -21,6 +21,8 @@ interface PreJoinDetailsProps {
     onJoinMeeting: (displayName: string, keepOnDevice: boolean) => void;
     shareLink: string;
     instantMeeting: boolean;
+    isPersonalRoom?: boolean;
+    isLoadingMeetings?: boolean;
 }
 
 export const PreJoinDetails = ({
@@ -31,6 +33,8 @@ export const PreJoinDetails = ({
     onJoinMeeting,
     shareLink,
     instantMeeting,
+    isPersonalRoom = false,
+    isLoadingMeetings = false,
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
 
@@ -38,16 +42,27 @@ export const PreJoinDetails = ({
 
     const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
 
-    const title = instantMeeting ? c('Title').t`Talk confidentially` : c('Title').t`Join meeting`;
+    const getTitle = () => {
+        if (isPersonalRoom) {
+            return c('Title').t`Personal meeting room`;
+        }
+        if (instantMeeting) {
+            return c('Title').t`Talk confidentially`;
+        }
+        return c('Title').t`Join meeting`;
+    };
 
     const getSubtitle = () => {
+        if (isPersonalRoom) {
+            return c('Info').t`Your always available meeting room`;
+        }
         if (instantMeeting) {
             return c('Info').t`Our end-to-end encrypted meetings protect privacy and empower truly free expression.`;
         }
-
         return c('Info').t`You've been invited to join a secure meeting. Confirm your name and click below to enter.`;
     };
 
+    const title = getTitle();
     const subtitle = getSubtitle();
 
     return (
@@ -56,8 +71,16 @@ export const PreJoinDetails = ({
             style={{ '--md-w-custom': '25rem' }}
         >
             <div className="flex flex-column gap-2">
-                <div className="title text-semibold text-center hidden md:block">{title}</div>
-                <div className="text-center color-weak hidden md:block">{subtitle}</div>
+                {!isLoadingMeetings && (
+                    <>
+                        <div
+                            className={`title text-semibold text-center hidden md:block ${isPersonalRoom ? 'color-primary' : ''}`}
+                        >
+                            {title}
+                        </div>
+                        <div className="text-center color-weak hidden md:block">{subtitle}</div>
+                    </>
+                )}
             </div>
             <div className="flex flex-column gap-2 lg:gap-4 py-2 lg:py-4 w-full">
                 <InputFieldStackedGroup classname="w-full">
