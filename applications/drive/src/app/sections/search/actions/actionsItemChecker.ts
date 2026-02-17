@@ -5,6 +5,14 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 
+type DocsCapability =
+    | { canOpenInDocs: true; openInDocsInfo: OpenInDocsType }
+    | { canOpenInDocs: false; openInDocsInfo?: undefined };
+
+type ParentCapability =
+    | { canGoToParent: true; parentNodeUid: string }
+    | { canGoToParent: false; parentNodeUid?: undefined };
+
 interface BaseSearchItemChecker {
     canEdit: boolean;
     canDownload: boolean;
@@ -12,33 +20,26 @@ interface BaseSearchItemChecker {
     hasAtLeastOneSelectedItem: boolean;
 }
 
-interface BaseSingleItemChecker extends BaseSearchItemChecker {
+type SingleItemChecker = BaseSearchItemChecker & {
     canPreview: boolean;
     canRename: true;
     canShowDetails: true;
     firstItemUid: string;
-}
+} & DocsCapability &
+    ParentCapability;
 
-interface SingleItemWithDocsChecker extends BaseSingleItemChecker {
-    canOpenInDocs: true;
-    openInDocsInfo: OpenInDocsType;
-}
-
-interface SingleItemWithoutDocsChecker extends BaseSingleItemChecker {
-    canOpenInDocs: false;
-    openInDocsInfo?: undefined;
-}
-
-interface MultiItemChecker extends BaseSearchItemChecker {
+type MultiItemChecker = BaseSearchItemChecker & {
     canPreview: false;
     canRename: false;
     canShowDetails: false;
+    canGoToParent: false;
+    parentNodeUid?: undefined;
     firstItemUid?: undefined;
     canOpenInDocs: false;
     openInDocsInfo?: undefined;
-}
+};
 
-export type SearchItemChecker = SingleItemWithDocsChecker | SingleItemWithoutDocsChecker | MultiItemChecker;
+export type SearchItemChecker = SingleItemChecker | MultiItemChecker;
 
 const getOpenableDocsInfo = (
     openInDocsInfo: OpenInDocsType | undefined,
@@ -61,7 +62,10 @@ const getOpenableDocsInfo = (
     return { ok: false };
 };
 
-export const createActionsItemChecker = (items: SearchResultItemUI[]): SearchItemChecker => {
+export const createActionsItemChecker = (
+    items: SearchResultItemUI[],
+    buttonType: 'contextMenu' | 'toolbar'
+): SearchItemChecker => {
     const firstItem = items.at(0);
     const hasAtLeastOneSelectedItem = items.length > 0;
 
@@ -69,11 +73,14 @@ export const createActionsItemChecker = (items: SearchResultItemUI[]): SearchIte
     const canDownload = hasAtLeastOneSelectedItem;
     const canDelete = hasAtLeastOneSelectedItem;
 
+    // Single-selection case:
     if (items.length === 1 && firstItem) {
         const hasPreviewAvailable = !!firstItem.mediaType && isPreviewAvailable(firstItem.mediaType, firstItem.size);
 
         const openInDocsInfo = firstItem.mediaType ? getOpenInDocsInfo(firstItem.mediaType) : undefined;
         const openableDocsResult = getOpenableDocsInfo(openInDocsInfo, canEdit);
+
+        const parentUid = firstItem.parentUid;
 
         const base = {
             canEdit,
@@ -86,17 +93,24 @@ export const createActionsItemChecker = (items: SearchResultItemUI[]): SearchIte
             hasAtLeastOneSelectedItem,
         };
 
-        if (openableDocsResult.ok) {
-            return { ...base, canOpenInDocs: true as const, openInDocsInfo: openableDocsResult.value };
-        }
+        const parentPart: ParentCapability =
+            parentUid && buttonType === 'contextMenu' // Only show 'Go to parent' in context menu
+                ? { canGoToParent: true as const, parentNodeUid: parentUid }
+                : { canGoToParent: false as const };
 
-        return { ...base, canOpenInDocs: false as const };
+        const docsPart: DocsCapability = openableDocsResult.ok
+            ? { canOpenInDocs: true as const, openInDocsInfo: openableDocsResult.value }
+            : { canOpenInDocs: false as const };
+
+        return { ...base, ...parentPart, ...docsPart };
     }
 
+    // Multi-selection case:
     return {
         canEdit,
         canDownload,
         canDelete,
+        canGoToParent: false as const,
         canPreview: false as const,
         canRename: false as const,
         canShowDetails: false as const,
