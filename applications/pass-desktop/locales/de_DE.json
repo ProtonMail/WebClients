@@ -1636,8 +1636,8 @@
       "Breaches detected": [
         "Datenlecks entdeckt"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Hol deine bestehenden Passwörter zu ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Hol deine bestehenden Passwörter zu ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Verwende deine eigene Domain, damit du nicht noch eine weitere E-Mail-Hosting-Lösung kaufen musst."
@@ -1854,8 +1854,8 @@
         "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert.",
         "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen gespeichert."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Hol das Beste aus Pass heraus, indem du einen Tresor für jedes Team oder Projekt erstellst."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Hol das Beste aus ${ PASS_APP_NAME } heraus, indem du einen Tresor für jedes Team oder Projekt erstellst."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Erhalte unbegrenzte Aliasse, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
@@ -2005,6 +2005,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"

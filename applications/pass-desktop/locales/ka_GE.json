@@ -1609,9 +1609,6 @@
       "Breaches detected": [
         "აღმოჩენილია გაჟონვები"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "შემოიტანეთ თქვენი არსებული პაროლები ${ BRAND_NAME }-ში."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "იქონიეთ თქვენი საკუთარი დომენი და არ მოგიწევთ, კიდევ ერთი ელფოსტის ჰოსტინგის გადაწყვეტილება შეიძინოთ."
       ],
@@ -1821,9 +1818,6 @@
         "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
         "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "მიიღეთ Pass-ის ფუნქციების უმრავლესობა თითოეული გუნდისთვის ან პროექტისთვის საკუთარი საცავის შექმნით."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
       ],
@@ -1969,6 +1963,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"

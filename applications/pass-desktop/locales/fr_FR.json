@@ -1636,8 +1636,8 @@
       "Breaches detected": [
         "Des fuites de données ont été détectées."
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Transférez vos mots de passe existants dans ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Transférer vos mots de passe existants dans ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Apportez votre propre domaine et vous n’aurez pas à acheter une autre solution d’hébergement de messagerie."
@@ -1799,7 +1799,7 @@
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Saisissez le code de vérification. Entrez ${ digit }."
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."
@@ -1854,8 +1854,8 @@
         "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine.",
         "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaines."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Tirez le meilleur parti de Pass en créant un coffre-fort pour chaque équipe ou projet."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Tirez le meilleur parti de ${ PASS_APP_NAME } en créant un coffre-fort pour chaque équipe ou projet."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenez un nombre illimité d'alias, profitez de fonctionnalités exceptionnelles et soutenez-nous en vous abonnant à Pass Plus."
@@ -2007,7 +2007,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2381,7 +2382,7 @@
         "L'importation pour les ${ totalIgnored } éléments suivants n'a pas abouti :"
       ],
       "The group is invited to a vault.": [
-        "Le groupe est invité à accéder à un coffre-fort."
+        "Le groupe est invité dans un coffre-fort."
       ],
       "The secure link has been removed": [
         "Le lien sécurisé a été supprimé."

@@ -1515,6 +1515,10 @@
         "${ row.breachCount } databrud registreret",
         "${ row.breachCount } databrud registreret"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } medlem)",
+        "(${ membersCount } medlemmer)"
+      ],
       "(Empty)": [
         "(Tom)"
       ],
@@ -1523,6 +1527,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Der oprettes en kontakt for hver e-mailadresse, der sender e-mails til eller modtager e-mails fra ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "En ny version downloades. Når downloaden er færdig, vil den være tilgængelig ved næste genstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
@@ -1629,8 +1636,8 @@
       "Breaches detected": [
         "Databrud registreret"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Hent dine eksisterende adgangskoder ind i ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Hent dine eksisterende adgangskoder ind i ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Tag dit eget domæne med, så behøver du ikke at købe endnu en e-mail-hostingløsning."
@@ -1847,8 +1854,8 @@
         "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
         "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Få mest muligt ud af Pass ved at oprette en boks til hvert team eller projekt."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Få mest muligt ud af ${ PASS_APP_NAME } ved at oprette en boks til hvert team eller projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
@@ -1999,6 +2006,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2025,6 +2036,9 @@
       ],
       "No network connection": [
         "Ingen internetforbindelse"
+      ],
+      "No new versions are available at the moment.": [
+        "Ingen nye versioner er tilgængelige i øjeblikket."
       ],
       "None": [
         "Ingen"
@@ -2418,6 +2432,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil afvise enheden **${ name }**, der forsøgte at logge ind på din ${ BRAND_NAME }-konto den **${ date }**."
       ],
+      "This will reload the application.": [
+        "Dette vil genindlæse applikationen."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Dette vil udløse en kontrol for nye beta-udgivelser."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
       ],
@@ -2432,6 +2452,9 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betroet af over 50.000 erhvervsbrugere og 100 millioner konti over hele verden."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de frigives til offentligheden."
       ],
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"

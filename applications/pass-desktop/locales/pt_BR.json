@@ -1633,9 +1633,6 @@
       "Breaches detected": [
         "Violações detectadas"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Traga suas senhas existentes para ${ BRAND_NAME }."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Traga seu próprio domínio e você não precisará comprar mais uma solução de hospedagem de e-mail."
       ],
@@ -1851,9 +1848,6 @@
         "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas.",
         "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Tire o máximo proveito do Pass criando um cofre para cada equipe ou projeto."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenha aliases ilimitados, aproveite os recursos exclusivos e nos suporte assinando o Pass Plus."
       ],
@@ -2004,7 +1998,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
