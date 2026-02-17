@@ -1,31 +1,41 @@
-import { useEffect, useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { Progress } from '@proton/components';
+import Progress from '@proton/components/components/progress/Progress';
 
-import mdx from './Progress.mdx';
-
-export default {
-    component: Progress,
+const meta: Meta<typeof Progress> = {
     title: 'Components/Progress',
+    args: {
+        value: 50,
+        max: 100,
+    },
+    component: Progress,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'A progress bar component that visually represents completion of a task. Supports custom max values and CSS class-based color variants (warning, error).',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Progress>;
+
+export const Default: Story = {};
+
+export const Warning: Story = {
+    args: {
+        value: 40,
+        className: 'progress-bar--warning',
     },
 };
 
-export const Basic = () => {
-    const [value, setValue] = useState(0);
-    const increment = () => setValue(value + 5);
-    const className = value < 50 ? 'progress-bar--warning' : 'progress-bar--error';
-
-    useEffect(() => {
-        const intervalID = setInterval(increment, 5000);
-
-        return () => {
-            clearInterval(intervalID);
-        };
-    }, []);
-
-    return <Progress value={value} className={className} />;
+export const Error: Story = {
+    args: {
+        value: 80,
+        className: 'progress-bar--error',
+    },
 };
