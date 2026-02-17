@@ -1502,7 +1502,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7364,8 +7365,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8839,6 +8839,9 @@
       ],
       "This message has a key attached, that has not been trusted yet.": [
         "Detta meddelande har en bifogad nyckel som inte blivit betrodd ännu."
+      ],
+      "Google Pay mark": [
+        "Google Pay-märke"
       ]
     },
     "info": {
@@ -12304,6 +12307,18 @@
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ]
     },
     "Payments.Error": {

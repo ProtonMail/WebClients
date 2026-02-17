@@ -1510,7 +1510,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7612,10 +7615,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9146,6 +9146,9 @@
       ],
       "No messages found": [
         "Nenalezeny žádné zprávy"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Tato zpráva má připojený klíč, který nebyl dosud označen jako důvěryhodný."
       ]
     },
     "info": {
