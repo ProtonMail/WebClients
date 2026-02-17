@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
@@ -13,10 +14,13 @@ import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { LiveKitLogCollector } from '../../utils/liveKitLogCollector/LiveKitLogCollector';
+import { isLiveKitLogAllowedToSend, redactLogs } from '../../utils/liveKitLogCollector/liveKitLogging';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
+
+    const reportMeetError = useMeetErrorReporting();
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
@@ -76,6 +80,12 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
 
             setLogExtension((level, msg, context) => {
                 liveKitLogCollector.addLog(level, msg, context);
+
+                const { msg: sanitizedMsg, context: sanitizedContext } = redactLogs(msg, context);
+                if (isLiveKitLogAllowedToSend(level, sanitizedMsg, sanitizedContext)) {
+                    // Sending sanitized logs to sentry one by one
+                    reportMeetError(sanitizedMsg, { level, context: sanitizedContext });
+                }
             });
         }
     }, []);
