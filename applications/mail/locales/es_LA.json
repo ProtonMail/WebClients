@@ -1484,7 +1484,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -5496,7 +5497,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -7179,7 +7180,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."

@@ -1483,6 +1483,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -5493,7 +5497,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ]
     },
     "fido2: Info": {

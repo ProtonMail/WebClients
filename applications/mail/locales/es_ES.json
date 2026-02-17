@@ -1483,6 +1483,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
+      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -5498,7 +5502,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -7106,7 +7110,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administra y cancela fácilmente la suscripción a boletines y listas de correo."
@@ -7176,7 +7180,7 @@
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Ingresa ${ digit }."
+        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -7489,7 +7493,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo predeterminada."
+        "Configura ${ MAIL_APP_NAME } como tu aplicación de correo predeterminada."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -8192,6 +8196,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que tu proveedor de servicios de internet y los sitios web que visitas no pueden conectar tu información personal con tu actividad en línea."
       ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Este mensaje tiene una clave adjunta que aún no ha sido validada."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Este mensaje ha sido ajustado para adaptarse a un fondo oscuro."
       ],
@@ -8536,7 +8543,7 @@
         "Cuando has activado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Cuando te registras en un boletín, usa un alias en lugar de tu dirección de correo. Tu identidad se mantiene oculta y podrás desactivar el alias en cualquier momento."

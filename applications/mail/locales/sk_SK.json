@@ -1492,7 +1492,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5570,12 +5573,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
+        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -8790,7 +8793,7 @@
         "Hneď ako povolíte dôverné kľúče pre ${ senderName }, verejné kľúče budú doplnené k detailu kontaktu."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
+        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Pri registrácii na odber noviniek používajte namiesto svojej emailovej adresy alias. Vaša identita zostane skrytá a alias môžete kedykoľvek vypnúť."
