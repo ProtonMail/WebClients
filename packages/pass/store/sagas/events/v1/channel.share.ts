@@ -1,34 +1,19 @@
 import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
-import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
+import { all, call, cancel, fork, select, take } from 'redux-saga/effects';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
+import { processSharePollingError, processSharePollingEvent } from '@proton/pass/lib/events/v1/share-polling.processor';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
-import {
-    itemsDeleteEvent,
-    itemsUpdated,
-    itemsUsedEvent,
-    shareDeleted,
-    shareEvent,
-    shareEventUpdate,
-    vaultDeleteSuccess,
-} from '@proton/pass/store/actions';
+import { getShareEventsQuery, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { vaultDeleteSuccess } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
-import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import type { Api, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import noop from '@proton/utils/noop';
 
 import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
@@ -36,21 +21,18 @@ import type { EventChannel } from './types';
 
 export type ShareEventResponse = { Events: PassEventListResponse };
 
-/* It is important to call onItemsDeleted before
- * actually dispatching the resulting action : we may be dealing
- * with a share or an item being selected in the pop-up and need
- * to run the side-effect before clearing the data from the store
- * FIXME: support ItemShares */
+/** Channel wrapper for per-share events. Handles channel-specific concerns
+ * (pending file-link guard with `manager.setEventID`) then delegates core
+ * processing to `processSharePollingEvent`. FIXME: support ItemShares */
 const onShareEvent = (shareId: string) =>
-    function* (
-        event: EventManagerEvent<ShareEventResponse>,
-        channel: EventChannel<ShareEventResponse>,
-        { onItemsUpdated }: RootSagaOptions
-    ) {
+    function* (event: EventManagerEvent<ShareEventResponse>, channel: EventChannel<ShareEventResponse>, options: RootSagaOptions) {
         if ('error' in event) throw event.error;
 
-        const { Events } = event;
-        const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems, FullRefresh } = Events;
+        /** Edge-case: We might receive the update event from the BE before a file
+         * linking operation has completed processing. To avoid inconsistencies between
+         * optimistic updates and server events, we skip processing the entire event
+         * batch if any item has a pending file link operation. */
+        const { UpdatedItems } = event.Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
         if (UpdatedItems.length > 0) {
@@ -60,96 +42,32 @@ const onShareEvent = (shareId: string) =>
             });
 
             if (updateIsPendingFileLink) {
-                /** Edge-case: We might receive the update event from the BE before a file
-                 * linking operation has completed processing. To avoid inconsistencies between
-                 * optimistic updates and server events, we skip processing the entire event
-                 * batch if any item has a pending file link operation. */
-                logger.info(`[ServerEvents::Share::${logId(shareId)}] Skipped because of pending file link`);
+                logger.info(`[Polling::Share::${logId(shareId)}] Skipped because of pending file link`);
                 channel.manager.setEventID(currentEventId);
                 return;
             }
         }
 
-        /* dispatch only if there was a change */
-        if (currentEventId !== eventId) {
-            logger.info(`[ServerEvents::Share::${logId(shareId)}] event ${logId(eventId)}`);
-            yield put(shareEvent({ ...event, shareId }));
-        }
-
-        if (UpdatedShare) {
-            const share: Maybe<Share> = yield parseShareResponse(UpdatedShare, { eventId });
-            if (share) yield put(shareEventUpdate(share));
-        }
-
-        if (DeletedItemIDs.length > 0) {
-            yield discardDrafts(shareId, DeletedItemIDs);
-            yield put(itemsDeleteEvent(shareId, DeletedItemIDs));
-        }
-
-        if (LastUseItems && LastUseItems.length > 0) {
-            yield put(
-                itemsUsedEvent(
-                    LastUseItems.map(({ ItemID, LastUseTime }) => ({
-                        itemId: ItemID,
-                        shareId,
-                        lastUseTime: LastUseTime,
-                    }))
-                )
-            );
-        }
-
-        if (UpdatedItems.length > 0) {
-            const updatedItems = (
-                (yield Promise.all(
-                    UpdatedItems.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(noop))
-                )) as Maybe<ItemRevision>[]
-            ).filter(truthy);
-
-            yield put(itemsUpdated(updatedItems));
-        }
-
-        if (FullRefresh) {
-            const encryptedShare: ShareGetResponse = yield requestShare(shareId);
-            const share: Maybe<Share> = yield parseShareResponse(encryptedShare);
-
-            if (share) {
-                yield put(shareEventUpdate(share));
-                const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
-                yield put(itemsUpdated(updatedItems));
-            }
-        }
-
-        const itemsMutated = DeletedItemIDs.length + UpdatedItems.length > 0 || FullRefresh;
-        if (itemsMutated) onItemsUpdated?.();
+        yield call(processSharePollingEvent, shareId, event, options);
     };
 
 const onShareEventError = (shareId: string, tasks: () => Task) =>
     function* (error: unknown, { channel }: EventChannel<ShareEventResponse>, { onItemsUpdated }: RootSagaOptions) {
-        const { code } = getApiError(error);
-
-        /* share was deleted or user lost access */
-        if (code === PassErrorCode.DISABLED_SHARE || code === PassErrorCode.NOT_EXIST_SHARE) {
-            logger.info(`[ServerEvents::Share::${logId(shareId)}] share disabled`);
+        if (isShareRemovedError(error)) {
+            logger.info(`[Polling::Share::${logId(shareId)}] share disabled`);
             channel.close();
-            const share: Maybe<Share> = yield select(selectShare(shareId));
-
-            if (share) {
-                onItemsUpdated?.();
-                yield discardDrafts(shareId);
-                yield put(shareDeleted(share));
-                PassCrypto.removeShare(shareId);
-            }
-
+            yield call(processSharePollingError, shareId);
             yield cancel(tasks());
+            onItemsUpdated?.();
         }
     };
 
 const onShareDeleted = (shareId: string, tasks: () => Task) =>
     function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
         yield take((action: Action) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
-        logger.info(`[ServerEvents::Share::${logId(shareId)}] share deleted`);
+        logger.info(`[Polling::Share::${logId(shareId)}] share deleted`);
         channel.close();
-        yield discardDrafts(shareId);
+        yield call(processSharePollingError, shareId);
         yield cancel(tasks());
     };
 
@@ -161,17 +79,17 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share, tasks:
         api,
         channelId: `share::${shareId}`,
         initialEventID: eventId,
-        query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
+        query: (latestEventID) => getShareEventsQuery(shareId, latestEventID),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
         getLatestEventID: () => getShareLatestEventId(shareId),
-        onClose: () => logger.info(`[ServerEvents::Share::${logId(shareId)}] closing channel`),
+        onClose: () => logger.info(`[Polling::Share::${logId(shareId)}] closing channel`),
         onEvent: onShareEvent(shareId),
         onError: onShareEventError(shareId, tasks),
     });
 
 export const getShareChannelForks = (api: Api, options: RootSagaOptions) =>
     function* (share: Share) {
-        logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
+        logger.info(`[Polling::Share::${logId(share.shareId)}] start polling`);
 
         const tasks: Task = yield fork(function* () {
             const self = () => tasks;

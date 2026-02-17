@@ -8,7 +8,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Id, MaybeNull, SyncEventListOutput } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 
-const CHANNEL_ID = 'ServerEvents::UserEventsV2';
+const CHANNEL_ID = 'Polling::UserEventsV2';
 
 export function* userEventsChannel(_: Api, options: RootSagaOptions): Generator {
     try {
