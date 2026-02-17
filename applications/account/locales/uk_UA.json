@@ -1580,12 +1580,51 @@
         "Пропозиція недоступна"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
+      ],
+      "One-time payment, lifetime deal": [
+        "Одноразовий платіж, довічна пропозиція"
+      ],
+      "Online document editor": [
+        "Онлайн редактор документів"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
       "Use your own email domain": [
         "Використовуйте свій власний домен електронної пошти"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Рахунок виставлено раз в ${ amount }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
       ]
     },
     "BF2025: Deal details": {
@@ -3611,6 +3650,14 @@
         "Індивідуальні рішення для великих організацій з особливими потребами"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Розширена історія версій"
+      ],
+      "Priority support": [
+        "Пріоритетна підтримка"
+      ]
+    },
     "Duration": {
       "30m": [
         "30 м"
@@ -4705,9 +4752,19 @@
         "(без назви)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "Усього 3 ТБ сховища"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Переваги вашого облікового запису"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Простір сховища спільний для учасників родини ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -4734,6 +4791,11 @@
       ],
       "View invitation": [
         "Переглянути запрошення"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "До 6 користувачів"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4977,6 +5039,17 @@
       ],
       "Set family name": [
         "Налаштувати назву родини"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включає 2700 серверів у понад 65 країнах, під'єднання до 10 пристроїв, доступ до світових сервісів потокової трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Включає підтримку 3 власних доменів, 90 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
     "Feature": {
@@ -6570,9 +6643,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Продовжити для з'єднання цієї сутності до вашої організації ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Продовжити з ${ freeName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Продовживши, ви пов'яжете обліковий запис ${ BRAND_NAME } з ${ name }."
       ],
@@ -6617,9 +6687,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Створюйте електронні адреси для інших людей, керуйте ${ MAIL_APP_NAME } для бізнесу, навчального закладу чи групи. Розпочніть з додавання назви своєї організації та власного домену (наприклад, @yourcompany.com). "
       ],
       "Create in": [
         "Створити у"
@@ -6927,9 +6994,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерування нової фрази відновлення деактивує попередню."
       ],
-      "Get ${ upsellPlanName }": [
-        "Отримати ${ upsellPlanName }"
-      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Отримайте доступ, створивши обліковий запис ${ BRAND_NAME } та прийнявши запрошення."
       ],
@@ -6971,9 +7035,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Якщо вам не сподобається, ми повернемо гроші."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
@@ -14474,6 +14535,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
+      ],
+      "All paid Mail and Calendar features": [
+        "Усі платні функції пошти й календарів"
+      ],
+      "High speed VPN": [
+        "Високошвидкісна VPN"
+      ],
       "Highest VPN speed": [
         "Найвища швидкість VPN"
       ],
@@ -14486,8 +14559,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Преміум ${ appName1 }, ${ appName2 } та ${ appName3 }"
       ],
+      "Premium early access": [
+        "Ранній преміумдоступ"
+      ],
+      "Secure cloud storage": [
+        "Безпечне хмарне сховище"
+      ],
       "Secure streaming": [
         "Захищена потокова трансляція"
+      ],
+      "Support online privacy": [
+        "Підтримка онлайн-приватності"
       ]
     },
     "specialoffer: Link": {
@@ -14502,22 +14584,99 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
       "/ month": [
         "/ місяць"
       ],
       "/month": [
         "/місячний"
       ],
+      "1 year": [
+        "1 рік"
+      ],
+      "15 months": [
+        "15 місяців"
+      ],
+      "2 years": [
+        "2 роки"
+      ],
+      "30 months": [
+        "30 місяців"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "До сплати ${ amount } за 1 місяць"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "До сплати ${ amount } за 12 місяців"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "До сплати ${ amount } за 15 місяців"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "До сплати ${ amount } за 24 місяці"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "До сплати ${ amount } за 30 місяців"
+      ],
       "Get the deal": [
         "Скористатися пропозицією"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продовження через 1 рік за зниженою ціною ${ discountedAmount } замість ${ regularAmount } (знижка ${ discount }%)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Продовження через 2 роки за зниженою ціною ${ discountedAmount } замість ${ regularAmount } (знижка ${ discount }%)"
+      ],
       "Save ${ discount }%": [
         "Знижка ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Стандартна ціна ${ amount } за 1 місяць"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Стандартна ціна ${ amount } за 12 місяців"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Стандартна ціна ${ amount } за 15 місяців"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Стандартна ціна ${ amount } за 24 місяці"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Стандартна ціна ${ amount } за 30 місяців"
       ]
     },
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Заощадьте ще більше, передплативши тарифний план ${ planName } на 2 роки"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань на користувача, всесвітні сервіси потокової трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Доступ до заблокованого вмісту та приватний перегляд. Включає 1700 серверів у понад 60 країнах, найвищу швидкість VPN, 10 VPN-з'єднань, всесвітні сервіси потокової трансляції, захист від зловмисних програм і реклами, а також інші можливості."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 3 власних доменів, 15 адрес пошти, необмежену кількість псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Ідеально підходить для сім'ї або невеликої команди. Кожен учасник може мати власну поштову скриньку та псевдоніми. Потрібен власний домен."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Отримуйте без додаткових витрат платні версії всіх нових служб приватності, які ми випускатимемо в майбутньому, а також ранній доступ до всіх майбутніх функцій і продуктів."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
     "sso": {
@@ -15746,6 +15905,20 @@
       ],
       "per user per month": [
         "за користувача на місяць"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Створюйте надійні дані для входу на всіх своїх пристроях з необмеженою кількістю псевдонімів, 20 сховищами, інтегрованою 2FA, автозаповненням кредитних карток та іншими можливостями."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включає понад 2950 серверів у більш ніж 65 країнах, під'єднання до 10 пристроїв, доступ до світових сервісів потокової трансляції, блокування зловмисних програм і реклами та багато інших можливостей."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ]
     },
     "Tab in domain modal": {
@@ -17823,9 +17996,6 @@
       ],
       "Just ${ price }": [
         "Всього за ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Спробуйте ${ upsellPlanName } без ризику"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш комплект ${ a } та ${ b }"

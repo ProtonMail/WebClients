@@ -1233,6 +1233,11 @@
         "Aɣram ɣef 30 n wussan yettwaḍmen"
       ]
     },
+    "BF2024: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } n uḥraz"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TAṬ n uḥraz n isefka"
@@ -2804,6 +2809,11 @@
         "Rnu ɣer ugar n 50,000 n tuddsiwin yesfaydin yakan seg tɣellist n ${ BRAND_NAME }"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Tallalt yezwaren"
+      ]
+    },
     "Email": {
       "Email verified": [
         "Imayl yettasenqed"
@@ -3543,6 +3553,11 @@
         "(ulac azwel)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TAṬ seg uḥraz asemday"
+      ]
+    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Gdel tinnubga"
@@ -3558,6 +3573,11 @@
       ],
       "View invitation": [
         "Sken tinnubga"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Armi d 6 n iseqdacen"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4633,9 +4653,6 @@
       "Close this screen to exit.": [
         "Mdel agdil-agi akken ad teffɣeḍ."
       ],
-      "Continue with ${ freeName }": [
-        "Kemmel s ${ freeName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Akemmel ad iqqen amiḍan-ik ${ BRAND_NAME } ɣer ${ name }."
       ],
@@ -4657,9 +4674,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Rnu udiɣ sefrek imiḍanen isnawanen sakin mudd-asen tansiwin-nsen n yimayl ɣef taɣulit-ik tudmawant."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Rnu tansiwin n yimayl i yimdanen-nniḍen, sefrek ${ MAIL_APP_NAME } i umahel, i uɣerbaz neɣ i ugraw. Bdu s tmerna n yisem n tkebbanit-ik·im d taɣult tudmawant (am. @takebbanit-ik·im.com). "
       ],
       "Create in": [
         "Snulfu-d di"
@@ -4826,9 +4840,6 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Asirew n tefyirt n tririt tamaynut ad tsens tafyirt-ik·im taqburt."
-      ],
-      "Get ${ upsellPlanName }": [
-        "Awi ${ upsellPlanName }"
       ],
       "Got it": [
         "Gziɣ-t"
@@ -8912,11 +8923,32 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TAṬ"
+      ],
+      "6 users": [
+        "6 yiseqdacen"
+      ],
+      "All paid Mail and Calendar features": [
+        "Akk timahilin n lexlaṣ i Mail d Calender"
+      ],
+      "High speed VPN": [
+        "VPN arurad ɛlayen"
+      ],
       "Highest VPN speed": [
         "Arured afellay maḍi VPN"
       ],
+      "Premium early access": [
+        "Anekcum Premium uzwir"
+      ],
+      "Secure cloud storage": [
+        "Aḥraz n usigna aɣellsan"
+      ],
       "Secure streaming": [
         "Asuddem aɣellsan"
+      ],
+      "Support online privacy": [
+        "Sefrek tabaḍnit srid"
       ]
     },
     "specialoffer: Link": {
@@ -8931,11 +8963,27 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
       "/month": [
         "/ayyur"
+      ],
+      "1 year": [
+        "1 n useggas"
+      ],
+      "15 months": [
+        "15 wayyuren"
+      ],
+      "2 years": [
+        "2 n yiseggasen"
+      ],
+      "30 months": [
+        "30 wayyuren"
       ],
       "Get the deal": [
         "Faṛes tagnit"
@@ -10748,9 +10796,6 @@
       "${ n } year": [
         "${ n } useggas",
         "${ n } yiseggasen"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Ɛreḍ ${ upsellPlanName }, tqeɛdeḍ neɣ ad terreḍ idrimen-ik"
       ],
       "Your ${ selected } plan": [
         "Aɣawas-ik ${ selected }"

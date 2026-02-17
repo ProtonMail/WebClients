@@ -1569,9 +1569,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Uppgradera till Professional"
-      ],
       "Upgrade to view all": [
         "Uppgradera för att visa alla"
       ],
@@ -1908,6 +1905,11 @@
         "admin"
       ]
     },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "En roll är en grupp med behörigheter som du kan tilldela till medlemmarna i din organisation."
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Genom att lämna nu kan några kontakter inte importeras"
@@ -2214,12 +2216,95 @@
         "Erbjudande ej tillgängligt"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
+      ],
+      "1 user account": [
+        "1 användarkonto"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "6 user accounts": [
+        "6 användarkonton"
+      ],
+      "Admin panel to manage your family": [
+        "Adminpanel för att hantera din familj"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "Easily add or remove users": [
+        "Lägg till eller ta bort användare enkelt"
+      ],
+      "One-time payment, lifetime deal": [
+        "Engångsbetalning, livstidserbjudande"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Password health alerts": [
+        "Aviseringar om lösenordshälsa"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Obegränsade inloggningar, kreditkort, hide-my-email-alias och mer"
+      ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Fakturerad med ${ amount } en gång"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Förnyas efter 1 månad till ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
       ]
     },
     "BF2025: Deal details": {
@@ -2411,6 +2496,9 @@
       ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Håll ditt teams filer skyddade, åtkomliga och synkroniserade med ${ DRIVE_APP_NAME } för företag."
+      ],
+      "Learn how Big Tech uses family photos to train AI, how it affects you.": [
+        "Lär dig hur stora teknikföretag använder familjefoton för att träna AI, och hur det påverkar dig."
       ],
       "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
         "Lär dig hur många GB det finns i ett TB och upptäck det bästa sättet att säkert lagra och dela dina filer – oavsett storlek."
@@ -4750,6 +4838,28 @@
         "Inaktivera adress?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } för den första månaden. Förnyas med ${ regularPrice }/månad, avbryt när som helst."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Skaffa VPN Plus för endast ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Skyddad av schweiziska integritetslagar"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Specialerbjudande: Spara 90 % rabatt på vårt premiumpaket"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsätt med gratis"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verifierad"
@@ -5053,6 +5163,14 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Skräddarsydda lösningar för större organisationer med anpassade behov"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ]
     },
     "Duo offer": {
@@ -6370,6 +6488,9 @@
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
       ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximalt ${ displayMaxValue } tillåtet"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -7115,9 +7236,19 @@
         "Du kan spara en ICS-fil med de händelser som exporterades."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB totalt lagringsutrymme"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Fördelarna med ditt konto"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagringsutrymme delas mellan familjemedlemmar mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7150,6 +7281,11 @@
       ],
       "View invitation": [
         "Visa inbjudan"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Upp till 6 användare"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7407,6 +7543,17 @@
       ],
       "Set family name": [
         "Välj familjenamn"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderar 2700 servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Inkluderar stöd för 3 anpassade e-postdomäner, 90 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ]
     },
     "Feature": {
@@ -8554,9 +8701,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " och andra säkerhetsfunktioner."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar.",
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar."
@@ -8905,9 +9049,6 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
-      "Accounts": [
-        "Konton"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
@@ -8916,6 +9057,9 @@
       ],
       "active": [
         "aktiv"
+      ],
+      "Activity Monitor": [
+        "Aktivitetsövervakare"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till e-postadressen ”@pm.me” till ditt konto. Denna enkla, kortare domän står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
@@ -9296,9 +9440,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Fortsätt för att ansluta denna entitet till din ${ BRAND_NAME }-organisation."
       ],
-      "Continue with ${ freeName }": [
-        "Fortsätt med ${ freeName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter kommer ditt ${ BRAND_NAME }-konto anslutas till ${ name }."
       ],
@@ -9339,9 +9480,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Skapa e-postadresser åt andra personer, hantera ${ MAIL_APP_NAME } åt ett företag, en skola eller grupp. Kom igång genom att lägga till ditt organisationsnamn och en anpassad domän (t.ex. @dittföretag.com). "
       ],
       "Create in": [
         "Skapa i"
@@ -9760,9 +9898,6 @@
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
       ],
-      "Gain visibility across your organization": [
-        "Få synlighet i hela din organisation"
-      ],
       "Gateway monitor": [
         "Övervakning av gateway"
       ],
@@ -9774,9 +9909,6 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Skaffa ${ AUTHENTICATOR_APP_NAME } för alla dina enheter."
-      ],
-      "Get ${ upsellPlanName }": [
-        "Skaffa ${ upsellPlanName }"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
@@ -9793,6 +9925,9 @@
       "Get started with the referral link above.": [
         "Kom igång med hänvisningslänken ovan."
       ],
+      "Get visibility into account access": [
+        "Skaffa insyn i kontoåtkomst"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ge detta token ett beskrivande namn, t.ex. vilken tjänst du avser att använda det med och välj en av dina aktiva anpassade domänadresser. Endast denna adress kan skicka e-post med denna token."
       ],
@@ -9801,6 +9936,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadatan för ${ appName } och importera den här."
+      ],
+      "Google Pay mark": [
+        "Google Pay-märke"
       ],
       "Got it": [
         "Jag förstår"
@@ -9840,9 +9978,6 @@
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Om det är aktiverat kommer organisationsmedlemmar att kunna dela individuella objekt utöver valv."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Om det inte passar dig så återbetalar vi dig."
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Om tangentbordsgenvägar är aktiverade kan du använda följande tangenter för snabba åtgärder eller för att hoppa till olika vyer. ${ metaKey } + K är alltid aktiverat."
@@ -10103,9 +10238,6 @@
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Learn more about Activity Monitor": [
-        "Lär dig mer om aktivitetsövervakare"
       ],
       "Learn more about Gateways": [
         "Lär dig mer om gateways"
@@ -10377,9 +10509,6 @@
         "Organisationsmedlemmar kommer behöva låsa upp ${ PASS_APP_NAME } med deras lösenord eller PIN etc."
       ],
       "Organization monitor": [
-        "Organisationsövervakning"
-      ],
-      "Organization Monitor": [
         "Organisationsövervakning"
       ],
       "Organization size": [
@@ -11245,11 +11374,11 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Uppgradera till Professional eller ett högre paket för att låsa upp"
-      ],
       "Upgrade to unlock": [
         "Uppgradera för att låsa upp"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Uppgradera för att låsa upp ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME } för organisationer."
@@ -14027,6 +14156,9 @@
       "Activity log": [
         "Aktivitetslogg"
       ],
+      "activity monitor": [
+        "aktivitetsövervakare"
+      ],
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
@@ -14665,6 +14797,9 @@
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "Alla filteråtgärder kommer att tillämpas på alla meddelanden i ditt ${ MAIL_APP_NAME }-konto. Inga automatiska e-postsvar kommer att skickas."
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Anslut din anpassade domän (t.ex. dittföretag.com) för att skapa e-postadresser för andra personer, hantera ${ MAIL_APP_NAME } för ett företag, skola eller grupp."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
@@ -17543,8 +17678,20 @@
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
@@ -20123,6 +20270,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alla betalda Mail och Calendar-funktioner"
+      ],
+      "High speed VPN": [
+        "Höghastighets-VPN"
+      ],
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
       ],
@@ -20135,8 +20294,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } och ${ appName2 } och ${ appName3 }"
       ],
+      "Premium early access": [
+        "Premium förhandstillgång"
+      ],
+      "Secure cloud storage": [
+        "Säker molnlagring"
+      ],
       "Secure streaming": [
         "Säker streaming"
+      ],
+      "Support online privacy": [
+        "Stöd integritet online"
       ]
     },
     "specialoffer: Footer": {
@@ -20180,17 +20348,72 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
       "/ month": [
         "/månad"
       ],
       "/month": [
         "/månad"
       ],
+      "1 year": [
+        "1 år"
+      ],
+      "15 months": [
+        "15 månader"
+      ],
+      "2 years": [
+        "2 år"
+      ],
+      "30 months": [
+        "30 månader"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Fakturerad med ${ amount } för 1 månad"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Fakturerad med ${ amount } för 12 månader"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Fakturerad med ${ amount } för 15 månader"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Fakturerad med ${ amount } för 24 månader"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Fakturerad med ${ amount } för 30 månader"
+      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Förnyas efter 1 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Förnyas efter 2 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
+      ],
       "Save ${ discount }%": [
         "Spara ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Ordinarie pris ${ amount } för 1 månad"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Ordinarie pris ${ amount } för 12 månader"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Ordinarie pris ${ amount } för 15 månader"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Ordinarie pris ${ amount } för 24 månader"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Ordinarie pris ${ amount } för 30 månader"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -20217,6 +20440,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar per användare, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfekt för familjer eller små team, alla kan ha sin egen inkorg och alias. Kräver en anpassad domän."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Få utan extra kostnad de betalda versionerna av alla nya integritetstjänster som vi släpper i framtiden, tillsammans med förhandstillgång till alla framtida funktioner och produkter."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ]
     },
     "Spotlight": {
@@ -21530,6 +21776,20 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detaljer om händelser som inte kunde exporteras"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Skapa säkra inloggningsuppgifter på alla dina enheter. Innehåller obegränsade alias, 20 valv, integrerad 2FA, automatisk ifyllning av kreditkort och mer."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderar 2950+ servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
       ]
     },
     "Tab in domain modal": {
@@ -22917,6 +23177,9 @@
       "Revoke certificate?": [
         "Återkalla certifikat?"
       ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
+      ],
       "Same inbox, shorter email address": [
         "Samma inkorg, kortare e-postadress"
       ],
@@ -24298,9 +24561,6 @@
       ],
       "Just ${ price }": [
         "Endast ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Prova ${ upsellPlanName } riskfritt"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ditt ${ a } och ${ b }-paket"
