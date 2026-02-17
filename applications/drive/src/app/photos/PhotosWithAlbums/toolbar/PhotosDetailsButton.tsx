@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
-import { getDriveForPhotos } from '@proton/drive';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
@@ -17,7 +17,7 @@ interface Props {
 
 const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
 
     const link = selectedLinks[0];
 
@@ -35,9 +35,7 @@ const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton =
                     if (selectedLinks.length === 1) {
                         void showDetailsModal({
                             drive: getDriveForPhotos(),
-                            volumeId: selectedLinks[0].volumeId,
-                            shareId: selectedLinks[0].rootShareId,
-                            linkId: selectedLinks[0].linkId,
+                            nodeUid: generateNodeUid(selectedLinks[0].volumeId, selectedLinks[0].linkId),
                         });
                     } else {
                         void showFilesDetailsModal({ selectedItems: selectedLinks });

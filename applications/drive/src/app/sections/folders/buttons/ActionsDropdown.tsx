@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
+import { MemberRole, generateNodeUid } from '@proton/drive/index';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -36,7 +36,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { sharingModal, showSharingModal } = useSharingModal();
@@ -84,7 +84,10 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showDetailsModal({ drive: getDrive(), shareId, linkId: selectedLinkIds[0], volumeId: '' }),
+            action: () =>
+                showDetailsModal({
+                    nodeUid: generateNodeUid(selectedItems[0].volumeId, selectedLinkIds[0]),
+                }),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,

@@ -4,19 +4,19 @@ import { NavLink } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 
 import { type BreadcrumbInfo, CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
-import { generateNodeUid, getDrive } from '@proton/drive/index';
+import { generateNodeUid } from '@proton/drive/index';
 import noop from '@proton/utils/noop';
 
 import type { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { useLinkPath } from '../../store';
 import type { Share } from '../../store/_shares';
 import { ShareType, useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DeprecatedSignatureIcon } from '../SignatureIcon';
-import { useDetailsModal } from '../modals/DetailsModal';
 import { getDevicesSectionName } from '../sections/Devices/constants';
 
 interface Props {
@@ -28,7 +28,7 @@ const DriveBreadcrumbsDeprecated = ({ activeFolder }: Props) => {
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
     const [dropTarget, setDropTarget] = useState<string>();
     const [rootShare, setRootShare] = useState<Share>();
@@ -50,13 +50,7 @@ const DriveBreadcrumbsDeprecated = ({ activeFolder }: Props) => {
                     let onClick;
                     if (linkId === activeFolder.linkId) {
                         onClick = link.signatureIssues
-                            ? () =>
-                                  showDetailsModal({
-                                      drive: getDrive(), // Breadcrumb is supported only in main SDK.
-                                      volumeId: activeFolder.volumeId,
-                                      shareId: activeFolder.shareId,
-                                      linkId,
-                                  })
+                            ? () => showDetailsModal({ nodeUid: generateNodeUid(activeFolder.volumeId, linkId) })
                             : undefined;
                     } else {
                         onClick = () => navigateToLink(activeFolder.shareId, linkId, false);

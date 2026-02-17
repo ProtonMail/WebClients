@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
 import type { ProtonDriveClient } from '@proton/drive';
-import { type Author, type MaybeNode, MemberRole, NodeType, generateNodeUid } from '@proton/drive';
+import { type Author, type MaybeNode, MemberRole, NodeType, getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
@@ -51,28 +51,22 @@ export type FileDetails = {
 };
 
 export type UseFileDetailsModalProps = ModalStateProps & {
-    onClose?: () => void;
-    volumeId: string;
-    linkId: string;
-    drive: Drive;
+    nodeUid: string;
+    drive?: Drive;
     verifySignatures?: boolean;
+    onClose?: () => void;
     /** @deprecated This is temporay helper until we figure out on how to fix it on public page **/
     showLocation?: boolean;
-
-    // Only required for the legacy modal.
-    shareId: string;
 };
 
 export function useFileDetailsModalState({
-    volumeId,
-    linkId,
-    drive,
+    nodeUid,
+    drive = getDrive(),
     showLocation = true,
     verifySignatures = true,
     open,
     onClose,
     onExit,
-    shareId,
 }: UseFileDetailsModalProps) {
     const { handleError } = useSdkErrorHandler();
 
@@ -84,7 +78,6 @@ export function useFileDetailsModalState({
     useEffect(() => {
         const fetchFileDetails = async () => {
             try {
-                const nodeUid = generateNodeUid(volumeId, linkId);
                 const node = await drive.getNode(nodeUid);
                 setTitle(getTitle(node));
 
@@ -146,18 +139,17 @@ export function useFileDetailsModalState({
                             : undefined,
                 });
             } catch (error: unknown) {
-                handleError(error, { showNotification: false, extra: { volumeId, linkId } });
+                handleError(error, { showNotification: false, extra: { nodeUid } });
                 setHasError(true);
             }
         };
         void withLoading(fetchFileDetails());
-    }, [volumeId, linkId, drive, withLoading, handleError, verifySignatures]);
+    }, [nodeUid, drive, withLoading, handleError, verifySignatures]);
 
     return {
         open,
         onClose,
         onExit,
-        shareId,
         isLoading,
         title,
         hasError,

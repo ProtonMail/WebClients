@@ -6,10 +6,10 @@ import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
-import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { usePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
 import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
@@ -26,7 +26,7 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
 const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
     const [previewModal, showPreviewModal] = usePreviewModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
 
     const useNewSelectionStore = useFlag('DriveWebNewFileBrowser');

@@ -5,11 +5,11 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
-import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
@@ -54,7 +54,7 @@ export function DriveItemContextMenu({
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const hasLink = isOnlyOneItem && selectedLink.shareUrl && !selectedLink.shareUrl.isExpired && !selectedLink.trashed;
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
