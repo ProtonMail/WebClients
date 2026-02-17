@@ -8,7 +8,6 @@ import {
     bringWindowToFront,
     getMainWindow,
     getWebContentsViewName,
-    loadURL,
     showView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
@@ -122,13 +121,7 @@ import {
     initializeUpdateChecks();
     new Notification();
 
-    // After this point the main window and views have been created
-    viewCreationAppStartup();
-
-    // Navigate to startup URL if provided via protocol
-    if (startupUrl) {
-        loadURL("meet", startupUrl);
-    }
+    viewCreationAppStartup(startupUrl || undefined);
 
     const settings = getSettings();
 

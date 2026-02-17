@@ -83,7 +83,7 @@ export const getMeetView = () => {
     return viewMap.meet!;
 };
 
-export const viewCreationAppStartup = async () => {
+export const viewCreationAppStartup = async (startupUrl?: string) => {
     mainWindow = createBrowserWindow();
     createViews();
 
@@ -111,7 +111,8 @@ export const viewCreationAppStartup = async () => {
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     await new Promise((resolve) => setTimeout(resolve, delay));
 
-    loadURL("meet", getAppURL().meet).then(() => {
+    const initialUrl = startupUrl || getAppURL().meet;
+    loadURL("meet", initialUrl).then(() => {
         showView("meet");
         mainWindow!.show();
     });
