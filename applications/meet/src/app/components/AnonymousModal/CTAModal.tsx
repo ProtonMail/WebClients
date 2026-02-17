@@ -7,17 +7,22 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import { CALENDAR_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
 import upsellModalIcon from '@proton/styles/assets/img/meet/upsell-modal-icon.png';
+import upsellRoomIcon from '@proton/styles/assets/img/meet/upsell-room-icon.svg';
+import upsellScheduleIcon from '@proton/styles/assets/img/meet/upsell-schedule-icon.svg';
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { useFeedback } from '../../hooks/useFeedback';
 import { FeedbackOptionColumn } from '../FeedbackOptionColumn/FeedbackOptionColumn';
+import { MeetSignIn } from '../SignIn/SignIn';
 import { StarRating } from '../StarRating/StarRating';
 import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
 
@@ -30,6 +35,10 @@ interface CTAModalProps {
     rejoin?: () => void;
     action: () => void;
 }
+
+const formatUpsellMessage = (message: string) => {
+    return getBoldFormattedText(message, 'color-white');
+};
 
 export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAModalProps) => {
     const meetFeedbackEnabled = useFlag('MeetFeedback');
@@ -44,11 +53,17 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     const [optionalDetails, setOptionalDetails] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
 
+    const signIn = (
+        <MeetSignIn key="signin" className="sign-in-button p-0 ml-1">
+            {c('Link').t`Sign in`}
+        </MeetSignIn>
+    );
+
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const titles = {
-        [UpsellModalTypes.Schedule]: c('Info').t`Schedule your next meeting`,
-        [UpsellModalTypes.Room]: c('Info').t`Create a meeting room`,
-        [UpsellModalTypes.PersonalMeeting]: c('Info').t`Get your personal meeting ID`,
+        [UpsellModalTypes.Schedule]: c('Info').t`You are almost there`,
+        [UpsellModalTypes.Room]: c('Info').t`You are almost there`,
+        [UpsellModalTypes.PersonalMeeting]: c('Info').t`You are almost there`,
         [UpsellModalTypes.StartMeeting]: c('Info').t`Host your own secure meeting`,
         [UpsellModalTypes.HostFreeAccount]: c('Info').t`You left your meeting`,
         [UpsellModalTypes.HostPaidAccount]: c('Info').t`You left your meeting`,
@@ -69,11 +84,18 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     }, []);
 
     const subtitles = {
-        [UpsellModalTypes.Schedule]: c('Info')
-            .t`Create an account to connect Meet with ${CALENDAR_APP_NAME} and send meeting invites instantly.`,
-        [UpsellModalTypes.Room]: c('Info').t`Create an account to have a meeting room that you can use at any time.`,
-        [UpsellModalTypes.PersonalMeeting]: c('Info')
-            .t`Create an account to have a personal meeting link you can reuse for every call.`,
+        [UpsellModalTypes.Schedule]: formatUpsellMessage(
+            c('Info')
+                .t`To schedule a meeting, **create a free ${BRAND_NAME} account**. You will return to ${MEET_APP_NAME} automatically.`
+        ),
+        [UpsellModalTypes.Room]: formatUpsellMessage(
+            c('Info')
+                .t`To create a room, **create a free ${BRAND_NAME} account**. You will return to ${MEET_APP_NAME} automatically.`
+        ),
+        [UpsellModalTypes.PersonalMeeting]: formatUpsellMessage(
+            c('Info')
+                .t`To use your personal meeting room, **create a free ${BRAND_NAME} account**. You will return to ${MEET_APP_NAME} automatically.`
+        ),
         [UpsellModalTypes.HostFreeAccount]: c('Info')
             .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`,
         [UpsellModalTypes.HostPaidAccount]: c('Info').t`Thank you for hosting a premium meeting.`,
@@ -86,9 +108,9 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     };
 
     const actionText = {
-        [UpsellModalTypes.Schedule]: c('Action').t`Create a free account`,
-        [UpsellModalTypes.Room]: c('Action').t`Create a free account`,
-        [UpsellModalTypes.PersonalMeeting]: c('Action').t`Create a free account`,
+        [UpsellModalTypes.Schedule]: c('Action').t`Continue`,
+        [UpsellModalTypes.Room]: c('Action').t`Continue`,
+        [UpsellModalTypes.PersonalMeeting]: c('Action').t`Continue`,
         [UpsellModalTypes.StartMeeting]: c('Action').t`Start a meeting`,
         [UpsellModalTypes.HostFreeAccount]: c('Action').t`Get Meet Professional`,
         [UpsellModalTypes.HostPaidAccount]: undefined,
@@ -109,9 +131,20 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         [UpsellModalTypes.PaidAccount]: undefined,
     };
 
+    const isUpsellModal = () => {
+        return (
+            ctaModalType === UpsellModalTypes.Schedule ||
+            ctaModalType === UpsellModalTypes.Room ||
+            ctaModalType === UpsellModalTypes.PersonalMeeting
+        );
+    };
+
     const actionButton = (
         <Button
-            className="rounded-full color-invert reload-button px-10 py-4 text-semibold"
+            className={clsx(
+                'rounded-full color-invert reload-button px-10 py-4 text-semibold',
+                isUpsellModal() && 'upsell-modal-button w-full'
+            )}
             onClick={() => {
                 onClose();
                 action();
@@ -229,24 +262,49 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
             });
     };
 
+    const getIcon = () => {
+        if (isEndCallUpsell()) {
+            return (
+                <img
+                    src={upsellModalIcon}
+                    alt=""
+                    className="w-custom h-custom"
+                    style={{ '--w-custom': '4.5em', '--h-custom': '4.5em' }}
+                />
+            );
+        }
+
+        if (isUpsellModal()) {
+            return (
+                <img
+                    className="w-custom h-custom"
+                    src={ctaModalType === UpsellModalTypes.Schedule ? upsellScheduleIcon : upsellRoomIcon}
+                    alt=""
+                    style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
+                />
+            );
+        }
+
+        return (
+            <img
+                className="w-custom h-custom"
+                src={scheduleIcon}
+                alt=""
+                style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
+            />
+        );
+    };
+
     return (
         <TranslucentModal open={open} onClose={onClose}>
-            <div className="flex flex-column justify-end items-center text-center pt-10 pb-10">
-                {isEndCallUpsell() ? (
-                    <img
-                        src={upsellModalIcon}
-                        alt=""
-                        className="w-custom h-custom"
-                        style={{ '--w-custom': '4.5em', '--h-custom': '4.5em' }}
-                    />
-                ) : (
-                    <img
-                        className="w-custom h-custom"
-                        src={scheduleIcon}
-                        alt=""
-                        style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
-                    />
+            <div
+                className={clsx(
+                    'flex flex-column justify-end items-center text-center pt-10 pb-10',
+                    isUpsellModal() && 'max-w-custom'
                 )}
+                style={{ '--max-w-custom': '28.25rem' }}
+            >
+                {getIcon()}
                 {isFinished && (
                     <>
                         <div className="flex flex-column gap-2 pt-10 pb-10">
@@ -269,14 +327,37 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                 )}
                 {!isFinished && (
                     <>
-                        <div className="flex flex-column gap-2 pt-10 pb-10">
-                            <div className="cta-modal-title text-semibold color-norm">{titles[ctaModalType]}</div>
+                        <div
+                            className={clsx(
+                                'flex flex-column gap-2 pb-10',
+                                !isUpsellModal() && 'pt-10',
+                                isUpsellModal() && 'upsell-modal pt-6 meet-glow-effect relative'
+                            )}
+                        >
+                            <div
+                                className={clsx(
+                                    'cta-modal-title color-norm',
+                                    !isUpsellModal() && 'text-semibold',
+                                    isUpsellModal() && 'upsell-modal-title font-arizona'
+                                )}
+                            >
+                                {titles[ctaModalType]}
+                            </div>
                             <div className="cta-modal-subtitle color-weak">{subtitles[ctaModalType]}</div>
                         </div>
                         <div className="flex flex-column gap-2 items-center cta-modal-content-container w-full">
-                            <div className="flex flex-column md:flex-row gap-2 items-center justify-between">
+                            <div
+                                className={clsx(
+                                    'flex flex-column md:flex-row gap-2 items-center justify-between',
+                                    isUpsellModal() && 'w-full'
+                                )}
+                            >
                                 {redirectToDashboard(ctaModalType) && (
-                                    <SettingsLink path={'/dashboard'} target={'_blank'}>
+                                    <SettingsLink
+                                        className={clsx(isUpsellModal() && 'w-full')}
+                                        path={'/dashboard'}
+                                        target={'_blank'}
+                                    >
                                         {actionButton}
                                     </SettingsLink>
                                 )}
@@ -302,6 +383,11 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                 </div>
                             )}
                         </div>
+                        {isUpsellModal() && (
+                            <div className="sign-in-button-container flex flex-row items-baseline py-6">
+                                {c('Go to sign in').jt`Already have an account? ${signIn}`}
+                            </div>
+                        )}
                         {meetFeedbackEnabled && rejoin && (
                             <div className="flex items-center gap-5 mt-20 mb-5 cta-modal-rating-container">
                                 <span className="text-semibold text-left cta-modal-rating-label">{c('Label')
