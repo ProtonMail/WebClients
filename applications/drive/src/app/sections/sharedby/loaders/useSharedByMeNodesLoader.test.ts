@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
-import { MemberRole, NodeType, useDrive } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -10,7 +10,6 @@ import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 import { useSharedByMeNodesLoader } from './useSharedByMeNodesLoader';
 
-jest.mock('@proton/drive');
 jest.mock('@proton/components');
 jest.mock('../../../utils/errorHandling/useSdkErrorHandler');
 jest.mock('../../../utils/sdk/getNodeEntity');
@@ -18,7 +17,6 @@ jest.mock('../../../utils/sdk/getSignatureIssues');
 jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../useSharedByMe.store');
 
-const mockUseDrive = jest.mocked(useDrive);
 const mockUseNotifications = jest.mocked(useNotifications);
 const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
@@ -29,6 +27,8 @@ const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);
 const mockDrive = {
     iterateSharedNodes: jest.fn(),
     getSharingInfo: jest.fn(),
+    getNode: jest.fn(),
+    iterateNodes: jest.fn(),
 };
 
 const mockCreateNotification = jest.fn();
@@ -81,7 +81,6 @@ describe('useSharedByMeNodesLoader', () => {
     beforeEach(() => {
         jest.clearAllMocks();
 
-        mockUseDrive.mockReturnValue({ drive: mockDrive } as any);
         mockUseNotifications.mockReturnValue({ createNotification: mockCreateNotification } as any);
         mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
 
@@ -119,7 +118,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal);
+            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
 
             expect(mockSetLoadingNodes).not.toHaveBeenCalled();
             expect(mockDrive.iterateSharedNodes).not.toHaveBeenCalled();
@@ -133,7 +132,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal);
+            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
 
             expect(mockSetLoadingNodes).toHaveBeenCalledWith(true);
             expect(mockDrive.iterateSharedNodes).toHaveBeenCalledWith(abortSignal);
@@ -149,7 +148,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal);
+            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
 
             expect(mockHandleError).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'We were not able to load some of your shared items',
@@ -166,7 +165,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal);
+            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
 
             expect(mockCleanupStaleItems).toHaveBeenCalledWith(new Set());
         });
@@ -175,7 +174,6 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
 
             expect(result.current.loadSharedByMeNodes).toBeDefined();
-            expect(mockUseDrive).toHaveBeenCalled();
             expect(mockUseNotifications).toHaveBeenCalled();
             expect(mockUseSdkErrorHandler).toHaveBeenCalled();
         });
