@@ -1483,6 +1483,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -5490,12 +5494,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -7103,7 +7107,7 @@
         "Chiave duplicata aggiornata"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta."
+        "Ogni codice può essere usato una sola volta"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestisci facilmente e annulla l'iscrizione a newsletter e mailing list."
@@ -7484,9 +7488,6 @@
       ],
       "Low Priority": [
         "Priorità bassa"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita."
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
@@ -8536,7 +8537,7 @@
         "Quando hai abilitato le chiavi attendibili per ${ senderName }, le chiavi pubbliche sono state aggiunte ai dettagli del contatto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quando ti registri a una newsletter, usa un alias invece del tuo indirizzo email. La tua identità rimane nascosta, e puoi disattivare l'alias in qualsiasi momento."

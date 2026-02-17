@@ -148,10 +148,10 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear data": [
-        "Hapus data"
+        "Bersihkan data"
       ],
       "Clear query": [
-        "Hapus kueri"
+        "Bersihkan kueri"
       ],
       "Click here.": [
         "Klik di sini."
@@ -239,9 +239,6 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
-      ],
-      "Create a spreadsheet": [
-        "Buat spreadsheet"
       ],
       "Create and copy alias": [
         "Buat dan salin alias"
@@ -3526,7 +3523,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -4191,7 +4188,7 @@
         "Panel samping kalender"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
+        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda membersihkan data terenkripsi dari semua kontak yang dienkripsi dengan kunci ini dan sekaligus menutup peringatan tersebut."
       ],
       "Change your password": [
         "Ubah kata sandi Anda"
@@ -4326,7 +4323,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Setiap kode hanya dapat digunakan satu kali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -4722,7 +4719,7 @@
         "Utama"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Penjelajahan pribadi (atau mode “incognito”) hanya berguna untuk menyembunyikan aktivitas Anda di perangkat. Fitur ini mencegah peramban menyimpan riwayat dan cookie, tetapi tidak membuat Anda tak terlihat. ISP Anda, administrator jaringan, serta situs web yang Anda kunjungi tetap dapat melihat apa yang Anda lakukan secara daring."
+        "Penjelajahan pribadi (atau mode “incognito”) hanya berguna untuk menyembunyikan aktivitas Anda di perangkat. Fitur ini mencegah peramban menyimpan riwayat dan kuki, tetapi tidak membuat Anda tak terlihat. ISP Anda, administrator jaringan, serta situs web yang Anda kunjungi tetap dapat melihat apa yang Anda lakukan secara daring."
       ],
       "Public documents are not yet enabled for your organization.": [
         "Dokumen publik belum diaktifkan untuk organisasi Anda."
@@ -4786,12 +4783,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
-      ],
-      "Settings update failed": [
-        "Pembaruan pengaturan gagal"
-      ],
-      "Settings updated": [
-        "Pengaturan diperbarui"
       ],
       "Share via link settings": [
         "Bagikan melalui pengaturan tautan"
@@ -5106,7 +5097,7 @@
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
       "You can close the tab or browser in the meantime.": [
-        "Sementara itu, Anda dapat menutup tab atau peramban."
+        "Anda dapat menutup tab atau peramban untuk saat ini."
       ],
       "You can import one data type at a time.": [
         "Anda dapat mengimpor satu jenis data dalam satu waktu."
@@ -5188,9 +5179,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Jadikan data Anda tetap milik Anda. Buat dan kolaborasikan berbagai hal dengan lembaran kerja berfitur lengkap yang diamankan oleh enkripsi end-to-end."
       ],
       "Your email address and password were leaked:": [
         "Alamat email dan kata sandi Anda telah bocor:"
@@ -6946,7 +6934,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
+        "Bersihkan pesan yang berusia lebih dari 30 hari dari Sampah dan Spam secara otomatis"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -7364,7 +7352,7 @@
         "Dokumen terkini diperbarui"
       ],
       "Root folder failed to be loaded": [
-        "Folder akar gagal dimuat"
+        "Folder root gagal dimuat"
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
@@ -7547,11 +7535,6 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias tak terbatas untuk melindungi identitas Anda"
-      ]
-    },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Mungkin nanti"
       ]
     },
     "Onboarding Trial": {
@@ -9086,7 +9069,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Menghapus data"
+        "Membersihkan data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
@@ -9318,9 +9301,6 @@
       ],
       "Information exposed in breach": [
         "Informasi yang terpapar dalam pembobolan data"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Memperkenalkan ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -9809,7 +9789,7 @@
         "Kontak tidak dapat digabung"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
+        "Jika Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

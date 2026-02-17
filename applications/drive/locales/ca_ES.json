@@ -4275,12 +4275,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -5383,7 +5383,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
+        "Cada codi només es pot utilitzar una vegada."
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
+      "Preparing": [
+        "En preparació"
+      ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Sol·liciteu accés o canvieu a un compte amb accés."
+      ],
+      "Requested item doesn't exist anymore": [
+        "L'element sol·licitat ja no existeix"
       ],
       "Restore": [
         "Restaura"
@@ -6441,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Intenteu cercar pel nom, data o tipus del fitxer."
       ],
+      "Unexpected download error": [
+        "Hi ha hagut un error de descàrrega inesperat"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Malauradament, sembla que el fitxer o algunes de les seves dades no es poden desxifrar."
       ],
@@ -6538,7 +6547,7 @@
         "Tenim problemes tècnics. Les accions relacionades amb els àlbums estan desactivades temporalment."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
-        "No s'ha pogut verificar que ${ nameAuthor } hagi carregat ${ node.name }. El següent podria haver estat manipulat: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu."
+        "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -6592,7 +6601,7 @@
         "Quan elimineu ${ deviceName } com a dispositiu sincronitzat, totes les carpetes afegides a Els Meus Ordinadors des d'aquest dispositiu s'eliminaran permanentment de ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
       "who": [
         "qui"

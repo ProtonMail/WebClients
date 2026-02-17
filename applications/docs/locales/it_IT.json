@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
-      "Create a spreadsheet": [
-        "Crea un foglio di calcolo"
-      ],
       "Create and copy alias": [
         "Crea e copia l'alias"
       ],
@@ -3563,12 +3560,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -4409,7 +4406,7 @@
         "Chiave duplicata aggiornata"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta."
+        "Ogni codice può essere usato una sola volta"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -4891,12 +4888,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
-      "Settings update failed": [
-        "Aggiornamento delle impostazioni non riuscito"
-      ],
-      "Settings updated": [
-        "Impostazioni aggiornate"
-      ],
       "Share via link settings": [
         "Impostazioni per la condivisione via link"
       ],
@@ -5172,7 +5163,7 @@
         "Quando ti connetti a una VPN, questa utilizza la tecnologia di crittografia per nascondere il tuo indirizzo IP (un codice univoco assegnato al tuo dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "words": [
         "parole"
@@ -5299,9 +5290,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "I tuoi dati restano tuoi. Crea e collabora usando fogli di calcolo ricchi di funzionalità, protetti con crittografia end-to-end."
       ],
       "Your email address and password were leaked:": [
         "Il tuo indirizzo email e la tua password sono stati resi pubblici:"
@@ -7727,11 +7715,6 @@
         "Alias illimitati per proteggere la tua identità"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Forse più tardi"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
@@ -9564,9 +9547,6 @@
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Ti presentiamo ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"

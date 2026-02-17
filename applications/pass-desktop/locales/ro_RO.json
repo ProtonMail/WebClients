@@ -1658,8 +1658,8 @@
       "Breaches detected": [
         "Divulgări detectate"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Aduceți-vă parolele actuale în ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Aduceți parolele existente în ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Aduceți-vă propriul domeniu și nu trebuie să cumpărați încă o soluție de găzduire de e-mail."
@@ -1878,8 +1878,8 @@
         "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
         "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Obțineți maximum din Proton Pass creând un seif pentru fiecare echipă sau proiect."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Profitați la maxim de ${ PASS_APP_NAME } creând un seif pentru fiecare echipă sau proiect."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obțineți pseudonime nelimitate, bucurați-vă de funcții exclusive și sprijiniți-ne abonându-vă la Pass Plus."
@@ -2031,6 +2031,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."

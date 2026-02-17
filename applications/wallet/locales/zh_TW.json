@@ -1948,17 +1948,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "目前不可編輯付款地址。請稍後再試。"
       ],
-      "Email is not valid": [
-        "電郵無效"
-      ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
       ],
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
-      ],
-      "Incorrect username": [
-        "錯誤的使用者名稱"
       ],
       "Input isn't a valid email or bitcoin address": [
         "輸入的電子郵件或比特幣地址無效"
@@ -1987,14 +1981,8 @@
       "Invalid ZIP code": [
         "無效的郵遞區號"
       ],
-      "Not a valid number": [
-        "號碼無效"
-      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
-      ],
-      "Passwords do not match": [
-        "密碼不一致"
       ],
       "Payment process canceled": [
         "付款過程已取消"
@@ -2053,41 +2041,23 @@
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
       ],
-      "The email addresses do not match": [
-        "電子郵件位址不相符"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
       "The passphrases do not match": [
         "密碼片語不符"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "此欄位還剩下 ${ maximumLength } 個字元。"
-      ],
       "This field is required": [
         "此欄位必填"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "此欄位至少須有 ${ minimumLength } 個字元。"
-      ],
       "This offer is not available in your country": [
         "此優惠在您的國家/地區無法使用"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "嘗試僅使用字母、數字與 _.-"
       ],
       "Unknown error": [
         "未知錯誤"
       ],
       "Unknown payment token status": [
         "未知的付款權仗狀態"
-      ],
-      "Username must begin with a letter or digit": [
-        "使用者名稱的開頭必須為字母或數字"
-      ],
-      "Username must end with a letter or digit": [
-        "使用者名稱的結尾必須為字母或數字"
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
@@ -2677,7 +2647,7 @@
         "週"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -5020,14 +4990,6 @@
       ],
       "Name": [
         "名稱"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "VPN Plan Feature": {

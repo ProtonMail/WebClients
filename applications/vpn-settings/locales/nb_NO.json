@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Oppgrader til Professional"
-      ],
       "Upgrade to view all": [
         "Oppgrader for å vise alle"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "administrator"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "En rolle er en gruppe med tillatelser som du kan tildele medlemmene i organisasjonen din."
       ]
     },
     "Alert": {
@@ -3434,6 +3436,28 @@
         "Deaktivere adresse?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } den første måneden. Fornyes til ${ regularPrice }/mnd, avbryt når som helst."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Skaff deg VPN Plus for kun ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet av sveitsiske personvernlover"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Spesialtilbud: Spar 90 % på premium-planen vår"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsett med gratis"
+      ],
+      "Get the deal": [
+        "Skaff deg tilbudet"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verifisert"
@@ -3858,14 +3882,41 @@
       "Added on ${ formattedDate }": [
         "Lagt til på ${ formattedDate }"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Be om hjelp fra en gjenopprettingskontakt. De vil motta en e-post for å bekrefte forespørselen din og låse opp dataene dine."
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Kontakt dem nå for å se om de kan hjelpe, og for å la dem vite personlig at det er deg som prøver å låse opp dataene dine."
+      ],
       "Immediate": [
         "Umiddelbar"
       ],
       "Less than a day": [
         "Mindre enn en dag"
       ],
+      "Recovery request sent": [
+        "Gjenopprettingsforespørsel sendt"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Fjern kontakter for gjenoppretting for å fortsette"
+      ],
+      "Select recovery contact ${ name }": [
+        "Velg gjenopprettingskontakt ${ name }"
+      ],
+      "Send email request": [
+        "Send e-postforespørsel"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "For å deaktivere denne gjenopprettingsmetoden, fjern alle gjenopprettingskontaktene dine."
+      ],
       "Trusted contact": [
         "Betrodd kontakt"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Kontakten din for gjenoppretting har hjulpet deg med å gjenopprette data."
       ]
     },
     "Empty group name": {
@@ -4052,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maksimalt ${ displayMaxValue } tillatt"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
@@ -5741,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " og andre sikkerhetsfunksjoner."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
         "${ amountUsers }/${ totalUsers } brukere har for øyeblikket tilgang til delte tjenere."
@@ -5908,6 +5959,10 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ total } user found": [
+        "${ total } bruker funnet",
+        "${ total } brukere funnet"
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } opprettet"
       ],
@@ -6013,14 +6068,14 @@
       "Account successfully updated": [
         "Konto oppdatert"
       ],
-      "Accounts": [
-        "Kontoer"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
       "active": [
         "aktiv"
+      ],
+      "Activity Monitor": [
+        "Aktivitetsovervåking"
       ],
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
@@ -6275,9 +6330,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Fortsett for å koble denne enheten til ${ BRAND_NAME }-organisasjonen din."
       ],
-      "Continue with ${ freeName }": [
-        "Fortsett med ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
@@ -6312,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Opprett e-postadresser for andre, administrer ${ MAIL_APP_NAME } for en virksomhet, skole eller gruppe. Start ved å legge til organisasjonsnavn og egendefinerte domener (f.eks. @dittfirma.no). "
       ],
       "Create in": [
         "Opprett i"
@@ -6625,9 +6674,6 @@
       "Free trial": [
         "Gratis prøveperiode"
       ],
-      "Gain visibility across your organization": [
-        "Få synlighet på tvers av organisasjonen"
-      ],
       "Gateway monitor": [
         "Overvåking av porttjener"
       ],
@@ -6640,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Få ${ AUTHENTICATOR_APP_NAME } for alle dine enheter."
       ],
-      "Get ${ upsellPlanName }": [
-        "Skaff deg ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
       ],
@@ -6651,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Kom i gang med vervekoblingen ovenfor."
+      ],
+      "Get visibility into account access": [
+        "Få innsikt i kontotilgang"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
@@ -6678,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dersom en administrator endret dette passordet, må du be om det nye organisasjonspassordet."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Hvis det ikke passer for deg, refunderer vi deg."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel tilbakestilling av passord, kan du hindre meldingen fra å vises igjen"
@@ -6900,9 +6943,6 @@
       "Learn more": [
         "Lær mer"
       ],
-      "Learn more about Activity Monitor": [
-        "Lær mer om overvåking av aktivitet"
-      ],
       "Learn more about Gateways": [
         "Lær mer om porttjenere"
       ],
@@ -6986,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Overvåk og gransk autentiseringsforsøk for alle ${ BRAND_NAME }-tjenester som bruker ${ BRAND_NAME }-legitimasjonen din."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Overvåk påloggingsaktivitet, oppdag uautorisert tilgang og lukk sikkerhets- og samsvarshull. "
       ],
       "Multi-user support not enabled.": [
         "Flerbrukerstøtte er ikke aktivert."
@@ -7095,9 +7138,6 @@
         "Eller velg en spesiell tjener:"
       ],
       "Organization monitor": [
-        "Organisasjonsovervåking"
-      ],
-      "Organization Monitor": [
         "Organisasjonsovervåking"
       ],
       "Organization size": [
@@ -7786,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Oppgrader til Professional eller en høyere plan for å låse opp"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Oppgrader for å låse opp ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Oppgrader planen din til ${ firstPlanNames } eller ${ lastPlanName } for å få tilgang til ${ PROTON_SENTINEL_NAME } for organisasjoner."
@@ -9386,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "aktivitetsovervåkeren"
+      ],
       "Add a gift code": [
         "Legg til gavekode"
       ],
@@ -9860,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Koble til ditt egendefinerte domene (f.eks. dinbedrift.com) for å opprette e-postadresser for andre personer, administrere ${ MAIL_APP_NAME } for en bedrift, skole eller gruppe."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Koble ditt egendefinerte domene til ${ BRAND_NAME } for å sette opp tilpassede e-postadresser (eks., du@dittfirma.no). Vår veileder vil rettlede deg gjennom prosessen."
       ],
@@ -15649,6 +15695,9 @@
       "Revoke certificate?": [
         "Oppheve sertifikatet?"
       ],
+      "Roles and permissions": [
+        "Roller og tillatelser"
+      ],
       "SAML authentication": [
         "SAML-autentisering"
       ],
@@ -16666,9 +16715,6 @@
       ],
       "Just ${ price }": [
         "Bare ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Prøv ${ upsellPlanName } risikofritt"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b } pakke"

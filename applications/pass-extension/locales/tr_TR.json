@@ -1460,10 +1460,10 @@
         "${ forwardedEmailsCount } iletildi"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
-        "${ inviterEmail }, yönettiğiniz bir grupla bir öğeyi paylaşmak istiyor."
+        "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } kullanıcısı ${ invitedGroup.Name } grubu ile bir öğeyi paylaşmak istiyor."
+        "${ inviterEmail }, bir ögeyi ${ invitedGroup.Name } grubu ile paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
@@ -1629,7 +1629,7 @@
         "Çöpe atılmış tüm ögeler geri yüklendi"
       ],
       "An item previously shared with you was removed.": [
-        "Daha önce sizinle paylaşılan bir öğe kaldırıldı."
+        "Daha önce sizinle paylaşılan bir öge kaldırıldı."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "${ emailJSX } adresini e-posta kutularınızdan kaldırmak istediğinize emin misiniz?"
@@ -1955,7 +1955,7 @@
         "Davet yeniden gönderildi"
       ],
       "invites the group ${ invitedGroup.Name } to access items in": [
-        "${ invitedGroup.Name } grubunu öğelere erişmeye davet eder"
+        "${ invitedGroup.Name } grubunu şu kasadaki ögelere erişmeye davet etti:"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -2678,13 +2678,13 @@
         "Ögeleri içe aktarabilmeniz için düzenleme izniniz olan bir kasanız olmalıdır."
       ],
       "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
-        "${ groupName } grubunuzun erişimi kaldırıldığı için artık bazı kasalara veya öğelere erişiminiz yok."
+        "${ groupName } grubunuzun erişimi kaldırıldığından artık bazı kasalara veya ögelere erişiminiz yok."
       ],
       "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
-        "${ groupName } grubunuz erişim izni aldığı için artık \"${ itemName } öğesine\" erişiminiz var."
+        "${ groupName } grubunuza erişim izni verildiğinden artık \"${ itemName }\" ögesine erişiminiz var."
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
-        "${ groupName } grubunuz erişim izni aldığı için artık \"${ vaultName } kasasına\" erişiminiz var."
+        "${ groupName } grubunuza erişim izni verildiğinden artık \"${ vaultName }\" kasasına erişiminiz var."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Etki alanınızı doğruladıktan sonra etki alanı ayarlarınızı (tümünü toplama e-posta takma adları, takma adlar için varsayılan görüntülenecek ad vb.) özelleştirebileceksiniz."
@@ -4808,7 +4808,7 @@
         "Kasa"
       ],
       "Vault shared with a group you administer": [
-        "Yönettiğiniz bir gruba kasanız paylaşıldı"
+        "Kasa, yönettiğiniz bir grup ile paylaşıldı"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"

@@ -465,6 +465,9 @@
       "Enable drive search": [
         "Povoliť vyhľadávanie na disku"
       ],
+      "Encrypted": [
+        "Šifrované"
+      ],
       "Expand": [
         "Rozbaliť"
       ],
@@ -1028,6 +1031,9 @@
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
+      ],
+      "Shared": [
+        "Zdieľané"
       ],
       "Sharing is end-to-end encrypted": [
         "Zdieľanie je end-to-end šifrované"
@@ -4325,12 +4331,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
+        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -6143,6 +6149,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
+      "Preparing": [
+        "Príprava"
+      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -6205,6 +6214,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Požiadajte o prístup alebo sa prepnite na účet s prístupom."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Požadovaná položka už neexistuje"
       ],
       "Restore": [
         "Obnoviť"
@@ -6611,6 +6623,9 @@
       "Try searching by file name, date, or type.": [
         "Skúste vyhľadávať podľa názvu súboru, dátumu alebo typu."
       ],
+      "Unexpected download error": [
+        "Neočakávaná chyba sťahovania"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
       ],
@@ -6762,7 +6777,7 @@
         "Keď odstránite ${ deviceName } ako synchronizované zariadenie, všetky priečinky pridané do Moje počítače z tohto zariadenia sa natrvalo odstránia z ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
+        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
       "who": [
         "kto"
@@ -7166,6 +7181,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "Access": [
+        "Prístup"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
       ],
@@ -7195,6 +7213,9 @@
       ],
       "All": [
         "Všetko"
+      ],
+      "Allow editors to change permissions and share": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať"
       ],
       "Anderson": [
         "Anderson"
@@ -7355,6 +7376,9 @@
       "Device name": [
         "Názov zariadenia"
       ],
+      "Disable this link on a specific date": [
+        "Deaktivovať tento odkaz k určitému dátumu"
+      ],
       "Do you have any suggestions for our team?": [
         "Máte nejaké návrhy pre náš tím?"
       ],
@@ -7411,6 +7435,9 @@
       ],
       "Expires": [
         "Exspiruje"
+      ],
+      "Expiry": [
+        "Platnosť"
       ],
       "Extended address": [
         "Rozšírená adresa"
@@ -7625,6 +7652,9 @@
       "Replace existing folder or file": [
         "Nahradiť existujúci priečinok alebo súbor"
       ],
+      "Require password": [
+        "Vyžadovať heslo"
+      ],
       "Reveal password": [
         "Odkryť heslo"
       ],
@@ -7633,6 +7663,9 @@
       ],
       "Select type of abuse": [
         "Vyberte typ zneužitia"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ],
       "Set recovery method": [
         "Nastaviť metódu obnovenia"
@@ -9369,6 +9402,9 @@
       "\"${ name }\" saved successfully": [
         "„${ name }“ úspešne uložené"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" zdieľané"
+      ],
       "\"${ name }\" successfully copied": [
         "„${ name }“ úspešne skopírované"
       ],
@@ -9662,6 +9698,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotografie sa už nachádzajú v \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Nastavenie aktualizované. Editori môžu zmeniť povolenia a zdieľať."
       ],
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"
@@ -12200,7 +12239,7 @@
     },
     "Tag": {
       "Bursts": [
-        "Sériové foto"
+        "Sekvenčné foto"
       ],
       "Favorites": [
         "Obľúbené"

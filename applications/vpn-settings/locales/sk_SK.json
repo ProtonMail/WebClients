@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgradovať pre využívanie programu ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Aktualizovať na Professional"
-      ],
       "Upgrade to view all": [
         "Upgradovať na zobrazenie všetkého"
       ],
@@ -1354,6 +1351,11 @@
     "Admin": {
       "admin": [
         "správca"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Pozícia je skupina povolení, ktoré môžete prideliť členom vašej organizácie."
       ]
     },
     "Alert": {
@@ -3472,6 +3474,28 @@
         "Deaktivovať adresu?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } za prvý mesiac. Obnovenie za ${ regularPrice }/mesiac, zrušiť môžete kedykoľvek."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Získajte VPN Plus len za ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Špeciálna ponuka: Ušetrite 90 % na našom prémiovom pláne"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Pokračovať bezplatne"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Overené"
@@ -3902,8 +3926,14 @@
       "Added on ${ formattedDate }": [
         "Pridané dňa ${ formattedDate }"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Požiadajte o pomoc kontaktnú osobu na obnovenie účtu. Tá dostane email s požiadavkou overenia vašej žiadosti a odblokovania vašich údajov."
+      ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Obráťte sa na nich teraz, aby ste zistili, či vám môžu pomôcť, a aby ste im osobne oznámili, že sa snažíte odomknúť svoje údaje."
       ],
       "Immediate": [
         "Okamžite"
@@ -3911,8 +3941,26 @@
       "Less than a day": [
         "Menej než deň"
       ],
+      "Recovery request sent": [
+        "Žiadosť o obnovenie účtu bola odoslaná"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Odstráňte svoje kontakty na obnovenie účtu, aby ste mohli pokračovať"
+      ],
+      "Select recovery contact ${ name }": [
+        "Vyberte kontaktnú osobu na obnovenie účtu ${ name }"
+      ],
+      "Send email request": [
+        "Odoslať žiadosť emailom"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Ak chcete túto metódu obnovenia deaktivovať, odstráňte všetky svoje kontakty na obnovenie účtu."
+      ],
       "Trusted contact": [
         "Dôveryhodný kontakt"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Váš kontakt na obnovu účtu vám pomohol obnoviť dáta."
       ]
     },
     "Empty group name": {
@@ -4103,6 +4151,9 @@
       ],
       "Label name cannot be empty.": [
         "Názov štítku nesmie byť prázdny."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximálne povolené ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
@@ -5846,9 +5897,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " a ďalšie bezpečnostné funkcie."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
         "${ amountUsers }/${ totalUsers } používateľov má v súčasnosti prístup k zdieľaným serverom.",
@@ -6176,14 +6224,14 @@
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
-      "Accounts": [
-        "Účty"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte aspoň jeden spôsob obnovy údajov, aby ste mali istotu, že v prípade straty hesla budete mať naďalej prístup k obsahu svojho ${ BRAND_NAME } účtu."
       ],
       "active": [
         "aktívne"
+      ],
+      "Activity Monitor": [
+        "Monitor aktivity"
       ],
       "add a recovery method": [
         "pridali spôsob obnovenia"
@@ -6452,9 +6500,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Pokračujte v pripojení tohto subjektu k vašej organizácii ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Pokračovať ako ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Skopírované do schránky"
       ],
@@ -6493,9 +6538,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Vytvorte emailové adresy pre ostatných ľudí, spravujte ${ MAIL_APP_NAME } pre podnikanie, školu alebo skupinu. Začnite pridaním názvu Vašej organizácie a vlastnej domény (napr. @vasafirma.sk). "
       ],
       "Create in": [
         "Vytvoriť v"
@@ -6812,9 +6854,6 @@
       "Free trial": [
         "Bezplatné skúšobné obdobie"
       ],
-      "Gain visibility across your organization": [
-        "Získajte prehľad o celej vašej organizácii"
-      ],
       "Gateway monitor": [
         "Monitorovanie brány"
       ],
@@ -6827,9 +6866,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Získajte ${ AUTHENTICATOR_APP_NAME } pre všetky vaše zariadenia."
       ],
-      "Get ${ upsellPlanName }": [
-        "Získať ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Nechajte sa upozorniť, ak dôjde k úniku vášho hesla alebo iných osobných údajov. ${ learnMoreLinkNoBreach }"
       ],
@@ -6838,6 +6874,9 @@
       ],
       "Get started with the referral link above.": [
         "Začnite s odporúčacím odkazom vyššie."
+      ],
+      "Get visibility into account access": [
+        "Získajte prehľad o prístupe k účtu"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
@@ -6865,9 +6904,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokiaľ niektorý zo správcov zmenil heslo, budete ho musiet požiadať o nové heslo organizácie."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Pokiaľ vám to nebude vyhovovať, vrátime vám peniaze."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ak je to spôsobené resetovaním starého hesla, môžete zastaviť opätovné zobrazovanie správy"
@@ -7091,9 +7127,6 @@
       "Learn more": [
         "Zistiť viac"
       ],
-      "Learn more about Activity Monitor": [
-        "Zistiť viac o Monitore aktivity"
-      ],
       "Learn more about Gateways": [
         "Zistiť viac o bránach"
       ],
@@ -7177,6 +7210,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Monitorujte a auditujte pokusy o overenie pre všetky služby ${ BRAND_NAME }, ktoré používajú vaše prihlasovacie údaje ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Monitorujte aktivity prihlásenia, odhaľujte neoprávnené prístupy a odstraňujte medzery v oblasti bezpečnosti a dodržiavania predpisov. "
       ],
       "Multi-user support not enabled.": [
         "Podpora viacerých používateľov nie je povolená."
@@ -7290,9 +7326,6 @@
         "Alebo vyberte konkrétny server:"
       ],
       "Organization monitor": [
-        "Monitorovanie organizácie"
-      ],
-      "Organization Monitor": [
         "Monitorovanie organizácie"
       ],
       "Organization size": [
@@ -7997,8 +8030,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Zvýšiť úroveň na Professional alebo vyšší plán na odomknutie"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Zvýšte úroveň pre prístup k ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Navýšte svoj plán na ${ firstPlanNames } alebo ${ lastPlanName }, aby ste získali prístup k ${ PROTON_SENTINEL_NAME } pre organizácie."
@@ -9637,6 +9670,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "monitoru aktivity"
+      ],
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
@@ -10129,6 +10165,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Pripojte svoju vlastnú doménu (napr. vašafirma.sk), aby ste mohli vytvárať emailové adresy pre ďalších ľudí, spravovať ${ MAIL_APP_NAME } pre firmu, školu alebo skupinu."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Prepojte vašu vlastnú doménu s ${ BRAND_NAME }, aby ste vytvorili vlastné emailové adresy (napr. vy@vasafirma.com). Náš sprievodca vás prevedie celým postupom."
       ],
@@ -16122,6 +16161,9 @@
       "Revoke certificate?": [
         "Zrušiť certifikát?"
       ],
+      "Roles and permissions": [
+        "Pozície a oprávnenia"
+      ],
       "SAML authentication": [
         "SAML overenie"
       ],
@@ -17169,9 +17211,6 @@
       ],
       "Just ${ price }": [
         "Len ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Vyskúšajte ${ upsellPlanName } bez rizika"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Váš balíček ${ a } a ${ b }"

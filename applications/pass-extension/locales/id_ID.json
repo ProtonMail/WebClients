@@ -143,10 +143,10 @@
         "Pilih berkas atau taruh di sini"
       ],
       "Clear": [
-        "Hapus"
+        "Bersihkan"
       ],
       "Clear search": [
-        "Hapus pencarian"
+        "Bersihkan pencarian"
       ],
       "Close": [
         "Tutup"
@@ -2007,6 +2007,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2212,7 +2215,7 @@
         "Silakan ikuti langkah-langkah di bawah ini untuk menyiapkan domain Anda."
       ],
       "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Silakan biarkan ${ PASS_APP_NAME } tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
+        "Harap biarkan ${ PASS_APP_NAME } tetap terbuka agar papan klip dapat dibersihkan secara otomatis."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mohon biarkan jendela ini tetap terbuka saat data Anda sedang diimpor. Proses ini mungkin memerlukan waktu beberapa menit."

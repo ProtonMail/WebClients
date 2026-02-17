@@ -2168,17 +2168,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
       ],
-      "Email is not valid": [
-        "Érvénytelen e-mail cím"
-      ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
-      ],
-      "Incorrect username": [
-        "Helytelen felhasználónév"
       ],
       "Input isn't a valid email or bitcoin address": [
         "A megadott érték nem egy érvényes e-mail cím vagy bitcoin cím"
@@ -2204,14 +2198,8 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Not a valid number": [
-        "Érvénytelen szám"
-      ],
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
-      ],
-      "Passwords do not match": [
-        "A jelszavak nem egyeznek"
       ],
       "Payment process canceled": [
         "A fizetés folyamata megszakítva"
@@ -2255,38 +2243,20 @@
       "The amount due has changed. Please try again.": [
         "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
-      "The email addresses do not match": [
-        "Az e-mail címek nem egyeznek"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
       "The passphrases do not match": [
         "A kulcsszövegek nem egyeznek meg"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
-      ],
       "This field is required": [
         "A mező kitöltése kötelező"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Próbáljon csak betűket, számokat és _.-t használni"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
-      ],
-      "Username must begin with a letter or digit": [
-        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
-      ],
-      "Username must end with a letter or digit": [
-        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
       "ZIP code is required": [
         "Irányítószám szükséges"
@@ -5367,16 +5337,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "VPN Plan Feature": {

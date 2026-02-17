@@ -1484,7 +1484,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4903,7 +4904,7 @@
         "Geri bildiriminiz için teşekkürler!"
       ],
       "That action can't be performed on emails in this folder": [
-        "Bu işlem bu klasördeki e-postalarda gerçekleştirilemez"
+        "Bu işlem bu klasördeki e-postalara uygulanamaz"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -7492,7 +7493,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -7615,7 +7616,7 @@
         "Herhangi bir bağlantı temizlenmedi"
       ],
       "No messages found": [
-        "İleti bulunamadı"
+        "Herhangi bir ileti bulunamadı"
       ],
       "No messages to show": [
         "Görüntülenecek bir ileti yok."
@@ -8196,7 +8197,7 @@
         "Bu durumda, internet hizmeti sağlayıcınız ve ziyaret ettiğiniz siteler kişisel bilgilerinizi çevrim içi etkinliğinizle ilişkilendiremez."
       ],
       "This message has a key attached, that has not been trusted yet.": [
-        "Bu iletiye henüz güvenilirliği onaylanmamış bir anahtar eklenmiş."
+        "Bu iletiye henüz güvenilmemiş bir anahtar eklenmiş."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Bu ileti, koyu bir arka plana uyacak şekilde ayarlandı."
@@ -11410,7 +11411,7 @@
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
-        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcısı olan müşteriler için ${ BRAND_NAME } müşteri destek ekibi tarafından sağlanır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."

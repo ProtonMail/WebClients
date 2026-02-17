@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
-      "Email is not valid": [
-        "E-mailadres is ongeldig"
-      ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Onjuiste gebruikersnaam"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Invoer is geen geldig e-mailadres of bitcoin-adres"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Ongeldige postcode"
       ],
-      "Not a valid number": [
-        "Geen geldig getal"
-      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
-      ],
-      "Passwords do not match": [
-        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
-      "The email addresses do not match": [
-        "De e-mailadressen komen niet overeen"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
       "The passphrases do not match": [
         "De wachtwoordzinnen komen niet overeen"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
-      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dit veld vereist een minimum van ${ minimumLength } tekens."
-      ],
       "This offer is not available in your country": [
         "Dit aanbod is niet beschikbaar in uw land"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
       "Unknown error": [
         "Onbekende fout"
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
-      ],
-      "Username must begin with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer beginnen"
-      ],
-      "Username must end with a letter or digit": [
-        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "ZIP code is required": [
         "Postcode is vereist"
@@ -2477,7 +2447,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -3017,7 +2987,7 @@
         "Week"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "VPN Plan Feature": {

@@ -1636,8 +1636,8 @@
       "Breaches detected": [
         "S'han detectat infraccions"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Porteu les vostres contrasenyes existents a ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Porteu les vostres contrasenyes a ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Porteu el vostre propi domini i no haureu de comprar una altra solució d'allotjament de correu electrònic."
@@ -1854,8 +1854,8 @@
         "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
         "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Aprofiteu Pass al màxim creant una caixa forta per a cada equip o projecte."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Traieu el màxim partit de ${ PASS_APP_NAME } creant una caixa forta per a cada equip o projecte."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Aconseguiu àlies il·limitats, gaudiu de característiques exclusives i doneu-nos suport subscrivint-vos al Pass Plus."
@@ -2007,7 +2007,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2453,7 +2454,7 @@
         "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Proveu les noves funcions, actualitzacions i productes de ${ BRAND_NAME } abans que s'alliberin per al públic general."
+        "Prova les noves funcionalitats, actualitzacions i productes de ${ BRAND_NAME } abans que es publiquin al públic."
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"

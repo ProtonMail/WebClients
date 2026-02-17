@@ -946,7 +946,7 @@
         "身份验证失败。请确认您的额外密码以继续导出"
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
-        "身份验证失败。请确认您的二次密码以继续导出"
+        "身份验证失败，请确认您的二级密码以继续导出！"
       ],
       "Authentication failure: ${ message }": [
         "身份验证失败：${ message }"
@@ -1339,7 +1339,7 @@
         "解锁密码错误，请重试。"
       ],
       "Wrong second password": [
-        "副密码错误"
+        "二级密码错误"
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
@@ -1543,7 +1543,7 @@
         "访问 ${ PASS_APP_NAME } 将始终需要您的额外密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your second password.": [
-        "访问 ${ PASS_APP_NAME } 将始终需要您的二次密码。"
+        "访问 ${ PASS_APP_NAME } 始终需要您的二级密码！"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
@@ -1774,7 +1774,7 @@
         "编辑者"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email address successfully deleted from monitoring": [
         "从监测中成功删除邮箱地址"
@@ -1825,7 +1825,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2025,6 +2025,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
+      ],
       "Moving items": [
         "正在移动"
       ],
@@ -2194,22 +2197,22 @@
         "请输入 PIN 码以更改此设置。"
       ],
       "Please confirm your second password": [
-        "请确认您的二次密码"
+        "请确认您的二级密码"
       ],
       "Please confirm your second password in order to auto-lock with biometrics.": [
-        "请确认您的二次密码，以便使用生物识别技术自动锁定。"
+        "请确认您的二级密码以使用生物识别自动锁定！"
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
-        "请确认您的二次密码，以便使用您的密码自动锁定。"
+        "请确认您的二级密码以使用密码自动锁定！"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
-        "请确认您的二次密码，以便导出您的 ${ PASS_APP_NAME } 数据"
+        "请确认您的二级密码以导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your second password in order to unregister your current lock.": [
-        "请确认您的二次密码，以取消您当前的锁定。"
+        "请确认您的二级密码以注销当前的锁定方式！"
       ],
       "Please confirm your second password in order to update the auto-lock time.": [
-        "请确认您的二次密码，以便更新自动锁定时间。"
+        "请确认您的二级密码以更新自动锁定时间！"
       ],
       "Please consider leaving a review.": [
         "请考虑留下评论。"
@@ -2512,7 +2515,7 @@
         "用您的额外密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
-        "使用您的二次密码解锁 ${ PASS_SHORT_APP_NAME }"
+        "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock it with your PIN to access the settings": [
         "输入 PIN 码查看设置"
@@ -3071,7 +3074,7 @@
         "清空回收站"
       ],
       "Enter email or username": [
-        "输入电子邮箱或用户名"
+        "请输入邮箱地址或用户名"
       ],
       "Expiration date": [
         "有效期至"
@@ -3542,7 +3545,7 @@
         "保存通行密钥"
       ],
       "Second password": [
-        "副密码"
+        "二级密码"
       ],
       "Secret": [
         "密钥"
@@ -3752,7 +3755,7 @@
         "用户名"
       ],
       "Username/email": [
-        "用户名/电子邮箱"
+        "用户名/邮箱"
       ],
       "Value:": [
         "值:"
@@ -4054,7 +4057,7 @@
         "输入前缀"
       ],
       "Enter email": [
-        "输入电子邮箱"
+        "请输入邮箱地址"
       ],
       "Enter password": [
         "输入密码"
@@ -4450,7 +4453,7 @@
         "输入 PIN 码"
       ],
       "Enter your second password": [
-        "输入您的二次密码"
+        "请输入您的二级密码"
       ],
       "Excluded items": [
         "不包括的项目"
@@ -4738,7 +4741,7 @@
         "有可用更新"
       ],
       "Use my email": [
-        "使用我的电子邮箱"
+        "使用我的邮箱"
       ],
       "Vault": [
         "保险库"

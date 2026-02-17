@@ -1379,6 +1379,12 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
+      ],
+      "One-time payment, lifetime deal": [
+        "Jednokratno plaćanje, doživotna ponuda"
+      ],
+      "Online document editor": [
+        "Online uređivač dokumenata"
       ]
     },
     "BF2025: Deal details": {
@@ -3139,6 +3145,11 @@
         "Rješenja po mjeri za veće organizacije s prilagođenim potrebama."
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Prioritetna podrška"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/mjesec"
@@ -3991,6 +4002,11 @@
         "(bez naslova)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB prostora za pohranu"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Pogodnosti Vašeg korisničkog računa"
@@ -4008,6 +4024,11 @@
       ],
       "Switch plans": [
         "Promijeni pretplatu"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Do 6 korisnika"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4130,6 +4151,11 @@
       ],
       "Set family name": [
         "Postavite prezime"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Feature": {
@@ -4929,9 +4955,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " i druge sigurnosne značajke."
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
       ],
@@ -5456,9 +5479,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
       ],
-      "Get ${ upsellPlanName }": [
-        "Nabavite ${ upsellPlanName }"
-      ],
       "Get it on Google Play": [
         "Preuzmite na Google Playju"
       ],
@@ -5482,9 +5502,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Ako Vam ne odgovara, vratit ćemo Vam novac."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ako je to zbog starog reseta lozinke, možete spriječiti da se poruka ponovno prikazuje."
@@ -10850,6 +10867,15 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
+      ],
+      "High speed VPN": [
+        "Visoka brzina VPN"
+      ],
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
@@ -10869,17 +10895,63 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
       "/ month": [
         "/ mjesec"
       ],
       "/month": [
         "/mjesec"
       ],
+      "1 year": [
+        "1 godina"
+      ],
+      "15 months": [
+        "15 mjeseci"
+      ],
+      "2 years": [
+        "2 godine"
+      ],
+      "30 months": [
+        "30 mjeseci"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Naplaćeno ${ amount } za 12 mjeseci"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Naplaćeno ${ amount } za 15 mjeseci"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Naplaćeno ${ amount } za 24 mjeseca"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Naplaćeno ${ amount } za 30 mjeseci"
+      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
       "Save ${ discount }%": [
         "Uštedite ${ discount } %"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standardna cijena ${ amount } za 12 mjeseci"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standardna cijena ${ amount } za 15 mjeseci"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standardna cijena ${ amount } za 24 mjeseca"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standardna cijena ${ amount } za 30 mjeseci"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Spotlight": {

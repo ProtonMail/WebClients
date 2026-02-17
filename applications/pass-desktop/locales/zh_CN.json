@@ -957,7 +957,7 @@
         "身份验证失败。请确认您的额外密码以继续导出"
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
-        "身份验证失败。请确认您的二次密码以继续导出"
+        "身份验证失败，请确认您的二级密码以继续导出！"
       ],
       "Cannot send invitation at the moment": [
         "目前无法发送邀请"
@@ -1317,7 +1317,7 @@
         "解锁密码错误，请重试。"
       ],
       "Wrong second password": [
-        "副密码错误"
+        "二级密码错误"
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
@@ -1525,7 +1525,7 @@
         "访问 ${ PASS_APP_NAME } 将始终需要您的额外密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your second password.": [
-        "访问 ${ PASS_APP_NAME } 将始终需要您的二次密码。"
+        "访问 ${ PASS_APP_NAME } 始终需要您的二级密码！"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
@@ -1614,8 +1614,8 @@
       "Breaches detected": [
         "检测到的泄露行为"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "将您的现有的密码导入 ${ BRAND_NAME }。"
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "将您现有的密码导入 ${ PASS_APP_NAME }。"
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "自带域名，无需再购买其他电子邮件托管解决方案。"
@@ -1723,7 +1723,7 @@
         "编辑者"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email address successfully deleted from monitoring": [
         "从监测中成功删除邮箱地址"
@@ -1777,7 +1777,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -1830,8 +1830,8 @@
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "通过为每个团队或项目创建一个保险库以此充分利用 Pass。"
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "为每个团队或项目创建独立保险库，充分发掘 ${ PASS_APP_NAME } 的价值。"
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "通过订阅 Pass Plus 来获得无限别名，享受独家功能并支持我们。"
@@ -1979,6 +1979,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2140,25 +2143,25 @@
         "请输入 PIN 码以更改此设置。"
       ],
       "Please confirm your second password": [
-        "请确认您的二次密码"
+        "请确认您的二级密码"
       ],
       "Please confirm your second password in order to auto-lock with biometrics.": [
-        "请确认您的二次密码，以便使用生物识别技术自动锁定。"
+        "请确认您的二级密码以使用生物识别自动锁定！"
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
-        "请确认您的二次密码，以便使用您的密码自动锁定。"
+        "请确认您的二级密码以使用密码自动锁定！"
       ],
       "Please confirm your second password in order to enable offline mode": [
-        "请确认您的二次密码，以便启用离线模式"
+        "请确认您的二级密码以启用离线模式！"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
-        "请确认您的二次密码，以便导出您的 ${ PASS_APP_NAME } 数据"
+        "请确认您的二级密码以导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your second password in order to unregister your current lock.": [
-        "请确认您的二次密码，以取消您当前的锁定。"
+        "请确认您的二级密码以注销当前的锁定方式！"
       ],
       "Please confirm your second password in order to update the auto-lock time.": [
-        "请确认您的二次密码，以便更新自动锁定时间。"
+        "请确认您的二级密码以更新自动锁定时间！"
       ],
       "Please consider leaving a review.": [
         "请考虑留下评论。"
@@ -2446,7 +2449,7 @@
         "用您的额外密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
-        "使用您的二次密码解锁 ${ PASS_SHORT_APP_NAME }"
+        "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock with biometrics": [
         "使用生物识别技术解锁"
@@ -2996,7 +2999,7 @@
         "启用脱机访问"
       ],
       "Enter email or username": [
-        "输入电子邮箱或用户名"
+        "请输入邮箱地址或用户名"
       ],
       "Experimental": [
         "实验性"
@@ -3521,7 +3524,7 @@
         "路由号码"
       ],
       "Second password": [
-        "副密码"
+        "二级密码"
       ],
       "Secret": [
         "密钥"
@@ -4097,7 +4100,7 @@
         "输入前缀"
       ],
       "Enter email": [
-        "输入电子邮箱"
+        "请输入邮箱地址"
       ],
       "Enter password": [
         "输入密码"
@@ -4481,7 +4484,7 @@
         "输入 PIN 码"
       ],
       "Enter your second password": [
-        "输入您的二次密码"
+        "请输入您的二级密码"
       ],
       "Excluded items": [
         "不包括的项目"

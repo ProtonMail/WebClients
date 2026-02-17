@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Η επεξεργασία της διεύθυνσης χρέωσης δεν είναι διαθέσιμη προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
-      "Email is not valid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Η καταχώρηση δεν είναι έγκυρη διεύθυνση ηλ. ταχυδρομείου ή bitcoin"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Μη έγκυρος Ταχυδρομικός Κωδικός"
       ],
-      "Not a valid number": [
-        "Μη έγκυρος αριθμός"
-      ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
-      ],
-      "Passwords do not match": [
-        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
       "Payment process canceled": [
         "Η διαδικασία πληρωμής ακυρώθηκε"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
-      "The email addresses do not match": [
-        "Οι διευθύνσεις email δεν ταιριάζουν."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
       ],
       "The passphrases do not match": [
         "Τα συνθηματικά δεν ταιριάζουν"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
-      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
-      ],
       "This offer is not available in your country": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
-      ],
-      "Username must begin with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
-      ],
-      "Username must end with a letter or digit": [
-        "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "VPN Plan Feature": {

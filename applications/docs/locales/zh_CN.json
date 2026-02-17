@@ -67,7 +67,7 @@
         "添加联系人"
       ],
       "Add email": [
-        "添加电子邮箱"
+        "添加邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -242,9 +242,6 @@
       ],
       "Create a new contact group": [
         "创建联系人群组"
-      ],
-      "Create a spreadsheet": [
-        "创建电子表格"
       ],
       "Create and copy alias": [
         "创建并复制别名"
@@ -748,7 +745,7 @@
         "登出"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "Sign up": [
         "注册"
@@ -3112,7 +3109,7 @@
         "无法导入文件"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
+        "无法加载 VPN 控制面板！请检查您的网络连接，然后重试。"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -3538,12 +3535,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Security key": [
         "安全密钥"
@@ -4347,13 +4344,13 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
@@ -4380,7 +4377,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
@@ -4826,12 +4823,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
-      "Settings update failed": [
-        "设置更新失败"
-      ],
-      "Settings updated": [
-        "设置已更新"
-      ],
       "Share via link settings": [
         "通过链接设置共享"
       ],
@@ -5106,7 +5097,7 @@
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "words": [
         "个字"
@@ -5230,9 +5221,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "您的数据始终属于您。使用功能齐全、受端到端加密保护的电子表格进行创建和协作。"
       ],
       "Your email address and password were leaked:": [
         "您的邮箱地址和密码已泄露："
@@ -7555,11 +7543,6 @@
         "无限别名，保护您的身份"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "以后再说"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
@@ -7810,7 +7793,7 @@
         "例如："
       ],
       "Email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Enter a new folder name": [
         "输入新文件夹名称"
@@ -9304,9 +9287,6 @@
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } 全新推出"
       ],
       "Invalid verification code": [
         "验证码无效"

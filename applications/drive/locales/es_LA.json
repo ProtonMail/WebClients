@@ -4275,7 +4275,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -5434,7 +5434,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Preparing": [
+        "Preparando"
+      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Solicite acceso o cambie a una cuenta con acceso."
+      ],
+      "Requested item doesn't exist anymore": [
+        "El elemento solicitado ya no existe"
       ],
       "Restore": [
         "Restaurar"
@@ -6440,6 +6446,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Pruebe a buscar por nombre de archivo, fecha o tipo."
+      ],
+      "Unexpected download error": [
+        "Error de descarga inesperado"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Lamentablemente, parece que el archivo o algunos de los datos no pueden descifrarse."
@@ -7009,7 +7018,7 @@
         "Todos"
       ],
       "Allow editors to change permissions and share": [
-        "Permitir que los editores cambien permisos y compartan"
+        "Permita que los editores cambien permisos y compartan"
       ],
       "Anderson": [
         "García"
@@ -7169,7 +7178,7 @@
         "Nombre del dispositivo"
       ],
       "Disable this link on a specific date": [
-        "Desactivar este enlace en una fecha específica"
+        "Desactive este enlace en una fecha específica"
       ],
       "Do you have any suggestions for our team?": [
         "¿Tiene alguna sugerencia para nuestro equipo?"
@@ -7457,7 +7466,7 @@
         "Seleccione el tipo de abuso"
       ],
       "Set a password to limit access via link": [
-        "Establecer una contraseña para limitar el acceso mediante enlace"
+        "Establezca una contraseña para limitar el acceso mediante enlace"
       ],
       "Set recovery method": [
         "Establecer método de recuperación"
@@ -9180,7 +9189,7 @@
         "\"${ name }\" guardado"
       ],
       "\"${ name }\" shared": [
-        "\"${ name }\" compartido"
+        "«${ name }» compartido"
       ],
       "\"${ name }\" successfully copied": [
         "«${ name }» copiado con éxito"

@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per activar ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Millora al pla Professional"
-      ],
       "Upgrade to view all": [
         "Milloreu el pla per a veure-ho tot"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Un càrrec és un conjunt de permisos que podeu assignar als membres de la vostra organització."
       ]
     },
     "Alert": {
@@ -3434,6 +3436,28 @@
         "Voleu desactivar l'adreça?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } el primer mes. Es renovarà per ${ regularPrice }/mes, ho podreu cancel·lar quan vulgueu."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Obtingueu VPN Plus per només ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sota la protecció de les lleis de privacitat suïsses"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Oferta especial: Estalvieu un 90 % en el nostre pla prèmium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continueu amb la versió gratuïta"
+      ],
+      "Get the deal": [
+        "Aprofiteu l'oferta"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificat"
@@ -4079,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "El màxim permès és ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
@@ -5768,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " i altres característiques de seguretat."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits.",
         "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits."
@@ -6044,14 +6068,14 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat."
       ],
-      "Accounts": [
-        "Comptes"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
       "active": [
         "activa"
+      ],
+      "Activity Monitor": [
+        "Monitor d'activitats"
       ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
@@ -6306,9 +6330,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Continueu connectant aquesta entitat amb la vostra organització de ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Continua amb ${ freeName }"
-      ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
@@ -6343,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Creeu adreces de correu electrònic per a altres persones, gestioneu ${ MAIL_APP_NAME } per una empresa, escola o grup. Comenceu introduint el nom de la vostra organització i domini personalitzat (p.ex. @lavostracompanyia.cat). "
       ],
       "Create in": [
         "Crear a"
@@ -6656,9 +6674,6 @@
       "Free trial": [
         "Prova gratuïta"
       ],
-      "Gain visibility across your organization": [
-        "Guanyeu visibilitat a tota la vostra organització"
-      ],
       "Gateway monitor": [
         "Monitor de passarel·la"
       ],
@@ -6671,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obteniu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
       ],
-      "Get ${ upsellPlanName }": [
-        "Obteniu ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades personals han estat filtrades. ${ learnMoreLinkNoBreach }"
       ],
@@ -6682,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Comenceu amb l'enllaç de recomanació anterior."
+      ],
+      "Get visibility into account access": [
+        "Obtingueu visibilitat sobre l'accés al compte"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
@@ -6709,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Si no us convé, us reemborsarem."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
@@ -6931,9 +6943,6 @@
       "Learn more": [
         "Més informació"
       ],
-      "Learn more about Activity Monitor": [
-        "Més informació sobre Activity Monitor"
-      ],
       "Learn more about Gateways": [
         "Més informació sobre les passarel·les"
       ],
@@ -7017,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Monitoreu i auditeu els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que fan servir les vostres credencials de ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Monitoreu l'activitat d'inici de sessió, detecteu accessos no autoritzats i tapeu forats de seguretat i compliment. "
       ],
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
@@ -7126,9 +7138,6 @@
         "O seleccioneu un servidor concret:"
       ],
       "Organization monitor": [
-        "Monitor d'organització"
-      ],
-      "Organization Monitor": [
         "Monitor d'organització"
       ],
       "Organization size": [
@@ -7817,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Milloreu al pla Professional o a un de superior per poder desbloquejar"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Millora per activar ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Actualitzeu el vostre pla a ${ firstPlanNames } o ${ lastPlanName } per obtenir accés a ${ PROTON_SENTINEL_NAME } per organitzacions."
@@ -9417,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "monitor d’activitats"
+      ],
       "Add a gift code": [
         "Afegeix un codi de regal"
       ],
@@ -9891,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Connecteu el vostre domini personalitzat (per exemple, lavostraempresa.com) per crear adreces de correu electrònic per a d'altres persones i gestioneu ${ MAIL_APP_NAME } per a una empresa, escola o grup."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
       ],
@@ -15702,6 +15717,9 @@
       "Revoke certificate?": [
         "Voleu revocar el certificat?"
       ],
+      "Roles and permissions": [
+        "Càrrecs i permisos"
+      ],
       "SAML authentication": [
         "Autenticació SAML"
       ],
@@ -16727,9 +16745,6 @@
       ],
       "Just ${ price }": [
         "Només ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Proveu ${ upsellPlanName } sense risc"
       ],
       "Your ${ a } and ${ b } bundle": [
         "El vostre paquet ${ a } i ${ b }"

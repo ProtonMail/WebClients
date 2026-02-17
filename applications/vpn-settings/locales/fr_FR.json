@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
-      "Upgrade to Professional": [
-        "Passer à l'abonnement Professional"
-      ],
       "Upgrade to view all": [
         "Améliorer l'abonnement pour tout voir"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "Administrateur"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Un rôle est un groupe de permissions que vous pouvez attribuer aux membres de votre organisation."
       ]
     },
     "Alert": {
@@ -3434,6 +3436,28 @@
         "Désactiver l’adresse ?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } le premier mois. Renouvellement à ${ regularPrice }/mois, annulation à tout moment."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Profitez de VPN Plus pour seulement ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protégé par les lois suisses sur les données personnelles"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Offre spéciale : Économisez 90 % sur notre abonnement premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuer avec la version gratuite"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Vérifié"
@@ -4079,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximum ${ displayMaxValue } autorisé"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
@@ -5768,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " et d'autres fonctionnalités de sécurité."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilisateur a actuellement accès aux serveurs partagés.",
         "${ amountUsers }/${ totalUsers } utilisateurs ont actuellement accès aux serveurs partagés."
@@ -6044,14 +6068,14 @@
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
-      "Accounts": [
-        "Comptes"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activez au moins une méthode de récupération des données pour vous assurer que vous pourrez continuer à accéder au contenu de votre compte ${ BRAND_NAME } si vous perdez votre mot de passe."
       ],
       "active": [
         "active"
+      ],
+      "Activity Monitor": [
+        "Surveillance des activités"
       ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
@@ -6306,9 +6330,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Poursuivez la connexion entre l'entité et votre organisation ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Continuer avec ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -6343,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Créez des adresses e-mail pour d'autres personnes, gérez ${ MAIL_APP_NAME } pour une entreprise, une école ou un groupe. Commencez par ajouter le nom de votre organisation et le domaine personnalisé (par exemple @votreentreprise.com). "
       ],
       "Create in": [
         "Créer dans"
@@ -6656,9 +6674,6 @@
       "Free trial": [
         "Essai gratuit"
       ],
-      "Gain visibility across your organization": [
-        "Gagnez en visibilité au sein de votre organisation"
-      ],
       "Gateway monitor": [
         "Surveillance des passerelles"
       ],
@@ -6671,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obtenez ${ AUTHENTICATOR_APP_NAME } pour tous vos appareils."
       ],
-      "Get ${ upsellPlanName }": [
-        "Obtenir ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Recevez une notification lorsque votre mot de passe ou d'autres données personnelles ont été exposées. ${ learnMoreLinkNoBreach }"
       ],
@@ -6682,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
+      ],
+      "Get visibility into account access": [
+        "Obtenez une visibilité sur l'accès au compte"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
@@ -6709,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un autre administrateur a modifié ce mot de passe, vous devrez lui demander le nouveau mot de passe de l'organisation."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Si ça ne vous convient pas, nous vous remboursons."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si cela est lié à une ancienne réinitialisation du mot de passe, vous pouvez empêcher le message de s'afficher à nouveau."
@@ -6931,9 +6943,6 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Learn more about Activity Monitor": [
-        "En savoir plus sur la surveillance des activités"
-      ],
       "Learn more about Gateways": [
         "En savoir plus sur les passerelles"
       ],
@@ -7017,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Surveillez et contrôlez les tentatives d’authentification pour tous les services ${ BRAND_NAME } qui utilisent vos identifiants ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Surveillez l’activité de connexion, détectez les accès non autorisés et comblez les lacunes en matière de sécurité et de conformité. "
       ],
       "Multi-user support not enabled.": [
         "La prise en charge du multi-utilisateur n'est pas activée."
@@ -7126,9 +7138,6 @@
         "Ou sélectionnez un serveur spécifique :"
       ],
       "Organization monitor": [
-        "Surveillance des organisations"
-      ],
-      "Organization Monitor": [
         "Surveillance des organisations"
       ],
       "Organization size": [
@@ -7817,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Passez à un abonnement Professional ou supérieur pour débloquer."
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Passez à la version supérieure pour débloquer ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME } pour les organisations."
@@ -9417,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "surveillance des activités"
+      ],
       "Add a gift code": [
         "Ajouter un code-cadeau"
       ],
@@ -9891,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Connectez votre domaine personnalisé (par ex. votreentreprise.com) pour créer des adresses e-mail pour d'autres personnes, gérez ${ MAIL_APP_NAME } pour une entreprise, une école ou un groupe."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connectez votre domaine personnalisé à ${ BRAND_NAME } pour configurer des adresses e-mail personnalisées (par exemple, vous@votreentreprise.fr). Notre assistant vous guidera tout au long du processus."
       ],
@@ -15702,6 +15717,9 @@
       "Revoke certificate?": [
         "Révoquer le certificat ?"
       ],
+      "Roles and permissions": [
+        "Rôles et permissions"
+      ],
       "SAML authentication": [
         "Authentification SAML"
       ],
@@ -16727,9 +16745,6 @@
       ],
       "Just ${ price }": [
         "Seulement ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Essayez ${ upsellPlanName }, satisfait ou remboursé"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Votre offre groupée ${ a } et ${ b }"

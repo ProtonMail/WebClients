@@ -1633,8 +1633,8 @@
       "Breaches detected": [
         "Intrång upptäckta"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Ta med dina befintliga lösenord till ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Ta med dina befintliga lösenord till ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Skaffa en egen domän så slipper du köpa ännu en värdlösning för din e-post."
@@ -1851,8 +1851,8 @@
         "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
         "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Få ut det mesta av Pass genom att skapa ett valv för varje team eller projekt."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Få ut det mesta av ${ PASS_APP_NAME } genom att skapa ett valv för varje team eller projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få obegränsade alias, njut av exklusiva funktioner och stöd oss ​​genom att prenumerera på Pass Plus."
@@ -2002,6 +2002,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

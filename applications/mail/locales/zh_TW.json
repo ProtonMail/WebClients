@@ -1464,6 +1464,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -7237,9 +7240,6 @@
       "Low Priority": [
         "較低優先順序"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "將 ${ MAIL_APP_NAME } 設為預設電子郵件應用程式。"
-      ],
       "Manage your folders": [
         "管理您的資料夾"
       ],
@@ -8246,7 +8246,7 @@
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "當您註冊電子報時，請使用別名來代替您的電子郵件地址。您的身份會保持隱藏，而且您可以隨時停用別名。"

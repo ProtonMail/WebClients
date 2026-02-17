@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Aktiver søk i Drive"
       ],
+      "Encrypted": [
+        "Kryptert"
+      ],
       "Expand": [
         "Utvid"
       ],
@@ -941,6 +944,9 @@
       "Scan & Download (${ nbSelected })": [
         "Skann og last ned (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Skann og last ned"
+      ],
       "Search": [
         "Søk"
       ],
@@ -1015,6 +1021,9 @@
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
+      ],
+      "Shared": [
+        "Delt"
       ],
       "Sharing is end-to-end encrypted": [
         "Deling er ende-til-ende-kryptert"
@@ -4266,7 +4275,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ]
     },
     "fido2: Info": {
@@ -5374,7 +5383,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan bare brukes én gang"
+        "Hver kode kan kun bli brukt en gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -5968,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
+      "Preparing": [
+        "Forbereder"
+      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke lastes"
       ],
@@ -6030,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Be om tilgang, eller bytt til en konto med tilgang."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Forespurt element eksisterer ikke lenger"
       ],
       "Restore": [
         "Gjenopprett"
@@ -6432,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Prøv å søke etter filnavn, dato eller type."
       ],
+      "Unexpected download error": [
+        "Uventet nedlastingsfeil"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Dessverre ser det ut til at filen eller noen av dens data ikke kan dekrypteres."
       ],
@@ -6583,7 +6601,7 @@
         "Når du fjerner ${ deviceName } som en synkronisert enhet, vil alle mapper lagt til Mine Datamaskiner fra denne enheten bli permanent slettet fra ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
       ],
       "who": [
         "hvem"
@@ -6963,6 +6981,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
+      "Access": [
+        "Tilgang"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
       ],
@@ -6992,6 +7013,9 @@
       ],
       "All": [
         "Alle"
+      ],
+      "Allow editors to change permissions and share": [
+        "Tillat redaktører å endre tillatelser og dele"
       ],
       "Anderson": [
         "Andersen"
@@ -7150,6 +7174,9 @@
       "Device name": [
         "Enhetsnavn"
       ],
+      "Disable this link on a specific date": [
+        "Deaktiver denne koblingen på en bestemt dato"
+      ],
       "Do you have any suggestions for our team?": [
         "Har du noen forslag til teamet vårt?"
       ],
@@ -7206,6 +7233,9 @@
       ],
       "Expires": [
         "Utløper"
+      ],
+      "Expiry": [
+        "Utløp"
       ],
       "Extended address": [
         "Utvidet adresse"
@@ -7420,6 +7450,9 @@
       "Replace existing folder or file": [
         "Erstatt eksisterende mappe eller fil"
       ],
+      "Require password": [
+        "Krev passord"
+      ],
       "Reveal password": [
         "Avslør passord"
       ],
@@ -7428,6 +7461,9 @@
       ],
       "Select type of abuse": [
         "Velg type misbruk"
+      ],
+      "Set a password to limit access via link": [
+        "Angi et passord for å begrense tilgang via kobling"
       ],
       "Set recovery method": [
         "Angi gjenopprettingsmetode"
@@ -9149,6 +9185,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" lagret"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" delt"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" kopiert"
       ],
@@ -9390,6 +9429,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valgte bilder allerede i \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"

@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
       ],
-      "Email is not valid": [
-        "E-post er ikke gyldig"
-      ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inndata er ikke en gyldig e-postadresse eller bitcoin-adresse"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Ugyldig postnummer"
       ],
-      "Not a valid number": [
-        "Ikke et gyldig tall"
-      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
-      ],
-      "Passwords do not match": [
-        "Passordene samsvarer ikke"
       ],
       "Payment process canceled": [
         "Betalingsprosessen ble avbrutt"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
-      "The email addresses do not match": [
-        "E-postadressene samsvarer ikke"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
       "The passphrases do not match": [
         "Passordfrasene samsvarer ikke"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
-      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Dette feltet krever minimum ${ minimumLength } tegn."
-      ],
       "This offer is not available in your country": [
         "Dette tilbudet er ikke tilgjengelig i landet ditt"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Prøv å bruke bare bokstaver, tall og _.-"
       ],
       "Unknown error": [
         "Ukjent feil"
       ],
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
-      ],
-      "Username must begin with a letter or digit": [
-        "Brukernavn må begynne med en bokstav eller ett tall"
-      ],
-      "Username must end with a letter or digit": [
-        "Brukernavn må ende med en bokstav eller ett tall"
       ],
       "ZIP code is required": [
         "Postnummer kreves"
@@ -2472,7 +2442,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ]
     },
     "fido2: Info": {
@@ -2761,7 +2731,7 @@
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
       ],
       "Each code can only be used once": [
-        "Hver kode kan bare brukes én gang"
+        "Hver kode kan kun bli brukt en gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -3017,7 +2987,7 @@
         "Uke"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brukernavn (maks ${ n } tegn)",
-        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
     "VPN Plan Feature": {

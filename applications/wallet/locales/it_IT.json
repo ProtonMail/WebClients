@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
       ],
-      "Email is not valid": [
-        "Indirizzo email non valido"
-      ],
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
-      ],
-      "Incorrect username": [
-        "Username non corretto"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inserimento di un indirizzo email o bitcoin non valido"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "CAP non valido"
       ],
-      "Not a valid number": [
-        "Numero non valido"
-      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
-      ],
-      "Passwords do not match": [
-        "Le password non corrispondono"
       ],
       "Payment process canceled": [
         "Processo di pagamento annullato"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
-      "The email addresses do not match": [
-        "Gli indirizzi email non corrispondono."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
       "The passphrases do not match": [
         "Le frasi d'accesso non corrispondono"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
-      ],
       "This field is required": [
         "Campo necessario"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
-      ],
       "This offer is not available in your country": [
         "Questa offerta non é disponibile nel tuo Paese"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Prova ad usare solo lettere, numeri e _.-"
       ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
-      ],
-      "Username must begin with a letter or digit": [
-        "Il nome utente deve iniziare con una lettera o un numero."
-      ],
-      "Username must end with a letter or digit": [
-        "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
@@ -2472,12 +2442,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -2761,7 +2731,7 @@
         "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta."
+        "Ogni codice può essere usato una sola volta"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -3017,7 +2987,7 @@
         "Settimana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
-        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova un nome utente più corto (massimo ${ n } carattere)",
-        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ]
     },
     "VPN Plan Feature": {

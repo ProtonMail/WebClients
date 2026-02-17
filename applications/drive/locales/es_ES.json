@@ -4280,7 +4280,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -5383,7 +5383,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -5434,7 +5434,7 @@
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Ingresa ${ digit }."
+        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Preparing": [
+        "Preparando"
+      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Solicita acceso o cambia a una cuenta con acceso."
+      ],
+      "Requested item doesn't exist anymore": [
+        "El elemento solicitado ya no existe."
       ],
       "Restore": [
         "Restaurar"
@@ -6441,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Prueba a buscar por nombre de archivo, fecha o tipo."
       ],
+      "Unexpected download error": [
+        "Error de descarga inesperado"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Lamentablemente, parece que el archivo o algunos de sus datos no pueden descifrarse."
       ],
@@ -6592,7 +6601,7 @@
         "Cuando elimines ${ deviceName } como dispositivo sincronizado, todas las carpetas añadidas a Mis ordenadores desde este dispositivo se eliminarán permanentemente de ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "who": [
         "quién"

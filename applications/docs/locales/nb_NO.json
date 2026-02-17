@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
-      "Create a spreadsheet": [
-        "Opprett et regneark"
-      ],
       "Create and copy alias": [
         "Opprett og kopier alias"
       ],
@@ -3563,7 +3560,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ]
     },
     "fido2: Info": {
@@ -4409,7 +4406,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan bare brukes én gang"
+        "Hver kode kan kun bli brukt en gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -4891,12 +4888,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
-      "Settings update failed": [
-        "Oppdatering av innstillinger mislyktes"
-      ],
-      "Settings updated": [
-        "Innstillinger oppdatert"
-      ],
       "Share via link settings": [
         "Del via koblingsinnstillinger"
       ],
@@ -5172,7 +5163,7 @@
         "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
       ],
       "words": [
         "ord"
@@ -5299,9 +5290,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Dine data forblir dine. Opprett og samarbeid ved hjelp av fullverdige regneark som er sikret med ende-til-ende-kryptering."
       ],
       "Your email address and password were leaked:": [
         "Din e-postadresse og passord ble lekket:"
@@ -7736,11 +7724,6 @@
         "Ubegrenset med aliaser for å beskytte din identitet"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Kanskje senere"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
@@ -9573,9 +9556,6 @@
       ],
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Vi introduserer ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
