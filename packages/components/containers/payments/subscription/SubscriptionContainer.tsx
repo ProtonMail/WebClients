@@ -19,7 +19,10 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
+import {
+    InvalidZipCodeError,
+    TaxExemptionNotSupportedError,
+} from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -57,10 +60,8 @@ import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
-    getIsCustomCycle,
     getIsPlanTransitionForbidden,
     getMaximumCycleForApp,
-    getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanCurrencyFromPlanIDs,
     getPlanFromPlanIDs,
@@ -75,19 +76,15 @@ import {
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
+import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
-import {
-    PaymentsContextProvider,
-    computeOptimisticSubscriptionMode,
-    useIsB2BTrial,
-    useTaxCountry,
-    useVatNumber,
-} from '@proton/payments/ui';
+import { PaymentsContextProvider, useIsB2BTrial, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -1109,6 +1106,11 @@ const SubscriptionContainerInner = ({
                     return;
                 }
 
+                if (error instanceof TaxExemptionNotSupportedError) {
+                    createNotification({ text: error.message, type: 'error' });
+                    return;
+                }
+
                 onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
             }
 
@@ -1291,6 +1293,7 @@ const SubscriptionContainerInner = ({
         paymentFacade,
         previousValidZipCode: model.taxBillingAddress.ZipCode,
         telemetryContext,
+        paymentsApi,
     });
 
     const vatNumber = useVatNumber({
@@ -1524,7 +1527,7 @@ const SubscriptionContainerInner = ({
                                 taxCountry={taxCountry}
                                 vatNumber={vatNumber}
                                 subscription={subscription}
-                                organization={organization}
+                                showTaxCountry={paymentFacade.showTaxCountry && !model.paymentForbiddenReason.forbidden}
                             />
                             <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
                         </div>

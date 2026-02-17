@@ -72,14 +72,12 @@ export const useVatNumber = ({
     const isAuthenticated = isAuthenticatedProp ?? !!selectUser(store.getState())?.value;
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = paymentsApiProp ?? defaultPaymentsApi;
-    const [loading, withLoading] = useLoading();
+    const [loadingBillingDetails, withLoading] = useLoading();
     const [loaded, setLoaded] = useState(false);
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
 
-    const planSuggestsVatNumber = isB2BPlan;
-    const [enableVatNumberPreference, setEnableVatNumberPreference] = useState<boolean | undefined>(undefined);
-    const enableVatNumber = enableVatNumberPreference ?? planSuggestsVatNumber;
+    const enableVatNumber = isB2BPlan;
     const [vatNumber, setVatNumber] = useState('');
 
     const fetchVatNumber = async () => {
@@ -115,24 +113,20 @@ export const useVatNumber = ({
         [taxCountry.selectedCountryCode, isB2BPlan]
     );
 
-    const vatUpdated = async () => {
-        const vatNumber = await fetchVatNumber();
-        onChange?.(vatNumber ?? '');
+    const vatUpdatedInModal = async (vatId: string | undefined) => {
+        handleVatNumberChange(vatId ?? '');
         if (isAuthenticated) {
             await onVatUpdated?.(vatNumber);
         }
     };
 
     return {
-        loading,
+        loadingBillingDetails,
         vatNumber,
         setVatNumber: handleVatNumberChange,
         enableVatNumber,
-        setEnableVatNumberPreference: (value: boolean) => {
-            setEnableVatNumberPreference(value);
-        },
         renderVatNumberInput: isB2BPlan && countriesWithVatId.has(taxCountry.selectedCountryCode),
-        vatUpdated,
+        vatUpdatedInModal,
         paymentsApi,
         isAuthenticated,
     };

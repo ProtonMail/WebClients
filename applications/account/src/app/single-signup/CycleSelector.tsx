@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { PassLogo, Radio, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { CYCLE, type Currency, type CycleMapping, PLANS, type PaymentsCheckout, type PlanIDs } from '@proton/payments';
+import { CYCLE, type Currency, type CycleMapping, PLANS, type PlanIDs } from '@proton/payments';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel2 from './SaveLabel2';
@@ -173,10 +174,10 @@ const CycleSelector = ({
     mode: 'vpn-pass-promotion' | 'signup' | 'pricing';
     cycles: CYCLE[];
     onChangeCycle: (data: { cycle: CYCLE; upsellFrom?: CYCLE; planIDs: PlanIDs }) => void;
-    checkoutMapping: CycleMapping<PaymentsCheckout>;
+    checkoutMapping: CycleMapping<PaymentsCheckoutUI>;
     upsell?: {
         cycle: CYCLE;
-        mapping: PaymentsCheckout;
+        mapping: PaymentsCheckoutUI;
     };
     bg?: boolean;
 }) => {

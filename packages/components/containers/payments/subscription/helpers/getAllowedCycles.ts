@@ -9,11 +9,11 @@ import {
     type Subscription,
     getPlanFromIDs,
     hasCycle,
-    isBF2025Offer,
     isRegularCycle,
     isTrial,
     notHigherThanAvailableOnBackend,
 } from '@proton/payments';
+import { isBF2025Offer } from '@proton/payments/core/checkout';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';

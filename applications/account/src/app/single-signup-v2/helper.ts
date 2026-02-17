@@ -33,7 +33,6 @@ import {
     getIsB2BAudienceFromPlan,
     getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
-    getOptimisticCheckResult,
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
@@ -49,6 +48,7 @@ import {
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -123,6 +123,7 @@ export const getSubscriptionData = async (
             coupon: options.coupon,
             trial: options.trial,
             ValidateZipCode: options.ValidateZipCode,
+            VatId: options.VatId,
         });
     })();
 
@@ -903,6 +904,7 @@ export const getPlanCardSubscriptionData = async ({
                         billingAddress,
                         info: true,
                         trial,
+                        VatId: undefined,
                     });
                     return subscriptionData;
                 })

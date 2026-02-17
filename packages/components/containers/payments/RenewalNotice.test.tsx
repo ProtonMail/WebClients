@@ -8,13 +8,12 @@ import {
     PLAN_TYPES,
     type PlanIDs,
     type PlansMap,
-    type RequiredCheckResponse,
     type Subscription,
     SubscriptionMode,
-    getCheckout,
     getFreeCheckResult,
     getPrice,
 } from '@proton/payments';
+import { type RequiredCheckResponse, getCheckoutUi } from '@proton/payments/core/checkout';
 import { APPS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
@@ -216,7 +215,7 @@ const getProps = (
     Parameters<typeof getCheckoutRenewNoticeText>[0],
     'planIDs' | 'checkout' | 'plansMap' | 'coupon' | 'currency' | 'app'
 > => {
-    const checkout = getCheckout({ planIDs, plansMap, checkResult });
+    const checkout = getCheckoutUi({ planIDs, plansMap, checkResult });
     return {
         planIDs,
         checkout,

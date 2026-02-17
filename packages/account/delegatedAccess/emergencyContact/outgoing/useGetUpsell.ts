@@ -4,7 +4,8 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { isUpsellWithPlan, resolveUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { getCanSubscriptionAccessDuoPlan, getPlansMap } from '@proton/payments';
-import { isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
+import { isPaymentsPreloaded } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';

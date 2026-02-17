@@ -15,14 +15,11 @@ import {
     type FreeSubscription,
     PLANS,
     PLAN_NAMES,
-    type PaymentsCheckout,
     type PlanIDs,
     type PlansMap,
-    type RequiredCheckResponse,
     type Subscription,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
-    getCheckout,
     getCheckoutModifiers,
     getPlanName,
     getPlanNameFromIDs,
@@ -30,6 +27,7 @@ import {
     isFreeSubscription,
     isLifetimePlanSelected,
 } from '@proton/payments';
+import { type PaymentsCheckoutUI, type RequiredCheckResponse, getCheckoutUi } from '@proton/payments/core/checkout';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
@@ -105,7 +103,7 @@ const getRegularRenewalNoticeText = ({
     currency,
     app,
 }: RenewalNoticeProps & {
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     currency: Currency;
     app: APP_NAMES;
 }) => {
@@ -180,7 +178,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
     cycle: CYCLE;
     currency: Currency;
     coupon: Coupon;
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     short?: boolean;
     app: APP_NAMES;
 }) => {
@@ -360,7 +358,7 @@ export const getCheckoutRenewNoticeText = ({
     planIDs: PlanIDs;
     plansMap: PlansMap;
     currency: Currency;
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     short?: boolean;
     app: APP_NAMES;
 } & RenewalNoticeProps): ReactNode => {
@@ -452,7 +450,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
         plansMap,
         planIDs,
         cycle: checkResult.Cycle,
-        checkout: getCheckout({
+        checkout: getCheckoutUi({
             planIDs,
             checkResult,
             plansMap,

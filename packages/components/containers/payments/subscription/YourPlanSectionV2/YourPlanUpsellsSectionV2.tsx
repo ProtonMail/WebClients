@@ -37,7 +37,8 @@ import {
     hasVisionary,
 } from '@proton/payments';
 import { isExFamilyTrial } from '@proton/payments/core/subscription/helpers';
-import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
+import { PaymentsContextProvider, isPaymentsPreloaded } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -663,7 +664,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 .filter(isTruthy) ?? [];
 
         withLoading(Promise.all(promises)).catch(noop);
-    }, [key, payments.hasEssentialData]);
+    }, [key, payments.initialized]);
 
     if (!subscription) {
         return {

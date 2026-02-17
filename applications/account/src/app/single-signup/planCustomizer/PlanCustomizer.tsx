@@ -163,9 +163,8 @@ const PlanCustomizer = ({
 
                 if (getAddonType(addon.Name) === ADDON_PREFIXES.IP) {
                     return (
-                        <div>
+                        <div key={id}>
                             <AddonField
-                                key={id}
                                 id={id}
                                 label={c('Info').t`Dedicated servers`}
                                 tooltip={c('Info')

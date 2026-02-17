@@ -4,12 +4,11 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeaturesShort } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { usePaymentsInner } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 
 const SubscriptionCheckoutPlanIncludedFeaturesModal = ({ ...modalProps }: ModalStateProps) => {
-    const { plansMap, freePlan, uiData } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { planName } = checkout;
+    const { plansMap, freePlan, checkoutUi } = usePayments();
+    const { planName } = checkoutUi;
     const [vpnServers] = useVPNServersCount();
 
     const shortPlan = getShortPlan(planName, plansMap, { vpnServers, freePlan });

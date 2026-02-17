@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
+import { applyHOCs, withApi, withCache, withConfig, withNotifications } from '@proton/testing';
 
 import { PaymentsNoApi } from './Payment';
 
@@ -22,7 +22,7 @@ let lastUsedMethod: ViewPaymentMethod;
 
 let allMethods: ViewPaymentMethod[];
 
-const WrappedPaymentsNoApi = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
+const WrappedPaymentsNoApi = applyHOCs(withApi(), withConfig(), withCache(), withNotifications())(PaymentsNoApi);
 
 beforeEach(() => {
     jest.clearAllMocks();

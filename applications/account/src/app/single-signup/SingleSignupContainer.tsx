@@ -417,6 +417,7 @@ const SingleSignupContainer = ({
                 billingAddress,
                 trial: checkSignupTrial,
                 ValidateZipCode: true,
+                VatId: model.subscriptionData.vatNumber,
             });
         }
 

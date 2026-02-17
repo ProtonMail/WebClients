@@ -163,7 +163,7 @@ const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);
 };
 
-export const getCheckout = ({
+export const getCheckoutUi = ({
     planIDs,
     plansMap,
     checkResult,
@@ -275,7 +275,7 @@ export const getCheckout = ({
     };
 };
 
-export type PaymentsCheckout = ReturnType<typeof getCheckout>;
+export type PaymentsCheckoutUI = ReturnType<typeof getCheckoutUi>;
 
 export const getCheckResultFromSubscription = (
     subscription: Subscription | undefined | null
@@ -342,9 +342,9 @@ export const getOptimisticCheckResult = ({
     };
 };
 
-export const getOptimisticCheckout = (params: Parameters<typeof getOptimisticCheckResult>[0]): PaymentsCheckout => {
+export const getOptimisticCheckout = (params: Parameters<typeof getOptimisticCheckResult>[0]): PaymentsCheckoutUI => {
     const optimisticCheckResult = getOptimisticCheckResult(params);
-    return getCheckout({
+    return getCheckoutUi({
         planIDs: params.planIDs ?? {},
         plansMap: params.plansMap,
         checkResult: optimisticCheckResult,

@@ -13,3 +13,10 @@ export class InvalidZipCodeError extends PaymentsApiError {
         this.name = 'InvalidZipCodeError';
     }
 }
+
+export class TaxExemptionNotSupportedError extends PaymentsApiError {
+    constructor() {
+        super(c('Error').t`Tax exemption is not supported for this plan`);
+        this.name = 'TaxExemptionNotSupportedError';
+    }
+}

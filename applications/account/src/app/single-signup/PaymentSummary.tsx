@@ -11,14 +11,13 @@ import { useCouponConfig } from '@proton/components/containers/payments/subscrip
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import {
     ADDON_NAMES,
-    type PaymentsCheckout,
     type Plan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
     TaxInclusive,
     formatTax,
-    getOptimisticCheckout,
 } from '@proton/payments';
+import { type PaymentsCheckoutUI, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { InclusiveVatText } from '@proton/payments/ui';
 import clsx from '@proton/utils/clsx';
 
@@ -58,7 +57,7 @@ interface Props {
     model: VPNSignupModel;
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
-    actualCheckout: PaymentsCheckout;
+    actualCheckout: PaymentsCheckoutUI;
     isB2bPlan: boolean;
     giftCode: ReactNode;
     planInformation: ReturnType<typeof getPlanInformation>;

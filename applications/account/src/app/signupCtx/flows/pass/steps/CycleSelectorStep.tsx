@@ -70,7 +70,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
 
         const pricePerMonthWithCurrency = (
             <span className="text-bold" key="monthly-price-in-bold">
-                {getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerMonth)}
+                {getSimplePriceString(price.checkoutUi.currency, price.checkoutUi.withDiscountPerMonth)}
             </span>
         );
 
@@ -84,7 +84,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
             currency: payments.selectedPlan.currency,
         });
 
-        const priceYearly = getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerCycle);
+        const priceYearly = getSimplePriceString(price.checkoutUi.currency, price.checkoutUi.withDiscountPerCycle);
 
         return c('Label').t`Billed at ${priceYearly} every 12 months.`;
     };
@@ -96,7 +96,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
             currency: payments.selectedPlan.currency,
         });
 
-        return getSimplePriceString(price.uiData.currency, price.uiData.regularAmountPerCycle);
+        return getSimplePriceString(price.checkoutUi.currency, price.checkoutUi.regularAmountPerCycle);
     };
 
     const handleSelect = (cycle: MaybeNull<CYCLE>) => {

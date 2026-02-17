@@ -260,6 +260,7 @@ const AccountStepPayment = ({
         previousValidZipCode: subscriptionData.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext,
+        paymentsApi,
     });
 
     const vatNumber = useVatNumber({
@@ -419,7 +420,6 @@ const AccountStepPayment = ({
                     vatNumber={vatNumber}
                     loadingBitcoin={loadingPaymentDetails}
                     subscription={model.session?.subscription}
-                    organization={model.session?.organization}
                     startTrial={isTrial}
                     onCurrencyChange={(currency) => handleOptimistic({ currency })}
                 />

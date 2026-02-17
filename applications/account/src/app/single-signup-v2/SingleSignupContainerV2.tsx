@@ -631,6 +631,7 @@ const SingleSignupContainerV2 = ({
                         billingAddress,
                         trial: signupTrial,
                         ValidateZipCode: true,
+                        VatId: undefined,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -828,6 +829,7 @@ const SingleSignupContainerV2 = ({
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
                     ValidateZipCode: true,
+                    VatId: undefined,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -943,6 +945,7 @@ const SingleSignupContainerV2 = ({
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
                     ValidateZipCode: true,
+                    VatId: undefined,
                 },
                 toApp: product,
                 availableCycles: signupConfiguration.cycles,
@@ -1171,15 +1174,15 @@ const SingleSignupContainerV2 = ({
         const run = async () => {
             const isAuthenticated = !!cache.session?.resumedSessionResult.UID;
 
-            await handleSubscribeUser(
-                silentApi,
-                cache.subscriptionData,
+            await handleSubscribeUser({
+                api: silentApi,
+                subscriptionData: cache.subscriptionData,
                 productParam,
                 hasZipCodeValidation,
-                getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
-                getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
-                getTelemetryContext(cache.session)
-            );
+                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
+                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
+                telemetryContext: getTelemetryContext(cache.session),
+            });
 
             if (cache.setupData) {
                 return cache.setupData;

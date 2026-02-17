@@ -29,7 +29,7 @@ import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import { usePaymentsInner } from '@proton/payments/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -74,7 +74,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
     const getCalendars = useGetCalendars();
 
     const {
-        uiData,
+        checkoutUi,
         checkResult,
         paymentStatus,
         billingAddress,
@@ -86,9 +86,8 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
         telemetryContext,
         coupon,
         reRunPaymentChecks,
-    } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { planName, planIDs, cycle, currency } = checkout;
+    } = usePayments();
+    const { planName, planIDs, cycle, currency } = checkoutUi;
     const [subscribing, withSubscribing] = useLoading();
     const api = useApi();
     const pollEventsMultipleTimes = usePollEvents();

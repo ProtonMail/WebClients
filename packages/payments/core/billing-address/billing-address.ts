@@ -83,24 +83,31 @@ export function billingStateValidator(billingAddress: BillingAddress) {
 }
 
 export type FullBillingAddress = {
-    CountryCode: string;
-    State: string | null;
-    Company: string | null;
-    Address: string | null;
-    ZipCode: string | null;
-    City: string | null;
-    FirstName: string | null;
-    LastName: string | null;
-    VatId: string | null;
+    BillingAddress: BillingAddress & {
+        Company?: string | null;
+        Address?: string | null;
+        City?: string | null;
+        FirstName?: string | null;
+        LastName?: string | null;
+    };
+    VatId?: string | null;
 };
 
-/**
- * Use it before sending the billing address to the backend. Either /check endpoint or /subscription endpoint.
- */
-export function normalizeBillingAddress(billingAddress: BillingAddress, hasZipCodeValidation: boolean): BillingAddress {
+export type PayloadBillingAddress = BillingAddress & {
+    VatId?: string | null;
+};
+
+function normalizeZipCodeInBillingAddress({
+    billingAddress,
+    hasZipCodeValidation,
+}: {
+    billingAddress: BillingAddress;
+    hasZipCodeValidation: boolean;
+}): BillingAddress {
     if (!billingAddress.ZipCode) {
         return billingAddress;
     }
+
     // If the feature flag is off, delete the ZipCode completely to revert to the pre-zip code feature behavior
     if (!hasZipCodeValidation) {
         const copy = {
@@ -113,4 +120,52 @@ export function normalizeBillingAddress(billingAddress: BillingAddress, hasZipCo
         ...billingAddress,
         ZipCode: normalizePostalCode(billingAddress.ZipCode, billingAddress.CountryCode),
     };
+}
+
+function normalizeVatIdInBillingAddress({
+    billingAddress,
+    vatId,
+}: {
+    billingAddress: BillingAddress;
+    vatId: string | undefined;
+}): PayloadBillingAddress {
+    const VatId = vatId ? vatId : undefined;
+
+    return {
+        ...billingAddress,
+        VatId,
+    };
+}
+
+/**
+ * Use it before sending the billing address to the backend. Either /check endpoint or /subscription endpoint.
+ */
+export function getBillingAddressPayload({
+    billingAddress,
+    vatId,
+    hasZipCodeValidation,
+}: {
+    billingAddress: BillingAddress;
+    vatId: string | undefined;
+    hasZipCodeValidation: boolean;
+}): PayloadBillingAddress {
+    const withNormalizedZipCode = normalizeZipCodeInBillingAddress({
+        billingAddress,
+        hasZipCodeValidation,
+    });
+
+    const withNormalizedVatId = normalizeVatIdInBillingAddress({
+        billingAddress: withNormalizedZipCode,
+        vatId,
+    });
+
+    const allowedProps: (keyof PayloadBillingAddress)[] = ['CountryCode', 'State', 'ZipCode', 'VatId'];
+    const payload: any = {};
+    Object.keys(withNormalizedVatId).forEach((key: any) => {
+        if (allowedProps.includes(key)) {
+            payload[key] = (withNormalizedVatId as any)[key];
+        }
+    });
+
+    return payload as PayloadBillingAddress;
 }

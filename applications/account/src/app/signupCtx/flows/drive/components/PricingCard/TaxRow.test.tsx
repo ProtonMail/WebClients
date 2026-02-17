@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import type { RequiredCheckResponse } from '@proton/payments';
 import { CYCLE, SubscriptionMode, TaxInclusive } from '@proton/payments';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 
 import { TaxRow } from './TaxRow';
 
@@ -80,7 +80,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('GST 15.5%');
+            expect(taxContainer).toHaveTextContent('Including 15.5% GST');
             expect(taxContainer).toHaveTextContent('US$1.55');
         });
 
@@ -99,7 +99,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('VAT 20%');
+            expect(taxContainer).toHaveTextContent('Including 20% VAT');
             expect(taxContainer).toHaveTextContent('US$2');
         });
 
@@ -128,7 +128,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Taxes 28%');
+            expect(taxContainer).toHaveTextContent('Including 28% taxes');
             expect(taxContainer).toHaveTextContent('US$2.80');
         });
 
@@ -147,7 +147,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('VAT 8.1235%');
+            expect(taxContainer).toHaveTextContent('Including 8.1235% VAT');
             expect(taxContainer).toHaveTextContent('US$2');
         });
 
@@ -167,7 +167,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('VAT 21%');
+            expect(taxContainer).toHaveTextContent('Including 21% VAT');
             expect(taxContainer).toHaveTextContent('2.10 €');
         });
 
@@ -186,8 +186,103 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Exempt 0%');
+            expect(taxContainer).toHaveTextContent('Including 0% Exempt');
             expect(taxContainer).toHaveTextContent('US$0');
+        });
+    });
+
+    describe('when TaxInclusive is EXCLUSIVE', () => {
+        it('renders single tax without "Including" prefix', () => {
+            const checkResult = createMockCheckResult({
+                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                Taxes: [
+                    {
+                        Name: 'VAT',
+                        Rate: 20,
+                        Amount: 200,
+                    },
+                ],
+            });
+
+            render(<TaxRow checkResult={checkResult} />);
+
+            const taxContainer = screen.getByTestId('tax');
+            expect(taxContainer).toBeInTheDocument();
+            expect(taxContainer).toHaveTextContent('20% VAT');
+            expect(taxContainer).not.toHaveTextContent('Including');
+            expect(taxContainer).toHaveTextContent('US$2');
+        });
+
+        it('renders multiple taxes without "Including" prefix', () => {
+            const checkResult = createMockCheckResult({
+                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                Taxes: [
+                    {
+                        Name: 'VAT',
+                        Rate: 20,
+                        Amount: 200,
+                    },
+                    {
+                        Name: 'State Tax',
+                        Rate: 8,
+                        Amount: 80,
+                    },
+                ],
+            });
+
+            render(<TaxRow checkResult={checkResult} />);
+
+            const taxContainer = screen.getByTestId('tax');
+            expect(taxContainer).toBeInTheDocument();
+            expect(taxContainer).toHaveTextContent('28% taxes');
+            expect(taxContainer).not.toHaveTextContent('Including');
+            expect(taxContainer).toHaveTextContent('US$2.80');
+        });
+
+        it('renders custom tax name in exclusive mode', () => {
+            const checkResult = createMockCheckResult({
+                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                Taxes: [
+                    {
+                        Name: 'GST',
+                        Rate: 10,
+                        Amount: 100,
+                    },
+                ],
+            });
+
+            render(<TaxRow checkResult={checkResult} />);
+
+            const taxContainer = screen.getByTestId('tax');
+            expect(taxContainer).toHaveTextContent('10% GST');
+            expect(taxContainer).not.toHaveTextContent('Including');
+            expect(taxContainer).toHaveTextContent('US$1');
+        });
+    });
+
+    describe('when TaxInclusive is undefined', () => {
+        it('renders row with amount but no label text in first span', () => {
+            const checkResult = createMockCheckResult({
+                TaxInclusive: undefined as any,
+                Taxes: [
+                    {
+                        Name: 'VAT',
+                        Rate: 20,
+                        Amount: 200,
+                    },
+                ],
+            });
+
+            render(<TaxRow checkResult={checkResult} />);
+
+            const taxContainer = screen.getByTestId('tax');
+            expect(taxContainer).toBeInTheDocument();
+            expect(taxContainer).not.toHaveTextContent('Including');
+            expect(taxContainer).toHaveTextContent('US$2');
+            const directChildSpans = Array.from(taxContainer.children).filter((child) => child.tagName === 'SPAN');
+            expect(directChildSpans).toHaveLength(2);
+            expect(directChildSpans[0]).toHaveTextContent('');
+            expect(directChildSpans[1]).toHaveTextContent('US$2');
         });
     });
 
@@ -204,7 +299,7 @@ describe('TaxRow', () => {
             // Check the direct child spans (Price component creates nested spans)
             const directChildSpans = Array.from(taxContainer.children).filter((child) => child.tagName === 'SPAN');
             expect(directChildSpans).toHaveLength(2);
-            expect(directChildSpans[0]).toHaveTextContent('VAT 20%');
+            expect(directChildSpans[0]).toHaveTextContent('Including 20% VAT');
             expect(directChildSpans[1]).toHaveTextContent('US$2');
         });
 
@@ -234,7 +329,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('High Tax 99.9999%'); // withDecimalPrecision limits to 4 decimal places
+            expect(taxContainer).toHaveTextContent('Including 99.9999% High Tax'); // withDecimalPrecision limits to 4 decimal places
             expect(taxContainer).toHaveTextContent('US$9.99');
         });
 
@@ -253,7 +348,7 @@ describe('TaxRow', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('20%'); // Empty name doesn't fall back to VAT, only undefined/null does
+            expect(taxContainer).toHaveTextContent('Including 20%'); // Empty name doesn't fall back to VAT, only undefined/null does
             expect(taxContainer).toHaveTextContent('US$2');
         });
     });

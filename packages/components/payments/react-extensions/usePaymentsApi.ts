@@ -8,6 +8,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
     type CheckSubscriptionData,
+    DEFAULT_TAX_BILLING_ADDRESS,
     type EnrichedCheckResponse,
     type FullBillingAddress,
     type MultiCheckOptions,
@@ -18,15 +19,21 @@ import {
     type RequestOptions,
     SubscriptionMode,
     captureWrongPlanIDs,
-    getOptimisticCheckResult,
     getPaymentMethodStatus,
     getPaymentsVersion,
     getPlanName,
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
-    normalizeBillingAddress,
 } from '@proton/payments';
-import { getLifetimeProductType } from '@proton/payments/core/api/createSubscription';
+import {
+    putFullBillingAddress,
+    putInvoiceBillingAddress,
+    queryFullBillingAddress,
+    queryInvoiceBillingAddress,
+} from '@proton/payments/core/api/billing-information';
+import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentSubscription';
+import { getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -34,7 +41,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InvalidZipCodeError } from './errors';
+import { InvalidZipCodeError, TaxExemptionNotSupportedError } from './errors';
 import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (
@@ -46,12 +53,20 @@ const checkSubscriptionQuery = (
         ...data,
     };
 
-    if (normalizedData.BillingAddress && normalizedData.BillingAddress.ZipCode) {
-        normalizedData.BillingAddress = normalizeBillingAddress(normalizedData.BillingAddress, hasZipCodeValidation);
+    if (normalizedData.BillingAddress) {
+        normalizedData.BillingAddress = getBillingAddressPayload({
+            billingAddress: normalizedData.BillingAddress,
+            vatId: data.VatId,
+            hasZipCodeValidation,
+        });
     }
 
     if (!hasZipCodeValidation) {
         delete normalizedData.ValidateZipCode;
+    }
+
+    if (!normalizedData.VatId) {
+        delete normalizedData.VatId;
     }
 
     return {
@@ -69,48 +84,9 @@ const checkProduct = (data: CheckSubscriptionData) => {
             Quantity: 1,
             Currency: data.Currency,
             ProductType: getLifetimeProductType(data),
-            BillingAddress: data.BillingAddress ?? {
-                CountryCode: 'CH',
-                State: null,
-                ZipCode: null,
-            },
+            BillingAddress: data.BillingAddress,
         },
     };
-};
-
-const queryFullBillingAddress = () => ({
-    url: 'payments/v5/account/billing-information',
-    method: 'GET',
-});
-
-const putFullBillingAddress = (BillingAddress: FullBillingAddress) => {
-    return {
-        url: 'payments/v5/account/billing-information',
-        method: 'PUT',
-        data: {
-            BillingAddress,
-        },
-    };
-};
-
-const putInvoiceBillingAddress = (invoiceId: string, BillingAddress: FullBillingAddress) => {
-    return {
-        url: `payments/v5/invoices/${invoiceId}/billing-information`,
-        method: 'PUT',
-        data: {
-            BillingAddress,
-        },
-    };
-};
-
-const queryInvoiceBillingAddress = (invoiceId: string) => ({
-    url: `payments/v5/invoices/${invoiceId}/billing-information`,
-    method: 'GET',
-});
-
-type FullBillingAddressResponse = {
-    BillingAddress: FullBillingAddress;
-    VatId: string | null;
 };
 
 export const useReportRoutingError = () => {
@@ -209,6 +185,47 @@ export const useMultiCheckCache = () => {
     };
 };
 
+function billingAddressFallback(fullBillingAddress: FullBillingAddress): FullBillingAddress {
+    if (!fullBillingAddress.BillingAddress) {
+        return {
+            ...fullBillingAddress,
+            BillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+        };
+    }
+
+    return fullBillingAddress;
+}
+
+export const getFullBillingAddress = async (api: Api): Promise<FullBillingAddress> => {
+    const fullBillingAddress = await api<FullBillingAddress>(queryFullBillingAddress());
+    return billingAddressFallback(fullBillingAddress);
+};
+
+const getInvoiceBillingAddress = async (api: Api, invoiceId: string): Promise<FullBillingAddress> => {
+    const fullBillingAddress = await api<FullBillingAddress>(queryInvoiceBillingAddress(invoiceId));
+    return billingAddressFallback(fullBillingAddress);
+};
+
+const normalizeFullBillingAddress = (value: FullBillingAddress): FullBillingAddress => {
+    // The API expects null over empty string for all optional values (all except CountryCode).
+    return Object.fromEntries(
+        Object.entries(value).map(([key, value]) => {
+            if (key === 'CountryCode') {
+                return [key, value];
+            }
+            return [key, value === '' ? null : value];
+        })
+    ) as FullBillingAddress;
+};
+
+const updateFullBillingAddress = async (api: Api, fullBillingAddress: FullBillingAddress) => {
+    await api(putFullBillingAddress(normalizeFullBillingAddress(fullBillingAddress)));
+};
+
+const updateInvoiceBillingAddress = async (api: Api, invoiceId: string, fullBillingAddress: FullBillingAddress) => {
+    await api(putInvoiceBillingAddress(invoiceId, normalizeFullBillingAddress(fullBillingAddress)));
+};
+
 export const usePaymentsApi = (
     apiOverride?: Api,
     checkV5Fallback?: (data: CheckSubscriptionData) => EnrichedCheckResponse | null
@@ -299,6 +316,10 @@ export const usePaymentsApi = (
                     throw new InvalidZipCodeError();
                 }
 
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
+                    throw new TaxExemptionNotSupportedError();
+                }
+
                 if (fallback) {
                     return {
                         ...fallback,
@@ -361,43 +382,6 @@ export const usePaymentsApi = (
             multiCheckCache.set(data, result);
         };
 
-        const formatFullBillingAddress = (response: FullBillingAddressResponse): FullBillingAddress => {
-            return {
-                ...response.BillingAddress,
-                VatId: response.VatId ?? null,
-            };
-        };
-
-        const normalizeBillingAddress = (value: FullBillingAddress): FullBillingAddress => {
-            // The API expects null over empty string for all optional values (all except CountryCode).
-            return Object.fromEntries(
-                Object.entries(value).map(([key, value]) => {
-                    if (key === 'CountryCode') {
-                        return [key, value];
-                    }
-                    return [key, value === '' ? null : value];
-                })
-            ) as FullBillingAddress;
-        };
-
-        const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
-            const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
-            return formatFullBillingAddress(response);
-        };
-
-        const updateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
-            await api(putFullBillingAddress(normalizeBillingAddress(fullBillingAddress)));
-        };
-
-        const updateInvoiceBillingAddress = async (invoiceId: string, fullBillingAddress: FullBillingAddress) => {
-            await api(putInvoiceBillingAddress(invoiceId, normalizeBillingAddress(fullBillingAddress)));
-        };
-
-        const getInvoiceBillingAddress = async (invoiceId: string): Promise<FullBillingAddress> => {
-            const response = await api<FullBillingAddressResponse>(queryInvoiceBillingAddress(invoiceId));
-            return formatFullBillingAddress(response);
-        };
-
         const getCachedCheck = (data: CheckSubscriptionData) => {
             return multiCheckCache.get(data);
         };
@@ -406,15 +390,47 @@ export const usePaymentsApi = (
             return multiCheckCache.getByPlans(plans);
         };
 
+        const innerGetFullBillingAddress = async (): Promise<FullBillingAddress> => {
+            return getFullBillingAddress(api);
+        };
+
+        const innerUpdateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
+            try {
+                return await updateFullBillingAddress(api, fullBillingAddress);
+            } catch (error: any) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
+                    throw new InvalidZipCodeError();
+                }
+
+                throw error;
+            }
+        };
+
+        const innerUpdateInvoiceBillingAddress = async (invoiceId: string, fullBillingAddress: FullBillingAddress) => {
+            try {
+                return await updateInvoiceBillingAddress(api, invoiceId, fullBillingAddress);
+            } catch (error: any) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
+                    throw new InvalidZipCodeError();
+                }
+
+                throw error;
+            }
+        };
+
+        const innerGetInvoiceBillingAddress = async (invoiceId: string): Promise<FullBillingAddress> => {
+            return getInvoiceBillingAddress(api, invoiceId);
+        };
+
         return {
             checkSubscription,
             multiCheck,
             cacheMultiCheck,
             paymentStatus,
-            getFullBillingAddress,
-            updateFullBillingAddress,
-            updateInvoiceBillingAddress,
-            getInvoiceBillingAddress,
+            getFullBillingAddress: innerGetFullBillingAddress,
+            updateFullBillingAddress: innerUpdateFullBillingAddress,
+            updateInvoiceBillingAddress: innerUpdateInvoiceBillingAddress,
+            getInvoiceBillingAddress: innerGetInvoiceBillingAddress,
             cachedCheck,
             getCachedCheck,
             getCachedCheckByPlans,

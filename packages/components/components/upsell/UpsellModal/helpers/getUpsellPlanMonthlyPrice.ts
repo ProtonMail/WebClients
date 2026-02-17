@@ -5,12 +5,12 @@ import {
     type PaymentsApi,
     type Plan,
     type PlanIDs,
-    getCheckout,
     getPlanByName,
     getPlansMap,
     getPricePerCycle,
     isMainCurrency,
 } from '@proton/payments';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 
 interface UpsellPlanMonthlyPriceParams {
     currency: Currency;
@@ -43,7 +43,7 @@ export const getUpsellPlanMonthlyPrice = async (
 
         const plansMap = getPlansMap(data.plans, data.currency, false);
 
-        const checkout = getCheckout({
+        const checkout = getCheckoutUi({
             planIDs: data.planIDs,
             checkResult,
             plansMap,

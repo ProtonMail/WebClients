@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import type { Currency } from '@proton/payments/core/interface';
-import { usePaymentsInner } from '@proton/payments/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 
 import SubscriptionCheckoutPlanDetails from './plan-section/SubscriptionCheckoutPlanDetails';
 import SubscriptionCheckoutPlanMoreInformation from './plan-section/SubscriptionCheckoutPlanMoreInformation';
@@ -21,9 +21,8 @@ const SubscriptionCheckoutPlanSection = ({
     availableCurrencies,
     hasSavedPaymentMethods,
 }: Props) => {
-    const { uiData, selectCurrency } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { currency } = checkout;
+    const { checkoutUi, selectCurrency } = usePayments();
+    const { currency } = checkoutUi;
 
     return (
         <>

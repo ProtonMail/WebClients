@@ -44,11 +44,11 @@ const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPe
 
     const currency = price.checkResult.Currency;
 
-    const priceDifferenceString = getSimplePriceString(currency, price?.uiData.discountPerCycle ?? 0);
+    const priceDifferenceString = getSimplePriceString(currency, price?.checkoutUi.discountPerCycle ?? 0);
 
-    const priceDifferencePercentage = price?.uiData.discountPercent ?? 0;
+    const priceDifferencePercentage = price?.checkoutUi.discountPercent ?? 0;
 
-    const hasSavings = (price?.uiData.discountPerCycle ?? 0) > 0;
+    const hasSavings = (price?.checkoutUi.discountPerCycle ?? 0) > 0;
 
     return (
         <div className="min-h-custom mb-3 fade-in" style={{ '--min-h-custom': '5.5rem' }}>
@@ -67,7 +67,7 @@ const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPe
                     <div className="flex gap-2">
                         {hasSavings ? (
                             <Price key={`${plan}-compare`} currency={currency} className="text-strike color-weak">
-                                {price?.uiData.withoutDiscountPerMonth ?? 0}
+                                {price?.checkoutUi.withoutDiscountPerMonth ?? 0}
                             </Price>
                         ) : null}
 
@@ -77,7 +77,7 @@ const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPe
                             className="text-semibold color-weak"
                             suffix={<span className="text-sm color-weak">{c('Suffix').t`/month`}</span>}
                         >
-                            {price?.uiData.withDiscountPerMonth ?? 0}
+                            {price?.checkoutUi.withDiscountPerMonth ?? 0}
                         </Price>
                     </div>
                 ) : (
