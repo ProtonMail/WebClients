@@ -1,54 +1,73 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 
-import mdx from './PromotionButton.mdx';
-
-export default {
+const meta: Meta<typeof PromotionButton> = {
+    title: 'Components/Promotion Button',
+    args: {
+        children: 'Upgrade',
+    },
     component: PromotionButton,
-    title: 'components/Promotion Button',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'A button with promotional gradient styling. Supports icons, responsive layout, ghost shape, upsell variant, and can be composed via ButtonLike.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof PromotionButton>;
+
+export const Default: Story = {};
+
+export const WithIcon: Story = {
+    args: {
+        iconName: 'brand-proton-mail-filled-plus',
+        children: 'With Icon',
     },
 };
 
-export const Example = () => <PromotionButton>Regular</PromotionButton>;
+export const IconOnly: Story = {
+    args: {
+        iconName: 'upgrade',
+        icon: true,
+        shape: 'ghost',
+        children: 'Icon Ghost',
+    },
+};
 
-export const ExampleWithIcon = () => (
-    <PromotionButton iconName="brand-proton-mail-filled-plus">With Icon</PromotionButton>
-);
+export const Responsive: Story = {
+    args: {
+        iconName: 'upgrade',
+        icon: true,
+        responsive: true,
+        children: 'Icon Ghost',
+    },
+};
 
-export const ExampleIconOnly = () => (
-    <PromotionButton iconName="upgrade" icon={true} shape="ghost">
-        Icon Ghost
-    </PromotionButton>
-);
+export const Upsell: Story = {
+    args: {
+        iconName: 'brand-proton-mail-filled-plus',
+        icon: true,
+        upsell: true,
+        children: 'Upsell',
+    },
+};
 
-export const ExampleResponsive = () => (
-    <PromotionButton iconName="upgrade" icon={true} responsive>
-        Icon Ghost
-    </PromotionButton>
-);
+export const NoIconGradient: Story = {
+    args: {
+        iconName: 'brand-proton-mail-filled-plus',
+        iconGradient: false,
+        children: 'No icon gradient',
+    },
+};
 
-export const ExampleIconSmall = () => (
-    <PromotionButton iconName="brand-proton-mail-filled-plus" icon={true} upsell>
-        Upsell
-    </PromotionButton>
-);
-
-export const ExampleWithIconNoGradient = () => (
-    <PromotionButton iconName="brand-proton-mail-filled-plus" iconGradient={false}>
-        No icon gradient
-    </PromotionButton>
-);
-
-export const ExampleLike = () => <ButtonLike as={PromotionButton}>ButtonLike</ButtonLike>;
-
-export const Basic = ({ ...args }) => (
-    <PromotionButton icon={true} iconName="users-plus" {...args}>
-        Loremium
-    </PromotionButton>
-);
-
-Basic.args = {};
+export const AsButtonLike: Story = {
+    render: () => <ButtonLike as={PromotionButton}>ButtonLike</ButtonLike>,
+};

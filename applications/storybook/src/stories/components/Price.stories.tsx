@@ -1,19 +1,33 @@
-import { Price } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Price.mdx';
+import Price from '@proton/components/components/price/Price';
 
-export default {
-    component: Price,
+const meta: Meta<typeof Price> = {
     title: 'Components/Price',
+    args: {
+        children: 6699,
+        currency: 'EUR',
+    },
+    component: Price,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Displays a formatted price with currency symbol. Supports EUR, CHF, and USD currencies, along with prefix, suffix, and various styling options.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => (
-    <>
+export default meta;
+
+type Story = StoryObj<typeof Price>;
+
+export const Default: Story = {};
+
+export const AllCurrencies: Story = {
+    render: () => (
         <ul>
             <li>
                 <Price currency="EUR">{6699}</Price>
@@ -25,5 +39,29 @@ export const Basic = () => (
                 <Price currency="USD">{8699}</Price>
             </li>
         </ul>
-    </>
-);
+    ),
+};
+
+export const Large: Story = {
+    args: {
+        large: true,
+        children: 9999,
+        currency: 'USD',
+    },
+};
+
+export const WithSuffix: Story = {
+    args: {
+        suffix: '/month',
+        children: 4999,
+        currency: 'EUR',
+    },
+};
+
+export const WithPrefix: Story = {
+    args: {
+        prefix: 'from ',
+        children: 1199,
+        currency: 'USD',
+    },
+};
