@@ -1,11 +1,13 @@
+import { getDefaultIntervalType } from '@proton/shared/lib/eventManager/getDefaultIntervalType';
 import noop from '@proton/utils/noop';
 
 import { getApiError } from '../api/helpers/apiErrorHelper';
-import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
+import { FIBONACCI_LIST } from '../constants';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
 import { eventLoopTimingTracker } from '../metrics/eventLoopMetrics';
+import { getDefaultIntervals } from './getDefaultIntervals';
 
 interface DefaultEventResult {
     More: 0 | 1;
@@ -19,9 +21,12 @@ type GetEvents<EventResult> = (options: {
 }) => Promise<EventResult>;
 type GetLatestEventID = (options: { signal: AbortSignal; silence: boolean }) => Promise<string>;
 
+type EventManagerIntervals = { foreground: number; background: number };
+
 type EventManagerConfigBase<EventResult> = {
     /** Maximum interval time to wait between each call */
-    interval?: number;
+    intervals?: EventManagerIntervals;
+    getIntervalType?: () => keyof EventManagerIntervals;
     parseResults?: (value: EventResult) => { nextEventID: string; more: 0 | 1 };
     getEvents: GetEvents<EventResult>;
 };
@@ -58,7 +63,8 @@ const defaultParseResults: EventManagerConfigBase<any>['parseResults'] = (result
 const createEventManager = <EventResult = DefaultEventResult>({
     eventID: initialEventID,
     getLatestEventID,
-    interval = INTERVAL_EVENT_TIMER,
+    intervals = getDefaultIntervals(),
+    getIntervalType = getDefaultIntervalType, // Allow to pass a different interval type getter in case the event loop is running in a different context, like a WebWorker
     parseResults = defaultParseResults,
     getEvents,
 }: EventManagerConfig<EventResult>): EventManager<EventResult> => {
@@ -114,7 +120,8 @@ const createEventManager = <EventResult = DefaultEventResult>({
             return;
         }
 
-        const ms = interval * FIBONACCI_LIST[retryIndex];
+        const intervalType = getIntervalType();
+        const ms = intervals[intervalType] * FIBONACCI_LIST[retryIndex];
         // eslint-disable-next-line
         STATE.timeoutHandle = setTimeout(call, ms);
     };
