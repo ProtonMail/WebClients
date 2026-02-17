@@ -2,7 +2,7 @@ import groupBy from 'lodash/groupBy';
 import { call, put } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { requestItem } from '@proton/pass/lib/items/item.requests';
 import { itemsDeleteEvent, itemsUpdated } from '@proton/pass/store/actions';
 import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';

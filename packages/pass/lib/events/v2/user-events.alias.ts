@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { aliasPendingCreated, itemsUpdated } from '@proton/pass/store/actions';
 import { syncPendingAliases } from '@proton/pass/store/sagas/alias/alias-sync.sagas';
 import type {

@@ -1,6 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
 import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
