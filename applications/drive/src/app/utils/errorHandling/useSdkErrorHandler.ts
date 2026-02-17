@@ -52,6 +52,9 @@ export const handleSdkError = (
                 component: 'drive-sdk',
             },
             extra: {
+                ...(error instanceof EnrichedError && {
+                    ...error.context?.extra,
+                }),
                 // Do not use fallbackMessage here, as it might include PII in some cases.
                 ...(error instanceof ServerError && {
                     serverErrorCode: error.code,
