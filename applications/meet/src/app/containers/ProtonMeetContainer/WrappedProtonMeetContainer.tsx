@@ -21,7 +21,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
     const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
-    const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
+    const isLiveKitDebugReportingAllowed = useFlag('MeetAlphaDebugLogCollection');
 
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
