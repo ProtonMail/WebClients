@@ -1,10 +1,11 @@
 import { Event, app } from "electron";
 import { isMac } from "../helpers";
-import { protocolLogger } from "../log";
 import { showView, bringWindowToFront } from "../view/viewManagement";
 import { isMeet, isNavigationAllowed } from "../urls/urlTests";
 
 export const DEEPLINK_PROTOCOL = "proton-meet";
+
+let macOSStartupUrl: string | null = null;
 
 export const checkDeepLinks = () => {
     app.setAsDefaultProtocolClient(DEEPLINK_PROTOCOL);
@@ -48,14 +49,18 @@ const convertProtocolUrlToWebUrl = (protocolUrl: string): string | null => {
 
 export const handleDeepLink = () => {
     if (isMac) {
-        app.on("open-url", (_ev: Event, url: string) => {
-            protocolLogger.info("Deep link received");
+        app.on("open-url", (ev: Event, url: string) => {
+            ev.preventDefault();
 
             if (url.startsWith(`${DEEPLINK_PROTOCOL}://`)) {
                 const webUrl = convertProtocolUrlToWebUrl(url);
                 if (webUrl) {
-                    showView("meet", webUrl);
-                    bringWindowToFront();
+                    if (app.isReady()) {
+                        showView("meet", webUrl);
+                        bringWindowToFront();
+                    } else {
+                        macOSStartupUrl = webUrl;
+                    }
                 }
             }
         });
@@ -63,6 +68,12 @@ export const handleDeepLink = () => {
 };
 
 export const handleStartupDeepLink = (): string | null => {
+    if (isMac && macOSStartupUrl) {
+        const url = macOSStartupUrl;
+        macOSStartupUrl = null;
+        return url;
+    }
+
     const protocolUrl = process.argv.find((arg) => arg.startsWith(`${DEEPLINK_PROTOCOL}://`));
 
     if (protocolUrl) {

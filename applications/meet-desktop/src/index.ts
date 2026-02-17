@@ -38,6 +38,10 @@ import {
     // during the uninstall process (or any other procees that implies application restart).
     await handleSquirrelEvents();
 
+    // Register protocol handler early (especially important for macOS to catch open-url events)
+    checkDeepLinks();
+    handleDeepLink();
+
     // Check for startup deep link URL
     const startupUrl = handleStartupDeepLink();
 
@@ -112,10 +116,6 @@ import {
 
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
-
-    // Register protocol handler
-    checkDeepLinks();
-    handleDeepLink();
 
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
