@@ -1,6 +1,6 @@
 import createEventManager from '../../lib/eventManager/eventManager';
 
-const mockApi = (responses) => {
+const mockApi = (responses: any) => {
     let i = 0;
     const cb = async () => {
         const response = responses[i++];
@@ -30,7 +30,7 @@ describe('event manager', () => {
         const eventManager = createEventManager({
             eventID: '1',
             getEvents,
-            interval: 1000,
+            intervals: { foreground: 1000, background: 1000 },
         });
         const onSuccess = jasmine.createSpy();
         const unsubscribe = eventManager.subscribe(onSuccess);
@@ -39,13 +39,13 @@ describe('event manager', () => {
 
         await eventManager.call();
 
-        expect(getEvents.calls.all().length).toEqual(6);
-        expect(onSuccess.calls.all().length).toEqual(6);
+        expect(getEvents).toHaveBeenCalledTimes(6);
+        expect(onSuccess).toHaveBeenCalledTimes(6);
 
         await eventManager.call();
 
-        expect(getEvents.calls.all().length, 7);
-        expect(onSuccess.calls.all().length, 7);
+        expect(getEvents).toHaveBeenCalledTimes(7);
+        expect(onSuccess).toHaveBeenCalledTimes(7);
 
         eventManager.stop();
         unsubscribe();
@@ -61,26 +61,26 @@ describe('event manager', () => {
         const eventManager = createEventManager({
             getLatestEventID,
             getEvents,
-            interval: 1000,
+            intervals: { foreground: 1000, background: 1000 },
         });
         const onSuccess = jasmine.createSpy();
         const unsubscribe = eventManager.subscribe(onSuccess);
 
         // Should make one call initially
-        expect(getLatestEventID.calls.all().length).toEqual(1);
+        expect(getLatestEventID).toHaveBeenCalledTimes(1);
 
         eventManager.start();
 
         // Should wait for that call to finish
         await eventManager.call();
 
-        expect(getLatestEventID.calls.all().length).toEqual(1);
-        expect(getEvents.calls.all().length).toEqual(1);
+        expect(getLatestEventID).toHaveBeenCalledTimes(1);
+        expect(getEvents).toHaveBeenCalledTimes(1);
 
         await eventManager.call();
 
-        expect(getLatestEventID.calls.all().length).toEqual(1);
-        expect(getEvents.calls.all().length).toEqual(2);
+        expect(getLatestEventID).toHaveBeenCalledTimes(1);
+        expect(getEvents).toHaveBeenCalledTimes(2);
 
         eventManager.stop();
         unsubscribe();
