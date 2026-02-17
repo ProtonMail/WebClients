@@ -1043,9 +1043,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "الترقية لتفعيل ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "الترقية إلى Professional"
-      ],
       "Upgrade to view all": [
         "قم بالترقية لعرض الكل"
       ],
@@ -1357,6 +1354,11 @@
     "Admin": {
       "admin": [
         "المشرف"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "الدور هو مجموعة من الأذونات التي يمكنك تعيينها لأعضاء مؤسستك."
       ]
     },
     "Alert": {
@@ -1964,6 +1966,14 @@
       ],
       "Ultra fast and private VPN": [
         "VPN خاص وفائق السرعة"
+      ],
+      "Up to ${ numberOfUsers } users": [
+        "ما يصل إلى ${ numberOfUsers } مستخدمًا",
+        "${ numberOfUsers } مستخدم",
+        "ما يصل إلى ${ numberOfUsers } مستخدمين",
+        "ما يصل إلى ${ numberOfUsers } مستخدم",
+        "ما يصل إلى ${ numberOfUsers } مستخدمًا",
+        "ما يصل إلى ${ numberOfUsers } مستخدماً"
       ]
     },
     "Checkout row": {
@@ -3310,6 +3320,28 @@
         "هل تريد تعطيل العنوان؟"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } للشهر الأول. يتجدد بسعر ${ regularPrice }/شهريًا، ويمكنك الإلغاء في أي وقت."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "احصل على VPN Plus مقابل ${ offerPrice } فقط"
+      ],
+      "Protected by Swiss privacy laws": [
+        "محمي بموجب قوانين الخصوصية السويسرية"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "عرض خاص: وفر 90٪ من خطتنا المميزة"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "المتابعة باستخدام الخطة المجانية"
+      ],
+      "Get the deal": [
+        "احصل على الصفقة"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "تم التحقق"
@@ -3740,14 +3772,41 @@
       "Added on ${ formattedDate }": [
         "أُضيف في ${ formattedDate }"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "اطلب المساعدة من جهة اتصال الاسترداد. سيحصلون على بريد إلكتروني للتحقق من طلبك وفتح بياناتك."
+      ],
+      "Contacts": [
+        "جهات الاتصال"
+      ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "تواصل معهم الآن لمعرفة ما إذا كان بإمكانهم المساعدة، ولإعلامهم شخصيا بأنك تحاول فتح بياناتك."
+      ],
       "Immediate": [
         "فوري"
       ],
       "Less than a day": [
         "أقل من يوم"
       ],
+      "Recovery request sent": [
+        "تم إرسال طلب الاسترداد"
+      ],
+      "Remove your recovery contacts to continue": [
+        "قم بإزالة جهات اتصال الاسترداد للمتابعة"
+      ],
+      "Select recovery contact ${ name }": [
+        "حدد جهة اتصال الاسترداد ${ name }"
+      ],
+      "Send email request": [
+        "أرسل طلب بريد إلكتروني"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
+      ],
       "Trusted contact": [
         "جهة اتصال موثوق بها"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "ساعدتك جهة اتصال الاسترداد الخاصة بك على استعادة البيانات."
       ]
     },
     "Empty group name": {
@@ -3939,6 +3998,9 @@
       ],
       "Label name cannot be empty.": [
         "لا يمكن أن يكون اسم التسمية فارغًا."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "الحد الأقصى المسموح به هو ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "دمج ما لا يقل عن ${ calendarsToFixCount } من التقاويم مع تقاويم ${ BRAND_NAME } الحالية",
@@ -5693,9 +5755,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        "وغيرها من ميزات الأمان."
-      ],
       "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
         "لدى ${ amountUsers }/${ totalUsers } من المستخدمين حاليًا وصول إلى الخوادم المشتركة.",
         "لدى مستخدم واحد (${ amountUsers }/${ totalUsers }) حاليًا وصول إلى الخوادم المشتركة.",
@@ -6063,14 +6122,14 @@
       "Account successfully updated": [
         "تم تحديث الحساب بنجاح"
       ],
-      "Accounts": [
-        "حسابات"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "فعّل طريقة واحدة على الأقل لاسترداد البيانات للتأكد من أنه يمكنك الاستمرار في الوصول إلى محتويات حساب ${ BRAND_NAME } الخاص بك إذا فقدت كلمة المرور."
       ],
       "active": [
         "مفعل"
+      ],
+      "Activity Monitor": [
+        "مراقب النشاط"
       ],
       "add a recovery method": [
         "إضافة طريقة استرداد"
@@ -6164,6 +6223,14 @@
       ],
       "All your changes will be lost.": [
         "سيتم فقدان التغييرات الخاصة بك."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال",
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال",
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال",
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال",
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال",
+        "سيتم استيراد كل جهات اتصالك، الحد الأقصى هو ${ maxContact } جهة اتصال"
       ],
       "Allocated": [
         "مخصص"
@@ -6342,9 +6409,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "تابع لربط هذا الكيان بمؤسستك على ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "المتابعة مع ${ freeName }"
-      ],
       "Copied to clipboard": [
         "تم نسخها إلى الحافظة"
       ],
@@ -6387,9 +6451,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "قم بإنشاء وإدارة الحسابات الفرعية وتعيين عناوين البريد الإلكتروني لها في نطاقك المخصص."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "أنشئ عناوين بريد إلكتروني لأشخاص آخرين، وأدِر ${ MAIL_APP_NAME } لشركة أو مدرسة أو مجموعة. ابدأ بإضافة اسم مؤسستك ونطاقك المخصص (على سبيل المثال، @yourcompany.com)."
       ],
       "Create in": [
         "الإنشاء في"
@@ -6712,9 +6773,6 @@
       "Free trial": [
         "فترة تجريبية مجانية"
       ],
-      "Gain visibility across your organization": [
-        "احصل على رؤية شاملة لمؤسستك"
-      ],
       "Gateway monitor": [
         "مراقبة البوابة"
       ],
@@ -6727,14 +6785,14 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "احصل على ${ AUTHENTICATOR_APP_NAME } لجميع أجهزتك."
       ],
-      "Get ${ upsellPlanName }": [
-        "أحصل على ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "احصل على إشعار إذا تم تسريب كلمة مرورك أو بياناتك الشخصية الأخرى. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
         "ابدأ باستخدام رابط الإحالة أعلاه."
+      ],
+      "Get visibility into account access": [
+        "احصل على رؤية للوصول إلى الحساب"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "اذهب إلى موفر هويتك واحصل على بيانات تعريف SAML لتطبيق ${ appName } ثم استردها هنا."
@@ -6762,9 +6820,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "إذا قام مسؤول آخر بتغيير كلمة المرور هذه، فستحتاج إلى أن تطلب منه كلمة مرور المؤسسة الجديدة"
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "في حال لم يكن مناسبًا، سنعيد لك المبلغ المدفوع."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "إذا كان هذا بسبب إعادة تعيين كلمة المرور القديمة، فيمكنك إيقاف عرض الرسالة مرة أخرى"
@@ -6992,9 +7047,6 @@
       "Learn more": [
         "أعرف المزيد"
       ],
-      "Learn more about Activity Monitor": [
-        "معرفة المزيد عن مراقب النشاط"
-      ],
       "Learn more about Gateways": [
         "معرفة المزيد حول البوابات"
       ],
@@ -7078,6 +7130,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "مراقبة وتدقيق محاولات المصادقة لجميع خدمات ${ BRAND_NAME } التي تستخدم بيانات اعتماد ${ BRAND_NAME } الخاصة بك."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "راقب نشاط تسجيل الدخول، واكتشف أي وصول غير مُصرَّح به، وأغلق الثغرات الأمنية وثغرات الامتثال. "
       ],
       "Multi-user support not enabled.": [
         "لم يتم تمكين دعم المستخدمين المتعددين."
@@ -7196,9 +7251,6 @@
       ],
       "Organization monitor": [
         "مراقبة المؤسسة"
-      ],
-      "Organization Monitor": [
-        "مراقب المؤسسة"
       ],
       "Organization size": [
         "حجم المؤسسة"
@@ -7906,8 +7958,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "الترقية إلى خطة Professional أو خطة أعلى لإلغاء القفل"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "قم بالترقية لفتح ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "قم بترقية خطتك إلى ${ firstPlanNames } أو ${ lastPlanName } للوصول إلى ${ PROTON_SENTINEL_NAME } للمؤسسات."
@@ -9560,6 +9612,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "مراقب النشاط"
+      ],
       "Add a gift code": [
         "إضافة رمز الهدية"
       ],
@@ -9936,6 +9991,24 @@
         "أعِدّ حسابك باستخدام نطاق Porkbun الخاص بك."
       ]
     },
+    "meet_2025: Feature": {
+      "Up to ${ n } meetings per day": [
+        "ما يصل إلى ${ n } إجتماعات يوميًا",
+        "ما يصل إلى ${ n } إجتماع يوميًا",
+        "ما يصل إلى ${ n } إجتماعات يوميًا",
+        "ما يصل إلى ${ n } إجتماع يوميًا",
+        "ما يصل إلى ${ n } إجتماع يوميًا",
+        "ما يصل إلى ${ n } إجتماع يوميًا"
+      ],
+      "Up to ${ n } participants": [
+        "ما يصل إلى ${ n } مشارك",
+        "ما يصل إلى ${ n } مشارك",
+        "ما يصل إلى ${ n } مشارك",
+        "ما يصل إلى ${ n } مشارك",
+        "ما يصل إلى ${ n } مشارك",
+        "ما يصل إلى ${ n } مشارك"
+      ]
+    },
     "Member action": {
       "Activate user": [
         "تفعيل المستخدم"
@@ -9981,6 +10054,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "قم بتوصيل نطاقك المخصص (على سبيل المثال yourcompany.com) لإنشاء عناوين بريد إلكتروني لأشخاص آخرين، وإدارة ${ MAIL_APP_NAME } لنشاط تجاري أو مدرسة أو مجموعة."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "صل نطاقك المخصص بـ ${ BRAND_NAME } لإعداد عناوين بريد إلكتروني مخصصة (على سبيل المثال، you@yourcompany.com). سيرشدك المعالج الخاص بنا خلال العملية."
       ],
@@ -12075,6 +12151,22 @@
       "terms and conditions": [
         "الشروط والأحكام"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewals.": [
+        "القسيمة صالحة لـ ${ renewalsWithCoupon } تجديدًا.",
+        "القسيمة صالحة لتجديد واحد (${ renewalsWithCoupon }).",
+        "القسيمة صالحة لتجديدين (${ renewalsWithCoupon }).",
+        "القسيمة صالحة لـ ${ renewalsWithCoupon } تجديدات.",
+        "القسيمة صالحة لـ ${ renewalsWithCoupon } تجديدًا.",
+        "القسيمة صالحة لـ ${ renewalsWithCoupon } تجديدًا."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } months. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "السعر المخفض الخاص صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } months.": [
         "السعر المخفَّض خاص للأشهر ${ subscriptionLength } الأولى",
         "السعر المخفَّض خاص للشهر ${ subscriptionLength } الأول",
@@ -12085,6 +12177,14 @@
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "السعر المخفض الخاص صالح للشهر الأول. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } كل شهر. يمكنك الإلغاء في أي وقت."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } months. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت.",
+        "سعر الخصم الخاص البالغ ${ priceWithDiscount } صالح لمدة ${ couponRedemptions } شهر. ثم سيتم تجديده تلقائيًا بسعر ${ renewPriceStr } لمدة شهر واحد. يمكنك الإلغاء في أي وقت."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months.": [
         "السعر المخفض الخاص البالغ ${ priceWithDiscount } صالح لأول ${ subscriptionLength } من الأشهر.",
@@ -16054,6 +16154,9 @@
       "Revoke certificate?": [
         "إبطال الشهادة؟"
       ],
+      "Roles and permissions": [
+        "الأدوار والأذونات"
+      ],
       "SAML authentication": [
         "مصادقة SAML"
       ],
@@ -17097,9 +17200,6 @@
       ],
       "Just ${ price }": [
         "فقط ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "جرب ${ upsellPlanName } بدون مخاطر"
       ],
       "Your ${ a } and ${ b } bundle": [
         "حزمتك من ${ a } و ${ b }"

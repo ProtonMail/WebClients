@@ -56,6 +56,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Lisää ${ BRAND_NAME }-osoite"
+      ],
       "Add account": [
         "Lisää tili"
       ],
@@ -1034,9 +1037,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
       ],
-      "Upgrade to Professional": [
-        "Päivitä Professionaliin"
-      ],
       "Upgrade to view all": [
         "Näytä kaikki päivittämällä tilauksesi"
       ],
@@ -1302,6 +1302,11 @@
     "Admin": {
       "admin": [
         "ylläpitäjä"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Rooli on joukko käyttöoikeuksia, jotka voit määrittää organisaatiosi jäsenille."
       ]
     },
     "Alert": {
@@ -3320,6 +3325,28 @@
         "Poistetaanko osoite käytöstä?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } ensimmäisen kuukauden ajan. Uusiutuu hintaan ${ regularPrice }/kk, voit peruuttaa milloin tahansa."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Hanki VPN Plus hintaan ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Erikoistarjous: Säästä 90 % premium-tilauksestamme"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Jatka ilmaisella"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Vahvistettu"
@@ -3730,6 +3757,9 @@
       "Less than a day": [
         "Alle päivä"
       ],
+      "Recovery request sent": [
+        "Palautuspyyntö lähetetty"
+      ],
       "Trusted contact": [
         "Luotettu yhteyshenkilö"
       ]
@@ -3909,6 +3939,9 @@
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Enintään ${ displayMaxValue } sallittu"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
@@ -5738,6 +5771,10 @@
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
+      "${ total } user found": [
+        "Löytyi ${ total } käyttäjä",
+        "${ total } käyttäjää löytyi"
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } luotiin"
       ],
@@ -5825,14 +5862,14 @@
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
-      "Accounts": [
-        "Tilit"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivoi tiedoillesi ainakin palautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "active": [
         "käytössä"
+      ],
+      "Activity Monitor": [
+        "Aktiviteettimonitori"
       ],
       "add a recovery method": [
         "lisäät palautustavan"
@@ -6069,9 +6106,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Jatka tämän entiteetin yhdistämistä ${ BRAND_NAME }-organisaatioosi."
       ],
-      "Continue with ${ freeName }": [
-        "Jatka ${ freeName } -tilauksella"
-      ],
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
@@ -6106,9 +6140,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Luo sähköpostiosoitteita muille, hallinnoi ${ MAIL_APP_NAME }ia yritykselle, koululle tai ryhmälle. Aloita lisäämällä organisaatiosi nimi ja oma verkkotunnus (esim. @yrityksesi.fi)."
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -6410,9 +6441,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Uuden palautuslausekkeen luonti poistaa vanhan lauseen käytöstä."
       ],
-      "Get ${ upsellPlanName }": [
-        "Hanki ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
       ],
@@ -6421,6 +6449,9 @@
       ],
       "Get started with the referral link above.": [
         "Aloita yllä olevalla suosittelulinkillä."
+      ],
+      "Get visibility into account access": [
+        "Saa näkyvyyttä tilin käyttöön"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
@@ -6448,9 +6479,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä organisaation uusi salasana heiltä."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Jos se ei sovi sinulle, hyvitämme sen."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen."
@@ -6741,6 +6769,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Valvo ja auditoi kaikkien ${ BRAND_NAME } -palveluiden tunnistautumisyrityksiä, jotka käyttävät ${ BRAND_NAME } -kirjautumistietojasi."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Seuraa kirjautumistoimintaa, havaitse luvattomat pääsyt ja korjaa tietoturva- ja vaatimustenmukaisuuspuutteet. "
       ],
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
@@ -7507,6 +7538,9 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Päivitä avataksesi ${ monitorLink }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Luo tilejä tuomalla täydellinen CSV-tiedosto"
@@ -9038,6 +9072,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "aktiviteettimonitori"
+      ],
       "Add a gift code": [
         "Lisää lahjakoodi"
       ],
@@ -9459,6 +9496,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Yhdistä oma verkkotunnuksesi (esim. yrityksesi.com) luodaksesi sähköpostiosoitteita muille henkilöille, hallinnoidaksesi ${ MAIL_APP_NAME }-palvelua yritykselle, koululle tai ryhmälle."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Määritä omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi) yhdistämällä oma verkkotunnuksesi ${ BRAND_NAME }iin. Ohjattu toiminto opastaa määrityksessä."
       ],
@@ -14944,6 +14984,9 @@
       "Revoke certificate?": [
         "Mitätöi varmenne?"
       ],
+      "Roles and permissions": [
+        "Roolit ja oikeudet"
+      ],
       "SAML authentication": [
         "SAML-todennus"
       ],
@@ -15893,9 +15936,6 @@
       ],
       "Just ${ price }": [
         "Vain ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Sinun ${ a } ja ${ b } -pakettisi"
