@@ -53,10 +53,10 @@ interface ScheduleMeetingFormProps {
     open: boolean;
     onClose: () => void;
     meeting?: Meeting;
-    isLoading?: boolean;
+    onMeetingCreated: (meetingId: string) => void;
 }
 
-export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingFormProps) => {
+export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }: ScheduleMeetingFormProps) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const timeFormat = userSettings.TimeFormat;
@@ -78,6 +78,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
     const [showTimezones, setShowTimezones] = useState(false);
 
     const [result, setResult] = useState<{
+        meetingId: string;
         meetingLink: string;
         meetingName: string;
         rrule: string | null;
@@ -193,6 +194,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
 
         try {
             let meetingLink;
+            let meetingId;
 
             if (!!meeting) {
                 await saveMeetingName({
@@ -215,6 +217,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                     Password: meeting.Password, // Use decrypted password
                 };
                 meetingLink = await generateMeetingLinkFromMeeting(meetingForLink, userKeys);
+                meetingId = meeting.ID;
             } else {
                 const { meetingLink: link, meeting: newMeeting } = await createMeeting({
                     ...restOfValues,
@@ -226,11 +229,14 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                 });
                 dispatch(addMeeting(newMeeting));
                 meetingLink = link;
+                meetingId = newMeeting.ID;
+                onMeetingCreated(newMeeting.ID);
             }
 
             setResult({
                 meetingLink: meetingLink.startsWith('http') ? meetingLink : `${window.location.origin}${meetingLink}`,
                 meetingName: meetingName,
+                meetingId,
                 rrule: rrule,
             });
         } catch (error) {
@@ -319,6 +325,10 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
         return <></>;
     }
 
+    const backToEditMeeting = () => {
+        setResult(null);
+    };
+
     return (
         <>
             {result && (
@@ -327,11 +337,14 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                     onClose={onClose}
                     meetingName={result.meetingName}
                     meetingLink={result.meetingLink}
+                    meetingId={result.meetingId}
                     startTime={combineDateAndTime(values.startDate, values.startTime, values.timeZone)}
                     endTime={combineDateAndTime(values.endDate, values.endTime, values.timeZone)}
                     timeZone={values.timeZone}
                     rrule={result.rrule}
                     isEdit={!!meeting}
+                    backToEditMeeting={backToEditMeeting}
+                    meetingIsDecrypting={!meeting}
                 />
             )}
             <div className="flex md:items-center justify-center">

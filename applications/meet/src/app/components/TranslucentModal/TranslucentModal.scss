@@ -8,8 +8,15 @@
 		background-color: transparent;
 	}
 
-	.close-button {
-		color: color-mix(in srgb, var(--text-norm) 80%, transparent);
+	.header-buttons-container {
+		.button {
+			border-color: var(--border-weak);
+			border-width: 1px;
+		}
+
+		.close-button {
+			color: color-mix(in srgb, var(--text-norm) 80%, transparent);
+		}
 	}
 
 	.translucent-modal_container {
