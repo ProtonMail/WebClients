@@ -7,12 +7,12 @@ type Props = {
 };
 
 export const InviteGroupField: FC<Props> = ({ email }) => {
-    const { open, name, members, onClick, onClose } = useGroupMembersModal(email);
+    const { open, name, label, members, onClick, onClose } = useGroupMembersModal(email);
 
     return (
+        // eslint-disable-next-line
         <div onClick={onClick}>
-            {name}
-            {members !== null && ` (${members.length})`}
+            {label}
             {open && <GroupMembersModal key="group-members-modal" name={name} members={members} onClose={onClose} />}
         </div>
     );
