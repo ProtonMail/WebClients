@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,25 +10,19 @@ import clsx from '@proton/utils/clsx';
 
 export function CopyPublicLink({ url, onClick, disabled }: { url?: string; onClick: () => void; disabled: boolean }) {
     const [recentlyCopied, setRecentlyCopied] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
         onClick();
         setRecentlyCopied(true);
-        inputRef.current?.focus();
-        inputRef.current?.select();
         setTimeout(() => {
             setRecentlyCopied(false);
-            inputRef.current?.blur();
-            window.getSelection()?.removeAllRanges();
         }, 3000);
     };
 
     return (
         <div className="flex justify-space-between gap-4 w-full">
             <Input
-                ref={inputRef}
-                className={!url || recentlyCopied ? 'border-none' : ''}
+                className={!url ? 'border-none' : ''}
                 inputClassName={clsx(
                     'overflow-hidden text-ellipsis color-hint',
                     !url && 'bg-weak pointer-events-none user-select-none'
