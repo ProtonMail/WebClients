@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
-      "Create a spreadsheet": [
-        "Crear una hoja de cálculo"
-      ],
       "Create and copy alias": [
         "Crear y copiar alias"
       ],
@@ -3566,7 +3563,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -4445,7 +4442,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
-      "Settings update failed": [
-        "Error al actualizar los ajustes"
-      ],
-      "Settings updated": [
-        "Ajustes actualizados"
-      ],
       "Share via link settings": [
         "Ajustes de compartir vía enlace"
       ],
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Sus datos le pertenecen. Cree y colabore usando hojas de cálculo con todas las funciones protegidas con cifrado de extremo a extremo."
       ],
       "Your email address and password were leaked:": [
         "La dirección de correo electrónico y contraseña fueron filtradas:"
@@ -7739,11 +7727,6 @@
         "Alias ilimitados para proteger su identidad"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Quizás más tarde"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
@@ -9576,9 +9559,6 @@
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Presentamos ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"

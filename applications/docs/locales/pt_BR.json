@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Criar um grupo de contatos"
       ],
-      "Create a spreadsheet": [
-        "Criar uma planilha"
-      ],
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
@@ -4412,7 +4409,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez."
+        "Cada código só pode ser usado uma única vez"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
-      "Settings update failed": [
-        "Erro ao atualizar configurações"
-      ],
-      "Settings updated": [
-        "Configurações atualizadas"
-      ],
       "Share via link settings": [
         "Compartilhar por meio de configurações de link"
       ],
@@ -5175,7 +5166,7 @@
         "Quando você se conectar à VPN, ela usa tecnologia de criptografia para ocultar seu endereço IP (um código exclusivo atribuído ao seu dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "words": [
         "palavras"
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Seus dados continuam sendo seus. Crie e colabore usando planilhas completas e protegidas com criptografia de ponta a ponta."
       ],
       "Your email address and password were leaked:": [
         "Seu endereço de e-mail e senha estão expostos:"
@@ -7733,11 +7721,6 @@
         "Aliases ilimitados para proteger a sua identidade"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Talvez mais tarde"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nossa ${ helpCenterLink } ou ${ contactSupportLink }."
@@ -9570,9 +9553,6 @@
       ],
       "Information exposed in breach": [
         "Informação exposta na violação"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Apresentamos ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."

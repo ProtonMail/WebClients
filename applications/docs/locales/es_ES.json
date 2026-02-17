@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
-      "Create a spreadsheet": [
-        "Crear una hoja de cálculo"
-      ],
       "Create and copy alias": [
         "Crear y copiar el alias"
       ],
@@ -3571,7 +3568,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -4412,7 +4409,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -4445,7 +4442,7 @@
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Ingresa ${ digit }."
+        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
       ],
-      "Settings update failed": [
-        "Error al actualizar los ajustes"
-      ],
-      "Settings updated": [
-        "Se han actualizado los ajustes."
-      ],
       "Share via link settings": [
         "Ajustes de uso compartido con un enlace"
       ],
@@ -5175,7 +5166,7 @@
         "Cuando te conectas a una VPN, usas tecnología de cifrado para ocultar tu dirección IP (un código único asignado a tu dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "words": [
         "palabras"
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Tus datos te pertenecen. Crea y colabora usando hojas de cálculo con todas las funciones protegidas con cifrado de extremo a extremo."
       ],
       "Your email address and password were leaked:": [
         "Tu dirección de correo electrónico y contraseña fueron filtradas:"
@@ -7739,11 +7727,6 @@
         "Alias ilimitados para proteger tu identidad"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Quizás más tarde"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita nuestro ${ helpCenterLink } o contacta a nuestro ${ contactSupportLink }."
@@ -9576,9 +9559,6 @@
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Presentamos ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"

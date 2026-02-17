@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a spreadsheet": [
-        "Créer une feuille de calcul"
-      ],
       "Create and copy alias": [
         "Créer et copier l'alias"
       ],
@@ -3566,12 +3563,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -4445,7 +4442,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Saisissez le code de vérification. Entrez ${ digit }."
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuration de PGP vous permet d'envoyer des messages chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
-      "Settings update failed": [
-        "La mise à jour des paramètres n'a pas abouti."
-      ],
-      "Settings updated": [
-        "Les paramètres ont été mis à jour."
-      ],
       "Share via link settings": [
         "Paramètres de partage avec un lien"
       ],
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Vos données restent les vôtres. Créez et collaborez en utilisant des feuilles de calcul complètes, sécurisées par un chiffrement de bout en bout."
       ],
       "Your email address and password were leaked:": [
         "Votre adresse e-mail et votre mot de passe ont été exposés :"
@@ -7739,11 +7727,6 @@
         "Un nombre illimité d'alias pour protéger votre identité"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Peut-être plus tard"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " consultez notre ${ helpCenterLink } ou ${ contactSupportLink }."
@@ -9576,9 +9559,6 @@
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Voici ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
