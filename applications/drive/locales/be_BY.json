@@ -465,6 +465,9 @@
       "Enable drive search": [
         "Уключыць пошук на дыску"
       ],
+      "Encrypted": [
+        "Зашыфравана"
+      ],
       "Expand": [
         "Разгарнуць"
       ],
@@ -951,6 +954,9 @@
       "Scan & Download (${ nbSelected })": [
         "Сканіраваць і спампаваць (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Сканіраваць і спампаваць"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -1025,6 +1031,9 @@
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
+      ],
+      "Shared": [
+        "Абагуленыя"
       ],
       "Sharing is end-to-end encrypted": [
         "Абагуліць са скразным шыфраваннем"
@@ -6140,6 +6149,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
       ],
+      "Preparing": [
+        "Падрыхтоўка"
+      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -6202,6 +6214,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Запытайце доступ або пераключыцеся на ўліковы запіс, які мае яго."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Запытаны элемент больш не існуе"
       ],
       "Restore": [
         "Аднавіць"
@@ -6608,6 +6623,9 @@
       "Try searching by file name, date, or type.": [
         "Паспрабуйце пошук па назве файла, даце або тыпу."
       ],
+      "Unexpected download error": [
+        "Нечаканая памылка спампоўкі"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Збой расшыфроўкі файла або некаторых яго даных."
       ],
@@ -6759,7 +6777,7 @@
         "Усе папкі, якія дададзены ў папку \"Мае камп'ютары\" з гэтай прылады, будуць незваротна выдалены з ${ DRIVE_APP_NAME } пры выдаленні прылады ${ deviceName } у якасці сінхранізаванай."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
       "who": [
         "хто"
@@ -7163,6 +7181,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "Access": [
+        "Доступ"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
       ],
@@ -7192,6 +7213,9 @@
       ],
       "All": [
         "Усе"
+      ],
+      "Allow editors to change permissions and share": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць"
       ],
       "Anderson": [
         "Маўр"
@@ -7352,6 +7376,9 @@
       "Device name": [
         "Назва прылады"
       ],
+      "Disable this link on a specific date": [
+        "Адключыць гэту спасылку на ўказаную дату"
+      ],
       "Do you have any suggestions for our team?": [
         "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
@@ -7409,6 +7436,9 @@
       "Expires": [
         "Дзейнічае да"
       ],
+      "Expiry": [
+        "Тэрмін дзеяння"
+      ],
       "Extended address": [
         "Пашыраны адрас"
       ],
@@ -7440,7 +7470,7 @@
         "Ад: ${ fromEmail }"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -7622,6 +7652,9 @@
       "Replace existing folder or file": [
         "Замяніць існуючую папку або файл"
       ],
+      "Require password": [
+        "Патрабаваць пароль"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -7630,6 +7663,9 @@
       ],
       "Select type of abuse": [
         "Выберыце тып парушэння"
+      ],
+      "Set a password to limit access via link": [
+        "Задаць пароль для абмежавання доступу праз спасылку"
       ],
       "Set recovery method": [
         "Задаць спосаб аднаўлення"
@@ -9417,6 +9453,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" паспяхова захаваны"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" абагулены"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" паспяхова скапіявана"
       ],
@@ -9711,6 +9750,9 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Выбраныя фатаграфіі ўжо знаходзяцца ў \"${ albumName }\""
       ],
+      "Setting updated. Editors can change permission and share.": [
+        "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
+      ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
       ],
@@ -9806,7 +9848,7 @@
         "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -11344,7 +11386,7 @@
         "Аплачваецца ${ amount } за 30 месяцаў"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"

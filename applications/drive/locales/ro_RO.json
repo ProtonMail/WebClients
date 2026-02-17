@@ -460,6 +460,9 @@
       "Enable drive search": [
         "Activare căutare în unitate"
       ],
+      "Encrypted": [
+        "Criptat"
+      ],
       "Expand": [
         "Extindere"
       ],
@@ -946,6 +949,9 @@
       "Scan & Download (${ nbSelected })": [
         "Scanare și descărcare (${ nbSelected })"
       ],
+      "Scan and Download": [
+        "Scanare și descărcare"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -1020,6 +1026,9 @@
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"
+      ],
+      "Shared": [
+        "Partajate"
       ],
       "Sharing is end-to-end encrypted": [
         "Partajarea este criptată bilateral"
@@ -5456,7 +5465,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar o dată."
+        "Fiecare cod poate fi folosit doar odată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6054,6 +6063,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
+      "Preparing": [
+        "Se pregătește"
+      ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
       ],
@@ -6116,6 +6128,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Solicitați accesul sau comutați la un cont care are acces."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Elementul solicitat nu mai există."
       ],
       "Restore": [
         "Restaurare"
@@ -6520,6 +6535,9 @@
       "Try searching by file name, date, or type.": [
         "Puteți căuta după nume fișier, dată sau tip."
       ],
+      "Unexpected download error": [
+        "Eroare neașteptată la descărcare."
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Din păcate, se pare că fișierul sau unele dintre datele sale nu pot fi decriptate."
       ],
@@ -6671,7 +6689,7 @@
         "Când eliminați ${ deviceName } ca dispozitiv sincronizat, toate folderele adăugate la Calculatoarele mele de pe acest dispozitiv vor fi șterse permanent din ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "who": [
         "cine"
@@ -7063,6 +7081,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
+      "Access": [
+        "Accesare"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
       ],
@@ -7092,6 +7113,9 @@
       ],
       "All": [
         "Toate"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitere ca editorii să modifice permisiunile și să partajeze"
       ],
       "Anderson": [
         "Andrei"
@@ -7251,6 +7275,9 @@
       "Device name": [
         "Nume dispozitiv"
       ],
+      "Disable this link on a specific date": [
+        "Dezactivare această legătură web la o dată specifică"
+      ],
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
       ],
@@ -7306,6 +7333,9 @@
         "Expirat"
       ],
       "Expires": [
+        "Expirare"
+      ],
+      "Expiry": [
         "Expirare"
       ],
       "Extended address": [
@@ -7521,6 +7551,9 @@
       "Replace existing folder or file": [
         "Înlocuire folder sau fișier existent"
       ],
+      "Require password": [
+        "Necesită parolă"
+      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -7529,6 +7562,9 @@
       ],
       "Select type of abuse": [
         "Selectați tipul de abuz"
+      ],
+      "Set a password to limit access via link": [
+        "Setare parolă pentru a limita accesarea prin legătura web"
       ],
       "Set recovery method": [
         "Setați metoda de recuperare"
@@ -9229,6 +9265,9 @@
       "\"${ name }\" saved successfully": [
         "„${ name }” a fost salvat."
       ],
+      "\"${ name }\" shared": [
+        "S-a partajat „${ name }\""
+      ],
       "\"${ name }\" successfully copied": [
         "„${ name }” s-a copiat."
       ],
@@ -9496,6 +9535,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Pozele selectate sunt deja salvate în „${ albumName }”."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Setare actualizată. Editorii pot schimba permisiunea și partaja."
       ],
       "Share invitation accepted successfully": [
         "Invitația partajată a fost acceptată"

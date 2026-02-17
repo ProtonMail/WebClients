@@ -980,6 +980,9 @@
       "Set as cover": [
         "Aseta kansikuvaksi"
       ],
+      "Set password or expiration date": [
+        "Aseta salasana tai erääntymispäivä"
+      ],
       "Set recovery methods": [
         "Aseta palautustavat"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Shared": [
         "Jaettu"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Jakaminen on päästä päähän -salattu"
       ],
       "Sharing options": [
         "Jakovalinnat"
@@ -3318,6 +3324,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
       ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
       ],
@@ -5564,6 +5573,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Lue, mitä tehdä, ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Linkki kopioitu"
+      ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
@@ -5733,6 +5745,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
       ],
+      "owner": [
+        "omistaja"
+      ],
       "password": [
         "salasana"
       ],
@@ -5833,6 +5848,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
       ],
+      "Preparing": [
+        "Valmistellaan"
+      ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
       ],
@@ -5895,6 +5913,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Pyydä käyttöoikeutta tai vaihda tiliin, jolla on käyttöoikeus."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Pyydettyä kohdetta ei ole enää olemassa"
       ],
       "Restore": [
         "Palauta"
@@ -6270,6 +6291,9 @@
       "Try searching by file name, date, or type.": [
         "Yritä etsiä tiedoston nimellä, päiväyksellä tai tyypillä."
       ],
+      "Unexpected download error": [
+        "Odottamaton latausvirhe"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
       ],
@@ -6418,10 +6442,13 @@
         "Kun poistat laitteen ${ deviceName } synkronoinnista, kaikki tältä laitteelta Omiin tietokoneisiini lisätyt kansiot poistetaan pysyvästi ${ DRIVE_APP_NAME } -palvelusta."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "who": [
         "kuka"
+      ],
+      "Who has access": [
+        "Kenellä on pääsy"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
@@ -6792,6 +6819,9 @@
       "Account holder": [
         "Tilinhaltija"
       ],
+      "Active": [
+        "Aktiivinen"
+      ],
       "Add email address": [
         "Lisää sähköpostiosoite"
       ],
@@ -6803,6 +6833,9 @@
       ],
       "Address": [
         "Osoite"
+      ],
+      "admin": [
+        "ylläpitäjä"
       ],
       "Alias title": [
         "Aliaksen otsikko"
@@ -6818,6 +6851,9 @@
       ],
       "Anonymous": [
         "Anonyymi"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kuka tahansa, jolla on linkki"
       ],
       "App password": [
         "Sovellussalasana"
@@ -6863,6 +6899,12 @@
       ],
       "Calendars": [
         "Kalenterit"
+      ],
+      "can edit": [
+        "voi muokata"
+      ],
+      "can view": [
+        "voi tarkastella"
       ],
       "Cancel download": [
         "Peru lataus"
@@ -6945,6 +6987,9 @@
       "Delete drive?": [
         "Poistetaanko levy?",
         "Poistetaanko levyt?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Poista linkki ja käyttöoikeudet kaikilta"
       ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
@@ -7146,6 +7191,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "Not active": [
+        "Ei aktiivinen"
       ],
       "Note": [
         "Muistiinpano"
@@ -10623,6 +10671,14 @@
         "Tilaustasi perutaan. Odota."
       ]
     },
+    "Status": {
+      "accepted": [
+        "hyväksyi"
+      ],
+      "pending": [
+        "odottaa"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "Hanki lisää tallennustilaa"
@@ -12060,6 +12116,12 @@
       "Processing...": [
         "Käsitellään..."
       ],
+      "Public link": [
+        "Julkinen linkki"
+      ],
+      "Public link settings": [
+        "Julkisen linkin asetukset"
+      ],
       "Public shared link status": [
         "Julkisen jakolinkin tila"
       ],
@@ -12150,6 +12212,9 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Asetukset tiedostolle ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"
