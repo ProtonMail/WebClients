@@ -3309,12 +3309,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Произошла ошибка при аутентификации с помощью ключа безопасности. Попробуйте снова."
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, привязанный к аккаунту ${ BRAND_NAME }."
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
       ],
       "Security key": [
         "Ключ безопасности"
@@ -4610,12 +4610,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
       ],
-      "Settings update failed": [
-        "Ошибка при обновлении настроек"
-      ],
-      "Settings updated": [
-        "Настройки обновлены"
-      ],
       "Share via link settings": [
         "Поделиться через настройки ссылки"
       ],
@@ -4872,7 +4866,7 @@
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "words": [
         "слова"
@@ -7290,11 +7284,6 @@
       ],
       "Storage": [
         "Хранилище"
-      ]
-    },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Может быть позже"
       ]
     },
     "Onboarding Trial": {

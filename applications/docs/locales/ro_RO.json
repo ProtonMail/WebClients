@@ -245,9 +245,6 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create a spreadsheet": [
-        "Creați o foaie de calcul"
-      ],
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
@@ -4471,7 +4468,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar o dată."
+        "Fiecare cod poate fi folosit doar odată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -4956,12 +4953,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
-      "Settings update failed": [
-        "Actualizarea setărilor a eșuat."
-      ],
-      "Settings updated": [
-        "Setările s-au actualizat."
-      ],
       "Share via link settings": [
         "Setări partajare prin legătură web"
       ],
@@ -5238,7 +5229,7 @@
         "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "words": [
         "cuvinte"
@@ -5368,9 +5359,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Datele vă aparțin. Creați și colaborați folosind foi de calcul cu funcții complete, securizate cu criptare bilaterală."
       ],
       "Your email address and password were leaked:": [
         "Adresa de e-mail și parola au fost divulgate:"
@@ -7803,11 +7791,6 @@
         "Aliasuri nelimitate pentru a vă proteja identitatea"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Poate mai târziu"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
@@ -9696,9 +9679,6 @@
       ],
       "Information exposed in breach": [
         "Informații expuse în divulgare"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Vă prezentăm ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"

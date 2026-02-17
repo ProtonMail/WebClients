@@ -234,9 +234,6 @@
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
-      "Create a spreadsheet": [
-        "Ustvari preglednico"
-      ],
       "Create and copy alias": [
         "Ustvari in kopiraj vzdevek"
       ],
@@ -377,6 +374,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Pridobi ${ planOrAppName }."
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Pridobite brezplačen ${ BRAND_NAME } naslov"
       ],
       "Get the apps": [
         "Namesti aplikacije"
@@ -991,6 +991,9 @@
       "1 user account": [
         "1 uporabniški račun"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
       "6 user accounts": [
         "6 uporabniških računov"
       ],
@@ -1141,6 +1144,9 @@
       "Manual setup problem": [
         "Težava z ročno namestitvijo"
       ],
+      "Meet problem": [
+        "Težava z Meet"
+      ],
       "Other": [
         "Drugo"
       ],
@@ -1256,8 +1262,19 @@
       "Access to advanced AI models": [
         "Dostop do naprednih modelov UI"
       ],
+      "Built and based in Europe": [
+        "Zgrajeno in s sedežem v Evropi"
+      ],
+      "Compliance with data protection regulations": [
+        "Skladnost s predpisi o varstvu podatkov"
+      ],
       "Data never used for AI training": [
         "Podatki se ne bodo nikoli uporabljali za urjenje UI"
+      ]
+    },
+    "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Napredna varnost računa in omrežja v enem paketu"
       ]
     },
     "color": {
@@ -2350,6 +2367,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Za zagotovitev najvišje možne varnosti vašega računa nastavite obnovitveno frazo."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Za uvoz preko CSV in VCF datoteke zagotovite, da datoteka ne presega ${ MAX_IMPORT_FILE_SIZE_STRING } ali ${ maxContactString } stikov. Če je vaša datoteka večja, jo razdelite na manjše. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
       ],
@@ -2476,11 +2496,27 @@
       "/month": [
         "/mesec"
       ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
       "2 user accounts": [
         "2 uporabniška računa"
       ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
       "Only": [
         "Samo"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Pridobite 4x več prostora za shranjevanje"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
       ]
     },
     "Email body for invitation": {
@@ -2496,6 +2532,9 @@
       "Here's what changed:": [
         "Kaj se je spremenilo:"
       ],
+      "LOCATION:": [
+        "LOKACIJA:"
+      ],
       "NOTE:": [
         "OPOMBA:"
       ],
@@ -2507,6 +2546,12 @@
       ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NASLOV:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2687,6 +2732,12 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje."
+      ],
+      "Failed loading group members": [
+        "Napaka pri nalaganju članov skupine"
+      ],
+      "Failed to open to contact": [
+        "Ni mogoče odpreti stika."
       ],
       "Failed to remove older revisions": [
         "Ni uspelo odstraniti starejših različic"
@@ -3068,6 +3119,9 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Pri nalaganju datoteke je prišlo do napake. Izbrana ni bila nobena datoteka."
       ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Vaša datoteka ${ formattedFilename } vsebuje več kot ${ maxContactString } stikov."
+      ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "V datoteki ${ formattedFilename } ni stikov, ki bi jih lahko uvozili."
       ],
@@ -3265,6 +3319,9 @@
       "customer support": [
         "podpora strankam"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Družinski paketi trenutno ne podpirajo zunanjih računov. Preden se pridružite, ustvarite naslov ${ BRAND_NAME }. ${ link }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
       ],
@@ -3359,6 +3416,9 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrirana shramba v oblaku za datoteke, fotografije in dokumente"
+      ],
       "More premium features": [
         "Več premijskih funkcij"
       ],
@@ -3711,6 +3771,9 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Preveč nedavnih zahtevkov. Poskusite znova čez nekaj trenutkov."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem e-poštnem računu."
+      ],
       "Use your app password if:": [
         "Uporabite geslo za aplikacijo, če:"
       ],
@@ -3881,6 +3944,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } zahteva ${ BRAND_NAME } naslov za varno sinhronizacijo dogodkov in šifriranje. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nov koledar",
         "${ calendarsToBeCreatedCount } nova koledarja",
@@ -4003,6 +4069,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Stikalo za odklop**: Ustavi uhajanje podatkov tako, da blokira vašo internetno povezavo, če VPN nepričakovano preneha delovati."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Korak 1:** Povabite vaše prijatelje na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Korak 2:** Vaši prijatelji dobijo svoj izbrani ${ BRAND_NAME } paket 2 tedna brezplačno."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Korak 2:** Vaši prijatelji dobijo svoj paket 2 tedna brezplačno."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsakega prijatelja, ki se naroči na paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsako osebo,, ki se naroči na paket."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
@@ -4709,12 +4790,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavitev PGP vam omogoča pošiljanje šifriranih e-poštnih sporočil od konca do konca z ne-uporabnikom ${ BRAND_NAME }, ki uporablja združljivo storitev PGP."
       ],
-      "Settings update failed": [
-        "Napaka pri posodobitvi nastavitev"
-      ],
-      "Settings updated": [
-        "Nastavitve posodobljene"
-      ],
       "Share via link settings": [
         "Nastavitve za skupno rabo prek povezave"
       ],
@@ -5074,9 +5149,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Vaši podatki ostanejo vaši. Ustvarjajte in sodelujte z uporabo polno opremljenih preglednic, zaščitenih s šifriranjem od konca do konca."
       ],
       "Your email address and password were leaked:": [
         "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
@@ -5736,6 +5808,9 @@
       "Resume now": [
         "Obnovi zdaj"
       ],
+      "Terms and conditions": [
+        "Pogoji uporabe"
+      ],
       "Types of recovery methods": [
         "Vrste načinov obnovitve"
       ],
@@ -5777,6 +5852,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Izvedi več."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Če želite še naprej uporabljati ${ BRAND_NAME }, poskrbite, da vaše premijske funkcije ne bodo več v uporabi ali nadgradite svoj paket."
       ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
@@ -5840,6 +5918,9 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Zaupna video konferenca za pogovore, ki so pomembni"
+      ],
       "${ n } active meeting at a time": [
         "${ n } sestanek hkrati",
         "${ n } sestanka hkrati",
@@ -5848,6 +5929,18 @@
       ],
       "24 hours per meeting": [
         "24 ur na sestanek"
+      ],
+      "60 minutes per meeting": [
+        "60 minut na sestanek"
+      ],
+      "One active meeting at a time": [
+        "En aktivni sestanek naenkrat"
+      ],
+      "Screen-sharing": [
+        "Deljenje zaslona"
+      ],
+      "Unlimited meetings per day": [
+        "Neomejeno število sestankov na dan"
       ],
       "Up to ${ n } meeting per day": [
         "Do ${ n } sestanek na dan",
@@ -5863,6 +5956,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše brezplačno preskusno obdobje se je končalo. Dostop do vašega računa bo kmalu onemogočen. ${ action }"
       ]
@@ -7387,11 +7483,6 @@
         "Shramba"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Morda kasneje"
-      ]
-    },
     "Onboarding Trial": {
       "Cancel anytime before ${ cancelDate }.": [
         "Prekličite kadarkoli pred ${ cancelDate }."
@@ -7555,6 +7646,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Znesek za plačilo po preskusnem obdobju ${ formattedDate }"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Cena podaljšanja se lahko spremeni skladno z ${ termsAndConditionsLink }."
       ],
@@ -7563,6 +7657,9 @@
       ],
       "terms and conditions": [
         "pravili in pogoji"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Posebno znižana cena velja prvi mesec. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
@@ -7791,11 +7888,17 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
       ],
+      "Invite friends. Get credits.": [
+        "Povabite prijatelje. Prejmite dobroimetje."
+      ],
       "Invited friends": [
         "Povabljeni prijatelji"
       ],
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "Start earning credits": [
+        "Začnite pridobivati dobroimetje"
       ],
       "your subscription": [
         "vaša naročnina"
@@ -8401,6 +8504,9 @@
       "${ app } storage": [
         "${ app } shrambe"
       ],
+      "${ app } storage used": [
+        "Porabljene shrambe ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je ${ percentage }% polna"
       ],
@@ -8412,6 +8518,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Za vse ${ BRAND_NAME } storitve"
+      ],
+      "Storage used": [
+        "Porabljena shramba"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Če želite še naprej uporabljati izdelke ${ BRAND_NAME }, sprostite prostor ali ${ upgrade }."
@@ -9068,6 +9177,9 @@
       "Exporting contacts": [
         "Izvažanje stikov"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Prejmite **${ referralInfo.uiData.refereeRewardAmount }** v dobroimetju z ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Izkoristite več od svoje VPN"
       ],
@@ -9322,6 +9434,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Nadgradite za ohranitev vaših premijskih ugodnosti."
       ],
       "Upload and share files": [
         "Naloži in deli datoteke"
@@ -9659,6 +9774,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Vaše brezplačno preizkusno obdobje se konča dne ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
       ]
     }
   }
