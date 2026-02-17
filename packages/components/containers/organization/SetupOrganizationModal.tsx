@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,6 +28,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
@@ -56,6 +57,7 @@ enum STEPS {
 const storageSizeUnit = sizeUnits.GB;
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
+    const eventManager = useEventManager();
     const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
@@ -104,6 +106,17 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
 
     const [keyRotationPayload, setKeyRotationPayload] = useState<null | OrganizationKeyRotationPayload>(null);
     const errorHandler = useErrorHandler();
+
+    useEffect(() => {
+        // There is a race condition in which after the user has performed the first step to setup the organization
+        // The app handles that state by showing a different route. In doing so, it closes this modal before the storage
+        // step can be completed.
+        // To get around that race condition, we stop the event loop to prevent updates.
+        eventManager.stop();
+        return () => {
+            eventManager.start();
+        };
+    }, []);
 
     const handlePreStorageStep = async () => {
         // If user setting up organization for VPN B2B or Pass Family plan then the storage step must be skipped.
