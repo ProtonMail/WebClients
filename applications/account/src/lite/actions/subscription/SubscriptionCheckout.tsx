@@ -8,7 +8,8 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { PLANS } from '@proton/payments/core/constants';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { PaymentsContextProvider, getPlanToCheck, usePaymentsInner } from '@proton/payments/ui/context/PaymentContext';
+import { PaymentsContextProvider, usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import noop from '@proton/utils/noop';
 
 import type { SubscriptionCheckoutMetricsOverrides } from './interface';
@@ -40,7 +41,7 @@ const SubscriptionCheckoutWithPayments = ({
     subscription,
     minimumCycle,
 }: Props) => {
-    const { initialize, plansMap, selectNewPlan } = usePaymentsInner();
+    const { initialize, plansMap, selectNewPlan } = usePayments();
     const api = useSilentApi();
     const app = useAppName();
 
@@ -59,20 +60,15 @@ const SubscriptionCheckoutWithPayments = ({
     });
 
     const handleUnlimitedUpgrade = () => {
-        selectNewPlan(
-            {
-                ...getPlanToCheck({
-                    planIDs: {
-                        [PLANS.BUNDLE]: 1,
-                    },
-                    currency: checkoutModel.currency,
-                    cycle: checkoutModel.cycle,
-                }),
-            },
-            {
-                subscription,
-            }
-        ).catch(noop);
+        selectNewPlan({
+            ...getPlanToCheck({
+                planIDs: {
+                    [PLANS.BUNDLE]: 1,
+                },
+                currency: checkoutModel.currency,
+                cycle: checkoutModel.cycle,
+            }),
+        }).catch(noop);
     };
     const {
         plusToPlusUpsellModal,

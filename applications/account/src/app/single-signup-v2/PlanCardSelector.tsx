@@ -17,21 +17,23 @@ import {
     FREE_PLAN,
     type FreePlanDefault,
     PLANS,
-    type PaymentsCheckout,
     type Plan,
     type PlanIDs,
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
     TRIAL_DURATION_DAYS,
-    getCheckResultFromSubscription,
-    getCheckout,
     getHasPlusPlan,
-    getOptimisticCheckout,
     getPlanFromPlanIDs,
     getPlanIDs,
     getRenewCycle,
 } from '@proton/payments';
+import {
+    type PaymentsCheckoutUI,
+    getCheckResultFromSubscription,
+    getCheckoutUi,
+    getOptimisticCheckout,
+} from '@proton/payments/core/checkout';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -439,7 +441,7 @@ export const PlanCardSelector = ({
                 })?.[cycle];
 
                 if (cycleMapping) {
-                    const checkout = getCheckout({
+                    const checkout = getCheckoutUi({
                         planIDs,
                         plansMap,
                         checkResult: cycleMapping.checkResult,
@@ -512,7 +514,7 @@ export const UpsellCardSelector = ({
     vpnServersCountData,
 }: {
     audience?: Audience;
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     relativePrice: string | undefined;
     plan: Plan;
     currentPlan: SubscriptionPlan | undefined;
@@ -566,7 +568,7 @@ export const UpsellCardSelector = ({
                     }
 
                     const currentPlanIDs = getPlanIDs(subscription);
-                    const currentCheckout = getCheckout({
+                    const currentCheckout = getCheckoutUi({
                         plansMap,
                         planIDs: currentPlanIDs,
                         checkResult: getCheckResultFromSubscription(subscription),

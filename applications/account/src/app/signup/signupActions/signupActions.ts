@@ -5,7 +5,7 @@ import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
 import { type PaymentsVersion, SubscriptionMode, hasPlanIDs } from '@proton/payments';
-import { createSubscription } from '@proton/payments/core/api/createSubscription';
+import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -313,15 +313,23 @@ export const getSubscriptionMetricsData = (
     };
 };
 
-export const handleSubscribeUser = async (
-    api: Api,
-    subscriptionData: SubscriptionData,
-    productParam: ProductParam,
-    hasZipCodeValidation: boolean,
-    reportPaymentSuccess: () => void,
-    reportPaymentFailure: () => void,
-    telemetryContext?: PaymentTelemetryContext
-) => {
+export const handleSubscribeUser = async ({
+    api,
+    subscriptionData,
+    productParam,
+    hasZipCodeValidation,
+    reportPaymentSuccess,
+    reportPaymentFailure,
+    telemetryContext,
+}: {
+    api: Api;
+    subscriptionData: SubscriptionData;
+    productParam: ProductParam;
+    hasZipCodeValidation: boolean;
+    reportPaymentSuccess: () => void;
+    reportPaymentFailure: () => void;
+    telemetryContext?: PaymentTelemetryContext;
+}) => {
     if (!hasPlanIDs(subscriptionData.planIDs)) {
         return;
     }
@@ -336,7 +344,7 @@ export const handleSubscribeUser = async (
 
         const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
-        const { Subscription } = await createSubscription(
+        const { Subscription } = await createPaymentSubscription(
             api,
             {
                 Plans: subscriptionData.planIDs,
@@ -431,15 +439,15 @@ export const handleSetupUser = async ({
     // so we don't need to subscribe anymore on the frontend
     let subscription: Subscription | undefined;
     if (!referralData) {
-        subscription = await handleSubscribeUser(
+        subscription = await handleSubscribeUser({
             api,
             subscriptionData,
             productParam,
             hasZipCodeValidation,
             reportPaymentSuccess,
             reportPaymentFailure,
-            telemetryContext
-        );
+            telemetryContext,
+        });
     }
 
     api(updateLocale(localeCode)).catch(noop);

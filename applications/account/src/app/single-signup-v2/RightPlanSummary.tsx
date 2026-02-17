@@ -5,13 +5,8 @@ import { c } from 'ttag';
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import {
-    type CYCLE,
-    type Currency,
-    type Cycle,
-    type PaymentsCheckout,
-    hasLumoAddonFromPlanIDs,
-} from '@proton/payments';
+import { type CYCLE, type Currency, type Cycle, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -29,7 +24,7 @@ interface Props {
     discount: number;
     free?: boolean;
     className?: string;
-    checkout?: PaymentsCheckout;
+    checkout?: PaymentsCheckoutUI;
     mode?: 'addons';
     isTrial?: boolean;
 }
@@ -145,7 +140,7 @@ export const RightPlanSummaryAddons = ({
 }: {
     cycle: Cycle;
     currency: Currency;
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     displayMembersWithDiscount: boolean;
 }) => {
     return [

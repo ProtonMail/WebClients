@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import type { RequiredCheckResponse } from '@proton/payments';
 import { TaxInclusive, formatTax } from '@proton/payments';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 
 interface Props {
     checkResult: RequiredCheckResponse;
 }
 
-function getVatText(formattedTax: NonNullable<ReturnType<typeof formatTax>>) {
+function getVatInclusiveText(formattedTax: NonNullable<ReturnType<typeof formatTax>>) {
     const { amount, rate: taxRate, currency, taxName, taxesQuantity, inclusive } = formattedTax;
 
     const taxAmount = (
@@ -23,14 +23,11 @@ function getVatText(formattedTax: NonNullable<ReturnType<typeof formatTax>>) {
             : // translator: example "Incl. 20% VAT: US$10"
               c('Payments').jt`Incl. ${taxRate}% ${taxName}: ${taxAmount}`;
     } else {
-        return taxesQuantity > 1
-            ? c('Payments').jt`Excl. ${taxRate}% taxes: ${taxAmount}`
-            : // translator: example "Excl. 20% VAT: US$10"
-              c('Payments').jt`Excl. ${taxRate}% ${taxName}: ${taxAmount}`;
+        return null;
     }
 }
 
-const VatText = ({ checkResult }: Partial<Props>) => {
+const VatInclusiveText = ({ checkResult }: Partial<Props>) => {
     if (!checkResult) {
         return null;
     }
@@ -42,9 +39,9 @@ const VatText = ({ checkResult }: Partial<Props>) => {
 
     return (
         <div className="color-weak text-xs text-normal" data-testid="tax">
-            {getVatText(formattedTax)}
+            {getVatInclusiveText(formattedTax)}
         </div>
     );
 };
 
-export default VatText;
+export default VatInclusiveText;

@@ -14,11 +14,10 @@ import {
     TRIAL_DURATION_DAYS,
     TaxInclusive,
     formatTax,
-    getCheckout,
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
-    getOptimisticCheckout,
 } from '@proton/payments';
+import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { InclusiveVatText } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -106,7 +105,7 @@ const AccountStepPaymentSummary = ({
     });
 
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
-    const currentCheckout = getCheckout({
+    const currentCheckout = getCheckoutUi({
         // If there is a coupon code, ignore the optimistic results from options since they don't contain the correct discount.
         planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
         plansMap: model.plansMap,

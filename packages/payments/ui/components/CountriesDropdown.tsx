@@ -18,7 +18,7 @@ export type CountriesHookProps = {
     disabledCountries?: string[];
 };
 
-export const useCountries = ({ allowedCountries, disabledCountries }: CountriesHookProps) => {
+export const useCountries = ({ allowedCountries, disabledCountries }: CountriesHookProps = {}) => {
     const countries = useMemo(() => {
         const fullList = getFullList();
 
@@ -52,27 +52,24 @@ export const useCountries = ({ allowedCountries, disabledCountries }: CountriesH
     return { countries, country, setCountry, getCountryByCode };
 };
 
-const getCountriesDropdownLabel = (countryItem: CountryItem, showCountryFlag?: boolean) => {
+const getCountriesDropdownLabel = (countryItem: CountryItem) => {
     const { value, label } = countryItem;
 
     if (value === DEFAULT_COUNTRIES_SEPARATOR.value) {
         return <hr className="m-0" />;
-    } else if (showCountryFlag) {
-        return (
-            <span className="flex items-center gap-2">
-                <CountryFlagAndName className="ml-0 mr-0" countryCode={value} countryName={label} />
-            </span>
-        );
-    } else {
-        return label;
     }
+
+    return (
+        <span className="flex items-center gap-2">
+            <CountryFlagAndName className="ml-0 mr-0" countryCode={value} countryName={label} />
+        </span>
+    );
 };
 
 type Props = {
     onChange?: (countryCode: string) => void;
     selectedCountryCode: string;
     autoComplete?: string;
-    showCountryFlag?: boolean;
 } & CountriesHookProps &
     Omit<SearcheableSelectProps<CountryItem>, 'children' | 'value' | 'search' | 'onChange'>;
 
@@ -81,7 +78,6 @@ export const CountriesDropdown = ({
     selectedCountryCode,
     allowedCountries,
     disabledCountries,
-    showCountryFlag,
     ...rest
 }: Props) => {
     const { countries, getCountryByCode } = useCountries({ allowedCountries, disabledCountries });
@@ -114,7 +110,7 @@ export const CountriesDropdown = ({
                     disabled={disabled}
                     data-testid={`country-${value}`}
                 >
-                    {getCountriesDropdownLabel(countryItem, showCountryFlag)}
+                    {getCountriesDropdownLabel(countryItem)}
                 </Option>
             );
         }),

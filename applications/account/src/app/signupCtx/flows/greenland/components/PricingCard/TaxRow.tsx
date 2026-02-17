@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Price } from '@proton/components';
-import { type RequiredCheckResponse, formatTax } from '@proton/payments';
+import { formatTax } from '@proton/payments';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 
 interface TaxRowProps {
     checkResult: RequiredCheckResponse;

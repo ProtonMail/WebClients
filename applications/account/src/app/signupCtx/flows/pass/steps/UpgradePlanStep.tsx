@@ -35,7 +35,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             currency: payments.selectedPlan.currency,
         });
 
-        return getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerMonth);
+        return getSimplePriceString(price.checkoutUi.currency, price.checkoutUi.withDiscountPerMonth);
     };
 
     const handlePayPlan = (plan: PLANS, coupon?: string) => {
@@ -153,7 +153,9 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             </div>
             {offerModal.state.open && (
                 <OfferModal
-                    uiData={payments.getPriceOrFallback(getPassPlusOfferPlan(payments.selectedPlan.currency)).uiData}
+                    checkoutUi={
+                        payments.getPriceOrFallback(getPassPlusOfferPlan(payments.selectedPlan.currency)).checkoutUi
+                    }
                     onClose={offerModal.abort}
                     onContinue={offerModal.resolver}
                     loading={offerModal.state.loading}

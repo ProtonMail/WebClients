@@ -5,16 +5,8 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
-import {
-    type CYCLE,
-    type Currency,
-    type PaymentsCheckout,
-    type PlanIDs,
-    type PlansMap,
-    type SubscriptionCheckResponse,
-    getCheckout,
-    getOptimisticCheckResult,
-} from '@proton/payments';
+import type { CYCLE, Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
+import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -27,7 +19,7 @@ const CycleItem = ({
     loading,
     plansMap,
 }: {
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     loading: boolean;
     plansMap: PlansMap;
 }) => {
@@ -71,7 +63,7 @@ const SubscriptionCycleSelector = ({
     checkResult: checkResultProp,
     listItemClassName,
 }: Props) => {
-    const calculateCheckout = (cycle: CYCLE): PaymentsCheckout => {
+    const calculateCheckout = (cycle: CYCLE): PaymentsCheckoutUI => {
         const checkResult =
             [...additionalCheckResults, checkResultProp].filter(isTruthy).find((it) => it.Cycle === cycle) ??
             getOptimisticCheckResult({
@@ -81,7 +73,7 @@ const SubscriptionCycleSelector = ({
                 cycle,
             });
 
-        return getCheckout({
+        return getCheckoutUi({
             planIDs,
             plansMap,
             checkResult,

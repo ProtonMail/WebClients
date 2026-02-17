@@ -8,20 +8,20 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-import type { PaymentsCheckout } from '@proton/payments';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 
 import './OfferModal.scss';
 
 type OfferModalProps = {
-    uiData: PaymentsCheckout;
+    checkoutUi: PaymentsCheckoutUI;
     loading: boolean;
     onClose: () => void;
     onContinue: (upgradeTo: boolean) => void;
 };
 
-export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onContinue }) => {
-    const renewalPrice = getSimplePriceString(uiData.currency, uiData.renewPrice);
-    const offerPrice = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
+export const OfferModal: FC<OfferModalProps> = ({ checkoutUi, loading, onClose, onContinue }) => {
+    const renewalPrice = getSimplePriceString(checkoutUi.currency, checkoutUi.renewPrice);
+    const offerPrice = getSimplePriceString(checkoutUi.currency, checkoutUi.withDiscountPerCycle);
 
     const features = [
         c('Label').t`Unlimited hide-my-email aliases`,
@@ -51,7 +51,7 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
                             <h1 className="text-40 text-bold">{offerPrice}</h1>
                             <div className="flex flex-column items-center">
                                 <span className="badge rounded-full py-0.5 px-1 text-sm">
-                                    - {uiData.discountPercent}%
+                                    - {checkoutUi.discountPercent}%
                                 </span>
                                 <span className="text-sm color-weak text-strike">{renewalPrice}</span>
                             </div>

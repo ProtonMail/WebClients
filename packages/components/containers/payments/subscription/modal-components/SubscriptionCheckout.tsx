@@ -11,12 +11,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type {
-    CheckoutModifiers,
-    FreeSubscription,
-    RequiredCheckResponse,
-    SubscriptionCheckForbiddenReason,
-} from '@proton/payments';
+import type { CheckoutModifiers, FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
 import {
     type Currency,
     type Cycle,
@@ -29,12 +24,12 @@ import {
     SubscriptionMode,
     TaxInclusive,
     formatTax,
-    getCheckout,
     getPlanFromPlanIDs,
     hasPlanIDs,
     isFreeSubscription,
     isLifetimePlanSelected,
 } from '@proton/payments';
+import { type RequiredCheckResponse, getCheckoutUi } from '@proton/payments/core/checkout';
 import type { TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -49,7 +44,7 @@ import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledCycleText } from './helpers/BilledCycleText';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
-import { checkoutGetTotalAmount } from './helpers/checkoutGetTotalAmount';
+import { checkoutGetNetTotalAmount } from './helpers/checkoutGetNetTotalAmount';
 import { getWhatsIncluded } from './helpers/included';
 import { show30DaysMoneyBackGuarantee } from './helpers/show30DaysMoneyBackGuarantee';
 
@@ -123,7 +118,7 @@ const SubscriptionCheckout = ({
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const checkout = getCheckout({
+    const checkout = getCheckoutUi({
         planIDs,
         plansMap,
         checkResult,
@@ -154,7 +149,7 @@ const SubscriptionCheckout = ({
     const proration = checkResult.Proration ?? 0;
     const unusedCredit = checkResult.UnusedCredit ?? 0;
     const credit = checkResult.Credit ?? 0;
-    const totalAmount = checkoutGetTotalAmount(checkout, trial, couponConfig);
+    const totalAmount = checkoutGetNetTotalAmount(checkout, trial, couponConfig);
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 

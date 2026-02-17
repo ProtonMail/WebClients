@@ -4,7 +4,8 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
-import { COUPON_CODES, CYCLE, type PLANS, getCheckout, getPlansMap } from '@proton/payments';
+import { COUPON_CODES, CYCLE, type PLANS, getPlansMap } from '@proton/payments';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 
 import type { PriceData } from '../helpers/interface';
 import { roundToUpper } from '../helpers/paidUserNudgeHelper';
@@ -42,7 +43,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
 
             const plansMap = getPlansMap(plans.plans, currency, false);
 
-            const checkout = getCheckout({
+            const checkout = getCheckoutUi({
                 planIDs: { [plan]: 1 },
                 plansMap,
                 checkResult: result,

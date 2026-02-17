@@ -34,8 +34,8 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectPaymentStatus = (state: PaymentStatusState) => state.paymentStatus;
 
-export const changeBillingAddress = createAction<Pick<PaymentStatus, 'CountryCode' | 'State'>>(
-    'paymentStatus/changeBillingAddress'
+export const changeBillingAddress = createAction<Pick<PaymentStatus, 'CountryCode' | 'State' | 'ZipCode'>>(
+    `${name}/changeBillingAddress`
 );
 
 const initialState = getInitialModelState<Model>();
@@ -66,6 +66,7 @@ const slice = createSlice({
 
             state.value.CountryCode = payload.CountryCode;
             state.value.State = payload.State;
+            state.value.ZipCode = payload.ZipCode;
         });
     },
 });

@@ -4,17 +4,16 @@ import { getHasPlanCustomizer } from '@proton/components/containers/payments/pla
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { showLumoAddonCustomizer } from '@proton/components/containers/payments/subscription/modal-components/helpers/showLumoAddonCustomizer';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import { usePaymentsInner } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 
 interface Props {
     initialCoupon: string | undefined;
 }
 
 const SubscriptionCheckoutAddonSection = ({ initialCoupon }: Props) => {
-    const { uiData, plansMap, subscription, selectPlanIDs, telemetryContext, loading, couponConfig } =
-        usePaymentsInner();
-    const { checkout } = uiData;
-    const { cycle, planIDs, currency } = checkout;
+    const { checkoutUi, plansMap, subscription, selectPlanIDs, telemetryContext, loading, couponConfig } =
+        usePayments();
+    const { cycle, planIDs, currency } = checkoutUi;
     const scribeEnabled = useAssistantFeatureEnabled();
 
     if (subscription && getHasPlanCustomizer(planIDs)) {

@@ -7,21 +7,15 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { BillingAddress } from '../../core/billing-address/billing-address';
-import { getCheckout } from '../../core/checkout';
-import { CYCLE, FREE_SUBSCRIPTION } from '../../core/constants';
+import { getCheckoutUi } from '../../core/checkout';
+import { CYCLE } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import type { EnrichedCheckResponse } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import type { InitializeProps } from './PaymentContext';
-import {
-    PaymentsContextProvider,
-    type PaymentsContextType,
-    type PaymentsContextTypeInner,
-    type PlanToCheck,
-    usePaymentsInner,
-} from './PaymentContext';
+import { PaymentsContextProvider, type PaymentsContextType, type PlanToCheck, usePayments } from './PaymentContext';
 
 interface InitializationStatus {
     /**
@@ -45,7 +39,7 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     loadingPaymentDetails: boolean;
     initializationStatus: InitializationStatus;
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
-    uiData: PaymentsContextTypeInner['uiData'];
+    checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
     vpnServersCountData: VPNServersCountData;
 };
@@ -60,7 +54,7 @@ interface PaymentsContextOptimisticProviderProps {
 }
 
 export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOptimisticProviderProps) => {
-    const paymentsContext = usePaymentsInner();
+    const paymentsContext = usePayments();
 
     const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>();
     const [, rerender] = useState<any>();
@@ -155,7 +149,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         latest: any
     ) => {
         try {
-            await paymentsContext.selectNewPlan(optimistic, { subscription: FREE_SUBSCRIPTION });
+            await paymentsContext.selectNewPlan(optimistic);
             if (latestOptimisticRef.current === latest) {
                 setOptimistic({});
             }
@@ -278,15 +272,19 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         rerender({});
     };
 
-    const selectCurrency: PaymentsContextTypeInner['selectCurrency'] = async (currency) => {
+    const selectCurrency: PaymentsContextType['selectCurrency'] = async (currency) => {
         handleOptimistic({ currency });
 
         // This is run in the background since we render the plan cards optimistically
         updateMultiPlanCheckCacheAfterChangingCurrency(currency, options.currency).catch(noop);
     };
 
-    const selectBillingAddress = async (billingAddress: BillingAddress) => {
-        handleOptimistic({ billingAddress });
+    const selectBillingAddress = (billingAddress: BillingAddress) => {
+        return paymentsContext.selectBillingAddress(billingAddress);
+    };
+
+    const setVatNumber = async (vatNumber: string) => {
+        return paymentsContext.setVatNumber(vatNumber);
     };
 
     const selectedPlan = new SelectedPlan(options.planIDs, paymentsContext.plansMap, options.cycle, options.currency);
@@ -297,22 +295,21 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 ...paymentsContext,
                 initialize,
                 selectBillingAddress,
+                setVatNumber,
                 selectCycle,
                 selectCurrency,
                 selectPlanIDs,
                 selectPlan: handleOptimistic,
                 selectedPlan,
-                loadingPaymentDetails,
+                loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
                 initializationStatus,
                 options,
                 vpnServersCountData,
-                uiData: {
-                    checkout: getCheckout({
-                        planIDs: options.planIDs,
-                        plansMap: paymentsContext.plansMap,
-                        checkResult: options.checkResult,
-                    }),
-                },
+                checkoutUi: getCheckoutUi({
+                    planIDs: options.planIDs,
+                    plansMap: paymentsContext.plansMap,
+                    checkResult: options.checkResult,
+                }),
             }}
         >
             {children}
