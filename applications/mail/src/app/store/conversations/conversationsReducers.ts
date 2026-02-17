@@ -380,7 +380,9 @@ export const markMessagesAsReadPending = (
                 }
             });
 
-            const messageState = conversationState.Messages?.find((message) => message.ID === message.ID);
+            const messageState = conversationState.Messages?.find(
+                (messageFromConversation) => messageFromConversation.ID === message.ID
+            );
 
             if (messageState) {
                 messageState.Unread = 0;
@@ -419,7 +421,9 @@ export const markMessagesAsUnreadPending = (
                 }
             });
 
-            const messageState = conversationState.Messages?.find((message) => message.ID === message.ID);
+            const messageState = conversationState.Messages?.find(
+                (messageFromConversation) => messageFromConversation.ID === message.ID
+            );
 
             if (messageState) {
                 messageState.Unread = 1;
@@ -586,9 +590,9 @@ export const labelMessagesPending = (
                 labels
             );
 
-            conversationState.Messages?.forEach((message) => {
-                if (message.ID === message.ID) {
-                    applyLabelToMessage(message, destinationLabelID, folders, labels);
+            conversationState.Messages?.forEach((messageFromConversation) => {
+                if (messageFromConversation.ID === message.ID) {
+                    applyLabelToMessage(messageFromConversation, destinationLabelID, folders, labels);
                 }
             });
         }
@@ -612,7 +616,9 @@ export const unlabelMessagesPending = (
         if (conversationState) {
             removeLabelToConversationMessage(message, conversationState.Conversation, destinationLabelID, labels);
 
-            const messageState = conversationState.Messages?.find((message) => message.ID === message.ID);
+            const messageState = conversationState.Messages?.find(
+                (messageFromConversation) => messageFromConversation.ID === message.ID
+            );
             if (messageState) {
                 removeLabelFromMessage(messageState, destinationLabelID, labels);
             }
