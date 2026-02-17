@@ -19,7 +19,7 @@ import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
-import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal/SignatureIssueModal';
+import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import {
     BaseTransferStatus,
     IssueStatus,
@@ -89,7 +89,7 @@ export const TransferItem = ({ entry, onShare, onReportAbuse }: Props) => {
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const { cancelTransfer, retryTransfer } = useTransferManagerActions();
     const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
-    const [signatureIssueModal, showSignatureIssueModal] = useSignatureIssueModal();
+    const { signatureIssueModal, showSignatureIssueModal } = useSignatureIssueModal();
     const onlyShowTransferredBytes = !totalSize;
     // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
     const transferredBytes = Math.min(totalSize, entry.transferredBytes);
