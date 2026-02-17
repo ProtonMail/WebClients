@@ -939,6 +939,9 @@
       "Error reporting problem": [
         "Virheraportoinnin ongelma"
       ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
       "Failed removing the invite.": [
         "Kutsun poisto epäonnistui."
       ],
@@ -1325,6 +1328,12 @@
         "${ forwardedEmailsCount } välitetty",
         "${ forwardedEmailsCount } välitetty"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } haluaa jakaa kohteen ryhmässä, jota hallinnoit."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
+        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ invitedGroup.Name } kanssa."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } haluaa jakaa kohteen kanssasi."
       ],
@@ -1372,6 +1381,10 @@
         "${ row.breachCount } tietomurto on havaittu",
         "${ row.breachCount } tietomurtoa on havaittu"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } jäsen)",
+        "(${ membersCount } jäsentä)"
+      ],
       "(Empty)": [
         "(Tyhjä)"
       ],
@@ -1380,6 +1393,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Yhteystieto luodaan jokaiselle sähköpostiosoitteelle, joka lähettää tai vastaanottaa sähköposteja osoitteelta ${ aliasEmail }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Uutta versiota ladataan. Kun lataus on valmis, se on käytettävissä seuraavassa uudelleenkäynnistyksessä."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
@@ -1477,8 +1493,8 @@
       "Breaches detected": [
         "Tietomurtoja havaittiin"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Tuo olemassa olevat salasanasi ${ BRAND_NAME }iin."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Tuo oma verkkotunnuksesi, eikä sinun tarvitse ostaa taas uutta sähköpostin hosting-palvelua."
@@ -1689,8 +1705,8 @@
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Ota Passista kaikki irti luomalla jokaiselle tiimille tai projektille oma holvi."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Ota kaikki irti ${ PASS_APP_NAME } -sovelluksesta luomalla holvi jokaiselle tiimille tai projektille."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
@@ -1736,6 +1752,9 @@
       ],
       "Invite successfully resent": [
         "Kutsu lähetettiin uudelleen"
+      ],
+      "invites the group ${ invitedGroup.Name } to access items in": [
+        "kutsuu ryhmän ${ invitedGroup.Name } käyttämään kohteita kohteessa"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään sisältöä holvista"
@@ -1859,6 +1878,9 @@
       ],
       "No network connection": [
         "Verkkoyhteyttä ei ole"
+      ],
+      "No new versions are available at the moment.": [
+        "Ei uusia versioita saatavilla tällä hetkellä."
       ],
       "None": [
         "Ei mitään"
@@ -2168,6 +2190,9 @@
         "Seuraavaa ${ totalIgnored } kohdetta ei voitu tuoda:",
         "Seuraavia ${ totalIgnored } kohdetta ei voitu tuoda:"
       ],
+      "The group is invited to a vault.": [
+        "Ryhmä on kutsuttu holviin."
+      ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
       ],
@@ -2216,6 +2241,12 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
+      "This will reload the application.": [
+        "Tämä lataa sovelluksen uudelleen."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "Tämä käynnistää tarkistuksen uusien beetaversioiden varalta."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"
       ],
@@ -2227,6 +2258,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
@@ -4454,6 +4488,9 @@
       ],
       "Vault": [
         "Holvi"
+      ],
+      "Vault shared with a group you administer": [
+        "Holvi jaettu ryhmälle, jota hallinnoit"
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"

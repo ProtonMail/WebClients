@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
-      "Create a spreadsheet": [
-        "Creeu un full de càlcul"
-      ],
       "Create and copy alias": [
         "Crea i copia un àlies"
       ],
@@ -3566,12 +3563,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -4412,7 +4409,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
+        "Cada codi només es pot utilitzar una vegada."
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
-      "Settings update failed": [
-        "No s'han pogut actualitzar les preferències."
-      ],
-      "Settings updated": [
-        "S'han actualitzat les preferències."
-      ],
       "Share via link settings": [
         "Preferències de compartició mitjançant un enllaç"
       ],
@@ -5175,7 +5166,7 @@
         "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
       "words": [
         "paraules"
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Les vostres dades són vostres. Creeu i col·laboreu utilitzant fulls de càlcul amb totes les funcionalitats i protegits amb xifratge d'extrem a extrem."
       ],
       "Your email address and password were leaked:": [
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
@@ -7739,11 +7727,6 @@
         "Un nombre il·limitat d'àlies per protegir la vostra identitat"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Potser després"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
@@ -9576,9 +9559,6 @@
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Us presentem ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."

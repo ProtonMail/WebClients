@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Opgradér til Professional"
-      ],
       "Upgrade to view all": [
         "Opgrader for at se alle"
       ],
@@ -1340,6 +1337,11 @@
         "admin"
       ]
     },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "En rolle er en gruppe tilladelser, som du kan tildele medlemmerne af din organisation."
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
@@ -1400,8 +1402,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3434,6 +3436,28 @@
         "Deaktiver adresse?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } for første måned. Fornys til ${ regularPrice }/måned, opsig når som helst."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Få VPN Plus for kun ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Særtilbud: Spar 90 % på vores premium-abonnement"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsæt med gratis"
+      ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Bekræftet"
@@ -3864,6 +3888,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Kontakt dem nu for at se, om de kan hjælpe, og for personligt at lade dem vide, at det er dig, der forsøger at låse dine data op."
+      ],
       "Immediate": [
         "Øjeblikkelig"
       ],
@@ -4076,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maksimalt ${ displayMaxValue } tilladt"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
@@ -5765,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " og andre sikkerhedsfunktioner."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere.",
         "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere."
@@ -5932,6 +5959,10 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
+      "${ total } user found": [
+        "${ total } bruger fundet",
+        "${ total } brugere fundet"
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } oprettet"
       ],
@@ -6037,14 +6068,14 @@
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
-      "Accounts": [
-        "Konti"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
       "active": [
         "aktiv"
+      ],
+      "Activity Monitor": [
+        "Aktivitetsovervågning"
       ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
@@ -6116,8 +6147,8 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "Allocated": [
         "Tildelt"
@@ -6288,7 +6319,7 @@
         "Forbindelsesdata vil være tilgængelige inden for cirka 1 time."
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Fortsæt med at tillade **${ affiliationsText }** fra **${ organizationValue.Name }** at tilslutte sig din ${ BRAND_NAME } organisation."
@@ -6298,9 +6329,6 @@
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Forbind stadig denne enhed med din ${ BRAND_NAME } organisation."
-      ],
-      "Continue with ${ freeName }": [
-        "Fortsæt med ${ freeName }"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -6336,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Opret e-mailadresser til andre personer, administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe. Kom i gang med at tilføje dit organisationsnavn og brugerdomæne (f.eks. @ditfirma.com). "
       ],
       "Create in": [
         "Opret i"
@@ -6649,9 +6674,6 @@
       "Free trial": [
         "Gratis prøveperiode"
       ],
-      "Gain visibility across your organization": [
-        "Opnå overblik over hele din organisation"
-      ],
       "Gateway monitor": [
         "Gateway Monitor"
       ],
@@ -6664,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Få ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
       ],
-      "Get ${ upsellPlanName }": [
-        "Få ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Få besked, hvis din adgangskode eller øvrige personlige data er blevet lækket. ${ learnMoreLinkNoBreach }"
       ],
@@ -6675,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Kom i gang med henvisningslinket ovenfor."
+      ],
+      "Get visibility into account access": [
+        "Få indsigt i kontoadgang"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
@@ -6702,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Hvis det ikke er det rigtige for dig, refunderer vi beløbet."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel nulstilling af adgangskoden, kan du forhindre, at meddelelsen vises igen"
@@ -6924,9 +6943,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Learn more about Activity Monitor": [
-        "Få mere at vide om Aktivitetsovervågning"
-      ],
       "Learn more about Gateways": [
         "Lær mere om gateways"
       ],
@@ -7010,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Overvåg og revidér godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, som benytter dine ${ BRAND_NAME }-legitimationsoplysninger."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Overvåg loginaktivitet, opdag uautoriseret adgang og luk sikkerheds- og compliancehuller. "
       ],
       "Multi-user support not enabled.": [
         "Understøttelse af flere brugere ikke aktiveret."
@@ -7119,9 +7138,6 @@
         "Eller vælg en bestemt server:"
       ],
       "Organization monitor": [
-        "Organisationsovervågning"
-      ],
-      "Organization Monitor": [
         "Organisationsovervågning"
       ],
       "Organization size": [
@@ -7810,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Opgradér til Professional eller et højere abonnement for at låse op"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Opgrader for at låse op for ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Opgradér dit abonnement til ${ firstPlanNames } eller ${ lastPlanName } for at få adgang til ${ PROTON_SENTINEL_NAME } for organisationer."
@@ -9410,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "aktivitetsovervågning"
+      ],
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
@@ -9884,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Forbind dit brugerdefinerede domæne (f.eks. dinvirksomhed.dk) for at oprette e-mailadresser til andre personer, og administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Forbind dit brugerdomæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
       ],
@@ -15681,6 +15703,9 @@
       "Revoke certificate?": [
         "Tilbagekald certifikat?"
       ],
+      "Roles and permissions": [
+        "Roller og tilladelser"
+      ],
       "SAML authentication": [
         "SAML-godkendelse"
       ],
@@ -16706,9 +16731,6 @@
       ],
       "Just ${ price }": [
         "Kun ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Prøv ${ upsellPlanName } risikofrit"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Din ${ a } og ${ b }-pakke"

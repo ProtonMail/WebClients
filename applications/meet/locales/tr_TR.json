@@ -63,7 +63,7 @@
         "Bağlantıyı kopyala ve kapat"
       ],
       "Copy meeting link": [
-        "Toplantı bağlantısını kopyala"
+        "Görüşme bağlantısını kopyala"
       ],
       "Create a free account": [
         "Ücretsiz hesap açın"
@@ -75,13 +75,13 @@
         "Hesap açın"
       ],
       "Create meeting": [
-        "Toplantı oluştur"
+        "Görüşme oluştur"
       ],
       "Delete": [
         "Sil"
       ],
       "Delete meeting": [
-        "Toplantıyı sil"
+        "Görüşmeyi sil"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName } kişisinin görüntüsünü kapat"
@@ -114,7 +114,7 @@
         "E-posta adresini düzenle"
       ],
       "Edit meeting": [
-        "Toplantıyı düzenle"
+        "Görüşmeyi düzenle"
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
@@ -129,7 +129,7 @@
         "Görünütüyü aç"
       ],
       "End meeting": [
-        "Toplantıyı sonlandır"
+        "Görüşmeyi sonlandır"
       ],
       "End meeting for all": [
         "Görüşmeyi herkes için sonlandır"
@@ -249,7 +249,7 @@
         "Oda"
       ],
       "Rotate personal meeting link": [
-        "Kişisel toplantı bağlantısına çevir"
+        "Kişisel görüşme bağlantısına çevir"
       ],
       "Save": [
         "Kaydet"
@@ -258,10 +258,10 @@
         "Planlama"
       ],
       "Schedule a meeting": [
-        "Toplantı planla"
+        "Görüşme zamanla"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }'da planla"
+        "${ CALENDAR_APP_NAME } ile zamanla"
       ],
       "Search countries": [
         "Ülke ara"
@@ -287,11 +287,14 @@
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
       ],
+      "Skip": [
+        "Atla"
+      ],
       "Start a meeting": [
         "Görüşme başlat"
       ],
       "Start an instant meeting": [
-        "Anında toplantı başlat"
+        "Anında görüşme başlat"
       ],
       "Start meeting": [
         "Görüşme başlat"
@@ -302,11 +305,14 @@
       "Start Recording Track Stats": [
         "Kayıt izleme istatistiklerini başlat"
       ],
+      "Start your own meeting": [
+        "Kendi toplantınızı başlatın"
+      ],
       "Stay in meeting": [
         "Görüşmede kal"
       ],
       "Stop opening meetings in the desktop app": [
-        "Toplantıları masaüstü uygulamasında açmayı durdur"
+        "Görüşmelerin bilgisayar uygulamasında açılmasını durdur"
       ],
       "Stop receiving video": [
         "Gelen görüntüyü kapat"
@@ -411,6 +417,9 @@
       ],
       "Rotate personal meeting link": [
         "Kişisel görüşme bağlantısını değiştir"
+      ],
+      "Screen share": [
+        "Ekran paylaşımı"
       ],
       "Settings": [
         "Ayarlar"
@@ -1474,6 +1483,9 @@
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
+      "Invalid meeting link": [
+        "Görüşme bağlantısı geçersiz"
+      ],
       "Invalid passphrase": [
         "Parola ifadesi geçersiz"
       ],
@@ -1628,15 +1640,15 @@
     },
     "Header": {
       "Speak freely again - every call is end-to-end encrypted": [
-        "Tekrar özgürce konuşun - tüm aramalar uçtan uca şifrelidir"
+        "Yeniden özgürce konuşun. Tüm aramalar uçtan uca şifrelenir"
       ]
     },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
-        "${ createAnActionAction } veya ${ signInAction } ile kişisel odanıza erişin ve yeni odalar oluşturun"
+        "${ createAnActionAction } ya da ${ signInAction } ve kişisel odanıza erişin veya yeni odalar oluşturun"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
-        "Toplantı planlamak için ${ createAnActionAction } veya ${ signInAction }"
+        "Görüşme zamanlamak için ${ createAnActionAction } ya da ${ signInAction }"
       ],
       "Your conversations ${ matterWord }": [
         "Yazışmalarınız ${ matterWord }"
@@ -1683,7 +1695,7 @@
         "${ presenterName } sunum yapıyor"
       ],
       "${ userName }'s Meeting": [
-        "${ userName } Kişisinin Toplantısı"
+        "${ userName } görüşmesi"
       ],
       "(You)": [
         "(Siz)"
@@ -1740,25 +1752,31 @@
         "Ülke kodu"
       ],
       "Create a meeting room": [
-        "Toplantı odası oluştur"
+        "Görüşme odası oluştur"
       ],
       "Create an account": [
-        "Hesap oluştur"
+        "Hesap açın"
       ],
       "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
         "Meet uygulamasını ${ CALENDAR_APP_NAME } ile bağlamak ve görüşme davetlerini anında göndermek için bir hesap açın."
       ],
       "Create an account to have a meeting room that you can use at any time.": [
-        "Her zaman kullanabileceğiniz bir toplantı odası oluşturmak için hesap oluşturun."
+        "Her zaman kullanabileceğiniz bir görüşme odası oluşturmak için hesap açın."
       ],
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Her çağrıda yeniden kullanabileceğiniz bir kişisel görüşme bağlantısı oluşturmak için bir hesap açın."
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "50 katılımcıya kadar toplantı düzenlemek için bir hesap oluşturun."
       ],
       "Created on ${ formattedDate }": [
         "${ formattedDate } tarihinde oluşturuldu"
       ],
       "Custom combination": [
         "Özel kombinasyon"
+      ],
+      "Decrypting meetings...": [
+        "Görüşmelerin şifresi çözülüyor..."
       ],
       "Default": [
         "Varsayılan"
@@ -1785,7 +1803,7 @@
         "E-posta adresini düzenle"
       ],
       "End Meeting for everyone?": [
-        "Toplantı herkes için sonlandırılsın mı?"
+        "Görüşme herkes için sonlandırılsın mı?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "Ses ve görüntü uçtan uca şifreleme ile korunuyor."
@@ -1818,7 +1836,7 @@
         "Görüşme parolası güncellenemedi"
       ],
       "Failed to update meeting schedule": [
-        "Toplantı planı güncellenemedi"
+        "Görüşme zamanlaması güncellenemedi"
       ],
       "Free meeting": [
         "Serbest görüşme"
@@ -1826,11 +1844,14 @@
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Ücretsiz görüşmelerin süresi 1 saat ile sınırlıdır. Bu çağrı yakında sona erecek."
       ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Kişisel toplantı odası edinin. İstediğiniz zaman kullanabileceğiniz kişisel toplantı bağlantısı için bir hesap oluşturun."
+      ],
       "Get a secure meeting link then add it to your calendar": [
-        "Güvenli bir toplantı bağlantısı alın ve bunu takviminize ekleyin"
+        "Bir güvenli görüşme bağlantısı oluşturun ve bunu takviminize ekleyin"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "${ protonMeet } masaüstü uygulamasıyla en iyi deneyimi yaşayın"
+        "${ protonMeet } bilgisayar uygulamasıyla en iyi deneyimi yaşayın"
       ],
       "Get your personal meeting ID": [
         "Kişisel görüşme kimliğinizi alın"
@@ -1840,6 +1861,9 @@
       ],
       "Host your own secure meeting": [
         "Kendi güvenli görüşmenizi düzenleyin"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Kendi güvenli toplantınızı düzenleyin. ${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -1856,9 +1880,6 @@
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } odasına katılındı"
       ],
-      "Last used on ${ formattedDate }": [
-        "En son ${ formattedDate } tarihinde kullanıldı"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -1871,6 +1892,9 @@
       "Left by mistake?": [
         "Yanlışlıkla mı ayrıldınız?"
       ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
       "Loading": [
         "Yükleniyor"
       ],
@@ -1880,6 +1904,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
+      "Loading meetings...": [
+        "Görüşmeler yükleniyor..."
+      ],
       "Loading...": [
         "Yükleniyor..."
       ],
@@ -1888,6 +1915,9 @@
       ],
       "Meet without restrictions": [
         "Kısıtlama olmadan görüşme yapın"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Kısıtlama olmadan toplantı yapın. 1 saatlik sınırlamayı kaldırmak ve 100 katılımcıya kadar toplantı düzenlemek için yükseltin."
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Görüşme dolu (${ maxParticipants } katılımcı)"
@@ -1914,10 +1944,10 @@
         "Mikrofon etkileri"
       ],
       "My Meeting": [
-        "Toplantım"
+        "Görüşmem"
       ],
       "My meetings": [
-        "Toplantılarım"
+        "Görüşmelerim"
       ],
       "My rooms": [
         "Odalarım"
@@ -1959,10 +1989,10 @@
         "Bir hoparlör bulunamadı"
       ],
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Artık toplantılarınız ${ MEET_APP_NAME } masaüstü uygulamasında açılacak"
+        "Artık görüşmeleriniz ${ MEET_APP_NAME } bilgisayar uygulamasında açılacak"
       ],
       "Only meetings you created appear here": [
-        "Yalnızca sizin oluşturduğunuz toplantılar burada görünür"
+        "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
       ],
       "Open external link": [
         "Dış bağlantıyı aç"
@@ -1995,7 +2025,7 @@
         "Bağlantı kötü"
       ],
       "Premium meeting": [
-        "Premium toplantı"
+        "Ücretli görüşme"
       ],
       "Recording saved": [
         "Görüşme kaydedildi"
@@ -2008,6 +2038,9 @@
       ],
       "Schedule your next meeting": [
         "Bir sonraki görüşmenizi zamanlayın"
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Bir sonraki toplantınızı planlayın. Takviminizle toplantılar planlamak için bir hesap oluşturun."
       ],
       "Select a camera": [
         "Bir kamera seçin"
@@ -2028,7 +2061,7 @@
         "Oturum zaman aşımına uğradı"
       ],
       "Set up a permanent meeting room for your team or clients": [
-        "Ekibiniz veya müşterileriniz için kalıcı bir toplantı odası ayarlayın"
+        "Ekibiniz veya müşterileriniz için bir kalıcı görüşme odası ayarlayın"
       ],
       "Share screen": [
         "Ekran paylaşımı"
@@ -2039,6 +2072,9 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "Sort by": [
+        "Sıralama"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
@@ -2046,7 +2082,13 @@
         "Ekran paylaşımını durdur"
       ],
       "Successfully deleted meeting": [
-        "Toplantı başarıyla silindi"
+        "Görüşme silindi"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Premium toplantıya ev sahipliği yaptığınız için teşekkür ederiz."
+      ],
+      "Thank you for joining.": [
+        "Katıldığınız için teşekkürler."
       ],
       "The host has ended the meeting": [
         "Görüşme, sahibi tarafından sonlandırıldı"
@@ -2067,19 +2109,16 @@
         "Bu görüşme ileti katmanı güvenliği (MLS) kullanan uçtan uca şifrelemeyle korunuyor."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Bu toplantı ${ MEET_APP_NAME } masaüstü uygulamasında açıldı."
+        "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
       ],
       "This will end the meeting for all participants.": [
-        "Bu işlem tüm katılımcılar için toplantıyı sonlandıracak."
+        "Bu işlem görüşmeyi tüm katılımcılar için sonlandıracak."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
-      ],
-      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
-        "Kuruluşunuzu korumak için ekibinizi ${ MEET_APP_NAME } kullanmaya davet edin."
       ],
       "Turn off camera": [
         "Kamerayı kapat"
@@ -2094,19 +2133,16 @@
         "Mikrofonu aç"
       ],
       "unlimited meeting": [
-        "sınırsız toplantı"
+        "sınırsız görüşme"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "${ unlimitedMeeting } ve ücretli özelliklerin kilidini açın"
+        "${ unlimitedMeeting } ve ücretli özelliklere erişin"
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Tarifenizi yükselterek 1 saat sınırını kaldırın ve geri sayımı atlayın. 24 saatlik görüşmelerin tadını çıkarın."
       ],
       "Video effects": [
         "Video etkileri"
-      ],
-      "We hope you enjoyed your secure meeting!": [
-        "Güvenli görüşmenizin tadını çıkardığınızı umuyoruz!"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -2121,7 +2157,7 @@
         "Bu etkinliği silmek ister misiniz?"
       ],
       "Would you like to delete this room?": [
-        "Bu odayı silmek ister misiniz?"
+        "Bu odayı silmek istiyor musunuz?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -2138,6 +2174,9 @@
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Görüşmede mikrofonunuzu ve kameranızı istediğiniz zaman kapatabilirsiniz"
       ],
+      "You left your meeting": [
+        "Toplantınızdan ayrıldınız"
+      ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Güvenli bir görüşmeye davet edildiniz. Adınızı onaylayın ve katılmak için aşağıya tıklayın."
       ],
@@ -2145,7 +2184,7 @@
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your always available meeting room": [
-        "Her zaman kullanabileceğiniz toplantı odası"
+        "Her zaman kullanabileceğiniz görüşme odası"
       ],
       "Your always available meeting room, share it only with people you trust.": [
         "Her zaman kullanabileceğiniz görüşme odanız, yalnızca güvendiğiniz kişilerle paylaşın."
@@ -2173,6 +2212,13 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } yıldız",
+        "${ numberOfStars } yıldız"
+      ],
+      "Add optional details": [
+        "İsteğe bağlı ayrıntılar ekle"
+      ],
       "Add to calendar": [
         "Takvime ekle"
       ],
@@ -2184,6 +2230,9 @@
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
+      ],
+      "Back to dashboard": [
+        "Panoya geri dön"
       ],
       "Browser": [
         "Tarayıcı"
@@ -2218,6 +2267,9 @@
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
+      "Does not repeat": [
+        "Yinelenmiyor"
+      ],
       "Download .ics": [
         ".ics dosyasını indir"
       ],
@@ -2251,6 +2303,9 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "How was the call quality?": [
+        "Arama kalitesi nasıldı?"
+      ],
       "Identity": [
         "Kimlik"
       ],
@@ -2275,9 +2330,6 @@
       "Name": [
         "Ad"
       ],
-      "No repeat": [
-        "Yinelenmiyor"
-      ],
       "Operating system": [
         "İşletim sistemi"
       ],
@@ -2299,11 +2351,14 @@
       "Remember my name on this device": [
         "Bu aygıtta adımı hatırla"
       ],
+      "Repeat event": [
+        "Etkinliği yinele"
+      ],
       "Reveal password": [
         "Parolayı görüntüle"
       ],
       "Schedule meeting": [
-        "Toplantı planla"
+        "Görüşme zamanla"
       ],
       "Selected Camera": [
         "Seçilmiş kamera"
@@ -2361,7 +2416,7 @@
         "Oda oluştur ve bağlantıyı kopyala"
       ],
       "Meeting rooms can be used at any time": [
-        "Toplantı odaları her zaman kullanılabilir"
+        "Görüşme odaları her zaman kullanılabilir"
       ],
       "Save and copy link": [
         "Kaydet ve bağlantıyı kopyala"
@@ -2397,6 +2452,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Could not send feedback": [
+        "Geri bildirim gönderilemedi"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -2415,6 +2473,35 @@
         "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
       ]
     },
+    "Option": {
+      "Audio was breaking up": [
+        "Ses kesiliyordu"
+      ],
+      "I couldn't hear others": [
+        "Diğerlerini duyamadım"
+      ],
+      "I couldn't present ": [
+        "Sunum yapamadım "
+      ],
+      "I couldn't see others' video": [
+        "Diğerlerinin görüntülerini göremedim"
+      ],
+      "I couldn't see the presentation": [
+        "Sunumu göremedim"
+      ],
+      "Others couldn't hear me": [
+        "Diğerleri beni duyamadı"
+      ],
+      "The presentation was blurry": [
+        "Sunum bulanıktı"
+      ],
+      "Video was blurry": [
+        "Görüntü bulanıktı"
+      ],
+      "Video was breaking up": [
+        "Görüntü takılıyordu"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
@@ -2423,7 +2510,7 @@
         "Örneğin, "
       ],
       "e.g., Design Team, Weekly Standup": [
-        "Örn. Tasarım Ekibi, Haftalık Ayaküstü Toplandı"
+        "Örnek: Tasarım ekibi, Haftalık toplantı"
       ],
       "Enter meeting title": [
         "Görüşme başlığını yazın"
@@ -2457,6 +2544,9 @@
       ],
       "Select": [
         "Seçin"
+      ],
+      "Share more details": [
+        "Daha fazla ayrıntı paylaş"
       ],
       "Type an encrypted message...": [
         "Şifrelenmiş bir ileti yazın..."
@@ -2514,14 +2604,11 @@
       ]
     },
     "Sort option": {
-      "Last used": [
-        "Son kullanılan"
-      ],
       "Newly created": [
-        "Yeni oluşturuldu"
+        "Yeni oluşturulan"
       ],
       "Past meetings": [
-        "Geçmiş toplantılar"
+        "Geçmiş görüşmeler"
       ],
       "Upcoming": [
         "Yaklaşan"
@@ -2657,16 +2744,19 @@
         "Yerel katılımcı"
       ],
       "Meeting created": [
-        "Toplantı oluşturuldu"
+        "Görüşme oluşturuldu"
       ],
       "Meeting details": [
         "Görüşme ayrıntıları"
       ],
       "Meeting edited": [
-        "Toplantı düzenlendi"
+        "Görüşme düzenlendi"
+      ],
+      "Meeting settings": [
+        "Toplantı ayarları"
       ],
       "Messaging Layer Security": [
-        "Mesajlaşma Katmanı Güvenliği"
+        "İletişim katmanı güvenliği"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -2716,6 +2806,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Show duration": [
+        "Süreyi göster"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -2724,6 +2817,9 @@
       ],
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"
+      ],
+      "Thank you!": [
+        "Teşekkürler!"
       ],
       "Time": [
         "Zaman"
@@ -2736,6 +2832,12 @@
       ],
       "Video": [
         "Görüntü"
+      ],
+      "What went wrong?": [
+        "Ters giden neydi?"
+      ],
+      "Your feedback has been submitted": [
+        "Geri bildiriminiz gönderildi"
       ]
     },
     "Today icon tooltip in mini calendar": {

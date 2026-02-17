@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
-      "Create a spreadsheet": [
-        "Luo laskentataulukko"
-      ],
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
@@ -2807,6 +2804,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
       ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
       ],
@@ -4816,12 +4816,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
-      "Settings update failed": [
-        "Asetusmuutos epäonnistui"
-      ],
-      "Settings updated": [
-        "Asetukset on muutettu"
-      ],
       "Share via link settings": [
         "Jakolinkin asetukset"
       ],
@@ -5088,7 +5082,7 @@
         "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "words": [
         "sanaa"
@@ -5215,9 +5209,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Datasi säilyy sinulla. Luo ja tee yhteistyötä käyttämällä monipuolisilla ominaisuuksilla varusteluissa taulukoissa, jotka on suojattu päästä päähän -salauksella."
       ],
       "Your email address and password were leaked:": [
         "Sähköpostiosoitteesi ja salasanasi paljastuivat:"
@@ -7514,11 +7505,6 @@
         "Tallennustila"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Ehkä myöhemmin"
-      ]
-    },
     "Onboarding Trial": {
       "contact our support team": [
         "ota yhteyttä tukeen"
@@ -9277,9 +9263,6 @@
       ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Esittelyssä ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"

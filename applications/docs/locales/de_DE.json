@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
-      "Create a spreadsheet": [
-        "Tabelle erstellen"
-      ],
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
       ],
@@ -3563,7 +3560,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ]
     },
     "fido2: Info": {
@@ -4891,12 +4888,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
-      "Settings update failed": [
-        "Fehler beim Aktualisieren der Einstellungen."
-      ],
-      "Settings updated": [
-        "Einstellungen aktualisiert"
-      ],
       "Share via link settings": [
         "Einstellungen für das Teilen via Link"
       ],
@@ -5299,9 +5290,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Deine Daten bleiben deine eigenen. Erstelle und arbeite zusammen mithilfe voll ausgestatteter Tabellenkalkulationen, gesichert mit Ende-zu-Ende-Verschlüsselung."
       ],
       "Your email address and password were leaked:": [
         "Deine E-Mail-Adresse und dein Passwort wurden offengelegt:"
@@ -7736,11 +7724,6 @@
         "Unbegrenzte Aliase, um deine Identität zu schützen"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Vielleicht später"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
@@ -9573,9 +9556,6 @@
       ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Wir präsentieren ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"

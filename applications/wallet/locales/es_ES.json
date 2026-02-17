@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
       ],
-      "Email is not valid": [
-        "El correo no es válido."
-      ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
-      ],
-      "Incorrect username": [
-        "El nombre de usuario no es correcto."
       ],
       "Input isn't a valid email or bitcoin address": [
         "La entrada no es una dirección de correo electrónico o de Bitcoin válida"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Código postal inválido"
       ],
-      "Not a valid number": [
-        "No es un número válido."
-      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
         "Se ha cancelado el proceso de pago"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
-      "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
       "The passphrases do not match": [
         "Las frases de contraseña no coinciden."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
-      ],
       "This field is required": [
         "Este campo es obligatorio."
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
-      ],
       "This offer is not available in your country": [
         "Esta oferta no está disponible en tu país"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Utiliza solo letras, números y _.-"
       ],
       "Unknown error": [
         "Error desconocido"
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
-      ],
-      "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número."
-      ],
-      "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
@@ -2477,7 +2447,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clave de seguridad"
@@ -2761,7 +2731,7 @@
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
@@ -2782,7 +2752,7 @@
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Ingresa ${ digit }."
+        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -3017,7 +2987,7 @@
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes usar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "VPN Plan Feature": {

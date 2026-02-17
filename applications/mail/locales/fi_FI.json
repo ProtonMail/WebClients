@@ -1483,6 +1483,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4533,6 +4537,9 @@
       ],
       "Error while uploading attachments. Message is not sent.": [
         "Virhe siirrettäessä liitteitä. Viestiä ei lähetetty."
+      ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Liitteen salaus epäonnistui. Yritä uudelleen."
@@ -8114,6 +8121,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
       ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Tähän viestiin on liitetty avain, jota ei ole vielä vahvistettu luotettavaksi."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Viestin ulkoasua on muutettu tummalle taustalle sopivaksi."
       ],
@@ -8455,7 +8465,7 @@
         "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."

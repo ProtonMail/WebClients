@@ -67,7 +67,7 @@
         "添加信用卡/借记卡"
       ],
       "Add email": [
-        "添加电子邮箱"
+        "添加邮箱"
       ],
       "Add group": [
         "添加群组"
@@ -1051,7 +1051,7 @@
         "登出"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "Sign up": [
         "注册"
@@ -3750,7 +3750,7 @@
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
+        "无法加载 VPN 控制面板！请检查您的网络连接，然后重试。"
       ],
       "Unable to set photo as cover": [
         "无法将照片设为封面"
@@ -4247,12 +4247,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Security key": [
         "安全密钥"
@@ -5301,13 +5301,13 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
@@ -5352,7 +5352,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -5891,6 +5891,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
       ],
+      "Preparing": [
+        "正在准备"
+      ],
       "Preview failed to be loaded": [
         "预览加载失败"
       ],
@@ -5953,6 +5956,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "请求访问权限，或切换到具有访问权限的账户。"
+      ],
+      "Requested item doesn't exist anymore": [
+        "请求的项目已不存在"
       ],
       "Restore": [
         "还原"
@@ -6353,6 +6359,9 @@
       "Try searching by file name, date, or type.": [
         "尝试搜索文件名称、日期或类型。"
       ],
+      "Unexpected download error": [
+        "意外的下载错误"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "很不幸，此文件或其部分数据无法解密。"
       ],
@@ -6504,7 +6513,7 @@
         "当您将 ${ deviceName } 从同步设备中移除时，从该设备添加到“我的电脑”中的所有文件夹都将从 ${ DRIVE_APP_NAME } 中永久删除。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "who": [
         "谁"
@@ -10056,7 +10065,7 @@
         "例如："
       ],
       "Email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Enter a new file name": [
         "输入新文件名称"

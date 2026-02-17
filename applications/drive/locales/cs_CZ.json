@@ -6149,6 +6149,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
       ],
+      "Preparing": [
+        "Příprava"
+      ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
       ],
@@ -6211,6 +6214,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Požádejte o přístup nebo přepněte na účet, který má přístup."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Požadovaná položka již neexistuje"
       ],
       "Restore": [
         "Obnovit"
@@ -6616,6 +6622,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Zkuste vyhledávat podle názvu souboru, data nebo typu."
+      ],
+      "Unexpected download error": [
+        "Neočekávaná chyba stahování"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
@@ -7368,7 +7377,7 @@
         "Název zařízení"
       ],
       "Disable this link on a specific date": [
-        "Zakázat tento odkaz k určitému datu"
+        "Deaktivovat tento odkaz k určitému datu"
       ],
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
@@ -9394,7 +9403,7 @@
         "\"${ name }\" úspěšně uloženo"
       ],
       "\"${ name }\" shared": [
-        "\"${ name }\" nasdíleno"
+        "\"${ name }\" sdíleno"
       ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" úspěšně zkopírováno"

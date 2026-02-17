@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Uppgradera till Professional"
-      ],
       "Upgrade to view all": [
         "Uppgradera för att visa alla"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "admin"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "En roll är en grupp med behörigheter som du kan tilldela till medlemmarna i din organisation."
       ]
     },
     "Alert": {
@@ -3422,6 +3424,28 @@
         "Inaktivera adress?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } för den första månaden. Förnyas med ${ regularPrice }/månad, avbryt när som helst."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Skaffa VPN Plus för endast ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Skyddad av schweiziska integritetslagar"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Specialerbjudande: Spara 90 % rabatt på vårt premiumpaket"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Fortsätt med gratis"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verifierad"
@@ -4067,6 +4091,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maximalt ${ displayMaxValue } tillåtet"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
@@ -5750,9 +5777,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " och andra säkerhetsfunktioner."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar.",
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar."
@@ -6026,14 +6050,14 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
-      "Accounts": [
-        "Konton"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
       "active": [
         "aktiv"
+      ],
+      "Activity Monitor": [
+        "Aktivitetsövervakare"
       ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
@@ -6288,9 +6312,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Fortsätt för att ansluta denna entitet till din ${ BRAND_NAME }-organisation."
       ],
-      "Continue with ${ freeName }": [
-        "Fortsätt med ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Kopierat till urklipp"
       ],
@@ -6325,9 +6346,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Skapa e-postadresser åt andra personer, hantera ${ MAIL_APP_NAME } åt ett företag, en skola eller grupp. Kom igång genom att lägga till ditt organisationsnamn och en anpassad domän (t.ex. @dittföretag.com). "
       ],
       "Create in": [
         "Skapa i"
@@ -6638,9 +6656,6 @@
       "Free trial": [
         "Gratis provperiod"
       ],
-      "Gain visibility across your organization": [
-        "Få synlighet i hela din organisation"
-      ],
       "Gateway monitor": [
         "Övervakning av gateway"
       ],
@@ -6653,9 +6668,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Skaffa ${ AUTHENTICATOR_APP_NAME } för alla dina enheter."
       ],
-      "Get ${ upsellPlanName }": [
-        "Skaffa ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli aviserad om ditt lösenord eller annan personlig data har läckt. ${ learnMoreLinkNoBreach }"
       ],
@@ -6665,8 +6677,14 @@
       "Get started with the referral link above.": [
         "Kom igång med hänvisningslänken ovan."
       ],
+      "Get visibility into account access": [
+        "Skaffa insyn i kontoåtkomst"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadatan för ${ appName } och importera den här."
+      ],
+      "Google Pay mark": [
+        "Google Pay-märke"
       ],
       "Got it": [
         "Jag förstår"
@@ -6688,9 +6706,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Om det inte passar dig så återbetalar vi dig."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen"
@@ -6910,9 +6925,6 @@
       "Learn more": [
         "Lär dig mer"
       ],
-      "Learn more about Activity Monitor": [
-        "Lär dig mer om aktivitetsövervakare"
-      ],
       "Learn more about Gateways": [
         "Lär dig mer om gateways"
       ],
@@ -7105,9 +7117,6 @@
         "Eller välj en specifik server:"
       ],
       "Organization monitor": [
-        "Organisationsövervakning"
-      ],
-      "Organization Monitor": [
         "Organisationsövervakning"
       ],
       "Organization size": [
@@ -7793,8 +7802,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Uppgradera till Professional eller ett högre paket för att låsa upp"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Uppgradera för att låsa upp ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME } för organisationer."
@@ -9380,6 +9389,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "aktivitetsövervakare"
+      ],
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
@@ -9846,6 +9858,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Anslut din anpassade domän (t.ex. dittföretag.com) för att skapa e-postadresser för andra personer, hantera ${ MAIL_APP_NAME } för ett företag, skola eller grupp."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
@@ -11871,8 +11886,20 @@
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
@@ -15623,6 +15650,9 @@
       "Revoke certificate?": [
         "Återkalla certifikat?"
       ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
+      ],
       "SAML authentication": [
         "SAML-autentisering"
       ],
@@ -16632,9 +16662,6 @@
       ],
       "Just ${ price }": [
         "Endast ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Prova ${ upsellPlanName } riskfritt"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ditt ${ a } och ${ b }-paket"

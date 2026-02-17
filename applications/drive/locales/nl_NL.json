@@ -4280,7 +4280,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
       ],
+      "Preparing": [
+        "Aan het voorbereiden"
+      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Vraag toegang aan, of schakel over naar een account met toegang."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Aangevraagd item bestaat niet meer"
       ],
       "Restore": [
         "Herstel"
@@ -6441,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Zoek ook op bestandsnaam, datum of type."
       ],
+      "Unexpected download error": [
+        "Onverwachte downloadfout"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
       ],
@@ -6592,7 +6601,7 @@
         "Wanneer u ${ deviceName } verwijdert als een gesynchroniseerd apparaat, worden alle mappen die zijn toegevoegd aan Mijn Computers van dit apparaat permanent verwijderd uit ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "who": [
         "wie"

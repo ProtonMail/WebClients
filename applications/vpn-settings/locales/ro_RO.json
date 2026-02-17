@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Trecere la Professional"
-      ],
       "Upgrade to view all": [
         "Schimbați planul pentru a le vedea pe toate"
       ],
@@ -1346,6 +1343,11 @@
     "Admin": {
       "admin": [
         "administrator"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Un rol este un grup de permisiuni pe care îl puteți atribui membrilor organizației."
       ]
     },
     "Alert": {
@@ -3453,6 +3455,28 @@
         "Dezactivați adresa?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } pentru prima lună. Se reînnoiește cu ${ regularPrice }/lună, puteți anula oricând."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Luați VPN Plus cu doar ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Ofertă specială: economisiți 90% la planul nostru premium"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Continuă cu gratuit"
+      ],
+      "Get the deal": [
+        "Luați oferta"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificat"
@@ -4103,6 +4127,9 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Maxim ${ displayMaxValue } permis"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
@@ -5819,9 +5846,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " și alte funcții de securitate."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
@@ -6122,14 +6146,14 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
-      "Accounts": [
-        "Conturi"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
       "active": [
         "activă"
+      ],
+      "Activity Monitor": [
+        "Monitorizare activitate"
       ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
@@ -6391,9 +6415,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Continuare conectare această entitate cu organizația din ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Continuare cu ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Copiat în memorie."
       ],
@@ -6430,9 +6451,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Creați adrese de e-mail pentru alte persoane, gestionați ${ MAIL_APP_NAME } pentru o afacere, o școală sau un grup. Începeți prin adăugarea numelui organizației și a domeniului personal (de ex. @numecompanie.com)."
       ],
       "Create in": [
         "Creare în"
@@ -6746,9 +6764,6 @@
       "Free trial": [
         "Probare gratuită"
       ],
-      "Gain visibility across your organization": [
-        "Câștigați vizibilitate în întreaga organizație"
-      ],
       "Gateway monitor": [
         "Monitorizare porți de acces"
       ],
@@ -6761,9 +6776,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obțineți ${ AUTHENTICATOR_APP_NAME } pentru toate dispozitivele personale."
       ],
-      "Get ${ upsellPlanName }": [
-        "Luați ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Primiți notificări dacă parola sau alte date personale v-au fost divulgate. ${ learnMoreLinkNoBreach }"
       ],
@@ -6772,6 +6784,9 @@
       ],
       "Get started with the referral link above.": [
         "Începeți cu legătura web de recomandate de mai sus."
+      ],
+      "Get visibility into account access": [
+        "Obțineți vizibilitate asupra accesării contului"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
@@ -6799,9 +6814,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Dacă nu vi se potrivește, vă vom rambursa."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Dacă aceasta se datorează unei resetări anterioare a parolei, puteți opri afișarea din nou a mesajului."
@@ -7023,9 +7035,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "Learn more about Activity Monitor": [
-        "Aflați mai multe despre monitorizarea activității"
-      ],
       "Learn more about Gateways": [
         "Aflați mai multe despre porțile de acces"
       ],
@@ -7109,6 +7118,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Monitorizați și auditați încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile de autentificare ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Monitorizați activitatea de conectare, detectați accesul neautorizat și închideți breșele de securitate și conformitate. "
       ],
       "Multi-user support not enabled.": [
         "Suportul pentru utilizatori multipli nu e activat."
@@ -7220,9 +7232,6 @@
         "Sau selectați un server anume:"
       ],
       "Organization monitor": [
-        "Monitorizare organizație"
-      ],
-      "Organization Monitor": [
         "Monitorizare organizație"
       ],
       "Organization size": [
@@ -7919,8 +7928,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Treceți la planul Professional sau superior pentru a debloca"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Îmbunătățiți-vă planul pentru a debloca funcția ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME } pentru organizații."
@@ -9539,6 +9548,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "monitorizare activitate"
+      ],
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
@@ -10022,6 +10034,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Conectați-vă domeniul personal (de ex. companiamea.com) pentru a crea adrese de e-mail pentru alte persoane și pentru a gestiona ${ MAIL_APP_NAME } pentru o afacere, o școală sau un grup."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
       ],
@@ -15898,6 +15913,9 @@
       "Revoke certificate?": [
         "Anulați certificatul?"
       ],
+      "Roles and permissions": [
+        "Roluri și permisiuni"
+      ],
       "SAML authentication": [
         "Autentificare SAML"
       ],
@@ -16927,9 +16945,6 @@
       ],
       "Just ${ price }": [
         "Doar ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Încercați fără riscuri ${ upsellPlanName }"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Pachetul ${ a } și ${ b }"

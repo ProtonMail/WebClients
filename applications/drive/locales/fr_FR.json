@@ -753,7 +753,7 @@
         "Page suivante"
       ],
       "No sensitive data": [
-        "Aucune donnée sensible"
+        "Avec aucune donnée sensible"
       ],
       "Not now": [
         "Plus tard"
@@ -4275,12 +4275,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -5434,7 +5434,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Saisissez le code de vérification. Entrez ${ digit }."
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
       ],
+      "Preparing": [
+        "Préparation en cours"
+      ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Demandez l'accès ou utilisez un compte qui a accès."
+      ],
+      "Requested item doesn't exist anymore": [
+        "L'élément demandé n'existe plus"
       ],
       "Restore": [
         "Restauration"
@@ -6440,6 +6446,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Essayez une recherche par nom, date ou type de fichier."
+      ],
+      "Unexpected download error": [
+        "Erreur de téléchargement inattendue"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Il n'est malheureusement pas possible de déchiffrer le fichier ou certaines de ses données."

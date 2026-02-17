@@ -287,6 +287,9 @@
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
       ],
+      "Skip": [
+        "Ignorer"
+      ],
       "Start a meeting": [
         "Démarrer une réunion"
       ],
@@ -301,6 +304,9 @@
       ],
       "Start Recording Track Stats": [
         "Démarrer l'enregistrement des statistiques de suivi"
+      ],
+      "Start your own meeting": [
+        "Lancez votre propre réunion"
       ],
       "Stay in meeting": [
         "Rester dans la réunion"
@@ -411,6 +417,9 @@
       ],
       "Rotate personal meeting link": [
         "Renouveler le lien de réunion personnelle"
+      ],
+      "Screen share": [
+        "Partage d’écran"
       ],
       "Settings": [
         "Paramètres"
@@ -1474,6 +1483,9 @@
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
+      "Invalid meeting link": [
+        "Le lien de réunion n'est pas valide."
+      ],
       "Invalid passphrase": [
         "La phrase secrète est invalide"
       ],
@@ -1568,12 +1580,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -1754,11 +1766,17 @@
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Créez un compte pour avoir un lien de réunion personnel que vous pouvez réutiliser pour chaque appel."
       ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Créez un compte pour organiser des réunions avec jusqu'à 50 participants."
+      ],
       "Created on ${ formattedDate }": [
         "Créé le ${ formattedDate }"
       ],
       "Custom combination": [
         "Combinaison personnalisée"
+      ],
+      "Decrypting meetings...": [
+        "Déchiffrement des réunions..."
       ],
       "Default": [
         "Par défaut"
@@ -1803,7 +1821,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Saisissez le code de vérification. Entrez ${ digit }."
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -1826,6 +1844,9 @@
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Les réunions gratuites sont limitées à 1 heure. Cet appel sera bientôt déconnecté."
       ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Obtenez une salle de réunion personnelle. Créez un compte pour obtenir un lien de réunion personnel que vous pourrez utiliser à tout moment."
+      ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtenez un lien de réunion sécurisé puis ajoutez-le à votre calendrier"
       ],
@@ -1840,6 +1861,9 @@
       ],
       "Host your own secure meeting": [
         "Organiser votre propre réunion sécurisée"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Hébergez votre propre réunion sécurisée. Lancez un appel dans ${ MEET_APP_NAME } et partagez le lien pour inviter n'importe qui à se joindre. Simple, sécurisé et gratuit."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
@@ -1856,9 +1880,6 @@
       "Joined ${ roomNameLabel }": [
         "Vous avez rejoint ${ roomNameLabel }"
       ],
-      "Last used on ${ formattedDate }": [
-        "Dernière utilisation le ${ formattedDate }"
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -1871,6 +1892,9 @@
       "Left by mistake?": [
         "Vous avez quitté par erreur ?"
       ],
+      "Link copied to clipboard": [
+        "Le lien est copié dans le presse-papiers."
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -1880,6 +1904,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
+      "Loading meetings...": [
+        "Chargement des réunions..."
+      ],
       "Loading...": [
         "Chargement en cours"
       ],
@@ -1888,6 +1915,9 @@
       ],
       "Meet without restrictions": [
         "Meet sans restrictions"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Réunissez-vous sans restrictions. Passez à la version supérieure pour supprimer la limite d'une heure et accueillir jusqu'à 100 participants."
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Réunion pleine (${ maxParticipants } participants)"
@@ -2009,6 +2039,9 @@
       "Schedule your next meeting": [
         "Planifiez votre prochaine réunion"
       ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Planifiez votre prochaine réunion. Créez un compte pour planifier des réunions avec votre calendrier."
+      ],
       "Select a camera": [
         "Sélectionner une caméra"
       ],
@@ -2039,6 +2072,9 @@
       "Sign in": [
         "Se connecter"
       ],
+      "Sort by": [
+        "Trier par"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Démarrez un appel dans ${ MEET_APP_NAME } et partagez le lien pour inviter n'importe qui à se joindre. Simple, sécurisé et gratuit."
       ],
@@ -2047,6 +2083,12 @@
       ],
       "Successfully deleted meeting": [
         "La réunion a été supprimée"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Merci d'avoir organisé une réunion premium."
+      ],
+      "Thank you for joining.": [
+        "Merci de votre présence."
       ],
       "The host has ended the meeting": [
         "L'hôte a mis fin à la réunion."
@@ -2078,9 +2120,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
-      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
-        "Pour protéger votre organisation, invitez votre équipe à utiliser ${ MEET_APP_NAME }."
-      ],
       "Turn off camera": [
         "Éteindre la caméra"
       ],
@@ -2104,9 +2143,6 @@
       ],
       "Video effects": [
         "Effets vidéo"
-      ],
-      "We hope you enjoyed your secure meeting!": [
-        "Nous espérons que votre réunion sécurisée vous a été agréable !"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
@@ -2137,6 +2173,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Vous pouvez toujours couper votre microphone et votre caméra à tout moment pendant la réunion"
+      ],
+      "You left your meeting": [
+        "Vous avez quitté votre réunion"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Vous venez de recevoir une invitation pour participer à une réunion sécurisée. Confirmez votre nom et cliquez ci-dessous pour vous connecter."
@@ -2173,6 +2212,13 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } favori",
+        "${ numberOfStars } favoris"
+      ],
+      "Add optional details": [
+        "Ajouter des informations facultatives"
+      ],
       "Add to calendar": [
         "Ajouter au calendrier"
       ],
@@ -2184,6 +2230,9 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
+      ],
+      "Back to dashboard": [
+        "Revenir au tableau de bord"
       ],
       "Browser": [
         "Navigateur"
@@ -2218,6 +2267,9 @@
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
       ],
+      "Does not repeat": [
+        "Ne pas répéter"
+      ],
       "Download .ics": [
         "Télécharger le .ics"
       ],
@@ -2251,6 +2303,9 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "How was the call quality?": [
+        "Comment était la qualité de l'appel ?"
+      ],
       "Identity": [
         "Identité"
       ],
@@ -2275,9 +2330,6 @@
       "Name": [
         "Nom"
       ],
-      "No repeat": [
-        "Sans répétition"
-      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -2298,6 +2350,9 @@
       ],
       "Remember my name on this device": [
         "Se souvenir de mon nom sur cet appareil"
+      ],
+      "Repeat event": [
+        "Répéter l'événement"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -2397,6 +2452,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Could not send feedback": [
+        "Impossible d'envoyer le commentaire"
+      ],
       "Link copied to clipboard": [
         "Le lien a été copié dans le presse-papiers."
       ],
@@ -2413,6 +2471,35 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "L'audio était haché"
+      ],
+      "I couldn't hear others": [
+        "Je n'ai pas pu entendre les autres"
+      ],
+      "I couldn't present ": [
+        "Je n'ai pas pu présenter "
+      ],
+      "I couldn't see others' video": [
+        "Je n'ai pas pu voir la vidéo des autres"
+      ],
+      "I couldn't see the presentation": [
+        "Je n'ai pas pu voir la présentation"
+      ],
+      "Others couldn't hear me": [
+        "Les autres ne m'entendaient pas"
+      ],
+      "The presentation was blurry": [
+        "La présentation était floue"
+      ],
+      "Video was blurry": [
+        "La vidéo était floue"
+      ],
+      "Video was breaking up": [
+        "La vidéo était hachée"
       ]
     },
     "Placeholder": {
@@ -2457,6 +2544,9 @@
       ],
       "Select": [
         "Sélectionnez"
+      ],
+      "Share more details": [
+        "Partager plus d'informations"
       ],
       "Type an encrypted message...": [
         "Écrivez un message chiffré..."
@@ -2514,9 +2604,6 @@
       ]
     },
     "Sort option": {
-      "Last used": [
-        "Dernière utilisation"
-      ],
       "Newly created": [
         "Créé récemment"
       ],
@@ -2665,6 +2752,9 @@
       "Meeting edited": [
         "La réunion a été modifiée"
       ],
+      "Meeting settings": [
+        "Paramètres des réunions"
+      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -2716,6 +2806,9 @@
       "Settings": [
         "Paramètres"
       ],
+      "Show duration": [
+        "Afficher la durée"
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -2724,6 +2817,9 @@
       ],
       "Talk confidentially": [
         "Parler en toute confidentialité"
+      ],
+      "Thank you!": [
+        "Merci !"
       ],
       "Time": [
         "Heure"
@@ -2736,6 +2832,12 @@
       ],
       "Video": [
         "Vidéo"
+      ],
+      "What went wrong?": [
+        "Qu'est-ce qui s'est mal passé ?"
+      ],
+      "Your feedback has been submitted": [
+        "Votre commentaire a été envoyé"
       ]
     },
     "Today icon tooltip in mini calendar": {

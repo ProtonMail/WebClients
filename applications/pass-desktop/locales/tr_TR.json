@@ -1463,10 +1463,10 @@
         "${ forwardedEmailsCount } iletildi"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
-        "${ inviterEmail }, yönettiğiniz bir grupla bir öğeyi paylaşmak istiyor."
+        "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } kullanıcısı ${ invitedGroup.Name } grubu ile bir öğeyi paylaşmak istiyor."
+        "${ inviterEmail }, bir ögeyi ${ invitedGroup.Name } grubu ile paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
@@ -1529,7 +1529,7 @@
         "${ aliasEmail } adresiyle e-posta gönderen veya alan her e-posta adresi için bir kişi oluşturulur."
       ],
       "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Yeni bir sürüm indiriliyor. İndirme işlemi tamamlandığında bir sonraki yeniden başlatmada kullanılabilir hale gelecek."
+        "Yeni sürüm indiriliyor. İndirme tamamlandığında sonraki yeniden başlatmada kullanılabilecek."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
@@ -1607,7 +1607,7 @@
         "Çöpe atılmış tüm ögeler geri yüklendi"
       ],
       "An item previously shared with you was removed.": [
-        "Daha önce sizinle paylaşılan bir öğe kaldırıldı."
+        "Daha önce sizinle paylaşılan bir öge kaldırıldı."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "${ emailJSX } adresini e-posta kutularınızdan kaldırmak istediğinize emin misiniz?"
@@ -1636,8 +1636,8 @@
       "Breaches detected": [
         "Veri sızıntısı bulundu"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Var olan parolalarınızı ${ BRAND_NAME } üzerine aktarın."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Var olan parolalarınızı ${ PASS_APP_NAME } içine aktarın."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Kendi etki alanınızı kullanın ve başka bir e-posta barındırma çözümü satın almanıza gerek kalmasın."
@@ -1854,8 +1854,8 @@
         "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır.",
         "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Her ekip veya proje için bir kasa oluşturarak Pass uygulamasından en iyi şekilde yararlanın."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Her ekip veya proje için bir kasa oluşturarak ${ PASS_APP_NAME } uygulamasından en iyi şekilde yararlanın."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
@@ -1906,7 +1906,7 @@
         "Davet yeniden gönderildi"
       ],
       "invites the group ${ invitedGroup.Name } to access items in": [
-        "${ invitedGroup.Name } grubunu öğelere erişmeye davet eder"
+        "${ invitedGroup.Name } grubunu şu kasadaki ögelere erişmeye davet etti:"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -2007,7 +2007,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2037,7 +2038,7 @@
         "Ağ bağlantısı yok"
       ],
       "No new versions are available at the moment.": [
-        "Şu anda yeni sürüm mevcut değil."
+        "Şu anda daha yeni bir sürüm yok."
       ],
       "None": [
         "Yok"
@@ -2432,10 +2433,10 @@
         "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
       ],
       "This will reload the application.": [
-        "Bu işlem uygulamayı yeniden yükleyecek."
+        "Bu seçenek uygulamayı yeniden yükleyecek."
       ],
       "This will trigger a check for new beta releases.": [
-        "Bu işlem yeni beta sürümleri için bir kontrolü tetikleyecek."
+        "Bu seçenek yeni beta sürümlerini denetleyecek."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "E-posta almayı sürdürmek için bu takma adları farklı bir e-posta kutusuna aktarın:"
@@ -2453,7 +2454,7 @@
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini herkese açık olmadan önce deneyin."
+        "Yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini herkesten önce deneyin."
       ],
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
@@ -2601,13 +2602,13 @@
         "Ögeleri içe aktarabilmeniz için düzenleme izniniz olan bir kasanız olmalıdır."
       ],
       "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
-        "${ groupName } grubunuzun erişimi kaldırıldığı için artık bazı kasalara veya öğelere erişiminiz yok."
+        "${ groupName } grubunuzun erişimi kaldırıldığından artık bazı kasalara veya ögelere erişiminiz yok."
       ],
       "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
-        "${ groupName } grubunuz erişim izni aldığı için artık \"${ itemName } öğesine\" erişiminiz var."
+        "${ groupName } grubunuza erişim izni verildiğinden artık \"${ itemName }\" ögesine erişiminiz var."
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
-        "${ groupName } grubunuz erişim izni aldığı için artık \"${ vaultName } kasasına\" erişiminiz var."
+        "${ groupName } grubunuza erişim izni verildiğinden artık \"${ vaultName }\" kasasına erişiminiz var."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Etki alanınızı doğruladıktan sonra etki alanı ayarlarınızı (tümünü toplama e-posta takma adları, takma adlar için varsayılan görüntülenecek ad vb.) özelleştirebileceksiniz."
@@ -4816,7 +4817,7 @@
         "Kasa"
       ],
       "Vault shared with a group you administer": [
-        "Yönettiğiniz bir gruba kasanız paylaşıldı"
+        "Kasa, yönettiğiniz bir grup ile paylaşıldı"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"

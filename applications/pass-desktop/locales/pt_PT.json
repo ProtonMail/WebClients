@@ -1529,9 +1529,6 @@
       "Breaches detected": [
         "Incidentes detetados"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Traga as suas palavras-passe existentes para o ${ BRAND_NAME }."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Traga o seu próprio domínio e não precisará de comprar mais uma solução de alojamento de e-mails."
       ],
@@ -1686,7 +1683,7 @@
         "Introduza o endereço para o qual deseja enviar um e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Introduza ${ digit }."
+        "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your extra password": [
         "Introduza a sua palavra-passe adicional"
@@ -1737,9 +1734,6 @@
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "As palavras-passe geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
         "As palavras-passe geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
-      ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Aproveite ao máximo o Pass criando um cofre para cada equipa ou projeto."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenha aliases ilimitados, desfrute de funcionalidades exclusivas e apoie-nos ao subscrever ao plano Plus."
@@ -1883,6 +1877,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"

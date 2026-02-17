@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtelo de nuevo más tarde."
       ],
-      "Email is not valid": [
-        "Correo no válido"
-      ],
       "Enter 6 digits": [
         "Ingrese 6 dígitos"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
-      ],
-      "Incorrect username": [
-        "Nombre de usuario incorrecto"
       ],
       "Input isn't a valid email or bitcoin address": [
         "La entrada no es una dirección de correo electrónico o de Bitcoin válida"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Código ZIP inválido"
       ],
-      "Not a valid number": [
-        "Número no válido"
-      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden"
       ],
       "Payment process canceled": [
         "Proceso de pago cancelado"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Intente de nuevo."
       ],
-      "The email addresses do not match": [
-        "Las direcciónes de correo electrónico no son las mismas"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
       "The passphrases do not match": [
         "Las frases de contraseña no coinciden."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
-      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
-      ],
       "This offer is not available in your country": [
         "Esta oferta no está disponible en su país"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Intente usando solo letras, números y _.-"
       ],
       "Unknown error": [
         "Error desconocido"
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
-      ],
-      "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o dígito"
-      ],
-      "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o dígito"
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
@@ -2472,7 +2442,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -2782,7 +2752,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
-        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
       ]
     },
     "VPN Plan Feature": {

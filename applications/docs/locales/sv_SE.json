@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
-      "Create a spreadsheet": [
-        "Skapa ett kalkylblad"
-      ],
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
@@ -4885,12 +4882,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
       ],
-      "Settings update failed": [
-        "Misslyckades uppdatera inställningar"
-      ],
-      "Settings updated": [
-        "Inställningar uppdaterade"
-      ],
       "Share via link settings": [
         "Inställningar för delning via länk"
       ],
@@ -5287,9 +5278,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Dina data förblir dina. Skapa och samarbeta med funktionsrika kalkylblad som är säkrade med end-to-end-kryptering."
       ],
       "Your email address and password were leaked:": [
         "Din e-postadress och ditt lösenord läcktes:"
@@ -7721,11 +7709,6 @@
         "Obegränsat antal alias för att skydda din identitet"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Kanske senare"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
@@ -7915,8 +7898,20 @@
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
@@ -9540,9 +9535,6 @@
       ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Introducerar ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"

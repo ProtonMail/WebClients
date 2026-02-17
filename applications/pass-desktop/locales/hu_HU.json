@@ -1540,9 +1540,6 @@
       "Breaches detected": [
         "Adatszivárgásokat észleltünk"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Importálja a meglévő jelszavait a ${ BRAND_NAME } szolgáltatásba."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Hozza a saját domain nevét, és nem kell újabb e-mail tárhelyszolgáltatást vásárolnia."
       ],
@@ -1749,9 +1746,6 @@
         "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk.",
         "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Hozza ki a legtöbbet a Pass használatából, minden csapat vagy projekt számára létrehozva egy-egy tárolót."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Használjon tetszőleges számú e-mail álnevet, prémium funkciókat és támogassa a munkánkat a Pass Plusra való előfizetéssel."
       ],
@@ -1894,6 +1888,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"

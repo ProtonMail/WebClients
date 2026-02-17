@@ -246,9 +246,6 @@
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
       ],
-      "Create a spreadsheet": [
-        "Vytvoriť tabuľku"
-      ],
       "Create and copy alias": [
         "Vytvoriť a kopírovať alias"
       ],
@@ -3613,12 +3610,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
+        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -5021,12 +5018,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavenie PGP vám umožní odosielať end-to-end šifrované emaily používateľom, ktorí nemajú ${ BRAND_NAME } a používajú službu kompatibilnú s PGP."
       ],
-      "Settings update failed": [
-        "Aktualizácia nastavenia zlyhala"
-      ],
-      "Settings updated": [
-        "Nastavenie aktualizované"
-      ],
       "Share via link settings": [
         "Zdieľať cez nastavenia odkazu"
       ],
@@ -5304,7 +5295,7 @@
         "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
+        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
       "words": [
         "slov"
@@ -5437,9 +5428,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Vaše údaje zostávajú vaše. Vytvárajte a spolupracujte pomocou plne funkčných tabuliek zabezpečených end-to-end šifrovaním."
       ],
       "Your email address and password were leaked:": [
         "Unikla vaša emailová adresa a heslo:"
@@ -7927,11 +7915,6 @@
         "Neobmedzené aliasy na ochranu vašej identity"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Možno neskôr"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " navštívte naše ${ helpCenterLink } alebo ${ contactSupportLink }."
@@ -9864,9 +9847,6 @@
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Predstavujeme ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"

@@ -2240,17 +2240,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
       ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
       ],
       "Input isn't a valid email or bitcoin address": [
         "Intrarea nu este o adresă de e-mail sau bitcoin validă."
@@ -2279,14 +2273,8 @@
       "Invalid ZIP code": [
         "Cod poștal nevalid"
       ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
       ],
       "Payment process canceled": [
         "Procesarea plății a fost anulată."
@@ -2345,41 +2333,23 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
-      "The email addresses do not match": [
-        "Adresele de e-mail nu se potrivesc."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
       ],
       "The passphrases do not match": [
         "Frazele de acces nu se potrivesc."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
-      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
-      ],
       "This offer is not available in your country": [
         "Această ofertă nu este disponibilă țara actuală."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Folosiți doar litere, cifre și _ . -"
       ],
       "Unknown error": [
         "Eroare necunoscută"
       ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
-      ],
-      "Username must begin with a letter or digit": [
-        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
-      ],
-      "Username must end with a letter or digit": [
-        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
@@ -2778,7 +2748,7 @@
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar o dată."
+        "Fiecare cod poate fi folosit doar odată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -3035,7 +3005,7 @@
         "Săptămâna"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -5701,18 +5671,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "VPN Plan Feature": {

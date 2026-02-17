@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "L'edició de l'adreça de facturació no està disponible en aquests moments. Torneu a provar més tard."
       ],
-      "Email is not valid": [
-        "El correu electrònic no és vàlid"
-      ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
-      ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
       ],
       "Input isn't a valid email or bitcoin address": [
         "L'entrada no és un correu electrònic o una adreça de Bitcoin vàlida."
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Aquest codi postal no és vàlid"
       ],
-      "Not a valid number": [
-        "Número no vàlid"
-      ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
-      ],
-      "Passwords do not match": [
-        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "S'ha cancel·lat el procés de pagament"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
-      "The email addresses do not match": [
-        "Les adreces de correu electrònic no coincideixen."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
       ],
       "The passphrases do not match": [
         "Les frases de contrasenya no coincideixen."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
-      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
-      ],
       "This offer is not available in your country": [
         "Aquesta oferta no està disponible al vostre país"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Intenteu utilitzar només lletres, numerals i _.-"
       ],
       "Unknown error": [
         "Error desconegut"
       ],
       "Unknown payment token status": [
         "Estat del token de pagament desconegut"
-      ],
-      "Username must begin with a letter or digit": [
-        "El nom d'usuari ha de començar amb una lletra o un dígit."
-      ],
-      "Username must end with a letter or digit": [
-        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
@@ -2472,12 +2442,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -2761,7 +2731,7 @@
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
+        "Cada codi només es pot utilitzar una vegada."
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -3017,7 +2987,7 @@
         "Setmana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l’autenticació de doble factor, proporcionem codis de recuperació que podeu utilitzar per iniciar la sessió si perdeu l’accés a l’aplicació d'autenticació."
+        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "VPN Plan Feature": {

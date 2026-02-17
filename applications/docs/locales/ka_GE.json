@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create a spreadsheet": [
-        "ელცხრილის შექმნა"
-      ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
@@ -3531,7 +3528,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღებით ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
     },
     "fido2: Info": {
@@ -4822,12 +4819,6 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP-ის აწყობა საშუალებას მოგცემთ, გააგზავნოთ დაშიფრული ელფოსტები არა${ BRAND_NAME }-ის მომხმარებლებთან, რომლებიც ასევე იყენებენ PGP-სთან თავსებად სერვისს."
-      ],
-      "Settings update failed": [
-        "პარამეტრების განახლება ჩავარდა"
-      ],
-      "Settings updated": [
-        "პარამეტრები განახლებულია"
       ],
       "Share via link settings": [
         "ბმულით გაზიარების მორგება"
@@ -7548,11 +7539,6 @@
         "განუსაზღვრელი ფსევდონიმები თქვენს დასაცავად"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "მოგვიანებით"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " დაუკავშირდით ჩვენს ${ helpCenterLink }-ს, ან ${ contactSupportLink }-ს."
@@ -9350,9 +9336,6 @@
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "წარმოგიდგენთ ${ SHEETS_APP_NAME }-ს"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"

@@ -1538,6 +1538,11 @@
         "ऑफर अनुपलब्ध"
       ]
     },
+    "BF2024: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } स्टोरेज"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 टीबी डेटा स्टोरेज"
@@ -3480,6 +3485,11 @@
         "बड़े संगठनों के लिए कस्टम ज़रूरतों के अनुसार अनुकूलित समाधान"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "टेक्स्ट फील्ड वैकल्पिक हैं। इस फॉर्म में प्रदान की गई जानकारी केवल भविष्य में जारी की जाने वाली इनवॉइस में दिखाई देगी और मौजूदा इनवॉइस को प्रभावित नहीं करेगी।"
@@ -4451,6 +4461,11 @@
         "(कोई शीर्षक नहीं)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 टीबी स्टोरेज"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "आपके खाते के फायदे"
@@ -4477,6 +4492,11 @@
       ],
       "View invitation": [
         "न्योता देखें"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "6 यूज़र तक"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4675,6 +4695,11 @@
       ],
       "Set family name": [
         "परिवार नाम सेट करें"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2700 सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
       ]
     },
     "Feature": {
@@ -6148,9 +6173,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "अपने ${ BRAND_NAME } संगठन के साथ इस entity को कनेक्ट करने के लिए जारी रखें।"
       ],
-      "Continue with ${ freeName }": [
-        "${ freeName } के साथ जारी रखें"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "जारी रखने से आपका ${ BRAND_NAME } खाता ${ name } से जुड़ जाएगा।"
       ],
@@ -6184,9 +6206,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "अन्य लोगों के लिए ईमेल पते बनाएं, व्यवसाय, स्कूल या समूह के लिए ${ MAIL_APP_NAME } प्रबंधित करें। अपने संगठन का नाम और कस्टम डोमेन (उदा. @aapkicompany.in) जोड़कर प्रारंभ करें। "
       ],
       "Create in": [
         "में बनाएँ"
@@ -6435,7 +6454,7 @@
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड दर्ज करें। अंक ${ digit }।"
+        "सत्यापन कोड डालें। ${ digit } अंक का।"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "अपने ${ BRAND_NAME } खाते की जानकारी डालें।"
@@ -6500,9 +6519,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "नया पुनर्प्राप्ति वाक्यांश बनाने से आपका पुराना वाक्यांश निष्क्रिय हो जाएगा।"
       ],
-      "Get ${ upsellPlanName }": [
-        "${ upsellPlanName } लें"
-      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } खाता बनाकर और आमंत्रण स्वीकार करके पहुँच प्राप्त करें।"
       ],
@@ -6535,9 +6551,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "अगर ये आपके लिए सही नहीं, तो हम आपको पूरे पैसे वापस कर देंगे।"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "यदि कीबोर्ड शॉर्टकट सक्षम हैं, तो आप त्वरित कार्यों के लिए या अलग-अलग दृश्यों पर जाने के लिए निम्नलिखित कुंजियों का उपयोग कर सकते हैं। ${ metaKey } + K हमेशा सक्षम रहता है।"
@@ -13384,6 +13397,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 टीबी"
+      ],
+      "6 users": [
+        "6 यूज़र"
+      ],
+      "All paid Mail and Calendar features": [
+        "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
+      ],
+      "High speed VPN": [
+        "तेज़ वीपीएन"
+      ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
       ],
@@ -13393,8 +13418,17 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "प्रीमियम ${ appName1 } और ${ appName2 }"
       ],
+      "Premium early access": [
+        "प्रीमियम जल्दी एक्सेस"
+      ],
+      "Secure cloud storage": [
+        "सुरक्षित क्लाउड स्टोरेज"
+      ],
       "Secure streaming": [
         "सुरक्षित स्ट्रीमिंग"
+      ],
+      "Support online privacy": [
+        "ऑनलाइन निजता को बढ़ावा दें"
       ]
     },
     "specialoffer: Link": {
@@ -13406,17 +13440,77 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
       "/ month": [
         "/ महीने"
       ],
       "/month": [
         "/महीना"
       ],
+      "1 year": [
+        "1 साल"
+      ],
+      "15 months": [
+        "15 महीने"
+      ],
+      "2 years": [
+        "2 साल"
+      ],
+      "30 months": [
+        "30 महीने"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1 महीने के लिए ${ amount } का बिल"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 महीने के लिए ${ amount } का बिल"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15 महीने के लिए ${ amount } का बिल"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24 महीने के लिए ${ amount } का बिल"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 महीने के लिए ${ amount } का बिल"
+      ],
       "Get the deal": [
         "सौदा पाएं"
       ],
       "Save ${ discount }%": [
         "${ discount }% की छूट"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "1 महीने के लिए मानक दाम ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "12 महीने के लिए मानक दाम ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 महीने के लिए मानक दाम ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "24 महीने के लिए मानक दाम ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 महीने के लिए मानक दाम ${ amount }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, प्रति उपयोगकर्ता 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
       ]
     },
     "sso": {
@@ -14369,6 +14463,17 @@
     "Suffix for price": {
       "per month": [
         "हर महीने"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "अपने सभी उपकरणों पर सुरक्षित लॉगिन विवरण बनाएं। इसमें असीमित उपनाम, 20 वॉल्ट, एकीकृत 2एफए, क्रेडिट कार्ड ऑटो-फिल और बहुत कुछ शामिल है।"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2950+ सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
       ]
     },
     "Tab in domain modal": {
@@ -16403,9 +16508,6 @@
       ],
       "Just ${ price }": [
         "सिर्फ ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "${ upsellPlanName } आज़माएं बिना जोखिम के"
       ],
       "Your ${ a } and ${ b } bundle": [
         "आपका ${ a } और ${ b } बंडल"

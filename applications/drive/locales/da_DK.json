@@ -983,6 +983,9 @@
       "Set as cover": [
         "Brug som cover"
       ],
+      "Set password or expiration date": [
+        "Indstil adgangskode eller udløbsdato"
+      ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"
       ],
@@ -1021,6 +1024,9 @@
       ],
       "Shared": [
         "Delt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er end-to-end-krypteret"
       ],
       "Sharing options": [
         "Delemuligheder"
@@ -1346,8 +1352,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5055,8 +5061,8 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "Already in this folder": [
         "Allerede i denne mappe"
@@ -5233,7 +5239,7 @@
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
@@ -5687,6 +5693,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Se hvad du skal gøre her ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Link kopieret"
+      ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
@@ -5862,6 +5871,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
       ],
+      "owner": [
+        "ejer"
+      ],
       "password": [
         "adgangskode"
       ],
@@ -5965,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
+      "Preparing": [
+        "Forbereder"
+      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -6027,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Anmod om adgang, eller skift til en konto med adgang."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Det ønskede element eksisterer ikke længere"
       ],
       "Restore": [
         "Gendan"
@@ -6429,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Prøv at søge efter filnavn, dato eller type."
       ],
+      "Unexpected download error": [
+        "Uventet downloadfejl"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Desværre ser det ud til, at filen eller nogle af dens data ikke kan dekrypteres."
       ],
@@ -6584,6 +6605,9 @@
       ],
       "who": [
         "hvem"
+      ],
+      "Who has access": [
+        "Hvem har adgang"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil blive gemt."
@@ -6966,6 +6990,9 @@
       "Account holder": [
         "Kontohaver"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Add email address": [
         "Tilføj e-mailadresse"
       ],
@@ -6977,6 +7004,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "admin": [
+        "administrator"
       ],
       "Alias title": [
         "Aliastitel"
@@ -6992,6 +7022,9 @@
       ],
       "Anonymous": [
         "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Enhver på internettet med linket"
       ],
       "App password": [
         "App-adgangskode"
@@ -7037,6 +7070,12 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
       ],
       "Cancel download": [
         "Afbryd download"
@@ -7119,6 +7158,9 @@
       "Delete drive?": [
         "Slet drev?",
         "Slet drev?"
+      ],
+      "Delete link and remove access for everyone": [
+        "Slet link og fjern adgang for alle"
       ],
       "Delete recovery-related information.": [
         "Slet gendannelsesrelaterede oplysninger."
@@ -7326,6 +7368,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "Not active": [
+        "Ikke aktiv"
       ],
       "Note": [
         "Note"
@@ -10412,7 +10457,7 @@
       ],
       "Friend joined": [
         "Ven tilmeldte sig",
-        "Venner tilmelde sig"
+        "Venner tilmeldte sig"
       ],
       "Friend subscribed": [
         "En ven abonnerede",
@@ -11008,6 +11053,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Opsiger dit abonnement, vent venligst"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "accepteret"
+      ],
+      "pending": [
+        "afventer"
       ]
     },
     "Storage": {
@@ -12483,6 +12536,12 @@
       "Processing...": [
         "Behandler..."
       ],
+      "Public link": [
+        "Offentligt link"
+      ],
+      "Public link settings": [
+        "Indstillinger for offentligt link"
+      ],
       "Public shared link status": [
         "Status på offentligt delt link"
       ],
@@ -12573,6 +12632,9 @@
       ],
       "Settings": [
         "Indstillinger"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Indstillinger for ${ sharedFileName }"
       ],
       "SHA1": [
         "SHA1"

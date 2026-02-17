@@ -2248,17 +2248,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
       ],
-      "Email is not valid": [
-        "Несапраўдная электронная пошта"
-      ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Няправільнае імя карыстальніка"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Уведзены няправільны адрас электроннай пошты або адрас Bitcoin"
@@ -2287,14 +2281,8 @@
       "Invalid ZIP code": [
         "Памылковы паштовы індэкс"
       ],
-      "Not a valid number": [
-        "Несапраўдны нумар"
-      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
-      ],
-      "Passwords do not match": [
-        "Паролі не супадаюць"
       ],
       "Payment process canceled": [
         "Апрацоўка плацяжу скасавана"
@@ -2353,41 +2341,23 @@
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
-      "The email addresses do not match": [
-        "Адрасы электроннай пошты не супадаюць"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
       "The passphrases do not match": [
         "Парольная фраза не супадае"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
-      ],
       "This field is required": [
         "Абавязковае поле"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
-      ],
       "This offer is not available in your country": [
         "Гэта прапанова недаступна ў вашай краіне"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
       "Unknown error": [
         "Невядомая памылка"
       ],
       "Unknown payment token status": [
         "Невядомы статус плацежнага токена"
-      ],
-      "Username must begin with a letter or digit": [
-        "Імя карыстальніка павінна пачынацца з літары або лічбы"
-      ],
-      "Username must end with a letter or digit": [
-        "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
@@ -3053,7 +3023,7 @@
         "Тыдзень"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Вы атрымаеце коды аднаўлення падчас наладжвання двухфактарнай аўтэнтыфікацыі. Імі можна будзе скарыстацца для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -3295,7 +3265,7 @@
         "Размяшчэнне папкі"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -5772,20 +5742,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
-        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "VPN Plan Feature": {

@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
-      "Create a spreadsheet": [
-        "Rekenblad aanmaken"
-      ],
       "Create and copy alias": [
         "Maak en kopieer alias"
       ],
@@ -3568,7 +3565,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -4891,12 +4888,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
-      "Settings update failed": [
-        "Bijwerken instellingen mislukt"
-      ],
-      "Settings updated": [
-        "Instellingen bijgewerkt"
-      ],
       "Share via link settings": [
         "Deel via linkinstellingen"
       ],
@@ -5172,7 +5163,7 @@
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "words": [
         "woorden"
@@ -5299,9 +5290,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Uw gegevens blijven van u. Creëer en werk samen met volledig functionele spreadsheets die beveiligd zijn met end-to-end versleuteling."
       ],
       "Your email address and password were leaked:": [
         "Uw emailadres en wachtwoorden werden gelekt:"
@@ -7679,11 +7667,6 @@
         "Onbeperkt aliassen om uw identiteit te beschermen"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Misschien later"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
@@ -9516,9 +9499,6 @@
       ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Ontdek ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"

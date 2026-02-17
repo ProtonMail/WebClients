@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
-      "Create a spreadsheet": [
-        "Opret et regneark"
-      ],
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
@@ -974,8 +971,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4221,8 +4218,8 @@
         "Alle (${ totalFoldersCount } etiketter)"
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "an anonymous user": [
         "en anonym bruger"
@@ -4306,7 +4303,7 @@
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Converting document...": [
         "Konverterer dokument..."
@@ -4894,12 +4891,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Ved at indstille PGP kan du sende end-to-end-krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
-      "Settings update failed": [
-        "Opdatering af indstillinger mislykkedes"
-      ],
-      "Settings updated": [
-        "Indstillinger opdateret"
-      ],
       "Share via link settings": [
         "Del via link-indstillinger"
       ],
@@ -5302,9 +5293,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Dine data forbliver dine. Opret og arbejd sammen med andre ved hjælp af funktionsrige regneark sikret med end-to-end kryptering."
       ],
       "Your email address and password were leaked:": [
         "Din e-mailadresse og adgangskode er blevet lækket:"
@@ -7682,11 +7670,6 @@
         "Ubegrænsede aliasser til at beskytte din identitet"
       ]
     },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Måske senere"
-      ]
-    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
@@ -8151,7 +8134,7 @@
       ],
       "Friend joined": [
         "Ven tilmeldte sig",
-        "Venner tilmelde sig"
+        "Venner tilmeldte sig"
       ],
       "Friend subscribed": [
         "En ven abonnerede",
@@ -9519,9 +9502,6 @@
       ],
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Introducerer ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"

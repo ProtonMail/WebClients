@@ -3509,6 +3509,9 @@
       "Event not found": [
         "Tapahtumaa ei löydy"
       ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Olemassa olevan ${ MEET_APP_NAME } -videoneuvottelun lisääminen epäonnistui"
       ],
@@ -6044,7 +6047,7 @@
         "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "Where will the appointment take place?": [
         "Missä tapaaminen järjestetään?"

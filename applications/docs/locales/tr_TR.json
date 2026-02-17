@@ -244,9 +244,6 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
-      "Create a spreadsheet": [
-        "Hesap tablosu oluştur"
-      ],
       "Create and copy alias": [
         "Takma ad ekle ve kopyala"
       ],
@@ -4891,12 +4888,6 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
-      "Settings update failed": [
-        "Ayarlar güncellenemedi"
-      ],
-      "Settings updated": [
-        "Ayarlar güncellendi"
-      ],
       "Share via link settings": [
         "Bağlantı ayarları ile paylaş"
       ],
@@ -5299,9 +5290,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
-      ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Verileriniz sizin kalır. Uçtan uca şifreleme ile korunan, tam özellikli hesap tablolarını kullanarak oluşturun ve iş birliği yapın."
       ],
       "Your email address and password were leaked:": [
         "E-posta adresiniz ve parolanız sızdırılmış:"
@@ -7151,7 +7139,7 @@
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
-        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcısı olan müşteriler için ${ BRAND_NAME } müşteri destek ekibi tarafından sağlanır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -7677,11 +7665,6 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Kimliğinizi korumak için sınırsız sayıda takma ad"
-      ]
-    },
-    "Onboarding Action": {
-      "Maybe later": [
-        "Belki daha sonra"
       ]
     },
     "Onboarding Trial": {
@@ -9516,9 +9499,6 @@
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } ile tanışın"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"

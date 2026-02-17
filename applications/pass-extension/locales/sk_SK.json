@@ -1674,6 +1674,9 @@
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
       ],
+      "An item previously shared with you was removed.": [
+        "Položka, ktorá bola predtým s vami zdieľaná, bola odstránená."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Skutočne chcete odstrániť ${ emailJSX } zo svojich poštových schránok?"
       ],
@@ -2649,6 +2652,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" bol úspešne aktualizovaný"
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" bol odstránený."
+      ],
       "Vault organization successfully updated": [
         "Organizácia trezoru bola úspešne aktualizovaná"
       ],
@@ -2738,6 +2744,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Pred importom položiek potrebujete trezor s oprávnením k úpravám."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Už nemáte prístup k niektorým trezorom alebo položkám, pretože prístup vašej skupiny ${ groupName } bol odstránený."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Teraz máte prístup k „${ itemName }“, pretože vašej skupine ${ groupName } bol udelený prístup."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Teraz máte prístup k „Trezoru ${ vaultName }“, pretože vašej skupine ${ groupName } bol udelený prístup."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po overení domény si budete môcť prispôsobiť nastavenia domény (aliasy doménových košov, predvolené zobrazované meno pre aliasy atď.)."

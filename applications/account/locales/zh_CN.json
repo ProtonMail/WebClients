@@ -244,7 +244,7 @@
         "更改密码"
       ],
       "Change second password": [
-        "修改第二个密码"
+        "修改二级密码"
       ],
       "Chat with us": [
         "与我们实时对话"
@@ -1435,7 +1435,7 @@
         "从 ${ nameToDisplay } ${ maybeEmailInBrackets } 中退出登录"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "sign up for free": [
         "免费注册"
@@ -1568,9 +1568,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Professional": [
-        "升级至专业版"
       ],
       "Upgrade to view all": [
         "升级账户查看全部"
@@ -1897,6 +1894,11 @@
         "管理员"
       ]
     },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "角色是一组权限，您可以将其分配给组织成员。"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
@@ -2201,12 +2203,93 @@
         "优惠不可用"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
+      "1 user account": [
+        "1 个账户"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 存储空间：您当前套餐的 40 倍"
+      ],
+      "6 user accounts": [
+        "6 个账户"
+      ],
+      "Admin panel to manage your family": [
+        "用于管理家人的管理员面板"
+      ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
+      ],
+      "One-time payment, lifetime deal": [
+        "一次性付款，终身有效"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
+      ],
+      "Recover previous file versions": [
+        "恢复先前的文件版本"
+      ],
+      "Unlimited folders, labels and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "无限制登录、信用卡、hide-my-email 别名等功能"
+      ],
       "Use your own email domain": [
         "个性化邮箱域名"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "按 ${ amount } 一次计费"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "次月起按 ${ regularAmount } 续费。"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 hide-my-email 别名等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
       ]
     },
     "BF2025: Deal details": {
@@ -4764,6 +4847,28 @@
         "禁用地址？"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "首月仅需 ${ offerPrice }，后续每月 ${ regularPrice } 续费，可随时取消！"
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "仅需 ${ offerPrice } 获取 VPN Plus"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隐私法保护"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "特别优惠：高级套餐享 90% 折扣"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "继续使用免费版"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "已验证"
@@ -4771,7 +4876,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "电子邮箱通常不使用 \"www\" 子域名。您确定要继续使用吗？"
+        "“www”子域通常不用于邮箱，您确定要使用此域名值吗？"
       ]
     },
     "Domain spam notification": {
@@ -5067,6 +5172,14 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "为有定制需求的大型组织量身定制解决方案。"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "更长的版本历史"
+      ],
+      "Priority support": [
+        "优先支持"
       ]
     },
     "Duo offer": {
@@ -6236,7 +6349,7 @@
         "邮箱地址已停用"
       ],
       "Email address is invalid": [
-        "电子邮箱地址不可用"
+        "邮箱地址不可用"
       ],
       "Email address is not available": [
         "邮箱地址不可用"
@@ -6326,7 +6439,7 @@
         "密码错误"
       ],
       "Incorrect second password. Please try again.": [
-        "二级密码不正确，请重试。"
+        "二级密码错误，请重试。"
       ],
       "Incorrect username": [
         "用户名不正确"
@@ -6384,6 +6497,9 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "最大允许 ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
@@ -7125,9 +7241,19 @@
         "您可以保存成功导出事件的 ICS 文件。"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 总存储空间"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "您的账户福利"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
       ]
     },
     "familyOffer_2023:Action": {
@@ -7160,6 +7286,11 @@
       ],
       "View invitation": [
         "查看邀请详情"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "最多 6 位用户"
       ]
     },
     "familyOffer_2023:Error": {
@@ -7411,6 +7542,17 @@
         "设置家庭名称"
       ]
     },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 台设备可同时接入 VPN"
@@ -7526,7 +7668,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
@@ -7549,7 +7691,7 @@
         "确定要删除安全密钥 ${ name } 吗？"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Insert your security key into your device's USB port.": [
         "将您的安全密钥插入设备 USB 接口中。"
@@ -8543,9 +8685,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " 以及其他安全功能。"
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
       ],
@@ -8625,7 +8764,7 @@
         "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可与单密码一起使用，后者可取代登录密码和第二密码。要切换到单密码模式，请输入要使用的单密码，然后单击保存。"
+        "${ MAIL_APP_NAME } 也可以使用单一密码，该密码将同时替代登录密码和二级密码。要切换至单一密码模式，请输入您想使用的单一密码，然后点击保存。"
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -8867,9 +9006,6 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Accounts": [
-        "账户"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
@@ -8878,6 +9014,9 @@
       ],
       "active": [
         "启用"
+      ],
+      "Activity Monitor": [
+        "活动监视器"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "为您的账户添加一个 @pm.me 邮箱地址。这个简短易记的域名代表 “${ MAIL_APP_NAME } me” 或 “私信我”"
@@ -9251,9 +9390,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "继续将此实体与您的 ${ BRAND_NAME } 组织连接起来。"
       ],
-      "Continue with ${ freeName }": [
-        "继续使用 ${ freeName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
@@ -9294,10 +9430,7 @@
         "为 ${ value } 成员创建一个安全云端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "使用您自己的域名创建并管理电子邮箱子账户。"
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "将 ${ MAIL_APP_NAME } 用于企业、学校或各类组织机构，为大量用户统一管理邮箱。首先需要设置机构名称和自有域名（如 @qiye.com）。"
+        "使用您自己的域名创建并管理邮箱子账户。"
       ],
       "Create in": [
         "创建于"
@@ -9480,7 +9613,7 @@
         "拖至此处即可导入"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
@@ -9498,7 +9631,7 @@
         "已保存 eduGAIN 配置"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email address": [
         "邮箱地址"
@@ -9612,7 +9745,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "请输入您的 ${ BRAND_NAME } 账户信息。"
@@ -9713,9 +9846,6 @@
       "free up space by deleting older messages or other data": [
         "删除旧邮件和其他数据释放空间"
       ],
-      "Gain visibility across your organization": [
-        "提高您组织内部的可见度"
-      ],
       "Gateway monitor": [
         "网关监视器"
       ],
@@ -9727,9 +9857,6 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
-      ],
-      "Get ${ upsellPlanName }": [
-        "开通 ${ upsellPlanName }"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "创建 ${ BRAND_NAME } 账户并接受邀请即可查看。"
@@ -9745,6 +9872,9 @@
       ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
+      ],
+      "Get visibility into account access": [
+        "获取账户访问可见性"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "请为令牌起一个描述性的名称，例如您计划使用该令牌的服务名称，并选择您的一个活跃自定义域名地址。只有此地址才能使用此令牌发送电子邮件。"
@@ -9796,9 +9926,6 @@
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "如果启用，组织成员将能够共享除保险库之外的单个项目。"
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "若不满意可要求退款。"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
@@ -10058,9 +10185,6 @@
       "Learn more": [
         "了解详情"
       ],
-      "Learn more about Activity Monitor": [
-        "详细了解活动监视器"
-      ],
       "Learn more about Gateways": [
         "了解网关"
       ],
@@ -10177,6 +10301,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "监控和审计使用您的 ${ BRAND_NAME } 凭据的所有 ${ BRAND_NAME } 服务的身份验证尝试。"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "监测登录活动、检测未授权访问并填补安全与合规漏洞。"
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
@@ -10330,9 +10457,6 @@
       ],
       "Organization monitor": [
         "组织监控器"
-      ],
-      "Organization Monitor": [
-        "组织监测"
       ],
       "Organization size": [
         "组织的规模"
@@ -11154,7 +11278,7 @@
         "双密码模式需要两个密码：一个用于登录账户，另一个用于解密数据。(高级)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "双密码模式使用不同的密码进行登录和数据解密。这在某些情况下会带来些许安全优势，但我们建议大多数用户使用单密码模式。要切换到双密码模式，首先要设置登录密码，然后再设置第二个密码。"
+        "双密码模式使用独立的密码进行登录和数据解密。这在某些情况下能提供轻微的安全优势，但我们为大多数用户推荐单密码模式。要切换至双密码模式，请先设置一个登录密码，再设置一个二级密码。"
       ],
       "Unable to check gateways monitoring current status.": [
         "无法检查网关监控的当前状态。"
@@ -11198,11 +11322,11 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "升级至专业版或更高版本以解锁"
-      ],
       "Upgrade to unlock": [
         "升级以解锁"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "升级以解锁 ${ monitorLink }！"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "将您的套餐升级至 ${ firstPlanNames } 或 ${ lastPlanName }，即可获得面向组织的 ${ PROTON_SENTINEL_NAME } 访问权限。"
@@ -11439,7 +11563,7 @@
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -13289,7 +13413,7 @@
         "新密码"
       ],
       "New second password": [
-        "新副密码"
+        "新的二级密码"
       ],
       "Newsletters": [
         "时事通讯"
@@ -13505,7 +13629,7 @@
         "搜索名称或邮箱地址"
       ],
       "Second password": [
-        "副密码"
+        "二级密码"
       ],
       "Secure password generator": [
         "安全密码生成器"
@@ -13980,6 +14104,9 @@
       "Activity log": [
         "活动日志"
       ],
+      "activity monitor": [
+        "活动监视器"
+      ],
       "Add a gift code": [
         "使用礼品码"
       ],
@@ -14026,7 +14153,7 @@
         "强制组织启用 2FA"
       ],
       "Forgot email?": [
-        "忘记电子邮箱？"
+        "忘记邮箱？"
       ],
       "Forgot password?": [
         "忘记密码?"
@@ -14618,6 +14745,9 @@
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "所有筛选器操作将应用于您 ${ MAIL_APP_NAME } 账户中的所有邮件，系统不会发送自动回复邮件。"
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "连接您的自定义域名（例如 yourcompany.com）即可为他人创建邮箱地址，为企业、学校或团体管理 ${ MAIL_APP_NAME }。"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
@@ -18821,7 +18951,7 @@
         "您的密保邮箱和手机只能**恢复对您账户的访问**。"
       ],
       "Your recovery email can **only recover access to your account**.": [
-        "您的密保邮箱 **只能恢复对您账户的访问**。"
+        "您的密保邮箱**只能恢复对您账户的访问**。"
       ],
       "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
         "您的恢复邮箱可能被攻击者滥用以接管您的账户，${ disableEmail } 以提高账户安全性。"
@@ -19824,13 +19954,13 @@
         "使用您当前的邮箱。"
       ],
       "Use your email, or ${ externalButton }": [
-        "使用您的电子邮箱，或 ${ externalButton }"
+        "使用您自己的邮箱，或 ${ externalButton }"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
       ],
       "use your own email.": [
-        "使用您的电子邮箱。"
+        "使用您自己的邮箱。"
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "遍布 ${ vpnServersCountData.free.countries } 个国家/地区的 VPN 服务器"
@@ -20026,6 +20156,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 位用户"
+      ],
+      "All paid Mail and Calendar features": [
+        "享受 Mail 与 Calendar 的所有付费功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
@@ -20038,8 +20180,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
+      "Premium early access": [
+        "抢先体验高级功能"
+      ],
+      "Secure cloud storage": [
+        "安全的云存储"
+      ],
       "Secure streaming": [
         "安全看视频"
+      ],
+      "Support online privacy": [
+        "支持网络隐私保护"
       ]
     },
     "specialoffer: Footer": {
@@ -20083,17 +20234,71 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "/ month": [
         "/月"
       ],
       "/month": [
         "/每月"
       ],
+      "1 year": [
+        "1 年"
+      ],
+      "15 months": [
+        "15 个月"
+      ],
+      "2 years": [
+        "2 年"
+      ],
+      "30 months": [
+        "30 个月"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "一个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "一年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15个月的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "两年的费用为${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30个月的费用为${ amount }"
+      ],
       "Get the deal": [
         "获取优惠"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
+      ],
       "Save ${ discount }%": [
         "立省 ${ discount }%"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "一个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "一年的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15个月的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "两年的的标准价格为${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30个月的标准价格为${ amount }"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "特别优惠的有效期为最初的两年"
       ]
     },
     "specialoffer: Title": {
@@ -20120,6 +20325,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 hide-my-email 别名、日历共享等功能的支持。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Spotlight": {
@@ -21410,6 +21638,20 @@
         "无法导出的事件详情"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保险库、集成 2FA、信用卡自动填充等。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "地址"
@@ -21849,7 +22091,7 @@
         "更改角色"
       ],
       "Change second password": [
-        "修改第二密码"
+        "修改二级密码"
       ],
       "Check your default mail application": [
         "检查您的默认邮件应用"
@@ -22002,7 +22244,7 @@
         "自定义您的邮件导入"
       ],
       "Dashboard": [
-        "总览"
+        "控制面板"
       ],
       "Data locked": [
         "数据已锁定"
@@ -22771,6 +23013,9 @@
       ],
       "Revoke certificate?": [
         "撤销证书?"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
       ],
       "Same inbox, shorter email address": [
         "同一个收件箱，但使用更短的邮箱地址"
@@ -24147,9 +24392,6 @@
       ],
       "Just ${ price }": [
         "仅需 ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "无忧体验 ${ upsellPlanName }"
       ],
       "Your ${ a } and ${ b } bundle": [
         "您的 ${ a } 和 ${ b } 套装"

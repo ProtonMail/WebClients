@@ -287,6 +287,9 @@
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
       ],
+      "Skip": [
+        "Omitir"
+      ],
       "Start a meeting": [
         "Iniciar una reunión"
       ],
@@ -301,6 +304,9 @@
       ],
       "Start Recording Track Stats": [
         "Iniciar estadísticas de grabación"
+      ],
+      "Start your own meeting": [
+        "Inicie su propia reunión"
       ],
       "Stay in meeting": [
         "Permanecer en la reunión"
@@ -411,6 +417,9 @@
       ],
       "Rotate personal meeting link": [
         "Rotar enlace de reunión personal"
+      ],
+      "Screen share": [
+        "Compartir pantalla"
       ],
       "Settings": [
         "Ajustes"
@@ -1474,6 +1483,9 @@
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
+      "Invalid meeting link": [
+        "Enlace de reunión no válido"
+      ],
       "Invalid passphrase": [
         "Frase de contraseña inválida"
       ],
@@ -1568,7 +1580,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -1754,11 +1766,17 @@
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Cree una cuenta para obtener un enlace de reunión personal que pueda reutilizar en cada llamada."
       ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Cree una cuenta para organizar reuniones con hasta 50 participantes."
+      ],
       "Created on ${ formattedDate }": [
         "Creada el ${ formattedDate }"
       ],
       "Custom combination": [
         "Combinación personalizada"
+      ],
+      "Decrypting meetings...": [
+        "Descifrando reuniones..."
       ],
       "Default": [
         "Por defecto"
@@ -1803,7 +1821,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -1826,6 +1844,9 @@
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Las reuniones gratuitas están limitadas a 1 hora. Esta llamada se desconectará pronto."
       ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Consiga su propia sala de reuniones. Cree una cuenta para tener un enlace personal que podrá usar en cualquier momento."
+      ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtenga un enlace de reunión seguro y luego añádalo a su calendario"
       ],
@@ -1840,6 +1861,9 @@
       ],
       "Host your own secure meeting": [
         "Inicie su propia reunión en un entorno seguro."
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Organice sus propias reuniones seguras. Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para invitar a quien quiera. Fácil, seguro y gratuito."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
@@ -1856,9 +1880,6 @@
       "Joined ${ roomNameLabel }": [
         "Se unió a ${ roomNameLabel }"
       ],
-      "Last used on ${ formattedDate }": [
-        "Último uso el ${ formattedDate }"
-      ],
       "Learn more": [
         "Más información"
       ],
@@ -1871,6 +1892,9 @@
       "Left by mistake?": [
         "¿Salió por error?"
       ],
+      "Link copied to clipboard": [
+        "Enlace copiado al portapapeles"
+      ],
       "Loading": [
         "Cargando"
       ],
@@ -1880,6 +1904,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
+      "Loading meetings...": [
+        "Cargando reuniones..."
+      ],
       "Loading...": [
         "Cargando..."
       ],
@@ -1888,6 +1915,9 @@
       ],
       "Meet without restrictions": [
         "Reúnase sin restricciones"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Reuniones sin restricciones. Actualice a un plan superior para quitar el límite de 1 hora y reunir hasta a 100 participantes."
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión llena (${ maxParticipants } participantes)"
@@ -1995,7 +2025,7 @@
         "Conexión débil"
       ],
       "Premium meeting": [
-        "Reunión prémium"
+        "Reunión premium"
       ],
       "Recording saved": [
         "Grabación guardada"
@@ -2008,6 +2038,9 @@
       ],
       "Schedule your next meeting": [
         "Programe su próxima reunión"
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
       ],
       "Select a camera": [
         "Seleccionar una cámara"
@@ -2039,6 +2072,9 @@
       "Sign in": [
         "Inicie sesión"
       ],
+      "Sort by": [
+        "Ordenar por"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para que se una quien usted desee. Simple, seguro y gratuito."
       ],
@@ -2047,6 +2083,12 @@
       ],
       "Successfully deleted meeting": [
         "Reunión eliminada con éxito"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Gracias por organizar una reunión prémium."
+      ],
+      "Thank you for joining.": [
+        "Gracias por unirse."
       ],
       "The host has ended the meeting": [
         "El anfitrión ha finalizado la reunión"
@@ -2078,9 +2120,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
-      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
-        "Para proteger su organización, invite a su equipo a usar ${ MEET_APP_NAME }."
-      ],
       "Turn off camera": [
         "Apagar la cámara"
       ],
@@ -2104,9 +2143,6 @@
       ],
       "Video effects": [
         "Efectos de video"
-      ],
-      "We hope you enjoyed your secure meeting!": [
-        "¡Esperamos que haya disfrutado de su reunión en nuestro entorno seguro!"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -2137,6 +2173,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Aún puede apagar su micrófono y cámara en cualquier momento de la reunión"
+      ],
+      "You left your meeting": [
+        "Abandonó su reunión"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Se le invitó unirse a una reunión segura. Confirme su nombre y pulse abajo para ingresar."
@@ -2173,6 +2212,13 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } estrella",
+        "${ numberOfStars } estrellas"
+      ],
+      "Add optional details": [
+        "Añadir detalles opcionales"
+      ],
       "Add to calendar": [
         "Añadir al calendario"
       ],
@@ -2184,6 +2230,9 @@
       ],
       "Authenticator app": [
         "Aplicación de autenticación"
+      ],
+      "Back to dashboard": [
+        "Volver al panel de control"
       ],
       "Browser": [
         "Navegador"
@@ -2218,6 +2267,9 @@
       "Delete recovery-related information.": [
         "Eliminar información de recuperación relacionada."
       ],
+      "Does not repeat": [
+        "No se repite"
+      ],
       "Download .ics": [
         "Descargar .ics"
       ],
@@ -2251,6 +2303,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "How was the call quality?": [
+        "¿Qué tal ha sido la calidad de la llamada?"
+      ],
       "Identity": [
         "Identidad"
       ],
@@ -2275,9 +2330,6 @@
       "Name": [
         "Nombre"
       ],
-      "No repeat": [
-        "No se repite"
-      ],
       "Operating system": [
         "Sistema operativo"
       ],
@@ -2298,6 +2350,9 @@
       ],
       "Remember my name on this device": [
         "Recordar mi nombre en este dispositivo"
+      ],
+      "Repeat event": [
+        "Repetir el evento"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -2397,6 +2452,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Could not send feedback": [
+        "No se pudo enviar el comentario"
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
@@ -2413,6 +2471,35 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "El audio se entrecortaba"
+      ],
+      "I couldn't hear others": [
+        "No pude oír a los demás"
+      ],
+      "I couldn't present ": [
+        "No pude presentar "
+      ],
+      "I couldn't see others' video": [
+        "No pude ver el vídeo de los demás"
+      ],
+      "I couldn't see the presentation": [
+        "No podía ver la presentación"
+      ],
+      "Others couldn't hear me": [
+        "No podían oírme"
+      ],
+      "The presentation was blurry": [
+        "La presentación estaba borrosa"
+      ],
+      "Video was blurry": [
+        "El video estaba borroso"
+      ],
+      "Video was breaking up": [
+        "El video se entrecortaba"
       ]
     },
     "Placeholder": {
@@ -2457,6 +2544,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Share more details": [
+        "Compartir más detalles"
       ],
       "Type an encrypted message...": [
         "Escriba un mensaje cifrado..."
@@ -2514,9 +2604,6 @@
       ]
     },
     "Sort option": {
-      "Last used": [
-        "Último uso"
-      ],
       "Newly created": [
         "Recién creada"
       ],
@@ -2665,6 +2752,9 @@
       "Meeting edited": [
         "Reunión editada"
       ],
+      "Meeting settings": [
+        "Ajustes de la reunión"
+      ],
       "Messaging Layer Security": [
         "Messaging Layer Security (MLS)"
       ],
@@ -2716,6 +2806,9 @@
       "Settings": [
         "Ajustes"
       ],
+      "Show duration": [
+        "Mostrar duración"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -2724,6 +2817,9 @@
       ],
       "Talk confidentially": [
         "Hable con confidencialidad"
+      ],
+      "Thank you!": [
+        "¡Gracias!"
       ],
       "Time": [
         "Hora"
@@ -2736,6 +2832,12 @@
       ],
       "Video": [
         "Video"
+      ],
+      "What went wrong?": [
+        "¿Qué salió mal?"
+      ],
+      "Your feedback has been submitted": [
+        "Tus comentarios han sido enviados"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -147,7 +147,7 @@
         "更改密码"
       ],
       "Change second password": [
-        "修改第二个密码"
+        "修改二级密码"
       ],
       "Chat with us": [
         "与我们实时对话"
@@ -942,7 +942,7 @@
         "登出"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "sign up for free": [
         "免费注册"
@@ -1045,9 +1045,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Professional": [
-        "升级至专业版"
       ],
       "Upgrade to view all": [
         "升级账户查看全部"
@@ -1330,6 +1327,11 @@
     "Admin": {
       "admin": [
         "管理员"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "角色是一组权限，您可以将其分配给组织成员。"
       ]
     },
     "Alert": {
@@ -3415,6 +3417,28 @@
         "禁用地址？"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "首月仅需 ${ offerPrice }，后续每月 ${ regularPrice } 续费，可随时取消！"
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "仅需 ${ offerPrice } 获取 VPN Plus"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隐私法保护"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "特别优惠：高级套餐享 90% 折扣"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "继续使用免费版"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "已验证"
@@ -3422,7 +3446,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "电子邮箱通常不使用 \"www\" 子域名。您确定要继续使用吗？"
+        "“www”子域通常不用于邮箱，您确定要使用此域名值吗？"
       ]
     },
     "Domain spam notification": {
@@ -3937,7 +3961,7 @@
         "目前无法编辑帐单地址。请稍后重试。"
       ],
       "Email address is invalid": [
-        "电子邮箱地址不可用"
+        "邮箱地址不可用"
       ],
       "Email address is not available": [
         "邮箱地址不可用"
@@ -4055,6 +4079,9 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "最大允许 ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
@@ -5717,9 +5744,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " 以及其他安全功能。"
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
       ],
@@ -5778,7 +5802,7 @@
         "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可与单密码一起使用，后者可取代登录密码和第二密码。要切换到单密码模式，请输入要使用的单密码，然后单击保存。"
+        "${ MAIL_APP_NAME } 也可以使用单一密码，该密码将同时替代登录密码和二级密码。要切换至单一密码模式，请输入您想使用的单一密码，然后点击保存。"
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -5966,14 +5990,14 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Accounts": [
-        "账户"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
       "active": [
         "启用"
+      ],
+      "Activity Monitor": [
+        "活动监视器"
       ],
       "add a recovery method": [
         "添加恢复方法"
@@ -6221,9 +6245,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "继续将此实体与您的 ${ BRAND_NAME } 组织连接起来。"
       ],
-      "Continue with ${ freeName }": [
-        "继续使用 ${ freeName }"
-      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
@@ -6255,10 +6276,7 @@
         "为 ${ value } 成员创建一个安全云端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "使用您自己的域名创建并管理电子邮箱子账户。"
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "将 ${ MAIL_APP_NAME } 用于企业、学校或各类组织机构，为大量用户统一管理邮箱。首先需要设置机构名称和自有域名（如 @qiye.com）。"
+        "使用您自己的域名创建并管理邮箱子账户。"
       ],
       "Create in": [
         "创建于"
@@ -6420,7 +6438,7 @@
         "已保存 eduGAIN 配置"
       ],
       "email": [
-        "电子邮箱"
+        "邮箱"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "与 ${ CONTACTS_APP_NAME } 集成的邮箱和日历"
@@ -6566,9 +6584,6 @@
       "Free trial": [
         "免费试用"
       ],
-      "Gain visibility across your organization": [
-        "提高您组织内部的可见度"
-      ],
       "Gateway monitor": [
         "网关监视器"
       ],
@@ -6581,9 +6596,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
       ],
-      "Get ${ upsellPlanName }": [
-        "开通 ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
       ],
@@ -6592,6 +6604,9 @@
       ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
+      ],
+      "Get visibility into account access": [
+        "获取账户访问可见性"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "访问身份供应商，获取 ${ appName } 的 SAML 元数据并导入此处。"
@@ -6619,9 +6634,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "若不满意可要求退款。"
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "如果这是由于密码重置造成的问题，您可以要求不再展示这条信息。"
@@ -6839,9 +6851,6 @@
       "Learn more": [
         "了解详情"
       ],
-      "Learn more about Activity Monitor": [
-        "详细了解活动监视器"
-      ],
       "Learn more about Gateways": [
         "了解网关"
       ],
@@ -6925,6 +6934,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "监控和审计使用您的 ${ BRAND_NAME } 凭据的所有 ${ BRAND_NAME } 服务的身份验证尝试。"
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "监测登录活动、检测未授权访问并填补安全与合规漏洞。"
       ],
       "Multi-user support not enabled.": [
         "未开启多用户功能。"
@@ -7033,9 +7045,6 @@
       ],
       "Organization monitor": [
         "组织监控器"
-      ],
-      "Organization Monitor": [
-        "组织监测"
       ],
       "Organization size": [
         "组织规模"
@@ -7677,7 +7686,7 @@
         "双密码模式需要两个密码：一个用于登录账户，另一个用于解密数据。(高级)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "双密码模式使用不同的密码进行登录和数据解密。这在某些情况下会带来些许安全优势，但我们建议大多数用户使用单密码模式。要切换到双密码模式，首先要设置登录密码，然后再设置第二个密码。"
+        "双密码模式使用独立的密码进行登录和数据解密。这在某些情况下能提供轻微的安全优势，但我们为大多数用户推荐单密码模式。要切换至双密码模式，请先设置一个登录密码，再设置一个二级密码。"
       ],
       "Unable to check gateways monitoring current status.": [
         "无法检查网关监控的当前状态。"
@@ -7715,8 +7724,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "升级至专业版或更高版本以解锁"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "升级以解锁 ${ monitorLink }！"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "将您的套餐升级至 ${ firstPlanNames } 或 ${ lastPlanName }，即可获得面向组织的 ${ PROTON_SENTINEL_NAME } 访问权限。"
@@ -8889,7 +8898,7 @@
         "新密码"
       ],
       "New second password": [
-        "新副密码"
+        "新的二级密码"
       ],
       "No filter": [
         "无过滤规则"
@@ -9295,6 +9304,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "活动监视器"
+      ],
       "Add a gift code": [
         "使用礼品码"
       ],
@@ -9760,6 +9772,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "连接您的自定义域名（例如 yourcompany.com）即可为他人创建邮箱地址，为企业、学校或团体管理 ${ MAIL_APP_NAME }。"
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
       ],
@@ -14863,7 +14878,7 @@
         "更改角色"
       ],
       "Change second password": [
-        "修改第二密码"
+        "修改二级密码"
       ],
       "Choose user affiliations": [
         "选择用户从属关系"
@@ -15458,6 +15473,9 @@
       ],
       "Revoke certificate?": [
         "撤销证书?"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
       ],
       "SAML authentication": [
         "SAML 授权"
@@ -16470,9 +16488,6 @@
       ],
       "Just ${ price }": [
         "仅需 ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "无忧体验 ${ upsellPlanName }"
       ],
       "Your ${ a } and ${ b } bundle": [
         "您的 ${ a } 和 ${ b } 套装"
