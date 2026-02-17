@@ -8,8 +8,9 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import noop from '@proton/utils/noop';
 
-const useInboxDesktopBadgeCount = () => {
+const useInboxBadgeCount = () => {
     const [mailSettings] = useMailSettings();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
@@ -17,10 +18,6 @@ const useInboxDesktopBadgeCount = () => {
 
     // Updates the notification badge on the desktop app icon depending on the unread count
     useEffect(() => {
-        if (!isElectronMail) {
-            return;
-        }
-
         const inboxConvCount = counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.INBOX);
         let payload = inboxConvCount?.Unread;
 
@@ -37,11 +34,17 @@ const useInboxDesktopBadgeCount = () => {
             payload = 0;
         }
 
-        void invokeInboxDesktopIPC({
-            type: 'updateNotification',
-            payload,
-        });
+        if (isElectronMail) {
+            // Inbox Desktop app badge
+            void invokeInboxDesktopIPC({
+                type: 'updateNotification',
+                payload,
+            });
+        } else if ('setAppBadge' in navigator) {
+            // PWA badge
+            navigator.setAppBadge(payload).catch(noop);
+        }
     }, [counts]);
 };
 
-export default useInboxDesktopBadgeCount;
+export default useInboxBadgeCount;

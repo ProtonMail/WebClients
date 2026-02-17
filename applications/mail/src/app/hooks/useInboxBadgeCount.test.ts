@@ -7,7 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import useInboxDesktopBadgeCount from 'proton-mail/hooks/useInboxDesktopBadgeCount';
+import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/mail/store/counts/conversationCountsSlice');
@@ -21,7 +21,7 @@ declare const global: {
 
 const originalWindow = { ...window };
 
-describe('useInboxDesktopBadgeCount', () => {
+describe('useInboxBadgeCount', () => {
     const useConversationCountsMock = useConversationCounts as jest.Mock;
     const useMessageCountsMock = useMessageCounts as jest.Mock;
     const useMailSettingsMock = useMailSettings as jest.Mock;
@@ -44,7 +44,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([]);
         useMessageCountsMock.mockReturnValue([]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
     });
 
@@ -54,7 +54,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([[]]);
         useMessageCountsMock.mockReturnValue([]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 
@@ -64,7 +64,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: -1, Total: 1 }]]);
         useMessageCountsMock.mockReturnValue([]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 
@@ -74,7 +74,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
         useMessageCountsMock.mockReturnValue([]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
     });
 
@@ -84,7 +84,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
         useMessageCountsMock.mockReturnValue([]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
     });
 
@@ -94,7 +94,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([]);
         useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
     });
 
@@ -104,7 +104,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useConversationCountsMock.mockReturnValue([]);
         useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
 
-        renderHook(() => useInboxDesktopBadgeCount());
+        renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
     });
 });
