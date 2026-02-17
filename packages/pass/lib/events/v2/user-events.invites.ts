@@ -1,7 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 
 import type { EventProcessor } from '@proton/pass/lib/events/types';
-import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
+import { resolveGroupInvites, resolveUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
 import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
 import { selectAllVaultIDs, selectItemsByShareId, selectShare } from '@proton/pass/store/selectors';
@@ -20,7 +20,7 @@ export function* processInvitesChanged(event?: MaybeNull<SyncEventChangedWithTok
 
     try {
         const vaultIDs: Set<ShareId> = yield select(selectAllVaultIDs);
-        const invites: UserInvite[] = yield getUserInvites(vaultIDs);
+        const invites: UserInvite[] = yield resolveUserInvites(vaultIDs);
         yield put(syncInvites({ type: InviteType.User, invites: toMap(invites, 'token') }));
 
         return true;
@@ -34,7 +34,7 @@ export function* processGroupInvitesChanged(event?: MaybeNull<SyncEventChangedWi
 
     try {
         const vaultIDs: Set<ShareId> = yield select(selectAllVaultIDs);
-        const invites: GroupInvite[] = yield getGroupInvites(vaultIDs);
+        const invites: GroupInvite[] = yield resolveGroupInvites(vaultIDs);
         const [owners, orgs] = partitionGroupInvites(invites);
         yield put(syncInvites({ type: InviteType.GroupOwner, invites: toMap(owners, 'token') }));
         yield put(syncInvites({ type: InviteType.GroupOrg, invites: toMap(orgs, 'token') }));

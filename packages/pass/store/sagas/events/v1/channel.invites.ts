@@ -1,52 +1,21 @@
-import { all, fork, put, select } from 'redux-saga/effects';
+import { all, call, fork } from 'redux-saga/effects';
 
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
-import { parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
-import { isAcceptedInvite } from '@proton/pass/lib/invites/invite.utils';
-import { syncInvites } from '@proton/pass/store/actions';
-import type { InviteState } from '@proton/pass/store/reducers';
-import { selectAllVaultIDs } from '@proton/pass/store/selectors';
-import { selectInvites } from '@proton/pass/store/selectors/invites';
+import { processUserInvitePollingEvent } from '@proton/pass/lib/events/v1/invite-polling.processor';
+import { getUserInvitesQuery } from '@proton/pass/lib/invites/invite.requests';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, InvitesGetResponse, Maybe, MaybeNull } from '@proton/pass/types';
-import { InviteType } from '@proton/pass/types';
-import type { UserInvite } from '@proton/pass/types/data/invites';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import type { Api, InvitesGetResponse } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 
-const NAMESPACE = 'ServerEvents::Invites';
+const NAMESPACE = 'Polling::Invites';
 
 function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     if ('error' in event) throw event.error;
-
-    const cachedInvites: InviteState = yield select(selectInvites);
-    const cachedInviteTokens = Object.keys(cachedInvites);
-
-    const noop =
-        event.Invites.length === cachedInviteTokens.length &&
-        event.Invites.every(({ InviteToken }) => cachedInviteTokens.includes(InviteToken));
-
-    if (noop) return;
-
-    logger.info(`[${NAMESPACE}] ${event.Invites.length} new invite(s) received`);
-    const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
-    const isAcceptedUserInvite = isAcceptedInvite(vaultIDs);
-
-    const invites: MaybeNull<UserInvite>[] = yield Promise.all(
-        event.Invites.map<Promise<MaybeNull<UserInvite>>>(async (invite) => {
-            if (isAcceptedUserInvite(invite)) return null;
-            const cached = cachedInvites[invite.InviteToken] as Maybe<UserInvite>;
-            return cached ?? parseUserInvite(invite);
-        })
-    );
-
-    const invitesMap = toMap(invites.filter(truthy), 'token');
-    yield put(syncInvites({ type: InviteType.User, invites: invitesMap }));
+    yield call(processUserInvitePollingEvent, event);
 }
 
 export const createInvitesChannel = (api: Api) =>
@@ -55,7 +24,7 @@ export const createInvitesChannel = (api: Api) =>
         channelId: 'invites',
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
-        query: () => ({ url: `pass/v1/invite`, method: 'get' }),
+        query: getUserInvitesQuery,
         onEvent: onInvitesEvent,
         onClose: () => logger.info(`[${NAMESPACE}] closing channel`),
     });
