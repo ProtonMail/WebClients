@@ -1,14 +1,17 @@
 import type { Draft } from 'immer';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from '../../models/conversation';
 import {
+    labelMessagesPending,
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,
     markMessagesAsReadPending,
     markMessagesAsUnreadPending,
+    unlabelMessagesPending,
 } from './conversationsReducers';
 import type { ConversationState, ConversationsState } from './conversationsTypes';
 
@@ -557,6 +560,170 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
                 // Message should remain unread (no change)
                 expect(updatedConversationState!.Messages![0].Unread).toBe(1);
+            });
+        });
+    });
+
+    describe('Only targeted message should be updated', () => {
+        describe('markMessagesAsReadPending', () => {
+            it('should only update the targeted message, not other messages in the conversation', () => {
+                mockMessage1.Unread = 1;
+                mockMessage2.Unread = 1;
+
+                const messages = [mockMessage1];
+
+                markMessagesAsReadPending(state, {
+                    type: 'markMessagesAsRead/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            labelID: inboxLabelID,
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // message 1 is read
+                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage1!.Unread).toBe(0);
+
+                // message 2 and 3 are unchanged
+                const updatedMessage2 = updatedConversationState!.Messages!.find((m) => m.ID === messageID2);
+                expect(updatedMessage2!.Unread).toBe(1);
+                const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
+                expect(updatedMessage3!.Unread).toBe(0);
+            });
+        });
+
+        describe('markMessagesAsUnreadPending', () => {
+            it('should only update the targeted message, not other messages in the conversation', () => {
+                mockMessage1.Unread = 0;
+                mockMessage2.Unread = 0;
+                mockMessage3.Unread = 0;
+                mockConversation.ContextNumUnread = 0;
+                mockConversation.NumUnread = 0;
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                markMessagesAsUnreadPending(state, {
+                    type: 'markMessagesAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            labelID: inboxLabelID,
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // message 1 is unread
+                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage1!.Unread).toBe(1);
+
+                // message 2 and 3 are unchanged
+                const updatedMessage2 = updatedConversationState!.Messages!.find((m) => m.ID === messageID2);
+                expect(updatedMessage2!.Unread).toBe(0);
+                const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
+                expect(updatedMessage3!.Unread).toBe(0);
+            });
+        });
+
+        describe('labelMessagesPending', () => {
+            const customLabelID = 'custom-label-1';
+            const mockLabel: Label = {
+                ID: customLabelID,
+                Name: 'Custom Label',
+                Color: '#ff0000',
+                Type: 1,
+                Path: 'Custom Label',
+                Order: 1,
+            } as Label;
+
+            it('should only add label to the targeted message, not other messages in the conversation', () => {
+                mockMessage1.LabelIDs = [inboxLabelID];
+                mockMessage2.LabelIDs = [inboxLabelID];
+                mockMessage3.LabelIDs = [draftLabelID];
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                labelMessagesPending(state, {
+                    type: 'labelMessages/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            sourceLabelID: inboxLabelID,
+                            destinationLabelID: customLabelID,
+                            labels: [mockLabel],
+                            folders: [],
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // message 1 is labelled
+                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage1!.LabelIDs).toContain(customLabelID);
+
+                // message2 and 3 are unchanged
+                const updatedMessage2 = updatedConversationState!.Messages!.find((m) => m.ID === messageID2);
+                expect(updatedMessage2!.LabelIDs).not.toContain(customLabelID);
+                const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
+                expect(updatedMessage3!.LabelIDs).not.toContain(customLabelID);
+            });
+        });
+
+        describe('unlabelMessagesPending', () => {
+            const customLabelID = 'custom-label-1';
+            const mockLabel: Label = {
+                ID: customLabelID,
+                Name: 'Custom Label',
+                Color: '#ff0000',
+                Type: 1,
+                Path: 'Custom Label',
+                Order: 1,
+            } as Label;
+
+            it('should only remove label from the targeted message, not other messages in the conversation', () => {
+                mockMessage1.LabelIDs = [inboxLabelID, customLabelID];
+                mockMessage2.LabelIDs = [inboxLabelID, customLabelID];
+                mockMessage3.LabelIDs = [draftLabelID, customLabelID];
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                unlabelMessagesPending(state, {
+                    type: 'unlabelMessages/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            destinationLabelID: customLabelID,
+                            labels: [mockLabel],
+                            folders: [],
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // message 1 is unlabelled
+                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage1!.LabelIDs).not.toContain(customLabelID);
+
+                // message 2 and 3 are unchanged
+                const updatedMessage2 = updatedConversationState!.Messages!.find((m) => m.ID === messageID2);
+                expect(updatedMessage2!.LabelIDs).toContain(customLabelID);
+                const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
+                expect(updatedMessage3!.LabelIDs).toContain(customLabelID);
             });
         });
     });
