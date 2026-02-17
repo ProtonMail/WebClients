@@ -945,7 +945,7 @@
         "Tara ve indir (${ nbSelected })"
       ],
       "Scan and Download": [
-        "Tara ve İndir"
+        "Tara ve indir"
       ],
       "Search": [
         "Arama"
@@ -1023,10 +1023,10 @@
         "Takviminizi ekibinizle paylaşın"
       ],
       "Shared": [
-        "Paylaşılan"
+        "Paylaşılmış"
       ],
       "Sharing is end-to-end encrypted": [
-        "Paylaşım uçtan uca şifrelenir"
+        "Paylaşım uçtan uca şifrelenmiştir"
       ],
       "Sharing options": [
         "Paylaşım seçenekleri"
@@ -3837,7 +3837,7 @@
         "Paylaşılan ögelerinizden bazıları yüklenemedi"
       ],
       "We were not able to load some search results": [
-        "Bazı arama sonuçlarını yükleyemedik"
+        "Bazı arama sonuçları yüklenemedi"
       ],
       "We were not able to load the folder contents": [
         "Klasör içeriği yüklenemedi"
@@ -5872,7 +5872,7 @@
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "owner": [
-        "sahip"
+        "sahibi"
       ],
       "password": [
         "parola"
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
+      "Preparing": [
+        "Hazırlanıyor"
+      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Erişim isteğinde bulunun ya da erişimi olan bir hesaba geçin."
+      ],
+      "Requested item doesn't exist anymore": [
+        "İstenilen öge artık yok"
       ],
       "Restore": [
         "Geri yükle"
@@ -6379,7 +6385,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
-        "${ DRIVE_APP_NAME } sizi korumak için dosyalarınızı gizliliğinizi koruyacak şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak yine de dosyaları yalnızca güvenilir kaynaklardan indirmek en iyisidir. "
+        "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilir kaynaklardan indirmeniz en iyisidir. "
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilen kaynaklardan indirmeniz en iyisidir. "
@@ -6440,6 +6446,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
+      ],
+      "Unexpected download error": [
+        "Beklenmeyen indirme sorunu"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
@@ -7006,7 +7015,7 @@
         "Tümü"
       ],
       "Allow editors to change permissions and share": [
-        "Düzenleyicilerin izinleri değiştirmesine ve paylaşmasına izin ver"
+        "Düzenleyiciler izinleri değiştirebilsin ve paylaşabilsin"
       ],
       "Anderson": [
         "Kaya"
@@ -7015,7 +7024,7 @@
         "İsimsiz"
       ],
       "Anyone on the Internet with the link": [
-        "İnternette bu bağlantıya sahip olan herkes"
+        "İnternet üzerinden bağlantıyı bilen herkes"
       ],
       "App password": [
         "Uygulama parolası"
@@ -7063,10 +7072,10 @@
         "Takvimler"
       ],
       "can edit": [
-        "düzenlenebilir"
+        "düzenleyebilir"
       ],
       "can view": [
-        "görüntülenebilir"
+        "görüntüleyebilir"
       ],
       "Cancel download": [
         "İndirmeyi iptal et"
@@ -7166,7 +7175,7 @@
         "Aygıt adı"
       ],
       "Disable this link on a specific date": [
-        "Bu bağlantıyı belirli bir tarihte devre dışı bırak"
+        "Bu bağlantıyı belirli bir tarihte kullanımdan kaldır"
       ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
@@ -7226,7 +7235,7 @@
         "Geçerlilik süresi sonu"
       ],
       "Expiry": [
-        "Sona erme"
+        "Geçerlilik sonu"
       ],
       "Extended address": [
         "Açık adres"
@@ -7442,7 +7451,7 @@
         "Var olan klasörün veya dosyanın üzerine yaz"
       ],
       "Require password": [
-        "Parola gerekli"
+        "Parola istensin"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -7454,7 +7463,7 @@
         "Kötüye kullanım türünü seçin"
       ],
       "Set a password to limit access via link": [
-        "Bağlantı üzerinden erişimi sınırlamak için bir şifre belirleyin"
+        "Bağlantı üzerinden erişimi sınırlamak için bir parola belirleyin"
       ],
       "Set recovery method": [
         "Kurtarma yöntemini ayarlayın"
@@ -8931,7 +8940,7 @@
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
-        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcısı olan müşteriler için ${ BRAND_NAME } müşteri destek ekibi tarafından sağlanır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -11048,10 +11057,10 @@
     },
     "Status": {
       "accepted": [
-        "kabul edildi"
+        "kabul edilmiş"
       ],
       "pending": [
-        "beklemede"
+        "bekliyor"
       ]
     },
     "Storage": {
@@ -12625,7 +12634,7 @@
         "Ayarlar"
       ],
       "Settings for ${ sharedFileName }": [
-        "${ sharedFileName } için ayarlar"
+        "${ sharedFileName } ayarları"
       ],
       "SHA1": [
         "SHA1"

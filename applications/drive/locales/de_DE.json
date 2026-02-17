@@ -4269,7 +4269,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ]
     },
     "fido2: Info": {
@@ -5971,6 +5971,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
+      "Preparing": [
+        "Vorbereitung"
+      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -6033,6 +6036,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Beantrage Zugriff, oder wechsle zu einem Konto mit Zugriff."
+      ],
+      "Requested item doesn't exist anymore": [
+        "Angeforderter Eintrag existiert nicht mehr"
       ],
       "Restore": [
         "Wiederherstellen"
@@ -6434,6 +6440,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Versuche, nach Dateiname, Datum oder Typ zu suchen."
+      ],
+      "Unexpected download error": [
+        "Unerwarteter Download-Fehler"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Leider scheint es, dass die Datei oder einige ihrer Daten nicht entschlüsselt werden können."

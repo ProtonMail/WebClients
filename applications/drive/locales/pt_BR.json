@@ -5383,7 +5383,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez."
+        "Cada código só pode ser usado uma única vez"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -5977,6 +5977,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
+      "Preparing": [
+        "Preparando"
+      ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
       ],
@@ -6039,6 +6042,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "Solicite acesso, ou altere para uma conta com acesso."
+      ],
+      "Requested item doesn't exist anymore": [
+        "O item solicitado não existe mais"
       ],
       "Restore": [
         "Restaurar"
@@ -6441,6 +6447,9 @@
       "Try searching by file name, date, or type.": [
         "Tente pesquisar pelos nome do arquivo, data ou tipo."
       ],
+      "Unexpected download error": [
+        "Erro inesperado de download"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Infelizmente, parece que o arquivo ou alguns de seus dados não podem ser descriptografados."
       ],
@@ -6592,7 +6601,7 @@
         "Quando você remover ${ deviceName } como um dispositivo sincronizado, todas as pastas adicionadas aos Meus Computadores a partir deste dispositivo serão permanentemente excluídas do ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "who": [
         "quem"
@@ -7227,6 +7236,9 @@
       ],
       "Expires": [
         "Data de validade"
+      ],
+      "Expiry": [
+        "Expiração"
       ],
       "Extended address": [
         "Endereço completo"
@@ -9414,6 +9426,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "As fotos selecionadas já estão em «${ albumName }»."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Configuração atualizada. Editores podem alterar permissão e compartilhar."
       ],
       "Share invitation accepted successfully": [
         "Convite para compartilhamento aceito com sucesso"

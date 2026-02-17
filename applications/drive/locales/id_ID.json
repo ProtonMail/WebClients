@@ -169,19 +169,19 @@
         "Klaim alamat ${ BRAND_NAME } gratis Anda"
       ],
       "Clear": [
-        "Hapus"
+        "Bersihkan"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Hapus data"
+        "Bersihkan data"
       ],
       "Clear query": [
-        "Hapus kueri"
+        "Bersihkan kueri"
       ],
       "Clear selection": [
-        "Hapus pilihan"
+        "Bersihkan pilihan"
       ],
       "Click here.": [
         "Klik di sini."
@@ -850,7 +850,7 @@
         "Laporkan masalah"
       ],
       "Report an issue": [
-        "Laporkan masalah"
+        "Laporkan isu"
       ],
       "Request a call": [
         "Minta telepon"
@@ -3266,7 +3266,7 @@
         "Pencarian konten tidak dapat diaktifkan di peramban ini. Silakan keluar dari mode penjelajahan pribadi atau gunakan peramban lain."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
+        "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau bersihkan data."
       ],
       "Could not add to favorites": [
         "Tidak dapat ditambahkan ke favorit"
@@ -4189,7 +4189,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -5039,7 +5039,7 @@
         "Tautan yang dibagikan tidak dapat dimuat"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
+        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda membersihkan data terenkripsi dari semua kontak yang dienkripsi dengan kunci ini dan sekaligus menutup peringatan tersebut."
       ],
       "Change your password": [
         "Ubah kata sandi Anda"
@@ -5054,16 +5054,16 @@
         "Pilih paket yang paling sesuai dengan kebutuhan Anda."
       ],
       "Clear data": [
-        "Hapus data"
+        "Bersihkan data"
       ],
       "Clear encrypted search data": [
-        "Hapus data pencarian terenkripsi"
+        "Bersihkan data pencarian terenkripsi"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Menghapus data peramban akan turut mengosongkan indeks pencarian yang ada pada perangkat ini. Seluruh file yang ada akan kembali diindeks ulang pada saat Anda menggunakan fitur pencarian."
+        "Membersihkan data peramban akan turut mengosongkan indeks pencarian yang ada pada perangkat ini. Seluruh file yang ada akan kembali diindeks ulang pada saat Anda menggunakan fitur pencarian."
       ],
       "Clears browser data related to the encrypted search.": [
-        "Menghapus data peramban yang terkait dengan pencarian terenkripsi."
+        "Membersihkan data peramban yang terkait dengan pencarian terenkripsi."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Edit\" untuk mengubahnya."
@@ -5231,7 +5231,7 @@
         "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
-        "Setiap kode hanya dapat digunakan satu kali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -5246,7 +5246,7 @@
         "Email ditandatangani secara otomatis"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dihapus secara otomatis."
+        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dibersihkan secara otomatis."
       ],
       "Empty folder": [
         "Folder kosong"
@@ -5459,7 +5459,7 @@
         "Memulai"
       ],
       "Integrity issues found": [
-        "Masalah integritas ditemukan"
+        "Isu integritas ditemukan"
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -5477,7 +5477,7 @@
         "Aplikasi iOS dan Android"
       ],
       "Issues found": [
-        "Masalah ditemukan"
+        "Isu ditemukan"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah file akan membatalkan unggahan yang telah ada."
@@ -5837,7 +5837,7 @@
         "Utama"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Penjelajahan pribadi (atau mode “incognito”) hanya berguna untuk menyembunyikan aktivitas Anda di perangkat. Fitur ini mencegah peramban menyimpan riwayat dan cookie, tetapi tidak membuat Anda tak terlihat. ISP Anda, administrator jaringan, serta situs web yang Anda kunjungi tetap dapat melihat apa yang Anda lakukan secara daring."
+        "Penjelajahan pribadi (atau mode “incognito”) hanya berguna untuk menyembunyikan aktivitas Anda di perangkat. Fitur ini mencegah peramban menyimpan riwayat dan kuki, tetapi tidak membuat Anda tak terlihat. ISP Anda, administrator jaringan, serta situs web yang Anda kunjungi tetap dapat melihat apa yang Anda lakukan secara daring."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari file dan folder tertentu."
@@ -5894,7 +5894,7 @@
         "Menyimpan..."
       ],
       "Scan issue": [
-        "Masalah pemindaian"
+        "Isu pemindaian"
       ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR ini dengan perangkat seluler Anda"
@@ -6476,7 +6476,7 @@
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
       "You can close the tab or browser in the meantime.": [
-        "Sementara itu, Anda dapat menutup tab atau peramban."
+        "Anda dapat menutup tab atau peramban untuk saat ini."
       ],
       "You can import one data type at a time.": [
         "Anda dapat mengimpor satu jenis data dalam satu waktu."
@@ -8609,7 +8609,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
+        "Bersihkan pesan yang berusia lebih dari 30 hari dari Sampah dan Spam secara otomatis"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -9093,7 +9093,7 @@
         "Akses tautan publik diperbarui"
       ],
       "Root folder failed to be loaded": [
-        "Folder akar gagal dimuat"
+        "Folder root gagal dimuat"
       ],
       "Selected item was not removed from your list": [
         "Item yang dipilih gagal dihapus dari daftar Anda"
@@ -11658,7 +11658,7 @@
         "Klaim alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Clearing data": [
-        "Menghapus data"
+        "Membersihkan data"
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
@@ -12772,7 +12772,7 @@
         "Kontak tidak dapat digabung"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
+        "Jika Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
