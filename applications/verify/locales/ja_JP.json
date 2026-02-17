@@ -1032,7 +1032,7 @@
         "複数の無料アカウントの作成は${ termsLink }で禁止されています。"
       ],
       "Each code can only be used once": [
-        "各コードは1度のみ使用可能です"
+        "各コードは 1 回のみ使用可能です"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -1044,7 +1044,7 @@
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "認証コードを入力してください。${ digit }桁です。"
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -1095,7 +1095,7 @@
         "新しい認証コードを ${ strong } に送信しました"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
