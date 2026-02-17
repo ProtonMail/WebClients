@@ -287,6 +287,9 @@
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
       ],
+      "Skip": [
+        "Overslaan"
+      ],
       "Start a meeting": [
         "Start een vergadering"
       ],
@@ -301,6 +304,9 @@
       ],
       "Start Recording Track Stats": [
         "Start met het registreren van Track Statistieken"
+      ],
+      "Start your own meeting": [
+        "Start uw eigen vergadering"
       ],
       "Stay in meeting": [
         "Blijf in de vergadering"
@@ -411,6 +417,9 @@
       ],
       "Rotate personal meeting link": [
         "Roteer persoonlijke vergadering link"
+      ],
+      "Screen share": [
+        "Scherm delen"
       ],
       "Settings": [
         "Instellingen"
@@ -1474,6 +1483,9 @@
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
+      "Invalid meeting link": [
+        "Ongeldige vergaderingslink"
+      ],
       "Invalid passphrase": [
         "Ongeldig wachtwoord"
       ],
@@ -1573,7 +1585,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME } account."
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Security key": [
         "Beveiligingssleutel"
@@ -1754,11 +1766,17 @@
       "Create an account to have a personal meeting link you can reuse for every call.": [
         "Maak een account aan om een persoonlijke vergadering link te hebben die u voor elk gesprek kunt hergebruiken."
       ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Maak een account aan om vergaderingen met maximaal 50 deelnemers te hosten."
+      ],
       "Created on ${ formattedDate }": [
         "Gemaakt op ${ formattedDate }"
       ],
       "Custom combination": [
         "Aangepaste combinatie"
+      ],
+      "Decrypting meetings...": [
+        "Vergaderingen ontsleutelen..."
       ],
       "Default": [
         "Standaard"
@@ -1826,6 +1844,9 @@
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Gratis vergaderingen zijn beperkt tot 1 uur. Dit gesprek zal binnenkort worden verbroken."
       ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Krijg een persoonlijke vergaderruimte. Maak een account aan om een persoonlijke vergaderlink te krijgen die u op elk moment kunt gebruiken."
+      ],
       "Get a secure meeting link then add it to your calendar": [
         "Krijg een beveiligde vergadering link en voeg deze vervolgens toe aan uw agenda"
       ],
@@ -1840,6 +1861,9 @@
       ],
       "Host your own secure meeting": [
         "Organiseer uw eigen veilige vergadering"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Host uw eigen veilige vergadering. Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen. Eenvoudig, veilig en gratis."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -1856,9 +1880,6 @@
       "Joined ${ roomNameLabel }": [
         "Deelname aan ${ roomNameLabel }"
       ],
-      "Last used on ${ formattedDate }": [
-        "Laatst gebruikt op ${ formattedDate }"
-      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -1871,6 +1892,9 @@
       "Left by mistake?": [
         "Per ongeluk vertrokken?"
       ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
       "Loading": [
         "Laden"
       ],
@@ -1880,6 +1904,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading meetings...": [
+        "Vergaderingen laden..."
+      ],
       "Loading...": [
         "Laden..."
       ],
@@ -1888,6 +1915,9 @@
       ],
       "Meet without restrictions": [
         "Meet zonder beperkingen"
+      ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Vergader zonder beperkingen. Upgrade om de limiet van 1 uur te verwijderen en host tot 100 deelnemers."
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Vergadering vol (${ maxParticipants } deelnemers)"
@@ -2009,6 +2039,9 @@
       "Schedule your next meeting": [
         "Plan uw volgende vergadering"
       ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Plan uw volgende vergadering. Maak een account om vergaderingen te plannen met uw agenda."
+      ],
       "Select a camera": [
         "Selecteer een camera"
       ],
@@ -2039,6 +2072,9 @@
       "Sign in": [
         "Inloggen"
       ],
+      "Sort by": [
+        "Sorteren op"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen deel te nemen. Eenvoudig, veilig en gratis."
       ],
@@ -2047,6 +2083,12 @@
       ],
       "Successfully deleted meeting": [
         "Vergadering succesvol verwijderd"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Bedankt voor het hosten van een premium vergadering."
+      ],
+      "Thank you for joining.": [
+        "Bedankt voor uw deelname."
       ],
       "The host has ended the meeting": [
         "De organisator heeft de vergadering beëindigd"
@@ -2078,9 +2120,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
-      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
-        "Om uw organisatie te beschermen, nodigt u uw team uit om ${ MEET_APP_NAME } te gebruiken."
-      ],
       "Turn off camera": [
         "Camera uitschakelen"
       ],
@@ -2105,9 +2144,6 @@
       "Video effects": [
         "Video-effecten"
       ],
-      "We hope you enjoyed your secure meeting!": [
-        "We hopen dat u genoten heeft van uw beveiligde vergadering!"
-      ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
@@ -2115,7 +2151,7 @@
         "Week"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
       "Would you like to delete this event?": [
         "Wilt u deze afspraak verwijderen?"
@@ -2137,6 +2173,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "U kunt uw microfoon en camera op elk moment tijdens de vergadering uitschakelen"
+      ],
+      "You left your meeting": [
+        "U hebt uw vergadering verlaten"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "U bent uitgenodigd om deel te nemen aan een beveiligde vergadering. Bevestig uw naam en klik hieronder om deel te nemen."
@@ -2173,6 +2212,13 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } ster",
+        "${ numberOfStars } sterren"
+      ],
+      "Add optional details": [
+        "Optionele gegevens toevoegen"
+      ],
       "Add to calendar": [
         "Voeg toe aan de agenda"
       ],
@@ -2184,6 +2230,9 @@
       ],
       "Authenticator app": [
         "Authenticatie app"
+      ],
+      "Back to dashboard": [
+        "Terug naar dashboard"
       ],
       "Browser": [
         "Browser"
@@ -2218,6 +2267,9 @@
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
       ],
+      "Does not repeat": [
+        "Wordt niet herhaald"
+      ],
       "Download .ics": [
         "Download .ics"
       ],
@@ -2251,6 +2303,9 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "How was the call quality?": [
+        "Hoe was de gesprekskwaliteit?"
+      ],
       "Identity": [
         "Identiteit"
       ],
@@ -2275,9 +2330,6 @@
       "Name": [
         "Naam"
       ],
-      "No repeat": [
-        "Niet herhalen"
-      ],
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -2298,6 +2350,9 @@
       ],
       "Remember my name on this device": [
         "Onthoud mijn naam op dit apparaat"
+      ],
+      "Repeat event": [
+        "Afspraak herhalen"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -2397,6 +2452,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Could not send feedback": [
+        "Kan feedback niet verzenden"
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -2413,6 +2471,35 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
+      ]
+    },
+    "Option": {
+      "Audio was breaking up": [
+        "Audio was aan het haperen"
+      ],
+      "I couldn't hear others": [
+        "Ik kon anderen niet horen"
+      ],
+      "I couldn't present ": [
+        "Ik kon niet presenteren "
+      ],
+      "I couldn't see others' video": [
+        "Ik kon de video van anderen niet zien"
+      ],
+      "I couldn't see the presentation": [
+        "I kon de presentatie niet zien"
+      ],
+      "Others couldn't hear me": [
+        "Anderen konden mij niet horen"
+      ],
+      "The presentation was blurry": [
+        "De presentatie was wazig"
+      ],
+      "Video was blurry": [
+        "Video was wazig"
+      ],
+      "Video was breaking up": [
+        "Video was aan het haperen"
       ]
     },
     "Placeholder": {
@@ -2434,6 +2521,9 @@
       "Enter time": [
         "Voer tijd in"
       ],
+      "Enter your name": [
+        "Voer uw naam in"
+      ],
       "Find...": [
         "Zoeken..."
       ],
@@ -2454,6 +2544,9 @@
       ],
       "Select": [
         "Selecteer"
+      ],
+      "Share more details": [
+        "Meer details delen"
       ],
       "Type an encrypted message...": [
         "Typ een versleuteld bericht..."
@@ -2511,9 +2604,6 @@
       ]
     },
     "Sort option": {
-      "Last used": [
-        "Laatst gebruikt"
-      ],
       "Newly created": [
         "Nieuw aangemaakt"
       ],
@@ -2722,6 +2812,9 @@
       "Talk confidentially": [
         "Vertrouwelijk communiceren"
       ],
+      "Thank you!": [
+        "Bedankt!"
+      ],
       "Time": [
         "Tijd"
       ],
@@ -2733,6 +2826,12 @@
       ],
       "Video": [
         "Video"
+      ],
+      "What went wrong?": [
+        "Wat ging er mis?"
+      ],
+      "Your feedback has been submitted": [
+        "Uw feedback is verzonden"
       ]
     },
     "Today icon tooltip in mini calendar": {

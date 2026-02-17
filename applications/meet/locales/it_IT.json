@@ -284,6 +284,9 @@
       "Sign out of all accounts": [
         "Esci da tutti gli account"
       ],
+      "Skip": [
+        "Salta"
+      ],
       "Start a meeting": [
         "Inizia la riunione"
       ],
@@ -1565,12 +1568,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo account ${ BRAND_NAME }."
+        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chiave di sicurezza"
@@ -1776,7 +1779,7 @@
         "Scarica i log correnti"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta."
+        "Ogni codice può essere usato una sola volta"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -1850,9 +1853,6 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
-      "Last used on ${ formattedDate }": [
-        "Ultimo utilizzo: ${ formattedDate }"
-      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -1861,6 +1861,9 @@
       ],
       "Left by mistake?": [
         "Sei uscito per errore?"
+      ],
+      "Link copied to clipboard": [
+        "Link copiato negli appunti"
       ],
       "Loading": [
         "Caricamento in corso"
@@ -2063,9 +2066,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
-      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
-        "Per proteggere la tua organizzazione, invita la tua squadra a usare ${ MEET_APP_NAME }."
-      ],
       "Turn off camera": [
         "Disattiva la webcam"
       ],
@@ -2090,9 +2090,6 @@
       "Video effects": [
         "Effetti video"
       ],
-      "We hope you enjoyed your secure meeting!": [
-        "Speriamo che tu abbia apprezzato il tuo incontro sicuro!"
-      ],
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
       ],
@@ -2100,7 +2097,7 @@
         "Settimana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "Would you like to delete this event?": [
         "Vuoi cancellare questo evento?"
@@ -2259,9 +2256,6 @@
       ],
       "Name": [
         "Nome"
-      ],
-      "No repeat": [
-        "Nessuna ripetizione"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -2493,9 +2487,6 @@
       ]
     },
     "Sort option": {
-      "Last used": [
-        "Ultimo utilizzo"
-      ],
       "Past meetings": [
         "Riunioni passate"
       ]
