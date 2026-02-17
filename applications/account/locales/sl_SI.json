@@ -620,6 +620,9 @@
       "Get ${ planOrAppName }": [
         "Pridobi ${ planOrAppName }."
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Pridobite brezplačen ${ BRAND_NAME } naslov"
+      ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
       ],
@@ -1676,6 +1679,11 @@
         "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Prekliči naročnino"
@@ -1763,12 +1771,81 @@
         "Ponudba ni na voljo."
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } shrambe"
+      ],
+      "1 user account": [
+        "1 uporabniški račun"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "6 user accounts": [
+        "6 uporabniških računov"
+      ],
+      "Admin panel to manage your family": [
+        "Administrativna plošča za upravljanje vaše družine"
+      ],
+      "Advanced account protection": [
+        "Napredni program za zaščito računa"
+      ],
+      "Easily add or remove users": [
+        "Enostavno dodajte ali odstranite uporabnike"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Password health alerts": [
+        "Opozorila o kakovosti gesla"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnovitev po enem mesecu za ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Zaščitite svoje datoteke s šifrirano shrambo v oblaku. Vključuje spletni urejevalnik dokumentov, varnostno kopijo fotografij, zgodovino različic, šifrirano delitev datotek in še več."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
       ]
     },
     "BF2025: Deal details": {
@@ -1991,6 +2068,9 @@
       ],
       "Manual setup problem": [
         "Težava z ročno namestitvijo"
+      ],
+      "Meet problem": [
+        "Težava z Meet"
       ],
       "Other": [
         "Drugo"
@@ -2278,11 +2358,28 @@
       "Access to advanced AI models": [
         "Dostop do naprednih modelov UI"
       ],
+      "Built and based in Europe": [
+        "Zgrajeno in s sedežem v Evropi"
+      ],
+      "Compliance with data protection regulations": [
+        "Skladnost s predpisi o varstvu podatkov"
+      ],
       "Data never used for AI training": [
         "Podatki se ne bodo nikoli uporabljali za urjenje UI"
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je umetna inteligenca s poudarkom na zasebnosti, ki vam pomaga opraviti več dela, hkrati pa ohranja vaše podatke varne. Odklenite njen polni potencial in uživajte v zgodnjem dostopu do novih funkcij, ko bodo uvedene."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Dodaj ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Napredna varnost računa in omrežja v enem paketu"
       ]
     },
     "collider_2025: Navigation": {
@@ -3715,6 +3812,9 @@
       "No one in your organization can connect to shared servers.": [
         "Nihče v vaši organizaciji se ne more povezati z deljenimi strežniki."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Za uvoz preko CSV in VCF datoteke zagotovite, da datoteka ne presega ${ MAX_IMPORT_FILE_SIZE_STRING } ali ${ maxContactString } stikov. Če je vaša datoteka večja, jo razdelite na manjše. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
       ],
@@ -3906,22 +4006,22 @@
         "Namizje"
       ],
       "Download for Linux": [
-        "Naloži za Linux"
+        "Prenesi za Linux"
       ],
       "Download for macOS": [
-        "Naloži za macOS"
+        "Prenesi za macOS"
       ],
       "Download for Windows": [
-        "Naloži za Windows"
+        "Prenesi za Windows"
       ],
       "Download on Snap store": [
         "Prenesi iz trgovine Snap"
       ],
       "Download on the Apple App Store": [
-        "Naloži iz trgovine Apple App Store"
+        "Prenesi iz trgovine Apple App Store"
       ],
       "Download on the Google Play Store": [
-        "Naloži iz trgovine Google Play"
+        "Prenesi iz trgovine Google Play"
       ],
       "Fire TV": [
         "Fire TV"
@@ -4020,15 +4120,39 @@
         "Prilagojene rešitve za večje organizacije, ki potrebujejo storitve po meri"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
     "Duo offer": {
       "/month": [
         "/mesec"
       ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
       "2 user accounts": [
         "2 uporabniška računa"
       ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
       "Only": [
         "Samo"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Pridobite 4x več prostora za shranjevanje"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
       ]
     },
     "edm": {
@@ -4075,6 +4199,9 @@
       "Here's what changed:": [
         "Kaj se je spremenilo:"
       ],
+      "LOCATION:": [
+        "LOKACIJA:"
+      ],
       "NOTE:": [
         "OPOMBA:"
       ],
@@ -4086,6 +4213,12 @@
       ],
       "This event was updated.": [
         "Ta dogodek je bil posodobljen."
+      ],
+      "TIME:": [
+        "ČAS:"
+      ],
+      "TITLE:": [
+        "NASLOV:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4521,6 +4654,9 @@
       "Expired": [
         "Poteklo"
       ],
+      "Failed loading group members": [
+        "Napaka pri nalaganju članov skupine"
+      ],
       "Failed to add group member": [
         "Člana skupine ni bilo mogoče dodati"
       ],
@@ -4881,6 +5017,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
       ],
+      "This offer is not available in your country": [
+        "Ta ponudba ni na voljo v vaši državi"
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali obnoviti skrbniške pravice."
       ],
@@ -5032,6 +5171,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Pri nalaganju datoteke je prišlo do napake. Izbrana ni bila nobena datoteka."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "Vaša datoteka ${ formattedFilename } vsebuje več kot ${ maxContactString } stikov."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "V datoteki ${ formattedFilename } ni stikov, ki bi jih lahko uvozili."
@@ -5262,9 +5404,19 @@
         "Lahko shranite datoteko ICS dogodkov, ki so bili uspešno izvoženi."
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB skupnega prostora shrambe"
+      ]
+    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Koristi vašega računa"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Prostor za shranjevanje si delijo družinski člani ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }"
       ]
     },
     "familyOffer_2023:Action": {
@@ -5293,6 +5445,11 @@
         "Ogled povabila"
       ]
     },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Do šest uporabnikov"
+      ]
+    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Družinska skupina ni prepoznana. Poskusite znova."
@@ -5310,6 +5467,9 @@
       ],
       "customer support": [
         "podpora strankam"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Družinski paketi trenutno ne podpirajo zunanjih računov. Preden se pridružite, ustvarite naslov ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
@@ -5512,6 +5672,17 @@
         "Določite družinsko ime."
       ]
     },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje 2700 strežnikov v več kot 65 državah, povežite do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 90 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN povezava",
@@ -5539,6 +5710,9 @@
       ],
       "Continue": [
         "Nadaljuj"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Šifrirana shramba v oblaku za datoteke, fotografije in dokumente"
       ],
       "Fastest VPN servers": [
         "Najhitrejši strežniki VPN"
@@ -6367,6 +6541,9 @@
       "Too many recent requests. Please try again in a few moments.": [
         "Preveč nedavnih zahtevkov. Poskusite znova čez nekaj trenutkov."
       ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem e-poštnem računu."
+      ],
       "Use your app password if:": [
         "Uporabite geslo za aplikacijo, če:"
       ],
@@ -6596,6 +6773,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } zahteva ${ BRAND_NAME } naslov za varno sinhronizacijo dogodkov in šifriranje. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nov koledar",
         "${ calendarsToBeCreatedCount } nova koledarja",
@@ -6773,8 +6953,17 @@
       "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Korak 1: Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Korak 1:** Povabite vaše prijatelje na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
       "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
         "**Korak 2:** Vaši prijatelji dobijo svoj paket **2 tedna brezplačno**."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Korak 2:** Vaši prijatelji dobijo svoj paket 2 tedna brezplačno."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Korak 3:** Prejmite ${ referrerRewardAmount } kot dobropis za vsako osebo,, ki se naroči na paket."
       ],
       "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
         "**Korak 3:** Prejmite **${ referrerRewardAmount } kot dobropis** za vsako osebo, ki se naroči na paket."
@@ -7103,9 +7292,6 @@
       "Continue": [
         "Nadaljuj"
       ],
-      "Continue with ${ freeName }": [
-        "Nadaljujte s ${ freeName }."
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Nadaljevanje bo povezalo vaš ${ BRAND_NAME } račun s storitvijo ${ name }."
       ],
@@ -7141,9 +7327,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Ustvarite in upravljajte podračune ter jim dodajte elektronske naslove s svojo lastno domeno."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Ustvarite e-poštne naslove za druge ljudi, upravljajte ${ MAIL_APP_NAME } za podjetje, šolo ali skupino. Začnite tako, da dodate ime organizacije in po meri prilagojeno domeno (npr. @vasepodjetje.com). "
       ],
       "Create in": [
         "Ustvari v"
@@ -7493,9 +7676,6 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Ustvarjanje nove obnovitvene fraze bo razveljavilo vašo staro frazo."
       ],
-      "Get ${ upsellPlanName }": [
-        "Pridobi ${ upsellPlanName }."
-      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Pridobite dostop z ustvarjanjem računa ${ BRAND_NAME } in s sprejetjem povabila."
       ],
@@ -7543,9 +7723,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Spremenjeno geslo za organizacijo vam lahko posreduje le drug administrator, ki je to geslo spremenil."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Če ni prav za vas, vam povrnemo denar."
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Če so bližnjice na tipkovnici omogočene, lahko uporabite naslednje tipke za hitra dejanja ali za skok na različne poglede. ${ metaKey } + K je vedno omogočeno."
@@ -9859,6 +10036,9 @@
       "Date format": [
         "Oblika datuma"
       ],
+      "Deals, offers, marketing emails": [
+        "Promocije, ponudbe, marketinška e-pošta"
+      ],
       "Default email address": [
         "Privzeti e-poštni naslov"
       ],
@@ -10005,6 +10185,9 @@
       ],
       "Gateway name": [
         "Ime prehoda"
+      ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
       ],
       "Gift code": [
         "Darilna koda"
@@ -10947,6 +11130,9 @@
       "Learn more": [
         "Izvedi več."
       ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Če želite še naprej uporabljati ${ BRAND_NAME }, poskrbite, da vaše premijske funkcije ne bodo več v uporabi ali nadgradite svoj paket."
+      ],
       "upgrade for more storage": [
         "dokupite prostor za shranjevanje"
       ],
@@ -11125,6 +11311,9 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: Zaupna video konferenca za pogovore, ki so pomembni"
+      ],
       "${ n } active meeting at a time": [
         "${ n } sestanek hkrati",
         "${ n } sestanka hkrati",
@@ -11133,6 +11322,18 @@
       ],
       "24 hours per meeting": [
         "24 ur na sestanek"
+      ],
+      "60 minutes per meeting": [
+        "60 minut na sestanek"
+      ],
+      "One active meeting at a time": [
+        "En aktivni sestanek naenkrat"
+      ],
+      "Screen-sharing": [
+        "Deljenje zaslona"
+      ],
+      "Unlimited meetings per day": [
+        "Neomejeno število sestankov na dan"
       ],
       "Up to ${ n } meeting per day": [
         "Do ${ n } sestanek na dan",
@@ -11185,6 +11386,9 @@
     "Message": {
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Povežite vašo domeno po meri v ${ BRAND_NAME } in pripravite e-poštne naslove po meri (npr. vi@vasepodjetje.com). Naš čarovnik vas bo vodil skozi postopek."
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše brezplačno preskusno obdobje se je končalo. Dostop do vašega računa bo kmalu onemogočen. ${ action }"
@@ -13737,6 +13941,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Znesek za plačilo po preskusnem obdobju ${ formattedDate }"
+      ],
       "Billing Country": [
         "Država plačnika"
       ],
@@ -13767,6 +13974,9 @@
       "Offer unavailable": [
         "Ponudba ni na voljo."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Zahtevan je način plačila, da se naročnina aktivira po koncu preskusnega obdobja."
+      ],
       "Processing payment": [
         "Plačilo v teku"
       ],
@@ -13782,8 +13992,14 @@
       "Sorry, this offer is not available with your current plan.": [
         "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
       ],
+      "Taxes": [
+        "Davki"
+      ],
       "terms and conditions": [
         "pravili in pogoji"
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Posebno znižana cena velja prvi mesec. Nato se bo samodejno podaljšala za ${ renewPriceStr } vsak mesec. Prekličete lahko kadarkoli."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
@@ -13791,11 +14007,20 @@
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcija je uspešno zaznana. Dobroimetje bo dodano vašemu računu, ko bo transakcija v celoti potrjena."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "To dejanje razširi obstoječo naročnino. Zaračunali vam bomo samo nove dodatke in preostali čas trenutnega obračunskega obdobja. Datum podaljšanja vaše naročnine se ne bo spremenil."
+      ],
+      "This offer is not available with your current plan.": [
+        "Ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
       ],
       "VAT": [
         "DDV"
+      ],
+      "VAT number": [
+        "DDV številka"
       ],
       "You already have a subscription to this plan.": [
         "Na ta paket ste že naročeni."
@@ -13803,8 +14028,14 @@
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Prek izbranega načina plačila vam bomo zaračunali ${ amountToCharge }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Za preverjanje plačila boste kmalu preusmerjeni na spletno mesto PayPal."
+      ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
       ]
     },
     "Payments.Error": {
@@ -13827,12 +14058,28 @@
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Nekaj je šlo narobe. Preverjanje Google Pay je spodletelo."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Dobroimetje bo dodano na vaš račun"
+      ]
+    },
     "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Ste prepričani, da želite nadaljevati?"
+      ],
       "Keep ${ planTitle }": [
         "Obdrži paket ${ planTitle }"
       ],
       "Yes, I'm sure": [
         "Da, prepričan(a) sem"
+      ],
+      "Your plan includes this feature already.": [
+        "Vaš paket že vključuje to funkcijo."
       ]
     },
     "Payments.plan_name": {
@@ -13849,11 +14096,20 @@
       ]
     },
     "Payments.VAT number name": {
+      "Add VAT number": [
+        "Dodaj DDV številko"
+      ],
       "Edit ABN": [
         "Uredi ABN"
       ],
+      "Edit Business Number": [
+        "Uredi številko podjetja"
+      ],
       "Edit EIN": [
         "Uredi EIN"
+      ],
+      "Edit VAT number": [
+        "Uredi DDV številko"
       ],
       "VAT number": [
         "ID za DDV"
@@ -14235,6 +14491,12 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
         "Uporabljam ${ BRAND_NAME } in pomislil sem, da ti bo morda všeč. To je varna e-pošta, shramba v oblaku, upravitelj gesel in VPN, ki varuje zasebnost. Registriraj se s to povezavo in za 14 dni dobiš brezplačne premijske funkcije: ${ referralLink }"
+      ],
+      "Invite friends. Get credits.": [
+        "Povabite prijatelje. Prejmite dobroimetje."
+      ],
+      "Start earning credits": [
+        "Začnite pridobivati dobroimetje"
       ],
       "your subscription": [
         "vaša naročnina"
@@ -15435,6 +15697,18 @@
       ]
     },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uporabnikov"
+      ],
+      "All paid Mail and Calendar features": [
+        "Vse plačljive funkcije Pošte in Koledarja"
+      ],
+      "High speed VPN": [
+        "Visoka hitrost VPN"
+      ],
       "Highest VPN speed": [
         "Najhitrejši VPN"
       ],
@@ -15447,8 +15721,17 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premijski ${ appName1 }, ${ appName2 } in ${ appName3 }"
       ],
+      "Premium early access": [
+        "Premijski zgodnji dostop"
+      ],
+      "Secure cloud storage": [
+        "Varna shramba v oblaku"
+      ],
       "Secure streaming": [
         "Varni pretočni prenos"
+      ],
+      "Support online privacy": [
+        "Podprite zasebnost na spletu"
       ]
     },
     "specialoffer: Footer": {
@@ -15480,17 +15763,74 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } meseca",
+        "${ n } meseci",
+        "${ n } mesecev"
+      ],
       "/ month": [
         "/mesec"
       ],
       "/month": [
         "/mesec"
       ],
+      "1 year": [
+        "1 leto"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "2 years": [
+        "2 leti"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Zaračunano ${ amount } za en mesec"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Zaračunano ${ amount } za 12 mesecev"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Zaračunano ${ amount } za 15 mesecev"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Zaračunano ${ amount } za 24 mesecev"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Zaračunano ${ amount } za 30 mesecev"
+      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 1 letu po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popusta)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 2 letih po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popust)"
+      ],
       "Save ${ discount }%": [
         "Prihranite ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Običajna cena ${ amount } za en mesec"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Običajna cena ${ amount } za 12 mesecev"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Običajna cena ${ amount } za 15 mesecev"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Običajna cena ${ amount } za 24 mesecev"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Posebna ponudba velja za prvi 2 leti."
       ]
     },
     "specialoffer: Title": {
@@ -15502,6 +15842,29 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN na uporabnika, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Vse naše premijske storitve z največjim možnim obsegom: 100 e-poštnih naslovov, podpora za 10 e-poštnih domen po meri, neomejeno število vzdevkov hide-my-email, deljenje koledarjev, šifrirana shramba v oblaku in še več."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Odlično za družine ali majhne ekipe, vsak ima lahko svoj nabiralnik in vzdevke. Zahtevana je domena po meri."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Brez dodatnih stroškov prejmite plačljive različice vseh novih storitev zasebnosti, ki jih izdamo v prihodnosti, skupaj z zgodnjim dostopom do vseh prihodnjih funkcij in izdelkov."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
     "sso": {
@@ -15750,6 +16113,9 @@
       "${ app } storage": [
         "${ app } shrambe"
       ],
+      "${ app } storage used": [
+        "Porabljene shrambe ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je ${ percentage }% polna"
       ],
@@ -15770,6 +16136,9 @@
       ],
       "Get more storage": [
         "Pridobite več prostora"
+      ],
+      "Storage used": [
+        "Porabljena shramba"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Če želite še naprej uporabljati izdelke ${ BRAND_NAME }, sprostite prostor ali ${ upgrade }."
@@ -16608,6 +16977,20 @@
         "Podrobnosti dogodkov, ki jih ni bilo mogoče izvoziti"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Naslovi"
@@ -17312,7 +17695,7 @@
         "Šifriranje in ključi"
       ],
       "Enjoy fast, seamless access to your emails with our dedicated apps.": [
-        "Uživajte hiter, brezhiben dostop do vaših e-poštnih sporočil z našimi namenskimi aplikacijami."
+        "Uživajte v hitrem in brezhibnem dostopu do vaših e-poštnih sporočil z našimi namenskimi aplikacijami."
       ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
@@ -17403,6 +17786,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Pridobite ${ vpnPlus } za dostop do vseh strežnikov"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Prejmite **${ referralInfo.uiData.refereeRewardAmount }** v dobroimetju z ${ planTitle }"
       ],
       "Get more from your cloud storage": [
         "Pridobite več od svoje shrambe v oblaku"
@@ -17956,6 +18342,9 @@
       "Time zone": [
         "Časovni pas"
       ],
+      "To preview this spreadsheet, download it.": [
+        "Če želite to preglednico predogledati, jo prenesite."
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -17985,6 +18374,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Nadgradite za ohranitev vaših premijskih ugodnosti."
       ],
       "Upgrade your privacy": [
         "Nadgradite svojo zasebnost"
@@ -18063,6 +18455,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "Vaša naročnina na ${ planTitle } se je začela"
       ],
       "Your calendar link": [
         "Povezava do vašega koledarja"
@@ -18737,9 +19132,6 @@
       "Just ${ price }": [
         "Le ${ price }"
       ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Preizkusite ${ upsellPlanName } brez tveganja."
-      ],
       "Your ${ a } and ${ b } bundle": [
         "Paket ${ a } in ${ b }"
       ],
@@ -18908,6 +19300,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Vaše brezplačno preizkusno obdobje se konča dne ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
       ]
     },
     "Warning for domain modal": {
