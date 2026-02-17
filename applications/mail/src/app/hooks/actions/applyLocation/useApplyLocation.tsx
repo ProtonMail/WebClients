@@ -5,6 +5,7 @@ import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
@@ -32,7 +33,7 @@ import {
     unlabelConversations,
     unlabelMessages,
 } from 'proton-mail/store/mailbox/mailboxActions';
-import { getNotificationTextUpdated } from 'proton-mail/store/mailbox/mailboxHelpers';
+import { getNotificationTextLabelAdded } from 'proton-mail/store/mailbox/mailboxHelpers';
 
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import {
@@ -454,9 +455,13 @@ export const useApplyLocation = () => {
         notificationID = createNotification({
             text: (
                 <UndoActionNotification closeOnUndo={false} onUndo={undo}>
-                    {getNotificationTextUpdated({
+                    {getNotificationTextLabelAdded({
                         isMessage,
                         elementsCount,
+                        isComingFromSpam: sourceLabelID === MAILBOX_LABEL_IDS.SPAM,
+                        destinationLabelID: Object.keys(params.changes)[0],
+                        folders,
+                        labels,
                     })}
                 </UndoActionNotification>
             ),
