@@ -121,7 +121,7 @@ import {
     initializeUpdateChecks();
     new Notification();
 
-    viewCreationAppStartup(startupUrl || undefined);
+    await viewCreationAppStartup(startupUrl || undefined);
 
     const settings = getSettings();
 

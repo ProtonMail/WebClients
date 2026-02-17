@@ -112,10 +112,10 @@ export const viewCreationAppStartup = async (startupUrl?: string) => {
     await new Promise((resolve) => setTimeout(resolve, delay));
 
     const initialUrl = startupUrl || getAppURL().meet;
-    loadURL("meet", initialUrl).then(() => {
-        showView("meet");
-        mainWindow!.show();
-    });
+
+    await loadURL("meet", initialUrl);
+    showView("meet");
+    mainWindow!.show();
 };
 
 const createView = (viewID: ViewID) => {
