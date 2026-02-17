@@ -12,9 +12,9 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrap';
+import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { calendarSettingsThunk } from '@proton/calendar/calendarUserSettings';
 import { calendarsThunk } from '@proton/calendar/calendars';
-import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { holidaysDirectoryThunk } from '@proton/calendar/holidaysDirectory';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -27,7 +27,6 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
-import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import noop from '@proton/utils/noop';
@@ -56,7 +55,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
 
     setupGuestCrossStorage({ appMode, appName });
-    initLogicalProperties();
     initSafariFontFixClassnames();
     startLogoutListener();
 

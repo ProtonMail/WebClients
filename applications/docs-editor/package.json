@@ -3,7 +3,7 @@
   "description": "Editor for Proton Docs.",
   "main": "index.ts",
   "scripts": {
-    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --babelLoader",
+    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --babelLoader --noLogicalScss",
     "check-types": "tsc",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
@@ -11,7 +11,7 @@
     "i18n:validate:context:web": "proton-i18n validate",
     "lint": "eslint --quiet",
     "lint:warning": "eslint",
-    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader",
+    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader --noLogicalScss",
     "test": "jest",
     "test:ci": "jest --runInBand --ci --coverage",
     "test:watch": "jest --watch --coverage=false"

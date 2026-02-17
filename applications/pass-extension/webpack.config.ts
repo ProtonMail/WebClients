@@ -194,7 +194,7 @@ const config: Configuration = {
             zipJSRule,
             layeredJSLoaders,
             ...(BUILD_TARGET === 'safari' ? [coreJsUint8ArrayFromBase64Rule] : []),
-            ...getCssLoaders({ browserslist: undefined, logical: false }),
+            ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
