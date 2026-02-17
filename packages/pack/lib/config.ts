@@ -22,8 +22,9 @@ const getGitCommitHash = () => {
 };
 
 const getGitTagVersion = (applicationName: string) => {
+    const sortingMethod = applicationName === 'proton-drive' ? '-creatordate' : '-v:refname'
     try {
-        const { stdout = '' } = sync(`git tag --sort=-v:refname | grep ${applicationName} | head -n 1`, {
+        const { stdout = '' } = sync(`git tag --sort=${sortingMethod} | grep ${applicationName} | head -n 1`, {
             shell: true,
         });
         return stdout.trim();
