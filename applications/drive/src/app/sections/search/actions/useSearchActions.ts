@@ -1,6 +1,7 @@
 import { getDrive, splitNodeUid } from '@proton/drive';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
@@ -15,6 +16,7 @@ export const useSearchActions = () => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const drive = getDrive();
+    const { navigateToNodeUid } = useDriveNavigation();
     const { trashItems } = useTrashActions();
 
     const handlePreview = (uid: string) => {
@@ -91,6 +93,10 @@ export const useSearchActions = () => {
         await trashItems(items);
     };
 
+    const handleGoToParent = async (parentNodeUid: string) => {
+        await navigateToNodeUid(parentNodeUid);
+    };
+
     return {
         modals: {
             previewModal,
@@ -103,7 +109,7 @@ export const useSearchActions = () => {
         handleOpenDocsOrSheets,
         handleDownload,
         handleTrash,
-        // TODO: Add go to parent modal
+        handleGoToParent,
         // TODO: Add show revision modal
         // TODO: Add move modal after converting it away from shareid,
         // TODO: Add share modal after converting it away from shareid,

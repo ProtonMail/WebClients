@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
+import { NodeType, getDrive, splitNodeUid } from '@proton/drive/index';
 import generateUID from '@proton/utils/generateUID';
 
 import { toLinkURLType } from '../../components/sections/helpers';
+import { sendErrorReport } from '../../utils/errorHandling';
+import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 interface NavigationEvenListener {
     id: string;
@@ -15,6 +19,7 @@ let listeners: NavigationEvenListener[] = [];
 function useDriveNavigation() {
     const navigate = useNavigate();
     const location = useLocation();
+    const drive = getDrive();
 
     const pushToHistory = (path: string) => {
         navigate(path);
@@ -28,6 +33,30 @@ function useDriveNavigation() {
             pushToHistory(`/${shareId}/${toLinkURLType(isFile)}/${linkId}?r=${rPath || location.pathname}`);
         },
         [location.pathname]
+    );
+
+    // TODO: Convert to volume-based navigation instead of deprecated shareId.
+    const navigateToNodeUid = useCallback(
+        async (nodeUid: string, rPath?: string) => {
+            const { nodeId: targetNodeLinkId } = splitNodeUid(nodeUid);
+            // The shareId is on the top root node; we need to climb from the current node to get it.
+            const ancestry = await getNodeAncestry(nodeUid, drive);
+            if (!ancestry.ok || !ancestry.value[0]?.ok) {
+                sendErrorReport(new Error('[navigateToNodeUid] Failed to resolve node ancestry for navigation'));
+                return;
+            }
+
+            const rootNodeSharedId = ancestry.value[0].value.deprecatedShareId;
+            if (!rootNodeSharedId) {
+                sendErrorReport(new Error('[navigateToNodeUid] Root node is missing deprecatedShareId for navigation'));
+                return;
+            }
+
+            const destinationNode = ancestry.value[ancestry.value.length - 1];
+            const isFile = getNodeEntity(destinationNode).node.type === NodeType.File;
+            return navigateToLink(rootNodeSharedId, targetNodeLinkId, isFile, rPath);
+        },
+        [drive, navigateToLink]
     );
 
     const redirectToLink = useCallback((shareId: string, linkId: string, isFile: boolean) => {
@@ -99,6 +128,7 @@ function useDriveNavigation() {
     };
 
     return {
+        navigateToNodeUid,
         navigateToLink,
         navigateToRoot,
         navigateToNoAccess,
