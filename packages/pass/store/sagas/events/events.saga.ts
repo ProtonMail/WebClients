@@ -3,7 +3,7 @@ import type { Task } from 'redux-saga';
 import { all, call, cancel, fork, select, take } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
-import { SYNC_STRATEGY } from '@proton/pass/lib/events/sync';
+import { SYNC_STRATEGY } from '@proton/pass/lib/events/global';
 import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
