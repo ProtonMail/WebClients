@@ -83,13 +83,13 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
         rrule: string | null;
     } | null>(null);
 
-    const userName = user.DisplayName !== '' ? user.DisplayName : user.Name;
-
     const [values, setValues] = useState({
         ...getInitialValues(),
         timeZone: userTimeZone,
-        meetingName: userName !== '' ? c('Info').t`${userName}'s Meeting` : c('Info').t`My Meeting`,
+        meetingName: '',
     });
+
+    const [touched, setTouched] = useState<Record<string, boolean>>({});
 
     const { createMeeting } = useCreateMeeting();
 
@@ -178,6 +178,9 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
     }, [timeFormat]);
 
     const handleSubmit = async () => {
+        // Mark all fields as touched on submit attempt
+        setTouched({ meetingName: true });
+
         const { startDate, recurrence, meetingName, ...restOfValues } = values;
 
         const startTime = combineDateAndTime(startDate, values.startTime, values.timeZone);
@@ -341,13 +344,16 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                             style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
                         />
                     </div>
-                    <div className="text-4xl mb-6 w-full text-center">
+                    <div className="create-container-title mb-10 w-full text-center text-semibold">
                         {meeting ? values.meetingName : c('Title').t`Schedule a meeting`}
                     </div>
                     <div className="text-left mb-5">
-                        <InlineLinkButton onClick={goToCalendar} className="text-no-decoration">
+                        <InlineLinkButton
+                            onClick={goToCalendar}
+                            className="flex text-no-decoration schedule-proton-calendar-button"
+                        >
                             {c('Placeholder').t`Schedule in ${CALENDAR_APP_NAME}`}
-                            <IcArrowWithinSquare size={4} className="ml-1" />
+                            <IcArrowWithinSquare size={5} className="ml-2" />
                         </InlineLinkButton>
                     </div>
                     <div className="w-full flex flex-nowrap items-center gap-4">
@@ -360,10 +366,13 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                             id="meetingName"
                             name="meetingName"
                             placeholder={c('Placeholder').t`Enter meeting title`}
-                            onChange={(e) => setValues({ ...values, meetingName: e.target.value })}
+                            onChange={(e) => {
+                                setValues({ ...values, meetingName: e.target.value });
+                                setTouched({ ...touched, meetingName: true });
+                            }}
                             autoComplete="off"
                             value={values.meetingName}
-                            error={errors.meetingName}
+                            error={touched.meetingName ? errors.meetingName : undefined}
                             autoFocus
                         />
                     </div>
@@ -411,6 +420,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         timeZoneOptions={timeZoneSelectOptions}
                         timeFormat={timeFormat}
                         timeError={errors.startTime}
+                        dateError={errors.startDate}
                     />
 
                     <TimeInputBlock
@@ -424,6 +434,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                         showIcon={false}
                         editableTimeZone={false}
                         timeError={errors.endTime}
+                        dateError={errors.endDate}
                     />
                     <div className="w-full flex flex-nowrap items-center gap-4">
                         <IcArrowsRotate
@@ -465,9 +476,9 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                             ))}
                         </SelectTwo>
                     </div>
-                    <div className="w-full flex flex-nowrap justify-center flex-row mt-5 gap-4">
+                    <div className="w-full flex flex-nowrap justify-center flex-row mt-10 gap-4">
                         <Button
-                            className="delete-button rounded-full w-full"
+                            className="delete-button rounded-full text-semibold w-full"
                             onClick={() => (meeting ? withLoadingDelete(handleDeleteMeeting(meeting)) : onClose())}
                             size="large"
                             disabled={loading || loadingDelete}
@@ -476,7 +487,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting }: ScheduleMeetingF
                             {meeting ? c('Action').t`Delete` : c('Action').t`Cancel`}
                         </Button>
                         <Button
-                            className="save-button rounded-full w-full"
+                            className="save-button rounded-full text-semibold w-full"
                             onClick={() => withLoading(handleSubmit)}
                             size="large"
                             disabled={isDisabled || loading || loadingDelete}
