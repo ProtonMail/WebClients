@@ -59,7 +59,6 @@ const config: ForgeConfig = {
         new MakerMSIX({
             packageName: `ProtonPass_Setup_${pkg.version}.msix`,
             packageAssets: `${__dirname}/assets`,
-            logLevel: 'debug',
             manifestVariables: {
                 packageIdentity: 'ProtonPass',
                 packageDisplayName: 'Proton Pass',
