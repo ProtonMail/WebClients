@@ -1,16 +1,30 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
-import { addHours } from 'date-fns';
 import { c } from 'ttag';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
+import { getZendeskIframeUrl } from '@proton/components/containers/zendesk/helper';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { APPS } from '@proton/shared/lib/constants';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
-import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
+
+type MessageDestination = 'proton' | 'zendesk';
+const fetchJWT = async (api: Api) => {
+    try {
+        const { JWT } = await api<{ JWT: string }>({
+            url: `/auth/v4/zendesk/jwt`,
+            method: 'post',
+        });
+        return JWT;
+    } catch (e) {
+        return;
+    }
+};
 
 // The sizes for these are hardcoded since the widget calculates it based on the viewport, and since it's in
 // an iframe it needs to have something reasonable.
@@ -21,18 +35,12 @@ const OPENED_SIZE = {
 };
 // The small button to toggle the chat.
 const CLOSED_SIZE = {
-    height: `${70 / 16}rem`,
+    height: `${90 / 16}rem`,
     width: `${140 / 16}rem`,
 };
 
 const SINGLE_CHAT_KEY = 'zk_state';
 const SINGLE_CHAT_TIMEOUT = 10000;
-
-const getIframeUrl = (zendeskKey: string) => {
-    const url = getApiSubdomainUrl('/core/v4/resources/zendesk', window.location.origin);
-    url.searchParams.set('Key', zendeskKey);
-    return url;
-};
 
 export const getIsSelfChat = () => {
     return sessionStorageWrapper.getItem(SINGLE_CHAT_KEY);
@@ -48,60 +56,7 @@ const setActiveMarker = () => {
     sessionStorageWrapper.setItem(SINGLE_CHAT_KEY, '1');
 };
 
-const clearPaidMarkers = () => {
-    if (!localStorageWrapper.hasStorage()) {
-        return;
-    }
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key?.startsWith('LiveChat')) {
-            if (+(localStorage.getItem(key) || 0) < Date.now()) {
-                localStorage.removeItem(key);
-            }
-        }
-    }
-};
-const setPaidMarker = (userID: string) => {
-    return localStorageWrapper.setItem(`LiveChat-${userID}`, addHours(new Date(), 24).getTime().toString());
-};
-const getPaidMarker = (userID: string) => {
-    return +(localStorageWrapper.getItem(`LiveChat-${userID}`) || 0);
-};
-
-export const useCanEnableChat = (user: UserModel) => {
-    const hasCachedChat = getPaidMarker(user.ID) > Date.now();
-    const canEnableChat = user.hasPaidVpn || hasCachedChat;
-    const { APP_NAME } = useConfig();
-
-    useEffect(() => {
-        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            return;
-        }
-        clearPaidMarkers();
-        if (!user.hasPaidVpn) {
-            return;
-        }
-        const setMarker = () => {
-            // Clear old items
-            clearPaidMarkers();
-            // Enable the user to access chat 24 hours after in case she unsubscribes
-            setPaidMarker(user.ID);
-        };
-        setMarker();
-        const handle = window.setInterval(setMarker, 60000);
-        return () => window.clearInterval(handle);
-    }, [user.hasPaidVpn]);
-
-    return APP_NAME === APPS.PROTONVPN_SETTINGS && canEnableChat;
-};
-
-export interface ZendeskRef {
-    run: (data: object) => void;
-    toggle: () => void;
-}
-
 interface Props {
-    zendeskKey: string;
     zendeskRef?: MutableRefObject<ZendeskRef | undefined>;
     name?: string;
     email?: string;
@@ -111,7 +66,8 @@ interface Props {
     tags: string[];
 }
 
-const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnavailable, locale, tags }: Props) => {
+const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, locale, tags }: Props) => {
+    const api = useSilentApi();
     const [style, setStyle] = useState({
         position: 'absolute',
         bottom: 0,
@@ -124,41 +80,47 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
     const [state, setState] = useState({ loaded: false, connected: false });
     const stateRef = useRef({ loaded: false, connected: false });
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const pendingLoadingRef = useRef<{ toggle?: boolean; locale?: string }>({});
+    const pendingLoadingRef = useRef<{ open?: boolean; locale?: string }>({});
+    const [isZendeskV2Enabled] = useState(useFlag('UseZendeskV2'));
 
-    const iframeUrl = getIframeUrl(zendeskKey);
+    const iframeUrl = getZendeskIframeUrl(isZendeskV2Enabled);
 
     const src = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
 
-    const handleRun = (args: any) => {
+    const sendMessage = (args: any, destination: MessageDestination = 'zendesk') => {
         const contentWindow = iframeRef.current?.contentWindow;
         if (!contentWindow || !stateRef.current.loaded) {
             return;
         }
-        contentWindow.postMessage({ args }, targetOrigin);
+        contentWindow.postMessage({ args, destination }, targetOrigin);
     };
 
-    const handleToggle = () => {
+    const handleOpen = () => {
         // Using the ref instead of state to not have to wait for re-render
         if (!stateRef.current.connected) {
             onUnavailable();
             return;
         }
-        pendingLoadingRef.current.toggle = true;
-        handleRun(['webWidget', 'toggle']);
+        pendingLoadingRef.current.open = true;
+        if (isZendeskV2Enabled) {
+            sendMessage(['messenger', 'open']);
+        } else {
+            sendMessage(['webWidget', 'toggle']);
+        }
     };
 
     useImperativeHandle(zendeskRef, () => ({
-        run: handleRun,
-        toggle: handleToggle,
+        run: sendMessage,
+        open: handleOpen,
     }));
 
     useEffect(() => {
-        if (!state.loaded) {
+        if (!state.loaded || isZendeskV2Enabled) {
             return;
         }
-        handleRun([
+
+        sendMessage([
             'webWidget',
             'prefill',
             {
@@ -172,17 +134,22 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
         if (!state.loaded) {
             return;
         }
-        handleRun(['webWidget', 'setLocale', locale]);
+        if (isZendeskV2Enabled) {
+            sendMessage(['messenger:set', 'locale', locale]);
+        } else {
+            sendMessage(['webWidget', 'setLocale', locale]);
+        }
     }, [state.loaded, locale]);
 
     useEffect(() => {
         if (!state.loaded || !tags.length) {
             return;
         }
-        handleRun(['webWidget', 'chat:addTags', tags]);
-        return () => {
-            handleRun(['webWidget', 'chat:removeTags', tags]);
-        };
+        if (isZendeskV2Enabled) {
+            sendMessage(['messenger:set', 'conversationTags', tags]);
+        } else {
+            sendMessage(['webWidget', 'chat:addTags', tags]);
+        }
     }, [state.loaded, tags]);
 
     useEffect(() => {
@@ -191,22 +158,29 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
         }
         const oldPending = pendingLoadingRef.current;
         pendingLoadingRef.current = {};
-        if (oldPending.toggle) {
-            handleToggle();
+        if (oldPending.open) {
+            handleOpen();
         }
+
+        (async () => {
+            const jwt = await fetchJWT(api);
+            if (jwt) {
+                sendMessage(['login', jwt], 'proton');
+            }
+        })().catch(noop);
     }, [state.loaded]);
 
     useEffect(() => {
         let globalId = 1;
         const handlers: { [key: string]: [(value: any) => void, (reason?: any) => void, number] } = {};
 
-        const sendMessage = (contentWindow: Window, args: any) => {
-            contentWindow.postMessage({ args }, targetOrigin);
-        };
-
-        const sendMessageWithReply = <T,>(contentWindow: Window, args: any): Promise<T> => {
+        const sendMessageWithReply = <T,>(
+            contentWindow: Window,
+            args: any,
+            destination: MessageDestination = 'zendesk'
+        ): Promise<T> => {
             const id = globalId++;
-            contentWindow.postMessage({ id, args }, targetOrigin);
+            contentWindow.postMessage({ id, args, destination }, targetOrigin);
             return new Promise((resolve, reject) => {
                 const intervalId = window.setTimeout(() => {
                     delete handlers[id];
@@ -222,7 +196,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
                 return;
             }
 
-            const departmentName = 'Support';
+            const departmentName = isZendeskV2Enabled ? 'VPN Chat' : 'Support';
 
             if (data.type === 'on') {
                 if (data.payload?.event === 'open') {
@@ -234,7 +208,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
                 }
 
                 if (data.payload?.event === 'chat:connected') {
-                    sendMessage(contentWindow, [
+                    sendMessage([
                         'webWidget',
                         'updateSettings',
                         {
@@ -272,9 +246,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
                     stateRef.current = { loaded: true, connected };
                     setState({ loaded: true, connected });
                 }
-            }
-
-            if (data.type === 'response') {
+            } else if (data.type === 'response') {
                 if (data.payload.id !== undefined) {
                     const handler = handlers[data.payload.id];
                     if (handler) {
@@ -282,22 +254,35 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
                         handler[0](data.payload.result);
                     }
                 }
-            }
-
-            if (data.type === 'loaded') {
-                sendMessage(contentWindow, [
-                    'webWidget',
-                    'updateSettings',
-                    {
-                        webWidget: {
-                            color: {
-                                launcher: '#6d4aff',
-                                button: '#6d4aff',
-                                header: '#261b57',
+            } else if (data.type === 'loaded') {
+                if (isZendeskV2Enabled) {
+                    const updatedState = { loaded: true, connected: true };
+                    stateRef.current = updatedState;
+                    setState(updatedState);
+                    sendMessage([
+                        'messenger:set',
+                        'customization',
+                        {
+                            theme: {
+                                primary: '#6d4aff',
                             },
                         },
-                    },
-                ]);
+                    ]);
+                } else {
+                    sendMessage([
+                        'webWidget',
+                        'updateSettings',
+                        {
+                            webWidget: {
+                                color: {
+                                    launcher: '#6d4aff',
+                                    button: '#6d4aff',
+                                    header: '#261b57',
+                                },
+                            },
+                        },
+                    ]);
+                }
             }
         };
 
@@ -350,7 +335,7 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
 
     useImperativeHandle(zendeskRef, () => ({
         run: (...args) => actualZendeskRef.current?.run(...args),
-        toggle: (...args) => {
+        open: (...args) => {
             if (getIsActiveInAnotherWindow()) {
                 createNotification({
                     text: c('Info')
@@ -359,7 +344,7 @@ const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
                 });
                 return;
             }
-            actualZendeskRef.current?.toggle(...args);
+            actualZendeskRef.current?.open(...args);
         },
     }));
 

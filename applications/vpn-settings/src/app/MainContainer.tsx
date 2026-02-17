@@ -89,11 +89,9 @@ import {
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import LiveChatZendesk, {
-    getIsSelfChat,
-    useCanEnableChat,
-} from '@proton/components/containers/zendesk/LiveChatZendesk';
+import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
+import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
+import { useCanEnableChat } from '@proton/components/containers/zendesk/useCanEnableChat';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { useIsB2BTrial } from '@proton/payments/ui';
@@ -105,8 +103,6 @@ import { useFlag } from '@proton/unleash';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';
 
-const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
-
 const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -117,7 +113,7 @@ const MainContainer: FunctionComponent = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
-    const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
+    const [showChat, setShowChat] = useState({ autoLaunch: false, render: false });
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
@@ -200,7 +196,7 @@ const MainContainer: FunctionComponent = () => {
         });
         if (hasChatRequest || isSelfChat) {
             if (canEnableChat) {
-                setShowChat({ autoToggle: hasChatRequest, render: true });
+                setShowChat({ autoLaunch: hasChatRequest, render: true });
             } else {
                 setFreeUserLiveChatModal(true);
             }
@@ -222,8 +218,8 @@ const MainContainer: FunctionComponent = () => {
 
     const openChat = canEnableChat
         ? () => {
-              setShowChat({ autoToggle: true, render: true });
-              zendeskRef.current?.toggle();
+              setShowChat({ autoLaunch: true, render: true });
+              zendeskRef.current?.open();
           }
         : undefined;
 
@@ -467,12 +463,11 @@ const MainContainer: FunctionComponent = () => {
                             <LiveChatZendesk
                                 tags={chatTags}
                                 zendeskRef={zendeskRef}
-                                zendeskKey={vpnZendeskKey}
                                 name={name || ''}
                                 email={email || ''}
                                 onLoaded={() => {
-                                    if (showChat.autoToggle) {
-                                        zendeskRef.current?.toggle();
+                                    if (showChat.autoLaunch) {
+                                        zendeskRef.current?.open();
                                     }
                                 }}
                                 onUnavailable={() => {
