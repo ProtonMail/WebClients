@@ -21,6 +21,7 @@ export const TimeInputBlock = ({
     showIcon = true,
     editableTimeZone = true,
     timeError,
+    dateError,
 }: {
     name: 'start' | 'end';
     values: FormValues;
@@ -32,6 +33,7 @@ export const TimeInputBlock = ({
     showIcon?: boolean;
     editableTimeZone?: boolean;
     timeError?: boolean;
+    dateError?: boolean;
 }) => {
     return (
         <div className="w-full flex flex-nowrap items-center gap-4">
@@ -55,6 +57,7 @@ export const TimeInputBlock = ({
                         inputClassName="date-input"
                         value={values[`${name}Date`]}
                         dropdownClassName="create-container-dropdown"
+                        error={dateError}
                     />
                     <TimeInput
                         id={`${name}Time`}
