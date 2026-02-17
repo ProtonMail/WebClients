@@ -2,7 +2,7 @@ import { call, put, select } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShare } from '@proton/pass/lib/shares/share.requests';

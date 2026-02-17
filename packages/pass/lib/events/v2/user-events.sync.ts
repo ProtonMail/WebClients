@@ -1,5 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -17,7 +18,6 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { getUserEventLatestID } from './user-events.requests';
-import type { EventProcessor } from './user-events.types';
 
 export type SyncResultV2 = {
     v: 2;
