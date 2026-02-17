@@ -1,5 +1,24 @@
 .join-with-link-modal {
 	padding-block-end: 10rem;
+	inline-size: 40rem;
+	max-inline-size: 100%;
+
+	.join-with-link-title {
+		font-size: 1.5em;
+	}
+
+	.join-with-link-subtitle {
+		font-size: 1em;
+	}
+
+	.cancel-button {
+		background: var(--background-card);
+		border: 1px solid var(--border-card);
+
+		&:hover {
+			background: var(--interaction-default-hover);
+		}
+	}
 
 	.join-button {
 		color: var(--text-invert);
@@ -11,17 +30,17 @@
 		background: var(--background-card);
 
 		&:hover,
-		&:active,
-		&:focus {
+		&:focus-within {
 			background: var(--interaction-default-hover);
 		}
 
 		&.focus,
 		&:not(.disabled):focus-within {
-			box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1);
+			border: 1px solid var(--ui-purple-interaction-minor-1);
+			box-shadow: none;
 		}
 
-		&::placeholder {
+		input::placeholder {
 			color: var(--text-disabled);
 		}
 	}
