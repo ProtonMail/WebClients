@@ -1575,6 +1575,9 @@
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
       ],
+      "An item previously shared with you was removed.": [
+        "Položka, ktorá bola predtým s vami zdieľaná, bola odstránená."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Skutočne chcete odstrániť ${ emailJSX } zo svojich poštových schránok?"
       ],
@@ -1602,8 +1605,8 @@
       "Breaches detected": [
         "Zistený únik"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Preneste svoje existujúce heslá do ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Preneste svoje existujúce heslá do ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Pripojte si vlastnú doménu a nemusíte si kupovať ďalšie riešenie emailového hostingu."
@@ -1824,8 +1827,8 @@
         "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
         "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Využite Proton Pass naplno vytvorením trezora pre každý tím alebo projekt."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Využite ${ PASS_APP_NAME } naplno vytvorením trezora pre každý tím alebo projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získajte neobmedzený počet aliasov, využívajte exkluzívne funkcie a podporte nás predplatením služby Pass Plus."
@@ -2484,6 +2487,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" bol úspešne aktualizovaný"
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" bol odstránený."
+      ],
       "Vault organization successfully updated": [
         "Organizácia trezoru bola úspešne aktualizovaná"
       ],
@@ -2573,6 +2579,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Pred importom položiek potrebujete trezor s oprávnením k úpravám."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Už nemáte prístup k niektorým trezorom alebo položkám, pretože prístup vašej skupiny ${ groupName } bol odstránený."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Teraz máte prístup k „${ itemName }“, pretože vašej skupine ${ groupName } bol udelený prístup."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Teraz máte prístup k „Trezoru ${ vaultName }“, pretože vašej skupine ${ groupName } bol udelený prístup."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po overení domény si budete môcť prispôsobiť nastavenia domény (aliasy doménových košov, predvolené zobrazované meno pre aliasy atď.)."
