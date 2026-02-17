@@ -1,3 +1,5 @@
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
 export const LockedSessionError = () => {
     const error = new Error('Session locked');
     error.name = 'LockedSession';
@@ -28,5 +30,10 @@ export enum PassErrorCode {
 }
 
 export class UnverifiedUserError extends Error {}
+
+export const isShareRemovedError = (error: unknown) => {
+    const { code } = getApiError(error);
+    return code === PassErrorCode.DISABLED_SHARE || code === PassErrorCode.NOT_EXIST_SHARE;
+};
 
 export const isAbortError = (error: unknown) => error instanceof Error && error.name === 'AbortError';
