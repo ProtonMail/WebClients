@@ -1810,7 +1810,7 @@
         "メールを送りたいアドレスを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "認証コードを入力してください。${ digit }桁です。"
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your extra password": [
         "追加パスワードを入力してください"
@@ -2006,6 +2006,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

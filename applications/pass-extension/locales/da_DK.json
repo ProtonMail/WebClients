@@ -1531,6 +1531,10 @@
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
       ],
+      "(${ membersCount } member)": [
+        "(${ membersCount } medlem)",
+        "(${ membersCount } medlemmer)"
+      ],
       "(Empty)": [
         "(Tom)"
       ],
