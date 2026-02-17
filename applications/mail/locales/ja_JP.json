@@ -1479,6 +1479,9 @@
       "Trust": [
         "信頼する"
       ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -6990,7 +6993,7 @@
         "重複した鍵がアップデートされました"
       ],
       "Each code can only be used once": [
-        "各コードは1度のみ使用可能です"
+        "各コードは 1 回のみ使用可能です"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
@@ -7059,7 +7062,7 @@
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "認証コードを入力してください。${ digit }桁です。"
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -7363,9 +7366,6 @@
       ],
       "Low Priority": [
         "優先度：低"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -8403,7 +8403,7 @@
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
