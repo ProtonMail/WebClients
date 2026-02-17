@@ -67,12 +67,12 @@ export class SearchEngine {
         this.cache.delete(name);
     }
 
-    private async loadBlob(name: string): Promise<Uint8Array<ArrayBuffer>> {
+    private async loadBlob(name: string): Promise<Uint8Array<ArrayBuffer> | undefined> {
         const blobEncrypted = await this.databaseAdapter.loadSearchBlob(name);
 
         if (blobEncrypted === null) {
             console.log(`loadBlob: No encrypted blob found for "${name}"`);
-            return new Uint8Array();
+            return undefined;
         }
 
         const ad = this.getSearchBlobAd(name);
@@ -124,7 +124,17 @@ export class SearchEngine {
             event.sendCached(cached);
         } else {
             const data = await this.loadBlob(name);
-            event.send(SerDes.Cbor, data);
+            if (!data) {
+                event.sendEmpty();
+                return;
+            }
+            try {
+                event.send(SerDes.Cbor, data);
+            } catch (x) {
+                const b64 = await bufferToBase64(data);
+                console.error(`Load event: send failed for "${name}" - ${b64}`);
+                throw x;
+            }
             console.log(`Load event: loading blob "${name}" (${data.length} bytes)`);
         }
     }
@@ -275,28 +285,24 @@ export class SearchEngine {
             let saveEventCount = 0;
             let loadEventCount = 0;
             let totalEvents = 0;
-
-            for (let event = execution.next(); event; event = execution.next()) {
+            let event;
+            while ((event = execution.next())) {
                 totalEvents++;
-                try {
-                    switch (event.kind()) {
-                        case WriteEventKind.Save: {
-                            saveEventCount++;
-                            await this.saveEvent(event);
-                            break;
-                        }
-                        case WriteEventKind.Load: {
-                            loadEventCount++;
-                            await this.loadEvent(event);
-                            break;
-                        }
-                        default: {
-                            console.error('Invalid write event', event.kind());
-                            break;
-                        }
+                switch (event.kind()) {
+                    case WriteEventKind.Save: {
+                        saveEventCount++;
+                        await this.saveEvent(event);
+                        break;
                     }
-                } catch (eventError) {
-                    console.error('Error processing execution event:', eventError);
+                    case WriteEventKind.Load: {
+                        loadEventCount++;
+                        await this.loadEvent(event);
+                        break;
+                    }
+                    default: {
+                        console.error('Invalid write event', event.kind());
+                        break;
+                    }
                 }
             }
 
@@ -505,8 +511,8 @@ export class SearchEngine {
                 let saveEventCount = 0;
                 let loadEventCount = 0;
                 let totalEvents = 0;
-
-                for (let event = execution.next(); event; event = execution.next()) {
+                let event;
+                while ((event = execution.next())) {
                     totalEvents++;
                     switch (event.kind()) {
                         case WriteEventKind.Save: {
@@ -583,4 +589,13 @@ export class SearchEngine {
             cleanup.free();
         }
     }
+}
+
+async function bufferToBase64(buffer: ArrayBuffer | Uint8Array<ArrayBuffer>): Promise<string> {
+    const base64url = await new Promise<string>((r) => {
+        const reader = new FileReader();
+        reader.onload = () => r(reader.result as string);
+        reader.readAsDataURL(new Blob([buffer]));
+    });
+    return base64url.slice(base64url.indexOf(',') + 1);
 }
