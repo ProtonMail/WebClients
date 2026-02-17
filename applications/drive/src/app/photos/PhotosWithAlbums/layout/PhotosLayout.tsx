@@ -124,7 +124,7 @@ export const PhotosLayout = () => {
     const cachedSelectedItems = useMemoArrayNoMatterTheOrder(selectedItems);
 
     const createAlbum = useCreateAlbum();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const { detailsModal, showDetailsModal } = useDetailsModal();
     const { navigateToAlbums, navigateToAlbum } = useNavigate();
     const addAlbumPhotosModal = useModalStateObject();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -247,9 +247,7 @@ export const PhotosLayout = () => {
         }
         showDetailsModal({
             drive: getDriveForPhotos(),
-            volumeId: linkVolumeId,
-            shareId: previewShareId,
-            linkId: linkId,
+            nodeUid: generateNodeUid(linkVolumeId, linkId),
         });
     }, [previewShareId, albumLinkId, showDetailsModal, previewItem]);
 
