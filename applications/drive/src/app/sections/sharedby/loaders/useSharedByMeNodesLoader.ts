@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
@@ -14,13 +14,14 @@ import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime';
 
+type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
+
 export const useSharedByMeNodesLoader = () => {
-    const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
     const loadSharedByMeNodes = useCallback(
-        async (abortSignal: AbortSignal) => {
+        async (abortSignal: AbortSignal, drive: Drive) => {
             const { isLoadingNodes, setLoadingNodes, setSharedByMeItem, cleanupStaleItems } =
                 useSharedByMeStore.getState();
             if (isLoadingNodes) {
@@ -118,7 +119,7 @@ export const useSharedByMeNodesLoader = () => {
                 setLoadingNodes(false);
             }
         },
-        [drive, handleError, createNotification]
+        [handleError, createNotification]
     );
 
     return {
