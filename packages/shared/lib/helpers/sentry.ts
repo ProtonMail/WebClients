@@ -297,6 +297,15 @@ function main({
                 });
             }
 
+            // This should help provide more context for Promise rejections that throw an Event object instead of an Error object.
+            if (hint && hint.originalException instanceof Event) {
+                event.extra = event.extra || {};
+                event.extra.originalEvent = {
+                    type: hint.originalException.type,
+                    target: String(hint.originalException.target),
+                };
+            }
+
             return event;
         },
         // Some ignoreErrors and denyUrls are taken from this gist: https://gist.github.com/Chocksy/e9b2cdd4afc2aadc7989762c4b8b495a
