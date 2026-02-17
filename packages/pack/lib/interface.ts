@@ -17,7 +17,7 @@ export interface ProtonPackOptions {
     overlayWarnings: boolean;
     overlayErrors: boolean;
     overlayRuntimeErrors: boolean;
-    logical: boolean;
+    noLogicalScss: boolean;
     analyze: boolean;
     optimizeAssets: boolean;
     handleSupportAndErrors: boolean;
@@ -64,7 +64,7 @@ export interface WebpackOptions {
     overlayWarnings: boolean;
     overlayErrors: boolean;
     overlayRuntimeErrors: boolean;
-    logical: boolean;
+    noLogicalScss: boolean;
     analyze: boolean;
     optimizeAssets: boolean;
     handleSupportAndErrors: boolean;

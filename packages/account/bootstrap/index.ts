@@ -67,6 +67,7 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, Unwrap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
+import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import {
     EVENTS,
@@ -147,6 +148,10 @@ export const init = ({
     sentry({ config, UID: authentication.UID });
     setVcalProdId(getProdId(config));
     removeLoaderClassName();
+
+    if (config.LOGICAL_SCSS) {
+        initLogicalProperties();
+    }
 
     const appTag = getCookie('Tag') ?? 'default';
     setSentryTags({ appTag });

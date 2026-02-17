@@ -6,7 +6,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --logical",
+        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
         "check-types": "tsc",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
@@ -15,7 +15,7 @@
         "lint": "eslint --quiet",
         "lint:warning": "eslint",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --logical",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "cross-env TZ=UTC jest",
         "test:ci": "yarn run test --ci --coverage --runInBand",
         "test:watch": "yarn run test --coverage=false --watch"

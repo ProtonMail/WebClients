@@ -10,6 +10,7 @@ export interface ProtonConfig {
     COMMIT: string;
     DATE_VERSION: string;
     LOCALES: { [key: string]: string };
+    LOGICAL_SCSS: boolean;
     SENTRY_DESKTOP_DSN?: string;
     SENTRY_DSN: string;
     SSO_URL: string;
@@ -26,6 +27,7 @@ export const getProtonConfig = (defaults: Partial<ProtonConfig> = {}): ProtonCon
     COMMIT: process.env.COMMIT ?? defaults.COMMIT ?? '',
     DATE_VERSION: process.env.DATE_VERSION ?? defaults.DATE_VERSION ?? '',
     LOCALES: (process.env.LOCALES as unknown as {}) ?? defaults.LOCALES ?? {},
+    LOGICAL_SCSS: (process.env.LOGICAL_SCSS as unknown as boolean) ?? defaults.LOGICAL_SCSS ?? true,
     SENTRY_DESKTOP_DSN: process.env.SENTRY_DESKTOP_DSN ?? defaults.SENTRY_DESKTOP_DSN ?? '',
     SENTRY_DSN: process.env.SENTRY_DSN ?? defaults.SENTRY_DSN ?? '',
     SSO_URL: process.env.SSO_URL ?? defaults.SSO_URL ?? '',

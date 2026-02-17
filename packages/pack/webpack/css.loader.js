@@ -10,7 +10,19 @@ const handleUrlResolve = (url) => {
     return true;
 };
 
-module.exports = ({ browserslist, logical }) => {
+module.exports = ({ browserslist, noLogicalScss }) => {
+    const plugins = [
+        require('autoprefixer')({
+            overrideBrowserslist: browserslist,
+            flexbox: 'no-2009',
+        }),
+        require('postcss-color-functional-notation')(),
+    ];
+
+    if (!noLogicalScss) {
+        plugins.push(require('postcss-logical')());
+    }
+
     const sassLoaders = [
         {
             loader: require.resolve('css-loader'),
@@ -22,14 +34,7 @@ module.exports = ({ browserslist, logical }) => {
             loader: require.resolve('postcss-loader'),
             options: {
                 postcssOptions: {
-                    plugins: [
-                        require('autoprefixer')({
-                            overrideBrowserslist: browserslist,
-                            flexbox: 'no-2009',
-                        }),
-                        require('postcss-color-functional-notation')(),
-                        !logical && require('postcss-logical')(),
-                    ].filter(Boolean),
+                    plugins,
                 },
             },
         },

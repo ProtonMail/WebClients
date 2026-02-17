@@ -14,7 +14,6 @@ import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLog
 import { getLoginPath } from '@proton/shared/lib/authentication/loginPath';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import PrivateApp from './PrivateApp';
@@ -30,7 +29,6 @@ const bootstrapApp = () => {
     handleLogoutFromURL({ api });
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
-    initLogicalProperties();
     initSafariFontFixClassnames();
     extendStore({ authentication, api, history, config });
     let session: PersistedSession | undefined = undefined;

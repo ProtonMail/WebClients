@@ -27,7 +27,6 @@ import {
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
-import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
@@ -221,7 +220,6 @@ export const executeBootstrapSteps = async ({
     const { sessionResult, appVersion, ...restServices } = await initAppDependencies(config, authentication);
 
     initElectronClassnames();
-    initLogicalProperties();
     bootstrap.init({ config, authentication, locales });
 
     const persistedState = await getDecryptedPersistedState<Partial<MeetState>>({
