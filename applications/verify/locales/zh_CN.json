@@ -923,12 +923,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Security key": [
         "安全密钥"
@@ -1032,7 +1032,7 @@
         "我们的条款 ${ termsLink } 不允许创建多个免费账户。"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -1044,7 +1044,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -1095,7 +1095,7 @@
         "我们将向 ${ strong } 发送新的验证码"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
