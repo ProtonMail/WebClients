@@ -416,7 +416,7 @@
         "Lihat faktur"
       ],
       "Visit knowledge base": [
-        "Kunjungi basis pengetahuan"
+        "Kunjungi dasar pengetahuan"
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
@@ -2224,17 +2224,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Pengeditan alamat tagihan tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
-      "Email is not valid": [
-        "Email tidak valid"
-      ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
         "Terjadi kesalahan saat menghubungkan ke API Bitcoin."
-      ],
-      "Incorrect username": [
-        "Nama pengguna salah"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Input bukan merupakan alamat email atau bitcoin yang valid"
@@ -2263,14 +2257,8 @@
       "Invalid ZIP code": [
         "Kode pos tidak valid"
       ],
-      "Not a valid number": [
-        "Nomor telepon tidak valid"
-      ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
-      ],
-      "Passwords do not match": [
-        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -2329,38 +2317,20 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
-      "The email addresses do not match": [
-        "Alamat email tidak sesuai"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
       ],
       "The passphrases do not match": [
         "Frasa sandi tidak cocok"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
-      ],
       "This field is required": [
         "Kolom ini wajib diisi"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
-      ],
-      "Username must begin with a letter or digit": [
-        "Nama pengguna harus dimulai dengan huruf atau angka"
-      ],
-      "Username must end with a letter or digit": [
-        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "ZIP code is required": [
         "Kode pos wajib diisi"
@@ -2461,7 +2431,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -2564,7 +2534,7 @@
         "Tidak sekarang"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Anda sekarang meninggalkan ${ WALLET_APP_NAME } menuju ${ providerName } (${ websiteLink }).\nLayanan terkait pembayaran kartu, transfer bank, dan transaksi fiat lainnya disediakan oleh ${ providerName },\nsebuah platform pihak ketiga yang terpisah. Dengan melanjutkan dan menggunakan layanan dari ${ providerName },\nAnda menyatakan telah membaca dan menyetujui Ketentuan Layanan ${ providerName } (${ termOfUseLink })\nserta Kebijakan Privasi dan Cookie (${ privacyAndCookiesPolicyLink }).\nUntuk pertanyaan terkait layanan ${ providerName }, silakan hubungi ${ providerName } di ${ supportEmailLink }."
+        "Anda sekarang akan meninggalkan ${ WALLET_APP_NAME } dan menuju ke ${ providerName } (${ websiteLink }).\nLayanan yang terkait dengan pembayaran kartu, transfer bank, dan transaksi fiat lainnya disediakan oleh ${ providerName },\nsebuah platform pihak ketiga yang terpisah. Dengan melanjutkan dan menggunakan layanan dari ${ providerName },\nAnda mengakui bahwa Anda telah membaca dan menyetujui Ketentuan Layanan (${ termOfUseLink })\nserta Kebijakan Privasi dan Kuki (${ privacyAndCookiesPolicyLink }) milik ${ providerName }.\nUntuk pertanyaan apa pun terkait layanan ${ providerName }, silakan hubungi ${ providerName } di ${ supportEmailLink }."
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
         "Anda kini akan membeli voucher bitcoin Azteco dengan ${ WALLET_APP_NAME }. Ini berfungsi mirip dengan kartu hadiah dan merupakan salah satu cara termudah dan paling pribadi untuk mendapatkan BTC."
@@ -2741,7 +2711,7 @@
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
       "Each code can only be used once": [
-        "Setiap kode hanya dapat digunakan satu kali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -2750,7 +2720,7 @@
         "Hosting email hanya tersedia untuk domain yang sudah Anda miliki. Pendaftaran domain saat ini tidak tersedia melalui ${ BRAND_NAME }. Anda dapat menghosting email untuk domain yang terdaftar di registrar domain mana pun."
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dihapus secara otomatis."
+        "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dibersihkan secara otomatis."
       ],
       "Enabling auto-deletion…": [
         "Mengaktifkan penghapusan otomatis…"
@@ -4087,7 +4057,7 @@
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Hapus otomatis pesan yang berusia lebih dari 30 hari dari Sampah dan Spam"
+        "Bersihkan pesan yang berusia lebih dari 30 hari dari Sampah dan Spam secara otomatis"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
@@ -5534,14 +5504,6 @@
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
-      ]
-    },
     "VPN Plan Feature": {
       "${ n } device": [
         "${ n } perangkat"
@@ -5853,7 +5815,7 @@
         "Batalkan"
       ],
       "Clear browser storage": [
-        "Hapus penyimpanan peramban"
+        "Bersihkan penyimpanan peramban"
       ],
       "Copy seed phrase": [
         "Salin frasa benih"
@@ -6168,7 +6130,7 @@
         "Bitcoin via Email"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "Penyimpanan peramban dihapus. Silakan muat ulang halaman"
+        "Penyimpanan peramban dibersihkan. Silakan muat ulang halaman"
       ],
       "Could not fill the pool after email address addition": [
         "Tidak dapat mengisi pool setelah penambahan alamat email"

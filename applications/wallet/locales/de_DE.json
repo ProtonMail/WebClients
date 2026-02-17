@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
       ],
-      "Email is not valid": [
-        "E-Mail-Adresse ungültig"
-      ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
-      ],
-      "Incorrect username": [
-        "Falscher Benutzername"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Die Eingabe ist keine gültige E-Mail-Adresse oder Bitcoin-Adresse"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "Ungültige Postleitzahl"
       ],
-      "Not a valid number": [
-        "Keine gültige Zahl"
-      ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
-      ],
-      "Passwords do not match": [
-        "Die Passwörter stimmen nicht überein"
       ],
       "Payment process canceled": [
         "Bezahlvorgang abgebrochen"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
       ],
-      "The email addresses do not match": [
-        "Die E-Mail-Adressen stimmen nicht überein"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
       "The passphrases do not match": [
         "Die Passphrasen stimmen nicht überein."
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
-      ],
       "This field is required": [
         "Pflichtfeld"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
-      ],
       "This offer is not available in your country": [
         "Dieses Angebot ist in deinem Land nicht verfügbar"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
-      ],
-      "Username must begin with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
-      ],
-      "Username must end with a letter or digit": [
-        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
@@ -2472,7 +2442,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ]
     },
     "fido2: Info": {
@@ -5630,16 +5600,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
-        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
-        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ]
     },
     "VPN Plan Feature": {

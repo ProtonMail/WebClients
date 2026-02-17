@@ -347,7 +347,7 @@
         "登出"
       ],
       "Sign out of all accounts": [
-        "退出所有账户"
+        "登出所有账户"
       ],
       "Submit": [
         "提交"
@@ -2224,17 +2224,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "目前无法编辑帐单地址。请稍后重试。"
       ],
-      "Email is not valid": [
-        "无效邮箱"
-      ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
-      ],
-      "Incorrect username": [
-        "用户名不正确"
       ],
       "Input isn't a valid email or bitcoin address": [
         "输入的不是有效的邮箱地址或比特币地址"
@@ -2263,14 +2257,8 @@
       "Invalid ZIP code": [
         "无效的邮政编码"
       ],
-      "Not a valid number": [
-        "无效号码"
-      ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
-      ],
-      "Passwords do not match": [
-        "密码不匹配"
       ],
       "Payment process canceled": [
         "支付已取消"
@@ -2329,41 +2317,23 @@
       "The amount due has changed. Please try again.": [
         "应付金额已更改，请重试。"
       ],
-      "The email addresses do not match": [
-        "邮箱地址不一致"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
       ],
       "The passphrases do not match": [
         "密码不匹配"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "此项超过了 ${ maximumLength } 个字符的长度限制。"
-      ],
       "This field is required": [
         "此项必须填写"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "该字段至少需要 ${ minimumLength } 个字符。"
-      ],
       "This offer is not available in your country": [
         "此优惠在您所在的国家/地区不可用"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
       ],
       "Unknown payment token status": [
         "支付状态不明"
-      ],
-      "Username must begin with a letter or digit": [
-        "用户名必须以字母或数字开头"
-      ],
-      "Username must end with a letter or digit": [
-        "用户名必须以字母或数字结尾"
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
@@ -2464,12 +2434,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错，请重试。"
+        "使用安全密钥进行身份验证时出错。请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "请插入与 ${ BRAND_NAME } 账户相关联的安全密钥。"
+        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
       ],
       "Security key": [
         "安全密钥"
@@ -2744,7 +2714,7 @@
         "即刻下载您所需的应用，随时随地保护隐私。"
       ],
       "Each code can only be used once": [
-        "每个恢复码只能使用一次"
+        "每条恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -2765,7 +2735,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "请输入验证码的第 ${ digit } 位数字。"
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -2999,7 +2969,7 @@
         "周"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -5520,16 +5490,16 @@
         "添加一个名字，这样您就能记住是谁寄来的。"
       ],
       "Add their email address or leave empty": [
-        "添加他们的电子邮箱地址或留空"
+        "添加他们的邮箱地址或留空"
       ],
       "Add their email address to save as contact": [
-        "添加他们的电子邮箱地址以保存为联系人"
+        "添加他们的邮箱地址以保存为联系人"
       ],
       "Email address": [
         "邮箱地址"
       ],
       "Email address is invalid": [
-        "电子邮箱地址不可用"
+        "邮箱地址不可用"
       ],
       "Give a name to this sender": [
         "给此发送者命名"
@@ -5559,14 +5529,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "VPN Plan Feature": {
@@ -5913,7 +5875,7 @@
         "已创建邮箱地址"
       ],
       "Email address is invalid": [
-        "电子邮箱地址不可用"
+        "邮箱地址不可用"
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
         "对于大多数人来说，这并不重要，因为他们是从自己信任的人那里接受收 BTC。但是，如果您担心这一点，我们建议您在使用这个主要 BTC 账户时，不要启用通过电子邮件接收比特币功能，而在启用通过电子邮件接收比特币功能后，再与您的其他 BTC 账户进行交易。这样可以将此账户中的 BTC 与您自动接收的任何 BTC 分开，从而提高您的区块链隐私。"
@@ -6268,7 +6230,7 @@
     },
     "Wallet setup": {
       "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
-        "密码短语充当第二个密码。它不能被更改或稍后添加。请安全备份它，以便在每次登录时解锁您的钱包。"
+        "若使用密码短语充当二级密码，后续将无法更改或添加。请将其安全备份，以便每次登录时解锁您的钱包！"
       ],
       "Add a passphrase": [
         "添加密码短语"
@@ -6644,7 +6606,7 @@
         "您的账户数已达到当前计划支持的上限。请升级以创建更多账户。您的支持对我们保护金融隐私和自由的斗争也至关重要。"
       ],
       "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "您已达到当前订阅方案所支持的电子邮箱地址数量上限。如需继续创建，请升级您的订阅方案。您的支持对于我们捍卫财务隐私与自由的使命也至关重要。"
+        "您已达到当前套餐所支持的邮箱地址数量上限，请升级以创建更多地址。您的支持对于保护金融隐私和自由的斗争也至关重要。"
       ],
       "You have reached the maximum number of wallets supported by your current plan.": [
         "您已达到当前计划支持的钱包数量上限。"

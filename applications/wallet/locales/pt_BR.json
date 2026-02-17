@@ -2232,17 +2232,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
       ],
-      "Email is not valid": [
-        "O e-mail não é válido."
-      ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
-      ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
       ],
       "Input isn't a valid email or bitcoin address": [
         "A entrada não é um endereço de bitcoin ou e-mail válido"
@@ -2271,14 +2265,8 @@
       "Invalid ZIP code": [
         "O código não é valido."
       ],
-      "Not a valid number": [
-        "Não é um número válido"
-      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
-      ],
-      "Passwords do not match": [
-        "As senhas não correspondem"
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -2337,41 +2325,23 @@
       "The amount due has changed. Please try again.": [
         "O valor devido foi alterado. Tente novamente."
       ],
-      "The email addresses do not match": [
-        "Os endereços de e-mail não correspondem."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
       "The passphrases do not match": [
         "As frases secretas não correspondem"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } caracteres."
-      ],
       "This field is required": [
         "Este campo é obrigatório"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo exige um mínimo de ${ minimumLength } caracteres."
-      ],
       "This offer is not available in your country": [
         "Esta oferta não está disponível no seu país"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Tente usar apenas letras, números e _.-"
       ],
       "Unknown error": [
         "Erro desconhecido"
       ],
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
-      ],
-      "Username must begin with a letter or digit": [
-        "O nome de usuário deve começar com uma letra ou dígito"
-      ],
-      "Username must end with a letter or digit": [
-        "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
@@ -2761,7 +2731,7 @@
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez."
+        "Cada código só pode ser usado uma única vez"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -3017,7 +2987,7 @@
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -5636,16 +5606,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
-        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "VPN Plan Feature": {
