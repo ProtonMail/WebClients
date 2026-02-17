@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, Loader } from '@proton/components';
-import { IcPassShieldFillSuccess } from '@proton/icons/icons/IcPassShieldFillSuccess';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import type { ShareInvitee } from '../interfaces';
 
@@ -36,7 +36,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email, isExter
     return {
         icon: (
             <span className="inline-flex pl-2 shrink-0 my-auto">
-                <IcPassShieldFillSuccess size={4} data-testid="invite-address-ok" className="color-success" />
+                <IcLockFilled size={4} data-testid="invite-address-ok" className="color-info" />
             </span>
         ),
         iconTooltip: c('Tooltip').t`Shared with end-to-end encryption`,
