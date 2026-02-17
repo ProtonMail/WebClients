@@ -21,20 +21,20 @@ export interface LumoThemeConfig {
  */
 export const LUMO_SPECIAL_THEMES: LumoThemeConfig[] = [
     {
-        name: 'valentines',
-        startDate: new Date('2026-02-11'),
-        endDate: new Date('2026-02-15'), // Day after Valentine's Day
+        name: 'chinese-new-year',
+        startDate: new Date('2026-02-16'),
+        endDate: new Date('2026-02-20'),
         getAnimationDark: () =>
             import(
-                /* webpackChunkName: "lumo-valentines-dark-animation" */
-                '../assets/valentines/dark.json'
+                /* webpackChunkName: "lumo-chinese-new-year-dark-animation" */
+                '../assets/chineseNewYear/dark.json'
             ),
         getAnimationLight: () =>
             import(
-                /* webpackChunkName: "lumo-valentines-light-animation" */
-                '../assets/valentines/light.json'
+                /* webpackChunkName: "lumo-chinese-new-year-light-animation" */
+                '../assets/chineseNewYear/light.json'
             ),
-        getPromptText: () => c('collider_2025:Prompt').t`How the world celebrates Valentine's Day`,
-        icon: '💕',
+        getPromptText: () => c('collider_2025:Prompt').t`How does the world celebrate Lunar New Year?`,
+        icon: '🏮',
     },
 ];

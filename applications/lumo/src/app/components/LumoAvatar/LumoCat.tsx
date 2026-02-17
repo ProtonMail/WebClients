@@ -7,6 +7,8 @@ import { getActiveSpecialTheme } from '../../features/themes/utils/themeUtils';
 import { useLumoTheme } from '../../providers/LumoThemeProvider';
 import { LazyLottie } from '../LazyLottie';
 
+import './LumoCat.scss';
+
 // Default Lumo cat animations (shown when no special theme is active)
 const getLumoCatDark = () =>
     import(
@@ -70,7 +72,9 @@ const LumoCat = ({ isSmallScreen, isGhostChatMode }: LumoCatProps) => {
                 alt="Lumo assistant avatar"
                 getAnimationData={getAnimationData}
                 loop={true}
-                className="absolute inset-0"
+                className={clsx('absolute inset-0', {
+                    'chinese-new-year': isLumoSpecialThemeEnabled,
+                })}
                 style={{
                     width: isSmallScreen ? 200 : 170,
                     height: isSmallScreen ? 200 : 170,
