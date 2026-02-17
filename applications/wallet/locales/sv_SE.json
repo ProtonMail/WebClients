@@ -2226,17 +2226,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
       ],
-      "Email is not valid": [
-        "E-post är inte giltig"
-      ],
       "Enter 6 digits": [
         "Ange 6 siffror"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
-      ],
-      "Incorrect username": [
-        "Felaktigt användarnamn"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inmatning är inte en giltig e-postadress eller Bitcoin-adress"
@@ -2265,14 +2259,8 @@
       "Invalid ZIP code": [
         "Ogiltigt postnummer"
       ],
-      "Not a valid number": [
-        "Inte ett giltigt nummer"
-      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
-      ],
-      "Passwords do not match": [
-        "Lösenorden matchar inte"
       ],
       "Payment process canceled": [
         "Betalningsprocess avbruten"
@@ -2331,41 +2319,23 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
-      "The email addresses do not match": [
-        "E-postadresserna matchar inte"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
       ],
       "The passphrases do not match": [
         "Lösenfraserna matchar inte"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
-      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Detta fält kräver minst ${ minimumLength } tecken."
-      ],
       "This offer is not available in your country": [
         "Detta erbjudande är inte tillgängligt i ditt land"
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Prova använda endast bokstäver, siffror och _.-"
       ],
       "Unknown error": [
         "Okänt fel"
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
-      ],
-      "Username must begin with a letter or digit": [
-        "Användarnamn måste börja med en bokstav eller siffra"
-      ],
-      "Username must end with a letter or digit": [
-        "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
@@ -2786,6 +2756,9 @@
       ],
       "Expired": [
         "Löpt ut"
+      ],
+      "Google Pay mark": [
+        "Google Pay-märke"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
@@ -4584,8 +4557,20 @@
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelse.",
         "Rabatten är giltig för ${ renewalsWithCoupon } förnyelser."
       ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset är giltig för den första månaden. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } varje månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Det rabatterade priset ${ priceWithDiscount } gäller för den första ${ subscriptionLength } månaden.",
@@ -5606,16 +5591,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     },
     "VPN Plan Feature": {
