@@ -299,6 +299,10 @@ export class SearchEngine {
                         await this.loadEvent(event);
                         break;
                     }
+                    case WriteEventKind.Stats: {
+                        console.log('Documents indexed: ', event.stats().documents);
+                        break;
+                    }
                     default: {
                         console.error('Invalid write event', event.kind());
                         break;
