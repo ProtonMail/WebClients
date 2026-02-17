@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/v2/user-events.types';
+import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { getOrganizationSettings } from '@proton/pass/lib/organization/organization.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';

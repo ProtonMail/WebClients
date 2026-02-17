@@ -9,3 +9,5 @@ export enum SyncStrategy {
     /** User events polling */
     USER_EVENTS = 'USER_EVENTS',
 }
+
+export type EventProcessor = Generator<any, boolean>;
