@@ -218,7 +218,7 @@ const PassPolicies = () => {
                                             id="pass-vault-creation"
                                             placeholder={c('Label').t`Yes`}
                                             onValue={handleCreateVaultsChange}
-                                            value={organizationSettings.Settings.VaultCreateMode}
+                                            value={organizationSettings.Settings?.VaultCreateMode}
                                             dense
                                         >
                                             {getVaultCreateOptions(showVaultCreationV2).map(({ title, value }) => (
