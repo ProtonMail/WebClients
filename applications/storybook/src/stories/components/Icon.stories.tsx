@@ -1,43 +1,82 @@
-import type { IconProps } from '@proton/components';
-import { Icon } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Icon.mdx';
+import Icon from '@proton/components/components/icon/Icon';
 
-export default {
-    component: Icon,
+const meta: Meta<typeof Icon> = {
     title: 'Components/Icon',
+    args: {
+        name: 'brand-proton-mail',
+    },
+    component: Icon,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Icon component renders SVG icons from the Proton icon set. Supports different sizes, colors, and rotation. Icons inherit the parent text color by default.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Icon>;
+
+export const Default: Story = {};
+
+export const AllSizes: Story = {
+    render: () => (
+        <div className="flex items-end gap-4">
+            {([3, 4, 6, 10, 12] as const).map((size) => (
+                <Icon key={size} name="brand-proton-mail" size={size} />
+            ))}
+        </div>
+    ),
+};
+
+export const WithColors: Story = {
+    render: () => {
+        const colors = ['primary', 'danger', 'success', 'warning', 'info'];
+        const sizes = [3, 4, 6, 10, 12] as const;
+
+        return (
+            <div>
+                <div className="flex items-end justify-center gap-4 mb-4">
+                    {sizes.map((size) => (
+                        <Icon key={size} name="brand-proton-mail" size={size} />
+                    ))}
+                </div>
+                {colors.map((color) => (
+                    <div key={color} className="flex items-end justify-center gap-4 mb-4">
+                        {sizes.map((size) => (
+                            <Icon key={size} name="brand-proton-mail" size={size} className={`color-${color}`} />
+                        ))}
+                    </div>
+                ))}
+            </div>
+        );
     },
 };
 
-export const Basic = ({ ...args }: IconProps) => <Icon {...args} />;
-
-Basic.args = {
-    name: 'brand-proton-mail',
+export const Rotated: Story = {
+    args: {
+        name: 'arrow-up',
+        rotate: 45,
+    },
 };
 
-export const Color = () => {
-    const colors = ['primary', 'danger', 'success', 'warning', 'info'];
+export const WithAlt: Story = {
+    args: {
+        name: 'brand-proton-mail',
+        alt: 'Proton Mail icon',
+    },
+};
 
-    const sizes = [3, 4, 6, 10, 12] as const;
-
-    return (
-        <div>
-            <div className="flex items-end justify-center">
-                {sizes.map((size) => (
-                    <Icon name="brand-proton-mail" size={size} className="mr-4" />
-                ))}
-            </div>
-            {colors.map((color) => (
-                <div className="flex items-end justify-center">
-                    {sizes.map((size) => (
-                        <Icon name="brand-proton-mail" size={size} className={`color-${color} mr-4`} />
-                    ))}
-                </div>
-            ))}
-        </div>
-    );
+export const CustomColor: Story = {
+    args: {
+        name: 'brand-proton-mail',
+        color: 'rgb(107, 76, 217)',
+        size: 10,
+    },
 };
