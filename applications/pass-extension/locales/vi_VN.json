@@ -2007,6 +2007,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+      ],
       "Moving items": [
         "Đang chuyển mục"
       ],
@@ -3191,7 +3194,7 @@
         "Khóa"
       ],
       "Key fingerprint": [
-        "Khoá vân tay"
+        "Khóa vân tay"
       ],
       "Key type": [
         "Loại khóa"
@@ -5035,7 +5038,7 @@
         "Đã đạt đến giới hạn thành viên có thể truy cập mục này."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho này."
+        "Bạn đã đạt đến giới hạn thành viên có thể truy cập kho này."
       ],
       "You have reached the limit of users for this item. ${ upgradeLink }": [
         "Đã đạt đến giới hạn người dùng cho mục này. ${ upgradeLink }"

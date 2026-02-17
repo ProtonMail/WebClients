@@ -1789,7 +1789,7 @@
         "받을 사람의 이메일 주소를 입력하세요."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit }자리입니다."
+        "인증 코드를 입력하세요. ${ digit } 자리."
       ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
@@ -1985,6 +1985,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

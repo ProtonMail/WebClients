@@ -1628,6 +1628,9 @@
       "All trashed items successfully restored": [
         "Alle papirkurvelementer gjenopprettet"
       ],
+      "An item previously shared with you was removed.": [
+        "Et element som tidligere er delt med deg, ble fjernet."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Er du sikker på at du vil fjerne ${ emailJSX } fra postboksene dine?"
       ],
@@ -2589,6 +2592,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Hvelv \"${ payload.share.content.name }\" oppdatert"
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Hvelv \"${ share.content.name }\" ble fjernet."
+      ],
       "Vault organization successfully updated": [
         "Hvelvorganisasjonen ble oppdatert"
       ],
@@ -2670,6 +2676,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Du må ha et hvelv med redigeringstillatelse før du kan importere elementer."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Du har ikke lenger tilgang til enkelte hvelv eller elementer fordi tilgangen til gruppen din ${ groupName } ble fjernet."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Du har nå tilgang til \"element ${ itemName }\" fordi gruppen din ${ groupName } har fått tilgang."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Du har nå tilgang til \"hvelv ${ vaultName }\" fordi gruppen din ${ groupName } har fått tilgang."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
