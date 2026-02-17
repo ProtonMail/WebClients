@@ -131,7 +131,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
         cycle: payments.selectedPlan.cycle,
     };
 
-    const { uiData } = payments.getPriceOrFallback({
+    const { checkoutUi } = payments.getPriceOrFallback({
         ...planToCheck,
         coupon: payments.getCoupon(planToCheck),
         /**
@@ -140,8 +140,8 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
         trial: false,
     });
 
-    const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
-    const priceWithDiscountPerCycle = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
+    const priceWithDiscountPerMonth = getSimplePriceString(checkoutUi.currency, checkoutUi.withDiscountPerMonth);
+    const priceWithDiscountPerCycle = getSimplePriceString(checkoutUi.currency, checkoutUi.withDiscountPerCycle);
 
     const willAutoRenew = eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name);
 
@@ -163,7 +163,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
             <CycleSelector
                 unstyled
                 className="w-auto color-primary"
-                cycle={uiData.cycle}
+                cycle={checkoutUi.cycle}
                 options={cycleOptions}
                 mode="select-two"
                 onSelect={(cycle) => {
@@ -207,7 +207,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
                 {willAutoRenew && step === 'payment' ? (
                     <>
                         <span className="text-semibold">{c('Signup').t`Amount due now`}</span>
-                        <span className="text-semibold">{getSimplePriceString(uiData.currency, 0)}</span>
+                        <span className="text-semibold">{getSimplePriceString(checkoutUi.currency, 0)}</span>
                     </>
                 ) : (
                     <>
@@ -289,7 +289,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
         cycle: payments.selectedPlan.cycle,
     };
 
-    const { uiData } = payments.getPriceOrFallback({
+    const { checkoutUi } = payments.getPriceOrFallback({
         ...planToCheck,
         coupon: payments.getCoupon(planToCheck),
         /**
@@ -302,7 +302,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const renewalNotice = showRenewalNotice && (
         <p className="mb-0 mt-6 color-weak text-sm">
             {getTrialRenewalNoticeTextWithTermsAndConditions({
-                renewCycle: uiData.renewCycle,
+                renewCycle: checkoutUi.renewCycle,
                 app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
             })}
         </p>

@@ -6,9 +6,10 @@ import SkeletonLoader, {
 } from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import noop from '@proton/utils/noop';
 
-import type { PaymentsCheckout } from '../../core/checkout';
+import type { PaymentsCheckoutUI } from '../../core/checkout';
 import { getIsVpnB2BPlan, getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
-import { type PlanToCheck, getPlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
+import { type PlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';
+import { getPlanToCheck } from '../context/helpers';
 
 export type Props = {
     planToCheck: PlanToCheck;
@@ -51,11 +52,11 @@ export const OfferPrice = ({
                 }
             }
 
-            if (payments.hasEssentialData) {
+            if (payments.initialized) {
                 run().catch(noop);
             }
         },
-        [price, planName, planToCheck.currency, planToCheck.cycle, planToCheck.coupon, payments.hasEssentialData]
+        [price, planName, planToCheck.currency, planToCheck.cycle, planToCheck.coupon, payments.initialized]
     );
 
     const value: number = (() => {
@@ -63,7 +64,7 @@ export const OfferPrice = ({
 
         const planName = getPlanNameFromIDs(planToCheck.planIDs);
 
-        let priceProp: keyof PaymentsCheckout;
+        let priceProp: keyof PaymentsCheckoutUI;
         if (isLifetime) {
             priceProp = 'withDiscountPerCycle';
         } else if (planName && getIsVpnB2BPlan(planName)) {
@@ -73,10 +74,10 @@ export const OfferPrice = ({
         }
 
         if (price) {
-            return price.uiData[priceProp];
+            return price.checkoutUi[priceProp];
         }
 
-        return payments.getFallbackPrice(planToCheck).uiData[priceProp];
+        return payments.getFallbackPrice(planToCheck).checkoutUi[priceProp];
     })();
 
     const groupLoading = planToCheck.groupId ? payments.isGroupLoading(planToCheck.groupId) : false;

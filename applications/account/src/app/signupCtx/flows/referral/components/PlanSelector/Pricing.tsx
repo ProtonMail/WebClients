@@ -27,7 +27,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
             className="text-sm color-weak"
             suffix={c('Suffix').t`/month`}
         >
-            {price.uiData.withDiscountPerMonth}
+            {price.checkoutUi.withDiscountPerMonth}
         </Price>
     ) : (
         <SkeletonLoader width="3rem" height="1.25rem" />

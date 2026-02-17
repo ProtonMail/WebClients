@@ -2,6 +2,8 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
+import useConfig from '@proton/components/hooks/useConfig';
+import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
@@ -10,7 +12,11 @@ import { useTaxCountry } from './useTaxCountry';
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
 jest.mock('@proton/unleash', () => ({
     useFlag: jest.fn().mockReturnValue(true),
+    useGetFlag: jest.fn().mockReturnValue(() => true),
 }));
+
+// Mock useConfig to provide APP_NAME
+jest.mock('@proton/components/hooks/useConfig');
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
@@ -18,6 +24,7 @@ describe('useTaxCountry hook', () => {
     beforeEach(() => {
         // Reset to default (enabled) before each test to match existing test expectations
         mockUseFlag.mockReturnValue(true);
+        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
     });
 
     describe('Core Functionality', () => {

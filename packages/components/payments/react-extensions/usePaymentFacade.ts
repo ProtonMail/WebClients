@@ -38,7 +38,7 @@ import {
     useGooglePay,
     useSepaCurrencyOverride,
 } from '@proton/payments';
-import { createSubscription } from '@proton/payments/core/api/createSubscription';
+import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -138,7 +138,7 @@ function getOperations(
 
             const hasZipCodeValidation = operationsData.hasZipCodeValidation;
 
-            return createSubscription(
+            return createPaymentSubscription(
                 api,
                 {
                     PaymentToken: params.PaymentToken,

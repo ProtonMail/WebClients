@@ -10,7 +10,6 @@ import type {
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { TaxCountryHook, VatNumberHook } from '@proton/payments/ui';
-import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { PaymentsNoApi } from './Payment';
 
@@ -30,7 +29,6 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     vatNumber?: VatNumberHook;
     loadingBitcoin?: boolean;
     subscription?: Subscription | FreeSubscription;
-    organization?: Organization;
 };
 
 const PaymentWrapper = ({

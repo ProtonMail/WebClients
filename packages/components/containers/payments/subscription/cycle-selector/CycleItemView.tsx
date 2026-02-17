@@ -1,6 +1,7 @@
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
-import { type PaymentsCheckout, isLifetimePlanSelected } from '@proton/payments';
+import { isLifetimePlanSelected } from '@proton/payments';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getShortBillingText } from '../helpers';
@@ -13,7 +14,7 @@ const CycleItemView = ({
     couponConfig,
 }: {
     loading?: boolean;
-    checkout: PaymentsCheckout;
+    checkout: PaymentsCheckoutUI;
     couponConfig?: CouponConfigRendered;
 }) => {
     const cycleTitle =

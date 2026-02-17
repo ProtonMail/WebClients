@@ -115,7 +115,6 @@ enum PaymentsFlag {
     SepaPayments = 'SepaPayments',
     SepaPaymentsB2C = 'SepaPaymentsB2C',
     TransactionsView = 'TransactionsView',
-    VatId = 'VatId',
     PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     GooglePay = 'GooglePay',

@@ -111,8 +111,7 @@ const PricingHeader = () => {
 
 const PricingFooter = () => {
     const payments = usePaymentOptimistic();
-    const { uiData, selectedPlan } = payments;
-    const { checkout } = uiData;
+    const { checkoutUi, selectedPlan } = payments;
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
@@ -122,21 +121,21 @@ const PricingFooter = () => {
     const billingCycle = (
         <div className="flex justify-space-between gap-2">
             <span>{c('Signup').t`Billing Cycle`}</span>
-            <span data-testid="billingCycle">{getCycleText(checkout.cycle)}</span>
+            <span data-testid="billingCycle">{getCycleText(checkoutUi.cycle)}</span>
         </div>
     );
 
-    const showDiscount = checkout.discountPercent !== 0;
+    const showDiscount = checkoutUi.discountPercent !== 0;
     const discount = showDiscount && (
         <div className="flex justify-space-between gap-2">
             {hasFullCheckoutDetails ? (
-                <SaveBadge savePercentage={checkout.discountPercent} />
+                <SaveBadge savePercentage={checkoutUi.discountPercent} />
             ) : (
                 <SkeletonLoader width="5rem" height="1.25rem" />
             )}
             {hasFullCheckoutDetails ? (
-                <Price key="price" currency={checkout.currency} className="text-strike" data-testid="discountPrice">
-                    {checkout.withoutDiscountPerCycle}
+                <Price key="price" currency={checkoutUi.currency} className="text-strike" data-testid="discountPrice">
+                    {checkoutUi.withoutDiscountPerCycle}
                 </Price>
             ) : (
                 <SkeletonLoader width="5rem" height="1.25rem" />
@@ -144,7 +143,7 @@ const PricingFooter = () => {
         </div>
     );
 
-    const showDivider = isPaidPlan && checkout.cycle !== CYCLE.MONTHLY;
+    const showDivider = isPaidPlan && checkoutUi.cycle !== CYCLE.MONTHLY;
     const divider = showDivider && <hr className="my-4 bg-weak" />;
 
     const total = (
@@ -157,14 +156,14 @@ const PricingFooter = () => {
                             <Price
                                 key="price"
                                 data-testid="totalPrice"
-                                currency={checkout.currency}
+                                currency={checkoutUi.currency}
                                 suffix={
-                                    checkout.cycle === CYCLE.MONTHLY && (
+                                    checkoutUi.cycle === CYCLE.MONTHLY && (
                                         <span className="text-sm color-weak">{c('Suffix').t`/month`}</span>
                                     )
                                 }
                             >
-                                {checkout.amountDue}
+                                {checkoutUi.amountDue}
                             </Price>
                         ) : (
                             <SkeletonLoader width="6.5rem" height="1.4rem" />
@@ -192,8 +191,7 @@ const PricingFooter = () => {
 
 export const PricingCard = () => {
     const payments = usePaymentOptimistic();
-    const { uiData } = payments;
-    const { checkout } = uiData;
+    const { checkoutUi } = payments;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
@@ -202,20 +200,20 @@ export const PricingCard = () => {
             {getCheckoutRenewNoticeTextFromCheckResult({
                 checkResult: payments.checkResult,
                 plansMap: payments.plansMap,
-                planIDs: checkout.planIDs,
+                planIDs: checkoutUi.planIDs,
                 app: APPS.PROTONMAIL,
             })}
         </div>
     );
 
-    const showCouponBanner = hasFullCheckoutDetails && checkout.couponDiscount !== 0;
+    const showCouponBanner = hasFullCheckoutDetails && checkoutUi.couponDiscount !== 0;
     const couponBanner = showCouponBanner && (
         <div className="greenland-signup-pricing-card-top w-full shadow-raised bg-norm mb-1">
             <div className="greenland-signup-pricing-card-top-content">
                 <div className="flex items-center gap-2 px-8 py-4 fade-in">
                     <IcBagPercentFilled className="shrink-0 color-primary" />
                     <span className="text-semibold" data-testid="discountBanner">{c('Signup')
-                        .t`Promo applied – ${checkout.discountPercent}% off`}</span>
+                        .t`Promo applied – ${checkoutUi.discountPercent}% off`}</span>
                 </div>
             </div>
         </div>

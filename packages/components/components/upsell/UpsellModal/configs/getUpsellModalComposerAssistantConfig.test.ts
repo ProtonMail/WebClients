@@ -2,7 +2,7 @@ import * as memberModule from '@proton/account/member';
 import * as organizationModule from '@proton/account/organization';
 import * as assistantUpsellConfigModule from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
-import * as paymentsModule from '@proton/payments';
+import * as checkoutModule from '@proton/payments/core/checkout';
 import * as organizationHelperModule from '@proton/shared/lib/organization/helper';
 
 import * as composerAssistantUpsellModalHelpersModule from '../../modals/ComposerAssistantUpsellModal.helpers';
@@ -72,7 +72,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
     // @ts-expect-error - mock of checkout call
-    jest.spyOn(paymentsModule, 'getCheckout').mockReturnValue({
+    jest.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
         withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
         withoutDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT,
     });

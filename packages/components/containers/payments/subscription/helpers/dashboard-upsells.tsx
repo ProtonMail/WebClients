@@ -46,12 +46,9 @@ import {
     isTrial,
 } from '@proton/payments';
 import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
-import {
-    type PreloadedPaymentsContextType,
-    getPlanToCheck,
-    isPaymentsPreloaded,
-    usePayments,
-} from '@proton/payments/ui';
+import { type PreloadedPaymentsContextType, isPaymentsPreloaded } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -1044,7 +1041,7 @@ export const useUpsellsToDisplay = (
             .filter(isTruthy);
 
         withLoading(Promise.all(promises)).catch(noop);
-    }, [key, payments.hasEssentialData]);
+    }, [key, payments.initialized]);
 
     return {
         upsells,

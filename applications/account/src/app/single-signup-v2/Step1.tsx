@@ -49,11 +49,8 @@ import {
     type Subscription,
     SubscriptionMode,
     type SubscriptionPlan,
-    getCheckout,
     getFallbackCurrency,
     getHas2025OfferCoupon,
-    getOptimisticCheckResult,
-    getOptimisticCheckout,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -61,6 +58,7 @@ import {
     isSubscriptionCheckForbidden,
     switchPlan,
 } from '@proton/payments';
+import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,
@@ -291,10 +289,6 @@ const Step1 = ({
         selectedPlanName: selectedPlan.Name,
     });
 
-    const getSilentPaymentApi = async () => {
-        return getPaymentsApi(silentApi);
-    };
-
     const latestRef = useRef<any>();
     const check = async (values: {
         currency: Currency;
@@ -303,6 +297,7 @@ const Step1 = ({
         billingAddress: BillingAddress;
         coupon?: string;
         trial?: boolean;
+        vatNumber?: string;
     }): Promise<EnrichedCheckResponse> => {
         if (isSubscriptionCheckForbidden(subscription, values.planIDs, values.cycle)) {
             return getOptimisticCheckResult({
@@ -313,9 +308,8 @@ const Step1 = ({
             });
         }
 
-        const paymentsApi = await getSilentPaymentApi();
         return getSubscriptionPrices({
-            paymentsApi,
+            paymentsApi: getPaymentsApi(silentApi),
             planIDs: values.planIDs,
             currency: values.currency,
             cycle: values.cycle,
@@ -323,6 +317,7 @@ const Step1 = ({
             coupon: values.coupon,
             trial: values.trial,
             ValidateZipCode: true,
+            VatId: values.vatNumber,
         });
     };
 
@@ -341,6 +336,7 @@ const Step1 = ({
                         billingAddress: optimistic.billingAddress,
                         trial: optimistic.trial,
                         zipCodeValid: true,
+                        vatNumber: optimistic.vatNumber,
                     },
                     optimistic: {},
                 }));
@@ -689,7 +685,7 @@ const Step1 = ({
     hasPlanSelector = hasPlanSelector || isPorkbunPayment;
     const hasUserSelector = !isPorkbunPayment;
 
-    const checkout = getCheckout({
+    const checkout = getCheckoutUi({
         planIDs: options.planIDs,
         plansMap: model.plansMap,
         checkResult: options.checkResult,
@@ -813,9 +809,8 @@ const Step1 = ({
 
     const fetchTrialPrice = async (planName: CheckTrialPriceParams['planName']) => {
         const run = async () => {
-            const paymentsApi = await getSilentPaymentApi();
             const checkTrialResult = await checkTrialPrice({
-                paymentsApi,
+                paymentsApi: getPaymentsApi(silentApi),
                 plansMap: model.plansMap,
                 currency: options.currency,
                 planName,
@@ -861,7 +856,7 @@ const Step1 = ({
         })?.[options.cycle];
 
         if (cycleMapping) {
-            const checkout = getCheckout({
+            const checkout = getCheckoutUi({
                 planIDs,
                 plansMap: model.plansMap,
                 checkResult: cycleMapping.checkResult,
@@ -948,7 +943,7 @@ const Step1 = ({
         // Using real coupon to show the correct discount percentage
         if (hasBFCoupon) {
             // prevent blinking while loading another subscription/check result
-            const modelCheckout = getCheckout({
+            const modelCheckout = getCheckoutUi({
                 planIDs: subscriptionCheckOptions.planIDs,
                 plansMap: model.plansMap,
                 checkResult: subscriptionCheckOptions.checkResult,
@@ -1007,7 +1002,7 @@ const Step1 = ({
             passBizYearlyCycle &&
             !!passBizYearlyCycle.checkResult.Coupon?.Code
         ) {
-            const checkout = getCheckout({
+            const checkout = getCheckoutUi({
                 planIDs: { [PLANS.PASS_BUSINESS]: 1 },
                 plansMap: model.plansMap,
                 checkResult: passBizYearlyCycle.checkResult,
@@ -1592,8 +1587,9 @@ const Step1 = ({
                                         ...model,
                                         subscriptionData: { ...model.subscriptionData, vatNumber },
                                     }));
+                                    handleOptimistic({ vatNumber });
                                 }}
-                                paymentsApi={getPaymentsApi(silentApi)}
+                                paymentsApi={getPaymentsApi(normalApi)}
                                 offerBanner={isMailVariantB && offerBanner}
                                 telemetryContext={telemetryContext}
                                 onMethodChanged={(method) => {

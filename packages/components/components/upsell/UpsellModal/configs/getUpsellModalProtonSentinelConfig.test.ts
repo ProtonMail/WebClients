@@ -1,5 +1,5 @@
 import { CYCLE, type Currency, PLANS, PLAN_TYPES, type PaymentsApi, type Plan } from '@proton/payments';
-import * as paymentsModule from '@proton/payments';
+import * as checkoutModule from '@proton/payments/core/checkout';
 
 import type { UpsellModalConfigParams } from '../interface';
 import { getUpsellModalProtonSentinelConfig } from './getUpsellModalProtonSentinelConfig';
@@ -24,7 +24,7 @@ async function setupTest(currency: Currency) {
         AmountDue: MOCK_YEARLY_PRICE_BRL,
     });
     // @ts-expect-error - mock of checkout call
-    jest.spyOn(paymentsModule, 'getCheckout').mockReturnValue({
+    jest.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
         withDiscountPerCycle: MOCK_YEARLY_PRICE_BRL,
         withoutDiscountPerCycle: MOCK_YEARLY_PRICE_BRL_WITHOUT_DISCOUNT,
     });

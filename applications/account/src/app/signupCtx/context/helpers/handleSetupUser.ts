@@ -11,7 +11,7 @@ import {
     type Subscription,
     hasFreePlanIDs,
 } from '@proton/payments';
-import { createSubscription } from '@proton/payments/core/api/createSubscription';
+import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -79,7 +79,7 @@ export const handleSubscribeUser = async (
     }
 
     try {
-        const { Subscription } = await createSubscription(
+        const { Subscription } = await createPaymentSubscription(
             api,
             {
                 Plans: subscriptionData.planIDs,

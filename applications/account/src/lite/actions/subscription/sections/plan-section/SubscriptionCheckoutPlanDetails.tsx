@@ -18,7 +18,7 @@ import PlanIconName from '@proton/components/containers/payments/subscription/Yo
 import { getPlanTitlePlusMaybeBrand } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/helpers';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { AddonTooltip } from '@proton/components/containers/payments/subscription/modal-components/helpers/AddonTooltip';
-import { checkoutGetTotalAmount } from '@proton/components/containers/payments/subscription/modal-components/helpers/checkoutGetTotalAmount';
+import { checkoutGetNetTotalAmount } from '@proton/components/containers/payments/subscription/modal-components/helpers/checkoutGetNetTotalAmount';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
@@ -36,7 +36,7 @@ import {
     isSubscriptionCheckForbiddenWithReason,
     isTrial,
 } from '@proton/payments';
-import { usePaymentsInner } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
@@ -49,7 +49,7 @@ import {
     getTrailPeriodText,
     useMemberAddonPrice,
 } from '../../helpers';
-import VatText from '../shared/VatText';
+import VatInclusiveText from '../shared/VatInclusiveText';
 import WithLoadingIndicator from '../shared/WithLoadingIndicator';
 
 import './SubscriptionCheckoutPlanDetails.scss';
@@ -83,17 +83,16 @@ const getSubscriptionStartDate = (
 };
 
 const SubscriptionCheckoutFixedPlanSectionHeader = () => {
-    const { uiData, loading, getIsTrial, couponConfig } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { usersTitle, planTitle, planName, discountPercent, checkResult, cycle, planIDs, currency } = checkout;
-    const shouldPassIsTrial = getIsTrial(planIDs, cycle, false);
+    const { checkoutUi, loading, getShouldPassTrial, couponConfig } = usePayments();
+    const { usersTitle, planTitle, planName, discountPercent, checkResult, cycle, planIDs, currency } = checkoutUi;
+    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
     const showDiscount =
         !loading &&
         discountPercent !== 0 &&
         checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
         !shouldPassIsTrial;
 
-    const amount = checkoutGetTotalAmount(checkout, shouldPassIsTrial, couponConfig);
+    const amount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
 
     const totalPrice = (
         <Price className="text-semibold" currency={currency} data-testid="subscription-total-price" key="total-price">
@@ -133,12 +132,14 @@ interface SubscriptionCheckoutPlanPriceSectionProps {
 }
 
 const SubscriptionCheckoutPlanPriceSection = ({ planSectionRef }: SubscriptionCheckoutPlanPriceSectionProps) => {
-    const { uiData, loading, getIsTrial } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { planTitle, planName, discountPercent, checkResult, cycle, planIDs } = checkout;
-    const trial = getIsTrial(planIDs, cycle, false);
+    const { checkoutUi, loading, getShouldPassTrial } = usePayments();
+    const { planTitle, planName, discountPercent, checkResult, cycle, planIDs } = checkoutUi;
+    const shouldPassTrial = getShouldPassTrial(planIDs, cycle, false);
     const showDiscountBadge =
-        !loading && discountPercent !== 0 && checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings && !trial;
+        !loading &&
+        discountPercent !== 0 &&
+        checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
+        !shouldPassTrial;
 
     return (
         <div className="flex bg-weak p-4 w-full justify-space-between" ref={planSectionRef}>
@@ -172,11 +173,8 @@ const SubscriptionCheckoutPlanPriceSection = ({ planSectionRef }: SubscriptionCh
 };
 
 const SubscriptionCheckoutAddonSection = () => {
-    const {
-        uiData: { checkout },
-        loading,
-    } = usePaymentsInner();
-    const { planIDs, usersTitle, currency, addons, cycle, checkResult } = checkout;
+    const { checkoutUi, loading } = usePayments();
+    const { planIDs, usersTitle, currency, addons, cycle, checkResult } = checkoutUi;
     const membersAmount = useMemberAddonPrice();
     const lifetimePlan = isLifetimePlanSelected(planIDs);
 
@@ -256,15 +254,14 @@ function SubscriptionCheckoutInfoBanners(props: {
 }
 
 const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDetailsProps) => {
-    const { uiData, subscription, loading, getIsTrial, couponConfig } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { planIDs, cycle, currency, checkResult } = checkout;
+    const { checkoutUi, subscription, loading, getShouldPassTrial, couponConfig } = usePayments();
+    const { planIDs, cycle, currency, checkResult } = checkoutUi;
 
     if (!subscription) {
         return null;
     }
 
-    const shouldPassIsTrial = getIsTrial(planIDs, cycle, false);
+    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
     const trial = isTrial(subscription);
     const lifetimePlan = isLifetimePlanSelected(planIDs);
     const amountDue = checkResult.AmountDue || 0;
@@ -279,7 +276,7 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
         isScheduledChargedImmediately
     );
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle);
-    const totalAmount = checkoutGetTotalAmount(checkout, shouldPassIsTrial, couponConfig);
+    const totalAmount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
 
     const amountDueToday = (
         <Price currency={currency} key="amount-due-today">
@@ -309,7 +306,7 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
                             <div className="flex flex-column">
                                 <span>{c('Subscription').jt`Total due`}</span>
                                 <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatText checkResult={checkResult} />
+                                    <VatInclusiveText checkResult={checkResult} />
                                 </WithLoadingIndicator>
                             </div>
                             <strong>
@@ -348,7 +345,7 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
                                         : c('Subscription').jt`Total due on ${formattedPeriodEnd}`}
                                 </span>
                                 <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatText checkResult={checkResult} />
+                                    <VatInclusiveText checkResult={checkResult} />
                                 </WithLoadingIndicator>
                             </div>
                         </span>
@@ -380,7 +377,7 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
                                         : c('Subscription').jt`Total due today`}
                                 </span>
                                 <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatText checkResult={checkResult} />
+                                    <VatInclusiveText checkResult={checkResult} />
                                 </WithLoadingIndicator>
                             </div>
                         </div>
@@ -408,16 +405,8 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
 };
 
 const SubscriptionCheckoutProration = () => {
-    const {
-        uiData: { checkout },
-        loading,
-        coupon,
-        couponConfig,
-        subscription,
-        getIsTrial,
-        selectCoupon,
-    } = usePaymentsInner();
-    const { currency, checkResult, couponDiscount, cycle, planIDs } = checkout;
+    const { checkoutUi, loading, coupon, couponConfig, subscription, getShouldPassTrial, selectCoupon } = usePayments();
+    const { currency, checkResult, couponDiscount, cycle, planIDs } = checkoutUi;
     const { isProration, isCustomBilling } = getCheckoutModifiers(checkResult);
     const proration = checkResult.Proration ?? 0;
     const unusedCredit = checkResult.UnusedCredit ?? 0;
@@ -431,14 +420,22 @@ const SubscriptionCheckoutProration = () => {
     const hasAppliedCoupon = !!couponDiscount && !couponConfig?.hidden;
     const hasCredit = credit !== 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
-    const showTax = tax?.inclusive === TaxInclusive.EXCLUSIVE && tax?.amount > 0;
-    const shouldPassIsTrial = getIsTrial(planIDs, cycle, false);
+    const showTaxExclusive = tax?.inclusive === TaxInclusive.EXCLUSIVE && tax?.amount > 0;
+    const showSubtotal = showTaxExclusive;
+    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
     const trial = isTrial(subscription);
-    const amount = checkoutGetTotalAmount(checkout, shouldPassIsTrial, couponConfig);
+    const netTotalAmount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle);
 
     const isSectionVisible =
-        hasProration || isCustomBillingWithCredit || hasAppliedCoupon || hasCredit || giftValue || showTax || trial;
+        hasProration ||
+        isCustomBillingWithCredit ||
+        hasAppliedCoupon ||
+        hasCredit ||
+        giftValue ||
+        showTaxExclusive ||
+        showSubtotal ||
+        trial;
 
     if (!isSectionVisible && !paymentForbiddenReason.reason) {
         return null;
@@ -451,7 +448,7 @@ const SubscriptionCheckoutProration = () => {
                     <span className="mr-2">{getTotalBillingText(cycle, planIDs)}</span>
                 </span>
                 <WithLoadingIndicator loading={loading}>
-                    <Price currency={currency}>{amount}</Price>
+                    <Price currency={currency}>{netTotalAmount}</Price>
                 </WithLoadingIndicator>
             </div>
             {hasProration && (
@@ -537,7 +534,17 @@ const SubscriptionCheckoutProration = () => {
                     </WithLoadingIndicator>
                 </div>
             )}
-            {showTax && (
+            {showSubtotal && (
+                <div className="flex justify-space-between">
+                    <span className="inline-flex items-center">
+                        <span className="mr-2">{c('Label').t`Net amount`}</span>
+                    </span>
+                    <WithLoadingIndicator loading={loading}>
+                        <Price currency={currency}>{checkoutUi.withDiscountPerCycle}</Price>
+                    </WithLoadingIndicator>
+                </div>
+            )}
+            {showTaxExclusive && (
                 <div className="flex justify-space-between">
                     <span>
                         {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%

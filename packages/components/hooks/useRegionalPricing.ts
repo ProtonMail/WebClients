@@ -3,10 +3,9 @@ import {
     type Currency,
     type EnrichedCheckResponse,
     type RequestOptions,
-    getCheckout,
-    getOptimisticCheckResult,
     isMainCurrency,
 } from '@proton/payments';
+import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
 import { usePreferredPlansMap } from './usePreferredPlansMap';
@@ -45,7 +44,7 @@ export const useRegionalPricing = () => {
     const fetchPrice = async (requestParams: Parameters<typeof getCheckResult>[0]): Promise<number> => {
         const checkResult = await getCheckResult(requestParams);
 
-        const checkout = getCheckout({
+        const checkout = getCheckoutUi({
             plansMap,
             checkResult,
             planIDs: requestParams.data.Plans,

@@ -1,7 +1,7 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { getCheckout, getUsersAndAddons } from './checkout';
+import { getCheckoutUi, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
@@ -119,7 +119,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VPN2024]: 1,
                 },
@@ -173,7 +173,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VPN2024]: 1,
                 },
@@ -252,7 +252,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VISIONARY]: 1,
                 },
@@ -310,7 +310,7 @@ describe('should get checkout result', () => {
             PeriodEnd: +addMonths(new Date(), CYCLE.THIRTY) / 1000,
         };
 
-        const result = getCheckout({
+        const result = getCheckoutUi({
             planIDs: {
                 [PLANS.VPN2024]: 1,
             },
@@ -382,7 +382,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.BUNDLE_PRO]: 1,
                     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
@@ -462,7 +462,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VPN_PRO]: 1,
                     [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
@@ -529,7 +529,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VPN_BUSINESS]: 1,
                     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
@@ -601,7 +601,7 @@ describe('should get checkout result', () => {
         };
 
         expect(
-            getCheckout({
+            getCheckoutUi({
                 planIDs: {
                     [PLANS.VISIONARY]: 1,
                 },
@@ -644,7 +644,7 @@ describe('should get checkout result', () => {
     });
 
     it('should compute discount percent correctly for custom billing mode with addon (Pass + Lumo)', () => {
-        const result = getCheckout({
+        const result = getCheckoutUi({
             planIDs: {
                 [PLANS.PASS]: 1,
                 [ADDON_NAMES.LUMO_PASS]: 1,
@@ -701,7 +701,7 @@ describe('should get checkout result', () => {
             };
 
             expect(
-                getCheckout({
+                getCheckoutUi({
                     planIDs: {
                         [PLANS.VPN_BUSINESS]: 1,
                     },

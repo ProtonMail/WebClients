@@ -109,8 +109,18 @@ export type PaymentStage =
     | 'verification_rejected_by_user'
     | 'verification_success'
     | 'verification_failure'
+    | 'billing_address_failure'
     | 'payment_declined'
     | 'payment_success';
+
+type BillingAddressFailureAdditionalProps = {
+    /** Billing address country code */
+    CountryCode?: string;
+    /** Billing address state */
+    State?: string | null;
+    /** Whether the billing address has a zip code */
+    hasZipCode?: boolean;
+};
 
 /**
  * Payload for payment telemetry events.
@@ -142,7 +152,7 @@ export type PaymentTelemetryPayload = {
     product: ProductParam;
     /** Checkout context for event naming */
     context: PaymentTelemetryContext;
-};
+} & BillingAddressFailureAdditionalProps;
 
 /** Event name mapping for payment events */
 export const PAYMENT_CONTEXT_MAPPING = getMapping('payment');

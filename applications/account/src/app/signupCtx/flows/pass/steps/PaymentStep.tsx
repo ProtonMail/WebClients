@@ -34,10 +34,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const [loading, setLoading] = useState(false);
     const { options } = payments;
     const amountDue = getSimplePriceString(payments.selectedPlan.currency, options.checkResult.AmountDue);
-    const monthlyPrice = getSimplePriceString(
-        payments.selectedPlan.currency,
-        payments.uiData.checkout.withDiscountPerMonth
-    );
+    const monthlyPrice = getSimplePriceString(payments.selectedPlan.currency, payments.checkoutUi.withDiscountPerMonth);
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -134,7 +131,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
     const showAlert3ds = methodsAllowed.includes(paymentFacade.selectedMethodType ?? '');
 
-    const months = getMonths(payments.uiData.checkout.cycle);
+    const months = getMonths(payments.checkoutUi.cycle);
     return (
         <Layout>
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>

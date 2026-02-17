@@ -16,6 +16,7 @@ import {
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
     useConfig,
+    useHandler,
     useModalState,
 } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
@@ -35,7 +36,6 @@ import type {
     EnrichedCheckResponse,
     ExtendedTokenPayment,
     PaymentProcessorHook,
-    PaymentsCheckout,
     TokenPayment,
 } from '@proton/payments';
 import {
@@ -51,15 +51,14 @@ import {
     type StrictPlan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
-    getCheckout,
     getHas2025OfferCoupon,
-    getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,
@@ -257,6 +256,7 @@ const Step1B = ({
         planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
         billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
+        vatNumber: model.optimistic.vatNumber ?? model.subscriptionData.vatNumber,
     };
 
     const handleUpdate = (step: StepId) => {
@@ -457,6 +457,8 @@ const Step1B = ({
         const newCycle = optimistic.cycle || options.cycle;
         const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
         const newBillingAddress = optimistic.billingAddress || options.billingAddress;
+        // It's important to allow empty strings here, hence ?? instead of ||
+        const newVatId = optimistic.vatNumber ?? options.vatNumber;
 
         // Try a pre-saved check first. If it's not available, then use the default optimistic one.
         // With the regular cycles, it should be available.
@@ -502,6 +504,7 @@ const Step1B = ({
                 coupon: coupon,
                 trial: signupTrial,
                 ValidateZipCode: true,
+                VatId: newVatId,
             });
 
             if (!validateFlow()) {
@@ -518,6 +521,7 @@ const Step1B = ({
                     checkResult,
                     billingAddress: newBillingAddress,
                     zipCodeValid: true,
+                    vatNumber: newVatId,
                 },
                 optimistic: {},
             }));
@@ -539,6 +543,8 @@ const Step1B = ({
             }
         }
     };
+
+    const debouncedHandleOptimistic = useHandler(handleOptimistic, { debounce: 1000 });
 
     const handleChangeCurrency = (currency: Currency) => {
         handleUpdate('plan');
@@ -633,14 +639,7 @@ const Step1B = ({
 
     const vatNumber = useVatNumber({
         selectedPlanName: selectedPlan?.Name,
-        onChange: (vatNumber) =>
-            setModel((model) => ({
-                ...model,
-                subscriptionData: {
-                    ...model.subscriptionData,
-                    vatNumber,
-                },
-            })),
+        onChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
         taxCountry,
     });
 
@@ -665,14 +664,14 @@ const Step1B = ({
         if (!checkResult) {
             return;
         }
-        return getCheckout({
+        return getCheckoutUi({
             planIDs,
             plansMap,
             checkResult,
         });
     };
 
-    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckout> | undefined => {
+    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckoutUI> | undefined => {
         if (mode === 'vpn-pass-promotion') {
             const vpnPassBundlePlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
             const vpnPassBundleSubscriptionMapping = getSubscriptionMapping({
@@ -720,7 +719,7 @@ const Step1B = ({
         };
     })();
 
-    const actualCheckout = getCheckout({
+    const actualCheckout = getCheckoutUi({
         planIDs: options.planIDs,
         plansMap,
         checkResult: options.checkResult,
@@ -1131,6 +1130,7 @@ const Step1B = ({
                             coupon: code,
                             trial: signupTrial,
                             ValidateZipCode: true,
+                            VatId: model.subscriptionData.vatNumber,
                         });
 
                         setModel((old) => ({
@@ -1157,6 +1157,7 @@ const Step1B = ({
                             coupon: undefined, // don't pass coupon code, it will be removed
                             trial: signupTrial,
                             ValidateZipCode: true,
+                            VatId: model.subscriptionData.vatNumber,
                         });
 
                         setModel((old) => ({

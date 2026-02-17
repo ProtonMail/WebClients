@@ -3,11 +3,11 @@ import { type FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { SubscriptionConfirmButton } from '@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getPaymentMethodRequired } from '@proton/components/containers/payments/subscription/helpers/getPaymentMethodRequired';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -22,7 +22,8 @@ import {
     isSubscriptionCheckForbiddenWithReason,
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useIsB2BTrial, usePaymentsInner, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -50,10 +51,9 @@ const SubscriptionCheckoutPaymentSection = ({
     const appName = useAppName();
     const [loading, withLoading] = useLoading();
     const [user] = useUser();
-    const [organization] = useOrganization();
     const {
         subscription,
-        uiData,
+        checkoutUi,
         zipCodeValid,
         paymentStatus,
         billingAddress,
@@ -63,16 +63,13 @@ const SubscriptionCheckoutPaymentSection = ({
         telemetryContext,
         loading: paymentsLoading,
         setVatNumber,
-        reRunPaymentChecks,
         coupon,
         selectCurrency,
         couponConfig,
-    } = usePaymentsInner();
-    const { checkout } = uiData;
-    const { planIDs, cycle, planName, currency } = checkout;
+    } = usePayments();
+    const { planIDs, cycle, planName, currency } = checkoutUi;
     const { amount, selectedMethodValue, methods, currencyOverride } = paymentFacade;
-    const { selectMethod } = methods;
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const { selectMethod, savedMethods } = methods;
     const taxCountry = useTaxCountry({
         onBillingAddressChange: selectBillingAddress,
         zipCodeBackendValid: zipCodeValid,
@@ -84,10 +81,7 @@ const SubscriptionCheckoutPaymentSection = ({
     const vatNumber = useVatNumber({
         selectedPlanName: planName,
         taxCountry,
-        onVatUpdated: (vatNumber) => {
-            setVatNumber(vatNumber ?? '');
-            reRunPaymentChecks().catch(noop);
-        },
+        onVatUpdated: (vatNumber) => setVatNumber(vatNumber ?? ''),
     });
     const { createNotification } = useNotifications();
 
@@ -107,7 +101,12 @@ const SubscriptionCheckoutPaymentSection = ({
     }
 
     const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
-    const paymentMethodRequired = amount > 0 || isTrial || isB2BTrial;
+    const paymentMethodRequired = getPaymentMethodRequired({
+        amount,
+        startTrial: isTrial,
+        subscription,
+        savedPaymentMethods: savedMethods,
+    });
     const isPaidPlanSelected = hasPlanIDs(planIDs);
     const isFreePlanSelected = !isPaidPlanSelected;
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;

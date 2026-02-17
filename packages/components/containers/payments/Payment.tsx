@@ -39,14 +39,11 @@ import {
     type ChargebeePaypalButtonProps,
     ChargebeeSavedCardWrapper,
     type TaxCountryHook,
-    TaxCountrySelector,
     type VatNumberHook,
-    VatNumberInput,
-    useIsB2BTrial,
 } from '@proton/payments/ui';
-import type { Organization, User } from '@proton/shared/lib/interfaces';
+import { TaxFields } from '@proton/payments/ui/components/TaxFields';
+import type { User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Alert3DS from './Alert3ds';
@@ -59,6 +56,7 @@ import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
+import { getPaymentMethodRequired } from './subscription/helpers/getPaymentMethodRequired';
 import { NoPaymentRequiredNote } from './subscription/modal-components/NoPaymentRequiredNote';
 
 export interface Props {
@@ -98,7 +96,6 @@ export interface Props {
     loadingBitcoin?: boolean;
     showTaxCountry: boolean;
     subscription?: Subscription | FreeSubscription;
-    organization?: Organization;
     currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
 }
 
@@ -134,13 +131,9 @@ export const PaymentsNoApi = ({
     loadingBitcoin: loadingBitcoinProp,
     showTaxCountry,
     subscription,
-    organization,
     startTrial,
     currencyOverride,
 }: Props) => {
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const enableVatIdFeature = useFlag('VatId');
-
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
     const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
@@ -215,16 +208,6 @@ export const PaymentsNoApi = ({
     const isPaypalMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     const showPaypalView = isPaypalMethod && !isSingleSignup;
 
-    const showVatInput = showTaxCountry; // basically the same condition as showTaxCountry for now. Can be changed later.
-
-    const vatInput = enableVatIdFeature && showVatInput && taxCountry && vatNumber && (
-        <VatNumberInput taxCountry={taxCountry} {...vatNumber} />
-    );
-
-    const billingCountryInput = showTaxCountry && taxCountry && (
-        <TaxCountrySelector className="mb-2" {...taxCountry} defaultCollapsed={true} showCountryFlag={false} />
-    );
-
     const infoMessages = (
         <>
             {flow === 'subscription' && (
@@ -241,10 +224,14 @@ export const PaymentsNoApi = ({
         </>
     );
 
-    // We must collect payment method details when amount due is greater than 0, this is obvious. But also when user
-    // wants to start a trial. We will not charge user in this case, but we still want to save the payment method
-    // information.
-    const paymentMethodRequired = amount > 0 || startTrial || isB2BTrial;
+    const paymentMethodRequired = getPaymentMethodRequired({
+        amount,
+        startTrial,
+        subscription,
+        savedPaymentMethods,
+    });
+
+    const taxFields = <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} />;
 
     return (
         <>
@@ -276,12 +263,7 @@ export const PaymentsNoApi = ({
                                 <ChargebeeCreditCardWrapper
                                     {...sharedCbProps}
                                     themeCode={themeCode}
-                                    suffix={
-                                        <>
-                                            {billingCountryInput}
-                                            {vatInput}
-                                        </>
-                                    }
+                                    suffix={taxFields}
                                     // if we don't let user select the tax country then we still need a fallback way to
                                     // collect the card country and the postal code
                                     showCountry={!showTaxCountry}
@@ -293,29 +275,19 @@ export const PaymentsNoApi = ({
                         {method === PAYMENT_METHOD_TYPES.APPLE_PAY && (
                             <>
                                 <ApplePayView />
-                                <div className="mt-2">
-                                    {billingCountryInput}
-                                    {vatInput}
-                                </div>
+                                <div className="mt-2">{taxFields}</div>
                             </>
                         )}
                         {method === PAYMENT_METHOD_TYPES.GOOGLE_PAY && (
                             <>
                                 <GooglePayView />
-                                <div className="mt-2">
-                                    {billingCountryInput}
-                                    {vatInput}
-                                </div>
+                                <div className="mt-2">{taxFields}</div>
                             </>
                         )}
                         {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
                             <>
                                 <SepaDirectDebit {...sharedCbProps} />
-
-                                <div className="mt-2">
-                                    {billingCountryInput}
-                                    {vatInput}
-                                </div>
+                                <div className="mt-2">{taxFields}</div>
                             </>
                         )}
                         {(function renderBitcoin() {
@@ -340,10 +312,7 @@ export const PaymentsNoApi = ({
                                             }
                                             {...bitcoinProps}
                                         />
-                                        <div className="mt-4">
-                                            {billingCountryInput}
-                                            {vatInput}
-                                        </div>
+                                        <div className="mt-4">{taxFields}</div>
                                     </>
                                 );
                             }
@@ -353,8 +322,7 @@ export const PaymentsNoApi = ({
                         {showBitcoinPlaceholder && <BilledUserInlineMessage />}
                         {isPaypalMethod && (
                             <>
-                                {billingCountryInput}
-                                {vatInput}
+                                {taxFields}
                                 {showPaypalView ? (
                                     <PayPalView method={method} amount={amount} currency={currency}>
                                         <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
@@ -369,8 +337,7 @@ export const PaymentsNoApi = ({
                                 {!hideSavedMethodsDetails && (
                                     <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
                                 )}
-                                {billingCountryInput}
-                                {vatInput}
+                                {taxFields}
                                 {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && showAlert3ds && (
                                     <Alert3DS />
                                 )}
@@ -386,14 +353,8 @@ export const PaymentsNoApi = ({
             {!paymentMethodRequired && (
                 <NoPaymentRequiredNote
                     hasPaymentMethod={!!savedPaymentMethods?.length}
-                    organization={organization}
                     subscription={subscription}
-                    taxCountry={
-                        <>
-                            {billingCountryInput}
-                            {vatInput}
-                        </>
-                    }
+                    taxFields={taxFields}
                 />
             )}
         </>

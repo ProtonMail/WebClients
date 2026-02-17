@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import type { RequiredCheckResponse } from '@proton/payments';
-import { CYCLE, SubscriptionMode, TaxInclusive } from '@proton/payments';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
+import { CYCLE } from '@proton/payments/core/constants';
+import { SubscriptionMode, TaxInclusive } from '@proton/payments/core/subscription/constants';
 
 import { TaxRow } from './TaxRow';
 

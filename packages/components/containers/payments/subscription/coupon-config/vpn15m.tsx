@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { CYCLE, PLANS, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getShortBillingText } from '../helpers';
@@ -18,7 +19,7 @@ export const vpn15mConfig: CouponConfig = {
     hidden: true,
     cyclePriceComparePosition: 'before',
     cyclePriceCompare: ({ suffix }, config) => {
-        const checkout = getCheckout(config);
+        const checkout = getCheckoutUi(config);
 
         return (
             <Price className="mr-2 text-strike" currency={checkout.currency} suffix={suffix}>

@@ -12,8 +12,9 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import { FREE_PLAN, type Plan } from '@proton/payments';
-import { PaymentsContextProvider } from '@proton/payments/ui';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type {

@@ -5,6 +5,7 @@ import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '@proton/payments/core/plan/addons';
 import {
     getIsB2BAudienceFromPlan,
@@ -16,7 +17,8 @@ import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionCheckResponse } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/ui';
-import { computeOptimisticSubscriptionMode, getPlanToCheck, usePaymentsInner } from '@proton/payments/ui';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -87,11 +89,8 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs:
 };
 
 export const useMemberAddonPrice = () => {
-    const {
-        uiData: { checkout },
-        couponConfig,
-    } = usePaymentsInner();
-    const { addons, membersPerMonth, withDiscountPerMonth, withDiscountMembersPerMonth, discountTarget } = checkout;
+    const { checkoutUi, couponConfig } = usePayments();
+    const { addons, membersPerMonth, withDiscountPerMonth, withDiscountMembersPerMonth, discountTarget } = checkoutUi;
     const noAddonsAndCouponIsHidden = !!couponConfig?.hidden && addons.length === 0;
 
     let membersAmount: number;
@@ -125,7 +124,7 @@ export async function runAdditionalCycleChecks(
     planIDs: PlanIDs,
     plansMap: PlansMap,
     currency: Currency,
-    coupon: string,
+    coupon: string | undefined,
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionCheckResponse[]>
 ) {
     const additionalCycles = allowedCycles
