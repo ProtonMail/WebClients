@@ -206,7 +206,6 @@ export const getExploreApps = ({ ...options }: Omit<Parameters<typeof getAvailab
                 // translator: Description for Proton Sheets. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Secure online sheets`;
             },
-            isNew: true,
             style: {
                 '--gradient-hover':
                     'radial-gradient(112.03% 101.5% at 94.23% 0%, rgb(95 103 251 / 0.5) 0%, rgb(39 218 122 / 0.5) 99.44%)',
