@@ -1,117 +1,109 @@
 import { useState } from 'react';
 
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalProps, ModalSize } from '@proton/components';
-import {
-    BasicModal,
-    Checkbox,
-    Form,
-    Icon,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Prompt,
-    RadioGroup,
-    useModalState,
-    useModalStateObject,
-} from '@proton/components';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
+import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import type { ModalProps, ModalSize } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState, { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 
-import mdx from './Modal.mdx';
+const loremIpsum =
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?';
 
-export default {
-    component: ModalTwo,
-    subcomponents: { ModalTwoHeader, Prompt },
+const meta: Meta<typeof ModalTwo> = {
     title: 'Components/Modal',
+    component: ModalTwo,
+    subcomponents: {
+        ModalTwoHeader: ModalTwoHeader as any,
+        ModalTwoContent: ModalTwoContent as any,
+        ModalTwoFooter: ModalTwoFooter as any,
+        Prompt: Prompt as any,
+        BasicModal: BasicModal as any,
+    },
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'A modal dialog component. Composed of ModalTwo, ModalTwoHeader, ModalTwoContent, and ModalTwoFooter. Supports multiple sizes, fullscreen on mobile, form integration, and Prompt/BasicModal variants.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ModalTwo>;
+
+export const Default: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
+
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open modal</Button>
+                {render && (
+                    <ModalTwo {...modalProps}>
+                        <ModalTwoHeader title="Example Modal" />
+                        <ModalTwoContent>
+                            <p>{loremIpsum}</p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
     },
 };
 
-export const Example = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const Sizes: Story = {
+    render: () => {
+        const [size, setSize] = useState<ModalSize>('medium');
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    return (
-        <div className="text-center">
-            <Button
-                className="mr-2"
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open modal
-            </Button>
-            {render && (
-                <ModalTwo {...modalProps}>
-                    <ModalTwoHeader title="Example Modal" />
-                    <ModalTwoContent>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
-};
-
-export const Primary = () => {
-    const [size, setSize] = useState<ModalSize>('medium');
-    const [modalProps, handleSetOpen, render] = useModalState();
-
-    return (
-        <div className="text-center">
-            <Button
-                className="mr-2"
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open size modal
-            </Button>
-            {render && (
-                <ModalTwo size={size} {...modalProps}>
-                    <ModalTwoHeader title="Size" />
-                    <ModalTwoContent>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-
-                        <div className="mr-8">
-                            <strong className="block mb-4">Shape</strong>
-                            <RadioGroup
-                                name="selected-shape"
-                                onChange={setSize}
-                                value={size}
-                                options={(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'] as const).map(
-                                    (size) => ({
-                                        value: size,
-                                        label: size,
-                                    })
-                                )}
-                            />
-                        </div>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open size modal</Button>
+                {render && (
+                    <ModalTwo size={size} {...modalProps}>
+                        <ModalTwoHeader title="Size" />
+                        <ModalTwoContent>
+                            <p>{loremIpsum}</p>
+                            <div className="mr-8">
+                                <strong className="block mb-4">Size</strong>
+                                <RadioGroup
+                                    name="selected-size"
+                                    onChange={setSize}
+                                    value={size}
+                                    options={(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'] as const).map(
+                                        (s) => ({ value: s, label: s })
+                                    )}
+                                />
+                            </div>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
 };
 
 const WrappedFormModal = (props: ModalProps) => {
@@ -131,437 +123,303 @@ const WrappedFormModal = (props: ModalProps) => {
     );
 };
 
-export const UsingUseModalState = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const UsingUseModalState: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    return (
-        <div className="text-center">
-            <Button
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open modal with useModalState
-            </Button>
-            {render && <WrappedFormModal {...modalProps} />}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open modal with useModalState</Button>
+                {render && <WrappedFormModal {...modalProps} />}
+            </div>
+        );
+    },
 };
 
-export const ModalStateObject = () => {
-    const modal = useModalStateObject();
+export const UsingModalStateObject: Story = {
+    render: () => {
+        const modal = useModalStateObject();
 
-    return (
-        <div className="text-center">
-            <Button
-                className="mr-2"
-                onClick={() => {
-                    modal.openModal(true);
-                }}
-            >
-                Open modal
-            </Button>
-            {modal.render && (
-                <ModalTwo {...modal.modalProps}>
-                    <ModalTwoHeader title="Example Modal" />
-                    <ModalTwoContent>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => modal.openModal(true)}>Open modal</Button>
+                {modal.render && (
+                    <ModalTwo {...modal.modalProps}>
+                        <ModalTwoHeader title="Example Modal" />
+                        <ModalTwoContent>
+                            <p>{loremIpsum}</p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
 };
 
-export const Header = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const WithHeaderSubline: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    return (
-        <div className="text-center">
-            <Button
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open modal with header extras
-            </Button>
-            {render && (
-                <ModalTwo {...modalProps}>
-                    <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
-                    <ModalTwoContent>
-                        <p className="m-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open modal with header extras</Button>
+                {render && (
+                    <ModalTwo {...modalProps}>
+                        <ModalTwoHeader title="Title in ModalHeader" subline="Subline in ModalHeader" />
+                        <ModalTwoContent>
+                            <p className="m-0">{loremIpsum}</p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
 };
 
-export const HeaderActions = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const WithHeaderActions: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    return (
-        <div className="text-center">
-            <Button
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open actions modal
-            </Button>
-            {render && (
-                <ModalTwo {...modalProps}>
-                    <ModalTwoHeader
-                        actions={[
-                            <Tooltip title="Get help">
-                                <Button icon shape="ghost">
-                                    <Icon name="question-circle" />
-                                </Button>
-                            </Tooltip>,
-                            <Tooltip title="Refresh">
-                                <Button icon shape="ghost">
-                                    <Icon name="arrows-rotate" />
-                                </Button>
-                            </Tooltip>,
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open actions modal</Button>
+                {render && (
+                    <ModalTwo {...modalProps}>
+                        <ModalTwoHeader
+                            actions={[
+                                <Tooltip title="Get help" key="help">
+                                    <Button icon shape="ghost">
+                                        <Icon name="question-circle" />
+                                    </Button>
+                                </Tooltip>,
+                                <Tooltip title="Refresh" key="refresh">
+                                    <Button icon shape="ghost">
+                                        <Icon name="arrows-rotate" />
+                                    </Button>
+                                </Tooltip>,
+                            ]}
+                        />
+                        <ModalTwoContent>
+                            <p className="m-0">{loremIpsum}</p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
+};
+
+export const ScrollableContent: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
+
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open modal with a lot of content</Button>
+                {render && (
+                    <ModalTwo {...modalProps}>
+                        <ModalTwoHeader title="Title in header" />
+                        <ModalTwoContent>
+                            {Array.from({ length: 10 }, (_, i) => (
+                                <p key={i}>{loremIpsum}</p>
+                            ))}
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
+};
+
+export const WithFormRoot: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
+        const [value, setValue] = useState('');
+
+        const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            window.alert(`Form submitted, value: ${value}.`);
+        };
+
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open modal with form root</Button>
+                {render && (
+                    <ModalTwo {...modalProps} as={Form} onSubmit={handleSubmit}>
+                        <ModalTwoHeader title="Form Modal" />
+                        <ModalTwoContent>
+                            <p>{loremIpsum}</p>
+                            <div className="mt-4">
+                                <InputFieldTwo
+                                    label="Name"
+                                    value={value}
+                                    onValue={setValue}
+                                    placeholder="e.g. John Fitzgerald"
+                                />
+                            </div>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button onClick={() => modalProps.onClose()}>Cancel</Button>
+                            <Button type="submit" color="norm">
+                                Submit
+                            </Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
+};
+
+export const FullscreenOnMobile: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
+
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open full screen on mobile modal</Button>
+                {render && (
+                    <ModalTwo fullscreenOnMobile {...modalProps}>
+                        <ModalTwoHeader />
+                        <ModalTwoContent>
+                            <p>
+                                If I&apos;m not full screen you&apos;ll have to make your screen&apos;s width smaller.
+                            </p>
+                            <p>{loremIpsum}</p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button>Secondary action</Button>
+                            <Button color="norm">Primary action</Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
+        );
+    },
+};
+
+export const PromptBasic: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
+
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open Prompt</Button>
+                {render && (
+                    <Prompt
+                        title="Title"
+                        subline="Subline"
+                        buttons={[
+                            <Button color="danger" key="continue">
+                                Continue
+                            </Button>,
+                            <Button onClick={() => modalProps.onClose()} key="cancel">
+                                Cancel
+                            </Button>,
                         ]}
-                    />
-                    <ModalTwoContent>
-                        <p className="m-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+                        actions={[<Checkbox key="accept">Accept me</Checkbox>]}
+                        {...modalProps}
+                    >
+                        <p>{loremIpsum}</p>
+                    </Prompt>
+                )}
+            </div>
+        );
+    },
 };
 
-export const ALotOfContent = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const PromptSingleButton: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    return (
-        <div className="text-center">
-            <Button
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open modal with a lot of content
-            </Button>
-            {render && (
-                <ModalTwo {...modalProps}>
-                    <ModalTwoHeader title="Title in header" />
-                    <ModalTwoContent>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptatum deserunt rem amet
-                            consectetur perspiciatis placeat error doloribus vero voluptate quisquam numquam expedita,
-                            ex maxime quas, nemo labore necessitatibus accusamus.
-                        </p>
-                        <p>
-                            Delectus blanditiis corporis et est exercitationem odio itaque vero! Fugiat sit eius minus!
-                            Architecto quibusdam nisi ullam impedit vel repellat amet, molestias, beatae repudiandae
-                            quis fugit, qui ea assumenda maxime.
-                        </p>
-                        <p>
-                            Deserunt rerum aspernatur sint placeat natus nisi quas, facere nesciunt quos obcaecati at
-                            suscipit hic modi incidunt numquam necessitatibus labore? Maxime nisi repellendus enim cum
-                            nostrum. Officiis porro fuga asperiores?
-                        </p>
-                        <p>
-                            Voluptates minus soluta, ullam maxime labore vitae saepe porro mollitia beatae perferendis
-                            velit quasi quidem. Similique numquam repellendus nulla adipisci dolore tempore tenetur
-                            laudantium. Sed debitis eos odit beatae soluta?
-                        </p>
-                        <p>
-                            Deleniti, dicta velit. Magnam optio rerum esse est nisi neque unde quos, natus quam aperiam
-                            dignissimos porro harum, maxime sed laudantium voluptas cum nam officiis molestiae. Quas
-                            iure dicta consectetur.
-                        </p>
-                        <p>
-                            Dolorum ducimus iste asperiores quibusdam laudantium soluta, doloremque minus incidunt
-                            distinctio quod dolorem. Nulla nam vitae rerum impedit iste, accusantium veritatis aut, hic
-                            animi optio blanditiis, repellat fugit dicta maxime!
-                        </p>
-                        <p>
-                            Quaerat sequi, quis doloribus vel asperiores unde nam excepturi facere consequuntur delectus
-                            officia dolorem et itaque sunt iste, suscipit maiores fugiat minus cum! Et id nostrum,
-                            officiis facilis voluptas fugiat.
-                        </p>
-                        <p>
-                            Ratione praesentium atque, eveniet nulla expedita distinctio assumenda odit suscipit non
-                            architecto accusamus quaerat quod fuga omnis veniam error reprehenderit. At aut impedit
-                            excepturi tenetur nulla molestias possimus totam vitae.
-                        </p>
-                        <p>
-                            Molestiae, delectus quae itaque illum impedit eligendi. Molestiae cumque, nam repellat modi
-                            dolorum quisquam sequi voluptates velit repudiandae numquam vel quis. Excepturi adipisci hic
-                            velit veritatis tenetur, aliquid quod maiores?
-                        </p>
-                        <p>
-                            Pariatur, sint nostrum accusamus dolorum eveniet esse totam praesentium nemo ipsum mollitia
-                            quod ad nisi beatae. Veniam, rem illum ratione alias dolores eos sit officia necessitatibus
-                            tempora, earum adipisci iure!
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open Prompt with one button</Button>
+                {render && (
+                    <Prompt
+                        title="Title"
+                        subline="Subline"
+                        buttons={<Button onClick={() => modalProps.onClose()}>I understand</Button>}
+                        {...modalProps}
+                    >
+                        <p>{loremIpsum}</p>
+                    </Prompt>
+                )}
+            </div>
+        );
+    },
 };
 
-export const WithFormRoot = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
-    const [value, setValue] = useState('');
+export const PromptWithFootnote: Story = {
+    render: () => {
+        const [modalProps, handleSetOpen, render] = useModalState();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        window.alert(`Form submitted, value: ${value}.`);
-    };
-
-    return (
-        <div className="text-center">
-            <Button
-                className="mr-2"
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open modal with form root
-            </Button>
-            {render && (
-                <ModalTwo {...modalProps} as={Form} onSubmit={handleSubmit}>
-                    <ModalTwoHeader title="Size" />
-                    <ModalTwoContent>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                        <div className="mt-4">
-                            <InputFieldTwo
-                                label="Name"
-                                value={value}
-                                onValue={setValue}
-                                placeholder="e.g. John Fitzgerald"
-                            />
-                        </div>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button
-                            onClick={() => {
-                                modalProps.onClose();
-                            }}
-                        >
-                            Cancel
-                        </Button>
-                        <Button type="submit" color="norm">
-                            Submit
-                        </Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
+        return (
+            <div className="text-center">
+                <Button onClick={() => handleSetOpen(true)}>Open Prompt with footnote</Button>
+                {render && (
+                    <Prompt
+                        title="Title"
+                        subline="Subline"
+                        buttons={[
+                            <Button color="danger" key="continue">
+                                Continue
+                            </Button>,
+                            <Button onClick={() => modalProps.onClose()} key="cancel">
+                                Cancel
+                            </Button>,
+                        ]}
+                        actions={[<Checkbox key="accept">Accept me</Checkbox>]}
+                        footnote="This is a footnote"
+                        {...modalProps}
+                    >
+                        <p>{loremIpsum}</p>
+                    </Prompt>
+                )}
+            </div>
+        );
+    },
 };
 
-export const FullscreenOnMobile = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
+export const BasicModalExample: Story = {
+    render: () => {
+        const [open, setOpen] = useState(false);
 
-    return (
-        <div className="text-center">
-            <Button
-                className="mr-2"
-                onClick={() => {
-                    handleSetOpen(true);
-                }}
-            >
-                Open full screen on mobile modal
-            </Button>
-            {render && (
-                <ModalTwo fullscreenOnMobile {...modalProps}>
-                    <ModalTwoHeader />
-                    <ModalTwoContent>
-                        <p>
-                            If I&apos;m not full screen you&apos;ll have to make your screen&apos;s width smaller. If
-                            you did that and I&apos;m still not fullscreen that means my developers did a shlopey job.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                            accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure
-                            amet qui vero, blanditiis quos?
-                        </p>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button>Secondary action</Button>
-                        <Button color="norm">Primary action</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
-    );
-};
-
-export const PromptBasic = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
-
-    return (
-        <div className="text-center">
-            <Button onClick={() => handleSetOpen(true)}>Open Prompt</Button>
-            {render && (
-                <Prompt
+        return (
+            <div className="text-center">
+                <Button onClick={() => setOpen(true)}>Open Basic Modal</Button>
+                <BasicModal
                     title="Title"
-                    subline="Subline"
-                    buttons={[
-                        <Button color="danger">Continue</Button>,
-                        <Button onClick={() => modalProps.onClose()}>Cancel</Button>,
-                    ]}
-                    actions={[<Checkbox>Accept me</Checkbox>]}
-                    {...modalProps}
+                    isOpen={open}
+                    onClose={() => setOpen(false)}
+                    footer={
+                        <>
+                            <Button onClick={() => setOpen(false)}>I understand</Button>
+                            <Button color="norm" onClick={() => setOpen(false)}>
+                                I do not understand
+                            </Button>
+                        </>
+                    }
                 >
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
-                        qui vero, blanditiis quos?
-                    </p>
-                </Prompt>
-            )}
-        </div>
-    );
-};
-
-export const PromptWithOnlyOneButton = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
-
-    return (
-        <div className="text-center">
-            <Button onClick={() => handleSetOpen(true)}>Open Prompt with only one Button</Button>
-            {render && (
-                <Prompt
-                    title="Title"
-                    subline="Subline"
-                    buttons={<Button onClick={() => modalProps.onClose()}>I understand</Button>}
-                    {...modalProps}
-                >
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
-                        qui vero, blanditiis quos?
-                    </p>
-                </Prompt>
-            )}
-        </div>
-    );
-};
-
-export const PromptWithFootnote = () => {
-    const [modalProps, handleSetOpen, render] = useModalState();
-    return (
-        <div className="text-center">
-            <Button onClick={() => handleSetOpen(true)}>Open Prompt with footnote</Button>
-            {render && (
-                <Prompt
-                    title="Title"
-                    subline="Subline"
-                    buttons={[
-                        <Button color="danger">Continue</Button>,
-                        <Button onClick={() => modalProps.onClose()}>Cancel</Button>,
-                    ]}
-                    actions={[<Checkbox>Accept me</Checkbox>]}
-                    footnote="This is a footnote"
-                    {...modalProps}
-                >
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
-                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
-                        qui vero, blanditiis quos?
-                    </p>
-                </Prompt>
-            )}
-        </div>
-    );
-};
-
-export const Basic = () => {
-    const [open, setOpen] = useState(false);
-
-    return (
-        <div className="text-center">
-            <Button onClick={() => setOpen(true)}>Open Basic Modal with only one Button</Button>
-            <BasicModal
-                title="Title"
-                isOpen={open}
-                onClose={() => setOpen(false)}
-                footer={
-                    <>
-                        <Button onClick={() => setOpen(false)}>I understand</Button>
-                        <Button color="norm" onClick={() => setOpen(false)}>
-                            I do not understand
-                        </Button>
-                    </>
-                }
-            >
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
-                    obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
-                    blanditiis quos?
-                </p>
-            </BasicModal>
-        </div>
-    );
+                    <p>{loremIpsum}</p>
+                </BasicModal>
+            </div>
+        );
+    },
 };

@@ -1,19 +1,47 @@
-import { MiddleEllipsis } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './MiddleEllipsis.mdx';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 
-export default {
-    component: MiddleEllipsis,
+const longText =
+    'mySuperLoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongFile.jpg';
+
+const meta: Meta<typeof MiddleEllipsis> = {
     title: 'Components/Middle Ellipsis',
+    args: {
+        text: longText,
+    },
+    component: MiddleEllipsis,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Truncates text in the middle rather than at the end, preserving both the beginning and end of the string. Useful for filenames and long paths.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof MiddleEllipsis>;
+
+export const Default: Story = {};
+
+export const WithoutTitle: Story = {
+    args: {
+        displayTitle: false,
     },
 };
 
-const textToEllipsis = `mySuperLoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongFile.jpg`;
+export const ConstrainedWidth: Story = {
+    args: {
+        className: 'w-1/2',
+    },
+};
 
-export const Basic = () => <MiddleEllipsis text={textToEllipsis} />;
-export const Title = () => <MiddleEllipsis displayTitle={false} text={textToEllipsis} />;
-export const Classes = () => <MiddleEllipsis className="w-1/2" text={textToEllipsis} />;
+export const CustomEndChars: Story = {
+    args: {
+        charsToDisplayEnd: 10,
+    },
+};
