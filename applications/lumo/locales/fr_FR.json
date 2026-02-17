@@ -2622,8 +2622,8 @@
       "Help me understand what this code does": [
         "Aide-moi à comprendre ce que fait ce code."
       ],
-      "How do people celebrate Valentine's Day around the world?": [
-        "Comment les personnes célèbrent-ils la Saint-Valentin à travers le monde ?"
+      "How the world celebrates Valentine's Day": [
+        "Comment le monde célèbre la Saint-Valentin"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identifie toute condition inhabituelle ou potentiellement défavorable."
@@ -4179,12 +4179,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clé de sécurité"
@@ -4468,7 +4468,7 @@
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Saisissez le code de vérification. Entrez ${ digit }."
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
