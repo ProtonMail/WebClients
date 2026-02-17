@@ -11,4 +11,9 @@
 	.close-button {
 		color: color-mix(in srgb, var(--text-norm) 80%, transparent);
 	}
+
+	.translucent-modal_container {
+		// Adding bottom margin to visually center the modal content in the middle of the screen because header push it down 80px
+		margin-block-end: 5rem;
+	}
 }

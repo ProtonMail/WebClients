@@ -6,6 +6,7 @@
 
 @use '~@proton/styles/scss/specifics/placeholder-loading' as *;
 @use '~@proton/styles/scss/specifics/settings' as *;
+@use '~@proton/styles/scss/specifics/arizona' as *;
 
 @use '~@proton/styles/scss/meet/meet-breakpoints' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
@@ -309,26 +310,38 @@ $profile-colors:
 }
 
 .meet-glow-effect {
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		inline-size: 16.25rem;
-		block-size: 16.25rem;
-		inset-block-start: 0;
-		background: var(--interaction-norm-minor-1);
-		opacity: 0.4;
-		filter: blur(8rem);
-		z-index: -1;
-		pointer-events: none;
-	}
+	@include im.media('>small') {
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			inline-size: 16.25rem;
+			block-size: 16.25rem;
+			inset-block-start: 0;
+			background: var(--interaction-norm-minor-1);
+			opacity: 0.4;
+			filter: blur(8rem);
+			z-index: -1;
+			pointer-events: none;
+		}
 
-	&::before {
-		inset-inline-start: -2rem;
-	}
+		&::before {
+			inset-inline-start: -1rem;
+		}
 
-	&::after {
-		inset-inline-end: -2rem;
+		&::after {
+			inset-inline-end: -1rem;
+		}
+
+		@include im.media('>medium') {
+			&::before {
+				inset-inline-start: -2rem;
+			}
+
+			&::after {
+				inset-inline-end: -2rem;
+			}
+		}
 	}
 }
 
