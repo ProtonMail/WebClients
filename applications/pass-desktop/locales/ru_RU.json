@@ -1559,9 +1559,6 @@
       "Breaches detected": [
         "Обнаружены утечки"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Принесите ваши существующие пароли в ${ BRAND_NAME }."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Заведите собственный домен, и вам не придется покупать еще один хостинг электронной почты."
       ],
@@ -1772,9 +1769,6 @@
         "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
         "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Получите максимальную отдачу от Pass, создав хранилище для каждой команды или проекта."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Получите неограниченное количество псевдонимов, наслаждайтесь эксклюзивными функциями и поддержите нас, подписавшись на Pass Plus."
       ],
@@ -1921,6 +1915,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"

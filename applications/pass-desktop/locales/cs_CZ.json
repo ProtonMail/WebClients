@@ -1680,8 +1680,8 @@
       "Breaches detected": [
         "Zjištěny úniky informací"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Přeneste svá stávající hesla do ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Přeneste svá stávající hesla do ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Přidejte si vlastní doménu a nemusíte kupovat další řešení e-mailového hostingu."
@@ -1902,8 +1902,8 @@
         "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů.",
         "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdnů."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Vytvořte trezor pro každý tým nebo projekt a využijte tak svůj Pass naplno."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Vytvořte trezor pro každý tým nebo projekt a využijte tak svou aplikaci ${ PASS_APP_NAME } naplno."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získejte neomezený počet aliasů, využívejte exkluzivní funkce a podpořte nás předplacením Proton Pass Plus."
@@ -2059,7 +2059,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2668,7 +2671,7 @@
         "Již nemáte přístup k některým trezorům nebo položkám, protože přístup vaší skupiny \"${ groupName }\" byl odebrán."
       ],
       "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
-        "Nyní máte přístup k \"Položka ${ itemName }\", protože vaše skupina ${ groupName } získala přístup."
+        "Nyní máte přístup k \"položce ${ itemName }\", protože vaše skupina ${ groupName } získala přístup."
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
         "Nyní máte přístup k \"Trezoru ${ vaultName }\", protože vaše skupina ${ groupName } získala přístup."

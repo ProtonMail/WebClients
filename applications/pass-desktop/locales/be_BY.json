@@ -689,10 +689,10 @@
         "Адпраўка справаздачы..."
       ],
       "Sync alias": [
-        "Сінхранізацыя псеўданіма",
-        "Сінхранізацыя псеўданімаў",
-        "Сінхранізацыя псеўданімаў",
-        "Сінхранізацыя псеўданімаў"
+        "Сінхранізаваць псеўданім",
+        "Сінхранізаваць псеўданімы",
+        "Сінхранізаваць псеўданімы",
+        "Сінхранізаваць псеўданімы"
       ],
       "Sync aliases": [
         "Сінхранізаваць псеўданімы"
@@ -1650,6 +1650,9 @@
       "All trashed items successfully restored": [
         "Усе выдаленыя элементы паспяхова адноўлены"
       ],
+      "An item previously shared with you was removed.": [
+        "Раней абагулены з вамі элемент быў выдалены."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "Вы сапраўды хочаце выдаліць ${ emailJSX } са сваіх паштовых скрынь?"
       ],
@@ -1677,8 +1680,8 @@
       "Breaches detected": [
         "Выяўлены парушэнні"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Перанясіце свае існуючыя паролі ў ${ BRAND_NAME }."
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Перанясіце свае існуючыя паролі ў ${ PASS_APP_NAME }."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Набудзьце свой уласны дамен, і вам не спатрэбіцца купляць яшчэ адно рашэнне для размяшчэння электроннай пошты."
@@ -1899,8 +1902,8 @@
         "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
         "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Атрымайце максімум пераваг ад Pass, стварыўшы сховішча для кожнай каманды або праекта."
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Атрымайце максімум пераваг ад ${ PASS_APP_NAME }, стварыўшы сховішча для кожнай каманды або праекта."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, атрымлівайце асалоду ад эксклюзіўных функцый і падтрымайце нас падпісаўшыся на Pass Plus."
@@ -2054,6 +2057,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2565,6 +2574,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховішча \"${ payload.share.content.name }\" паспяхова абноўлена"
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Сховішча \"${ share.content.name }\" было выдалена."
+      ],
       "Vault organization successfully updated": [
         "Арганізацыя сховішча паспяхова абноўлена"
       ],
@@ -2654,6 +2666,15 @@
       ],
       "You need a vault with edit permission before you can import items.": [
         "Вам неабходна сховішча з правамі рэдагавання перад тым, як імпартаваць элементы."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "У вас больш няма доступу да некаторых сховішчаў або элементаў, таму што доступ да вашай групы ${ groupName } быў выдалены."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Цяпер у вас ёсць доступ да элемента з назвай ${ itemName }\", таму што ваша група ${ groupName } атрымала доступ."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Цяпер у вас ёсць доступ да \"Сховішча з назвай ${ vaultName }\", таму што ваша група ${ groupName } атрымала доступ."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "У вас ёсць магчымасць наладзіць дамен пад свае патрабаванні (адпраўляць усе лісты псеўданімаў ва ўсю пошту дамена, задаць прадвызначанае бачнае імя для псеўданімаў і г.д.) пасля таго, як ён будзе спраўджаны."

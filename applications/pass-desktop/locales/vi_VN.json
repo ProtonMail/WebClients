@@ -1596,9 +1596,6 @@
       "Breaches detected": [
         "Phát hiện vi phạm"
       ],
-      "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Đưa các mật khẩu hiện có vào ${ BRAND_NAME }."
-      ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "Sử dụng miền riêng và bạn không cần phải mua thêm giải pháp lưu trữ email nào nữa."
       ],
@@ -1812,9 +1809,6 @@
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Các mật khẩu đã tạo sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
       ],
-      "Get the most out of Pass by creating a vault for each team or project.": [
-        "Tận dụng tối đa Pass bằng cách tạo một kho cho mỗi nhóm hoặc dự án."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn biệt danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
       ],
@@ -1960,7 +1954,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -3146,7 +3140,7 @@
         "Khóa"
       ],
       "Key fingerprint": [
-        "Khoá vân tay"
+        "Khóa vân tay"
       ],
       "Key type": [
         "Loại khóa"
@@ -5045,7 +5039,7 @@
         "Đã đạt đến giới hạn thành viên có thể truy cập mục này."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho này."
+        "Bạn đã đạt đến giới hạn thành viên có thể truy cập kho này."
       ],
       "You have reached the limit of users for this item. ${ upgradeLink }": [
         "Đã đạt đến giới hạn người dùng cho mục này. ${ upgradeLink }"
