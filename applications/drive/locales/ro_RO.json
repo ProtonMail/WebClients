@@ -1241,6 +1241,15 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Encrypted": [
+        "Criptat"
+      ],
+      "Scan and Download": [
+        "Scanare și descărcare"
+      ],
+      "Shared": [
+        "Partajate"
       ]
     },
     "Action: Docs": {
@@ -5456,7 +5465,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar o dată."
+        "Fiecare cod poate fi folosit doar odată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6671,7 +6680,7 @@
         "Când eliminați ${ deviceName } ca dispozitiv sincronizat, toate folderele adăugate la Calculatoarele mele de pe acest dispozitiv vor fi șterse permanent din ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "who": [
         "cine"
@@ -6932,6 +6941,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Preparing": [
+        "Se pregătește"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Elementul solicitat nu mai există."
+      ],
+      "Unexpected download error": [
+        "Eroare neașteptată la descărcare."
       ]
     },
     "info": {
@@ -7685,6 +7703,24 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Access": [
+        "Accesare"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitere ca editorii să modifice permisiunile și să partajeze"
+      ],
+      "Disable this link on a specific date": [
+        "Dezactivare această legătură web la o dată specifică"
+      ],
+      "Expiry": [
+        "Expirare"
+      ],
+      "Require password": [
+        "Necesită parolă"
+      ],
+      "Set a password to limit access via link": [
+        "Setare parolă pentru a limita accesarea prin legătura web"
       ]
     },
     "Label for contact group color": {
@@ -9543,6 +9579,12 @@
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "\"${ name }\" shared": [
+        "S-a partajat „${ name }\""
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Setare actualizată. Editorii pot schimba permisiunea și partaja."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

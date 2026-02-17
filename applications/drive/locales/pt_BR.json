@@ -5383,7 +5383,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez."
+        "Cada código só pode ser usado uma única vez"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -6592,7 +6592,7 @@
         "Quando você remover ${ deviceName } como um dispositivo sincronizado, todas as pastas adicionadas aos Meus Computadores a partir deste dispositivo serão permanentemente excluídas do ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação"
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
       "who": [
         "quem"
@@ -6846,6 +6846,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Preparing": [
+        "Preparando"
+      ],
+      "Requested item doesn't exist anymore": [
+        "O item solicitado não existe mais"
+      ],
+      "Unexpected download error": [
+        "Erro inesperado de download"
       ]
     },
     "info": {
@@ -7611,6 +7620,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Expiry": [
+        "Expiração"
       ]
     },
     "Label for contact group color": {
@@ -9460,6 +9472,9 @@
       ],
       "Your settings have been changed successfully": [
         "Suas configurações foram alteradas"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Configuração atualizada. Editores podem alterar permissão e compartilhar."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

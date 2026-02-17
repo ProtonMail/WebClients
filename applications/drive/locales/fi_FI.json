@@ -1232,6 +1232,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Set password or expiration date": [
+        "Aseta salasana tai erääntymispäivä"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Jakaminen on päästä päähän -salattu"
       ]
     },
     "Action: Docs": {
@@ -3767,6 +3773,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
+      ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
       ]
     },
     "error": {
@@ -6418,7 +6427,7 @@
         "Kun poistat laitteen ${ deviceName } synkronoinnista, kaikki tältä laitteelta Omiin tietokoneisiini lisätyt kansiot poistetaan pysyvästi ${ DRIVE_APP_NAME } -palvelusta."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "who": [
         "kuka"
@@ -6657,6 +6666,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Link copied": [
+        "Linkki kopioitu"
+      ],
+      "owner": [
+        "omistaja"
+      ],
+      "Preparing": [
+        "Valmistellaan"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Pyydettyä kohdetta ei ole enää olemassa"
+      ],
+      "Unexpected download error": [
+        "Odottamaton latausvirhe"
+      ],
+      "Who has access": [
+        "Kenellä on pääsy"
       ]
     },
     "info": {
@@ -7392,6 +7419,27 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Active": [
+        "Aktiivinen"
+      ],
+      "admin": [
+        "ylläpitäjä"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kuka tahansa, jolla on linkki"
+      ],
+      "can edit": [
+        "voi muokata"
+      ],
+      "can view": [
+        "voi tarkastella"
+      ],
+      "Delete link and remove access for everyone": [
+        "Poista linkki ja käyttöoikeudet kaikilta"
+      ],
+      "Not active": [
+        "Ei aktiivinen"
       ]
     },
     "Label for contact group color": {
@@ -12396,6 +12444,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Sinulla on 5 Gt tallennustilaa"
+      ],
+      "Public link": [
+        "Julkinen linkki"
+      ],
+      "Public link settings": [
+        "Julkisen linkin asetukset"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Asetukset tiedostolle ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12697,6 +12754,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "hyväksyi"
+      ],
+      "pending": [
+        "odottaa"
       ]
     }
   }

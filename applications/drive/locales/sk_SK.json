@@ -1250,6 +1250,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Encrypted": [
+        "Šifrované"
+      ],
+      "Shared": [
+        "Zdieľané"
       ]
     },
     "Action: Docs": {
@@ -4325,12 +4331,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
+        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -6762,7 +6768,7 @@
         "Keď odstránite ${ deviceName } ako synchronizované zariadenie, všetky priečinky pridané do Moje počítače z tohto zariadenia sa natrvalo odstránia z ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
+        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
       "who": [
         "kto"
@@ -7030,6 +7036,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Preparing": [
+        "Príprava"
+      ],
+      "Requested item doesn't exist anymore": [
+        "Požadovaná položka už neexistuje"
+      ],
+      "Unexpected download error": [
+        "Neočakávaná chyba sťahovania"
       ]
     },
     "info": {
@@ -7789,6 +7804,24 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Access": [
+        "Prístup"
+      ],
+      "Allow editors to change permissions and share": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať"
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovať tento odkaz k určitému dátumu"
+      ],
+      "Expiry": [
+        "Platnosť"
+      ],
+      "Require password": [
+        "Vyžadovať heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ]
     },
     "Label for contact group color": {
@@ -9710,6 +9743,12 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" zdieľané"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "Nastavenie aktualizované. Editori môžu zmeniť povolenia a zdieľať."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12200,7 +12239,7 @@
     },
     "Tag": {
       "Bursts": [
-        "Sériové foto"
+        "Sekvenčné foto"
       ],
       "Favorites": [
         "Obľúbené"
