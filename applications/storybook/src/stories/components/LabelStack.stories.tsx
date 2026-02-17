@@ -1,16 +1,6 @@
-import { LabelStack } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './LabelStack.mdx';
-
-export default {
-    component: LabelStack,
-    title: 'Components/Label Stack',
-    parameters: {
-        docs: {
-            page: mdx,
-        },
-    },
-};
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 
 const labelList = [
     { color: '#8080FF', title: 'electron' },
@@ -26,7 +16,7 @@ const labelList = [
 ].map(({ color, title }) => ({
     title,
     name: title,
-    color: color,
+    color,
 }));
 
 const labelListWithHandlers = labelList.map((label) => ({
@@ -39,19 +29,60 @@ const labelListWithHandlers = labelList.map((label) => ({
     },
 }));
 
-export const Basic = () => <LabelStack labels={labelList} />;
+const meta: Meta<typeof LabelStack> = {
+    title: 'Components/Label Stack',
+    args: {
+        labels: labelList,
+    },
+    component: LabelStack,
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    'Displays a list of colored labels with an embedded look and feel. Supports click handlers, delete buttons, stacking, max count, and dropdown display.',
+            },
+        },
+    },
+    tags: ['autodocs'],
+};
 
-export const Clickable = () => <LabelStack labels={labelListWithHandlers} />;
+export default meta;
 
-export const WithDelete = () => <LabelStack labels={labelListWithHandlers} showDelete />;
+type Story = StoryObj<typeof LabelStack>;
 
-export const Stacked = () => (
-    <div className="flex justify-space-between">
-        <LabelStack labels={labelList} isStacked leftToRight />
-        <LabelStack labels={labelList} isStacked />
-    </div>
-);
+export const Default: Story = {};
 
-export const Max = () => <LabelStack labels={labelList} maxNumber={5} />;
+export const Clickable: Story = {
+    args: {
+        labels: labelListWithHandlers,
+    },
+};
 
-export const Dropdown = () => <LabelStack labels={labelListWithHandlers} showDropDown />;
+export const WithDelete: Story = {
+    args: {
+        labels: labelListWithHandlers,
+        showDelete: true,
+    },
+};
+
+export const Stacked: Story = {
+    render: () => (
+        <div className="flex justify-space-between">
+            <LabelStack labels={labelList} isStacked leftToRight />
+            <LabelStack labels={labelList} isStacked />
+        </div>
+    ),
+};
+
+export const MaxNumber: Story = {
+    args: {
+        maxNumber: 5,
+    },
+};
+
+export const WithDropdown: Story = {
+    args: {
+        labels: labelListWithHandlers,
+        showDropDown: true,
+    },
+};

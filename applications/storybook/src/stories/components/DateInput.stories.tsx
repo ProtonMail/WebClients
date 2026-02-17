@@ -1,91 +1,96 @@
 import { useMemo, useState } from 'react';
 
-import { DateInput } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import DateInput from '@proton/components/components/input/DateInput';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import mdx from './DateInput.mdx';
-
-export default {
-    component: DateInput,
+const meta: Meta<typeof DateInput> = {
     title: 'Components/Date Input',
+    component: DateInput,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'A date input with an integrated mini calendar dropdown. Supports min/max date constraints, value reset prevention, week number display, and custom placeholder formatting.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof DateInput>;
+
+export const Default: Story = {
+    render: () => {
+        const [value, setValue] = useState<Date | undefined>(new Date());
+
+        return <DateInput value={value} onChange={setValue} />;
     },
 };
 
-export const Basic = () => {
-    const currentDate = new Date();
-    const [value, setValue] = useState<Date | undefined>(currentDate);
+export const WithMinAndMax: Story = {
+    render: () => {
+        const currentDate = new Date();
+        const [value, setValue] = useState<Date | undefined>(currentDate);
+        const min = addDays(currentDate, -3);
+        const max = addDays(currentDate, 3);
 
-    const handleChange = (change: Date | undefined) => {
-        setValue(change);
-    };
-
-    const sharedDateInputProps = {
-        value,
-        onChange: handleChange,
-    };
-
-    return (
-        <div>
-            <DateInput {...sharedDateInputProps} />
-        </div>
-    );
+        return <DateInput value={value} onChange={setValue} min={min} max={max} />;
+    },
 };
 
-export const WithMinAndMax = () => {
-    const currentDate = new Date();
-    const [value, setValue] = useState<Date | undefined>(currentDate);
-    const min = addDays(currentDate, -3);
-    const max = addDays(currentDate, 3);
+export const WithPreventValueReset: Story = {
+    render: () => {
+        const currentDate = new Date();
+        const [value, setValue] = useState<Date | undefined>(currentDate);
+        const min = addDays(currentDate, -3);
+        const max = addDays(currentDate, 3);
 
-    const handleChange = (change: Date | undefined) => {
-        setValue(change);
-    };
+        const error = useMemo(() => {
+            if (value && value < min) {
+                return 'Choose a date in the future';
+            }
+            if (value && value > max) {
+                return 'Choose a date in the past';
+            }
+            return undefined;
+        }, [value]);
 
-    const sharedDateInputProps = {
-        value,
-        onChange: handleChange,
-    };
-
-    return (
-        <div>
-            <DateInput {...sharedDateInputProps} min={min} max={max} />
-        </div>
-    );
+        return <DateInput value={value} onChange={setValue} min={min} max={max} preventValueReset error={error} />;
+    },
 };
 
-export const WithMinAndMaxAndPreventreset = () => {
-    const currentDate = new Date();
-    const [value, setValue] = useState<Date | undefined>(currentDate);
-    const min = addDays(currentDate, -3);
-    const max = addDays(currentDate, 3);
+export const WithWeekNumbers: Story = {
+    render: () => {
+        const [value, setValue] = useState<Date | undefined>(new Date());
 
-    const handleChange = (change: Date | undefined) => {
-        setValue(change);
-    };
+        return <DateInput value={value} onChange={setValue} displayWeekNumbers />;
+    },
+};
 
-    const error = useMemo(() => {
-        if (value && value < min) {
-            return 'Choose a date in the future';
-        }
-        if (value && value > max) {
-            return 'Choose a date in the past';
-        }
-        return undefined;
-    }, [value]);
+export const CustomWeekStart: Story = {
+    render: () => {
+        const [value, setValue] = useState<Date | undefined>(new Date());
 
-    const sharedDateInputProps = {
-        value,
-        onChange: handleChange,
-        error,
-    };
+        return <DateInput value={value} onChange={setValue} weekStartsOn={1} />;
+    },
+};
 
-    return (
-        <div>
-            <DateInput {...sharedDateInputProps} min={min} max={max} preventValueReset />
-        </div>
-    );
+export const WithoutPrefixPlaceholder: Story = {
+    render: () => {
+        const [value, setValue] = useState<Date | undefined>(undefined);
+
+        return <DateInput value={value} onChange={setValue} prefixPlaceholder={false} />;
+    },
+};
+
+export const CustomPlaceholder: Story = {
+    render: () => {
+        const [value, setValue] = useState<Date | undefined>(undefined);
+
+        return <DateInput value={value} onChange={setValue} placeholder="Pick a date..." />;
+    },
 };
