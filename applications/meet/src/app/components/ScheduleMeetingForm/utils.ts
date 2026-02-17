@@ -79,10 +79,19 @@ export const validate = (values: FormValues) => {
         combineDateAndTime(values.startDate, values.startTime, values.timeZone) >
         combineDateAndTime(values.endDate, values.endTime, values.timeZone)
     ) {
-        errors.endTime = true;
-        errors.startTime = true;
-        errors.endDate = true;
-        errors.startDate = true;
+        // Check if the dates are different
+        const startDateOnly = new Date(values.startDate).setHours(0, 0, 0, 0);
+        const endDateOnly = new Date(values.endDate).setHours(0, 0, 0, 0);
+
+        if (startDateOnly !== endDateOnly) {
+            // If dates are different, mark date fields as error
+            errors.endDate = true;
+            errors.startDate = true;
+        } else {
+            // If dates are the same, mark time fields as error
+            errors.endTime = true;
+            errors.startTime = true;
+        }
     }
 
     return errors;

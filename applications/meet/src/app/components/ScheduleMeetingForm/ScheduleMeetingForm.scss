@@ -3,6 +3,20 @@
 }
 
 .create-container {
+	& > *:not(.button),
+	.input,
+	.select,
+	.field,
+	label,
+	span:not(.button *),
+	div:not(.button *) {
+		font-size: 0.875rem;
+	}
+
+	.create-container-title {
+		font-size: 1.75rem !important;
+	}
+
 	.field-two-assist {
 		display: none !important;
 	}
@@ -28,7 +42,7 @@
 
 	.input.focus,
 	.input:not(.disabled):focus-within {
-		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1);
+		box-shadow: 0 0 0 0.063rem var(--ui-purple-interaction-minor-1);
 	}
 
 	.button {
@@ -36,6 +50,10 @@
 	}
 
 	.timezone-button {
+		font-weight: 500 !important;
+	}
+
+	.schedule-proton-calendar-button {
 		font-weight: 500 !important;
 	}
 
@@ -90,7 +108,7 @@
 	&.select-two-repeat:focus-within,
 	&.select-two-repeat[aria-expanded='true']:not([aria-controls]) {
 		// specificity inferno
-		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1) !important;
+		box-shadow: 0 0 0 0.063rem var(--ui-purple-interaction-minor-1) !important;
 	}
 
 	// a bit of reset to get it like we want
@@ -138,8 +156,8 @@
 	&[aria-expanded='true']:not([aria-controls]),
 	&:focus,
 	&:focus-within {
-		border-color: none !important;
-		box-shadow: 0 0 0 0.063rem var(--ui-blue-interaction-minor-1) !important;
+		border-color: transparent !important;
+		box-shadow: 0 0 0 0.063rem var(--ui-purple-interaction-minor-1) !important;
 	}
 }
 

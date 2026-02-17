@@ -19,6 +19,8 @@
 	color: black;
 	background: var(--interaction-norm);
 	border: 1px solid #ffffff0a;
+	padding: 0.8rem;
+	font-size: 1rem;
 
 	&:hover,
 	&:active {
@@ -46,14 +48,15 @@
 }
 
 .calendar-dropdown-button {
-	background-color: var(--background-card);
-	border: 1px solid var(--border-norm);
+	background-color: var(--interaction-weak);
+	border: 1px solid var(--border-card);
 	color: white;
+	padding: 0.8rem;
+	font-size: 1rem;
 
 	&:hover,
 	&:active {
-		background-color: var(--border-norm);
-		color: #a0a0a0;
+		background-color: var(--interaction-weak-minor-1);
 	}
 }
 
@@ -91,4 +94,13 @@
 	&::after {
 		background: #16161fcc !important;
 	}
+}
+
+.button-copy-meeting-link {
+	background: var(--ui-purple-interaction-minor-3);
+}
+
+.meeting-link {
+	font-size: 0.875rem;
+	font-weight: 500;
 }
