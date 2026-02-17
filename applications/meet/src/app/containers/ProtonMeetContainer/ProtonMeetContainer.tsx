@@ -45,6 +45,7 @@ import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
+import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
@@ -100,7 +101,7 @@ export const ProtonMeetContainer = ({
 
     useWakeLock();
 
-    useDependencySetup(guestMode);
+    const { personalMeeting, meetingsListStatus } = useDependencySetup(guestMode);
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -230,6 +231,18 @@ export const ProtonMeetContainer = ({
         meetingDetails.meetingId,
         meetingDetails.meetingPassword
     )}`;
+
+    // Check if joining own personal meeting room
+    const isPersonalRoom = !guestMode && personalMeeting?.MeetingLinkName === token;
+
+    // Check if still loading meetings (to avoid showing wrong title initially)
+    const isLoadingMeetings =
+        !guestMode &&
+        (meetingsListStatus === MeetingListStatus.InitialLoading ||
+            meetingsListStatus === MeetingListStatus.InitialDecrypting);
+
+    // Override room name if joining own personal meeting room
+    const displayRoomName = isPersonalRoom ? c('Title').t`Personal meeting room` : meetingDetails.meetingName;
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
@@ -1053,7 +1066,7 @@ export const ProtonMeetContainer = ({
                         handleUngracefulLeave={handleUngracefulLeave}
                         handleEndMeeting={handleEndMeeting}
                         shareLink={shareLink}
-                        roomName={meetingDetails.meetingName as string}
+                        roomName={displayRoomName as string}
                         participantNameMap={participantNameMap}
                         participantsMap={participantsMap}
                         getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
@@ -1087,13 +1100,15 @@ export const ProtonMeetContainer = ({
                         isLoading={joiningInProgress}
                         guestMode={guestMode}
                         shareLink={shareLink}
-                        roomName={meetingDetails.meetingName as string}
+                        roomName={displayRoomName as string}
                         roomId={token}
                         instantMeeting={instantMeetingRef.current}
                         participantsCount={participantsCount}
                         displayName={displayName}
                         setDisplayName={setDisplayName}
                         isInstantJoin={isInstantJoin}
+                        isPersonalRoom={isPersonalRoom}
+                        isLoadingMeetings={isLoadingMeetings}
                     />
                 )}
                 {isWebRtcUnsupportedModalOpen && (
