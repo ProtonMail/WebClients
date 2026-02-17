@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Effettua l'upgrade per abilitare ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Effettua l'upgrade a Professional"
-      ],
       "Upgrade to view all": [
         "Effettua l'upgrade per visualizzare tutto"
       ],
@@ -5735,9 +5732,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " e altre funzionalità di sicurezza."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utente attualmente ha accesso ai server condivisi.",
         "${ amountUsers }/${ totalUsers } utenti attualmente hanno accesso ai server condivisi."
@@ -6011,9 +6005,6 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
-      "Accounts": [
-        "Account"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Attiva almeno un metodo di recupero dei dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME } se dovessi perdere la tua password."
       ],
@@ -6273,9 +6264,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Continua per connettere questa entità con la tua organizzazione ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Continua con ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
@@ -6310,9 +6298,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Crea indirizzi email per altre persone, gestisci ${ MAIL_APP_NAME } per un azienda, una scuola o un gruppo. Inizia aggiungendo il nome dell'organizzazione e del dominio personalizzato (ad es. @la-tua-azienda.it). "
       ],
       "Create in": [
         "Crea in"
@@ -6623,9 +6608,6 @@
       "Free trial": [
         "Prova gratuita"
       ],
-      "Gain visibility across your organization": [
-        "Ottieni visibilità sulla tua organizzazione"
-      ],
       "Gateway monitor": [
         "Monitoraggio del gateway"
       ],
@@ -6638,9 +6620,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Scarica ${ AUTHENTICATOR_APP_NAME } per tutti i tuoi dispositivi."
       ],
-      "Get ${ upsellPlanName }": [
-        "Scegli ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Ricevi una notifica se la tua password o altri dati personali vengono resi pubblici. ${ learnMoreLinkNoBreach }"
       ],
@@ -6649,6 +6628,9 @@
       ],
       "Get started with the referral link above.": [
         "Inizia con il link di affiliazione qui sopra."
+      ],
+      "Get visibility into account access": [
+        "Ottieni visibilità sull'accesso all'account"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vai nel tuo fornitore di identità, ottieni i metadati SAML per ${ appName } e importali qui."
@@ -6676,9 +6658,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se un altro amministratore cambia questa password, sarà necessario chiedergli una nuova password dell'organizzazione."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Se non fa per te, ti rimborseremo."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Se ciò è dovuto a una vecchia reimpostazione della password, puoi interrompere la visualizzazione del messaggio di nuovo"
@@ -6898,9 +6877,6 @@
       "Learn more": [
         "Scopri di più"
       ],
-      "Learn more about Activity Monitor": [
-        "Scopri di più su Monitoraggio dell'Attività"
-      ],
       "Learn more about Gateways": [
         "Scopri di più sui Gateway"
       ],
@@ -7093,9 +7069,6 @@
         "O seleziona un server specifico:"
       ],
       "Organization monitor": [
-        "Monitoraggio dell’organizzazione"
-      ],
-      "Organization Monitor": [
         "Monitoraggio dell’organizzazione"
       ],
       "Organization size": [
@@ -7783,9 +7756,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
-      ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Effettua l'upgrade a Professional o a un piano superiore per sbloccare"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -9384,6 +9354,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "monitor attività"
+      ],
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
@@ -16691,9 +16664,6 @@
       ],
       "Just ${ price }": [
         "Solo ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Prova ${ upsellPlanName } senza rischi"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Il tuo pacchetto ${ a } e ${ b }"

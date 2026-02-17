@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
       ],
-      "Upgrade to Professional": [
-        "Professional로 업그레이드"
-      ],
       "Upgrade to view all": [
         "업그레이드하여 모두 보기"
       ],
@@ -5658,9 +5655,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " 과 다른 보안 기능을 잠금 해제하세요."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }명/${ totalUsers }명이 현재 공유된 서버 접근 권한을 소유하고 있습니다."
       ],
@@ -5903,9 +5897,6 @@
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
-      ],
-      "Accounts": [
-        "계정"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
@@ -6159,9 +6150,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "이 엔티티를 사용자의 ${ BRAND_NAME } 조직과 연결하려면 계속하세요."
       ],
-      "Continue with ${ freeName }": [
-        "${ freeName }으로 계속"
-      ],
       "Copied to clipboard": [
         "클립보드로 복사함"
       ],
@@ -6194,9 +6182,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "하위 계정을 생성 및 관리하고 커스텀 도메인에 이메일 주소를 할당하세요."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME }을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
       ],
       "Create in": [
         "만들기"
@@ -6504,9 +6489,6 @@
       "Free trial": [
         "무료 체험"
       ],
-      "Gain visibility across your organization": [
-        "회원님의 조직 전체에 걸쳐 가시성을 확보하세요"
-      ],
       "Gateway monitor": [
         "게이트웨이 감시"
       ],
@@ -6518,9 +6500,6 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "${ AUTHENTICATOR_APP_NAME }를 회원님의 모든 기기에서 사용하세요."
-      ],
-      "Get ${ upsellPlanName }": [
-        "${ upsellPlanName } 받기"
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 알림을 받아보세요. ${ learnMoreLinkNoBreach }"
@@ -6554,9 +6533,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "만약 회원님과 맞지 않는다면, 언제든지 환불하실 수 있어요."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
@@ -6774,9 +6750,6 @@
       "Learn more": [
         "더 알아보기"
       ],
-      "Learn more about Activity Monitor": [
-        "활동 모니터링에 관해 더 알아보기"
-      ],
       "Learn more about Gateways": [
         "게이트웨이에 대해 더 알아보기"
       ],
@@ -6967,9 +6940,6 @@
         "또는 특정 서버 선택:"
       ],
       "Organization monitor": [
-        "조직 모니터링"
-      ],
-      "Organization Monitor": [
         "조직 모니터링"
       ],
       "Organization size": [
@@ -7646,9 +7616,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
-      ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Professional 또는 더 상위의 플랜으로 업그레이드하여"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
@@ -10360,7 +10327,7 @@
         "${ last4 }(으)로 끝나는 ${ brand }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "${ BRAND_NAME }을 사용하면 이메일 주소를 만들고 하위 사용자의 계정을 관리할 수 있습니다. 이는 가족과 조직에 이상적입니다."
+        "${ BRAND_NAME } 일부 플랜에서는 하위 사용자를 위한 이메일 주소를 생성하거나 계정을 관리할 수 있습니다. 가족과 조직에 이상적인 기능입니다."
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
@@ -16364,9 +16331,6 @@
       ],
       "Just ${ price }": [
         "단 ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "${ upsellPlanName } 플랜을 걱정 없이 체험해 보세요"
       ],
       "Your ${ a } and ${ b } bundle": [
         "사용자의 ${ a } 및 ${ b } 번들"

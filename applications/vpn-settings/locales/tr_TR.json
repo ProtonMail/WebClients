@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
       ],
-      "Upgrade to Professional": [
-        "Profesyonel tarifesine yükselt"
-      ],
       "Upgrade to view all": [
         "Tümünü görüntülemek için tarifenizi yükseltin"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "Yönetici"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Bir rol, kuruluşunuzun üyelerine atayabileceğiniz bir izin grubudur."
       ]
     },
     "Alert": {
@@ -3434,6 +3436,28 @@
         "Adres kullanımdan kaldırılsın mı?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "İlk ay için ${ offerPrice }. Aylık ${ regularPrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Yalnızca ${ offerPrice } ile VPN Plus edinin"
+      ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Özel teklif: Ücretli tarifemizde %90 indirim alın"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Free tarifesini kullanmayı sürdür"
+      ],
+      "Get the deal": [
+        "Fırsatı değerlendirin"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Doğrulanmış"
@@ -3592,7 +3616,7 @@
         "macOS"
       ],
       "macOS 14 (Sonoma) or newer": [
-        "macOS 14 (Sonoma) veya daha yenisi"
+        "macOS 14 (Sonoma) ya da üzeri"
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
@@ -3859,13 +3883,13 @@
         "${ formattedDate } tarihinde eklendi"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
-        "Kurtarma kişisinden yardım isteyin. İsteğinizi doğrulamak ve verilerinizin kilidini açmak için bir e-posta alacaklar."
+        "Kurtarma kişisinden yardım isteyin. İsteğinizi doğrulaması ve verilerinizin şifresini çözmesi için kendisine bir e-posta gönderilecek."
       ],
       "Contacts": [
         "Kişiler"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
-        "Onlarla hemen iletişime geçerek size yardımcı olup olamayacaklarını öğrenin ve verilerinizi kilidini açmaya çalışan kişinin siz olduğunuzu bizzat bildirin."
+        "Onunla hemen görüşecek size yardımcı olup olamayacağını öğrenin ve verilerinizin şifresini çözmeye çalışan kişinin siz olduğunuzu bildirin."
       ],
       "Immediate": [
         "Hemen"
@@ -3877,16 +3901,16 @@
         "Kurtarma isteği gönderildi"
       ],
       "Remove your recovery contacts to continue": [
-        "Devam etmek için kurtarma kişilerinizi kaldırın"
+        "İlerlemek için kurtarma kişilerinizi kaldırın"
       ],
       "Select recovery contact ${ name }": [
-        "Kurtarma kişisini seçin: ${ name }"
+        "${ name } kurtarma kişisini seç"
       ],
       "Send email request": [
         "E-posta isteği gönder"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
-        "Bu kurtarma yöntemini devre dışı bırakmak için tüm kurtarma kişilerinizi kaldırın."
+        "Bu kurtarma yöntemini kullanımdan kaldırmak için tüm kurtarma kişilerinizi kaldırın."
       ],
       "Trusted contact": [
         "Güvenilir kişi"
@@ -4079,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "En fazla ${ displayMaxValue } olabilir"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -5768,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " ve diğer güvenlik özellikleri."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
         "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
@@ -6030,7 +6054,7 @@
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
       "A recovery file lets you unlock and view your data after account recovery": [
-        "Bir kurtarma dosyası, bir hesabı kurtarırken verilerinizin kilidini açıp görüntülemenizi sağlar"
+        "Bir kurtarma dosyası, bir hesabı kurtarırken verilerinizin şifresini çözmenizi ve görüntülemenizi sağlar"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır"
@@ -6044,14 +6068,14 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Accounts": [
-        "Hesaplar"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
       "active": [
         "etkin"
+      ],
+      "Activity Monitor": [
+        "Etkinlik izleyici"
       ],
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
@@ -6306,9 +6330,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "${ BRAND_NAME } kuruluşunuzla bu varlığın bağlantısı kurun."
       ],
-      "Continue with ${ freeName }": [
-        "${ freeName } ile ilerle"
-      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
@@ -6343,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Diğer kişiler için e-posta adresleri ekleyin. Bir işletme, okul ya da grubu ${ MAIL_APP_NAME } üzerinden yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (@sirketiniz.com gibi). "
       ],
       "Create in": [
         "Şuraya ekle"
@@ -6656,9 +6674,6 @@
       "Free trial": [
         "Ücretsiz deneme"
       ],
-      "Gain visibility across your organization": [
-        "Kuruluşunuzun genel görünümüne ulaşın"
-      ],
       "Gateway monitor": [
         "Ağ geçidi izleyici"
       ],
@@ -6671,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Tüm aygıtlarınız için ${ AUTHENTICATOR_APP_NAME } uygulamasını edinin."
       ],
-      "Get ${ upsellPlanName }": [
-        "${ upsellPlanName } tarifesini edinin"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Parolanız veya diğer kişisel verileriniz sızdırılmışsa bildirim alın. ${ learnMoreLinkNoBreach }"
       ],
@@ -6682,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Yukarıdaki öneri bağlantısı ile başlayın."
+      ],
+      "Get visibility into account access": [
+        "Hesap erişiminde görünür olun"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
@@ -6709,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Bu parolayı başka bir yönetici değiştirdiyse, ondan yeni kuruluş parolasını istemeniz gerekecek."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Gereksinimlerinizi karşılamazsa ücretinizi geri öderiz."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Bu durum eski bir parola sıfırlamasından kaynaklanıyorsa iletinin yeniden görüntülenmesini engelleyebilirsiniz"
@@ -6753,7 +6765,7 @@
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
+        "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin şifresini çözebilirsiniz"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Kuruluşunuzda tanınmış kişiler varsa, önemli veriler işleniyorsa veya siber saldırılara hedef olabilecekse, kuruluşunuzdaki herkes için ${ PROTON_SENTINEL_NAME } özelliğini kullanmanız önemle önerilir."
@@ -6931,9 +6943,6 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Learn more about Activity Monitor": [
-        "Etkinlik izleyici ile ilgili ayrıntılı bilgi alın"
-      ],
       "Learn more about Gateways": [
         "Ağ geçitleri ile ilgili ayrıntılı bilgi alın"
       ],
@@ -7017,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "${ BRAND_NAME } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetleri için kimlik doğrulama girişimlerini izleyin ve denetleyin."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Oturum açma etkinliklerini izleyin, yetkisiz erişimleri farkedin ve güvenlik ile uyumluluk açıklarını kapatın. "
       ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
@@ -7126,9 +7138,6 @@
         "Ya da belirli bir sunucuyu seçin:"
       ],
       "Organization monitor": [
-        "Kuruluş izleyici"
-      ],
-      "Organization Monitor": [
         "Kuruluş izleyici"
       ],
       "Organization size": [
@@ -7545,7 +7554,7 @@
         "Gizlilik ve özgürlüğe öncelik veren daha iyi bir internet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
+        "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin şifresini çözebilirsiniz."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
@@ -7817,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Professional ya da daha yüksek bir tarifeye yükselterek kullanın"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Kuruluşlar için ${ PROTON_SENTINEL_NAME } hizmetine erişmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
@@ -9417,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "etkinlik izleyici"
+      ],
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
       ],
@@ -9517,7 +9529,7 @@
         "E-posta ile paylaşım nasıl yapılır"
       ],
       "How to unlock data": [
-        "Verilerin kilidi nasıl açılır"
+        "Verilerin şifresi nasıl çözülür"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } nasıl kullanılır"
@@ -9891,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Diğer kişilere e-posta adresleri oluşturmak, bir kuruluş, okul veya grup için ${ MAIL_APP_NAME } uygulamasını yönetmek üzere özel etki alanınızı (örn. kurulus.com) bağlayın."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Süreç boyunca yardımcımız size yol gösterecek."
       ],
@@ -10855,7 +10870,7 @@
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
-        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcıya sahip müşteriler için ${ BRAND_NAME } Müşteri Destek ekibi tarafından sağlanmaktadır."
+        "Telefon desteği Avrupa çalışma saatleri içinde ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } veya daha fazla kullanıcısı olan müşteriler için ${ BRAND_NAME } müşteri destek ekibi tarafından sağlanır."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -15672,6 +15687,9 @@
       "Revoke certificate?": [
         "Sertifika geçersiz kılınsın mı?"
       ],
+      "Roles and permissions": [
+        "Roller ve izinler"
+      ],
       "SAML authentication": [
         "SAML kimlik doğrulaması"
       ],
@@ -16203,7 +16221,7 @@
         "Kullanıcı daveti reddetti"
       ],
       "User is a group": [
-        "Kullanıcı bir gruptur"
+        "Kullanıcı bir grup"
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
@@ -16693,9 +16711,6 @@
       ],
       "Just ${ price }": [
         "Yalnızca ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Riske girmeden ${ upsellPlanName } tarifesini deneyin"
       ],
       "Your ${ a } and ${ b } bundle": [
         "${ a } ve ${ b } paketiniz"

@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Αναβάθμιση σε Professional"
-      ],
       "Upgrade to view all": [
         "Αναβαθμίστε για προβολή όλων"
       ],
@@ -1338,6 +1335,11 @@
     "Admin": {
       "admin": [
         "διαχειριστής"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Ένας ρόλος είναι μια ομάδα δικαιωμάτων που μπορείτε να εκχωρήσετε στα μέλη του οργανισμού σας."
       ]
     },
     "Alert": {
@@ -3434,6 +3436,28 @@
         "Απενεργοποίηση διεύθυνσης;"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } για τον πρώτο μήνα. Ανανέωση με ${ regularPrice }/μήνα, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Αποκτήστε το VPN Plus για μόνο ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Ειδική προσφορά: Εξοικονομήστε 90% από το premium πλάνο μας"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Συνέχεια με Free"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Επιβεβαιωμένο"
@@ -4079,6 +4103,9 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Μέγιστα ${ displayMaxValue } επιτρέπονται"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
@@ -5768,9 +5795,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " και άλλες λειτουργίες ασφάλειας."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } χρήστης διαθέτει προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές",
         "${ amountUsers }/${ totalUsers } χρήστες διαθέτουν προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές"
@@ -6044,14 +6068,14 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
-      "Accounts": [
-        "Λογαριασμοί"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ενεργοποιήστε τουλάχιστον μία μέθοδο ανάκτησης δεδομένων για να βεβαιωθείτε ότι μπορείτε να συνεχίσετε να έχετε πρόσβαση στα περιεχόμενα του λογαριασμού σας ${ BRAND_NAME } εάν χάσετε τον κωδικό πρόσβασής σας."
       ],
       "active": [
         "ενεργό"
+      ],
+      "Activity Monitor": [
+        "Παρακολούθηση Δραστηριότητας"
       ],
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
@@ -6306,9 +6330,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Συνεχίστε για να συνδέσετε αυτήν την οντότητα με τον ${ BRAND_NAME } οργανισμό σας."
       ],
-      "Continue with ${ freeName }": [
-        "Συνέχεια με το ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
@@ -6343,9 +6364,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Δημιουργήστε διευθύνσεις για άλλα άτομα, διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, σχολείο ή ομάδα. Ξεκινήστε προσθέτοντας το όνομα και τον ιδιαίτερο τομέα του οργανισμού σας (π.χ. @yourcompany.com). "
       ],
       "Create in": [
         "Δημιουργία σε"
@@ -6656,9 +6674,6 @@
       "Free trial": [
         "Δωρεάν δοκιμή"
       ],
-      "Gain visibility across your organization": [
-        "Αποκτήστε ορατότητα σε όλο τον οργανισμό σας"
-      ],
       "Gateway monitor": [
         "Παρακολούθηση πυλών"
       ],
@@ -6671,9 +6686,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Αποκτήστε το ${ AUTHENTICATOR_APP_NAME } για όλες τις συσκευές σας."
       ],
-      "Get ${ upsellPlanName }": [
-        "Απόκτηση ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
       ],
@@ -6682,6 +6694,9 @@
       ],
       "Get started with the referral link above.": [
         "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
+      ],
+      "Get visibility into account access": [
+        "Αποκτήστε ορατότητα στην πρόσβαση λογαριασμού"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
@@ -6709,9 +6724,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Εάν δεν είναι κατάλληλο για εσάς, θα σας επιστρέψουμε τα χρήματα."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Εάν αυτό είναι εξαιτίας μιας παλιάς επαναφοράς κωδικού, μπορείτε να σταματήσετε την επανεμφάνιση του μηνύματος"
@@ -6931,9 +6943,6 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "Learn more about Activity Monitor": [
-        "Μάθετε περισσότερα σχετικά με την Παρακολούθηση Δραστηριότητας"
-      ],
       "Learn more about Gateways": [
         "Μάθετε περισσότερα σχετικά με τις Πύλες"
       ],
@@ -7017,6 +7026,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Παρακολουθήστε και ελέγξτε προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Παρακολουθήστε τη δραστηριότητα σύνδεσης, εντοπίστε μη εξουσιοδοτημένες προσβάσεις και καλύψτε τα κενά ασφάλειας και συμμόρφωσης. "
       ],
       "Multi-user support not enabled.": [
         "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
@@ -7127,9 +7139,6 @@
       ],
       "Organization monitor": [
         "Παρακολούθηση οργανισμού"
-      ],
-      "Organization Monitor": [
-        "Παρακολούθηση Οργανισμού"
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
@@ -7817,8 +7826,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Αναβάθμιση σε Professional ή ένα υψηλότερο πλάνο για να ξεκλειδώσετε"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Αναβαθμίστε για να ξεκλειδώσετε το ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Αναβαθμίστε το πλάνο σας σε ${ firstPlanNames } ή ${ lastPlanName } για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME } για οργανισμούς."
@@ -9417,6 +9426,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "παρακολούθηση δραστηριότητας"
+      ],
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
@@ -9891,6 +9903,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Συνδέστε τον προσαρμοσμένο τομέα σας (π.χ. yourcompany.com) για να δημιουργήσετε διευθύνσεις ηλεκτρονικού ταχυδρομείου για άλλα άτομα, να διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, ένα σχολείο ή μια ομάδα."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας στο ${ BRAND_NAME } για να ρυθμίσετε προσαρμοσμένες διευθύνσεις email (π.χ. you@yourcompany.com). Ο οδηγός μας θα σας καθοδηγήσει στη διαδικασία."
       ],
@@ -15692,6 +15707,9 @@
       "Revoke certificate?": [
         "Ανάκληση πιστοποιητικού;"
       ],
+      "Roles and permissions": [
+        "Ρόλοι και δικαιώματα"
+      ],
       "SAML authentication": [
         "Ταυτοποίηση SAML"
       ],
@@ -16717,9 +16735,6 @@
       ],
       "Just ${ price }": [
         "Μόνο ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Δοκιμάστε το ${ upsellPlanName } χωρίς κίνδυνο"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Το ${ a } και ${ b } πακέτο σας"

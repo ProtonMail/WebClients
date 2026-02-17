@@ -1046,9 +1046,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Professional": [
-        "Палепшыць да Professional"
-      ],
       "Upgrade to view all": [
         "Палепшыць, каб паглядзець усё"
       ],
@@ -1354,6 +1351,11 @@
     "Admin": {
       "admin": [
         "адміністратар"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Роля - гэта група дазволаў, якія вы можаце прызначыць удзельнікам сваёй арганізацыі."
       ]
     },
     "Alert": {
@@ -3472,6 +3474,28 @@
         "Адключыць адрас?"
       ]
     },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } за першы месяц. Падаўжаецца за ${ regularPrice }/месяц. Скасаваць можна ў любы час."
+      ],
+      "Get VPN Plus for only ${ offerPrice }": [
+        "Атрымайце VPN Plus усяго за ${ offerPrice }"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "Спецыяльная прапанова: зэканомце 90% з нашым прэміяльным тарыфным плане"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "Працягнуць на бясплатнай аснове"
+      ],
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Праверана"
@@ -3923,6 +3947,9 @@
       "Select recovery contact ${ name }": [
         "Выберыце кантакт для аднаўлення ${ name }"
       ],
+      "Send email request": [
+        "Адправіць запыт на электронную пошту"
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
       ],
@@ -4121,6 +4148,9 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "Максімальны дазволены аб'ём складае ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
@@ -5864,9 +5894,6 @@
       ]
     },
     "Info": {
-      " and other security features.": [
-        " і іншыя функцыі бяспекі."
-      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
         "${ amountUsers } карыстальнікі з ${ totalUsers } у цяперашні час маюць доступ да абагуленых сервераў.",
@@ -6194,14 +6221,14 @@
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
-      "Accounts": [
-        "Уліковыя запісы"
-      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
       "active": [
         "актыўна"
+      ],
+      "Activity Monitor": [
+        "Манітор актыўнасці"
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
@@ -6470,9 +6497,6 @@
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
         "Працягніце падключэнне гэтага аб'екта з вашай арганізацыяй ${ BRAND_NAME }."
       ],
-      "Continue with ${ freeName }": [
-        "Працягнуць з ${ freeName }"
-      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -6511,9 +6535,6 @@
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
-      ],
-      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Стварайце адрасы электроннай пошты для іншых карыстальнікаў, кіруйце поштай ${ MAIL_APP_NAME } для бізнесу, навучальных арганізацый або груп. Пачніце працу са стварэння назвы для вашай арганізацыі і вашага карыстальніцкага дамена (напрыклад, @vashakampaniya.com). "
       ],
       "Create in": [
         "Стварыць у"
@@ -6830,9 +6851,6 @@
       "Free trial": [
         "Бясплатны пробны перыяд"
       ],
-      "Gain visibility across your organization": [
-        "Станьце больш заўважным у сваёй арганізацыі"
-      ],
       "Gateway monitor": [
         "Назіранне за шлюзом"
       ],
@@ -6845,9 +6863,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Атрымайце ${ AUTHENTICATOR_APP_NAME } для ўсіх сваіх прылад."
       ],
-      "Get ${ upsellPlanName }": [
-        "Атрымаць тарыфны план ${ upsellPlanName }"
-      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
       ],
@@ -6856,6 +6871,9 @@
       ],
       "Get started with the referral link above.": [
         "Пачніце па рэферальнай спасылцы вышэй."
+      ],
+      "Get visibility into account access": [
+        "Атрымайце агляд доступу да ўліковага запісу"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
@@ -6883,9 +6901,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
-      ],
-      "If it’s not right for you, we’ll refund you.": [
-        "Калі ён вам не падыходзіць, то мы вернем ваш плацеж."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Калі гэта звязана са скіданнем старога пароля, то вы можаце спыніць паўторны паказ паведамлення"
@@ -7109,9 +7124,6 @@
       "Learn more": [
         "Даведацца больш"
       ],
-      "Learn more about Activity Monitor": [
-        "Даведацца больш аб маніторы актыўнасці"
-      ],
       "Learn more about Gateways": [
         "Даведацца больш аб шлюзах"
       ],
@@ -7195,6 +7207,9 @@
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Маніторынг і аўдыт спроб аўтэнтыфікацыі для ўсіх сэрвісаў ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME }."
+      ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "Сачыце за актыўнасцю ўваходаў, выяўляйце несанкцыянаваны доступ, закрывайце прабелы ў бяспецы і адпаведнасці патрабаванням. "
       ],
       "Multi-user support not enabled.": [
         "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
@@ -7308,9 +7323,6 @@
         "Або выберыце пэўны сервер:"
       ],
       "Organization monitor": [
-        "Назіранне за арганізацыяй"
-      ],
-      "Organization Monitor": [
         "Назіранне за арганізацыяй"
       ],
       "Organization size": [
@@ -8015,8 +8027,8 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
-      "Upgrade to Professional or a higher plan to unlock": [
-        "Палепшыце да Professional або больш высокага тарыфнага плана, каб разблакіраваць"
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць ${ monitorLink }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Палепшыць свой тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME } для арганізацый."
@@ -9093,7 +9105,7 @@
         "Назва шлюза"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -9655,6 +9667,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "манітор актыўнасці"
+      ],
       "Add a gift code": [
         "Дадаць падарункавы код"
       ],
@@ -10147,6 +10162,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "Падключыце свой карыстальніцкі дамен (напрыклад, vashakampaniya.com), каб ствараць адрасы электроннай пошты для іншых людзей, кіраваць ${ MAIL_APP_NAME } для бізнесу, школай або групай."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Падключыце свой карыстальніцкі дамен да ${ BRAND_NAME }, каб наладзіць адрасы электроннай пошты (напрыклад, vy@vashakampanija.com). Наш майстар дапаможа вам з працэсам наладжвання."
       ],
@@ -11515,7 +11533,7 @@
         "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -13898,7 +13916,7 @@
         "Аплачваецца ${ amount } за 30 месяцаў"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Падаўжаецца праз 1 год па зніжанай цане. Вы заплаціце ${ discountedAmount } замест ${ regularAmount } (скідка: ${ discount }%)"
@@ -16149,6 +16167,9 @@
       "Revoke certificate?": [
         "Адклікаць сертыфікат?"
       ],
+      "Roles and permissions": [
+        "Ролі і дазволы"
+      ],
       "SAML authentication": [
         "Аўтэнтыфікацыя SAML"
       ],
@@ -17202,9 +17223,6 @@
       ],
       "Just ${ price }": [
         "Усяго за ${ price }"
-      ],
-      "Try ${ upsellPlanName } risk-free": [
-        "Паспрабуйце ${ upsellPlanName } без рызыкі"
       ],
       "Your ${ a } and ${ b } bundle": [
         "Ваш камплект ${ a } і ${ b }"
