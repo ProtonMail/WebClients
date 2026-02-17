@@ -3,6 +3,7 @@ import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import type { SharesState } from '@proton/pass/store/reducers';
 import type {
     ActiveShareGetResponse,
+    PassEventListResponse,
     Share,
     ShareGetResponse,
     ShareHideUnhideBatchRequest,
@@ -25,6 +26,19 @@ export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse
     });
 
     return response.ShareKeys?.Keys ?? [];
+};
+
+export const getSharesQuery = () => ({ url: 'pass/v1/share', method: 'get' }) as const;
+export const getShares = async () => {
+    const res = await api(getSharesQuery());
+    return res.Shares;
+};
+
+export const getShareEventsQuery = (shareId: ShareId, eventId: string) =>
+    ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }) as const;
+export const getShareEvents = async (shareId: ShareId, eventId: string): Promise<PassEventListResponse> => {
+    const res = await api(getShareEventsQuery(shareId, eventId));
+    return res.Events;
 };
 
 export const getShareLatestEventId = async (shareId: string): Promise<string> =>

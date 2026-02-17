@@ -1,52 +1,39 @@
 import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
-import { all, cancelled, fork, put, select, take, takeEvery } from 'redux-saga/effects';
+import { all, call, cancelled, fork, select, take, takeEvery } from 'redux-saga/effects';
 
 import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
-import { sharesEventNew, sharesEventSync, vaultCreationSuccess } from '@proton/pass/store/actions';
-import type { ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
+import { processSharesIncomingEvent, processSharesPollingEvent } from '@proton/pass/lib/events/v1/share-polling.processor';
+import { getSharesQuery } from '@proton/pass/lib/shares/share.requests';
+import { vaultCreationSuccess } from '@proton/pass/store/actions';
+import type { SharesState } from '@proton/pass/store/reducers';
 import { selectShareState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, Maybe, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { diadic } from '@proton/pass/utils/fp/variadics';
+import type { Api, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object/merge';
-import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel, EventChannelOnEvent } from './types';
 
-type NewSharesChannel = Channel<ShareGetResponse[]>;
-/** We're only interested in new shares in this effect : Deleted shares will
- * be handled by the share's EventChannel error handling. see `channel.share.ts`
- * code `PassErrorCode.DISABLED_SHARE`. FIXME: handle ItemShares */
-const onSharesEvent = (newSharesChannel: NewSharesChannel): EventChannelOnEvent<SharesGetResponse> =>
+type SharesIncomingChannel = Channel<ShareGetResponse[]>;
+type SharesChannels = { events: EventChannel<SharesGetResponse>; incoming: SharesIncomingChannel };
+
+/** Channel wrapper for the shares-list polling event. Delegates changed-share
+ * detection to `processSharesPollingEvent` (forked) and pushes newly discovered
+ * shares to the incoming channel for `processSharesIncomingEvent` to handle.
+ * Deleted shares are handled by per-share channel error handling (see
+ * `channel.share.ts:onShareEventError`). FIXME: handle ItemShares */
+const onSharesEventFactory = (incoming: SharesIncomingChannel): EventChannelOnEvent<SharesGetResponse> =>
     function* (event) {
         if ('error' in event) throw event.error;
 
-        const localShares: SharesState = yield select(selectShareState);
-        const remoteShares = event.Shares;
-        const newShares = remoteShares.filter((share) => !(share.ShareID in localShares));
+        const shares: SharesState = yield select(selectShareState);
+        yield fork(processSharesPollingEvent, event.Shares, shares);
 
-        if (newShares.length) yield newSharesChannel.put(newShares);
-
-        yield fork(function* () {
-            for (const encryptedShare of remoteShares) {
-                const shareId = encryptedShare.ShareID;
-                const localShare = localShares[shareId];
-
-                if (localShare && hasShareChanged(localShare, encryptedShare)) {
-                    const share: Maybe<Share> = yield parseShareResponse(encryptedShare, { eventId: localShare.eventId });
-                    if (share) yield put(sharesEventSync(share));
-                }
-            }
-        });
+        const newShares = event.Shares.filter((share) => !(share.ShareID in shares));
+        if (newShares.length) yield incoming.put(newShares);
     };
 
 /* The event-manager can be used to implement
@@ -54,74 +41,51 @@ const onSharesEvent = (newSharesChannel: NewSharesChannel): EventChannelOnEvent<
  * structure it is expecting. In order to poll for
  * new shares, set the query accordingly & use a
  * non-existing eventID */
-export const createSharesChannel = (api: Api, newSharesChannel: NewSharesChannel) =>
+export const createSharesChannel = (api: Api, newSharesChannel: SharesIncomingChannel) =>
     eventChannelFactory<SharesGetResponse>({
         api,
         channelId: 'shares',
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
-        onClose: () => logger.info(`[ServerEvents::Shares] closing channel`),
-        onEvent: onSharesEvent(newSharesChannel),
-        query: () => ({ url: 'pass/v1/share', method: 'get' }),
+        onClose: () => logger.info(`[Polling::Shares] closing channel`),
+        onEvent: onSharesEventFactory(newSharesChannel),
+        query: getSharesQuery,
     });
 
-/* when a vault is created : recreate all the necessary
+/** When a vault is created : recreate all the necessary
  * channels to start polling for this new share's events */
-function* onNewLocalShare(api: Api, options: RootSagaOptions) {
+function* onShareCreated(api: Api, options: RootSagaOptions) {
     yield takeEvery(vaultCreationSuccess.match, function* ({ payload: { share } }) {
         yield getShareChannelForks(api, options)(share);
     });
 }
 
-export function* onNewRemoteShares(newSharesChannel: NewSharesChannel, api: Api, options: RootSagaOptions): Generator {
+export function* onSharesIncoming(incoming: SharesIncomingChannel, api: Api, options: RootSagaOptions): Generator {
     try {
         while (true) {
-            const shares: ShareGetResponse[] = yield take(newSharesChannel);
-
-            logger.info(`[ServerEvents::Shares]`, `${shares.length} remote share(s) not in cache`);
-            const parsedShares: Maybe<Share>[] = yield Promise.all(shares.map((encryptedShare) => parseShareResponse(encryptedShare)));
-            const activeNewShares = parsedShares.filter(truthy);
-
-            if (activeNewShares.length > 0) {
-                const items = (
-                    (yield Promise.all(
-                        activeNewShares.map(async ({ shareId }) => ({
-                            [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-                        }))
-                    )) as ItemsByShareId[]
-                ).reduce(diadic(merge));
-
-                yield put(sharesEventNew({ shares: toMap(activeNewShares, 'shareId'), items, v: 1 }));
-                for (const share of activeNewShares) yield fork(getShareChannelForks(api, options), share);
-            }
+            const event: ShareGetResponse[] = yield take(incoming);
+            const shares: Share[] = yield call(processSharesIncomingEvent, event);
+            for (const share of shares) yield fork(getShareChannelForks(api, options), share);
         }
     } finally {
-        if (yield cancelled()) newSharesChannel.close();
+        if (yield cancelled()) incoming.close();
     }
 }
-
-export const createNewSharesChannel = () => channel<ShareGetResponse[]>();
-
-type SharesChannelDeps = {
-    eventsChannel: EventChannel<SharesGetResponse>;
-    newSharesChannel: Channel<ShareGetResponse[]>;
-};
 
 export function* sharesChannel(
     api: Api,
     options: RootSagaOptions,
-    /** unit-testing purposes */
-    deps?: SharesChannelDeps
+    deps?: SharesChannels // unit-testing purposes
 ): Generator {
-    const newSharesChannel = deps?.newSharesChannel ?? createNewSharesChannel();
-    const eventsChannel = deps?.eventsChannel ?? createSharesChannel(api, newSharesChannel);
+    const incomingChannel = deps?.incoming ?? channel<ShareGetResponse[]>();
+    const eventsChannel = deps?.events ?? createSharesChannel(api, incomingChannel);
 
-    logger.info(`[ServerEvents::Shares] start polling for new shares`);
+    logger.info(`[Polling::Shares] start polling for new shares`);
 
     const events = fork(channelEvents<SharesGetResponse>, eventsChannel, options);
     const wakeup = fork(channelInitalize<SharesGetResponse>, eventsChannel, options);
-    const newLocalShare = fork(onNewLocalShare, api, options);
-    const newRemoteShares = fork(onNewRemoteShares, newSharesChannel, api, options);
+    const shareCreated = fork(onShareCreated, api, options);
+    const sharesIncoming = fork(onSharesIncoming, incomingChannel, api, options);
 
-    yield all([events, wakeup, newLocalShare, newRemoteShares]);
+    yield all([events, wakeup, shareCreated, sharesIncoming]);
 }

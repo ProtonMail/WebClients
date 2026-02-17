@@ -23,7 +23,6 @@ jest.mock('./channel.worker', () => ({
 const parseShareResponse = jest.spyOn(shareParser, 'parseShareResponse').mockImplementation();
 const requestItemsForShareId = jest.spyOn(itemRequests, 'requestItemsForShareId').mockImplementation();
 const getShareChannelForks = jest.spyOn(channelShare, 'getShareChannelForks');
-const createNewSharesChannel = jest.spyOn(SharesChannel, 'createNewSharesChannel');
 const createSharesChannel = jest.spyOn(SharesChannel, 'createSharesChannel');
 
 describe('channel.shares saga', () => {
@@ -33,11 +32,7 @@ describe('channel.shares saga', () => {
     } as unknown as RootSagaOptions;
 
     const response = [{ ShareID: 'share1' }, { ShareID: 'share2' }] as ShareGetResponse[];
-
-    const shares = response.map(({ ShareID }) => ({
-        shareId: ShareID,
-        name: ShareID,
-    })) as unknown as Share[];
+    const shares = response.map(({ ShareID }) => ({ shareId: ShareID, name: ShareID })) as unknown as Share[];
 
     const items: IndexedByShareIdAndItemId<ItemRevision> = {
         share1: { item1: { itemId: 'item1' } as any },
@@ -50,15 +45,14 @@ describe('channel.shares saga', () => {
         parseShareResponse.mockImplementation(async ({ ShareID }) => shares.find(({ shareId }) => shareId === ShareID));
     });
 
-    describe('`onNewRemoteShares`', () => {
+    describe('`onSharesIncoming`', () => {
         test('should process new remote shares correctly', async () => {
-            const { onNewRemoteShares } = SharesChannel;
-
-            const newSharesChannel = channel<ShareGetResponse[]>();
+            const { onSharesIncoming } = SharesChannel;
+            const incoming = channel<ShareGetResponse[]>();
             const saga = sagaSetup();
-            const task = runSaga(saga.options, onNewRemoteShares, newSharesChannel, api, options);
+            const task = runSaga(saga.options, onSharesIncoming, incoming, api, options);
 
-            newSharesChannel.put(response);
+            incoming.put(response);
             await saga.nextTick();
 
             expect(saga.dispatched).toContainEqual(sharesEventNew({ shares: toMap(shares, 'shareId'), items, v: 1 }));
@@ -68,19 +62,19 @@ describe('channel.shares saga', () => {
             task.cancel();
         });
 
-        test('should close the `newSharesChannel` when cancelled', async () => {
-            const { onNewRemoteShares } = SharesChannel;
+        test('should close the `incoming` when cancelled', async () => {
+            const { onSharesIncoming } = SharesChannel;
 
-            const newSharesChannel = channel<ShareGetResponse[]>();
-            jest.spyOn(newSharesChannel, 'close');
+            const incoming = channel<ShareGetResponse[]>();
+            jest.spyOn(incoming, 'close');
 
             const saga = sagaSetup();
-            const task = runSaga(saga.options, onNewRemoteShares, newSharesChannel, api, options);
+            const task = runSaga(saga.options, onSharesIncoming, incoming, api, options);
 
             task.cancel();
             await saga.nextTick();
 
-            expect(newSharesChannel.close).toHaveBeenCalled();
+            expect(incoming.close).toHaveBeenCalled();
         });
     });
 
@@ -88,7 +82,7 @@ describe('channel.shares saga', () => {
         test('should cancel channels when the parent task is cancelled', async () => {
             const manager = { setInterval: noop };
 
-            const eventsChannel = {
+            const events = {
                 manager,
                 channel: eventChannel(() => noop),
                 channelId: 'test-shares',
@@ -96,22 +90,19 @@ describe('channel.shares saga', () => {
                 onError: jest.fn(),
             } as unknown as EventChannel<SharesGetResponse>;
 
-            const newSharesChannel = channel<ShareGetResponse[]>();
-
-            jest.spyOn(newSharesChannel, 'close');
-            jest.spyOn(eventsChannel.channel, 'close');
+            const incoming = channel<ShareGetResponse[]>();
+            jest.spyOn(incoming, 'close');
+            jest.spyOn(events.channel, 'close');
 
             try {
                 const saga = sagaSetup();
-                const task = runSaga(saga.options, SharesChannel.sharesChannel, api, options, { eventsChannel, newSharesChannel });
-
+                const task = runSaga(saga.options, SharesChannel.sharesChannel, api, options, { events, incoming });
                 await saga.nextTick();
                 task.cancel();
 
-                expect(newSharesChannel.close).toHaveBeenCalled();
-                expect(eventsChannel.channel.close).toHaveBeenCalled();
+                expect(incoming.close).toHaveBeenCalled();
+                expect(events.channel.close).toHaveBeenCalled();
             } finally {
-                createNewSharesChannel.mockRestore();
                 createSharesChannel.mockRestore();
             }
         });

@@ -51,11 +51,11 @@ export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
         if (keysUpdated) {
             /** Full sync removes shares we can no longer decrypt
              * and/or recovers newly accessible ones */
-            logger.info(`[ServerEvents::User] Detected user keys update`);
+            logger.info(`[Polling::User] Detected user keys update`);
             yield put(syncIntent());
         }
     } catch (err) {
-        logger.warn(`[ServerEvents::User] user refresh failed`, err);
+        logger.warn(`[Polling::User] user refresh failed`, err);
     }
 }
 
@@ -76,7 +76,7 @@ function* onUserEvent(
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) {
         yield put(userEvent(event));
-        logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
+        logger.info(`[Polling::User] event ${logId(event.EventID!)}`);
     }
 
     const keyPassword = getAuthStore().getPassword();
@@ -138,11 +138,11 @@ export const createUserChannel = (api: Api, eventID: string) =>
         getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
         getLatestEventID: () => api<EventCursor>(getLatestID()).then(({ EventID }) => EventID),
         onEvent: onUserEvent,
-        onClose: () => logger.info(`[ServerEvents::User] closing channel`),
+        onClose: () => logger.info(`[Polling::User] closing channel`),
     });
 
 export function* userChannel(api: Api, options: RootSagaOptions) {
-    logger.info(`[ServerEvents::User] start polling for user events`);
+    logger.info(`[Polling::User] start polling for user events`);
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);
