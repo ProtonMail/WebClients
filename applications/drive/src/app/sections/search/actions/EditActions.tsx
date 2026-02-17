@@ -5,6 +5,7 @@ import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { DeleteButton } from '../../commonButtons/DeleteButton';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
+import { GoToButton } from '../../commonButtons/GoToParentButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';
 import { RenameButton } from '../../commonButtons/RenameButton';
@@ -18,6 +19,7 @@ interface BaseEditActionsProps {
     onDetails: (uid: string) => void;
     onRename: (uid: string) => void;
     onTrash: (uids: string[]) => void;
+    onGoToParent: (parentNodeUid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
@@ -41,6 +43,7 @@ export function EditActions({
     onDetails,
     onRename,
     onTrash,
+    onGoToParent,
     onOpenDocsOrSheets,
     close,
     buttonType,
@@ -80,7 +83,12 @@ export function EditActions({
                     <DeleteButton deletionType="trash" onClick={() => onTrash(selectedUids)} {...extraProps} />
                 </>
             )}
-            {/* TODO: Add separator and goto parent for context menu */}
+            {itemChecker.canGoToParent && (
+                <>
+                    {separator}
+                    <GoToButton onClick={() => onGoToParent(itemChecker.parentNodeUid)} {...extraProps} />
+                </>
+            )}
         </>
     );
 }

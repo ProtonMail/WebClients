@@ -4,8 +4,16 @@ import { SearchActions } from './actions/SearchActions';
 import { useSearchActions } from './actions/useSearchActions';
 
 export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: ContextMenuProps) {
-    const { modals, handlePreview, handleDownload, handleDetails, handleRename, handleTrash, handleOpenDocsOrSheets } =
-        useSearchActions();
+    const {
+        modals,
+        handlePreview,
+        handleDownload,
+        handleDetails,
+        handleRename,
+        handleTrash,
+        handleOpenDocsOrSheets,
+        handleGoToParent,
+    } = useSearchActions();
 
     return (
         <>
@@ -17,6 +25,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
                     onTrash={handleTrash}
                     onRename={handleRename}
                     onOpenDocsOrSheets={handleOpenDocsOrSheets}
+                    onGoToParent={handleGoToParent}
                     close={close}
                     buttonType="contextMenu"
                 />

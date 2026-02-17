@@ -16,6 +16,7 @@ interface BaseSearchActionsProps {
     onDownload: (uids: string[]) => Promise<void>;
     onRename: (uid: string) => void;
     onTrash: (uids: string[]) => void;
+    onGoToParent: (parentNodeUid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
@@ -39,6 +40,7 @@ export function SearchActions({
     onDetails,
     onRename,
     onTrash,
+    onGoToParent,
     onOpenDocsOrSheets,
 }: SearchActionsProps) {
     const { selectedUids } = useSelectionStore(
@@ -47,7 +49,7 @@ export function SearchActions({
         }))
     );
     const items = selectedUids.map(useSearchViewStore.getState().getSearchResultItem).filter(isTruthy);
-    const itemChecker = createActionsItemChecker(items);
+    const itemChecker = createActionsItemChecker(items, buttonType);
     if (!itemChecker.hasAtLeastOneSelectedItem) {
         // No actions when nothing is selected.
         return null;
@@ -70,6 +72,7 @@ export function SearchActions({
             onDetails={onDetails}
             onRename={onRename}
             onTrash={onTrash}
+            onGoToParent={onGoToParent}
             onOpenDocsOrSheets={onOpenDocsOrSheets}
             {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
         />
