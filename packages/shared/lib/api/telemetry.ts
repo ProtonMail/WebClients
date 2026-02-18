@@ -397,6 +397,10 @@ export enum TelemetryPassNudgeEvents {
     pass_cta_click = 'pass_cta_click',
 }
 
+export enum TelemetryPassExtensionEvents {
+    pass_extension_installed = 'fe.pass_extension_installed',
+}
+
 export enum TelemetryUnlimitedOffer2025 {
     clickTopNavbar = 'click_top_navbar',
     clickUpsellButton = 'click_upsell_button',
@@ -458,6 +462,7 @@ export type TelemetryEvents =
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge
     | TelemetryPassNudgeEvents
+    | TelemetryPassExtensionEvents
     | TelemetryMailNewsletterSubscriptions
     | TelemetryUnlimitedOffer2025
     | TelemetryAlwaysOnUpsellEvents
