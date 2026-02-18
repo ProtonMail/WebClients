@@ -1,15 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-import addMinutes from 'date-fns/addMinutes';
-import isAfter from 'date-fns/isAfter';
-import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 
 import { useFreeUploadOverModal } from '../../../modals/FreeUploadOverModal/useFreeUploadOverModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useFreeUploadStore } from '../../../zustand/freeUpload/freeUpload.store';
 import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
@@ -24,6 +21,8 @@ type Timeout = ReturnType<typeof setTimeout>;
  * @returns modal that will show when the countdown reaches zero
  */
 export function useRunningFreeUploadTimer(createTime?: number) {
+    const { createNotification } = useNotifications();
+
     const canUseFreeUpload = useFreeUploadFeature();
 
     const { refreshSecondsLeft, beginCountdown, abortCountdown } = useFreeUploadStore(
@@ -62,27 +61,15 @@ export function useRunningFreeUploadTimer(createTime?: number) {
                 .then(({ EndTime }) => {
                     if (EndTime !== null) {
                         const endTimeMs = EndTime * 1000;
-                        if (isAfter(endTimeMs, addMinutes(new Date(), 10))) {
-                            const error = new EnrichedError(
-                                c('Error').t`We're sorry, but free upload is not available right now.`,
-                                {
-                                    level: 'debug',
-                                    extra: {
-                                        endTimeMs,
-                                        isAfterTenMinutes: true,
-                                    },
-                                },
-                                'Free upload not available'
-                            );
-                            showErrorNotification(error);
-                            throw error;
-                        }
                         beginCountdown(endTimeMs);
                     }
                 })
-                .catch(sendErrorReport);
+                .catch((error) => {
+                    // No feedback for the user - we don't know if timer is supossed to be resumed or not
+                    sendErrorReport(error);
+                });
         },
-        [beginCountdown, canUseFreeUpload, checkFreeUploadTimer, createTime, showErrorNotification]
+        [beginCountdown, canUseFreeUpload, checkFreeUploadTimer, createNotification, createTime, showErrorNotification]
     );
 
     const [freeUploadOverModal, showFreeUploadOverModal] = useFreeUploadOverModal();
