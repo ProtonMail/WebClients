@@ -4,8 +4,8 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { LayoutButton } from '../../components/sections/ToolbarButtons';
-import { useSelectionStore } from '../../modules/selection';
+import { LayoutButton } from '../../../components/sections/ToolbarButtons';
+import { useSelectionStore } from '../../../modules/selection';
 import { SearchActions } from './actions/SearchActions';
 import { useSearchActions } from './actions/useSearchActions';
 import { useSearchViewStore } from './store';

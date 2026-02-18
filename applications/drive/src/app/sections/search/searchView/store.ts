@@ -4,9 +4,9 @@ import { devtools } from 'zustand/middleware';
 import type { NodeType } from '@proton/drive';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import type { SortField } from '../../modules/sorting';
-import { type SortConfig, sortItems } from '../../modules/sorting';
-import type { EffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
+import type { SortField } from '../../../modules/sorting';
+import { type SortConfig, sortItems } from '../../../modules/sorting';
+import type { EffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
 import { defaultSort, getSearchResultItemSortValue } from './searchResultItems.sorting';
 
 export type SearchResultItemUI = {
