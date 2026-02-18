@@ -1,4 +1,4 @@
-import React, { type ChangeEvent, useState } from 'react';
+import React, { type ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,16 +18,20 @@ import { validateLinkNameField } from '../../store';
 export const RenameAlbumModal = ({
     renameAlbumModal,
     renameAlbum,
-    name,
+    initialName = '',
 }: {
     renameAlbumModal: ModalStateReturnObj;
     renameAlbum: (name: string) => Promise<void>;
-    name?: string;
+    initialName?: string;
 }) => {
     const { validator, onFormSubmit } = useFormErrors();
-    const [albumName, setAlbumName] = useState<string>(name || '');
+    const [albumName, setAlbumName] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const { modalProps, openModal, render } = renameAlbumModal;
+
+    useEffect(() => {
+        setAlbumName(initialName);
+    }, [initialName]);
 
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
