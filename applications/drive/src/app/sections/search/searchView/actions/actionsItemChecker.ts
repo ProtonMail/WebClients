@@ -2,7 +2,7 @@ import { MemberRole } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
+import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 
 type DocsCapability =

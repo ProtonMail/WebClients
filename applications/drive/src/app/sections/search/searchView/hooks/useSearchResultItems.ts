@@ -6,18 +6,18 @@ import { NodeType, getDrive, getDrivePerNodeType, splitNodeUid } from '@proton/d
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import { useDrivePreviewModal } from '../../../modals/preview';
-import { useSelectionStore } from '../../../modules/selection';
-import type { SortConfig, SortField } from '../../../modules/sorting/types';
-import { useUserSettings } from '../../../store';
-import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { useSearchViewStore } from '../store';
+import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
+import { useBatchThumbnailLoader } from '../../../../hooks/drive/useBatchThumbnailLoader';
+import useDriveNavigation from '../../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../../hooks/drive/useOnItemRenderedMetrics';
+import { useDrivePreviewModal } from '../../../../modals/preview';
+import { useSelectionStore } from '../../../../modules/selection';
+import type { SortConfig, SortField } from '../../../../modules/sorting/types';
+import { useUserSettings } from '../../../../store';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
+import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
+import { getRootNode } from '../../../../utils/sdk/mapNodeToLegacyItem';
+import { useSearchViewStore } from '../../searchView/store';
 
 export const useSearchResultItems = () => {
     const { navigateToLink, navigateToAlbum } = useDriveNavigation();

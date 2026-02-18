@@ -6,17 +6,18 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import { generateNodeUid } from '@proton/drive/index';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useSearchResults } from '../../../store/_search';
-import { extractSearchParameters } from '../../../store/_search/utils';
-import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
+import { useSearchResults } from '../../../../store/_search';
+import { extractSearchParameters } from '../../../../store/_search/utils';
+import { useMemoArrayNoMatterTheOrder } from '../../../../store/_views/utils';
+import { sendErrorReport } from '../../../../utils/errorHandling';
+import type { SearchViewModelAdapter } from '../type';
 
 // An adapter to connect the encrypted-search providers to the stateless DriveExplorer.
 // This hook will be the junction point to allow:
 //  - migrating the search UI to the new SDK-friendly DriveExplorer while using the encrypted-search library
 //  - migrating the encrypted-search library to the new Search Library from foundation in the future.
-export const useSearchViewModelAdapter = () => {
+export const useLegacySearchAdapter = (): SearchViewModelAdapter => {
     // Note: Calling this hook has side-effects and it's required to bootstrap and init the search library.
     const {
         runSearch,
@@ -35,6 +36,7 @@ export const useSearchViewModelAdapter = () => {
 
     // The search view is based on url params.
     const location = useLocation();
+    // TODO: do not rely on this store/_search/utils package.
     const query = extractSearchParameters(location);
 
     const enableSearchAction = useCallback(async () => {
@@ -90,9 +92,9 @@ export const useSearchViewModelAdapter = () => {
     return {
         isSearchEnabled: dbExists,
         isComputingSearchIndex: isEnablingSearch,
-        enableSearch: enableSearchAction,
+        startIndexing: enableSearchAction,
         isSearching,
         resultUids: searchResultUids,
-        refresh,
+        refreshResults: refresh,
     };
 };

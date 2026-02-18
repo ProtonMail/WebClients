@@ -1,7 +1,7 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { SortField } from '../../modules/sorting/types';
-import { defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
+import { SortField } from '../../../modules/sorting/types';
+import { defaultNameCellConfig } from '../../commonDriveExplorerCells/NameCell';
 import type { SearchResultItemUI } from './store';
 
 export const defaultSort = {

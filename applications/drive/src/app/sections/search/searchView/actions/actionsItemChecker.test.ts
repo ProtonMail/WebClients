@@ -1,11 +1,11 @@
 import { MemberRole, NodeType } from '@proton/drive';
 
-import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
+import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 import { createActionsItemChecker } from './actionsItemChecker';
 
-jest.mock('../../../utils/docs/openInDocs', () => ({
-    ...jest.requireActual('../../../utils/docs/openInDocs'),
+jest.mock('../../../../utils/docs/openInDocs', () => ({
+    ...jest.requireActual('../../../../utils/docs/openInDocs'),
     getOpenInDocsInfo: jest.fn(),
 }));
 

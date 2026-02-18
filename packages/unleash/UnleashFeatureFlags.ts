@@ -186,6 +186,8 @@ enum DriveFeatureFlag {
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
     // DriveWebNewFileBrowser
     DriveWebNewFileBrowser = 'DriveWebNewFileBrowser',
+    // Foundation search libray
+    DriveWebSearchFoundation = 'DriveWebSearchFoundation',
 }
 
 enum DocsFeatureFlag {

@@ -6,12 +6,12 @@ import { useNotifications } from '@proton/components';
 import type { MaybeMissingNode, MaybeNode, MissingNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
-import { shouldTrackError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
-import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import { useSearchViewStore } from '../store';
+import { shouldTrackError, useSdkErrorHandler } from '../../../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
+import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
+import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
+import { useSearchViewStore } from '../../searchView/store';
 
 const isMissingNode = (result: MaybeMissingNode): result is { ok: false; error: MissingNode } => {
     return result.ok === false && result.error && 'missingUid' in result.error;

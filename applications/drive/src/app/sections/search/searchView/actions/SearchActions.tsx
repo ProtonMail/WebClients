@@ -3,9 +3,8 @@ import { useShallow } from 'zustand/react/shallow';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSelectionStore } from '../../../modules/selection';
-import { sendErrorReport } from '../../../utils/errorHandling';
-// import { usePublicFolderStore } from '../usePublicFolder.store';
+import { useSelectionStore } from '../../../../modules/selection';
+import { sendErrorReport } from '../../../../utils/errorHandling';
 import { useSearchViewStore } from '../store';
 import { EditActions } from './EditActions';
 import { createActionsItemChecker } from './actionsItemChecker';
