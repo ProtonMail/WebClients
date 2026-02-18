@@ -1,22 +1,40 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import { Button } from '@proton/atoms/Button/Button';
-import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 
-import mdx from './Table.mdx';
-
-export default {
+const meta: Meta<typeof Table> = {
     title: 'Components/Table',
     component: Table,
-    subcomponents: { TableHeader, TableHeaderCell, TableRow, TableCell, TableBody },
+    subcomponents: {
+        TableHeader: TableHeader as any,
+        TableHeaderCell: TableHeaderCell as any,
+        TableBody: TableBody as any,
+        TableRow: TableRow as any,
+        TableCell: TableCell as any,
+    },
     parameters: {
         docs: {
-            page: mdx,
-            inlineStories: false,
+            description: {
+                component:
+                    'A table component composed of Table, TableHeader, TableHeaderCell, TableBody, TableRow, and TableCell. Supports responsive card layout and action columns.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-export const Basic = () => {
-    return (
+export default meta;
+
+type Story = StoryObj<typeof Table>;
+
+export const Default: Story = {
+    render: () => (
         <Table responsive="cards" hasActions>
             <TableHeader>
                 <TableHeaderCell>ID</TableHeaderCell>
@@ -24,40 +42,22 @@ export const Basic = () => {
                 <TableHeaderCell>Action</TableHeaderCell>
             </TableHeader>
             <TableBody>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Loremium</Button>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Loremium</Button>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Loremium</Button>
-                    </TableCell>
-                </TableRow>
+                {['Row 1', 'Row 2', 'Row 3'].map((row) => (
+                    <TableRow key={row}>
+                        <TableCell label="ID">{row}</TableCell>
+                        <TableCell label="Name">Lorem ipsum</TableCell>
+                        <TableCell>
+                            <Button size="small">Loremium</Button>
+                        </TableCell>
+                    </TableRow>
+                ))}
             </TableBody>
         </Table>
-    );
+    ),
 };
 
-Basic.parameters = {
-    docs: {
-        iframeHeight: '300px',
-    },
-};
-
-export const Cards = () => {
-    return (
+export const Cards: Story = {
+    render: () => (
         <Table responsive="cards">
             <TableHeader>
                 <TableHeaderCell>ID</TableHeaderCell>
@@ -65,34 +65,16 @@ export const Cards = () => {
                 <TableHeaderCell>Action</TableHeaderCell>
             </TableHeader>
             <TableBody>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Settings</Button>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Settings</Button>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell label="ID">Lorem ipsum</TableCell>
-                    <TableCell label="Name">Lorem ipsum</TableCell>
-                    <TableCell>
-                        <Button size="small">Settings</Button>
-                    </TableCell>
-                </TableRow>
+                {['Row 1', 'Row 2', 'Row 3'].map((row) => (
+                    <TableRow key={row}>
+                        <TableCell label="ID">{row}</TableCell>
+                        <TableCell label="Name">Lorem ipsum</TableCell>
+                        <TableCell>
+                            <Button size="small">Settings</Button>
+                        </TableCell>
+                    </TableRow>
+                ))}
             </TableBody>
         </Table>
-    );
-};
-
-Cards.parameters = {
-    docs: {
-        iframeHeight: '500px',
-    },
+    ),
 };
