@@ -303,6 +303,12 @@ $profile-colors:
 	&:hover {
 		background: var(--interaction-default-hover) !important;
 	}
+
+	&:disabled {
+		background: var(--interaction-weak-minor-1) !important;
+		border-color: var(--border-norm) !important;
+		color: var(--text-disabled) !important;
+	}
 }
 
 .color-white {
