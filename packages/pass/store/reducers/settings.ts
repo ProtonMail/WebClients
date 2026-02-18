@@ -9,6 +9,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
+    commitSyncStrategy,
     extraPasswordToggle,
     itemCreate,
     lockCreateSuccess,
@@ -84,21 +85,22 @@ const getInitialState = (): SettingsState => ({
 });
 
 const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
-    if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
-
-    if (itemCreate.success.match(action)) {
-        return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
-    }
-
-    if (or(lockCreateSuccess.match, lockSync.match)(action)) {
-        return partialMerge(state, { lockMode: action.payload.lock.mode, lockTTL: action.payload.lock.ttl });
-    }
-
     if (settingsEditSuccess.match(action)) return { ...state, ...action.payload };
+    if (passwordOptionsEdit.match(action)) return partialMerge(state, { passwordOptions: action.payload });
+    if (itemCreate.success.match(action)) return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    if (extraPasswordToggle.success.match(action)) return partialMerge(state, { extraPassword: action.payload });
+    if (commitSyncStrategy.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
 
     if (userEvent.match(action)) {
         const locale = action.payload.UserSettings?.Locale;
         return locale ? partialMerge(state, { locale }) : state;
+    }
+
+    if (or(lockCreateSuccess.match, lockSync.match)(action)) {
+        return partialMerge(state, {
+            lockMode: action.payload.lock.mode,
+            lockTTL: action.payload.lock.ttl,
+        });
     }
 
     if (updatePauseListItem.match(action)) {
