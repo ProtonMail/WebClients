@@ -8,7 +8,7 @@ import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncry
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
 import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
-import useInboxDesktopBadgeCount from 'proton-mail/hooks/useInboxDesktopBadgeCount';
+import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 
@@ -31,7 +31,7 @@ jest.mock('proton-mail/hooks/mailbox/useMailboxPageTitle', () => ({
 jest.mock('proton-mail/hooks/mailbox/useMailboxFavicon', () => ({
     useMailboxFavicon: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/useInboxDesktopBadgeCount', () => ({
+jest.mock('proton-mail/hooks/useInboxBadgeCount', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
@@ -77,7 +77,7 @@ describe('useMailboxContainerSideEffects', () => {
         expect(useApplyEncryptedSearch).toHaveBeenCalledWith(props.elementsParams);
         expect(useMailboxPageTitle).toHaveBeenCalledWith(props.labelID);
         expect(useMailboxFavicon).toHaveBeenCalledWith(props.labelID);
-        expect(useInboxDesktopBadgeCount).toHaveBeenCalled();
+        expect(useInboxBadgeCount).toHaveBeenCalled();
         expect(useNewEmailNotification).toHaveBeenCalled();
         expect(useCalendars).toHaveBeenCalled();
         expect(useCalendarUserSettings).toHaveBeenCalled();
