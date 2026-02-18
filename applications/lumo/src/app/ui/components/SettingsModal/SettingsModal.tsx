@@ -223,8 +223,8 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
         try {
             const db = new DbApi(userId);
-            await db.clearAllSearchBlobs();
-            await new Promise((resolve) => setTimeout(resolve, 100));
+            await db.clearAllSearchBlobs(['search_index_key', 'bm25_index', 'drive_manifest']);
+            await new Promise((resolve) => setTimeout(resolve, 500));
 
             const searchService = SearchService.get(userId);
             if (!searchService) {

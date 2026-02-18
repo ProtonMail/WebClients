@@ -477,7 +477,7 @@ export class DbApi {
     private setupConnectionMonitoring = async () => {
         try {
             const database = await this.db;
-            
+
             // Monitor for unexpected database closure
             database.onclose = () => {
                 console.warn('[LumoDB] Database connection closed unexpectedly. Attempting to reconnect...');
@@ -526,7 +526,7 @@ export class DbApi {
             // Create a new database connection
             this.db = this.openDb(this.userId);
             await this.setupConnectionMonitoring();
-            
+
             // Update store operations with new connection
             this.updateStoreConnections();
 
@@ -568,14 +568,14 @@ export class DbApi {
             } catch (error: any) {
                 lastError = error;
                 const errorMessage = error?.message || error?.toString() || '';
-                const isConnectionError = 
+                const isConnectionError =
                     errorMessage.includes('Connection to Indexed Database') ||
                     errorMessage.includes('UnknownError') ||
                     error?.name === 'UnknownError';
 
                 if (isConnectionError && attempt < maxRetries) {
                     console.warn(`[LumoDB] ${operationName} failed with connection error (attempt ${attempt}/${maxRetries}). Retrying...`);
-                    
+
                     // Trigger reconnection if not already in progress
                     if (!this.isReconnecting) {
                         this.handleConnectionLoss();
@@ -596,7 +596,7 @@ export class DbApi {
 
     private async waitForReconnection(timeout: number): Promise<void> {
         const startTime = Date.now();
-        
+
         while (this.isReconnecting && (Date.now() - startTime) < timeout) {
             await new Promise(resolve => setTimeout(resolve, 100));
         }
@@ -1379,33 +1379,26 @@ export class DbApi {
         await requestToPromise(store.delete(blobName));
     };
 
-    public getAllSearchBlobs = async (tx?: IDBTransaction): Promise<Map<string, Uint8Array<ArrayBuffer>>> => {
-        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+    public clearAllSearchBlobs = async (keysToPreserve?: string[], tx?: IDBTransaction): Promise<void> => {
+
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
         const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
 
-        const results = await requestToPromise(store.getAll());
-        const blobMap = new Map<string, Uint8Array<ArrayBuffer>>();
+        const preservedKeys = new Map<string, any>();
 
-        results.forEach((entry: any) => {
-            if (entry.blobName && entry.blobData) {
-                blobMap.set(entry.blobName, entry.blobData);
+        for (const key of keysToPreserve || []) {
+            const request = store.get(key);
+            const result = await requestToPromise(request);
+            if (result !== undefined) {
+                preservedKeys.set(key, result);
             }
-        });
-
-        return blobMap;
-    };
-
-    public clearAllSearchBlobs = async (tx?: IDBTransaction): Promise<void> => {
-        const db = await this.db;
-        // Gracefully handle older DBs that don't have the foundation store yet
-        if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
-            return;
         }
 
-        tx ??= db.transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
-        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
-
         await requestToPromise(store.clear());
+
+        for (const [, value] of preservedKeys.entries()) {
+            await requestToPromise(store.put(value));
+        }
     };
 
     public checkFoundationSearchStatus = async (): Promise<{
