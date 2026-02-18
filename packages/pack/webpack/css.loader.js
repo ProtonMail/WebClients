@@ -19,7 +19,7 @@ module.exports = ({ browserslist, noLogicalScss }) => {
         require('postcss-color-functional-notation')(),
     ];
 
-    if (!noLogicalScss) {
+    if (noLogicalScss) {
         plugins.push(require('postcss-logical')());
     }
 
