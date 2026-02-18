@@ -14,6 +14,7 @@ import {
     processSharesIncomingEvent,
     processSharesPollingEvent,
 } from '@proton/pass/lib/events/v1/share-polling.processor';
+import { syncV1 } from '@proton/pass/lib/events/v1/sync';
 import { getUserEventLatestID } from '@proton/pass/lib/events/v2/user-events.requests';
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
@@ -101,4 +102,15 @@ export function* migrateV2(options: RootSagaOptions) {
     /** 4. Commit strategy switch + V2 cursor */
     yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS);
     yield put(setUserEventID(userEventID));
+}
+
+/** V2 → V1 rollback. Full V1 sync re-establishes all per-share state
+ * and eventIDs (which went stale while V2 was active). Clears the V2
+ * cursor and reverts strategy to LEGACY. Like `migrateV2`, runs at
+ * boot-time only — if any step throws, the caller should keep the
+ * current strategy and retry on next boot. */
+export function* rollbackV2() {
+    yield call(syncV1);
+    yield put(setUserEventID(undefined));
+    yield call(updateSyncStrategy, SyncStrategy.LEGACY);
 }
