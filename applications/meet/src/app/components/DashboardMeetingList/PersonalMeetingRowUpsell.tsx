@@ -30,11 +30,11 @@ export const PersonalMeetingRowUpsell = () => {
                     >
                         <IcMeetUsers size={6} />
                     </div>
-                    <div className="flex flex-column gap-2">
-                        <div className="text-xl color-norm text-semibold text-break">{c('Title')
+                    <div className="flex flex-column gap-1">
+                        <div className="text-lg color-norm text-semibold text-break">{c('Title')
                             .t`Personal meeting room`}</div>
                         <div className="flex items-center gap-2">
-                            <span className="color-weak">{c('Info').t`Your always available meeting room`}</span>
+                            <span className="color-hint">{c('Info').t`Your always available meeting room`}</span>
                         </div>
                     </div>
                 </div>
