@@ -19,14 +19,19 @@ jest.mock('@proton/components/hooks/useErrorHandler', () => ({
     default: jest.fn(() => jest.fn()),
 }));
 
+const mockCreateNotification = jest.fn();
+jest.mock('@proton/components/hooks/useNotifications', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({ createNotification: mockCreateNotification })),
+}));
+
 const mockUseFreeUploadFeature = jest.mocked(useFreeUploadFeature);
 const mockUseFreeUploadApi = jest.mocked(useFreeUploadApi);
 const mockUseIsFreeUploadInProgress = jest.mocked(useIsFreeUploadInProgress);
 const mockSendErrorReport = jest.mocked(sendErrorReport);
 
-describe('useRunningFreeUploadTimer - upper bound (10 minutes) check', () => {
+describe('useRunningFreeUploadTimer', () => {
     const mockCheckFreeUploadTimer = jest.fn();
-    const mockShowErrorNotification = jest.fn();
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -47,17 +52,13 @@ describe('useRunningFreeUploadTimer - upper bound (10 minutes) check', () => {
             startFreeUploadTimer: jest.fn(),
             checkOnboardingStatus: jest.fn(),
         } as any);
-
-        jest.spyOn(require('@proton/components/hooks/useErrorHandler'), 'default').mockReturnValue(
-            mockShowErrorNotification
-        );
     });
 
     afterEach(() => {
         jest.restoreAllMocks();
     });
 
-    it('should successfully begin countdown when EndTime is within 10 minutes', async () => {
+    it('should successfully begin countdown when EndTime is not null', async () => {
         const now = Date.now();
         const recentCreateTime = Math.floor((now - 30 * 60 * 1000) / 1000);
         const validEndTime = Math.floor((now + 9 * 60 * 1000) / 1000);
@@ -74,16 +75,16 @@ describe('useRunningFreeUploadTimer - upper bound (10 minutes) check', () => {
         expect(mockCheckFreeUploadTimer).toHaveBeenCalledTimes(1);
         expect(storeState.isFreeUploadInProgress).toBe(true);
         expect(storeState.targetTime).toBe(validEndTime * 1000);
-        expect(mockShowErrorNotification).not.toHaveBeenCalled();
+        expect(mockCreateNotification).not.toHaveBeenCalled();
         expect(mockSendErrorReport).not.toHaveBeenCalled();
     });
 
-    it('should handle EndTime after 10 minutes and show error', async () => {
+    it('should report error when checkFreeUploadTimer fails', async () => {
         const now = Date.now();
         const recentCreateTime = Math.floor((now - 30 * 60 * 1000) / 1000);
-        const tooLateEndTime = Math.floor((now + 11 * 60 * 1000) / 1000);
+        const error = new Error('API failure');
 
-        mockCheckFreeUploadTimer.mockResolvedValue({ EndTime: tooLateEndTime });
+        mockCheckFreeUploadTimer.mockRejectedValue(error);
 
         await act(async () => {
             renderHook(() => useRunningFreeUploadTimer(recentCreateTime));
@@ -91,19 +92,9 @@ describe('useRunningFreeUploadTimer - upper bound (10 minutes) check', () => {
         });
 
         const storeState = useFreeUploadStore.getState();
-
         expect(mockCheckFreeUploadTimer).toHaveBeenCalledTimes(1);
-        expect(mockShowErrorNotification).toHaveBeenCalledWith(
-            expect.objectContaining({
-                message: expect.stringContaining('free upload is not available'),
-            })
-        );
         expect(storeState.isFreeUploadInProgress).toBe(false);
         expect(storeState.targetTime).toBe(0);
-        expect(mockSendErrorReport).toHaveBeenCalledWith(
-            expect.objectContaining({
-                message: expect.stringContaining('free upload is not available'),
-            })
-        );
+        expect(mockSendErrorReport).toHaveBeenCalledWith(error);
     });
 });
