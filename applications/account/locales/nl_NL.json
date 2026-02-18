@@ -322,7 +322,7 @@
         "Verbonden"
       ],
       "Contact sales": [
-        "Neem contact op met sales"
+        "Contact opnemen met sales"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Failed to update billing address": [
+        "Bijwerken factuuradres mislukt"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Belastingvrijstelling wordt niet ondersteund voor dit abonnement"
       ]
     },
     "error": {
@@ -14076,6 +14082,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Net amount": [
+        "Netto bedrag"
       ]
     },
     "label": {
@@ -17848,6 +17857,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% belastingen"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclusief ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inclusief ${ taxRate }% belastingen"
+      ],
+      "Net amount": [
+        "Netto bedrag"
       ]
     },
     "Payments.Error": {
@@ -20213,6 +20234,9 @@
       ],
       "Your trial": [
         "Uw proefversie"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promotie toegepast – ${ checkoutUi.discountPercent }% korting"
       ]
     },
     "Signup label": {
@@ -21811,6 +21835,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "U ontvangt uw gebruikersnaam binnen een minuut via SMS als u een geldig herstel-telefoonnummer hebt ingevoerd."
+      ],
+      "Billing information updated": [
+        "Factuurgegevens bijgewerkt"
       ]
     },
     "Success message": {
@@ -24423,6 +24450,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Bespaar ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Bespaar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

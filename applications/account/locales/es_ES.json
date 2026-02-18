@@ -1578,6 +1578,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Contact sales": [
+        "Contactar con ventas"
+      ],
+      "Delete and confirm": [
+        "Eliminar y confirmar"
       ]
     },
     "action": {
@@ -6517,6 +6523,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Failed to update billing address": [
+        "Error al actualizar la dirección de facturación"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exención de impuestos no es compatible con este plan"
       ]
     },
     "error": {
@@ -11382,6 +11394,21 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } dejará de guardar las versiones anteriores de tus archivos."
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para obtener un historial de versiones de 10 años, ponte en contacto con nuestro equipo de ventas."
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Se eliminarán todas las versiones de tus archivos anteriores a ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Se eliminarán todas las versiones anteriores de tus archivos."
+      ],
+      "Upgrade to unlock": [
+        "Pásate a un plan superior para desbloquear"
       ]
     },
     "info": {
@@ -13160,6 +13187,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Don't keep versions": [
+        "No guardar versiones"
+      ],
+      "Net amount": [
+        "Importe neto"
       ]
     },
     "label": {
@@ -16769,6 +16802,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% de impuestos"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluye un ${ taxRate }% de ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluye un ${ taxRate }% de impuestos"
+      ],
+      "Net amount": [
+        "Importe neto"
       ]
     },
     "Payments.Error": {
@@ -19070,6 +19115,9 @@
       ],
       "Your trial": [
         "Tu prueba"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoción aplicada: ${ checkoutUi.discountPercent }% de descuento"
       ]
     },
     "Signup label": {
@@ -20644,6 +20692,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Recibirás tu nombre de usuario por SMS en un minuto si has ingresado un número de teléfono de recuperación válido."
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ]
     },
     "Success message": {
@@ -22466,6 +22517,9 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Delete version history?": [
+        "¿Eliminar el historial de versiones?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23074,6 +23128,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Ahorra un ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ahorra un ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
@@ -23797,6 +23854,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Activar la sección Fotos"
       ]
     }
   }

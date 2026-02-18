@@ -719,7 +719,7 @@
         "المساعدة والمصادر"
       ],
       "Hide": [
-        "أخفِ"
+        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -1500,6 +1500,12 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Contact sales": [
+        "اتصل بالمبيعات"
+      ],
+      "Delete and confirm": [
+        "حذف وتأكيد"
       ]
     },
     "action": {
@@ -6865,7 +6871,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
@@ -6888,7 +6894,7 @@
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدرج مفتاح أمان مرتبطًا بحساب ${ BRAND_NAME } الخاص بك."
+        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "أدرج مفتاح الأمان في منفذ USB بجهازك."
@@ -9023,7 +9029,7 @@
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. رَقَم ${ digit }."
+        "أدخل رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
@@ -10715,7 +10721,7 @@
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عندما تقوم بإعداد المصادقة الثنائية، فإننا نوفر رموز استرداد يمكنك استخدامها لتسجيل الدخول إذا فقدت الوصول إلى تطبيق المصادقة الخاص بك."
+        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -11135,6 +11141,24 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "لن يحتفظ ${ DRIVE_APP_NAME } بعد الآن بالإصدارات السابقة من ملفاتك."
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "للحصول على تاريخ إصدار لمدة 10 سنوات، يرجى الاتصال بفريق المبيعات لدينا."
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "سيؤدي هذا إلى حذف جميع الإصدارات السابقة من ملفاتك الأقدم من ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "سيؤدي ذلك إلى حذف جميع الإصدارات السابقة من ملفاتك."
+      ],
+      "Upgrade to unlock": [
+        "قم بالترقية لفتح القفل"
+      ],
+      "Version history": [
+        "تاريخ الإصدار"
       ]
     },
     "info": {
@@ -12754,6 +12778,9 @@
       ],
       "ZIP code": [
         "الرمز البريدي"
+      ],
+      "Don't keep versions": [
+        "لا تحتفظ بالإصدارات"
       ]
     },
     "label": {
@@ -12922,7 +12949,7 @@
         "إنشاء اسم مستعار"
       ],
       "Don't have access to your 2FA?": [
-        "ليس لديك إمكانية الوصول إلى 2FA؟"
+        "لا يمكنك الوصول إلى 2FA؟"
       ],
       "Downloads": [
         "التنزيلات"
@@ -13459,7 +13486,7 @@
         "${ appName }: تسجيل الدخول"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: إنشئ حساباً"
+        "${ appName }: التسجيل"
       ],
       "${ BRAND_NAME } Account": [
         "حساب ${ BRAND_NAME }"
@@ -13477,10 +13504,10 @@
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت كلمة مرور حسابك ${ BRAND_NAME }؟ قم بإعادة تعيينه هنا باستخدام رمز الاسترداد، البريد الإلكتروني، أو الرسائل القصيرة واستعادة الوصول إلى ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغيرها."
+        "هل نسيت كلمة مرور حساب ${ BRAND_NAME }؟ أعد تعيينها هنا باستخدام رمز الاسترداد أو البريد الإلكتروني أو الرسالة القصيرة واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت اسم المستخدم الخاص بحسابك ${ BRAND_NAME }؟ ابحث عنه باستخدام البريد الاسترداد أو رقم الهاتف الخاص بك لاستعادة الوصول إلى تطبيق ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغير ذلك."
+        "هل نسيت اسم المستخدم لحساب ${ BRAND_NAME }؟ ابحث عنه باستخدام بريد الاسترداد أو رقم هاتفك واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
@@ -22063,6 +22090,9 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Delete version history?": [
+        "هل تريد حذف سجل الإصدارات؟"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23465,6 +23495,11 @@
       ],
       "Yearly, ${ untilString }": [
         "سنويًا، ${ untilString }"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "تمكين قسم الصور"
       ]
     }
   }

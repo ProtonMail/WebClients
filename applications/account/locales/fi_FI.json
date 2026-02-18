@@ -5998,6 +5998,12 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Failed to update billing address": [
+        "Laskutusosoitteen päivitys epäonnistui"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
       ]
     },
     "error": {
@@ -12464,6 +12470,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Net amount": [
+        "Nettosumma"
       ]
     },
     "label": {
@@ -15957,6 +15966,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% verot"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Sisältää ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Sisältää ${ taxRate }% veroja"
+      ],
+      "Net amount": [
+        "Nettosumma"
       ]
     },
     "Payments.Error": {
@@ -17965,6 +17986,9 @@
       ],
       "Your trial": [
         "Kokeilujaksosi"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Tarjous käytetty – ${ checkoutUi.discountPercent }% alennus"
       ]
     },
     "Signup label": {
@@ -19481,6 +19505,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Saat käyttäjätunnuksesi tekstiviestitse minuutin kuluessa, jos syötit kelvollisen palautuspuhelinnumeron."
+      ],
+      "Billing information updated": [
+        "Laskutustiedot päivitetty"
       ]
     },
     "Success message": {
@@ -21762,6 +21789,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Säästä ${ price.uiData.discountPercent } %"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Säästä ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

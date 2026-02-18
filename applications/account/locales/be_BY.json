@@ -322,7 +322,7 @@
         "Падключана"
       ],
       "Contact sales": [
-        "Звязацца з камерцыйным аддзелам"
+        "Звязацца з аддзелам продажаў"
       ],
       "Contact support": [
         "Звязацца са службай падтрымкі"
@@ -7025,6 +7025,12 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Failed to update billing address": [
+        "Не ўдалося абнавіць адрас аплаты"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -14359,6 +14365,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Net amount": [
+        "Чыстая сума"
       ]
     },
     "label": {
@@ -18249,6 +18258,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% падаткаў"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Уключае ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "З улікам падаткаў у памеры ${ taxRate }%:"
+      ],
+      "Net amount": [
+        "Чыстая сума"
       ]
     },
     "Payments.Error": {
@@ -20684,6 +20705,9 @@
       ],
       "Your trial": [
         "Ваш пробны перыяд"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Прамакод ужыты. Вы атрымалі скідку ў памеры ${ checkoutUi.discountPercent }%"
       ]
     },
     "Signup label": {
@@ -22354,6 +22378,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Вы атрымаеце сваё імя карыстальніка праз SMS на працягу хвіліны, калі вы ўвялі слушны нумар тэлефона для аднаўлення доступу."
+      ],
+      "Billing information updated": [
+        "Плацежная інфармацыя абноўлена"
       ]
     },
     "Success message": {
@@ -25006,6 +25033,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Эканомія ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Эканомія ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

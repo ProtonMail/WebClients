@@ -6040,6 +6040,10 @@
       ],
       "Your recovery contacts": [
         "თქვენი აღდგენის კონტაქტები"
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "თქვენ მიაღწიეთ ${ limit } აღდგენის კონტაქტის მაქსიმალურ რაოდენობას.",
+        "თქვენ მიაღწიეთ მაქსიმალურ ${ limit } აღდგენის კონტაქტს."
       ]
     },
     "Empty group name": {
@@ -6694,6 +6698,9 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "დაშვებულია მაქსიმუმ ${ displayMaxValue }"
       ]
     },
     "error": {
@@ -11651,6 +11658,21 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Activity Monitor": [
+        "აქტივობების მონიტორი"
+      ],
+      "Get visibility into account access": [
+        "გააკონტროლეთ ანგარიშზე წვდომა"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
+      ],
+      "You saved ${ discountAmount } with an offer": [
+        "შეთავაზებით თქვენ დაზოგეთ ${ discountAmount }"
+      ],
+      "Your payment details are encrypted and secure": [
+        "თქვენი გადახდის მონაცემები დაშიფრული და უსაფრთხოა"
       ]
     },
     "info": {
@@ -13601,6 +13623,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "ანგარიშის მფლობელი: ${ sepaDetails.AccountName }"
       ]
     },
     "label": {
@@ -13988,6 +14013,9 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ],
+      "activity monitor": [
+        "აქტივობების მონიტორი"
       ]
     },
     "Link (Scribe)": {
@@ -17301,6 +17329,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
       ]
     },
     "Payments.Error": {
@@ -20439,6 +20470,9 @@
       ],
       "Total due today": [
         "სულ გადასახდელი დღეს"
+      ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "მიბმულია ორგანიზაციაზე: **${ nameToDisplay }**"
       ]
     },
     "Subscription attribute": {
@@ -23070,6 +23104,9 @@
       ],
       "Your subscriptions": [
         "თქვენი გამოწერები"
+      ],
+      "Roles and permissions": [
+        "როლები და ნებართვები"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24454,6 +24491,25 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "dollar_offer": {
+      "Get VPN Plus for only ${ offerPrice }": [
+        "მიიღეთ VPN Plus მხოლოდ ${ offerPrice }-ად"
+      ],
+      "Protected by Swiss privacy laws": [
+        "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "სპეციალური შეთავაზება: დაზოგეთ 90% ჩვენს პრემიუმ პაკეტზე"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "გაგრძელება უფასოდ"
+      ],
+      "Get the deal": [
+        "გარიგების მიღება"
       ]
     }
   }

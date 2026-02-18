@@ -322,7 +322,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış ekibiyle görüşün"
+        "Satış ekibiyle iletişime geçin"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Failed to update billing address": [
+        "Fatura adresi güncellenemedi"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ]
     },
     "error": {
@@ -8809,7 +8815,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9933,7 +9939,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
+        "10 yıllık sürüm geçmişi için lütfen satış ekibimizle iletişime geçin."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11250,10 +11256,10 @@
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
+        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden daha eski önceki sürümlerini silecektir."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
+        "Bu işlem dosyalarınızın önceki tüm sürümlerini silecektir."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -11445,7 +11451,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kullanmak için tarifenizi yükseltin"
+        "Kilidi açmak için yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -14076,6 +14082,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Net amount": [
+        "Net tutar"
       ]
     },
     "label": {
@@ -17848,6 +17857,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "${ taxRate }% taxes": [
+        "%${ taxRate } vergi"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "%${ taxRate } ${ suggestedTaxName } dahil"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "%${ taxRate } vergi dahil"
+      ],
+      "Net amount": [
+        "Net tutar"
       ]
     },
     "Payments.Error": {
@@ -19735,7 +19756,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Fotoğraflar bölümünü aç"
+        "Fotoğraflar bölümünü etkinleştir"
       ],
       "Get updates about comments via email": [
         "Yorum güncellemeleri e-posta ile bildirilsin"
@@ -20213,6 +20234,9 @@
       ],
       "Your trial": [
         "Deneme süreniz"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promosyon uygulandı – %${ checkoutUi.discountPercent } indirim"
       ]
     },
     "Signup label": {
@@ -21811,6 +21835,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir SMS alacaksınız."
+      ],
+      "Billing information updated": [
+        "Fatura bilgileri güncellendi"
       ]
     },
     "Success message": {
@@ -24423,6 +24450,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "%${ price.uiData.discountPercent } indirim alın"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "%${ price.checkoutUi.discountPercent } tasarruf edin"
       ]
     },
     "User role": {

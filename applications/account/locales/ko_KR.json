@@ -1758,6 +1758,9 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips }개 전용 VPN 서버"
       ]
     },
     "Address action": {
@@ -5970,6 +5973,9 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "비상 연락처 ${ name }이(가) 사용자의 계정으로 접근을 요청하고 있습니다."
+      ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "복구 연락처의 최대치인 ${ limit }개에 도달했습니다."
       ]
     },
     "Empty group name": {
@@ -6622,6 +6628,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
       ]
     },
     "error": {
@@ -11641,6 +11650,9 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
       ]
     },
     "info": {

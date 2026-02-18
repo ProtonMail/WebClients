@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Failed to update billing address": [
+        "Kunne ikke opdatere faktureringsadressen"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritagelse understøttes ikke for dette abonnement"
       ]
     },
     "error": {
@@ -9936,7 +9942,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Kontakt vores salgsteam for at få en 10-årig versionshistorik."
+        "For en 10-årig versionshistorik, kontakt venligst vores salgsteam."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -14079,6 +14085,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Net amount": [
+        "Nettobeløb"
       ]
     },
     "label": {
@@ -17851,6 +17860,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% skat"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inklusiv ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inklusiv ${ taxRate }% skatter og afgifter"
+      ],
+      "Net amount": [
+        "Nettobeløb"
       ]
     },
     "Payments.Error": {
@@ -20216,6 +20237,9 @@
       ],
       "Your trial": [
         "Din prøveversion"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Kampagne anvendt – ${ checkoutUi.discountPercent }% rabat"
       ]
     },
     "Signup label": {
@@ -21814,6 +21838,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil modtage dit brugernavn via SMS indenfor et minut, hvis du har indtastet et gyldigt telefonnummer til gendannelse."
+      ],
+      "Billing information updated": [
+        "Faktureringsoplysninger opdateret"
       ]
     },
     "Success message": {
@@ -24426,6 +24453,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Spar ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

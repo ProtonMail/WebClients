@@ -6983,6 +6983,12 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed to update billing address": [
+        "Nu s-a putut actualiza adresa de facturare."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -11666,7 +11672,7 @@
         "Versiunea ${ version }"
       ],
       "Version history": [
-        "Istoric versiuni fișiere"
+        "Istoric versiuni"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -14219,6 +14225,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Net amount": [
+        "Sumă netă"
       ]
     },
     "label": {
@@ -18050,6 +18059,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% impozit"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclusiv ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluzând impozit de ${ taxRate }%"
+      ],
+      "Net amount": [
+        "Sumă netă"
       ]
     },
     "Payments.Error": {
@@ -20450,6 +20471,9 @@
       ],
       "Your trial": [
         "Probare"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoție aplicată – ${ checkoutUi.discountPercent }% reducere"
       ]
     },
     "Signup label": {
@@ -22084,6 +22108,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Veți primi numele de utilizator prin SMS într-un minut dacă ați introdus un număr de telefon de recuperare valid."
+      ],
+      "Billing information updated": [
+        "Informațiile de facturare s-au actualizat."
       ]
     },
     "Success message": {
@@ -24716,6 +24743,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Economisiți ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economisiți ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

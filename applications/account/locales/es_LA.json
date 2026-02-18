@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Failed to update billing address": [
+        "Error al actualizar la dirección de facturación"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exoneración de impuestos no es compatible con este plan"
       ]
     },
     "error": {
@@ -11256,7 +11262,7 @@
         "Esto eliminará todas las versiones anteriores de los archivos previo a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Esto eliminará todas las versiones anteriores de los archivos."
+        "Esto eliminará todas las versiones anteriores de sus archivos."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿En verdad desea continuar?"
@@ -11448,7 +11454,7 @@
         "Mejore para mantener sus beneficios de ${ planTitle }."
       ],
       "Upgrade to unlock": [
-        "Mejore su suscripción para desbloquear"
+        "Acualice su suscripción para desbloquear"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Actualice a un mejor plan para desbloquear ${ monitorLink }."
@@ -14079,6 +14085,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Net amount": [
+        "Importe neto"
       ]
     },
     "label": {
@@ -17851,6 +17860,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% de impuestos"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluido ${ taxRate }% de ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluido ${ taxRate }% de impuestos"
+      ],
+      "Net amount": [
+        "Importe neto"
       ]
     },
     "Payments.Error": {
@@ -20216,6 +20237,9 @@
       ],
       "Your trial": [
         "Su prueba"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoción aplicada: ${ checkoutUi.discountPercent }% de descuento"
       ]
     },
     "Signup label": {
@@ -21814,6 +21838,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Recibirá su nombre de usuario por SMS en un minuto si ha ingresado un número de teléfono de recuperación válido."
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ]
     },
     "Success message": {
@@ -24426,6 +24453,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Ahorre un ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ahorre ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

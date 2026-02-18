@@ -6886,6 +6886,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Failed to update billing address": [
+        "Misslyckades att uppdatera faktureringsadress"
       ]
     },
     "error": {
@@ -17751,6 +17754,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate } % moms"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inklusive ${ taxRate } % ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inklusive ${ taxRate } % moms"
       ]
     },
     "Payments.Error": {
@@ -24287,6 +24299,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Spara ${ price.uiData.discountPercent } %"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spara ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

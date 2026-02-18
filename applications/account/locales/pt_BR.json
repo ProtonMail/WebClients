@@ -14017,6 +14017,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Net amount": [
+        "Valor líquido"
       ]
     },
     "label": {
@@ -17798,6 +17801,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluindo ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluindo ${ taxRate }% de impostos"
+      ],
+      "Net amount": [
+        "Valor líquido"
       ]
     },
     "Payments.Error": {
@@ -20163,6 +20175,9 @@
       ],
       "Your trial": [
         "Sua avaliação"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoção aplicada – ${ checkoutUi.discountPercent }% de desconto"
       ]
     },
     "Signup label": {
@@ -21749,6 +21764,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Você receberá seu nome de usuário por SMS em um minuto se tiver inserido um número de telefone de recuperação válido."
+      ],
+      "Billing information updated": [
+        "As informações de faturamento foram atualizadas"
       ]
     },
     "Success message": {
@@ -24370,6 +24388,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Economize ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economize ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

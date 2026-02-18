@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Failed to update billing address": [
+        "Rechnungsadresse konnte nicht aktualisiert werden"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ]
     },
     "error": {
@@ -8809,7 +8815,7 @@
         "${ discountPercent }% Rabatt"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } wird frühere Versionen deiner Dateien nicht mehr behalten."
+        "${ DRIVE_APP_NAME } wird keine früheren Versionen deiner Dateien mehr behalten."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
@@ -13177,7 +13183,7 @@
         "Nicht erneut fragen"
       ],
       "Don't keep versions": [
-        "Versionen nicht speichern"
+        "Versionen nicht behalten"
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
@@ -14076,6 +14082,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Net amount": [
+        "Nettobetrag"
       ]
     },
     "label": {
@@ -17848,6 +17857,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate } % Steuern"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Einschließlich ${ taxRate } % ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Einschließlich ${ taxRate } % Steuern"
+      ],
+      "Net amount": [
+        "Nettobetrag"
       ]
     },
     "Payments.Error": {
@@ -19735,7 +19756,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Bereich Fotos aktivieren"
+        "Fotos-Bereich aktivieren"
       ],
       "Get updates about comments via email": [
         "Erhalte Benachrichtigungen über Kommentare via E-Mail."
@@ -20213,6 +20234,9 @@
       ],
       "Your trial": [
         "Deine Testversion"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Angebot angewendet – ${ checkoutUi.discountPercent } % Rabatt"
       ]
     },
     "Signup label": {
@@ -21811,6 +21835,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du erhältst deinen Benutzernamen innerhalb einer Minute per SMS, wenn du eine gültige Rückrufnummer eingegeben hast."
+      ],
+      "Billing information updated": [
+        "Rechnungsinformationen aktualisiert"
       ]
     },
     "Success message": {
@@ -24423,6 +24450,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Spare ${ price.uiData.discountPercent } %"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "${ price.checkoutUi.discountPercent } % sparen"
       ]
     },
     "User role": {

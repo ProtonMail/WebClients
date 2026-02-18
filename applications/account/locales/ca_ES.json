@@ -448,7 +448,7 @@
         "Elimina el compte"
       ],
       "Delete and confirm": [
-        "Elimineu i confirmeu"
+        "Elimineu-ho i confirmeu-ho"
       ],
       "Delete filter “${ Name }”": [
         "Voleu eliminar el filtre \"${ Name }\""
@@ -6938,6 +6938,12 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Failed to update billing address": [
+        "No s'ha pogut actualitzar l'adreça de facturació"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Aquest pla no admet l'exempció d'impostos"
       ]
     },
     "error": {
@@ -8809,7 +8815,7 @@
         "${ discountPercent }% de descompte"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ja no conservarà les versions anteriors dels vostres fitxers."
+        "${ DRIVE_APP_NAME } ja no conservarà versions anteriors dels vostres fitxers."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
@@ -11250,10 +11256,10 @@
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Això eliminarà totes les versions anteriors dels vostres fitxers prèvies a ${ rententionLabel }."
+        "Això eliminarà totes les versions dels vostres fitxers anteriors a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Això suprimirà totes les versions anteriors dels vostres fitxers."
+        "Això eliminarà totes les versions anteriors dels vostres fitxers."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Això denegarà l'accés a **${ email }**. Segur que voleu continuar?"
@@ -13177,7 +13183,7 @@
         "No tornis a preguntar"
       ],
       "Don't keep versions": [
-        "No conserveu versions"
+        "No conserveu les versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -14076,6 +14082,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Net amount": [
+        "Import net"
       ]
     },
     "label": {
@@ -17848,6 +17857,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% d'impostos"
+      ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclòs el ${ taxRate }% ${ suggestedTaxName }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inclòs el ${ taxRate }% d'impostos"
+      ],
+      "Net amount": [
+        "Import net"
       ]
     },
     "Payments.Error": {
@@ -19738,7 +19759,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Habiliteu la secció de Fotos"
+        "Habiliteu la secció Fotos"
       ],
       "Get updates about comments via email": [
         "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
@@ -20216,6 +20237,9 @@
       ],
       "Your trial": [
         "La vostra prova"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "S'ha aplicat la promoció: ${ checkoutUi.discountPercent }% de descompte"
       ]
     },
     "Signup label": {
@@ -21814,6 +21838,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Rebreu el vostre nom d'usuari per SMS en un minut si heu introduït un número de telèfon de recuperació vàlid."
+      ],
+      "Billing information updated": [
+        "S'ha actualitzat la informació de facturació"
       ]
     },
     "Success message": {
@@ -22604,7 +22631,7 @@
         "Voleu eliminar l'usuari?"
       ],
       "Delete version history?": [
-        "Voleu eliminar l'historial de versions?"
+        "Voleu eliminar l’historial de versions?"
       ],
       "Deny access to user?": [
         "Voleu denegar l'accés a l'usuari?"
@@ -24426,6 +24453,9 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Estalvieu el ${ price.uiData.discountPercent }%"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Estalvieu un ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
