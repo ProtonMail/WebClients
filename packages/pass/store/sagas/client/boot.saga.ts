@@ -5,8 +5,9 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
+import { migrate } from '@proton/pass/lib/events/migrate';
 import { sync } from '@proton/pass/lib/events/sync';
-import type { SyncResult } from '@proton/pass/lib/events/types';
+import { type SyncResult, SyncStrategy } from '@proton/pass/lib/events/types';
 import {
     aliasSyncStatus,
     bootFailure,
@@ -32,10 +33,11 @@ import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
@@ -58,7 +60,8 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield loadCryptoWorker();
 
         /* merge the existing cache to preserve any state that may have been
-         * mutated before the boot sequence (session lock data) */
+         * mutated before the boot sequence (session lock data). Hydration will
+         * set the sync-strategy under the hood based on the current user state. */
         const { fromCache, version, state }: HydrationResult = yield hydrate(
             { online, merge: (existing, incoming) => merge(existing, incoming, { excludeEmpty: true }) },
             options
@@ -68,7 +71,18 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
+        /** By this time: hydration of an existing cache will have hydrated the sync strategy. */
         const syncResult: Maybe<SyncResult> = fromCache ? undefined : yield sync(state, options);
+
+        if (fromCache && state && online) {
+            /** If the feature flag has changed since this cache was created,
+             * migrate the sync strategy before polling starts. On failure,
+             * the old strategy remains and migration retries on next boot. */
+            const syncV2 = selectFeatureFlag(PassFeature.PassUserEventsV1)(state);
+            const currStrategy = selectSyncStrategy(state);
+            const nextStrategy = SyncStrategy[syncV2 ? 'USER_EVENTS' : 'LEGACY'];
+            if (currStrategy !== nextStrategy) yield call(migrate, nextStrategy, options);
+        }
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot

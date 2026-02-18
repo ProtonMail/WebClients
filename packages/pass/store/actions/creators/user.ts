@@ -5,7 +5,7 @@ import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actio
 import type { FeatureFlagState, FeatureFlagVariants, HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { Maybe } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
@@ -43,6 +43,6 @@ export const getUserAccessFailure = createAction(
 
 export const getUserSettings = requestActionsFactory<string, UserSettings>('user::settings::get')({ key: identity });
 export const setUserAccess = createAction<HydratedAccessState>('user::access');
-export const setUserEventID = createAction('user::userEventID::set', (userEventID: Maybe<string>) =>
+export const setUserEventID = createAction('user::userEventID::set', (userEventID: MaybeNull<string>) =>
     withCache({ payload: { userEventID } })
 );

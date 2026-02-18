@@ -1,9 +1,11 @@
-import { put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoHydrationError } from '@proton/pass/lib/crypto/utils/errors';
+import { DEFAULT_SYNC_STRATEGY, setSyncStrategy } from '@proton/pass/lib/events/global';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
@@ -97,6 +99,18 @@ export function* hydrate(
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
         settings.extraPassword = authStore.getExtraPassword();
+
+        /** Resolve the sync strategy for this session:
+         * - From cache: use the persisted value. If missing (pre-migration
+         *   cache), default to LEGACY — migration check in boot.saga.ts
+         *   will handle the transition if the feature flag differs.
+         * - Fresh login (no cache): derive directly from the feature flag
+         *   so the first sync routes to the correct strategy. */
+        const syncV2 = userState.features.PassUserEventsV1 ?? false;
+        settings.syncStrategy = cachedState
+            ? (settings.syncStrategy ?? DEFAULT_SYNC_STRATEGY)
+            : SyncStrategy[syncV2 ? 'USER_EVENTS' : 'LEGACY'];
+
         const autofill = settings.autofill;
 
         if (EXTENSION_BUILD && autofill) {
@@ -129,6 +143,7 @@ export function* hydrate(
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, groups, clear: true });
 
         yield put(stateHydrate(next));
+        yield call(setSyncStrategy, next.settings.syncStrategy);
 
         return {
             fromCache,
@@ -141,6 +156,7 @@ export function* hydrate(
         if (config.onError) yield config.onError?.(err);
         else throw err;
 
+        yield call(setSyncStrategy);
         return { fromCache: false, state: null };
     }
 }

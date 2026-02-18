@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { SyncResult } from '@proton/pass/lib/events/types';
+import type { SyncMigration, SyncResult } from '@proton/pass/lib/events/types';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -21,12 +21,7 @@ export const stopEventPolling = createAction('events::polling::stop');
 
 export const stateDestroy = createAction('state::destroy');
 export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
-    pipe(
-        withStreamableAction,
-        options ? withReceiver(options) : identity
-    )({
-        payload: { state },
-    })
+    pipe(withStreamableAction, options ? withReceiver(options) : identity)({ payload: { state } })
 );
 
 export const cacheRequest = createAction('cache::request', (options: Omit<CacheMeta, 'cache'>) =>
@@ -89,7 +84,7 @@ export const syncSuccess = createAction('sync::success', (payload: SyncResult) =
     )({ payload })
 );
 
-export const sync = createAction('sync::v2', (payload: SyncResult) => pipe(withCache, withShareDedupe, withStreamableAction)({ payload }));
+export const sync = createAction('sync::v2', (payload: SyncResult) => pipe(withCache, withStreamableAction)({ payload }));
 
 export const syncFailure = createAction('sync::failure', (error: unknown) =>
     pipe(
@@ -101,6 +96,11 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
 export const offlineResume = requestActionsFactory<{ localID?: number; retryable?: boolean; silence?: boolean }, boolean, void>(
     'offline::resume'
 )();
+
+/** Commits a sync strategy migration without triggering cache writes.
+ * During boot, a `withCache` action would trip the `isCachingAction`
+ * race guard and cancel the boot sequence. */
+export const syncMigration = createAction<SyncMigration>('sync::migration');
 
 /** Represents an action object streamed through chunks.
  * This is only to be used in the extension when action
