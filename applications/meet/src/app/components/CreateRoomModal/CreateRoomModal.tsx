@@ -11,6 +11,7 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
 import { RoomForm } from '../RoomForm/RoomForm';
+import { getRoomVariantFromId } from '../RoomForm/getRoomVariantFromId';
 import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
 
 interface CreateRoomModalProps {
@@ -85,9 +86,11 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
     return (
         <TranslucentModal open={open} onClose={onClose}>
             <RoomForm
-                variant="orange"
+                variant={getRoomVariantFromId(editedRoom?.ID)}
                 onSubmit={editedRoom ? onEdit : onSubmit}
                 initialName={editedRoom?.MeetingName}
+                id={editedRoom?.ID}
+                onClose={onClose}
             />
         </TranslucentModal>
     );

@@ -348,7 +348,10 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
                 />
             )}
             <div className="flex md:items-center justify-center">
-                <div className="create-container w-custom flex flex-column gap-2" style={{ '--w-custom': '35rem' }}>
+                <div
+                    className="create-container md:w-custom flex flex-column gap-2"
+                    style={{ '--md-w-custom': '35rem' }}
+                >
                     <div className="text-center">
                         <img
                             className="w-custom h-custom mb-2"

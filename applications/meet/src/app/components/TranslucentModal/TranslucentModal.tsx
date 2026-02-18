@@ -26,8 +26,8 @@ export const TranslucentModal = ({
                     <CloseButton onClose={onClose} />
                 </div>
             </div>
-            <div className="translucent-modal_container flex flex-1">
-                <div className="m-auto pt-10 pb-10">{children}</div>
+            <div className="translucent-modal_container flex flex-1 flex-row items-center">
+                <div className="flex flex-column flex-1 items-center py-6">{children}</div>
             </div>
         </div>
     </ModalTwo>
