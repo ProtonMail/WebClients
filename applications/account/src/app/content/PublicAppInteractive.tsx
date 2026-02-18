@@ -320,7 +320,9 @@ const PublicAppInteractive = ({
                 </UnAuthenticated>
             </Route>
             <Route path={SSO_PATHS.PASS_EXTENSION_ONBOARDING}>
-                <PassExtensionOnboarding />
+                <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
+                    <PassExtensionOnboarding />
+                </UnauthenticatedApiProvider>
             </Route>
             {blockingLoginEffect && <Route path="*">{blockingLoginEffect}</Route>}
             <Route path="*">

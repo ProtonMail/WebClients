@@ -6,12 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import { PassLogo, useNotifications } from '@proton/components';
+import { PassLogo, useApi, useNotifications } from '@proton/components';
+import { TelemetryMeasurementGroups, TelemetryPassExtensionEvents } from '@proton/shared/lib/api/telemetry';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import passIconIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
+import noop from '@proton/utils/noop';
 
 import { SetTheme } from '../../content/theme/SetTheme';
 import Layout from '../Layout';
@@ -51,6 +54,7 @@ const PassThemeLayout: FC<PropsWithChildren> = ({ children }) => (
 );
 
 const PassExtensionOnboarding: FC = () => {
+    const api = useApi();
     const [extensionDetected, setExtensionDetected] = useState<boolean | null>(null);
     const [currentStep, setCurrentStep] = useState<'pinning' | 'authentication'>(
         isSafari() ? 'authentication' : 'pinning'
@@ -80,6 +84,13 @@ const PassExtensionOnboarding: FC = () => {
             .catch(() => {
                 setExtensionDetected(false);
             });
+
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: TelemetryPassExtensionEvents.pass_extension_installed,
+            delay: false,
+        }).catch(noop);
     }, []);
 
     const handleContinue = () => {
