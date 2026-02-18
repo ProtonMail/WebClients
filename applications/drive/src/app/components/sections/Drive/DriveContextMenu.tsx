@@ -6,12 +6,12 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
-import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal/RevisionsModal';
 import {
@@ -56,7 +56,7 @@ export function DriveItemContextMenu({
     const hasLink = isOnlyOneItem && selectedLink.shareUrl && !selectedLink.shareUrl.isExpired && !selectedLink.trashed;
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
+    const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
     const { sharingModal, showSharingModal } = useSharingModal();
 
@@ -89,7 +89,7 @@ export function DriveItemContextMenu({
                     <MoveToFolderButton
                         shareId={shareId}
                         selectedLinks={selectedLinks}
-                        showMoveToFolderModal={showMoveToFolderModal}
+                        showMoveItemsModal={showMoveItemsModal}
                         close={close}
                     />
                 ) : null}
@@ -118,7 +118,7 @@ export function DriveItemContextMenu({
             </ItemContextMenu>
             {filesDetailsModal}
             {detailsModal}
-            {moveToFolderModal}
+            {moveItemsModal}
             {renameModal}
             {sharingModal}
             {revisionsModal}

@@ -13,10 +13,10 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useDetailsModal } from '../../../../modals/DetailsModal';
+import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink, useActions } from '../../../../store';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 
 interface Props {
@@ -33,7 +33,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
+    const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
     const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
@@ -62,7 +62,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveToFolderModal({ shareId, selectedItems: selectedLinks }),
+            action: () => showMoveItemsModal({ shareId, items: selectedLinks }),
         },
         {
             hidden: isMultiSelect || !isEditor,
@@ -147,7 +147,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             </Dropdown>
             {filesDetailsModal}
             {detailsModal}
-            {moveToFolderModal}
+            {moveItemsModal}
             {renameModal}
             {sharingModal}
         </>
