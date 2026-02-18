@@ -1,15 +1,23 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import clsx from '@proton/utils/clsx';
 
-import mdx from './Colors.mdx';
-
-export default {
+const meta: Meta = {
     title: 'CSS Utilities/Colors',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Background and text color utility classes. Available in both UI Standard and UI Prominent contexts.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
+
+export default meta;
+
+type Story = StoryObj;
 
 type ColorItemProps = {
     className: string;
@@ -25,7 +33,7 @@ const ColorItem = ({ className }: ColorItemProps) => (
             'w-custom text-sm flex items-center justify-center p-4 rounded shadow-norm border user-select',
             className
         )}
-        style={{ 'aspect-ratio': '1', '--w-custom': '8em' }}
+        style={{ aspectRatio: '1', '--w-custom': '8em' } as React.CSSProperties}
     >
         .{className}
     </div>
@@ -52,8 +60,8 @@ const ColorPalette = ({ children }: ColorPaletteProps) => (
     </>
 );
 
-export const BackgroundColors = () => (
-    <>
+export const BackgroundColors: Story = {
+    render: () => (
         <ColorPalette>
             <ColorItem className="bg-norm" />
             <ColorItem className="bg-weak" />
@@ -64,11 +72,11 @@ export const BackgroundColors = () => (
             <ColorItem className="bg-success" />
             <ColorItem className="bg-info" />
         </ColorPalette>
-    </>
-);
+    ),
+};
 
-export const TextColors = () => (
-    <>
+export const TextColors: Story = {
+    render: () => (
         <ColorPalette>
             <TextItem className="color-norm" />
             <TextItem className="color-weak" />
@@ -82,5 +90,5 @@ export const TextColors = () => (
             <TextItem className="color-disabled" />
             <TextItem className="color-invert" />
         </ColorPalette>
-    </>
-);
+    ),
+};
