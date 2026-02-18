@@ -19,13 +19,14 @@ import { getUserEventLatestID } from '@proton/pass/lib/events/v2/user-events.req
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { commitSyncStrategy, setUserAccess, setUserEventID } from '@proton/pass/store/actions';
+import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { SharesState } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
+import type { InvitesGetResponse, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
 import type { Share } from '@proton/pass/types/data/shares';
+import { logger } from '@proton/pass/utils/logger';
 
 export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
     const { shareId } = share;
@@ -58,9 +59,9 @@ export function* drainInvites() {
     yield call(processGroupInvitePollingEvent, groupInvites);
 }
 
-export function* updateSyncStrategy(strategy: SyncStrategy) {
+export function* updateSyncStrategy(strategy: SyncStrategy, userEventID: MaybeNull<string>) {
     setSyncStrategy(strategy);
-    yield put(commitSyncStrategy(strategy));
+    yield put(syncMigration({ userEventID, strategy }));
 }
 
 /** V1 → V2 migration. Runs at boot-time during hydration, before polling
@@ -100,8 +101,7 @@ export function* migrateV2(options: RootSagaOptions) {
     yield call(drainInvites);
 
     /** 4. Commit strategy switch + V2 cursor */
-    yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS);
-    yield put(setUserEventID(userEventID));
+    yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS, userEventID);
 }
 
 /** V2 → V1 rollback. Full V1 sync re-establishes all per-share state
@@ -111,6 +111,20 @@ export function* migrateV2(options: RootSagaOptions) {
  * current strategy and retry on next boot. */
 export function* rollbackV2() {
     yield call(syncV1);
-    yield put(setUserEventID(undefined));
-    yield call(updateSyncStrategy, SyncStrategy.LEGACY);
+    yield call(updateSyncStrategy, SyncStrategy.LEGACY, null);
+}
+
+export function* migrate(next: SyncStrategy, options: RootSagaOptions) {
+    try {
+        switch (next) {
+            case SyncStrategy.LEGACY:
+                yield call(rollbackV2);
+                break;
+            case SyncStrategy.USER_EVENTS:
+                yield call(migrateV2, options);
+                break;
+        }
+    } catch (err) {
+        logger.warn(`[SyncStrategy::migration] Migrating to ${next} failed`, err);
+    }
 }
