@@ -8,7 +8,7 @@ import { type EncryptedSearchParams, useApplyEncryptedSearch } from 'proton-mail
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
 import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
-import useInboxDesktopBadgeCount from 'proton-mail/hooks/useInboxDesktopBadgeCount';
+import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import type { Element } from 'proton-mail/models/element';
@@ -47,7 +47,7 @@ export const useMailboxContainerSideEffects = ({
 
     useMailboxPageTitle(labelID);
     useMailboxFavicon(labelID);
-    useInboxDesktopBadgeCount();
+    useInboxBadgeCount();
 
     useNewEmailNotification(() => handleCheckAll(false));
 
