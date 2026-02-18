@@ -50,7 +50,6 @@ export const usePublicActions = () => {
             previewableNodeUids: getAllFolderItems()
                 .filter((item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size))
                 .map((item) => item.uid),
-            deprecatedContextShareId: '',
         });
     };
 

@@ -17,7 +17,7 @@ import {
     PreviewButton as ToolbarPreviewButton,
 } from '../../../components/sections/ToolbarButtons';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
-import type { usePreviewModal } from '../../../modals/preview';
+import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { CopyButton } from '../../folders/buttons/CopyButton';
@@ -26,7 +26,7 @@ import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
 interface BaseDirectShareActionsProps {
     selectedItems: DirectShareItem[];
-    showPreviewModal: ReturnType<typeof usePreviewModal>[1];
+    showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;

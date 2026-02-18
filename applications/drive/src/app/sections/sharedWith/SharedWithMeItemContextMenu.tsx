@@ -5,7 +5,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
-import { usePreviewModal } from '../../modals/preview';
+import { useDrivePreviewModal } from '../../modals/preview';
 import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
@@ -19,8 +19,8 @@ export function SharedWithMeContextMenu({
 }: ContextMenuProps & {
     selectedBrowserItems: SharedWithMeListingItemUI[];
 }) {
-    const [previewModal, showPreviewModal] = usePreviewModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 

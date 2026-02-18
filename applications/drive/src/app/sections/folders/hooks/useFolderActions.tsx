@@ -12,7 +12,7 @@ import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getPublicLinkIsExpired } from '../../../utils/sdk/getPublicLinkIsExpired';
@@ -52,7 +52,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     } = useFolderUploadInput(volumeId, shareId, linkId);
 
     // Modal hooks
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
@@ -76,7 +76,6 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
                 .map((item) => item.nodeUid);
 
             showPreviewModal({
-                drive,
                 deprecatedContextShareId: shareId,
                 nodeUid: item.uid,
                 previewableNodeUids,

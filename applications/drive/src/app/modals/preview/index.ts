@@ -24,12 +24,7 @@
 
 export { Preview } from './Preview';
 export { PartialPreview } from './PartialPreview';
-export {
-    // TODO: For backwards compatibility only.
-    // Update all places to use the specific hook explicitely.
-    useDrivePreviewModal as usePreviewModal,
-    useDrivePreviewModal,
-} from './useDrivePreviewModal';
+export { useDrivePreviewModal } from './useDrivePreviewModal';
 export { ContentPreviewMethod } from './content';
 export { usePhotosPreviewModal } from './usePhotosPreviewModal';
 export { useDrivePublicPreviewModal } from './useDrivePublicPreviewModal';

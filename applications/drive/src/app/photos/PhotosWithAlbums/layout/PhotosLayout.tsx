@@ -733,7 +733,6 @@ export const PhotosLayout = () => {
 
         showPreviewModal({
             drive: getDriveForPhotos(),
-            deprecatedContextShareId: previewItem.rootShareId,
             nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
             previewableNodeUids: previewableNodeUids,
             onNodeChange: (nodeUid: string) => setPreviewLinkId(splitNodeUid(nodeUid).nodeId),
