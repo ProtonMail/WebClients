@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
+import { getDrive } from '@proton/drive/index';
 
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -10,10 +11,10 @@ import { SignatureInformation, SignatureStatus } from './signatures';
 import { usePreviewState } from './usePreviewState';
 
 export interface PreviewProps {
-    drive: Drive;
-    deprecatedContextShareId: string;
     nodeUid: string;
+    // Entire list of previewable images in the current view
     previewableNodeUids?: string[];
+    drive?: Drive;
     onNodeChange?: (nodeUid: string) => void;
     verifySignatures?: boolean;
     onClose: () => void;
@@ -34,7 +35,7 @@ type PhotosProps = {
 };
 
 export function Preview({
-    drive,
+    drive = getDrive(),
     nodeUid,
     previewableNodeUids,
     onNodeChange,

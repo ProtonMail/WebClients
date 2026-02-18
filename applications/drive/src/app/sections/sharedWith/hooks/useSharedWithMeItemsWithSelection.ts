@@ -74,7 +74,7 @@ export const useSharedWithMeItemsWithSelection = () => {
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = useDrivePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     // Do not add logic here, it will be removed later
     const handleRenderItem = useCallback(

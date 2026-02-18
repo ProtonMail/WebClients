@@ -20,7 +20,7 @@ import {
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useRenameModal } from '../../../modals/RenameModal';
 import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import type { usePreviewModal } from '../../../modals/preview';
+import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useActions } from '../../../store';
 import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
@@ -31,8 +31,8 @@ import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
 interface BaseSharedByMeActionsProps {
     selectedItems: SharedByMeItem[];
-    showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
+    showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
     showRenameModal: ReturnType<typeof useRenameModal>['showRenameModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;

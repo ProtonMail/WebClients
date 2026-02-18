@@ -10,7 +10,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
-import { usePreviewModal } from '../../modals/preview';
+import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
 import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
 import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
@@ -24,7 +24,7 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();

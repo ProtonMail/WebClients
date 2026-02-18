@@ -5,7 +5,9 @@ import { getBasename, getLocalIDFromPathname } from '@proton/shared/lib/authenti
 
 import { Preview, type PreviewProps } from './Preview';
 
-type PreviewPropsWithoutOnClose = Omit<PreviewProps, 'onNodeChange' | 'onClose'>;
+type PreviewPropsWithoutOnClose = Omit<PreviewProps, 'onNodeChange' | 'onClose'> & {
+    deprecatedContextShareId: string;
+};
 
 export function useDrivePreviewModal() {
     const [open, setOpen] = useState(false);
@@ -72,8 +74,8 @@ export function useDrivePreviewModal() {
         [props]
     );
 
-    return [
-        open && props ? <Preview onClose={onClose} onNodeChange={onNodeChange} {...props} /> : null,
+    return {
+        previewModal: open && props ? <Preview onClose={onClose} onNodeChange={onNodeChange} {...props} /> : null,
         showPreviewModal,
-    ] as const;
+    };
 }
