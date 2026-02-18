@@ -5,8 +5,12 @@ im.$breakpoints: $breakpoints;
 
 .meeting-row {
 	background: var(--background-card);
+	line-height: 1.5;
 	border-radius: 0;
-	border-color: var(--border-card);
+
+	&.border {
+		border-color: var(--border-card);
+	}
 
 	+ .meeting-row {
 		border-block-start: none;
