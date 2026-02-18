@@ -1229,6 +1229,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Encrypted": [
+        "암호화됨"
+      ],
+      "Scan and Download": [
+        "스캔 및 다운로드"
+      ],
+      "Shared": [
+        "공유됨"
       ]
     },
     "Action: Docs": {
@@ -3832,6 +3841,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
       ]
     },
     "error": {
@@ -6727,6 +6739,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Preparing": [
+        "준비 중"
+      ],
+      "Requested item doesn't exist anymore": [
+        "요청한 항목이 더 이상 존재하지 않습니다."
+      ],
+      "Unexpected download error": [
+        "예기치 않은 다운로드 오류"
       ]
     },
     "info": {
@@ -7468,6 +7489,24 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Access": [
+        "접근"
+      ],
+      "Allow editors to change permissions and share": [
+        "편집자가 권한을 변경하거나 공유하도록 허용"
+      ],
+      "Disable this link on a specific date": [
+        "특정 날짜에 이 링크 비활성화"
+      ],
+      "Expiry": [
+        "만료"
+      ],
+      "Require password": [
+        "비밀번호 요구"
+      ],
+      "Set a password to limit access via link": [
+        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
       ]
     },
     "Label for contact group color": {
@@ -9200,6 +9239,12 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\"이(가) 공유됨"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "설정이 업데이트되었습니다. 편집자가 권한을 변경하거나 공유할 수 있습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

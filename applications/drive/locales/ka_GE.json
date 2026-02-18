@@ -1238,6 +1238,12 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Encrypted": [
+        "დაშიფრული"
+      ],
+      "Scan and Download": [
+        "სკანირება და გადმოწერა"
       ]
     },
     "Action: Docs": {
@@ -6690,6 +6696,15 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "Preparing": [
+        "მზადდება"
+      ],
+      "Requested item doesn't exist anymore": [
+        "მოთხოვნილი ელემენტი აღარ არსებობს"
+      ],
+      "Unexpected download error": [
+        "გადმოწერის მოულოდნელი შეცდომა"
       ]
     },
     "info": {
@@ -7440,6 +7455,18 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Allow editors to change permissions and share": [
+        "რედაქტორებისთვის წვდომებისა და გაზიარების შეცვლის უფლების მიცემა"
+      ],
+      "Disable this link on a specific date": [
+        "ამ ბმულის გამორთვა მითითებულ თარიღზე"
+      ],
+      "Require password": [
+        "პაროლის მოთხოვნა"
+      ],
+      "Set a password to limit access via link": [
+        "დააყენეთ პაროლი ბმულით წვდომის შესაზღუდად"
       ]
     },
     "Label for contact group color": {
@@ -9223,6 +9250,9 @@
       ],
       "Your settings have been changed successfully": [
         "პარამეტრები წარმატებით შეიცვალა"
+      ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" გაზიარებულია"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
