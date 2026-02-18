@@ -5,9 +5,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
@@ -37,7 +35,7 @@ import {
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getIsSMPTEligible } from '@proton/shared/lib/organization/helper';
@@ -56,7 +54,6 @@ interface SmtpTokens {
 
 const SMTPSubmissionSection = () => {
     const api = useApi();
-    const [user] = useUser();
     const [addresses = []] = useAddresses();
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasActiveCustomAddress = addresses.some(
@@ -131,7 +128,10 @@ const SMTPSubmissionSection = () => {
             void withloadingTokenEligible(getSmtpTokenEligible());
             return;
         }
-        void withLoadingTokens(fetchTokens());
+
+        if (isSMPTEligible) {
+            void withLoadingTokens(fetchTokens());
+        }
     }, [submissionTokenAvailable, tokenEligible, isSMPTEligible]);
 
     if (loadingOrganization || loadingTokenEligible) {
@@ -151,27 +151,7 @@ const SMTPSubmissionSection = () => {
         isSettings: true,
     });
 
-    if (!tokenEligible) {
-        const params = {
-            topic: 'email delivery and spam',
-            username: user.Email,
-        };
-        const createTicket = (
-            <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>
-        );
-        if (isSMPTEligible) {
-            return (
-                <SettingsSectionWide>
-                    <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                        {
-                            // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To request access, please <create a ticket> describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.
-                            c('Info')
-                                .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To request access, please ${createTicket} describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.`
-                        }
-                    </SettingsParagraph>
-                </SettingsSectionWide>
-            );
-        }
+    if (!isSMPTEligible) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
