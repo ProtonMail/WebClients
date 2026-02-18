@@ -37,7 +37,7 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
                 title={title}
                 icon={icon}
                 onClick={() => openInDocsInfo.openDocument()}
-                data-testid="toolbar-open-in-docs"
+                data-testid="toolbar-open-document"
             />
         );
     }
@@ -47,7 +47,7 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
             <ContextMenuButton
                 name={title}
                 icon={icon}
-                testId="context-menu-open-in-docs"
+                testId="context-menu-open-document"
                 action={() => openInDocsInfo.openDocument()}
                 close={() => close?.()}
             />

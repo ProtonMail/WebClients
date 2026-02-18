@@ -22,7 +22,7 @@ export const OpenInDocsButton = ({ openInDocs, mimeType, linkId, close }: Props)
         <ContextMenuButton
             name={getOpenInDocsString(openInDocsType, mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />}
-            testId="context-menu-open-in-docs"
+            testId="context-menu-open-document"
             action={() => openInDocs(linkId, { mimeType })}
             close={close}
         />

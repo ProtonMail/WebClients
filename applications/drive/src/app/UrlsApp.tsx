@@ -52,13 +52,20 @@ const bootstrapApp = async () => {
     const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) });
     extendStore({ config, api, authentication, history, unleashClient });
     unleashVanillaStore.getState().setClient(unleashClient);
-    bootstrap.unleashReady({ unleashClient }).catch(noop);
-
+    const unleashFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUnleash);
+    unleashFeature.start();
+    const unleashPromise = bootstrap
+        .unleashReady({ unleashClient })
+        .catch(noop)
+        .finally(() => {
+            unleashFeature.end();
+        });
     const searchParams = new URLSearchParams(location.search);
 
     await Promise.all([
         loadStreamsPolyfill(),
         bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' }),
+        unleashPromise,
     ]);
 
     return { store };
@@ -100,7 +107,7 @@ const UrlsApp = () => {
                         <Router history={extraThunkArguments.history}>
                             <CompatRouter>
                                 <AuthenticationProvider store={extraThunkArguments.authentication}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <ApiProvider api={extraThunkArguments.api}>
                                             <ErrorBoundary
                                                 big

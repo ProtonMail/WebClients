@@ -5,12 +5,19 @@ import { c } from 'ttag';
 import { useAuthentication, useNotifications } from '@proton/components';
 import { type NodeEntity, NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { downloadManager } from '../../managers/download/DownloadManager';
+import {
+    getOpenInDocsInfo,
+    openDocsOrSheetsDocument,
+    openPublicDocsOrSheetsDocument,
+} from '../../utils/docs/openInDocs';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient, setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';
+import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
 
 interface UsePublicLinkResult {
     rootNode: NodeEntity | undefined;
@@ -30,9 +37,27 @@ export const loadRootNode = async (url: string, password: string | undefined, is
     return rootNode;
 };
 
-const redirectToPrivateApp = (deprecatedShareId: string, nodeId: string, type: NodeType, returnPath?: string) => {
+const redirectToPrivateApp = async (
+    deprecatedShareId: string,
+    uid: string,
+    type: NodeType,
+    mediaType: string | undefined,
+    returnPath?: string
+) => {
+    if (mediaType) {
+        const openInDocsInfo = getOpenInDocsInfo(mediaType);
+        if (openInDocsInfo) {
+            await openDocsOrSheetsDocument({
+                uid,
+                type: openInDocsInfo.type,
+                isNative: openInDocsInfo.isNative,
+                openBehavior: 'redirect',
+            });
+            return;
+        }
+    }
     const nodeTypeUrl = type === NodeType.Folder ? 'folder' : 'file';
-    const url = `/${deprecatedShareId}/${nodeTypeUrl}/${nodeId}${returnPath ? `?r=${returnPath}` : ''}`;
+    const url = `/${deprecatedShareId}/${nodeTypeUrl}/${splitNodeUid(uid).nodeId}${returnPath ? `?r=${returnPath}` : ''}`;
     window.location.replace(url);
 };
 
@@ -84,15 +109,32 @@ export const usePublicLink = (): UsePublicLinkResult => {
                     const { node: parentNode } = getNodeEntity(maybeParentNode);
                     if (parentNode.deprecatedShareId) {
                         isRedirecting = true;
-                        redirectToPrivateApp(parentNode.deprecatedShareId, splitNodeUid(node.uid).nodeId, node.type);
+                        await redirectToPrivateApp(parentNode.deprecatedShareId, node.uid, node.type, node.mediaType);
                         return;
                     }
                 } else if (node.membership !== undefined && node.deprecatedShareId) {
                     const returnPath =
                         node.type === NodeType.File || node.type === NodeType.Photo ? '/shared-with-me' : '';
                     isRedirecting = true;
-                    redirectToPrivateApp(node.deprecatedShareId, splitNodeUid(node.uid).nodeId, node.type, returnPath);
+                    await redirectToPrivateApp(node.deprecatedShareId, node.uid, node.type, node.mediaType, returnPath);
                     return;
+                }
+
+                if (node.mediaType && isNativeProtonDocsAppFile(node.mediaType)) {
+                    const openInDocsInfo = getOpenInDocsInfo(node.mediaType);
+                    if (openInDocsInfo) {
+                        const { token, urlPassword } = getPublicTokenAndPassword(window.location.pathname);
+                        await openPublicDocsOrSheetsDocument({
+                            uid: node.uid,
+                            type: openInDocsInfo.type,
+                            isNative: openInDocsInfo.isNative,
+                            openBehavior: 'redirect',
+                            token,
+                            urlPassword,
+                            customPassword: passwordRef.current,
+                        });
+                        return;
+                    }
                 }
 
                 setCustomPassword(passwordRef.current);

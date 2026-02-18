@@ -135,7 +135,7 @@ const Header = ({
                         shape="outline"
                         className="mr-4 flex items-center"
                         color="weak"
-                        data-testid="file-preview:actions:open-in-docs"
+                        data-testid="file-preview:actions:open-document"
                     >
                         <MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />
                         {getOpenInDocsString(openInDocsType, mimeType)}

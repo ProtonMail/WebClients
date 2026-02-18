@@ -27,7 +27,7 @@ export const FileCard = ({ mediaType, type, className, name, size }: Props) => {
                     <FileName text={name} />
                 </div>
                 {(type === NodeType.File || type === NodeType.Photo) && (
-                    <span className={clsx('text-pre', className)}>
+                    <span className="text-pre">
                         {size === undefined ? <span className="text-pre">--</span> : humanSize({ bytes: size })}
                     </span>
                 )}
