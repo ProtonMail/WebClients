@@ -44,7 +44,10 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
 
     return (
         <TranslucentModal open={open} onClose={onResetAndClose}>
-            <div className="join-with-link-modal flex flex-column justify-end items-center gap-4 text-center pt-10 pb-10">
+            <div
+                className="join-with-link-modal flex flex-column justify-end items-center gap-4 text-center pt-10 pb-10 md:w-custom"
+                style={{ '--md-w-custom': '40em' }}
+            >
                 <img
                     src={linkIcon}
                     alt=""

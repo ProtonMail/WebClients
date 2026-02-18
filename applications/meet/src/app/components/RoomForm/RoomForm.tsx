@@ -10,14 +10,13 @@ import clsx from '@proton/utils/clsx';
 import './RoomForm.scss';
 
 export type RoomVariant = 'orange' | 'blue' | 'green' | 'red';
+
 export interface RoomFormProps {
-    /**
-     * TODO: use id to support editing mode for existing rooms
-     */
     id?: string;
     variant: RoomVariant;
     onSubmit: ({ name }: { name: string }) => Promise<void>;
     initialName?: string;
+    onClose: () => void;
 }
 const RoomColorsMap: Record<RoomVariant, string[]> = {
     orange: ['#523A2E', '#FFB35F', '#FF7A00'],
@@ -74,11 +73,9 @@ const RoomIcon = ({ variant }: { variant: RoomVariant }) => (
     </svg>
 );
 
-export const RoomForm = ({ id, variant, onSubmit, initialName }: RoomFormProps) => {
+export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFormProps) => {
     const [roomName, setRoomName] = useState<string>(initialName ?? '');
     const [loading, setLoading] = useState(false);
-    // Use id to determine if we are in edit mode
-    // TODO: check the room exists
     const editMode = !!id;
 
     const handleSubmit = async () => {
@@ -88,30 +85,41 @@ export const RoomForm = ({ id, variant, onSubmit, initialName }: RoomFormProps) 
     };
 
     return (
-        <div className={clsx('room-form flex flex-column items-center', `variant-${variant}`)}>
+        <div
+            className={clsx('room-form flex flex-column items-center w-full md:w-custom', `variant-${variant}`)}
+            style={{ '--md-w-custom': '33rem' }}
+        >
             <RoomIcon variant={variant} />
-            <h2 className="h2 text-semibold mt-4">{c('meet').t`Create new room`}</h2>
-            <p className="color-hint text-lg mt-2">{c('meet').t`Meeting rooms can be used at any time`}</p>
+            <div className="flex flex-column items-center gap-3 py-10 w-full">
+                <h2 className="title h2 text-semibold w-full text-center">
+                    {editMode ? roomName : c('meet').t`Create new room`}
+                </h2>
+                <p className="subtitle color-weak m-0">{c('meet').t`Meeting rooms can be used at any time`}</p>
+            </div>
             <div className="flex self-stretch items-center gap-4 my-4">
                 <IcTextAlignLeft size={5} className="color-hint" />
                 <Input
                     placeholder={c('Placeholder').t`e.g., Design Team, Weekly Standup`}
-                    className="input-name rounded-full px-3 py-1"
+                    className="input-name rounded-xl px-4 py-2"
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
                     autoFocus
                 />
             </div>
-            <Button
-                className="input-submit mt-4 py-3 text-semibold"
-                onClick={handleSubmit}
-                disabled={!roomName.trim() || loading}
-                loading={loading}
-                pill
-                fullWidth
-            >
-                {editMode ? c('meet').t`Save and copy link` : c('meet').t`Create room and copy link`}
-            </Button>
+            <div className="room-form-buttons flex flex-column sm:flex-row w-full gap-4">
+                <Button className="cancel-button rounded-full text-semibold" onClick={() => onClose()} pill>
+                    {c('Action').t`Cancel`}
+                </Button>
+                <Button
+                    className="input-submit text-semibold"
+                    onClick={handleSubmit}
+                    disabled={!roomName.trim() || loading}
+                    loading={loading}
+                    pill
+                >
+                    {editMode ? c('meet').t`Save and copy link` : c('meet').t`Create and copy link`}
+                </Button>
+            </div>
         </div>
     );
 };
