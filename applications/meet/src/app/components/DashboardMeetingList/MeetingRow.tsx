@@ -208,12 +208,12 @@ export const MeetingRow = ({
                             </>
                         )}
                     </div>
-                    <div className="flex-1 flex flex-column flex-nowrap *:min-size-auto gap-2">
-                        <div className="text-xl color-norm text-semibold text-break">
+                    <div className="flex-1 flex flex-column flex-nowrap *:min-size-auto gap-1">
+                        <div className="text-lg color-norm text-semibold text-break">
                             {meeting.MeetingName ? meeting.MeetingName : c('Title').t`Secure meeting`}
                         </div>
                         <div className="flex items-center gap-2">
-                            <span className="color-weak">
+                            <span className="color-hint">
                                 {isRoom ? (
                                     <>{roomLabel}</>
                                 ) : (
