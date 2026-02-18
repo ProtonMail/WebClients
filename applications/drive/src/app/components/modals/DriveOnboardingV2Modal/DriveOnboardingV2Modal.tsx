@@ -1,20 +1,14 @@
 import type { ReactNode } from 'react';
 import { type FC, useEffect, useMemo, useState } from 'react';
 
-import { c } from 'ttag';
-
 import { useWelcomeFlags } from '@proton/account';
 import type { ModalStateProps } from '@proton/components';
 import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useDrivePlan } from '@proton/components';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFreeUploadApi } from '../../../hooks/drive/freeUpload/useFreeUploadApi';
 import { useInitializeFreeUploadTimer } from '../../../hooks/drive/freeUpload/useInitializeFreeUploadTimer';
 import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useOnboarding } from '../../onboarding/useOnboarding';
 import { Header } from './Header';
@@ -50,9 +44,6 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     const showPendingInvitationsStep = !showB2BInviteStep && hasPendingExternalInvitations;
 
     const { eligibleForFreeUpload, initializeTimer } = useInitializeFreeUploadTimer();
-    const { checkOnboardingStatus } = useFreeUploadApi();
-
-    const showErrorNotification = useErrorHandler();
 
     // Only show upload step on desktop
     const showUploadStep = !eligibleForFreeUpload && !isMobile();
@@ -99,27 +90,11 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
         if (step < steps.length - 1) {
             setStep((step) => step + 1);
         } else {
+            // Last step
             setWelcomeFlagsDone();
 
-            // Re-validate eligibility before starting timer to avoid stale state
             if (eligibleForFreeUpload) {
-                const { IsFreshAccount } = await checkOnboardingStatus();
-                if (IsFreshAccount) {
-                    await initializeTimer();
-                } else {
-                    const error = new EnrichedError(
-                        c('Error').t`We're sorry, but free upload is not available right now.`,
-                        {
-                            level: 'debug',
-                            extra: {
-                                IsFreshAccount,
-                            },
-                        },
-                        'Free upload not available'
-                    );
-                    sendErrorReport(error);
-                    showErrorNotification(error);
-                }
+                await initializeTimer();
             }
 
             props.onClose?.();
