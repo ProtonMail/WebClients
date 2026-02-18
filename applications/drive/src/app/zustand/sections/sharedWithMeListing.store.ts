@@ -7,7 +7,6 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { getSharedWithMeSortValue } from '../../sections/sharedWith/sharedWithMe.sorting';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
@@ -425,26 +424,15 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                             const { node } = getNodeEntity(maybeNode);
                             const signatureResult = getSignatureIssues(maybeNode);
                             if (!node.deprecatedShareId) {
-                                handleSdkError(
-                                    new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
-                                        tags: { component: 'drive-sdk' },
-                                        extra: { uid: node.uid },
-                                    })
-                                );
+                                handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
+                                    extra: { nodeUid: node.uid },
+                                });
                                 continue;
                             }
                             if (!node.membership) {
-                                handleSdkError(
-                                    new EnrichedError('Shared with me node have missing membership', {
-                                        tags: { component: 'drive-sdk' },
-                                        extra: {
-                                            uid: node.uid,
-                                            message:
-                                                'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
-                                        },
-                                    })
-                                );
-
+                                handleSdkError(new Error('Shared with me node has missing membership'), {
+                                    extra: { nodeUid: node.uid },
+                                });
                                 continue;
                             }
                             store.setSharedWithMeItem({
