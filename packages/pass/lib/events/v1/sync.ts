@@ -1,6 +1,7 @@
-import { put, select } from 'redux-saga/effects';
+import { call, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { notifyInactiveShares } from '@proton/pass/lib/events/migrate';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -8,7 +9,6 @@ import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
-import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { selectAllShares, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
@@ -20,7 +20,6 @@ import {
     type ShareGetResponse,
     type ShareType,
 } from '@proton/pass/types';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -76,20 +75,7 @@ export function* syncV1({ getCore }: RootSagaOptions) {
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
 
-    /* Check if PassCrypto may have been cleared due to
-     * an inactive or locked session during this sequence,
-     * which could result in detecting  inactive shares  */
-    if (inactiveRemoteShares.length > 0 && PassCrypto.ready) {
-        yield put(
-            notification({
-                endpoint: 'popup',
-                type: 'error',
-                expiration: 5_000,
-                key: NotificationKey.INACTIVE_SHARES,
-                text: '',
-            })
-        );
-    }
+    if (inactiveRemoteShares.length > 0) yield call(notifyInactiveShares);
 
     /* when checking the presence of an active vault we must both
      * check the active remote shares and the local cached shares */

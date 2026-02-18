@@ -1,6 +1,7 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
 import { isShareRemovedError } from '@proton/pass/lib/api/errors';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { setSyncStrategy } from '@proton/pass/lib/events/global';
 import { SyncStrategy } from '@proton/pass/lib/events/types';
 import type { GroupInvitesGetResponse } from '@proton/pass/lib/events/v1/invite-polling.processor';
@@ -19,13 +20,14 @@ import { getUserEventLatestID } from '@proton/pass/lib/events/v2/user-events.req
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
+import { notification, setUserAccess, syncMigration } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { SharesState } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
 import type { Share } from '@proton/pass/types/data/shares';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 
 export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
@@ -62,6 +64,20 @@ export function* drainInvites() {
 export function* updateSyncStrategy(strategy: SyncStrategy, userEventID: MaybeNull<string>) {
     setSyncStrategy(strategy);
     yield put(syncMigration({ userEventID, strategy }));
+}
+
+export function* notifyInactiveShares() {
+    if (PassCrypto.ready) {
+        yield put(
+            notification({
+                endpoint: 'popup',
+                type: 'error',
+                expiration: 5_000,
+                key: NotificationKey.INACTIVE_SHARES,
+                text: '',
+            })
+        );
+    }
 }
 
 /** V1 → V2 migration. Runs at boot-time during hydration, before polling
