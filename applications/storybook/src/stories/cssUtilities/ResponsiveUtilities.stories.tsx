@@ -1,18 +1,26 @@
-import mdx from './ResponsiveUtilities.mdx';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-export default {
+const meta: Meta = {
     title: 'Css utilities/Responsive',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Responsive utility classes. Use breakpoint prefixes (sm:, md:, lg:, xl:) to apply styles at different viewport widths.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
+
+export default meta;
+
+type Story = StoryObj;
 
 const demoItemClasses = 'flex items-center justify-center bg-primary user-select';
 
-export const Responsive = () => {
-    return (
+export const Default: Story = {
+    render: () => (
         <div className="border rounded overflow-hidden w-full relative flex text-2xs">
             <div className="bg-primary rounded-sm">
                 <div
@@ -26,13 +34,12 @@ export const Responsive = () => {
                 </div>
             </div>
         </div>
-    );
-};
-
-Responsive.parameters = {
-    docs: {
-        iframeHeight: '100px',
-        inlineStories: false,
+    ),
+    parameters: {
+        docs: {
+            iframeHeight: '100px',
+            inlineStories: false,
+        },
+        layout: 'fullscreen',
     },
-    layout: 'fullscreen',
 };
