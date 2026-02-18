@@ -11030,7 +11030,7 @@ __metadata:
     "@rowsncolumns/utils": "workspace:^"
     "@types/uzip": "npm:^0.20201231.2"
     "@zip.js/zip.js": "npm:^2.8.17"
-    fast-xml-parser: "npm:^5.3.5"
+    fast-xml-parser: "npm:^5.3.6"
     rxjs: "npm:^7.8.2"
     saxes: "npm:^6.0.0"
     uzip: "npm:^0.20201231.0"
@@ -24371,14 +24371,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^5.3.5":
-  version: 5.3.5
-  resolution: "fast-xml-parser@npm:5.3.5"
+"fast-xml-parser@npm:^5.3.6":
+  version: 5.3.6
+  resolution: "fast-xml-parser@npm:5.3.6"
   dependencies:
     strnum: "npm:^2.1.2"
   bin:
     fxparser: src/cli/cli.js
-  checksum: 10/913363c2cf9ab8038bd2b666698d99d44b977725f0198f3dfff3a5d34c3109ef49d3a163a0f390f69ed00ad33b81355112dec8be5e79a13f8e6c7aaf146204b8
+  checksum: 10/03527ab0bdf49d960fdc8f6088cd0715c052e06b68b39459da87b1a1fbb3439a855b2d83cbf3c400e983b8e668b396296b072a4dd5c63403cf1e618c9326b6df
   languageName: node
   linkType: hard
 
