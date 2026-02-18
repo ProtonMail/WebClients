@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import type { PasswordTypeConfig } from '@proton/pass/lib/auth/utils';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
+import type { SyncStrategy } from '@proton/pass/lib/events/types';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -105,3 +106,5 @@ export const redeemCoupon = requestActionsFactory<string, boolean>('coupon::rede
             })({ payload: null }),
     },
 });
+
+export const commitSyncStrategy = createAction('settings::sync::commit', (strategy: SyncStrategy) => withCache({ payload: { strategy } }));
