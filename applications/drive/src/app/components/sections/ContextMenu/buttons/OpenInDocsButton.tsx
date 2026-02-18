@@ -17,7 +17,7 @@ const OpenInDocsButton = ({ openDocument, close, type, isNative, mimeType }: Pro
         <ContextMenuButton
             name={getOpenInDocsString({ type, isNative }, mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName({ type })} className="mr-2" />}
-            testId="context-menu-open-in-docs"
+            testId="context-menu-open-document"
             action={openDocument}
             close={close}
         />

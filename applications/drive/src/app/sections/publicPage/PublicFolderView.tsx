@@ -8,7 +8,6 @@ import { MemberRole, NodeType } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
@@ -215,20 +214,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             }
         }
         if (item.type === NodeType.File || item.type === NodeType.Photo) {
-            const previewableNodeUids = [];
-            for (const itemUid of itemUids) {
-                const item = usePublicFolderStore.getState().getFolderItem(itemUid);
-                if (!item) {
-                    continue;
-                }
-                if (item.mediaType && isPreviewAvailable(item?.mediaType, item.size)) {
-                    previewableNodeUids.push(itemUid);
-                }
-            }
-
-            handlePreview(uid);
-
-            return;
+            return handlePreview(uid);
         }
 
         loadView(item.uid);
