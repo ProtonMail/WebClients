@@ -14,7 +14,6 @@ import {
     ModalTwoHeader,
     Radio,
     Row,
-    useModalTwoStatic,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -137,8 +136,4 @@ export function SignatureIssueModal({
             </ModalTwoFooter>
         </ModalTwo>
     );
-}
-
-export function useSignatureIssueModal() {
-    return useModalTwoStatic(SignatureIssueModal);
 }
