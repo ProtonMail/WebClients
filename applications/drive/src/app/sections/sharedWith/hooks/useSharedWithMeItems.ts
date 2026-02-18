@@ -85,7 +85,7 @@ export const useSharedWithMeItems = () => {
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = useDrivePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     useEffect(() => {
         setAllItemIds(new Set(sortedUids));

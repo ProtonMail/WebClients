@@ -19,7 +19,7 @@ import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview'
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
@@ -142,7 +142,7 @@ export function Trash({ shareId, trashView }: Props) {
     };
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const nodesWithThumbnail = trashNodes.map((node) => ({
         ...node,
@@ -203,7 +203,6 @@ export function Trash({ shareId, trashView }: Props) {
 
         if (isSDKPreviewEnabled) {
             showPreviewModal({
-                drive: getDrive(), // TODO: pass Drive client from context
                 deprecatedContextShareId: item.rootShareId,
                 nodeUid: item.uid,
             });

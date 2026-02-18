@@ -10,7 +10,7 @@ import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButt
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { usePreviewModal } from '../../modals/preview';
+import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
@@ -23,7 +23,7 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();

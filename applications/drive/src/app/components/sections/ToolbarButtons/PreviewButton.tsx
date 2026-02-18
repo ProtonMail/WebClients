@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { getDrive } from '@proton/drive';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
@@ -27,7 +26,7 @@ interface Props {
 
 const PreviewButton = ({ selectedBrowserItems }: Props) => {
     const openLegacyPreview = useOpenPreview();
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
 
@@ -50,7 +49,6 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
                         const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
                         if (isSDKPreviewEnabled && nodeUid) {
                             showPreviewModal({
-                                drive: getDrive(), // TODO: pass Drive client from context
                                 deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
                                 nodeUid,
                             });

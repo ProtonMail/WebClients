@@ -6,7 +6,7 @@ import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemConte
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { usePreviewModal } from '../../modals/preview';
+import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import type { SharedByMeItem } from './useSharedByMe.store';
 
@@ -20,7 +20,7 @@ export function SharedByMeItemContextMenu({
 }: ContextMenuProps & {
     selectedBrowserItems: SharedByMeItem[];
 }) {
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();

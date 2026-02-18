@@ -68,7 +68,6 @@ function PreviewContainerSDK({ shareId, nodeUid }: PreviewContainerProps) {
     return (
         <Preview
             drive={drive}
-            deprecatedContextShareId={shareId}
             nodeUid={nodeUid}
             onClose={() => {
                 const referer = new URLSearchParams(window.location.search).get('r');

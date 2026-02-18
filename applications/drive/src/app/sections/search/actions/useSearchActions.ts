@@ -1,21 +1,19 @@
-import { getDrive } from '@proton/drive';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { useTrashActions } from '../../commonActions/useTrashActions';
 import { useSearchViewStore } from '../store';
 
 export const useSearchActions = () => {
-    const [previewModal, showPreviewModal] = usePreviewModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
-    const drive = getDrive();
     const { navigateToNodeUid } = useDriveNavigation();
     const { trashItems } = useTrashActions();
 
@@ -23,7 +21,6 @@ export const useSearchActions = () => {
         const { getAllSearchResultItems } = useSearchViewStore.getState();
 
         showPreviewModal({
-            drive,
             nodeUid: uid,
             verifySignatures: false,
             previewableNodeUids: getAllSearchResultItems()
