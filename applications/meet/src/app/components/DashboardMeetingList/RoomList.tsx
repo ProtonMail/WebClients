@@ -46,9 +46,9 @@ export const RoomList = ({
                 onClick={() => handleNewRoomClick()}
             >
                 <PlaceholderPlusSign />
-                <div className="flex flex-column gap-2 items-center md:items-start">
+                <div className="flex flex-column gap-1 items-center md:items-start">
                     <div className="md:text-lg color-weak">{c('Title').t`Create new room`}</div>
-                    <div className="md:text-base color-weak">{c('Info')
+                    <div className="md:text-base color-hint">{c('Info')
                         .t`Set up a permanent meeting room for your team or clients`}</div>
                 </div>
             </button>
