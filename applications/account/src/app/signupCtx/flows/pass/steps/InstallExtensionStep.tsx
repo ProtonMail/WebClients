@@ -1,15 +1,18 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon } from '@proton/components';
+import { Icon, useApi } from '@proton/components';
 import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
+import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
+import { getTelemetryClientType } from '../../../../single-signup-v2/measure';
+import { measureSignupCtx } from '../../../measure';
 import browserImage from '../assets/images/browser.svg';
 import { Layout } from '../components/Layout/Layout';
 
@@ -18,21 +21,25 @@ type Props = {
 };
 
 export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
-    const browser = useMemo(() => {
+    const api = useApi();
+
+    const browserType: Clients | null = useMemo(() => {
         const supportedBrowser = getExtensionSupportedBrowser();
 
         if (supportedBrowser) {
-            return clients[supportedBrowser];
+            return supportedBrowser;
         }
         if (isSafari()) {
-            return clients[Clients.Safari];
+            return Clients.Safari;
         }
         if (isFirefox()) {
-            return clients[Clients.Firefox];
+            return Clients.Firefox;
         }
 
         return null;
     }, []);
+
+    const browser = browserType ? clients[browserType] : null;
 
     const platforms = [
         clients[Clients.iOS],
@@ -42,12 +49,36 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
         clients[Clients.macOS],
     ];
 
+    useEffect(() => {
+        void measureSignupCtx(api, {
+            event: TelemetryAccountSignupEvents.onboardFinish,
+            dimensions: { flow: 'pass_ctx_signup' },
+        });
+    }, []);
+
+    const handleExtensionDownload = () => {
+        const telemetryClientType = browserType ? getTelemetryClientType(browserType) : 'unknown';
+
+        void measureSignupCtx(api, {
+            event: TelemetryAccountSignupEvents.interactDownload,
+            dimensions: { flow: 'pass_ctx_signup', click: `download_${telemetryClientType}` },
+        });
+    };
+
     return (
         <Layout>
             <img src={browserImage} alt="Browser icon" />
             <h2 className="text-4xl text-bold my-5 text-center">{c('Title').t`Secure your passwords. Everywhere.`}</h2>
             {browser && (
-                <ButtonLike as="a" target="_blank" size="large" color="norm" pill href={browser.link}>
+                <ButtonLike
+                    as="a"
+                    target="_blank"
+                    size="large"
+                    color="norm"
+                    pill
+                    href={browser.link}
+                    onClick={handleExtensionDownload}
+                >
                     {c('Action').t`Get the extension for ${browser.title}`}
                 </ButtonLike>
             )}
