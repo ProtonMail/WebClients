@@ -1,5 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 
+import { notifyInactiveShares } from '@proton/pass/lib/events/migrate';
 import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
@@ -53,8 +54,9 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     const encryptedShares: ShareGetResponse[] = yield requestShares();
     /** 3b. Open all shares (may fail on inactive keys) */
     const shares: RemoteShare[] = yield Promise.all(encryptedShares.map(intoRemoteShare));
-    /** 3c. Split active from inactive shares (FIXME: notify on inactive) */
-    const [activeShares] = partition(shares, (s): s is Required<RemoteShare> => Boolean(s.share));
+    /** 3c. Split active from inactive shares  */
+    const [activeShares, inactiveShares] = partition(shares, (s): s is Required<RemoteShare> => Boolean(s.share));
+    if (inactiveShares.length > 0) yield call(notifyInactiveShares);
     /** 4. Get all items for all active shares */
     const items: ItemsByShareId[] = yield Promise.all(activeShares.map(intoItemsByShareId));
     /** 5. Get all invites — filter out stale accepted invites before parsing */
