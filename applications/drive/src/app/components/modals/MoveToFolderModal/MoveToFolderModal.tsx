@@ -6,7 +6,6 @@ import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/compon
 import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { MoveItemsModal } from '../../../modals/MoveItemsModal';
 import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 import type { DecryptedLink } from '../../../store';
@@ -14,6 +13,7 @@ import { useActions, useTreeForModals } from '../../../store';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
+import { useCreateFolderModalDeprecated } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
@@ -35,7 +35,7 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { viewportWidth } = useActiveBreakpoint();
-    const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModalDeprecated();
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, {
