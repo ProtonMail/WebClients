@@ -246,7 +246,7 @@ export const AlbumsView: FC = () => {
             )}
             {renameAlbumLinkId && (
                 <RenameAlbumModal
-                    name={filteredAlbums.find((album) => album.linkId === renameAlbumLinkId)?.name}
+                    initialName={filteredAlbums.find((album) => album.linkId === renameAlbumLinkId)?.name}
                     renameAlbumModal={renameAlbumModal}
                     renameAlbum={onRenameAlbum}
                 />
