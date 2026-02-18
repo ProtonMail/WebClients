@@ -1,44 +1,49 @@
 import { useState } from 'react';
 
-import { EmojiScale, Scale } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Scale.mdx';
+import EmojiScale from '@proton/components/components/input/EmojiScale';
+import Scale from '@proton/components/components/input/Scale';
 
-export default {
-    component: Scale,
+const meta: Meta<typeof Scale> = {
     title: 'Components/Scale',
+    component: Scale,
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'A numeric scale input for rating or scoring. Renders a row of selectable buttons from a range. Also available as EmojiScale with emoji icons.',
+            },
         },
+    },
+    tags: ['autodocs'],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Scale>;
+
+export const Default: Story = {
+    render: () => {
+        const [value, setValue] = useState<number>();
+
+        return (
+            <Scale
+                from={0}
+                to={10}
+                fromLabel="0 - Not at all likely"
+                toLabel="10 - Extremely likely"
+                value={value}
+                onChange={setValue}
+            />
+        );
     },
 };
 
-export const Basic = () => {
-    const [value, setValue] = useState<number>();
+export const Emoji: Story = {
+    render: () => {
+        const [value, setValue] = useState<number>();
 
-    const handleChange = (v: number) => {
-        setValue(v);
-    };
-
-    return (
-        <Scale
-            from={0}
-            to={10}
-            fromLabel="0 - Not at all likely"
-            toLabel="10 - Extremely likely"
-            value={value}
-            onChange={handleChange}
-        />
-    );
-};
-
-export const Emoji = () => {
-    const [value, setValue] = useState<number>();
-
-    const handleChange = (v: number) => {
-        setValue(v);
-    };
-
-    return <EmojiScale fromLabel="Awful" toLabel="Wonderful" value={value} onChange={handleChange} />;
+        return <EmojiScale fromLabel="Awful" toLabel="Wonderful" value={value} onChange={setValue} />;
+    },
 };
