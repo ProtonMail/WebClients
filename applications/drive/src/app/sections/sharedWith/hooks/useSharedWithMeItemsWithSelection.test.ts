@@ -99,7 +99,7 @@ jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
 }));
 
 jest.mock('../../../modals/preview/useDrivePreviewModal', () => ({
-    useDrivePreviewModal: () => [null, jest.fn()],
+    useDrivePreviewModal: () => ({ previewModal: null, showPreviewModal: jest.fn() }),
 }));
 
 describe('useSharedWithMeItemsWithSelection', () => {

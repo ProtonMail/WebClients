@@ -31,7 +31,7 @@ import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import { usePreviewModal } from '../../../modals/preview';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
 import { useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -139,7 +139,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const openLegacyPreview = useOpenPreview();
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const { permissions, isLoading, role, folder, hasEverLoaded } = useFolderStore(
         useShallow((state) => ({
@@ -247,7 +247,6 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                         .map((item) => item.uid);
 
                     showPreviewModal({
-                        drive: getDrive(),
                         deprecatedContextShareId: shareId,
                         nodeUid: item.uid,
                         previewableNodeUids,

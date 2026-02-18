@@ -58,7 +58,7 @@ export const useSearchResultItems = () => {
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
-    const [previewModal, showPreviewModal] = useDrivePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const handleRenderItem = useCallback(
         ({ id }: { id: string }) => {

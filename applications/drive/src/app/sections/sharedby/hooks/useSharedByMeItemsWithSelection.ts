@@ -54,7 +54,7 @@ export const useSharedByMeItemsWithSelection = () => {
     );
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = useDrivePreviewModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     // TODO: Cleanup mappedItems as we probably don't need all of this
     const mappedItems = useMemo((): MappedLegacyItem[] => {
