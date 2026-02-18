@@ -428,12 +428,6 @@ export class SearchEngine {
 
                         conversation.messages.forEach((msg: any) => {
                             const content = msg.content || msg.text || '';
-                            console.log(`Processing message ${msg.id}:`, {
-                                role: msg.role,
-                                contentLength: content.length,
-                                contentPreview: content.substring(0, 100),
-                                hasContent: !!content,
-                            });
 
                             if (content) {
                                 allMessages.push(content);
@@ -443,13 +437,6 @@ export class SearchEngine {
                                     assistantMessages.push(content);
                                 }
                             }
-                        });
-
-                        console.log('Message processing results:', {
-                            totalMessages: allMessages.length,
-                            userMessages: userMessages.length,
-                            assistantMessages: assistantMessages.length,
-                            allTextLength: allMessages.join(' ').length,
                         });
 
                         // Add all content as a single field
@@ -483,7 +470,6 @@ export class SearchEngine {
                         doc.addAttribute('content', contentValue);
                     }
 
-                    // Add other searchable fields
                     if (conversation.subject) {
                         const subjectValue = Value.text(conversation.subject);
                         doc.addAttribute('subject', subjectValue);
@@ -507,7 +493,6 @@ export class SearchEngine {
             // Commit the changes
             console.log('Committing writer changes...');
             const execution = writer.commit();
-            // Writer is consumed by commit()
             console.log('Writer committed, processing execution events...');
 
             try {
@@ -545,8 +530,6 @@ export class SearchEngine {
                     `Single conversation indexing completed: ${saveEventCount} saves, ${loadEventCount} loads, ${totalEvents} total events`
                 );
             } finally {
-                // Free the execution object to release the write handle
-                // This prevents "Failed to get write handle" errors
                 execution.free();
             }
 
