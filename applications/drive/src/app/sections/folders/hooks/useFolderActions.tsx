@@ -61,7 +61,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
     const { renameModal, showRenameModal } = useRenameModal();
-    const [moveModal, showMoveModal] = useMoveItemsModal();
+    const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 
     const showPreview = () => {
@@ -95,7 +95,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         void createDocument({ type: 'sheet', shareId: shareId, parentLinkId: linkId });
     };
 
-    const moveAction = (shareId: string) => showMoveModal({ shareId, selectedItems });
+    const moveAction = (shareId: string) => showMoveItemsModal({ shareId, items: selectedItems });
 
     const copyAction = () => showCopyItemsModal(selectedItems);
 
@@ -176,7 +176,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             filesDetailsModal,
             revisionsModal,
             renameModal,
-            moveModal,
+            moveItemsModal,
             copyModal,
         },
     };

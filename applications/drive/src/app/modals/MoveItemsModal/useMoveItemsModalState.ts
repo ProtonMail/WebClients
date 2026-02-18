@@ -19,19 +19,12 @@ export type MoveItemsModalStateItem = {
 
 export type MoveItemsModalInnerProps = {
     shareId: string;
-    selectedItems: MoveItemsModalStateItem[];
-    onSuccess?: (items: { uid: string; parentUid: string | undefined }[]) => void;
+    items: MoveItemsModalStateItem[];
 };
 
 export type UseMoveItemsModalStateProps = ModalStateProps & MoveItemsModalInnerProps;
 
-export const useMoveItemsModalState = ({
-    onClose,
-    onSuccess,
-    shareId,
-    selectedItems,
-    ...modalProps
-}: UseMoveItemsModalStateProps) => {
+export const useMoveItemsModalState = ({ onClose, shareId, items, ...modalProps }: UseMoveItemsModalStateProps) => {
     const {
         rootItems,
         expand,
@@ -42,13 +35,13 @@ export const useMoveItemsModalState = ({
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
     const { activeFolder } = useActiveShare();
 
-    const itemMap: MoveNodesItemMap = selectedItems.reduce((acc, item) => {
+    const itemMap: MoveNodesItemMap = items.reduce((acc, item) => {
         const uid = generateNodeUid(item.volumeId, item.linkId);
         const parentUid = generateNodeUid(item.volumeId, item.parentLinkId);
         return { ...acc, [uid]: { name: item.name, parentUid } };
     }, {});
 
-    const { moveNodes } = useMoveNodes({ onSuccess });
+    const { moveNodes } = useMoveNodes();
 
     let treeSelectedFolder;
     if (targetFolderUid) {
@@ -81,8 +74,8 @@ export const useMoveItemsModalState = ({
 
         let targetUid;
         if (!targetFolderUid) {
-            const targetLinkId = activeFolder.linkId || rootItems[0]?.link.linkId || selectedItems[0]?.parentLinkId;
-            const targetVolumeId = activeFolder.volumeId || rootItems[0]?.link.volumeId || selectedItems[0]?.volumeId;
+            const targetLinkId = activeFolder.linkId || rootItems[0]?.link.linkId || items[0]?.parentLinkId;
+            const targetVolumeId = activeFolder.volumeId || rootItems[0]?.link.volumeId || items[0]?.volumeId;
             targetUid = generateNodeUid(targetVolumeId, targetLinkId) as string;
         } else {
             targetUid = targetFolderUid;
@@ -109,7 +102,7 @@ export const useMoveItemsModalState = ({
         toggleExpand,
         createFolderModal,
         targetFolderUid,
-        selectedItems,
+        items,
         onClose,
         createFolder: createNewFolder,
         ...modalProps,

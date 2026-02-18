@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -24,11 +23,7 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
     const [activeDropTarget, setActiveDropTarget] = useState<DragAndDropItem>();
     const dragEnterCounter = useRef(0);
     const selectionControls = useSelection();
-    const { moveNodes } = useMoveNodes({ onSuccess });
-
-    function onSuccess(items: { uid: string; parentUid: string | undefined }[]) {
-        void getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items });
-    }
+    const { moveNodes } = useMoveNodes();
 
     const selectedItems = React.useMemo(
         () =>

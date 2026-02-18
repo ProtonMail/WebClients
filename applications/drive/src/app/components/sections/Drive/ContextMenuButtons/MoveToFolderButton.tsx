@@ -1,23 +1,23 @@
+import type { useMoveItemsModal } from 'applications/drive/src/app/modals/MoveItemsModal';
 import { c } from 'ttag';
 
 import type { DecryptedLink } from '../../../../store';
-import type { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     shareId: string;
     selectedLinks: DecryptedLink[];
-    showMoveToFolderModal: ReturnType<typeof useMoveToFolderModal>[1];
+    showMoveItemsModal: ReturnType<typeof useMoveItemsModal>['showMoveItemsModal'];
     close: () => void;
 }
 
-const MoveToFolderButton = ({ shareId, selectedLinks, showMoveToFolderModal, close }: Props) => {
+const MoveToFolderButton = ({ shareId, selectedLinks, showMoveItemsModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Move to folder`}
             icon="arrows-cross"
             testId="context-menu-move"
-            action={() => showMoveToFolderModal({ shareId, selectedItems: selectedLinks })}
+            action={() => showMoveItemsModal({ shareId, items: selectedLinks })}
             close={close}
         />
     );
