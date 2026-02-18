@@ -1,13 +1,13 @@
 import isTruthy from '@proton/utils/isTruthy';
 
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { downloadManager } from '../../../managers/download/DownloadManager';
-import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useRenameModal } from '../../../modals/RenameModal';
-import { useDrivePreviewModal } from '../../../modals/preview';
-import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
-import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
-import { useTrashActions } from '../../commonActions/useTrashActions';
+import useDriveNavigation from '../../../../hooks/drive/useNavigate';
+import { downloadManager } from '../../../../managers/download/DownloadManager';
+import { useDetailsModal } from '../../../../modals/DetailsModal';
+import { useRenameModal } from '../../../../modals/RenameModal';
+import { useDrivePreviewModal } from '../../../../modals/preview';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
+import { isPreviewOrFallbackAvailable } from '../../../../utils/isPreviewOrFallbackAvailable';
+import { useTrashActions } from '../../../commonActions/useTrashActions';
 import { useSearchViewStore } from '../store';
 
 export const useSearchActions = () => {

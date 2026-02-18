@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
-import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
+import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 
 export const NoSearchResultsView = () => {
     // translator: Shown when searching and no results are found

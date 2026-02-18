@@ -6,12 +6,12 @@ import { useNotifications } from '@proton/components';
 import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import type { EffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
-import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
-import { createMockDegradedNode, createMockNodeEntity } from '../../../utils/test/nodeEntity';
-import { useSearchViewStore } from '../store';
+import { useSdkErrorHandler } from '../../../../utils/errorHandling/useSdkErrorHandler';
+import type { EffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
+import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
+import { createMockDegradedNode, createMockNodeEntity } from '../../../../utils/test/nodeEntity';
+import { useSearchViewStore } from '../../searchView/store';
 import { useSearchViewNodesLoader } from './useSearchViewLoader';
 
 // Mock dependencies
@@ -24,16 +24,16 @@ jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
 }));
 
-jest.mock('../../../utils/errorHandling/useSdkErrorHandler', () => ({
-    ...jest.requireActual('../../../utils/errorHandling/useSdkErrorHandler'),
+jest.mock('../../../../utils/errorHandling/useSdkErrorHandler', () => ({
+    ...jest.requireActual('../../../../utils/errorHandling/useSdkErrorHandler'),
     useSdkErrorHandler: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getNodeLocation', () => ({
+jest.mock('../../../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),
 }));
 
-jest.mock('../../../utils/sdk/getNodeEffectiveRole', () => ({
+jest.mock('../../../../utils/sdk/getNodeEffectiveRole', () => ({
     getNodeEffectiveRole: jest.fn(),
 }));
 

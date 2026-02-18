@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
+import { SearchField } from '../../../sections/search/searchField';
 import isSearchFeatureEnabled from '../../../utils/isSearchFeatureEnabled';
-import { SearchField } from '../search/SearchField';
+import { SearchField as LegacySearchField } from '../search/SearchField';
 import { DownloadAppButton } from './DownloadAppButton';
 import { SuggestBusinessButton } from './SuggestBusinessButton';
 
@@ -18,6 +20,17 @@ interface Props {
     settingsButton?: ReactNode;
     upsellButton?: ReactNode;
 }
+
+const OptionalSearchField = () => {
+    const isSearchFoundationEnabled = useFlagsDriveFoundationSearch();
+    const isSearchSupported = isSearchFeatureEnabled();
+
+    if (!isSearchSupported) {
+        return null;
+    }
+
+    return isSearchFoundationEnabled ? <SearchField /> : <LegacySearchField />;
+};
 
 export const DriveHeaderPrivate = ({
     isHeaderExpanded,
@@ -36,7 +49,7 @@ export const DriveHeaderPrivate = ({
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
                 isSmallViewport={viewportWidth['<=small']}
-                actionArea={isSearchFeatureEnabled() && <SearchField />}
+                actionArea={<OptionalSearchField />}
                 settingsButton={settingsButton}
                 upsellButton={SuggestBusinessButton()}
                 downloadAppButton={<DownloadAppButton />}

@@ -16,6 +16,7 @@ import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/dr
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
+import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
 import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
@@ -47,6 +48,8 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const driveEventManager = useDriveEventManager();
 
     const defaultShareIdPromise = getDefaultShare().then(({ shareId }) => shareId);
+
+    const isSearchFoundationEnabled = useFlagsDriveFoundationSearch();
 
     const esCallbacks = useESCallbacks({
         api,
@@ -94,12 +97,17 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     };
 
     useEffect(() => {
+        if (isSearchFoundationEnabled) {
+            // When the new search foundation is enabled, we never want to bootstrap the legacy search.
+            return;
+        }
+
         // Feature flags come in asyncronously (false back to `false` initially),
         // thus we need to observe their changes
         if (searchEnabled && !isInitialized) {
             void initializeESDrive();
         }
-    }, [searchEnabled, isInitialized]);
+    }, [searchEnabled, isInitialized, isSearchFoundationEnabled]);
 
     useEffect(() => {
         if (!esFunctions.esStatus.dbExists) {
