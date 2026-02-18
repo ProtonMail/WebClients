@@ -1,5 +1,5 @@
-import type { ContextMenuProps } from '../../components/FileBrowser';
-import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import type { ContextMenuProps } from '../../../components/FileBrowser';
+import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { SearchActions } from './actions/SearchActions';
 import { useSearchActions } from './actions/useSearchActions';
 

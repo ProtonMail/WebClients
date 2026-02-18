@@ -5,25 +5,27 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components/index';
 
-import { FileBrowserStateProvider } from '../../components/FileBrowser';
-import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
-import { useContextMenuStore } from '../../modules/contextMenu';
-import { useSelectionStore } from '../../modules/selection';
-import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
+import { FileBrowserStateProvider } from '../../../components/FileBrowser';
+import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
+import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
+import { useContextMenuStore } from '../../../modules/contextMenu';
+import { useSelectionStore } from '../../../modules/selection';
+import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
     DriveExplorerSort,
-} from '../../statelessComponents/DriveExplorer/types';
+} from '../../../statelessComponents/DriveExplorer/types';
 import { EnableSearchView } from './EnableSearchView';
 import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchContextMenu } from './SearchContextMenu';
 import { getCellDefinitions, getGridDefinition } from './SearchDriveExplorerDefinitions';
 import { SearchResultViewToolbar } from './Toolbar';
+import { useFoundationSearchAdapter } from './hooks/useFoundationSearchAdapter';
+import { useLegacySearchAdapter } from './hooks/useLegacySearchAdapter';
 import { useSearchResultItems } from './hooks/useSearchResultItems';
 import { useSearchViewNodesLoader } from './hooks/useSearchViewLoader';
-import { useSearchViewModelAdapter } from './hooks/useSearchViewModelAdapter';
 import { useSearchViewStore } from './store';
 import { subscribeSearchStoreToEvents } from './subscribeSearchStoreToEvents';
 
@@ -38,14 +40,14 @@ const SearchResultTitle = ({ loading, resultCount }: { loading: boolean; resultC
 };
 
 export const SearchView = () => {
-    const {
-        isSearchEnabled,
-        isComputingSearchIndex,
-        enableSearch,
-        isSearching,
-        resultUids,
-        refresh: refreshSearchResults,
-    } = useSearchViewModelAdapter();
+    const legacySearchModel = useLegacySearchAdapter();
+    const foundationSearchModel = useFoundationSearchAdapter();
+
+    const isFoudationSearchEnabled = useFlagsDriveFoundationSearch();
+    const searchModel = isFoudationSearchEnabled ? foundationSearchModel : legacySearchModel;
+
+    const { isSearchEnabled, isComputingSearchIndex, startIndexing, isSearching, resultUids, refreshResults } =
+        searchModel;
 
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -86,9 +88,9 @@ export const SearchView = () => {
         //  -> new results trigger a new load
         //  -> loader sync the store and undirty it.
         if (isStoreDirty) {
-            refreshSearchResults();
+            refreshResults();
         }
-    }, [isStoreDirty, refreshSearchResults]);
+    }, [isStoreDirty, refreshResults]);
 
     useEffect(() => {
         // Make the search view react to Web Drive events.
@@ -111,7 +113,7 @@ export const SearchView = () => {
     }, [sortedItemUids]);
 
     if (!isSearchEnabled) {
-        return <EnableSearchView enableSearch={enableSearch} isComputingSearchIndex={isComputingSearchIndex} />;
+        return <EnableSearchView enableSearch={startIndexing} isComputingSearchIndex={isComputingSearchIndex} />;
     }
 
     if (!isSearching && resultUids.length === 0) {

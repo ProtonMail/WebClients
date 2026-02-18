@@ -2,14 +2,14 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 
-import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
-import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
-import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
-import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
-import { LocationCell, defaultLocationCellConfig } from '../commonDriveExplorerCells/LocationCell';
-import { ModifiedCell, defaultModifiedCellConfig } from '../commonDriveExplorerCells/ModifiedCell';
-import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
-import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
+import { GridItemContent } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
+import { GridItemName } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
+import type { CellDefinition, GridDefinition } from '../../../statelessComponents/DriveExplorer/types';
+import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
+import { LocationCell, defaultLocationCellConfig } from '../../commonDriveExplorerCells/LocationCell';
+import { ModifiedCell, defaultModifiedCellConfig } from '../../commonDriveExplorerCells/ModifiedCell';
+import { NameCell, defaultNameCellConfig } from '../../commonDriveExplorerCells/NameCell';
+import { SizeCell, defaultSizeCellConfig } from '../../commonDriveExplorerCells/SizeCell';
 import { useSearchViewStore } from './store';
 
 export const getCellDefinitions = ({

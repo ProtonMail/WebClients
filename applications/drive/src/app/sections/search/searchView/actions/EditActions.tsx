@@ -2,13 +2,13 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { DeleteButton } from '../../commonButtons/DeleteButton';
-import { DetailsButton } from '../../commonButtons/DetailsButton';
-import { DownloadButton } from '../../commonButtons/DownloadButton';
-import { GoToButton } from '../../commonButtons/GoToParentButton';
-import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
-import { PreviewButton } from '../../commonButtons/PreviewButton';
-import { RenameButton } from '../../commonButtons/RenameButton';
+import { DeleteButton } from '../../../commonButtons/DeleteButton';
+import { DetailsButton } from '../../../commonButtons/DetailsButton';
+import { DownloadButton } from '../../../commonButtons/DownloadButton';
+import { GoToButton } from '../../../commonButtons/GoToParentButton';
+import { OpenInDocsOrSheetsButton } from '../../../commonButtons/OpenInDocsOrSheetsButton';
+import { PreviewButton } from '../../../commonButtons/PreviewButton';
+import { RenameButton } from '../../../commonButtons/RenameButton';
 import type { SearchItemChecker } from './actionsItemChecker';
 
 interface BaseEditActionsProps {
