@@ -225,13 +225,14 @@ export const ScheduleMeetingRecapModal = ({
                             color="weak"
                             shape="outline"
                             pill
-                            className="header-button h-custom flex items-center gap-2 px-5"
+                            className="header-button h-custom flex items-center gap-2 px-3 md:px-5"
                             style={{ '--h-custom': '2.5rem' }}
                             onClick={backToEditMeeting}
                             disabled={meetingIsDecrypting}
+                            icon
                         >
                             <IcPenSquare size={4} className="shrink-0" />
-                            Edit
+                            <span className="hidden md:flex">{c('Action').t`Edit`}</span>
                         </Button>
                     </ConditionalTooltip>
 
@@ -239,156 +240,156 @@ export const ScheduleMeetingRecapModal = ({
                         color="danger"
                         shape="outline"
                         pill
-                        className="header-button h-custom flex items-center gap-2 px-5"
+                        className="header-button h-custom flex items-center gap-2 px-3 md:px-5"
                         style={{ '--h-custom': '2.5rem' }}
                         onClick={() => setIsDeleteMeetingModalOpen(true)}
                     >
                         <IcTrash size={4} className="shrink-0" />
-                        Delete
+                        <span className="hidden md:flex">{c('Action').t`Delete`}</span>
                     </Button>
                 </>
             }
         >
-            <div className="flex md:items-center justify-center">
-                <h1
-                    className="create-container max-w-custom flex flex-column gap-2 text-rg"
-                    style={{ '--max-w-custom': '35rem' }}
-                >
-                    <div className="text-center">
-                        <SvgAddedIcon className={!isEdit ? 'meeting-icon--added' : undefined} />
-                        <span className="sr-only">
-                            {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
-                        </span>
-                    </div>
-                    <div className="create-container-title mb-3 w-full text-center text-wrap-balance text-break">
-                        {meetingName}
-                    </div>
-                </h1>
-            </div>
-
-            <p className="color-weak mt-0 text-center w-full">
-                {endsOnSameDay ? (
-                    <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
-                        <span>{formatDate(startTime, timeZone)}</span>
-                        <span>
-                            {formatTimeHHMM(startTime, timeFormat, timeZone)} -{' '}
-                            {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
-                        </span>
-                    </span>
-                ) : (
-                    <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
-                        <span>
-                            {formatDate(startTime, timeZone)} {formatTimeHHMM(startTime, timeFormat, timeZone)} (
-                            {timeZone})
-                        </span>
-                        <span>
-                            {formatDate(endTime, timeZone)} {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
-                        </span>
-                    </span>
-                )}
-            </p>
-            <div className="flex flex-column items-center align-center mt-10 gap-10">
-                <div className="w-full md:w-4/5">
-                    <Card
-                        className="flex flex-column meeting-details-card p-6"
-                        bordered={false}
-                        background={false}
-                        rounded={false}
-                    >
-                        <p className="flex flex-nowrap flex-row items-center gap-2 max-w-full m-0">
-                            <a
-                                className="meeting-link flex-1"
-                                href={meetingLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                title={meetingLink}
-                            >
-                                {meetingLink}
-                            </a>
-                            <Tooltip title={c('Action').t`Copy meeting link`}>
-                                <Button
-                                    shape="ghost"
-                                    color="norm"
-                                    type="button"
-                                    icon
-                                    className="button-copy-meeting-link shrink-0 rounded-full"
-                                    onClick={() => {
-                                        void navigator.clipboard.writeText(meetingLink);
-                                        notifications.createNotification({
-                                            key: 'link-copied',
-                                            text: c('Notification').t`Link copied to clipboard`,
-                                        });
-                                    }}
-                                >
-                                    <IcSquares alt={c('Action').t`Copy meeting link`} />
-                                </Button>
-                            </Tooltip>
-                        </p>
-                    </Card>
-                </div>
-                <div className="flex flex-nowrap flex-column *:min-size-auto gap-2 w-full md:w-4/5">
-                    <div className="w-full">
-                        <DropdownButton
-                            ref={anchorRef}
-                            isOpen={isOpen}
-                            onClick={toggle}
-                            hasCaret={false}
-                            shape="ghost"
-                            className="text-semibold w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
-                            size="large"
-                        >
-                            <span className="inline-flex items-center flex-nowrap gap-2">
-                                <IcPlus size={4} className="shrink-0" />
-                                {c('Label').t`Add to calendar`}
+            <div style={{ '--max-w-custom': '35rem' }} className="max-w-custom">
+                <div className="flex md:items-center justify-center">
+                    <h1 className="create-container  flex flex-column gap-2 text-rg">
+                        <div className="text-center">
+                            <SvgAddedIcon className={!isEdit ? 'meeting-icon--added' : undefined} />
+                            <span className="sr-only">
+                                {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
                             </span>
-                        </DropdownButton>
-                        <Dropdown
-                            isOpen={isOpen}
-                            anchorRef={anchorRef}
-                            onClose={close}
-                            className="calendar-dropdown meet-radius"
+                        </div>
+                        <div className="create-container-title mb-3 w-full text-center text-wrap-balance text-break">
+                            {meetingName}
+                        </div>
+                    </h1>
+                </div>
+
+                <p className="color-weak mt-0 text-center w-full">
+                    {endsOnSameDay ? (
+                        <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
+                            <span>{formatDate(startTime, timeZone)}</span>
+                            <span>
+                                {formatTimeHHMM(startTime, timeFormat, timeZone)} -{' '}
+                                {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
+                            </span>
+                        </span>
+                    ) : (
+                        <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
+                            <span>
+                                {formatDate(startTime, timeZone)} {formatTimeHHMM(startTime, timeFormat, timeZone)} (
+                                {timeZone})
+                            </span>
+                            <span>
+                                {formatDate(endTime, timeZone)} {formatTimeHHMM(endTime, timeFormat, timeZone)} (
+                                {timeZone})
+                            </span>
+                        </span>
+                    )}
+                </p>
+                <div className="flex flex-column items-center align-center mt-10 gap-10">
+                    <div className="w-full md:w-4/5">
+                        <Card
+                            className="flex flex-column meeting-details-card p-6"
+                            bordered={false}
+                            background={false}
+                            rounded={false}
                         >
-                            <DropdownMenu>
-                                <DropdownMenuButton
-                                    className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                    key="outlook-calendar"
-                                    onClick={handleOutlookDeepLink}
+                            <p className="flex flex-nowrap flex-row items-center gap-2 max-w-full m-0">
+                                <a
+                                    className="meeting-link flex-1"
+                                    href={meetingLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title={meetingLink}
                                 >
-                                    {c('Label').t`Outlook calendar`}
-                                </DropdownMenuButton>
-                                <DropdownMenuButton
-                                    className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                    key="google-calendar"
-                                    onClick={handleGoogleDeepLink}
-                                >
-                                    {c('Label').t`Google calendar`}
-                                </DropdownMenuButton>
-                                <DropdownMenuButton
-                                    className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                    key="ics"
-                                    onClick={handleIcs}
-                                >
-                                    {c('Label').t`Download .ics`}
-                                </DropdownMenuButton>
-                                {isProtonCalendarDeepLinkEnabled && (
+                                    {meetingLink}
+                                </a>
+                                <Tooltip title={c('Action').t`Copy meeting link`}>
+                                    <Button
+                                        shape="ghost"
+                                        color="norm"
+                                        type="button"
+                                        icon
+                                        className="button-copy-meeting-link shrink-0 rounded-full"
+                                        onClick={() => {
+                                            void navigator.clipboard.writeText(meetingLink);
+                                            notifications.createNotification({
+                                                key: 'link-copied',
+                                                text: c('Notification').t`Link copied to clipboard`,
+                                            });
+                                        }}
+                                    >
+                                        <IcSquares alt={c('Action').t`Copy meeting link`} />
+                                    </Button>
+                                </Tooltip>
+                            </p>
+                        </Card>
+                    </div>
+                    <div className="flex flex-nowrap flex-column *:min-size-auto gap-2 w-full md:w-4/5">
+                        <div className="w-full">
+                            <DropdownButton
+                                ref={anchorRef}
+                                isOpen={isOpen}
+                                onClick={toggle}
+                                hasCaret={false}
+                                shape="ghost"
+                                className="text-semibold w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
+                                size="large"
+                            >
+                                <span className="inline-flex items-center flex-nowrap gap-2">
+                                    <IcPlus size={4} className="shrink-0" />
+                                    {c('Label').t`Add to calendar`}
+                                </span>
+                            </DropdownButton>
+                            <Dropdown
+                                isOpen={isOpen}
+                                anchorRef={anchorRef}
+                                onClose={close}
+                                className="calendar-dropdown meet-radius"
+                            >
+                                <DropdownMenu>
                                     <DropdownMenuButton
                                         className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
-                                        key="proton-calendar"
-                                        onClick={handleProtonCalendarDeepLink}
+                                        key="outlook-calendar"
+                                        onClick={handleOutlookDeepLink}
                                     >
-                                        {CALENDAR_APP_NAME}
+                                        {c('Label').t`Outlook calendar`}
                                     </DropdownMenuButton>
-                                )}
-                            </DropdownMenu>
-                        </Dropdown>
+                                    <DropdownMenuButton
+                                        className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
+                                        key="google-calendar"
+                                        onClick={handleGoogleDeepLink}
+                                    >
+                                        {c('Label').t`Google calendar`}
+                                    </DropdownMenuButton>
+                                    <DropdownMenuButton
+                                        className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
+                                        key="ics"
+                                        onClick={handleIcs}
+                                    >
+                                        {c('Label').t`Download .ics`}
+                                    </DropdownMenuButton>
+                                    {isProtonCalendarDeepLinkEnabled && (
+                                        <DropdownMenuButton
+                                            className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
+                                            key="proton-calendar"
+                                            onClick={handleProtonCalendarDeepLink}
+                                        >
+                                            {CALENDAR_APP_NAME}
+                                        </DropdownMenuButton>
+                                    )}
+                                </DropdownMenu>
+                            </Dropdown>
+                        </div>
+                        <Button
+                            className="done-button text-semibold rounded-full w-full"
+                            onClick={() => {
+                                onClose();
+                            }}
+                            size="large"
+                        >{c('Action').t`Done`}</Button>
                     </div>
-                    <Button
-                        className="done-button text-semibold rounded-full w-full"
-                        onClick={() => {
-                            onClose();
-                        }}
-                        size="large"
-                    >{c('Action').t`Done`}</Button>
                 </div>
             </div>
             {isDeleteMeetingModalOpen && (
