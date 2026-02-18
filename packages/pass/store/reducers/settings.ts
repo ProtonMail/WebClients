@@ -16,6 +16,7 @@ import {
     lockSync,
     offlineSetup,
     settingsEditSuccess,
+    syncMigration,
     updatePauseListItem,
     userEvent,
 } from '@proton/pass/store/actions';
@@ -90,6 +91,7 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     if (itemCreate.success.match(action)) return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
     if (extraPasswordToggle.success.match(action)) return partialMerge(state, { extraPassword: action.payload });
     if (commitSyncStrategy.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
+    if (syncMigration.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
 
     if (userEvent.match(action)) {
         const locale = action.payload.UserSettings?.Locale;
