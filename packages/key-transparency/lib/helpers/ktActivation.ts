@@ -26,7 +26,7 @@ export const getKTActivationValue = async ({
     if (!featureFlag) {
         return KeyTransparencyActivation.DISABLED;
     }
-    if (!(await isKTActive(featureFlag))) {
+    if (!(await isKTActive(featureFlag).catch(() => false))) {
         return KeyTransparencyActivation.DISABLED;
     }
     if (featureFlag == KtFeatureEnum.ENABLE_CORE) {
