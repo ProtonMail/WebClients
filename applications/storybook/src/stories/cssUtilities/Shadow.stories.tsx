@@ -1,18 +1,30 @@
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import mdx from './Shadow.mdx';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 
-export default {
+const meta: Meta = {
     title: 'CSS Utilities/Shadow',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Box shadow utility classes. Includes shadow-norm, shadow-raised, shadow-lifted, and shadow-color-primary.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-export const Shadow = () => {
-    return (
+export default meta;
+
+type Story = StoryObj;
+
+export const Default: Story = {
+    render: () => (
         <Table className="color-norm">
             <TableHeader>
                 <TableRow>
@@ -34,7 +46,10 @@ export const Shadow = () => {
                         Applies a <code>--shadow-norm</code> shadow on an element.
                     </TableCell>
                     <TableCell className="text-right">
-                        <span className="inline-block shadow-norm w-custom" style={{ '--w-custom': '3em' }}>
+                        <span
+                            className="inline-block shadow-norm w-custom"
+                            style={{ '--w-custom': '3em' } as React.CSSProperties}
+                        >
                             &nbsp;
                         </span>
                     </TableCell>
@@ -44,12 +59,13 @@ export const Shadow = () => {
                         <code>shadow-raised</code>
                     </TableCell>
                     <TableCell>
-                        Applies a <code>--shadow-raised</code> shadow on an element.
-                        <br />
-                        Should only be applied on lifted and out of flow elements, such as modals or tooltips.
+                        Applies a <code>--shadow-raised</code> shadow on an element. For lifted/out-of-flow elements.
                     </TableCell>
                     <TableCell className="text-right">
-                        <span className="inline-block shadow-raised w-custom" style={{ '--w-custom': '3em' }}>
+                        <span
+                            className="inline-block shadow-raised w-custom"
+                            style={{ '--w-custom': '3em' } as React.CSSProperties}
+                        >
                             &nbsp;
                         </span>
                     </TableCell>
@@ -59,12 +75,13 @@ export const Shadow = () => {
                         <code>shadow-lifted</code>
                     </TableCell>
                     <TableCell>
-                        Applies a <code>--shadow-lifted</code> shadow on an element.
-                        <br />
-                        Should only be applied on lifted and out of flow elements, such as modals or tooltips.
+                        Applies a <code>--shadow-lifted</code> shadow on an element. For lifted/out-of-flow elements.
                     </TableCell>
                     <TableCell className="text-right">
-                        <span className="inline-block shadow-lifted w-custom" style={{ '--w-custom': '3em' }}>
+                        <span
+                            className="inline-block shadow-lifted w-custom"
+                            style={{ '--w-custom': '3em' } as React.CSSProperties}
+                        >
                             &nbsp;
                         </span>
                     </TableCell>
@@ -77,13 +94,13 @@ export const Shadow = () => {
                     <TableCell className="text-right">
                         <span
                             className="inline-block shadow-norm shadow-color-primary w-custom mr-2"
-                            style={{ '--w-custom': '3em' }}
+                            style={{ '--w-custom': '3em' } as React.CSSProperties}
                         >
                             &nbsp;
                         </span>
                         <span
                             className="inline-block shadow-lifted shadow-color-primary w-custom"
-                            style={{ '--w-custom': '3em' }}
+                            style={{ '--w-custom': '3em' } as React.CSSProperties}
                         >
                             &nbsp;
                         </span>
@@ -91,17 +108,5 @@ export const Shadow = () => {
                 </TableRow>
             </TableBody>
         </Table>
-    );
+    ),
 };
-
-// ## Example
-
-// Applies the common box shadow on this element.
-
-// <Source
-//     language="html"
-//     format
-//     code={`
-// <div className="shadow-norm">Lorem ipsum dolor sit amet</div>
-// `}
-// />
