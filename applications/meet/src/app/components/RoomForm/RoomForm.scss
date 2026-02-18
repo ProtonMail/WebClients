@@ -1,6 +1,14 @@
 .room-form {
-	inline-size: 25rem;
-	padding-block-end: 15rem;
+	.title {
+		line-height: 1.25;
+		word-break: break-word;
+	}
+
+	.subtitle {
+		line-height: 1.5;
+		font-size: 1rem;
+		font-weight: 500;
+	}
 
 	.input-name {
 		border-color: var(--theme-color) !important;
@@ -32,5 +40,28 @@
 
 	&.variant-red {
 		--theme-color: var(--ui-red-interaction-norm);
+	}
+
+	.room-form-buttons {
+		padding-block: 2.5rem;
+
+		.button {
+			padding-inline: 2.5rem;
+			padding-block: 1rem;
+			line-height: 1.5;
+			flex: 1;
+		}
+
+		.cancel-button {
+			background-color: var(--background-card);
+			border: 1px solid var(--border-norm);
+			color: white;
+		}
+
+		.cancel-button:hover,
+		.cancel-button:active {
+			background-color: var(--button-lighter-hover-background-color);
+			color: #a0a0a0;
+		}
 	}
 }
