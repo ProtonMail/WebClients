@@ -40,16 +40,20 @@ export const usePublicActions = () => {
     const { handleError } = useSdkErrorHandler();
 
     const handlePreview = (uid: string) => {
-        const { getAllFolderItems } = usePublicFolderStore.getState();
+        const { itemUids, getFolderItem } = usePublicFolderStore.getState();
         const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
 
         showPreviewModal({
             drive: getPublicLinkClient(),
             nodeUid: uid,
             verifySignatures: isLoggedIn,
-            previewableNodeUids: getAllFolderItems()
-                .filter((item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size))
-                .map((item) => item.uid),
+            previewableNodeUids: Array.from(itemUids).filter((itemUid) => {
+                const item = getFolderItem(itemUid);
+                if (!item) {
+                    return false;
+                }
+                return item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size);
+            }),
         });
     };
 
