@@ -8,6 +8,9 @@ import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 
+import { getStoreRef } from '../../redux/storeRef';
+import { selectMasterKey }  from '../../redux/selectors';
+
 const WorkerMessageType = {
     Search: 0,
     Populate: 1,
@@ -69,8 +72,6 @@ export class SearchService {
      * Get the master key from the Redux store.
      */
     private getMasterKey(): string | null {
-        const { getStoreRef } = require('../../redux/storeRef');
-        const { selectMasterKey } = require('../../redux/selectors');
         const store = getStoreRef();
         if (!store) return null;
         return selectMasterKey(store.getState());
