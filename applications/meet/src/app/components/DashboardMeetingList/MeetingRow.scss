@@ -65,7 +65,8 @@ im.$breakpoints: $breakpoints;
 		linear-gradient(91deg, rgb(163 140 243 / 0.18) 0.12%, rgb(163 140 243 / 0) 89.23%), var(--background-card);
 
 	&:hover {
-		background: linear-gradient(90.57deg, rgb(163 140 243 / 0.18) 0.12%, rgb(163 140 243 / 0) 89.23%);
+		background:
+			linear-gradient(91deg, rgb(163 140 243 / 0.18) 0.12%, rgb(163 140 243 / 0) 89.23%), var(--background-weak);
 	}
 }
 
