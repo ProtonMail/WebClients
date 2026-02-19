@@ -74,6 +74,8 @@ export const DashboardMeetingList = ({
         meetingRooms: meetingRooms,
     };
 
+    const isSearchActive = search.length > 0;
+
     const shouldShowSearchBar =
         // Show search bar when we are in my meetings tab and there are meetings
         (activeTab === DashboardMeetingListTab.TimeBased &&
@@ -82,7 +84,7 @@ export const DashboardMeetingList = ({
         (activeTab === DashboardMeetingListTab.MeetingRooms &&
             meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1) ||
         // OR when is a search in progress because it could return no results but we still want to show the search bar
-        search.length > 0;
+        isSearchActive;
 
     // Sticky positioning
     const stickyRef = useRef<HTMLDivElement>(null);
@@ -156,6 +158,8 @@ export const DashboardMeetingList = ({
                         handleNewRoomClick={handleNewRoomClick}
                         handleRotatePersonalMeeting={handleRotatePersonalMeeting}
                         loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                        isSearchActive={isSearchActive}
+                        isGuest={isGuest}
                     />
                 )}
 
