@@ -76,6 +76,9 @@ export const handleDesktopFork = async ({ api }: { api: Api; paths: Paths }): Pr
         ...forkParameters,
         localID: undefined,
         app: desktopForkParameters.app,
+        // Force reauth for cli-pass
+        // TODO: This can potentially be done for all pass forks, but starting out like this
+        prompt: desktopForkParameters.qrCodePayload.childClientId === 'cli-pass' ? 'login' : forkParameters.prompt,
     };
 
     return {
