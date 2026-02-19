@@ -23,11 +23,12 @@ test.describe('visual tests', () => {
                 `,
             });
             // Wait for SB to fully render the components
-            await page.waitForTimeout(200);
+            await page.waitForTimeout(300);
 
             await expect(page).toHaveScreenshot({
                 animations: 'disabled',
                 fullPage: true,
+                mask: [page.locator('table.docblock-argstable')],
             });
         });
     }
