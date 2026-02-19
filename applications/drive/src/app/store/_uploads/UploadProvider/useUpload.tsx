@@ -87,7 +87,10 @@ function useBaseUpload(
     const shouldUseSdk = !isPublicContext;
     const { handleError } = useSdkErrorHandler();
 
-    const { drive, unsafeRemoveNodeFromCache } = useDrive();
+    const {
+        drive,
+        internal: { unsafeRemoveNodeFromCache },
+    } = useDrive();
     const metrics = useUploadMetrics(plan);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));

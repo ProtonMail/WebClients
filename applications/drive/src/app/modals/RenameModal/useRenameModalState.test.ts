@@ -14,6 +14,14 @@ jest.mock('@proton/components', () => ({
     })),
 }));
 
+const mockHandleError = jest.fn();
+
+jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
+    useSdkErrorHandler: () => ({
+        handleError: mockHandleError,
+    }),
+}));
+
 const mockedGetNode = jest.fn();
 const mockDrive = {
     getNode: mockedGetNode,
@@ -378,6 +386,46 @@ describe('useRenameModalState', () => {
 
             await waitFor(() => {
                 expectNameAndNameToFocus(result.current, 'somefile.mp3', 'somefile');
+            });
+        });
+    });
+
+    describe('Error handling', () => {
+        it('should call handleError and exit the modal when getNode throws', async () => {
+            const onExit = jest.fn();
+            const error = new Error('fetch error');
+            mockedGetNode.mockRejectedValueOnce(error);
+
+            renderHook(() => useRenameModalState({ ...defaultProps, onExit }));
+
+            await waitFor(() => {
+                expect(mockHandleError).toHaveBeenCalledWith(error, { showNotification: true });
+                expect(onExit).toHaveBeenCalled();
+            });
+        });
+
+        it('should call handleError when renameNode throws', async () => {
+            const node = createMockNode({
+                uid: DEFAULT_UID,
+                name: 'myimage.png',
+                mediaType: 'image/png',
+                type: NodeType.File,
+            });
+            mockedGetNode.mockResolvedValueOnce({ ok: true, value: node });
+            const error = new Error('rename error');
+            mockDrive.renameNode.mockRejectedValueOnce(error);
+
+            const { result } = renderHook(() => useRenameModalState(defaultProps));
+
+            await waitFor(() => {
+                expect(result.current).toMatchObject({ loaded: true });
+            });
+
+            await (result.current as Extract<RenameModalViewProps, { loaded: true }>).handleSubmit('newname.png');
+
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: expect.stringContaining('newname.png'),
+                extra: { nodeUid: DEFAULT_UID },
             });
         });
     });

@@ -73,8 +73,10 @@ describe('useTrashPhototsNodes', () => {
         mockUseTrashStore.getState.mockReturnValue({ setLoading });
 
         mockUseDrive.mockReturnValue({
-            photos: {
-                iterateTrashedNodes: iterateTrashedPhotoNodes,
+            internal: {
+                photos: {
+                    iterateTrashedNodes: iterateTrashedPhotoNodes,
+                },
             },
         } as any);
 

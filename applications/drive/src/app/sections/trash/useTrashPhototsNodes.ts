@@ -13,7 +13,9 @@ export type SimpleTrashNode = {
 
 export const useTrashPhototsNodes = () => {
     const { handleError } = useSdkErrorHandler();
-    const { photos } = useDrive();
+    const {
+        internal: { photos },
+    } = useDrive();
 
     const loadTrashPhotoNodes = useCallback(
         async (abortSignal: AbortSignal) => {
