@@ -135,7 +135,7 @@ export function FolderItemContextMenu({
             {modals.sharingModal}
             {modals.revisionsModal}
             {modals.renameModal}
-            {modals.moveModal}
+            {modals.moveItemsModal}
             {modals.copyModal}
         </>
     );

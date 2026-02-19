@@ -25,7 +25,7 @@ import { useMoveEligibility } from './useMoveEligibility';
 import type { MoveItemsModalStateItem } from './useMoveItemsModalState';
 
 export type MoveItemsModalViewProps = {
-    selectedItems: MoveItemsModalStateItem[];
+    items: MoveItemsModalStateItem[];
     handleSubmit: () => Promise<void>;
     rootItems: TreeItem[];
     createFolder: () => void;
@@ -39,7 +39,7 @@ export type MoveItemsModalViewProps = {
 };
 
 export const MoveItemsModalView = ({
-    selectedItems,
+    items,
     handleSubmit,
     rootItems,
     createFolder,
@@ -54,11 +54,11 @@ export const MoveItemsModalView = ({
 }: MoveItemsModalViewProps) => {
     const [loading, withLoading] = useLoading();
 
-    const itemsToMove = selectedItems.map((item) => item.linkId);
+    const itemsToMove = items.map((item) => item.linkId);
     const itemsToMoveCount = itemsToMove.length;
     const messages = getMovedFiles(itemsToMoveCount);
 
-    const selectedItemConfigs = selectedItems.map((item) => ({
+    const selectedItemConfigs = items.map((item) => ({
         nodeUid: generateNodeUid(item.volumeId, item.linkId),
         parentNodeUid: generateNodeUid(item.volumeId, item.parentLinkId),
     }));
@@ -66,7 +66,7 @@ export const MoveItemsModalView = ({
     const { isInvalidMove, invalidMoveMessage } = useMoveEligibility(selectedItemConfigs, targetFolderUid, drive);
 
     const title = selectMessageForItemList(
-        selectedItems.map((item) => item.isFile),
+        items.map((item) => item.isFile),
         messages
     );
 

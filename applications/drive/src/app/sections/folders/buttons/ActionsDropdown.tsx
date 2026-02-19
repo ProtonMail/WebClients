@@ -10,8 +10,8 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
-import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useActions } from '../../../store';
@@ -37,7 +37,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
+    const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = role === MemberRole.Editor;
@@ -66,7 +66,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveToFolderModal({ shareId, selectedItems: selectedItems }),
+            action: () => showMoveItemsModal({ shareId, items: selectedItems }),
         },
         {
             hidden: isMultiSelect || !isEditor,
@@ -144,7 +144,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             </Dropdown>
             {filesDetailsModal}
             {detailsModal}
-            {moveToFolderModal}
+            {moveItemsModal}
             {renameModal}
             {sharingModal}
         </>
