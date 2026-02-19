@@ -23,7 +23,10 @@ const DEFAULT_SORT = {
  * after converting them to legacyItems
  */
 export const useJointTrashNodes = () => {
-    const { drive, photos } = useDrive();
+    const {
+        drive,
+        internal: { photos },
+    } = useDrive();
     const { getDefaultShare } = useStableDefaultShare();
     const { driveTrashNodes, driveLoading } = useTrashStore(
         useShallow((state) => ({ driveTrashNodes: state.trashNodes, driveLoading: state.isLoading }))

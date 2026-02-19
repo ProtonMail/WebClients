@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import type { MetricEvent } from '@protontech/drive-sdk';
+import type { MetricEvent, ProtonDriveCryptoCache, Telemetry } from '@protontech/drive-sdk';
 import { MemoryCache, NodeType, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 import type { LogHandler, MetricHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
@@ -25,6 +25,8 @@ import { Logging } from './modules/logging';
 
 export {
     /** @deprecated only for transition to sdk */
+    makeInvitationUid as generateInvitationUid,
+    /** @deprecated only for transition to sdk */
     splitInvitationUid,
     /** @deprecated only for transition to sdk */
     splitNodeRevisionUid,
@@ -32,42 +34,40 @@ export {
     splitNodeUid,
     /** @deprecated only for transition to sdk */
     splitPublicLinkUid,
-    /** @deprecated only for transition to sdk */
-    makeInvitationUid as generateInvitationUid,
 } from '@protontech/drive-sdk/dist/internal/uids';
 
 export { generateNodeUid } from '@protontech/drive-sdk';
 
 /* Type export */
 export type {
-    Device,
-    MaybeNode,
-    MaybeMissingNode,
-    NodeEntity,
-    DegradedNode,
-    MissingNode,
-    Revision,
-    MetricEvent,
-    Thumbnail,
-    ShareResult,
-    ProtonInvitation,
-    NonProtonInvitation,
-    Member,
-    ShareNodeSettings,
     Author,
-    InvalidNameError,
-    ProtonDriveClient,
-    ProtonInvitationWithNode,
-    MaybeBookmark,
     Bookmark,
     BookmarkOrUid,
-    DriveEvent,
-    UploadController,
+    DegradedNode,
+    Device,
     DownloadController,
-    Result,
-    SeekableReadableStream,
-    PhotoNode,
+    DriveEvent,
+    InvalidNameError,
+    MaybeBookmark,
+    MaybeMissingNode,
+    MaybeNode,
+    Member,
+    MetricEvent,
+    MissingNode,
+    NodeEntity,
+    NonProtonInvitation,
     PhotoAttributes,
+    PhotoNode,
+    ProtonDriveClient,
+    ProtonInvitation,
+    ProtonInvitationWithNode,
+    Result,
+    Revision,
+    SeekableReadableStream,
+    ShareNodeSettings,
+    ShareResult,
+    Thumbnail,
+    UploadController,
 } from '@protontech/drive-sdk';
 export type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 export type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
@@ -75,27 +75,32 @@ export type SDKMetricRecord = MetricRecord<MetricEvent>;
 
 /* Other export */
 export {
-    DeviceType,
-    NodeType,
-    MemberRole,
-    RevisionState,
-    ThumbnailType,
-    ProtonDriveError,
-    ValidationError,
     AbortError,
-    RateLimitedError,
     ConnectionError,
-    NonProtonInvitationState,
-    DriveEventType,
-    ServerError,
     DecryptionError,
+    DeviceType,
+    DriveEventType,
+    MemberRole,
+    NodeType,
     NodeWithSameNameExistsValidationError,
+    NonProtonInvitationState,
+    ProtonDriveError,
+    RateLimitedError,
+    RevisionState,
     SDKEvent,
+    ServerError,
+    ThumbnailType,
+    ValidationError,
 } from '@protontech/drive-sdk';
+
+// Shared config and telemetry for all SDK instances.
+let config: { baseUrl: string; clientUid: string } | undefined;
+let telemetry: Telemetry<MetricEvent> | undefined;
 
 let driveLatestEventIdProvider: LatestEventIdProvider;
 let driveSingleton: ProtonDriveClient;
 let driveEntitiesCacheSingleton: MemoryCache<string> | undefined;
+let driveCryptoCacheSingleton: ProtonDriveCryptoCache | undefined;
 
 let photosLatestEventIdProvider: LatestEventIdProvider;
 let photosSingleton: ProtonDrivePhotosClient;
@@ -139,7 +144,7 @@ export function useDrive() {
             metricHandler?: MetricHandler<MetricEvent>;
         }) => {
             const clientUid = getClientUid();
-            const config = {
+            config = {
                 baseUrl: `${window.location.host}/api`,
                 clientUid,
             };
@@ -156,14 +161,16 @@ export function useDrive() {
             );
 
             loggingSingleton = options.logging || new Logging({ sentryComponent: 'drive-sdk-log' });
-            const telemetry = initTelemetry(options.userPlan, loggingSingleton, options.metricHandler, debug);
+            telemetry = initTelemetry(options.userPlan, loggingSingleton, options.metricHandler, debug);
 
             driveLatestEventIdProvider = new LatestEventIdProvider();
-            const driveEntitiesCache = new MemoryCache<string>();
+            driveCryptoCacheSingleton = new MemoryCache();
+            driveEntitiesCacheSingleton = new MemoryCache<string>();
+
             const driveClient = new ProtonDriveClient({
                 httpClient,
-                entitiesCache: driveEntitiesCache,
-                cryptoCache: new MemoryCache(),
+                entitiesCache: driveEntitiesCacheSingleton,
+                cryptoCache: driveCryptoCacheSingleton,
                 account,
                 openPGPCryptoModule,
                 srpModule,
@@ -172,7 +179,6 @@ export function useDrive() {
                 telemetry,
             });
             driveSingleton = proxyDriveClientWithEventTracking(driveClient, driveLatestEventIdProvider);
-            driveEntitiesCacheSingleton = driveEntitiesCache;
 
             photosLatestEventIdProvider = new LatestEventIdProvider();
             const photosEntitiesCache = new MemoryCache<string>();
@@ -201,14 +207,7 @@ export function useDrive() {
          * You must call `configure` before to initialize the client.
          */
         drive: driveSingleton,
-        /**
-         * Returns the configured ProtonDrivePhotosClient instance.
-         *
-         * You must call `configure` before to initialize the client.
-         *
-         * @deprecated This is an experimental feature that might change without a warning.
-         */
-        photos: photosSingleton,
+
         /**
          * Returns the logs from the SDK.
          *
@@ -219,18 +218,67 @@ export function useDrive() {
         getLogs: useCallback(() => {
             return loggingSingleton?.getLogs() || [];
         }, []),
-        /** @deprecated only for transition to sdk */
-        unsafeRemoveNodeFromCache: useCallback(async (nodeUid: string) => {
-            await driveEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
-            await photosEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
-        }, []),
+
         /**
          * This is temporary function for lumo to be able to clear sdk cache
          * @deprecated This should not be used
+         * TODO: Move to internal namespace ith a dedicated Lumo MR.
          */
         clearCache: useCallback(async () => {
             await driveEntitiesCacheSingleton?.clear();
         }, []),
+
+        /**
+         * Internal namespace - Do not use without permission.
+         */
+        internal: {
+            /**
+             * Returns the configured ProtonDrivePhotosClient instance.
+             *
+             * You must call `configure` before to initialize the client.
+             *
+             * This is an experimental feature that might change without a warning.
+             */
+            photos: photosSingleton,
+
+            /**
+             * Create a dedicated search SDK instance with a customizable LatestEventIdProvider
+             * @param params Create
+             * @returns
+             */
+            createSearchDriveInstance: (params: { latestEventIdProvider: LatestEventIdProvider }) => {
+                if (!driveEntitiesCacheSingleton) {
+                    throw new Error('[createSearchDriveInstance] Entity cache required');
+                }
+                if (!driveCryptoCacheSingleton) {
+                    throw new Error('[createSearchDriveInstance] Crypto cache required');
+                }
+                if (!config) {
+                    throw new Error('[createSearchDriveInstance] SDK config required');
+                }
+                if (!telemetry) {
+                    throw new Error('[createSearchDriveInstance] SDK telemetry required');
+                }
+
+                return new ProtonDriveClient({
+                    httpClient,
+                    entitiesCache: driveEntitiesCacheSingleton,
+                    cryptoCache: driveCryptoCacheSingleton,
+                    account,
+                    openPGPCryptoModule,
+                    srpModule,
+                    latestEventIdProvider: params.latestEventIdProvider,
+                    config: config,
+                    telemetry: telemetry,
+                });
+            },
+
+            /** Only used for transition to sdk */
+            unsafeRemoveNodeFromCache: useCallback(async (nodeUid: string) => {
+                await driveEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
+                await photosEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
+            }, []),
+        },
     };
 }
 

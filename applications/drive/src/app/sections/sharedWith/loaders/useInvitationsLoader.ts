@@ -10,7 +10,10 @@ import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHand
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useInvitationsLoader = () => {
-    const { drive, photos } = useDrive();
+    const {
+        drive,
+        internal: { photos },
+    } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 

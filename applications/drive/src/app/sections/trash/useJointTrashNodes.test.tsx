@@ -93,7 +93,9 @@ describe('useJointTrashNodes', () => {
 
         mockUseDrive.mockReturnValue({
             drive: {},
-            photos: {},
+            internal: {
+                photos: {},
+            },
         } as any);
 
         mockUseStableDefaultShare.mockReturnValue({
