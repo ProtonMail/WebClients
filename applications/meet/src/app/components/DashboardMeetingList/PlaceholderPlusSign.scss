@@ -1,9 +1,14 @@
-.placeholder-button-icon-container,
-.placeholder-button-icon-container:hover {
-	border-color: var(--text-disabled);
+.placeholder-button-icon-container {
+	border-color: var(--border-strong);
 	border-radius: 1.25rem;
 	background: var(--interaction-norm-minor-3);
+	color: var(--text-weak);
 
 	/* soft shadow bg */
 	box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
+
+	&:hover {
+		color: var(--text-norm);
+		border-color: var(--interaction-weak-major-2) !important;
+	}
 }

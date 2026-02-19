@@ -8,7 +8,7 @@ export const PlaceholderPlusSign = () => {
             className="placeholder-button-icon-container border border-dashed flex justify-center items-center w-custom h-custom"
             style={{ '--w-custom': '3.75rem', '--h-custom': '3.75rem' }}
         >
-            <IcPlus className="color-norm" size={4} />
+            <IcPlus size={4} />
         </div>
     );
 };

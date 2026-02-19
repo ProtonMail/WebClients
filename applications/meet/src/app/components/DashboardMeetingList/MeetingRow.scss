@@ -26,6 +26,10 @@ im.$breakpoints: $breakpoints;
 		border-end-end-radius: 2rem;
 	}
 
+	+ .meeting-row--last-room {
+		border-block-end: none;
+	}
+
 	.hidden-meeting-row-actions {
 		* {
 			transition: none !important;
