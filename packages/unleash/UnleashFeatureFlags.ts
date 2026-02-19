@@ -292,6 +292,7 @@ enum MeetFeatureFlag {
     MeetDownloadDesktopAppEnabled = 'MeetDownloadDesktopAppEnabled',
     MeetDesktopAppBannerEnabled = 'MeetDesktopAppBannerEnabled',
     MeetFeedback = 'MeetFeedback',
+    MeetPastMeetings = 'MeetPastMeetings',
 }
 
 enum LumoFeatureFlag {

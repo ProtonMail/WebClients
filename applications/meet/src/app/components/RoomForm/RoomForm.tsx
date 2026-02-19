@@ -100,7 +100,7 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
                 <IcTextAlignLeft size={5} className="color-hint" />
                 <Input
                     placeholder={c('Placeholder').t`e.g., Design Team, Weekly Standup`}
-                    className="input-name rounded-xl px-4 py-2"
+                    className="input-name rounded-full px-4 py-2"
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
                     autoFocus
