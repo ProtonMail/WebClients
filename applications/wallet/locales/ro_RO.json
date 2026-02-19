@@ -2205,9 +2205,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Câmpurile de text sunt opționale. Informațiile pe care le furnizați în acest formular vor modifica doar factura pe care ați selectat-o ​​și nu detaliile viitoarei facturi."
       ]
     },
     "emergency_access": {
@@ -2329,6 +2326,9 @@
       ],
       "Tab closed": [
         "Filă închisă."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
@@ -4584,9 +4584,6 @@
       "Got it": [
         "Am înțeles"
       ],
-      "I'm purchasing as a business": [
-        "Achiziționez în calitate de companie"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -4788,18 +4785,6 @@
       ],
       "Business Number": [
         "Cod unic de înregistrare"
-      ],
-      "Edit ABN": [
-        "Editare ABN"
-      ],
-      "Edit Business Number": [
-        "Editare cod unic de înregistrare"
-      ],
-      "Edit EIN": [
-        "Editare EIN"
-      ],
-      "Edit VAT number": [
-        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -5300,6 +5285,9 @@
     "Success": {
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
+      ],
+      "Billing information updated": [
+        "Informațiile de facturare s-au actualizat."
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"

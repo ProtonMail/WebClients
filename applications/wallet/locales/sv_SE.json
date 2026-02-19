@@ -2191,9 +2191,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
       ]
     },
     "emergency_access": {
@@ -2315,6 +2312,9 @@
       ],
       "Tab closed": [
         "Flik stängd"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Momsbefrielse stöds inte för detta paket"
       ],
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
@@ -4520,9 +4520,6 @@
       "Got it": [
         "Jag förstår"
       ],
-      "I'm purchasing as a business": [
-        "Jag köper som ett företag"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -4718,18 +4715,6 @@
       ],
       "Business Number": [
         "Företagsnummer"
-      ],
-      "Edit ABN": [
-        "Redigera ABN"
-      ],
-      "Edit Business Number": [
-        "Redigera företagsnummer"
-      ],
-      "Edit EIN": [
-        "Redigera EIN"
-      ],
-      "Edit VAT number": [
-        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -5220,6 +5205,9 @@
     "Success": {
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
+      ],
+      "Billing information updated": [
+        "Faktureringsinformation uppdaterad"
       ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"
