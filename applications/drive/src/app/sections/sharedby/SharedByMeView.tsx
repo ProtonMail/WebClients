@@ -3,7 +3,6 @@ import { useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAppTitle } from '@proton/components';
-import { getDrive, getDriveForPhotos } from '@proton/drive';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
@@ -26,8 +25,7 @@ export const SharedByMeView = () => {
     useEffect(() => {
         const abortController = new AbortController();
 
-        void loadSharedByMeNodes(abortController.signal, getDrive());
-        void loadSharedByMeNodes(abortController.signal, getDriveForPhotos());
+        void loadSharedByMeNodes(abortController.signal);
 
         return () => {
             abortController.abort();
