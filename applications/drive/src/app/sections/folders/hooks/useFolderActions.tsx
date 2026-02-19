@@ -6,7 +6,7 @@ import { useRevisionsModal } from '../../../components/modals/RevisionsModal/Rev
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import useOpenPreview from '../../../components/useOpenPreview';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { useCopyItemsModal } from '../../../modals/CopyItemsModal/CopyItemsModal';
+import { useCopyItemsModal } from '../../../modals/CopyItemsModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
