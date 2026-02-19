@@ -43,6 +43,9 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
   const currencySubMenu = Ariakit.useMenuStore({ values, focusLoop: true })
   const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
+  const customCurrencyFormatDialogStore = useUI((ui) => ui.view.customCurrencyFormatDialog.store)
+  // const customNumberFormatDialogStore = useUI((ui) => ui.view.customNumberFormatDialog.store)
+
   return (
     <Menu>
       <UI.MenuItemCheckbox
@@ -162,6 +165,11 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
       >
         {s('Duration')}
       </UI.MenuItemCheckbox>
+      <UI.MenuSeparator />
+      <UI.MenuItem leadingIndent onClick={customCurrencyFormatDialogStore.show}>
+        {s('Custom currency')}
+      </UI.MenuItem>
+      {/* <UI.MenuItem onClick={customNumberFormatDialogStore.show}>{s('Custom number format')}</UI.MenuItem> */}
     </Menu>
   )
 }
@@ -242,5 +250,7 @@ function strings() {
     Time: c('sheets_2025:Spreadsheet editor number formats menu').t`Time`,
     'Date time': c('sheets_2025:Spreadsheet editor number formats menu').t`Date time`,
     Duration: c('sheets_2025:Spreadsheet editor number formats menu').t`Duration`,
+    'Custom currency': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom currency`,
+    'Custom number format': c('sheets_2025:Spreadsheet editor number formats menu').t`Custom number format`,
   }
 }
