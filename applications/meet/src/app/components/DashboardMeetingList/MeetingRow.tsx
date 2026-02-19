@@ -240,9 +240,9 @@ export const MeetingRow = ({
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
+                <div className="flex items-center gap-3 shrink-0 w-full md:w-auto">
                     <div
-                        className="hidden-meeting-row-actions gap-2 grow-custom md:grow-1 items-center color-norm flex flex-1 md:flex-none"
+                        className="hidden-meeting-row-actions gap-3 grow-custom md:grow-1 items-center color-norm flex flex-1 md:flex-none"
                         style={{ '--grow-custom': '3' }}
                     >
                         {meeting.Type !== MeetingType.PERSONAL && (
