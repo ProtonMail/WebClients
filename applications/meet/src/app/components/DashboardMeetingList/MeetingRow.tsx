@@ -200,11 +200,14 @@ export const MeetingRow = ({
                         ) : (
                             <>
                                 <div
-                                    className={clsx('text-sm text-semibold', !isRoom && `profile-color-${colorIndex}`)}
+                                    className={clsx(
+                                        'text-xs text-semibold text-uppercase',
+                                        !isRoom && `profile-color-${colorIndex}`
+                                    )}
                                 >
                                     {month}
                                 </div>
-                                <div className="color-norm text-semibold text-xl">{day}</div>
+                                <div className="color-norm text-semibold text-lg">{day}</div>
                             </>
                         )}
                     </div>
