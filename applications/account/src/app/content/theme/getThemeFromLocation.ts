@@ -59,5 +59,12 @@ export const getThemeFromLocation = (
         };
     }
 
+    if (location.pathname === SSO_PATHS.PASS_EXTENSION_ONBOARDING) {
+        return {
+            DarkTheme: ThemeTypes.PassDark,
+            Mode: ThemeModeSetting.Dark,
+        };
+    }
+
     return null;
 };

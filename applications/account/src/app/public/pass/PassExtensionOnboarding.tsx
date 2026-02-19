@@ -12,11 +12,9 @@ import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import passIconIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 import noop from '@proton/utils/noop';
 
-import { SetTheme } from '../../content/theme/SetTheme';
 import Layout from '../Layout';
 import Main from '../Main';
 import connectIllustration from './pass-extension-onboarding-connect-illustration.svg';
@@ -44,13 +42,10 @@ const getSteps = () => [
     },
 ];
 
-const PassThemeLayout: FC<PropsWithChildren> = ({ children }) => (
-    <>
-        <SetTheme theme={ThemeTypes.PassDark} />
-        <Layout toApp={APPS.PROTONPASS}>
-            <Main>{children}</Main>
-        </Layout>
-    </>
+const PassLayout: FC<PropsWithChildren> = ({ children }) => (
+    <Layout toApp={APPS.PROTONPASS}>
+        <Main>{children}</Main>
+    </Layout>
 );
 
 const PassExtensionOnboarding: FC = () => {
@@ -126,13 +121,13 @@ const PassExtensionOnboarding: FC = () => {
 
     if (extensionDetected === null) {
         return (
-            <PassThemeLayout>
+            <PassLayout>
                 <div className="text-center">
                     <CircleLoader size="large" />
                     <div className="text-lg mt-4 text-bold">{c('Info')
                         .t`Verifying ${PASS_APP_NAME} browser extension...`}</div>
                 </div>
-            </PassThemeLayout>
+            </PassLayout>
         );
     }
 
@@ -140,7 +135,7 @@ const PassExtensionOnboarding: FC = () => {
     // May happen on Safari or Firefox if permission was not granted.
     if (extensionDetected === false) {
         return (
-            <PassThemeLayout>
+            <PassLayout>
                 <h1 className="h3 text-bold mb-4">{c('Title').t`${PASS_APP_NAME} is missing permissions`}</h1>
                 <div className="text-lg mb-6">
                     {c('Info')
@@ -154,140 +149,137 @@ const PassExtensionOnboarding: FC = () => {
                         {c('Action').t`Reload page`}
                     </Button>
                 </div>
-            </PassThemeLayout>
+            </PassLayout>
         );
     }
 
     return (
-        <>
-            <SetTheme theme={ThemeTypes.PassDark} />
-            <div className="pass-onboarding ui-prominent w-full min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
-                <div className="m-auto p-14 color-norm flex justify-center">
-                    <div className="pass-onboarding--gradient"></div>
+        <div className="pass-onboarding ui-prominent w-full min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
+            <div className="m-auto p-14 color-norm flex justify-center">
+                <div className="pass-onboarding--gradient"></div>
+                <div className="flex flex-column">
                     <div className="flex flex-column">
-                        <div className="flex flex-column">
-                            <PassLogo />
-                            <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">
-                                {c('Title').jt`Welcome to your new password manager!`}
-                            </h1>
-                        </div>
+                        <PassLogo />
+                        <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">
+                            {c('Title').t`Welcome to your new password manager!`}
+                        </h1>
+                    </div>
 
-                        {!isSafari() && (
-                            <div className="flex items-center gap-2 mb-4">
-                                <span className="text-bold">
-                                    {currentStep === 'pinning' ? c('Info').t`Step 1 of 2` : c('Info').t`Step 2 of 2`}
-                                </span>
-                                <hr className="pass-onboarding--white-separator my-2 flex flex-auto" />
-                            </div>
+                    {!isSafari() && (
+                        <div className="flex items-center gap-2 mb-4">
+                            <span className="text-bold">
+                                {currentStep === 'pinning' ? c('Info').t`Step 1 of 2` : c('Info').t`Step 2 of 2`}
+                            </span>
+                            <hr className="pass-onboarding--white-separator my-2 flex flex-auto" />
+                        </div>
+                    )}
+
+                    <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">
+                        {currentStep === 'pinning' && (
+                            <>
+                                <div className="flex flex-nowrap flex-column">
+                                    <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
+                                        {c('Title').t`Pin the extension`}
+                                    </h2>
+                                    <h2 className="text-xl mb-5">
+                                        {c('Info').t`For easy access to your passwords and more.`}
+                                    </h2>
+
+                                    <div className="mb-1">
+                                        <ol className="unstyled m-0">
+                                            {steps.map(({ key, icon, description }, idx) => (
+                                                <li key={key} className="flex mb-5 items-center">
+                                                    <div
+                                                        className="pass-onboarding--dot rounded-50 text-center mr-3 relative"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <span className="absolute inset-center">{idx + 1}</span>
+                                                    </div>
+                                                    <div
+                                                        className="w-custom text-center mr-2"
+                                                        style={{ '--w-custom': '2.5rem' }}
+                                                        aria-hidden="true"
+                                                    >
+                                                        <img
+                                                            src={icon}
+                                                            className="h-custom"
+                                                            style={{ '--h-custom': '1.5rem' }}
+                                                            alt={BRAND_NAME}
+                                                        />
+                                                    </div>
+
+                                                    <div className="flex-1 text-left">{description}</div>
+                                                </li>
+                                            ))}
+                                        </ol>
+                                    </div>
+                                    <Button
+                                        pill
+                                        size="large"
+                                        shape="solid"
+                                        color="norm"
+                                        className="mt-5 mb-2 w-full"
+                                        onClick={handleContinue}
+                                        aria-label={c('Action').t`Continue`}
+                                    >
+                                        <span className="flex justify-center px-4">{c('Action').t`Continue`}</span>
+                                    </Button>
+                                </div>
+
+                                <div className="flex">
+                                    <img src={pinTutorialGif} alt="" width="325" />
+                                </div>
+                            </>
                         )}
 
-                        <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">
-                            {currentStep === 'pinning' && (
-                                <>
-                                    <div className="flex flex-nowrap flex-column">
-                                        <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
-                                            {c('Title').jt`Pin the extension`}
-                                        </h2>
-                                        <h2 className="text-xl mb-5">
-                                            {c('Info').t`For easy access to your passwords and more.`}
-                                        </h2>
+                        {currentStep === 'authentication' && (
+                            <>
+                                <div className="flex flex-nowrap flex-column">
+                                    <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
+                                        {c('Title').t`Connect your ${BRAND_NAME} Account`}
+                                    </h2>
+                                    <h2 className="text-xl mb-5">
+                                        {c('Info').t`Sign in or create an account to continue.`}
+                                    </h2>
+                                    <Button
+                                        pill
+                                        shape="solid"
+                                        color="norm"
+                                        className="mb-2"
+                                        onClick={handleSignIn}
+                                        aria-label={c('Action').t`Sign in`}
+                                    >
+                                        <span className="flex justify-center px-4">
+                                            {c('Action').t`Connect your ${BRAND_NAME} Account`}
+                                        </span>
+                                    </Button>
+                                    <Button
+                                        pill
+                                        shape="outline"
+                                        color="weak"
+                                        onClick={handleSignUp}
+                                        aria-label={c('Action').t`Create an account`}
+                                    >
+                                        <span className="flex justify-center px-4">
+                                            {c('Action').t`Create a ${BRAND_NAME} Account`}
+                                        </span>
+                                    </Button>
+                                </div>
 
-                                        <div className="mb-1">
-                                            <ol className="unstyled m-0">
-                                                {steps.map(({ key, icon, description }, idx) => (
-                                                    <li key={key} className="flex mb-5 items-center">
-                                                        <div
-                                                            className="pass-onboarding--dot rounded-50 text-center mr-3 relative"
-                                                            aria-hidden="true"
-                                                        >
-                                                            <span className="absolute inset-center">{idx + 1}</span>
-                                                        </div>
-                                                        <div
-                                                            className="w-custom text-center mr-2"
-                                                            style={{ '--w-custom': '2.5rem' }}
-                                                            aria-hidden="true"
-                                                        >
-                                                            <img
-                                                                src={icon}
-                                                                className="h-custom"
-                                                                style={{ '--h-custom': '1.5rem' }}
-                                                                alt={BRAND_NAME}
-                                                            />
-                                                        </div>
-
-                                                        <div className="flex-1 text-left">{description}</div>
-                                                    </li>
-                                                ))}
-                                            </ol>
-                                        </div>
-                                        <Button
-                                            pill
-                                            size="large"
-                                            shape="solid"
-                                            color="norm"
-                                            className="mt-5 mb-2 w-full"
-                                            onClick={handleContinue}
-                                            aria-label={c('Action').t`Continue`}
-                                        >
-                                            <span className="flex justify-center px-4">{c('Action').t`Continue`}</span>
-                                        </Button>
-                                    </div>
-
-                                    <div className="flex">
-                                        <img src={pinTutorialGif} alt="" width="325" />
-                                    </div>
-                                </>
-                            )}
-
-                            {currentStep === 'authentication' && (
-                                <>
-                                    <div className="flex flex-nowrap flex-column">
-                                        <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
-                                            {c('Title').jt`Connect your ${BRAND_NAME} Account`}
-                                        </h2>
-                                        <h2 className="text-xl mb-5">
-                                            {c('Info').t`Sign in or create an account to continue.`}
-                                        </h2>
-                                        <Button
-                                            pill
-                                            shape="solid"
-                                            color="norm"
-                                            className="mb-2"
-                                            onClick={handleSignIn}
-                                            aria-label={c('Action').t`Sign in`}
-                                        >
-                                            <span className="flex justify-center px-4">
-                                                {c('Action').t`Connect your ${BRAND_NAME} Account`}
-                                            </span>
-                                        </Button>
-                                        <Button
-                                            pill
-                                            shape="outline"
-                                            color="weak"
-                                            onClick={handleSignUp}
-                                            aria-label={c('Action').t`Create an account`}
-                                        >
-                                            <span className="flex justify-center px-4">
-                                                {c('Action').t`Create a ${BRAND_NAME} Account`}
-                                            </span>
-                                        </Button>
-                                    </div>
-
-                                    <div className="flex justify-center items-center">
-                                        <img
-                                            src={connectIllustration}
-                                            alt=""
-                                            className="pass-onboarding--connect-illustration"
-                                            width="428"
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                                <div className="flex justify-center items-center">
+                                    <img
+                                        src={connectIllustration}
+                                        alt=""
+                                        className="pass-onboarding--connect-illustration"
+                                        width="428"
+                                    />
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
