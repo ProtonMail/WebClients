@@ -989,7 +989,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             cache.setupHealthCheckLoop();
 
-            expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 3000);
+            expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 2000);
         });
 
         it('should not check broken transceivers when room is not connected', async () => {
@@ -1091,6 +1091,14 @@ describe('AudioTrackSubscriptionManager', () => {
 
             // Second check to trigger recovery
             await (cache as any).checkBrokenTransceivers();
+
+            // Since wait() is mocked to resolve immediately, we need to flush all pending promises
+            await vi.waitFor(
+                () => {
+                    expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
+                },
+                { timeout: 1000 }
+            );
             const firstCallCount = micPub.setSubscribed.mock.calls.length;
 
             // Third check while recovery is in progress (should not trigger another recovery)
@@ -1135,8 +1143,8 @@ describe('AudioTrackSubscriptionManager', () => {
             for (let i = 0; i < 3; i++) {
                 await (cache as any).checkBrokenTransceivers();
                 await vi.runAllTimersAsync();
-                // Advance past recovery cooldown (5 seconds)
-                vi.advanceTimersByTime(6000);
+                // Advance past recovery cooldown (3 seconds)
+                vi.advanceTimersByTime(4000);
             }
 
             const callCountAfterMaxAttempts = micPub.setSubscribed.mock.calls.length;
@@ -1268,15 +1276,15 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const trackId = micPub.track?.mediaStreamTrack?.id;
 
-            // Mock getStats to return high concealment (57% like in the user's log)
+            // Mock getStats to return high concealment (20% concealment, low silent ratio)
             const mockStats = new Map();
             mockStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
                 kind: 'audio',
                 trackIdentifier: trackId,
-                concealedSamples: 5873,
-                totalSamplesReceived: 10220,
-                silentConcealedSamples: 5860,
+                concealedSamples: 2000,
+                totalSamplesReceived: 10000,
+                silentConcealedSamples: 200, // Only 10% silent (not filtered)
                 concealmentEvents: 54,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
@@ -1299,7 +1307,7 @@ describe('AudioTrackSubscriptionManager', () => {
                     context: expect.objectContaining({
                         participant: participant.identity,
                         trackSid: micPub.trackSid,
-                        concealmentRatio: '0.575',
+                        nonSilentConcealmentRatio: '0.180', // 2000 - 200 = 1800 non-silent out of 10000
                     }),
                 })
             );
@@ -1345,7 +1353,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const trackId = micPub.track?.mediaStreamTrack?.id;
 
-            // First check with high concealment
+            // First check with high concealment (40%, low silent ratio)
             const highConcealmentStats = new Map();
             highConcealmentStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
@@ -1353,7 +1361,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 trackIdentifier: trackId,
                 concealedSamples: 4000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 3950,
+                silentConcealedSamples: 400, // Only 10% silent (not filtered)
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(highConcealmentStats);
@@ -1391,7 +1399,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 cache.addToCache(micPub as any, participant as any);
             }
 
-            // Mock getStats to return high concealment for all tracks
+            // Mock getStats to return high concealment for all tracks (low silent ratio)
             const mockStats = new Map();
             for (let i = 0; i < 4; i++) {
                 const trackId = `media-mic-${i}`;
@@ -1401,7 +1409,7 @@ describe('AudioTrackSubscriptionManager', () => {
                     trackIdentifier: trackId,
                     concealedSamples: 4000,
                     totalSamplesReceived: 10000,
-                    silentConcealedSamples: 3950,
+                    silentConcealedSamples: 400, // Only 10% silent (not filtered)
                     concealmentEvents: 20,
                 });
             }
@@ -1444,7 +1452,7 @@ describe('AudioTrackSubscriptionManager', () => {
             cache.addToCache(mutedPub as any, participant1 as any);
             cache.addToCache(unsubscribedPub as any, participant2 as any);
 
-            // Mock getStats to return high concealment
+            // Mock getStats to return high concealment (low silent ratio)
             const mockStats = new Map();
             mockStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
@@ -1452,7 +1460,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 trackIdentifier: 'media-mic-muted',
                 concealedSamples: 5000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 4950,
+                silentConcealedSamples: 500, // Only 10% silent (not filtered)
                 concealmentEvents: 20,
             });
             mockStats.set('inbound-rtp-2', {
@@ -1461,7 +1469,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 trackIdentifier: 'media-mic-unsub',
                 concealedSamples: 5000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 4950,
+                silentConcealedSamples: 500, // Only 10% silent (not filtered)
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
@@ -1488,7 +1496,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const trackId = micPub.track?.mediaStreamTrack?.id;
 
-            // Mock getStats to return high concealment
+            // Mock getStats to return high concealment (low silent ratio)
             const mockStats = new Map();
             mockStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
@@ -1496,7 +1504,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 trackIdentifier: trackId,
                 concealedSamples: 5000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 4950,
+                silentConcealedSamples: 500, // Only 10% silent (not filtered)
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
@@ -1520,7 +1528,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const trackId = micPub.track?.mediaStreamTrack?.id;
 
-            // Mock getStats to return high concealment
+            // Mock getStats to return high concealment (low silent ratio)
             const mockStats = new Map();
             mockStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
@@ -1528,7 +1536,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 trackIdentifier: trackId,
                 concealedSamples: 5000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 4950,
+                silentConcealedSamples: 500, // Only 10% silent (not filtered)
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
@@ -1633,17 +1641,17 @@ describe('AudioTrackSubscriptionManager', () => {
             // Should not trigger (good audio)
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
 
-            // Second check: Audio breaks! 3 more seconds, all concealed (144,000 new samples, all bad)
-            // Total: 1.08% cumulative (below 30% threshold)
-            // Recent: 100% of new samples concealed (above 80% threshold - should trigger immediately!)
+            // Second check: Audio breaks! 3 more seconds, almost all non-silent concealment (144,000 new samples)
+            // New concealed: 144,000, new silent: 1,000, new non-silent: 143,000 out of 144,000 = 99.3%
+            // This should trigger immediately (way above 25% threshold)
             const brokenAudioStats = new Map();
             brokenAudioStats.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
                 kind: 'audio',
                 trackIdentifier: trackId,
-                concealedSamples: 145000,
-                totalSamplesReceived: 1584000,
-                silentConcealedSamples: 144900,
+                concealedSamples: 145000, // 1000 + 144000 new
+                totalSamplesReceived: 1584000, // 1440000 + 144000
+                silentConcealedSamples: 1900, // 900 + 1000 new (very low)
                 concealmentEvents: 50,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(brokenAudioStats);
@@ -1651,8 +1659,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             await vi.runAllTimersAsync();
 
-            // Should trigger immediately due to high recent concealment (80%+)
-            // even though cumulative is only 9.2%
+            // Should trigger immediately due to high recent non-silent concealment (99.3%)
             expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
             expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
             expect(mockReportError).toHaveBeenCalledWith(
@@ -1663,7 +1670,6 @@ describe('AudioTrackSubscriptionManager', () => {
                         participant: participant.identity,
                         trackSid: micPub.trackSid,
                         triggerReason: 'recent_samples_critical',
-                        recentConcealmentRatio: '1.000',
                     }),
                 })
             );
@@ -1678,15 +1684,15 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const trackId = micPub.track?.mediaStreamTrack?.id;
 
-            // Gradual degradation: 35% cumulative but only 40% recent
+            // Gradual degradation: 17% non-silent concealment, establishing baseline
             const gradualDegradationStats1 = new Map();
             gradualDegradationStats1.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
                 kind: 'audio',
                 trackIdentifier: trackId,
-                concealedSamples: 3500,
+                concealedSamples: 2000,
                 totalSamplesReceived: 10000,
-                silentConcealedSamples: 3400,
+                silentConcealedSamples: 300, // 1700 non-silent = 17%
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats1);
@@ -1695,16 +1701,18 @@ describe('AudioTrackSubscriptionManager', () => {
             // First check doesn't trigger (needs 2 consecutive)
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
 
-            // Second check: still gradual degradation
+            // Second check: 16% non-silent cumulative, 15% recent (below 25% threshold)
+            // Recent: (3200 - 1700) / 10000 = 15% (not critical)
+            // This should trigger with "cumulative_high" since recent is not critical but cumulative is high
             const gradualDegradationStats2 = new Map();
             gradualDegradationStats2.set('inbound-rtp-1', {
                 type: 'inbound-rtp',
                 kind: 'audio',
                 trackIdentifier: trackId,
-                concealedSamples: 7000,
+                concealedSamples: 4000,
                 totalSamplesReceived: 20000,
-                silentConcealedSamples: 6800,
-                concealmentEvents: 40,
+                silentConcealedSamples: 800, // 3200 non-silent = 16% cumulative
+                concealmentEvents: 30,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats2);
             await (cache as any).checkAudioConcealment();
@@ -1721,6 +1729,104 @@ describe('AudioTrackSubscriptionManager', () => {
                     }),
                 })
             );
+        });
+
+        it('should not trigger recovery when concealment is mostly silent (low non-silent concealment)', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats with 50% total concealment but 49% silent (only 1% non-silent)
+            // This represents mute/silence, not network issues
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                concealedSamples: 5000, // 50% total concealment
+                totalSamplesReceived: 10000,
+                silentConcealedSamples: 4900, // 49% silent → only 1% non-silent
+                concealmentEvents: 20,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // Multiple checks - should not trigger because non-silent concealment is only 1%
+            await (cache as any).checkAudioConcealment();
+            await (cache as any).checkAudioConcealment();
+            await vi.runAllTimersAsync();
+
+            // Should not trigger recovery (non-silent concealment < 15% threshold)
+            expect(micPub.setSubscribed).not.toHaveBeenCalled();
+        });
+
+        it('should not trigger stalled audio detection for muted tracks', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true, isMuted: true });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+
+            // Mock getStats with stalled packets
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check to establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Second check with same packet count (stalled)
+            await (cache as any).checkBrokenTransceivers();
+            await vi.runAllTimersAsync();
+
+            // Should not trigger recovery for muted track
+            expect(micPub.setSubscribed).not.toHaveBeenCalled();
+        });
+
+        it('should clear packet tracking when track becomes muted', async () => {
+            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true, isMuted: false });
+            const participant = createMockParticipant('participant-1', [micPub]);
+
+            mockRoom.remoteParticipants.set('participant-1', participant);
+            cache.addToCache(micPub as any, participant as any);
+
+            const trackId = micPub.track?.mediaStreamTrack?.id;
+            const trackKey = `${participant.sid}-${micPub.trackSid}`;
+
+            // Mock getStats with packets flowing
+            const mockStats = new Map();
+            mockStats.set('inbound-rtp-1', {
+                type: 'inbound-rtp',
+                kind: 'audio',
+                trackIdentifier: trackId,
+                packetsReceived: 100,
+            });
+            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+
+            // First check to establish baseline
+            await (cache as any).checkBrokenTransceivers();
+
+            // Verify packet count was tracked
+            expect((cache as any).lastPacketCounts.has(trackKey)).toBe(true);
+
+            // Mute the track
+            micPub.isMuted = true;
+
+            // Second check should clear the tracking
+            await (cache as any).checkBrokenTransceivers();
+
+            // Verify packet count was cleared
+            expect((cache as any).lastPacketCounts.has(trackKey)).toBe(false);
         });
     });
 });
