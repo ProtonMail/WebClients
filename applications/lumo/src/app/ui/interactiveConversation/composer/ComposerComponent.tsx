@@ -4,11 +4,11 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
+import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
@@ -18,12 +18,12 @@ import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { upsertAttachment } from '../../../redux/slices/core/attachments';
-import type { ProjectSpace } from '../../../types';
-import type { Attachment, Message } from '../../../types';
-import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
+import type { Attachment, Message, ProjectSpace } from '../../../types';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../../util/pastedContentHelper';
+import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
+import { SketchOverlay } from '../../features/drawingcanvas';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea, type ComposerEditorAreaProps } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
@@ -36,10 +36,12 @@ import './ComposerComponent.scss';
  * Wrapper component that provides Drive SDK functions to ComposerEditorArea.
  * This is a separate component so we can conditionally render it only for authenticated users.
  */
-const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile' | 'userId'>) => {
+const ComposerEditorAreaWithDrive = (
+    props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile' | 'userId'>
+) => {
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const [user] = useUser();
-    
+
     return (
         <ComposerEditorArea
             {...props}
@@ -108,6 +110,7 @@ const ComposerComponentInner = ({
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
+    const [showDrawingModal, setShowDrawingModal] = useState(false);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -155,6 +158,34 @@ const ComposerComponentInner = ({
         setShowUploadMenu(!showUploadMenu);
     }, [showUploadMenu]);
 
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
+
+    const handleDrawingExport = useCallback(
+        async (imageData: string) => {
+            // Convert base64 to File
+            const base64Data = imageData.split(',')[1];
+            const byteCharacters = atob(base64Data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: 'image/png' });
+            const file = new File([blob], `sketch-${Date.now()}.png`, { type: 'image/png' });
+
+            // Process the file as an attachment
+            await handleFileProcessing(file);
+
+            createNotification({
+                text: c('collider_2025: Info').t`Sketch added as attachment`,
+                type: 'success',
+            });
+        },
+        [handleFileProcessing, createNotification]
+    );
+
     // Add click event listener for voice entry click telemetry (on mobile)
     useEffect(() => {
         const voiceButton = document.getElementById('voice-entry-mobile');
@@ -178,32 +209,68 @@ const ComposerComponentInner = ({
     const handleFocus = useCallback(() => {
         setIsEditorFocused?.(true);
     }, [setIsEditorFocused]);
-    
+
     const handleBlur = useCallback(() => {
         setIsEditorFocused?.(false);
     }, [setIsEditorFocused]);
-    
-    const handlePasteLargeContent = useCallback((pastedContent: string) => {
-        // Create attachment from pasted content
-        const attachment = createAttachmentFromPastedContent(pastedContent);
-        
-        // Add to Redux as provisional attachment
-        dispatch(upsertAttachment(attachment));
-        
-        // Show notification to user
-        const lineCount = pastedContent.split('\n').length;
-        const charCount = pastedContent.length;
-        const message = getPasteConversionMessage(lineCount, charCount);
-        
-        createNotification({
-            text: message,
-            type: 'info',
-        });
-        
-        // Don't insert anything in the editor - let the user type their own message
-        // The attachment will be included automatically as a provisional attachment
-    }, [dispatch, createNotification]);
-    
+
+    const handlePasteLargeContent = useCallback(
+        (pastedContent: string) => {
+            // Create attachment from pasted content
+            const attachment = createAttachmentFromPastedContent(pastedContent);
+
+            // Add to Redux as provisional attachment
+            dispatch(upsertAttachment(attachment));
+
+            // Show notification to user
+            const lineCount = pastedContent.split('\n').length;
+            const charCount = pastedContent.length;
+            const message = getPasteConversionMessage(lineCount, charCount);
+
+            createNotification({
+                text: message,
+                type: 'info',
+            });
+
+            // Don't insert anything in the editor - let the user type their own message
+            // The attachment will be included automatically as a provisional attachment
+        },
+        [dispatch, createNotification]
+    );
+
+    // Handle paste events to attach images from clipboard
+    useEffect(() => {
+        const handlePaste = async (e: ClipboardEvent) => {
+            // Only process if there are clipboard items
+            if (!e.clipboardData?.items) return;
+
+            // Check if any item is an image
+            const items = Array.from(e.clipboardData.items);
+            const imageItems = items.filter((item) => item.type.startsWith('image/'));
+
+            if (imageItems.length === 0) return;
+
+            // Prevent default paste behavior for images
+            e.preventDefault();
+
+            // Process each image
+            for (const item of imageItems) {
+                const file = item.getAsFile();
+                if (file) {
+                    await handleFileProcessing(file);
+                }
+            }
+        };
+
+        const container = composerContainerRef.current;
+        if (container) {
+            container.addEventListener('paste', handlePaste);
+            return () => {
+                container.removeEventListener('paste', handlePaste);
+            };
+        }
+    }, [handleFileProcessing]);
+
     const { editor, handleSubmit } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
         hasTierErrors,
@@ -337,6 +404,7 @@ const ComposerComponentInner = ({
                             handleFileInputChange={handleFileInputChange}
                             handleOpenFileDialog={handleOpenFileDialog}
                             handleBrowseDrive={handleBrowseDrive}
+                            handleDrawSketch={handleDrawSketch}
                             showUploadMenu={showUploadMenu}
                             setShowUploadMenu={setShowUploadMenu}
                             handleUploadButtonClick={handleUploadButtonClick}
@@ -361,6 +429,14 @@ const ComposerComponentInner = ({
             {fileToView && (
                 <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
             )}
+
+            {/* Drawing Canvas Overlay */}
+            <SketchOverlay
+                isOpen={showDrawingModal}
+                onClose={() => setShowDrawingModal(false)}
+                onExport={handleDrawingExport}
+                mode="blank"
+            />
         </>
     );
 };
@@ -379,12 +455,12 @@ const ComposerComponentWithDrive = (props: ComposerComponentProps) => {
  */
 export const ComposerComponent = (props: ComposerComponentProps) => {
     const isGuest = useIsGuest();
-    
+
     // For guest users, render without Drive SDK (avoids useUser() error)
     if (isGuest) {
         return <ComposerComponentInner {...props} />;
     }
-    
+
     // For authenticated users, provide Drive SDK upload function
     return <ComposerComponentWithDrive {...props} />;
 };

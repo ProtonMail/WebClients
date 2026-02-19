@@ -16,7 +16,6 @@ export type MessageChainComponentProps = {
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
     isGenerating?: boolean;
-    isGeneratingWithToolCall?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     composerContainerRef: React.RefObject<HTMLDivElement>;
 };
@@ -154,7 +153,6 @@ export const MessageChainComponent = ({
     handleEditMessage,
     getSiblingInfo,
     isGenerating,
-    isGeneratingWithToolCall,
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
@@ -228,7 +226,6 @@ export const MessageChainComponent = ({
                                 newMessageRef={index === messageChain.length - 2 ? newMessageRef : undefined}
                                 isLastMessage={isLastMessage}
                                 isGenerating={isGenerating || false}
-                                isGeneratingWithToolCall={isGeneratingWithToolCall || false}
                                 onRetryPanelToggle={onRetryPanelToggle}
                             />
                         </div>

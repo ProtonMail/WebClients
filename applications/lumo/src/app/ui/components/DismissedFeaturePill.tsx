@@ -1,9 +1,9 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Pill } from '@proton/atoms/Pill/Pill';
 
 import { useFeatureFlags } from '../../hooks/useFeatureFlags';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { hasDeclinedFeatureFlag } from '../../utils/whatsNewStorage';
 
@@ -18,7 +18,7 @@ interface DismissedFeaturePillProps {
  * 2. AND the specified feature has been declined by the user
  */
 export const DismissedFeaturePill = ({ featureId, versionFlag }: DismissedFeaturePillProps) => {
-    const isWhatsNewEnabled = useFlag('WhatsNewV1p3');
+    const { whatsNew: isWhatsNewEnabled } = useLumoFlags();
     const isGuest = useIsGuest();
     const { isDeclined } = useFeatureFlags();
 

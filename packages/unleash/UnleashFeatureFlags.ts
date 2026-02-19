@@ -300,6 +300,8 @@ enum LumoFeatureFlag {
     LumoSpecialTheme = 'LumoSpecialTheme',
     WhatsNewV1p3 = 'WhatsNewV1p3',
     LumoProjects = 'LumoProjects',
+    LumoSmoothedRendering = 'LumoSmoothedRendering',
+    LumoImageTools = 'LumoImageTools',
 }
 
 export type FeatureFlag =

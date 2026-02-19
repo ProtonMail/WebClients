@@ -147,6 +147,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             const userId = userData.user.ID;
             const dbApi = new DbApi(userId);
+            await dbApi.initialize();
             const lumoApi = new LumoApi(uid);
             extendStore({ dbApi, lumoApi });
             sagaMiddleware.setContext({ dbApi, lumoApi }); // resolves the unsafe note above

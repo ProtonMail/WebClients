@@ -1,39 +1,33 @@
-import { memo, useCallback, useRef, useState } from 'react';
+import { memo, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
-import type { RetryStrategy } from 'applications/lumo/src/app/types-api';
+import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
-import TurndownService from 'turndown';
 
 import { Icon, useModalStateObject } from '@proton/components';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
+import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
 import LinkWarningModal from '../../../../components/LumoMarkdown/LinkWarningModal';
-import StreamingMarkdownRenderer from '../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import SiblingSelector from '../../../../components/SiblingSelector';
-import ToolCallLoading from '../../../../components/ToolCallLoading/ToolCallLoading';
 import AssistantFeedbackModal from '../actionToolbar/AssistantFeedbackModal';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
-import { useToolCallInfo } from '../toolCall/useToolCallInfo';
+import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { AvatarAndNotice } from './AvatarAndNotice';
+import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
 
-// Initialize turndown service once
-const turndownService = new TurndownService({
-    headingStyle: 'atx',
-    codeBlockStyle: 'fenced',
-});
+const ENABLE_DEBUG_INFO = false;
 
 interface AssistantActionToolbarProps {
     message: Message;
@@ -142,7 +136,6 @@ interface AssistantMessageProps {
     handleOpenFiles: (message?: Message) => void;
     messageChain: Message[];
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
     onToggleMessageSource: (message: Message) => void;
     onToggleFilesManagement: (message?: Message) => void;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
@@ -155,6 +148,26 @@ interface AssistantMessageProps {
 //     maxWidth: '100%',
 //     boxSizing: 'border-box' as const,
 // };
+
+function DebugInfo(props: {
+    isLoading: boolean;
+    hasToolCall: boolean;
+    blocks: ContentBlock[];
+    searchResults: SearchItem[];
+}) {
+    if (!ENABLE_DEBUG_INFO) {
+        return null;
+    }
+    return (
+        <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
+            <p className="color-weak font-bold mb-1">DEBUG INFO</p>
+            <p className="color-weak m-0">isLoading: {JSON.stringify(props.isLoading)}</p>
+            <p className="color-weak m-0">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>
+            <p className="color-weak m-0 break-all">blocks: {JSON.stringify(props.blocks.length)}</p>
+            <p className="color-weak m-0">searchResults: {JSON.stringify(props.searchResults !== null)}</p>
+        </div>
+    );
+}
 
 const AssistantMessage = ({
     isLoading,
@@ -169,7 +182,6 @@ const AssistantMessage = ({
     handleOpenFiles,
     messageChain,
     isGenerating,
-    isGeneratingWithToolCall,
     onRetryPanelToggle,
 }: AssistantMessageProps) => {
     const { isWebSearchButtonToggled } = useWebSearch();
@@ -180,10 +192,21 @@ const AssistantMessage = ({
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
-    const messageContent = preprocessContent(message?.content);
 
-    const { query, results } = useToolCallInfo(message.toolCall, message.toolResult);
-    const hasToolCall = !!query;
+    // Get blocks for interleaved rendering
+    const blocks = useMemo(
+        () => getMessageBlocks(message),
+        [message.blocks, message.content, message.toolCall, message.toolResult]
+    );
+    const hasContent = blocks.length > 0;
+
+    // Extract search results for legacy sources button
+    const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
+
+    // Check if any block is a tool call (for loading state)
+    const hasToolCall = blocks.some((b) => b.type === 'tool_call');
+    const lastToolCall = blocks.findLast((b) => b.type === 'tool_call');
+    const lastToolCallParsed = lastToolCall?.type === 'tool_call' ? parseToolCallBlock(lastToolCall) : null;
 
     const handleLinkClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -205,57 +228,60 @@ const AssistantMessage = ({
         [handleRegenerateMessage, message, isWebSearchButtonToggled]
     );
 
+    // Hide message if it's loading and truly empty (no content, no tool calls)
+    const shouldShow = !isLoading || hasContent || hasToolCall;
+
     return (
         <>
-            <div className="gap-2 relative">
-                <div
-                    // ref={markdownContainerRef}
-                    className={clsx(
-                        'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-4 bg-norm'
-                    )}
-                    style={{
-                        '--min-h-custom': '62px',
-                    }}
-                >
+            <div className="gap-2 relative w-full">
+                {shouldShow && (
                     <div
-                        ref={markdownContainerRef}
-                        className="markdown-rendering w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                        // ref={markdownContainerRef}
+                        className={clsx(
+                            'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm'
+                        )}
+                        style={{
+                            '--min-h-custom': '62px',
+                        }}
                     >
-                        {
-                            // eslint-disable-next-line no-nested-ternary
-                            isLoading ? (
-                                hasToolCall ? (
-                                    <ToolCallLoading />
-                                ) : (
-                                    <div className="w-full pt-1" style={{ minHeight: '2em' }}>
-                                        <div className="rectangle-skeleton keep-motion"></div>
-                                    </div>
-                                )
+                        <div
+                            ref={markdownContainerRef}
+                            className="w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                        >
+                            <DebugInfo
+                                isLoading={isLoading || false}
+                                hasToolCall={hasToolCall}
+                                blocks={blocks}
+                                searchResults={searchResults ?? []}
+                            />
+                            {isLoading && !hasToolCall ? (
+                                <div className="w-full pt-1" style={{ minHeight: '2em' }}>
+                                    <div className="rectangle-skeleton keep-motion"></div>
+                                </div>
                             ) : (
                                 <div className="w-full" style={{ minHeight: '2em' }}>
-                                    {messageContent || doNotShowEmptyMessage ? (
-                                        <div className="w-full">
-                                            <StreamingMarkdownRenderer
-                                                message={message}
-                                                content={messageContent}
-                                                isStreaming={isGenerating && isLastMessage}
-                                                handleLinkClick={handleLinkClick}
-                                                toolCallResults={results}
-                                                sourcesContainerRef={sourcesContainerRef}
-                                            />
-                                        </div>
+                                    {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
+                                    {hasContent || doNotShowEmptyMessage || message.reasoning || hasToolCall ? (
+                                        <RenderBlocks
+                                            blocks={blocks}
+                                            message={message}
+                                            isGenerating={isGenerating}
+                                            isLastMessage={isLastMessage}
+                                            handleLinkClick={handleLinkClick}
+                                            sourcesContainerRef={sourcesContainerRef}
+                                            reasoning={message.reasoning}
+                                        />
                                     ) : (
                                         <EmptyMessage />
                                     )}
 
-                                    {/* <SourcesBlock results={results} onClick={onToggleMessageSource} /> */}
                                     <AssistantActionToolbar
                                         message={message}
                                         isFinishedGenerating={isFinishedGenerating}
                                         handleRegenerate={handleRegenerate}
                                         siblingInfo={siblingInfo}
                                         generationFailed={generationFailed}
-                                        results={results}
+                                        results={searchResults}
                                         onToggleMessageSource={onToggleMessageSource}
                                         messageChain={messageChain}
                                         onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
@@ -264,15 +290,15 @@ const AssistantMessage = ({
                                         retryButtonRef={retryButtonRef}
                                     />
                                 </div>
-                            )
-                        }
+                            )}
+                        </div>
                     </div>
-                </div>
+                )}
                 {isLastMessage && (
                     <AvatarAndNotice
                         isFinishedGenerating={isFinishedGenerating}
                         isGenerating={isGenerating}
-                        isGeneratingWithToolCall={isGeneratingWithToolCall}
+                        toolCallName={lastToolCallParsed?.name}
                     />
                 )}
             </div>
@@ -297,29 +323,11 @@ const EmptyMessage = () => (
     </>
 );
 
-function preprocessContent(content: string | undefined): string {
-    if (!content) return '';
-    content = content.trim();
-    // Sometimes the model replies in raw html, e.g. "<p>Hello World</p>", even though we expect Markdown.
-    if (
-        content.startsWith('<div>') ||
-        content.startsWith('<p>') ||
-        content.endsWith('</div>') ||
-        content.endsWith('</p>')
-    ) {
-        return turndownService.turndown(content);
-    }
-    return content;
-}
-
 // Memoize to prevent unnecessary re-renders
 export default memo(AssistantMessage, (prevProps, nextProps) => {
-    // Only re-render if message content or streaming state changed
-    const contentEqual = prevProps.message.content === nextProps.message.content;
-    const statusEqual = prevProps.message.status === nextProps.message.status;
-    const streamingEqual = prevProps.isGenerating === nextProps.isGenerating;
-    const lastMessageEqual = prevProps.isLastMessage === nextProps.isLastMessage;
-
-    // Don't re-render if nothing meaningful changed
-    return contentEqual && statusEqual && streamingEqual && lastMessageEqual;
+    return (
+        messagesEqualForRendering(prevProps.message, nextProps.message) &&
+        prevProps.isGenerating === nextProps.isGenerating &&
+        prevProps.isLastMessage === nextProps.isLastMessage
+    );
 });

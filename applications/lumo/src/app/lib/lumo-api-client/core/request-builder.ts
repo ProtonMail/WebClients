@@ -1,11 +1,11 @@
-import type {
-    AesGcmCryptoKey,
-    AssistantCallOptions,
-    ChunkCallback,
-    FinishCallback,
-    RequestId,
+import {
+    type AesGcmCryptoKey,
+    type AssistantCallOptions,
+    type ChunkCallback,
+    type FinishCallback,
+    type RequestId,
     Role,
-    Turn,
+    type Turn,
 } from './types';
 
 /**
@@ -26,7 +26,7 @@ export class RequestBuilder {
      * @param role Message role (defaults to 'user')
      * @returns RequestBuilder for chaining
      */
-    addMessage(content: string, role: Role = 'user'): RequestBuilder {
+    addMessage(content: string, role: Role = Role.User): RequestBuilder {
         this.turns.push({ role, content });
         return this;
     }
@@ -37,7 +37,7 @@ export class RequestBuilder {
      * @returns RequestBuilder for chaining
      */
     user(content: string): RequestBuilder {
-        return this.addMessage(content, 'user');
+        return this.addMessage(content, Role.User);
     }
 
     /**
@@ -46,7 +46,7 @@ export class RequestBuilder {
      * @returns RequestBuilder for chaining
      */
     assistant(content: string): RequestBuilder {
-        return this.addMessage(content, 'assistant');
+        return this.addMessage(content, Role.Assistant);
     }
 
     /**
@@ -55,7 +55,7 @@ export class RequestBuilder {
      * @returns RequestBuilder for chaining
      */
     system(content: string): RequestBuilder {
-        return this.addMessage(content, 'system');
+        return this.addMessage(content, Role.System);
     }
 
     /**
@@ -73,6 +73,8 @@ export class RequestBuilder {
     //       - no tools / default
     //       - internal tools (proton_info)
     //       - all tools: internal + external (web search, etc)
+
+    // todo: the todo above is even more relevant with image generation: api users likely don't want imgen
 
     /**
      * Enable or disable external tools (web search, weather, etc.)
@@ -98,7 +100,7 @@ export class RequestBuilder {
      * @returns RequestBuilder for chaining
      */
     withTitle(enabled: boolean = true): RequestBuilder {
-        this.options.requestTitle = enabled;
+        this.options.generateTitle = enabled;
         return this;
     }
 

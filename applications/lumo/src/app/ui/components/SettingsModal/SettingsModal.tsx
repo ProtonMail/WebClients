@@ -14,11 +14,11 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
-import useFlag from '@proton/unleash/useFlag';
 
-import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
-import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useLumoUserSettings } from '../../../hooks';
+import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -163,21 +163,19 @@ const LumoSettingsSidebar = ({
 const GeneralSettingsPanelGuest = () => {
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
-    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
 
     return (
         <div className="flex flex-column gap-4">
-            {isLumoDarkModeEnabled && (
-                <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                    <SettingsSectionItem
-                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                        text={c('collider_2025: Title').t`Theme`}
-                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                    />
-                    <LumoThemeButton />
-                </div>
-            )}
+            <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                <SettingsSectionItem
+                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                    text={c('collider_2025: Title').t`Theme`}
+                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                />
+                <LumoThemeButton />
+            </div>
+
             <SettingsSectionItem
                 icon="info-circle"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
@@ -191,8 +189,7 @@ const GeneralSettingsPanelGuest = () => {
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
-    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
-    const isLumoToolingEnabled = useFlag('LumoTooling');
+    const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
@@ -223,6 +220,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
         try {
             const db = new DbApi(userId);
+            await db.initialize();
             await db.clearAllSearchBlobs(['search_index_key', 'bm25_index', 'drive_manifest']);
             await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -278,16 +276,14 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 
     return (
         <div className="flex flex-column gap-4">
-            {isLumoDarkModeEnabled && (
-                <div className="flex flex-column flex-nowrap gap-4 mb-4">
-                    <SettingsSectionItem
-                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
-                        text={c('collider_2025: Title').t`Theme`}
-                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
-                    />
-                    <LumoThemeButton />
-                </div>
-            )}
+            <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                <SettingsSectionItem
+                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                    text={c('collider_2025: Title').t`Theme`}
+                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                />
+                <LumoThemeButton />
+            </div>
 
             {/* Project conversations in history toggle */}
             <SettingsSectionItem
@@ -346,21 +342,18 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                             />
                         )}
                         {hasError && (
-                            <span className="color-danger text-sm">
-                                {indexError || messageIndexingStatus.error}
-                            </span>
+                            <span className="color-danger text-sm">{indexError || messageIndexingStatus.error}</span>
                         )}
                     </div>
                 }
-                button={
-                    <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
-                }
+                button={<SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />}
             />
 
             <SettingsSectionItem
                 icon="speech-bubble"
                 text={c('collider_2025: Title').t`Delete everything`}
-                subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
+                subtext={c('collider_2025: Description')
+                    .t`Permanently delete your project and chats. This is irreversible.`}
                 button={<DeleteAllButton onClose={onClose} />}
             />
             <SettingsSectionItem
@@ -482,15 +475,16 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             </div>
 
                             {/* Panel content */}
-                            <div
-                                className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
-                                style={{ minHeight: 0 }}
-                            >
+                            <div className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10" style={{ minHeight: 0 }}>
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
                                 {activePanel === 'general' &&
-                                    (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
+                                    (isGuest ? (
+                                        <GeneralSettingsPanelGuest />
+                                    ) : (
+                                        <GeneralSettingsPanelAuth onClose={closeModal} />
+                                    ))}
                             </div>
                         </div>
                     </div>
@@ -527,7 +521,11 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                             {activePanel === 'personalization' && <PersonalizationPanel />}
                             {activePanel === 'general' &&
-                                (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
+                                (isGuest ? (
+                                    <GeneralSettingsPanelGuest />
+                                ) : (
+                                    <GeneralSettingsPanelAuth onClose={closeModal} />
+                                ))}
                         </div>
                     </div>
                 </div>

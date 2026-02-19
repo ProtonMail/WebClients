@@ -1,3 +1,4 @@
+import { attachmentLoadingStateReducer } from './attachmentLoadingState';
 import contextFiltersReducer from './contextFilters';
 import attachmentsReducer from './core/attachments';
 import conversationsReducer from './core/conversations';
@@ -19,6 +20,7 @@ export const lumoReducers = {
     conversations: conversationsReducer,
     messages: messagesReducer,
     attachments: attachmentsReducer,
+    attachmentLoadingState: attachmentLoadingStateReducer,
     credentials: credentialsReducer,
     idmap: idMapReducer,
     eligibilityStatus: eligibilityStatusReducer,

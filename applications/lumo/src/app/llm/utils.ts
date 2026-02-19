@@ -1,18 +1,23 @@
-import type { MessageMap } from '../redux/slices/core/messages';
-import type { Attachment, Message } from '../types';
-import { getApproximateTokenCount } from './tokenizer';
+import type { Attachment, ContentBlock, Message } from '../types';
+import { countTokens } from './tokenizer';
 
-export const calculateContextSize = (messageMap: MessageMap): number => {
-    // Use fast approximation for better performance (4 chars/token)
-    return Object.values(messageMap).reduce((total, message) => {
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
-        const contextTokens = getApproximateTokenCount(message.context || '');
-
-        return total + contentTokens + toolCallTokens + toolResultTokens + contextTokens;
-    }, 0);
-};
+/**
+ * Calculate token count for a single content block.
+ * Delegates to appropriate calculation based on block type.
+ */
+function calculateBlockTokens(block: ContentBlock): number {
+    switch (block.type) {
+        case 'text':
+            return countTokens(block.content);
+        case 'tool_call':
+            return countTokens(block.content);
+        case 'tool_result':
+            return countTokens(block.content);
+        default:
+            // Future-proof: unknown block types
+            return 0;
+    }
+}
 
 /**
  * Calculate tokens from message content only (excluding context)
@@ -20,15 +25,20 @@ export const calculateContextSize = (messageMap: MessageMap): number => {
  */
 export const calculateMessageContentTokens = (messageChain: Message[]): number => {
     return messageChain.reduce((total, message) => {
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
-        return total + contentTokens + toolCallTokens + toolResultTokens;
+        if (message.blocks && message.blocks.length > 0) {
+            // New format: iterate through blocks and delegate to helper
+            return total + message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
+        } else {
+            // Legacy format
+            return (
+                total + countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult)
+            );
+        }
     }, 0);
 };
 
-// Calculate estimated token size for a single attachment
-export const calculateSingleAttachmentContextSize = (attachment: Attachment): number => {
+// Calculate estimated tokn size for a single attachment
+export const countAttachmentToken = (attachment: Attachment): number => {
     if (!attachment || attachment.processing || !attachment.markdown || !attachment.filename) {
         return 0;
     }
@@ -49,7 +59,7 @@ export const calculateSingleAttachmentContextSize = (attachment: Attachment): nu
         const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
 
         // Use fast approximation for better performance (4 chars/token)
-        return getApproximateTokenCount(fullContext);
+        return countTokens(fullContext);
     } catch (error) {
         console.warn('Error calculating attachment context size:', error, attachment);
         return 0;
@@ -65,7 +75,7 @@ export const calculateSingleAttachmentContextSize = (attachment: Attachment): nu
  */
 export const calculateAttachmentContextSize = (attachments: Attachment[]): number => {
     return attachments.reduce((total, attachment) => {
-        return total + calculateSingleAttachmentContextSize(attachment);
+        return total + countAttachmentToken(attachment);
     }, 0);
 };
 
@@ -137,15 +147,21 @@ export const calculateTotalContextSize = (messageChain: Message[], currentAttach
 // Calculate context size for the conversation history (messages + their attachments)
 export const calculateConversationContextSize = (messageChain: Message[]): number => {
     return messageChain.reduce((total, message) => {
-        // Message content, tool calls, and tool results (using fast approximation)
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
+        // Calculate content tokens from blocks if available, otherwise use legacy fields
+        let contentTokens = 0;
+        if (message.blocks && message.blocks.length > 0) {
+            // New format: iterate through blocks and delegate to helper
+            contentTokens = message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
+        } else {
+            // Legacy format
+            contentTokens =
+                countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult);
+        }
 
         // Context from attachments in this message (already formatted by flattenAttachmentsForLlm)
-        const contextTokens = getApproximateTokenCount(message.context || '');
+        const contextTokens = countTokens(message.context);
 
-        return total + contentTokens + toolCallTokens + toolResultTokens + contextTokens;
+        return total + contentTokens + contextTokens;
     }, 0);
 };
 
@@ -177,49 +193,4 @@ export const getTotalContextSizeWarning = (
 ): 'none' | 'warning' | 'danger' | 'critical' => {
     const totalTokens = calculateTotalContextSize(messageChain, currentAttachments);
     return getContextSizeWarning(totalTokens);
-};
-
-// Remove a specific file from a message's context (used for filtering at LLM call time)
-export const removeFileFromMessageContext = (message: Message, filename: string): Message => {
-    if (!message.context) return message;
-
-    const lines = message.context.split('\n');
-    const newLines: string[] = [];
-
-    let currentFilename = '';
-    let skipFile = false;
-    let isInFileContent = false;
-
-    for (const line of lines) {
-        if (line.startsWith('Filename: ')) {
-            currentFilename = line.substring('Filename: '.length);
-            skipFile = currentFilename === filename;
-
-            if (!skipFile) {
-                newLines.push(line);
-            }
-        } else if (line === '----- BEGIN FILE CONTENTS -----') {
-            isInFileContent = true;
-            if (!skipFile) {
-                newLines.push(line);
-            }
-        } else if (line === '----- END FILE CONTENTS -----') {
-            isInFileContent = false;
-            if (!skipFile) {
-                newLines.push(line);
-            }
-            currentFilename = '';
-        } else if (isInFileContent || line.startsWith('File contents:')) {
-            if (!skipFile) {
-                newLines.push(line);
-            }
-        } else {
-            newLines.push(line);
-        }
-    }
-
-    return {
-        ...message,
-        context: newLines.join('\n'),
-    };
 };

@@ -99,9 +99,10 @@ function isStatusRequest(item: any): item is StatusRequest {
 let searchEngine: SearchEngine | null = null;
 let currentSearchIndexKey: string | null = null;
 
-function getSearchEngine(userId: string, searchIndexKey: string): SearchEngine | null {
+async function getSearchEngine(userId: string, searchIndexKey: string): Promise<SearchEngine | null> {
     if (!searchEngine || searchEngine.userId != userId) {
         const userDbApi = new DbApi(userId);
+        await userDbApi.initialize();
         const cryptoAdapter = new LumoCryptoAdapter(
             encryptUint8Array as (data: Uint8Array<ArrayBuffer>, key: any, ad?: string) => Promise<string>,
             decryptUint8Array as (encrypted: string, key: any, ad: string) => Promise<Uint8Array<ArrayBuffer>>
@@ -121,7 +122,7 @@ function getSearchEngine(userId: string, searchIndexKey: string): SearchEngine |
 }
 
 async function status(userId: string, searchIndexKey: string): Promise<Status> {
-    const searchEngine = getSearchEngine(userId, searchIndexKey);
+    const searchEngine = await getSearchEngine(userId, searchIndexKey);
     if (!searchEngine) {
         return { tableExists: false, hasEntries: false, entryCount: 0 };
     }
@@ -222,7 +223,7 @@ async function search(request: SearchRequest) {
     }
 
     try {
-        const searchEngine = getSearchEngine(userId, searchIndexKey);
+        const searchEngine = await getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -291,7 +292,7 @@ async function populate(request: PopulateRequest) {
     console.log(`Search worker received populate request ${id} for ${Object.keys(conversations).length} conversations`);
 
     try {
-        const searchEngine = getSearchEngine(userId, searchIndexKey);
+        const searchEngine = await getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -327,7 +328,7 @@ async function index(request: IndexConversationRequest) {
     console.log(`Search worker received indexing request ${id} for conversation: ${conversations.length}`);
 
     try {
-        const searchEngine = getSearchEngine(userId, searchIndexKey);
+        const searchEngine = await getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -361,7 +362,7 @@ async function index(request: IndexConversationRequest) {
 async function cleanup(request: StatusRequest) {
     const { id, userId, searchIndexKey } = request;
     console.log(`Search worker received status request ${id}`);
-    const searchEngine = getSearchEngine(userId, searchIndexKey);
+    const searchEngine = await getSearchEngine(userId, searchIndexKey);
     if (!searchEngine) {
         throw new Error('Search engine not available');
     }

@@ -5,12 +5,12 @@ import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { Attachment, SpaceId } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
-import { fileProcessingService } from '../fileProcessingService';
+import type { FileProcessingService } from '../fileProcessingService';
 import { SearchService } from '../search/searchService';
 import { storePendingAttachment } from './pendingAttachments';
 
 export const handleSpaceAttachmentFileAsync =
-    (file: File, spaceId: SpaceId) =>
+    (file: File, spaceId: SpaceId, fileProcessingService: FileProcessingService) =>
     async (
         dispatch: LumoDispatch,
         getState: () => LumoState
@@ -65,13 +65,13 @@ export const handleSpaceAttachmentFileAsync =
         try {
             const result = await fileProcessingService.processFile(file);
 
-            if (result.success && result.result) {
+            if (result.type === 'text') {
                 processedAttachment = {
                     ...processedAttachment,
-                    markdown: result.result.convertedContent,
-                    truncated: result.result.truncated,
-                    originalRowCount: result.result.originalRowCount,
-                    processedRowCount: result.result.processedRowCount,
+                    markdown: result.content,
+                    truncated: result.metadata?.truncated,
+                    originalRowCount: result.metadata?.rowCount?.original,
+                    processedRowCount: result.metadata?.rowCount?.processed,
                 };
 
                 if (processedAttachment.markdown) {
@@ -83,11 +83,11 @@ export const handleSpaceAttachmentFileAsync =
                         console.warn('Failed to calculate token count:', tokenError);
                     }
                 }
-            } else {
+            } else if (result.type === 'error') {
                 hasError = true;
-                isUnsupported = !result.success;
+                isUnsupported = result.unsupported || false;
                 processedAttachment.error = true;
-                processedAttachment.errorMessage = result.error || 'File processing failed';
+                processedAttachment.errorMessage = result.message;
             }
         } catch (error) {
             console.error('Error processing file:', error);

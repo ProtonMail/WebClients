@@ -1,5 +1,5 @@
-import type { GenerationToFrontendMessage } from './types';
-import { isGenerationToFrontendMessage } from './types';
+import type { GenerationResponseMessage } from './types';
+import { isGenerationResponseMessage } from './types';
 
 /**
  * Processes streaming data chunks from the API
@@ -12,10 +12,10 @@ export class StreamProcessor {
      * @param chunk Raw string chunk from the stream
      * @returns Array of parsed messages
      */
-    processChunk(chunk: string): GenerationToFrontendMessage[] {
+    processChunk(chunk: string): GenerationResponseMessage[] {
         const lines = (this.leftover + chunk).split('\n');
         const lastLine = lines.pop() || '';
-        const parsedData: GenerationToFrontendMessage[] = [];
+        const parsedData: GenerationResponseMessage[] = [];
 
         for (const line of lines) {
             if (!line.match(/^data:\s*/)) continue;
@@ -23,8 +23,9 @@ export class StreamProcessor {
             try {
                 const jsonStr = line.replace(/^data:\s*/, '');
                 const item = JSON.parse(jsonStr);
-                if (!isGenerationToFrontendMessage(item)) {
-                    console.warn('Unexpected format for json payload received from API server, ignoring');
+                console.log('[STREAM] Parsed item:', item.type, item);
+                if (!isGenerationResponseMessage(item)) {
+                    console.warn('Unexpected format for json payload received from API server, ignoring', item);
                     continue;
                 }
                 parsedData.push(item);
@@ -38,7 +39,7 @@ export class StreamProcessor {
             try {
                 const jsonStr = lastLine.replace(/^data:\s*/, '');
                 const item = JSON.parse(jsonStr);
-                if (isGenerationToFrontendMessage(item)) {
+                if (isGenerationResponseMessage(item)) {
                     parsedData.push(item);
                 } else {
                     console.warn('Unexpected format for json payload received from API server, ignoring');
@@ -57,13 +58,13 @@ export class StreamProcessor {
      * Finalize processing and return any remaining messages
      * @returns Array of any remaining parsed messages
      */
-    finalize(): GenerationToFrontendMessage[] {
+    finalize(): GenerationResponseMessage[] {
         if (!this.leftover || !this.leftover.match(/^data:\s*/)) return [];
 
         try {
             const jsonStr = this.leftover.replace(/^data:\s*/, '');
             const item = JSON.parse(jsonStr);
-            if (isGenerationToFrontendMessage(item)) {
+            if (isGenerationResponseMessage(item)) {
                 return [item];
             }
         } catch {

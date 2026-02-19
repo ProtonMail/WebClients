@@ -1,15 +1,15 @@
 import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
+import { selectMasterKey } from '../../redux/selectors';
+import type { SpaceMap } from '../../redux/slices/core/spaces';
+import { getStoreRef } from '../../redux/storeRef';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { applyRetentionPolicy } from '../../ui/sidepanel/helpers';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
-
-import { getStoreRef } from '../../redux/storeRef';
-import { selectMasterKey }  from '../../redux/selectors';
 
 const WorkerMessageType = {
     Search: 0,
@@ -23,9 +23,6 @@ const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): str
     return `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
 };
 
-// TODO: looks like it can be replaced by SpaceMap in core/spaces.ts
-type SpaceMap = Record<string, { isProject?: boolean; projectName?: string; projectIcon?: string }>;
-
 const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
     const space = spaces[spaceId];
     if (space?.isProject) {
@@ -37,6 +34,7 @@ const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: stri
 export class SearchService {
     private static instances: Map<string, SearchService> = new Map();
     private static defaultInstance: SearchService | null = null;
+
     // Keep the userId to allow per-user instances when needed
     private constructor(private readonly userId?: string) {
         if (userId) {
@@ -92,6 +90,7 @@ export class SearchService {
         }
 
         const dbApi = new DbApi(this.userId);
+        await dbApi.initialize();
         const {
             base64ToMasterKey,
             unwrapAesKey,
@@ -210,6 +209,7 @@ export class SearchService {
     private async loadManifest(): Promise<void> {
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
+        await dbApi.initialize();
         try {
             const blob = await dbApi.loadSearchBlob(SearchService.MANIFEST_BLOB);
             if (!blob) {
@@ -262,6 +262,7 @@ export class SearchService {
     private async persistManifest(): Promise<void> {
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
+        await dbApi.initialize();
         try {
             await dbApi.saveSearchBlob(SearchService.MANIFEST_BLOB, JSON.stringify(this.driveDocuments));
         } catch (error) {
@@ -272,6 +273,7 @@ export class SearchService {
     private async persistBM25Index(): Promise<void> {
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
+        await dbApi.initialize();
         try {
             const serialized = this.bm25Index.serialize();
             const { encryptUint8Array } = await import('../../crypto');
@@ -287,6 +289,7 @@ export class SearchService {
     private async loadBM25Index(): Promise<void> {
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
+        await dbApi.initialize();
         try {
             const blob = await dbApi.loadSearchBlob(SearchService.BM25_INDEX_BLOB);
             if (!blob) {
@@ -668,6 +671,7 @@ export class SearchService {
         this.manifestReady = null;
         if (this.userId) {
             const dbApi = new DbApi(this.userId);
+            await dbApi.initialize();
             try {
                 await dbApi.removeSearchBlob(SearchService.MANIFEST_BLOB);
                 await dbApi.removeSearchBlob(SearchService.BM25_INDEX_BLOB);
@@ -805,10 +809,11 @@ export class SearchService {
                 .filter((doc) => doc.parentDocumentId === documentId)
                 .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
 
-            if (allChunks.length > 0) {
+            const chunk0 = allChunks[0];
+            if (chunk0) {
                 // Return a combined document
                 return {
-                    ...allChunks[0],
+                    ...chunk0,
                     id: documentId,
                     content: allChunks.map((c) => c.content).join('\n\n'),
                     isChunk: false,
@@ -836,11 +841,12 @@ export class SearchService {
             .filter((doc) => doc.name === name && doc.isChunk)
             .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
 
-        if (chunks.length > 0) {
+        const chunk0 = chunks[0];
+        if (chunk0) {
             // Return a combined document
             return {
-                ...chunks[0],
-                id: chunks[0].parentDocumentId || chunks[0].id,
+                ...chunk0,
+                id: chunk0.parentDocumentId || chunk0.id,
                 content: chunks.map((c) => c.content).join('\n\n'),
                 isChunk: false,
                 parentDocumentId: undefined,
@@ -1011,7 +1017,7 @@ export class SearchService {
         }));
     }
 
-    formatRAGContext(
+    static formatRAGContext(
         documents: { name: string; content: string; score?: number }[],
         maxContextChars: number = 100000
     ): string {
@@ -1071,6 +1077,7 @@ export class SearchService {
         // Prefer worker/IDB status when user is known
         if (this.userId) {
             const dbApi = new DbApi(this.userId);
+            await dbApi.initialize();
             const status = await dbApi.checkFoundationSearchStatus();
             // If the store or entries are gone (e.g., IDB cleared), reset in-memory docs
             if (!status.tableExists || !status.hasEntries) {

@@ -1,7 +1,6 @@
 import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
-import type { ConversationId, LUMO_USER_TYPE } from '../../../types';
-import type { ActionParams, LUMO_API_ERRORS } from '../../../types-api';
+import type { ActionParams, ConversationId, LUMO_API_ERRORS, LUMO_USER_TYPE } from '../../../types';
 
 // Base error interface for consistent error structure
 interface BaseError {
@@ -48,7 +47,7 @@ const errorsSlice = createSlice({
             if (!state.conversationErrors[error.conversationId]) {
                 state.conversationErrors[error.conversationId] = [];
             }
-            state.conversationErrors[error.conversationId].push(error);
+            state.conversationErrors[error.conversationId]!.push(error);
         },
 
         addTierError: (state, action: PayloadAction<Omit<TierError, 'timestamp'>>) => {
@@ -107,16 +106,5 @@ export const selectHasTierErrors = createSelector(
     [selectErrorsState],
     (errorsState) => errorsState.tierErrors.length > 0
 );
-
-// export const addTestTierError = () => (dispatch: LumoDispatch) => {
-//     dispatch(
-//         addTierError({
-//             userType: LUMO_USER_TYPE.FREE,
-//             errorTitle: "You've reached your weekly limit of 40 questions.",
-//             errorMessage: "Upgrade to Lumo Plus to get unlimited questions and access to all premium features.",
-//             errorType: LUMO_API_ERRORS.TIER_LIMIT,
-//         })
-//     );
-// };
 
 export default errorsSlice.reducer;

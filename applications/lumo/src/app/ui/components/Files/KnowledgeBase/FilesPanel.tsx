@@ -12,7 +12,7 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
-import { useFilteredFiles } from '../../../../hooks';
+import { useFileProcessing, useFilteredFiles } from '../../../../hooks';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
@@ -60,6 +60,7 @@ export const FilesPanel = ({
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
     const [selectedFiles] = useState<Set<string>>(new Set());
+    const fileProcessingService = useFileProcessing();
 
     // Drive browser state
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
@@ -104,7 +105,11 @@ export const FilesPanel = ({
                         // For Drive files (driveNodeId present), we require fullAtt to exist
                         // This prevents showing files from unlinked Drive folders
                         if (shallowAtt.driveNodeId && !fullAtt) {
-                            console.log('[FilesPanel] Skipping deleted Drive attachment:', shallowAtt.id, shallowAtt.filename);
+                            console.log(
+                                '[FilesPanel] Skipping deleted Drive attachment:',
+                                shallowAtt.id,
+                                shallowAtt.filename
+                            );
                             return;
                         }
 
@@ -177,7 +182,7 @@ export const FilesPanel = ({
                 console.log(
                     `Processing downloaded Drive file: ${file.name} (${(content.length / 1024 / 1024).toFixed(2)} MB)`
                 );
-                const result = await dispatch(handleFileAsync(fileObject, messageChain));
+                const result = await dispatch(handleFileAsync(fileObject, messageChain, fileProcessingService));
 
                 if (result.isDuplicate) {
                     // Show toast notification for duplicate file

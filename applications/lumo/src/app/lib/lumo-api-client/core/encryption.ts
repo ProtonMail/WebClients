@@ -1,68 +1,69 @@
-import { v4 as uuidv4 } from 'uuid';
+import { decryptString, decryptUint8Array, encryptString } from '../../../crypto';
+import { LUMO_GPG_PUB_KEY } from '../../../keys';
+import type { WireImage } from '../../../types-api';
+import type { RequestEncryptionParams } from './encryptionParams';
+import type { EncryptedTurn, Turn } from './types';
 
-import { CryptoProxy } from '@proton/crypto';
-import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+// Default Lumo public key (uses production key or custom key from LUMO_PUB_KEY_PATH env var)
+export const DEFAULT_LUMO_PUB_KEY = LUMO_GPG_PUB_KEY;
 
-import { decryptString as decryptContent, encryptString } from '../../../crypto';
-import { LUMO_GPG_PUB_KEY_PROD_2 } from '../../../keys';
-import type { AesGcmCryptoKey, Base64, EncryptedTurn, RequestId, Turn } from './types';
+export { decryptString, decryptUint8Array, encryptString };
 
-// Default Lumo public key (imported from keys.ts for consistency)
-export const DEFAULT_LUMO_PUB_KEY = LUMO_GPG_PUB_KEY_PROD_2;
+export function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
+    const binaryString = atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes;
+}
 
-export { decryptContent, encryptString };
-
-/**
- * Generate a new request ID for encryption
- */
-export function generateRequestId(): RequestId {
-    return uuidv4();
+export function uint8ArrayToBase64String(bytes: Uint8Array<ArrayBuffer>): string {
+    let binaryString = '';
+    for (let i = 0; i < bytes.length; i++) {
+        binaryString += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binaryString);
 }
 
 /**
- * Generate a new AES-GCM encryption key
+ * Encrypt one conversation turn for U2L encryption
  */
-export async function generateRequestKey(): Promise<AesGcmCryptoKey> {
-    const key = await importKey(generateKey(), { extractable: true });
+async function encryptTurn(turn: Turn, encryption: RequestEncryptionParams) {
+    const content = turn.content ?? '';
+    const contentPromise = encryption.encryptString(content);
 
-    return {
-        type: 'AesGcmCryptoKey',
-        encryptKey: key,
+    // Start encrypting images in parallel if present
+    const imagePromises = turn.images?.map((image) => encryptImage(image, encryption)) || [];
+
+    const encryptedTurn: EncryptedTurn = {
+        ...turn,
+        content: await contentPromise,
+        images: await Promise.all(imagePromises),
+        encrypted: true,
     };
+    return encryptedTurn;
 }
 
 /**
- * Encrypt conversation turns for U2L encryption
+ * Encrypt all conversation turns for U2L encryption
  */
-export async function encryptTurns(
-    turns: Turn[],
-    requestKey: AesGcmCryptoKey,
-    requestId: RequestId
-): Promise<EncryptedTurn[]> {
-    return Promise.all(
-        turns.map(async (turn) => {
-            const content = turn.content ?? '';
-            const turnAd = `lumo.request.${requestId}.turn`;
-            const contentEnc = await encryptString(content, requestKey, turnAd);
-            return {
-                ...turn,
-                content: contentEnc,
-                encrypted: true,
-            };
-        })
-    );
+export async function encryptTurns(turns: Turn[], encryption: RequestEncryptionParams): Promise<EncryptedTurn[]> {
+    return Promise.all(turns.map((turn) => encryptTurn(turn, encryption)));
 }
 
 /**
- * Prepare encrypted request key for transmission
+ * Encrypt one image for U2L encryption
  */
-export async function prepareEncryptedRequestKey(requestKey: AesGcmCryptoKey, lumoPubKey: string): Promise<Base64> {
-    const lumoPublicKey = await CryptoProxy.importPublicKey({ armoredKey: lumoPubKey });
-    const requestKeyBin = await exportKey(requestKey.encryptKey);
-    const requestKeyEnc = await CryptoProxy.encryptMessage({
-        binaryData: requestKeyBin,
-        encryptionKeys: lumoPublicKey,
-        format: 'binary',
-    });
-    return requestKeyEnc.message.toBase64();
+async function encryptImage(image: WireImage, encryption: RequestEncryptionParams) {
+    const data = base64StringToUint8Array(image.data);
+    console.log('image.data (truncated):', image.data.slice(0, 128));
+    console.log('decoded data (truncated):', data.slice(0, 128));
+    const encryptedData = await encryption.encryptUint8Array(data);
+    console.log('encryptedData (truncated):', encryptedData.slice(0, 128));
+    return {
+        ...image,
+        data: encryptedData,
+        encrypted: true,
+    };
 }
