@@ -4,6 +4,7 @@ import { useUI } from '../../ui-store'
 import { DeleteSheetDialog } from './DeleteSheet'
 import { ResizeDimensionEditorDialog } from './ResizeDimensionEditorDialog'
 import { SpreadsheetSettingsDialog } from './SpreadsheetSettingsDialog'
+import { CustomCurrencyFormatDialog } from './CustomCurrencyFormatDialog'
 
 export function Dialogs() {
   return (
@@ -24,6 +25,7 @@ export function Dialogs() {
       <DeleteSheetDialog />
       <ResizeDimensionEditorDialog />
       <SpreadsheetSettingsDialog />
+      <CustomCurrencyFormatDialog />
     </>
   )
 }

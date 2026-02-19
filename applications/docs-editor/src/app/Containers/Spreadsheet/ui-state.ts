@@ -192,6 +192,8 @@ export function useProtonSheetsUIState(
   const [insertLinkCell, setInsertLinkCell] = useState<CellInterface>(() => state.activeCell)
   const [deleteSheetId, setDeleteSheetId] = useState<number | undefined>(undefined)
   const spreadsheetSettingsDialogStore = Ariakit.useDialogStore()
+  const customCurrencyFormatDialogStore = Ariakit.useDialogStore()
+  const customNumberFormatDialogStore = Ariakit.useDialogStore()
 
   const view = {
     formulaBar: {
@@ -229,6 +231,12 @@ export function useProtonSheetsUIState(
     },
     spreadsheetSettingsDialog: {
       store: spreadsheetSettingsDialogStore,
+    },
+    customCurrencyFormatDialog: {
+      store: customCurrencyFormatDialogStore,
+    },
+    customNumberFormatDialog: {
+      store: customNumberFormatDialogStore,
     },
     deleteSheetConfirmation: {
       sheetId: deleteSheetId,
