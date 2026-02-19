@@ -297,11 +297,15 @@ $profile-colors:
 }
 
 .action-button-new {
-	border: 1px solid var(--border-card) !important;
+	border: 1px solid var(--border-norm) !important;
 	background: var(--background-card) !important;
+	color: var(--text-weak) !important;
 
-	&:hover {
-		background: var(--interaction-default-hover) !important;
+	&:hover,
+	&:active,
+	&:focus-visible {
+		background: var(--border-norm) !important;
+		border-color: var(--border-norm) !important;
 	}
 
 	&:disabled {
