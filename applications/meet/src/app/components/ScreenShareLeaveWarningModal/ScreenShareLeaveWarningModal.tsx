@@ -37,9 +37,8 @@ export const ScreenShareLeaveWarningModal = ({ onClose, onConfirm }: ScreenShare
                     >{c('Action').t`Leave meeting`}</Button>
 
                     <Button
-                        className="rounded-full py-4 bg-weak close-button border-none text-semibold"
+                        className="rounded-full py-4 bg-weak secondary border-none text-semibold"
                         onClick={onClose}
-                        color="weak"
                         size="large"
                     >
                         {c('Action').t`Stay in meeting`}

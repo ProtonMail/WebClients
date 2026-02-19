@@ -24,13 +24,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.join-button {
-	&:hover,
-	&:focus {
-		color: var(--text-invert) !important;
-	}
-}
-
 .copy-button {
 	background-color: var(--interaction-weak-minor-2);
 	color: var(--interaction-norm);

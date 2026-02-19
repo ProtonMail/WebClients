@@ -363,3 +363,63 @@ $profile-colors:
 .checkbox-input:checked:hover + .checkbox-fakecheck {
 	color: black;
 }
+
+// Meet button styles. primary | secondary | tertiary | ghost
+// https://www.figma.com/design/enM75uGIsAX3EyyVwVtd7Z/Proton-Meet----Design-Decisions?node-id=9935-46039&m=dev
+button {
+	&.primary {
+		background-color: var(--interaction-norm);
+		color: var(--text-invert);
+		border: none;
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--interaction-norm-major-1);
+			color: var(--text-invert);
+			border: none;
+		}
+	}
+
+	&.secondary {
+		background-color: var(--interaction-weak);
+		color: var(--text-norm);
+		border: none;
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--interaction-weak-major-1);
+			color: var(--text-norm);
+			border: none;
+		}
+	}
+
+	&.tertiary {
+		background-color: var(--background-card);
+		color: var(--text-norm);
+		border: 1px solid var(--border-norm);
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--background-weak);
+			color: var(--text-norm);
+			border: 1px solid var(--border-weak);
+		}
+	}
+
+	&.ghost {
+		background-color: transparent;
+		color: var(--text-norm);
+		border: 1px solid var(--border-norm);
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--background-card);
+			color: var(--text-norm);
+			border: 1px solid var(--border-weak);
+		}
+	}
+}

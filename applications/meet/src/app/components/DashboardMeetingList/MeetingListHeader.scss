@@ -38,27 +38,8 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+	.sort-dropdown-button,
 	.list-toolbar-schedule-button {
-		background: var(--interaction-weak);
-		border-color: var(--border-card);
 		font-size: 0.875rem;
-
-		&:hover,
-		&:active,
-		&:focus {
-			background: var(--interaction-weak-major-1);
-		}
-	}
-
-	.sort-dropdown-button {
-		background: var(--background-card);
-		border: 1px solid var(--border-card);
-		font-size: 0.875rem;
-
-		&:hover,
-		&:active,
-		&:focus {
-			background: var(--interaction-default-hover);
-		}
 	}
 }

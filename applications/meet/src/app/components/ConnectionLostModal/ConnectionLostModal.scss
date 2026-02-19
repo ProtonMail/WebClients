@@ -16,15 +16,6 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	.close-button {
-		background-color: var(--interaction-weak);
-
-		&:hover,
-		&:focus {
-			background-color: var(--interaction-weak-major-1);
-		}
-	}
-
 	.modal-two-dialog-container,
 	.modal-two-dialog {
 		inline-size: 90%;
