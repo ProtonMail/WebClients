@@ -246,16 +246,3 @@ export const getNotificationTextLabelAdded = ({
         elementsCount
     );
 };
-
-export const getNotificationTextUpdated = ({
-    isMessage,
-    elementsCount,
-}: {
-    isMessage: boolean;
-    elementsCount: number;
-}) => {
-    if (isMessage) {
-        return c('Success').ngettext(msgid`Message updated`, `Messages updated`, elementsCount);
-    }
-    return c('Success').ngettext(msgid`Conversation updated`, `Conversations updated`, elementsCount);
-};
