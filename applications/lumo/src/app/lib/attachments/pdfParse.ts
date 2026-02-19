@@ -91,7 +91,8 @@ async function pdfParse(dataBuffer: any, options?: Partial<PDFOptions>): Promise
         ...options,
     };
 
-    const doc = await PDFJS.getDocument(dataBuffer).promise;
+    try {
+        const doc = await PDFJS.getDocument(dataBuffer).promise;
     ret.numpages = doc.numPages;
 
     const metaData = await doc.getMetadata().catch(console.warn);
@@ -112,10 +113,13 @@ async function pdfParse(dataBuffer: any, options?: Partial<PDFOptions>): Promise
         ret.text = `${ret.text}\n\n${pageText}`;
     }
 
-    ret.numrender = counter;
-    void doc.destroy();
+        ret.numrender = counter;
+        void doc.destroy();
 
-    return ret;
+        return ret;
+    } catch (error) {
+        throw new Error(`PDF parsing failed: ${error instanceof Error ? error.message : String(error)}`);
+    }
 }
 
 export default pdfParse;

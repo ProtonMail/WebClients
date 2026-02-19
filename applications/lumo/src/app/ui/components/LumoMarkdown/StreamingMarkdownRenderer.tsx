@@ -37,7 +37,7 @@ interface StreamingMarkdownProps {
  * Throttled markdown renderer that batches updates during streaming
  */
 const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
-    ({ content, isStreaming = false, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
+    ({ content, isStreaming = false, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
         const [displayContent, setDisplayContent] = useState(content || '');
         const contentRef = useRef(content);
         const frameRef = useRef<number>();
@@ -105,6 +105,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
                 handleLinkClick={handleLinkClick}
                 toolCallResults={toolCallResults}
                 sourcesContainerRef={sourcesContainerRef}
+                message={message}
             />
         );
     },

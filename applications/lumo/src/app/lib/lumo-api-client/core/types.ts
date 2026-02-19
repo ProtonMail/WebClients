@@ -1,83 +1,147 @@
-// FIXME FIXME FIXME
-//
-// Most of those types are duplicated from `applications/lumo/src/app/types-api.ts`!
-// It would be wise to merge them to have a single source of truth.
-// I'm not sure what is the best location: here (lib/lumo-api-client) or there (applications/lumo) -> TBD.
-//
-// FIXME FIXME FIXME
+/* eslint-disable no-duplicate-imports */
 
-export type Role = 'assistant' | 'user' | 'system' | 'tool_call' | 'tool_result';
+/* Types for the lumo-api-client library.
+ *
+ * This file contains:
+ * 1. Library-internal types (config, callbacks, interceptors)
+ * 2. Re-exports from types-api.ts (backend API types)
+ * 3. Re-exports from types.ts (app-wide types)
+ *
+ * Most types are re-exported to avoid breaking existing imports within the library.
+ */
 
-export type Turn = {
-    role: Role;
-    content?: string;
-    encrypted?: boolean;
+import type { AesGcmCryptoKey } from '../../../crypto/types';
+import type { Base64, RequestId, Status } from '../../../types';
+import {
+    type ChatEndpointGenerationRequest,
+    type Decrypted,
+    type DecryptedImageDataMessage,
+    type DecryptedTokenDataMessage,
+    type DoneMessage,
+    type Encrypted,
+    type EncryptedImageDataMessage,
+    type EncryptedTokenDataMessage,
+    type EncryptedWireTurn,
+    type ErrorMessage,
+    type GenerationResponseMessage,
+    type GenerationResponseMessageDecrypted,
+    type GenerationTarget,
+    type HarmfulMessage,
+    type ImageDataMessage,
+    type IngestingMessage,
+    type LumoApiGenerationRequest,
+    type QueuedMessage,
+    type RejectedMessage,
+    type RequestableGenerationTarget,
+    Role,
+    type TimeoutMessage,
+    type TokenDataMessage,
+    type ToolName,
+    type UnencryptedWireTurn,
+    type WireImage,
+    type WireTurn,
+} from '../../../types-api';
+import {
+    isDecrypted,
+    isDecryptedImageDataMessage,
+    isDecryptedTokenDataMessage,
+    isDoneMessage,
+    isEncrypted,
+    isEncryptedImageDataMessage,
+    isEncryptedTokenDataMessage,
+    isEncryptedWireTurn,
+    isErrorMessage,
+    isGenerationResponseMessage,
+    isGenerationTarget,
+    isHarmfulMessage,
+    isImageDataMessage,
+    isIngestingMessage,
+    isQueuedMessage,
+    isRejectedMessage,
+    isTimeoutMessage,
+    isTokenDataMessage,
+    isUnencryptedWireTurn,
+    isWireTurn,
+} from '../../../types-api';
+
+// Re-export types with aliases
+export {
+    type ChatEndpointGenerationRequest,
+    type Decrypted,
+    type DecryptedImageDataMessage,
+    type DecryptedTokenDataMessage,
+    type DoneMessage,
+    type Encrypted,
+    type EncryptedImageDataMessage,
+    type EncryptedTokenDataMessage,
+    type ErrorMessage,
+    type GenerationResponseMessage,
+    type GenerationResponseMessageDecrypted,
+    type GenerationTarget,
+    type HarmfulMessage,
+    type ImageDataMessage,
+    type IngestingMessage,
+    type LumoApiGenerationRequest,
+    type QueuedMessage,
+    type RejectedMessage,
+    type RequestableGenerationTarget,
+    Role,
+    type TimeoutMessage,
+    type TokenDataMessage,
+    type ToolName,
+    type WireImage,
 };
+export type EncryptedTurn = EncryptedWireTurn;
+export type UnencryptedTurn = UnencryptedWireTurn;
+export type Turn = WireTurn;
 
-export type EncryptedTurn = Turn & { encrypted: true };
-
-export type Base64 = string;
-export type RequestId = string;
-
-export type AesGcmCryptoKey = {
-    type: 'AesGcmCryptoKey';
-    encryptKey: CryptoKey;
+// Re-export functions with aliases
+export {
+    isDecrypted,
+    isDecryptedImageDataMessage,
+    isDecryptedTokenDataMessage,
+    isDoneMessage,
+    isEncrypted,
+    isEncryptedImageDataMessage,
+    isEncryptedTokenDataMessage,
+    isErrorMessage,
+    isGenerationResponseMessage,
+    isGenerationTarget,
+    isHarmfulMessage,
+    isImageDataMessage,
+    isIngestingMessage,
+    isQueuedMessage,
+    isRejectedMessage,
+    isTimeoutMessage,
+    isTokenDataMessage,
 };
+export const isEncryptedTurn = isEncryptedWireTurn;
+export const isUnencryptedTurn = isUnencryptedWireTurn;
+export const isTurn = isWireTurn;
 
-export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency';
+export type { Base64, RequestId, Status };
 
-export type RequestableGenerationTarget = 'message' | 'title';
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result';
+export type { AesGcmCryptoKey };
 
-export type LumoApiGenerationRequest = {
-    type: 'generation_request';
-    turns: Turn[];
-    options?: {
-        tools?: ToolName[] | boolean;
-    };
-    targets?: RequestableGenerationTarget[];
-    request_key?: string; // aes-gcm-256, pgp-encrypted, base64
-    request_id?: RequestId; // uuid used solely for AEAD encryption
-};
-
-export type GenerationToFrontendMessage =
-    | { type: 'queued'; target?: GenerationTarget }
-    | { type: 'ingesting'; target: GenerationTarget }
-    | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: boolean }
-    | { type: 'done' }
-    | { type: 'timeout' }
-    | { type: 'error' }
-    | { type: 'rejected' }
-    | { type: 'harmful' };
-
-export type GenerationToFrontendMessageDecrypted =
-    | { type: 'queued'; target?: GenerationTarget }
-    | { type: 'ingesting'; target: GenerationTarget }
-    | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: false }
-    | { type: 'done' }
-    | { type: 'timeout' }
-    | { type: 'error' }
-    | { type: 'rejected' }
-    | { type: 'harmful' };
-
-export type Status = 'succeeded' | 'failed';
+// *** Library-internal types (lumo-api-client only) ***
 
 // Configuration interfaces
 export interface LumoApiClientConfig {
-    enableU2LEncryption?: boolean;
-    enableSmoothing?: boolean;
-    endpoint?: string;
-    lumoPubKey?: string;
-    externalTools?: ToolName[];
-    internalTools?: ToolName[];
-    interceptors?: {
+    enableU2LEncryption: boolean;
+    enableSmoothing: boolean;
+    endpoint: string;
+    lumoPubKey: string;
+    externalTools: ToolName[];
+    internalTools: ToolName[];
+    imageTools: ToolName[];
+    interceptors: {
         request?: RequestInterceptor[];
         response?: ResponseInterceptor[];
     };
 }
 
 // Callback types
-export type ChunkCallback = (message: GenerationToFrontendMessage) => Promise<{ error?: any }> | { error?: any };
+export type ChunkCallback = (message: GenerationResponseMessage) => Promise<void> | void;
 export type FinishCallback = (status: Status) => Promise<void> | void;
 
 // Options interface
@@ -86,50 +150,11 @@ export interface AssistantCallOptions {
     finishCallback?: FinishCallback;
     signal?: AbortSignal;
     enableExternalTools?: boolean;
+    enableImageTools?: boolean,
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;
-    requestTitle?: boolean;
+    generateTitle?: boolean;
     autoGenerateEncryption?: boolean;
-}
-
-// Type guards
-export function isGenerationToFrontendMessage(obj: any): obj is GenerationToFrontendMessage {
-    if (typeof obj !== 'object' || obj === null) {
-        return false;
-    }
-
-    if (!('type' in obj)) {
-        return false;
-    }
-
-    switch (obj.type) {
-        case 'queued':
-        case 'ingesting':
-        case 'done':
-        case 'timeout':
-        case 'error':
-        case 'rejected':
-        case 'harmful':
-            return true;
-
-        case 'token_data':
-            return (
-                'target' in obj &&
-                'count' in obj &&
-                'content' in obj &&
-                isGenerationTarget(obj.target) &&
-                typeof obj.count === 'number' &&
-                typeof obj.content === 'string' &&
-                (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-            );
-
-        default:
-            return false;
-    }
-}
-
-export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result'].includes(value);
 }
 
 /**
@@ -166,9 +191,9 @@ export interface ResponseInterceptor {
      * @returns Modified chunk or the original chunk
      */
     onResponseChunk?: (
-        chunk: GenerationToFrontendMessage,
+        chunk: GenerationResponseMessage,
         context: ResponseContext
-    ) => Promise<GenerationToFrontendMessage> | GenerationToFrontendMessage;
+    ) => Promise<GenerationResponseMessage> | GenerationResponseMessage;
 
     /**
      * Called when the response is complete

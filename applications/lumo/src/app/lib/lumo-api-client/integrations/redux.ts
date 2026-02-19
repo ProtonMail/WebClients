@@ -1,5 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -7,7 +9,9 @@ import {
 } from '../../../redux/slices/core/conversations';
 // Redux action creators
 import {
+    addImageAttachment,
     appendChunk,
+    appendReasoning,
     deleteMessage,
     finishMessage,
     pushMessageRequest,
@@ -16,8 +20,9 @@ import {
 } from '../../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../../redux/store';
 import { ConversationStatus, Role } from '../../../types';
+import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
 import { LumoApiClient } from '../core/client';
-import type { AssistantCallOptions, GenerationToFrontendMessage, LumoApiClientConfig, Turn } from '../core/types';
+import type { AssistantCallOptions, GenerationResponseMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
 
 /**
@@ -27,12 +32,12 @@ export function sendMessageWithRedux(
     api: Api,
     turns: Turn[],
     options: AssistantCallOptions & {
-        config?: LumoApiClientConfig;
+        config?: Partial<LumoApiClientConfig>;
         messageId?: string;
         conversationId?: string;
         spaceId?: string;
         role?: Role;
-        errorHandler?: (message: GenerationToFrontendMessage, conversationId: string) => any;
+        errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     } = {} as any
 ) {
     return async (dispatch: LumoDispatch): Promise<void> => {
@@ -54,7 +59,7 @@ export function sendMessageWithRedux(
 
         await client.callAssistant(api, turns, {
             ...assistantOptions,
-            chunkCallback: async (message: GenerationToFrontendMessage) => {
+            chunkCallback: async (message: GenerationResponseMessage) => {
                 switch (message.type) {
                     case 'error':
                     case 'timeout':
@@ -62,18 +67,18 @@ export function sendMessageWithRedux(
                     case 'harmful':
                         // Use custom error handler if provided, otherwise use generic Error
                         if (errorHandler && conversationId) {
-                            return { error: errorHandler(message, conversationId) };
+                            throw errorHandler(message, conversationId);
                         }
-                        return { error: new Error(`Generation failed: ${message.type}`) };
+                        throw new Error(`Generation failed: ${message.type}`);
 
                     case 'done':
                         // handle case for successful response with no content
                         if (!accumulatedContent.trim()) {
                             console.warn(`Generation completed with no content`);
                             if (errorHandler && conversationId) {
-                                return { error: errorHandler({ type: 'error' }, conversationId) };
+                                throw errorHandler({ type: 'error' }, conversationId);
                             }
-                            return { error: new Error('Generation failed: no content') };
+                            throw new Error('Generation failed: no content');
                         }
                         break;
 
@@ -143,6 +148,46 @@ export function sendMessageWithRedux(
                                     );
                                 }
                                 break;
+
+                            case 'reasoning':
+                                if (messageId) {
+                                    dispatch(
+                                        appendReasoning({
+                                            messageId,
+                                            content: message.content,
+                                            sequence: message.count,
+                                        })
+                                    );
+                                }
+                                break;
+                        }
+                        break;
+
+                    case 'image_data':
+                        console.log('[IMAGE_DATA] Received in Redux integration', {
+                            image_id: message.image_id,
+                            data: message.data
+                                ? `${message.data.substring(0, 50)}... (${message.data.length} chars)`
+                                : 'none',
+                            is_final: message.is_final,
+                            seed: message.seed,
+                        });
+
+                        if (message.image_id && message.data && messageId && spaceId) {
+                            const { attachment, data: imageData } = createImageAttachment(
+                                message.image_id,
+                                message.data,
+                                spaceId
+                            );
+
+                            // Store image data in cache instead of Redux
+                            attachmentDataCache.setData(attachment.id, imageData);
+                            
+                            dispatch(addAttachment(attachment));
+                            dispatch(addImageAttachment({ messageId, attachment }));
+                            dispatch(appendChunk({ messageId, content: generateImageMarkdown(message.image_id) }));
+                            // Push attachment to server now that it has spaceId
+                            dispatch(pushAttachmentRequest({ id: message.image_id }));
                         }
                         break;
                 }
@@ -151,25 +196,23 @@ export function sendMessageWithRedux(
                 if (assistantOptions.chunkCallback) {
                     return assistantOptions.chunkCallback(message);
                 }
-
-                return {};
             },
             finishCallback: async (status) => {
                 if (messageId && conversationId && spaceId) {
-                    // If generation failed, delete the message instead of keeping it
-                    if (status === 'failed') {
-                        dispatch(deleteMessage(messageId));
-                    } else {
-                        dispatch(
-                            finishMessage({
-                                messageId,
-                                conversationId,
-                                spaceId,
-                                content: accumulatedContent,
-                                status,
-                                role,
-                            })
-                        );
+                    // Always finish the message (even if failed) to preserve any content that was streamed
+                    // This includes reasoning tokens, partial message content, or tool calls
+                    dispatch(
+                        finishMessage({
+                            messageId,
+                            conversationId,
+                            spaceId,
+                            content: accumulatedContent,
+                            status: status === 'failed' ? 'failed' : status,
+                            role,
+                        })
+                    );
+                    // Only push to server if generation succeeded
+                    if (status !== 'failed') {
                         dispatch(pushMessageRequest({ id: messageId }));
                     }
 
@@ -212,6 +255,7 @@ export function sendMessageWithRedux(
 /**
  * Create Redux callbacks for streaming responses
  */
+// TODO unused? consider removing
 export function createReduxCallbacks(
     messageId: string,
     conversationId: string,
@@ -229,7 +273,7 @@ export function createReduxCallbacks(
 
     return {
         // todo turn chunkCallback(message, dispatch) into dispatch(chunkCallback(message))
-        chunkCallback: async (message: GenerationToFrontendMessage, dispatch: LumoDispatch) => {
+        chunkCallback: async (message: GenerationResponseMessage, dispatch: LumoDispatch) => {
             if (message.type === 'token_data' && message.target === 'message') {
                 accumulatedContent += message.content;
 

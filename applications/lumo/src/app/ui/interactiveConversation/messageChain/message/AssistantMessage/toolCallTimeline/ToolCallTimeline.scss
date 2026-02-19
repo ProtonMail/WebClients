@@ -1,0 +1,80 @@
+.tool-call-timeline {
+	//margin: 8px 0;
+}
+
+.tool-call-timeline-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: 24px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+
+	// Vertical line from circle to bottom (always present, hidden for last item)
+	&::before {
+		content: '';
+		position: absolute;
+		left: 5px;
+		top: calc(50% + 5.5px);
+		bottom: 0;
+		width: 1px;
+		background-color: var(--border-norm);
+	}
+
+	&:last-child::before {
+		opacity: 0;
+	}
+
+	// Vertical line from top to circle (always present, hidden for first item)
+	&::after {
+		content: '';
+		position: absolute;
+		left: 5px;
+		top: 0;
+		height: calc(50% - 5.5px);
+		width: 1px;
+		background-color: var(--border-norm);
+	}
+
+	&:first-child::after {
+		opacity: 0;
+	}
+
+	// Single item: no circle, no padding
+	&--single {
+		padding-left: 0;
+
+		.tool-call-circle {
+			display: none;
+		}
+	}
+}
+
+.tool-call-circle {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(calc(-50%));
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: var(--border-norm);
+
+	&--in-progress {
+		background-color: var(--interaction-norm);
+		animation: pulse 1.5s ease-in-out infinite;
+	}
+}
+
+.tool-call-label--in-progress {
+	//font-weight: 500;
+}
+
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+}

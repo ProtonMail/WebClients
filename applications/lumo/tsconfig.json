@@ -1,6 +1,8 @@
 {
     "extends": "../../tsconfig.base.json",
-    "compilerOptions": {},
+    "compilerOptions": {
+        "noUncheckedIndexedAccess": false
+    },
     "exclude": [
         "**/node_modules",
         "**/.*/",

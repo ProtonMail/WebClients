@@ -1,5 +1,5 @@
 import { isTurn } from '../../types';
-import type { RequestId, Role, Turn } from './index';
+import { type RequestId, Role, type Turn } from './index';
 
 /**
  * Simple message interface for convenience
@@ -23,35 +23,35 @@ export function prepareTurns(messages: Message[]): Turn[] {
  * Create a user turn
  */
 export function createUserTurn(content: string): Turn {
-    return { role: 'user', content };
+    return { role: Role.User, content };
 }
 
 /**
  * Create an assistant turn
  */
 export function createAssistantTurn(content: string): Turn {
-    return { role: 'assistant', content };
+    return { role: Role.Assistant, content };
 }
 
 /**
  * Create a system turn
  */
 export function createSystemTurn(content: string): Turn {
-    return { role: 'system', content };
+    return { role: Role.System, content };
 }
 
 /**
  * Create a tool call turn
  */
 export function createToolCallTurn(content: string): Turn {
-    return { role: 'tool_call', content };
+    return { role: Role.ToolCall, content };
 }
 
 /**
  * Create a tool result turn
  */
 export function createToolResultTurn(content: string): Turn {
-    return { role: 'tool_result', content };
+    return { role: Role.ToolResult, content };
 }
 
 /**
@@ -169,7 +169,7 @@ export function getConversationSummary(turns: Turn[], maxLength: number = 100): 
  * @param finalTurn - Turn to append
  * @returns New array with final turn appended
  */
-export function appendFinalTurn(turns: Turn[], finalTurn: Turn = { role: 'assistant', content: '' }): Turn[] {
+export function appendFinalTurn(turns: Turn[], finalTurn: Turn = { role: Role.Assistant, content: '' }): Turn[] {
     return [...turns, finalTurn];
 }
 

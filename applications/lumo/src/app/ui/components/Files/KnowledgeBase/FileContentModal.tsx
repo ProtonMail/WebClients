@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,10 +7,11 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import type { ModalProps } from '@proton/components';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 
+import { attachmentDataCache } from '../../../../services/attachmentDataCache';
 import type { Attachment } from '../../../../types';
 import { Role } from '../../../../types';
 import { isFileTypeSupported, mimeToHuman } from '../../../../util/filetypes';
-import { LazyLumoMarkdown } from '../../LumoMarkdown/LazyMarkdownComponents';
+import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FileContentModalProps extends Omit<ModalProps, 'children'> {
     attachment: Attachment | null;
@@ -19,6 +20,7 @@ interface FileContentModalProps extends Omit<ModalProps, 'children'> {
 
 export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileContentModalProps) => {
     const [showRaw, setShowRaw] = useState(false);
+    const [imageUrl, setImageUrl] = useState<string | null>(null);
 
     // Truncate long content to prevent UI lag
     // ~80 chars per line, ~50 lines per page, ~5 pages = 20,000 chars
@@ -42,6 +44,30 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             remaining: attachment.markdown.length - truncateAt,
         };
     }, [attachment?.markdown]);
+
+    // Check if this is an image
+    const attachmentMimeType = attachment?.mimeType;
+    const isImage = attachmentMimeType?.startsWith('image/');
+
+    // Create and cleanup image URL
+    useEffect(() => {
+        if (isImage && attachment) {
+            // Get image data from cache instead of Redux
+            const attachmentData = attachmentDataCache.getData(attachment.id);
+            const attachmentImagePreview = attachmentDataCache.getImagePreview(attachment.id);
+            const imageData = attachmentData || attachmentImagePreview;
+            
+            if (imageData) {
+                const blob = new Blob([imageData], { type: attachmentMimeType });
+                const url = URL.createObjectURL(blob);
+                setImageUrl(url);
+
+                return () => {
+                    URL.revokeObjectURL(url);
+                };
+            }
+        }
+    }, [isImage, attachment, attachmentMimeType]);
 
     if (!attachment) return null;
 
@@ -261,6 +287,28 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             );
         }
 
+        // Show image if available
+        if (imageUrl) {
+            const hasFullResolution = attachmentDataCache.hasData(attachment.id);
+            const hasPreviewOnly = !hasFullResolution && attachmentDataCache.hasImagePreview(attachment.id);
+            
+            return (
+                <div className="flex flex-column items-center justify-center p-4">
+                    <img
+                        src={imageUrl}
+                        alt={attachment.filename}
+                        className="max-w-full max-h-custom rounded"
+                        style={{ '--max-h-custom': '70vh', objectFit: 'contain' }}
+                    />
+                    {hasPreviewOnly && (
+                        <p className="text-xs color-weak mt-2">
+                            {c('collider_2025: Info').t`Preview quality - full resolution not loaded`}
+                        </p>
+                    )}
+                </div>
+            );
+        }
+
         if (!hasContent) {
             return (
                 <div className="flex flex-column items-center justify-center p-8 text-center">
@@ -306,7 +354,9 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                     className="prose prose-sm max-w-none overflow-auto p-6 --max-h-custom"
                     // style={{ '--max-h-custom': '70vh' }}
                 >
-                    <LazyLumoMarkdown
+                    <LazyProgressiveMarkdownRenderer
+                        content={truncatedContent.content}
+                        isStreaming={false}
                         message={{
                             id: 'file-content',
                             content: truncatedContent.content,
@@ -314,7 +364,6 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                             conversationId: '',
                             createdAt: new Date().toISOString(),
                         }}
-                        content={truncatedContent.content}
                     />
                 </div>
                 {truncatedContent.truncated && (
@@ -376,7 +425,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                 />
 
                 <ModalTwoContent>
-                    {hasContent && (
+                    {hasContent && !imageUrl && (
                         <div className="flex flex-row justify-space-between items-center mb-4 p-2 bg-weak rounded">
                             <span className="text-sm color-weak">
                                 {isCSVOrExcel && !showRaw

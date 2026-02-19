@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
-import useFlag from '@proton/unleash/useFlag';
+import {useLumoFlags} from '../../../hooks/useLumoFlags';
 
 import { useLumoNavigate } from '../../../hooks/useLumoNavigate';
 import { useStaggeredWhatsNewFeatures } from '../../../hooks/useStaggeredWhatsNewFeatures';
@@ -14,37 +14,14 @@ import type { WhatsNewFeature } from './types';
 
 import './WhatsNew.scss';
 
-const WHATS_NEW_FEATURE_FLAG = 'WhatsNewV1p3' as const;
-
 const WhatsNew = () => {
-    const isFeatureEnabled = useFlag(WHATS_NEW_FEATURE_FLAG);
+    const { whatsNew} = useLumoFlags();
     const { isDarkLumoTheme, isAutoMode } = useLumoTheme();
     const navigate = useLumoNavigate();
 
     const features: WhatsNewFeature[] = useMemo(
         () => [
-            // {
-            //     id: 'darkMode',
-            //     versionFlag: 'WhatsNewV1p2',
-            //     image: whatsNewDarkMode,
-            //     getTitle: () => c('collider_2025:Title').t`Dark mode is here`,
-            //     getDescription: () =>
-            //         c('collider_2025:Title')
-            //             .t`Dark mode has been one of our community’s most highly anticipated updates for ${LUMO_SHORT_APP_NAME}. Throughout the ${BRAND_NAME} ecosystem, you can customize the look of all of your apps, and now you can customize ${LUMO_SHORT_APP_NAME}, too, with a light or dark theme.`,
-            //     settingsPanelToOpen: 'general',
-            //     canShow: !isDarkLumoTheme && !isAutoMode,
-            // },
-            // {
-            //     id: 'personalization',
-            //     versionFlag: 'WhatsNewV1p2',
-            //     image: whatsNewPersonalization,
-            //     getTitle: () => c('collider_2025:Title').t`Personalization: ${LUMO_SHORT_APP_NAME} for you`,
-            //     getDescription: () =>
-            //         c('collider_2025:Title')
-            //             .t`Personalization lets you tailor how ${LUMO_SHORT_APP_NAME} interacts with you. Tell ${LUMO_SHORT_APP_NAME} your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.`,
-            //     settingsPanelToOpen: 'personalization',
-            //     canShow: true,
-            // },
+
             {
                 id: 'projects',
                 versionFlag: 'WhatsNewV1p3',
@@ -161,7 +138,7 @@ const WhatsNew = () => {
         [isDarkLumoTheme, isAutoMode]
     );
 
-    const { currentFeature, dismissFeature, declineFeature } = useStaggeredWhatsNewFeatures(features, isFeatureEnabled);
+    const { currentFeature, dismissFeature, declineFeature } = useStaggeredWhatsNewFeatures(features, whatsNew);
     const timerRef = useRef<number>();
 
     const dismissCurrentFeature = () => {

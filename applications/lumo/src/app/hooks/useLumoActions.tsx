@@ -2,24 +2,23 @@ import { useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
+import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
-import type { Attachment } from '../types';
+import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
-import type { ActionParams, ErrorContext, RetryStrategy } from '../types-api';
 import {
+    formatPersonalization,
     generateFakeConversationToShowTierError,
-    getPersonalizationPromptFromState,
     regenerateMessage,
     retrySendMessage,
     sendMessage,
@@ -28,6 +27,8 @@ import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessage
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
+import { useLumoFlags } from './useLumoFlags';
+import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
 import { useTierErrors } from './useTierErrors';
 
@@ -49,8 +50,13 @@ interface Props {
     navigateCallback: (conversationId: ConversationId) => void;
 }
 
-export type HandleSendMessage = (newMessage: string, enableExternalTools: boolean) => Promise<void>;
-export type HandleRegenerateMessage = (message: Message, isWebSearchButtonToggled: boolean, retryStrategy?: RetryStrategy, customInstructions?: string) => Promise<void>;
+export type HandleSendMessage = (newMessage: string, isWebSearchButtonToggled: boolean) => Promise<void>;
+export type HandleRegenerateMessage = (
+    message: Message,
+    isWebSearchButtonToggled: boolean,
+    retryStrategy?: RetryStrategy,
+    customInstructions?: string
+) => Promise<void>;
 export type HandleEditMessage = (
     originalMessage: Message,
     newContent: string,
@@ -72,15 +78,16 @@ export const useLumoActions = ({
     const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
-    const isLumoToolingEnabled = useFlag('LumoTooling');
-    const enableSmoothing = useFlag('LumoSmoothedRendering');
+    const { smoothRendering: ffSmoothRendering, externalTools: ffExternalTools, imageTools: ffImageTools } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
+    const { personalization } = usePersonalization();
+    const attachmentMap = useLumoSelector(selectAttachmentsBySpaceId(space?.id));
 
     // Custom hooks
-    const { isGhostChatMode } = useGhostChat();
+    const { isGhostChatMode: isGhostMode } = useGhostChat();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
@@ -96,36 +103,85 @@ export const useLumoActions = ({
 
     const spaceId = space?.id;
 
-    const handleSendAction = async (
-        actionParams: ActionParams,
-        finalConversationId: ConversationId,
-        finalSpaceId: SpaceId,
-        spaceDek: any,
-        signal: AbortSignal,
-        datePair?: [string, string]
-    ) => {
-        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
+    // Helper to load and deduplicate attachments from message history
+    const loadAttachments = async (
+        messages: Message[],
+        user: User | undefined,
+        spaceDek: AesGcmCryptoKey | undefined
+    ): Promise<Attachment[]> => {
+        const allAttachments: Attachment[] = [];
+        const seenIds = new Set<string>();
 
-        if (!newMessageContent) {
-            return;
+        for (const message of messages) {
+            if (message.attachments && message.attachments.length > 0) {
+                console.log(
+                    `Loading attachments for message ${message.id}] (content=${message.content?.slice(50)}`,
+                    message.attachments
+                );
+                // Filter out already-seen attachments to avoid redundant loading
+                const unseenAttachments = message.attachments.filter((a) => !seenIds.has(a.id));
+
+                if (unseenAttachments.length > 0) {
+                    const filled = await fillAttachmentData(unseenAttachments, attachmentMap, user, spaceDek);
+                    allAttachments.push(...filled);
+
+                    // Mark as seen
+                    filled.forEach((a) => seenIds.add(a.id));
+                }
+            }
         }
 
+        console.log('all attachments:', allAttachments);
+
+        return allAttachments;
+    };
+
+    const handleSendAction = async (
+        actionParams: ActionParams,
+        conversationId: ConversationId,
+        spaceId: SpaceId,
+        spaceDek: AesGcmCryptoKey | undefined,
+        signal: AbortSignal
+    ) => {
+        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
+        if (!newMessageContent) return;
+
+        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
+        const enableImageTools = ffImageTools;
+        const enableSmoothing = ffSmoothRendering;
+
+        // Load messages and all attachments from conversation history and combine with new message attachments
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
+        const allConversationAttachments = [...historyAttachments, ...provisionalAttachments];
 
         await dispatch(
             sendMessage({
-                api,
-                newMessageContent,
-                attachments: provisionalAttachments,
-                messageChain: messagesWithContext,
-                conversationId: finalConversationId,
-                spaceId: finalSpaceId,
-                signal,
-                navigateCallback,
-                enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
-                enableSmoothing,
-                contextFilters,
-                datePair,
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                newMessageData: {
+                    content: newMessageContent,
+                    attachments: provisionalAttachments,
+                },
+                conversationContext: {
+                    spaceId,
+                    conversationId,
+                    allConversationAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    enableExternalTools,
+                    enableImageTools,
+                    navigateCallback,
+                    enableSmoothing,
+                    isGhostMode,
+                },
+                settingsContext: {
+                    personalization,
+                },
             })
         );
 
@@ -136,7 +192,7 @@ export const useLumoActions = ({
     const handleRetryAction = async (
         finalConversationId: ConversationId,
         finalSpaceId: SpaceId,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal,
         isWebSearchButtonToggled: boolean
     ) => {
@@ -157,12 +213,16 @@ export const useLumoActions = ({
             spaceDek
         );
 
+        // Load all attachments from conversation history
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
+
         // Get personalization data for retry from saved user settings (not unsaved Redux state)
+        // TODO can I delete this?
         const savedPersonalization = lumoUserSettings?.personalization;
         let personalizationPrompt: string | undefined;
-        
+
         if (savedPersonalization?.enableForNewChats) {
-            personalizationPrompt = getPersonalizationPromptFromState(savedPersonalization);
+            personalizationPrompt = formatPersonalization(savedPersonalization);
             console.log('Retry: Generated personalization prompt from saved settings:', personalizationPrompt);
         } else {
             console.log('Retry: Personalization not enabled or no saved personalization data');
@@ -174,54 +234,96 @@ export const useLumoActions = ({
             projectInstructions = space.projectInstructions;
         }
 
-        await retrySendMessage({
-            api,
-            dispatch,
-            lastUserMessage,
-            messageChain: messagesWithContext,
-            spaceId: finalSpaceId,
-            conversationId: finalConversationId,
-            signal,
-            enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
-            contextFilters,
-            personalizationPrompt,
-            projectInstructions,
-            allAttachments,
-        });
+        await dispatch(
+            retrySendMessage({
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                conversationContext: {
+                    spaceId: finalSpaceId,
+                    conversationId: finalConversationId,
+                    allConversationAttachments: historyAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                projectContext: {
+                    isProject: !!space?.isProject,
+                    projectInstructions,
+                    allAttachments,
+                },
+                uiContext: {
+                    enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                    navigateCallback,
+                    isGhostMode,
+                    enableSmoothing: ffSmoothRendering,
+                    enableImageTools: ffImageTools,
+                },
+                settingsContext: {
+                    personalization,
+                },
+                retryData: {
+                    lastUserMessage,
+                },
+            })
+        );
     };
 
     const handleEditAction = async (
         actionParams: ActionParams,
+        conversationId: ConversationId,
+        spaceId: SpaceId,
         originalMessage: Message,
-        spaceDek: any,
-        signal: AbortSignal,
-        isWebSearchButtonToggled: boolean
+        spaceDek: AesGcmCryptoKey | undefined,
+        signal: AbortSignal
     ) => {
-        const { newMessageContent } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
         if (!newMessageContent) {
             return;
         }
 
         const parentMessageChain = buildLinearChain(messageMap, originalMessage.parentId, preferredSiblings);
-        const conversationId = originalMessage.conversationId;
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
-        const attachments = await fillAttachmentData(originalMessage.attachments ?? [], user, spaceDek);
+
+        // Load all attachments from conversation history and combine with edited message attachments
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
+        const editedMessageAttachments = await fillAttachmentData(
+            originalMessage.attachments ?? [],
+            attachmentMap,
+            user,
+            spaceDek
+        );
+        const allAttachments = [...historyAttachments, ...editedMessageAttachments];
 
         await dispatch(
             sendMessage({
-                api,
-                newMessageContent,
-                attachments,
-                messageChain: messagesWithContext,
-                conversationId,
-                spaceId,
-                signal,
-                navigateCallback,
-                isEdit: true,
-                updateSibling: preferSibling,
-                enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
-                enableSmoothing,
-                contextFilters,
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                newMessageData: {
+                    content: newMessageContent,
+                    attachments: editedMessageAttachments,
+                },
+                conversationContext: {
+                    spaceId: spaceId,
+                    conversationId: conversationId,
+                    allConversationAttachments: allAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    isEdit: true,
+                    updateSibling: preferSibling,
+                    enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                    enableImageTools: ffImageTools,
+                    navigateCallback,
+                    enableSmoothing: ffSmoothRendering,
+                    isGhostMode,
+                },
+                settingsContext: {
+                    personalization,
+                },
             })
         );
 
@@ -250,7 +352,7 @@ export const useLumoActions = ({
 
     const handleRegenerateAction = async (
         originalMessage: Message,
-        spaceDek: any,
+        spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal,
         isWebSearchButtonToggled: boolean,
         retryStrategy: RetryStrategy = 'simple',
@@ -271,6 +373,9 @@ export const useLumoActions = ({
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
         const retryInstructions = getRetryInstructions(retryStrategy, customInstructions);
 
+        // Load all attachments from conversation history
+        const allAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
+
         // Create a new placeholder assistant message
         const assistantMessageId = newMessageId();
         const assistantMessage: Message = {
@@ -284,34 +389,57 @@ export const useLumoActions = ({
         };
 
         dispatch(addMessage(assistantMessage));
+
         // Set this message as preferred so it gets displayed instead of its earlier siblings
         preferSibling(assistantMessage);
 
         const parentMessageHasAttachments = !!parentMessage?.attachments?.length;
-        const enableExternalTools = isWebSearchButtonToggled && !parentMessageHasAttachments && isLumoToolingEnabled;
+        const enableExternalTools = ffExternalTools && isWebSearchButtonToggled && !parentMessageHasAttachments;
+        const enableImageTools = ffImageTools;
 
         if (!spaceId) {
             throw new Error(OPERATION_MESSAGES.SPACE_ID_REQUIRED);
         }
 
         await dispatch(
-            regenerateMessage(
-                api,
-                spaceId,
-                conversationId,
-                assistantMessageId,
-                messagesWithContext,
-                signal,
-                enableExternalTools,
-                enableSmoothing,
-                contextFilters,
-                retryInstructions
-            )
+            regenerateMessage({
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                conversationContext: {
+                    spaceId,
+                    conversationId,
+                    allConversationAttachments: allAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    enableExternalTools,
+                    enableImageTools,
+                    navigateCallback,
+                    isGhostMode,
+                    enableSmoothing: ffSmoothRendering,
+                },
+                settingsContext: {
+                    personalization,
+                },
+                regenerateData: {
+                    assistantMessageId,
+                    retryInstructions,
+                },
+            })
         );
     };
 
     const handleMessageAction = async (actionParams: ActionParams) => {
-        const { actionType, newMessageContent, originalMessage, retryStrategy = 'simple', customRetryInstructions } = actionParams;
+        const {
+            actionType,
+            newMessageContent,
+            originalMessage,
+            retryStrategy = 'simple',
+            customRetryInstructions,
+        } = actionParams;
         const isWebSearchButtonToggled = !!actionParams.isWebSearchButtonToggled;
 
         // Validate input parameters
@@ -342,11 +470,7 @@ export const useLumoActions = ({
             clearErrors();
         }
 
-        const {
-            conversationId: finalConversationId,
-            spaceId: finalSpaceId,
-            datePair,
-        } = ensureConversationAndSpace(conversationId, spaceId);
+        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace();
 
         // Create error context with guaranteed conversationId
         const errorContext: ErrorContext = {
@@ -361,20 +485,34 @@ export const useLumoActions = ({
             !conversationId, // isNewConversation when conversationId is undefined
             isWebSearchButtonToggled,
             provisionalAttachments.length > 0,
-            isGhostChatMode
+            isGhostMode
         );
 
         try {
             const spaceDek = space && (await getSpaceDek(space));
 
             if (actionType === 'send') {
-                await handleSendAction(actionParams, finalConversationId, finalSpaceId, spaceDek, signal, datePair);
+                await handleSendAction(actionParams, finalConversationId, finalSpaceId, spaceDek, signal);
             }
             if (actionType === 'edit') {
-                await handleEditAction(actionParams, originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
+                await handleEditAction(
+                    actionParams,
+                    finalConversationId,
+                    finalSpaceId,
+                    originalMessage!,
+                    spaceDek,
+                    signal
+                );
             }
             if (actionType === 'regenerate') {
-                await handleRegenerateAction(originalMessage!, spaceDek, signal, isWebSearchButtonToggled, retryStrategy, customRetryInstructions);
+                await handleRegenerateAction(
+                    originalMessage!,
+                    spaceDek,
+                    signal,
+                    isWebSearchButtonToggled,
+                    retryStrategy,
+                    customRetryInstructions
+                );
             }
         } catch (error: any) {
             handleActionError(error, errorContext);

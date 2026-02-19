@@ -1,13 +1,49 @@
+import partition from 'lodash/partition';
+
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { DbApi } from '../indexedDb/db';
+import type { AttachmentMap } from '../redux/slices/core/attachments';
 import { deserializeAttachment } from '../serialization';
-import type { Attachment, Message } from '../types';
+import { type Attachment, type Message, isShallowAttachment } from '../types';
+
+// Supported image MIME types
+const IMAGE_MIME_TYPES = [
+    'image/jpeg',
+    'image/jpg',
+    'image/png',
+    'image/gif',
+    'image/webp',
+    'image/heic',
+    'image/heif',
+];
+
+/**
+ * Check if an attachment is an image based on its MIME type
+ */
+export function isImageAttachment(attachment: Attachment): boolean {
+    return IMAGE_MIME_TYPES.some((type) => attachment.mimeType?.startsWith(type));
+}
+
+/**
+ * Separate attachments into images and text/document files
+ */
+export function separateAttachmentsByType(attachments: Attachment[]): {
+    imageAttachments: Attachment[];
+    textAttachments: Attachment[];
+} {
+    const [imageAttachments, textAttachments] = partition(attachments, isImageAttachment);
+    return { imageAttachments, textAttachments };
+}
 
 // Generates a multiline string for the LLM (the "context") that represents the aggregated contents of the attachments.
+// Note: Images are excluded and should be sent as WireImage instead.
 export function flattenAttachmentsForLlm(attachments: Attachment[]) {
-    const contextLines = attachments.flatMap((a) => {
+    // Filter out images - they will be sent separately as WireImage objects
+    const { textAttachments } = separateAttachmentsByType(attachments);
+
+    const contextLines = textAttachments.flatMap((a) => {
         let content: string | undefined;
         if (a.markdown) {
             content = (a as Attachment)?.markdown?.trim() ?? '';
@@ -31,7 +67,7 @@ export function flattenAttachmentsForLlm(attachments: Attachment[]) {
     });
 
     if (contextLines.length > 0) {
-        const fileCount = attachments.filter((a) => a.markdown || a.error).length;
+        const fileCount = textAttachments.filter((a) => a.markdown || a.error).length;
         const fileCountText = fileCount === 1 ? '1 file' : `${fileCount} files`;
 
         return [
@@ -57,6 +93,7 @@ export async function addContextToMessages(
         return messageChain;
     }
     const dbApi = new DbApi(user.ID);
+    await dbApi.initialize();
     const addContextToMessage = async (m: Message) => {
         if (m.context !== undefined) return m;
         if (!m.attachments) return m;
@@ -89,6 +126,7 @@ export async function fillOneAttachmentData(
     }
     if (!dbApi) {
         dbApi = new DbApi(user.ID);
+        await dbApi.initialize();
     }
     const serializedAttachment = await dbApi.getAttachmentById(attachment.id);
     if (!serializedAttachment) return attachment;
@@ -96,17 +134,31 @@ export async function fillOneAttachmentData(
     return fullAttachment ?? attachment;
 }
 
-// Retrieves full copies with all fields defined (especially `data`, `markdown`) from partial
-// attachments that may have these fields undefined. The full copies are retrieved from IndexedDB,
-// which serves as the source of truth for attachments and contains all fields.
+// Turns shallow attachments into filled attachments with all fields defined (especially `data`, `markdown`) .
+// We try to retrieve the full copies from Redux first and then from IndexedDB.
+//
+// Note that in guest mode, IndexedDB isn't available, but Redux has all the attachment data (since the
+// conversation was necessarily started from this session); conversely, in authenticated mode, Redux may
+// not have the full attachment data (e.g. if loading a previous conversation) but IndexedDB should have it.
 export async function fillAttachmentData(
     attachments: Attachment[],
+    attachmentMap: AttachmentMap,
     user: User | undefined,
     spaceDek: AesGcmCryptoKey | undefined
 ): Promise<Attachment[]> {
-    if (!user || !spaceDek) {
-        return attachments;
+    const isNotShallow = (a: Attachment) => !isShallowAttachment(a);
+    // Try to fill some or all from Redux (attachmentMap comes from the Redux state)
+    const attachments1 = attachments.map((a) => attachmentMap[a.id] ?? a);
+    if (attachments1.every(isNotShallow)) {
+        return attachments1;
     }
-    const dbApi = new DbApi(user.ID);
-    return Promise.all(attachments.map((a) => fillOneAttachmentData(a, user, spaceDek, dbApi)));
+    // If some unfilled attachments remain, try to get them via IndexedDB. However, this only works if we're in
+    // authenticated mode, otherwise we can't get a `dbApi` (handle to IndexedDB) due to the absence of user
+    // credentials.
+    const dbApi = user && spaceDek ? new DbApi(user.ID) : undefined;
+    if (dbApi) {
+        await dbApi.initialize();
+    }
+    const fillIfNotShallow = (a: Attachment) => (isNotShallow(a) ? a : fillOneAttachmentData(a, user, spaceDek, dbApi));
+    return Promise.all(attachments.map(fillIfNotShallow));
 }

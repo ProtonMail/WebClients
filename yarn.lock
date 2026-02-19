@@ -13689,12 +13689,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.5.5, @types/node@npm:^22.7.7":
-  version: 22.19.0
-  resolution: "@types/node@npm:22.19.0"
+"@types/node@npm:^22.18.13, @types/node@npm:^22.5.5, @types/node@npm:^22.7.7":
+  version: 22.19.1
+  resolution: "@types/node@npm:22.19.1"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/fdb16593b54fcc82f16064da089f89e80df3da70162a379dc9dc91fd65234704d738f31a5479ab1affc45ca531333ccdb4fad5546e5fcd40327987b9539f173f
+  checksum: 10/40d5368faa6d9be6c27ebca2362734bc9e035a742e0b5cafee40ba3b355d7cfcaedbc93618c76465451e53f1af0c811b4b85ee9b85e2e942f34a4c5310fa047b
   languageName: node
   linkType: hard
 
@@ -26558,6 +26558,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gpt-tokenizer@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "gpt-tokenizer@npm:3.4.0"
+  checksum: 10/c893910b6c629d77dae10ddedd9f50c6d91d2548228ddb4eee8037f0a20419fbaffaba75206615b6ce93d5e5efb98b0f202fac9a4d7364b480f6c52b5a5e30bc
+  languageName: node
+  linkType: hard
+
 "graceful-fs@npm:4.2.10":
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
@@ -31462,6 +31469,15 @@ __metadata:
   checksum: 10/7db502835cda241a2bfb1c05054ffeb8f6b416b7da05cf2ac0879b48636301e956d8b6453ac87205a9afe0f4295a0e265da08853d7a7699860f5889c8a378f2e
   languageName: node
   linkType: hard
+
+"lumo-dev-proxy@workspace:utilities/lumo-dev-proxy":
+  version: 0.0.0-use.local
+  resolution: "lumo-dev-proxy@workspace:utilities/lumo-dev-proxy"
+  dependencies:
+    "@types/node": "npm:^22.18.13"
+    tsx: "npm:^4.20.6"
+  languageName: unknown
+  linkType: soft
 
 "luxon@npm:^3.2.1":
   version: 3.5.0
@@ -37222,6 +37238,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     exceljs: "npm:^4.4.0"
     fake-indexeddb: "npm:^6.2.5"
+    gpt-tokenizer: "npm:^3.4.0"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     json-stable-stringify: "npm:^1.3.0"
@@ -44256,7 +44273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.21.0":
+"tsx@npm:^4.20.6, tsx@npm:^4.21.0":
   version: 4.21.0
   resolution: "tsx@npm:4.21.0"
   dependencies:

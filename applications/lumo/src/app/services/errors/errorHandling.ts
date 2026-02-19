@@ -4,22 +4,21 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { addConversationError, addTierError } from '../../redux/slices/meta/errors';
 import type { LumoDispatch } from '../../redux/store';
-import type { ConversationId, LUMO_USER_TYPE } from '../../types';
-import type { GenerationError, GenerationToFrontendMessage } from '../../types-api';
-import { LUMO_API_ERRORS } from '../../types-api';
+import { type ConversationId, type GenerationError, LUMO_API_ERRORS, type LUMO_USER_TYPE } from '../../types';
+import type { GenerationResponseMessage } from '../../types-api';
 import { getExceedTierErrorMessage, getExceededTierErrorTitle } from '../../util/errorMessages';
 
 export const createGenerationError = (
     type: LUMO_API_ERRORS,
     conversationId: ConversationId,
-    originalMessage: GenerationToFrontendMessage
+    originalMessage: GenerationResponseMessage
 ): GenerationError => ({
     type,
     conversationId,
     originalMessage,
 });
 
-export const getErrorTypeFromMessage = (messageType: GenerationToFrontendMessage['type']): LUMO_API_ERRORS => {
+export const getErrorTypeFromMessage = (messageType: GenerationResponseMessage['type']): LUMO_API_ERRORS => {
     switch (messageType) {
         case 'error':
             return LUMO_API_ERRORS.GENERATION_ERROR;

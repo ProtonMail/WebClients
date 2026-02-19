@@ -1,10 +1,10 @@
-import type { GenerationToFrontendMessageDecrypted, ResponseContext } from '../types';
+import type { GenerationResponseMessageDecrypted, ResponseContext } from '../types';
 
 const makeContextUpdaterTransformer = (
     responseContext: ResponseContext
-): Transformer<GenerationToFrontendMessageDecrypted, GenerationToFrontendMessageDecrypted> => {
+): Transformer<GenerationResponseMessageDecrypted, GenerationResponseMessageDecrypted> => {
     return {
-        transform(value: GenerationToFrontendMessageDecrypted, controller: TransformStreamDefaultController) {
+        transform(value: GenerationResponseMessageDecrypted, controller: TransformStreamDefaultController) {
             responseContext.chunkCount++;
             if (value.type === 'token_data') {
                 responseContext.totalContentLength += value.content.length;
@@ -16,5 +16,5 @@ const makeContextUpdaterTransformer = (
 
 export const makeContextUpdaterTransformStream = (
     responseContext: ResponseContext
-): TransformStream<GenerationToFrontendMessageDecrypted, GenerationToFrontendMessageDecrypted> =>
+): TransformStream<GenerationResponseMessageDecrypted, GenerationResponseMessageDecrypted> =>
     new TransformStream(makeContextUpdaterTransformer(responseContext));

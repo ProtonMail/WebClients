@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const,no-nested-ternary */
 import { sleep } from '../../../../util/date';
-import type { GenerationToFrontendMessageDecrypted as M } from '../types';
+import type { GenerationResponseMessageDecrypted as M } from '../types';
 
 declare global {
     interface Window {

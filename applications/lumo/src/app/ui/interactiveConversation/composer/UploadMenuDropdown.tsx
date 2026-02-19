@@ -4,7 +4,10 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
+import { IcPen } from '@proton/icons/icons/IcPen';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 
 import './UploadMenuDropdown.scss';
 
@@ -14,6 +17,7 @@ interface UploadMenuDropdownProps {
     onClose: () => void;
     onUploadFromComputer: () => void;
     onBrowseDrive: () => void;
+    onDrawSketch: () => void;
     /** Hide the "Add from Proton Drive" option (e.g., when a Drive folder is already linked) */
     hideDriveOption?: boolean;
     /** When true, shows "Add file to Drive" instead of "Upload from device" */
@@ -26,9 +30,11 @@ export const UploadMenuDropdown = ({
     onClose,
     onUploadFromComputer,
     onBrowseDrive,
+    onDrawSketch,
     hideDriveOption = false,
     uploadsToDrive = false,
 }: UploadMenuDropdownProps) => {
+    const { imageTools: ffImageTools } = useLumoFlags();
     return (
         <Dropdown
             isOpen={isOpen}
@@ -80,6 +86,22 @@ export const UploadMenuDropdown = ({
                     </div>
                 </div>
             </DropdownMenuButton>
+            {ffImageTools && (
+                <DropdownMenuButton
+                    onClick={() => {
+                        onDrawSketch();
+                        onClose();
+                    }}
+                    className="justify-start"
+                >
+                    <div className="flex items-center gap-3">
+                        <IcPen size={5} className="color-weak" />
+                        <div className="flex flex-column">
+                            <span className="text-sm font-medium">{c('collider_2025: Action').t`Draw a sketch`}</span>
+                        </div>
+                    </div>
+                </DropdownMenuButton>
+            )}
         </Dropdown>
     );
 };

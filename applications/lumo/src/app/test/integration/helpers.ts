@@ -67,7 +67,7 @@ export function createActionHistoryTracker(): ActionHistoryTracker {
 }
 
 export function createActionHistoryMiddleware(tracker: ActionHistoryTracker): Middleware {
-    return (store) => (next) => (action) => {
+    return (_store) => (next) => (action) => {
         tracker.actions.push(action as AnyAction);
         return next(action);
     };
@@ -219,6 +219,9 @@ export async function setupTestEnvironment({
 
     const lumoApi = new LumoApi(USER_TEST_UID);
     const dbApi = existingDbApi || new DbApi(mockUser.ID);
+    if (!existingDbApi) {
+        await dbApi.initialize();
+    }
 
     const extra = {
         config: testConfig,

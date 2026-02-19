@@ -1,22 +1,23 @@
-import type { GenerationToFrontendMessage } from '../../../../types-api';
-import type { ChunkCallback, GenerationToFrontendMessageDecrypted, ResponseContext } from '../types';
+import type {
+    ChunkCallback,
+    GenerationResponseMessage,
+    GenerationResponseMessageDecrypted,
+    ResponseContext,
+} from '../types';
 
 export const makeFinishSink = (
     notifyResponse: (
-        value: GenerationToFrontendMessage,
+        value: GenerationResponseMessage,
         responseContext: ResponseContext
-    ) => Promise<GenerationToFrontendMessage>,
+    ) => Promise<GenerationResponseMessage>,
     chunkCallback: ChunkCallback | undefined,
     responseContext: ResponseContext
-): WritableStream<GenerationToFrontendMessageDecrypted> => {
+): WritableStream<GenerationResponseMessageDecrypted> => {
     return new WritableStream({
-        async write(value: GenerationToFrontendMessageDecrypted) {
+        async write(value: GenerationResponseMessageDecrypted) {
             const processedValue = await notifyResponse(value, responseContext);
             if (!chunkCallback) return;
-            const result = await chunkCallback(processedValue);
-            if (result?.error) {
-                throw result.error;
-            }
+            await chunkCallback(processedValue);
         },
     });
 };

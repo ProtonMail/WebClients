@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { calculateSingleAttachmentContextSize, getFileSizeLevel } from '../../../llm/utils';
+import { countAttachmentToken, getFileSizeLevel } from '../../../llm/utils';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachmentById } from '../../../redux/selectors';
 import type { Attachment } from '../../../types';
@@ -21,7 +21,7 @@ export const useFileItemData = (file: any, attachment?: Attachment) => {
         if (!fullAttachment || fullAttachment.processing || !fullAttachment.markdown) {
             return { tokenSize: 0, sizeLevel: 'small' as const };
         }
-        const tokens = fullAttachment.tokenCount ?? calculateSingleAttachmentContextSize(fullAttachment);
+        const tokens = fullAttachment.tokenCount ?? countAttachmentToken(fullAttachment);
         return {
             tokenSize: tokens,
             sizeLevel: getFileSizeLevel(tokens),

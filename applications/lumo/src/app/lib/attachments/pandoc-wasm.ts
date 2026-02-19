@@ -6,7 +6,6 @@ import { ConsoleStdout, File, OpenFile, PreopenDirectory, WASI } from '@bjorn3/b
 // import pandocWasmAsset from '../../../assets/pandoc.wasm';
 
 const pandocWasmAsset = new URL('../../assets/pandoc.wasm', import.meta.url).toString();
-console.log({ pandocWasmAsset });
 // const pandocWasmAsset = '/public/pandoc.wasm';
 
 // Add WASM module caching
@@ -14,69 +13,30 @@ let cachedWasmModule: WebAssembly.Module | null = null;
 async function getWasmModule(): Promise<WebAssembly.Module> {
     if (!cachedWasmModule) {
         const response = await fetch(pandocWasmAsset);
-        cachedWasmModule = await WebAssembly.compile(await response.arrayBuffer());
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch pandoc.wasm: ${response.status} ${response.statusText}`);
+        }
+        
+        const arrayBuffer = await response.arrayBuffer();
+        cachedWasmModule = await WebAssembly.compile(arrayBuffer);
     }
     return cachedWasmModule;
 }
 
-// Add memory tracking utilities at the top of the file
-async function getDetailedMemoryUsage(): Promise<{
-    jsHeapUsed: number;
-    jsHeapTotal: number;
-    wasmBytes?: number;
-    detailedBreakdown?: string;
-}> {
-    const basic = {
-        jsHeapUsed: 0,
-        jsHeapTotal: 0,
-    };
+// Memory logging - only enabled when DEBUG_PANDOC_MEMORY is set
+const DEBUG_MEMORY = typeof globalThis !== 'undefined' && (globalThis as any).DEBUG_PANDOC_MEMORY === true;
 
-    // Get basic JS heap measurements
+function logMemoryUsage(label: string) {
+    if (!DEBUG_MEMORY) return;
+    
+    // Simple synchronous logging for debugging
     if (typeof window !== 'undefined' && (window.performance as any)?.memory) {
         const memory = (window.performance as any).memory;
-        basic.jsHeapUsed = Math.round(memory.usedJSHeapSize / (1024 * 1024));
-        basic.jsHeapTotal = Math.round(memory.totalJSHeapSize / (1024 * 1024));
+        const used = Math.round(memory.usedJSHeapSize / (1024 * 1024));
+        const total = Math.round(memory.totalJSHeapSize / (1024 * 1024));
+        console.log(`[Pandoc Memory ${label}] JS Heap: ${used}MB / ${total}MB`);
     }
-
-    // Get detailed memory measurements including WASM
-    if (typeof performance !== 'undefined' && (performance as any).measureUserAgentSpecificMemory) {
-        try {
-            const measurement = await (performance as any).measureUserAgentSpecificMemory();
-            let wasmTotal = 0;
-            const breakdown = [];
-
-            for (const entry of measurement.breakdown) {
-                if (entry.types.includes('wasm')) {
-                    wasmTotal += entry.bytes;
-                }
-                breakdown.push(`${entry.types.join('+')}:${Math.round(entry.bytes / (1024 * 1024))}MB`);
-            }
-
-            return {
-                ...basic,
-                wasmBytes: Math.round(wasmTotal / (1024 * 1024)),
-                detailedBreakdown: breakdown.join(', '),
-            };
-        } catch (e) {
-            console.warn('Failed to measure detailed memory:', e);
-        }
-    }
-
-    return basic;
-}
-
-async function logMemoryUsage(label: string) {
-    const memory = await getDetailedMemoryUsage();
-    let message = `[Memory ${label}] JS Heap Used: ${memory.jsHeapUsed}MB, Total: ${memory.jsHeapTotal}MB`;
-
-    if (memory.wasmBytes !== undefined) {
-        message += `, WASM: ${memory.wasmBytes}MB`;
-    }
-    if (memory.detailedBreakdown) {
-        message += `\n  Breakdown: ${memory.detailedBreakdown}`;
-    }
-
-    console.log(message);
 }
 
 export class PandocConverter {
@@ -92,21 +52,14 @@ export class PandocConverter {
 
     constructor() {
         PandocConverter.instanceCount++;
-        console.log(`[PandocConverter] Creating instance #${PandocConverter.instanceCount}`);
-
-        void logMemoryUsage('Before PandocConverter Init');
+        logMemoryUsage('Init Start');
 
         this.ready = new Promise(async (resolve, reject) => {
             try {
-                console.log('initPandocWasm: starting');
-                await logMemoryUsage('Before WASM Args Setup');
-
                 const args = ['pandoc.wasm', '+RTS', '-H64m', '-RTS'];
                 const env: string[] = [];
                 this.inFile = new File(new Uint8Array(), { readonly: true });
                 this.outFile = new File(new Uint8Array(), { readonly: false });
-
-                await logMemoryUsage('Before WASI Setup');
 
                 const fds = [
                     new OpenFile(new File(new Uint8Array(), { readonly: true })),
@@ -122,7 +75,6 @@ export class PandocConverter {
                 ];
 
                 const wasi = new WASI(args, env, fds, { debug: false });
-                await logMemoryUsage('Before WASM Instantiation');
 
                 // Use cached WASM module
                 const module = await getWasmModule();
@@ -130,15 +82,11 @@ export class PandocConverter {
                     wasi_snapshot_preview1: wasi.wasiImport,
                 });
 
-                await logMemoryUsage('After WASM Instantiation');
-
                 this.wasmInstance = instance;
                 // @ts-ignore
                 wasi.initialize(instance);
                 // @ts-ignore
                 instance.exports.__wasm_call_ctors();
-
-                await logMemoryUsage('Before Memory Setup');
 
                 // Initialize memory and arguments
                 // @ts-ignore
@@ -166,16 +114,13 @@ export class PandocConverter {
                 const argv_ptr = instance.exports.malloc(4);
                 memory_data_view().setUint32(argv_ptr, argv, true);
 
-                await logMemoryUsage('Before hs_init');
-
                 // @ts-ignore
                 instance.exports.hs_init_with_rtsopts(argc_ptr, argv_ptr);
 
-                await logMemoryUsage('After Complete Init');
-
+                logMemoryUsage('Init Complete');
                 resolve(this);
             } catch (e) {
-                await logMemoryUsage('On Init Error');
+                logMemoryUsage('Init Error');
                 reject(e);
             }
         });
@@ -191,7 +136,7 @@ export class PandocConverter {
     }
 
     async cleanup() {
-        await logMemoryUsage('Before Cleanup');
+        logMemoryUsage('Cleanup Start');
 
         if (this.wasmInstance?.exports.hs_exit) {
             // Call Haskell runtime cleanup
@@ -209,13 +154,11 @@ export class PandocConverter {
 
         PandocConverter.instanceCount--;
 
-        await logMemoryUsage('After Cleanup');
+        logMemoryUsage('Cleanup Complete');
     }
 
     async convert(inputBytes: ArrayBuffer, inputFormat: string = 'html'): Promise<string> {
         try {
-            await logMemoryUsage('Before Convert');
-
             await this.ready;
             if (!this.wasmInstance) throw new Error('Pandoc WASM not initialized');
 
@@ -233,16 +176,10 @@ export class PandocConverter {
 
                 this.inFile!.data = new Uint8Array(inputBytes);
 
-                await logMemoryUsage('Before WASM Main Call');
-
                 // @ts-ignore
                 this.wasmInstance.exports.wasm_main(args_ptr, args_str.length);
 
-                await logMemoryUsage('After WASM Main Call');
-
                 const output = new TextDecoder('utf-8', { fatal: true }).decode(this.outFile!.data);
-
-                await logMemoryUsage('After Convert Complete');
 
                 return output;
             } finally {
@@ -251,10 +188,8 @@ export class PandocConverter {
                     // @ts-ignore
                     this.wasmInstance.exports.free(args_ptr);
                 }
-                // Clear input/output buffers
+                // Clear input/output buffers immediately to free memory
                 this.clearBuffers();
-
-                await logMemoryUsage('After Convert Cleanup');
             }
         } catch (error) {
             console.error('Error during conversion:', error);

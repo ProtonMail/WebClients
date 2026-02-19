@@ -1,7 +1,7 @@
 import { AppsDropdown, UserDropdown } from '@proton/components';
 import { APPS, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { InvitesButton } from '../components/InvitesButton/InvitesButton';
 import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
 import { HeaderWrapper } from './HeaderWrapper';
@@ -9,7 +9,7 @@ import { HeaderWrapper } from './HeaderWrapper';
 const { PROTONLUMO } = APPS;
 
 export const PrivateHeader = () => {
-    const isLumoEarlyAccessEnabled = useFlag('LumoEarlyAccess');
+    const { earlyAccess: isLumoEarlyAccessEnabled } = useLumoFlags();
 
     return (
         <HeaderWrapper>

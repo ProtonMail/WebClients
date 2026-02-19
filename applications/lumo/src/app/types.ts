@@ -4,6 +4,28 @@ import type { AttachmentMap } from './redux/slices/core/attachments';
 import type { ConversationMap } from './redux/slices/core/conversations';
 import type { MessageMap } from './redux/slices/core/messages';
 import type { SpaceMap } from './redux/slices/core/spaces';
+import {
+    type EncryptedWireTurn,
+    type GenerationResponseMessage,
+    Role,
+    type UnencryptedWireTurn,
+    type WireTurn,
+    isEncryptedWireTurn,
+    isRole,
+    isUnencryptedWireTurn,
+    isWireTurn,
+} from './types-api';
+
+// *** Turn aliases ***
+// Turn types are defined in types-api as WireTurn (matching backend schema)
+// We export them here as Turn for convenience throughout the codebase
+export type Turn = WireTurn;
+export type EncryptedTurn = EncryptedWireTurn;
+export type UnencryptedTurn = UnencryptedWireTurn;
+export const isTurn = isWireTurn;
+export const isEncryptedTurn = isEncryptedWireTurn;
+export const isUnencryptedTurn = isUnencryptedWireTurn;
+export { Role };
 
 // *** Various string aliases ***
 export type Base64 = string;
@@ -49,26 +71,6 @@ export type Encrypted = {
 export type Shallow = {
     encrypted?: undefined; // means the `encrypted` field is NOT present (or set to undefined)
 };
-
-// *** Role ***
-
-export enum Role {
-    Assistant = 'assistant',
-    User = 'user',
-    System = 'system',
-    ToolCall = 'tool_call',
-    ToolResult = 'tool_result',
-}
-
-export function isRole(value: any): value is Role {
-    return (
-        value === Role.Assistant ||
-        value === Role.User ||
-        value === Role.System ||
-        value === Role.ToolCall ||
-        value === Role.ToolResult
-    );
-}
 
 // *** Space ***
 
@@ -298,6 +300,30 @@ export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
 }
 
 // *** Message ***
+
+// Content block types for structured message content
+export type TextBlock = {
+    type: 'text';
+    content: string; // Markdown
+    sequence?: number; // Optional sequence number for ordering
+};
+
+export type ToolCallBlock = {
+    type: 'tool_call';
+    content: string; // JSON string (for serialization/prepareTurns)
+    toolCall?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    sequence?: number; // Optional sequence number for ordering
+};
+
+export type ToolResultBlock = {
+    type: 'tool_result';
+    content: string; // JSON string (for serialization/prepareTurns)
+    toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    sequence?: number; // Optional sequence number for ordering
+};
+
+export type ContentBlock = TextBlock | ToolCallBlock | ToolResultBlock;
+
 export type MessagePub = {
     id: MessageId; // uuid
     createdAt: string; // date
@@ -308,19 +334,62 @@ export type MessagePub = {
     status?: Status;
 };
 
+export type ThinkingTimelineEvent =
+    | { type: 'reasoning'; timestamp: number; content: string }
+    | { type: 'tool_call'; timestamp: number; toolCallIndex: number };
+
+export type ReasoningChunk = {
+    content: string;
+    sequence: number; // The count from token_data message
+};
+
 export type MessagePriv = {
-    content?: string;
+    // Legacy fields (kept for backward compatibility)
     context?: string;
     attachments?: ShallowAttachment[]; // with empty .data and .markdown; full payloads are in IndexedDB
-    toolCall?: string;
-    toolResult?: string;
     contextFiles?: AttachmentId[]; // Files that were used in LLM context for this response
+
+    // Content v1: could not have more than one tool call, and cannot interleave content and tools
+    content?: string; // User-visible message string (as markdown)
+    toolCall?: string; // Stringified JSON from backend
+    toolResult?: string; // Stringified JSON from backend
+
+    // Content v2: message content and tool calls are now interleaved in a clear sequence `blocks`,
+    // making other fields (`content`, `toolCall`, `toolResult`) legacy.
+    blocks?: ContentBlock[];
+
+    // Reasoning: Model's internal thinking process (extended thinking models)
+    reasoning?: string; // Legacy: concatenated reasoning
+    reasoningChunks?: ReasoningChunk[]; // New: reasoning with sequence numbers for proper interleaving
+    
+    // Thinking timeline: events showing when reasoning/tool calls happened
+    thinkingTimeline?: ThinkingTimelineEvent[];
 };
 
 export type Message = MessagePub & MessagePriv;
 export type SerializedMessage = MessagePub & Partial<Encrypted> & LocalFlags;
 export type DeletedMessage = Omit<SerializedMessage, 'encrypted'> & Deleted;
 export type SerializedMessageMap = Record<MessageId, SerializedMessage>;
+
+export function isTextBlock(block: any): block is TextBlock {
+    return typeof block === 'object' && block !== null && block.type === 'text' && typeof block.content === 'string';
+}
+
+export function isToolCallBlock(block: any): block is ToolCallBlock {
+    return (
+        typeof block === 'object' && block !== null && block.type === 'tool_call' && typeof block.content === 'string'
+    );
+}
+
+export function isToolResultBlock(block: any): block is ToolResultBlock {
+    return (
+        typeof block === 'object' && block !== null && block.type === 'tool_result' && typeof block.content === 'string'
+    );
+}
+
+export function isContentBlock(value: any): value is ContentBlock {
+    return isTextBlock(value) || isToolCallBlock(value) || isToolResultBlock(value);
+}
 
 export function isMessagePub(value: any): value is MessagePub {
     return (
@@ -337,19 +406,20 @@ export function isMessagePub(value: any): value is MessagePub {
 }
 
 export function isMessagePriv(value: any): value is MessagePriv {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.content === undefined || value.content === null || typeof value.content === 'string') &&
-        (value.context === undefined || value.context === null || typeof value.context === 'string') &&
-        (value.attachments === undefined ||
-            value.attachments === null ||
-            (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
-        (value.toolCall === undefined || value.toolCall === null || typeof value.toolCall === 'string') &&
-        (value.toolResult === undefined || value.toolResult === null || typeof value.toolResult === 'string') &&
-        (value.contextFiles === undefined ||
-            value.contextFiles === null ||
-            (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string')))
+        (value.content === undefined || typeof value.content === 'string') &&
+        (value.context === undefined || typeof value.context === 'string') &&
+        (value.attachments === undefined || (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
+        (value.toolCall === undefined || typeof value.toolCall === 'string') &&
+        (value.toolResult === undefined || typeof value.toolResult === 'string') &&
+        (value.contextFiles === undefined || (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string'))) &&
+        (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock))) &&
+        (value.reasoning === undefined || typeof value.reasoning === 'string') &&
+        (value.reasoningChunks === undefined || Array.isArray(value.reasoningChunks)) &&
+        (value.thinkingTimeline === undefined || Array.isArray(value.thinkingTimeline))
     );
 }
 
@@ -359,8 +429,8 @@ export function getMessagePub(message: MessagePub): MessagePub {
 }
 
 export function getMessagePriv(m: MessagePriv): MessagePriv {
-    const { content, context, attachments, toolCall, toolResult, contextFiles } = m;
-    return { content, context, attachments, toolCall, toolResult, contextFiles };
+    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline } = m;
+    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline };
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -385,6 +455,10 @@ export function cleanMessage(message: Message): Message {
         toolCall,
         toolResult,
         contextFiles,
+        blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
     } = message;
     return {
         id,
@@ -396,10 +470,14 @@ export function cleanMessage(message: Message): Message {
         ...(status !== undefined && { status }),
         ...(content !== undefined && { content }),
         ...(context !== undefined && { context }),
-        ...(attachments !== undefined && { attachments }),
+        ...(attachments !== undefined && { attachments: attachments.map(cleanAttachment) }),
         ...(toolCall !== undefined && { toolCall }),
         ...(toolResult !== undefined && { toolResult }),
         ...(contextFiles !== undefined && { contextFiles }),
+        ...(blocks !== undefined && { blocks }),
+        ...(reasoning !== undefined && { reasoning }),
+        ...(reasoningChunks !== undefined && { reasoningChunks }),
+        ...(thinkingTimeline !== undefined && { thinkingTimeline }),
     };
 }
 
@@ -442,7 +520,11 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.attachments === undefined &&
         value.toolCall === undefined &&
         value.toolResult === undefined &&
-        value.contextFiles === undefined
+        value.contextFiles === undefined &&
+        (value.blocks === undefined || value.blocks.length === 0) &&
+        value.reasoning === undefined &&
+        value.reasoningChunks === undefined &&
+        value.thinkingTimeline === undefined
     );
 }
 
@@ -580,13 +662,15 @@ export type AttachmentPub = {
 // This is represents the sensitive data in its decrypted form.
 export type AttachmentPriv = {
     filename: string;
-    data?: Uint8Array<ArrayBuffer>; // original binary as sent by user // TODO: figure out if we really need to keep this around and persist it?
+    data?: Uint8Array<ArrayBuffer>; // original binary as sent by user, or HD reduction of image
     markdown?: string; // after conversion
     errorMessage?: string; // detailed error message for processing failures
     truncated?: boolean; // indicates if the file content was truncated for context limits
     originalRowCount?: number; // original number of rows in CSV/Excel files
     processedRowCount?: number; // number of rows actually processed
     tokenCount?: number; // cached token count for LLM context size calculation
+    imagePreview?: Uint8Array<ArrayBuffer>; // if the attachment is an image: small definition image for preview
+    role?: 'user' | 'assistant'; // source of attachment, defaults to 'user' for backward compatibility
 };
 
 // This contains metadata as well as the complete blob data.
@@ -601,47 +685,41 @@ export type DeletedAttachment = Omit<SerializedAttachment, 'encrypted'> & Delete
 export type SerializedAttachmentMap = Record<AttachmentId, SerializedAttachment>;
 
 export function isAttachmentPub(value: any): value is AttachmentPub {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
         typeof value.id === 'string' &&
-        (value.spaceId === undefined || value.spaceId === null || typeof value.spaceId === 'string') &&
-        (value.mimeType === undefined || value.mimeType === null || typeof value.mimeType === 'string') &&
+        (value.spaceId === undefined || typeof value.spaceId === 'string') &&
+        (value.mimeType === undefined || typeof value.mimeType === 'string') &&
         typeof value.uploadedAt === 'string' &&
-        (value.rawBytes === undefined || value.rawBytes === null || typeof value.rawBytes === 'number') &&
-        (value.processing === undefined || value.processing === null || typeof value.processing === 'boolean') &&
-        (value.error === undefined || value.error === null || typeof value.error === 'boolean') &&
-        (value.autoRetrieved === undefined ||
-            value.autoRetrieved === null ||
-            typeof value.autoRetrieved === 'boolean') &&
-        (value.driveNodeId === undefined || value.driveNodeId === null || typeof value.driveNodeId === 'string') &&
-        (value.relevanceScore === undefined ||
-            value.relevanceScore === null ||
-            typeof value.relevanceScore === 'number') &&
-        (value.isChunk === undefined || value.isChunk === null || typeof value.isChunk === 'boolean') &&
-        (value.chunkTitle === undefined || value.chunkTitle === null || typeof value.chunkTitle === 'string') &&
-        (value.isUploadedProjectFile === undefined ||
-            value.isUploadedProjectFile === null ||
-            typeof value.isUploadedProjectFile === 'boolean')
+        (value.rawBytes === undefined || typeof value.rawBytes === 'number') &&
+        (value.processing === undefined || typeof value.processing === 'boolean') &&
+        (value.error === undefined || typeof value.error === 'boolean') &&
+        (value.autoRetrieved === undefined || typeof value.autoRetrieved === 'boolean') &&
+        (value.driveNodeId === undefined || typeof value.driveNodeId === 'string') &&
+        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number') &&
+        (value.isChunk === undefined || typeof value.isChunk === 'boolean') &&
+        (value.chunkTitle === undefined || typeof value.chunkTitle === 'string') &&
+        (value.isUploadedProjectFile === undefined || typeof value.isUploadedProjectFile === 'boolean')
     );
 }
 
 export function isAttachmentPriv(value: any): value is AttachmentPriv {
+    // prettier-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.filename === undefined || value.filename === null || typeof value.filename === 'string') &&
-        (value.data === undefined || value.data === null || value.data instanceof Uint8Array) &&
-        (value.markdown === undefined || value.markdown === null || typeof value.markdown === 'string') &&
-        (value.errorMessage === undefined || value.errorMessage === null || typeof value.errorMessage === 'string') &&
-        (value.truncated === undefined || value.truncated === null || typeof value.truncated === 'boolean') &&
-        (value.originalRowCount === undefined ||
-            value.originalRowCount === null ||
-            typeof value.originalRowCount === 'number') &&
-        (value.processedRowCount === undefined ||
-            value.processedRowCount === null ||
-            typeof value.processedRowCount === 'number') &&
-        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number')
+        (value.filename === undefined || typeof value.filename === 'string') &&
+        (value.data === undefined || value.data instanceof Uint8Array) &&
+        (value.markdown === undefined || typeof value.markdown === 'string') &&
+        (value.errorMessage === undefined || typeof value.errorMessage === 'string') &&
+        (value.truncated === undefined || typeof value.truncated === 'boolean') &&
+        (value.originalRowCount === undefined || typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
+        (value.imagePreview === undefined || value.imagePreview instanceof Uint8Array) &&
+        (value.tokenCount === undefined || typeof value.tokenCount === 'number') &&
+        (value.role === undefined || value.role === 'user' || value.role === 'assistant')
     );
 }
 
@@ -650,10 +728,7 @@ export function isAttachment(value: any): value is Attachment {
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
-    // Check that data and markdown are not present (undefined, null, or missing after JSON parsing)
-    const hasNoData = value.data === undefined || value.data === null;
-    const hasNoMarkdown = value.markdown === undefined || value.markdown === null;
-    return isAttachment(value) && hasNoData && hasNoMarkdown;
+    return isAttachment(value) && value.data === undefined && value.markdown === undefined;
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
@@ -684,8 +759,30 @@ export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
 }
 
 export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
-    const { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount } = m;
-    return { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount };
+    const {
+        filename,
+        data,
+        markdown,
+        errorMessage,
+        truncated,
+        originalRowCount,
+        processedRowCount,
+        tokenCount,
+        imagePreview,
+        role,
+    } = m;
+    return {
+        filename,
+        data,
+        markdown,
+        errorMessage,
+        truncated,
+        originalRowCount,
+        processedRowCount,
+        tokenCount,
+        imagePreview,
+        role,
+    };
 }
 
 export function splitAttachment(m: Attachment): {
@@ -713,15 +810,16 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         isChunk,
         chunkTitle,
         filename,
-        // Note: `data` (raw Uint8Array) is intentionally excluded from cleaned attachments
-        // to prevent large binary blobs from being stored in Redux state.
-        // The data is only needed temporarily during file processing and serialization.
+        // Note: `data` and `imagePreview` (Uint8Array) are intentionally excluded from cleaned attachments
+        // to prevent non-serializable binary blobs from being stored in Redux state.
+        // These are stored in the attachmentDataCache instead and retrieved when needed.
         markdown,
         errorMessage,
         truncated,
         originalRowCount,
         processedRowCount,
         tokenCount,
+        role,
     } = attachment;
     return {
         id,
@@ -737,13 +835,14 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(isChunk !== undefined && { isChunk }),
         ...(chunkTitle !== undefined && { chunkTitle }),
         filename,
-        // data is intentionally NOT included - see comment above
+        // data and imagePreview are intentionally NOT included - see comment above
         ...(markdown !== undefined && { markdown }),
         ...(errorMessage !== undefined && { errorMessage }),
         ...(truncated !== undefined && { truncated }),
         ...(originalRowCount !== undefined && { originalRowCount }),
         ...(processedRowCount !== undefined && { processedRowCount }),
         ...(tokenCount !== undefined && { tokenCount }),
+        ...(role !== undefined && { role }),
     };
 }
 
@@ -769,6 +868,7 @@ export type UpdateConversationStatusAction = {
 export type ChunkAction = {
     messageId: MessageId;
     content: string;
+    sequence?: number; // Optional sequence number for ordering (used for reasoning)
 };
 
 export type FinishMessageAction = {
@@ -804,36 +904,6 @@ export type MasterKey = {
     createdAt: string;
     masterKey: Base64;
 };
-
-// *** Turn ***
-
-export type Turn = {
-    role: Role;
-    content?: string;
-    encrypted?: boolean;
-};
-
-export type EncryptedTurn = Turn & { encrypted: true };
-export type UnencryptedTurn = Turn & { encrypted?: false };
-
-export function isTurn(obj: any): obj is Turn {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        'role' in obj &&
-        isRole(obj.role) &&
-        (obj.content === undefined || typeof obj.content === 'string') &&
-        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isEncryptedTurn(obj: any): obj is EncryptedTurn {
-    return isTurn(obj) && obj.encrypted === true;
-}
-
-export function isUnencryptedTurn(obj: any): obj is UnencryptedTurn {
-    return isTurn(obj) && (obj.encrypted === false || obj.encrypted === undefined);
-}
 
 // *** Misc ***
 
@@ -892,3 +962,44 @@ export enum LUMO_USER_TYPE {
     FREE = 'FREE',
     PAID = 'PAID',
 }
+
+export enum LUMO_API_ERRORS {
+    // CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
+    HIGH_DEMAND = 'HighDemand',
+    GENERATION_ERROR = 'GenerationError', // This is a catch-all for any error that occurs during generation
+    TIER_LIMIT = 'TierLimit', //not implemented yet for free and paid tiers - BE needs to be updated
+    GENERATION_REJECTED = 'GenerationRejected',
+    HARMFUL_CONTENT = 'HarmfulContent',
+    STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
+}
+
+export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
+
+// TODO this type should be refactored in a union like:
+//    ({ type: 'send', ... } | { type: 'edit', ... }) | { type: 'regenerate' } & { ...common... }
+export interface ActionParams {
+    actionType: 'send' | 'edit' | 'regenerate';
+    newMessageContent?: string;
+    originalMessage?: Message;
+    isWebSearchButtonToggled: boolean;
+    retryStrategy?: RetryStrategy;
+    customRetryInstructions?: string;
+}
+
+export interface ErrorContext {
+    actionType: string;
+    conversationId?: ConversationId;
+    actionParams: ActionParams;
+}
+
+export interface GenerationError {
+    type: LUMO_API_ERRORS;
+    conversationId: ConversationId;
+    originalMessage: GenerationResponseMessage;
+    actionParams?: ActionParams;
+}
+
+export type GenerationErrorAction = {
+    type: 'generation_error';
+    payload: GenerationError;
+};

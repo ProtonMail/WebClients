@@ -6,13 +6,11 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleEditMessage, HandleRegenerateMessage, HandleSendMessage } from '../../hooks/useLumoActions';
-import { tryParseToolCall } from '../../lib/toolCall/types';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import type { Conversation, Message, SiblingInfo } from '../../types';
-import type { RetryStrategy } from '../../types-api';
+import type { Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
 import ErrorCard from '../components/ErrorCard';
 import { FilesManagementView } from '../components/Files';
 import { RetryPanel } from '../components/RetryPanel';
@@ -161,9 +159,6 @@ const ConversationComponent = ({
     const composerContainerRef = useRef<HTMLDivElement>(null);
 
     const conversationId = conversation?.id;
-    const isGeneratingWithToolCall = isGenerating
-        ? !!tryParseToolCall(messageChain[messageChain.length - 1]?.toolCall ?? '')
-        : undefined;
 
     const conversationErrors = useLumoSelector((state) =>
         conversationId ? selectConversationErrors(state, conversationId) : []
@@ -221,7 +216,7 @@ const ConversationComponent = ({
             if (retryPanelState.messageId) {
                 const message = messageChain.find((m) => m.id === retryPanelState.messageId);
                 if (message) {
-                    handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+                    void handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
                 }
             }
             handleRetryPanelClose();
@@ -259,7 +254,6 @@ const ConversationComponent = ({
                         handleEditMessage={handleEditMessage}
                         getSiblingInfo={getSiblingInfo}
                         isGenerating={isGenerating}
-                        isGeneratingWithToolCall={isGeneratingWithToolCall}
                         sourcesContainerRef={sourcesContainerRef}
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}
