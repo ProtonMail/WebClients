@@ -6,7 +6,6 @@ import { useGetLabels } from '@proton/mail/store/labels/hooks';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
@@ -20,7 +19,7 @@ import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLab
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 import { useCreateFilters } from '../useCreateFilters';
-import { getNotificationTextAdded, getNotificationTextRemoved, getNotificationTextStarred } from './helper';
+import { getApplyLabelNotificationText } from './helper';
 import type { ApplyLabelsToSelectionParams } from './interface';
 
 export class ApplyLabelsError extends Error {
@@ -171,21 +170,12 @@ export const useApplyLabelsToSelection = () => {
         // No await ==> optimistic
         const promise = handleDo();
 
-        let notificationText = c('Success').t`Labels applied.`;
-
-        const elementsCount = elementIDs.length;
-
-        if (changesKeys.length === 1) {
-            const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
-
-            if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
-                notificationText = getNotificationTextStarred(isMessage, elementsCount);
-            } else if (!Object.values(changes)[0]) {
-                notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
-            } else {
-                notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
-            }
-        }
+        const notificationText = getApplyLabelNotificationText({
+            changes,
+            labels,
+            isMessage,
+            elementsCount: elementIDs.length,
+        });
 
         if (!silent) {
             createNotification({

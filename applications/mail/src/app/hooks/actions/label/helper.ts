@@ -1,6 +1,9 @@
 import { c, msgid } from 'ttag';
 
-export const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+
+const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message marked as Starred.`;
@@ -22,7 +25,7 @@ export const getNotificationTextStarred = (isMessage: boolean, elementsCount: nu
     );
 };
 
-export const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
+const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message removed from ${labelName}.`;
@@ -44,7 +47,7 @@ export const getNotificationTextRemoved = (isMessage: boolean, elementsCount: nu
     );
 };
 
-export const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
+const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message added to ${labelName}.`;
@@ -64,4 +67,32 @@ export const getNotificationTextAdded = (isMessage: boolean, elementsCount: numb
         `${elementsCount} conversations added to ${labelName}.`,
         elementsCount
     );
+};
+
+export const getApplyLabelNotificationText = ({
+    changes,
+    labels,
+    isMessage,
+    elementsCount,
+}: {
+    changes: Record<string, boolean>;
+    labels: Label[];
+    isMessage: boolean;
+    elementsCount: number;
+}) => {
+    const changesKeys = Object.keys(changes);
+    if (changesKeys.length > 1) {
+        return c('Success').t`Labels applied.`;
+    }
+
+    if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
+        return getNotificationTextStarred(isMessage, elementsCount);
+    }
+
+    const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
+    if (!Object.values(changes)[0]) {
+        return getNotificationTextRemoved(isMessage, elementsCount, labelName);
+    }
+
+    return getNotificationTextAdded(isMessage, elementsCount, labelName);
 };
