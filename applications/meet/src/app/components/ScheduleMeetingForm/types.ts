@@ -8,3 +8,5 @@ export interface FormValues {
     customPassword: string;
     recurrence: string;
 }
+
+export type OnDateTimeChange = (params: { fieldName: string; value: Date | string | undefined }) => void;
