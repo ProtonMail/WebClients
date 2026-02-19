@@ -1,13 +1,14 @@
 .join-with-link-modal {
-	padding-block-end: 10rem;
 	max-inline-size: 100%;
 
 	.join-with-link-title {
-		font-size: 1.5em;
+		line-height: 1.25;
 	}
 
 	.join-with-link-subtitle {
-		font-size: 1em;
+		line-height: 1.5;
+		font-size: 1rem;
+		font-weight: 500;
 	}
 
 	.meeting-link-input {

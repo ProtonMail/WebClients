@@ -45,20 +45,23 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
     return (
         <TranslucentModal open={open} onClose={onResetAndClose}>
             <div
-                className="join-with-link-modal flex flex-column justify-end items-center gap-4 text-center pt-10 pb-10 md:w-custom"
-                style={{ '--md-w-custom': '40em' }}
+                className="join-with-link-modal flex flex-column justify-end items-center text-center md:w-custom"
+                style={{ '--md-w-custom': '33em' }}
             >
                 <img
                     src={linkIcon}
                     alt=""
                     className="w-custom h-custom"
-                    style={{ '--w-custom': '6rem', '--h-custom': '6rem' }}
+                    style={{ '--w-custom': '4.375rem', '--h-custom': '4.375rem' }}
                 />
-                <div className="join-with-link-title text-semibold">{c('Title').t`Join a meeting`}</div>
-                <div className="join-with-link-subtitle color-weak">{c('Info')
-                    .t`Paste your ${MEET_APP_NAME} link to join a secure meeting`}</div>
+                <div className="flex flex-column items-center gap-3 py-10 w-full">
+                    <h2 className="join-with-link-title h2 text-semibold">{c('Title').t`Join a meeting`}</h2>
+                    <div className="join-with-link-subtitle color-weak">
+                        {c('Info').t`Paste your ${MEET_APP_NAME} link to join a secure meeting`}
+                    </div>
+                </div>
                 <div className="flex flex-column w-full">
-                    <div className={clsx('flex items-center w-full justify-start flex-nowrap gap-2 my-8')}>
+                    <div className={clsx('flex items-center w-full justify-start flex-nowrap gap-2 my-4')}>
                         <img
                             src={linkIcon}
                             alt=""
@@ -79,12 +82,8 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                             .t`Invalid meeting link`}</span>
                     )}
                 </div>
-                <div className="flex flex-column md:flex-row gap-4 w-full">
-                    <Button
-                        className="tertiary rounded-full py-4 md:flex-1 text-semibold"
-                        onClick={onResetAndClose}
-                        size="large"
-                    >
+                <div className="flex flex-column md:flex-row gap-4 w-full py-10">
+                    <Button className="tertiary rounded-full py-4 md:flex-1 text-semibold" onClick={onResetAndClose}>
                         {c('Action').t`Cancel`}
                     </Button>
                     <Button
@@ -95,7 +94,6 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                                 onJoin(meetingId, urlPassword);
                             }
                         }}
-                        size="large"
                         disabled={!canJoin}
                     >
                         {c('Action').t`Join meeting`}
