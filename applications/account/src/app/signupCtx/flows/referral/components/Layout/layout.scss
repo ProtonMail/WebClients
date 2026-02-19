@@ -1,4 +1,17 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .referral-signup {
+	--referral-box-shadow:
+		0 1.66px 5.56px 0 rgb(74 45 197 / 0.043), 0 7.86px 21.72px 0 rgb(74 45 197 / 0.07),
+		0 20.41px 68.19px 0 rgb(74 45 197 / 0.11);
+
+	.shadow-referral {
+		box-shadow: var(--referral-box-shadow);
+	}
+
 	.button-outline-norm {
 		--button-default-text-color: var(--interaction-norm-major-1);
 	}
@@ -6,4 +19,13 @@
 
 .referral-signup-bg-gradient {
 	background: linear-gradient(122deg, #fff 8.63%, #f7f5fe 69.23%);
+}
+
+.referral-no-credit-card-badge {
+	margin-inline-end: calc(var(--space-4) * -1);
+	border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+
+	@include im.media('>medium') {
+		margin-inline-end: calc(var(--space-8) * -1);
+	}
 }

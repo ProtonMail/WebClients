@@ -153,7 +153,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                 method="post"
                 className="w-full"
             >
-                <h1 className="font-arizona text-semibold text-8xl">
+                <h1 className="font-arizona text-semibold text-8xl lh120 mb-2">
                     {
                         // translator: full sentence "Try Proton for 14 days free"
                         c('Signup').t`Try ${BRAND_NAME} for ${TRIAL_DURATION_DAYS} days free`
@@ -213,7 +213,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         <Layout>
             <Header />
 
-            <Wrapper minHeight="calc(100vh - 4.25rem - 3.75rem)">
+            <Wrapper marginTop="5vh">
                 <Main>
                     <Button
                         onClick={onBack}

@@ -1,6 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { PASS_PLUS_VAULTS } from '@proton/components/containers/payments/features/pass';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
 import { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -18,8 +22,14 @@ export const BundleFeatures = () => {
 
     return (
         <>
-            <FeatureItem loading={!maxSpace} text={getSecureStorageString(maxSpace)} highlighted />
             <FeatureItem
+                icon={<IcBrandProtonDrive size={5} />}
+                loading={!maxSpace}
+                text={getSecureStorageString(maxSpace)}
+                highlighted
+            />
+            <FeatureItem
+                icon={<IcBrandProtonMail size={5} />}
                 text={[
                     c('Signup').ngettext(
                         msgid`${maxAddresses} email address`,
@@ -30,9 +40,8 @@ export const BundleFeatures = () => {
                 ].join(', ')}
                 highlighted
             />
-            <FeatureItem text={c('Signup').t`Unlimited hide-my-email aliases`} highlighted />
-            <FeatureItem text={c('Signup').t`Encrypted file sharing and document editor`} highlighted />
             <FeatureItem
+                icon={<IcBrandProtonVpn size={5} />}
                 text={c('Signup').ngettext(
                     msgid`${VPN_CONNECTIONS} high-speed VPN connection`,
                     `${VPN_CONNECTIONS} high-speed VPN connections`,
@@ -41,6 +50,7 @@ export const BundleFeatures = () => {
                 highlighted
             />
             <FeatureItem
+                icon={<IcBrandProtonPass size={5} />}
                 text={c('Signup').ngettext(
                     msgid`${PASS_PLUS_VAULTS} vault for your passwords`,
                     `${PASS_PLUS_VAULTS} vaults for your passwords`,

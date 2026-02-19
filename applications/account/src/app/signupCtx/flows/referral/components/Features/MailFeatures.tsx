@@ -1,36 +1,43 @@
 import { c, msgid } from 'ttag';
 
+import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/features/pass';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { getMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
-import { getSecureStorageString } from '../../helpers/i18n';
 import FeatureItem from '../FeatureItem/FeatureItem';
 
 export const MailFeatures = () => {
     const payments = usePaymentOptimistic();
-    const maxSpace = getMaxSpaceMap(payments)[PLANS.MAIL];
 
     const plan = payments.plansMap[PLANS.MAIL];
     const maxAddresses = plan?.MaxAddresses || 10;
 
     return (
         <>
-            <FeatureItem loading={!maxSpace} text={getSecureStorageString(maxSpace)} highlighted />
             <FeatureItem
+                icon={<IcEnvelope size={5} />}
                 loading={payments.loadingPaymentDetails}
                 text={c('Signup').ngettext(
-                    msgid`${maxAddresses} extra email address`,
-                    `${maxAddresses} extra email addresses`,
+                    msgid`${maxAddresses} extra email address for you`,
+                    `${maxAddresses} extra email addresses for you`,
                     maxAddresses
                 )}
                 highlighted
             />
-            <FeatureItem text={c('Signup').t`Use your own email domain`} highlighted />
-            <FeatureItem text={c('Signup').t`Unlimited folders, labels, and filters`} highlighted />
-            <FeatureItem text={c('Signup').t`${MAIL_APP_NAME} desktop app`} highlighted />
-            <FeatureItem text={DARK_WEB_MONITORING_NAME} highlighted />
+            <FeatureItem
+                icon={<IcAlias size={5} />}
+                loading={payments.loadingPaymentDetails}
+                text={c('Signup').ngettext(
+                    msgid`${FREE_PASS_ALIASES} hide-my-email alias`,
+                    `${FREE_PASS_ALIASES} hide-my-email aliases`,
+                    FREE_PASS_ALIASES
+                )}
+                highlighted
+            />
+            <FeatureItem icon={<IcAt size={5} />} text={c('Signup').t`Custom email domain`} highlighted />
         </>
     );
 };

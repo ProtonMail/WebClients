@@ -9,7 +9,7 @@ im.$media-expressions: $media-expressions;
 	--name-background: transparent;
 	--icon-scale: 1;
 	--icon-image-scale: 1;
-	--icon-opacity: 0.7;
+	--icon-opacity: 1;
 
 	&-icon {
 		border: 1px solid var(--icon-border-color);
@@ -22,22 +22,6 @@ im.$media-expressions: $media-expressions;
 			transition: all 0.25s ease;
 			transform: scale(var(--icon-image-scale));
 			transform-origin: center;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			border: 2px solid rgb(109 74 255 / 0.2);
-			border-radius: inherit;
-			opacity: 0;
-			transition: opacity 0.25s ease;
-		}
-	}
-
-	&:focus-visible &-icon {
-		&::after {
-			opacity: 1;
 		}
 	}
 
@@ -60,7 +44,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&--selected {
-		--icon-scale: 1.05;
+		--icon-scale: 1.1;
 		--icon-image-scale: 1.05;
 		--icon-border-color: rgb(109 74 255);
 		--name-color: var(--norm);

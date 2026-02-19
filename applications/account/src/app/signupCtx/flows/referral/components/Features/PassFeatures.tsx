@@ -1,18 +1,25 @@
 import { c } from 'ttag';
 
-import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcShield } from '@proton/icons/icons/IcShield';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
 export const PassFeatures = () => {
     return (
         <>
-            <FeatureItem text={c('Signup').t`Built-in 2FA authenticator`} highlighted />
-            <FeatureItem text={c('Signup').t`Secure vault sharing and link sharing`} highlighted />
-            <FeatureItem text={c('Signup').t`Custom fields and file attachment`} highlighted />
-            <FeatureItem text={c('Signup').t`Unlimited hide-my-email aliases`} highlighted />
-            <FeatureItem text={c('Signup').t`Mailboxes and custom domains for aliases`} highlighted />
-            <FeatureItem text={DARK_WEB_MONITORING_NAME} highlighted />
+            <FeatureItem icon={<IcShield size={5} />} text={c('Signup').t`Built-in 2FA authenticator`} highlighted />
+            <FeatureItem
+                icon={<IcLink size={5} />}
+                text={c('Signup').t`Secure vault sharing and link sharing`}
+                highlighted
+            />
+            <FeatureItem
+                icon={<IcAlias size={5} />}
+                text={c('Signup').t`Unlimited hide-my-email aliases`}
+                highlighted
+            />
         </>
     );
 };

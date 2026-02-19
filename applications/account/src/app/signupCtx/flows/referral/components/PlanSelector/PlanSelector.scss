@@ -1,0 +1,195 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.PlanSelector-carouselContainer {
+	--mock-item-height: #{rem(360)};
+}
+
+.PlanSelector-planCard {
+	--shadow-full: var(--referral-box-shadow);
+	--shadow-none: none;
+
+	box-shadow: var(--shadow-full);
+	border-radius: calc(var(--border-radius-xl) * 1.5);
+	transform: translateZ(0);
+	will-change: box-shadow, transform, opacity, scale;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+
+	@keyframes referral-plan-shadow {
+		from {
+			box-shadow: var(--shadow-none);
+		}
+
+		to {
+			box-shadow: var(--shadow-full);
+		}
+	}
+
+	--translate: 0;
+	--rotate-y: 0;
+
+	@keyframes referral-plan-fade {
+		0% {
+			opacity: 1;
+			scale: 1;
+		}
+
+		15% {
+			opacity: 0.7;
+			scale: 0.96;
+		}
+
+		100% {
+			opacity: 1;
+			scale: 1;
+		}
+	}
+
+	@keyframes referral-plan-slide {
+		from {
+			opacity: 0;
+			scale: 0.9;
+			transform: translateX(var(--translate)) rotateX(5deg) rotateY(var(--rotate-y)) rotateZ(0deg);
+		}
+
+		to {
+			opacity: 1;
+			scale: 1;
+			transform: translateX(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		}
+	}
+}
+
+.PlanSelector-carouselItem {
+	position: relative;
+	inline-size: rem(192);
+	block-size: var(--mock-item-height);
+	background-color: rgb(234 229 255 / 0.7);
+	border: 1px solid var(--border-weak);
+
+	--translate: 0;
+
+	@keyframes referral-carousel-slide {
+		from {
+			opacity: 0;
+			transform: translateX(var(--translate));
+		}
+
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&--left {
+		mask-image: linear-gradient(to left, black, transparent);
+
+		[dir='rtl'] & {
+			mask-image: linear-gradient(to right, black, transparent);
+		}
+	}
+
+	&--right {
+		mask-image: linear-gradient(to right, black, transparent);
+
+		[dir='rtl'] & {
+			mask-image: linear-gradient(to left, black, transparent);
+		}
+	}
+}
+
+.PlanSelector-carouselContainer--animate {
+	.PlanSelector-planCard {
+		animation:
+			referral-plan-fade 0.4s ease-out both,
+			referral-plan-shadow 0.4s ease-out both;
+
+		> * {
+			animation: referral-plan-fade 0.4s ease-out both;
+		}
+	}
+}
+
+.PlanSelector-carouselContainer--animate-next,
+.PlanSelector-carouselContainer--animate-prev {
+	.PlanSelector-planCard {
+		--translate: #{rem(90)};
+		--rotate-y: -30deg;
+
+		[dir='rtl'] & {
+			--translate: #{rem(-90)};
+			--rotate-y: 30deg;
+		}
+
+		animation:
+			referral-plan-slide 0.4s ease-out both,
+			referral-plan-shadow 0.4s ease-out both;
+	}
+
+	.PlanSelector-carouselItem {
+		--translate: #{rem(20)};
+
+		animation: referral-carousel-slide 0.4s ease-out both;
+	}
+}
+
+.PlanSelector-carouselContainer--animate-prev {
+	.PlanSelector-planCard {
+		--translate: #{rem(-90)};
+		--rotate-y: 30deg;
+	}
+
+	.PlanSelector-carouselItem {
+		--translate: #{rem(-20)};
+	}
+}
+
+.PlanSelector-carouselButton {
+	inset-block-start: calc(var(--mock-item-height) / 2);
+	margin-block-start: var(--space-4);
+	transform: translateY(-50%);
+	box-shadow: var(--referral-box-shadow);
+	border: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--button-default-background-color);
+		border-radius: inherit;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		background-color: var(--button-hover-background-color);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: -1px;
+		background: linear-gradient(180deg, #fff 0%, #ded9f2 100%);
+		border-radius: inherit;
+		z-index: -2;
+	}
+
+	&--left {
+		inset-inline-start: rem(70);
+
+		svg {
+			transform: translateX(-0.1rem);
+		}
+	}
+
+	&--right {
+		inset-inline-end: rem(70);
+
+		svg {
+			transform: translateX(0.1rem);
+		}
+	}
+}

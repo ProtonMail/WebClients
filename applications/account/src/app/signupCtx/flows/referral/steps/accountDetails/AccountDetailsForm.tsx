@@ -142,7 +142,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             noValidate
             className="w-full"
         >
-            <h1 className="font-arizona text-semibold text-8xl">
+            <h1 className="font-arizona text-semibold text-8xl lh120">
                 {step === 'email' ? headline : c('Signup').t`Set your password`}
             </h1>
 

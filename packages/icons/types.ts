@@ -173,6 +173,7 @@ export type IconName =
     | 'cog-drawer'
     | 'credit-card'
     | 'credit-card-detailed'
+    | 'credit-card-slashed'
     | 'credit-cards'
     | 'credit-cards-filled'
     | 'cross'
