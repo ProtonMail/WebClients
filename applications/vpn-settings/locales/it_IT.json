@@ -11817,9 +11817,6 @@
       "Got it": [
         "Tutto chiaro"
       ],
-      "I'm purchasing as a business": [
-        "Sto acquistando come azienda"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
       ],
@@ -12040,18 +12037,6 @@
       ],
       "Business Number": [
         "Numero azienda"
-      ],
-      "Edit ABN": [
-        "Modificare ABN"
-      ],
-      "Edit Business Number": [
-        "Modifica numero azienda"
-      ],
-      "Edit EIN": [
-        "Modificare EIN"
-      ],
-      "Edit VAT number": [
-        "Modifica il numero di partita IVA"
       ],
       "EIN": [
         "Numero d'identificazione fiscale (EIN)"
@@ -16387,9 +16372,6 @@
       ],
       "Recommended": [
         "Consigliato"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Risparmia il ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

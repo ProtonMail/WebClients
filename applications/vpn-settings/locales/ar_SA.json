@@ -534,7 +534,7 @@
         "المساعدة والمصادر"
       ],
       "Hide": [
-        "أخفِ"
+        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -1884,8 +1884,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "إضافة مستخدمين يدوياً"
+      ],
       "Close": [
         "إغلاق"
+      ],
+      "Configure your network": [
+        "تكوين شبكتك"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "الاستمرار في استخدام ${ MAIL_APP_NAME }."
@@ -1905,17 +1911,29 @@
       "Discover and set up features": [
         "اكتشف الميزات وقم بإعدادها"
       ],
+      "Invite your team": [
+        "ادعُ فريقك"
+      ],
+      "Manage global VPN permissions": [
+        "إدارة أذونات VPN العالمية"
+      ],
       "Maybe later": [
         "ربما لاحقا"
       ],
       "Remind me later": [
         "ذكِّرني لاحقًا"
       ],
+      "Secure your organization": [
+        "قم بتأمين مؤسستك"
+      ],
       "Send": [
         "أرسل"
       ],
       "Set up other features": [
         "إعداد ميزات أخرى"
+      ],
+      "Set up SSO": [
+        "إعداد SSO"
       ],
       "Take a tour": [
         "جولة تعريفية"
@@ -3205,14 +3223,23 @@
       "Connect your CRM, website, printers, and more.": [
         "اربط نظام إدارة علاقات العملاء (CRM) والموقع الإلكتروني والطابعات والمزيد."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "أنشئ بوابة تتيح للمستخدمين الوصول إلى موارد تكنولوجيا المعلومات الخاصة بك من خلال خوادم مخصصة."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "أنشئ اجتماع Zoom وأضف تفاصيل الانضمام لحدثك بنقرة واحدة."
       ],
       "Create groups you can email with a single address.": [
         "أنشئ مجموعات يمكنك مراسلتها عبر البريد الإلكتروني باستخدام عنوان واحد."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "إنشاء حسابات مستخدمين جديدة أو استيراد مستخدمين باستخدام تزويد SCIM (تسجيل الدخول الأحادي)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "أنشئ سياسات تُحدد من يمكنه الاتصال بالخوادم المشتركة في كل بلد."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "حدد المستخدمين الذين يمكنهم الاتصال بكل موقع من مواقع الخوادم المشتركة التي يزيد عددها عن 120 موقعًا."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "الوصول بسهولة إلى بريدك الإلكتروني وتقويمك على سطح المكتب والجوال."
@@ -3258,6 +3285,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "ساعد فريقك على تخزين كلمات المرور بشكل آمن لمعلومات العمل والعملاء الحساسة."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "إذا لم تكن قد قمت بذلك بالفعل، فقم بتمكين بعض طرق الاسترداد للتأكد من أنك لن تفقد الوصول إلى ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "يبدو أن قائمة جهات الاتصال التي تستوردها تحتوي على بعض المجموعات. يرجى مراجعة كيفية استيراد هذه المجموعات."
@@ -4980,7 +5010,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
@@ -5003,7 +5033,7 @@
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدرج مفتاح أمان مرتبطًا بحساب ${ BRAND_NAME } الخاص بك."
+        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "أدرج مفتاح الأمان في منفذ USB بجهازك."
@@ -6717,7 +6747,7 @@
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. رَقَم ${ digit }."
+        "أدخل رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
@@ -6787,6 +6817,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "احصل على إشعار إذا تم تسريب كلمة مرورك أو بياناتك الشخصية الأخرى. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "ابدأ الآن"
       ],
       "Get started with the referral link above.": [
         "ابدأ باستخدام رابط الإحالة أعلاه."
@@ -7544,6 +7577,9 @@
       "Set up your organization": [
         "إعداد مؤسستك"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "قم بإعداد مؤسستك وابدأ في حماية بياناتك في بضع خطوات سهلة."
+      ],
       "Setting up ${ feature }…": [
         "جارٍ إعداد ${ feature }…"
       ],
@@ -8145,7 +8181,7 @@
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عندما تقوم بإعداد المصادقة الثنائية، فإننا نوفر رموز استرداد يمكنك استخدامها لتسجيل الدخول إذا فقدت الوصول إلى تطبيق المصادقة الخاص بك."
+        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -8275,6 +8311,9 @@
       ],
       "You can now return to the application to continue": [
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "لا يمكنك فتح أكثر من محادثة في نفس الوقت. يرجى إغلاق المحادثات السابقة قبل بدء محادثة جديدة."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "يمكنك تشغيل الإشعارات للحصول على التنبيهات عند وصول رسائل البريد الإلكتروني الجديدة في هذا المجلد."
@@ -9640,7 +9679,7 @@
         "إنشاء اسم مستعار"
       ],
       "Don't have access to your 2FA?": [
-        "ليس لديك إمكانية الوصول إلى 2FA؟"
+        "لا يمكنك الوصول إلى 2FA؟"
       ],
       "Encryption and keys": [
         "التشفير والمفاتيح"
@@ -9794,6 +9833,20 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "المحادثة المباشرة متاحة مع ${ planName }"
+      ],
+      "Open support form": [
+        "فتح نموذج الدعم"
+      ],
+      "Upgrade subscription": [
+        "ترقية الاشتراك"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "قم بالترقية لفتح الدعم عبر الدردشة والميزات المتقدمة الأخرى، أو استخدم نموذج الدعم المجاني للإبلاغ عن مشكلتك."
       ]
     },
     "Loading info": {
@@ -10086,7 +10139,7 @@
         "${ appName }: تسجيل الدخول"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: إنشئ حساباً"
+        "${ appName }: التسجيل"
       ],
       "Create a new ${ appName } account": [
         "إنشاء حساب ${ appName } جديد"
@@ -10095,10 +10148,10 @@
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت كلمة مرور حسابك ${ BRAND_NAME }؟ قم بإعادة تعيينه هنا باستخدام رمز الاسترداد، البريد الإلكتروني، أو الرسائل القصيرة واستعادة الوصول إلى ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغيرها."
+        "هل نسيت كلمة مرور حساب ${ BRAND_NAME }؟ أعد تعيينها هنا باستخدام رمز الاسترداد أو البريد الإلكتروني أو الرسالة القصيرة واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت اسم المستخدم الخاص بحسابك ${ BRAND_NAME }؟ ابحث عنه باستخدام البريد الاسترداد أو رقم الهاتف الخاص بك لاستعادة الوصول إلى تطبيق ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغير ذلك."
+        "هل نسيت اسم المستخدم لحساب ${ BRAND_NAME }؟ ابحث عنه باستخدام بريد الاسترداد أو رقم هاتفك واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
@@ -12112,9 +12165,6 @@
       "Got it": [
         "أحصل عليها"
       ],
-      "I'm purchasing as a business": [
-        "أقوم بالشراء كشركة"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "متضمنًا ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12359,18 +12409,6 @@
       ],
       "Business Number": [
         "رقم العمل"
-      ],
-      "Edit ABN": [
-        "تعديل ABN"
-      ],
-      "Edit Business Number": [
-        "تعديل رقم الأعمال"
-      ],
-      "Edit EIN": [
-        "تعديل EIN"
-      ],
-      "Edit VAT number": [
-        "تعديل الرقم الضريبي:"
       ],
       "EIN": [
         "EIN"
@@ -15304,6 +15342,11 @@
         "فاتح"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "المظهر"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } days": [
         "${ ceilDays } أيام",
@@ -15367,6 +15410,9 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } للمؤسسات"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "عملاء ${ VPN_APP_NAME }"
+      ],
       "(active)": [
         "(نشط)"
       ],
@@ -15393,6 +15439,9 @@
       ],
       "Access control": [
         "التحكم في الوصول"
+      ],
+      "Account": [
+        "الحساب"
       ],
       "Account recovery": [
         "استرداد الحساب"
@@ -15763,6 +15812,9 @@
       "Discard changes?": [
         "تجاهل التغييرات؟"
       ],
+      "Dismiss setup checklist": [
+        "إغلاق قائمة التحقق من الإعداد"
+      ],
       "Domain names": [
         "أسماء النطاق"
       ],
@@ -15831,6 +15883,9 @@
       ],
       "Email categories": [
         "فئات البريد الإلكتروني"
+      ],
+      "Email subscriptions": [
+        "اشتراكات البريد الإلكتروني"
       ],
       "Enable advanced account protection": [
         "تفعيل الحماية المتقدمة للحساب"
@@ -15905,6 +15960,9 @@
       ],
       "Get more from your VPN": [
         "احصل على المزيد من VPN الخاص بك"
+      ],
+      "Get started": [
+        "ابدأ الآن"
       ],
       "Get the apps": [
         "احصل على التطبيقات"
@@ -16022,6 +16080,9 @@
       "OpenVPN configuration files": [
         "ملفات تكوين OpenVPN"
       ],
+      "OpenVPN username": [
+        "اسم مستخدم OpenVPN"
+      ],
       "Org setup": [
         "إعداد المؤسسة"
       ],
@@ -16066,6 +16127,9 @@
       ],
       "Phone": [
         "الهاتف"
+      ],
+      "Plans": [
+        "الباقة"
       ],
       "Preview": [
         "معاينة"
@@ -16339,6 +16403,9 @@
       "Upgrade to keep your premium benefits.": [
         "قم بالترقية للحفاظ على مزاياك المميزة"
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "قم بترقية حماية شبكتك باستخدام خوادم مخصصة"
+      ],
       "Upgrade your privacy": [
         "قم بترقية خصوصيتك"
       ],
@@ -16428,6 +16495,9 @@
       ],
       "Your changes are not synced yet": [
         "لم تتم مزامنة تغييراتك بعد"
+      ],
+      "Your current plan": [
+        "اشتراكك الحالي"
       ],
       "Your exposed information": [
         "معلوماتك المكشوفة"
@@ -16883,9 +16953,6 @@
       ],
       "Recommended": [
         "موصى به"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "حفظ ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

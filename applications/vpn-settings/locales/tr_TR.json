@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Logo işlenemedi"
       ],
+      "Failed to update billing address": [
+        "Fatura adresi güncellenemedi"
+      ],
       "Failed to update detailed monitoring.": [
         "Ayrıntılı izleme güncellenemedi."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -11873,9 +11879,6 @@
       "Got it": [
         "Anladım"
       ],
-      "I'm purchasing as a business": [
-        "Kurumsal olarak satın alıyorum"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
       ],
@@ -12096,18 +12099,6 @@
       ],
       "Business Number": [
         "İş numarası"
-      ],
-      "Edit ABN": [
-        "ABN kodunu düzenle"
-      ],
-      "Edit Business Number": [
-        "İş numarasını düzenle"
-      ],
-      "Edit EIN": [
-        "EIN kodunu düzenle"
-      ],
-      "Edit VAT number": [
-        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -14503,6 +14494,9 @@
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
       ],
+      "Billing information updated": [
+        "Fatura bilgileri güncellendi"
+      ],
       "Canceling import": [
         "İçe aktarma iptal ediliyor"
       ],
@@ -16439,8 +16433,8 @@
       "Recommended": [
         "Önerilen"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "%${ price.uiData.discountPercent } indirim alın"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "%${ price.checkoutUi.discountPercent } tasarruf edin"
       ]
     },
     "User role": {
