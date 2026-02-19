@@ -60,11 +60,18 @@ export interface DriveSDKMethods {
     navigateUp: () => void;
     getRootFolder: () => Promise<DriveNode>;
     subscribeToDriveEvents: (callback: (event: DriveEvent) => Promise<void>) => Promise<EventSubscription>;
-    subscribeToTreeEvents: (treeEventScopeId: string, callback: (event: DriveEvent) => Promise<void>) => Promise<EventSubscription>;
+    subscribeToTreeEvents: (
+        treeEventScopeId: string,
+        callback: (event: DriveEvent) => Promise<void>
+    ) => Promise<EventSubscription>;
 }
 
 export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized: boolean } {
-    const { drive, init: initDrive, clearCache } = useDrive();
+    const {
+        drive,
+        init: initDrive,
+        internal: { clearCache },
+    } = useDrive();
     const [user] = useUser();
     const isGuest = useIsGuest();
     const [state, setState] = useState<DriveSDKState>({
@@ -410,7 +417,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
     );
 
     const subscribeToTreeEvents = useCallback(
-        async (treeEventScopeId: string, callback: (event: DriveEvent) => Promise<void>): Promise<EventSubscription> => {
+        async (
+            treeEventScopeId: string,
+            callback: (event: DriveEvent) => Promise<void>
+        ): Promise<EventSubscription> => {
             if (!drive) {
                 throw new Error('Drive not initialized');
             }
