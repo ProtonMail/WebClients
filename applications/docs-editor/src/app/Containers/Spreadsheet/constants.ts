@@ -71,7 +71,7 @@ function getTimePattern(locale: string) {
   return `[$-${locale}]h:mm;@` // 24-Hour Style
 }
 
-function getCurrencySymbol(locale: string | undefined, currency: string) {
+export function getCurrencySymbol(locale: string | undefined, currency: string) {
   try {
     const currencySymbol = new Intl.NumberFormat(locale, {
       style: 'currency',
