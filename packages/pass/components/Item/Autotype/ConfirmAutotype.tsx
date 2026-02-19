@@ -54,7 +54,7 @@ const ConfirmAutotypeCore: FC<ConfirmAutotypePropsCore> = ({
                     .t`Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.`}</div>
                 {BUILD_TARGET === 'darwin' && (
                     <div className="text-sm color-weak mb-4">{c('Info')
-                        .t`You may need to grant accessiblity permission to ${PASS_APP_NAME}.`}</div>
+                        .t`You may need to grant accessibility permission to ${PASS_APP_NAME}.`}</div>
                 )}
                 {BUILD_TARGET === 'linux' && (
                     <div className="text-sm color-weak mb-4">{c('Info')
