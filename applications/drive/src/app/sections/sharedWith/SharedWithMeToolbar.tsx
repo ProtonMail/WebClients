@@ -8,7 +8,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useSelection } from '../../components/FileBrowser';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
-import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
+import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
