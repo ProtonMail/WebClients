@@ -66,7 +66,7 @@ const getTips = (): UnlimitedOfferTipProps[] => [
     {
         type: UnlimitedMessageType.Pass,
         cta: c('specialoffer: Link').t`Keep passwords safe`,
-        spotlightTitle: c('specialoffer: Title').t`Keep your passwords safe and organized in multiple vaults `,
+        spotlightTitle: c('specialoffer: Title').t`Keep your passwords safe and organized in multiple vaults`,
         features: featureListPass,
     },
 ];
