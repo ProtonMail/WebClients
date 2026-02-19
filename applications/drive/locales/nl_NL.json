@@ -3139,9 +3139,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Tekstvelden zijn optioneel. De informatie die u in dit formulier opgeeft, zal alleen de door u geselecteerde factuur wijzigen en niet uw toekomstige factuurgegevens."
       ]
     },
     "Email body for invitation": {
@@ -3691,6 +3688,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Belastingvrijstelling wordt niet ondersteund voor dit abonnement"
       ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
@@ -9968,9 +9968,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "I'm purchasing as a business": [
-        "Ik koop dit voor mijn bedrijf."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -10166,18 +10163,6 @@
       ],
       "Business Number": [
         "Ondernemingsnummer"
-      ],
-      "Edit ABN": [
-        "ABN bewerken"
-      ],
-      "Edit Business Number": [
-        "Ondernemingsnummer bewerken"
-      ],
-      "Edit EIN": [
-        "EIN bewerken"
-      ],
-      "Edit VAT number": [
-        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -11641,6 +11626,9 @@
         "Alias opgeslagen en gekopieerd"
       ],
       "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
+      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Canceling import": [

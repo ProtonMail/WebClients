@@ -455,6 +455,9 @@
       "Enable drive search": [
         "Drive-ზე ძებნის ჩართვა"
       ],
+      "Encrypted": [
+        "დაშიფრული"
+      ],
       "Expand": [
         "ამოკეცვა"
       ],
@@ -940,6 +943,9 @@
       ],
       "Scan & Download (${ nbSelected })": [
         "სკანირება და გადმოწერა (${ nbSelected })"
+      ],
+      "Scan and Download": [
+        "სკანირება და გადმოწერა"
       ],
       "Search": [
         "ძებნა"
@@ -5894,6 +5900,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "მოითმინეთ, მიმდინარეობს არააქტიური გასაღებით დაშიფრული მონაცემების ძებნა."
       ],
+      "Preparing": [
+        "მზადდება"
+      ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
       ],
@@ -5956,6 +5965,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "მოითხოვეთ წვდომა, ან გადაერთეთ ანგარიშზე, რომელსაც წვდომა უკვე აქვს."
+      ],
+      "Requested item doesn't exist anymore": [
+        "მოთხოვნილი ელემენტი აღარ არსებობს"
       ],
       "Restore": [
         "აღდგენა"
@@ -6317,6 +6329,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "სცადეთ, ფაილი სახელით, თარიღით ან ტიპით მოძებნოთ."
+      ],
+      "Unexpected download error": [
+        "გადმოწერის მოულოდნელი შეცდომა"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "სამწუხაროდ, როგორც ჩანს, ფაილის ან მისი მონაცემების ნაწილის გაშიფვრა შეუძლებელია."
@@ -6846,6 +6861,9 @@
       "All": [
         "ყველა"
       ],
+      "Allow editors to change permissions and share": [
+        "რედაქტორებისთვის წვდომებისა და გაზიარების შეცვლის უფლების მიცემა"
+      ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
       ],
@@ -7002,6 +7020,9 @@
       ],
       "Device name": [
         "მოწყობილობის სახელი"
+      ],
+      "Disable this link on a specific date": [
+        "ამ ბმულის გამორთვა მითითებულ თარიღზე"
       ],
       "Do you have any suggestions for our team?": [
         "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
@@ -7276,6 +7297,9 @@
       "Replace existing folder or file": [
         "არსებული საქაღალდის ან ფაილის ჩანაცვლება"
       ],
+      "Require password": [
+        "პაროლის მოთხოვნა"
+      ],
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
@@ -7284,6 +7308,9 @@
       ],
       "Select type of abuse": [
         "აირჩიეთ კანონის დარღვევის ტიპი"
+      ],
+      "Set a password to limit access via link": [
+        "დააყენეთ პაროლი ბმულით წვდომის შესაზღუდად"
       ],
       "Set recovery method": [
         "აღდგენის მეთოდის დაყენება"
@@ -8936,6 +8963,9 @@
       "\"${ name }\" saved successfully": [
         "${ name } წარმატებით იქნა შენახული"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\" გაზიარებულია"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" წარმატებით დაკოპირდა"
       ],
@@ -9767,9 +9797,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "I'm purchasing as a business": [
-        "ვაპირებ შევიძინო ბიზნესისთვის"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
       ],
@@ -9942,18 +9969,6 @@
       ],
       "Business Number": [
         "ბიზნესის ნომერი"
-      ],
-      "Edit ABN": [
-        "ABN-ის რედაქტირება"
-      ],
-      "Edit Business Number": [
-        "ბიზნესის ნომრის ჩასწორება"
-      ],
-      "Edit EIN": [
-        "EIN-ის ჩასწორება"
-      ],
-      "Edit VAT number": [
-        "დღგ ნომრის ჩასწორება"
       ],
       "EIN": [
         "EIN"
@@ -11385,6 +11400,9 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
+      ],
+      "Billing information updated": [
+        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"
