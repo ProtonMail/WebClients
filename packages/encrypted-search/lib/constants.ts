@@ -43,7 +43,7 @@ export const ES_MAX_INITIAL_CHARS = 20;
  * number is larger due to our size estimation function being more conservative
  * than the actual memory occupation
  */
-export const ES_MAX_CACHE = 600000000; // 600 MB
+export const ES_MAX_CACHE = 600_000_000; // 600 MB
 
 /**
  * Maximum number of metadata "pages" per batch during metadata indexing
@@ -54,7 +54,7 @@ export const ES_BACKGROUND_METADATA_BATCH = 1;
 /**
  * Upper bound of number of items queried from IndexedDB at once
  */
-export const ES_MAX_ITEMS_PER_BATCH = 1000;
+export const ES_MAX_ITEMS_PER_BATCH = 1_000;
 
 /**
  * Current version of the most up-to-date ES IndexedDB
