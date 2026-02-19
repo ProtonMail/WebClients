@@ -38,6 +38,7 @@ import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.svg';
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { TimeInputBlock } from '../TimeInputBlock';
+import type { OnDateTimeChange } from './types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
 
 import './ScheduleMeetingForm.scss';
@@ -329,6 +330,14 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
         setResult(null);
     };
 
+    const handleDateTimeChange: OnDateTimeChange = ({ fieldName, value }) => {
+        setValues((oldValues) => ({
+            ...oldValues,
+            [fieldName]: value,
+            ...(fieldName === 'startDate' ? { endDate: value as Date } : {}),
+        }));
+    };
+
     return (
         <>
             {result && (
@@ -430,7 +439,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
                     <TimeInputBlock
                         name="start"
                         values={values}
-                        setValues={setValues}
+                        onDateTimeChange={handleDateTimeChange}
                         showTimezones={showTimezones}
                         timeOptions={startTimeOptions}
                         timeZoneOptions={timeZoneSelectOptions}
@@ -442,7 +451,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
                     <TimeInputBlock
                         name="end"
                         values={values}
-                        setValues={setValues}
+                        onDateTimeChange={handleDateTimeChange}
                         showTimezones={showTimezones}
                         timeOptions={endTimeOptions}
                         timeZoneOptions={timeZoneSelectOptions}
