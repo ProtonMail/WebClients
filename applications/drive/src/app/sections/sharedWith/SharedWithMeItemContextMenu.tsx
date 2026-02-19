@@ -3,7 +3,7 @@ import { useConfirmActionModal } from '@proton/components';
 import type { ContextMenuProps } from '../../components/FileBrowser';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
-import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
+import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
