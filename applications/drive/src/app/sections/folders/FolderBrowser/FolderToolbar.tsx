@@ -177,7 +177,7 @@ export const FolderToolbar = ({
             <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             {modals.previewModal}
             {modals.renameModal}
-            {modals.moveModal}
+            {modals.moveItemsModal}
             {modals.copyModal}
             {modals.createFileModal}
             {modals.createFolderModal}

@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 
+import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import type { DecryptedLink } from '../../../../store';
-import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 
 interface Props {
     shareId: string;
@@ -12,17 +12,17 @@ interface Props {
 }
 
 const MoveToFolderButton = ({ shareId, selectedLinks }: Props) => {
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
+    const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
 
     return (
         <>
             <ToolbarButton
                 title={c('Action').t`Move to folder`}
                 icon={<IcArrowsCross alt={c('Action').t`Move to folder`} />}
-                onClick={() => showMoveToFolderModal({ shareId, selectedItems: selectedLinks })}
+                onClick={() => showMoveItemsModal({ shareId, items: selectedLinks })}
                 data-testid="toolbar-move"
             />
-            {moveToFolderModal}
+            {moveItemsModal}
         </>
     );
 };

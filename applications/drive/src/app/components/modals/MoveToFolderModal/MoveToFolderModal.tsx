@@ -6,11 +6,9 @@ import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/compon
 import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import { MoveItemsModal } from '../../../modals/MoveItemsModal';
 import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 import type { DecryptedLink } from '../../../store';
 import { useActions, useTreeForModals } from '../../../store';
-import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import { useCreateFolderModalDeprecated } from '../CreateFolderModal';
@@ -135,20 +133,4 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
     );
 };
 
-export const useMoveToFolderModal = () => {
-    const isPublic = getIsPublicContext();
-
-    const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(
-        !isPublic ? MoveItemsModal : MoveToFolderModalDeprecated
-    );
-
-    const handleShowMoveToFolderModal = ({ shareId, selectedItems, ...rest }: Props) => {
-        if (!shareId || !selectedItems.length) {
-            return;
-        }
-
-        void showMoveToFolderModal({ shareId, selectedItems, ...rest });
-    };
-
-    return [moveToFolderModal, handleShowMoveToFolderModal] as const;
-};
+export const useMoveToFolderModalDeprecated = () => useModalTwoStatic(MoveToFolderModalDeprecated);
