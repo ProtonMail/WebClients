@@ -3321,9 +3321,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Los campos de texto son opcionales. La información que proporciona en este formulario solo cambiará la factura que ha seleccionado y no los detalles de la futura factura."
       ]
     },
     "Edit event button tooltip": {
@@ -3879,6 +3876,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exoneración de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
@@ -9327,9 +9327,6 @@
       "Got it": [
         "Entiendo"
       ],
-      "I'm purchasing as a business": [
-        "Estoy comprando como empresa"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -9525,18 +9522,6 @@
       ],
       "Business Number": [
         "Número de negocio"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar número de negocio"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -11073,6 +11058,9 @@
       ],
       "Billing details updated": [
         "Detalles de facturación actualizados"
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ],
       "Booking page created": [
         "Página de reservas creada"
