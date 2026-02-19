@@ -321,9 +321,6 @@
       "Connected": [
         "Terhubung"
       ],
-      "Contact sales": [
-        "Hubungi pemasaran"
-      ],
       "Contact support": [
         "Hubungi layanan dukungan"
       ],
@@ -446,9 +443,6 @@
       ],
       "Delete account": [
         "Hapus akun"
-      ],
-      "Delete and confirm": [
-        "Hapus dan konfirmasi"
       ],
       "Delete filter “${ Name }”": [
         "Hapus filter “${ Name }”"
@@ -7378,7 +7372,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Terjadi kesalahan saat mendaftarkan kunci keamanan Anda. Silakan coba lagi."
@@ -8443,9 +8437,6 @@
       "${ discountPercent }% discount": [
         "Diskon ${ discountPercent }%"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } tidak lagi akan menyimpan file versi sebelumnya."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
       ],
@@ -9308,7 +9299,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Masing-masing domain hanya dapat memiliki satu rekaman SPF (TXT). Apabila Anda ingin mempertahankan rekaman SPF (TXT) yang telah ada, Anda dapat menambahkan ${ spf } ke rekaman Anda saat ini (tempatkan rekaman ini setelah ${ spfValue })."
@@ -9513,9 +9504,6 @@
       ],
       "finance": [
         "keuangan"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Untuk riwayat versi 10 tahun, silakan hubungi tim penjualan kami."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Untuk akses kapan saja dan pengalaman seluler yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
@@ -10804,12 +10792,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Verifikasi ini dapat memakan waktu hingga satu jam. Setelah verifikasi berhasil, jangan hapus catatan TXT karena diperlukan untuk memastikan bahwa Anda tetap memiliki domain tersebut."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Tindakan ini akan menghapus semua versi file Anda yang lebih lama dari ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Hal ini akan mengahpus semua file versi lama Anda."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Tindakan ini akan menolak akses ke **${ email }**. Apakah Anda yakin ingin melanjutkan?"
       ],
@@ -10996,9 +10978,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Tingkatkan untuk mempertahankan berbagai manfaat ${ planTitle } Anda."
       ],
-      "Upgrade to unlock": [
-        "Tingkatkan akun untuk mengakses fitur"
-      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Tingkatkan paket Anda ke ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME } untuk organisasi."
       ],
@@ -11091,9 +11070,6 @@
       ],
       "Version ${ version }": [
         "Versi ${ version }"
-      ],
-      "Version history": [
-        "Riwayat versi"
       ],
       "Version number successfully copied to clipboard": [
         "Nomor versi berhasil disalin ke papan klip"
@@ -12665,9 +12641,6 @@
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
-      ],
-      "Don't keep versions": [
-        "Jangan simpan file versi lama"
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
@@ -17102,9 +17075,6 @@
       "Got it": [
         "Paham"
       ],
-      "I'm purchasing as a business": [
-        "Saya membeli produk ini selaku pihak bisnis"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
@@ -17313,18 +17283,6 @@
       ],
       "Business Number": [
         "Nomor Bisnis"
-      ],
-      "Edit ABN": [
-        "Edit ABN"
-      ],
-      "Edit Business Number": [
-        "Edit Nomor Bisnis"
-      ],
-      "Edit EIN": [
-        "Edit EIN"
-      ],
-      "Edit VAT number": [
-        "Edit nomor PPN"
       ],
       "EIN": [
         "NPWP"
@@ -19071,9 +19029,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Aktifkan bagian Foto"
-      ],
       "Get updates about comments via email": [
         "Dapatkan pembaruan seputar komentar via email"
       ],
@@ -19389,9 +19344,6 @@
       ],
       "Private AI assistant with encrypted chat history": [
         "Asisten AI pribadi dengan riwayat obrolan yang terenkripsi"
-      ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Promo diterapkan – hemat ${ checkout.discountPercent }%"
       ],
       "Recover previous file versions": [
         "Pulihkan versi file sebelumnya"
@@ -21821,9 +21773,6 @@
       "Delete user?": [
         "Hapus pengguna?"
       ],
-      "Delete version history?": [
-        "Hapus riwayat versi?"
-      ],
       "Deny access to user?": [
         "Tolak akses pengguna?"
       ],
@@ -23606,9 +23555,6 @@
       ],
       "Recommended": [
         "Direkomendasikan"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Disimpan: ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

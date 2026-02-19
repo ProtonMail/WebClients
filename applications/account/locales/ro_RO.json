@@ -6483,6 +6483,9 @@
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
+      "Failed to update billing address": [
+        "Nu s-a putut actualiza adresa de facturare."
+      ],
       "Failed to update detailed monitoring.": [
         "Actualizarea monitorizării detaliate a eșuat."
       ],
@@ -6815,6 +6818,9 @@
       ],
       "Tab closed": [
         "Filă închisă."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
@@ -11666,7 +11672,7 @@
         "Versiunea ${ version }"
       ],
       "Version history": [
-        "Istoric versiuni fișiere"
+        "Istoric versiuni"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -13680,6 +13686,9 @@
       ],
       "Navigation": [
         "Navigare"
+      ],
+      "Net amount": [
+        "Sumă netă"
       ],
       "New display name": [
         "Nume nou afișat"
@@ -17880,6 +17889,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% impozit"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după probare la ${ formattedDate }"
       ],
@@ -17901,12 +17913,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exclus ${ taxRate }% taxe: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17916,17 +17922,20 @@
       "Got it": [
         "Am înțeles"
       ],
-      "I'm purchasing as a business": [
-        "Achiziționez în calitate de companie"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Inclusiv ${ taxRate }% taxe: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclusiv ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluzând impozit de ${ taxRate }%"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
@@ -17936,6 +17945,9 @@
       ],
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
+      ],
+      "Net amount": [
+        "Sumă netă"
       ],
       "Offer unavailable": [
         "Ofertă indisponibilă"
@@ -18157,18 +18169,6 @@
       ],
       "Business Number": [
         "Cod unic de înregistrare"
-      ],
-      "Edit ABN": [
-        "Editare ABN"
-      ],
-      "Edit Business Number": [
-        "Editare cod unic de înregistrare"
-      ],
-      "Edit EIN": [
-        "Editare EIN"
-      ],
-      "Edit VAT number": [
-        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -20300,8 +20300,8 @@
       "Private AI assistant with encrypted chat history": [
         "Asistent de IA privat cu istoric de chat criptat"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Promoție aplicată – ${ checkout.discountPercent }% reducere"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoție aplicată – ${ checkoutUi.discountPercent }% reducere"
       ],
       "Recover previous file versions": [
         "Recuperați versiunile anterioare ale fișierelor"
@@ -21880,6 +21880,9 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
+      ],
+      "Billing information updated": [
+        "Informațiile de facturare s-au actualizat."
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
@@ -24714,8 +24717,8 @@
       "Recommended": [
         "Recomandat"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Economisiți ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economisiți ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

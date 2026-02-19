@@ -321,9 +321,6 @@
       "Connected": [
         "연결됨"
       ],
-      "Contact sales": [
-        "영업팀에 문의"
-      ],
       "Contact support": [
         "문의하기"
       ],
@@ -446,9 +443,6 @@
       ],
       "Delete account": [
         "계정 삭제"
-      ],
-      "Delete and confirm": [
-        "삭제 및 확인"
       ],
       "Delete filter “${ Name }”": [
         "필터 \"${ Name }\" 삭제"
@@ -1725,6 +1719,9 @@
       ],
       "${ domains } additional custom domain": [
         "사용자 지정 이메일 도메인 ${ domains }개"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips }개 전용 VPN 서버"
       ],
       "${ ips } server": [
         "${ ips }개 서버"
@@ -5953,6 +5950,9 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
       ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "복구 연락처의 최대치인 ${ limit }개에 도달했습니다."
+      ],
       "You will be notified when someone requests emergency access.": [
         "누군가 긴급 접근을 요청하면 알림을 받게 됩니다."
       ],
@@ -6112,6 +6112,9 @@
       ],
       "Expired": [
         "만료됨"
+      ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
       ],
       "Failed to add group member": [
         "그룹 구성원 추가 실패"
@@ -8462,9 +8465,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }가 더 이상 사용자의 이전 버전의 파일을 보관하지 않습니다."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
@@ -8599,6 +8599,9 @@
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
+      ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
       ],
       "${ url } added.": [
         "${ url }이(가) 추가됨."
@@ -9535,9 +9538,6 @@
       ],
       "finance": [
         "금융정보"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10년 버전 기록은 영업팀에 문의하세요."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
@@ -10829,12 +10829,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
-      ],
-      "This will delete all previous versions of your files.": [
-        "이는 사용자의 모든 이전 버전의 파일을 삭제합니다."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
       ],
@@ -11021,9 +11015,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
-      "Upgrade to unlock": [
-        "잠금 해제하려면 업그레이드"
-      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
       ],
@@ -11116,9 +11107,6 @@
       ],
       "Version ${ version }": [
         "${ version } 버전"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
@@ -12699,9 +12687,6 @@
       ],
       "Don't ask again": [
         "다시 묻지 않기"
-      ],
-      "Don't keep versions": [
-        "버전 유지 안함"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -17160,9 +17145,6 @@
       "Got it": [
         "확인했습니다"
       ],
-      "I'm purchasing as a business": [
-        "사업체 용도로 구매합니다"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
       ],
@@ -17383,18 +17365,6 @@
       ],
       "Business Number": [
         "사업자등록번호"
-      ],
-      "Edit ABN": [
-        "ABN 수정"
-      ],
-      "Edit Business Number": [
-        "사업자등록번호 수정"
-      ],
-      "Edit EIN": [
-        "EIN 수정"
-      ],
-      "Edit VAT number": [
-        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -19141,9 +19111,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "사진 섹션 활성화"
-      ],
       "Get updates about comments via email": [
         "이메일로 댓글에 대한 업데이트를 받아보세요"
       ],
@@ -19459,9 +19426,6 @@
       ],
       "Private AI assistant with encrypted chat history": [
         "암호화된 채팅 기록을 갖춘 개인용 AI 어시스턴트"
-      ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "할인 적용됨 – ${ checkout.discountPercent }% 할인"
       ],
       "Recover previous file versions": [
         "이전 파일 버전으로 복구"
@@ -21904,9 +21868,6 @@
       "Delete user?": [
         "사용자를 삭제합니까?"
       ],
-      "Delete version history?": [
-        "버전 기록을 삭제하시겠어요?"
-      ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"
       ],
@@ -23710,9 +23671,6 @@
       ],
       "Recommended": [
         "권장"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "${ price.uiData.discountPercent }% 절약"
       ]
     },
     "User role": {

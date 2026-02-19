@@ -13480,6 +13480,9 @@
       "Navigation": [
         "Navegação"
       ],
+      "Net amount": [
+        "Valor líquido"
+      ],
       "New display name": [
         "Novo nome de exibição"
       ],
@@ -17655,12 +17658,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excl ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excl. ${ taxRate }% de impostos: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17670,17 +17667,20 @@
       "Got it": [
         "Entendi"
       ],
-      "I'm purchasing as a business": [
-        "Estou comprando como empresa"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incl ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Incl ${ taxRate }% de impostos: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluindo ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluindo ${ taxRate }% de impostos"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
@@ -17690,6 +17690,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Net amount": [
+        "Valor líquido"
       ],
       "Offer unavailable": [
         "Oferta indisponível"
@@ -17905,18 +17908,6 @@
       ],
       "Business Number": [
         "Número comercial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar número comercial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -20015,8 +20006,8 @@
       "Private AI assistant with encrypted chat history": [
         "Assistente de IA privado com histórico de bate-papo criptografado"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Promoção aplicada – ${ checkout.discountPercent }% de desconto"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoção aplicada – ${ checkoutUi.discountPercent }% de desconto"
       ],
       "Recover previous file versions": [
         "Recuperar versões anteriores de arquivos"
@@ -21545,6 +21536,9 @@
       ],
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
+      ],
+      "Billing information updated": [
+        "As informações de faturamento foram atualizadas"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
@@ -24368,8 +24362,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Economize ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economize ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

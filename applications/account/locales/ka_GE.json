@@ -4773,6 +4773,25 @@
         "გავთიშო მისამართი?"
       ]
     },
+    "dollar_offer": {
+      "Get VPN Plus for only ${ offerPrice }": [
+        "მიიღეთ VPN Plus მხოლოდ ${ offerPrice }-ად"
+      ],
+      "Protected by Swiss privacy laws": [
+        "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "სპეციალური შეთავაზება: დაზოგეთ 90% ჩვენს პრემიუმ პაკეტზე"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "გაგრძელება უფასოდ"
+      ],
+      "Get the deal": [
+        "გარიგების მიღება"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "გადამოწმებულია"
@@ -6019,6 +6038,10 @@
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს.",
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს."
       ],
+      "You reached the maximum of ${ limit } recovery contact.": [
+        "თქვენ მიაღწიეთ ${ limit } აღდგენის კონტაქტის მაქსიმალურ რაოდენობას.",
+        "თქვენ მიაღწიეთ მაქსიმალურ ${ limit } აღდგენის კონტაქტს."
+      ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
       ],
@@ -6301,6 +6324,9 @@
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "დაშვებულია მაქსიმუმ ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
@@ -8555,9 +8581,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% ფასდაკლება"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } თქვენი ფაილების წინა ვერსიებს აღარ შეინახავს."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } არასწორია"
       ],
@@ -8837,6 +8860,9 @@
       ],
       "active": [
         "აქტიური"
+      ],
+      "Activity Monitor": [
+        "აქტივობების მონიტორი"
       ],
       "add a recovery method": [
         "აღდგენის მეთოდის დამატება"
@@ -9630,9 +9656,6 @@
       "finance": [
         "ფინანსები"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10-წლიანი ვერსიის ისტორიისთვის დაუკავშირდით ჩვენი გაყიდვების გუნდს."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "ელფოსტასთან ნენებისმიერ დროს წვდომისთვის და მობილურისთვის ოპტიმიზებული პროგრამებისთვის გადმოწერეთ ჩვენი ${ androidAppLink }-ის ან ${ iosAppLink }-ის აპი."
       ],
@@ -9680,6 +9703,9 @@
       ],
       "Get started with the referral link above.": [
         "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
+      ],
+      "Get visibility into account access": [
+        "გააკონტროლეთ ანგარიშზე წვდომა"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
@@ -10890,12 +10916,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "ამ გადამოწმებას ერთ საათამდე შეიძლება, დასჭირდეს. წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "ეს თქვენი ფაილების ${ rententionLabel }-ზე ძველ ვერსიებს წაშლის."
-      ],
-      "This will delete all previous versions of your files.": [
-        "ეს თქვენი ფაილების ყველა წინა ვერსიას წაშლის."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "ეს აკრძალავს წვდომას **${ email }**-სთან. მართლა გნებავთ, გააგრძელოთ?"
       ],
@@ -11078,6 +11098,9 @@
       ],
       "Upgrade to unlock": [
         "განსაბლოკად ასწიეთ ტარიფი"
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე."
@@ -11496,6 +11519,9 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "მოვლენების ICS-დან შემოსატანად პირადი კალენდრების ქონაა საჭირო."
       ],
+      "You saved ${ discountAmount } with an offer": [
+        "შეთავაზებით თქვენ დაზოგეთ ${ discountAmount }"
+      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "გაიტანეთ ამ გასაღების მარქაფი იმ შემთხვევისთვის, თუ მისით დაშიფრული მონაცემების აღდგენა დაგჭირდათ."
       ],
@@ -11599,6 +11625,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "თქვენი ორგანიზაციის ელფოსტა გამჭოლადაა დაშიფრული ორგანიზაციის გასაღების გამოყენებით. ეს ანაბეჭდი ასევე შეიძლება გამოიყენოთ, რათა დარწმუნდეთ, რომ თქვენი ანგარიშის ყველა ადმინისტრატორი იგივე გასაღებს იყენებს."
+      ],
+      "Your payment details are encrypted and secure": [
+        "თქვენი გადახდის მონაცემები დაშიფრული და უსაფრთხოა"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდის თქვენი მეთოდები TLS დაშიფვრითა და კონფიდენციალობის შვეიცარიული კანონებითაა დაცული."
@@ -12259,6 +12288,9 @@
       ],
       "Account holder": [
         "ანგარიშის მფლობელი"
+      ],
+      "Account holder: ${ sepaDetails.AccountName }": [
+        "ანგარიშის მფლობელი: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "ანგარიშის საცავი"
@@ -13067,6 +13099,9 @@
       "Navigation": [
         "ნავიგაცია"
       ],
+      "Net amount": [
+        "სულ გადასახდელი თანხა"
+      ],
       "New display name": [
         "ახალი საჩვენებელი სახელი"
       ],
@@ -13772,6 +13807,9 @@
     "Link": {
       "Activity log": [
         "აქტივობის ჟურნალი"
+      ],
+      "activity monitor": [
+        "აქტივობების მონიტორი"
       ],
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
@@ -17166,6 +17204,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% გადასახადი"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "გამოსაცდელი ვადის (${ formattedDate }) გადასახდელი თანხა"
       ],
@@ -17184,9 +17225,6 @@
       "CVC": [
         "CVC"
       ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% გადასახადის გათვალისწინების გარეშე: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
       ],
@@ -17196,14 +17234,17 @@
       "Got it": [
         "გავიგე"
       ],
-      "I'm purchasing as a business": [
-        "ვაპირებ შევიძინო ბიზნესისთვის"
+      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
       ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "${ taxRate }% გადასახადის გათვალისწინებით"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
@@ -17213,6 +17254,9 @@
       ],
       "More plans are available in other currencies": [
         "მეტი სატარიფო გეგმა ხელმისაწვდომია სხვა ვალუტებში"
+      ],
+      "Net amount": [
+        "სუფთა თანხა"
       ],
       "Offer unavailable": [
         "შეთავაზება ხელმიუწვდომელია"
@@ -17405,18 +17449,6 @@
       ],
       "Business Number": [
         "ბიზნესის ნომერი"
-      ],
-      "Edit ABN": [
-        "ABN-ის რედაქტირება"
-      ],
-      "Edit Business Number": [
-        "ბიზნესის ნომრის ჩასწორება"
-      ],
-      "Edit EIN": [
-        "EIN-ის ჩასწორება"
-      ],
-      "Edit VAT number": [
-        "დღგ ნომრის ჩასწორება"
       ],
       "EIN": [
         "EIN"
@@ -19450,9 +19482,6 @@
       "Private AI assistant with encrypted chat history": [
         "პირადი ხი დამხმარე დაშიფრულიჩატის ისტორიით"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "პრომო გადატარებულია - ფასდაკლება ${ checkout.discountPercent }%"
-      ],
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
@@ -20428,6 +20457,9 @@
       "Bound to **${ nameToDisplay }**": [
         "მიბმული **${ nameToDisplay }**-ზე"
       ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "მიბმულია ორგანიზაციაზე: **${ nameToDisplay }**"
+      ],
       "Next billing date": [
         "შემდეგი გადახდის თარიღი"
       ],
@@ -20965,6 +20997,9 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
+      ],
+      "Billing information updated": [
+        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "კალენდარი დაემატა. სინქრონიზაციას რამდენიმე წუთი შეიძლება დასჭირდეს."
@@ -22659,6 +22694,9 @@
       "Revoke certificate?": [
         "გავაუქმო სერტიფიკატი?"
       ],
+      "Roles and permissions": [
+        "როლები და ნებართვები"
+      ],
       "Same inbox, shorter email address": [
         "იგივე საფოსტო ყუთი, უფრო მოკლე ელფოსტის მისამართი"
       ],
@@ -23710,9 +23748,6 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "დაზოგეთ ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

@@ -292,6 +292,9 @@
       "Connected": [
         "مُتصل"
       ],
+      "Contact sales": [
+        "اتصل بالمبيعات"
+      ],
       "Contact support": [
         "التواصل مع الدعم الفني"
       ],
@@ -396,6 +399,9 @@
       ],
       "Delete account": [
         "حذف الحساب"
+      ],
+      "Delete and confirm": [
+        "حذف وتأكيد"
       ],
       "Delete Gateway": [
         "حذف البوابة"
@@ -719,7 +725,7 @@
         "المساعدة والمصادر"
       ],
       "Hide": [
-        "أخفِ"
+        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -6865,7 +6871,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
@@ -6888,7 +6894,7 @@
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدرج مفتاح أمان مرتبطًا بحساب ${ BRAND_NAME } الخاص بك."
+        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "أدرج مفتاح الأمان في منفذ USB بجهازك."
@@ -7942,6 +7948,9 @@
       ],
       "${ discountPercent }% discount": [
         "خصم ${ discountPercent }%"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "لن يحتفظ ${ DRIVE_APP_NAME } بعد الآن بالإصدارات السابقة من ملفاتك."
       ],
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
@@ -9023,7 +9032,7 @@
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. رَقَم ${ digit }."
+        "أدخل رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
@@ -9087,6 +9096,9 @@
       ],
       "finance": [
         "مالية"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "للحصول على تاريخ إصدار لمدة 10 سنوات، يرجى الاتصال بفريق المبيعات لدينا."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "للوصول إلى البريد الإلكتروني في أي وقت ولتجربة محسّنة على الجوال، نزّل ${ androidAppLink } أو ${ iosAppLink }."
@@ -10327,6 +10339,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "قد يستغرق هذا التحقق ما يصل إلى ساعة واحدة. بعد التحقق بنجاح، لا تقم بإزالة سجل TXT لأنه ضروري لتأكيد استمرار امتلاكك للنطاق."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "سيؤدي هذا إلى حذف جميع الإصدارات السابقة من ملفاتك الأقدم من ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "سيؤدي ذلك إلى حذف جميع الإصدارات السابقة من ملفاتك."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "سيؤدي هذا إلى رفض الوصول إلى **${ email }**. هل تريد بالتأكيد المتابعة؟"
       ],
@@ -10498,6 +10516,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
       ],
+      "Upgrade to unlock": [
+        "قم بالترقية لفتح القفل"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "قم بالترقية لفتح ${ monitorLink }."
       ],
@@ -10587,6 +10608,9 @@
       ],
       "Version ${ version }": [
         "الإصدار ${ version }"
+      ],
+      "Version history": [
+        "تاريخ الإصدار"
       ],
       "Version number successfully copied to clipboard": [
         "تم نسخ رقم الإصدار إلى الحافظة بنجاح"
@@ -10715,7 +10739,7 @@
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عندما تقوم بإعداد المصادقة الثنائية، فإننا نوفر رموز استرداد يمكنك استخدامها لتسجيل الدخول إذا فقدت الوصول إلى تطبيق المصادقة الخاص بك."
+        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -12006,6 +12030,9 @@
       "Don't ask again": [
         "لا تسأل ثانيا"
       ],
+      "Don't keep versions": [
+        "لا تحتفظ بالإصدارات"
+      ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
       ],
@@ -12922,7 +12949,7 @@
         "إنشاء اسم مستعار"
       ],
       "Don't have access to your 2FA?": [
-        "ليس لديك إمكانية الوصول إلى 2FA؟"
+        "لا يمكنك الوصول إلى 2FA؟"
       ],
       "Downloads": [
         "التنزيلات"
@@ -13459,7 +13486,7 @@
         "${ appName }: تسجيل الدخول"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: إنشئ حساباً"
+        "${ appName }: التسجيل"
       ],
       "${ BRAND_NAME } Account": [
         "حساب ${ BRAND_NAME }"
@@ -13477,10 +13504,10 @@
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت كلمة مرور حسابك ${ BRAND_NAME }؟ قم بإعادة تعيينه هنا باستخدام رمز الاسترداد، البريد الإلكتروني، أو الرسائل القصيرة واستعادة الوصول إلى ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغيرها."
+        "هل نسيت كلمة مرور حساب ${ BRAND_NAME }؟ أعد تعيينها هنا باستخدام رمز الاسترداد أو البريد الإلكتروني أو الرسالة القصيرة واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت اسم المستخدم الخاص بحسابك ${ BRAND_NAME }؟ ابحث عنه باستخدام البريد الاسترداد أو رقم الهاتف الخاص بك لاستعادة الوصول إلى تطبيق ${ MAIL_APP_NAME }و ${ DRIVE_SHORT_APP_NAME }و ${ CALENDAR_SHORT_APP_NAME } وغير ذلك."
+        "هل نسيت اسم المستخدم لحساب ${ BRAND_NAME }؟ ابحث عنه باستخدام بريد الاسترداد أو رقم هاتفك واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
@@ -16156,9 +16183,6 @@
       "Got it": [
         "أحصل عليها"
       ],
-      "I'm purchasing as a business": [
-        "أقوم بالشراء كشركة"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "متضمنًا ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -16406,18 +16430,6 @@
       ],
       "Business Number": [
         "رقم العمل"
-      ],
-      "Edit ABN": [
-        "تعديل ABN"
-      ],
-      "Edit Business Number": [
-        "تعديل رقم الأعمال"
-      ],
-      "Edit EIN": [
-        "تعديل EIN"
-      ],
-      "Edit VAT number": [
-        "تعديل الرقم الضريبي:"
       ],
       "EIN": [
         "EIN"
@@ -18129,6 +18141,11 @@
         "طلب إعادة تعيين كلمة المرور"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "تمكين قسم الصور"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "حافظ على تنظيم صندوق الوارد باستخدام المجلدات والتسميات. ${ learnMoreLink }"
@@ -18462,9 +18479,6 @@
       ],
       "Pick your perfect plan": [
         "اختر خطتك المثالية"
-      ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "تم تطبيق العرض الترويجي – خصم ${ checkout.discountPercent }%"
       ],
       "Recover previous file versions": [
         "استرداد إصدارات الملفات السابقة"
@@ -21032,6 +21046,9 @@
       "Delete user?": [
         "حذف المستخدم؟"
       ],
+      "Delete version history?": [
+        "هل تريد حذف سجل الإصدارات؟"
+      ],
       "Deny access to user?": [
         "هل تريد رفض وصول المستخدم؟"
       ],
@@ -22614,9 +22631,6 @@
       ],
       "Recommended": [
         "موصى به"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "حفظ ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

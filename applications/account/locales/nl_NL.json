@@ -322,7 +322,7 @@
         "Verbonden"
       ],
       "Contact sales": [
-        "Neem contact op met sales"
+        "Contact opnemen met sales"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "Het logo kon niet worden verwerkt"
       ],
+      "Failed to update billing address": [
+        "Bijwerken factuuradres mislukt"
+      ],
       "Failed to update detailed monitoring.": [
         "Gedetailleerde monitoring kon niet worden bijgewerkt."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Belastingvrijstelling wordt niet ondersteund voor dit abonnement"
       ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
@@ -13539,6 +13545,9 @@
       "Navigation": [
         "Navigatie"
       ],
+      "Net amount": [
+        "Netto bedrag"
+      ],
       "New display name": [
         "Nieuwe weergavenaam"
       ],
@@ -17684,6 +17693,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% belastingen"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
       ],
@@ -17705,12 +17717,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excl. ${ taxRate }% belastingen: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17720,17 +17726,20 @@
       "Got it": [
         "Begrepen"
       ],
-      "I'm purchasing as a business": [
-        "Ik koop dit voor mijn bedrijf."
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Incl. ${ taxRate }% belastingen: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclusief ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inclusief ${ taxRate }% belastingen"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
@@ -17740,6 +17749,9 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
+      ],
+      "Net amount": [
+        "Netto bedrag"
       ],
       "Offer unavailable": [
         "Aanbieding niet beschikbaar"
@@ -17955,18 +17967,6 @@
       ],
       "Business Number": [
         "Ondernemingsnummer"
-      ],
-      "Edit ABN": [
-        "ABN bewerken"
-      ],
-      "Edit Business Number": [
-        "Ondernemingsnummer bewerken"
-      ],
-      "Edit EIN": [
-        "EIN bewerken"
-      ],
-      "Edit VAT number": [
-        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -20065,8 +20065,8 @@
       "Private AI assistant with encrypted chat history": [
         "Privé AI-assistent met versleutelde gespreksgeschiedenis"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Promotie toegepast – ${ checkout.discountPercent }% korting"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promotie toegepast – ${ checkoutUi.discountPercent }% korting"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -21606,6 +21606,9 @@
         "Backup-wachtwoord bijgewerkt"
       ],
       "Billing details updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
+      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Calendar added. It might take a few minutes to sync.": [
@@ -24421,8 +24424,8 @@
       "Recommended": [
         "Aanbevolen"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Bespaar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Bespaar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
