@@ -14,12 +14,10 @@ import noop from '@proton/utils/noop';
 function* getOrganizationSettingsWorker(options: RootSagaOptions, { meta }: ReturnType<typeof getOrganizationSettings.intent>) {
     try {
         const organization: MaybeNull<Organization> = yield select(selectOrganization);
-        if (!organization) throw new Error('User not in organization');
+        if (!organization) throw {};
 
         const settings: OrganizationGetResponse = yield call(fetchOrganizationSettings);
-
         const orgLockTTL = settings?.Settings?.ForceLockSeconds;
-
         yield put(getOrganizationSettings.success(meta.request.id, settings));
 
         try {
