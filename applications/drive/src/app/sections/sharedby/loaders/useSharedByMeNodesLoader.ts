@@ -43,6 +43,21 @@ export const useSharedByMeNodesLoader = () => {
 
                     loadedUids.add(node.uid);
 
+                    const rootNode = await getRootNode(node, drive);
+
+                    setSharedByMeItem({
+                        nodeUid: node.uid,
+                        name: node.name,
+                        type: node.type,
+                        mediaType: node.mediaType,
+                        thumbnailId: node.activeRevision?.uid || node.uid,
+                        shareId: node.deprecatedShareId,
+                        rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
+                        size: node.activeRevision?.storageSize || node.totalStorageSize,
+                        parentUid: node.parentUid,
+                        haveSignatureIssues: !signatureResult.ok,
+                    });
+
                     void getFormattedNodeLocation(drive, sharedByMeMaybeNode).then((location) => {
                         const { updateSharedByMeItem } = useSharedByMeStore.getState();
                         updateSharedByMeItem(node.uid, {
@@ -75,21 +90,6 @@ export const useSharedByMeNodesLoader = () => {
                                 creationTime: oldestCreationTime,
                             });
                         }
-                    });
-
-                    const rootNode = await getRootNode(node, drive);
-
-                    setSharedByMeItem({
-                        nodeUid: node.uid,
-                        name: node.name,
-                        type: node.type,
-                        mediaType: node.mediaType,
-                        thumbnailId: node.activeRevision?.uid || node.uid,
-                        shareId: node.deprecatedShareId,
-                        rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
-                        size: node.activeRevision?.storageSize || node.totalStorageSize,
-                        parentUid: node.parentUid,
-                        haveSignatureIssues: !signatureResult.ok,
                     });
                 } catch (e) {
                     handleError(e, {
