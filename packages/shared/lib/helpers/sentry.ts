@@ -350,6 +350,7 @@ export enum SentryMailInitiatives {
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
     UPSELL_MODALS = 'upsell-modals',
     MOVE_ACTIONS = 'move-actions',
+    MAIL_REDUX_ERRORS = 'mail-redux-errors',
 }
 
 export enum SentryMailPerformanceInitiatives {

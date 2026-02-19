@@ -3,6 +3,8 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
+import { errorMiddleware } from 'proton-mail/store/middleware';
+
 import { start } from './listener';
 import { type MailState, rootReducer } from './rootReducer';
 import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
@@ -17,8 +19,8 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
         preloadedState,
         reducer: rootReducer,
         devTools: process.env.NODE_ENV !== 'production',
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
+        middleware: (getDefaultMiddleware) => {
+            return getDefaultMiddleware({
                 serializableCheck: {
                     ignoredActions,
                     ignoredPaths: [...ignoredPaths, ...mailIgnoredPaths],
@@ -31,7 +33,10 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
                     warnAfter: process.env.NODE_ENV === 'production' ? 32 : 100,
                 },
                 thunk: { extraArgument: extraThunkArguments },
-            }).prepend(listenerMiddleware.middleware),
+            })
+                .prepend(listenerMiddleware.middleware)
+                .concat(errorMiddleware);
+        },
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
