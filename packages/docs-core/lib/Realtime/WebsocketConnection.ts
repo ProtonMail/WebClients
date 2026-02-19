@@ -38,6 +38,11 @@ export const DebugConnection = {
   url: 'ws://localhost:4000/websockets',
 }
 
+export enum ReconnectionStopReason {
+  NeedsReadonlyMode = 'needs-readonly-mode',
+  DocumentTimeout = 'document-timeout',
+}
+
 export class WebsocketConnection implements WebsocketConnectionInterface {
   socket?: WebSocket
   readonly state = new WebsocketState()
@@ -45,7 +50,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   private destroyed = false
 
-  isReconnectionStoppedDueToTimeout = false
+  reconnectionStopped: ReconnectionStopReason | undefined = undefined
 
   private didReceiveReadyMessageFromRTS = false
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
@@ -220,7 +225,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       return ApiResult.ok(urlAndTokenResult.getValue())
     } else {
-      if (urlAndTokenResult.getErrorObject().code === DocsApiErrorCode.CommitIdOutOfSync) {
+      const errorCode = urlAndTokenResult.getErrorObject().code
+      if (errorCode === DocsApiErrorCode.CommitIdOutOfSync) {
         this.logger.info('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
       } else {
         this.logger.error('Failed to get realtime URL and token:', urlAndTokenResult.getErrorMessage())
@@ -228,9 +234,14 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       this.state.didFailToFetchToken()
 
-      this.callbacks.onFailToGetToken(urlAndTokenResult.getErrorObject().code)
+      this.callbacks.onFailToGetToken(errorCode)
 
-      this.queueReconnection()
+      if (errorCode === DocsApiErrorCode.NeedsReadonlyMode) {
+        this.logger.info('Should be shown in readonly mode, not queueing reconnection')
+        this.stopReconnectionDueToReadonlyMode()
+      } else {
+        this.queueReconnection()
+      }
 
       return ApiResult.fail(urlAndTokenResult.getErrorObject())
     }
@@ -335,6 +346,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   handleSocketClose(code: number, message: string): void {
+    const isConnectedBeforeClose = this.state.isConnected
+
     this.socket = undefined
     this.state.didClose()
 
@@ -345,7 +358,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.metricService.reportRealtimeDisconnect(reason)
 
-    if (this.state.isConnected) {
+    if (isConnectedBeforeClose) {
       this.callbacks.onClose(reason)
     } else {
       this.callbacks.onFailToConnect(reason)
@@ -364,6 +377,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
+    if (reason.props.code === ConnectionCloseReason.CODES.READ_ONLY_MODE_REQUIRED) {
+      this.logger.info('Connection closed due to needing readonly mode, not queueing reconnection')
+      this.stopReconnectionDueToReadonlyMode()
+      return
+    }
+
     if (this.shouldPreventAutoReconnectOnClose) {
       this.logger.info('Preventing auto reconnection on socket close for this instance')
       this.shouldPreventAutoReconnectOnClose = false
@@ -373,15 +392,19 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.queueReconnection()
   }
 
+  stopReconnectionDueToReadonlyMode() {
+    this.reconnectionStopped = ReconnectionStopReason.NeedsReadonlyMode
+  }
+
   stopReconnectionUntilActivity() {
-    this.isReconnectionStoppedDueToTimeout = true
+    this.reconnectionStopped = ReconnectionStopReason.DocumentTimeout
 
     const reconnect = () => {
       if (document.visibilityState !== 'visible') {
         return
       }
       this.logger.info('User activity detected, resuming reconnection attempts')
-      this.isReconnectionStoppedDueToTimeout = false
+      this.reconnectionStopped = undefined
       this.queueReconnection({ skipDelay: true })
       document.removeEventListener('mousemove', reconnect)
       document.removeEventListener('keydown', reconnect)
@@ -399,8 +422,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    if (this.isReconnectionStoppedDueToTimeout) {
-      this.logger.info('Not queueing reconnection because document was closed due to timeout')
+    if (this.reconnectionStopped) {
+      this.logger.info('Not queueing reconnection because reconnection is stopped', this.reconnectionStopped)
       return
     }
 

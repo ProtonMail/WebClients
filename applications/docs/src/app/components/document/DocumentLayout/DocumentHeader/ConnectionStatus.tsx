@@ -109,6 +109,23 @@ export function ConnectionStatus({ documentState }: ConnectionStatusProps) {
         </PopoverPill>
       )
       break
+    case WebsocketConnectionEvent.NeedsToBeInReadonlyMode:
+      connectionPill = (
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <Icon name="lock" className="h-6 w-6 fill-current" />
+              <span>{c('Title').t`Readonly`}</span>
+            </div>
+          }
+          content={c('Info')
+            .t`This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.`}
+        >
+          <Icon name="lock" className="h-4 w-4 fill-current" />
+          <span className="head-max-1199:!sr-only">{c('Info').t`Readonly`}</span>
+        </PopoverPill>
+      )
+      break
   }
 
   return (
