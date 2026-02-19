@@ -220,15 +220,6 @@ export function useDrive() {
         }, []),
 
         /**
-         * This is temporary function for lumo to be able to clear sdk cache
-         * @deprecated This should not be used
-         * TODO: Move to internal namespace ith a dedicated Lumo MR.
-         */
-        clearCache: useCallback(async () => {
-            await driveEntitiesCacheSingleton?.clear();
-        }, []),
-
-        /**
          * Internal namespace - Do not use without permission.
          */
         internal: {
@@ -277,6 +268,11 @@ export function useDrive() {
             unsafeRemoveNodeFromCache: useCallback(async (nodeUid: string) => {
                 await driveEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
                 await photosEntitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
+            }, []),
+
+            /** Temporary function for lumo to be able to clear sdk cache. */
+            clearCache: useCallback(async () => {
+                await driveEntitiesCacheSingleton?.clear();
             }, []),
         },
     };
