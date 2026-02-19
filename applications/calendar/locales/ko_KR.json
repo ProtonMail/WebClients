@@ -3295,9 +3295,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
     "Edit event button tooltip": {
@@ -3548,6 +3545,9 @@
       ],
       "Event not found": [
         "이벤트를 찾을 수 없음"
+      ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
       ],
       "Failed to create ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } 화상 회의 생성 실패"
@@ -9158,9 +9158,6 @@
       "Got it": [
         "확인했습니다"
       ],
-      "I'm purchasing as a business": [
-        "사업체 용도로 구매합니다"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
       ],
@@ -9350,18 +9347,6 @@
       ],
       "Business Number": [
         "사업자등록번호"
-      ],
-      "Edit ABN": [
-        "ABN 수정"
-      ],
-      "Edit Business Number": [
-        "사업자등록번호 수정"
-      ],
-      "Edit EIN": [
-        "EIN 수정"
-      ],
-      "Edit VAT number": [
-        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
