@@ -25,17 +25,6 @@
 		color: var(--text-hint);
 	}
 
-	.join-via-link-button {
-		background-color: var(--background-card);
-		border: 1px solid var(--border-norm);
-		color: var(--text-norm);
-
-		&:hover,
-		&:active {
-			background-color: var(--background-weak);
-		}
-	}
-
 	.meet-dashboard-cta-wrapper {
 		@media (width <= 48em) {
 			flex-direction: column;

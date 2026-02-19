@@ -81,15 +81,14 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                 </div>
                 <div className="flex flex-column md:flex-row gap-4 w-full">
                     <Button
-                        className="cancel-button rounded-full py-4 md:flex-1 text-semibold"
+                        className="tertiary rounded-full py-4 md:flex-1 text-semibold"
                         onClick={onResetAndClose}
                         size="large"
-                        color="weak"
                     >
                         {c('Action').t`Cancel`}
                     </Button>
                     <Button
-                        className="join-button rounded-full border-none py-4 md:flex-1 text-semibold"
+                        className="primary rounded-full border-none py-4 md:flex-1 text-semibold"
                         onClick={() => {
                             if (canJoin) {
                                 onClose();

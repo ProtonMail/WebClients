@@ -145,8 +145,7 @@ export const PreJoinDetails = ({
                 </div>
             </div>
             <Button
-                className="join-button py-4 px-5 md:py-5 rounded-full color-invert"
-                color="norm"
+                className="primary py-4 px-5 md:py-5 rounded-full"
                 size="large"
                 fullWidth
                 onClick={() => onJoinMeeting(displayName, keepDisplayNameOnDevice)}

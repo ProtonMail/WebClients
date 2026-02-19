@@ -334,7 +334,7 @@ export const ScheduleMeetingRecapModal = ({
                                 onClick={toggle}
                                 hasCaret={false}
                                 shape="ghost"
-                                className="text-semibold w-full calendar-dropdown-button rounded-full border-none flex items-center justify-center"
+                                className="text-semibold w-full calendar-dropdown-button secondary rounded-full border-none flex items-center justify-center"
                                 size="large"
                             >
                                 <span className="inline-flex items-center flex-nowrap gap-2">
@@ -383,7 +383,7 @@ export const ScheduleMeetingRecapModal = ({
                             </Dropdown>
                         </div>
                         <Button
-                            className="done-button text-semibold rounded-full w-full"
+                            className="done-button primary text-semibold rounded-full w-full"
                             onClick={() => {
                                 onClose();
                             }}

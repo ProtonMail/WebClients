@@ -503,7 +503,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
                     </div>
                     <div className="w-full flex flex-nowrap justify-center flex-row mt-10 gap-4">
                         <Button
-                            className="delete-button rounded-full text-semibold w-full"
+                            className="tertiary rounded-full text-semibold w-full"
                             onClick={() => (meeting ? withLoadingDelete(handleDeleteMeeting(meeting)) : onClose())}
                             size="large"
                             disabled={loading || loadingDelete}
@@ -512,7 +512,7 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
                             {meeting ? c('Action').t`Delete` : c('Action').t`Cancel`}
                         </Button>
                         <Button
-                            className="save-button rounded-full text-semibold w-full"
+                            className="primary rounded-full text-semibold w-full"
                             onClick={() => withLoading(handleSubmit)}
                             size="large"
                             disabled={isDisabled || loading || loadingDelete}

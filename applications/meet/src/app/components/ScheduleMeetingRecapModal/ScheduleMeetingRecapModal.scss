@@ -16,18 +16,9 @@
 }
 
 .done-button {
-	color: black;
-	background: var(--interaction-norm);
-	border: 1px solid #ffffff0a;
 	padding: 0.8rem;
 	font-size: 1rem;
 	line-height: 1.5rem;
-
-	&:hover,
-	&:active {
-		color: black;
-		background: #c1b8ff;
-	}
 }
 
 .meeting-icon--added .meeting-icon-check {
@@ -49,16 +40,8 @@
 }
 
 .calendar-dropdown-button {
-	background-color: var(--interaction-weak);
-	border: 1px solid var(--border-card);
-	color: white;
 	padding: 0.8rem;
 	font-size: 1rem;
-
-	&:hover,
-	&:active {
-		background-color: var(--interaction-weak-minor-1);
-	}
 }
 
 .calendar-dropdown {
