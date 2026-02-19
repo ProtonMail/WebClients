@@ -66,9 +66,9 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({ nodeUid, drive, verifySignatures });
+        showDetailsModal({ nodeUid: preview.node.nodeUid, drive, verifySignatures });
     };
-    const onShare = preview.canShare ? () => showSharingModal({ nodeUid }) : undefined;
+    const onShare = preview.canShare ? () => showSharingModal({ nodeUid: preview.node.nodeUid }) : undefined;
 
     return (
         <>
