@@ -132,7 +132,7 @@ const processCustomItem = (item: OnePassItem) =>
         modifyTime: item.updatedAt,
         trashed: item.state === OnePassState.ARCHIVED,
         sections: item.details.sections?.map((s) => ({
-            sectionName: s.title,
+            sectionName: s.title || c('Label').t`Untitled`,
             sectionFields: extract1PasswordExtraFields(s),
         })),
         extraFields: item.details.sections?.flatMap(extract1PasswordExtraFields) ?? [],

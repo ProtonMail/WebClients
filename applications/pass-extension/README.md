@@ -4,10 +4,6 @@
 
 All commands should be run from the `applications/pass-extension` directory.
 
-```bash
-yarn install:devtools # Install development tools
-```
-
 ### Environment Variables
 
 #### Build Target
