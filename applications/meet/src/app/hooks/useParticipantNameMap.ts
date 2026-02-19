@@ -19,7 +19,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
 
     const [participantNameMap, setParticipantNameMap] = useState<Record<string, string>>({});
     const [participantsMap, setParticipantsMap] = useState<Record<string, ParticipantEntity>>({});
-    const [participantsCount, setParticipantsCount] = useState<number | null>(null);
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -50,8 +49,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
             setParticipantsMap((prev) => ({ ...prev, ...updatedParticipantsMap }));
 
             countRef.current = participants.length;
-            setParticipantsCount(participants.length);
-
             isFetchingRef.current = false;
 
             lastFetchTimestamp.current = Date.now();
@@ -100,7 +97,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
     const getQueryParticipantsCount = async (meetingLinkName: string) => {
         try {
             const response = await api<{ Current: number }>(queryParticipantsCount(meetingLinkName));
-            setParticipantsCount(response.Current);
             return response.Current;
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -111,7 +107,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
     const resetParticipantNameMap = () => {
         setParticipantNameMap({});
         setParticipantsMap({});
-        setParticipantsCount(null);
     };
 
     const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
@@ -145,7 +140,6 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
                 const { [participant.identity]: removed, ...rest } = prev;
                 return rest;
             });
-            setParticipantsCount((prev) => (prev ? prev - 1 : null));
         };
 
         room.on('participantDisconnected', handleParticipantDisconnected);
@@ -201,6 +195,5 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
         resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
-        participantsCount,
     };
 };
