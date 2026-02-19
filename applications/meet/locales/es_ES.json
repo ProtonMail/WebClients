@@ -110,6 +110,9 @@
       "Download room level report": [
         "Descargar informe de la sala"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
       ],
@@ -1621,6 +1624,11 @@
         "Muy pequeño"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "¿Ya tienes una cuenta? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Cuenta"
@@ -1694,9 +1702,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
       ],
-      "${ userName }'s Meeting": [
-        "Reunión de ${ userName }"
-      ],
       "(You)": [
         "(Tú)"
       ],
@@ -1748,20 +1753,8 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a meeting room": [
-        "Crear una sala de reuniones"
-      ],
       "Create an account": [
         "Crear una cuenta"
-      ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Crea una cuenta para conectar Meet con ${ CALENDAR_APP_NAME } y enviar invitaciones de reunión al instante."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Crea una cuenta para tener una sala de reuniones que puedas usar en cualquier momento."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Crea una cuenta para obtener un enlace de reunión personal que puedas reutilizar en cada llamada."
       ],
       "Create an account to host meetings with up to 50 participants.": [
         "Crea una cuenta para organizar reuniones con hasta 50 participantes."
@@ -1850,9 +1843,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Disfruta de la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
       ],
-      "Get your personal meeting ID": [
-        "Consigue tu ID personal de reunión"
-      ],
       "Host your own secure meeting": [
         "Inicia tu propia reunión en un entorno seguro."
       ],
@@ -1916,6 +1906,9 @@
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión completa (${ maxParticipants } participantes)"
       ],
+      "Meeting is decrypting...": [
+        "Desencriptando la reunión..."
+      ],
       "Meeting link": [
         "Enlace de la reunión"
       ],
@@ -1933,9 +1926,6 @@
       ],
       "microphone": [
         "micrófono"
-      ],
-      "My Meeting": [
-        "Mi reunión"
       ],
       "My meetings": [
         "Mis reuniones"
@@ -2027,9 +2017,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
-      "Schedule your next meeting": [
-        "Programa tu próxima reunión"
-      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programa tu próxima reunión. Crea una cuenta para programar reuniones con tu calendario."
       ],
@@ -2108,8 +2095,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para crear una sala, **crea una cuenta gratuita de ${ BRAND_NAME }**. Volverás a ${ MEET_APP_NAME } automáticamente."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para programar una reunión, **crea una cuenta gratuita de ${ BRAND_NAME }**. Volverás a ${ MEET_APP_NAME } automáticamente."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para usar tu sala de reuniones personal, **crea una cuenta gratuita de ${ BRAND_NAME }**. Volverás a ${ MEET_APP_NAME } automáticamente."
       ],
       "Turn off camera": [
         "Apagar cámara"
@@ -2152,6 +2148,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "¿Quieres recibir un nuevo código de verificación?"
+      ],
+      "You are almost there": [
+        "Ya casi has terminado"
       ],
       "You can close this tab.": [
         "Puedes cerrar esta pestaña."
@@ -2392,16 +2391,19 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "What’s this?": [
         "¿Qué es esto?"
       ]
     },
     "meet": {
+      "Create and copy link": [
+        "Crear y copiar enlace"
+      ],
       "Create new room": [
         "Crear una nueva sala"
-      ],
-      "Create room and copy link": [
-        "Crear sala y copiar enlace"
       ],
       "Meeting rooms can be used at any time": [
         "Las salas de reuniones se pueden usar en cualquier momento"

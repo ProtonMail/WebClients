@@ -110,6 +110,9 @@
       "Download room level report": [
         "Oda düzeyi raporunu indir"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
@@ -1621,6 +1624,11 @@
         "Çok küçük"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Zaten bir hesabınız var mı? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Hesap"
@@ -1694,9 +1702,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } sunum yapıyor"
       ],
-      "${ userName }'s Meeting": [
-        "${ userName } görüşmesi"
-      ],
       "(You)": [
         "(Siz)"
       ],
@@ -1751,23 +1756,11 @@
       "Country code": [
         "Ülke kodu"
       ],
-      "Create a meeting room": [
-        "Görüşme odası oluştur"
-      ],
       "Create an account": [
         "Hesap açın"
       ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Meet uygulamasını ${ CALENDAR_APP_NAME } ile bağlamak ve görüşme davetlerini anında göndermek için bir hesap açın."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Her zaman kullanabileceğiniz bir görüşme odası oluşturmak için hesap açın."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Her çağrıda yeniden kullanabileceğiniz bir kişisel görüşme bağlantısı oluşturmak için bir hesap açın."
-      ],
       "Create an account to host meetings with up to 50 participants.": [
-        "50 katılımcıya kadar toplantı düzenlemek için bir hesap oluşturun."
+        "50 katılımcıya kadar toplantı düzenlemek için bir hesap açın."
       ],
       "Created on ${ formattedDate }": [
         "${ formattedDate } tarihinde oluşturuldu"
@@ -1845,16 +1838,13 @@
         "Ücretsiz görüşmelerin süresi 1 saat ile sınırlıdır. Bu çağrı yakında sona erecek."
       ],
       "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
-        "Kişisel toplantı odası edinin. İstediğiniz zaman kullanabileceğiniz kişisel toplantı bağlantısı için bir hesap oluşturun."
+        "Bir kişisel toplantı odası edinin. İstediğiniz zaman kullanabileceğiniz bir kişisel toplantı bağlantısı edinmek için hesap açın."
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Bir güvenli görüşme bağlantısı oluşturun ve bunu takviminize ekleyin"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
         "${ protonMeet } bilgisayar uygulamasıyla en iyi deneyimi yaşayın"
-      ],
-      "Get your personal meeting ID": [
-        "Kişisel görüşme kimliğinizi alın"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
@@ -1917,10 +1907,13 @@
         "Kısıtlama olmadan görüşme yapın"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
-        "Kısıtlama olmadan toplantı yapın. 1 saatlik sınırlamayı kaldırmak ve 100 katılımcıya kadar toplantı düzenlemek için yükseltin."
+        "Kısıtlama olmadan toplantı yapın. 1 saatlik sınırlamayı kaldırmak ve 100 katılımcıya kadar toplantı düzenlemek için tarifenizi yükseltin."
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Görüşme dolu (${ maxParticipants } katılımcı)"
+      ],
+      "Meeting is decrypting...": [
+        "Toplantının şifresi çözülüyor..."
       ],
       "Meeting link": [
         "Görüşme bağlantısı"
@@ -1942,9 +1935,6 @@
       ],
       "Microphone effects": [
         "Mikrofon etkileri"
-      ],
-      "My Meeting": [
-        "Görüşmem"
       ],
       "My meetings": [
         "Görüşmelerim"
@@ -2036,11 +2026,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
-      "Schedule your next meeting": [
-        "Bir sonraki görüşmenizi zamanlayın"
-      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
-        "Bir sonraki toplantınızı planlayın. Takviminizle toplantılar planlamak için bir hesap oluşturun."
+        "Sonraki toplantınızı zamanlayın. Takviminizde toplantılar zamanlamak için bir hesap açın."
       ],
       "Select a camera": [
         "Bir kamera seçin"
@@ -2085,7 +2072,7 @@
         "Görüşme silindi"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Premium toplantıya ev sahipliği yaptığınız için teşekkür ederiz."
+        "Ücretli bir toplantıya ev sahipliği yaptığınız için teşekkür ederiz."
       ],
       "Thank you for joining.": [
         "Katıldığınız için teşekkürler."
@@ -2117,8 +2104,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Bir oda oluşturmak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Toplantı planlamak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Kişisel toplantı odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
       ],
       "Turn off camera": [
         "Kamerayı kapat"
@@ -2164,6 +2160,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "You are almost there": [
+        "Neredeyse vardınız"
       ],
       "You can close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
@@ -2217,7 +2216,7 @@
         "${ numberOfStars } yıldız"
       ],
       "Add optional details": [
-        "İsteğe bağlı ayrıntılar ekle"
+        "İsteğe bağlı bilgiler ekleyin"
       ],
       "Add to calendar": [
         "Takvime ekle"
@@ -2232,7 +2231,7 @@
         "Kimlik doğrulama uygulaması"
       ],
       "Back to dashboard": [
-        "Panoya geri dön"
+        "Panoya dön"
       ],
       "Browser": [
         "Tarayıcı"
@@ -2404,6 +2403,9 @@
       "Request an invite": [
         "Davet iste"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "What’s this?": [
         "Bu nedir?"
       ]
@@ -2411,9 +2413,6 @@
     "meet": {
       "Create new room": [
         "Yeni oda oluştur"
-      ],
-      "Create room and copy link": [
-        "Oda oluştur ve bağlantıyı kopyala"
       ],
       "Meeting rooms can be used at any time": [
         "Görüşme odaları her zaman kullanılabilir"
@@ -2546,7 +2545,7 @@
         "Seçin"
       ],
       "Share more details": [
-        "Daha fazla ayrıntı paylaş"
+        "Daha fazla ayrıntı paylaşın"
       ],
       "Type an encrypted message...": [
         "Şifrelenmiş bir ileti yazın..."
@@ -2753,7 +2752,7 @@
         "Görüşme düzenlendi"
       ],
       "Meeting settings": [
-        "Toplantı ayarları"
+        "Görüşme ayarları"
       ],
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
@@ -2834,7 +2833,7 @@
         "Görüntü"
       ],
       "What went wrong?": [
-        "Ters giden neydi?"
+        "Sorun neydi?"
       ],
       "Your feedback has been submitted": [
         "Geri bildiriminiz gönderildi"
