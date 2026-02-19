@@ -10,6 +10,8 @@ import clsx from '@proton/utils/clsx';
 import type { FormValues, OnDateTimeChange } from './MeetingCreation/ScheduleMeetingModal/ScheduleMeetingForm/types';
 import { TimeInput } from './TimeInput/TimeInput';
 
+/** Meet change scope **/
+
 export const TimeInputBlock = ({
     name,
     values,
