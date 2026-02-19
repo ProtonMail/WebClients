@@ -6,7 +6,7 @@
 
 1. Set up local SSO: follow the instructions in `utilities/local-sso/README.md`
 
-2. Start the application:
+2. Start the application from the root directory:
 
     ```shell
     yarn start-all --applications "proton-pass" --api proton.black
