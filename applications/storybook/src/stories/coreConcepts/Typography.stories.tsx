@@ -1,17 +1,24 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import mdx from './Typography.mdx';
-
-export default {
+const meta: Meta = {
     title: 'Core Concepts/Typography',
     parameters: {
         docs: {
-            page: mdx,
+            description: {
+                component:
+                    'Typography utilities for Proton apps. Covers font weights, headings, text sizes, text colors, and monospace.',
+            },
         },
     },
+    tags: ['autodocs'],
 };
 
-// Storybooks <code> styling is not available inside stories, so we have to use a custom component
+export default meta;
+
+type Story = StoryObj;
+
 type CodeProps = {
     children: React.ReactNode;
 };
@@ -20,8 +27,8 @@ const Code = ({ children }: CodeProps) => (
     <code className="inline-block user-select rounded-sm py-1 px-2 border bg-weak text-norm text-sm">{children}</code>
 );
 
-export const Font = () => (
-    <>
+export const Font: Story = {
+    render: () => (
         <Table>
             <TableHeader>
                 <TableRow>
@@ -58,11 +65,11 @@ export const Font = () => (
                 </TableRow>
             </TableBody>
         </Table>
-    </>
-);
+    ),
+};
 
-export const Headings = () => (
-    <>
+export const Headings: Story = {
+    render: () => (
         <Table>
             <TableHeader>
                 <TableRow>
@@ -123,11 +130,11 @@ export const Headings = () => (
                 </TableRow>
             </TableBody>
         </Table>
-    </>
-);
+    ),
+};
 
-export const Text = () => (
-    <>
+export const Text: Story = {
+    render: () => (
         <Table>
             <TableHeader>
                 <TableRow>
@@ -218,8 +225,8 @@ export const Text = () => (
                 </TableRow>
             </TableBody>
         </Table>
-    </>
-);
+    ),
+};
 
 const TypoColorsTable = () => (
     <Table>
@@ -274,20 +281,22 @@ const TypoColorsTable = () => (
     </Table>
 );
 
-export const Colors = () => (
-    <>
-        <h4>On ui-standard background</h4>
-        <TypoColorsTable />
-
-        <h4>On ui-prominent background</h4>
-        <div className="ui-prominent rounded p-4">
+export const Colors: Story = {
+    render: () => (
+        <>
+            <h4>On ui-standard background</h4>
             <TypoColorsTable />
-        </div>
-    </>
-);
 
-export const Monospace = () => (
-    <>
+            <h4>On ui-prominent background</h4>
+            <div className="ui-prominent rounded p-4">
+                <TypoColorsTable />
+            </div>
+        </>
+    ),
+};
+
+export const Monospace: Story = {
+    render: () => (
         <Table>
             <TableHeader>
                 <TableRow>
@@ -308,5 +317,5 @@ export const Monospace = () => (
                 </TableRow>
             </TableBody>
         </Table>
-    </>
-);
+    ),
+};
