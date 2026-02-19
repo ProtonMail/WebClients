@@ -31,9 +31,9 @@ const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomActio
             {...rest}
         >
             {isMessage
-                ? c('Info').t`Scheduled send of this message will be canceled.`
+                ? c('Info').t`Moving this message will cancel its scheduled send.`
                 : c('Info')
-                      .t`This conversation contains a scheduled message. Sending of this message will be canceled.`}
+                      .t`This conversation contains a scheduled message. Moving it will cancel the scheduled send.`}
         </Prompt>
     );
 };
