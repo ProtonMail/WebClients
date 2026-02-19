@@ -4279,9 +4279,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun blive vist på fakturaer, der udstedes i fremtiden, og vil ikke påvirke eksisterende fakturaer."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Tekstfelter er valgfrie. De oplysninger, du angiver i denne formular, vil kun ændre den faktura, du har valgt, og ikke dine fremtidige fakturadetaljer."
       ]
     },
     "Email body for invitation": {
@@ -4896,6 +4893,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "Text is too long to refine": [
         "Teksten er for lang til at finpudse"
@@ -12184,9 +12184,6 @@
       "Got it": [
         "Forstået"
       ],
-      "I'm purchasing as a business": [
-        "Jeg køber som virksomhed"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12382,18 +12379,6 @@
       ],
       "Business Number": [
         "Forretningsnummer"
-      ],
-      "Edit ABN": [
-        "Redigér ABN"
-      ],
-      "Edit Business Number": [
-        "Redigér forretningsnummer"
-      ],
-      "Edit EIN": [
-        "Redigér EIN"
-      ],
-      "Edit VAT number": [
-        "Redigér momsnummer"
       ],
       "EIN": [
         "Momsnummer"
@@ -14237,6 +14222,9 @@
         "Alias gemt og kopieret"
       ],
       "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
+      ],
+      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Canceling import": [

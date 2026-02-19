@@ -4279,9 +4279,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτήν τη φόρμα θα αλλάξουν μόνο το τιμολόγιο που έχετε επιλέξει και όχι τα μελλοντικά στοιχεία του τιμολογίου σας."
       ]
     },
     "Email body for invitation": {
@@ -4896,6 +4893,9 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "Text is too long to refine": [
         "Το κείμενο είναι πολύ μεγάλο για να βελτιωθεί"
@@ -12184,9 +12184,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "I'm purchasing as a business": [
-        "Αγοράζω ως επιχείρηση"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12382,18 +12379,6 @@
       ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
-      ],
-      "Edit ABN": [
-        "Επεξεργασία ABN"
-      ],
-      "Edit Business Number": [
-        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
-      ],
-      "Edit EIN": [
-        "Επεξεργασία ΑΦΜ"
-      ],
-      "Edit VAT number": [
-        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -14237,6 +14222,9 @@
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
       ],
       "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
+      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Canceling import": [
