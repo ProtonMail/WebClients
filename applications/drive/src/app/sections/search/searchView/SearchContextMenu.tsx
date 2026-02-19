@@ -13,6 +13,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
         handleTrash,
         handleOpenDocsOrSheets,
         handleGoToParent,
+        handleShare,
     } = useSearchActions();
 
     return (
@@ -26,6 +27,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
                     onRename={handleRename}
                     onOpenDocsOrSheets={handleOpenDocsOrSheets}
                     onGoToParent={handleGoToParent}
+                    onShare={handleShare}
                     close={close}
                     buttonType="contextMenu"
                 />
@@ -33,6 +35,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
             {modals.previewModal}
             {modals.detailsModal}
             {modals.renameModal}
+            {modals.sharingModal}
         </>
     );
 }
