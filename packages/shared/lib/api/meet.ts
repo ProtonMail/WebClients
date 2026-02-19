@@ -160,3 +160,9 @@ export const getMeetEvents = (eventID: string) => ({
     url: `meet/v1/events/${eventID}`,
     method: 'get',
 });
+
+export const sendFeedback = (meetingLinkName: string, data: { Score: number; Feedback: string }) => ({
+    method: 'post',
+    url: `meet/v1/meetings/links/${meetingLinkName}/feedback`,
+    data,
+});
