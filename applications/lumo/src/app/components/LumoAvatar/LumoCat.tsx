@@ -1,9 +1,9 @@
 import { clsx } from 'clsx';
 
 import lumoGhost from '@proton/styles/assets/img/lumo/lumo-sit-side-ghost.svg';
-import useFlag from '@proton/unleash/useFlag';
 
 import { getActiveSpecialTheme } from '../../features/themes/utils/themeUtils';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoTheme } from '../../providers/LumoThemeProvider';
 import { LazyLottie } from '../LazyLottie';
 
@@ -28,7 +28,7 @@ interface LumoCatProps {
 
 const LumoCat = ({ isSmallScreen, isGhostChatMode }: LumoCatProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
-    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
+    const { specialTheme: isLumoSpecialThemeEnabled } = useLumoFlags();
 
     const getAnimationData = (() => {
         // Check if there's an active special theme

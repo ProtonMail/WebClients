@@ -17,7 +17,10 @@ import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../../util/tokens';
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
+
+import './LumoMarkdown.scss';
 
 /**
  * Progressive Markdown Renderer
@@ -139,6 +142,7 @@ interface ProgressiveMarkdownProps {
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    message: any;
 }
 
 /**
@@ -153,75 +157,72 @@ const MarkdownBlock: React.FC<{
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    message: any;
 }> = React.memo(
-    ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
+    ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
         // RefLink component for source references
         const RefLink = useMemo(
             () =>
-                // eslint-disable-next-line react/display-name
-                React.memo(
-                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                    ({ id, children }: { id: string; children: React.ReactNode }) => {
-                        if (!toolCallResults) return null;
+                React.memo(({ id, children }: { id: string; children: React.ReactNode }) => {
+                    if (!toolCallResults) return null;
 
-                        const idInt = parseInteger(id);
-                        if (!idInt) return null;
+                    const idInt = parseInteger(id);
+                    if (!idInt) return null;
 
-                        const toolCallInfo = toolCallResults?.[idInt];
-                        if (!toolCallInfo) return null;
+                    const toolCallInfo = toolCallResults?.[idInt];
+                    if (!toolCallInfo) return null;
 
-                        const url = toolCallInfo?.url;
-                        if (!url) return null;
+                    const url = toolCallInfo?.url;
+                    if (!url) return null;
 
-                        const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-                            if (handleLinkClick) {
-                                handleLinkClick(e, toolCallInfo?.url ?? '');
+                    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                        if (handleLinkClick) {
+                            handleLinkClick(e, toolCallInfo?.url ?? '');
+                        }
+                    };
+
+                    const handleMouseEnter = () => {
+                        if (sourcesContainerRef?.current) {
+                            const sourceElement = sourcesContainerRef.current.querySelector(
+                                `[data-source-index="${id}"]`
+                            );
+                            if (sourceElement) {
+                                sourceElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                sourceElement.classList.add('highlight-source');
                             }
-                        };
+                        }
+                    };
 
-                        const handleMouseEnter = () => {
-                            if (sourcesContainerRef?.current) {
-                                const sourceElement = sourcesContainerRef.current.querySelector(
-                                    `[data-source-index="${id}"]`
-                                );
-                                if (sourceElement) {
-                                    sourceElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                    sourceElement.classList.add('highlight-source');
-                                }
+                    const handleMouseLeave = () => {
+                        if (sourcesContainerRef?.current) {
+                            const sourceElement = sourcesContainerRef.current.querySelector(
+                                `[data-source-index="${id}"]`
+                            );
+                            if (sourceElement) {
+                                sourceElement.classList.remove('highlight-source');
                             }
-                        };
+                        }
+                    };
 
-                        const handleMouseLeave = () => {
-                            if (sourcesContainerRef?.current) {
-                                const sourceElement = sourcesContainerRef.current.querySelector(
-                                    `[data-source-index="${id}"]`
-                                );
-                                if (sourceElement) {
-                                    sourceElement.classList.remove('highlight-source');
-                                }
-                            }
-                        };
-
-                        return (
-                            <ButtonLike
-                                pill
-                                size="small"
-                                color="weak"
-                                shape="solid"
-                                as="a"
-                                className="ref-link text-sm mx-1 py-0.5 px-1 lh100"
-                                href={url}
-                                onClick={handleClick}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {getDomain(toolCallInfo)}
-                            </ButtonLike>
-                        );
-                    }
-                ),
+                    return (
+                        <ButtonLike
+                            pill
+                            size="small"
+                            color="weak"
+                            shape="solid"
+                            as="a"
+                            className="ref-link text-sm mx-1 py-0.5 px-1 lh100"
+                            href={url}
+                            onClick={handleClick}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {getDomain(toolCallInfo)}
+                        </ButtonLike>
+                    );
+                }),
             [toolCallResults, sourcesContainerRef, handleLinkClick]
         );
 
@@ -268,6 +269,19 @@ const MarkdownBlock: React.FC<{
                         </a>
                     );
                 },
+                img: (props: any) => {
+                    const { src, alt } = props;
+
+                    // Handle attachment: URLs
+                    if (src?.startsWith('attachment:')) {
+                        const attachmentId = src.substring('attachment:'.length);
+                        // Look up full attachment from Redux (not from message.attachments which is shallow)
+                        return <InlineImageComponent attachmentId={attachmentId} alt={alt} />;
+                    }
+
+                    // For security, don't render other images
+                    return null;
+                },
                 table(props: any) {
                     return (
                         <div className="markdown-table-wrapper">
@@ -284,6 +298,14 @@ const MarkdownBlock: React.FC<{
                 remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
                 rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
                 components={components}
+                urlTransform={(url) => {
+                    // Preserve attachment: URLs, sanitize everything else
+                    if (url.startsWith('attachment:')) {
+                        return url;
+                    }
+                    // Default sanitization for other URLs
+                    return url;
+                }}
             >
                 {content}
             </Markdown>
@@ -340,7 +362,7 @@ const CodeBlockWrapper: React.FC<{
 MarkdownBlock.displayName = 'MarkdownBlock';
 
 export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.memo(
-    ({ content, isStreaming, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
+    ({ content, isStreaming, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
         const { theme } = useLumoTheme();
 
         // Process REF tokens and convert to markdown links
@@ -362,7 +384,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
             return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
         }, [isIos(), isIpad(), isSafari()]);
         return (
-            <div className="progressive-markdown-content">
+            <div className="progressive-markdown-content markdown-rendering">
                 {blocks.map((block) => (
                     <div key={block.key} className={className}>
                         <MarkdownBlock
@@ -371,6 +393,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                             handleLinkClick={handleLinkClick}
                             toolCallResults={toolCallResults}
                             sourcesContainerRef={sourcesContainerRef}
+                            message={message}
                         />
                     </div>
                 ))}

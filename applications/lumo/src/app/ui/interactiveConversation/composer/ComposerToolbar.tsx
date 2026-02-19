@@ -7,8 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
-import useFlag from '@proton/unleash/useFlag';
 
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { getAcceptAttributeString } from '../../../util/filetypes';
 import PressEnterToReturn from '../../components/PressEnterToReturn';
@@ -21,6 +21,7 @@ export interface ComposerToolbarProps {
     handleFileInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleOpenFileDialog: () => void;
     handleBrowseDrive: () => void;
+    handleDrawSketch: () => void;
     hasAttachments: boolean;
 
     // Upload menu state
@@ -41,6 +42,7 @@ export const ComposerToolbar = ({
     handleFileInputChange,
     handleOpenFileDialog,
     handleBrowseDrive,
+    handleDrawSketch,
     showUploadMenu,
     setShowUploadMenu,
     handleUploadButtonClick,
@@ -51,7 +53,7 @@ export const ComposerToolbar = ({
 }: ComposerToolbarProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
-    const isLumoToolingEnabled = useFlag('LumoTooling');
+    const { externalTools: isLumoToolingEnabled } = useLumoFlags();
 
     return (
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
@@ -85,6 +87,7 @@ export const ComposerToolbar = ({
                     onClose={() => setShowUploadMenu(false)}
                     onUploadFromComputer={handleOpenFileDialog}
                     onBrowseDrive={handleBrowseDrive}
+                    onDrawSketch={handleDrawSketch}
                     hideDriveOption={hideDriveOption}
                     uploadsToDrive={uploadsToDrive}
                 />

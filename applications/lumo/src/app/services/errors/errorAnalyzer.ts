@@ -2,7 +2,7 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { type ErrorContext, LUMO_API_ERRORS } from '../../types-api';
+import { type ErrorContext, LUMO_API_ERRORS } from '../../types';
 
 export interface AnalyzedError {
     category: 'api' | 'network' | 'abort' | 'validation' | 'unknown';

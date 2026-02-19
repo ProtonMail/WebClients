@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 
 interface Props {
     children: ReactNode;
@@ -14,18 +15,18 @@ from the private account app,  but to limit this FF usage to lumo scope, we are 
 account.proton.me/lumo if the FF is enabled. Multiple redirections is not ideal, but this is expected to be temporary  */
 
 const ProtectGuestRouteGuard = ({ children }: Props) => {
-    const isLumoEarlyAccessEnabled = useFlag('LumoEarlyAccess');
-    const isLumoDeactivateGuestModeEnabled = useFlag('LumoDeactivateGuestModeFrontend');
+
+    const { deactivateGuestMode: isLumoDeactivateGuestModeEnabled } = useLumoFlags();
 
     const accountHref = getAppHref('lumo', APPS.PROTONACCOUNT);
 
     useEffect(() => {
-        if (isLumoEarlyAccessEnabled || isLumoDeactivateGuestModeEnabled) {
+        if (isLumoDeactivateGuestModeEnabled) {
             window.location.href = accountHref;
         }
-    }, [isLumoEarlyAccessEnabled, isLumoDeactivateGuestModeEnabled, accountHref]);
+    }, [isLumoDeactivateGuestModeEnabled, accountHref]);
 
-    if (isLumoEarlyAccessEnabled || isLumoDeactivateGuestModeEnabled) {
+    if (isLumoDeactivateGuestModeEnabled) {
         return null;
     }
 

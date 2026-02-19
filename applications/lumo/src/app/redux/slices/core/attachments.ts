@@ -8,6 +8,7 @@ import type {
     RemoteFilledAttachment,
     RemoteShallowAttachment,
 } from '../../../remote/types';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
@@ -90,17 +91,24 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(deleteAttachment, (state, action) => {
             console.log('Action triggered: deleteAttachment', action.payload);
             const attachmentId = action.payload;
+            // Clean up cache when deleting attachment
+            attachmentDataCache.delete(attachmentId);
             delete state[attachmentId];
         })
         .addCase(deleteAllAttachments, () => {
             console.log('Action triggered: deleteAllAttachments');
+            // Clean up all cached data when deleting all attachments
+            attachmentDataCache.clear();
             return EMPTY_ATTACHMENT_MAP;
         })
         .addCase(deleteAttachmentsBySpaceId, (state, action) => {
             console.log('Action triggered: deleteAttachmentsBySpaceId', action.payload);
             const spaceId = action.payload;
             Object.keys(state).forEach((attachmentId) => {
-                if (state[attachmentId].spaceId === spaceId) {
+                const attachment = state[attachmentId];
+                if (attachment && attachment.spaceId === spaceId) {
+                    // Clean up cache when deleting attachment
+                    attachmentDataCache.delete(attachmentId);
                     delete state[attachmentId];
                 }
             });
@@ -108,7 +116,9 @@ const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) 
         .addCase(clearProvisionalAttachments, (state) => {
             console.log('Action triggered: clearProvisionalAttachments');
             // Remove all attachments that don't have a spaceId (provisional attachments)
-            const provisionalIds = Object.keys(state).filter((id) => !state[id].spaceId);
+            const provisionalIds = Object.entries(state)
+                .filter(([_, attachment]) => !attachment.spaceId)
+                .map(([id]) => id);
             provisionalIds.forEach((id) => {
                 delete state[id];
             });

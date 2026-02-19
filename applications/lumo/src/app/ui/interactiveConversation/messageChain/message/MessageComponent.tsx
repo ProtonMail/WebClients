@@ -22,7 +22,6 @@ export type MessageComponentProps = {
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     isLastMessage: boolean;
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
@@ -33,8 +32,7 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message === nextProps.message &&
         prevProps.siblingInfo === nextProps.siblingInfo &&
         prevProps.isLastMessage === nextProps.isLastMessage &&
-        prevProps.isGenerating === nextProps.isGenerating &&
-        prevProps.isGeneratingWithToolCall === nextProps.isGeneratingWithToolCall
+        prevProps.isGenerating === nextProps.isGenerating
     ) {
         return true;
     }
@@ -46,7 +44,10 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.placeholder !== nextProps.message.placeholder ||
         prevProps.message.status !== nextProps.message.status ||
         prevProps.message.toolCall !== nextProps.message.toolCall ||
-        prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length;
+        prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length ||
+        prevProps.message.toolResult !== nextProps.message.toolResult ||
+        prevProps.message.reasoning !== nextProps.message.reasoning ||
+        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -55,9 +56,7 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
 
     // Compare generation state
     const generationStateChanged =
-        prevProps.isLastMessage !== nextProps.isLastMessage ||
-        prevProps.isGenerating !== nextProps.isGenerating ||
-        prevProps.isGeneratingWithToolCall !== nextProps.isGeneratingWithToolCall;
+        prevProps.isLastMessage !== nextProps.isLastMessage || prevProps.isGenerating !== nextProps.isGenerating;
 
     // If any of these changed, re-render
     return !messageChanged && !siblingInfoChanged && !generationStateChanged;
@@ -76,13 +75,12 @@ const MessageComponentPure = ({
     newMessageRef,
     isLastMessage,
     isGenerating,
-    isGeneratingWithToolCall,
     onRetryPanelToggle,
 }: MessageComponentProps) => {
     const messageContent = message?.content;
     const isUser = message.role === Role.User;
     const isRunning = message.placeholder || false;
-    const isLoading = message.placeholder && !messageContent;
+    const isLoading = message.placeholder && !messageContent && !message.reasoning;
 
     return (
         <ChatContainerItem
@@ -101,24 +99,25 @@ const MessageComponentPure = ({
                     // onOpenFiles={handleOpenFiles}
                 />
             ) : (
-                <AssistantMessage
-                    message={message}
-                    isLoading={isLoading}
-                    isRunning={isRunning}
-                    messageChainRef={messageChainRef}
-                    sourcesContainerRef={sourcesContainerRef}
-                    handleRegenerateMessage={handleRegenerateMessage}
-                    siblingInfo={siblingInfo}
-                    isLastMessage={isLastMessage}
-                    handleOpenSources={handleOpenSources}
-                    handleOpenFiles={handleOpenFiles}
-                    messageChain={messageChain}
-                    isGenerating={isGenerating}
-                    isGeneratingWithToolCall={isGeneratingWithToolCall}
-                    onToggleMessageSource={handleOpenSources}
-                    onToggleFilesManagement={handleOpenFiles}
-                    onRetryPanelToggle={onRetryPanelToggle}
-                />
+                <>
+                    <AssistantMessage
+                        message={message}
+                        isLoading={isLoading}
+                        isRunning={isRunning}
+                        messageChainRef={messageChainRef}
+                        sourcesContainerRef={sourcesContainerRef}
+                        handleRegenerateMessage={handleRegenerateMessage}
+                        siblingInfo={siblingInfo}
+                        isLastMessage={isLastMessage}
+                        handleOpenSources={handleOpenSources}
+                        handleOpenFiles={handleOpenFiles}
+                        messageChain={messageChain}
+                        isGenerating={isGenerating}
+                        onToggleMessageSource={handleOpenSources}
+                        onToggleFilesManagement={handleOpenFiles}
+                        onRetryPanelToggle={onRetryPanelToggle}
+                    />
+                </>
             )}
             {/* </div> */}
         </ChatContainerItem>

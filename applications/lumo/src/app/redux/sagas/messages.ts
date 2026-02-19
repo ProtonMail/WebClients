@@ -219,10 +219,10 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
         throw new Error(`cannot find ${type} ${localId} in Redux`);
     }
 
-    // Check if phantom chat mode is enabled - if so, skip remote persistence
-    const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
-    if (isGhostChatMode) {
-        console.log('pushMessage: Phantom chat mode is enabled, skipping remote persistence');
+    // In ghost mode, skip remote persistence
+    const isGhostMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
+    if (isGhostMode) {
+        console.log('pushMessage: Ghost mode is enabled, skipping remote persistence');
         yield put(pushMessageSuccess(payload));
         return;
     }

@@ -1,11 +1,15 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import type { ChatEndpointGenerationRequest } from './types';
+
+export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat';
+
 /**
  * Call the appropriate endpoint based on configuration
  */
-export async function callEndpoint(
+export async function callChatEndpoint(
     api: Api,
-    payload: any,
+    payload: ChatEndpointGenerationRequest,
     options: {
         endpoint?: string;
         signal?: AbortSignal;
@@ -13,7 +17,7 @@ export async function callEndpoint(
 ): Promise<ReadableStream> {
     const { endpoint, signal } = options;
 
-    const finalEndpoint = endpoint || 'ai/v1/chat';
+    const finalEndpoint = endpoint || LUMO_CHAT_ENDPOINT;
 
     console.log('%c[Endpoint] Using endpoint: %c%s', 'color: blue; font-weight: bold', 'color: black', finalEndpoint);
 

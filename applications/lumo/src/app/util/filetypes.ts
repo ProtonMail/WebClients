@@ -8,11 +8,54 @@ export interface FileTypeConfig {
     extensions: string[];
     mimeTypes: string[];
     description: string;
-    category: 'document' | 'spreadsheet' | 'presentation' | 'text' | 'code' | 'config' | 'log' | 'ebook' | 'web' | 'build';
+    category:
+        | 'document'
+        | 'spreadsheet'
+        | 'presentation'
+        | 'text'
+        | 'code'
+        | 'config'
+        | 'log'
+        | 'ebook'
+        | 'web'
+        | 'build'
+        | 'image';
     pandocFormat?: string;
 }
 
 export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
+    // Image formats
+    jpeg: {
+        extensions: ['jpg', 'jpeg'],
+        mimeTypes: ['image/jpeg'],
+        description: 'JPEG Image',
+        category: 'image',
+    },
+    png: {
+        extensions: ['png'],
+        mimeTypes: ['image/png'],
+        description: 'PNG Image',
+        category: 'image',
+    },
+    gif: {
+        extensions: ['gif'],
+        mimeTypes: ['image/gif'],
+        description: 'GIF Image',
+        category: 'image',
+    },
+    webp: {
+        extensions: ['webp'],
+        mimeTypes: ['image/webp'],
+        description: 'WebP Image',
+        category: 'image',
+    },
+    heic: {
+        extensions: ['heic', 'heif'],
+        mimeTypes: ['image/heic', 'image/heif'],
+        description: 'HEIC Image',
+        category: 'image',
+    },
+
     // Document formats
     pdf: {
         extensions: ['pdf'],
@@ -26,21 +69,21 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
         description: 'Word Document',
         category: 'document',
-        pandocFormat: 'docx'
+        pandocFormat: 'docx',
     },
     odt: {
         extensions: ['odt'],
         mimeTypes: ['application/vnd.oasis.opendocument.text'],
         description: 'ODT Document',
         category: 'document',
-        pandocFormat: 'odt'
+        pandocFormat: 'odt',
     },
     rtf: {
         extensions: ['rtf'],
         mimeTypes: ['application/rtf'],
         description: 'RTF Document',
         category: 'document',
-        pandocFormat: 'rtf'
+        pandocFormat: 'rtf',
     },
 
     // Spreadsheet formats
@@ -187,7 +230,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     },
     java: {
         extensions: ['java'],
-        mimeTypes: ['text/plain', 'text/x-java-source'],
+        mimeTypes: ['text/plain', 'text/x-java-source', 'text/x-java'],
         description: 'Java File',
         category: 'code',
         // No pandocFormat - processed as plain text
@@ -427,32 +470,37 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/plain'],
         description: 'Gitignore File',
         category: 'text',
-    }
+    },
 };
 
 // Helper functions
 export function getAllSupportedMimeTypes(): Set<string> {
     const mimeTypes = new Set<string>();
-    Object.values(FILE_TYPE_CONFIGS).forEach(config => {
-        config.mimeTypes.forEach(mimeType => mimeTypes.add(mimeType));
+    Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        config.mimeTypes.forEach((mimeType) => mimeTypes.add(mimeType));
     });
     return mimeTypes;
 }
 
 export function getAllSupportedExtensions(): Set<string> {
     const extensions = new Set<string>();
-    Object.values(FILE_TYPE_CONFIGS).forEach(config => {
-        config.extensions.forEach(ext => extensions.add(ext));
+    Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        config.extensions.forEach((ext) => extensions.add(ext));
     });
     return extensions;
 }
 
 export function getExtensionToMimeTypeMap(): Record<string, string> {
     const map: Record<string, string> = {};
-    Object.values(FILE_TYPE_CONFIGS).forEach(config => {
-        config.extensions.forEach(ext => {
-            // Use the first MIME type as the primary one
-            map[ext] = config.mimeTypes[0];
+    Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        // Use the first MIME type as the primary one
+        const mime = config.mimeTypes[0];
+        if (!mime) {
+            console.warn('Config has no mime types defined');
+            return;
+        }
+        config.extensions.forEach((ext) => {
+            map[ext] = mime;
         });
     });
     return map;
@@ -460,8 +508,8 @@ export function getExtensionToMimeTypeMap(): Record<string, string> {
 
 export function getMimeTypeToDescriptionMap(): Record<string, string> {
     const map: Record<string, string> = {};
-    Object.values(FILE_TYPE_CONFIGS).forEach(config => {
-        config.mimeTypes.forEach(mimeType => {
+    Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        config.mimeTypes.forEach((mimeType) => {
             // Only set if not already defined (first-wins strategy)
             // This prevents later configs from overwriting earlier ones for shared MIME types like 'text/plain'
             if (!map[mimeType]) {
@@ -474,8 +522,8 @@ export function getMimeTypeToDescriptionMap(): Record<string, string> {
 
 export function getExtensionToDescriptionMap(): Record<string, string> {
     const map: Record<string, string> = {};
-    Object.values(FILE_TYPE_CONFIGS).forEach(config => {
-        config.extensions.forEach(ext => {
+    Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
+        config.extensions.forEach((ext) => {
             map[ext] = config.description;
         });
     });
@@ -484,7 +532,7 @@ export function getExtensionToDescriptionMap(): Record<string, string> {
 
 export function getAcceptAttributeString(): string {
     const mimeTypes = Array.from(getAllSupportedMimeTypes());
-    const extensions = Array.from(getAllSupportedExtensions()).map(ext => `.${ext}`);
+    const extensions = Array.from(getAllSupportedExtensions()).map((ext) => `.${ext}`);
     return [...mimeTypes, ...extensions].join(',');
 }
 
@@ -550,7 +598,7 @@ export function mimeTypeToPandocFormat(mimeType: string): string | undefined {
 
     // Find the config that contains this MIME type
     for (const config of Object.values(FILE_TYPE_CONFIGS)) {
-        if (config.mimeTypes.some(mime => mime.toLowerCase() === normalizedMime)) {
+        if (config.mimeTypes.some((mime) => mime.toLowerCase() === normalizedMime)) {
             return config.pandocFormat;
         }
     }
@@ -630,7 +678,7 @@ export function shouldProcessAsPlainText(mimeType: string): boolean {
 
         // Web files
         'text/css',
-        'text/html',  // HTML can be processed directly, LLMs understand HTML markup
+        'text/html', // HTML can be processed directly, LLMs understand HTML markup
 
         // Already handled separately
         'text/plain',
@@ -658,8 +706,111 @@ export function needsPandocConversion(mimeType: string): boolean {
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.oasis.opendocument.text',
-        'application/rtf',  // RTF has control codes, needs conversion to clean text
+        'application/rtf', // RTF has control codes, needs conversion to clean text
     ]);
 
     return pandocTypes.has(normalizedMime);
+}
+
+/**
+ * Processing categories for file routing
+ */
+export type ProcessingCategory = 'image' | 'text' | 'csv' | 'excel' | 'pdf' | 'document' | 'unsupported';
+
+/**
+ * Determine the processing category for a file based on MIME type and filename
+ * This is used to route files to the appropriate processor
+ */
+export function getProcessingCategory(mimeType: string, fileName?: string): ProcessingCategory {
+    const normalizedMime = mimeType.toLowerCase().trim();
+
+    // Check against known MIME types in FILE_TYPE_CONFIGS
+    for (const config of Object.values(FILE_TYPE_CONFIGS)) {
+        if (config.mimeTypes.some((mime) => mime.toLowerCase() === normalizedMime)) {
+            // Route based on category
+            switch (config.category) {
+                case 'image':
+                    return 'image';
+                case 'spreadsheet':
+                    // Distinguish between CSV and Excel
+                    if (normalizedMime === 'text/csv' || normalizedMime === 'application/csv') {
+                        return 'csv';
+                    }
+                    return 'excel';
+                case 'document':
+                    // PDF has special handling
+                    if (normalizedMime === 'application/pdf') {
+                        return 'pdf';
+                    }
+                    // Other documents need Pandoc conversion
+                    return 'document';
+                case 'text':
+                case 'code':
+                case 'config':
+                case 'log':
+                case 'web':
+                case 'build':
+                    return 'text';
+                case 'presentation':
+                    // Presentations are not supported
+                    return 'unsupported';
+            }
+        }
+    }
+
+    // If MIME type not found, try file extension
+    if (fileName) {
+        const ext = fileName.split('.').pop()?.toLowerCase();
+        if (ext) {
+            for (const config of Object.values(FILE_TYPE_CONFIGS)) {
+                if (config.extensions.includes(ext)) {
+                    // Same routing logic as above
+                    switch (config.category) {
+                        case 'image':
+                            return 'image';
+                        case 'spreadsheet':
+                            if (ext === 'csv') {
+                                return 'csv';
+                            }
+                            return 'excel';
+                        case 'document':
+                            if (ext === 'pdf') {
+                                return 'pdf';
+                            }
+                            return 'document';
+                        case 'text':
+                        case 'code':
+                        case 'config':
+                        case 'log':
+                        case 'web':
+                        case 'build':
+                            return 'text';
+                        case 'presentation':
+                            return 'unsupported';
+                    }
+                }
+            }
+        }
+    }
+
+    return 'unsupported';
+}
+
+/** Get MIME type from filename */
+export function getMimeTypeFromName(filename: string): string {
+    const ext = filename.split('.').pop()?.toLowerCase() || '';
+    const mimeTypes: Record<string, string> = {
+        pdf: 'application/pdf',
+        doc: 'application/msword',
+        docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        txt: 'text/plain',
+        md: 'text/markdown',
+        csv: 'text/csv',
+        xls: 'application/vnd.ms-excel',
+        xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        json: 'application/json',
+        html: 'text/html',
+        xml: 'application/xml',
+    };
+    return mimeTypes[ext] || 'application/octet-stream';
 }

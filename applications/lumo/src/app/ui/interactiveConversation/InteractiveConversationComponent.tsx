@@ -13,7 +13,6 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import {
@@ -67,6 +66,7 @@ const InteractiveConversationComponentInner = () => {
     //     ? c('collider_2025:Title').jt`Hi ${displayName}, how can I help you today?`
     //     : c('collider_2025:Title').t`Hello, how can I help you today?`;
 
+    // FIXME: `isLoading` is always false because `messageMap` is never falsy (it can be `{}`, but that's not falsy)
     const isLoading = !isGuest && (!remoteWasSynced || (curConversationId && !messageMap));
 
     const navigateCallback = useCallback((conversationId: ConversationId) => {
@@ -208,11 +208,9 @@ const InteractiveConversationComponentInner = () => {
 export const InteractiveConversationComponent = () => {
     return (
         <DragAreaProvider>
-            <PandocProvider>
-                <WebSearchProvider>
-                    <InteractiveConversationComponentInner />
-                </WebSearchProvider>
-            </PandocProvider>
+            <WebSearchProvider>
+                <InteractiveConversationComponentInner />
+            </WebSearchProvider>
         </DragAreaProvider>
     );
 };

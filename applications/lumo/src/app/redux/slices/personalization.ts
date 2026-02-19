@@ -8,7 +8,7 @@ export interface PersonalizationSettings {
     traits: string[];
     lumoTraits: string; // New field for Lumo-specific traits
     additionalContext: string;
-    enableForNewChats: boolean;
+    enableForNewChats: boolean; // TODO: I think this is never set to false, hence, unused. Double-check before removing.
 }
 
 export interface PersonalizationTrait {
@@ -147,21 +147,16 @@ const personalizationReducer = createReducer(initialState, (builder) => {
         });
 });
 
-// selectors
-export const selectPersonalizationSettings = (state: any) => state.personalization;
-
-export const selectHasModifiedPersonalization = (state: any) => {
-    const currentSettings = selectPersonalizationSettings(state);
-
-    // Only check specific fields for modification
+// Helpers
+export function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
     const fieldsToCheck: (keyof PersonalizationSettings)[] = [
         'nickname',
         'jobRole',
         'personality',
         'additionalContext',
     ];
+    return fieldsToCheck.some((field) => personalization[field] !== initialState[field]);
+}
 
-    return fieldsToCheck.some((field) => currentSettings[field] !== initialState[field]);
-};
-
+// Export Reducer
 export default personalizationReducer;

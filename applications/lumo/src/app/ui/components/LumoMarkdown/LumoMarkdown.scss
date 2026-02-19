@@ -17,7 +17,17 @@
 
 .markdown-rendering {
 	font-size: 0.875rem;
+	width: 100%;
 	line-height: 1.5;
+	gap: 0.75rem;
+	color: var(--text-markdown);
+	contain: layout style;
+	word-break: break-word;
+
+	/* Improve text rendering */
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	h1 {
 		font-size: 1.5rem;
@@ -221,6 +231,33 @@
 		tbody tr:nth-child(even) {
 			background-color: rgb(255 255 255 / 0.02);
 		}
+	}
+
+	pre {
+		margin-block: 0.75rem;
+		border-radius: 0.5rem;
+		padding-block: 1.25rem;
+		padding-inline: 1rem;
+		inline-size: 100%;
+		background-color: var(--markdown-pre-background);
+		position: relative;
+	}
+
+	pre div {
+		white-space: pre-wrap;
+		word-break: break-word;
+		margin: 0 !important;
+		box-sizing: border-box;
+		border-radius: 0.5em !important;
+		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+		font-size: 0.98em;
+		line-height: 1.6;
+	}
+
+	pre code {
+		white-space: pre-wrap;
+		word-break: break-word;
+		color: var(--text-markdown);
 	}
 }
 

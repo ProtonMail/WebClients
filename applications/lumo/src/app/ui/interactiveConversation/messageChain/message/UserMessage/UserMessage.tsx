@@ -15,7 +15,7 @@ import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { FileCard, FileContentModal } from '../../../../components/Files';
-import { LazyLumoMarkdown } from '../../../../components/LumoMarkdown/LazyMarkdownComponents';
+import { LazyProgressiveMarkdownRenderer } from '../../../../components/LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../components/SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
@@ -87,6 +87,12 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
             if (isAutoRetrieved) {
                 return null; // Exclude auto-retrieved files (Drive or project files)
             }
+
+            // Exclude assistant-generated attachments
+            if (fullAttachment?.role === 'assistant') {
+                return null;
+            }
+
             return fullAttachment || null;
         })
         .filter(Boolean) as Attachment[];
@@ -138,7 +144,11 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         )}
                         ref={contentRef}
                     >
-                        <LazyLumoMarkdown message={message} content={messageContent} />
+                        <LazyProgressiveMarkdownRenderer
+                            content={messageContent || ''}
+                            isStreaming={false}
+                            message={message}
+                        />
                     </div>
                 </div>
             )}

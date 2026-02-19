@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { LumoApiClient } from '../core/client';
-import type { AssistantCallOptions, LumoApiClientConfig } from '../core/types';
+import { type AssistantCallOptions, type LumoApiClientConfig, Role } from '../core/types';
 import { type Message, prepareTurns } from '../utils';
 
 /**
@@ -19,7 +19,7 @@ export function useLumoChat(api: Api, config?: LumoApiClientConfig) {
         async (content: string, options: Partial<AssistantCallOptions> = {}) => {
             if (!content.trim()) return;
 
-            const userMessage: Message = { role: 'user', content };
+            const userMessage: Message = { role: Role.User, content };
             const updatedMessages = [...messages, userMessage];
             setMessages(updatedMessages);
             setIsLoading(true);
@@ -41,16 +41,14 @@ export function useLumoChat(api: Api, config?: LumoApiClientConfig) {
                                 if (newMessages[lastIndex]?.role === 'assistant') {
                                     newMessages[lastIndex].content = assistantResponse;
                                 } else {
-                                    newMessages.push({ role: 'assistant', content: assistantResponse });
+                                    newMessages.push({ role: Role.Assistant, content: assistantResponse });
                                 }
 
                                 return newMessages;
                             });
                         } else if (message.type === 'error') {
-                            return { error: new Error('Generation failed') };
+                            throw new Error('Generation failed');
                         }
-
-                        return {};
                     },
                     finishCallback: async (status) => {
                         setIsLoading(false);
@@ -91,14 +89,12 @@ export function useLumoChat(api: Api, config?: LumoApiClientConfig) {
                     chunkCallback: async (message) => {
                         if (message.type === 'token_data' && message.target === 'message') {
                             assistantResponse += message.content;
-
                             setMessages((prev) => {
                                 const newMessages = messagesToRegenerate.slice();
-                                newMessages.push({ role: 'assistant', content: assistantResponse });
+                                newMessages.push({ role: Role.Assistant, content: assistantResponse });
                                 return newMessages;
                             });
                         }
-                        return {};
                     },
                     finishCallback: async (status) => {
                         setIsLoading(false);

@@ -10,6 +10,7 @@ import {addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import type { Conversation, Space } from '../../types';
 import { ConversationStatus } from '../../types';
 import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDebugModal';
+import { TestRendererModal } from './TestRendererModal';
 
 import './PerformanceMonitor.scss';
 
@@ -264,6 +265,7 @@ const PerformanceMonitor = () => {
     });
     const [isVisible, setIsVisible] = useState(false);
     const [showSearchIndexDebug, setShowSearchIndexDebug] = useState(false);
+    const [showTestRenderer, setShowTestRenderer] = useState(false);
 
     useEffect(() => {
         const checkDebug = () => {
@@ -578,6 +580,10 @@ const PerformanceMonitor = () => {
         alert(`Created ${testConversations.length} test conversations!\n\nCheck the sidebar to see:\n- Today section (1 chat)\n- Last 7 days (1 chat)\n- Expiring Soon (3 chats) ⚠️\n- Last 30 days (1 chat - hidden for free users)`);
     };
 
+    const handleTestRenderer = () => {
+        setShowTestRenderer(true);
+    };
+
     return (
         <div className="debug-view">
             <div className="debug-view-header">
@@ -793,6 +799,13 @@ const PerformanceMonitor = () => {
                 </button>
                 <button
                     className="debug-view-btn debug-view-btn--primary"
+                    onClick={handleTestRenderer}
+                    style={{ background: 'var(--interaction-norm)' }}
+                >
+                    🧪 {c('lumo: Debug View').t`Test Renderer`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--primary"
                     onClick={handleCreateTestChats}
                     style={{ background: 'var(--signal-warning)' }}
                 >
@@ -805,6 +818,9 @@ const PerformanceMonitor = () => {
 
             {showSearchIndexDebug && (
                 <SearchIndexDebugModal open={showSearchIndexDebug} onClose={() => setShowSearchIndexDebug(false)} />
+            )}
+            {showTestRenderer && (
+                <TestRendererModal open={showTestRenderer} onClose={() => setShowTestRenderer(false)} />
             )}
         </div>
     );

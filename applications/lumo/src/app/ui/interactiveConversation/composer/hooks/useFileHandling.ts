@@ -7,14 +7,15 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
+import { useFileProcessing } from '../../../../hooks';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
-import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
 import type { AttachmentId, LinkedDriveFolder, Message } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
+import { isLargeSpreadsheetFile, isPresentationFile } from '../../../../util/fileTypeHelpers';
 import { sendFileUploadEvent, sendFileUploadFromDriveEvent } from '../../../../util/telemetry';
 
 export interface UseFileHandlingProps {
@@ -37,6 +38,7 @@ export const useFileHandling = ({
 }: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
+    const fileProcessingService = useFileProcessing();
     const fileInputRef = useRef<HTMLInputElement>(null);
     const userId = useLumoSelector((state) => state.user?.value?.ID);
     const isGuest = useIsGuest();
@@ -80,12 +82,12 @@ export const useFileHandling = ({
                             console.log(`[useFileHandling] Processing uploaded Drive file for indexing: ${file.name}`);
                             const processingResult = await fileProcessingService.processFile(file);
 
-                            if (processingResult.success && processingResult.result) {
+                            if (processingResult.type === 'text') {
                                 const searchService = SearchService.get(userId);
                                 const document: DriveDocument = {
                                     id: nodeId,
                                     name: file.name,
-                                    content: processingResult.result.convertedContent,
+                                    content: processingResult.content,
                                     mimeType: file.type,
                                     size: file.size,
                                     modifiedTime: Date.now(),
@@ -95,8 +97,19 @@ export const useFileHandling = ({
                                 };
                                 await searchService.indexDocuments([document]);
                                 console.log(`[useFileHandling] Indexed Drive file for RAG: ${file.name}`);
+                            } else if (processingResult.type === 'error') {
+                                console.warn(
+                                    `[useFileHandling] File processing failed for ${file.name}: ${processingResult.message}`
+                                );
+                                createNotification({
+                                    text: c('collider_2025: Warning')
+                                        .t`Failed to index file for search: ${processingResult.message}`,
+                                    type: 'warning',
+                                });
                             } else {
-                                console.warn(`[useFileHandling] File processing failed, not indexing: ${file.name}`);
+                                console.log(
+                                    `[useFileHandling] Skipping indexing for ${file.name} (type '${processingResult.type}')`
+                                );
                             }
                         } catch (indexError) {
                             console.warn('[useFileHandling] Failed to index Drive file for RAG:', indexError);
@@ -117,33 +130,26 @@ export const useFileHandling = ({
                 // Log file processing start for user feedback
                 console.log(`Starting file processing: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
 
-                // Special messaging for large CSV files
-                if (
-                    (file.type === 'text/csv' ||
-                        file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-                        file.type === 'application/vnd.ms-excel') &&
-                    file.size > 1024 * 1024
-                ) {
-                    // > 1MB
+                // Special messaging for large spreadsheet files
+                if (isLargeSpreadsheetFile(file)) {
                     console.log(`Processing large spreadsheet file - this may take a moment...`);
                 }
 
-                const result = await dispatch(handleFileAsync(file, messageChain));
+                const result = await dispatch(handleFileAsync(file, messageChain, fileProcessingService));
 
+                // Handle duplicate file
                 if (result.isDuplicate) {
-                    // Show toast notification for duplicate file
                     createNotification({
                         text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
                         type: 'warning',
                     });
-                } else if (result.isUnsupported) {
-                    // Special message for PPTX files with conversion suggestions
-                    if (
-                        file.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation' ||
-                        file.type === 'application/vnd.ms-powerpoint' ||
-                        file.name.toLowerCase().endsWith('.pptx') ||
-                        file.name.toLowerCase().endsWith('.ppt')
-                    ) {
+                    return;
+                }
+
+                // Handle unsupported file
+                if (result.isUnsupported) {
+                    // Special message for presentation files with conversion suggestions
+                    if (isPresentationFile(file)) {
                         createNotification({
                             text: c('collider_2025: Error')
                                 .t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
@@ -156,8 +162,11 @@ export const useFileHandling = ({
                             type: 'error',
                         });
                     }
-                } else if (!result.success && result.errorMessage) {
-                    // Show toast notification for processing error
+                    return;
+                }
+
+                // Handle processing error
+                if (!result.success && result.errorMessage) {
                     createNotification({
                         text: c('collider_2025: Error').t`Error processing ${result.fileName}: ${result.errorMessage}`,
                         type: 'error',
@@ -188,6 +197,9 @@ export const useFileHandling = ({
                         }
                     }
                 }
+
+                // Success
+                console.log(`File processing completed: ${file.name}`);
             } catch (error) {
                 console.error('Error processing file:', error);
                 createNotification({

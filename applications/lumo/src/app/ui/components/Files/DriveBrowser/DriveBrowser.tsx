@@ -15,8 +15,8 @@ import { MAX_ASSET_SIZE, MAX_FILE_SIZE } from '../../../../constants';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
+import { useFileProcessing } from '../../../../hooks/useFileProcessing';
 import { useDriveIndexing } from '../../../../providers/DriveIndexingProvider';
-import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { SearchService } from '../../../../services/search/searchService';
 import type { DriveDocument } from '../../../../types/documents';
 import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../../util/filetypes';
@@ -79,6 +79,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
         const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
+        const fileProcessingService = useFileProcessing();
         const [user] = useUser();
         const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
         const [children, setChildren] = useState<DriveNode[]>([]);
@@ -403,7 +404,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                 // Process the file we already have in memory
                                 const result = await fileProcessingService.processFile(file);
 
-                                if (result.success && result.result && user?.ID) {
+                                if (result.type === 'text' && user?.ID) {
                                     // Find the indexed folder for this upload
                                     const indexedFolder = indexedFolders.find(
                                         (f) => f.nodeUid === currentFolder.nodeUid || f.nodeUid === initialFolderId
@@ -412,7 +413,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                     const document: DriveDocument = {
                                         id: nodeUid,
                                         name: file.name,
-                                        content: result.result.convertedContent,
+                                        content: result.content,
                                         mimeType:
                                             file.type ||
                                             getMimeTypeFromExtension(file.name) ||
@@ -453,8 +454,24 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                             type: 'success',
                                         });
                                     }
+                                } else if (result.type === 'error') {
+                                    const processingResult = result;
+                                    console.warn(
+                                        `[DriveBrowser] File processing failed for ${file.name}: ${result.message}`
+                                    );
+                                    createNotification({
+                                        text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                        type: 'success',
+                                    });
+                                    createNotification({
+                                        text: c('collider_2025: Warning')
+                                            .t`Failed to index file for search: ${processingResult.message}`,
+                                        type: 'warning',
+                                    });
                                 } else {
-                                    // Processing failed or not supported, just show upload success
+                                    console.log(
+                                        `[DriveBrowser] Skipping indexing for ${file.name} (type '${result.type}')`
+                                    );
                                     createNotification({
                                         text: c('collider_2025: Success').t`File uploaded to Drive folder`,
                                         type: 'success',

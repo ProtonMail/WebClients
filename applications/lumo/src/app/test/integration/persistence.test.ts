@@ -3,7 +3,7 @@ import { type SetupServer, setupServer } from 'msw/node';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
-import { getCallbacks } from '../../llm';
+import { _getCallbacks } from '../../llm';
 import { setRetryPushEveryMs } from '../../redux/sagas';
 import {
     selectAttachmentById,
@@ -68,7 +68,7 @@ import {
     type Status,
     getSpaceDek,
 } from '../../types';
-import type { GenerationToFrontendMessage } from '../../types-api';
+import type { GenerationResponseMessage } from '../../types-api';
 import { clarify } from '../../util/clarify';
 import { listify, mapIds, mapLength, mapify, setify } from '../../util/collections';
 import { sleep } from '../../util/date';
@@ -540,7 +540,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Simulate receiving token data and finishing the answer message
                 console.log('Simulate receiving token data and finishing the answer message');
-                type G = GenerationToFrontendMessage;
+                type G = GenerationResponseMessage;
                 const sseMessages: G[] = [
                     { type: 'queued' },
                     { type: 'queued' },
@@ -556,7 +556,8 @@ describe('Lumo Persistence Integration Tests', () => {
                     { type: 'token_data', target: 'message', content: '.', count: 5 },
                     { type: 'done' },
                 ];
-                const { chunkCallback, finishCallback } = getCallbacks(spaceId, conversationId, answerMessageId);
+                // FIXME getCallbacks is no longer the real function!
+                const { chunkCallback, finishCallback } = _getCallbacks(spaceId, conversationId, answerMessageId);
                 for (const sse of sseMessages) {
                     await chunkCallback(sse, dispatch);
                     await sleep(50);
@@ -875,6 +876,7 @@ describe('Lumo Persistence Integration Tests', () => {
             const masterKeyBase64 = masterKeyBytes.toBase64();
             const sharedUserId = generateFakeUserId();
             const sharedDbApi = new DbApi(sharedUserId);
+            await sharedDbApi.initialize();
 
             // Create some test data
             console.log('Create some test data');
@@ -1025,7 +1027,9 @@ describe('Lumo Persistence Integration Tests', () => {
                     expect(restoredConversation).toBeDefined();
                     expect(restoredConversation.id).toBe(conversationId);
                     expect(restoredConversation.title).toBe(conversation.title);
-                    expectConversationEqual(restoredConversation, conversation, { ignoreFields: ['createdAt', 'updatedAt'] });
+                    expectConversationEqual(restoredConversation, conversation, {
+                        ignoreFields: ['createdAt', 'updatedAt'],
+                    });
                     // - message
                     console.log('- message');
                     const restoredMessage = restoredState.messages[messageId];
@@ -1476,6 +1480,7 @@ describe('Lumo Persistence Integration Tests', () => {
             const masterKey = await base64ToMasterKey(masterKeyBase64);
             const userId = generateFakeUserId();
             const dbApi = new DbApi(userId);
+            await dbApi.initialize();
             const lumoApi = new LumoApi(userId);
 
             // Prepare data structures for tracking
@@ -1620,6 +1625,7 @@ describe('Lumo Persistence Integration Tests', () => {
             const masterKeyBase64 = generateMasterKeyBase64();
             const masterKey = await base64ToMasterKey(masterKeyBase64);
             const dbApi = new DbApi(userId);
+            await dbApi.initialize();
 
             // Create a test space
             console.log('Creating test space');

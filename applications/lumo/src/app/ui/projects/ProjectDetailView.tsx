@@ -21,10 +21,11 @@ import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
+import { usePersonalization } from '../../hooks';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
-import { PandocProvider } from '../../providers/PandocProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
@@ -119,6 +120,8 @@ const ProjectDetailViewInner = () => {
     const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
+    const { personalization } = usePersonalization();
+    const { smoothRendering: ffSmoothRendering, externalTools: ffExternalTools, imageTools: ffImageTools } = useLumoFlags();
 
     // Editable title state
     const [isEditingTitle, setIsEditingTitle] = useState(false);
@@ -162,7 +165,7 @@ const ProjectDetailViewInner = () => {
     // Sync space data when navigating to a project to ensure we have the latest state
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
     useEffect(() => {
-        if (!projectId || projectId === 'undefined') return;
+        if (!projectId) return;
 
         console.log(`Project navigation: pulling specific space to sync project ${projectId}`);
         dispatch(pullSpaceRequest({ id: projectId }));
@@ -200,23 +203,40 @@ const ProjectDetailViewInner = () => {
                 // Navigate to the conversation first
                 history.push(`/c/${conversationId}`);
 
+                const isWebSearchButtonToggled = false; // todo wire the web search button
+
                 // Send the message using the helper function
                 // sendMessage returns a thunk, so we need to dispatch it
                 console.log('Sending message...');
                 await dispatch(
                     sendMessage({
-                        api,
-                        newMessageContent: content,
-                        attachments: provisionalAttachments,
-                        messageChain: [],
-                        conversationId,
-                        spaceId: projectId,
-                        signal: new AbortController().signal,
-                        navigateCallback: (newConvId) => {
-                            console.log('Navigate callback:', newConvId);
-                            history.push(`/c/${newConvId}`);
+                        applicationContext: {
+                            api,
+                            signal: new AbortController().signal,
                         },
-                        enableExternalToolsToggled: isWebSearchButtonToggled,
+                        newMessageData: {
+                            content,
+                            attachments: provisionalAttachments,
+                        },
+                        conversationContext: {
+                            spaceId: projectId,
+                            conversationId,
+                            allConversationAttachments: [],
+                            messageChain: [],
+                            contextFilters: [],
+                        },
+                        uiContext: {
+                            navigateCallback: (newConvId: string) => {
+                                console.log('Navigate callback:', newConvId);
+                                history.push(`/c/${newConvId}`);
+                            },
+                            enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                            enableImageTools: ffImageTools,
+                            enableSmoothing: ffSmoothRendering,
+                        },
+                        settingsContext: {
+                            personalization,
+                        },
                     })
                 );
                 console.log('Message sent successfully');
@@ -607,9 +627,7 @@ export const ProjectDetailView = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <PandocProvider>
-                    <ProjectDetailViewInner />
-                </PandocProvider>
+                <ProjectDetailViewInner />
             </WebSearchProvider>
         </DragAreaProvider>
     );

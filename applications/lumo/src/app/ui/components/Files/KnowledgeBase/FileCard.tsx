@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -6,6 +8,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CircularProgress, FileIcon, Icon } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { attachmentDataCache } from '../../../../services/attachmentDataCache';
 import type { Attachment } from '../../../../types';
 import { mimeToHuman } from '../../../../util/filetypes';
 
@@ -19,11 +22,41 @@ interface FileCardProps {
     readonly?: boolean;
 }
 
+const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): string | null => {
+    if (!imagePreview || !(imagePreview instanceof Uint8Array)) {
+        return null;
+    }
+    try {
+        const blob = new Blob([imagePreview], { type: 'image/jpg' });
+        const url = URL.createObjectURL(blob);
+        return url;
+    } catch (e) {
+        console.error('Failed to create preview URL:', e);
+        return null;
+    }
+};
+
 export const FileCard = ({ attachment, onRemove, onView, className, readonly = false }: FileCardProps) => {
     const { error, processing, filename, errorMessage } = attachment;
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const mimeTypeIcon = attachment.mimeType ?? 'unknown';
     const prettyType = mimeToHuman(attachment);
     const hasError = error;
+
+    // Cleanup blob URL on unmount or when it changes
+    // Re-run when processing state changes (when image finishes processing, preview becomes available)
+    useEffect(() => {
+        // Get imagePreview from cache instead of Redux
+        const imagePreview = attachmentDataCache.getImagePreview(attachment.id);
+        const url = createPreviewUrl(imagePreview);
+        setPreviewUrl(url);
+        return () => {
+            if (url) {
+                URL.revokeObjectURL(url);
+            }
+            setPreviewUrl(null);
+        };
+    }, [attachment.id, processing]);
 
     // const hasContent = attachment.markdown && attachment.markdown.trim() !== '';
 
@@ -85,7 +118,23 @@ export const FileCard = ({ attachment, onRemove, onView, className, readonly = f
                 ))}
 
             <div className="flex flex-row flex-nowrap gap-2 items-start">
-                <FileIcon mimeType={mimeTypeIcon} size={10} className="mr-1" />
+                {processing ? (
+                    <div
+                        className="mr-1 flex items-center justify-center"
+                        style={{ width: '2.5rem', height: '2.5rem' }}
+                    >
+                        <CircularProgress progress={75} size={20} />
+                    </div>
+                ) : previewUrl ? (
+                    <img
+                        src={previewUrl}
+                        alt={filename}
+                        className="mr-1 rounded object-cover"
+                        style={{ width: '2.5rem', height: '2.5rem' }}
+                    />
+                ) : (
+                    <FileIcon mimeType={mimeTypeIcon} size={10} className="mr-1" />
+                )}
                 <div className="relative flex-1 flex flex-column items-start gap-0.5 min-w-0">
                     <p className="m-0 text-ellipsis w-full font-medium" title={filename}>
                         {filename}
