@@ -181,6 +181,7 @@ export function usePreviewState({
 
     const result = {
         node: {
+            nodeUid,
             name: node ? getNodeName(node) : undefined,
             mediaType: mimeType,
             sharedStatus: getSharedStatus(node),
