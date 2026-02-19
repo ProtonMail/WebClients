@@ -81,8 +81,10 @@ describe('useTrashActions', () => {
                 drive: {
                     emptyTrash: emptyTrashDrive,
                 },
-                photos: {
-                    emptyTrash: emptyTrashPhotos,
+                internal: {
+                    photos: {
+                        emptyTrash: emptyTrashPhotos,
+                    },
                 },
             } as any);
 

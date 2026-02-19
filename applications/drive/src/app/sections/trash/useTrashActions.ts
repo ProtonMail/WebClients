@@ -20,7 +20,10 @@ type SelectedNode = {
 
 export const useTrashActions = () => {
     const { handleError } = useSdkErrorHandler();
-    const { drive, photos } = useDrive();
+    const {
+        drive,
+        internal: { photos },
+    } = useDrive();
     const { createTrashRestoreNotification, createTrashDeleteNotification, createEmptyTrashNotificationSuccess } =
         useTrashNotifications();
 
