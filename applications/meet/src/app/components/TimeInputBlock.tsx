@@ -7,13 +7,13 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import type { FormValues } from './ScheduleMeetingForm/types';
+import type { FormValues, OnDateTimeChange } from './ScheduleMeetingForm/types';
 import { TimeInput } from './TimeInput/TimeInput';
 
 export const TimeInputBlock = ({
     name,
     values,
-    setValues,
+    onDateTimeChange,
     showTimezones,
     timeOptions,
     timeZoneOptions,
@@ -25,7 +25,7 @@ export const TimeInputBlock = ({
 }: {
     name: 'start' | 'end';
     values: FormValues;
-    setValues: (values: FormValues) => void;
+    onDateTimeChange: OnDateTimeChange;
     showTimezones: boolean;
     timeOptions: { value: string; label: string }[];
     timeZoneOptions: { value: string; label: string; formattedText: ReactNode }[];
@@ -52,7 +52,7 @@ export const TimeInputBlock = ({
                         name={`${name}Date`}
                         min={new Date(Date.now() - 24 * 60 * 60 * 1000)}
                         preventValueReset
-                        onChange={(date) => setValues({ ...values, [`${name}Date`]: date as Date })}
+                        onChange={(value) => onDateTimeChange({ fieldName: `${name}Date`, value })}
                         className="date-input flex-1"
                         inputClassName="date-input"
                         value={values[`${name}Date`]}
@@ -68,7 +68,7 @@ export const TimeInputBlock = ({
                                 return;
                             }
 
-                            setValues({ ...values, [`${name}Time`]: value });
+                            onDateTimeChange({ fieldName: `${name}Time`, value });
                         }}
                         options={timeOptions}
                         timeFormat={timeFormat}
@@ -81,7 +81,7 @@ export const TimeInputBlock = ({
                         name="timeZone"
                         className="w-full flex-1 select-two-timezone-select"
                         onChange={(item: { value: string }) => {
-                            setValues({ ...values, timeZone: item.value as string });
+                            onDateTimeChange({ fieldName: 'timeZone', value: item.value });
                         }}
                         value={values.timeZone}
                         dropdownClassName="create-container-dropdown select-two-timezone-dropdown py-2"
