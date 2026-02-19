@@ -111,6 +111,8 @@ export interface DocumentStateValues {
   realtimeIsParticipantLimitReached: boolean
   realtimeIsLockedDueToSquashError: boolean
   realtimeConnectionToken: string | undefined
+
+  realtimeShouldBeShownInReadonlyMode: boolean
 }
 
 const DefaultValues: Pick<
@@ -129,6 +131,7 @@ const DefaultValues: Pick<
   | 'realtimeIsLockedDueToSizeContraint'
   | 'realtimeIsParticipantLimitReached'
   | 'realtimeIsLockedDueToSquashError'
+  | 'realtimeShouldBeShownInReadonlyMode'
 > = {
   documentName: '',
   currentCommitId: undefined,
@@ -145,6 +148,7 @@ const DefaultValues: Pick<
   realtimeIsLockedDueToSizeContraint: false,
   realtimeIsParticipantLimitReached: false,
   realtimeIsLockedDueToSquashError: false,
+  realtimeShouldBeShownInReadonlyMode: false,
 }
 
 export function isDocumentState(state: DocumentState | PublicDocumentState): state is DocumentState {

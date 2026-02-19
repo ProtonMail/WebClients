@@ -5,3 +5,4 @@ export type WebsocketConnectionEventStatusChange =
   | WebsocketConnectionEvent.ConnectedAndReady
   | WebsocketConnectionEvent.Disconnected
   | WebsocketConnectionEvent.FailedToConnect
+  | WebsocketConnectionEvent.NeedsToBeInReadonlyMode

@@ -82,6 +82,11 @@ export class EditorController implements EditorControllerInterface {
         this.showEditorForTheFirstTime()
       }
     })
+    documentState.subscribeToProperty('realtimeShouldBeShownInReadonlyMode', (value) => {
+      if (this.editorInvoker && value) {
+        this.showEditorForTheFirstTime()
+      }
+    })
 
     documentState.subscribeToProperty('baseCommit', (_value) => {
       this.sendBaseCommitToEditor().catch(console.error)
@@ -212,13 +217,16 @@ export class EditorController implements EditorControllerInterface {
     const realtimeEnabled = this.documentState.getProperty('realtimeEnabled')
     const realtimeReadyToBroadcast = this.documentState.getProperty('realtimeReadyToBroadcast')
     const realtimeConnectionTimedOut = this.documentState.getProperty('realtimeConnectionTimedOut')
-    const realtimeIsDoneLoading = realtimeReadyToBroadcast || realtimeConnectionTimedOut
+    const realtimeShouldBeShownInReadonlyMode = this.documentState.getProperty('realtimeShouldBeShownInReadonlyMode')
+    const realtimeIsDoneLoading =
+      realtimeReadyToBroadcast || realtimeConnectionTimedOut || realtimeShouldBeShownInReadonlyMode
 
     if (realtimeEnabled && !realtimeIsDoneLoading) {
       this.logger.info('Not showing editor for the first time due to RTS status', {
         realtimeEnabled,
         realtimeReadyToBroadcast,
         realtimeConnectionTimedOut,
+        realtimeShouldBeShownInReadonlyMode,
       })
       return
     }
