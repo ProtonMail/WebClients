@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import type { NodeType } from '@proton/drive';
+import { type NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
@@ -42,6 +42,7 @@ interface SharedByMeStore {
     hasEverLoaded: boolean;
 
     eventSubscription: (() => void) | null;
+    eventPhotosSubscription: (() => void) | null;
     activeContexts: Set<string>;
 
     setLoadingNodes: (loading: boolean) => void;
@@ -76,6 +77,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
             hasEverLoaded: false,
 
             eventSubscription: null,
+            eventPhotosSubscription: null,
             activeContexts: new Set<string>(),
 
             setSharedByMeItem: (item: SharedByMeItem) => {
@@ -193,23 +195,36 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                 }
 
                 const eventManager = getBusDriver();
-                await eventManager.subscribeSdkEventsMyUpdates(context);
+                await Promise.all([
+                    eventManager.subscribeSdkEventsMyUpdates(context),
+                    eventManager.subscribePhotosEventsMyUpdates(context),
+                ]);
 
-                const unsubscribeFromEvents = subscribeToSharedByMeEvents();
-                set({ eventSubscription: unsubscribeFromEvents });
+                const unsubscribeFromEvents = subscribeToSharedByMeEvents(getDrive());
+                const unsubscribeFromPhotosEvents = subscribeToSharedByMeEvents(getDriveForPhotos());
+                set({ eventSubscription: unsubscribeFromEvents, eventPhotosSubscription: unsubscribeFromPhotosEvents });
             },
             unsubscribeToEvents: async (context: string) => {
                 const eventManager = getBusDriver();
-                await eventManager.unsubscribeSdkEventsMyUpdates(context);
+                await Promise.all([
+                    eventManager.unsubscribeSdkEventsMyUpdates(context),
+                    eventManager.unsubscribePhotosEventsMyUpdates(context),
+                ]);
 
-                const { activeContexts, eventSubscription } = get();
+                const { activeContexts, eventSubscription, eventPhotosSubscription } = get();
                 const newActiveContexts = new Set(activeContexts);
                 newActiveContexts.delete(context);
                 set({ activeContexts: newActiveContexts });
 
-                if (newActiveContexts.size === 0 && eventSubscription) {
-                    eventSubscription();
-                    set({ eventSubscription: null });
+                if (newActiveContexts.size === 0) {
+                    if (eventSubscription) {
+                        eventSubscription();
+                        set({ eventSubscription: null });
+                    }
+                    if (eventPhotosSubscription) {
+                        eventPhotosSubscription();
+                        set({ eventPhotosSubscription: null });
+                    }
                 }
             },
         }),

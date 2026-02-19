@@ -1,4 +1,4 @@
-import { getDrive } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -11,9 +11,9 @@ import type { SharedByMeItem } from './useSharedByMe.store';
 import { useSharedByMeStore } from './useSharedByMe.store';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
 
-const createSharedByMeItemFromNode = async (nodeUid: string): Promise<SharedByMeItem | null> => {
+type Drive = Pick<ProtonDriveClient, 'getNode' | 'getSharingInfo'>;
+const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Promise<SharedByMeItem | null> => {
     try {
-        const drive = getDrive();
         const sharedByMeMaybeNode = await drive.getNode(nodeUid);
         const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
         const { node } = getNodeEntity(sharedByMeMaybeNode);
@@ -60,7 +60,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string): Promise<SharedByMe
     }
 };
 
-export const subscribeToSharedByMeEvents = () => {
+export const subscribeToSharedByMeEvents = (drive: Drive) => {
     const eventManager = getBusDriver();
 
     const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event) => {
@@ -68,7 +68,7 @@ export const subscribeToSharedByMeEvents = () => {
 
         for (const item of event.items) {
             if (item.isShared && !store.getSharedByMeItem(item.uid)) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid);
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, drive);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
@@ -83,7 +83,7 @@ export const subscribeToSharedByMeEvents = () => {
             if (item.isShared === false && store.getSharedByMeItem(item.uid)) {
                 store.removeSharedByMeItem(item.uid);
             } else if (item.isShared) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid);
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, drive);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
