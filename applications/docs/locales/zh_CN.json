@@ -3027,6 +3027,9 @@
       "status page": [
         "运行状态网页"
       ],
+      "Tax exemption is not supported for this plan": [
+        "此套餐不支持免税"
+      ],
       "The address might be misspelled": [
         "地址可能拼写不正确"
       ],
@@ -4823,6 +4826,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
+      "Settings update failed": [
+        "设置更新失败"
+      ],
+      "Settings updated": [
+        "设置已更新"
+      ],
       "Share via link settings": [
         "通过链接设置共享"
       ],
@@ -5959,7 +5968,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
