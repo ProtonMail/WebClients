@@ -23,7 +23,7 @@ const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         <Layout>
             <Header showSignIn />
 
-            <Wrapper minHeight="calc(100vh - 4.25rem - 4rem)">
+            <Wrapper marginTop="5vh">
                 <Main>
                     <Button
                         onClick={() => {
