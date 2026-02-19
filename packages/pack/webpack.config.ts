@@ -107,7 +107,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                 // Must not be versioned
                 // https://web.dev/learn/pwa/service-workers/#update
                 if (chunkName && chunkName.startsWith('downloadSW')) {
-                    return `[name].js`;
+                    return `${assetsFolder}/[name].js`;
                 }
                 return result;
             },
