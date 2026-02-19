@@ -161,6 +161,7 @@ export const ProtonMeetContainer = ({
     });
 
     const [connectionLost, setConnectionLost] = useState(false);
+    const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
 
     const accessTokenRef = useRef<string | null>(null);
 
@@ -171,7 +172,6 @@ export const ProtonMeetContainer = ({
         resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
-        participantsCount,
     } = useParticipantNameMap(meetingDetails.meetingId as string);
 
     const {
@@ -513,7 +513,10 @@ export const ProtonMeetContainer = ({
             });
 
             // get participants count from the API so we can know which joinType to use based on the participants count
-            const participantsCountValue = await getQueryParticipantsCount(meetingToken);
+            const participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
+
+            // Set count for prejoin loader
+            setPrejoinParticipantCount(participantsCountValue);
 
             accessTokenRef.current = accessToken;
 
@@ -1103,7 +1106,7 @@ export const ProtonMeetContainer = ({
                         roomName={displayRoomName as string}
                         roomId={token}
                         instantMeeting={instantMeetingRef.current}
-                        participantsCount={participantsCount}
+                        participantsCount={prejoinParticipantCount}
                         displayName={displayName}
                         setDisplayName={setDisplayName}
                         isInstantJoin={isInstantJoin}
