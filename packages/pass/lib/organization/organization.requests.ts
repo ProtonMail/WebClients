@@ -47,18 +47,18 @@ export const getGroupMembers = async (groupId: string): Promise<GroupMembersGetR
 
 export const getOrganizationKey = async (): Promise<OrganizationKey> => api(getOrganizationKeys());
 
-export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> => {
+export const getOrganization = async (loadGroups: boolean = false): Promise<MaybeNull<OrganizationState>> => {
     const organization = await getUserOrganization();
     if (!organization) return null;
 
     const { Settings, CanUpdate }: OrganizationGetResponse = await getOrganizationSettings();
-    const { Groups }: GroupsGetResponse = await getOrganizationGroups();
+    const groups = loadGroups ? (await getOrganizationGroups()).Groups : [];
 
     return {
-        settings: Settings!,
+        settings: Settings,
         canUpdate: CanUpdate,
         organization,
-        groups: Groups ?? [],
+        groups,
     };
 };
 

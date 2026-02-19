@@ -71,9 +71,10 @@ export function* hydrate(
 
         /** Request #2: Fetch organization data for business users if not cached.
          * Graceful fallback to null on network failure to avoid blocking hydration. */
-        const organization: MaybeNull<OrganizationState> = yield userState.plan.Type === PlanType.BUSINESS
-            ? (cachedState?.organization ?? getOrganization().catch(() => null))
-            : null;
+        const groupInvitesV1 = userState.features.PassGroupInvitesV1 ?? false;
+        const org = cachedState?.organization;
+        const b2b = userState.plan.Type === PlanType.BUSINESS;
+        const organization: MaybeNull<OrganizationState> = b2b ? (org ?? (yield getOrganization(groupInvitesV1).catch(() => null))) : null;
         const groups = organization?.groups;
 
         const twoPasswordMode = userState.userSettings.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
