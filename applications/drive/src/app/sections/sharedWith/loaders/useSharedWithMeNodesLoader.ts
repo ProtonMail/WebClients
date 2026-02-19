@@ -14,7 +14,10 @@ import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useSharedWithMeNodesLoader = () => {
-    const { drive, photos } = useDrive();
+    const {
+        drive,
+        internal: { photos },
+    } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
     const { setVolumeShareIds } = useVolumesState();
