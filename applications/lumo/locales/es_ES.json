@@ -1978,8 +1978,8 @@
       ]
     },
     "collider_2025:Prompt": {
-      "How the world celebrates Valentine's Day": [
-        "Cómo se celebra San Valentín en el mundo"
+      "How does the world celebrate Lunar New Year?": [
+        "¿Cómo se celebra el Año Nuevo Lunar en el mundo?"
       ]
     },
     "collider_2025:Success": {
@@ -3090,9 +3090,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Los campos de texto son opcionales. La información que proporciones en este formulario solo aparecerá en las facturas emitidas en el futuro y no afectará a las facturas existentes."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Los campos de texto son opcionales. La información que proporcionas en este formulario solo cambiará la factura que has seleccionado y no los detalles de la futura factura."
       ]
     },
     "emergency_access": {
@@ -3217,6 +3214,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exención de impuestos no es compatible con este plan"
       ],
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
@@ -5418,9 +5418,6 @@
       "Got it": [
         "Entiendo"
       ],
-      "I'm purchasing as a business": [
-        "Estoy comprando como empresa"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -5616,18 +5613,6 @@
       ],
       "Business Number": [
         "Número empresarial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar el número empresarial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar el número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -6179,6 +6164,9 @@
     "Success": {
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
