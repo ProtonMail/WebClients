@@ -110,6 +110,9 @@
       "Download room level report": [
         "Scarica il report a livello di stanza"
       ],
+      "Edit": [
+        "Modifica"
+      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -1609,6 +1612,11 @@
         "Molto piccolo"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Hai già un account? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Account"
@@ -1682,9 +1690,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } sta presentando"
       ],
-      "${ userName }'s Meeting": [
-        "Riunione di ${ userName }"
-      ],
       "(You)": [
         "(Voi)"
       ],
@@ -1739,20 +1744,8 @@
       "Country code": [
         "Codice nazione"
       ],
-      "Create a meeting room": [
-        "Crea una sala riunioni"
-      ],
       "Create an account": [
         "Crea un account"
-      ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Crea un account per connettere Meet con ${ CALENDAR_APP_NAME } e inviare inviti alle riunioni all'istante."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Crea un account per avere una sala riunioni che puoi usare in qualsiasi momento."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Crea un account per avere un link di riunione personale che puoi riutilizzare per ogni chiamata."
       ],
       "Created on ${ formattedDate }": [
         "Creato il ${ formattedDate }"
@@ -1832,9 +1825,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Ottieni la migliore esperienza con l'app desktop ${ protonMeet }"
       ],
-      "Get your personal meeting ID": [
-        "Ottieni il tuo ID riunione personale"
-      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vai su about:config, cerca media.peerconnection.enabled e impostalo su true."
       ],
@@ -1906,9 +1896,6 @@
       ],
       "Microphone effects": [
         "Effetti microfono"
-      ],
-      "My Meeting": [
-        "La mia riunione"
       ],
       "My meetings": [
         "Le mie riunioni"
@@ -1994,8 +1981,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
-      "Schedule your next meeting": [
-        "Programma la tua prossima riunione"
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Programma il tuo prossimo meeting. Crea un account per pianificare riunioni con il tuo calendario."
       ],
       "Select a camera": [
         "Seleziona una webcam"
@@ -2063,8 +2050,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Per creare una sala, **crea una account gratuito di ${ BRAND_NAME }**. Tornerai a ${ MEET_APP_NAME } automaticamente."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Per pianificare una riunione, **crea un account gratuito a ${ BRAND_NAME } **. Tornerai a ${ MEET_APP_NAME } automaticamente."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Per utilizzare la tua sala riunioni, **crea un account gratuito a ${ BRAND_NAME } **. Tornerai a ${ MEET_APP_NAME } automaticamente."
       ],
       "Turn off camera": [
         "Disattiva la webcam"
@@ -2111,6 +2107,9 @@
       "Would you like to receive a new verification code?": [
         "Vuoi ricevere un nuovo codice di verifica?"
       ],
+      "You are almost there": [
+        "Ci sei quasi"
+      ],
       "You can close this tab.": [
         "Puoi chiudere questa scheda."
       ],
@@ -2119,6 +2118,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Puoi comunque disattivare il microfono e la webcam in qualsiasi momento durante la riunione"
+      ],
+      "You left your meeting": [
+        "Hai lasciato il tuo meeting."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Sei stato invitato a partecipare a una riunione sicura. Conferma il tuo nome e clicca qui sotto per entrare."
@@ -2155,6 +2157,10 @@
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } stella",
+        "${ numberOfStars } stelle"
+      ],
       "Add to calendar": [
         "Aggiungi al calendario"
       ],
@@ -2166,6 +2172,9 @@
       ],
       "Authenticator app": [
         "App di autenticazione"
+      ],
+      "Back to dashboard": [
+        "Torna al pannello di controllo"
       ],
       "Browser": [
         "Browser"
@@ -2325,6 +2334,9 @@
       "Request an invite": [
         "Richiedi un invito"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "What’s this?": [
         "Cos'è questo?"
       ]
@@ -2332,9 +2344,6 @@
     "meet": {
       "Create new room": [
         "Crea un nuovo canale"
-      ],
-      "Create room and copy link": [
-        "Crea col canale e copia link"
       ],
       "Meeting rooms can be used at any time": [
         "Le sale riunioni possono essere utilizzate in qualsiasi momento"
@@ -2373,6 +2382,9 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
+      "Could not send feedback": [
+        "Impossibile inviare il feedback"
+      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -2389,6 +2401,20 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
+      ]
+    },
+    "Option": {
+      "I couldn't present ": [
+        "Non sono riuscito a presentare. "
+      ],
+      "Others couldn't hear me": [
+        "Non potevano sentirmi"
+      ],
+      "The presentation was blurry": [
+        "La presentazione era sfocata."
+      ],
+      "Video was breaking up": [
+        "Il video si stava interrompendo"
       ]
     },
     "Placeholder": {
@@ -2629,6 +2655,9 @@
       "Meeting edited": [
         "Riunione modificata"
       ],
+      "Meeting settings": [
+        "Impostazioni della riunione"
+      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -2679,6 +2708,9 @@
       ],
       "Settings": [
         "Impostazioni"
+      ],
+      "Show duration": [
+        "Mostra la durata"
       ],
       "Sign out": [
         "Esci dall'account"

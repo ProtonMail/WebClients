@@ -110,6 +110,9 @@
       "Download room level report": [
         "Rapport van deze ruimte downloaden"
       ],
+      "Edit": [
+        "Bewerken"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -1621,6 +1624,11 @@
         "Zeer klein"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Heeft u al een account? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Account"
@@ -1694,9 +1702,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } is aan het presenteren"
       ],
-      "${ userName }'s Meeting": [
-        "Vergadering van ${ userName }"
-      ],
       "(You)": [
         "(U)"
       ],
@@ -1751,20 +1756,8 @@
       "Country code": [
         "Landcode"
       ],
-      "Create a meeting room": [
-        "Maak een vergaderruimte aan"
-      ],
       "Create an account": [
         "Maak een account aan"
-      ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Maak een account aan om Meet te verbinden met ${ CALENDAR_APP_NAME } en direct uitnodigingen voor vergaderingen te verzenden."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Maak een account aan om een vergaderruimte te hebben die u op elk moment kunt gebruiken."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Maak een account aan om een persoonlijke vergadering link te hebben die u voor elk gesprek kunt hergebruiken."
       ],
       "Create an account to host meetings with up to 50 participants.": [
         "Maak een account aan om vergaderingen met maximaal 50 deelnemers te hosten."
@@ -1853,9 +1846,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Krijg de beste ervaring met de ${ protonMeet } desktop app"
       ],
-      "Get your personal meeting ID": [
-        "Ontvang uw persoonlijke vergadering ID"
-      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
       ],
@@ -1922,6 +1912,9 @@
       "Meeting full (${ maxParticipants } participants)": [
         "Vergadering vol (${ maxParticipants } deelnemers)"
       ],
+      "Meeting is decrypting...": [
+        "Vergadering wordt ontsleuteld..."
+      ],
       "Meeting link": [
         "Vergadering link"
       ],
@@ -1942,9 +1935,6 @@
       ],
       "Microphone effects": [
         "Microfoon effecten"
-      ],
-      "My Meeting": [
-        "Mijn vergadering"
       ],
       "My meetings": [
         "Mijn vergaderingen"
@@ -2035,9 +2025,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
-      ],
-      "Schedule your next meeting": [
-        "Plan uw volgende vergadering"
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Plan uw volgende vergadering. Maak een account om vergaderingen te plannen met uw agenda."
@@ -2404,6 +2391,9 @@
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "What’s this?": [
         "Wat is dit?"
       ]
@@ -2411,9 +2401,6 @@
     "meet": {
       "Create new room": [
         "Maak nieuwe kamer"
-      ],
-      "Create room and copy link": [
-        "Maak kamer en kopieer link"
       ],
       "Meeting rooms can be used at any time": [
         "Vergaderruimtes kunnen op elk moment worden gebruikt"
@@ -2752,6 +2739,9 @@
       "Meeting edited": [
         "Vergadering bewerkt"
       ],
+      "Meeting settings": [
+        "Vergadering instellingen"
+      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -2802,6 +2792,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Show duration": [
+        "Toon tijdsduur"
       ],
       "Sign out": [
         "Uitloggen"
