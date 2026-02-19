@@ -110,6 +110,9 @@
       "Download room level report": [
         "Baixar relatório de nível da sala"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
@@ -304,6 +307,9 @@
       ],
       "Start Recording Track Stats": [
         "Iniciar gravação das estatísticas da pista"
+      ],
+      "Start your own meeting": [
+        "Iniciar sua própria reunião"
       ],
       "Stay in meeting": [
         "Ficar na reunião"
@@ -1618,6 +1624,11 @@
         "Muito pequeno"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Já tem uma conta? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Conta"
@@ -1686,9 +1697,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está apresentando"
       ],
-      "${ userName }'s Meeting": [
-        "Reunião de ${ userName }"
-      ],
       "(You)": [
         "(Você)"
       ],
@@ -1743,20 +1751,8 @@
       "Country code": [
         "Código do país"
       ],
-      "Create a meeting room": [
-        "Criar uma sala de reunião"
-      ],
       "Create an account": [
         "Criar uma conta"
-      ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Crie uma conta para conectar o Meet com o ${ CALENDAR_APP_NAME } e envie convites de reunião instantaneamente."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Crie uma conta para ter uma sala de reunião que você possa usar a qualquer momento."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Crie uma conta para ter um link de reunião pessoal que você pode reutilizar em todas as chamadas."
       ],
       "Created on ${ formattedDate }": [
         "Criado em ${ formattedDate }"
@@ -1839,9 +1835,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Obtenha a melhor experiência com o aplicativo do ${ protonMeet } para computador."
       ],
-      "Get your personal meeting ID": [
-        "Obtenha seu ID pessoal da reunião"
-      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
       ],
@@ -1902,6 +1895,9 @@
       "Meeting full (${ maxParticipants } participants)": [
         "Reunião cheia (${ maxParticipants } participantes)"
       ],
+      "Meeting is decrypting...": [
+        "A reunião está sendo descriptografada..."
+      ],
       "Meeting link": [
         "Link da reunião"
       ],
@@ -1922,9 +1918,6 @@
       ],
       "Microphone effects": [
         "Efeitos de microfone"
-      ],
-      "My Meeting": [
-        "Minha reunião"
       ],
       "My meetings": [
         "Minhas reuniões"
@@ -2015,9 +2008,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
-      ],
-      "Schedule your next meeting": [
-        "Agende sua próxima reunião"
       ],
       "Select a camera": [
         "Selecionar uma câmera"
@@ -2136,6 +2126,9 @@
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
       ],
+      "You are almost there": [
+        "Você está quase lá"
+      ],
       "You can close this tab.": [
         "Você pode fechar esta aba."
       ],
@@ -2144,6 +2137,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Você ainda pode desligar seu microfone e câmera a qualquer momento na reunião."
+      ],
+      "You left your meeting": [
+        "Você deixou a sua reunião"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Você foi convidado(a) para entrar em uma reunião segura. Confirme seu nome e clique abaixo para inserir."
@@ -2179,6 +2175,10 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
+      ],
+      "${ numberOfStars } star": [
+        "${ numberOfStars } estrela",
+        "${ numberOfStars } estrelas"
       ],
       "Add optional details": [
         "Adicionar detalhes opcionais"
@@ -2266,6 +2266,9 @@
       ],
       "Hide password": [
         "Ocultar senha"
+      ],
+      "How was the call quality?": [
+        "Como foi a qualidade da chamada?"
       ],
       "Identity": [
         "Identidade"
@@ -2365,6 +2368,9 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "What’s this?": [
         "O que é isso?"
       ]
@@ -2372,9 +2378,6 @@
     "meet": {
       "Create new room": [
         "Criar nova sala"
-      ],
-      "Create room and copy link": [
-        "Criar sala e copiar link"
       ],
       "Meeting rooms can be used at any time": [
         "Salas de reunião podem ser usadas a qualquer momento"
@@ -2413,6 +2416,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Could not send feedback": [
+        "Não foi possível enviar o feedback"
+      ],
       "Link copied to clipboard": [
         "O link foi copiado para área de transferência"
       ],
@@ -2434,6 +2440,30 @@
     "Option": {
       "Audio was breaking up": [
         "O áudio está falhando"
+      ],
+      "I couldn't hear others": [
+        "Eu não conseguia ouvir os outros"
+      ],
+      "I couldn't present ": [
+        "Não foi possível apresentar "
+      ],
+      "I couldn't see others' video": [
+        "Eu não consegui ver o vídeo dos outros"
+      ],
+      "I couldn't see the presentation": [
+        "Eu não consegui ver a apresentação"
+      ],
+      "Others couldn't hear me": [
+        "Os outros não conseguiam me ouvir"
+      ],
+      "The presentation was blurry": [
+        "A apresentação estava embaçada"
+      ],
+      "Video was blurry": [
+        "O vídeo estava embaçado"
+      ],
+      "Video was breaking up": [
+        "O vídeo está falhando"
       ]
     },
     "Placeholder": {
@@ -2769,6 +2799,9 @@
       ],
       "What went wrong?": [
         "O que aconteceu de errado?"
+      ],
+      "Your feedback has been submitted": [
+        "Seu feedback foi enviado"
       ]
     },
     "Today icon tooltip in mini calendar": {

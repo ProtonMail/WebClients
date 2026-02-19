@@ -4325,9 +4325,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, změní pouze vybranou fakturu, nikoli budoucí fakturační údaje."
       ]
     },
     "Email body for invitation": {
@@ -7379,8 +7376,8 @@
       "embedded image": [
         "vložený obrázek",
         "vložené obrázky",
-        "vložené obrázky",
-        "vložené obrázky"
+        "vložených obrázků",
+        "vložených obrázků"
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
@@ -12564,9 +12561,6 @@
       "Got it": [
         "Rozumím"
       ],
-      "I'm purchasing as a business": [
-        "Kupuji jako firma"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -12774,18 +12768,6 @@
       ],
       "Business Number": [
         "Firemní číslo"
-      ],
-      "Edit ABN": [
-        "Upravit ABN"
-      ],
-      "Edit Business Number": [
-        "Upravit firemní číslo"
-      ],
-      "Edit EIN": [
-        "Upravit EIN"
-      ],
-      "Edit VAT number": [
-        "Upravit DIČ"
       ],
       "EIN": [
         "EIN"
@@ -14717,10 +14699,10 @@
         "${ elementsCount } zpráv označeno jako nepřečtené."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } zpráva byla přesunuta do ${ labelName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zprávy byly přesunuty do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zpráv bylo přesunuto do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zpráv bylo přesunuto do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
+        "${ elementsCount } zpráva byla přesunuta do složky ${ labelName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zprávy byly přesunuty do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } zpráva přesunuta do složky ${ labelName }.",
@@ -14885,10 +14867,10 @@
         "Zpráva označena jako nepřečtená."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
-        "Zpráva přesunuta do ${ labelName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
+        "Zpráva přesunuta do složky ${ labelName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
       ],
       "Message moved to ${ labelName }.": [
-        "Zpráva přesunuta do ${ labelName }."
+        "Zpráva přesunuta do složky ${ labelName }."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "Zpráva byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů."

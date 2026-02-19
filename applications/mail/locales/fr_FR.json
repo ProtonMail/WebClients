@@ -4279,9 +4279,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Les champs de texte sont facultatifs. Les informations fournies dans ce formulaire apparaîtront uniquement sur les factures émises à l’avenir et n’affecteront pas les factures existantes."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Les champs de texte sont facultatifs. Les informations que vous fournissez dans ce formulaire ne modifieront que la facture que vous avez sélectionnée et non les détails de votre future facture."
       ]
     },
     "Email body for invitation": {
@@ -4896,6 +4893,9 @@
       ],
       "Tab closed": [
         "L'onglet est fermé."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "L'exonération fiscale n'est pas prise en charge pour cet abonnement."
       ],
       "Text is too long to refine": [
         "Le texte est trop long pour être optimisé."
@@ -12184,9 +12184,6 @@
       "Got it": [
         "J'ai compris"
       ],
-      "I'm purchasing as a business": [
-        "J'achète en tant qu'entreprise."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
       ],
@@ -12382,18 +12379,6 @@
       ],
       "Business Number": [
         "Numéro d'entreprise"
-      ],
-      "Edit ABN": [
-        "Modifier ABN"
-      ],
-      "Edit Business Number": [
-        "Modifier le numéro d'entreprise"
-      ],
-      "Edit EIN": [
-        "Modifier EIN"
-      ],
-      "Edit VAT number": [
-        "Modifier le numéro de TVA"
       ],
       "EIN": [
         "Numéro d'identification fiscale (EIN)"
@@ -14237,6 +14222,9 @@
         "L'alias a été enregistré et copié."
       ],
       "Billing details updated": [
+        "Les informations de facturation ont été mises à jour."
+      ],
+      "Billing information updated": [
         "Les informations de facturation ont été mises à jour."
       ],
       "Canceling import": [

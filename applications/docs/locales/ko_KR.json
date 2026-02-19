@@ -2841,6 +2841,9 @@
       "External invitations are temporarily disabled. Please try again later": [
         "외부 초대가 일시적으로 비활성화 되었습니다. 나중에 다시 시도하세요."
       ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
+      ],
       "Failed to copy photo to album": [
         "사진을 앨범에 복사하지 못했습니다."
       ],
@@ -4816,6 +4819,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
+      ],
+      "Settings update failed": [
+        "설정 업데이트 실패"
+      ],
+      "Settings updated": [
+        "설정 업데이트 완료"
       ],
       "Share via link settings": [
         "링크로 공유 설정"

@@ -3298,9 +3298,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "文本字段为选填字段。您在此表单中提供的信息只会更改您选择的发票，而不会更改您未来的发票详细信息。"
       ]
     },
     "Edit event button tooltip": {
@@ -3845,6 +3842,9 @@
       ],
       "Tab closed": [
         "标签页已关闭"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "此套餐不支持免税"
       ],
       "The address might be misspelled": [
         "地址可能拼写不正确"
@@ -7333,7 +7333,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
@@ -9170,9 +9170,6 @@
       "Got it": [
         "了解"
       ],
-      "I'm purchasing as a business": [
-        "以企业身份购买"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
       ],
@@ -9362,18 +9359,6 @@
       ],
       "Business Number": [
         "商业编号"
-      ],
-      "Edit ABN": [
-        "编辑 ABN"
-      ],
-      "Edit Business Number": [
-        "编辑商业编号"
-      ],
-      "Edit EIN": [
-        "编辑 EIN"
-      ],
-      "Edit VAT number": [
-        "编辑增值税号"
       ],
       "EIN": [
         "雇主识别号码 (EIN)"
@@ -10873,6 +10858,9 @@
       ],
       "Billing details updated": [
         "账单详细信息已更新"
+      ],
+      "Billing information updated": [
+        "账单信息已更新"
       ],
       "Booking page created": [
         "预约页面已创建"

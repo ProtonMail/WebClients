@@ -4065,6 +4065,9 @@
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
       ],
+      "Failed to update billing address": [
+        "Не ўдалося абнавіць адрас аплаты"
+      ],
       "Failed to update detailed monitoring.": [
         "Не ўдалося абнавіць падрабязнае назіранне."
       ],
@@ -4346,6 +4349,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
@@ -12203,9 +12209,6 @@
       "Got it": [
         "Зразумела"
       ],
-      "I'm purchasing as a business": [
-        "Я купляю як юрыдычная асоба"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12438,18 +12441,6 @@
       ],
       "Business Number": [
         "Нумар прадпрыемства"
-      ],
-      "Edit ABN": [
-        "Рэдагаваць ABN"
-      ],
-      "Edit Business Number": [
-        "Рэдагаваць нумар прадпрыемства"
-      ],
-      "Edit EIN": [
-        "Рэдагаваць ІНП"
-      ],
-      "Edit VAT number": [
-        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -14961,6 +14952,9 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
+      "Billing information updated": [
+        "Плацежная інфармацыя абноўлена"
+      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -16923,8 +16917,8 @@
       "Recommended": [
         "Рэкамендавана"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Эканомія ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Эканомія ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

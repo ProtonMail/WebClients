@@ -4298,6 +4298,9 @@
       "Tab closed": [
         "Fane lukket"
       ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritak støttes ikke for dette abonnementet"
+      ],
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
       ],
@@ -11877,9 +11880,6 @@
       "Got it": [
         "Skjønner"
       ],
-      "I'm purchasing as a business": [
-        "Jeg kjøper som en bedrift."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12100,18 +12100,6 @@
       ],
       "Business Number": [
         "Bedriftsnummer"
-      ],
-      "Edit ABN": [
-        "Rediger ABN"
-      ],
-      "Edit Business Number": [
-        "Rediger bedriftsnummer"
-      ],
-      "Edit EIN": [
-        "Rediger EIN"
-      ],
-      "Edit VAT number": [
-        "Rediger MVA-nummer"
       ],
       "EIN": [
         "EIN"
@@ -14511,6 +14499,9 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
+      "Billing information updated": [
+        "Faktureringsinformasjon er oppdatert"
+      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -16447,8 +16438,8 @@
       "Recommended": [
         "Anbefalt"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spar ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

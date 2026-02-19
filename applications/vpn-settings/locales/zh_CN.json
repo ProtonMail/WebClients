@@ -3996,6 +3996,9 @@
       "Failed to process the logo": [
         "无法处理图标"
       ],
+      "Failed to update billing address": [
+        "更新账单地址失败"
+      ],
       "Failed to update detailed monitoring.": [
         "更新详细监控失败。"
       ],
@@ -4271,6 +4274,9 @@
       ],
       "Tab closed": [
         "标签页已关闭"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "此套餐不支持免税"
       ],
       "The amount due has changed. Please try again.": [
         "应付金额已更改，请重试。"
@@ -9532,7 +9538,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
@@ -11726,9 +11732,6 @@
       "Got it": [
         "了解"
       ],
-      "I'm purchasing as a business": [
-        "以企业身份购买"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
       ],
@@ -11943,18 +11946,6 @@
       ],
       "Business Number": [
         "商业编号"
-      ],
-      "Edit ABN": [
-        "编辑 ABN"
-      ],
-      "Edit Business Number": [
-        "编辑商业编号"
-      ],
-      "Edit EIN": [
-        "编辑 EIN"
-      ],
-      "Edit VAT number": [
-        "编辑增值税号"
       ],
       "EIN": [
         "雇主识别号码 (EIN)"
@@ -14301,6 +14292,9 @@
       "Billing details updated": [
         "账单详细信息已更新"
       ],
+      "Billing information updated": [
+        "账单信息已更新"
+      ],
       "Canceling import": [
         "正在取消导入"
       ],
@@ -16224,8 +16218,8 @@
       "Recommended": [
         "推荐"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "节省 ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "立省 ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

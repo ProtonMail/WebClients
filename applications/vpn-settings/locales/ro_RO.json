@@ -4044,6 +4044,9 @@
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
       ],
+      "Failed to update billing address": [
+        "Nu s-a putut actualiza adresa de facturare."
+      ],
       "Failed to update detailed monitoring.": [
         "Actualizarea monitorizării detaliate a eșuat."
       ],
@@ -4323,6 +4326,9 @@
       ],
       "Tab closed": [
         "Filă închisă."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
@@ -12027,9 +12033,6 @@
       "Got it": [
         "Am înțeles"
       ],
-      "I'm purchasing as a business": [
-        "Achiziționez în calitate de companie"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12256,18 +12259,6 @@
       ],
       "Business Number": [
         "Cod unic de înregistrare"
-      ],
-      "Edit ABN": [
-        "Editare ABN"
-      ],
-      "Edit Business Number": [
-        "Editare cod unic de înregistrare"
-      ],
-      "Edit EIN": [
-        "Editare EIN"
-      ],
-      "Edit VAT number": [
-        "Editare TVA"
       ],
       "EIN": [
         "EIN"
@@ -14718,6 +14709,9 @@
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
       ],
+      "Billing information updated": [
+        "Informațiile de facturare s-au actualizat."
+      ],
       "Canceling import": [
         "Se anulează importarea"
       ],
@@ -16667,8 +16661,8 @@
       "Recommended": [
         "Recomandat"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Economisiți ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economisiți ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

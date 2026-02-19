@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
       ],
+      "Failed to update billing address": [
+        "No s'ha pogut actualitzar l'adreça de facturació"
+      ],
       "Failed to update detailed monitoring.": [
         "No s'ha pogut actualitzar el monitoratge detallat."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Aquest pla no admet l'exempció d'impostos"
       ],
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
@@ -11892,9 +11898,6 @@
       "Got it": [
         "Fet"
       ],
-      "I'm purchasing as a business": [
-        "Estic comprant com a empresa"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12115,18 +12118,6 @@
       ],
       "Business Number": [
         "Número d'empresa"
-      ],
-      "Edit ABN": [
-        "Edita l'ABN"
-      ],
-      "Edit Business Number": [
-        "Editeu el Número d'Empresa"
-      ],
-      "Edit EIN": [
-        "Edita l'EIN"
-      ],
-      "Edit VAT number": [
-        "Edita el número d'IVA"
       ],
       "EIN": [
         "Número d’identificació fiscal (EIN)"
@@ -14533,6 +14524,9 @@
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
       ],
+      "Billing information updated": [
+        "S'ha actualitzat la informació de facturació"
+      ],
       "Canceling import": [
         "S'està cancel·lant la importació"
       ],
@@ -16469,8 +16463,8 @@
       "Recommended": [
         "Recomanat"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Estalvieu el ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Estalvieu un ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

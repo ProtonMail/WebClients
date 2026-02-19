@@ -923,12 +923,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدرج مفتاح أمان مرتبطًا بحساب ${ BRAND_NAME } الخاص بك."
+        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
       ],
       "Security key": [
         "مفتاح الأمان"
@@ -1074,7 +1074,7 @@
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. رَقَم ${ digit }."
+        "أدخل رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
@@ -1125,7 +1125,7 @@
         "سنرسل رمز تحقق جديدًا إلى ${strong}"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عندما تقوم بإعداد المصادقة الثنائية، فإننا نوفر رموز استرداد يمكنك استخدامها لتسجيل الدخول إذا فقدت الوصول إلى تطبيق المصادقة الخاص بك."
+        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "هل ترغب في تلقي رمز تحقق جديد أو استخدام طريقة تحقق بديلة؟"

@@ -2213,9 +2213,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
       ]
     },
     "emergency_access": {
@@ -2337,6 +2334,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
@@ -4639,9 +4639,6 @@
       "Got it": [
         "Зразумела"
       ],
-      "I'm purchasing as a business": [
-        "Я купляю як юрыдычная асоба"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -4849,18 +4846,6 @@
       ],
       "Business Number": [
         "Нумар прадпрыемства"
-      ],
-      "Edit ABN": [
-        "Рэдагаваць ABN"
-      ],
-      "Edit Business Number": [
-        "Рэдагаваць нумар прадпрыемства"
-      ],
-      "Edit EIN": [
-        "Рэдагаваць ІНП"
-      ],
-      "Edit VAT number": [
-        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -5371,6 +5356,9 @@
     "Success": {
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
+      ],
+      "Billing information updated": [
+        "Плацежная інфармацыя абноўлена"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"

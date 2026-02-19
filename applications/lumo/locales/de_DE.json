@@ -2622,8 +2622,8 @@
       "Help me understand what this code does": [
         "Hilf mir zu verstehen, was dieser Code tut"
       ],
-      "How the world celebrates Valentine's Day": [
-        "Wie die Welt den Valentinstag feiert"
+      "How does the world celebrate Lunar New Year?": [
+        "Wie feiert die Welt Mond-Neujahr?"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identifiziere alle ungewöhnlichen oder potenziell nachteiligen Begriffe"
@@ -3907,9 +3907,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Die Textfelder sind optional. Die Informationen, die du in diesem Formular angibst, erscheinen nur auf zukünftigen Rechnungen und haben keinen Einfluss auf bestehende Rechnungen."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Textfelder sind optional. Die Informationen, die du in diesem Formular eingibst, ändern nur die von dir ausgewählte Rechnung und nicht deine zukünftigen Rechnungsdetails."
       ]
     },
     "emergency_access": {
@@ -4034,6 +4031,9 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
@@ -6391,9 +6391,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "I'm purchasing as a business": [
-        "Ich kaufe als Unternehmen"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -6589,18 +6586,6 @@
       ],
       "Business Number": [
         "Unternehmensnummer"
-      ],
-      "Edit ABN": [
-        "ABN bearbeiten"
-      ],
-      "Edit Business Number": [
-        "Unternehmensnummer bearbeiten"
-      ],
-      "Edit EIN": [
-        "EIN bearbeiten"
-      ],
-      "Edit VAT number": [
-        "Umsatzsteuernummer bearbeiten"
       ],
       "EIN": [
         "Arbeitgeber-Identifikationsnummer (EIN)"
@@ -7169,6 +7154,9 @@
     "Success": {
       "Billing details updated": [
         "Rechnungsdetails aktualisiert"
+      ],
+      "Billing information updated": [
+        "Rechnungsinformationen aktualisiert"
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"

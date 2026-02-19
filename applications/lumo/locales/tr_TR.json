@@ -2622,8 +2622,8 @@
       "Help me understand what this code does": [
         "Bu kodun ne işe yaradığını anlamama yardım et"
       ],
-      "How the world celebrates Valentine's Day": [
-        "Dünyada Sevgililer Günü nasıl kutlanıyor"
+      "How does the world celebrate Lunar New Year?": [
+        "Ay Yeni Yılı dünyada nasıl kutluyor?"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Olağandışı veya potansiyel olarak olumsuz şartları belirle"
@@ -3907,9 +3907,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "emergency_access": {
@@ -4034,6 +4031,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -6391,9 +6391,6 @@
       "Got it": [
         "Anladım"
       ],
-      "I'm purchasing as a business": [
-        "Kurumsal olarak satın alıyorum"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
       ],
@@ -6589,18 +6586,6 @@
       ],
       "Business Number": [
         "İş numarası"
-      ],
-      "Edit ABN": [
-        "ABN kodunu düzenle"
-      ],
-      "Edit Business Number": [
-        "İş numarasını düzenle"
-      ],
-      "Edit EIN": [
-        "EIN kodunu düzenle"
-      ],
-      "Edit VAT number": [
-        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -7168,6 +7153,9 @@
     },
     "Success": {
       "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
+      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Code sent to ${ methodTo }": [

@@ -3367,9 +3367,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, зменяць толькі выбраны рахунак і гэта не акажа ўплыў на будучыя падрабязнасці рахунка."
       ]
     },
     "Edit event button tooltip": {
@@ -3947,6 +3944,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -9641,9 +9641,6 @@
       "Got it": [
         "Зразумела"
       ],
-      "I'm purchasing as a business": [
-        "Я купляю як юрыдычная асоба"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -9851,18 +9848,6 @@
       ],
       "Business Number": [
         "Нумар прадпрыемства"
-      ],
-      "Edit ABN": [
-        "Рэдагаваць ABN"
-      ],
-      "Edit Business Number": [
-        "Рэдагаваць нумар прадпрыемства"
-      ],
-      "Edit EIN": [
-        "Рэдагаваць ІНП"
-      ],
-      "Edit VAT number": [
-        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -10176,16 +10161,16 @@
         "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
       ],
       "Friend joined": [
-        "Сябар далучыўся",
-        "Сябры далучылася",
-        "Сябры далучылася",
-        "Сябры далучылася"
+        "сябар далучыўся",
+        "сябры далучыліся",
+        "сяброў далучыліся",
+        "сяброў далучыліся"
       ],
       "Friend subscribed": [
-        "Сябар падпісаўся",
-        "Сябры падпісаліся",
-        "Сяброў падпісалася",
-        "Сяброў падпісалася"
+        "сябар падпісаўся",
+        "сябры падпісаліся",
+        "сяброў падпісаліся",
+        "сяброў падпісаліся"
       ],
       "Invite friends. Get credits.": [
         "Запрашайце сяброў і атрымлівайце крэдыты."
@@ -11473,6 +11458,9 @@
       ],
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
+      ],
+      "Billing information updated": [
+        "Плацежная інфармацыя абноўлена"
       ],
       "Booking page created": [
         "Старонка браніравання створана"

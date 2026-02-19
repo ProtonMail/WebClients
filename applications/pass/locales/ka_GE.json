@@ -1507,6 +1507,9 @@
       "All trashed items successfully restored": [
         "ყველა ელემენტი ნაგვის ყუთიდან, წარმატებით, აღდგა"
       ],
+      "An item previously shared with you was removed.": [
+        "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "მართლა გნებავთ წაშალოთ ${ emailJSX } თქვენი საფოსტო ყუთებიდან?"
       ],
@@ -1533,6 +1536,9 @@
       ],
       "Breaches detected": [
         "აღმოჩენილია გაჟონვები"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "გადაიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "იქონიეთ თქვენი საკუთარი დომენი და არ მოგიწევთ, კიდევ ერთი ელფოსტის ჰოსტინგის გადაწყვეტილება შეიძინოთ."
@@ -2365,6 +2371,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "საცავი \"${ payload.share.content.name }\" წარმატებით განახლდა"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "საცავი \"${ share.content.name }\" წაიშალა."
       ],
       "Vault organization successfully updated": [
         "საცავის ორგანიზაცია წარმატებით განახლდა"

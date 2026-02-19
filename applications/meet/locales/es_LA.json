@@ -110,6 +110,9 @@
       "Download room level report": [
         "Descargar informe de nivel de sala"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit email address": [
         "Editar dirección de correo"
       ],
@@ -1621,6 +1624,11 @@
         "Muy pequeña"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "¿Ya tiene una cuenta? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Cuenta"
@@ -1694,9 +1702,6 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
       ],
-      "${ userName }'s Meeting": [
-        "Reunión de ${ userName }"
-      ],
       "(You)": [
         "(Usted)"
       ],
@@ -1751,20 +1756,8 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a meeting room": [
-        "Crear una sala de reunión"
-      ],
       "Create an account": [
         "Cree una cuenta"
-      ],
-      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
-        "Cree una cuenta para conectar Meet con ${ CALENDAR_APP_NAME } y enviar invitaciones de reunión al instante."
-      ],
-      "Create an account to have a meeting room that you can use at any time.": [
-        "Cree una cuenta para tener una sala de reunión que pueda usar en cualquier momento."
-      ],
-      "Create an account to have a personal meeting link you can reuse for every call.": [
-        "Cree una cuenta para obtener un enlace de reunión personal que pueda reutilizar en cada llamada."
       ],
       "Create an account to host meetings with up to 50 participants.": [
         "Cree una cuenta para organizar reuniones con hasta 50 participantes."
@@ -1776,7 +1769,7 @@
         "Combinación personalizada"
       ],
       "Decrypting meetings...": [
-        "Descifrando reuniones..."
+        "Descifrando las reuniones..."
       ],
       "Default": [
         "Por defecto"
@@ -1853,9 +1846,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Obtenga la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
       ],
-      "Get your personal meeting ID": [
-        "Consiga su ID personal de reunión"
-      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vaya a about:config, busque media.peerconnection.enabled y actívelo."
       ],
@@ -1922,6 +1912,9 @@
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión llena (${ maxParticipants } participantes)"
       ],
+      "Meeting is decrypting...": [
+        "Descifrando la reunión..."
+      ],
       "Meeting link": [
         "Enlace de la reunión"
       ],
@@ -1942,9 +1935,6 @@
       ],
       "Microphone effects": [
         "Efectos de micrófono"
-      ],
-      "My Meeting": [
-        "Mi Reunión"
       ],
       "My meetings": [
         "Mis reuniones"
@@ -2036,9 +2026,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
-      "Schedule your next meeting": [
-        "Programe su próxima reunión"
-      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
       ],
@@ -2085,7 +2072,7 @@
         "Reunión eliminada con éxito"
       ],
       "Thank you for hosting a premium meeting.": [
-        "Gracias por organizar una reunión prémium."
+        "Gracias por organizar una reunión premium."
       ],
       "Thank you for joining.": [
         "Gracias por unirse."
@@ -2117,8 +2104,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para crear una sala, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para programar una reunión, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para usar su sala de reuniones personal, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
       ],
       "Turn off camera": [
         "Apagar la cámara"
@@ -2164,6 +2160,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
+      ],
+      "You are almost there": [
+        "Ya casi terminamos"
       ],
       "You can close this tab.": [
         "Puede cerrar esta pestaña."
@@ -2404,16 +2403,19 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "What’s this?": [
         "¿Qué es esto?"
       ]
     },
     "meet": {
+      "Create and copy link": [
+        "Crear y copiar el enlace"
+      ],
       "Create new room": [
         "Crear una sala"
-      ],
-      "Create room and copy link": [
-        "Crear sala y copiar el enlace"
       ],
       "Meeting rooms can be used at any time": [
         "Las salas de reuniones pueden usarse en cualquier momento"
@@ -2484,7 +2486,7 @@
         "No pude presentar "
       ],
       "I couldn't see others' video": [
-        "No pude ver el vídeo de los demás"
+        "No pude ver el video de los demás"
       ],
       "I couldn't see the presentation": [
         "No podía ver la presentación"
@@ -2837,7 +2839,7 @@
         "¿Qué salió mal?"
       ],
       "Your feedback has been submitted": [
-        "Tus comentarios han sido enviados"
+        "Sus comentarios han sido enviados"
       ]
     },
     "Today icon tooltip in mini calendar": {

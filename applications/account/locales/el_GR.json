@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
       ],
+      "Failed to update billing address": [
+        "Αποτυχία ενημέρωσης της διεύθυνσης χρέωσης"
+      ],
       "Failed to update detailed monitoring.": [
         "Αποτυχία ενημέρωσης λεπτομερούς παρακολούθησης."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
@@ -13539,6 +13545,9 @@
       "Navigation": [
         "Πλοήγηση"
       ],
+      "Net amount": [
+        "Καθαρό ποσό"
+      ],
       "New display name": [
         "Νέο εμφανιζόμενο όνομα"
       ],
@@ -17684,6 +17693,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% φόροι"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
@@ -17705,12 +17717,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% φόρων: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17720,17 +17726,20 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "I'm purchasing as a business": [
-        "Αγοράζω ως επιχείρηση"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
@@ -17740,6 +17749,9 @@
       ],
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
+      ],
+      "Net amount": [
+        "Καθαρό ποσό"
       ],
       "Offer unavailable": [
         "Η προσφορά δεν είναι διαθέσιμη"
@@ -17955,18 +17967,6 @@
       ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
-      ],
-      "Edit ABN": [
-        "Επεξεργασία ABN"
-      ],
-      "Edit Business Number": [
-        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
-      ],
-      "Edit EIN": [
-        "Επεξεργασία ΑΦΜ"
-      ],
-      "Edit VAT number": [
-        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -20065,8 +20065,8 @@
       "Private AI assistant with encrypted chat history": [
         "Ιδιωτικός βοηθός Τεχνητής Νοημοσύνης με κρυπτογραφημένο ιστορικό συνομιλιών"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Προσφορά εφαρμόστηκε – ${ checkout.discountPercent }% έκπτωση"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Προσφορά εφαρμόστηκε – ${ checkoutUi.discountPercent }% έκπτωση"
       ],
       "Recover previous file versions": [
         "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
@@ -21606,6 +21606,9 @@
         "Ο εφεδρικός κωδικός πρόσβασης ενημερώθηκε"
       ],
       "Billing details updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
+      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Calendar added. It might take a few minutes to sync.": [
@@ -24421,8 +24424,8 @@
       "Recommended": [
         "Προτεινόμενο"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Εξοικονομίστε ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Εξοικονομίστε ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

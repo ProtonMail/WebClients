@@ -3139,9 +3139,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "Email body for invitation": {
@@ -3691,6 +3688,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -9968,9 +9968,6 @@
       "Got it": [
         "Anladım"
       ],
-      "I'm purchasing as a business": [
-        "Kurumsal olarak satın alıyorum"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
       ],
@@ -10166,18 +10163,6 @@
       ],
       "Business Number": [
         "İş numarası"
-      ],
-      "Edit ABN": [
-        "ABN kodunu düzenle"
-      ],
-      "Edit Business Number": [
-        "İş numarasını düzenle"
-      ],
-      "Edit EIN": [
-        "EIN kodunu düzenle"
-      ],
-      "Edit VAT number": [
-        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -11641,6 +11626,9 @@
         "Takma ad kaydedildi ve kopyalandı"
       ],
       "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
+      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Canceling import": [
