@@ -11,6 +11,8 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { BRAND_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
@@ -52,6 +54,8 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     const [comment, setComment] = useState('');
     const [optionalDetails, setOptionalDetails] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
+
+    const previousMeetingLink = useMeetSelector(selectPreviousMeetingLink);
 
     const signIn = (
         <MeetSignIn key="signin" className="sign-in-button p-0 ml-1">
@@ -245,7 +249,16 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
             allFeedback.push(comment);
         }
 
+        if (previousMeetingLink === null) {
+            notifications.createNotification({
+                type: 'error',
+                text: c('Notification').t`You can't send a feedback for a meeting you haven't been to`,
+            });
+            return;
+        }
+
         await submitFeedback({
+            meetingLinkName: previousMeetingLink,
             score: score,
             feedbackOptions: allFeedback,
         })
