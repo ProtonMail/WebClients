@@ -10,10 +10,13 @@ const initialState: ContextFiltersState = {
     filters: [],
 };
 
+export type FilterAction = { messageId: string; filename: string };
+export type ClearFilterAction = { messageId?: string };
+
 // Actions
-export const addContextFilter = createAction<{ messageId: string; filename: string }>('contextFilters/add');
-export const removeContextFilter = createAction<{ messageId: string; filename: string }>('contextFilters/remove');
-export const clearContextFilters = createAction<{ messageId?: string }>('contextFilters/clear');
+export const addContextFilter = createAction<FilterAction>('contextFilters/add');
+export const removeContextFilter = createAction<FilterAction>('contextFilters/remove');
+export const clearContextFilters = createAction<ClearFilterAction>('contextFilters/clear');
 export const resetAllContextFilters = createAction('contextFilters/resetAll');
 
 // Reducer

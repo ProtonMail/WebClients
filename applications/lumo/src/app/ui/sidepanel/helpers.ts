@@ -1,4 +1,4 @@
-import { isToday, isWithinInterval, subDays, subMonths } from 'date-fns';
+ import { isToday, isWithinInterval, startOfDay, subDays, subMonths } from 'date-fns';
 
 import type { Conversation } from '../../types';
 
@@ -11,7 +11,7 @@ export type DateBucketedConversations = {
 };
 
 export const categorizeConversations = (conversations: Conversation[], hasLumoPlus: boolean = false): DateBucketedConversations => {
-    const now = new Date();
+    const now = startOfDay(new Date());
 
     const result: DateBucketedConversations = {
         today: [],
@@ -22,7 +22,7 @@ export const categorizeConversations = (conversations: Conversation[], hasLumoPl
     };
 
     for (const c of conversations) {
-        const createdAt = new Date(c.createdAt);
+        const createdAt = startOfDay(new Date(c.createdAt));
 
         if (isToday(createdAt)) {
             result.today.push(c);
@@ -60,11 +60,11 @@ export const searchConversations = (conversations: Conversation[], searchInput: 
  * Used to enforce the 7-day retention policy for free users.
  */
 export const filterConversationsWithin7Days = (conversations: Conversation[]): Conversation[] => {
-    const now = new Date();
+    const now = startOfDay(new Date());
     const sevenDaysAgo = subDays(now, 7);
 
     return conversations.filter((conversation) => {
-        const createdAt = new Date(conversation.createdAt);
+        const createdAt = startOfDay(new Date(conversation.createdAt));
         return createdAt >= sevenDaysAgo;
     });
 };

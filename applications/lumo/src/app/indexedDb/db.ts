@@ -464,7 +464,6 @@ export class DbApi {
     constructor(userId: string | undefined) {
         this.userId = userId;
         this.db = this.openDb(userId);
-        this.setupConnectionMonitoring();
 
         // Initialize store operations
         this.spaceStore = new StoreOperations(this.db, storeConfigs.space);
@@ -474,6 +473,10 @@ export class DbApi {
         this.assetStore = new StoreOperations(this.db, storeConfigs.asset);
     }
 
+    public async initialize(): Promise<void> {
+        await this.setupConnectionMonitoring();
+    }
+
     private setupConnectionMonitoring = async () => {
         try {
             const database = await this.db;
@@ -481,19 +484,19 @@ export class DbApi {
             // Monitor for unexpected database closure
             database.onclose = () => {
                 console.warn('[LumoDB] Database connection closed unexpectedly. Attempting to reconnect...');
-                this.handleConnectionLoss();
+                void this.handleConnectionLoss();
             };
 
             // Monitor for version changes from other tabs
             database.onversionchange = () => {
                 console.warn('[LumoDB] Database version changed by another tab. Closing connection...');
                 database.close();
-                this.handleConnectionLoss();
+                void this.handleConnectionLoss();
             };
         } catch (error) {
             console.error('[LumoDB] Failed to setup connection monitoring:', error);
             // If initial connection fails, try to reconnect
-            this.handleConnectionLoss();
+            void this.handleConnectionLoss();
         }
     };
 
@@ -510,17 +513,21 @@ export class DbApi {
             console.error('[LumoDB] Max reconnection attempts reached. Please refresh the page.');
             this.isReconnecting = false;
             // Optionally dispatch an event or show a notification to the user
-            window.dispatchEvent(new CustomEvent('indexeddb-connection-failed', {
-                detail: { message: 'Connection to database lost. Please refresh the page.' }
-            }));
+            window.dispatchEvent(
+                new CustomEvent('indexeddb-connection-failed', {
+                    detail: { message: 'Connection to database lost. Please refresh the page.' },
+                })
+            );
             return;
         }
 
         // Calculate exponential backoff delay
         const delay = this.baseReconnectDelay * Math.pow(2, this.reconnectAttempts - 1);
-        console.log(`[LumoDB] Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts} in ${delay}ms...`);
+        console.log(
+            `[LumoDB] Attempting reconnection ${this.reconnectAttempts}/${this.maxReconnectAttempts} in ${delay}ms...`
+        );
 
-        await new Promise(resolve => setTimeout(resolve, delay));
+        await new Promise((resolve) => setTimeout(resolve, delay));
 
         try {
             // Create a new database connection
@@ -535,14 +542,16 @@ export class DbApi {
             this.isReconnecting = false;
 
             // Dispatch success event
-            window.dispatchEvent(new CustomEvent('indexeddb-reconnected', {
-                detail: { message: 'Database connection restored' }
-            }));
+            window.dispatchEvent(
+                new CustomEvent('indexeddb-reconnected', {
+                    detail: { message: 'Database connection restored' },
+                })
+            );
         } catch (error) {
             console.error('[LumoDB] Reconnection attempt failed:', error);
             this.isReconnecting = false;
             // Try again
-            this.handleConnectionLoss();
+            void this.handleConnectionLoss();
         }
     };
 
@@ -555,11 +564,7 @@ export class DbApi {
         (this.assetStore as any).db = this.db;
     };
 
-    private async executeWithRetry<T>(
-        operation: () => Promise<T>,
-        operationName: string,
-        maxRetries = 3
-    ): Promise<T> {
+    private async executeWithRetry<T>(operation: () => Promise<T>, operationName: string, maxRetries = 3): Promise<T> {
         let lastError: Error | undefined;
 
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -574,11 +579,13 @@ export class DbApi {
                     error?.name === 'UnknownError';
 
                 if (isConnectionError && attempt < maxRetries) {
-                    console.warn(`[LumoDB] ${operationName} failed with connection error (attempt ${attempt}/${maxRetries}). Retrying...`);
+                    console.warn(
+                        `[LumoDB] ${operationName} failed with connection error (attempt ${attempt}/${maxRetries}). Retrying...`
+                    );
 
                     // Trigger reconnection if not already in progress
                     if (!this.isReconnecting) {
-                        this.handleConnectionLoss();
+                        void this.handleConnectionLoss();
                     }
 
                     // Wait for reconnection with timeout
@@ -597,8 +604,8 @@ export class DbApi {
     private async waitForReconnection(timeout: number): Promise<void> {
         const startTime = Date.now();
 
-        while (this.isReconnecting && (Date.now() - startTime) < timeout) {
-            await new Promise(resolve => setTimeout(resolve, 100));
+        while (this.isReconnecting && Date.now() - startTime < timeout) {
+            await new Promise((resolve) => setTimeout(resolve, 100));
         }
 
         if (this.isReconnecting) {
@@ -615,24 +622,15 @@ export class DbApi {
 
     // Message operations
     public addMessage = async (message: SerializedMessage, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.messageStore.add(message, { dirty }, tx),
-            'addMessage'
-        );
+        return this.executeWithRetry(() => this.messageStore.add(message, { dirty }, tx), 'addMessage');
     };
 
     public updateMessage = async (message: SerializedMessage, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.messageStore.update(message, { dirty }, tx),
-            'updateMessage'
-        );
+        return this.executeWithRetry(() => this.messageStore.update(message, { dirty }, tx), 'updateMessage');
     };
 
     public getMessageById = async (id: MessageId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.messageStore.getById(id, tx),
-            'getMessageById'
-        );
+        return this.executeWithRetry(() => this.messageStore.getById(id, tx), 'getMessageById');
     };
 
     // Conversation operations
@@ -641,10 +639,7 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.executeWithRetry(
-            () => this.conversationStore.add(conversation, { dirty }, tx),
-            'addConversation'
-        );
+        return this.executeWithRetry(() => this.conversationStore.add(conversation, { dirty }, tx), 'addConversation');
     };
 
     public updateConversation = async (
@@ -659,39 +654,24 @@ export class DbApi {
     };
 
     public getConversationById = async (id: ConversationId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.conversationStore.getById(id, tx),
-            'getConversationById'
-        );
+        return this.executeWithRetry(() => this.conversationStore.getById(id, tx), 'getConversationById');
     };
 
     // Space operations
     public addSpace = async (space: SerializedSpace, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.spaceStore.add(space, { dirty }, tx),
-            'addSpace'
-        );
+        return this.executeWithRetry(() => this.spaceStore.add(space, { dirty }, tx), 'addSpace');
     };
 
     public updateSpace = async (space: SerializedSpace, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.spaceStore.update(space, { dirty }, tx),
-            'updateSpace'
-        );
+        return this.executeWithRetry(() => this.spaceStore.update(space, { dirty }, tx), 'updateSpace');
     };
 
     public getSpaceById = async (id: SpaceId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.spaceStore.getById(id, tx),
-            'getSpaceById'
-        );
+        return this.executeWithRetry(() => this.spaceStore.getById(id, tx), 'getSpaceById');
     };
 
     public deleteSpace = async (id: SpaceId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.spaceStore.delete(id, tx),
-            'deleteSpace'
-        );
+        return this.executeWithRetry(() => this.spaceStore.delete(id, tx), 'deleteSpace');
     };
 
     // Attachment operations
@@ -700,10 +680,7 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.executeWithRetry(
-            () => this.attachmentStore.add(attachment, { dirty }, tx),
-            'addAttachment'
-        );
+        return this.executeWithRetry(() => this.attachmentStore.add(attachment, { dirty }, tx), 'addAttachment');
     };
 
     public updateAttachment = async (
@@ -711,24 +688,15 @@ export class DbApi {
         { dirty }: { dirty: boolean },
         tx?: IDBTransaction
     ) => {
-        return this.executeWithRetry(
-            () => this.attachmentStore.update(attachment, { dirty }, tx),
-            'updateAttachment'
-        );
+        return this.executeWithRetry(() => this.attachmentStore.update(attachment, { dirty }, tx), 'updateAttachment');
     };
 
     public getAttachmentById = async (id: AttachmentId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.attachmentStore.getById(id, tx),
-            'getAttachmentById'
-        );
+        return this.executeWithRetry(() => this.attachmentStore.getById(id, tx), 'getAttachmentById');
     };
 
     public deleteAttachment = async (id: AttachmentId, tx?: IDBTransaction) => {
-        return this.executeWithRetry(
-            () => this.attachmentStore.delete(id, tx),
-            'deleteAttachment'
-        );
+        return this.executeWithRetry(() => this.attachmentStore.delete(id, tx), 'deleteAttachment');
     };
 
     // Asset operations
@@ -782,31 +750,19 @@ export class DbApi {
 
     // Bulk operations
     public getAllSpaces = async (tx?: IDBTransaction): Promise<SerializedSpace[]> => {
-        return this.executeWithRetry(
-            () => this.spaceStore.getAll(tx),
-            'getAllSpaces'
-        );
+        return this.executeWithRetry(() => this.spaceStore.getAll(tx), 'getAllSpaces');
     };
 
     public getAllConversations = async (tx?: IDBTransaction): Promise<SerializedConversation[]> => {
-        return this.executeWithRetry(
-            () => this.conversationStore.getAll(tx),
-            'getAllConversations'
-        );
+        return this.executeWithRetry(() => this.conversationStore.getAll(tx), 'getAllConversations');
     };
 
     public getAllMessages = async (tx?: IDBTransaction): Promise<SerializedMessage[]> => {
-        return this.executeWithRetry(
-            () => this.messageStore.getAll(tx),
-            'getAllMessages'
-        );
+        return this.executeWithRetry(() => this.messageStore.getAll(tx), 'getAllMessages');
     };
 
     public getAllAttachments = async (tx?: IDBTransaction): Promise<SerializedAttachment[]> => {
-        return this.executeWithRetry(
-            () => this.attachmentStore.getAll(tx),
-            'getAllAttachments'
-        );
+        return this.executeWithRetry(() => this.attachmentStore.getAll(tx), 'getAllAttachments');
     };
 
     public getAllIdMaps = async (tx?: IDBTransaction): Promise<IdMapEntry[]> => {
@@ -1380,7 +1336,6 @@ export class DbApi {
     };
 
     public clearAllSearchBlobs = async (keysToPreserve?: string[], tx?: IDBTransaction): Promise<void> => {
-
         tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
         const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
 

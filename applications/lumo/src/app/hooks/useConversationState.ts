@@ -1,6 +1,6 @@
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useLumoDispatch } from '../redux/hooks';
-import { createDatePair } from '../redux/slices/core/messages';
+import { createDate } from '../redux/slices/core/messages';
 import type { ConversationId, SpaceId } from '../types';
 import { initializeNewSpaceAndConversation } from '../ui/interactiveConversation/helper';
 
@@ -9,37 +9,25 @@ interface UseConversationStateProps {
     spaceId?: SpaceId;
 }
 
-export const useConversationState = ({ conversationId, spaceId }: UseConversationStateProps) => {
+export const useConversationState = (props: UseConversationStateProps) => {
     const dispatch = useLumoDispatch();
     const { isGhostChatMode } = useGhostChat();
-    // const generatedConversationIdRef = useRef<ConversationId | null>(null);
 
-    const ensureConversationAndSpace = (
-        inputConversationId?: ConversationId,
-        inputSpaceId?: SpaceId
-    ): { conversationId: ConversationId; spaceId: SpaceId; datePair?: [string, string] } => {
-        if (inputSpaceId && inputConversationId) {
-            return { conversationId: inputConversationId, spaceId: inputSpaceId };
+    const ensureConversationAndSpace = (): Required<UseConversationStateProps> => {
+        if (props.spaceId && props.conversationId) {
+            return { conversationId: props.conversationId, spaceId: props.spaceId };
         }
 
-        const datePair = createDatePair();
-        const { conversationId: newConversationId, spaceId: newSpaceId } = initializeNewSpaceAndConversation(
-            dispatch,
-            datePair[0],
-            isGhostChatMode
-        );
-
-        // generatedConversationIdRef.current = newConversationId;
+        const now = createDate();
+        const { conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(now, isGhostChatMode));
 
         return {
-            conversationId: newConversationId,
-            spaceId: newSpaceId,
-            datePair,
+            conversationId,
+            spaceId,
         };
     };
 
     return {
         ensureConversationAndSpace,
-        // generatedConversationIdRef,
     };
 };

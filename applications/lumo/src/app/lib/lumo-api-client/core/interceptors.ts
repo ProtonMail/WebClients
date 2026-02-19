@@ -1,5 +1,5 @@
 import type {
-    GenerationToFrontendMessage,
+    GenerationResponseMessage,
     LumoApiGenerationRequest,
     RequestContext,
     RequestInterceptor,
@@ -39,7 +39,7 @@ export const createLoggingInterceptor = (
             return request;
         },
 
-        onResponseChunk: (chunk: GenerationToFrontendMessage, context: ResponseContext) => {
+        onResponseChunk: (chunk: GenerationResponseMessage, context: ResponseContext) => {
             if (logResponses && chunk.type === 'token_data') {
                 console.log(`${prefix} Chunk:`, {
                     requestId: context.requestId,
@@ -83,19 +83,22 @@ export const createLoggingInterceptor = (
     };
 };
 
+// todo try to unifiy with RequestContext
+type MetricsContext = {
+    requestId: string;
+    endpoint: string;
+    duration: number;
+    chunkCount: number;
+    contentLength: number;
+    status: Status;
+    error?: Error;
+};
+
 /**
  * Performance monitoring interceptor
  */
 export const createPerformanceInterceptor = (
-    onMetrics?: (metrics: {
-        requestId: string;
-        endpoint: string;
-        duration: number;
-        chunkCount: number;
-        contentLength: number;
-        status: Status;
-        error?: Error;
-    }) => void
+    onMetrics?: (metrics: MetricsContext) => void
 ): RequestInterceptor & ResponseInterceptor => {
     const requestTimes = new Map<string, number>();
 
@@ -150,7 +153,7 @@ export const createPerformanceInterceptor = (
 export const createContentTransformInterceptor = (
     transform: (content: string, context: ResponseContext) => string
 ): ResponseInterceptor => ({
-    onResponseChunk: (chunk: GenerationToFrontendMessage, context: ResponseContext) => {
+    onResponseChunk: (chunk: GenerationResponseMessage, context: ResponseContext) => {
         if (chunk.type === 'token_data' && chunk.target === 'message') {
             return {
                 ...chunk,
@@ -218,7 +221,7 @@ export const createCustomHeadersInterceptor = (headers: Record<string, string>):
  * Content filtering interceptor
  */
 export const createContentFilterInterceptor = (filter: (content: string) => string): ResponseInterceptor => ({
-    onResponseChunk: (chunk: GenerationToFrontendMessage, context: ResponseContext) => {
+    onResponseChunk: (chunk: GenerationResponseMessage, context: ResponseContext) => {
         if (chunk.type === 'token_data') {
             return {
                 ...chunk,

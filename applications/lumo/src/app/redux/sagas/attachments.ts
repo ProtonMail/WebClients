@@ -16,6 +16,7 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeAttachment, deserializeFilledAttachment, serializeAttachment } from '../../serialization';
+import { attachmentDataCache } from '../../services/attachmentDataCache';
 import {
     type Attachment,
     type AttachmentId,
@@ -25,6 +26,7 @@ import {
     getSpaceDek,
 } from '../../types';
 import { selectAttachmentById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
+import { clearAttachmentLoading, setAttachmentError, setAttachmentLoading } from '../slices/attachmentLoadingState';
 import {
     type IndexAttachmentRequest,
     type PullAttachmentRequest,
@@ -156,9 +158,16 @@ export function* serializeAttachmentSaga(
         spaceDek_ = yield call(getSpaceDek, space);
     }
 
+    // Restore binary data from cache for serialization
+    const attachmentWithData: Attachment = {
+        ...attachment,
+        data: attachmentDataCache.getData(localId),
+        imagePreview: attachmentDataCache.getImagePreview(localId),
+    };
+
     const serializedAttachment: SerializedAttachment | undefined = yield call(
         serializeAttachment,
-        attachment,
+        attachmentWithData,
         spaceDek_
     );
     if (!serializedAttachment) {
@@ -203,6 +212,16 @@ export function* deserializeAttachmentSaga(
     if (!deserializedRemoteAttachment) {
         throw new Error(`deserializeAttachmentSaga ${localId}: cannot deserialize attachment ${localId} from remote`);
     }
+    
+    // Store binary data in cache before cleaning
+    // This ensures the cache is populated when loading from IndexedDB
+    if (deserializedRemoteAttachment.data) {
+        attachmentDataCache.setData(localId, deserializedRemoteAttachment.data);
+    }
+    if (deserializedRemoteAttachment.imagePreview) {
+        attachmentDataCache.setImagePreview(localId, deserializedRemoteAttachment.imagePreview);
+    }
+    
     const cleanRemote = cleanAttachment(deserializedRemoteAttachment);
     return cleanRemote;
 }
@@ -382,6 +401,7 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
                 yield call(clearDirtyUnconditionally, localId);
             }
             yield put(pushAttachmentFailure({ ...payload, error: `${e}` }));
+            yield put(setAttachmentError({ id: localId, error: `${e}` }));
         } else {
             yield put(pushAttachmentNeedsRetry(payload));
         }
@@ -438,6 +458,39 @@ export function* refreshFilledAttachmentFromRemote({
         return;
     }
 
+    // Check if this is a shallow attachment (no encrypted data to deserialize)
+    if (!remoteAttachment.encrypted) {
+        console.log(`refreshAttachmentFromRemote: attachment ${localId} is shallow, checking if we need to pull`);
+
+        // Check if attachment already exists in Redux with data (already loaded)
+        const existingAttachment: Attachment | undefined = yield select(selectAttachmentById(localId));
+        if (existingAttachment?.data) {
+            console.log(`refreshAttachmentFromRemote: attachment ${localId} already has data, skipping pull`);
+            return;
+        }
+
+        // Check if we're already loading this attachment
+        const loadingState = yield select((s: LumoState) => s.attachmentLoadingState[localId]);
+        if (loadingState?.loading) {
+            console.log(
+                `refreshAttachmentFromRemote: attachment ${localId} is already loading, skipping duplicate pull`
+            );
+            return;
+        }
+
+        // Add shallow attachment to Redux so components can find it
+        const shallowAttachment = cleanAttachment(remoteAttachment as any);
+        yield put(addAttachment(shallowAttachment));
+
+        // Add ID mapping
+        yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
+
+        // Trigger pull to fetch full attachment data from server (only once)
+        console.log(`refreshAttachmentFromRemote: attachment ${localId} triggering pull for the first time`);
+        yield put(pullAttachmentRequest({ id: localId, spaceId: localSpaceId }));
+        return;
+    }
+
     // Compare with object in Redux
     const localSpace: Space = yield call(waitForSpace, localSpaceId);
     const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, localSpace);
@@ -488,6 +541,10 @@ export function* pullAttachment({ payload }: { payload: PullAttachmentRequest })
     const { id: localId, spaceId: localSpaceId } = payload;
     console.log('Saga triggered: pullAttachment', localId);
     const type = 'attachment';
+
+    // Set loading state at the start
+    yield put(setAttachmentLoading(localId));
+
     try {
         const lumoApi: LumoApi = yield getContext('lumoApi');
         const remoteId: RemoteId | undefined = yield select((s: LumoState) => s.idmap.local2remote[type][localId]);
@@ -504,6 +561,7 @@ export function* pullAttachment({ payload }: { payload: PullAttachmentRequest })
     } catch (e) {
         console.error(`pullAttachment: Error pulling attachment ${localId}:`, e);
         yield put(pullAttachmentFailure(localId));
+        yield put(setAttachmentError({ id: localId, error: 'Failed to download attachment' }));
     }
 }
 
@@ -520,6 +578,7 @@ export function* processPullAttachmentResult({
     } else {
         yield put(locallyRefreshFilledAttachmentFromRemoteRequest(payload));
     }
+    yield put(clearAttachmentLoading(id));
 }
 
 export function* considerRequestingFullAttachment({
@@ -551,6 +610,7 @@ export function* considerRequestingFullAttachment({
                 }
                 const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, space);
                 const attachment: Attachment = yield call(deserializeAttachmentSaga, idbAttachment, spaceDek);
+                // Cache is populated inside deserializeAttachmentSaga
                 yield put(addAttachment(attachment));
             } catch (e) {
                 console.error(`considerRequestingFullAttachment: Failed to load attachment ${localId} from IDB:`, e);

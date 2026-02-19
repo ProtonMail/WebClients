@@ -28,9 +28,13 @@ export const useAllRelevantAttachments = (
     }, [messageChain]);
 
     // Get full attachment data for all message attachments
+    // Filter out role='assistant' attachments (inline images) from context
     const messageAttachments = useMemo(() => {
         if (!messageAttachmentIds || messageAttachmentIds.length === 0) return [];
-        return messageAttachmentIds.map((id) => allAttachments[id]).filter(Boolean) as Attachment[];
+        return messageAttachmentIds
+            .map((id) => allAttachments[id])
+            .filter(Boolean)
+            .filter((attachment) => attachment.role !== 'assistant') as Attachment[];
     }, [messageAttachmentIds, allAttachments]);
 
     // Combine all attachments: space assets + space attachments + provisional + message attachments

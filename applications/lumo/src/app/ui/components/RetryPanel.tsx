@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Icon } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 
-import type { RetryStrategy } from '../../types-api';
+import type { RetryStrategy } from '../../types';
 
 export type RetryOption = {
     strategy: RetryStrategy;

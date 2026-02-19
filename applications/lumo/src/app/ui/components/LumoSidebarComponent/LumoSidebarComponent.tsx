@@ -10,19 +10,14 @@ import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useSidebar } from '../../../providers/SidebarProvider';
-import { InvitesButton } from '../InvitesButton/InvitesButton';
 
 import './SidebarButton.scss';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     app: APP_NAMES;
-    /**
-     * Expanded is only for mobile
-     */
     expanded?: boolean;
     onToggleExpand?: () => void;
     children?: ReactNode;
@@ -91,8 +86,6 @@ const LumoSidebarComponent = ({
     navigationRef,
     ...rest
 }: Props) => {
-    const isLumoEarlyAccessEnabled = useFlag('LumoEarlyAccess');
-
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
         active: expanded,
@@ -127,11 +120,6 @@ const LumoSidebarComponent = ({
                         <div className="mobile-user-dropdown px-3 mt-1 shrink-0 md:hidden mb-2">
                             <UserDropdown app={APP_NAME} />
                         </div>
-                        {isLumoEarlyAccessEnabled && (
-                            <div className="px-3 shrink-0">
-                                <InvitesButton isSidebar />
-                            </div>
-                        )}
                     </>
                 ) : null}
                 {isSmallScreen && isGuest && expanded ? (
@@ -157,7 +145,6 @@ const LumoSidebarComponent = ({
                 </div>
             </div>
             {
-                // mobile backdrop
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 expanded ? <div className="sidebar-backdrop" onClick={onToggleExpand}></div> : undefined
             }

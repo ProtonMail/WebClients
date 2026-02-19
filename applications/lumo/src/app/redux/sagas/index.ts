@@ -401,6 +401,7 @@ export function* loadReduxFromIdb(): SagaIterator {
                 continue;
             }
             const attachment: Attachment = yield call(deserializeAttachmentSaga, serializedAttachment, spaceDek);
+            // Cache is populated inside deserializeAttachmentSaga
             yield put(addAttachment(attachment));
         } catch (e) {
             console.warn('Error while loading attachment from IndexedDB:', e);
@@ -559,6 +560,8 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullSpacesPageResponse, processPullSpacesPage)},
         function*() { yield takeEvery(pullSpacesSuccess, logPullSpacesSuccess)},
         function*() { yield takeEvery(pullSpacesFailure, logPullSpacesFailure)},
+        function*() { yield takeEvery(pullSpaceRequest, pullSpace)},
+        function*() { yield takeEvery(pullSpaceSuccess, processPullSpaceResult)},
         function*() { yield takeEvery(locallyDeleteSpaceFromLocalRequest, softDeleteSpaceFromLocal)},
         function*() { yield takeEvery(locallyDeleteSpaceFromRemoteRequest, softDeleteSpaceFromRemote)},
         function*() { yield takeEvery(locallyRefreshSpaceFromRemoteRequest, refreshSpaceFromRemote)},

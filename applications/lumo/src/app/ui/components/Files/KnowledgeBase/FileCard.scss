@@ -10,7 +10,6 @@
 		inset-inline-end: #{rem(-6)};
 		z-index: 10;
 
-		// Button styling
 		background: var(--background-norm);
 		border: 1px solid var(--border-weak);
 		border-radius: 50%;
@@ -21,19 +20,22 @@
 			opacity 0.2s ease,
 			visibility 0.2s ease;
 
-		// Size
 		inline-size: #{rem(24)};
 		block-size: #{rem(24)};
 		padding: #{rem(3)};
 	}
 
-	&:hover .file-card-dismiss-button {
-		opacity: 1;
-		visibility: visible;
+	&:hover {
+		cursor: pointer;
+		
+		.file-card-dismiss-button {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+
+	p {
+		margin: 0;
 	}
 }
-
-// // override - TODO: remove from index.scss file
-// .circle-chart-circle {
-//     stroke: var(--primary)
-// }
