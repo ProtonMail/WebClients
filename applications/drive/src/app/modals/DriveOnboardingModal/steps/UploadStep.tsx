@@ -9,10 +9,10 @@ import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled';
 import clsx from '@proton/utils/clsx';
 
-import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
-import { useFileDrop } from '../../../../hooks/drive/useFileDrop';
-import { useFileUploadInput, useFolderUploadInput } from '../../../../store/_uploads/useUploadInput';
-import { Actions, countActionWithTelemetry } from '../../../../utils/telemetry';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { useFileDrop } from '../../../hooks/drive/useFileDrop';
+import { useFileUploadInput, useFolderUploadInput } from '../../../store/_uploads/useUploadInput';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { Container } from '../Container';
 import type { OnboardingProps } from '../interface';
 
