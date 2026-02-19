@@ -4008,6 +4008,9 @@
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
       ],
+      "Failed to update billing address": [
+        "Misslyckades att uppdatera faktureringsadress"
+      ],
       "Failed to update detailed monitoring.": [
         "Misslyckades att uppdatera detaljerad övervakning."
       ],
@@ -4285,6 +4288,9 @@
       ],
       "Tab closed": [
         "Flik stängd"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Momsbefrielse stöds inte för detta paket"
       ],
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
@@ -11843,9 +11849,6 @@
       "Got it": [
         "Jag förstår"
       ],
-      "I'm purchasing as a business": [
-        "Jag köper som ett företag"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -12066,18 +12069,6 @@
       ],
       "Business Number": [
         "Företagsnummer"
-      ],
-      "Edit ABN": [
-        "Redigera ABN"
-      ],
-      "Edit Business Number": [
-        "Redigera företagsnummer"
-      ],
-      "Edit EIN": [
-        "Redigera EIN"
-      ],
-      "Edit VAT number": [
-        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -14469,6 +14460,9 @@
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
       ],
+      "Billing information updated": [
+        "Faktureringsinformation uppdaterad"
+      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -16390,8 +16384,8 @@
       "Recommended": [
         "Rekommenderad"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spara ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spara ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

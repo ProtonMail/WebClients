@@ -4954,7 +4954,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Terjadi kesalahan saat mendaftarkan kunci keamanan Anda. Silakan coba lagi."
@@ -6334,7 +6334,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Masing-masing domain hanya dapat memiliki satu rekaman SPF (TXT). Apabila Anda ingin mempertahankan rekaman SPF (TXT) yang telah ada, Anda dapat menambahkan ${ spf } ke rekaman Anda saat ini (tempatkan rekaman ini setelah ${ spfValue })."
@@ -11592,9 +11592,6 @@
       "Got it": [
         "Paham"
       ],
-      "I'm purchasing as a business": [
-        "Saya membeli produk ini selaku pihak bisnis"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
@@ -11800,18 +11797,6 @@
       ],
       "Business Number": [
         "Nomor Bisnis"
-      ],
-      "Edit ABN": [
-        "Edit ABN"
-      ],
-      "Edit Business Number": [
-        "Edit Nomor Bisnis"
-      ],
-      "Edit EIN": [
-        "Edit EIN"
-      ],
-      "Edit VAT number": [
-        "Edit nomor PPN"
       ],
       "EIN": [
         "NPWP"
@@ -16050,9 +16035,6 @@
       ],
       "Recommended": [
         "Direkomendasikan"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Disimpan: ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

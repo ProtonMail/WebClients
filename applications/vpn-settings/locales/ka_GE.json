@@ -3389,6 +3389,25 @@
         "გავთიშო მისამართი?"
       ]
     },
+    "dollar_offer": {
+      "Get VPN Plus for only ${ offerPrice }": [
+        "მიიღეთ VPN Plus მხოლოდ ${ offerPrice }-ად"
+      ],
+      "Protected by Swiss privacy laws": [
+        "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Special offer: Save 90% off our premium plan": [
+        "სპეციალური შეთავაზება: დაზოგეთ 90% ჩვენს პრემიუმ პაკეტზე"
+      ]
+    },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "გაგრძელება უფასოდ"
+      ],
+      "Get the deal": [
+        "გარიგების მიღება"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "გადამოწმებულია"
@@ -4002,6 +4021,9 @@
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "დაშვებულია მაქსიმუმ ${ displayMaxValue }"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
@@ -5948,6 +5970,9 @@
       "active": [
         "აქტიური"
       ],
+      "Activity Monitor": [
+        "აქტივობების მონიტორი"
+      ],
       "add a recovery method": [
         "აღდგენის მეთოდის დამატება"
       ],
@@ -6559,6 +6584,9 @@
       ],
       "Get started with the referral link above.": [
         "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
+      ],
+      "Get visibility into account access": [
+        "გააკონტროლეთ ანგარიშზე წვდომა"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
@@ -7660,6 +7688,9 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
+      ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე."
@@ -9199,6 +9230,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "აქტივობების მონიტორი"
+      ],
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
@@ -11624,9 +11658,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "I'm purchasing as a business": [
-        "ვაპირებ შევიძინო ბიზნესისთვის"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
       ],
@@ -11824,18 +11855,6 @@
       ],
       "Business Number": [
         "ბიზნესის ნომერი"
-      ],
-      "Edit ABN": [
-        "ABN-ის რედაქტირება"
-      ],
-      "Edit Business Number": [
-        "ბიზნესის ნომრის ჩასწორება"
-      ],
-      "Edit EIN": [
-        "EIN-ის ჩასწორება"
-      ],
-      "Edit VAT number": [
-        "დღგ ნომრის ჩასწორება"
       ],
       "EIN": [
         "EIN"
@@ -14182,6 +14201,9 @@
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
       ],
+      "Billing information updated": [
+        "ბილინგის ინფორმაცია განახლდა"
+      ],
       "Canceling import": [
         "შემოტანის გაუქმება"
       ],
@@ -15366,6 +15388,9 @@
       "Revoke certificate?": [
         "გავაუქმო სერტიფიკატი?"
       ],
+      "Roles and permissions": [
+        "როლები და ნებართვები"
+      ],
       "SAML authentication": [
         "SAML ავთენტიკაცია"
       ],
@@ -16090,9 +16115,6 @@
       ],
       "Recommended": [
         "რეკომენდებულია"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "დაზოგეთ ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

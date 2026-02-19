@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Het logo kon niet worden verwerkt"
       ],
+      "Failed to update billing address": [
+        "Bijwerken factuuradres mislukt"
+      ],
       "Failed to update detailed monitoring.": [
         "Gedetailleerde monitoring kon niet worden bijgewerkt."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Belastingvrijstelling wordt niet ondersteund voor dit abonnement"
       ],
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
@@ -11869,9 +11875,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "I'm purchasing as a business": [
-        "Ik koop dit voor mijn bedrijf."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12092,18 +12095,6 @@
       ],
       "Business Number": [
         "Ondernemingsnummer"
-      ],
-      "Edit ABN": [
-        "ABN bewerken"
-      ],
-      "Edit Business Number": [
-        "Ondernemingsnummer bewerken"
-      ],
-      "Edit EIN": [
-        "EIN bewerken"
-      ],
-      "Edit VAT number": [
-        "Wijzig BTW-nummer"
       ],
       "EIN": [
         "Rijksregisternummer"
@@ -14499,6 +14490,9 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
+      "Billing information updated": [
+        "Factuurgegevens bijgewerkt"
+      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -16435,8 +16429,8 @@
       "Recommended": [
         "Aanbevolen"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Bespaar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Bespaar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

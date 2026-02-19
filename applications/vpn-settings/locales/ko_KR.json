@@ -5796,6 +5796,9 @@
       "${ storage } storage": [
         "저장공간 ${ storage }"
       ],
+      "${ total } user found": [
+        "${ total }명 사용자 찾음"
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } 생성됨"
       ],
@@ -11598,9 +11601,6 @@
       "Got it": [
         "확인했습니다"
       ],
-      "I'm purchasing as a business": [
-        "사업체 용도로 구매합니다"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
       ],
@@ -11815,18 +11815,6 @@
       ],
       "Business Number": [
         "사업자등록번호"
-      ],
-      "Edit ABN": [
-        "ABN 수정"
-      ],
-      "Edit Business Number": [
-        "사업자등록번호 수정"
-      ],
-      "Edit EIN": [
-        "EIN 수정"
-      ],
-      "Edit VAT number": [
-        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
@@ -16066,9 +16054,6 @@
       ],
       "Recommended": [
         "권장"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "${ price.uiData.discountPercent }% 절약"
       ]
     },
     "User role": {

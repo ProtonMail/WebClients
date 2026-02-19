@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Le traitement du logo n'a pas abouti."
       ],
+      "Failed to update billing address": [
+        "La mise à jour de l'adresse de facturation n'a pas abouti."
+      ],
       "Failed to update detailed monitoring.": [
         "La mise à jour de la surveillance détaillée n'a pas abouti."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "L'onglet est fermé."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "L'exonération fiscale n'est pas prise en charge pour cet abonnement."
       ],
       "The amount due has changed. Please try again.": [
         "Le montant a changé. Nous vous invitons à réessayer."
@@ -11892,9 +11898,6 @@
       "Got it": [
         "J'ai compris"
       ],
-      "I'm purchasing as a business": [
-        "J'achète en tant qu'entreprise."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
       ],
@@ -12115,18 +12118,6 @@
       ],
       "Business Number": [
         "Numéro d'entreprise"
-      ],
-      "Edit ABN": [
-        "Modifier ABN"
-      ],
-      "Edit Business Number": [
-        "Modifier le numéro d'entreprise"
-      ],
-      "Edit EIN": [
-        "Modifier EIN"
-      ],
-      "Edit VAT number": [
-        "Modifier le numéro de TVA"
       ],
       "EIN": [
         "Numéro d'identification fiscale (EIN)"
@@ -14533,6 +14524,9 @@
       "Billing details updated": [
         "Les informations de facturation ont été mises à jour."
       ],
+      "Billing information updated": [
+        "Les informations de facturation ont été mises à jour."
+      ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
@@ -16469,8 +16463,8 @@
       "Recommended": [
         "Recommandé"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Économisez ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Économisez ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
