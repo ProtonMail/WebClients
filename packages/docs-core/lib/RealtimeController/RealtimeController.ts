@@ -70,6 +70,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.NeedsToBeInReadonlyMode)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ImportUpdateSuccessful)
     eventBus.addEventHandler(this, DocSizeTrackerEvent)
     eventBus.addEventHandler(this, SquashErrorEvent)
@@ -227,6 +228,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
        * what the server was expecting.
        */
       void this.refetchCommitDueToStaleContents('token-fail')
+    } else if (event.type === WebsocketConnectionEvent.NeedsToBeInReadonlyMode) {
+      this.documentState.setProperty('realtimeShouldBeShownInReadonlyMode', true)
     } else if (event.type === SquashErrorEvent) {
       PostApplicationError(this.eventBus, {
         translatedError: c('Error').t`We are having trouble syncing your document. Please refresh the page.`,
@@ -315,6 +318,9 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     if (reason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
       void this.refetchCommitDueToStaleContents('rts-disconnect')
+    }
+    if (reason.props.code === ConnectionCloseReason.CODES.READ_ONLY_MODE_REQUIRED) {
+      this.documentState.setProperty('realtimeShouldBeShownInReadonlyMode', true)
     }
 
     if (reason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {

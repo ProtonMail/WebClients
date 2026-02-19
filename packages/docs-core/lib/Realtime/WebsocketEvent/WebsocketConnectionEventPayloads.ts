@@ -15,6 +15,7 @@ export type WebsocketConnectionEventPayloads = {
     readinessInformation?: ConnectionReadyPayload
   }
   [WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.NeedsToBeInReadonlyMode]: BaseWebsocketPayload
   [WebsocketConnectionEvent.Disconnected]: BaseWebsocketPayload & {
     serverReason: ConnectionCloseReason
   }

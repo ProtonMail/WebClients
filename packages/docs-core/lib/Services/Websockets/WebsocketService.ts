@@ -264,6 +264,14 @@ export class WebsocketService implements WebsocketServiceInterface {
             serverReason: reason,
           },
         })
+        if (reason.props.code === ConnectionCloseReason.CODES.READ_ONLY_MODE_REQUIRED) {
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.NeedsToBeInReadonlyMode]>({
+            type: WebsocketConnectionEvent.NeedsToBeInReadonlyMode,
+            payload: {
+              document: nodeMeta,
+            },
+          })
+        }
       },
 
       onMessage: (message) => {
@@ -286,6 +294,13 @@ export class WebsocketService implements WebsocketServiceInterface {
             WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync]
           >({
             type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
+            payload: {
+              document: nodeMeta,
+            },
+          })
+        } else if (errorCode === DocsApiErrorCode.NeedsReadonlyMode) {
+          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.NeedsToBeInReadonlyMode]>({
+            type: WebsocketConnectionEvent.NeedsToBeInReadonlyMode,
             payload: {
               document: nodeMeta,
             },

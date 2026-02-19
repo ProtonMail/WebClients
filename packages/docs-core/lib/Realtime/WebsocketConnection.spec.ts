@@ -1,5 +1,6 @@
 import {
   DebugConnection,
+  ReconnectionStopReason,
   TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES,
   WebsocketConnection,
 } from './WebsocketConnection'
@@ -156,7 +157,7 @@ describe('WebsocketConnection', () => {
       beforeEach(() => {
         jest.useFakeTimers()
 
-        connection.isReconnectionStoppedDueToTimeout = true
+        connection.reconnectionStopped = ReconnectionStopReason.DocumentTimeout
 
         connection.queueReconnection = jest.fn()
         connection.callbacks.onFailToConnect = jest.fn()
@@ -164,36 +165,36 @@ describe('WebsocketConnection', () => {
       })
 
       it('should not queue reconnection immediately', () => {
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
       })
 
       it('should not queue reconnection after some time', () => {
         jest.advanceTimersByTime(3000) // slightly more than 2 seconds, which is the base reconnection delay
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
       })
 
       it('should queue reconnection on mouse move', () => {
         document.dispatchEvent(new Event('mousemove'))
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.reconnectionStopped).toBe(undefined)
         expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
       })
 
       it('should queue reconnection on key down', () => {
         connection.handleSocketClose(3005, 'Document timeout')
         jest.advanceTimersByTime(3000)
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
         document.dispatchEvent(new Event('keydown'))
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.reconnectionStopped).toBe(undefined)
         expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
       })
 
       it('should queue reconnection on visibility change to visible', () => {
         connection.handleSocketClose(3005, 'Document timeout')
         jest.advanceTimersByTime(3000)
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
 
         Object.defineProperty(document, 'visibilityState', {
@@ -201,7 +202,7 @@ describe('WebsocketConnection', () => {
           writable: true,
         })
         document.dispatchEvent(new Event('visibilitychange'))
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
 
         Object.defineProperty(document, 'visibilityState', {
@@ -209,7 +210,7 @@ describe('WebsocketConnection', () => {
           writable: true,
         })
         document.dispatchEvent(new Event('visibilitychange'))
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.reconnectionStopped).toBe(undefined)
         expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
       })
     })
@@ -218,7 +219,7 @@ describe('WebsocketConnection', () => {
       beforeEach(() => {
         jest.useFakeTimers()
 
-        connection.isReconnectionStoppedDueToTimeout = false
+        connection.reconnectionStopped = undefined
 
         connection.queueReconnection = jest.fn()
         connection.callbacks.onFailToConnect = jest.fn()
@@ -226,7 +227,7 @@ describe('WebsocketConnection', () => {
       })
 
       it('should queue reconnection normally', () => {
-        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.reconnectionStopped).toBe(undefined)
         expect(connection.queueReconnection).toHaveBeenCalled()
       })
     })

@@ -45,6 +45,7 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     WEBSOCKET_MESSAGE_HANDLING_ERROR: 3021,
     ROOM_JOINING_ERROR: 3022,
     CONNECTION_CONFIGURING_ERROR: 3023,
+    READ_ONLY_MODE_REQUIRED: 3024,
   }
 
   static messages: Record<number, string> = {
@@ -89,6 +90,7 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.WEBSOCKET_MESSAGE_HANDLING_ERROR]: 'Error handling websocket message',
     [ConnectionCloseReason.CODES.ROOM_JOINING_ERROR]: 'Failed to join room',
     [ConnectionCloseReason.CODES.CONNECTION_CONFIGURING_ERROR]: 'Failed to configure connection',
+    [ConnectionCloseReason.CODES.READ_ONLY_MODE_REQUIRED]: 'Read only mode required',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {
