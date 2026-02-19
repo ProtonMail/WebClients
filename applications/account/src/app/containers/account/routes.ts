@@ -103,7 +103,6 @@ function getV1DashboardSections(
 ) {
     return [
         {
-            text: c('Title').t`Finish setting up your business account`,
             id: 'business-activation',
             available: showBusinessActivation,
         },
