@@ -4279,9 +4279,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet, vil bare endre fakturaen du har valgt, og ikke dine fremtidige fakturadetaljer."
       ]
     },
     "Email body for invitation": {
@@ -4896,6 +4893,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritak støttes ikke for dette abonnementet"
       ],
       "Text is too long to refine": [
         "Teksten er for lang til å finjusteres"
@@ -12184,9 +12184,6 @@
       "Got it": [
         "Skjønner"
       ],
-      "I'm purchasing as a business": [
-        "Jeg kjøper som en bedrift."
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12382,18 +12379,6 @@
       ],
       "Business Number": [
         "Bedriftsnummer"
-      ],
-      "Edit ABN": [
-        "Rediger ABN"
-      ],
-      "Edit Business Number": [
-        "Rediger bedriftsnummer"
-      ],
-      "Edit EIN": [
-        "Rediger EIN"
-      ],
-      "Edit VAT number": [
-        "Rediger MVA-nummer"
       ],
       "EIN": [
         "EIN"
@@ -14238,6 +14223,9 @@
       ],
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
+      ],
+      "Billing information updated": [
+        "Faktureringsinformasjon er oppdatert"
       ],
       "Canceling import": [
         "Avbryter import"

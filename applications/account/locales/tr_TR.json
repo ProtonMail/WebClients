@@ -322,7 +322,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış ekibiyle görüşün"
+        "Satış ekibiyle iletişime geçin"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "Logo işlenemedi"
       ],
+      "Failed to update billing address": [
+        "Fatura adresi güncellenemedi"
+      ],
       "Failed to update detailed monitoring.": [
         "Ayrıntılı izleme güncellenemedi."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -8809,7 +8815,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9933,7 +9939,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
+        "10 yıllık sürüm geçmişi için lütfen satış ekibimizle iletişime geçin."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11250,10 +11256,10 @@
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
+        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden daha eski önceki sürümlerini silecektir."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
+        "Bu işlem dosyalarınızın önceki tüm sürümlerini silecektir."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -11445,7 +11451,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kullanmak için tarifenizi yükseltin"
+        "Kilidi açmak için yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -13538,6 +13544,9 @@
       ],
       "Navigation": [
         "Gezinme"
+      ],
+      "Net amount": [
+        "Net tutar"
       ],
       "New display name": [
         "Yeni görüntülenecek ad"
@@ -17684,6 +17693,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "%${ taxRate } vergi"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -17705,12 +17717,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi hariç: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
       ],
@@ -17720,17 +17726,20 @@
       "Got it": [
         "Anladım"
       ],
-      "I'm purchasing as a business": [
-        "Kurumsal olarak satın alıyorum"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "%${ taxRate } ${ suggestedTaxName } dahil"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "%${ taxRate } vergi dahil"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "%${ taxRate } vergi dahil: ${ taxAmount }"
@@ -17740,6 +17749,9 @@
       ],
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
+      ],
+      "Net amount": [
+        "Net tutar"
       ],
       "Offer unavailable": [
         "Teklif kullanılamıyor"
@@ -17955,18 +17967,6 @@
       ],
       "Business Number": [
         "İş numarası"
-      ],
-      "Edit ABN": [
-        "ABN kodunu düzenle"
-      ],
-      "Edit Business Number": [
-        "İş numarasını düzenle"
-      ],
-      "Edit EIN": [
-        "EIN kodunu düzenle"
-      ],
-      "Edit VAT number": [
-        "KDV numarasını düzenle"
       ],
       "EIN": [
         "EIN"
@@ -19735,7 +19735,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Fotoğraflar bölümünü aç"
+        "Fotoğraflar bölümünü etkinleştir"
       ],
       "Get updates about comments via email": [
         "Yorum güncellemeleri e-posta ile bildirilsin"
@@ -20065,8 +20065,8 @@
       "Private AI assistant with encrypted chat history": [
         "Şifrelenmiş sohbet geçmişi ile güvenli yapay zeka yardımcısı"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "İndirim uygulandı – %${ checkout.discountPercent } indirim"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promosyon uygulandı – %${ checkoutUi.discountPercent } indirim"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerine dönün"
@@ -21606,6 +21606,9 @@
         "Yedek parola güncellendi"
       ],
       "Billing details updated": [
+        "Fatura bilgileri güncellendi"
+      ],
+      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Calendar added. It might take a few minutes to sync.": [
@@ -24421,8 +24424,8 @@
       "Recommended": [
         "Önerilen"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "%${ price.uiData.discountPercent } indirim alın"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "%${ price.checkoutUi.discountPercent } tasarruf edin"
       ]
     },
     "User role": {

@@ -322,7 +322,7 @@
         "Падключана"
       ],
       "Contact sales": [
-        "Звязацца з камерцыйным аддзелам"
+        "Звязацца з аддзелам продажаў"
       ],
       "Contact support": [
         "Звязацца са службай падтрымкі"
@@ -6522,6 +6522,9 @@
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
       ],
+      "Failed to update billing address": [
+        "Не ўдалося абнавіць адрас аплаты"
+      ],
       "Failed to update detailed monitoring.": [
         "Не ўдалося абнавіць падрабязнае назіранне."
       ],
@@ -6857,6 +6860,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -13820,6 +13826,9 @@
       "Navigation": [
         "Навігацыя"
       ],
+      "Net amount": [
+        "Чыстая сума"
+      ],
       "New display name": [
         "Новае бачнае імя"
       ],
@@ -18073,6 +18082,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% падаткаў"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -18094,12 +18106,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Без уліку ${ taxRate }% падатка ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку${ taxRate }% падатка: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -18109,17 +18115,20 @@
       "Got it": [
         "Зразумела"
       ],
-      "I'm purchasing as a business": [
-        "Я купляю як юрыдычная асоба"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "З улікам ${ taxRate }% падатка ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "З улікам падаткаў у памеры ${ taxRate }%: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Уключае ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "З улікам падаткаў у памеры ${ taxRate }%:"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
@@ -18129,6 +18138,9 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
+      "Net amount": [
+        "Чыстая сума"
       ],
       "Offer unavailable": [
         "Прапанова недаступна"
@@ -18356,18 +18368,6 @@
       ],
       "Business Number": [
         "Нумар прадпрыемства"
-      ],
-      "Edit ABN": [
-        "Рэдагаваць ABN"
-      ],
-      "Edit Business Number": [
-        "Рэдагаваць нумар прадпрыемства"
-      ],
-      "Edit EIN": [
-        "Рэдагаваць ІНП"
-      ],
-      "Edit VAT number": [
-        "Рэдагаваць нумар ПДВ"
       ],
       "EIN": [
         "EIN"
@@ -20532,8 +20532,8 @@
       "Private AI assistant with encrypted chat history": [
         "Прыватны памочнік ШІ з зашыфраванай гісторыяй чатаў"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Промакод ужыты. Вы атрымалі скідку ў памеры ${ checkout.discountPercent }%"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Прамакод ужыты. Вы атрымалі скідку ў памеры ${ checkoutUi.discountPercent }%"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -22150,6 +22150,9 @@
       ],
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
+      ],
+      "Billing information updated": [
+        "Плацежная інфармацыя абноўлена"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."
@@ -25004,8 +25007,8 @@
       "Recommended": [
         "Рэкамендавана"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Эканомія ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Эканомія ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

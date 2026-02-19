@@ -3799,6 +3799,9 @@
       "Tab closed": [
         "Välilehti suljettiin"
       ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
+      ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
       ],
@@ -9218,18 +9221,6 @@
       "Business Number": [
         "Yritystunnus"
       ],
-      "Edit ABN": [
-        "Muokkaa ABT-tunnusta"
-      ],
-      "Edit Business Number": [
-        "Muokkaa yritystunnusta"
-      ],
-      "Edit EIN": [
-        "Muokkaa EIN-tunnusta"
-      ],
-      "Edit VAT number": [
-        "Muokkaa ALV-numeroa"
-      ],
       "EIN": [
         "EIN"
       ],
@@ -10705,6 +10696,9 @@
         "${ MEET_APP_NAME } -linkkien automaattinen lisääminen on poistettu käytöstä"
       ],
       "Billing details updated": [
+        "Laskutustiedot päivitetty"
+      ],
+      "Billing information updated": [
         "Laskutustiedot päivitetty"
       ],
       "Calendar added. It might take a few minutes to sync.": [

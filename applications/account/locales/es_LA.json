@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
+      "Failed to update billing address": [
+        "Error al actualizar la dirección de facturación"
+      ],
       "Failed to update detailed monitoring.": [
         "Error al actualizar la monitorización detallada."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exoneración de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
@@ -11256,7 +11262,7 @@
         "Esto eliminará todas las versiones anteriores de los archivos previo a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Esto eliminará todas las versiones anteriores de los archivos."
+        "Esto eliminará todas las versiones anteriores de sus archivos."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿En verdad desea continuar?"
@@ -11448,7 +11454,7 @@
         "Mejore para mantener sus beneficios de ${ planTitle }."
       ],
       "Upgrade to unlock": [
-        "Mejore su suscripción para desbloquear"
+        "Acualice su suscripción para desbloquear"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Actualice a un mejor plan para desbloquear ${ monitorLink }."
@@ -13541,6 +13547,9 @@
       ],
       "Navigation": [
         "Navegación"
+      ],
+      "Net amount": [
+        "Importe neto"
       ],
       "New display name": [
         "Nombre a mostrar nuevo"
@@ -17687,6 +17696,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% de impuestos"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad por pagar después de la prueba el ${ formattedDate }"
       ],
@@ -17708,12 +17720,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excl. el ${ taxRate }% de ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excl. el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17723,17 +17729,20 @@
       "Got it": [
         "Entiendo"
       ],
-      "I'm purchasing as a business": [
-        "Estoy comprando como empresa"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incl. el ${ taxRate }% de ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Incl. el ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluido ${ taxRate }% de ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluido ${ taxRate }% de impuestos"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
@@ -17743,6 +17752,9 @@
       ],
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
+      ],
+      "Net amount": [
+        "Importe neto"
       ],
       "Offer unavailable": [
         "Oferta no disponible"
@@ -17958,18 +17970,6 @@
       ],
       "Business Number": [
         "Número de negocio"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar número de negocio"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -20068,8 +20068,8 @@
       "Private AI assistant with encrypted chat history": [
         "Asistente de IA privado con historial de chat cifrado"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Se aplicó la promoción (-${ checkout.discountPercent }% de descuento)."
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoción aplicada: ${ checkoutUi.discountPercent }% de descuento"
       ],
       "Recover previous file versions": [
         "Recuperar versiones previas de archivos"
@@ -21610,6 +21610,9 @@
       ],
       "Billing details updated": [
         "Detalles de facturación actualizados"
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario agregado. Puede tomar unos minutos en sincronizarse."
@@ -24424,8 +24427,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Ahorre un ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ahorre ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

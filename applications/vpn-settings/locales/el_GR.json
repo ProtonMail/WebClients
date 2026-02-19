@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
       ],
+      "Failed to update billing address": [
+        "Αποτυχία ενημέρωσης της διεύθυνσης χρέωσης"
+      ],
       "Failed to update detailed monitoring.": [
         "Αποτυχία ενημέρωσης λεπτομερούς παρακολούθησης."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -11885,9 +11891,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "I'm purchasing as a business": [
-        "Αγοράζω ως επιχείρηση"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12108,18 +12111,6 @@
       ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
-      ],
-      "Edit ABN": [
-        "Επεξεργασία ABN"
-      ],
-      "Edit Business Number": [
-        "Επεξεργασία Αριθμού ΦΠΑ Επιχείρησης"
-      ],
-      "Edit EIN": [
-        "Επεξεργασία ΑΦΜ"
-      ],
-      "Edit VAT number": [
-        "Επεξεργασία Αριθμού ΦΠΑ"
       ],
       "EIN": [
         "ΑΦΜ"
@@ -14523,6 +14514,9 @@
       "Billing details updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
+      "Billing information updated": [
+        "Τα στοιχεία χρέωσης ενημερώθηκαν"
+      ],
       "Canceling import": [
         "Ακύρωση εισαγωγής"
       ],
@@ -16459,8 +16453,8 @@
       "Recommended": [
         "Προτεινόμενο"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Εξοικονομίστε ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Εξοικονομίστε ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

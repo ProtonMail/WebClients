@@ -4273,9 +4273,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Informationen du anger i detta formulär kommer endast att ändra den faktura du har valt och inte dina framtida fakturadetaljer."
       ]
     },
     "Email body for invitation": {
@@ -4890,6 +4887,9 @@
       ],
       "Tab closed": [
         "Flik stängd"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Momsbefrielse stöds inte för detta paket"
       ],
       "Text is too long to refine": [
         "Text är för lång för att finjustera"
@@ -12163,9 +12163,6 @@
       "Got it": [
         "Jag förstår"
       ],
-      "I'm purchasing as a business": [
-        "Jag köper som ett företag"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -12361,18 +12358,6 @@
       ],
       "Business Number": [
         "Företagsnummer"
-      ],
-      "Edit ABN": [
-        "Redigera ABN"
-      ],
-      "Edit Business Number": [
-        "Redigera företagsnummer"
-      ],
-      "Edit EIN": [
-        "Redigera EIN"
-      ],
-      "Edit VAT number": [
-        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -14217,6 +14202,9 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
+      ],
+      "Billing information updated": [
+        "Faktureringsinformation uppdaterad"
       ],
       "Canceling import": [
         "Avbryter import"

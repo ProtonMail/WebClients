@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Logoet blev ikke behandlet"
       ],
+      "Failed to update billing address": [
+        "Kunne ikke opdatere faktureringsadressen"
+      ],
       "Failed to update detailed monitoring.": [
         "Opdatering af detaljeret overvågning mislykkedes."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
@@ -11881,9 +11887,6 @@
       "Got it": [
         "Forstået"
       ],
-      "I'm purchasing as a business": [
-        "Jeg køber som virksomhed"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12104,18 +12107,6 @@
       ],
       "Business Number": [
         "Forretningsnummer"
-      ],
-      "Edit ABN": [
-        "Redigér ABN"
-      ],
-      "Edit Business Number": [
-        "Redigér forretningsnummer"
-      ],
-      "Edit EIN": [
-        "Redigér EIN"
-      ],
-      "Edit VAT number": [
-        "Redigér momsnummer"
       ],
       "EIN": [
         "Momsnummer"
@@ -14519,6 +14510,9 @@
       "Billing details updated": [
         "Faktureringsoplysninger opdateret"
       ],
+      "Billing information updated": [
+        "Faktureringsoplysninger opdateret"
+      ],
       "Canceling import": [
         "Annullerer import"
       ],
@@ -16455,8 +16449,8 @@
       "Recommended": [
         "Anbefalet"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

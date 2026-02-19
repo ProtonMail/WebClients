@@ -2189,9 +2189,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Kolom teks bersifat opsional. Informasi yang Anda sediakan dalam formulir ini hanya akan mengubah isi faktur yang Anda pilih tanpa memengaruhi rincian faktur yang akan datang."
       ]
     },
     "emergency_access": {
@@ -2431,7 +2428,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -2711,7 +2708,7 @@
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan satu kali"
+        "Setiap kode hanya dapat digunakan satu kali"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -4456,9 +4453,6 @@
       "Got it": [
         "Paham"
       ],
-      "I'm purchasing as a business": [
-        "Saya membeli produk ini selaku pihak bisnis"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
       ],
@@ -4639,18 +4633,6 @@
       ],
       "Business Number": [
         "Nomor Bisnis"
-      ],
-      "Edit ABN": [
-        "Edit ABN"
-      ],
-      "Edit Business Number": [
-        "Edit Nomor Bisnis"
-      ],
-      "Edit EIN": [
-        "Edit EIN"
-      ],
-      "Edit VAT number": [
-        "Edit nomor PPN"
       ],
       "EIN": [
         "NPWP"

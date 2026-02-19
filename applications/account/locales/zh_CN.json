@@ -6399,6 +6399,9 @@
       "Failed to process the logo": [
         "无法处理图标"
       ],
+      "Failed to update billing address": [
+        "更新账单地址失败"
+      ],
       "Failed to update detailed monitoring.": [
         "更新详细监控失败。"
       ],
@@ -6725,6 +6728,9 @@
       ],
       "Tab closed": [
         "标签页已关闭"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "此套餐不支持免税"
       ],
       "The address might be misspelled": [
         "地址可能拼写不正确"
@@ -11128,10 +11134,10 @@
         "验证时间可能长达一小时。验证成功后，不要删除 TXT 记录，因为需要它来确认您继续拥有该域名。"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "这将删除早于 ${ rententionLabel } 文件的所有先前版本。"
+        "这将删除早于 ${ rententionLabel } 文件的所有先前版本！"
       ],
       "This will delete all previous versions of your files.": [
-        "此操作将删除您文件的所有先前版本"
+        "此操作将删除您文件的所有先前版本！"
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "这将拒绝访问 **${ email }**，您确定要继续吗？"
@@ -13035,7 +13041,7 @@
         "不再询问"
       ],
       "Don't keep versions": [
-        "不保留版本历史"
+        "不保留版本"
       ],
       "Don't show this again": [
         "不再显示此内容"
@@ -13396,6 +13402,9 @@
       ],
       "Navigation": [
         "导航栏"
+      ],
+      "Net amount": [
+        "净额"
       ],
       "New display name": [
         "新称呼"
@@ -14359,7 +14368,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "了解更多信息"
+        "了解详情"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "若要继续使用 ${ BRAND_NAME }，请确保您已不再使用高级功能或升级您的套餐。"
@@ -17488,6 +17497,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% 税费"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后 ${ formattedDate } 的应付金额"
       ],
@@ -17509,12 +17521,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "不含 ${ taxRate }% 税费：${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
       ],
@@ -17524,17 +17530,20 @@
       "Got it": [
         "了解"
       ],
-      "I'm purchasing as a business": [
-        "以企业身份购买"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "含 ${ taxRate }% ${ taxName }：${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "含 ${ taxRate }% 税费：${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "含 ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "含 ${ taxRate }% 税费"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "包含 ${ taxRate }% 税费：${ taxAmount }"
@@ -17544,6 +17553,9 @@
       ],
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
+      ],
+      "Net amount": [
+        "净额"
       ],
       "Offer unavailable": [
         "优惠不可用"
@@ -17753,18 +17765,6 @@
       ],
       "Business Number": [
         "商业编号"
-      ],
-      "Edit ABN": [
-        "编辑 ABN"
-      ],
-      "Edit Business Number": [
-        "编辑商业编号"
-      ],
-      "Edit EIN": [
-        "编辑 EIN"
-      ],
-      "Edit VAT number": [
-        "编辑增值税号"
       ],
       "EIN": [
         "雇主识别号码 (EIN)"
@@ -19830,8 +19830,8 @@
       "Private AI assistant with encrypted chat history": [
         "私密 AI 助手，配备加密聊天记录"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "优惠已应用 – ${ checkout.discountPercent }% 折扣"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "已应用优惠 – 立减 ${ checkoutUi.discountPercent }%"
       ],
       "Recover previous file versions": [
         "恢复先前的文件版本"
@@ -21334,6 +21334,9 @@
       ],
       "Billing details updated": [
         "账单详细信息已更新"
+      ],
+      "Billing information updated": [
+        "账单信息已更新"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "已新增日历，可能需要几分钟才能同步"
@@ -24128,8 +24131,8 @@
       "Recommended": [
         "推荐"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "节省 ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "立省 ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

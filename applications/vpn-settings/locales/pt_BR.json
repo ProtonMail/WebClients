@@ -11878,9 +11878,6 @@
       "Got it": [
         "Entendi"
       ],
-      "I'm purchasing as a business": [
-        "Estou comprando como empresa"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -12101,18 +12098,6 @@
       ],
       "Business Number": [
         "Número comercial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar número comercial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -14516,6 +14501,9 @@
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
       ],
+      "Billing information updated": [
+        "As informações de faturamento foram atualizadas"
+      ],
       "Canceling import": [
         "Cancelando a importação"
       ],
@@ -16452,8 +16440,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Economize ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Economize ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

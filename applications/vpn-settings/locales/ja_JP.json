@@ -11633,9 +11633,6 @@
       "Got it": [
         "分かりました"
       ],
-      "I'm purchasing as a business": [
-        "法人として購入します"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
       ],
@@ -11850,18 +11847,6 @@
       ],
       "Business Number": [
         "法人番号"
-      ],
-      "Edit ABN": [
-        "ABNを編集する"
-      ],
-      "Edit Business Number": [
-        "法人番号を編集する"
-      ],
-      "Edit EIN": [
-        "EIN を編集する"
-      ],
-      "Edit VAT number": [
-        "VAT番号を編集する"
       ],
       "EIN": [
         "EIN"
@@ -16106,9 +16091,6 @@
       ],
       "Recommended": [
         "おすすめ"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "${ price.uiData.discountPercent }%を節約"
       ]
     },
     "User role": {

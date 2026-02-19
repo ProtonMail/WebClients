@@ -448,7 +448,7 @@
         "Elimina el compte"
       ],
       "Delete and confirm": [
-        "Elimineu i confirmeu"
+        "Elimineu-ho i confirmeu-ho"
       ],
       "Delete filter “${ Name }”": [
         "Voleu eliminar el filtre \"${ Name }\""
@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
       ],
+      "Failed to update billing address": [
+        "No s'ha pogut actualitzar l'adreça de facturació"
+      ],
       "Failed to update detailed monitoring.": [
         "No s'ha pogut actualitzar el monitoratge detallat."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Aquest pla no admet l'exempció d'impostos"
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
@@ -8809,7 +8815,7 @@
         "${ discountPercent }% de descompte"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ja no conservarà les versions anteriors dels vostres fitxers."
+        "${ DRIVE_APP_NAME } ja no conservarà versions anteriors dels vostres fitxers."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
@@ -11250,10 +11256,10 @@
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Això eliminarà totes les versions anteriors dels vostres fitxers prèvies a ${ rententionLabel }."
+        "Això eliminarà totes les versions dels vostres fitxers anteriors a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Això suprimirà totes les versions anteriors dels vostres fitxers."
+        "Això eliminarà totes les versions anteriors dels vostres fitxers."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Això denegarà l'accés a **${ email }**. Segur que voleu continuar?"
@@ -13177,7 +13183,7 @@
         "No tornis a preguntar"
       ],
       "Don't keep versions": [
-        "No conserveu versions"
+        "No conserveu les versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -13538,6 +13544,9 @@
       ],
       "Navigation": [
         "Navegació"
+      ],
+      "Net amount": [
+        "Import net"
       ],
       "New display name": [
         "Nou nom per a mostrar"
@@ -17684,6 +17693,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% d'impostos"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
@@ -17705,12 +17717,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "No inclou ${ taxRate }% de ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "No inclou ${ taxRate }% d'impostos: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17720,17 +17726,20 @@
       "Got it": [
         "Fet"
       ],
-      "I'm purchasing as a business": [
-        "Estic comprant com a empresa"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclou ${ taxRate }% de ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inclòs el ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inclòs el ${ taxRate }% d'impostos"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
@@ -17740,6 +17749,9 @@
       ],
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
+      ],
+      "Net amount": [
+        "Import net"
       ],
       "Offer unavailable": [
         "L'oferta no està disponible"
@@ -17955,18 +17967,6 @@
       ],
       "Business Number": [
         "Número d'empresa"
-      ],
-      "Edit ABN": [
-        "Edita l'ABN"
-      ],
-      "Edit Business Number": [
-        "Editeu el Número d'Empresa"
-      ],
-      "Edit EIN": [
-        "Edita l'EIN"
-      ],
-      "Edit VAT number": [
-        "Edita el número d'IVA"
       ],
       "EIN": [
         "Número d’identificació fiscal (EIN)"
@@ -19738,7 +19738,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Habiliteu la secció de Fotos"
+        "Habiliteu la secció Fotos"
       ],
       "Get updates about comments via email": [
         "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
@@ -20068,8 +20068,8 @@
       "Private AI assistant with encrypted chat history": [
         "Assistent d'IA privat amb historial de xat xifrat"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "S'ha aplicat la promoció (${ checkout.discountPercent }% de descompte)."
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "S'ha aplicat la promoció: ${ checkoutUi.discountPercent }% de descompte"
       ],
       "Recover previous file versions": [
         "Recupereu versions anteriors del fitxer"
@@ -21611,6 +21611,9 @@
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
       ],
+      "Billing information updated": [
+        "S'ha actualitzat la informació de facturació"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
       ],
@@ -22604,7 +22607,7 @@
         "Voleu eliminar l'usuari?"
       ],
       "Delete version history?": [
-        "Voleu eliminar l'historial de versions?"
+        "Voleu eliminar l’historial de versions?"
       ],
       "Deny access to user?": [
         "Voleu denegar l'accés a l'usuari?"
@@ -24424,8 +24427,8 @@
       "Recommended": [
         "Recomanat"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Estalvieu el ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Estalvieu un ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

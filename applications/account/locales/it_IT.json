@@ -8553,7 +8553,7 @@
         "${ discountPercent }% di sconto"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } non conserverà più versioni precedenti dei tuoi file."
+        "${ DRIVE_APP_NAME } non conserverà più le versioni precedenti dei tuoi file."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
@@ -9668,7 +9668,7 @@
         "dati finanziari"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Per una cronologia delle versioni di 10 anni, contatta il nostro team di vendita."
+        "Per una cronologia delle versioni di 10 anni, contatta il nostro team commerciale."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
@@ -10976,10 +10976,10 @@
         "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Questo eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
+        "Si elimineranno tutte le versioni dei tuoi file precedenti a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Questo eliminerà tutte le versioni precedenti dei tuoi file."
+        "Si elimineranno tutte le versioni precedenti dei tuoi file."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
@@ -11168,7 +11168,7 @@
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
       ],
       "Upgrade to unlock": [
-        "Esegui l'upgrade per sbloccare"
+        "Aggiorna per sbloccare"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -12879,7 +12879,7 @@
         "Non chiederlo più"
       ],
       "Don't keep versions": [
-        "Non salvare versioni"
+        "Non conservare le versioni"
       ],
       "Don't show this again": [
         "Non mostrare più"
@@ -17395,9 +17395,6 @@
       "Got it": [
         "Tutto chiaro"
       ],
-      "I'm purchasing as a business": [
-        "Sto acquistando come azienda"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
       ],
@@ -17624,18 +17621,6 @@
       ],
       "Business Number": [
         "Numero azienda"
-      ],
-      "Edit ABN": [
-        "Modificare ABN"
-      ],
-      "Edit Business Number": [
-        "Modifica numero azienda"
-      ],
-      "Edit EIN": [
-        "Modificare EIN"
-      ],
-      "Edit VAT number": [
-        "Modifica il numero di partita IVA"
       ],
       "EIN": [
         "Numero d'identificazione fiscale (EIN)"
@@ -19733,9 +19718,6 @@
       ],
       "Private AI assistant with encrypted chat history": [
         "Assistente AI privato con cronologia chat crittografata"
-      ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Promo applicata – ${ checkout.discountPercent }% di sconto"
       ],
       "Recover previous file versions": [
         "Recupera versioni precedenti del file"
@@ -24056,9 +24038,6 @@
       ],
       "Recommended": [
         "Consigliato"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Risparmia il ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

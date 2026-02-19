@@ -3862,6 +3862,9 @@
       "Failed to process the logo": [
         "Logon käsittely epäonnistui"
       ],
+      "Failed to update billing address": [
+        "Laskutusosoitteen päivitys epäonnistui"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Tiedosto on liian suuri. Logotiedoston koko voi olla enintään 30 kt."
       ],
@@ -4127,6 +4130,9 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
       ],
       "The amount due has changed. Please try again.": [
         "Erääntyvä summa on muuttunut. Yritä uudelleen."
@@ -11585,18 +11591,6 @@
       "Business Number": [
         "Yritystunnus"
       ],
-      "Edit ABN": [
-        "Muokkaa ABT-tunnusta"
-      ],
-      "Edit Business Number": [
-        "Muokkaa yritystunnusta"
-      ],
-      "Edit EIN": [
-        "Muokkaa EIN-tunnusta"
-      ],
-      "Edit VAT number": [
-        "Muokkaa ALV-numeroa"
-      ],
       "EIN": [
         "EIN"
       ],
@@ -13851,6 +13845,9 @@
       "Billing details updated": [
         "Laskutustiedot päivitetty"
       ],
+      "Billing information updated": [
+        "Laskutustiedot päivitetty"
+      ],
       "Canceling import": [
         "Perutaan tuontia"
       ],
@@ -15679,8 +15676,8 @@
       "Recommended": [
         "Suositus"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Säästä ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Säästä ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

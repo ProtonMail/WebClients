@@ -301,6 +301,9 @@
       "Connected": [
         "Conectado"
       ],
+      "Contact sales": [
+        "Contactar con ventas"
+      ],
       "Contact support": [
         "Contactar con soporte"
       ],
@@ -405,6 +408,9 @@
       ],
       "Delete account": [
         "Eliminar la cuenta"
+      ],
+      "Delete and confirm": [
+        "Eliminar y confirmar"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar el filtro \"${ Name }\""
@@ -6026,6 +6032,9 @@
       "Failed to process the logo": [
         "Error al procesar el logo"
       ],
+      "Failed to update billing address": [
+        "Error al actualizar la dirección de facturación"
+      ],
       "Failed to update detailed monitoring.": [
         "Error al actualizar la monitorización detallada."
       ],
@@ -6349,6 +6358,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exención de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
@@ -8299,6 +8311,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } dejará de guardar las versiones anteriores de tus archivos."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida."
       ],
@@ -9359,6 +9374,9 @@
       ],
       "finance": [
         "finanzas"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para obtener un historial de versiones de 10 años, ponte en contacto con nuestro equipo de ventas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -10593,6 +10611,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimines el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Se eliminarán todas las versiones de tus archivos anteriores a ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Se eliminarán todas las versiones anteriores de tus archivos."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿Estás seguro de que deseas continuar?"
       ],
@@ -10769,6 +10793,9 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejora para mantener tus beneficios de ${ planTitle }."
+      ],
+      "Upgrade to unlock": [
+        "Pásate a un plan superior para desbloquear"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Pásate a un plan superior para desbloquear ${ monitorLink }."
@@ -12347,6 +12374,9 @@
       "Don't ask again": [
         "No preguntar de nuevo"
       ],
+      "Don't keep versions": [
+        "No guardar versiones"
+      ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
@@ -12673,6 +12703,9 @@
       ],
       "Navigation": [
         "Navegación"
+      ],
+      "Net amount": [
+        "Importe neto"
       ],
       "New display name": [
         "Nuevo Nombre a mostrar"
@@ -16605,6 +16638,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% de impuestos"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
@@ -16626,12 +16662,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excl. ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -16641,17 +16671,20 @@
       "Got it": [
         "Entiendo"
       ],
-      "I'm purchasing as a business": [
-        "Estoy comprando como empresa"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Incl. ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Incluye un ${ taxRate }% de ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Incluye un ${ taxRate }% de impuestos"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
@@ -16661,6 +16694,9 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
+      ],
+      "Net amount": [
+        "Importe neto"
       ],
       "Offer unavailable": [
         "Oferta no disponible"
@@ -16876,18 +16912,6 @@
       ],
       "Business Number": [
         "Número empresarial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar el número empresarial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar el número de IVA"
       ],
       "EIN": [
         "Número de identificación fiscal (EIN)"
@@ -18617,6 +18641,11 @@
         "Solicitud de restablecimiento de contraseña"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "Activar la sección Fotos"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organiza tu bandeja de entrada con carpetas y etiquetas. ${ learnMoreLink }"
@@ -18922,8 +18951,8 @@
       "Private AI assistant with encrypted chat history": [
         "Asistente de IA privado con historial de chat cifrado"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Se ha aplicado la promoción (-${ checkout.discountPercent }% de descuento)."
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Promoción aplicada: ${ checkoutUi.discountPercent }% de descuento"
       ],
       "Recover previous file versions": [
         "Recuperar las versiones previas de los archivos"
@@ -20459,6 +20488,9 @@
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
       ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario añadido. La sincronización puede tardar unos minutos."
       ],
@@ -21392,6 +21424,9 @@
       ],
       "Delete user?": [
         "¿Eliminar usuario?"
+      ],
+      "Delete version history?": [
+        "¿Eliminar el historial de versiones?"
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
@@ -23072,8 +23107,8 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Ahorra un ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ahorra un ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

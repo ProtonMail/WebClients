@@ -4020,6 +4020,9 @@
       "Failed to process the logo": [
         "Fehler beim Verarbeiten des Logos"
       ],
+      "Failed to update billing address": [
+        "Rechnungsadresse konnte nicht aktualisiert werden"
+      ],
       "Failed to update detailed monitoring.": [
         "Die detaillierte Überwachung konnte nicht aktualisiert werden."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
@@ -11877,9 +11883,6 @@
       "Got it": [
         "Verstanden"
       ],
-      "I'm purchasing as a business": [
-        "Ich kaufe als Unternehmen"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -12100,18 +12103,6 @@
       ],
       "Business Number": [
         "Unternehmensnummer"
-      ],
-      "Edit ABN": [
-        "ABN bearbeiten"
-      ],
-      "Edit Business Number": [
-        "Unternehmensnummer bearbeiten"
-      ],
-      "Edit EIN": [
-        "EIN bearbeiten"
-      ],
-      "Edit VAT number": [
-        "Umsatzsteuernummer bearbeiten"
       ],
       "EIN": [
         "Arbeitgeber-Identifikationsnummer (EIN)"
@@ -14511,6 +14502,9 @@
       "Billing details updated": [
         "Rechnungsdetails aktualisiert"
       ],
+      "Billing information updated": [
+        "Rechnungsinformationen aktualisiert"
+      ],
       "Canceling import": [
         "Import wird abgebrochen"
       ],
@@ -16447,8 +16441,8 @@
       "Recommended": [
         "Empfohlen"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spare ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "${ price.checkoutUi.discountPercent } % sparen"
       ]
     },
     "User role": {
