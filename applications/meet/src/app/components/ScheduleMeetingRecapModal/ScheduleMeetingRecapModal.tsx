@@ -297,7 +297,7 @@ export const ScheduleMeetingRecapModal = ({
                         >
                             <p className="flex flex-nowrap flex-row items-center gap-2 max-w-full m-0">
                                 <a
-                                    className="meeting-link flex-1"
+                                    className="meeting-link flex-1 text-break text-no-decoration"
                                     href={meetingLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
