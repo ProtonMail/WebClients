@@ -7,6 +7,8 @@ import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import { areNodeMetasEqual } from '@proton/drive-store'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 
+// @TODO(aman): This whole thing should probably be refactored to be some kind of state machine that directly reflects the current status instead of using events where it can potentially become disjointed from the actual state.
+
 type WebsocketStatus = {
   state?: WebsocketConnectionEventStatusChange
   saving?: boolean
@@ -61,6 +63,15 @@ export function useWebSocketStatus(document?: NodeMeta | PublicNodeMeta) {
           }
         },
         WebsocketConnectionEvent.Disconnected,
+      ),
+
+      application.eventBus.addEventCallback(
+        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.NeedsToBeInReadonlyMode]) => {
+          if (!document || areNodeMetasEqual(document, payload.document)) {
+            setCurrentStatus({ state: WebsocketConnectionEvent.NeedsToBeInReadonlyMode })
+          }
+        },
+        WebsocketConnectionEvent.NeedsToBeInReadonlyMode,
       ),
 
       application.eventBus.addEventCallback(
