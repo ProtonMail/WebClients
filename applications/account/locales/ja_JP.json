@@ -321,9 +321,6 @@
       "Connected": [
         "接続済み"
       ],
-      "Contact sales": [
-        "セールスに連絡"
-      ],
       "Contact support": [
         "サポートへ連絡"
       ],
@@ -446,9 +443,6 @@
       ],
       "Delete account": [
         "アカウントを削除"
-      ],
-      "Delete and confirm": [
-        "削除・確認"
       ],
       "Delete filter “${ Name }”": [
         "フィルタ「${ Name }」を削除"
@@ -8478,9 +8472,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }%割引"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }は以前のファイルバージョンを保存しなくなります。"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
       ],
@@ -9551,9 +9542,6 @@
       ],
       "finance": [
         "ファイナンス"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10 年間のバージョン履歴については、営業チームまでお問い合わせください。"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "メールと最適化されたモバイル体験へいつでもアクセスできるよう、 ${ androidAppLink } または ${ iosAppLink } をダウンロードしましょう。"
@@ -10845,12 +10833,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "この確認には最大で1時間かかる場合があります。確認が成功した後も、TXTレコードを削除しないでください。ドメインを所有し続けていることを確認するために必要です。"
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "${ rententionLabel }より古い以前のファイルバージョンがすべて削除されます。"
-      ],
-      "This will delete all previous versions of your files.": [
-        "ファイルの以前のバージョンは全て削除されます。"
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "これは**${ email }**へのアクセスを拒否します。本当に続けますか？"
       ],
@@ -11037,9 +11019,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle }の特典を維持するには、アップグレードしてください。"
       ],
-      "Upgrade to unlock": [
-        "アップグレードしてロックを解除"
-      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "組織向けの${ PROTON_SENTINEL_NAME }にアクセスするには、${ firstPlanNames }または${ lastPlanName }にアップグレードしてください。"
       ],
@@ -11132,9 +11111,6 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
-      ],
-      "Version history": [
-        "バージョン履歴"
       ],
       "Version number successfully copied to clipboard": [
         "バージョン番号がクリップボードにコピーされました"
@@ -12721,9 +12697,6 @@
       ],
       "Don't ask again": [
         "今後表示しない"
-      ],
-      "Don't keep versions": [
-        "バージョンを保持しない"
       ],
       "Don't show this again": [
         "次回から表示しない"
@@ -17176,9 +17149,6 @@
       "Got it": [
         "分かりました"
       ],
-      "I'm purchasing as a business": [
-        "法人として購入します"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
       ],
@@ -17399,18 +17369,6 @@
       ],
       "Business Number": [
         "法人番号"
-      ],
-      "Edit ABN": [
-        "ABNを編集する"
-      ],
-      "Edit Business Number": [
-        "法人番号を編集する"
-      ],
-      "Edit EIN": [
-        "EIN を編集する"
-      ],
-      "Edit VAT number": [
-        "VAT番号を編集する"
       ],
       "EIN": [
         "EIN"
@@ -19157,9 +19115,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "写真セクションを有効化"
-      ],
       "Get updates about comments via email": [
         "メール経由でコメントの最新情報を受け取る"
       ],
@@ -19475,9 +19430,6 @@
       ],
       "Private AI assistant with encrypted chat history": [
         "チャット履歴の暗号化を備えたプライベートAIアシスタント"
-      ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "プロモーションが適用済み – ${ checkout.discountPercent }% 割引"
       ],
       "Recover previous file versions": [
         "以前のファイルバージョンを復元"
@@ -21910,9 +21862,6 @@
       "Delete user?": [
         "ユーザーを削除しますか？"
       ],
-      "Delete version history?": [
-        "バージョン履歴を削除しますか？"
-      ],
       "Deny access to user?": [
         "ユーザーのアクセスを拒否しますか？"
       ],
@@ -23713,9 +23662,6 @@
       ],
       "Recommended": [
         "おすすめ"
-      ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "${ price.uiData.discountPercent }%を節約"
       ]
     },
     "User role": {

@@ -6389,6 +6389,9 @@
       "Failed to process the logo": [
         "Misslyckades att bearbeta loggan"
       ],
+      "Failed to update billing address": [
+        "Misslyckades att uppdatera faktureringsadress"
+      ],
       "Failed to update detailed monitoring.": [
         "Misslyckades att uppdatera detaljerad övervakning."
       ],
@@ -6718,6 +6721,9 @@
       ],
       "Tab closed": [
         "Flik stängd"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Momsbefrielse stöds inte för detta paket"
       ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
@@ -17587,6 +17593,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate } % moms"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -17608,12 +17617,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exkl. ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exkl. ${ taxRate } % moms: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
@@ -17623,17 +17626,20 @@
       "Got it": [
         "Jag förstår"
       ],
-      "I'm purchasing as a business": [
-        "Jag köper som ett företag"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inkl. ${ taxRate } % ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Inkl. ${ taxRate } % moms: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inklusive ${ taxRate } % ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inklusive ${ taxRate } % moms"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Inklusive ${ taxRate } % moms: ${ taxAmount }"
@@ -17858,18 +17864,6 @@
       ],
       "Business Number": [
         "Företagsnummer"
-      ],
-      "Edit ABN": [
-        "Redigera ABN"
-      ],
-      "Edit Business Number": [
-        "Redigera företagsnummer"
-      ],
-      "Edit EIN": [
-        "Redigera EIN"
-      ],
-      "Edit VAT number": [
-        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -19941,8 +19935,8 @@
       "Private AI assistant with encrypted chat history": [
         "Privat AI-assistent med krypterad chatthistorik"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Kampanj tillämpad – ${ checkout.discountPercent } % rabatt"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Kampanj tillämpad – ${ checkoutUi.discountPercent } % rabatt"
       ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
@@ -21474,6 +21468,9 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
+      ],
+      "Billing information updated": [
+        "Faktureringsinformation uppdaterad"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender har lagts till. Det kan ta några minuter att synkronisera."
@@ -24285,8 +24282,8 @@
       "Recommended": [
         "Rekommenderad"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spara ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spara ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

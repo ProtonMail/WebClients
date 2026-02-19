@@ -321,9 +321,6 @@
       "Connected": [
         "Tilkoblet"
       ],
-      "Contact sales": [
-        "Ta kontakt med salg"
-      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -6771,6 +6768,9 @@
       "Tab closed": [
         "Fane lukket"
       ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritak støttes ikke for dette abonnementet"
+      ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
       ],
@@ -8808,9 +8808,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } vil ikke lenger beholde tidligere versjoner av filene dine."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -9931,9 +9928,6 @@
       ],
       "finance": [
         "finans"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
@@ -11250,10 +11244,7 @@
         "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Dette vil slette alle tidligere versjoner av filene dine eldre enn ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Dette vil slette alle tidligere versjoner av filene dine."
+        "Dette vil slette alle tidligere versjoner av filene dine som er eldre enn ${ rententionLabel }."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
@@ -11443,9 +11434,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
-      ],
-      "Upgrade to unlock": [
-        "Oppgrader for å låse opp"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Oppgrader for å låse opp ${ monitorLink }."
@@ -13175,9 +13163,6 @@
       ],
       "Don't ask again": [
         "Ikke spør igjen"
-      ],
-      "Don't keep versions": [
-        "Ikke behold versjoner"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -17705,12 +17690,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ekskl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ekskl. ${ taxRate }% moms: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17719,9 +17698,6 @@
       ],
       "Got it": [
         "Skjønner"
-      ],
-      "I'm purchasing as a business": [
-        "Jeg kjøper som en bedrift."
       ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inkl. ${ taxRate }% ${ taxName }: ${ taxAmount }"
@@ -17740,6 +17716,9 @@
       ],
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
+      ],
+      "Net amount": [
+        "Nettobeløp"
       ],
       "Offer unavailable": [
         "Tilbudet er utilgjengelig"
@@ -17955,18 +17934,6 @@
       ],
       "Business Number": [
         "Bedriftsnummer"
-      ],
-      "Edit ABN": [
-        "Rediger ABN"
-      ],
-      "Edit Business Number": [
-        "Rediger bedriftsnummer"
-      ],
-      "Edit EIN": [
-        "Rediger EIN"
-      ],
-      "Edit VAT number": [
-        "Rediger MVA-nummer"
       ],
       "EIN": [
         "EIN"
@@ -19735,7 +19702,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Aktiver fotoseksjon"
+        "Aktiver Bilder-seksjonen"
       ],
       "Get updates about comments via email": [
         "Få oppdateringer om kommentarer via e-post"
@@ -20065,8 +20032,8 @@
       "Private AI assistant with encrypted chat history": [
         "Privat KI-assistent med kryptert chattehistorikk"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Kampanje anvendt – ${ checkout.discountPercent } % rabatt"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Kampanjen er brukt – ${ checkoutUi.discountPercent } % rabatt"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -21608,6 +21575,9 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
+      "Billing information updated": [
+        "Faktureringsinformasjon er oppdatert"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
@@ -22601,7 +22571,7 @@
         "Slett bruker?"
       ],
       "Delete version history?": [
-        "Slette versjonshistorikk?"
+        "Vil du slette versjonshistorikken?"
       ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"
@@ -24421,8 +24391,8 @@
       "Recommended": [
         "Anbefalt"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spar ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {

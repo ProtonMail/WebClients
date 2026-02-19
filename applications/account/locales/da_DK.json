@@ -6441,6 +6441,9 @@
       "Failed to process the logo": [
         "Logoet blev ikke behandlet"
       ],
+      "Failed to update billing address": [
+        "Kunne ikke opdatere faktureringsadressen"
+      ],
       "Failed to update detailed monitoring.": [
         "Opdatering af detaljeret overvågning mislykkedes."
       ],
@@ -6770,6 +6773,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -9936,7 +9942,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Kontakt vores salgsteam for at få en 10-årig versionshistorik."
+        "For en 10-årig versionshistorik, kontakt venligst vores salgsteam."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -13541,6 +13547,9 @@
       ],
       "Navigation": [
         "Navigation"
+      ],
+      "Net amount": [
+        "Nettobeløb"
       ],
       "New display name": [
         "Nyt vist navn"
@@ -17687,6 +17696,9 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ taxRate }% taxes": [
+        "${ taxRate }% skat"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
@@ -17708,12 +17720,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Eksklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Eksklusiv ${ taxRate }% moms: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Eksklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -17723,17 +17729,20 @@
       "Got it": [
         "Forstået"
       ],
-      "I'm purchasing as a business": [
-        "Jeg køber som virksomhed"
-      ],
       "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Inkl. ${ taxRate }% moms: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Inklusiv ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Inklusiv ${ taxRate }% skatter og afgifter"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Inklusiv ${ taxRate }% moms: ${ taxAmount }"
@@ -17743,6 +17752,9 @@
       ],
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
+      ],
+      "Net amount": [
+        "Nettobeløb"
       ],
       "Offer unavailable": [
         "Tilbud ikke tilgængeligt"
@@ -17958,18 +17970,6 @@
       ],
       "Business Number": [
         "Forretningsnummer"
-      ],
-      "Edit ABN": [
-        "Redigér ABN"
-      ],
-      "Edit Business Number": [
-        "Redigér forretningsnummer"
-      ],
-      "Edit EIN": [
-        "Redigér EIN"
-      ],
-      "Edit VAT number": [
-        "Redigér momsnummer"
       ],
       "EIN": [
         "Momsnummer"
@@ -20068,8 +20068,8 @@
       "Private AI assistant with encrypted chat history": [
         "Privat AI-assistent med krypteret chathistorik"
       ],
-      "Promo applied – ${ checkout.discountPercent }% off": [
-        "Kampagne anvendt – ${ checkout.discountPercent }% rabat"
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Kampagne anvendt – ${ checkoutUi.discountPercent }% rabat"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -21609,6 +21609,9 @@
         "Backupadgangskode opdateret"
       ],
       "Billing details updated": [
+        "Faktureringsoplysninger opdateret"
+      ],
+      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Calendar added. It might take a few minutes to sync.": [
@@ -24424,8 +24427,8 @@
       "Recommended": [
         "Anbefalet"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Spar ${ price.uiData.discountPercent }%"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Spar ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {

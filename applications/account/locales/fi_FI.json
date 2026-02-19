@@ -427,9 +427,6 @@
       "Delete account": [
         "Poista tili"
       ],
-      "Delete and confirm": [
-        "Poista ja vahvista"
-      ],
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
       ],
@@ -5519,6 +5516,9 @@
       "Failed to process the logo": [
         "Logon käsittely epäonnistui"
       ],
+      "Failed to update billing address": [
+        "Laskutusosoitteen päivitys epäonnistui"
+      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Tiedosto on liian suuri. Logotiedoston koko voi olla enintään 30 kt."
       ],
@@ -5833,6 +5833,9 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
@@ -10206,9 +10209,6 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
-      "Version history": [
-        "Versiohistoria"
-      ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
       ],
@@ -11645,9 +11645,6 @@
       "Don't ask again": [
         "Älä kysy uudelleen"
       ],
-      "Don't keep versions": [
-        "Älä säilytä versioita"
-      ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
@@ -11977,6 +11974,9 @@
       ],
       "Navigation": [
         "Navigaatio"
+      ],
+      "Net amount": [
+        "Nettosumma"
       ],
       "New display name": [
         "Uusi näyttönimi"
@@ -15808,6 +15808,9 @@
       ]
     },
     "Payments": {
+      "${ taxRate }% taxes": [
+        "${ taxRate }% verot"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Maksu erääntyy kokeilun jälkeen ${ formattedDate }"
       ],
@@ -15829,12 +15832,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
       ],
-      "Excl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ilman ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ilman ${ taxRate }% veroja: ${ taxAmount }"
-      ],
       "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }%:n ${ taxName } poisluettuna: ${ taxAmount }"
       ],
@@ -15850,8 +15847,14 @@
       "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
         "Sisältää ${ taxRate }% veroja: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% ${ suggestedTaxName }": [
+        "Sisältää ${ taxRate }% ${ suggestedTaxName }"
+      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName } sisältäen: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes": [
+        "Sisältää ${ taxRate }% veroja"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
         "Sisältää ${ taxRate }% veroja: ${ taxAmount }"
@@ -15861,6 +15864,9 @@
       ],
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
+      ],
+      "Net amount": [
+        "Nettosumma"
       ],
       "Offer unavailable": [
         "Tarjous ei ole saatavilla"
@@ -16050,18 +16056,6 @@
       ],
       "Business Number": [
         "Yritystunnus"
-      ],
-      "Edit ABN": [
-        "Muokkaa ABT-tunnusta"
-      ],
-      "Edit Business Number": [
-        "Muokkaa yritystunnusta"
-      ],
-      "Edit EIN": [
-        "Muokkaa EIN-tunnusta"
-      ],
-      "Edit VAT number": [
-        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -17587,11 +17581,6 @@
         "Salasanan nollauspyyntö"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Ota Kuvat-osio käyttöön"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Pidä postilaatikkosi järjestyksessä kansioiden ja tunnisteiden avulla. ${ learnMoreLink }"
@@ -17864,6 +17853,9 @@
       ],
       "Private AI assistant with encrypted chat history": [
         "Yksityinen tekoälyavustaja salatulla keskusteluhistorialla"
+      ],
+      "Promo applied – ${ checkoutUi.discountPercent }% off": [
+        "Tarjous käytetty – ${ checkoutUi.discountPercent }% alennus"
       ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
@@ -19290,6 +19282,9 @@
       "Billing details updated": [
         "Laskutustiedot päivitetty"
       ],
+      "Billing information updated": [
+        "Laskutustiedot päivitetty"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalenteri lisättiin. Sen synkronointi saattaa kestää muutamia minuutteja."
       ],
@@ -20197,9 +20192,6 @@
       ],
       "Delete user?": [
         "Poistetaanko käyttäjä?"
-      ],
-      "Delete version history?": [
-        "Poistetaanko versiohistoria?"
       ],
       "Deny access to user?": [
         "Kielletäänkö käyttäjän käyttöoikeus?"
@@ -21760,8 +21752,8 @@
       "Recommended": [
         "Suositus"
       ],
-      "Save ${ price.uiData.discountPercent }%": [
-        "Säästä ${ price.uiData.discountPercent } %"
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Säästä ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {
