@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -13,6 +12,7 @@ import {
     getTrialRenewalAmountDueNoticeText,
     getTrialRenewalNoticeTextWithTermsAndConditions,
 } from '@proton/components/containers/payments/RenewalNotice';
+import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
@@ -23,22 +23,9 @@ import clsx from '@proton/utils/clsx';
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
 import { FreeFeatures } from '../Features/FreeFeatures';
+import { NoCreditCardBadge } from '../Layout/NoCreditCardBadge';
+import { PlanLogo } from '../Layout/PlanLogo';
 import { TaxRow } from './TaxRow';
-
-const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
-    return (
-        <div
-            className={clsx(
-                'w-custom ratio-square rounded-lg overflow-hidden flex items-center justify-center shrink-0',
-                border ? 'border border-weak' : undefined
-            )}
-            style={{ '--w-custom': '2.75rem', backgroundColor: 'white' }}
-            aria-hidden="true"
-        >
-            {children}
-        </div>
-    );
-};
 
 const PricingHeader = () => {
     const payments = usePaymentOptimistic();
@@ -50,27 +37,30 @@ const PricingHeader = () => {
 
     return (
         <>
-            <div className="px-4 lg:px-8 flex flex-nowrap items-center gap-2">
-                <span
-                    className="rounded text-semibold py-0.5 px-1 color-primary shrink-0"
-                    style={{ backgroundColor: 'rgb(109 74 255 / 0.08)' }}
-                >{c('Signup').t`Your trial`}</span>
-                {referrerName && (
-                    <span className="text-ellipsis">
-                        {getBoldFormattedText(c('Signup').t`Gifted by **${referrerName}**`, 'text-semibold')}
-                    </span>
-                )}
+            <div className="px-4 lg:px-8 flex flex-column gap-4 lg:gap-8">
+                <div className="flex flex-nowrap items-center gap-2">
+                    <span
+                        className="rounded text-semibold py-0.5 px-1 color-primary shrink-0"
+                        style={{ backgroundColor: 'rgb(109 74 255 / 0.08)' }}
+                    >{c('Signup').t`Your trial`}</span>
+                    {referrerName && (
+                        <span className="text-ellipsis">
+                            {getBoldFormattedText(c('Signup').t`Gifted by **${referrerName}**`, 'text-semibold')}
+                        </span>
+                    )}
+                </div>
+                <div className="flex justify-space-between items-center flex-nowrap items-center gap-2">
+                    <PlanLogo
+                        logoSrc={getPlanIconPath(selectedPlan.name)}
+                        planName={
+                            selectedPlan.name === PLANS.FREE
+                                ? `${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]}`
+                                : getNormalizedPlanTitleToPlus(selectedPlan.name)
+                        }
+                    />
+                    <NoCreditCardBadge plan={selectedPlan.name} />
+                </div>
             </div>
-            <header className="flex flex-nowrap gap-4 items-center px-4 lg:px-8">
-                <LogoIconShape>
-                    <img src={getPlanIconPath(selectedPlan.name)} alt="" />
-                </LogoIconShape>
-                <span className="text-2xl text-semibold" data-testid="planName">
-                    {selectedPlan.name === PLANS.FREE
-                        ? `${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]}`
-                        : selectedPlan.getPlan().Title}
-                </span>
-            </header>
         </>
     );
 };
@@ -78,18 +68,13 @@ const PricingHeader = () => {
 const TrialExplanation = () => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
-    const { eligibleTrials } = useEligibleTrials();
 
     const planName = PLAN_NAMES[selectedPlan.getPlanName()];
-
-    const creditCardRequired = eligibleTrials.creditCardRequiredPlans.includes(selectedPlan.name);
 
     const [referralInfo, loadingReferralInfo] = useReferralInfo();
 
     return (
         <div className="px-4 lg:px-8">
-            {!creditCardRequired && <p className="mt-0 mb-2">{c('Signup').t`No credit card required:`}</p>}
-
             <VerticalSteps className="vertical-steps--primary mb-0">
                 <VerticalStep
                     title={c('Signup').t`Create a ${BRAND_NAME} Account`}
@@ -310,7 +295,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
 
     return (
         <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
-            <div className="referral-signup-pricing-card-inner rounded-xl fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
+            <div className="referral-signup-pricing-card-inner rounded-xl border border-weak fade-in w-full flex flex-column shadow-referral gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
                 {isPaidPlan ? (
                     <>
                         <PricingHeader />

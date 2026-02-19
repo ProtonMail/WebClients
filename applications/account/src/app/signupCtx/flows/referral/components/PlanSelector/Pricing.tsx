@@ -20,7 +20,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
 
     const currency = price.checkResult.Currency;
 
-    return pricingInitialized ? (
+    const priceElement = (
         <Price
             key={`${plan}${payments.options.cycle}-price`}
             currency={currency}
@@ -29,8 +29,12 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
         >
             {price.checkoutUi.withDiscountPerMonth}
         </Price>
+    );
+
+    return pricingInitialized ? (
+        <span className="color-weak text-sm">{c('Signup').jt`Then ${priceElement}`}</span>
     ) : (
-        <SkeletonLoader width="3rem" height="1.25rem" />
+        <SkeletonLoader width="7rem" height="0.906rem" />
     );
 };
 
