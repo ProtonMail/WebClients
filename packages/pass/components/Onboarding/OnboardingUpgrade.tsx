@@ -18,14 +18,18 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { updateFeatureVariantCookie } from '@proton/pass/lib/cookies/features';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { deletePassCookie } from '@proton/pass/lib/cookies/cookies';
+import { UNLEASH_FLAG_COOKIE_NAME, updateFeatureVariantCookie } from '@proton/pass/lib/cookies/features';
 import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
+import { getUserFeaturesIntent } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
@@ -104,16 +108,25 @@ export const Content: FC = () => {
         plan: PLANS.PASS_LIFETIME,
         upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING,
     });
+    const { revalidate } = useActionRequest(getUserFeaturesIntent, {
+        onSuccess: () => deletePassCookie(UNLEASH_FLAG_COOKIE_NAME),
+        onFailure: () => deletePassCookie(UNLEASH_FLAG_COOKIE_NAME),
+    });
     const user = useSelector(selectUser);
+    const authStore = useAuthStore();
+    const userID = authStore?.getUserID();
+
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
     const displayLifetimeCard = passLifetimeFlag && supportedCurrencies.includes(user?.Currency ?? '');
     const plusTitle = PLAN_NAMES[PLANS.PASS];
     const welcomeUnlimitedVariant = useFeatureFlagVariant(PassFeature.PassOnboardingUpgrade);
 
-    /* Set cookie for A/B test when upgrade screen is shown (web/desktop only) */
+    /* Set cookie for A/B test when upgrade screen is shown (web/desktop only).
+     * It will send a single API request (can be any) with the Unleash cookie for telemetry then delete the cookie */
     useEffect(() => {
         if (!EXTENSION_BUILD && welcomeUnlimitedVariant?.name) {
             updateFeatureVariantCookie(PassFeature.PassOnboardingUpgrade, welcomeUnlimitedVariant.name);
+            if (userID) revalidate(userID);
         }
     }, []);
 

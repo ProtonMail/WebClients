@@ -1,6 +1,6 @@
+import { getPassCookie, setPassCookie } from '@proton/pass/lib/cookies/cookies';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { addDays, endOfDay } from '@proton/shared/lib/date-fns-utc';
-import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
 export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
 
@@ -8,7 +8,7 @@ export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
 export const getFeaturesFromCookie = (): Record<string, string> => {
     try {
         /** Format: "FlagName:Variant,SecondFlagName:Variant" */
-        const cookie = getCookie(UNLEASH_FLAG_COOKIE_NAME);
+        const cookie = getPassCookie(UNLEASH_FLAG_COOKIE_NAME);
         if (!cookie) return {};
 
         return Object.fromEntries(
@@ -47,5 +47,5 @@ export const updateFeatureVariantCookie = (flagName: PassFeature, variantName: s
         expirationDate: endOfDay(addDays(new Date(), 30)).toUTCString(),
     };
 
-    setCookie(cookie);
+    setPassCookie(cookie);
 };

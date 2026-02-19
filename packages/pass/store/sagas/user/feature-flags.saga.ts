@@ -1,11 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { UNLEASH_FLAG_COOKIE_NAME } from '@proton/pass/lib/cookies/features';
 import { getFeatureFlags } from '@proton/pass/lib/user/user.requests';
 import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '@proton/pass/store/actions';
 import type { FeatureFlagAndVariantState } from '@proton/pass/store/reducers';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { deleteCookie } from '@proton/shared/lib/helpers/cookies';
 
 /* Try to sync the user feature flags on each wakeup success :
 /* `getUserFeatures` will only request pass feature flags from the api
@@ -17,8 +15,6 @@ function* syncFeatures({ getAuthStore, onFeatureFlags, extensionId }: RootSagaOp
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
         const incoming: FeatureFlagAndVariantState = yield getFeatureFlags(extensionId);
-        // Reset feature flags cookie. Not used on extension.
-        if (!EXTENSION_BUILD) deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
         onFeatureFlags?.(incoming);
