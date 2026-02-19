@@ -142,14 +142,13 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     const actionButton = (
         <Button
             className={clsx(
-                'rounded-full color-invert reload-button px-10 py-4 text-semibold',
+                'rounded-full reload-button px-10 py-4 text-semibold primary',
                 isUpsellModal() && 'upsell-modal-button w-full'
             )}
             onClick={() => {
                 onClose();
                 action();
             }}
-            color="norm"
             size="medium"
         >
             {actionText[ctaModalType]}

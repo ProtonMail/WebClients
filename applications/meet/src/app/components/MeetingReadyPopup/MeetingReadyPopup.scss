@@ -99,13 +99,4 @@ im.$media-expressions: $media-expressions;
 			color: var(--interaction-norm-major-2);
 		}
 	}
-
-	.copy-meeting-link-button {
-		background-color: var(--interaction-weak);
-
-		&:hover,
-		&:focus {
-			background-color: var(--interaction-weak-major-1) !important;
-		}
-	}
 }

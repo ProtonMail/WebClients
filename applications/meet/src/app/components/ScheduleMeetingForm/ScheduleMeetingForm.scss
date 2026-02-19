@@ -60,30 +60,6 @@
 		font-weight: 500 !important;
 	}
 
-	.save-button {
-		color: black;
-		background: var(--interaction-norm);
-		border: 1px solid #ffffff0a;
-	}
-
-	.save-button:hover,
-	.save-button:active {
-		color: black;
-		background: #c1b8ff;
-	}
-
-	.delete-button {
-		background-color: var(--background-card);
-		border: 1px solid var(--border-norm);
-		color: white;
-	}
-
-	.delete-button:hover,
-	.delete-button:active {
-		background-color: var(--button-lighter-hover-background-color);
-		color: #a0a0a0;
-	}
-
 	.input-link {
 		color: var(--ui-purple-interaction-minor-1);
 		background-color: var(--background-card);

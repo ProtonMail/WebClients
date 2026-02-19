@@ -70,7 +70,7 @@ export const DashboardContainerBody = ({
                                 onCreateRoomClick={onCreateRoomClick}
                             />
                             <Button
-                                className="rounded-full border-none flex justify-center items-center join-via-link-button text-rg py-4 px-6"
+                                className="rounded-full border-none flex justify-center items-center tertiary text-rg py-4 px-6"
                                 size="large"
                                 onClick={onJoinWithLinkClick}
                             >
