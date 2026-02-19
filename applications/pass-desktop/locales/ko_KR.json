@@ -1004,6 +1004,9 @@
       "Error reporting problem": [
         "문제 보고 실패"
       ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
+      ],
       "Failed removing the invite.": [
         "초대 삭제 실패."
       ],
@@ -1921,7 +1924,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
