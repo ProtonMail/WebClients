@@ -44,7 +44,7 @@ export const MeetingOpenedInDesktopApp = () => {
                 </div>
 
                 <Button
-                    className="rounded-full action-button-new px-custom py-4"
+                    className="rounded-full tertiary px-custom py-4"
                     onClick={() => {
                         clearDesktopAppPreference();
                         window.location.reload();

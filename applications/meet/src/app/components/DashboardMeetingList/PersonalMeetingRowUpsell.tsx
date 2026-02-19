@@ -39,7 +39,7 @@ export const PersonalMeetingRowUpsell = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
+                <div className="flex items-center gap-3 shrink-0 w-full md:w-auto">
                     <div
                         className="hidden-meeting-row-actions absolute top-custom right-custom md:static gap-2 items-center color-norm flex"
                         style={{
@@ -58,7 +58,7 @@ export const PersonalMeetingRowUpsell = () => {
                         </Button>
                     </div>
                     <Button
-                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center md:mr-2"
+                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
                         size="medium"
                         shape="ghost"
                         disabled

@@ -57,7 +57,7 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
             style={{ gridTemplateColumns: 'auto 1fr auto' }}
         >
             <div />
-            <div className="flex items-center justify-center gap-2 ml-5">
+            <div className="flex items-center justify-center gap-3 ml-5">
                 <div className="color-weak text-semibold text-xs md:text-rg">
                     {
                         // translator: full sentence is "Get the best experience with the Proton Meet desktop app" where "Proton Meet" is emphasized in white color

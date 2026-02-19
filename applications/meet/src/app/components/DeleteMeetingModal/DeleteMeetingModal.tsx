@@ -82,9 +82,8 @@ export const DeleteMeetingModal = ({ meetingId, onClose, onDelete, isRoom }: Del
                     >{c('Action').t`Delete`}</Button>
 
                     <Button
-                        className="action-button-new rounded-full py-4 bg-weak border-none text-semibold border"
+                        className="tertiary rounded-full py-4 bg-weak border-none text-semibold border"
                         onClick={onClose}
-                        color="weak"
                         size="large"
                     >
                         {c('Action').t`Cancel`}

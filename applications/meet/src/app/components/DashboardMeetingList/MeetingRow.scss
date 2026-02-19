@@ -49,14 +49,9 @@ im.$breakpoints: $breakpoints;
 
 	.delete-button:hover,
 	.delete-button:focus {
-		border-color: var(--signal-danger) !important;
+		border-color: var(--signal-danger-minor-2) !important;
 		background: var(--signal-danger-minor-2) !important;
-		color: var(--signal-danger) !important;
-	}
-
-	.join-button:hover,
-	.join-button:focus {
-		color: var(--text-norm) !important;
+		color: var(--signal-danger-major-1) !important;
 	}
 }
 
