@@ -3139,9 +3139,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Os campos de texto são opcionais. As informações fornecidas neste formulário alterarão apenas a fatura selecionada, e não os detalhes das faturas futuras."
       ]
     },
     "Email body for invitation": {
@@ -10028,9 +10025,6 @@
       "Got it": [
         "Entendi"
       ],
-      "I'm purchasing as a business": [
-        "Estou comprando como empresa"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "Incluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
@@ -10226,18 +10220,6 @@
       ],
       "Business Number": [
         "Número comercial"
-      ],
-      "Edit ABN": [
-        "Editar ABN"
-      ],
-      "Edit Business Number": [
-        "Editar número comercial"
-      ],
-      "Edit EIN": [
-        "Editar EIN"
-      ],
-      "Edit VAT number": [
-        "Editar número de IVA"
       ],
       "EIN": [
         "Número de identificação tributária (EIN)"
@@ -11702,6 +11684,9 @@
       ],
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
+      ],
+      "Billing information updated": [
+        "As informações de faturamento foram atualizadas"
       ],
       "Canceling import": [
         "Cancelando a importação"

@@ -450,6 +450,9 @@
       "Enable drive search": [
         "드라이브 검색 활성화하기"
       ],
+      "Encrypted": [
+        "암호화됨"
+      ],
       "Expand": [
         "펼치기"
       ],
@@ -936,6 +939,9 @@
       "Scan & Download (${ nbSelected })": [
         "스캔 및 다운로드 (${ nbSelected }개)"
       ],
+      "Scan and Download": [
+        "스캔 및 다운로드"
+      ],
       "Search": [
         "검색"
       ],
@@ -1010,6 +1016,9 @@
       ],
       "Share your calendar with your team": [
         "팀과 일정 공유하기"
+      ],
+      "Shared": [
+        "공유됨"
       ],
       "Sharing is end-to-end encrypted": [
         "공유가 종단간 암호화됩니다"
@@ -3110,9 +3119,6 @@
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
-      ],
-      "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "텍스트 입력란은 선택 사항입니다. 이 양식에 제공된 정보는 선택한 송장에 한해 변경되며 향후 송장 세부 사항은 변경되지 않습니다."
       ]
     },
     "Email body for invitation": {
@@ -3358,6 +3364,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "외부 초대가 일시적으로 비활성화 되었습니다. 나중에 다시 시도하세요."
+      ],
+      "Failed loading group members": [
+        "그룹 구성원을 로드하는 데 실패했습니다"
       ],
       "Failed to copy photo to album": [
         "사진을 앨범에 복사하지 못했습니다."
@@ -5873,6 +5882,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
       ],
+      "Preparing": [
+        "준비 중"
+      ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
       ],
@@ -5935,6 +5947,9 @@
       ],
       "Request access, or switch to an account with access.": [
         "접근 권한을 요청하거나, 권한이 있는 다른 계정으로 전환하세요."
+      ],
+      "Requested item doesn't exist anymore": [
+        "요청한 항목이 더 이상 존재하지 않습니다."
       ],
       "Restore": [
         "복원"
@@ -6331,6 +6346,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "파일 이름, 날짜, 유형으로 검색을 시도하세요."
+      ],
+      "Unexpected download error": [
+        "예기치 않은 다운로드 오류"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
@@ -6848,6 +6866,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
+      "Access": [
+        "접근"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "스크립팅, 자동화 및 개발 워크플로우에 이상적인 터미널에서 ${ PASS_APP_NAME }에 안전하게 접근하세요."
       ],
@@ -6877,6 +6898,9 @@
       ],
       "All": [
         "전체"
+      ],
+      "Allow editors to change permissions and share": [
+        "편집자가 권한을 변경하거나 공유하도록 허용"
       ],
       "Anderson": [
         "길동"
@@ -7034,6 +7058,9 @@
       "Device name": [
         "기기 이름"
       ],
+      "Disable this link on a specific date": [
+        "특정 날짜에 이 링크 비활성화"
+      ],
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
       ],
@@ -7089,6 +7116,9 @@
         "만료됨"
       ],
       "Expires": [
+        "만료"
+      ],
+      "Expiry": [
         "만료"
       ],
       "Extended address": [
@@ -7304,6 +7334,9 @@
       "Replace existing folder or file": [
         "기존 폴더 또는 파일 대체"
       ],
+      "Require password": [
+        "비밀번호 요구"
+      ],
       "Reveal password": [
         "비밀번호 표시"
       ],
@@ -7312,6 +7345,9 @@
       ],
       "Select type of abuse": [
         "악용 유형 선택"
+      ],
+      "Set a password to limit access via link": [
+        "링크로 접근을 제한하도록 비밀번호를 설정하세요"
       ],
       "Set recovery method": [
         "복구 방법 설정"
@@ -8940,6 +8976,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
+      "\"${ name }\" shared": [
+        "\"${ name }\"이(가) 공유됨"
+      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\"이(가) 성공적으로 복사되었습니다"
       ],
@@ -9155,6 +9194,9 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "선택한 사진이 이미 “${ albumName }”에 존재합니다."
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "설정이 업데이트되었습니다. 편집자가 권한을 변경하거나 공유할 수 있습니다."
       ],
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
@@ -9746,9 +9788,6 @@
       "Got it": [
         "확인했습니다"
       ],
-      "I'm purchasing as a business": [
-        "사업체 용도로 구매합니다"
-      ],
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
       ],
@@ -9938,18 +9977,6 @@
       ],
       "Business Number": [
         "사업자등록번호"
-      ],
-      "Edit ABN": [
-        "ABN 수정"
-      ],
-      "Edit Business Number": [
-        "사업자등록번호 수정"
-      ],
-      "Edit EIN": [
-        "EIN 수정"
-      ],
-      "Edit VAT number": [
-        "VAT 번호 수정"
       ],
       "EIN": [
         "EIN"
