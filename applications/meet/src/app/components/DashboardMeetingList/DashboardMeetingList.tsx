@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { useFlag } from '@proton/unleash';
 
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';
@@ -35,11 +36,13 @@ export const DashboardMeetingList = ({
     handleRotatePersonalMeeting,
     loadingRotatePersonalMeeting,
 }: DashboardMeetingListProps) => {
+    const isPastMeetingsEnabled = useFlag('MeetPastMeetings');
+
     const [search, setSearch] = useState('');
     const [activeTab, setActiveTab] = useState<DashboardMeetingListTab>(DashboardMeetingListTab.TimeBased);
     const [sortBy, setSortBy] = useState<SortOption>(SortOption.Upcoming);
 
-    const sortOptions = getSortOptions();
+    const sortOptions = getSortOptions(isPastMeetingsEnabled);
     const selectedSortOption = sortOptions.find((opt) => opt.value === sortBy) as SortOptionObject;
 
     const filteredMeetings = meetings.filter((meeting) =>
