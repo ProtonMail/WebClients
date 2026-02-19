@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
@@ -8,15 +10,14 @@ import type { SupportedReferralPlans } from '../../helpers/plans';
 import './ReferralPlanIcon.scss';
 
 interface Props {
-    icon: string;
+    icon: ReactNode;
     plan: SupportedReferralPlans;
     selected: boolean;
     handleClick: (plan: SupportedReferralPlans) => void;
     title: string;
-    extraShortTitle?: string;
 }
 
-export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title, extraShortTitle }: Props) => {
+export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title }: Props) => {
     const { eligibleTrials } = useEligibleTrials();
 
     if (!eligibleTrials.trialPlans.includes(plan)) {
@@ -35,23 +36,20 @@ export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title, ext
         >
             <div
                 className={clsx(
-                    'ReferralPlanIcon-icon overflow-hidden w-custom sm:w-custom lg:w-custom ratio-square shadow-color-primary',
+                    'ReferralPlanIcon-icon overflow-hidden w-custom flex items-center justify-center ratio-square shadow-color-primary',
                     selected ? 'shadow-lifted' : 'shadow-raised'
                 )}
-                style={{ '--w-custom': '3rem', '--sm-w-custom': '4rem', '--lg-w-custom': '5rem' }}
+                style={{ '--w-custom': '3rem' }}
             >
-                <img src={icon} alt="" className="animate-fade-in" />
+                {icon}
             </div>
             <div
                 className={clsx(
-                    'ReferralPlanIcon-name text-sm text-semibold lg:text-rg inline-flex flex-row justify-center rounded-full px-1 sm:px-2 py-1 max-w-full',
+                    'ReferralPlanIcon-name text-sm text-semibold lg:text-rg inline-flex flex-row justify-center rounded-xl px-1 sm:px-2 py-1 max-w-full text-no-cut',
                     selected ? 'color-primary bg-norm shadow-lifted shadow-color-primary' : 'color-weak'
                 )}
             >
-                <span className="block sm:hidden" aria-hidden>
-                    {extraShortTitle ? extraShortTitle : title}
-                </span>
-                <span className="hidden sm:block">{title}</span>
+                <span>{title}</span>
             </div>
         </button>
     );

@@ -1,5 +1,8 @@
 import { c, msgid } from 'ttag';
 
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcShield } from '@proton/icons/icons/IcShield';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
@@ -12,18 +15,8 @@ export const VPNFeatures = () => {
 
     return (
         <>
-            <FeatureItem text={c('Signup').t`Stream your favorite TV shows and movies`} highlighted />
-            <FeatureItem text={c('Signup').t`Block ads, trackers, and malware`} highlighted />
             <FeatureItem
-                text={c('Signup').ngettext(
-                    msgid`Secure ${VPN_CONNECTIONS} device at a time`,
-                    `Secure ${VPN_CONNECTIONS} devices at a time`,
-                    VPN_CONNECTIONS
-                )}
-                highlighted
-            />
-            <FeatureItem text={c('Signup').t`Highest VPN speed`} highlighted />
-            <FeatureItem
+                icon={<IcGlobe size={5} />}
                 loading={vpnServersCountLoading}
                 text={[
                     // Translator: Full sentence: "N+ servers across N+ countries"
@@ -40,7 +33,20 @@ export const VPNFeatures = () => {
                 ].join(', ')}
                 highlighted
             />
-            <FeatureItem text={c('Signup').t`Fast P2P/BitTorrent downloads`} highlighted />
+            <FeatureItem
+                icon={<IcShield size={5} />}
+                text={c('Signup').t`Block ads, trackers, and malware`}
+                highlighted
+            />
+            <FeatureItem
+                icon={<IcMobile size={5} />}
+                text={c('Signup').ngettext(
+                    msgid`Secure ${VPN_CONNECTIONS} device at a time`,
+                    `Secure ${VPN_CONNECTIONS} devices at a time`,
+                    VPN_CONNECTIONS
+                )}
+                highlighted
+            />
         </>
     );
 };
