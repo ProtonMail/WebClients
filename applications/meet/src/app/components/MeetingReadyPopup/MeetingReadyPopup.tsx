@@ -70,7 +70,7 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                 </div>
 
                 <Button
-                    className="copy-meeting-link-button w-full rounded-full border-none p-4 flex justify-center items-center gap-1"
+                    className="copy-meeting-link-button secondary w-full rounded-full border-none p-4 flex justify-center items-center gap-1"
                     size="large"
                     onClick={async () => {
                         void navigator.clipboard.writeText(meetingLink);

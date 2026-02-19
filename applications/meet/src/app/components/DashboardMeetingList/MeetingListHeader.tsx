@@ -73,7 +73,7 @@ export const MeetingListHeader = forwardRef(
                         hasCaret={true}
                         shape="ghost"
                         className={clsx(
-                            'rounded-full border-none flex items-center justify-center sort-dropdown-button'
+                            'rounded-full border-none flex items-center justify-center sort-dropdown-button tertiary'
                         )}
                         size="large"
                     >
@@ -117,7 +117,7 @@ export const MeetingListHeader = forwardRef(
                         </DropdownMenu>
                     </Dropdown>
                     <Button
-                        className="list-toolbar-schedule-button rounded-full flex items-center justify-center gap-1 border-none px-6 py-4"
+                        className="list-toolbar-schedule-button rounded-full flex items-center justify-center gap-1 border-none px-6 py-4 secondary"
                         onClick={() => handleAddClick()}
                         size="large"
                     >

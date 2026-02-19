@@ -30,12 +30,7 @@ export const ConnectionLostModal = ({ onClose, onLeave }: ConnectionLostModalPro
                         'Action'
                     ).t`Leave`}</Button>
 
-                    <Button
-                        className="rounded-full py-4 bg-weak close-button border-none"
-                        onClick={onClose}
-                        color="weak"
-                        size="large"
-                    >
+                    <Button className="rounded-full py-4 bg-weak secondary border-none" onClick={onClose} size="large">
                         {c('Action').t`Stay in meeting`}
                     </Button>
                 </div>

@@ -10,20 +10,6 @@
 		font-size: 1em;
 	}
 
-	.cancel-button {
-		background: var(--background-card);
-		border: 1px solid var(--border-card);
-
-		&:hover {
-			background: var(--interaction-default-hover);
-		}
-	}
-
-	.join-button {
-		color: var(--text-invert);
-		background: var(--interaction-norm);
-	}
-
 	.meeting-link-input {
 		border: 1px solid var(--border-card);
 		background: var(--background-card);

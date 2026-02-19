@@ -5,15 +5,8 @@
 .device-select {
 	&#{&} {
 		padding-inline: 1.5rem;
-		border-color: var(--border-card) !important;
-		background-color: var(--background-card) !important;
 		outline: none;
 		box-shadow: none !important;
-
-		&:hover,
-		&:focus {
-			background-color: var(--interaction-weak-minor-2) !important;
-		}
 	}
 
 	.caret-icon {
