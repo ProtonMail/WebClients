@@ -9,18 +9,18 @@ import {
 } from '@proton/components';
 import type { StartupModal } from '@proton/components';
 
+import { DriveOnboardingModal } from '../../modals/DriveOnboardingModal';
 import { useDriveDocsFeatureFlag } from '../../store/_documents';
 import { DocsSuggestionsOnboardingModal } from './DocsSuggestionsOnboardingModal';
-import { DriveOnboardingV2Modal } from './DriveOnboardingV2Modal';
 
-const useDriveOnboardingV2Modal: () => StartupModal = () => {
+const useDriveOnboardingModal: () => StartupModal = () => {
     const { welcomeFlags } = useWelcomeFlags();
     const [modal, setModal, renderModal] = useModalState();
 
     return {
         showModal: !welcomeFlags.isDone,
         activateModal: () => setModal(true),
-        component: renderModal ? <DriveOnboardingV2Modal {...modal} /> : null,
+        component: renderModal ? <DriveOnboardingModal {...modal} /> : null,
     };
 };
 
@@ -44,7 +44,7 @@ const useDocsSuggestionsOnboardingModal: () => StartupModal = () => {
 
 const useStartupModals = () => {
     const trialEndedModal = useTrialEndedModal();
-    const welcomeModal = useDriveOnboardingV2Modal();
+    const welcomeModal = useDriveOnboardingModal();
     const docsModal = useDocsSuggestionsOnboardingModal();
     const reminderModal = useCancellationReminderModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();

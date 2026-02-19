@@ -6,7 +6,7 @@ import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosImg from '@proton/styles/assets/img/onboarding/drive-v2-macos.svg';
 import windowsImg from '@proton/styles/assets/img/onboarding/drive-v2-windows.svg';
 
-import { Actions, countActionWithTelemetry } from '../../../../utils/telemetry';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { Container } from '../Container';
 import { IconList } from '../IconList';
 import type { OnboardingProps } from '../interface';

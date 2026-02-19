@@ -5,7 +5,7 @@ import { useSettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import inviteImg from '@proton/styles/assets/img/onboarding/drive-v2-invite.png';
 
-import { Actions, countActionWithTelemetry } from '../../../../utils/telemetry';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { Container } from '../Container';
 import { IconList } from '../IconList';
 import type { OnboardingProps } from '../interface';
