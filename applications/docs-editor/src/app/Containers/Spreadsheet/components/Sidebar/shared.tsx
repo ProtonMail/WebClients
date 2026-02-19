@@ -48,7 +48,7 @@ export const NativeSelect = forwardRef<HTMLSelectElement, ComponentPropsWithRef<
   ref,
 ) {
   return (
-    <div className={'relative isolate h-[36px] rounded-lg border border-[#ADABA8]'}>
+    <div className={'relative isolate h-[36px] rounded-lg border border-[#EAE7E4]'}>
       <select className="absolute inset-0 appearance-none px-3 text-[13px]" {...props} ref={ref} />
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
         <Icon className="shrink-0" legacyName="chevron-down-filled" />
@@ -131,7 +131,7 @@ export const Input = createComponent(function Input(props: ComponentPropsWithRef
     <input
       {...props}
       className={clsx(
-        'h-[36px] text-ellipsis rounded-lg border border-[#ADABA8] px-3 text-sm !outline-none',
+        'h-[36px] text-ellipsis rounded-lg border border-[#EAE7E4] px-3 text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -162,7 +162,7 @@ export const Select = createComponent(function Select({ children, ...props }: Ar
     <Ariakit.Select
       {...props}
       className={clsx(
-        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[#ADABA8] pl-3 text-left text-sm !outline-none',
+        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[#EAE7E4] pl-3 text-left text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}

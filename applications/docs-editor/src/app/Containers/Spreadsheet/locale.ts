@@ -1,6 +1,8 @@
 import { localeCode, subscribeToLocaleChange } from '@proton/shared/lib/i18n'
 import { getIntlLocale } from '@proton/shared/lib/i18n/helper'
 import { useEffect, useMemo, useState } from 'react'
+import { CURRENCY_PATTERN, getCurrencySymbol } from './constants'
+import { ssfFormat } from '@rowsncolumns/utils'
 
 export const CURRENCY_FALLBACK = 'USD'
 export const LOCALE_FALLBACK = 'en-us'
@@ -130,6 +132,24 @@ function getNavigatorLanguages() {
   return typeof navigator !== 'undefined' && typeof navigator.languages !== 'undefined'
     ? navigator.languages.map((locale) => locale.toLowerCase())
     : []
+}
+
+export function getCurrencyList(locale: string) {
+  const currencyCodes = Intl.supportedValuesOf('currency')
+  const displayNames = new Intl.DisplayNames(locale, { type: 'currency' })
+  const list = currencyCodes.map((code) => {
+    const name = displayNames.of(code) || code
+    const pattern = CURRENCY_PATTERN({ locale, currency: code })
+    const example = ssfFormat(pattern, 1000.12, locale)
+    return {
+      code,
+      name,
+      example,
+      symbol: getCurrencySymbol(locale, code),
+    }
+  })
+
+  return list.sort((a, b) => a.name.localeCompare(b.name, locale))
 }
 
 export function useAccountLocale() {
