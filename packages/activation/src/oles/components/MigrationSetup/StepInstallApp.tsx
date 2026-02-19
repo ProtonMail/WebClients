@@ -46,7 +46,7 @@ const StepInstallApp: FC<{ model: MigrationSetupModel }> = () => {
             <p className="text-xl text-bold mb-2">{c('BOSS').t`Install migration app`}</p>
             <p className="color-weak mt-0">
                 {c('BOSS')
-                    .t`To migrate your organization’s data, you need to install the ${BRAND_NAME} Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${BRAND_NAME} to copy your data. After installing it, come back here to continue. Learn more`}
+                    .t`To migrate your organization’s data, you need to install the ${BRAND_NAME} Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${BRAND_NAME} to copy your data. After installing it, come back here to continue. Learn more`}
             </p>
             <Button color="norm" onClick={onClick}>
                 {c('BOSS').t`Sign in to Google Workspace`}
