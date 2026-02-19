@@ -66,7 +66,7 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
                 logger.warn(`Video streaming failed because of error: ${errorToString(error)}`);
             }
 
-            videoError = new EnrichedError('Failed to load the video', {
+            videoError = new EnrichedError('Failed to load the video for streaming preview', {
                 extra: {
                     error,
                     eventErrorMessage,
@@ -85,7 +85,10 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
     }, []);
 
     const initServiceWorker = (abortController: AbortController) => {
-        void initDownloadSW();
+        initDownloadSW().catch((err) => {
+            handleBrokenVideo(err);
+            abortController.abort();
+        });
 
         swTimeoutRef.current = setTimeout(() => {
             handleBrokenVideo(new ServiceWorkerTimeoutError('Service Worker timeout: not ready within 15 seconds'));
