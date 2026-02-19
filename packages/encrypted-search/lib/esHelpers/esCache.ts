@@ -139,8 +139,11 @@ const getOldestCachedItem = <ESItemMetadata, ESItemContent>(
         return;
     }
 
-    const values = [...esCacheRef.current.esCache.values()];
-    return values.pop();
+    let lastItem;
+    for (const item of esCacheRef.current.esCache.values()) {
+        lastItem = item;
+    }
+    return lastItem;
 };
 
 /**
@@ -185,8 +188,7 @@ const getMostRecentCachedItem = <ESItemMetadata, ESItemContent>(
         return;
     }
 
-    const values = [...esCacheRef.current.esCache.values()];
-    return values.shift();
+    return esCacheRef.current.esCache.values().next().value;
 };
 
 /**

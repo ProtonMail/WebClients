@@ -64,7 +64,7 @@ export const isESTimepoint = (value: any): value is ESTimepoint =>
  * Check whether an object contains no properties. This can happen if products
  * return e.g. a content object with undefined properties only
  */
-export const isObjectEmpty = (object: Object) => JSON.stringify(object) === '{}';
+export const isObjectEmpty = (object: Object) => Object.keys(object).length === 0;
 
 /**
  * Size in bytes of a ciphertext
@@ -109,9 +109,7 @@ export const hasReactivatedKey = ({
      *  - when we reactivate a key for only a single address, this condition won't be matched then.
      *  - if a key gets reactivated during the indexation, this condition will be matched, but the event will be consume and we won't correct undecrypted ones
      */
-    return (
-        !!AddressEvents && AddressEvents.filter(({ Action }) => Action === EVENT_ACTIONS.UPDATE).length === numAddresses
-    );
+    return AddressEvents?.filter(({ Action }) => Action === EVENT_ACTIONS.UPDATE).length === numAddresses;
 };
 
 /**
