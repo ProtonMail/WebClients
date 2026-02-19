@@ -40,6 +40,7 @@ describe('createActionsItemChecker', () => {
                 canEdit: true,
                 canDownload: false,
                 canDelete: false,
+                canShare: false,
                 canGoToParent: false,
                 canPreview: false,
                 canRename: false,
@@ -157,6 +158,27 @@ describe('createActionsItemChecker', () => {
             });
         });
 
+        describe('canShare', () => {
+            it('should be true for Admin role and firstItemUid should be defined', () => {
+                const result = createActionsItemChecker(
+                    [createItem({ nodeUid: 'share-uid', role: MemberRole.Admin })],
+                    'toolbar'
+                );
+                expect(result.canShare).toBe(true);
+                expect(result).toHaveProperty('firstItemUid', 'share-uid');
+            });
+
+            it('should be false for Editor role', () => {
+                const result = createActionsItemChecker([createItem({ role: MemberRole.Editor })], 'toolbar');
+                expect(result.canShare).toBe(false);
+            });
+
+            it('should be false for Viewer role', () => {
+                const result = createActionsItemChecker([createItem({ role: MemberRole.Viewer })], 'toolbar');
+                expect(result.canShare).toBe(false);
+            });
+        });
+
         describe('canGoToParent', () => {
             it('should be true when parentUid is defined and buttonType is contextMenu', () => {
                 const result = createActionsItemChecker([createItem({ parentUid: 'parent-uid' })], 'contextMenu');
@@ -191,6 +213,7 @@ describe('createActionsItemChecker', () => {
             expect(result.canShowDetails).toBe(false);
             expect(result.canOpenInDocs).toBe(false);
             expect(result.canGoToParent).toBe(false);
+            expect(result.canShare).toBe(false);
             expect(result).not.toHaveProperty('firstItemUid');
         });
 

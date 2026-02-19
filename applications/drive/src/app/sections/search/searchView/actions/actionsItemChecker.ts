@@ -13,6 +13,8 @@ type ParentCapability =
     | { canGoToParent: true; parentNodeUid: string }
     | { canGoToParent: false; parentNodeUid?: undefined };
 
+type ShareCapability = { canShare: true; firstItemUid: string } | { canShare: false };
+
 interface BaseSearchItemChecker {
     canEdit: boolean;
     canDownload: boolean;
@@ -26,7 +28,8 @@ type SingleItemChecker = BaseSearchItemChecker & {
     canShowDetails: true;
     firstItemUid: string;
 } & DocsCapability &
-    ParentCapability;
+    ParentCapability &
+    ShareCapability;
 
 type MultiItemChecker = BaseSearchItemChecker & {
     canPreview: false;
@@ -34,10 +37,9 @@ type MultiItemChecker = BaseSearchItemChecker & {
     canShowDetails: false;
     canGoToParent: false;
     parentNodeUid?: undefined;
-    firstItemUid?: undefined;
     canOpenInDocs: false;
     openInDocsInfo?: undefined;
-};
+} & ShareCapability;
 
 export type SearchItemChecker = SingleItemChecker | MultiItemChecker;
 
@@ -82,6 +84,7 @@ export const createActionsItemChecker = (
 
         const parentUid = firstItem.parentUid;
 
+        const isAdmin = firstItem.role === MemberRole.Admin;
         const base = {
             canEdit,
             canDownload,
@@ -93,6 +96,10 @@ export const createActionsItemChecker = (
             hasAtLeastOneSelectedItem,
         };
 
+        const sharePart: ShareCapability = isAdmin
+            ? { canShare: true as const, firstItemUid: firstItem.nodeUid }
+            : { canShare: false as const };
+
         const parentPart: ParentCapability =
             parentUid && buttonType === 'contextMenu' // Only show 'Go to parent' in context menu
                 ? { canGoToParent: true as const, parentNodeUid: parentUid }
@@ -102,7 +109,7 @@ export const createActionsItemChecker = (
             ? { canOpenInDocs: true as const, openInDocsInfo: openableDocsResult.value }
             : { canOpenInDocs: false as const };
 
-        return { ...base, ...parentPart, ...docsPart };
+        return { ...base, ...sharePart, ...parentPart, ...docsPart };
     }
 
     // Multi-selection case:
@@ -110,6 +117,7 @@ export const createActionsItemChecker = (
         canEdit,
         canDownload,
         canDelete,
+        canShare: false as const,
         canGoToParent: false as const,
         canPreview: false as const,
         canRename: false as const,
