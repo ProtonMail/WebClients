@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
-import { MemberRole, NodeType } from '@proton/drive';
+import { MemberRole, NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
 
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -11,6 +11,7 @@ import { useSharedByMeStore } from '../useSharedByMe.store';
 import { useSharedByMeNodesLoader } from './useSharedByMeNodesLoader';
 
 jest.mock('@proton/components');
+jest.mock('@proton/drive');
 jest.mock('../../../utils/errorHandling/useSdkErrorHandler');
 jest.mock('../../../utils/sdk/getNodeEntity');
 jest.mock('../../../utils/sdk/getSignatureIssues');
@@ -19,6 +20,8 @@ jest.mock('../useSharedByMe.store');
 
 const mockUseNotifications = jest.mocked(useNotifications);
 const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
+const mockGetDrive = jest.mocked(getDrive);
+const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 const mockGetSignatureIssues = jest.mocked(getSignatureIssues);
 const mockGetRootNode = jest.mocked(getRootNode);
@@ -83,6 +86,8 @@ describe('useSharedByMeNodesLoader', () => {
 
         mockUseNotifications.mockReturnValue({ createNotification: mockCreateNotification } as any);
         mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
+        mockGetDrive.mockReturnValue(mockDrive as any);
+        mockGetDriveForPhotos.mockReturnValue(mockDrive as any);
 
         mockUseSharedByMeStore.getState = jest.fn().mockReturnValue({
             isLoadingNodes: false,
@@ -118,7 +123,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
+            await result.current.loadSharedByMeNodes(abortSignal);
 
             expect(mockSetLoadingNodes).not.toHaveBeenCalled();
             expect(mockDrive.iterateSharedNodes).not.toHaveBeenCalled();
@@ -132,7 +137,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
+            await result.current.loadSharedByMeNodes(abortSignal);
 
             expect(mockSetLoadingNodes).toHaveBeenCalledWith(true);
             expect(mockDrive.iterateSharedNodes).toHaveBeenCalledWith(abortSignal);
@@ -148,7 +153,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
+            await result.current.loadSharedByMeNodes(abortSignal);
 
             expect(mockHandleError).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'We were not able to load some of your shared items',
@@ -165,7 +170,7 @@ describe('useSharedByMeNodesLoader', () => {
             const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
 
-            await result.current.loadSharedByMeNodes(abortSignal, mockDrive);
+            await result.current.loadSharedByMeNodes(abortSignal);
 
             expect(mockCleanupStaleItems).toHaveBeenCalledWith(new Set());
         });
