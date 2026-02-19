@@ -11,9 +11,9 @@
 	}
 
 	.input-name {
-		border-color: var(--theme-color) !important;
-
+		&:active,
 		&:focus-within {
+			border-color: var(--theme-color) !important;
 			box-shadow: 0 0 0 0.063rem var(--theme-color) !important;
 		}
 	}
