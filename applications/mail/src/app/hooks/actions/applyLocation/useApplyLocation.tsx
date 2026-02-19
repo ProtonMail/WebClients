@@ -33,7 +33,7 @@ import {
     unlabelMessages,
 } from 'proton-mail/store/mailbox/mailboxActions';
 
-import { getNotificationTextAdded } from '../label/helper';
+import { getApplyLabelNotificationText } from '../label/helper';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import {
     APPLY_LOCATION_TYPES,
@@ -451,12 +451,10 @@ export const useApplyLocation = () => {
             }
         };
 
-        const labelName = labels.filter((l) => l.ID === Object.keys(params.changes)[0])[0]?.Name;
-
         notificationID = createNotification({
             text: (
                 <UndoActionNotification closeOnUndo={false} onUndo={undo}>
-                    {getNotificationTextAdded(isMessage, elementsCount, labelName)}
+                    {getApplyLabelNotificationText({ changes: params.changes, labels, isMessage, elementsCount })}
                 </UndoActionNotification>
             ),
             expiration: -1, // Make the notification persistent
