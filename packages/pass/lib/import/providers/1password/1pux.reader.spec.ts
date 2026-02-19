@@ -31,11 +31,12 @@ describe('Import 1password 1pux', () => {
     test('should correctly parse vaults', () => {
         const { vaults } = get1PasswordData('1password.1pux');
 
-        expect(vaults.length).toEqual(4);
+        expect(vaults.length).toEqual(5);
         expect(vaults[0].name).toEqual('Personal');
         expect(vaults[1].name).toEqual('Private');
         expect(vaults[2].name).toEqual('SecondaryVault');
         expect(vaults[3].name).toEqual('Shared');
+        expect(vaults[4].name).toEqual('1pux reader test');
     });
 
     test('should support login items with multiple TOTPs [vault 1]', () => {
@@ -298,6 +299,15 @@ describe('Import 1password 1pux', () => {
         expect(item.content.extraPersonalDetails).toStrictEqual([]);
         expect(item.content.extraWorkDetails).toStrictEqual([]);
         expect(item.content.extraSections).toStrictEqual([]);
+    });
+
+    test('should replace empty section names with "Untitled" [vault 4]', () => {
+        const item = get1PasswordItem<'custom'>('1password.1pux', 4, 0);
+        expect(item.type).toEqual('custom');
+        expect(item.metadata.name).toEqual('Passport');
+        expect(item.content.sections).toBeDefined();
+        expect(item.content.sections.length).toEqual(1);
+        expect(item.content.sections[0].sectionName).toEqual('Untitled');
     });
 
     test('should handle all 1Password item types', () => {
