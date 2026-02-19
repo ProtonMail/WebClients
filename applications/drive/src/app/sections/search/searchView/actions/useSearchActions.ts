@@ -4,6 +4,7 @@ import useDriveNavigation from '../../../../hooks/drive/useNavigate';
 import { downloadManager } from '../../../../managers/download/DownloadManager';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useRenameModal } from '../../../../modals/RenameModal';
+import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../../../utils/isPreviewOrFallbackAvailable';
@@ -14,6 +15,8 @@ export const useSearchActions = () => {
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
+    const { sharingModal, showSharingModal } = useSharingModal();
+
     const { navigateToNodeUid } = useDriveNavigation();
     const { trashItems } = useTrashActions();
 
@@ -84,11 +87,16 @@ export const useSearchActions = () => {
         await navigateToNodeUid(parentNodeUid);
     };
 
+    const handleShare = (uid: string) => {
+        showSharingModal({ nodeUid: uid });
+    };
+
     return {
         modals: {
             previewModal,
             detailsModal,
             renameModal,
+            sharingModal,
         },
         handlePreview,
         handleDetails,
@@ -97,8 +105,8 @@ export const useSearchActions = () => {
         handleDownload,
         handleTrash,
         handleGoToParent,
+        handleShare,
         // TODO: Add show revision modal
         // TODO: Add move modal after converting it away from shareid,
-        // TODO: Add share modal after converting it away from shareid,
     };
 };

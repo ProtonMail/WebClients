@@ -17,6 +17,7 @@ interface BaseSearchActionsProps {
     onTrash: (uids: string[]) => void;
     onGoToParent: (parentNodeUid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
+    onShare: (uid: string) => void;
 }
 
 interface ContextMenuSearchActionsProps extends BaseSearchActionsProps {
@@ -41,6 +42,7 @@ export function SearchActions({
     onTrash,
     onGoToParent,
     onOpenDocsOrSheets,
+    onShare,
 }: SearchActionsProps) {
     const { selectedUids } = useSelectionStore(
         useShallow((state) => ({
@@ -72,6 +74,7 @@ export function SearchActions({
             onRename={onRename}
             onTrash={onTrash}
             onGoToParent={onGoToParent}
+            onShare={onShare}
             onOpenDocsOrSheets={onOpenDocsOrSheets}
             {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
         />
