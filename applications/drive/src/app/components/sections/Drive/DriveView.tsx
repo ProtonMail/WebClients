@@ -7,10 +7,10 @@ import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import { useAlbumOnboardingModal } from '../../../modals/AlbumOnboardingModal';
 import { useFolderView } from '../../../store';
 import DriveBreadcrumbsDeprecated from '../../DriveBreadcrumbsDeprecated';
 import { FileBrowserStateProvider } from '../../FileBrowser';
-import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import Drive from './Drive';
@@ -24,7 +24,7 @@ export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; lin
 export function DriveViewDeprecated() {
     const { activeFolder } = useActiveShare();
     const { navigateToRoot, navigateToLink } = useDriveNavigation();
-    const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
+    const { albumOnboardingModal } = useAlbumOnboardingModal();
 
     const folderView = useFolderView(activeFolder);
     const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
@@ -61,7 +61,7 @@ export function DriveViewDeprecated() {
 
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
-            {renderAlbumOnboardingModal}
+            {albumOnboardingModal}
             {isEditor ? (
                 <UploadDragDrop
                     shareId={activeFolder.shareId}

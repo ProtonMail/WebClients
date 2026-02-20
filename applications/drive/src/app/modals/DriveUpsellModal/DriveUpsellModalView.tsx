@@ -2,100 +2,43 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { usePlans } from '@proton/account/plans/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useModalTwoStatic } from '@proton/components';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Price from '@proton/components/components/price/Price';
 import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
-import { CYCLE, type Currency, PLANS } from '@proton/payments';
 
 import './DriveUpsellModal.scss';
 
-export interface DriveUpsellModalProps {
+export interface DriveUpsellModalViewProps {
     ['data-testid']?: string;
     titleModal: ReactNode;
     description: ReactNode;
-    upgradePath?: string;
+    upgradeButton: ReactNode;
+    footerTextModal: ReactNode;
     illustration: string;
-    onClose?: () => void;
-    onUpgrade?: () => void;
     size?: ModalSize;
-    submitText?: ReactNode;
-    /**
-     * Overrides `submitText`, `position` and `handleUpgrade` as it is a ReactNode
-     * replacing submit button
-     */
-    submitButton?: ReactNode;
-    footerText?: ReactNode;
     closeButtonColor?: 'white' | 'black';
+    isFree: boolean;
+    open: boolean;
+    onClose: () => void;
+    onExit?: () => void;
 }
 
-const DriveUpsellModal = ({
+export const DriveUpsellModalView = ({
     'data-testid': dataTestid,
     titleModal,
     description,
-    upgradePath,
+    upgradeButton,
+    footerTextModal,
     illustration,
-    onClose,
-    onUpgrade,
     size,
-    submitText,
-    submitButton,
-    footerText,
-    onExit,
-    open,
     closeButtonColor,
-}: DriveUpsellModalProps & ModalStateProps) => {
-    const [user] = useUser();
-
-    const handleUpgrade = () => {
-        onUpgrade?.();
-        onClose();
-    };
-
-    const currency: Currency = user?.Currency || 'USD';
-
-    const upgradePlan = user.isFree ? PLANS.DRIVE : PLANS.BUNDLE;
-
-    const [plansResult] = usePlans();
-    const plan = plansResult?.plans?.find(({ Name }) => Name === upgradePlan);
-
-    const amount = (plan?.DefaultPricing?.[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
-
-    const priceDrivePlus = (
-        <Price
-            key="monthly-price"
-            currency={currency}
-            suffix={c('specialoffer: Offers').t`/month`}
-            isDisplayedInSentence
-        >
-            {amount}
-        </Price>
-    );
-
-    const upgradeButton = submitButton || (
-        <ButtonLike
-            as={upgradePath ? SettingsLink : undefined}
-            path={upgradePath || ''}
-            onClick={handleUpgrade}
-            size="medium"
-            color="norm"
-            shape="solid"
-            fullWidth
-        >
-            {submitText || c('new_plans: Action').t`Upgrade`}
-        </ButtonLike>
-    );
-
-    const footerTextModal = footerText || c('new_plans: Action').jt`Plans starting from ${priceDrivePlus}`;
-
+    isFree,
+    open,
+    onClose,
+    onExit,
+}: DriveUpsellModalViewProps) => {
     return (
         <ModalTwo
             className="modal-two--drive-upsell"
@@ -122,7 +65,7 @@ const DriveUpsellModal = ({
                         className="text-left mb-4"
                         hideInfo
                         features={[
-                            user.isFree ? 'drive-plus-storage' : '1-tb-secure-storage',
+                            isFree ? 'drive-plus-storage' : '1-tb-secure-storage',
                             'file-sharing',
                             'docs-editor',
                             'photos-backup',
@@ -135,8 +78,4 @@ const DriveUpsellModal = ({
             </div>
         </ModalTwo>
     );
-};
-
-export const useDriveUpsellModal = () => {
-    return useModalTwoStatic(DriveUpsellModal);
 };
