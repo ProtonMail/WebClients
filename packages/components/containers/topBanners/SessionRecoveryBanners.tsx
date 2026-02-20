@@ -107,7 +107,7 @@ const PasswordResetAvailableBanner = () => {
             // translator: Full sentence "You have N minutes to reset your password."
             return c('session_recovery:available:info').ngettext(
                 msgid`You have ${timeRemaining.inMinutes} minute to reset your password.`,
-                ` You have ${timeRemaining.inMinutes} minutes to reset your password.`,
+                `You have ${timeRemaining.inMinutes} minutes to reset your password.`,
                 timeRemaining.inMinutes
             );
         }
@@ -116,7 +116,7 @@ const PasswordResetAvailableBanner = () => {
             // translator: Full sentence "You have N hours to reset your password."
             return c('session_recovery:available:info').ngettext(
                 msgid`You have ${timeRemaining.inHours} hour to reset your password.`,
-                ` You have ${timeRemaining.inHours} hours to reset your password.`,
+                `You have ${timeRemaining.inHours} hours to reset your password.`,
                 timeRemaining.inHours
             );
         }
