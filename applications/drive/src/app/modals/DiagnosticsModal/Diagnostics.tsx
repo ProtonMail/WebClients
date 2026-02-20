@@ -117,7 +117,7 @@ function DiagnosticsModalViewOptions({
             />
             <InputFieldTwo
                 as={FileInput}
-                label={c('Option').t`Expected strcuture`}
+                label={c('Option').t`Expected structure`}
                 onChange={(event) => {
                     const file = event.target.files?.[0];
                     if (file) {
