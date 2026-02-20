@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
+import { Commander, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -52,7 +52,7 @@ export const RouterLabelContainer = ({
 }: Props) => {
     const { sort, filter, labelID, elementID, messageID } = params;
     const { handleBack, page, handleFilter } = navigation;
-    const { elements, elementIDs, loading } = elementsData;
+    const { elementIDs, loading } = elementsData;
     const {
         handleElement,
         isMessageOpening,
@@ -84,7 +84,6 @@ export const RouterLabelContainer = ({
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
-    const breakpoints = useActiveBreakpoint();
 
     const categoryViewControl = useCategoriesView();
 
@@ -97,11 +96,7 @@ export const RouterLabelContainer = ({
     const showList = isColumnModeActive || !elementID;
     const showContentPanel = isColumnModeActive || !!elementID;
     const showContentView = showContentPanel && !!elementID;
-    const isComposerOpened = composersCount > 0;
-    const showPlaceholder =
-        (!breakpoints.viewportWidth['<=small'] && !elementID && elements.length) ||
-        (!!checkedIDs.length && isColumnModeActive) ||
-        (!elements.length && isColumnModeActive);
+    const showRightPlaceholder = isColumnModeActive && (!elementID || !!checkedIDs.length);
 
     const { commanderList } = useMailCommander();
     const { applyLocation } = useApplyLocation();
@@ -114,7 +109,7 @@ export const RouterLabelContainer = ({
         showList,
         listRef,
         labelID,
-        isComposerOpened,
+        isComposerOpened: composersCount > 0,
         loading,
     });
 
@@ -235,7 +230,7 @@ export const RouterLabelContainer = ({
                 ])}
                 aria-label={c('Info').t`Message view`}
             >
-                {showPlaceholder && (
+                {showRightPlaceholder && (
                     <MailboxContainerPlaceholder
                         showPlaceholder={showContentPanel}
                         welcomeFlag={welcomeFlag}
