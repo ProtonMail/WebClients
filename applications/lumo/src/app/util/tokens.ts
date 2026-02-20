@@ -43,6 +43,10 @@ export function convertRefTokensToSpans(content: string) {
     // Remove any incomplete bold square brackets at the end
     content = content.replaceAll(/【[^】]*$/g, '');
 
+    // Ensure ref links are separated from preceding non-whitespace characters (e.g. bare URLs).
+    // `https://example.com[3](#ref-3)` would be parsed as one invalid autolink URL.
+    content = content.replace(/(\S)(\[\d+\]\(#ref-\d+\))/g, '$1 $2');
+
     return content;
 }
 
@@ -122,14 +126,13 @@ export function processForLatexParentheses(markdown: string) {
 }
 
 /**
- * Remove <br> tags and replace them with a space to keep table formatting
+ * Previously replaced <br> tags with spaces, but this caused bullet points
+ * separated by <br> inside table cells to collapse into a single line.
+ * <br> tags are now handled by the remarkBrToBreak remark plugin in the
+ * markdown renderer, which converts them to proper AST break nodes.
  */
 export function normalizeBrTags(markdown: string): string {
-    return (
-        markdown
-            // Normalize <br> variants
-            .replace(/<br\s*\/?>/gi, ' ')
-    );
+    return markdown;
 }
 
 // remark-math does not natively support latex delimiters like \(, \[, \\(, etc so we must convert both block-level and inline LaTeX delimiters \[ \] and \( \)
