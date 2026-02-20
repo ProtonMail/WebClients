@@ -113,7 +113,7 @@ describe('useBookmarksActions', () => {
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 1);
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
-                text: 'Selected items were successfully removed from your list',
+                text: 'Selected item was successfully removed from your list',
             });
         });
     });
