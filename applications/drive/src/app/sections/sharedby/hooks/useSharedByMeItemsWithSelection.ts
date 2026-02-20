@@ -4,12 +4,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type BrowserItemId, useSelection } from '../../../components/FileBrowser';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -17,6 +16,7 @@ import type { SortField } from '../../../hooks/util/useSorting';
 import { useSortingWithDefault } from '../../../hooks/util/useSorting';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { useUserSettings } from '../../../store';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { useSharingInfoStore } from '../../../zustand/share/sharingInfo.store';
 import type { MappedLegacyItem } from '../SharedByMeCells';
 import { useSharedByMeStore } from '../useSharedByMe.store';
@@ -31,7 +31,6 @@ const getSelectedItemsId = (items: { id: string }[], selectedItemIds: string[]) 
 
 export const useSharedByMeItemsWithSelection = () => {
     const { layout } = useUserSettings();
-    const { openDocument } = useDocumentActions();
     const { navigateToAlbum, navigateToLink } = useDriveNavigation();
     // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
     const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
@@ -98,7 +97,7 @@ export const useSharedByMeItemsWithSelection = () => {
     const isEmpty = hasEverLoaded && !isLoading && mappedItems.length === 0;
 
     const handleOpenItem = useCallback(
-        (uid: BrowserItemId) => {
+        async (uid: BrowserItemId) => {
             const storeItem = getSharedByMeItem(uid);
             if (!storeItem) {
                 return;
@@ -107,20 +106,16 @@ export const useSharedByMeItemsWithSelection = () => {
             document.getSelection()?.removeAllRanges();
 
             const { nodeId } = splitNodeUid(storeItem.nodeUid);
-            if (storeItem.mediaType && isProtonDocsDocument(storeItem.mediaType)) {
-                return openDocument({
-                    type: 'doc',
-                    uid: nodeId,
-                    openBehavior: 'tab',
-                });
-            }
-
-            if (storeItem.mediaType && isProtonDocsSpreadsheet(storeItem.mediaType)) {
-                return openDocument({
-                    type: 'sheet',
-                    uid: nodeId,
-                    openBehavior: 'tab',
-                });
+            if (storeItem.mediaType && isNativeProtonDocsAppFile(storeItem.mediaType)) {
+                const openInDocsInfo = getOpenInDocsInfo(storeItem.mediaType);
+                if (openInDocsInfo) {
+                    return openDocsOrSheetsDocument({
+                        uid: storeItem.nodeUid,
+                        isNative: openInDocsInfo.isNative,
+                        type: openInDocsInfo.type,
+                        openBehavior: 'tab',
+                    });
+                }
             }
 
             if (storeItem.mediaType === 'Album') {
@@ -143,7 +138,7 @@ export const useSharedByMeItemsWithSelection = () => {
                 storeItem.type === NodeType.File || storeItem.type === NodeType.Photo
             );
         },
-        [getSharedByMeItem, openDocument, navigateToAlbum, navigateToLink, isSDKPreviewEnabled, showPreviewModal]
+        [getSharedByMeItem, navigateToAlbum, navigateToLink, isSDKPreviewEnabled, showPreviewModal]
     );
 
     const handleRenderItem = useCallback(
