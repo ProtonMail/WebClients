@@ -95,11 +95,21 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield put(passwordHistoryGarbageCollect());
 
         if (online) {
+            const syncStrategy: SyncStrategy = yield select(selectSyncStrategy);
+            const legacySync = syncStrategy === SyncStrategy.LEGACY;
+
             /** NOTE: critical we start polling after the `bootSuccess` is dispatched in case
              * of a first V2 sync: this ensures the `userEventID` is hydrated in state. */
             yield put(startEventPolling());
-            yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(aliasSyncStatus.intent()));
+
+            if (legacySync) {
+                /** In V2 mode these are covered by user events:
+                 *  - breaches: `BreachUpdate`
+                 *  - alias sync: `UserRefreshed` */
+                yield put(withRevalidate(getBreaches.intent()));
+                yield put(withRevalidate(aliasSyncStatus.intent()));
+            }
+
             yield put(withRevalidate(secureLinksGet.intent()));
             yield put(withRevalidate(getInAppNotifications.intent()));
             yield put(getAuthDevices.intent());
@@ -116,9 +126,16 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                  * cache is corrupted, these will have been revalidated
                  * by the `hydrate` call above inside `getUserData` */
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
-                yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
-                yield put(withRevalidate(getOrganizationSettings.intent()));
+                yield put(withRevalidate(getOrganizationPauseList.intent()));
+
+                if (legacySync) {
+                    /** In V2 mode these are covered by user events:
+                     *  - user access: `UserRefreshed`
+                     *  - org settings: `OrganizationInfoChanged` */
+                    yield put(withRevalidate(getUserAccessIntent(userID)));
+                    yield put(withRevalidate(getOrganizationSettings.intent()));
+                }
             }
         }
 
