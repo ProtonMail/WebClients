@@ -25,6 +25,7 @@ import cache from './client/cache.saga';
 import notification from './client/notification.saga';
 import offlineResume from './client/offline-resume.saga';
 import offlineSetup from './client/offline-setup.saga';
+import qa from './client/qa.saga';
 import reportProblem from './client/report-problem.saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
@@ -178,6 +179,7 @@ const COMMON_SAGAS = [
     vaultTransferOwner,
     sharesDedupe,
     sharesNotification,
+    qa,
 ];
 
 export const rootSagaFactory = (platformSagas: PassSaga[]) =>

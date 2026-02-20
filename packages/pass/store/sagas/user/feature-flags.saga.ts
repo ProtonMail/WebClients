@@ -1,5 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { getFeatureFlags } from '@proton/pass/lib/user/user.requests';
 import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '@proton/pass/store/actions';
 import type { FeatureFlagAndVariantState } from '@proton/pass/store/reducers';
@@ -15,6 +16,8 @@ function* syncFeatures({ getAuthStore, onFeatureFlags, extensionId }: RootSagaOp
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
         const incoming: FeatureFlagAndVariantState = yield getFeatureFlags(extensionId);
+        if (ENV === 'development') incoming.features.PassUserEventsV1 = QA_SERVICE?.state.sync_strategy_v2 ?? false;
+
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
         onFeatureFlags?.(incoming);
