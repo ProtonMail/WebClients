@@ -148,12 +148,14 @@ export const createActivationService = () => {
                         plan: BUILD_TARGET === 'safari' && forkType === ForkType.SIGNUP ? 'free' : undefined,
                     });
 
-                const loginUrl = fork(ForkType.LOGIN).url;
-                const signupUrl = fork(ForkType.SIGNUP).url;
+                /* Extract URL parameters of fork
+                 * (without the hostname which will be built later for security) */
+                const loginParams = new URL(fork(ForkType.LOGIN).url).searchParams.toString();
+                const signupParams = new URL(fork(ForkType.SIGNUP).url).searchParams.toString();
 
                 const searchParams = new URLSearchParams();
-                searchParams.append('loginUrl', loginUrl);
-                searchParams.append('signupUrl', signupUrl);
+                searchParams.append('loginParams', loginParams);
+                searchParams.append('signupParams', signupParams);
 
                 const url = `${config.SSO_URL}${SSO_PATHS.PASS_EXTENSION_ONBOARDING}?${searchParams.toString()}`;
 
