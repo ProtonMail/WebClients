@@ -17,7 +17,7 @@ import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-banner.svg';
 import clsx from '@proton/utils/clsx';
 
-import { useDriveUpsellModal } from '../../../components/modals/DriveUpsellModal';
+import { useDriveUpsellModal } from '../../DriveUpsellModal';
 import { CopyPublicLink } from './CopyPublicLink';
 import { usePublickLinkSettingsModal } from './PublicLinkSettingsModal';
 import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';
@@ -70,7 +70,7 @@ export const PublicSharing = ({
         fromApp: APPS.PROTONDRIVE,
     });
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
-    const [driveUpsellModal, showDriveUpsellModal] = useDriveUpsellModal();
+    const { driveUpsellModal, showDriveUpsellModal } = useDriveUpsellModal();
 
     const handleCopyURLClick = () => {
         if (contentRef.current) {
