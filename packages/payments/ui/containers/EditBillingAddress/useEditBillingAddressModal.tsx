@@ -23,6 +23,7 @@ export const useEditBillingAddressModal = () => {
         // Technically type casting isn't safe here, but practically speaking openBillingAddressModal ensures that these
         // properties are set correctly before the modal is shown.
         initialFullBillingAddress: {} as FullBillingAddress,
+        subscription: undefined,
     }));
 
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
@@ -43,7 +44,7 @@ export const useEditBillingAddressModal = () => {
     };
 
     const openBillingAddressModal = async (
-        props: Pick<EditBillingAdressModalInputs, 'focusVat' | 'paymentsApi'> & {
+        props: Pick<EditBillingAdressModalInputs, 'subscription' | 'paymentsApi'> & {
             loadingKey: string;
         }
     ): Promise<FullBillingAddress> => {

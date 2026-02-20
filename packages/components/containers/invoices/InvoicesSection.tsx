@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
@@ -37,6 +38,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const enableTransactions = useFlag('TransactionsView');
 
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
     const [owner, setOwner] = useState(InvoiceOwner.User);
 
@@ -109,7 +111,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',
-                    onClick: () => openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey }),
+                    onClick: () => openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }),
                     loading: loadingByKey[editBillingAddressLoadingKey],
                 },
                 {
