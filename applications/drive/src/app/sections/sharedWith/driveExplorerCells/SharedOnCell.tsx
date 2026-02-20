@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { TimeIntl } from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
@@ -46,7 +47,7 @@ export const defaultSharedOnCellConfig: CellDefinitionConfig = {
     sortField: SortField.sharedOn,
     sortConfig: [
         { field: SortField.sharedOn, comparator: dateComparator },
-        { field: SortField.name, comparator: stringComparator },
+        { field: SortField.name, comparator: stringComparator, direction: SORT_DIRECTION.ASC },
     ],
     testId: 'column-shared-on',
 };
