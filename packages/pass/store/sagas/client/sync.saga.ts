@@ -1,6 +1,7 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
 import { sync } from '@proton/pass/lib/events/sync';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import {
     getInAppNotifications,
     getUserAccessIntent,
@@ -18,7 +19,7 @@ import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/priva
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectSyncStrategy, selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -30,12 +31,21 @@ function* syncWorker(options: RootSagaOptions) {
     const user: MaybeNull<User> = yield select(selectUser);
     if (!user) return;
 
+    const syncStrategy: SyncStrategy = yield select(selectSyncStrategy);
+    const legacySync = syncStrategy === SyncStrategy.LEGACY;
+
     try {
         yield wait(1_500);
 
-        yield put(withRevalidate(getUserAccessIntent(user.ID)));
+        if (legacySync) {
+            /** In V2 mode these are covered by user events:
+             *  - user access: `UserRefreshed`
+             *  - org settings: `OrganizationInfoChanged` */
+            yield put(withRevalidate(getUserAccessIntent(user.ID)));
+            yield put(withRevalidate(getOrganizationSettings.intent()));
+        }
+
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
-        yield put(withRevalidate(getOrganizationSettings.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());
