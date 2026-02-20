@@ -6,7 +6,7 @@
         "build:extension": "cross-env API_ENV=proton.me BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'yarn clean && yarn build:extension:helper'",
         "build:extension:all": "./tools/build-all.sh",
         "build:extension:beta": "./tools/build-all.sh --beta",
-        "build:extension:dev": "cross-env API_ENV=proton.black BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'yarn clean && yarn build:extension:helper'",
+        "build:extension:dev": "cross-env API_ENV=iridium.proton.black BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'yarn clean && yarn build:extension:helper'",
         "build:extension:ff": "cross-env RELEASE=true NODE_ENV=production BUILD_TARGET=firefox API_ENV=proton.me sh -c 'yarn run build:extension:helper'",
         "build:extension:helper": "NODE_ENV=production webpack --config webpack.config.ts && ./tools/release.sh ./dist",
         "check-types": "tsc",
