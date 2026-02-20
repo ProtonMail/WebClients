@@ -20,14 +20,16 @@ import { useDispatch } from '@proton/redux-shared-store';
 
 import type { FullBillingAddress } from '../../../core/billing-address/billing-address';
 import { isCountryWithRequiredPostalCode } from '../../../core/countries';
-import type { PaymentsApi } from '../../../core/interface';
+import type { FreeSubscription, PaymentsApi } from '../../../core/interface';
+import type { Subscription } from '../../../core/subscription/interface';
+import { isFreeSubscription } from '../../../core/type-guards';
 import { CountryStateSelector } from '../../components/CountryStateSelector';
-import { getVatNumberName } from '../../components/VatNumberInput';
+import { type CountriesWithCustomVatName, getVatNumberName } from '../../components/VatNumberInput';
 
 export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;
     paymentsApi?: PaymentsApi;
-    focusVat?: boolean;
+    subscription: Subscription | FreeSubscription | undefined;
 }
 
 type Props = ModalProps & ModalTwoPromiseHandlers<FullBillingAddress> & EditBillingAdressModalInputs;
@@ -44,8 +46,34 @@ const zipCodeValidator = (countryCode: string, zipCode: string | null | undefine
     return '';
 };
 
+function renewalPriceDependentOnVatNumber(countryCode: string): string {
+    const texts: Record<CountriesWithCustomVatName, string> = {
+        US: c('Payments.Renewal price dependent on VAT number')
+            .t`Renewal price is dependent on the billing region and EIN.`,
+        CA: c('Payments.Renewal price dependent on VAT number')
+            .t`Renewal price is dependent on the billing region and Business Number.`,
+        AU: c('Payments.Renewal price dependent on VAT number')
+            .t`Renewal price is dependent on the billing region and ABN.`,
+    };
+
+    const stringTexts = texts as Record<string, string>;
+
+    return (
+        stringTexts[countryCode] ??
+        c('Payments.Renewal price dependent on VAT number')
+            .t`Renewal price is dependent on the billing region and VAT number.`
+    );
+}
+
 export const EditBillingAddressModal = (props: Props) => {
-    const { initialFullBillingAddress, focusVat, onReject, onResolve, paymentsApi: paymentsApiParam, ...rest } = props;
+    const {
+        initialFullBillingAddress,
+        onReject,
+        onResolve,
+        paymentsApi: paymentsApiParam,
+        subscription,
+        ...rest
+    } = props;
 
     const { createNotification } = useNotifications();
     const [fullBillingAddress, setFullBillingAddress] = useState<FullBillingAddress>(initialFullBillingAddress);
@@ -81,6 +109,8 @@ export const EditBillingAddressModal = (props: Props) => {
         });
     };
 
+    const vatNumberName = getVatNumberName(fullBillingAddress.BillingAddress.CountryCode);
+
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} onClose={onReject} {...rest}>
             <ModalTwoHeader title={c('Title').t`Edit billing address`} />
@@ -89,6 +119,11 @@ export const EditBillingAddressModal = (props: Props) => {
                     {c('Edit billing address form note')
                         .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
                 </p>
+                {subscription && !isFreeSubscription(subscription) && (
+                    <p className="mb-4">
+                        {renewalPriceDependentOnVatNumber(fullBillingAddress.BillingAddress.CountryCode)}
+                    </p>
+                )}
                 <div>
                     <div className="field-two-container">
                         <CountryStateSelector
@@ -152,8 +187,8 @@ export const EditBillingAddressModal = (props: Props) => {
                         }
                     />
                     <InputFieldTwo
-                        label={getVatNumberName(fullBillingAddress.BillingAddress.CountryCode)}
-                        placeholder={c('Placeholder').t`VAT number`}
+                        label={vatNumberName}
+                        placeholder={vatNumberName}
                         name="vat"
                         data-testid="billing-address-vat"
                         value={fullBillingAddress.VatId ?? ''}

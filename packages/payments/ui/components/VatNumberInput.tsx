@@ -50,24 +50,30 @@ export function getVatPlaceholder(countryCode: string) {
     return placeholders[countryCode] ?? `${countryCode}123456789`;
 }
 
+export type CountriesWithCustomVatName = 'US' | 'CA' | 'AU';
+
 export function getVatNumberName(countryCode: string): string {
-    const names: Record<string, string> = {
+    const names: Record<CountriesWithCustomVatName, string> = {
         US: c('Payments.VAT number name').t`EIN`,
         CA: c('Payments.VAT number name').t`Business Number`,
         AU: c('Payments.VAT number name').t`ABN`,
     };
 
-    return names[countryCode] ?? c('Payments.VAT number name').t`VAT number`;
+    const stringNames = names as Record<string, string>;
+
+    return stringNames[countryCode] ?? c('Payments.VAT number name').t`VAT number`;
 }
 
 export function getAddVatNumberText(countryCode: string): string {
-    const names: Record<string, string> = {
+    const names: Record<CountriesWithCustomVatName, string> = {
         US: c('Payments.VAT number name').t`Add EIN`,
         CA: c('Payments.VAT number name').t`Add Business Number`,
         AU: c('Payments.VAT number name').t`Add ABN`,
     };
 
-    return names[countryCode] ?? c('Payments.VAT number name').t`Add VAT number`;
+    const stringNames = names as Record<string, string>;
+
+    return stringNames[countryCode] ?? c('Payments.VAT number name').t`Add VAT number`;
 }
 
 type Props = VatNumberHook & {
