@@ -1,3 +1,5 @@
+import type { Organization } from '@proton/shared/lib/interfaces';
+
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
@@ -11,8 +13,9 @@ import {
     TRIAL_MAX_USERS,
 } from '../constants';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
-import { hasLumoMobileSubscription } from '../subscription/helpers';
+import { getPlanIDs, hasLumoMobileSubscription, isB2BTrial } from '../subscription/helpers';
 import type { Subscription } from '../subscription/interface';
+import { isFreeSubscription } from '../type-guards';
 import { PlanState } from './constants';
 import { getPlansLimit, getPlansQuantity } from './feature-limits';
 import type { Plan, PlansMap, StrictPlan } from './interface';
@@ -290,18 +293,29 @@ export function isMultiUserPersonalPlan(plan: Plan | PlanIDs | PLANS | ADDON_NAM
 export const shouldPassIsTrial = ({
     plansMap,
     newPlanIDs,
-    oldPlanIDs,
     newCycle,
-    oldCycle,
     downgradeIsTrial,
+    subscription: subscriptionParam,
+    organization,
 }: {
     plansMap: PlansMap;
+    subscription: Subscription | FreeSubscription | undefined;
+    organization: Organization | undefined;
     newPlanIDs: PlanIDs;
-    oldPlanIDs: PlanIDs;
     newCycle: CYCLE;
-    oldCycle: CYCLE | undefined;
     downgradeIsTrial: boolean;
 }) => {
+    const subscription = subscriptionParam?.UpcomingSubscription ?? subscriptionParam;
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    if (!isB2BTrial(subscription, organization)) {
+        return false;
+    }
+
+    const oldPlanIDs = getPlanIDs(subscription);
+    const oldCycle = subscription.Cycle;
     if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {
         return false;
     }
