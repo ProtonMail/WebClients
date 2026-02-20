@@ -236,6 +236,27 @@ describe('sortItems', () => {
             expect(result).toEqual(['uid1', 'uid2']);
         });
 
+        it('should fall through to next level when comparator returns NaN', () => {
+            const nanComparator = (a: number, b: number) => a - b;
+            const items = [
+                { uid: 'uid1', name: 'b', type: 'file' as const, size: NaN, createdAt: new Date('2024-01-01') },
+                { uid: 'uid2', name: 'a', type: 'file' as const, size: NaN, createdAt: new Date('2024-01-02') },
+            ];
+
+            const result = sortItems(
+                items,
+                [
+                    { field: SortField.size, comparator: nanComparator },
+                    { field: SortField.name, comparator: stringComparator },
+                ],
+                SORT_DIRECTION.ASC,
+                getValueForField,
+                getKey
+            );
+
+            expect(result).toEqual(['uid2', 'uid1']);
+        });
+
         it('should handle items with equal values', () => {
             const items: TestItem[] = [
                 { uid: 'uid1', name: 'same', type: 'file', size: 100, createdAt: new Date('2024-01-01') },

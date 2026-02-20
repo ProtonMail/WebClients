@@ -4,7 +4,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
-import { nodeTypeComparator, numberComparator } from '../../modules/sorting/comparators';
+import { nodeTypeComparator, numberComparator, stringComparator } from '../../modules/sorting/comparators';
 import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 
@@ -25,8 +25,9 @@ export const defaultSizeCellConfig: CellDefinitionConfig = {
     className: 'w-1/10',
     sortField: SortField.size,
     sortConfig: [
-        { field: SortField.nodeType, comparator: nodeTypeComparator, direction: SORT_DIRECTION.ASC },
+        { field: SortField.nodeType, comparator: nodeTypeComparator },
         { field: SortField.size, comparator: numberComparator },
+        { field: SortField.name, comparator: stringComparator, direction: SORT_DIRECTION.ASC },
     ],
     testId: 'column-size',
 };
