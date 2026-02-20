@@ -63,7 +63,7 @@ export const apiHelper = async <T>({
     signal: AbortSignal | undefined;
     options: Object;
     callingContext: string;
-    retries: number;
+    retries?: number;
 }): Promise<T | undefined> => {
     if (signal?.aborted) {
         return;

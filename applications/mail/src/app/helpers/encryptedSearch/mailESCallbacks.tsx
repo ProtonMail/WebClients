@@ -113,10 +113,10 @@ export const getESCallbacks = ({
         let Page = 0;
 
         while (Page < numPagesFetched && Page < numPages) {
-            messagesPromises[Page] = apiHelper<{ Messages: Message[] }>(
+            messagesPromises[Page] = apiHelper<{ Messages: Message[] }>({
                 api,
                 signal,
-                queryMessageMetadata({
+                options: queryMessageMetadata({
                     PageSize: ES_MAX_PARALLEL_ITEMS,
                     Location: MAILBOX_LABEL_IDS.ALL_MAIL,
                     Sort: 'Time',
@@ -125,8 +125,8 @@ export const getESCallbacks = ({
                     End: recoveryPoint?.End,
                     EndID: recoveryPoint?.EndID,
                 }),
-                'queryMessageMetadata'
-            ).then((result) => {
+                callingContext: 'queryMessageMetadata',
+            }).then((result) => {
                 if (!result) {
                     return;
                 }
@@ -372,7 +372,7 @@ export const getESCallbacks = ({
         ).filter(isTruthy);
 
         if (messagesToAdd.length) {
-            await executeContentOperations(userID, [], messagesToAdd);
+            await executeContentOperations({ userID, itemsToRemove: [], itemsToAdd: messagesToAdd });
         }
     };
 
@@ -399,15 +399,15 @@ export const getESCallbacks = ({
 
         const recordProgressLocal = (progress: number) => recordProgress(progress, 'content');
 
-        await buildContentDB(
+        await buildContentDB({
             userID,
             indexKey,
             abortIndexingRef,
-            recordProgressLocal,
+            recordProgress: recordProgressLocal,
             fetchESItemContent,
-            timepoint,
-            false
-        );
+            inputrecoveryPoint: timepoint,
+            isInitialIndexing: false,
+        });
 
         const count = (await readNumContent(userID)) || 0;
         return count - contentLen;

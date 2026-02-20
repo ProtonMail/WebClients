@@ -149,12 +149,12 @@ export const getESEvent = async (
     getCalendarEventRaw: GetCalendarEventRaw,
     signal?: AbortSignal
 ): Promise<ESCalendarMetadata> => {
-    const response = await apiHelper<{ Event: CalendarEvent }>(
+    const response = await apiHelper<{ Event: CalendarEvent }>({
         api,
         signal,
-        getEvent(calendarID, eventID),
-        'queryEventMetadata'
-    );
+        options: getEvent(calendarID, eventID),
+        callingContext: 'queryEventMetadata',
+    });
 
     if (!response?.Event) {
         throw new Error('Could not fetch event metadata');
@@ -387,11 +387,11 @@ export const searchUndecryptedElements = async (
             metadatas
                 .filter((item): item is EncryptedItemWithInfo => !!item)
                 .map(async (encryptedMetadata) => {
-                    const plaintextMetadata = await decryptFromDB<ESCalendarMetadata>(
-                        encryptedMetadata.aesGcmCiphertext,
+                    const plaintextMetadata = await decryptFromDB<ESCalendarMetadata>({
+                        aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
                         indexKey,
-                        'searchUndecryptedElements'
-                    );
+                        source: 'searchUndecryptedElements',
+                    });
 
                     return plaintextMetadata;
                 })
