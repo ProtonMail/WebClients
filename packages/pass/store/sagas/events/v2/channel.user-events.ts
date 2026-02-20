@@ -1,8 +1,9 @@
-import { call, cancelled, delay, put, select } from 'redux-saga/effects';
+import { call, cancelled, delay, put, race, select, take } from 'redux-saga/effects';
 
 import { processUserEvents } from '@proton/pass/lib/events/v2/user-events.processor';
 import { getUserEventsSince } from '@proton/pass/lib/events/v2/user-events.requests';
 import { setUserEventID } from '@proton/pass/store/actions';
+import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
 import { selectLatestUserEventId } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Id, MaybeNull, SyncEventListOutput } from '@proton/pass/types';
@@ -36,8 +37,14 @@ export function* userEventsChannel(_: Api, options: RootSagaOptions): Generator 
             /** 5. If more events pending -> poll immediately */
             if (processed && events.EventsPending) continue;
 
-            /** 6. Wait for next poll interval */
-            yield delay(options.getPollingInterval());
+            /** 6. Wait for next poll interval. `forcePollV2` short-circuits
+             * the delay to trigger an immediate re-poll. If a poll is already
+             * in-flight the action is naturally ignored — the ongoing poll
+             * will pick up the latest events anyway. */
+            yield race({
+                delay: delay(options.getPollingInterval()),
+                force: take(forcePollV2.match),
+            });
         }
     } catch {
     } finally {

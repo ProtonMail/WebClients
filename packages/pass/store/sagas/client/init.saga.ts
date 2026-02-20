@@ -1,13 +1,15 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '@proton/pass/store/actions';
 import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
+import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
 import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectTabIDs } from '@proton/pass/store/selectors';
+import { selectSyncStrategy, selectTabIDs } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
@@ -19,6 +21,7 @@ function* clientInitWorker(
     const { tabId, endpoint } = meta.receiver;
     const loggedIn = getAuth().hasSession();
     const userId = getAuth().getUserID();
+    const strategy: SyncStrategy = yield select(selectSyncStrategy);
 
     if (endpoint === 'popup' || endpoint === 'page') {
         const state: State = yield select();
@@ -27,8 +30,19 @@ function* clientInitWorker(
 
     if (loggedIn && userId && clientBooted(status)) {
         const online = !clientOffline(status);
-        const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
-        if (online) yield put(maybeRevalidate(getUserAccessIntent(userId)));
+        const isPopup = endpoint === 'popup';
+        const maybeRevalidate = isPopup ? withRevalidate : identity;
+
+        switch (strategy) {
+            case SyncStrategy.LEGACY:
+                if (online) yield put(maybeRevalidate(getUserAccessIntent(userId)));
+                break;
+            case SyncStrategy.USER_EVENTS:
+                /** Force an immediate V2 poll on popup wakeup to
+                 * ensure fresh data without explicit revalidation */
+                if (online && isPopup) yield put(forcePollV2());
+                break;
+        }
 
         /* garbage collect any stale popup tab
          * state on each popup wakeup call */

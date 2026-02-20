@@ -5,7 +5,7 @@ import { call, cancel, cancelled, fork, put, select, take, takeLeading } from 'r
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
 import { channelAcknowledge, clientInit } from '@proton/pass/store/actions';
-import { forcePoll } from '@proton/pass/store/actions/creators/polling';
+import { forcePollV1 } from '@proton/pass/store/actions/creators/polling';
 import { channelRequest } from '@proton/pass/store/actions/requests';
 import type { RequestEntry } from '@proton/pass/store/request/types';
 import { selectRequest } from '@proton/pass/store/selectors';
@@ -58,7 +58,7 @@ export function* channelInitalize<T extends {}>({ manager, channelId }: EventCha
      * and executes poll immediately */
     yield fork(function* () {
         yield takeLeading(
-            (action: Action) => forcePoll.match(action) && action.payload === channelId,
+            (action: Action) => forcePollV1.match(action) && action.payload === channelId,
             function* () {
                 yield cancel(initTask);
                 yield manager.call().catch(noop);
