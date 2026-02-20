@@ -84,7 +84,7 @@ import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
-import { PaymentsContextProvider, useIsB2BTrial, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PaymentsContextProvider, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -314,7 +314,6 @@ const SubscriptionContainerInner = ({
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const eventManager = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
@@ -823,28 +822,16 @@ const SubscriptionContainerInner = ({
     };
 
     const shouldPassIsTrial = (newModel: Model, downgradeIsTrial: boolean) => {
-        if (!isB2BTrial) {
-            return false;
-        }
-
-        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
-
-        if (!oldSubscription) {
-            return false;
-        }
-
         const newPlanIDs = newModel.planIDs;
-        const oldPlanIDs = getPlanIDs(subscription);
         const newCycle = newModel.cycle;
-        const oldCycle = oldSubscription.Cycle;
 
         return shouldPassIsTrialPayments({
             plansMap: plansMapRef.current,
             newPlanIDs,
-            oldPlanIDs,
             newCycle,
-            oldCycle,
             downgradeIsTrial,
+            subscription,
+            organization,
         });
     };
 
