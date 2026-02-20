@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
 import { Icon } from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { stringComparator } from '../../../modules/sorting/comparators';
@@ -50,7 +51,7 @@ export const defaultSharedByCellConfig: CellDefinitionConfig = {
     sortField: SortField.sharedBy,
     sortConfig: [
         { field: SortField.sharedBy, comparator: stringComparator },
-        { field: SortField.name, comparator: stringComparator },
+        { field: SortField.name, comparator: stringComparator, direction: SORT_DIRECTION.ASC },
     ],
     testId: 'column-shared-by',
 };

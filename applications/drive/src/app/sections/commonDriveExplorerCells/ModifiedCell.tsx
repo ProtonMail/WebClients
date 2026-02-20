@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { TimeIntl } from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { dateComparator } from '../../modules/sorting/comparators';
+import { dateComparator, stringComparator } from '../../modules/sorting/comparators';
 import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
@@ -44,6 +45,9 @@ export const defaultModifiedCellConfig: CellDefinitionConfig = {
     headerText: c('Label').t`Modified`,
     className: 'w-1/6',
     sortField: SortField.modificationTime,
-    sortConfig: [{ field: SortField.modificationTime, comparator: dateComparator }],
+    sortConfig: [
+        { field: SortField.modificationTime, comparator: dateComparator },
+        { field: SortField.name, comparator: stringComparator, direction: SORT_DIRECTION.ASC },
+    ],
     testId: 'column-modified',
 };

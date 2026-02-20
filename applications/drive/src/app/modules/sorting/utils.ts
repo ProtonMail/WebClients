@@ -43,7 +43,7 @@ export function sortItems<T>(
                 const valueB = getValueForField(b, field);
                 const result = (comparator as (a: unknown, b: unknown) => number)(valueA, valueB);
 
-                if (result !== 0) {
+                if (result !== 0 && !Number.isNaN(result)) {
                     // Use level-specific direction if provided, otherwise use global direction
                     const effectiveDirection = levelDirection ?? direction;
                     return effectiveDirection === SORT_DIRECTION.DESC ? -result : result;
