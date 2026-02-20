@@ -7,6 +7,7 @@ const createMockShareResult = (overrides: Partial<ShareResult> = {}): ShareResul
     protonInvitations: [],
     nonProtonInvitations: [],
     members: [],
+    editorsCanShare: false,
     ...overrides,
 });
 
