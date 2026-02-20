@@ -411,20 +411,25 @@ export class AudioTrackSubscriptionManager {
         }
     }
 
-    private checkBrokenTransceivers = async () => {
+    private runHealthCheck = async () => {
         if (this.room.state !== ConnectionState.Connected) {
             return;
         }
 
+        const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
+        if (!subscriberPC) {
+            return;
+        }
+
+        const stats = await subscriberPC.getStats();
+        const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+
+        await this.checkBrokenTransceivers(stats, currentCacheValues);
+        await this.checkAudioConcealment(stats, currentCacheValues);
+    };
+
+    private checkBrokenTransceivers = async (stats: RTCStatsReport, currentCacheValues: PublicationItem[]) => {
         try {
-            const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
-            if (!subscriberPC) {
-                return;
-            }
-
-            const stats = await subscriberPC.getStats();
-            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
-
             for (const item of currentCacheValues) {
                 const { publication, participant } = item;
                 const track = publication.track;
@@ -559,19 +564,8 @@ export class AudioTrackSubscriptionManager {
         }
     };
 
-    private checkAudioConcealment = async () => {
-        if (this.room.state !== ConnectionState.Connected) {
-            return;
-        }
-
+    private checkAudioConcealment = async (stats: RTCStatsReport, currentCacheValues: PublicationItem[]) => {
         try {
-            const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
-            if (!subscriberPC) {
-                return;
-            }
-
-            const stats = await subscriberPC.getStats();
-            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
             let tracksWithHighConcealment = 0;
 
             for (const item of currentCacheValues) {
@@ -860,8 +854,7 @@ export class AudioTrackSubscriptionManager {
 
     setupHealthCheckLoop = () => {
         this.healthCheckInterval = setInterval(() => {
-            void this.checkBrokenTransceivers();
-            void this.checkAudioConcealment();
+            void this.runHealthCheck();
         }, this.HEALTH_CHECK_INTERVAL);
     };
 
