@@ -8,7 +8,7 @@ import { isFreeSubscription } from './type-guards';
 
 export function computeOptimisticSubscriptionMode(
     { planIDs, cycle, currency, plansMap }: Parameters<typeof getOptimisticCheckResult>[0],
-    subscription: Subscription | FreeSubscription,
+    subscription: Subscription | FreeSubscription | undefined,
     {
         isTrial,
     }: {

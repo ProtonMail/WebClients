@@ -5,7 +5,8 @@ import Price from '@proton/components/components/price/Price';
 import type { RequiredCheckResponse } from '../../core/checkout';
 import { TaxInclusive } from '../../core/subscription/constants';
 import { isTaxExclusive, isTaxInclusive } from '../../core/subscription/helpers';
-import { formatTax } from '../../core/tax';
+import { getTaxInclusiveRateAndAmountText } from '../headless-checkout/items/tax-inclusive';
+import { formatTax } from '../headless-checkout/tax-helpers';
 
 interface Props {
     checkResult: RequiredCheckResponse;
@@ -32,10 +33,7 @@ export const VatText = ({ checkResult, className }: Partial<Props>) => {
 
     const text = (() => {
         if (inclusive === TaxInclusive.INCLUSIVE) {
-            return taxesQuantity > 1
-                ? c('Payments').jt`Including ${taxRate}% taxes: ${taxAmount}`
-                : // translator: example "Including 20% VAT: US$10"
-                  c('Payments').jt`Including ${taxRate}% ${taxName}: ${taxAmount}`;
+            return getTaxInclusiveRateAndAmountText(taxRate, taxName, taxAmount, taxesQuantity);
         } else {
             return taxesQuantity > 1
                 ? c('Payments').jt`Excluding ${taxRate}% taxes: ${taxAmount}`

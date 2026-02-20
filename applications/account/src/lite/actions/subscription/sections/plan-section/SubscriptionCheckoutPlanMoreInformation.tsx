@@ -2,24 +2,21 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAppName } from '@proton/account/appName';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { canShowGiftCodeInput } from '@proton/components/containers/payments/subscription/modal-components/helpers/canShowGiftCodeInput';
 import { show30DaysMoneyBackGuarantee } from '@proton/components/containers/payments/subscription/modal-components/helpers/show30DaysMoneyBackGuarantee';
 import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
-import { hasPlanIDs, isSubscriptionCheckForbiddenWithReason } from '@proton/payments';
+import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { CheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import noop from '@proton/utils/noop';
 
 import SubscriptionCheckoutPlanGiftCodeInput from './SubscriptionCheckoutPlanGiftCodeInput';
 import SubscriptionCheckoutPlanIncludedFeaturesModal from './SubscriptionCheckoutPlanIncludedFeaturesModal';
 
-const SubscriptionCheckoutPlanMoreInformation = () => {
-    const app = useAppName();
+const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutView: CheckoutView }) => {
     const [showGiftCodeForm, setShowGiftCodeForm] = useState(false);
     const [planInformationModal, setPlanInformationModal, renderPlanInformationModal] = useModalState();
     const { checkoutUi, selectedPlan, subscription, plansMap, loading, selectCoupon, couponConfig } = usePayments();
@@ -48,7 +45,6 @@ const SubscriptionCheckoutPlanMoreInformation = () => {
             .catch(noop);
     };
 
-    const displayRenewNotice = hasPlanIDs(planIDs) && !paymentForbiddenReason.forbidden;
     const showGiftCodeLink =
         !showGiftCodeForm && canShowGiftCodeInput({ paymentForbiddenReason, couponConfig, checkResult });
 
@@ -65,18 +61,7 @@ const SubscriptionCheckoutPlanMoreInformation = () => {
                         <span>{c('Info').t`30-day money-back guarantee`}</span>
                     </div>
                 )}
-                {displayRenewNotice && (
-                    <p className="color-weak text-sm m-0" data-testid="checkout:header-renew-notice">
-                        {getCheckoutRenewNoticeTextFromCheckResult({
-                            checkResult,
-                            plansMap,
-                            planIDs,
-                            subscription,
-                            app: app as APP_NAMES,
-                        })}{' '}
-                        {c('Info').jt`Cancel anytime.`}
-                    </p>
-                )}
+                {checkoutView.render('renewalNotice')}
                 <div className="flex gap-1 items-center">
                     <Button onClick={() => openPlanFeatureModal()} shape="underline" size="tiny" color="norm">
                         {c('Link').t`What's included in your plan`}

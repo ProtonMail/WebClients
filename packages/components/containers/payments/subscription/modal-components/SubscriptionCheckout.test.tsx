@@ -3,9 +3,11 @@ import type { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 
 import { CYCLE, FREE_PLAN, PLANS, type SubscriptionCheckResponse, SubscriptionMode } from '@proton/payments';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { useTaxCountry } from '@proton/payments/ui';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { getTestPlansMap } from '@proton/testing/data';
 
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 
@@ -119,7 +121,12 @@ describe('SubscriptionCheckout', () => {
         const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
-                checkResult={checkResult}
+                checkResult={getOptimisticCheckResult({
+                    cycle: CYCLE.MONTHLY,
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    plansMap: getTestPlansMap('CHF'),
+                    currency: 'CHF',
+                })}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
@@ -145,7 +152,16 @@ describe('SubscriptionCheckout', () => {
     });
 
     it('should display next start date if proration must be hidden', () => {
+        const checkResult = getOptimisticCheckResult({
+            cycle: CYCLE.YEARLY,
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap: getTestPlansMap('CHF'),
+            currency: 'CHF',
+        });
+
         checkResult.Proration = 0;
+        checkResult.SubscriptionMode = SubscriptionMode.ScheduledChargedImmediately;
+        checkResult.optimistic = false;
 
         const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
@@ -154,7 +170,7 @@ describe('SubscriptionCheckout', () => {
                 plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
-                cycle={CYCLE.MONTHLY}
+                cycle={CYCLE.YEARLY}
                 planIDs={{}}
                 user={buildUser()}
                 onChangeCurrency={() => {}}
@@ -163,9 +179,16 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedImmediately={true}
                 isScheduledChargedLater={false}
                 isScheduled={true}
-                subscription={buildSubscription(undefined, {
-                    PeriodEnd: 1668868986,
-                })}
+                subscription={buildSubscription(
+                    {
+                        cycle: CYCLE.MONTHLY,
+                        planName: PLANS.MAIL,
+                        currency: 'CHF',
+                    },
+                    {
+                        PeriodEnd: 1668868986,
+                    }
+                )}
                 paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
@@ -331,7 +354,12 @@ describe('SubscriptionCheckout', () => {
         const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
-                checkResult={checkResult}
+                checkResult={getOptimisticCheckResult({
+                    cycle: CYCLE.YEARLY,
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    plansMap: {} as any,
+                    currency: 'CHF',
+                })}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
@@ -353,14 +381,19 @@ describe('SubscriptionCheckout', () => {
         );
 
         expect(screen.getByTestId('billed-cycle-text')).toBeInTheDocument();
-        expect(container).toHaveTextContent('Billed yearly');
+        expect(container).toHaveTextContent('1 year');
     });
 
-    it('should not display <BillingCycleText> if a lifetime plan is selected', () => {
+    it('should display billed cycle text for lifetime plans', () => {
         const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
-                checkResult={checkResult}
+                checkResult={getOptimisticCheckResult({
+                    cycle: CYCLE.YEARLY,
+                    planIDs: { [PLANS.PASS_LIFETIME]: 1 },
+                    plansMap: {} as any,
+                    currency: 'CHF',
+                })}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
@@ -381,15 +414,20 @@ describe('SubscriptionCheckout', () => {
             />
         );
 
-        expect(screen.queryAllByTestId('billed-cycle-text')).toHaveLength(0);
-        expect(container).not.toHaveTextContent('Billed yearly');
+        expect(screen.getByTestId('billed-cycle-text')).toBeInTheDocument();
+        expect(container).toHaveTextContent('Lifetime access');
     });
 
     it('should display price row', () => {
         const { container } = renderWithProviders(
             <WrappedSubscriptionCheckout
                 freePlan={FREE_PLAN}
-                checkResult={checkResult}
+                checkResult={getOptimisticCheckResult({
+                    cycle: CYCLE.YEARLY,
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    plansMap: {} as any,
+                    currency: 'CHF',
+                })}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"

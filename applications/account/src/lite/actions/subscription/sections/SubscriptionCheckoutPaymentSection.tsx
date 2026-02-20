@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
 import { useUser } from '@proton/account/user/hooks';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { SubscriptionConfirmButton } from '@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPaymentMethodRequired } from '@proton/components/containers/payments/subscription/helpers/getPaymentMethodRequired';
@@ -23,6 +22,7 @@ import {
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

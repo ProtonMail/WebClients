@@ -2,7 +2,7 @@ import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -14,7 +14,6 @@ import {
     CurrencySelector,
     SkeletonLoader,
     Toggle,
-    getCheckoutRenewNoticeTextFromCheckResult,
     useConfig,
     useHandler,
     useModalState,
@@ -65,6 +64,7 @@ import type {
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -112,25 +112,6 @@ import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
-
-const getYears = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} year`, `${n} years`, n);
-const getMonths = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} month`, `${n} months`, n);
-export const getBilledText = (cycle: CYCLE): string | null => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('vpn_2step: billing').t`Billed monthly`;
-        case CYCLE.YEARLY:
-            return getYears(1);
-        case CYCLE.TWO_YEARS:
-            return getYears(2);
-        case CYCLE.FIFTEEN:
-            return getMonths(15);
-        case CYCLE.THIRTY:
-            return getMonths(30);
-        default:
-            return null;
-    }
-};
 
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
@@ -1472,9 +1453,7 @@ const Step1 = ({
                                         <PaymentSummary
                                             model={model}
                                             options={options}
-                                            actualCheckout={actualCheckout}
                                             loadingPaymentDetails={ghostPayments}
-                                            isB2bPlan={isB2bPlan}
                                             upsellToggle={getUpsellToggle()}
                                             planInformation={(() => {
                                                 return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
@@ -1544,7 +1523,6 @@ const Step1 = ({
                                                     }}
                                                 />
                                             }
-                                            hasSelectedFree={hasSelectedFree}
                                         />
                                     </div>
                                 </div>

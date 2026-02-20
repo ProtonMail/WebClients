@@ -17,7 +17,7 @@ import {
     isFreeSubscription,
     isTrial,
 } from '@proton/payments';
-import { InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import { PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
@@ -164,7 +164,6 @@ export const SubscriptionSubmitButton = ({
                 telemetryContext="subscription-modification"
                 {...payButtonProps}
             />
-            <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
             {paymentWarnings}
         </>
     );

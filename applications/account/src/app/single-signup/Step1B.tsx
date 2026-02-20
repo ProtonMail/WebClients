@@ -14,7 +14,6 @@ import {
     CurrencySelector,
     SkeletonLoader,
     Toggle,
-    getCheckoutRenewNoticeTextFromCheckResult,
     useConfig,
     useHandler,
     useModalState,
@@ -66,6 +65,7 @@ import type {
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -1101,9 +1101,7 @@ const Step1B = ({
         <PaymentSummary
             model={model}
             options={options}
-            actualCheckout={actualCheckout}
             loadingPaymentDetails={disablePayButton}
-            isB2bPlan={isB2bPlan}
             upsellToggle={getUpsellToggle()}
             planInformation={(() => {
                 return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
@@ -1172,7 +1170,6 @@ const Step1B = ({
                     }}
                 />
             }
-            hasSelectedFree={hasSelectedFree}
         />
     );
 

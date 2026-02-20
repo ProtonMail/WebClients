@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Price } from '@proton/components';
 import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 import { TaxInclusive } from '@proton/payments/core/subscription/constants';
-import { formatTax } from '@proton/payments/core/tax';
+import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 
 interface TaxRowProps {
     checkResult: RequiredCheckResponse;

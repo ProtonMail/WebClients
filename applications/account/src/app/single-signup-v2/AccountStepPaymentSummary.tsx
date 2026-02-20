@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import type { CouponConfigRendered } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import {
@@ -13,12 +12,13 @@ import {
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
     TaxInclusive,
-    formatTax,
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
 } from '@proton/payments';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { InclusiveVatText } from '@proton/payments/ui';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
+import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -163,11 +163,25 @@ const AccountStepPaymentSummary = ({
         };
         return [
             !hideDiscount &&
-                !isTrial && {
+                // we hide the full plan amount for trials only for tax inclusive case, because it's a simpler case.
+                // When there is tax exlusive trial, then we need to show more extended checkout version to avoid
+                // confusion.
+                !(isTrial && tax?.inclusive === TaxInclusive.INCLUSIVE) && {
                     id: 'amount',
-                    left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
-                    right:
-                        isBFOffer || couponConfig?.hidden ? (
+                    left: (
+                        <span>
+                            {getTotalBillingText(options.cycle, currentCheckout.planIDs, {
+                                excludingTax: tax?.inclusive === TaxInclusive.EXCLUSIVE,
+                            })}
+                        </span>
+                    ),
+                    right: (() => {
+                        // for trials, backend returns checkResult.Amount === 0, so we need to use the optimistic amount
+                        const regularAmountPerCycle = isTrial
+                            ? currentCheckout.regularAmountPerCycleOptimistic
+                            : currentCheckout.regularAmountPerCycle;
+
+                        return isBFOffer || couponConfig?.hidden ? (
                             <>
                                 {loading ? (
                                     loaderNode
@@ -186,15 +200,14 @@ const AccountStepPaymentSummary = ({
                         ) : (
                             <>
                                 {/* Even though this section isn't called "Amount Due", we still must show amountDue 
-                                here. This is because if we don't show the dedicated "Amount Due" line then 
-                                this is the final amount that user will see before paying. 
-                                It is **critical** to show the amountDue to the user. */}
-                                {showAmountDue
-                                    ? getPrice(currentCheckout.regularAmountPerCycle)
-                                    : getPrice(currentCheckout.amountDue)}
+                                    here. This is because if we don't show the dedicated "Amount Due" line then 
+                                    this is the final amount that user will see before paying. 
+                                    It is **critical** to show the amountDue to the user. */}
+                                {showAmountDue ? getPrice(regularAmountPerCycle) : getPrice(currentCheckout.amountDue)}
                                 {!showAmountDue && showRenewalNotice && asteriskPosition === 'final-amount' && '*'}
                             </>
-                        ),
+                        );
+                    })(),
                     bold: true,
                     loader: !showAmountDue,
                 },

@@ -2,20 +2,12 @@ import { c } from 'ttag';
 
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import type { RequiredCheckResponse } from './checkout';
-import type { Currency } from './interface';
-import { TaxInclusive } from './subscription/constants';
+import type { RequiredCheckResponse } from '../../core/checkout';
+import { TaxInclusive } from '../../core/subscription/constants';
 
-export const formatTax = (
-    checkResult: RequiredCheckResponse
-): {
-    amount: number;
-    rate: number;
-    inclusive: TaxInclusive;
-    currency: Currency;
-    taxName: string;
-    taxesQuantity: number;
-} | null => {
+export type TaxInfo = ReturnType<typeof formatTax>;
+
+export const formatTax = (checkResult: RequiredCheckResponse) => {
     const taxesQuantity = checkResult.Taxes?.length ?? 0;
     if (!checkResult.Taxes || !taxesQuantity) {
         return null;
