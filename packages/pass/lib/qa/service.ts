@@ -4,7 +4,7 @@ import { fromEntries, objectEntries } from '@proton/pass/utils/object/generic';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
 
-export const QA_SCENARIOS = ['login_without_offline_components', 'api_downtime'] as const;
+export const QA_SCENARIOS = ['login_without_offline_components', 'api_downtime', 'sync_strategy_v2'] as const;
 export const QA_STATE_KEY = 'pass::qa';
 
 export type QAScenario = (typeof QA_SCENARIOS)[number];
