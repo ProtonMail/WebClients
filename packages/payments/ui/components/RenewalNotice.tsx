@@ -6,32 +6,21 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Time, { getReadableTime } from '@proton/components/components/time/Time';
-import {
-    CYCLE,
-    type CheckoutModifiers,
-    type Coupon,
-    type Currency,
-    type Cycle,
-    type FreeSubscription,
-    PLANS,
-    PLAN_NAMES,
-    type PlanIDs,
-    type PlansMap,
-    type Subscription,
-    SubscriptionMode,
-    TRIAL_DURATION_DAYS,
-    getCheckoutModifiers,
-    getPlanName,
-    getPlanNameFromIDs,
-    getPlanTitle,
-    isFreeSubscription,
-    isLifetimePlanSelected,
-} from '@proton/payments';
-import { type PaymentsCheckoutUI, type RequiredCheckResponse, getCheckoutUi } from '@proton/payments/core/checkout';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
-export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
+import { type PaymentsCheckoutUI, type RequiredCheckResponse, getCheckoutUi } from '../../core/checkout';
+import { type CheckoutModifiers, getCheckoutModifiers } from '../../core/checkout-modifiers';
+import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '../../core/constants';
+import type { Currency, Cycle, FreeSubscription, PlanIDs } from '../../core/interface';
+import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/helpers';
+import type { PlansMap } from '../../core/plan/interface';
+import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import { getPlanName, getPlanTitle } from '../../core/subscription/helpers';
+import type { Coupon, Subscription } from '../../core/subscription/interface';
+import { isFreeSubscription } from '../../core/type-guards';
+
+const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
     // translator: Full sentence is: Renewal pricing subject to change according to <terms and conditions>.
     const termsAndConditionsLink = (
@@ -69,7 +58,7 @@ type RenewalNoticeProps = {
     subscription?: Subscription | FreeSubscription;
 } & Partial<CheckoutModifiers>;
 
-export function getRenewalTime(
+export function calculateRenewalTimeDuringCheckout(
     subscription: Subscription | FreeSubscription | undefined,
     cycle: CYCLE,
     isCustomBilling: boolean | undefined,
@@ -93,6 +82,17 @@ export function getRenewalTime(
     return getReadableTime({ value: unixRenewalTime, format: 'PPP' });
 }
 
+export function formatPriceWithTaxes(currency: Currency, amount: number, checkout: PaymentsCheckoutUI) {
+    const formattedPrice = getSimplePriceString(currency, amount);
+
+    if (checkout.checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE) {
+        // translator: This will be displayed as part of other text. Example: "CHF 2256.56 (excl. tax)"
+        return c('Payments').t`${formattedPrice} (excl. tax)`;
+    }
+
+    return formattedPrice;
+}
+
 const getRegularRenewalNoticeText = ({
     checkout,
     cycle,
@@ -107,7 +107,7 @@ const getRegularRenewalNoticeText = ({
     currency: Currency;
     app: APP_NAMES;
 }) => {
-    const renewalTime = getRenewalTime(
+    const renewalTime = calculateRenewalTimeDuringCheckout(
         subscription,
         cycle,
         isCustomBilling,
@@ -129,7 +129,7 @@ const getRegularRenewalNoticeText = ({
         })();
 
         const nextBillingDate = c('Info')
-            .t`Your next billing date is ${renewalTime}. Please contact support if you require an immediate plan change.`;
+            .t`Your next billing date is ${renewalTime}. You can cancel at any time. Please contact support if you require an immediate plan change.`;
 
         return appendTermsAndConditionsLink([autoRenewNote, ' ', nextBillingDate], app);
     }
@@ -140,11 +140,11 @@ const getRegularRenewalNoticeText = ({
     if (checkout.renewPriceOverriden || checkout.renewCycleOverriden) {
         const one = c('Info').t`Your subscription will automatically renew on ${renewalTime}.`;
 
-        const renewAmountStr = getSimplePriceString(currency, renewAmount);
+        const renewAmountStr = formatPriceWithTaxes(currency, renewAmount, checkout);
 
         const two = c('Info').ngettext(
-            msgid`You'll then be billed every ${renewCycle} month at ${renewAmountStr}.`,
-            `You'll then be billed every ${renewCycle} months at ${renewAmountStr}.`,
+            msgid`You'll then be billed every ${renewCycle} month at ${renewAmountStr}. You can cancel at any time.`,
+            `You'll then be billed every ${renewCycle} months at ${renewAmountStr}. You can cancel at any time.`,
             renewCycle
         );
 
@@ -163,7 +163,7 @@ const getRegularRenewalNoticeText = ({
         );
     })();
 
-    const nextBillingDate = c('Info').jt`Your next billing date is ${renewalTime}.`;
+    const nextBillingDate = c('Info').jt`Your next billing date is ${renewalTime}. You can cancel at any time.`;
     return appendTermsAndConditionsLink([start, ' ', nextBillingDate], app);
 };
 
@@ -188,12 +188,12 @@ const getRenewNoticeTextForLimitedCoupons = ({
 
     const couponRedemptions = coupon.MaximumRedemptionsPerUser;
 
-    const priceWithDiscount = getSimplePriceString(currency, checkout.withDiscountPerCycle);
+    const priceWithDiscount = formatPriceWithTaxes(currency, checkout.withDiscountPerCycle, checkout);
 
     const renewPrice = checkout.renewPrice;
     const renewalLength = checkout.renewCycle;
 
-    const renewPriceStr = getSimplePriceString(currency, renewPrice);
+    const renewPriceStr = formatPriceWithTaxes(currency, renewPrice, checkout);
 
     const isCustomBilling = checkout.checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
 
@@ -300,7 +300,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
     return appendTermsAndConditionsLink([one, ' ', two, ' ', three], app);
 };
 
-export const getPassLifetimeRenewNoticeText = ({
+const getPassLifetimeRenewNoticeText = ({
     subscription,
     app,
 }: {
@@ -327,7 +327,7 @@ export const getPassLifetimeRenewNoticeText = ({
     );
 };
 
-export const getLifetimeRenewNoticeText = ({
+const getLifetimeRenewNoticeText = ({
     subscription,
     planIDs,
     app,

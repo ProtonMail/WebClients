@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
-import { DriveLogo, Price, SkeletonLoader, getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components';
+import { DriveLogo, Price, SkeletonLoader } from '@proton/components';
 import { IcBagPercentFilled } from '@proton/icons/icons/IcBagPercentFilled';
-import { CYCLE, PLANS, PLAN_NAMES, TaxInclusive } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import { type CheckoutView, createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -13,7 +14,6 @@ import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { getSecureStoragePerUserString, getSecureStorageString } from '../../helpers/i18n';
 import FeatureItem from '../FeatureItem/FeatureItem';
 import { SaveBadge } from '../SaveBadge/SaveBadge';
-import { TaxRow } from './TaxRow';
 import planFreeLogo from './plan-drive-free.svg';
 
 import './PricingCard.scss';
@@ -33,19 +33,6 @@ const LogoIconShape = ({ children, border = true }: { children: ReactNode; borde
             {children}
         </div>
     );
-};
-
-const getCycleText = (cycle: CYCLE) => {
-    if (!cycle) {
-        return '';
-    }
-    if (cycle === CYCLE.MONTHLY) {
-        return c('Billing cycle option').t`Monthly`;
-    }
-    if (cycle === CYCLE.YEARLY) {
-        return c('Billing cycle option').t`Yearly`;
-    }
-    return c('Plans').ngettext(msgid`${cycle} month`, `${cycle} months`, cycle);
 };
 
 const PricingFeatures = () => {
@@ -113,97 +100,29 @@ const PricingHeader = () => {
     );
 };
 
-const PricingFooter = ({ step }: { step: PricingStep }) => {
-    const payments = usePaymentOptimistic();
-    const { checkoutUi, selectedPlan } = payments;
-    const isPaidPlan = selectedPlan.name !== PLANS.FREE;
+interface PricingFooterProps {
+    checkoutView: CheckoutView;
+}
 
-    const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+const PricingFooter = ({ checkoutView }: PricingFooterProps) => {
+    const { checkoutData } = checkoutView;
 
-    const isTaxExclusive =
-        payments.checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE && !!payments.checkResult.Taxes?.length;
-    const showTaxRow = step === 'payment';
-    const taxRow = (showTaxRow || isTaxExclusive) && <TaxRow checkResult={payments.checkResult} />;
-    const taxRowPosition = isTaxExclusive ? ('bottom' as const) : ('top' as const);
-
-    const showBillingCycle = (isPaidPlan && checkoutUi.cycle !== CYCLE.MONTHLY) || step === 'payment';
-    const billingCycle = showBillingCycle && (
-        <div className="flex justify-space-between gap-2">
-            <span>{c('Signup').t`Billing Cycle`}</span>
-            <span data-testid="billingCycle">{getCycleText(checkoutUi.cycle)}</span>
-        </div>
-    );
-
-    const showDiscount = checkoutUi.discountPercent !== 0;
-    const discount = showDiscount && (
-        <div className="flex justify-space-between gap-2">
-            {hasFullCheckoutDetails ? (
-                <SaveBadge savePercentage={checkoutUi.discountPercent} />
-            ) : (
-                <SkeletonLoader width="5rem" height="1.25rem" />
-            )}
-            {hasFullCheckoutDetails ? (
-                <Price key="price" currency={checkoutUi.currency} className="text-strike" data-testid="discountPrice">
-                    {checkoutUi.withoutDiscountPerCycle}
-                </Price>
-            ) : (
-                <SkeletonLoader width="5rem" height="1.25rem" />
-            )}
-        </div>
-    );
-
-    const showDivider = isPaidPlan && checkoutUi.cycle !== CYCLE.MONTHLY;
+    const showDivider = checkoutData.isPaidPlan && checkoutData.checkoutUi.cycle !== CYCLE.MONTHLY;
     const divider = showDivider && <hr className="my-4 bg-weak" />;
-
-    const netAmountElement = isTaxExclusive && (
-        <div className="flex justify-space-between gap-2">
-            <span>{c('Payments').t`Net amount`}</span>
-            <Price key="price" currency={checkoutUi.currency} data-testid="netAmount">
-                {checkoutUi.regularAmountPerCycle}
-            </Price>
-        </div>
-    );
-
-    const total = (
-        <div className="flex justify-space-between gap-2 text-lg">
-            <span className="text-semibold">{c('Signup').t`Total`}</span>
-            <span className="text-semibold">
-                {isPaidPlan ? (
-                    <>
-                        {hasFullCheckoutDetails ? (
-                            <Price
-                                key="price"
-                                data-testid="totalPrice"
-                                currency={checkoutUi.currency}
-                                suffix={
-                                    checkoutUi.cycle === CYCLE.MONTHLY && (
-                                        <span className="text-sm color-weak">{c('Suffix').t`/month`}</span>
-                                    )
-                                }
-                            >
-                                {checkoutUi.amountDue}
-                            </Price>
-                        ) : (
-                            <SkeletonLoader width="6.5rem" height="1.4rem" />
-                        )}
-                    </>
-                ) : (
-                    <span data-testid="totalFree">{c('Signup').t`Free`}</span>
-                )}
-            </span>
-        </div>
-    );
 
     return (
         <footer className="border-top border-weak">
             <div className="flex flex-column px-8 pt-5 gap-2">
-                {taxRowPosition === 'top' && taxRow}
-                {billingCycle}
-                {discount}
+                {checkoutView.render('taxInclusive')}
+                {checkoutView.render('billingCycle')}
+                {checkoutView.render('discount')}
                 {divider}
-                {netAmountElement}
-                {taxRowPosition === 'bottom' && taxRow}
-                {total}
+                {
+                    // maybe remove?
+                    checkoutView.render('planAmountWithDiscount')
+                }
+                {checkoutView.render('taxExclusive')}
+                {checkoutView.render('amountDue')}
             </div>
         </footer>
     );
@@ -211,30 +130,125 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
 
 export const PricingCard = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
-    const { checkoutUi, selectedPlan } = payments;
+    const { options } = payments;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
-    const showRenewalNotice = selectedPlan.name !== PLANS.FREE && step === 'payment';
-    const renewalNotice = showRenewalNotice && (
-        <div className="w-full text-center text-sm color-weak mt-8">
-            {getCheckoutRenewNoticeTextFromCheckResult({
-                checkResult: payments.checkResult,
-                plansMap: payments.plansMap,
-                planIDs: checkoutUi.planIDs,
-                app: APPS.PROTONDRIVE,
-            })}
-        </div>
+    const checkoutView = createCheckoutView(
+        {
+            planIDs: options.planIDs,
+            plansMap: payments.plansMap,
+            checkResult: options.checkResult,
+            app: APPS.PROTONDRIVE,
+            paymentForbiddenReason: { forbidden: false },
+        },
+        (headless) => ({
+            members: () => null,
+            addons: () => null,
+            planAmount: () => null,
+            discount: (item) => (
+                <div className="flex justify-space-between gap-2">
+                    {hasFullCheckoutDetails ? (
+                        <SaveBadge savePercentage={item.discountPercent} />
+                    ) : (
+                        <SkeletonLoader width="5rem" height="1.25rem" />
+                    )}
+                    {hasFullCheckoutDetails ? (
+                        <Price key="price" currency={item.currency} className="text-strike" data-testid="discountPrice">
+                            {item.withoutDiscountPerCycle}
+                        </Price>
+                    ) : (
+                        <SkeletonLoader width="5rem" height="1.25rem" />
+                    )}
+                </div>
+            ),
+            proration: () => null,
+            unusedCredit: () => null,
+            coupon: () => null,
+            credit: () => null,
+            gift: () => null,
+            planAmountWithDiscount: (item) => (
+                <div className="flex justify-space-between gap-2">
+                    <span>{c('Payments').t`Net amount`}</span>
+                    <Price key="price" currency={item.currency} data-testid="netAmount">
+                        {item.planAmountWithDiscount}
+                    </Price>
+                </div>
+            ),
+            taxExclusive: (item) => (
+                <div className="flex justify-space-between gap-2" data-testid="tax">
+                    <span>{item.taxRateElement}</span>
+                    <span>{item.taxAmountElement}</span>
+                </div>
+            ),
+            taxInclusive: (item) => {
+                if (step === 'payment') {
+                    return (
+                        <div className="flex justify-space-between gap-2" data-testid="tax">
+                            <span>{item.taxRateElement}</span>
+                            <span>{item.taxAmountElement}</span>
+                        </div>
+                    );
+                }
+            },
+            nextBilling: () => null,
+            amountDue: (item) => {
+                let totalContent: ReactNode;
+                if (!headless.isPaidPlan) {
+                    totalContent = <span data-testid="totalFree">{c('Signup').t`Free`}</span>;
+                } else if (hasFullCheckoutDetails) {
+                    totalContent = (
+                        <Price
+                            key="price"
+                            data-testid="totalPrice"
+                            currency={item.currency}
+                            suffix={
+                                item.cycle === CYCLE.MONTHLY && (
+                                    <span className="text-sm color-weak">{c('Suffix').t`/month`}</span>
+                                )
+                            }
+                        >
+                            {item.amountDue}
+                        </Price>
+                    );
+                } else {
+                    totalContent = <SkeletonLoader width="6.5rem" height="1.4rem" />;
+                }
+                return (
+                    <div className="flex justify-space-between gap-2 text-lg">
+                        <span className="text-semibold">{c('Signup').t`Total`}</span>
+                        <span className="text-semibold">{totalContent}</span>
+                    </div>
+                );
+            },
+            renewalNotice: (item) => {
+                if (step === 'payment' && hasFullCheckoutDetails) {
+                    return <div className="w-full text-center text-sm color-weak mt-8">{item.content}</div>;
+                }
+            },
+
+            billingCycle: (item) => {
+                if (step === 'payment' || item.cycle !== CYCLE.MONTHLY) {
+                    return (
+                        <div className="flex justify-space-between gap-2">
+                            <span>{c('Signup').t`Billing Cycle`}</span>
+                            <span data-testid="billingCycle">{item.shortText}</span>
+                        </div>
+                    );
+                }
+            },
+        })
     );
 
-    const showCouponBanner = hasFullCheckoutDetails && checkoutUi.couponDiscount !== 0;
+    const discountItem = checkoutView.getItem('discount');
+    const showCouponBanner = hasFullCheckoutDetails && discountItem.visible && discountItem.couponDiscount !== 0;
     const couponBanner = showCouponBanner && (
         <div className="drive-signup-pricing-card-top w-full shadow-raised bg-norm mb-1">
             <div className="drive-signup-pricing-card-top-content">
                 <div className="flex items-center gap-2 px-8 py-4 fade-in">
                     <IcBagPercentFilled className="shrink-0 color-primary" />
                     <span className="text-semibold" data-testid="discountBanner">{c('Signup')
-                        .t`Promo applied – ${checkoutUi.discountPercent}% off`}</span>
+                        .t`Promo applied – ${discountItem.discountPercent}% off`}</span>
                 </div>
             </div>
         </div>
@@ -246,9 +260,9 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
             <div className="drive-signup-pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-8 py-8 bg-norm">
                 <PricingHeader />
                 <PricingFeatures />
-                <PricingFooter step={step} />
+                <PricingFooter checkoutView={checkoutView} />
             </div>
-            {renewalNotice}
+            {checkoutView.render('renewalNotice')}
         </section>
     );
 };

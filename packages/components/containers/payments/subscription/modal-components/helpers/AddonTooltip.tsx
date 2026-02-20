@@ -4,15 +4,21 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
-import { type Currency, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon } from '@proton/payments';
-import type { AddonDescription } from '@proton/payments/core/checkout';
+import {
+    type ADDON_NAMES,
+    type Currency,
+    isDomainAddon,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+} from '@proton/payments';
 
 export const AddonTooltip = ({
-    addon,
+    addonName,
     pricePerAddon,
     currency,
 }: {
-    addon: AddonDescription;
+    addonName: ADDON_NAMES;
     pricePerAddon: number;
     currency: Currency;
 }) => {
@@ -24,16 +30,16 @@ export const AddonTooltip = ({
 
     let text: ReactNode;
     switch (true) {
-        case isDomainAddon(addon.name):
+        case isDomainAddon(addonName):
             text = c('Addon').jt`${price} per domain`;
             break;
-        case isMemberAddon(addon.name):
+        case isMemberAddon(addonName):
             text = c('Addon').jt`${price} per user`;
             break;
-        case isIpAddon(addon.name):
+        case isIpAddon(addonName):
             text = c('Addon').jt`${price} per dedicated server`;
             break;
-        case isLumoAddon(addon.name):
+        case isLumoAddon(addonName):
             text = c('Addon').jt`${price} per seat`;
             break;
         default:

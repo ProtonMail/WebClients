@@ -1,9 +1,9 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import type { RequiredCheckResponse } from './checkout';
-import { CYCLE } from './constants';
-import { SubscriptionMode, TaxInclusive } from './subscription/constants';
-import { formatTax } from './tax';
+import type { RequiredCheckResponse } from '../../core/checkout';
+import { CYCLE } from '../../core/constants';
+import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import { formatTax } from './tax-helpers';
 
 describe('formatTax', () => {
     const createMockCheckResult = (overrides = {}): RequiredCheckResponse => ({
