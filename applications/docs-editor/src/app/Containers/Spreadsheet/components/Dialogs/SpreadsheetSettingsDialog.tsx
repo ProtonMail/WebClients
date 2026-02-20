@@ -83,30 +83,12 @@ export function SpreadsheetSettingsDialog() {
   const value = useUI((ui) => ui.locale.value ?? 'auto')
   const setLocale = useUI.$.locale.set
 
-  const label = useMemo(() => {
-    const items = [
-      { value: 'auto', label: `${s('Auto')} (${getLocaleRegionLabel(localeAuto, accountLocale)})` },
-      ...LOCALE_BROWSER_LIST.map((locale) => ({
-        value: locale,
-        label: getLocaleRegionLabel(locale, accountLocale),
-      })),
-      ...restLocalesWithLabels,
-    ]
-
-    for (const item of items) {
-      if (item.value === value) {
-        return item.label
-      }
-    }
-  }, [value, accountLocale, localeAuto, restLocalesWithLabels])
-
   return (
     <Ariakit.DialogProvider store={store}>
       <Ariakit.Dialog
         portal={false}
         backdrop={false}
         modal={false}
-        // onClose={() => setOpen(false)}
         unmountOnHide
         className={clsx(
           'fixed inset-4 z-10 m-auto h-fit w-full max-w-[32rem] bg-[white]',
@@ -128,7 +110,7 @@ export function SpreadsheetSettingsDialog() {
                 value={value}
                 setValue={(value) => setLocale(value === 'auto' ? undefined : value)}
               >
-                <Select id="locale">{label}</Select>
+                <Select id="locale" />
                 <SelectPopover>
                   <SelectGroup>
                     <SelectItem value="auto">
