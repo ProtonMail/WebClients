@@ -1,6 +1,6 @@
 import Papa from 'papaparse';
 
-import { prepare, readCsv } from '../../lib/contacts/helpers/csv';
+import { prepare, readCsv, toVCardContacts } from '../../lib/contacts/helpers/csv';
 import { getContactCategories, getContactEmails, getVCardProperties } from '../../lib/contacts/properties';
 import { prepareForSaving } from '../../lib/contacts/surgery';
 import { parseToVCard, vCardPropertiesToICAL } from '../../lib/contacts/vcard';
@@ -191,5 +191,114 @@ describe('readCSV', () => {
         expect(preVcardsContacts[0][3][0].field).toEqual('anniversary');
         expect(preVcardsContacts[0][4][0].field).toEqual('gender');
         expect(preVcardsContacts[0].length).toEqual(5);
+    });
+
+    it('should map known CSV headers to VCF fields', async () => {
+        const cases: {
+            headers: string;
+            csvContent: string;
+            propertyExpectations: {
+                field: string;
+                value: string | Record<string, string>;
+                params?: Record<string, string>;
+            }[];
+        }[] = [
+            {
+                headers: `first  name,last name,organization,e-mail address,mobile,primary phone,address 1,city,state,zip,note,notes,website`,
+                csvContent: `eric,norbert,,eric@proton.me,15556979792,15559190156,207 Street Lane,Locality,XX,99999,A note,Some notes,`,
+                propertyExpectations: [
+                    {
+                        field: 'fn',
+                        value: 'eric norbert',
+                    },
+                    {
+                        field: 'email',
+                        value: 'eric@proton.me',
+                    },
+                    {
+                        field: 'adr',
+                        value: {
+                            postOfficeBox: '',
+                            extendedAddress: '',
+                            streetAddress: '207 Street Lane',
+                            locality: 'Locality',
+                            region: 'XX',
+                            postalCode: '99999',
+                            country: '',
+                        },
+                    },
+                    {
+                        field: 'tel',
+                        value: '15559190156',
+                        params: {
+                            type: 'main',
+                        },
+                    },
+                    {
+                        field: 'tel',
+                        value: '15556979792',
+                        params: {
+                            type: 'cell',
+                        },
+                    },
+                ],
+            },
+            {
+                headers: `first name,last name,organization,email-address,mobile phone,home phone,address,address 2,city,state,zip,note,notes,website`,
+                csvContent: `Eric,Norbert,Proton AG,eric@proton.me,,555 123-9999,1337 Koenigsegg Street,Flat P,Ängelholm,,0431,, N/A ,`,
+                propertyExpectations: [
+                    {
+                        field: 'fn',
+                        value: 'Eric Norbert',
+                    },
+                    {
+                        field: 'email',
+                        value: 'eric@proton.me',
+                    },
+                    {
+                        field: 'adr',
+                        value: {
+                            postOfficeBox: '',
+                            extendedAddress: 'Flat P',
+                            streetAddress: '1337 Koenigsegg Street',
+                            locality: 'Ängelholm',
+                            region: '',
+                            postalCode: '0431',
+                            country: '',
+                        },
+                    },
+                    {
+                        field: 'note',
+                        value: 'N/A',
+                    },
+                    {
+                        field: 'tel',
+                        value: '555 123-9999',
+                        params: {
+                            type: 'home',
+                        },
+                    },
+                ],
+            },
+        ];
+
+        const results = await Promise.all(
+            cases.map(async ({ headers, csvContent }, i) => {
+                const textContent = `${headers}\n${csvContent}\n`;
+                const blob = new Blob([textContent], { type: 'text/plain' });
+                const file = new File([blob], `import-${i}.csv`);
+                const csv = await readCsv(file);
+                const preVcard = prepare(csv);
+                return toVCardContacts(preVcard);
+            })
+        );
+
+        for (const [i, testCase] of cases.entries()) {
+            const [contact] = results[i].rest;
+            const properties = getVCardProperties(contact);
+            for (const expectation of testCase.propertyExpectations) {
+                expect(properties).toContain(jasmine.objectContaining(expectation));
+            }
+        }
     });
 });
