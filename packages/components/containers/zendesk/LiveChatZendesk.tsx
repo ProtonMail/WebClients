@@ -17,7 +17,7 @@ type MessageDestination = 'proton' | 'zendesk';
 const fetchJWT = async (api: Api) => {
     try {
         const { JWT } = await api<{ JWT: string }>({
-            url: `/auth/v4/zendesk/jwt`,
+            url: `auth/v4/zendesk/jwt`,
             method: 'post',
         });
         return JWT;
