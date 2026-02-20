@@ -79,15 +79,15 @@ const useEncryptedSearchIndexingProgress = () => {
         const elapsedTime = currentRecordTimestamp - startTimestamp;
 
         if (prevRecordTimestamp && prevProgress) {
-            const estimationResult = await estimateIndexingProgress(
-                user.ID,
+            const estimationResult = await estimateIndexingProgress({
+                userID: user.ID,
                 totalItems,
                 prevProgress,
                 prevRecordTimestamp,
-                currentProgress,
+                indexedItems: currentProgress,
                 elapsedTime,
-                indexedDbRow
-            );
+                indexedDBRow: indexedDbRow,
+            });
 
             if (!estimationResult) {
                 return;

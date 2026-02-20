@@ -56,13 +56,19 @@ import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 /**
  * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
  */
-export const initializeEncryptedSearch = async (
-    userID: string,
-    getUserKeys: GetUserKeys,
-    previousEventIDs: EventsObject,
-    isRefreshed: boolean,
-    totalItems: number
-) => {
+export const initializeEncryptedSearch = async ({
+    userID,
+    getUserKeys,
+    previousEventIDs,
+    isRefreshed,
+    totalItems,
+}: {
+    userID: string;
+    getUserKeys: GetUserKeys;
+    previousEventIDs: EventsObject;
+    isRefreshed: boolean;
+    totalItems: number;
+}) => {
     let esDB: IDBPDatabase<EncryptedSearchDB>;
     let generatedIndexKey: GeneratedIndexKey;
     try {
@@ -135,14 +141,21 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 /**
  * Store one batch of items metadata to IndexedDB
  */
-export const storeItemsMetadata = async <ESItemMetadata extends Object>(
-    userID: string,
-    resultMetadata: ESItemMetadata[],
-    esSupported: boolean,
-    indexKey: IndexKey | undefined,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    esCacheRef?: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>
-) => {
+export const storeItemsMetadata = async <ESItemMetadata extends Object>({
+    userID,
+    resultMetadata,
+    esSupported,
+    indexKey,
+    getItemInfo,
+    esCacheRef,
+}: {
+    userID: string;
+    resultMetadata: ESItemMetadata[];
+    esSupported: boolean;
+    indexKey: IndexKey | undefined;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+    esCacheRef?: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
+}) => {
     const batchSize = resultMetadata.reduce((sum, item) => sum + sizeOfESItem(item), 0);
 
     // If either indexKey or esDB are undefined, we still want to index all metadata
@@ -208,14 +221,14 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
     }
 
     while (resultMetadata.length) {
-        const success = await storeItemsMetadata<ESItemMetadata>(
+        const success = await storeItemsMetadata<ESItemMetadata>({
             userID,
             resultMetadata,
             esSupported,
             indexKey,
             getItemInfo,
-            esCacheRef
-        ).catch((error: any) => {
+            esCacheRef,
+        }).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&
                 !(error.name && error.name === 'AbortError')
@@ -263,16 +276,25 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
 /**
  * Add content to an existing metadata DB
  */
-export const buildContentDB = async <ESItemContent>(
-    userID: string,
-    indexKey: IndexKey,
-    abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordProgress: (progress: number) => void,
-    fetchESItemContent: Required<InternalESCallbacks<unknown, unknown, ESItemContent>>['fetchESItemContent'],
-    inputrecoveryPoint: ESTimepoint | undefined,
-    isInitialIndexing: boolean = true,
-    isBackgroundIndexing?: boolean
-): Promise<STORING_OUTCOME> => {
+export const buildContentDB = async <ESItemContent>({
+    userID,
+    indexKey,
+    abortIndexingRef,
+    recordProgress,
+    fetchESItemContent,
+    inputrecoveryPoint,
+    isInitialIndexing = true,
+    isBackgroundIndexing,
+}: {
+    userID: string;
+    indexKey: IndexKey;
+    abortIndexingRef: React.MutableRefObject<AbortController>;
+    recordProgress: (progress: number) => void;
+    fetchESItemContent: Required<InternalESCallbacks<unknown, unknown, ESItemContent>>['fetchESItemContent'];
+    inputrecoveryPoint: ESTimepoint | undefined;
+    isInitialIndexing: boolean;
+    isBackgroundIndexing?: boolean;
+}): Promise<STORING_OUTCOME> => {
     let counter = 0;
 
     if (isInitialIndexing) {
@@ -416,11 +438,11 @@ export const buildContentDB = async <ESItemContent>(
             const last = itemsToAdd[itemsToAdd.length - 1];
             recoveryPoint = { ID: last.ID, timepoint: last.timepoint };
 
-            const storingOutcome = await executeContentOperations(
+            const storingOutcome = await executeContentOperations({
                 userID,
-                [],
-                itemsToAdd.filter((item): item is EncryptedItemWithInfo => !!item.aesGcmCiphertext)
-            );
+                itemsToRemove: [],
+                itemsToAdd: itemsToAdd.filter((item): item is EncryptedItemWithInfo => !!item.aesGcmCiphertext),
+            });
 
             if (storingOutcome === STORING_OUTCOME.SUCCESS) {
                 // In case the batch was successfully stored, we keep on with the following batch
@@ -460,12 +482,17 @@ export const buildContentDB = async <ESItemContent>(
  * items are removed after a syncing operation, therefore we might have
  * some space left to index more content
  */
-export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
-    userID: string,
-    indexKey: IndexKey,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    abortIndexingRef: React.MutableRefObject<AbortController>
-) => {
+export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, ESItemContent>({
+    userID,
+    indexKey,
+    esCallbacks,
+    abortIndexingRef,
+}: {
+    userID: string;
+    indexKey: IndexKey;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    abortIndexingRef: React.MutableRefObject<AbortController>;
+}) => {
     const isDBLimited = await readLimited(userID);
     if (!isDBLimited) {
         return;
@@ -481,15 +508,15 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
         return;
     }
 
-    const storingOutcome = await buildContentDB<ESItemContent>(
+    const storingOutcome = await buildContentDB<ESItemContent>({
         userID,
         indexKey,
         abortIndexingRef,
-        () => {},
+        recordProgress: () => {},
         fetchESItemContent,
-        itemInfo.timepoint,
-        false
-    );
+        inputrecoveryPoint: itemInfo.timepoint,
+        isInitialIndexing: false,
+    });
 
     // In case we have recovered, we set the flag accordingly
     if (storingOutcome === STORING_OUTCOME.SUCCESS) {

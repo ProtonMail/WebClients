@@ -282,7 +282,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             cachedIndexKey: indexKey,
         }));
 
-        return cacheIDB<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef);
+        return cacheIDB<ESItemMetadata, ESItemContent>({ indexKey, userID, esCacheRef });
     };
 
     const correctDecryptionErrors = async () => {
@@ -344,15 +344,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         const { esSearchParams } = getSearchParams();
-        const searchChanged = await syncItemEvents<ESItemContent, ESItemMetadata, ESSearchParameters>(
+        const searchChanged = await syncItemEvents<ESItemContent, ESItemMetadata, ESSearchParameters>({
             Items,
             userID,
             esCacheRef,
             permanentResults,
             indexKey,
             esSearchParams,
-            esCallbacks
-        );
+            esCallbacks,
+        });
 
         if (searchChanged) {
             setResultsList(permanentResults);
@@ -383,11 +383,20 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             const contentProgress = await contentIndexingProgress.read(userID);
             if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
                 abortIndexingRef.current = new AbortController();
-                await retryContentIndexing(userID, indexKey, esCallbacks, abortIndexingRef);
+                await retryContentIndexing({ userID, indexKey, esCallbacks, abortIndexingRef });
             }
-            await refreshESCache<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esCallbacks.getItemInfo);
+            await refreshESCache<ESItemMetadata, ESItemContent>({
+                indexKey,
+                userID,
+                esCacheRef,
+                getItemInfo: esCallbacks.getItemInfo,
+            });
 
-            await retryAPICalls<ESItemContent>(userID, indexKey, esCallbacks.fetchESItemContent);
+            await retryAPICalls<ESItemContent>({
+                userID,
+                indexKey,
+                fetchESItemContent: esCallbacks.fetchESItemContent,
+            });
 
             // Check if DB became limited or not after the update
             isDBLimited = await readLimited(userID);
@@ -560,13 +569,13 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         } else {
             try {
                 let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
-                ({ indexKey, esDB } = await initializeEncryptedSearch(
+                ({ indexKey, esDB } = await initializeEncryptedSearch({
                     userID,
                     getUserKeys,
-                    previousEventID,
+                    previousEventIDs: previousEventID,
                     isRefreshed,
-                    expectedTotalIndexed
-                ));
+                    totalItems: expectedTotalIndexed,
+                }));
 
                 esSupported = !!indexKey && !!esDB;
 
@@ -841,16 +850,16 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         let success = totalItems === 0;
         while (!success) {
             try {
-                indexingOutcome = await buildContentDB<ESItemContent>(
+                indexingOutcome = await buildContentDB<ESItemContent>({
                     userID,
                     indexKey,
                     abortIndexingRef,
-                    recordContentProgress,
+                    recordProgress: recordContentProgress,
                     fetchESItemContent,
-                    recoveryPoint,
-                    true,
-                    isBackgroundIndexing
-                );
+                    inputrecoveryPoint: recoveryPoint,
+                    isInitialIndexing: true,
+                    isBackgroundIndexing,
+                });
             } catch (error: any) {
                 if (abortIndexingRef.current.signal.aborted) {
                     return;
@@ -1000,17 +1009,17 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 ESItemMetadata,
                 ESItemContent,
                 ESSearchParameters
-            >(
+            >({
                 esCacheRef,
                 esSearchParams,
                 cachedIndexKey,
                 getUserKeys,
                 userID,
-                controlledSetResultsList,
+                setResultsList: controlledSetResultsList,
                 abortSearchingRef,
                 esCallbacks,
-                minimumItems
-            ));
+                minimumItems,
+            }));
         } catch (error: any) {
             esSentryReport('encryptedSearch: hybridSearch', { error });
             // If the key is the problem, then we want to wipe the DB and fall back to
@@ -1086,17 +1095,16 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             ESItemMetadata,
             ESItemContent,
             ESSearchParameters
-        >(
+        >({
             userID,
             indexKey,
             esSearchParams,
             esCallbacks,
             lastTimePoint,
-            extraItems,
+            itemLimit: extraItems,
             hasApostrophe,
-            undefined,
-            abortSearchingRef
-        );
+            abortSearchingRef,
+        });
 
         if (!abortSearchingRef.current.signal.aborted) {
             const end = performance.now();
@@ -1257,7 +1265,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
-        return findItemIndex(ID, permanentResults, esCallbacks.getItemInfo) !== -1;
+        return findItemIndex({ itemID: ID, itemArray: permanentResults, getItemInfo: esCallbacks.getItemInfo }) !== -1;
     };
 
     /**

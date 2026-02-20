@@ -33,12 +33,17 @@ export const sizeOfESItem = (value: any): number => {
 /**
  * Cache both content and metadata at once
  */
-export const cacheIDB = async <ESItemMetadata, ESItemContent>(
-    indexKey: IndexKey,
-    userID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    checkpoint?: ESTimepoint
-) => {
+export const cacheIDB = async <ESItemMetadata, ESItemContent>({
+    indexKey,
+    userID,
+    esCacheRef,
+    checkpoint,
+}: {
+    indexKey: IndexKey;
+    userID: string;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    checkpoint?: ESTimepoint;
+}) => {
     esCacheRef.current.isCacheReady = false;
 
     const sortedIDs = await readSortedIDs(userID, true, checkpoint);
@@ -67,9 +72,17 @@ export const cacheIDB = async <ESItemMetadata, ESItemContent>(
                 const encryptedContent = content[index];
 
                 const [plaintextMetadata, plaintextContent] = await Promise.all([
-                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey, 'cacheIDB'),
+                    decryptFromDB<ESItemMetadata>({
+                        aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
+                        indexKey,
+                        source: 'cacheIDB',
+                    }),
                     !!encryptedContent
-                        ? decryptFromDB<ESItemContent>(encryptedContent, indexKey, 'cacheIDB')
+                        ? decryptFromDB<ESItemContent>({
+                              aesGcmCiphertext: encryptedContent,
+                              indexKey,
+                              source: 'cacheIDB',
+                          })
                         : undefined,
                 ]);
 
@@ -105,11 +118,15 @@ export const cacheIDB = async <ESItemMetadata, ESItemContent>(
  * removed from cache. It returns the size of the removed item
  * (or portion thereof)
  */
-export const removeFromESCache = <ESItemMetadata, ESItemContent>(
-    itemID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    contentOnly: boolean
-) => {
+export const removeFromESCache = <ESItemMetadata, ESItemContent>({
+    itemID,
+    esCacheRef,
+    contentOnly,
+}: {
+    itemID: string;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    contentOnly: boolean;
+}) => {
     let size = 0;
 
     const item = esCacheRef.current.esCache.get(itemID);
@@ -150,10 +167,13 @@ const getOldestCachedItem = <ESItemMetadata, ESItemContent>(
  * Return the oldest cached item's timepoint, which is the last one since
  * the cache is in reverse chronological order
  */
-export const getOldestCachedTimepoint = <ESItemMetadata>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
+export const getOldestCachedTimepoint = <ESItemMetadata>({
+    esCacheRef,
+    getItemInfo,
+}: {
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+}) => {
     const oldestItem = getOldestCachedItem(esCacheRef);
     if (!oldestItem) {
         return;
@@ -166,14 +186,19 @@ export const getOldestCachedTimepoint = <ESItemMetadata>(
  * Remove items to make room for the content of the
  * given one
  */
-const freeCacheSpace = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    oldestItem: CachedItem<ESItemMetadata, ESItemContent> | undefined,
-    itemSize: number
-) => {
+const freeCacheSpace = <ESItemMetadata, ESItemContent>({
+    esCacheRef,
+    getItemInfo,
+    oldestItem,
+    itemSize,
+}: {
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+    oldestItem: CachedItem<ESItemMetadata, ESItemContent> | undefined;
+    itemSize: number;
+}) => {
     while (oldestItem && esCacheRef.current.esCache.size + itemSize >= ES_MAX_CACHE) {
-        removeFromESCache(getItemInfo(oldestItem.metadata).ID, esCacheRef, true);
+        removeFromESCache({ itemID: getItemInfo(oldestItem.metadata).ID, esCacheRef, contentOnly: true });
         oldestItem = getOldestCachedItem(esCacheRef);
     }
 };
@@ -195,10 +220,13 @@ const getMostRecentCachedItem = <ESItemMetadata, ESItemContent>(
  * Restructure the cache in such a way that the order of insertion
  * correspond to the reverse chronological order of items
  */
-const reorderCache = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
+const reorderCache = <ESItemMetadata, ESItemContent>({
+    esCacheRef,
+    getItemInfo,
+}: {
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+}) => {
     const entries = [...esCacheRef.current.esCache.entries()];
     entries.sort(([, i1], [, i2]) =>
         isTimepointSmaller(getItemInfo(i1.metadata).timepoint, getItemInfo(i2.metadata).timepoint) ? 1 : -1
@@ -213,11 +241,15 @@ const reorderCache = <ESItemMetadata, ESItemContent>(
 /**
  * Add a single item to cache, depending on whether the size limit has been reached or not
  */
-export const addToESCache = <ESItemMetadata, ESItemContent>(
-    inputItem: CachedItem<ESItemMetadata, ESItemContent>,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
+export const addToESCache = <ESItemMetadata, ESItemContent>({
+    inputItem,
+    esCacheRef,
+    getItemInfo,
+}: {
+    inputItem: CachedItem<ESItemMetadata, ESItemContent>;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+}) => {
     if (!esCacheRef.current.esCache.size && !esCacheRef.current.isCacheReady) {
         return;
     }
@@ -235,7 +267,7 @@ export const addToESCache = <ESItemMetadata, ESItemContent>(
             return;
         }
 
-        freeCacheSpace<ESItemMetadata, ESItemContent>(esCacheRef, getItemInfo, oldestItem, itemSize);
+        freeCacheSpace<ESItemMetadata, ESItemContent>({ esCacheRef, getItemInfo, oldestItem, itemSize });
         wereItemsRemoved = true;
     }
 
@@ -256,30 +288,35 @@ export const addToESCache = <ESItemMetadata, ESItemContent>(
         mostRecentMetadata &&
         isTimepointSmaller(getItemInfo(inputItem.metadata).timepoint, getItemInfo(mostRecentMetadata).timepoint)
     ) {
-        return reorderCache(esCacheRef, getItemInfo);
+        return reorderCache({ esCacheRef, getItemInfo });
     }
 };
 
 /**
  * Add more content to a limited cache in case many were removed
  */
-export const refreshESCache = async <ESItemMetadata, ESItemContent>(
-    indexKey: IndexKey,
-    userID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
+export const refreshESCache = async <ESItemMetadata, ESItemContent>({
+    indexKey,
+    userID,
+    esCacheRef,
+    getItemInfo,
+}: {
+    indexKey: IndexKey;
+    userID: string;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+}) => {
     const { cacheSize, isCacheReady, isCacheLimited } = esCacheRef.current;
 
     // Perform this operation only if there is space left in cache but not all items are cached, and if the initial
     // caching operation had succeeded
     if (cacheSize < ES_MAX_CACHE && isCacheLimited && isCacheReady) {
         const oldestItem = getOldestCachedItem(esCacheRef);
-        return cacheIDB<ESItemMetadata, ESItemContent>(
+        return cacheIDB<ESItemMetadata, ESItemContent>({
             indexKey,
             userID,
             esCacheRef,
-            !!oldestItem ? getItemInfo(oldestItem.metadata).timepoint : undefined
-        );
+            checkpoint: !!oldestItem ? getItemInfo(oldestItem.metadata).timepoint : undefined,
+        });
     }
 };

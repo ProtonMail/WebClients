@@ -52,13 +52,19 @@ export const esSentryReport = (errorMessage: string, extra?: any) => {
  * include in sentry reports in case of permanent errors
  * @param retries the number of times the same call has already been retried
  */
-export const apiHelper = async <T>(
-    api: Api,
-    signal: AbortSignal | undefined,
-    options: Object,
-    callingContext: string,
-    retries: number = 1
-): Promise<T | undefined> => {
+export const apiHelper = async <T>({
+    api,
+    signal,
+    options,
+    callingContext,
+    retries = 1,
+}: {
+    api: Api;
+    signal: AbortSignal | undefined;
+    options: Object;
+    callingContext: string;
+    retries: number;
+}): Promise<T | undefined> => {
     if (signal?.aborted) {
         return;
     }
@@ -93,7 +99,7 @@ export const apiHelper = async <T>(
         const retryAfterSeconds = parseInt(error.response?.headers?.get('retry-after') || '5', 10);
         await wait(retryAfterSeconds * SECOND);
 
-        return apiHelper<T>(api, signal, options, callingContext, retries + 1);
+        return apiHelper<T>({ api, signal, options, callingContext, retries: retries + 1 });
     }
 
     return apiResponse;
