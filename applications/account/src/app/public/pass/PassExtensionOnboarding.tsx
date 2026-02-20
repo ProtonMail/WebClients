@@ -8,8 +8,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { PassLogo, useApi, useNotifications } from '@proton/components';
 import { TelemetryMeasurementGroups, TelemetryPassExtensionEvents } from '@proton/shared/lib/api/telemetry';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
-import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import passIconIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
@@ -58,8 +59,12 @@ const PassExtensionOnboarding: FC = () => {
 
     // Get fork URLs passed by Pass extension.
     const searchParams = new URLSearchParams(window.location.search);
-    const loginUrl = searchParams.get('loginUrl');
-    const signupUrl = searchParams.get('signupUrl');
+    const loginParams = searchParams.get('loginParams');
+    const signupParams = searchParams.get('signupParams');
+
+    const host = getAppHref(SSO_PATHS.AUTHORIZE, APPS.PROTONACCOUNT);
+    const loginUrl = loginParams ? `${host}?${loginParams}` : null;
+    const signupUrl = signupParams ? `${host}?${signupParams}` : null;
 
     const helpUrl = (() => {
         if (isSafari()) {
