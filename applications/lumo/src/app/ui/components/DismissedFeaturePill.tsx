@@ -5,7 +5,7 @@ import { Pill } from '@proton/atoms/Pill/Pill';
 import { useFeatureFlags } from '../../hooks/useFeatureFlags';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { hasDeclinedFeatureFlag } from '../../utils/whatsNewStorage';
+import { hasDeclinedFeatureFlag } from '../../util/whatsNewStorage';
 
 interface DismissedFeaturePillProps {
     featureId: string;
