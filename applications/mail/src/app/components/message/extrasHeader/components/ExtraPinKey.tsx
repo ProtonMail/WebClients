@@ -16,7 +16,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
-import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail, extractEmailFromUserID } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
@@ -42,10 +42,15 @@ interface Params {
     senderAddress: string;
 }
 
-const getFirstAttachedKeyMatchingSender = (senderAddress: string, attachedPublicKeys: PublicKeyReference[]) =>
-    attachedPublicKeys.find((key) =>
-        key.getUserIDs().some((userID) => userID.includes(canonicalizeInternalEmail(senderAddress)))
+const getFirstAttachedKeyMatchingSender = (senderAddress: string, attachedPublicKeys: PublicKeyReference[]) => {
+    const canonicalizedSenderAddress = canonicalizeInternalEmail(senderAddress);
+    return attachedPublicKeys.find((key) =>
+        key.getUserIDs().some((userID) => {
+            const canonicalizedKeyAddress = canonicalizeInternalEmail(extractEmailFromUserID(userID) || userID);
+            return canonicalizedKeyAddress === canonicalizedSenderAddress;
+        })
     );
+};
 
 const getPromptKeyPinningType = ({
     messageVerification,
