@@ -6,11 +6,13 @@ jest.mock('@proton/drive/index');
 
 const mockSplitPublicLinkUid = jest.mocked(splitPublicLinkUid);
 
-const mockedBaseShareResult = {
+const mockedBaseShareResult: ShareResult = {
     members: [],
     protonInvitations: [],
     nonProtonInvitations: [],
+    editorsCanShare: false,
 };
+
 describe('mapShareResultToSharingInfo', () => {
     beforeEach(() => {
         jest.clearAllMocks();
@@ -28,8 +30,7 @@ describe('mapShareResultToSharingInfo', () => {
     });
 
     it('should return undefined when shareResult has no publicLink', () => {
-        const shareResult: ShareResult = mockedBaseShareResult;
-        const result = mapShareResultToSharingInfo(shareResult);
+        const result = mapShareResultToSharingInfo(mockedBaseShareResult);
         expect(result).toBeUndefined();
     });
 
