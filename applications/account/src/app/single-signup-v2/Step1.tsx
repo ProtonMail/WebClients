@@ -14,7 +14,6 @@ import {
     CycleSelector,
     Icon,
     SkeletonLoader,
-    getCheckoutRenewNoticeTextFromCheckResult,
     useActiveBreakpoint,
     useConfig,
     useErrorHandler,
@@ -65,6 +64,7 @@ import type {
     EstimationChangePayload,
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
@@ -270,6 +270,7 @@ const Step1 = ({
         billingAddress: model.subscriptionData.billingAddress,
         checkResult: model.subscriptionData.checkResult,
         trial: model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial || undefined,
+        vatNumber: model.subscriptionData.vatNumber,
     };
     const options: OptimisticOptions = {
         ...subscriptionCheckOptions,

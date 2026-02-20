@@ -434,7 +434,6 @@ export {
     planToPlanIDs,
 } from './core/subscription/plans-map-wrapper';
 export { SelectedPlan } from './core/subscription/selected-plan';
-export { formatTax } from './core/tax';
 export {
     displayTransactionState,
     displayTransactionType,

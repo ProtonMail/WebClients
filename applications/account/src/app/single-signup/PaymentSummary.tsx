@@ -9,25 +9,16 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import {
-    ADDON_NAMES,
-    type Plan,
-    SubscriptionMode,
-    TRIAL_DURATION_DAYS,
-    TaxInclusive,
-    formatTax,
-} from '@proton/payments';
-import { type PaymentsCheckoutUI, getOptimisticCheckout } from '@proton/payments/core/checkout';
-import { InclusiveVatText } from '@proton/payments/ui';
+import { type Plan, SubscriptionMode, TRIAL_DURATION_DAYS } from '@proton/payments';
+import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
+import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import AddonSummary from './AddonSummary';
 import SaveLabel2 from './SaveLabel2';
-import { getBilledText } from './Step1';
 import type { getPlanInformation } from './getPlanInformation';
 import type { VPNSignupModel } from './interface';
-import getAddonsPricing from './planCustomizer/getAddonsPricing';
 
 const TrialSummary = ({ loading, options }: { loading: boolean; options: OptimisticOptions }) => {
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
@@ -57,35 +48,15 @@ interface Props {
     model: VPNSignupModel;
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
-    actualCheckout: PaymentsCheckoutUI;
-    isB2bPlan: boolean;
     giftCode: ReactNode;
     planInformation: ReturnType<typeof getPlanInformation>;
     upsellToggle: ReactNode;
-    hasSelectedFree: boolean;
 }
 
-const PaymentSummary = ({
-    model,
-    options,
-    loadingPaymentDetails,
-    actualCheckout,
-    isB2bPlan,
-    giftCode,
-    planInformation,
-    upsellToggle,
-    hasSelectedFree,
-}: Props) => {
+const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planInformation, upsellToggle }: Props) => {
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
-
-    const addonsPricing = getAddonsPricing({
-        currentPlan: options.plan,
-        plansMap: model.plansMap,
-        planIDs: options.planIDs,
-        cycle: options.cycle,
-    });
 
     const couponConfig = useCouponConfig({
         planIDs: options.planIDs,
@@ -95,31 +66,137 @@ const PaymentSummary = ({
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
-    const discountPercent: number = (() => {
-        if (!isTrial) {
-            return actualCheckout.discountPercent;
-        }
-
-        // For trials, show the original plan discount instead of the 100% trial discount
-        return getOptimisticCheckout({
+    const checkoutView = createCheckoutView(
+        {
             planIDs: options.planIDs,
             plansMap: model.plansMap,
-            cycle: options.cycle,
-            currency: options.currency,
-        }).discountPercent;
-    })();
+            checkResult: options.checkResult,
+            isTrial,
+            couponConfig,
+            app: APPS.PROTONVPN_SETTINGS,
+        },
+        (headless) => ({
+            addons: (item) => {
+                return item.addons.map((addon) => {
+                    return (
+                        <AddonSummary
+                            key={addon.addonName}
+                            label={addon.labelWithoutQuantityShort}
+                            numberOfItems={addon.quantity}
+                            price={initialLoading ? loaderNode : addon.pricePerOnePerMonthElement}
+                            subline={undefined}
+                        />
+                    );
+                });
+            },
+            billingCycle: (item) => {
+                return <span className="color-weak mr-1">{item.normalText}</span>;
+            },
+            members: (item) => {
+                if (headless.isB2C) {
+                    return null;
+                }
 
-    const tax = formatTax(options.checkResult);
+                return (
+                    <AddonSummary
+                        key="members"
+                        label={item.labelWithoutQuantity}
+                        numberOfItems={item.totalUsers}
+                        price={initialLoading ? loaderNode : item.pricePerOnePerMonthElement}
+                        subline={<>/ {c('Checkout summary').t`month`}</>}
+                    />
+                );
+            },
+            planAmount: () => {
+                if (
+                    // mostly, B2C cases are simple, so we don't display the full plan amount for them for now.
+                    !headless.isB2B ||
+                    // Before tax exclusive, B2B cases with trials were also rather simple. But when tax exclusive is
+                    // enabled, we need to show the full plan price, otherwise it will be confusing for users
+                    (headless.isTrial && headless.isTaxInclusive)
+                ) {
+                    return null;
+                }
 
-    const amountDueLabel = (() => {
-        if (isTrial) {
-            return c('b2b_trials_2025_Label').t`Amount due now`;
-        }
-        if (isB2bPlan) {
-            return c('Info').t`Amount due`;
-        }
-        return getTotalBillingText(options.cycle, options.planIDs);
-    })();
+                const amount = headless.isTrial
+                    ? // for trials, backend returns checkResult.Amount === 0, so we need to use the optimistic amount
+                      headless.checkoutUi.regularAmountPerCycleOptimistic
+                    : headless.checkResult.Amount;
+
+                return (
+                    <>
+                        <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
+                            <span>
+                                {getTotalBillingText(options.cycle, options.planIDs, {
+                                    excludingTax: headless.isTaxExclusive,
+                                })}
+                            </span>
+                            <span>
+                                {initialLoading ? loaderNode : <Price currency={options.currency}>{amount}</Price>}
+                            </span>
+                        </div>
+                    </>
+                );
+            },
+            discount: (item) => (
+                <SaveLabel2 className="text-sm inline-block" highlightPrice>
+                    {`− ${item.discountPercent}%`}
+                </SaveLabel2>
+            ),
+            planAmountWithDiscount: () => null,
+            proration: () => null,
+            unusedCredit: () => null,
+            credit: () => null,
+            gift: () => null,
+            taxExclusive: (item) => (
+                <div className="mx-3 flex justify-space-between gap-2">
+                    <span>{item.taxRateElement}</span>
+                    <span>{item.taxAmountElement}</span>
+                </div>
+            ),
+            nextBilling: () => null,
+            amountDue: (item) => {
+                const amountDueLabel = (() => {
+                    if (headless.isTrial) {
+                        return c('b2b_trials_2025_Label').t`Amount due now`;
+                    }
+                    if (headless.isB2B) {
+                        return c('Info').t`Amount due`;
+                    }
+
+                    return getTotalBillingText(item.cycle, item.planIDs, {
+                        excludingTax: false,
+                    });
+                })();
+
+                return (
+                    <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
+                        <span>{amountDueLabel}</span>
+                        <span>
+                            {loading ? (
+                                loaderNode
+                            ) : (
+                                <>
+                                    <Price currency={item.currency}>{item.amountDue}</Price>*
+                                </>
+                            )}
+                        </span>
+                    </div>
+                );
+            },
+            taxInclusive: (item) => (
+                <div className="text-sm color-weak" data-testid="tax">
+                    <span>{item.taxRateAndAmountElement}</span>
+                </div>
+            ),
+            renewalNotice: () => null,
+            coupon: () => null,
+        })
+    );
+
+    const isB2bPlan = checkoutView.checkoutData.isB2B;
+
+    const discountItem = checkoutView.getItem('discount');
 
     return (
         <div className="flex flex-column gap-3">
@@ -131,10 +208,7 @@ const PaymentSummary = ({
 
                 const pricePerMonth = initialLoading
                     ? loaderNode
-                    : getSimplePriceString(options.currency, actualCheckout.withDiscountPerMonth);
-                const regularPrice = initialLoading
-                    ? loaderNode
-                    : getSimplePriceString(options.currency, actualCheckout.withoutDiscountPerMonth);
+                    : getSimplePriceString(options.currency, discountItem.withDiscountPerMonth);
 
                 return (
                     <div
@@ -156,30 +230,24 @@ const PaymentSummary = ({
                                 </div>
                                 <div className="flex-1 flex items-center gap-2">
                                     <div className="flex-1 text-sm">
-                                        <span className="color-weak mr-1">{getBilledText(options.cycle)}</span>
-                                        {discountPercent > 0 && !couponConfig?.hidden && (
-                                            <SaveLabel2 className="text-sm inline-block" highlightPrice>
-                                                {`− ${discountPercent}%`}
-                                            </SaveLabel2>
-                                        )}
+                                        {checkoutView.render('billingCycle')}
+                                        {checkoutView.render('discount')}
                                     </div>
 
-                                    {hasSelectedFree && (
-                                        <div className="flex-1 text-sm color-weak">{c('Info').t`Free forever`}</div>
-                                    )}
-
-                                    {!isB2bPlan && discountPercent > 0 && (
+                                    {!isB2bPlan && discountItem.discountPercent > 0 && (
                                         <span className="inline-flex">
                                             <span className="text-sm color-weak text-strike text-ellipsis">
-                                                {regularPrice}
+                                                {/* Regular Price */}
+                                                {initialLoading
+                                                    ? loaderNode
+                                                    : getSimplePriceString(
+                                                          options.currency,
+                                                          discountItem.withoutDiscountPerMonth
+                                                      )}
                                             </span>
                                             <span className="text-sm color-weak ml-1">{` ${c('Suffix')
                                                 .t`/month`}`}</span>
                                         </span>
-                                    )}
-
-                                    {hasSelectedFree && (
-                                        <span className="text-sm color-weak ml-1">{` ${c('Suffix').t`/month`}`}</span>
                                     )}
                                 </div>
                             </div>
@@ -194,101 +262,40 @@ const PaymentSummary = ({
                 );
             })()}
 
-            {addonsPricing.length > 0 ? (
-                <>
-                    <div className="mx-3 mt-1 flex flex-column gap-2">
-                        {(() => {
-                            return addonsPricing.map(({ addonPricePerCycle, cycle, value, addon }) => {
-                                const price = initialLoading ? (
-                                    loaderNode
-                                ) : (
-                                    <Price currency={options.currency}>{addonPricePerCycle / cycle}</Price>
-                                );
-                                if (
-                                    addon.Name === ADDON_NAMES.MEMBER_VPN_PRO ||
-                                    addon.Name === ADDON_NAMES.MEMBER_VPN_BUSINESS ||
-                                    addon.Name === ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS
-                                ) {
-                                    return (
-                                        <AddonSummary
-                                            key={addon.Name}
-                                            label={c('Checkout summary').t`Users`}
-                                            numberOfItems={value}
-                                            price={price}
-                                            subline={<>/ {c('Checkout summary').t`month`}</>}
-                                        />
-                                    );
-                                }
+            {(() => {
+                const membersElement = checkoutView.render('members');
+                const addonsElement = checkoutView.render('addons');
 
-                                if (
-                                    addon.Name === ADDON_NAMES.IP_VPN_BUSINESS ||
-                                    addon.Name === ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS
-                                ) {
-                                    return (
-                                        <AddonSummary
-                                            key={addon.Name}
-                                            label={c('Checkout summary').t`Servers`}
-                                            numberOfItems={value}
-                                            price={price}
-                                        />
-                                    );
-                                }
-                            });
-                        })()}
-                    </div>
-                    {!isTrial && <hr className="mx-3 my-0 border-bottom border-weak" />}
-                </>
-            ) : null}
+                if (!membersElement && !addonsElement) {
+                    return null;
+                }
 
-            {isB2bPlan && !isTrial && (
-                <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
-                    <span>{getTotalBillingText(options.cycle, options.planIDs)}</span>
-                    <span>
-                        {initialLoading ? (
-                            loaderNode
-                        ) : (
-                            <Price currency={options.currency}>{options.checkResult.Amount}</Price>
-                        )}
-                    </span>
-                </div>
-            )}
+                return (
+                    <>
+                        <div className="mx-3 mt-1 flex flex-column gap-2">
+                            {membersElement}
+                            {addonsElement}
+                        </div>
+                        <hr className="mx-3 my-0 border-bottom border-weak" />
+                    </>
+                );
+            })()}
 
-            {isB2bPlan && <hr className="mx-3 my-0 border-bottom border-weak" />}
+            {checkoutView.render('planAmount')}
 
             {isB2bPlan && !isTrial && (
                 <>
+                    <hr className="mx-3 my-0 border-bottom border-weak" />
                     <div className="mx-3">{giftCode}</div>
                     <hr className="mx-3 my-0 border-bottom border-weak" />
                 </>
             )}
 
-            {tax?.inclusive === TaxInclusive.EXCLUSIVE && (
-                <div className="mx-3 flex justify-space-between gap-2">
-                    <span>
-                        {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
-                    </span>
-                    <span>
-                        <Price key="price" currency={tax.currency} data-testid="taxAmount">
-                            {tax.amount}
-                        </Price>
-                    </span>
-                </div>
-            )}
+            {checkoutView.render('taxExclusive')}
 
             <div className="mx-3 flex flex-column gap-2">
-                <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
-                    <span>{amountDueLabel}</span>
-                    <span>
-                        {loading ? (
-                            loaderNode
-                        ) : (
-                            <>
-                                <Price currency={options.currency}>{options.checkResult.AmountDue}</Price>*
-                            </>
-                        )}
-                    </span>
-                </div>
-                <InclusiveVatText checkResult={options.checkResult} className="text-sm color-weak" />
+                {checkoutView.render('amountDue')}
+                {checkoutView.render('taxInclusive')}
             </div>
             {isTrial && <TrialSummary loading={loading} options={options} />}
         </div>

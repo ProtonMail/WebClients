@@ -59,7 +59,6 @@ import { isFreeSubscription } from '../../core/type-guards';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { EstimationChangeAction } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
-import useIsB2BTrial from '../hooks/useIsB2BTrial';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
@@ -204,14 +203,9 @@ export const PaymentsContextProvider = ({
 
     const defaultApi = useApi();
 
-    const {
-        user,
-        paymentStatus: paymentStatusInitial,
-        subscription: subscriptionInitial,
-        plans: plansInitial,
-        organization,
+    const { user, paymentStatus: paymentStatusInitial, subscription: subscriptionInitial, plans: plansInitial } =
         // Avoid using model hooks to avoid fetching data
-    } = useSelector(selectInitialPaymentData);
+        useSelector(selectInitialPaymentData);
     const dispatch = useDispatch();
 
     const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
@@ -267,9 +261,18 @@ export const PaymentsContextProvider = ({
              * In the future iterations, if it still remains unused, we will eventually remove it
              **/
 
-            const trial = undefined;
+            const cycle = CYCLE.MONTHLY;
+            const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
+            const trial = shouldPassIsTrial({
+                plansMap,
+                newPlanIDs: initialPlanIDs,
+                oldPlanIDs: getPlanIDs(subscription),
+                newCycle: cycle,
+                oldCycle: oldSubscription.Cycle,
+                downgradeIsTrial: true,
+            });
             const planToCheck = {
-                cycle: CYCLE.MONTHLY,
+                cycle,
                 currency: autoCurrency,
                 planIDs: initialPlanIDs,
                 coupon: undefined,
@@ -326,17 +329,34 @@ export const PaymentsContextProvider = ({
 
     const multiCheckGroups = useMultiCheckGroups();
 
-    const isB2BTrial = useIsB2BTrial(stateRef.current.subscription, organization);
     const couponConfig = useCouponConfig({
         checkResult: stateRef.current.checkResult,
         planIDs: stateRef.current.planToCheck.planIDs,
         plansMap: getPlansMap(),
     });
 
+    const getShouldPassTrial = (planIDs: PlanIDs, cycle: Cycle, canDowngrade: boolean) => {
+        const subscription = stateRef.current.subscription;
+        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
+
+        if (!oldSubscription) {
+            return false;
+        }
+
+        return shouldPassIsTrial({
+            plansMap: getPlansMap(),
+            newPlanIDs: planIDs,
+            oldPlanIDs: getPlanIDs(subscription),
+            newCycle: cycle,
+            oldCycle: oldSubscription.Cycle,
+            downgradeIsTrial: canDowngrade,
+        });
+    };
+
     const getOptimisticCheckResult: PaymentsContextType['getOptimisticCheckResult'] = (planToCheck) => {
         const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
         return computeOptimisticCheckResult({ plansMap, ...planToCheck }, stateRef.current.subscription, {
-            isTrial: planToCheck.trial,
+            isTrial: planToCheck.trial || getShouldPassTrial(planToCheck.planIDs, planToCheck.cycle, true),
         });
     };
 
@@ -368,7 +388,11 @@ export const PaymentsContextProvider = ({
 
             setState({
                 planToCheck: newPlanToCheck,
-                checkResult: newCheckResult,
+                checkResult: {
+                    ...newCheckResult,
+                    AmountDue: 0,
+                    PeriodEnd: 0,
+                },
                 zipCodeValid: true,
             });
 
@@ -472,17 +496,7 @@ export const PaymentsContextProvider = ({
 
         const isFree = hasFreePlanIDs(newPlanToCheck.planIDs);
         if (isFree) {
-            const plansMap = getLocalizedPlansMap({ paramCurrency: newPlanToCheck.currency });
-            const newCheckResult = computeOptimisticCheckResult(
-                {
-                    plansMap,
-                    cycle: newPlanToCheck.cycle,
-                    planIDs: newPlanToCheck.planIDs,
-                    currency: newPlanToCheck.currency,
-                },
-                stateRef.current.subscription,
-                { isTrial: newPlanToCheck.trial }
-            );
+            const newCheckResult = getOptimisticCheckResult(newPlanToCheck);
             setState({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
             return newCheckResult;
         }
@@ -672,28 +686,6 @@ export const PaymentsContextProvider = ({
         }
     };
 
-    const getShouldPassTrial = (planIDs: PlanIDs, cycle: Cycle, canDowngrade: boolean) => {
-        if (!isB2BTrial) {
-            return false;
-        }
-
-        const subscription = stateRef.current.subscription;
-        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
-
-        if (!oldSubscription) {
-            return false;
-        }
-
-        return shouldPassIsTrial({
-            plansMap: getPlansMap(),
-            newPlanIDs: planIDs,
-            oldPlanIDs: getPlanIDs(subscription),
-            newCycle: cycle,
-            oldCycle: oldSubscription.Cycle,
-            downgradeIsTrial: canDowngrade,
-        });
-    };
-
     const instantSelectBillingAddress = async (billingAddress: BillingAddress) => {
         try {
             await calculateSubscriptionEstimation({ billingAddress });
@@ -719,11 +711,7 @@ export const PaymentsContextProvider = ({
 
     const getFallbackPrice: PaymentsContextType['getFallbackPrice'] = (planToCheck): PricesResult => {
         const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-        const checkResult = computeOptimisticCheckResult(
-            { plansMap: localizedPlansMap, ...planToCheck },
-            stateRef.current.subscription,
-            { isTrial: planToCheck.trial }
-        );
+        const checkResult = getOptimisticCheckResult(planToCheck);
 
         return {
             checkResult,

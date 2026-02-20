@@ -8,14 +8,14 @@ import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import { AppsLogos, CycleSelector, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import {
-    getTrialRenewalAmountDueNoticeText,
-    getTrialRenewalNoticeTextWithTermsAndConditions,
-} from '@proton/components/containers/payments/RenewalNotice';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import {
+    getTrialRenewalAmountDueNoticeText,
+    getTrialRenewalNoticeTextWithTermsAndConditions,
+} from '@proton/payments/ui/components/RenewalNotice';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

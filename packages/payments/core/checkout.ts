@@ -3,9 +3,10 @@ import { c, msgid } from 'ttag';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
+import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
 import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
 import {
+    getAddonType,
     isDomainAddon,
     isIpAddon,
     isLumoAddon,
@@ -24,11 +25,11 @@ import { isValidPlanName } from './type-guards';
 
 export type RequiredCheckResponse = SubscriptionCheckResponse;
 
-export interface AddonDescription {
+interface AddonDescription {
     name: ADDON_NAMES;
-    title: string;
     quantity: number;
     pricing: Pricing;
+    title: string;
 }
 
 const getAddonQuantity = (addon: Plan, quantity: number) => {
@@ -50,7 +51,7 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
     return quantity * addonMultiplier;
 };
 
-const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
+export const getAddonTitleWithQuantity = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
     if (isDomainAddon(addonName)) {
         const domains = quantity;
         return c('Addon').ngettext(
@@ -65,7 +66,7 @@ const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanID
     }
     if (isIpAddon(addonName)) {
         const ips = quantity;
-        return c('Addon').ngettext(msgid`${ips} server`, `${ips} servers`, ips);
+        return c('Addon').ngettext(msgid`${ips} dedicated VPN server`, `${ips} dedicated VPN servers`, ips);
     }
 
     const plan = getPlanNameFromIDs(planIDs);
@@ -81,15 +82,55 @@ const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanID
     }
 
     if (isLumoAddon(addonName)) {
+        const seats = quantity;
         if (isB2C) {
-            return LUMO_APP_NAME;
+            return c('Addon').ngettext(
+                msgid`${seats} ${LUMO_APP_NAME} AI license`,
+                `${seats} ${LUMO_APP_NAME} AI licenses`,
+                seats
+            );
         }
 
-        const seats = quantity;
         return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
     }
 
     return '';
+};
+
+export const getAddonTitleByType = (
+    addonType: ADDON_PREFIXES,
+    isB2C: boolean,
+    { short }: { short?: boolean } = {}
+): string => {
+    const scribeTitle = isB2C ? c('Addon').t`Writing assistant` : c('Addon').t`Writing assistant seats`;
+    const lumoTitle = isB2C ? c('Addon').t`${LUMO_APP_NAME} AI license` : c('Addon').t`${LUMO_APP_NAME} seats`;
+    const ipTitle = short ? c('Addon').t`Servers` : c('Addon').t`Dedicated VPN servers`;
+
+    const mapping: Record<ADDON_PREFIXES, string> = {
+        [ADDON_PREFIXES.SCRIBE]: scribeTitle,
+        [ADDON_PREFIXES.LUMO]: lumoTitle,
+        [ADDON_PREFIXES.MEMBER]: c('Addon').t`Users`,
+        [ADDON_PREFIXES.DOMAIN]: c('Addon').t`Domains`,
+        [ADDON_PREFIXES.IP]: ipTitle,
+    };
+
+    return mapping[addonType];
+};
+
+export const getAddonTitleWithoutQuantity = (
+    addonName: ADDON_NAMES,
+    planIDs: PlanIDs,
+    options: { short?: boolean } = {}
+) => {
+    const plan = getPlanNameFromIDs(planIDs);
+    const isB2C = !getIsB2BAudienceFromPlan(plan);
+
+    const addonType = getAddonType(addonName);
+    if (!addonType) {
+        return '';
+    }
+
+    return getAddonTitleByType(addonType, isB2C, options);
 };
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
@@ -108,12 +149,11 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
         }
 
         const name = planOrAddon.Name as ADDON_NAMES;
-        const title = getAddonTitle(name, quantity, planIDs);
         acc[name] = {
             name,
-            title,
             quantity: getAddonQuantity(planOrAddon, quantity),
             pricing: planOrAddon.Pricing,
+            title: getAddonTitleWithQuantity(name, quantity, planIDs),
         };
 
         return acc;
@@ -136,7 +176,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
             };
         }
 
-        addonsMap[ADDON_NAMES.IP_VPN_BUSINESS].title = getAddonTitle(
+        addonsMap[ADDON_NAMES.IP_VPN_BUSINESS].title = getAddonTitleWithQuantity(
             ADDON_NAMES.IP_VPN_BUSINESS,
             addonsMap[ADDON_NAMES.IP_VPN_BUSINESS].quantity,
             planIDs
@@ -235,7 +275,8 @@ export const getCheckoutUi = ({
      * error-prone very quickly.
      */
     const isPricePerMember = supportsMemberAddon(planIDs);
-    const viewPricePerMonth = isPricePerMember ? membersPerMonth / usersAndAddons.users : withDiscountPerMonth;
+    const oneMemberPerMonth = membersPerMonth / usersAndAddons.users;
+    const viewPricePerMonth = isPricePerMember ? oneMemberPerMonth : withDiscountPerMonth;
     const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
 
     const discountTarget: 'base-users' | undefined =
@@ -272,6 +313,8 @@ export const getCheckoutUi = ({
         monthlySuffix,
         checkResult,
         discountTarget,
+        viewUsers: usersAndAddons.viewUsers,
+        oneMemberPerMonth,
     };
 };
 

@@ -5,7 +5,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -22,6 +21,7 @@ import {
     type PlanIDs,
     type PlansMap,
 } from '@proton/payments';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import SaveLabel from '../SaveLabel';
