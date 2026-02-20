@@ -150,6 +150,15 @@ export async function processDocumentUpdateChunk(
   }
   state.set(id, entry)
 
+  if (entry.chunks.has(index)) {
+    // If we already got this chunk, check if it matches the expected content. If it does, we can just skip processing, otherwise we throw an error for visibility.
+    const existingChunk = entry.chunks.get(index)
+    if (existingChunk && !isEqualArray(existingChunk, content)) {
+      throw new Error(`Chunk ${index} already exists but does not match expected content`)
+    }
+    return
+  }
+
   entry.received++
   entry.chunks.set(index, content)
 
@@ -213,4 +222,16 @@ export function isDocumentUpdateChunkingEnabled(unleashClient: UnleashClient, do
     unleashClient.isReady() &&
     unleashClient.isEnabled(documentType === 'sheet' ? 'SheetsUpdateChunkingEnabled' : 'DocsUpdateChunkingEnabled')
   )
+}
+
+function isEqualArray(a: Uint8Array<ArrayBuffer>, b: Uint8Array<ArrayBuffer>): boolean {
+  if (a.length != b.length) {
+    return false
+  }
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false
+    }
+  }
+  return true
 }
