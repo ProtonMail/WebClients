@@ -15,7 +15,7 @@ export const NoiseCancellingToggle = ({
     return (
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
             <label
-                className={clsx('setting-label text-ellipsis text-rg', noiseFilter ? 'color-norm' : 'color-hint')}
+                className={clsx('setting-label text-ellipsis', noiseFilter ? 'color-norm' : 'color-hint')}
                 htmlFor={`${idBase}-noise-filter`}
             >{c('Action').t`Noise cancellation`}</label>
             <Toggle

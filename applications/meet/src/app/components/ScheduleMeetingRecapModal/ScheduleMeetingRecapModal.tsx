@@ -354,14 +354,14 @@ export const ScheduleMeetingRecapModal = ({
                                         key="outlook-calendar"
                                         onClick={handleOutlookDeepLink}
                                     >
-                                        {c('Label').t`Outlook calendar`}
+                                        {c('Label').t`Outlook Calendar`}
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
                                         key="google-calendar"
                                         onClick={handleGoogleDeepLink}
                                     >
-                                        {c('Label').t`Google calendar`}
+                                        {c('Label').t`Google Calendar`}
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="calendar-dropdown-menu text-left large-meet-radius flex flex-nowrap items-center gap-2 border-none shrink-0"
