@@ -21,14 +21,6 @@ const getCreatedOnSubtitle = (meeting: Meeting, dateFormat: SETTINGS_DATE_FORMAT
     return c('Info').t`Created on ${formattedDate}`;
 };
 
-const PAST_MEETINGS_SORT_OPTION: SortOptionObject = {
-    value: SortOption.Past,
-    label: c('Sort option').t`Past meetings`,
-    icon: <IcCalendarCheckmark className="shrink-0 mr-2" />,
-    groupBy: 'adjustedEndTime',
-    getSubtitle: getCreatedOnSubtitle,
-};
-
 export const getSortOptions = (isPastMeetingsEnabled: boolean): SortOptionObject[] => [
     {
         value: SortOption.NewlyCreated,
@@ -44,5 +36,15 @@ export const getSortOptions = (isPastMeetingsEnabled: boolean): SortOptionObject
         groupBy: 'adjustedStartTime',
         getSubtitle: getCreatedOnSubtitle,
     },
-    ...(isPastMeetingsEnabled ? [PAST_MEETINGS_SORT_OPTION] : []),
+    ...(isPastMeetingsEnabled
+        ? [
+              {
+                  value: SortOption.Past,
+                  label: c('Sort option').t`Past meetings`,
+                  icon: <IcCalendarCheckmark className="shrink-0 mr-2" />,
+                  groupBy: 'adjustedEndTime',
+                  getSubtitle: getCreatedOnSubtitle,
+              } as SortOptionObject,
+          ]
+        : []),
 ];

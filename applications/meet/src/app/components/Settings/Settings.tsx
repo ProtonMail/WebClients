@@ -122,7 +122,10 @@ export const Settings = () => {
                         </div>
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
-                                className={clsx('setting-label text-ellipsis', !selfView ? 'color-norm' : 'color-hint')}
+                                className={clsx(
+                                    'setting-label text-ellipsis',
+                                    pipEnabled ? 'color-norm' : 'color-hint'
+                                )}
                                 htmlFor="pip-enabled"
                             >{c('Action').t`Picture-in-picture mode`}</label>
                             <Toggle
