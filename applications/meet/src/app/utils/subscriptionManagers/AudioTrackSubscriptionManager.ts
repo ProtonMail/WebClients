@@ -372,6 +372,11 @@ export class AudioTrackSubscriptionManager {
                 return;
             }
 
+            // Clear stale concealment baseline — the new transceiver starts with fresh counters
+            // so any delta calculated against the old values would be meaningless and cause
+            // a false-positive "concealment resolved" on the very next health check tick.
+            this.lastConcealmentStats.delete(trackKey);
+
             publication.setSubscribed(true);
             await wait(100);
             // Attach new audio element cleanly
