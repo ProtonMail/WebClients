@@ -1102,7 +1102,7 @@
         "3 TB Datenspeicher"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+        "Greife auf über 15.000 Server in mehr als 120 Ländern zu"
       ],
       "Access advanced AI models": [
         "Zugriff auf erweiterte KI-Modelle"
@@ -1111,10 +1111,10 @@
         "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
+        "Werbung, Tracker und Malware blockieren"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Connect 10 devices at once": [
         "Verbinde 10 Geräte gleichzeitig"
@@ -1123,13 +1123,13 @@
         "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
       ],
       "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
+        "Individuelle Konten für 6 Benutzer"
       ],
       "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
+        "Individuelle Konten für dich und einen Partner"
       ],
       "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
@@ -5369,6 +5369,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Readonly": [
+        "Schreibgeschützt"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Dieses Dokument hat viele aktive Mitwirkende. Echtzeitbearbeitung ist vorübergehend nicht verfügbar. Aktualisiere, um die letzten Änderungen anzuzeigen."
       ]
     },
     "info": {
@@ -8530,10 +8536,10 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Neue Tabelle"
+        "Neue Tabellenkalkulation"
       ],
       "Tab Separated Values (.tsv)": [
-        "Tabulatorgetrennte Werte (.tsv)"
+        "Tab-getrennte Werte (.tsv)"
       ]
     },
     "sheets_2025:Info": {
@@ -8548,11 +8554,23 @@
       ],
       "Replace data at selected cell": [
         "Daten in der ausgewählten Zelle ersetzen"
+      ],
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
+      ],
+      "Replace spreadsheet": [
+        "Tabellenkalkulation ersetzen"
+      ],
+      "Select a file to import": [
+        "Eine Datei zum Importieren auswählen"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Deine aktuelle Tabelle, einschließlich aller darin enthaltenen Arbeitsblätter, wird durch diese Version ersetzt."
       ]
     },
     "sheets_2025:Label": {
       "Convert text to numbers, dates, and formulas": [
-        "Text in Zahlen, Daten und Formeln umwandeln"
+        "Text in Zahlen, Datumsangaben und Formeln umwandeln"
       ],
       "Destination": [
         "Ziel"
@@ -8561,7 +8579,7 @@
         "Formatieren"
       ],
       "Separator type": [
-        "Trennzeichenart"
+        "Trennertyp"
       ]
     },
     "sheets_2025:Title": {
@@ -8790,6 +8808,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9832,6 +9853,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Readonly": [
+        "Schreibgeschützt"
       ]
     },
     "Today icon tooltip in mini calendar": {

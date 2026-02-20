@@ -1122,16 +1122,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dátového úložiska"
+        "2 TB úložisko dát"
       ],
       "3 TB data storage": [
-        "3 TB dátového úložiska"
+        "3 TB úložisko dát"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+        "Pristupujte k 15 000+ serverom vo viac ako 120 krajinách"
       ],
       "Access advanced AI models": [
-        "Prístup k pokročilým modelom umelej inteligencie"
+        "Prístup k pokročilým modelom AI"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
@@ -1143,7 +1143,7 @@
         "Zabudovaný 2FA autentifikátor"
       ],
       "Connect 10 devices at once": [
-        "Pripojte 10 zariadení súčasne"
+        "Pripojte 10 zariadení naraz"
       ],
       "Full chat history with easy search and favorites": [
         "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
@@ -1155,7 +1155,7 @@
         "Individuálne účty pre vás a partnera"
       ],
       "Stronger protection against cyber threats": [
-        "Silnejšia ochrana proti kybernetickým hrozbám"
+        "Silnejšia ochrana pred kybernetickými hrozbami"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -3224,6 +3224,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Pre tento plán daňová výnimka nie je podporovaná"
       ]
     },
     "error": {
@@ -8621,9 +8624,9 @@
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
@@ -9024,6 +9027,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch"
       ]
     },
     "specialoffer: Tooltip": {

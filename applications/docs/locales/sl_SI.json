@@ -8508,13 +8508,13 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } shrambe"
+        "Prostor za shrambo ${ app }"
       ],
       "${ app } storage used": [
-        "Porabljene shrambe ${ app }"
+        "Porabljene shrambe za ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } je ${ percentage }% polna"
+        "${ storage } je ${ percentage } % poln."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Z zmanjšanjem paketa boste izgubili naslednje ugodnosti. Ste prepričani, da želite nadaljevati?"
@@ -8550,10 +8550,10 @@
         "Na trenutnem paketu **${ currentPlanName }** vam je preostalo še **${ daysRemaining }** dni uporabe."
       ],
       "Your ${ appStorage } is almost full": [
-        "${ appStorage } je skoraj polna"
+        "${ appStorage } je skoraj poln."
       ],
       "Your ${ appStorage } is full": [
-        "${ appStorage } je polna"
+        "${ appStorage } je poln."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Vaš ${ productString } je poln ${ percentage } %. ${ cta }."
@@ -8562,7 +8562,7 @@
         "Vaš ${ productString } je poln. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Vaša shramba je polna ${ percentage } %. ${ cta }."
+        "Vaša shramba je ${ percentage } % polna. ${ cta }."
       ],
       "Your storage is full": [
         "Vaša shramba je polna"

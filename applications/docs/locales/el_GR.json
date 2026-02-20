@@ -1096,10 +1096,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου"
+        "2 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου"
+        "3 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
@@ -1108,7 +1108,7 @@
         "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
@@ -1120,16 +1120,16 @@
         "Συνδέστε 10 συσκευές ταυτόχρονα"
       ],
       "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
       ],
       "Individual accounts for 6 users": [
         "Ατομικοί λογαριασμοί για 6 χρήστες"
       ],
       "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
       ],
       "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -5369,6 +5369,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Readonly": [
+        "Μόνο για ανάγνωση"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Αυτό το έγγραφο έχει πολλούς ενεργούς συνεργάτες. Η επεξεργασία σε πραγματικό χρόνο δεν είναι προσωρινά διαθέσιμη. Ανανεώστε για να δείτε τις τελευταίες ενημερώσεις."
       ]
     },
     "info": {
@@ -8336,7 +8342,7 @@
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -8491,11 +8497,23 @@
       ],
       "Replace data at selected cell": [
         "Αντικατάσταση δεδομένων στο επιλεγμένο κελί"
+      ],
+      "Creating new spreadsheet...": [
+        "Δημιουργία νέου υπολογιστικού φύλλου..."
+      ],
+      "Replace spreadsheet": [
+        "Αντικατάσταση υπολογιστικού φύλλου"
+      ],
+      "Select a file to import": [
+        "Επιλέξτε αρχείο για εισαγωγή"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Το τρέχον υπολογιστικό φύλλο σας, συμπεριλαμβανομένων όλων των φύλλων που περιέχει, θα αντικατασταθεί με αυτήν την έκδοση."
       ]
     },
     "sheets_2025:Label": {
       "Convert text to numbers, dates, and formulas": [
-        "Μετατροπή κειμένου σε αριθμούς, ημερομηνίες και τύπους"
+        "Μετατροπή κειμένου σε αριθμούς, ημερομηνίες και φόρμουλες"
       ],
       "Destination": [
         "Προορισμός"
@@ -8733,6 +8751,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9775,6 +9796,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Readonly": [
+        "Μόνο για ανάγνωση"
       ]
     },
     "Today icon tooltip in mini calendar": {

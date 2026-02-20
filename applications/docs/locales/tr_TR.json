@@ -1105,28 +1105,28 @@
         "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik İki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
-        "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
+        "Kolay arama ve favoriler ile tam sohbet geçmişi"
       ],
       "Individual accounts for 6 users": [
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Sizin ve partneriniz için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -1137,7 +1137,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
+        "Özel olarak tasarlanmış NetShield, reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek cihazlarınızı korur ve tarama hızınızı artırır."
       ]
     },
     "Browser": {
@@ -5369,6 +5369,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Readonly": [
+        "Salt okunur"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Bu doküman üzerinde çalışan çok sayıda kişi var. Gerçek zamanlı düzenleme geçici olarak kullanılamamaktadır. En güncel hali görmek için sayfayı yenileyin."
       ]
     },
     "info": {
@@ -8335,8 +8341,8 @@
         " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -8467,16 +8473,16 @@
     },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
-        "Virgül ile Ayrılmış Değerler (.csv)"
+        "Virgülle Ayrılan Değerler (.csv)"
       ],
       "Microsoft Excel (.xlsx)": [
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Yeni e-tablo"
+        "Yeni hesap tablosu"
       ],
       "Tab Separated Values (.tsv)": [
-        "Sekme ile Ayrılmış Değerler (.tsv)"
+        "Sekmeyle Ayrılan Değerler (.tsv)"
       ]
     },
     "sheets_2025:Info": {
@@ -8484,13 +8490,25 @@
         "Otomatik olarak algıla"
       ],
       "Insert as new sheet": [
-        "Yeni sayfa olarak ekle"
+        "Yeni tablo olarak ekle"
       ],
       "Replace current sheet": [
-        "Mevcut sayfayı değiştirin"
+        "Mevcut sayfayı değiştir"
       ],
       "Replace data at selected cell": [
-        "Seçili hücredeki verileri değiştirin"
+        "Seçili hücredeki verileri değiştir"
+      ],
+      "Creating new spreadsheet...": [
+        "Yeni hesap tablosu oluşturuluyor..."
+      ],
+      "Replace spreadsheet": [
+        "Hesap tablosunu değiştir"
+      ],
+      "Select a file to import": [
+        "İçe aktarmak için bir dosya seçin"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Mevcut hesap tablonuz içindeki tüm sayfalar dahil olmak üzere bu sürümle değiştirilecektir."
       ]
     },
     "sheets_2025:Label": {
@@ -8733,6 +8751,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvenli ve düzenli bir şekilde saklayın"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9775,6 +9796,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Readonly": [
+        "Salt okunur"
       ]
     },
     "Today icon tooltip in mini calendar": {

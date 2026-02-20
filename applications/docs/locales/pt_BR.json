@@ -1105,13 +1105,13 @@
         "3 TB de armazenamento de dados"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Acesse mais de 15.000 servidores em mais de 120 países"
+        "Acesse 15.000+ servidores em 120+ países"
       ],
       "Access advanced AI models": [
-        "Acesso a modelos de IA avançados"
+        "Acesse modelos de IA avançados"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+        "Todos os recursos premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloqueie anúncios, rastreadores e malware"
@@ -5369,6 +5369,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Readonly": [
+        "Apenas leitura"
       ]
     },
     "info": {
@@ -8542,6 +8545,18 @@
       ],
       "Replace data at selected cell": [
         "Substituir dados na célula selecionada"
+      ],
+      "Creating new spreadsheet...": [
+        "Criando nova planilha..."
+      ],
+      "Replace spreadsheet": [
+        "Substituir planilha"
+      ],
+      "Select a file to import": [
+        "Selecionar um arquivo para importar"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Sua planilha atual, incluindo todas as planilhas nela contidas, será substituída por esta versão."
       ]
     },
     "sheets_2025:Label": {
@@ -8560,7 +8575,7 @@
     },
     "sheets_2025:Title": {
       "Import data": [
-        "Importar dados"
+        "Importação de dados"
       ]
     },
     "Signing preference for emails": {
@@ -9826,6 +9841,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Readonly": [
+        "Apenas leitura"
       ]
     },
     "Today icon tooltip in mini calendar": {
