@@ -1,5 +1,5 @@
-import { getClientID } from '@proton/shared/lib/apps/helper';
-import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
+import {getClientID} from '@proton/shared/lib/apps/helper';
+import {getAppVersionHeaders} from '@proton/shared/lib/fetch/headers';
 
 import config from '../config';
 
@@ -57,7 +57,7 @@ interface PaymentTokenPayload {
 
 // Sends the result/error of an API call back to the native side
 const sendResultToNative = (callId: string, payload: any) => {
-    const message = { callId, ...payload };
+    const message = {callId, ...payload};
     console.log(`Payment Bridge: Sending message for callId ${callId}`, message);
     try {
         if ((window as any).webkit?.messageHandlers?.paymentApiHandler) {
@@ -83,7 +83,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
         if (!apiInstance) {
             const errorMsg = 'PaymentApi instance not found on window.';
             console.error(`Payment Bridge: ${errorMsg}`);
-            sendResultToNative(callId, { status: 'error', error: errorMsg });
+            sendResultToNative(callId, {status: 'error', error: errorMsg});
             return;
         }
 
@@ -91,7 +91,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
         if (typeof method !== 'function') {
             const errorMsg = `Method ${methodName} not found on PaymentApi instance.`;
             console.error(`Payment Bridge: ${errorMsg}`);
-            sendResultToNative(callId, { status: 'error', error: errorMsg });
+            sendResultToNative(callId, {status: 'error', error: errorMsg});
             return;
         }
 
@@ -100,7 +100,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
             if (!apiInstance.isUidSet() && methodName !== 'setUid') {
                 const errorMsg = `UID not set for PaymentApi. Call setUid first.`;
                 console.error(`Payment Bridge: ${errorMsg}`);
-                sendResultToNative(callId, { status: 'error', error: errorMsg });
+                sendResultToNative(callId, {status: 'error', error: errorMsg});
                 return;
             }
 
@@ -110,7 +110,7 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
             if (result instanceof Promise) {
                 result
                     .then((resData) => {
-                        sendResultToNative(callId, { status: 'success', data: resData });
+                        sendResultToNative(callId, {status: 'success', data: resData});
                     })
                     .catch((error) => {
                         const errorMessage = error instanceof Error ? error.message : String(error);
@@ -118,19 +118,21 @@ const createNativeWrapper = (methodName: keyof PaymentApi) => {
                             `Payment Bridge: Error during async ${methodName} call for callId ${callId}:`,
                             error
                         );
-                        sendResultToNative(callId, { status: 'error', error: errorMessage });
+                        sendResultToNative(callId, {status: 'error', error: errorMessage});
                     });
             } else {
                 // Handle synchronous results (if any in the future, or for setUid)
-                sendResultToNative(callId, { status: 'success', data: result });
+                sendResultToNative(callId, {status: 'success', data: result});
             }
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : String(error);
             console.error(`Payment Bridge: Synchronous error during ${methodName} call for callId ${callId}:`, error);
-            sendResultToNative(callId, { status: 'error', error: errorMessage });
+            sendResultToNative(callId, {status: 'error', error: errorMessage});
         }
     };
 };
+
+type UUIDResponse = any;
 
 class PaymentApi {
     private uid: string | undefined;
@@ -138,6 +140,8 @@ class PaymentApi {
     private authBaseUrl = '/api/auth/v4';
 
     private baseUrl = '/api/payments/v5';
+
+    private inFlightUUID?: Promise<UUIDResponse>;
 
     constructor(uid?: string) {
         this.uid = uid;
@@ -260,14 +264,34 @@ class PaymentApi {
         return this.handleApiResponse(response, 'postSubscription');
     }
 
-    public async getUUID(): Promise<any> {
-        const url = `${this.authBaseUrl}/sessions/uuid`;
-        console.log(`PaymentApi: GET ${url}`);
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: this.protonHeaders(),
-        });
-        return this.handleApiResponse(response, 'getUUID');
+    public async getUUID(): Promise<UUIDResponse> {
+
+        // If a request is already running, reuse it.
+        if (this.inFlightUUID) {
+            return this.inFlightUUID;
+        }
+
+        this.inFlightUUID = (async () => {
+            const url = `${this.authBaseUrl}/sessions/uuid`;
+            console.log(`PaymentApi: GET ${url}`);
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: this.protonHeaders(),
+            });
+
+            const result = await this.handleApiResponse(response, 'getUUID');
+
+            return result;
+        })();
+
+        try {
+            return await this.inFlightUUID;
+        } catch (e) {
+            // If it failed, allow future calls to retry.
+            this.inFlightUUID = undefined;
+            throw e;
+        }
     }
 
     public async getPlans(platform?: Platform): Promise<any> {
@@ -318,9 +342,9 @@ try {
     console.log('Payment Bridge: Native wrapper functions created under window.nativePaymentApi');
 
     // Signal readiness (use a unique callId or convention)
-    sendResultToNative('paymentBridgeReady', { status: 'success', data: 'Payment API bridge initialized' });
+    sendResultToNative('paymentBridgeReady', {status: 'success', data: 'Payment API bridge initialized'});
 } catch (error) {
     console.error('Payment Bridge: Failed to initialize PaymentApi bridge:', error);
     // Optionally notify native side about the failure
-    sendResultToNative('paymentBridgeError', { status: 'error', error: 'Failed to initialize Payment API bridge' });
+    sendResultToNative('paymentBridgeError', {status: 'error', error: 'Failed to initialize Payment API bridge'});
 }
