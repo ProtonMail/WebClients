@@ -134,14 +134,20 @@ export const standarize = ({ headers, contacts }: ParsedCsvContacts) => {
                     beRemoved[i] = true;
                 }
             }
-            if (header === 'address') {
+            if (header === 'address' || header === 'address 1') {
                 beChanged[i] = 'street';
             }
-            if (header === 'zip') {
+            if (header === 'address 2') {
+                beChanged[i] = 'extended address';
+            }
+            if (header === 'zip' || header === 'zipcode') {
                 beChanged[i] = 'postal code';
             }
             if (header === 'county') {
                 beChanged[i] = 'state';
+            }
+            if (header === 'mobile') {
+                beChanged[i] = 'mobile phone';
             }
             /*
                 consecutive headers for address n property are (n is an integer)
@@ -356,7 +362,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
 
     const companyMatch = property.match(/^company\s?(\d*)/);
     const departmentMatch = property.match(/^department\s?(\d*)/);
-    const emailMatch = property.match(/^(\w+)?\s?e-?mail\s?(\d*)/);
+    const emailMatch = property.match(/^(\w+)?\s?e(\s)?mail\s?(\d*)/);
     const phoneMatch = property.match(/^(\w+\s*\w+)?\s?phone\s?(\d*)$/);
     const faxMatch = property.match(/^(\w+)?\s?fax\s?(\d*)$/);
     const pagerMatch = property.match(/^(\w+)?\s?pager\s?(\d*)$/);
