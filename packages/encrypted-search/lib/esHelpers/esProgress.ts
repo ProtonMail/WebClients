@@ -18,15 +18,23 @@ import { getIndexingProgressQueryHelpers } from '../esIDB';
  * @returns the estimated time to completion (in minutes) and the current progress
  * expressed as a number between 0 and 100
  */
-export const estimateIndexingProgress = async (
-    userID: string,
-    totalItems: number,
-    prevProgress: number,
-    prevRecordTimestamp: number,
-    indexedItems: number,
-    elapsedTime: number,
-    indexedDBRow?: IndexedDBRow
-) => {
+export const estimateIndexingProgress = async ({
+    userID,
+    totalItems,
+    prevProgress,
+    prevRecordTimestamp,
+    indexedItems,
+    elapsedTime,
+    indexedDBRow,
+}: {
+    userID: string;
+    totalItems: number;
+    prevProgress: number;
+    prevRecordTimestamp: number;
+    indexedItems: number;
+    elapsedTime: number;
+    indexedDBRow?: IndexedDBRow;
+}) => {
     if (totalItems !== 0 && indexedItems !== prevProgress && elapsedTime !== prevRecordTimestamp) {
         const remainingItems = totalItems - indexedItems;
 

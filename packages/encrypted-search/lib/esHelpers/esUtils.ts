@@ -41,11 +41,15 @@ export const normalizeString = (str: string, format: 'NFD' | 'NFKD' = 'NFKD') =>
 /**
  * Find the index of an item in an item array. Should return -1 if the index is not found
  */
-export const findItemIndex = <ESItemMetadata>(
-    itemID: string,
-    itemArray: ESItemMetadata[],
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => itemArray.findIndex((item) => getItemInfo(item).ID === itemID);
+export const findItemIndex = <ESItemMetadata>({
+    itemID,
+    itemArray,
+    getItemInfo,
+}: {
+    itemID: string;
+    itemArray: ESItemMetadata[];
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+}) => itemArray.findIndex((item) => getItemInfo(item).ID === itemID);
 
 /**
  * Compare two timestamps and return whether the first one is smaller (i.e. older)

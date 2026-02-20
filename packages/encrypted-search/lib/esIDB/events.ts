@@ -52,7 +52,12 @@ export const writeAllEvents = async (userID: string, eventsObject: EventsObject)
     }
 
     for (const componentID in eventsObject) {
-        await safelyWriteToIDBAbsolutely(eventsObject[componentID], componentID, 'events', esDB).catch(noop);
+        await safelyWriteToIDBAbsolutely({
+            value: eventsObject[componentID],
+            key: componentID,
+            storeName: 'events',
+            esDB,
+        }).catch(noop);
     }
 
     esDB.close();
