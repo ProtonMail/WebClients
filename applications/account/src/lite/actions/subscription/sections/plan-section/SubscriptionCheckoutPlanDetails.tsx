@@ -7,49 +7,21 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Badge from '@proton/components/components/badge/Badge';
-import Info from '@proton/components/components/link/Info';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
-import { getRenewalTime } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanIcon } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PlanIcon';
 import PlanIconName from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PlanIconName';
 import { getPlanTitlePlusMaybeBrand } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/helpers';
-import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { AddonTooltip } from '@proton/components/containers/payments/subscription/modal-components/helpers/AddonTooltip';
-import { checkoutGetNetTotalAmount } from '@proton/components/containers/payments/subscription/modal-components/helpers/checkoutGetNetTotalAmount';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
-import { IcTagFilled } from '@proton/icons/icons/IcTagFilled';
 import type { FreeSubscription, Subscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
-import {
-    SubscriptionMode,
-    TaxInclusive,
-    formatTax,
-    getCheckoutModifiers,
-    isFreeSubscription,
-    isLifetimePlanSelected,
-    isSubscriptionCheckForbiddenWithReason,
-    isTrial,
-} from '@proton/payments';
+import { SubscriptionMode, isFreeSubscription, isTrial } from '@proton/payments';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { APPS } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { CheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
-import clsx from '@proton/utils/clsx';
 
-import {
-    getAddonTitle,
-    getBillingPeriodText,
-    getDisplayName,
-    getTrailPeriodText,
-    useMemberAddonPrice,
-} from '../../helpers';
-import VatInclusiveText from '../shared/VatInclusiveText';
+import { getDisplayName, getTrialPeriodText } from '../../helpers';
 import WithLoadingIndicator from '../shared/WithLoadingIndicator';
 
 import './SubscriptionCheckoutPlanDetails.scss';
@@ -82,44 +54,50 @@ const getSubscriptionStartDate = (
         : c('Checkout row').jt`Starting ${formattedStartDate}`;
 };
 
-const SubscriptionCheckoutFixedPlanSectionHeader = () => {
-    const { checkoutUi, loading, getShouldPassTrial, couponConfig } = usePayments();
-    const { usersTitle, planTitle, planName, discountPercent, checkResult, cycle, planIDs, currency } = checkoutUi;
-    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
-    const showDiscount =
-        !loading &&
-        discountPercent !== 0 &&
-        checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
-        !shouldPassIsTrial;
+interface CheckoutViewProps {
+    checkoutView: CheckoutView;
+    loading: boolean;
+}
 
-    const amount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
-
-    const totalPrice = (
-        <Price className="text-semibold" currency={currency} data-testid="subscription-total-price" key="total-price">
-            {amount}
-        </Price>
-    );
+const SubscriptionCheckoutFixedPlanSectionHeader = ({
+    checkoutView,
+    loading,
+    showDiscountItem,
+}: CheckoutViewProps & { showDiscountItem: boolean }) => {
+    const { checkoutData } = checkoutView;
+    const discountItem = checkoutData.getItem('discount');
+    const planAmountItem = checkoutData.getItem('planAmount');
+    const membersItem = checkoutData.getItem('members');
 
     return (
         <div className="fixed shadow-norm border-weak bg-norm top-0 left-0 w-full flex justify-space-between p-4 lite-app-fixed-plan-header z-up fade-in">
             <PlanIconName
-                logo={<PlanIcon planName={planName} />}
-                topLine={getPlanTitlePlusMaybeBrand(planTitle, planName)}
+                logo={<PlanIcon planName={checkoutData.planName} />}
+                topLine={getPlanTitlePlusMaybeBrand(checkoutData.planTitle, checkoutData.planName)}
                 bottomLine={
                     <div className="flex gap-1 items-center color-weak text-sm">
-                        <span>{getBillingPeriodText(cycle, planIDs)}</span>
+                        <span>{checkoutView.render('billingCycle')}</span>
                         <span className="color-hint text-xs">•</span>
-                        <span>{usersTitle}</span>
+                        <span>{membersItem.labelWithQuantity}</span>
                     </div>
                 }
             />
             <div className="flex flex-column items-end shrink-0">
                 <div className="text-rg">
-                    <WithLoadingIndicator loading={loading}>{totalPrice}</WithLoadingIndicator>
+                    <WithLoadingIndicator loading={loading}>
+                        <Price
+                            className="text-semibold"
+                            currency={planAmountItem.currency}
+                            data-testid="subscription-total-price"
+                            key="total-price"
+                        >
+                            {planAmountItem.amount}
+                        </Price>
+                    </WithLoadingIndicator>
                 </div>
-                {showDiscount && (
+                {showDiscountItem && (
                     <div className="flex gap-2 text-semibold text-sm color-success">
-                        {c('Subscription').jt`${discountPercent}% discount applied`}
+                        {c('Subscription').jt`${discountItem.discountPercent}% discount applied`}
                     </div>
                 )}
             </div>
@@ -127,42 +105,40 @@ const SubscriptionCheckoutFixedPlanSectionHeader = () => {
     );
 };
 
-interface SubscriptionCheckoutPlanPriceSectionProps {
+interface SubscriptionCheckoutPlanPriceSectionProps extends CheckoutViewProps {
     planSectionRef: MutableRefObject<HTMLDivElement | null>;
+    showDiscountItem: boolean;
 }
 
-const SubscriptionCheckoutPlanPriceSection = ({ planSectionRef }: SubscriptionCheckoutPlanPriceSectionProps) => {
-    const { checkoutUi, loading, getShouldPassTrial } = usePayments();
-    const { planTitle, planName, discountPercent, checkResult, cycle, planIDs } = checkoutUi;
-    const shouldPassTrial = getShouldPassTrial(planIDs, cycle, false);
-    const showDiscountBadge =
-        !loading &&
-        discountPercent !== 0 &&
-        checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
-        !shouldPassTrial;
+const SubscriptionCheckoutPlanPriceSection = ({
+    planSectionRef,
+    checkoutView,
+    loading,
+    showDiscountItem,
+}: SubscriptionCheckoutPlanPriceSectionProps) => {
+    const { checkoutData } = checkoutView;
+    const discountItem = checkoutData.getItem('discount');
 
     return (
         <div className="flex bg-weak p-4 w-full justify-space-between" ref={planSectionRef}>
             <PlanIconName
-                logo={<PlanIcon planName={planName} />}
-                topLine={getPlanTitlePlusMaybeBrand(planTitle, planName)}
+                logo={<PlanIcon planName={checkoutData.planName} />}
+                topLine={getPlanTitlePlusMaybeBrand(checkoutData.planTitle, checkoutData.planName)}
                 bottomLine={
-                    <WithLoadingIndicator loading={loading}>
-                        <span className="text-sm">{getBillingPeriodText(cycle, planIDs)}</span>
-                    </WithLoadingIndicator>
+                    <WithLoadingIndicator loading={loading}>{checkoutView.render('billingCycle')}</WithLoadingIndicator>
                 }
             />
             <div className="flex flex-column items-end shrink-0">
                 <div className="flex gap-2">
                     <WithLoadingIndicator loading={loading} className="text-lg">
-                        {showDiscountBadge && (
+                        {showDiscountItem && (
                             <Badge
                                 type="success"
                                 tooltip={c('Info')
                                     .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
                                 className="text-semibold"
                             >
-                                {c('Subscription').jt`${discountPercent}% off`}
+                                {c('Subscription').jt`${discountItem.discountPercent}% off`}
                             </Badge>
                         )}
                     </WithLoadingIndicator>
@@ -172,38 +148,16 @@ const SubscriptionCheckoutPlanPriceSection = ({ planSectionRef }: SubscriptionCh
     );
 };
 
-const SubscriptionCheckoutAddonSection = () => {
-    const { checkoutUi, loading } = usePayments();
-    const { planIDs, usersTitle, currency, addons, cycle, checkResult } = checkoutUi;
-    const membersAmount = useMemberAddonPrice();
-    const lifetimePlan = isLifetimePlanSelected(planIDs);
+const SubscriptionCheckoutAddonSection = ({ checkoutView }: CheckoutViewProps) => {
+    const { checkoutData } = checkoutView;
 
     return (
         <div className="p-4 w-full flex flex-column pb-0">
             <div className="flex flex-column gap-1">
-                <div className="flex justify-space-between">
-                    {usersTitle}
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{lifetimePlan ? checkResult.Amount : membersAmount}</Price>
-                    </WithLoadingIndicator>
-                </div>
-                {addons.map((addon) => {
-                    const pricePerAddon = (addon.pricing[cycle] || 0) / cycle;
-                    const addonAmount = addon.quantity * pricePerAddon;
-                    return (
-                        <div className="flex justify-space-between" key={addon.name}>
-                            <div>
-                                {getAddonTitle(addon.name, addon.quantity, planIDs)}
-                                <AddonTooltip addon={addon} pricePerAddon={pricePerAddon} currency={currency} />
-                            </div>
-                            <WithLoadingIndicator loading={loading}>
-                                <Price currency={currency}>{addonAmount}</Price>
-                            </WithLoadingIndicator>
-                        </div>
-                    );
-                })}
+                {checkoutView.render('members')}
+                {checkoutView.render('addons')}
             </div>
-            {!lifetimePlan && (
+            {!checkoutData.isLifetime && (
                 <div className="flex items-end flex-column">
                     <div className="color-weak text-xs">{c('Suffix').t`/month`}</div>
                 </div>
@@ -227,25 +181,21 @@ const SubscriptionCheckoutBoundToSection = () => {
     );
 };
 
-interface BillingDetailsProps {
-    hasSavedPaymentMethods: boolean;
-}
-
 function SubscriptionCheckoutInfoBanners(props: {
     trial: boolean;
     hasSavedPaymentMethods: boolean;
-    paymentForbiddenReason: SubscriptionCheckForbiddenReason;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
     periodEnd: ReactNode;
 }) {
     return (
         <div className="w-full">
-            {props.trial && !props.hasSavedPaymentMethods && props.paymentForbiddenReason.reason && (
+            {props.trial && !props.hasSavedPaymentMethods && props.paymentForbiddenReason?.reason && (
                 <Banner variant="info" icon={<IcCreditCards />} className="mt-4">
                     {c('Subscription')
                         .jt`To continue your subscription after the free trial ends, add a payment method before ${props.periodEnd}.`}
                 </Banner>
             )}
-            {!props.trial && props.paymentForbiddenReason.reason === 'already-subscribed' && (
+            {!props.trial && props.paymentForbiddenReason?.reason === 'already-subscribed' && (
                 <Banner variant="info" className="mt-4">{c('Payments')
                     .t`You already have a subscription to this plan.`}</Banner>
             )}
@@ -253,34 +203,28 @@ function SubscriptionCheckoutInfoBanners(props: {
     );
 }
 
-const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDetailsProps) => {
-    const { checkoutUi, subscription, loading, getShouldPassTrial, couponConfig } = usePayments();
-    const { planIDs, cycle, currency, checkResult } = checkoutUi;
+interface BillingDetailsProps extends CheckoutViewProps {
+    subscription: Subscription | FreeSubscription;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
+    hasSavedPaymentMethods: boolean;
+}
 
-    if (!subscription) {
-        return null;
-    }
-
-    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
+const SubscriptionCheckoutBillingDate = ({
+    checkoutView,
+    loading,
+    subscription,
+    paymentForbiddenReason,
+    hasSavedPaymentMethods,
+}: BillingDetailsProps) => {
+    const { checkoutData } = checkoutView;
     const trial = isTrial(subscription);
-    const lifetimePlan = isLifetimePlanSelected(planIDs);
-    const amountDue = checkResult.AmountDue || 0;
-    const { isCustomBilling, isScheduledChargedImmediately, isScheduledChargedLater, isScheduled } =
-        getCheckoutModifiers(checkResult);
-    const hasValidCoupon = checkResult.Coupon?.Code || checkResult.Gift;
-    const renewalTime = getRenewalTime(
-        subscription,
-        cycle,
-        isCustomBilling,
-        isScheduledChargedLater,
-        isScheduledChargedImmediately
-    );
-    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle);
-    const totalAmount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
+    const amountDueItem = checkoutData.getItem('amountDue');
+    const planAmountItem = checkoutData.getItem('planAmount');
+    const hasValidCoupon = checkoutData.checkResult.Coupon?.Code || checkoutData.checkResult.Gift;
 
-    const amountDueToday = (
-        <Price currency={currency} key="amount-due-today">
-            {amountDue}
+    const amountDuePrice = (
+        <Price currency={amountDueItem.currency} key="amount-due-today">
+            {amountDueItem.amountDue}
         </Price>
     );
 
@@ -297,7 +241,7 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
         </Time>
     );
 
-    if (lifetimePlan) {
+    if (checkoutData.isLifetime) {
         return (
             <div className="w-full p-4">
                 <div className="flex flex-column gap-2">
@@ -305,12 +249,10 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
                         <div className="flex justify-space-between text-semibold">
                             <div className="flex flex-column">
                                 <span>{c('Subscription').jt`Total due`}</span>
-                                <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatInclusiveText checkResult={checkResult} />
-                                </WithLoadingIndicator>
+                                {checkoutView.render('taxInclusive')}
                             </div>
                             <strong>
-                                <WithLoadingIndicator loading={loading}>{amountDueToday}</WithLoadingIndicator>
+                                <WithLoadingIndicator loading={loading}>{amountDuePrice}</WithLoadingIndicator>
                             </strong>
                         </div>
                     </div>
@@ -325,15 +267,18 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
             </div>
         );
     } else if (trial && subscription && !isFreeSubscription(subscription)) {
-        const trailCycleText = getTrailPeriodText(subscription);
-        const amountDueToday = isPeriodEndToday || checkResult?.SubscriptionMode === SubscriptionMode.Regular;
+        const trialCycleText = getTrialPeriodText(subscription);
+        const amountDueToday =
+            isPeriodEndToday || checkoutData.checkResult?.SubscriptionMode === SubscriptionMode.Regular;
         return (
             <div className="w-full p-4">
                 <div className="flex flex-column gap-2 text-semibold">
-                    {checkResult?.SubscriptionMode !== SubscriptionMode.Regular && trailCycleText && (
+                    {checkoutData.checkResult?.SubscriptionMode !== SubscriptionMode.Regular && trialCycleText && (
                         <div className="flex justify-space-between">
-                            <span>{getSubscriptionStartDate(subscription, trial, isScheduled)}</span>
-                            <span>{c('Subscription').jt`${trailCycleText} free`}</span>
+                            <span>
+                                {getSubscriptionStartDate(subscription, trial, checkoutData.modifiers.isScheduled)}
+                            </span>
+                            <span>{c('Subscription').jt`${trialCycleText} free`}</span>
                         </div>
                     )}
                     <div className="flex justify-space-between text-semibold">
@@ -344,13 +289,13 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
                                         ? c('Subscription').jt`Total due today`
                                         : c('Subscription').jt`Total due on ${formattedPeriodEnd}`}
                                 </span>
-                                <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatInclusiveText checkResult={checkResult} />
-                                </WithLoadingIndicator>
+                                {checkoutView.render('taxInclusive')}
                             </div>
                         </span>
                         <WithLoadingIndicator loading={loading}>
-                            <Price currency={currency}>{amountDueToday ? amountDue : totalAmount}</Price>
+                            <Price currency={amountDueItem.currency}>
+                                {amountDueToday ? amountDueItem.amountDue : planAmountItem.amount}
+                            </Price>
                         </WithLoadingIndicator>
                     </div>
                     <SubscriptionCheckoutBoundToSection />
@@ -367,29 +312,27 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
     return (
         <div className="w-full p-4">
             <div className="flex flex-column gap-2">
-                {!paymentForbiddenReason.reason && (
+                {!paymentForbiddenReason?.reason && (
                     <div className="flex justify-space-between text-semibold">
                         <div className="inline-flex items-center">
                             <div className="flex flex-column">
                                 <span>
                                     {isFreeSubscription(subscription) && !hasValidCoupon
-                                        ? getTotalBillingText(cycle, planIDs)
+                                        ? planAmountItem.label
                                         : c('Subscription').jt`Total due today`}
                                 </span>
-                                <WithLoadingIndicator loading={loading} className="text-xs">
-                                    <VatInclusiveText checkResult={checkResult} />
-                                </WithLoadingIndicator>
+                                {checkoutView.render('taxInclusive')}
                             </div>
                         </div>
-                        <WithLoadingIndicator loading={loading}>
-                            <Price currency={currency}>{amountDue}</Price>
-                        </WithLoadingIndicator>
+                        {checkoutView.render('amountDue')}
                     </div>
                 )}
                 <div className="flex justify-space-between">
                     {c('Subscription').jt`Next billing date`}
                     <span data-testid="lite:checkout:renewal-date">
-                        <WithLoadingIndicator loading={loading}>{renewalTime}</WithLoadingIndicator>
+                        <WithLoadingIndicator loading={loading}>
+                            {checkoutView.getItem('nextBilling').renewalTime}
+                        </WithLoadingIndicator>
                     </span>
                 </div>
                 <SubscriptionCheckoutBoundToSection />
@@ -404,156 +347,31 @@ const SubscriptionCheckoutBillingDate = ({ hasSavedPaymentMethods }: BillingDeta
     );
 };
 
-const SubscriptionCheckoutProration = () => {
-    const { checkoutUi, loading, coupon, couponConfig, subscription, getShouldPassTrial, selectCoupon } = usePayments();
-    const { currency, checkResult, couponDiscount, cycle, planIDs } = checkoutUi;
-    const { isProration, isCustomBilling } = getCheckoutModifiers(checkResult);
-    const proration = checkResult.Proration ?? 0;
-    const unusedCredit = checkResult.UnusedCredit ?? 0;
-    const credit = checkResult.Credit ?? 0;
-    const { APP_NAME } = useConfig();
-    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const tax = formatTax(checkResult);
+interface ProrationSectionProps extends CheckoutViewProps {
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
+}
 
-    const hasProration = isProration && proration !== 0;
-    const isCustomBillingWithCredit = isCustomBilling && unusedCredit < 0;
-    const hasAppliedCoupon = !!couponDiscount && !couponConfig?.hidden;
-    const hasCredit = credit !== 0;
-    const giftValue = Math.abs(checkResult.Gift || 0);
-    const showTaxExclusive = tax?.inclusive === TaxInclusive.EXCLUSIVE && tax?.amount > 0;
-    const showSubtotal = showTaxExclusive;
-    const shouldPassIsTrial = getShouldPassTrial(planIDs, cycle, false);
-    const trial = isTrial(subscription);
-    const netTotalAmount = checkoutGetNetTotalAmount(checkoutUi, shouldPassIsTrial, couponConfig);
-    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle);
+const SubscriptionCheckoutProration = ({ checkoutView, paymentForbiddenReason }: ProrationSectionProps) => {
+    const { checkoutData } = checkoutView;
 
-    const isSectionVisible =
-        hasProration ||
-        isCustomBillingWithCredit ||
-        hasAppliedCoupon ||
-        hasCredit ||
-        giftValue ||
-        showTaxExclusive ||
-        showSubtotal ||
-        trial;
+    const adjustmentTypes = ['proration', 'unusedCredit', 'coupon', 'gift', 'credit', 'taxExclusive'] as const;
 
-    if (!isSectionVisible && !paymentForbiddenReason.reason) {
+    const hasVisibleAdjustments = adjustmentTypes.some((type) => checkoutData.getItem(type).visible);
+    const isSectionVisible = hasVisibleAdjustments || checkoutData.isTrial;
+
+    if (!isSectionVisible && !paymentForbiddenReason?.reason) {
         return null;
     }
 
     return (
         <div className="p-4 w-full flex flex-column gap-1 pb-0">
-            <div className="flex justify-space-between">
-                <span className="inline-flex items-center">
-                    <span className="mr-2">{getTotalBillingText(cycle, planIDs)}</span>
-                </span>
-                <WithLoadingIndicator loading={loading}>
-                    <Price currency={currency}>{netTotalAmount}</Price>
-                </WithLoadingIndicator>
-            </div>
-            {hasProration && (
-                <div className="flex justify-space-between">
-                    <span className="inline-flex items-center">
-                        <span className="mr-2">{c('Label').t`Proration`}</span>
-                        <Info
-                            title={
-                                proration < 0
-                                    ? c('Info').t`Credit for the unused portion of your previous plan subscription`
-                                    : c('Info').t`Balance from your previous subscription`
-                            }
-                            url={
-                                isVPN
-                                    ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                                    : getKnowledgeBaseUrl('/credit-proration-coupons')
-                            }
-                        />
-                    </span>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{proration}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {isCustomBillingWithCredit && (
-                <div className="flex justify-space-between">
-                    <span className="inline-flex items-center">
-                        <span className="mr-2">{c('Label').t`Proration`}</span>
-                        <Info
-                            title={c('Payments.info')
-                                .t`Credit for the unused portion of your previous plan subscription`}
-                        />
-                    </span>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{unusedCredit}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {hasAppliedCoupon && checkResult.Coupon?.Code && (
-                <div className="flex justify-space-between">
-                    <div className="inline-flex items-center">
-                        <div className="flex flex-column gap-0.5">
-                            <Badge type="success">
-                                <Tooltip title={checkResult.Coupon.Description}>
-                                    <div className="flex items-center gap-1">
-                                        <IcTagFilled size={3} />
-                                        {checkResult.Coupon.Code}
-                                    </div>
-                                </Tooltip>
-                            </Badge>
-                        </div>
-                    </div>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{couponDiscount}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {giftValue > 0 && coupon && (
-                <div className="flex justify-space-between">
-                    <Badge type="success">
-                        <span className="flex items-center gap-1">
-                            <IcTagFilled size={3} />
-                            {coupon}
-                            <IcCross className="cursor-pointer" size={3} onClick={() => selectCoupon('')} />
-                        </span>
-                    </Badge>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{-giftValue}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {hasCredit && (
-                <div className={clsx('flex justify-space-between', credit > 0 && 'color-success')}>
-                    <span className="inline-flex items-center">
-                        <span className="mr-2">
-                            {c('Label').t`Your credit balance`} <IcMoneyBills />
-                        </span>
-                    </span>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price prefix={credit > 0 ? '+' : ''} currency={currency}>
-                            {credit}
-                        </Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {showSubtotal && (
-                <div className="flex justify-space-between">
-                    <span className="inline-flex items-center">
-                        <span className="mr-2">{c('Label').t`Net amount`}</span>
-                    </span>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={currency}>{checkoutUi.withDiscountPerCycle}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
-            {showTaxExclusive && (
-                <div className="flex justify-space-between">
-                    <span>
-                        {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
-                    </span>
-                    <WithLoadingIndicator loading={loading}>
-                        <Price currency={tax.currency}>{tax.amount}</Price>
-                    </WithLoadingIndicator>
-                </div>
-            )}
+            {checkoutView.render('planAmount')}
+            {checkoutView.render('proration')}
+            {checkoutView.render('unusedCredit')}
+            {checkoutView.render('coupon')}
+            {checkoutView.render('gift')}
+            {checkoutView.render('credit')}
+            {checkoutView.render('taxExclusive')}
             <hr className="border-weak border-bottom m-0 mt-3" />
         </div>
     );
@@ -561,11 +379,14 @@ const SubscriptionCheckoutProration = () => {
 
 interface Props {
     hasSavedPaymentMethods: boolean;
+    checkoutView: CheckoutView;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
 }
 
-const SubscriptionCheckoutPlanDetails = ({ hasSavedPaymentMethods }: Props) => {
+const SubscriptionCheckoutPlanDetails = ({ hasSavedPaymentMethods, checkoutView, paymentForbiddenReason }: Props) => {
     const planSectionRef = useRef<HTMLDivElement>(null);
     const [showFixedHeader, setShowFixedHeader] = useState(false);
+    const { subscription, loading } = usePayments();
 
     useEffect(() => {
         if (!planSectionRef.current) {
@@ -592,14 +413,42 @@ const SubscriptionCheckoutPlanDetails = ({ hasSavedPaymentMethods }: Props) => {
         };
     }, []);
 
+    if (!subscription) {
+        return null;
+    }
+
+    const discountItem = checkoutView.getItem('discount');
+    const showDiscountItem = !loading && discountItem.visible && !checkoutView.checkoutData.isTrial;
+
     return (
         <>
-            {showFixedHeader && <SubscriptionCheckoutFixedPlanSectionHeader />}
+            {showFixedHeader && (
+                <SubscriptionCheckoutFixedPlanSectionHeader
+                    checkoutView={checkoutView}
+                    loading={loading}
+                    showDiscountItem={showDiscountItem}
+                />
+            )}
             <section className="flex flex-column border border-weak shadow-raised rounded-lg my-4 lite-app-plan-card">
-                <SubscriptionCheckoutPlanPriceSection planSectionRef={planSectionRef} />
-                <SubscriptionCheckoutAddonSection />
-                <SubscriptionCheckoutProration />
-                <SubscriptionCheckoutBillingDate hasSavedPaymentMethods={hasSavedPaymentMethods} />
+                <SubscriptionCheckoutPlanPriceSection
+                    planSectionRef={planSectionRef}
+                    checkoutView={checkoutView}
+                    loading={loading}
+                    showDiscountItem={showDiscountItem}
+                />
+                <SubscriptionCheckoutAddonSection checkoutView={checkoutView} loading={loading} />
+                <SubscriptionCheckoutProration
+                    checkoutView={checkoutView}
+                    loading={loading}
+                    paymentForbiddenReason={paymentForbiddenReason}
+                />
+                <SubscriptionCheckoutBillingDate
+                    checkoutView={checkoutView}
+                    loading={loading}
+                    subscription={subscription}
+                    paymentForbiddenReason={paymentForbiddenReason}
+                    hasSavedPaymentMethods={hasSavedPaymentMethods}
+                />
             </section>
         </>
     );

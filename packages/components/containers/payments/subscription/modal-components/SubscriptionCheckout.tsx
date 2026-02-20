@@ -1,11 +1,11 @@
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -21,32 +21,42 @@ import {
     type PlanIDs,
     SelectedPlan,
     type Subscription,
-    SubscriptionMode,
-    TaxInclusive,
-    formatTax,
     getPlanFromPlanIDs,
-    hasPlanIDs,
-    isFreeSubscription,
-    isLifetimePlanSelected,
 } from '@proton/payments';
-import { type RequiredCheckResponse, getCheckoutUi } from '@proton/payments/core/checkout';
+import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 import type { TaxCountryHook } from '@proton/payments/ui';
+import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
-import { getTotalBillingText } from '../helpers';
 import { AddonTooltip } from './helpers/AddonTooltip';
-import { BilledCycleText } from './helpers/BilledCycleText';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
-import { checkoutGetNetTotalAmount } from './helpers/checkoutGetNetTotalAmount';
 import { getWhatsIncluded } from './helpers/included';
 import { show30DaysMoneyBackGuarantee } from './helpers/show30DaysMoneyBackGuarantee';
+
+export const useAvailableCurrenciesForPlan = (
+    plan: Plan | undefined,
+    subscription: Subscription | FreeSubscription
+) => {
+    const [user] = useUser();
+    const [paymentStatus] = usePaymentStatus();
+    const [plansResult] = usePlans();
+    const plans: Plan[] = plansResult?.plans ?? [];
+    const { getAvailableCurrencies } = useCurrencies();
+
+    return getAvailableCurrencies({
+        paymentStatus,
+        subscription,
+        user,
+        plans,
+        selectedPlanName: plan?.Name,
+    });
+};
 
 type Props = {
     freePlan: FreePlanDefault;
@@ -69,25 +79,6 @@ type Props = {
     paymentFacade: PaymentFacade;
     taxCountry: TaxCountryHook;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
-};
-
-export const useAvailableCurrenciesForPlan = (
-    plan: Plan | undefined,
-    subscription: Subscription | FreeSubscription
-) => {
-    const [user] = useUser();
-    const [paymentStatus] = usePaymentStatus();
-    const [plansResult] = usePlans();
-    const plans: Plan[] = plansResult?.plans ?? [];
-    const { getAvailableCurrencies } = useCurrencies();
-
-    return getAvailableCurrencies({
-        paymentStatus,
-        subscription,
-        user,
-        plans,
-        selectedPlanName: plan?.Name,
-    });
 };
 
 export type SubscriptionCheckoutProps = Props & CheckoutModifiers;
@@ -118,23 +109,6 @@ const SubscriptionCheckout = ({
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const checkout = getCheckoutUi({
-        planIDs,
-        plansMap,
-        checkResult,
-    });
-
-    const {
-        planTitle,
-        usersTitle,
-        addons,
-        membersPerMonth,
-        couponDiscount,
-        withDiscountPerMonth,
-        withDiscountMembersPerMonth,
-        discountTarget,
-    } = checkout;
-
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
 
@@ -142,30 +116,230 @@ const SubscriptionCheckout = ({
         return null;
     }
 
-    const isPaidPlanSelected = hasPlanIDs(planIDs);
-    const isFreePlanSelected = !isPaidPlanSelected;
-    const lifetimePlan = isLifetimePlanSelected(planIDs);
-
-    const proration = checkResult.Proration ?? 0;
-    const unusedCredit = checkResult.UnusedCredit ?? 0;
-    const credit = checkResult.Credit ?? 0;
-    const totalAmount = checkoutGetNetTotalAmount(checkout, trial, couponConfig);
-    const amountDue = checkResult.AmountDue || 0;
-    const giftValue = Math.abs(checkResult.Gift || 0);
-
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
-    const displayRenewNotice = isPaidPlanSelected && !paymentForbiddenReason.forbidden;
+    const checkoutView = createCheckoutView(
+        {
+            planIDs,
+            plansMap,
+            checkResult,
+            isTrial: trial,
+            couponConfig,
+            app: APP_NAME,
+            subscription,
+            paymentForbiddenReason,
+        },
+        (headless) => ({
+            members: (item) => {
+                if (headless.isLifetime) {
+                    return <div className="mb-4">{item.labelWithQuantity}</div>;
+                }
 
-    const tax = formatTax(checkResult);
+                return (
+                    <CheckoutRow
+                        title={item.labelWithQuantity}
+                        amount={item.pricePerAllPerMonth}
+                        currency={item.currency}
+                        suffix={perMonthSuffix}
+                        loading={loading}
+                        data-testid="members-price-per-month"
+                    />
+                );
+            },
 
-    const showDiscountBadge =
-        !loading &&
-        checkout.discountPercent !== 0 &&
-        checkResult.SubscriptionMode !== SubscriptionMode.CustomBillings &&
-        !trial;
+            addons: (item) =>
+                item.addons.map((addon) => (
+                    <CheckoutRow
+                        title={
+                            <>
+                                {addon.labelWithQuantity}
+                                <AddonTooltip
+                                    addonName={addon.addonName}
+                                    pricePerAddon={addon.pricePerOnePerMonth}
+                                    currency={addon.currency}
+                                />
+                            </>
+                        }
+                        amount={addon.priceForAllPerMonth}
+                        currency={addon.currency}
+                        loading={loading}
+                        suffix={perMonthSuffix}
+                    />
+                )),
+
+            planAmount: (item) => (
+                <>
+                    <div className="mb-4">
+                        <hr />
+                    </div>
+                    <CheckoutRow
+                        className="text-semibold"
+                        title={
+                            <>
+                                <span className="mr-2">{item.label}</span>
+                                {checkoutModifiers.isCustomBilling ? (
+                                    <Info
+                                        title={c('Payments')
+                                            .t`This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.`}
+                                    />
+                                ) : null}
+                            </>
+                        }
+                        amount={item.amount}
+                        currency={item.currency}
+                        loading={loading}
+                        data-testid="price"
+                    />
+                </>
+            ),
+
+            discount: (item) => {
+                if (loading) {
+                    return null;
+                }
+
+                return (
+                    <Badge
+                        type="success"
+                        tooltip={c('Info')
+                            .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
+                        className="ml-2 text-semibold"
+                    >
+                        -{item.discountPercent}%
+                    </Badge>
+                );
+            },
+
+            proration: (item) => (
+                <CheckoutRow
+                    title={
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">{c('Label').t`Proration`}</span>
+                            <Info
+                                title={
+                                    item.isCredit
+                                        ? c('Info').t`Credit for the unused portion of your previous plan subscription`
+                                        : c('Info').t`Balance from your previous subscription`
+                                }
+                                url={
+                                    isVPN
+                                        ? 'https://protonvpn.com/support/vpn-credit-proration/'
+                                        : getKnowledgeBaseUrl('/credit-proration-coupons')
+                                }
+                            />
+                        </span>
+                    }
+                    amount={item.amount}
+                    currency={item.currency}
+                    loading={loading}
+                    data-testid="proration-value"
+                />
+            ),
+
+            unusedCredit: (item) => (
+                <CheckoutRow
+                    title={
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">{c('Label').t`Proration`}</span>
+                            <Info
+                                title={c('Payments.info')
+                                    .t`Credit for the unused portion of your previous plan subscription`}
+                            />
+                        </span>
+                    }
+                    amount={item.amount}
+                    currency={item.currency}
+                    loading={loading}
+                    data-testid="custom-billing-unused-credit-value"
+                />
+            ),
+
+            coupon: (item) => (
+                <CheckoutRow
+                    title={c('Title').t`Coupon`}
+                    amount={item.discountAmount}
+                    currency={item.currency}
+                    loading={loading}
+                    data-testid="coupon-discount"
+                />
+            ),
+
+            credit: (item) => (
+                <CheckoutRow
+                    title={
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">{c('Label').t`Credits`}</span>
+                            {item.isAddedToBalance && (
+                                <Info title={c('Payments.info').t`Credits will be added to your balance`} />
+                            )}
+                        </span>
+                    }
+                    amount={item.amount}
+                    currency={item.currency}
+                    loading={loading}
+                    data-testid="credits-value"
+                />
+            ),
+
+            gift: (item) => (
+                <CheckoutRow
+                    title={c('Title').t`Gift`}
+                    amount={item.amount}
+                    currency={item.currency}
+                    loading={loading}
+                />
+            ),
+
+            planAmountWithDiscount: () => null, // Not shown in this checkout variant
+
+            taxExclusive: (item) => (
+                <CheckoutRow
+                    title={
+                        <span>
+                            {item.taxesQuantity > 1 ? c('Payments').t`Taxes` : item.taxName} {item.rate}%
+                        </span>
+                    }
+                    amount={item.amount}
+                    currency={item.currency}
+                    loading={loading}
+                />
+            ),
+
+            taxInclusive: (item) => (
+                <div className="text-sm color-weak text-center mt-1" data-testid="tax">
+                    <span>{item.taxRateAndAmountElement}</span>
+                </div>
+            ),
+
+            nextBilling: (item) => <StartDateCheckoutRow nextSubscriptionStart={item.scheduledSubscriptionStartDate} />,
+
+            amountDue: (item) => (
+                <CheckoutRow
+                    title={c('Title').t`Amount due`}
+                    amount={item.amountDue}
+                    currency={item.currency}
+                    loading={loading}
+                    className="text-bold m-0 text-2xl mt-4"
+                    data-testid="subscription-amout-due"
+                />
+            ),
+
+            renewalNotice: (item) => item.content,
+
+            billingCycle: (item) => (
+                <span className="color-weak text-sm" data-testid="billed-cycle-text">
+                    {item.normalText}
+                </span>
+            ),
+        })
+    );
+
+    const bodyItems = checkoutView.getVisibleItems({
+        exclude: ['amountDue', 'discount', 'renewalNotice', 'taxInclusive', 'billingCycle'],
+    });
+    const planAmountValue = checkoutView.checkoutData.getItem('planAmount').amount;
 
     return (
         <Checkout
@@ -184,196 +358,31 @@ const SubscriptionCheckout = ({
             paymentMethods={paymentMethods}
             planIDs={planIDs}
             user={user}
-            renewNotice={
-                displayRenewNotice
-                    ? getCheckoutRenewNoticeTextFromCheckResult({
-                          checkResult,
-                          plansMap,
-                          planIDs,
-                          subscription,
-                          app: APP_NAME,
-                      })
-                    : undefined
-            }
+            renewNotice={checkoutView.render('renewalNotice')}
             couponConfig={couponConfig}
         >
+            {/* Plan header: title + discount badge + billing cycle */}
             <div className="mb-4 flex flex-column">
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
-                    <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
-                    {showDiscountBadge ? (
-                        <Badge
-                            type="success"
-                            tooltip={c('Info')
-                                .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
-                            className="ml-2 text-semibold"
-                        >
-                            -{checkout.discountPercent}%
-                        </Badge>
-                    ) : null}
+                    <strong className="mb-1">{checkoutView.checkoutData.planTitle}</strong>
+                    {checkoutView.render('discount')}
                 </div>
 
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>
-                    {isPaidPlanSelected && !lifetimePlan && <BilledCycleText cycle={cycle} planIDs={planIDs} />}
+                    {checkoutView.render('billingCycle')}
                 </div>
             </div>
-            {(() => {
-                if (lifetimePlan) {
-                    return <div className="mb-4">{usersTitle}</div>;
-                }
 
-                const noAddonsAndCouponIsHidden = !!couponConfig?.hidden && addons.length === 0;
+            {/* Body line items: members, addons, plan-amount, proration, coupon, credit, gift, tax, start-date */}
+            {bodyItems.map((item) => (
+                <Fragment key={item.type}>{checkoutView.render(item.type)}</Fragment>
+            ))}
 
-                let membersAmount: number;
-                if (discountTarget === 'base-users') {
-                    membersAmount = withDiscountMembersPerMonth;
-                } else if (noAddonsAndCouponIsHidden) {
-                    membersAmount = withDiscountPerMonth;
-                } else {
-                    membersAmount = membersPerMonth;
-                }
-
-                return (
-                    <CheckoutRow
-                        title={usersTitle}
-                        amount={membersAmount}
-                        currency={currency}
-                        suffix={perMonthSuffix}
-                        loading={loading}
-                        data-testid="members-price-per-month"
-                    />
-                );
-            })()}
-            {addons.map((addon) => {
-                const pricePerAddon = (addon.pricing[cycle] || 0) / cycle;
-                const addonAmount = addon.quantity * pricePerAddon;
-
-                return (
-                    <CheckoutRow
-                        key={addon.name}
-                        title={
-                            <>
-                                {addon.title}
-                                <AddonTooltip addon={addon} pricePerAddon={pricePerAddon} currency={currency} />
-                            </>
-                        }
-                        amount={addonAmount}
-                        currency={currency}
-                        loading={loading}
-                        suffix={perMonthSuffix}
-                    />
-                );
-            })}
-            {isPaidPlanSelected && (
-                <>
-                    <div className="mb-4">
-                        <hr />
-                    </div>
-                    <CheckoutRow
-                        className="text-semibold"
-                        title={
-                            <>
-                                <span className="mr-2">{getTotalBillingText(cycle, planIDs)}</span>
-                                {checkoutModifiers.isCustomBilling ? (
-                                    <Info
-                                        title={c('Payments')
-                                            .t`This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.`}
-                                    />
-                                ) : null}
-                            </>
-                        }
-                        amount={totalAmount}
-                        currency={currency}
-                        loading={loading}
-                        data-testid="price"
-                    />
-                </>
-            )}
-
-            {checkoutModifiers.isProration && proration !== 0 && (
-                <CheckoutRow
-                    title={
-                        <span className="inline-flex items-center">
-                            <span className="mr-2">{c('Label').t`Proration`}</span>
-                            <Info
-                                title={
-                                    proration < 0
-                                        ? c('Info').t`Credit for the unused portion of your previous plan subscription`
-                                        : c('Info').t`Balance from your previous subscription`
-                                }
-                                url={
-                                    isVPN
-                                        ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                                        : getKnowledgeBaseUrl('/credit-proration-coupons')
-                                }
-                            />
-                        </span>
-                    }
-                    amount={proration}
-                    currency={currency}
-                    data-testid="proration-value"
-                />
-            )}
-            {checkoutModifiers.isCustomBilling && unusedCredit < 0 && (
-                <CheckoutRow
-                    title={
-                        <span className="inline-flex items-center">
-                            <span className="mr-2">{c('Label').t`Proration`}</span>
-                            <Info
-                                title={c('Payments.info')
-                                    .t`Credit for the unused portion of your previous plan subscription`}
-                            />
-                        </span>
-                    }
-                    amount={unusedCredit}
-                    currency={currency}
-                    data-testid="custom-billing-unused-credit-value"
-                />
-            )}
-            {!!couponDiscount && !couponConfig?.hidden && (
-                <CheckoutRow
-                    title={c('Title').t`Coupon`}
-                    amount={couponDiscount}
-                    currency={currency}
-                    data-testid="coupon-discount"
-                />
-            )}
-            {credit !== 0 && (
-                <CheckoutRow
-                    title={
-                        <span className="inline-flex items-center">
-                            <span className="mr-2">{c('Label').t`Credits`}</span>
-                            {credit > 0 && <Info title={c('Payments.info').t`Credits will be added to your balance`} />}
-                        </span>
-                    }
-                    amount={credit}
-                    currency={currency}
-                    data-testid="credits-value"
-                />
-            )}
-            {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
-            {tax?.inclusive === TaxInclusive.EXCLUSIVE && tax?.amount > 0 && (
-                <CheckoutRow
-                    title={
-                        <span>
-                            {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
-                        </span>
-                    }
-                    amount={tax.amount}
-                    currency={tax.currency}
-                />
-            )}
-            {checkoutModifiers.isScheduled && !isFreeSubscription(subscription) && (
-                <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
-            )}
+            {/* Final separator + amount due */}
             <hr />
-            <CheckoutRow
-                title={c('Title').t`Amount due`}
-                amount={amountDue}
-                currency={currency}
-                loading={loading}
-                className="text-bold m-0 text-2xl mt-4"
-                data-testid="subscription-amout-due"
-            />
+            {checkoutView.render('amountDue')}
+
+            {/* Coupon amount-due message */}
             {(() => {
                 if (!couponConfig?.renderAmountDueMessage) {
                     return null;
@@ -385,8 +394,15 @@ const SubscriptionCheckout = ({
                     <div className="mb-4">{couponConfig.renderAmountDueMessage()}</div>
                 );
             })()}
-            <div className="my-4">{submit}</div>
-            {totalAmount > 0 && gift ? gift : null}
+
+            {/* Submit button */}
+            <div className="my-4">
+                {submit}
+                {checkoutView.render('taxInclusive')}
+            </div>
+
+            {/* Gift code input */}
+            {planAmountValue > 0 && gift ? gift : null}
         </Checkout>
     );
 };

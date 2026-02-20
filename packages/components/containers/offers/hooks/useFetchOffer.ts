@@ -6,8 +6,8 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type Currency, getPlansMap } from '@proton/payments';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 
-import { getCheckoutRenewNoticeTextFromCheckResult } from '../../payments/RenewalNotice';
 import { fetchDealPrices } from '../helpers/dealPrices';
 import type { Offer, OfferConfig } from '../interface';
 

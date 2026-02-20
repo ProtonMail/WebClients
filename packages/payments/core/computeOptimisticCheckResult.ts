@@ -6,7 +6,7 @@ import type { EnrichedCheckResponse, Subscription } from './subscription/interfa
 
 export function computeOptimisticCheckResult(
     params: Parameters<typeof getOptimisticCheckResult>[0],
-    subscription: Subscription | FreeSubscription,
+    subscription: Subscription | FreeSubscription | undefined,
     options: {
         isTrial?: boolean;
     }

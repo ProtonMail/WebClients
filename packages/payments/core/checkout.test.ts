@@ -136,6 +136,7 @@ describe('should get checkout result', () => {
             planIDs: { [PLANS.VPN2024]: 1 },
             planName: PLANS.VPN2024,
             usersTitle: '1 user',
+            viewUsers: 1,
             addons: [],
             withDiscountPerCycle: 999,
             withDiscountPerMonth: 999,
@@ -156,6 +157,7 @@ describe('should get checkout result', () => {
             viewPricePerMonth: 999,
             monthlySuffix: '/month',
             checkResult,
+            oneMemberPerMonth: 999,
         });
     });
 
@@ -208,6 +210,8 @@ describe('should get checkout result', () => {
             planName: PLANS.VPN2024,
             planIDs: { [PLANS.VPN2024]: 1 },
             usersTitle: '1 user',
+            viewUsers: 1,
+            oneMemberPerMonth: 1199,
             addons: [],
             // We don't want to show the price increase to the user, so we use the maximum of Pricing and
             // DefaultPricing as basis for the calculation. We go with Pricing in this case.
@@ -269,6 +273,8 @@ describe('should get checkout result', () => {
             planTitle: 'VIS',
             planName: PLANS.VISIONARY,
             usersTitle: '6 users',
+            viewUsers: 6,
+            oneMemberPerMonth: 1999,
             addons: [],
             withDiscountPerCycle: 43200,
             withDiscountPerMonth: 1800,
@@ -329,6 +335,8 @@ describe('should get checkout result', () => {
             planName: PLANS.VPN2024,
             planIDs: { [PLANS.VPN2024]: 1 },
             usersTitle: '1 user',
+            viewUsers: 1,
+            oneMemberPerMonth: 999,
             addons: [],
             withDiscountPerCycle: 11976,
             withDiscountPerMonth: 399.2,
@@ -407,6 +415,8 @@ describe('should get checkout result', () => {
                 [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
             },
             usersTitle: '3 users',
+            viewUsers: 3,
+            oneMemberPerMonth: 999,
             addons: [
                 {
                     name: ADDON_NAMES.DOMAIN_BUNDLE_PRO,
@@ -484,6 +494,7 @@ describe('should get checkout result', () => {
                 [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
             },
             usersTitle: '4 users',
+            viewUsers: 4,
             addons: [],
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
@@ -504,6 +515,7 @@ describe('should get checkout result', () => {
             amountDue: twoYearPrice3Members,
             monthlySuffix: '/user per month',
             checkResult,
+            oneMemberPerMonth: 599,
         });
     });
 
@@ -552,12 +564,13 @@ describe('should get checkout result', () => {
             planTitle: 'VPN Professional',
             planName: PLANS.VPN_BUSINESS,
             usersTitle: '4 users',
+            viewUsers: 4,
             addons: [
                 {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
                     quantity: 1,
                     pricing: { 1: 4999, 12: 47988, 24: 86376 },
-                    title: '1 server',
+                    title: '1 dedicated VPN server',
                 },
             ],
             withDiscountPerCycle: twoYearPrice3Members,
@@ -579,6 +592,7 @@ describe('should get checkout result', () => {
             amountDue: twoYearPrice3Members,
             monthlySuffix: '/user per month',
             checkResult,
+            oneMemberPerMonth: 899,
         });
     });
 
@@ -620,6 +634,7 @@ describe('should get checkout result', () => {
             },
             planName: PLANS.VISIONARY,
             usersTitle: '6 users',
+            viewUsers: 6,
             addons: [],
             withDiscountPerCycle: 0,
             withDiscountPerMonth: 0,
@@ -640,6 +655,7 @@ describe('should get checkout result', () => {
             viewPricePerMonth: 0,
             monthlySuffix: '/month',
             checkResult,
+            oneMemberPerMonth: 1999,
         });
     });
 
@@ -725,6 +741,7 @@ describe('should get checkout result', () => {
                 planName: PLANS.VPN_BUSINESS,
                 planTitle: 'VPN Professional',
                 usersTitle: '2 users',
+                viewUsers: 2,
                 renewCycle: 24,
                 renewPrice: 129528,
                 renewCycleOverriden: false,
@@ -741,11 +758,12 @@ describe('should get checkout result', () => {
                         name: ADDON_NAMES.IP_VPN_BUSINESS,
                         pricing: { 1: 4999, 12: 47988, 24: 86376 },
                         quantity: 1,
-                        title: '1 server',
+                        title: '1 dedicated VPN server',
                     },
                 ],
                 monthlySuffix: '/user per month',
                 checkResult,
+                oneMemberPerMonth: 899,
             });
         });
 
@@ -888,7 +906,7 @@ describe('getUsersAndAddons()', () => {
                 // purposes we must take into account the fact that VPN Professional has 2 members + 1 server by default
                 {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
-                    title: '1 server',
+                    title: '1 dedicated VPN server',
                     quantity: 1,
                     pricing: { 1: 4999, 12: 47988, 24: 86376 },
                 },
@@ -925,7 +943,7 @@ describe('getUsersAndAddons()', () => {
                 // purposes we must take into account the fact that VPN Professional has 2 members + 1 server by default
                 {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
-                    title: '1 server',
+                    title: '1 dedicated VPN server',
                     quantity: 1,
                     pricing: { 1: 4999, 12: 47988, 24: 86376 },
                 },
@@ -964,7 +982,7 @@ describe('getUsersAndAddons()', () => {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
                     quantity: 5,
                     pricing: { 1: 4999, 12: 47988, 24: 86376 },
-                    title: '5 servers',
+                    title: '5 dedicated VPN servers',
                 },
             ],
         });
@@ -1002,7 +1020,7 @@ describe('getUsersAndAddons()', () => {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
                     quantity: 5,
                     pricing: { 1: 4999, 12: 47988, 24: 86376 },
-                    title: '5 servers',
+                    title: '5 dedicated VPN servers',
                 },
             ],
         });

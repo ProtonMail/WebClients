@@ -679,7 +679,6 @@ export { default as PaymentMethodSelector } from './containers/payments/methods/
 export { default as PaymentMethodsSection } from './containers/payments/methods/PaymentMethodsSection';
 export { default as PayPalButton } from './containers/payments/PayPalButton';
 export { default as PlansSection } from './containers/payments/PlansSection';
-export { getCheckoutRenewNoticeTextFromCheckResult } from './containers/payments/RenewalNotice';
 export { default as StyledPayPalButton } from './containers/payments/StyledPayPalButton';
 export { default as AssistantIncompatibleBrowserModal } from './containers/payments/subscription/assistant/AssistantIncompatibleBrowserModal';
 export { default as AssistantIncompatibleHardwareModal } from './containers/payments/subscription/assistant/AssistantIncompatibleHardwareModal';
