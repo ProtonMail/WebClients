@@ -4992,6 +4992,12 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
       ]
     },
     "error": {
@@ -7325,7 +7331,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8459,7 +8466,7 @@
         "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."
@@ -8744,6 +8751,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Tähän viestiin on liitetty avain, jota ei ole vielä vahvistettu luotettavaksi."
       ]
     },
     "info": {
@@ -14195,6 +14205,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Billing information updated": [
+        "Laskutustiedot päivitetty"
       ]
     },
     "Success notification": {

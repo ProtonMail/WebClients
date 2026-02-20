@@ -1484,8 +1484,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2040,28 +2039,28 @@
         "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik İki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
-        "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
+        "Kolay arama ve favoriler ile tam sohbet geçmişi"
       ],
       "Individual accounts for 6 users": [
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Sizin ve partneriniz için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -2072,7 +2071,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
+        "Özel olarak tasarlanmış NetShield, reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek cihazlarınızı korur ve tarama hızınızı artırır."
       ]
     },
     "Billing cycle option": {
@@ -5058,6 +5057,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Bu tarife için vergi muafiyeti desteklenmemektedir"
       ]
     },
     "error": {
@@ -7397,7 +7399,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7493,7 +7496,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8837,6 +8840,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Bu iletiyi taşırsanız planlanan gönderimi iptal edilir."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Bu yazışma planlanmış bir mesaj içeriyor. Mesajı taşımak planlanmış gönderimi iptal edecektir."
       ]
     },
     "info": {
@@ -13098,8 +13107,8 @@
         " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -13231,6 +13240,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "${ appName } uygulamasında aç"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (Beta) uygulamasında aç"
       ]
     },
     "Signature verification warning": {
@@ -13506,6 +13518,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvenli ve düzenli bir şekilde saklayın"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14455,6 +14470,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Billing information updated": [
+        "Fatura bilgileri güncellendi"
       ]
     },
     "Success notification": {

@@ -1484,8 +1484,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2031,19 +2030,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagring"
+        "2 TB datalagringsutrymme"
       ],
       "3 TB data storage": [
-        "3 TB datalagring"
+        "3 TB datalagringsutrymme"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+        "Åtkomst till över 15 000 servrar i över 120 länder"
       ],
       "Access advanced AI models": [
         "Åtkomst till avancerade AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+        "Alla premiumfunktioner för ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
@@ -2055,7 +2054,7 @@
         "Anslut 10 enheter samtidigt"
       ],
       "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkel sökning och favoriter"
+        "Fullständig konversationshistorik med enkel sökning och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -5052,6 +5051,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Momsbefrielse stöds inte för detta paket"
       ]
     },
     "error": {
@@ -7385,7 +7387,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -12255,6 +12258,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset är giltig för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Det speciellt rabatterade priset är giltigt för den första ${ subscriptionLength } månaden.",
+        "Det speciellt rabatterade priset är giltigt för de första ${ subscriptionLength } månaderna."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månad. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst.",
+        "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt för ${ couponRedemptions } månader. Sedan kommer det förnyas automatiskt med ${ renewPriceStr } för 1 månad. Du kan avbryta när som helst."
       ]
     },
     "Payments.Error": {
@@ -13198,6 +13213,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Öppna i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Öppna i ${ appName } (beta)"
       ]
     },
     "Signature verification warning": {
@@ -14422,6 +14440,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Billing information updated": [
+        "Faktureringsinformation uppdaterad"
       ]
     },
     "Success notification": {

@@ -664,7 +664,7 @@
         "Skjul"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
-        "Gem ${ BRAND_NAME }'s Scribe-skriveassistent"
+        "Gem ${ BRAND_NAME }s Scribe-skriveassistent"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -818,7 +818,7 @@
         "Indlæser${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mailapplikation"
+        "Gør ${ MAIL_APP_NAME } til din standard-e-mailapplikation"
       ],
       "Make it friendly": [
         "Gør det venligt"
@@ -1484,8 +1484,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1885,8 +1884,8 @@
     },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
-        "${ hiddenResultsCount } resultat mere ikke vist",
-        "${ hiddenResultsCount } resultater mere ikke vist"
+        "${ hiddenResultsCount } til resultat ikke vist",
+        "${ hiddenResultsCount } flere resultater ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4910,8 +4909,8 @@
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
-        "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
+        "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen\nmed et program som for eksempel GnuPG.",
+        "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne\nmed et program som for eksempel GnuPG."
       ],
       "The email addresses do not match": [
         "E-mailadresserne stemmer ikke overens"
@@ -5058,6 +5057,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Skattefritagelse understøttes ikke for dette abonnement"
       ]
     },
     "error": {
@@ -6415,7 +6417,7 @@
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } samtale vil blive markeret som ulæst.",
-        "${ elementsCount } samtaler vil blive markeret som ulæst."
+        "${ elementsCount } samtaler vil blive markeret som ulæste."
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } samtale vil blive flyttet",
@@ -6725,8 +6727,8 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }",
-        "Alle dine kontakter vil blive importeret, op til en grænse på ${ maxContact }"
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
+        "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6906,7 +6908,7 @@
         "Ryd valg"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Rydning af browserdata deaktiverer også beskedindholdsøgning på denne enhed. Alle beskeder skal downloades igen for at kunne søge i dem."
+        "Rydning af browserdata deaktiverer også søgning efter indhold i beskeder på denne enhed. Alle beskeder skal downloades igen for at kunne søge i dem."
       ],
       "Clears browser data (including downloaded messages, …)": [
         "Rydder browserdata (herunder hentede beskeder, ...)"
@@ -6939,7 +6941,7 @@
         "Kontakt fjernet fra gruppen ${ contactGroupName }"
       ],
       "Continue": [
-        "Forsæt"
+        "Fortsæt"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -7397,7 +7399,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8114,7 +8117,7 @@
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "Den originale afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
+        "Den oprindelige afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
@@ -8837,6 +8840,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Hvis du flytter denne besked, annulleres dens planlagte afsendelse."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Denne samtale indeholder en planlagt besked. Flytning af den vil annullere den planlagte afsendelse."
       ]
     },
     "info": {
@@ -12768,7 +12777,7 @@
       ],
       "Friend joined": [
         "Ven tilmeldte sig",
-        "Venner tilmelde sig"
+        "Venner tilmeldte sig"
       ],
       "Friend subscribed": [
         "En ven abonnerede",
@@ -13506,6 +13515,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold dine adgangskoder sikre og organiserede i flere bokse"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13533,7 +13545,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Se, hvad der er inkluderet i dit abonnement og nyd fordelene"
+        "Se, hvad der er inkluderet i dit abonnement og drag nytte af fordelene."
       ],
       "Discover your subscription benefits": [
         "Opdag fordelene ved dit abonnement"
@@ -14278,7 +14290,7 @@
         "Samtale markeret som ulæst."
       ],
       "Conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "Samtale flyttet til ${ labelName } og afsender tilføjet din ikke-spam-liste."
+        "Samtale flyttet til ${ labelName } og afsender tilføjet din liste over ikkespam."
       ],
       "Conversation moved to ${ labelName }.": [
         "Samtale flyttet til ${ labelName }."
@@ -14455,6 +14467,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Billing information updated": [
+        "Faktureringsoplysninger opdateret"
       ]
     },
     "Success notification": {

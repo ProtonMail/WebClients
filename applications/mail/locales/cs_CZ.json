@@ -1492,10 +1492,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7379,8 +7376,8 @@
       "embedded image": [
         "vložený obrázek",
         "vložené obrázky",
-        "vložené obrázky",
-        "vložené obrázky"
+        "vložených obrázků",
+        "vložených obrázků"
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
@@ -7635,7 +7632,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -14717,10 +14717,10 @@
         "${ elementsCount } zpráv označeno jako nepřečtené."
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } zpráva byla přesunuta do ${ labelName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zprávy byly přesunuty do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zpráv bylo přesunuto do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
-        "${ elementsCount } zpráv bylo přesunuto do ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
+        "${ elementsCount } zpráva byla přesunuta do složky ${ labelName } a odesílatel byl přidán na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zprávy byly přesunuty do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů.",
+        "${ elementsCount } zpráv bylo přesunuto do složky ${ labelName } a odesílatelé byli přidáni na váš seznam vyžádaných e-mailů."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
         "${ elementsCount } zpráva přesunuta do složky ${ labelName }.",
@@ -14885,10 +14885,10 @@
         "Zpráva označena jako nepřečtená."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
-        "Zpráva přesunuta do ${ labelName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
+        "Zpráva přesunuta do složky ${ labelName } a odesílatel přidán na váš seznam vyžádaných e-mailů."
       ],
       "Message moved to ${ labelName }.": [
-        "Zpráva přesunuta do ${ labelName }."
+        "Zpráva přesunuta do složky ${ labelName }."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "Zpráva byla přesunuta do spamu a odesílatel byl přidán do vašeho seznamu spamů."
