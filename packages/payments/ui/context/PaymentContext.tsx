@@ -203,7 +203,13 @@ export const PaymentsContextProvider = ({
 
     const defaultApi = useApi();
 
-    const { user, paymentStatus: paymentStatusInitial, subscription: subscriptionInitial, plans: plansInitial } =
+    const {
+        user,
+        paymentStatus: paymentStatusInitial,
+        subscription: subscriptionInitial,
+        plans: plansInitial,
+        organization,
+    } =
         // Avoid using model hooks to avoid fetching data
         useSelector(selectInitialPaymentData);
     const dispatch = useDispatch();
@@ -262,14 +268,13 @@ export const PaymentsContextProvider = ({
              **/
 
             const cycle = CYCLE.MONTHLY;
-            const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
             const trial = shouldPassIsTrial({
                 plansMap,
                 newPlanIDs: initialPlanIDs,
-                oldPlanIDs: getPlanIDs(subscription),
                 newCycle: cycle,
-                oldCycle: oldSubscription.Cycle,
                 downgradeIsTrial: true,
+                subscription,
+                organization,
             });
             const planToCheck = {
                 cycle,
@@ -336,20 +341,13 @@ export const PaymentsContextProvider = ({
     });
 
     const getShouldPassTrial = (planIDs: PlanIDs, cycle: Cycle, canDowngrade: boolean) => {
-        const subscription = stateRef.current.subscription;
-        const oldSubscription = subscription?.UpcomingSubscription ?? subscription;
-
-        if (!oldSubscription) {
-            return false;
-        }
-
         return shouldPassIsTrial({
             plansMap: getPlansMap(),
             newPlanIDs: planIDs,
-            oldPlanIDs: getPlanIDs(subscription),
             newCycle: cycle,
-            oldCycle: oldSubscription.Cycle,
             downgradeIsTrial: canDowngrade,
+            subscription: stateRef.current.subscription,
+            organization,
         });
     };
 
@@ -369,13 +367,6 @@ export const PaymentsContextProvider = ({
         const newPlanToCheck = diff.planToCheck ?? stateRef.current.planToCheck;
         const newBillingAddress = diff.billingAddress ?? stateRef.current.billingAddress;
         const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;
-
-        const subscriptionData = getSubscriptionDataFromPlanToCheck({
-            ...newPlanToCheck,
-            ValidateZipCode: true,
-            BillingAddress: newBillingAddress,
-            VatId: newVatNumber,
-        });
 
         const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
             stateRef.current.subscription,
@@ -405,6 +396,14 @@ export const PaymentsContextProvider = ({
                 abortControllerRef.current.abort();
             }
             abortControllerRef.current = new AbortController();
+
+            const subscriptionData = getSubscriptionDataFromPlanToCheck({
+                ...newPlanToCheck,
+                ValidateZipCode: true,
+                BillingAddress: newBillingAddress,
+                VatId: newVatNumber,
+                trial: newPlanToCheck.trial || getShouldPassTrial(newPlanToCheck.planIDs, newPlanToCheck.cycle, true),
+            });
 
             const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData, {
                 signal: abortControllerRef.current.signal,

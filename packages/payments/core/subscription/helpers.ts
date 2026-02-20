@@ -447,6 +447,13 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     return trial && getPlanName(subscription) === plan;
 };
 
+export function isB2BTrial(
+    subscription: Subscription | FreeSubscription | undefined,
+    organization: Organization | undefined
+): boolean {
+    return isTrial(subscription) && !!organization?.IsBusiness;
+}
+
 export const isReferralTrial = (subscription: Subscription | FreeSubscription | undefined) => {
     if (isFreeSubscription(subscription) || !subscription) {
         return false;
