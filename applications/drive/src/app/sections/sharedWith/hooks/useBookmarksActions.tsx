@@ -56,7 +56,7 @@ export const useBookmarksActions = () => {
             createNotification({
                 type: 'success',
                 text: c('Notification').ngettext(
-                    msgid`Selected items were successfully removed from your list`,
+                    msgid`Selected item was successfully removed from your list`,
                     `Selected items were successfully removed from your list`,
                     deletedBookmarkUids.length
                 ),
