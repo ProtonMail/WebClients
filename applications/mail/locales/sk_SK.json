@@ -1492,10 +1492,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2059,16 +2056,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dátového úložiska"
+        "2 TB úložisko dát"
       ],
       "3 TB data storage": [
-        "3 TB dátového úložiska"
+        "3 TB úložisko dát"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+        "Pristupujte k 15 000+ serverom vo viac ako 120 krajinách"
       ],
       "Access advanced AI models": [
-        "Prístup k pokročilým modelom umelej inteligencie"
+        "Prístup k pokročilým modelom AI"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
@@ -2080,7 +2077,7 @@
         "Zabudovaný 2FA autentifikátor"
       ],
       "Connect 10 devices at once": [
-        "Pripojte 10 zariadení súčasne"
+        "Pripojte 10 zariadení naraz"
       ],
       "Full chat history with easy search and favorites": [
         "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
@@ -2092,7 +2089,7 @@
         "Individuálne účty pre vás a partnera"
       ],
       "Stronger protection against cyber threats": [
-        "Silnejšia ochrana proti kybernetickým hrozbám"
+        "Silnejšia ochrana pred kybernetickými hrozbami"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -5125,6 +5122,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Pre tento plán daňová výnimka nie je podporovaná"
       ]
     },
     "error": {
@@ -7632,7 +7632,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9118,6 +9121,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Presunutím tejto správy sa zruší jej naplánované odoslanie."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Táto konverzácia obsahuje naplánovanú správu. Premiestnením sa zruší plánované odoslanie."
       ]
     },
     "info": {
@@ -13511,9 +13520,9 @@
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
@@ -13651,6 +13660,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otvoriť v ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Otvoriť v ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13936,6 +13948,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14973,6 +14988,9 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Billing information updated": [
+        "Fakturačné údaje aktualizované"
       ]
     },
     "Success notification": {

@@ -1456,10 +1456,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7318,7 +7315,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8032,7 +8032,7 @@
         "Prenos pomočnika pri pisanju se mora zaključiti, preden ga lahko uporabite."
       ],
       "Themes can give your inbox a new look.": [
-        "Teme lahko dajo vašo pošti nov izgled."
+        "Teme lahko dajo vaši pošti nov izgled."
       ],
       "There are no messages from this sender in your inbox.": [
         "V mapi Prejeto nimate sporočil od tega pošiljatelja."
@@ -13275,13 +13275,13 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } shrambe"
+        "Prostor za shrambo ${ app }"
       ],
       "${ app } storage used": [
-        "Porabljene shrambe ${ app }"
+        "Porabljene shrambe za ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } je ${ percentage }% polna"
+        "${ storage } je ${ percentage } % poln."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Z zmanjšanjem paketa boste izgubili naslednje ugodnosti. Ste prepričani, da želite nadaljevati?"
@@ -13323,10 +13323,10 @@
         "Na trenutnem paketu **${ currentPlanName }** vam je preostalo še **${ daysRemaining }** dni uporabe."
       ],
       "Your ${ appStorage } is almost full": [
-        "${ appStorage } je skoraj polna"
+        "${ appStorage } je skoraj poln."
       ],
       "Your ${ appStorage } is full": [
-        "${ appStorage } je polna"
+        "${ appStorage } je poln."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Vaš ${ productString } je poln ${ percentage } %. ${ cta }."
@@ -13335,7 +13335,7 @@
         "Vaš ${ productString } je poln. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Vaša shramba je polna ${ percentage } %. ${ cta }."
+        "Vaša shramba je ${ percentage } % polna. ${ cta }."
       ],
       "Your storage is full": [
         "Vaša shramba je polna"

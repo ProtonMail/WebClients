@@ -1484,8 +1484,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7397,7 +7396,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8837,6 +8837,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Het verplaatsen van dit bericht annuleert het gepland verzenden ervan."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Dit gesprek bevat een gepland bericht. Het verplaatsen ervan annuleert het gepland verzenden."
       ]
     },
     "info": {
@@ -13491,6 +13497,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Upgrade en bespaar meer met 2 jaar ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Bewaar uw wachtwoorden veilig en georganiseerd in meerdere kluizen"
       ]
     },
     "specialoffer: Tooltip": {

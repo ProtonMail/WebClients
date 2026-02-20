@@ -1484,8 +1484,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7397,7 +7396,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8837,6 +8837,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Hvis du flytter denne besked, annulleres dens planlagte afsendelse."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Denne samtale indeholder en planlagt besked. Flytning af den vil annullere den planlagte afsendelse."
       ]
     },
     "info": {
@@ -13491,6 +13497,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold dine adgangskoder sikre og organiserede i flere bokse"
       ]
     },
     "specialoffer: Tooltip": {

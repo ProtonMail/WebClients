@@ -1484,8 +1484,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2031,7 +2030,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 To d'espace de stockage de données"
+        "2 To d'espace de stockage"
       ],
       "3 TB data storage": [
         "3 To d'espace de stockage de données"
@@ -2040,31 +2039,31 @@
         "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
       ],
       "Access advanced AI models": [
-        "Accès à des modèles d'IA avancés"
+        "Accéder aux modèles d'IA avancés"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+        "Bloquer les pubs, les traqueurs et les logiciels malveillants"
       ],
       "Built-in 2FA authenticator": [
-        "Authentificateur 2FA intégré"
+        "Authentificateur A2F intégré"
       ],
       "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
+        "Connectez 10 appareils à la fois"
       ],
       "Full chat history with easy search and favorites": [
         "Historique complet des discussions avec recherche facile et favoris"
       ],
       "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
+        "Comptes individuels pour 6 utilisateurs"
       ],
       "Individual accounts for you and a partner": [
         "Comptes individuels pour vous et un partenaire"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les menaces cybermenaces"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -7397,7 +7396,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8837,6 +8837,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Déplacer ce message annulera son envoi programmé."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Cette conversation contient un message programmé. Son déplacement annulera l'envoi programmé."
       ]
     },
     "info": {
@@ -13216,6 +13222,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Ouvrir dans ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Ouvrir dans ${ appName } (beta)"
       ]
     },
     "Signature verification warning": {
@@ -13491,6 +13500,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Gardez vos mots de passe en sécurité et organisez-les dans plusieurs coffres-forts"
       ]
     },
     "specialoffer: Tooltip": {

@@ -1484,8 +1484,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2031,10 +2030,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου"
+        "2 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου"
+        "3 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
@@ -2043,7 +2042,7 @@
         "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
@@ -2055,16 +2054,16 @@
         "Συνδέστε 10 συσκευές ταυτόχρονα"
       ],
       "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
       ],
       "Individual accounts for 6 users": [
         "Ατομικοί λογαριασμοί για 6 χρήστες"
       ],
       "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
       ],
       "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -7397,7 +7396,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8837,6 +8837,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Η μετακίνηση αυτού του μηνύματος θα ακυρώσει την προγραμματισμένη αποστολή του."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η μετακίνησή της θα ακυρώσει την προγραμματισμένη αποστολή."
       ]
     },
     "info": {
@@ -13084,7 +13090,7 @@
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -13216,6 +13222,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Άνοιγμα σε ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Άνοιγμα σε ${ appName }) (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13491,6 +13500,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες"
       ]
     },
     "specialoffer: Tooltip": {
