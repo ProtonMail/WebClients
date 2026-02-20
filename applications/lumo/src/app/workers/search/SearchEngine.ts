@@ -110,9 +110,9 @@ export class SearchEngine {
         try {
             // Use consistent search key instead of space-specific key
             await this.databaseAdapter.removeSearchBlob(name);
-            console.log(`saveBlob: Successfully saved encrypted blob "${name}"`);
+            console.log(`removeBlob: Successfully saved encrypted blob "${name}"`);
         } catch (error) {
-            console.error(`saveBlob: Failed to encrypt/save blob "${name}"`, error);
+            console.error(`removeBlob: Failed to encrypt/save blob "${name}"`, error);
             throw error;
         }
     }
