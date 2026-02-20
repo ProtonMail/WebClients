@@ -5,6 +5,7 @@ import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/pris
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import { visit } from 'unist-util-visit';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
@@ -21,6 +22,21 @@ import { InlineImageComponent } from './InlineImageComponent';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import './LumoMarkdown.scss';
+
+/**
+ * Remark plugin that converts raw `<br>` HTML nodes into proper AST break nodes.
+ * This allows `<br>` tags inside GFM table cells (where block-level lists are
+ * unsupported) to render as actual line breaks rather than being stripped.
+ */
+function remarkBrToBreak() {
+    return (tree: any) => {
+        visit(tree, 'html', (node: any, index: number | null | undefined, parent: any) => {
+            if (parent && typeof index === 'number' && /^<br\s*\/?>$/i.test((node.value ?? '').trim())) {
+                parent.children.splice(index, 1, { type: 'break' });
+            }
+        });
+    };
+}
 
 /**
  * Progressive Markdown Renderer
@@ -295,7 +311,7 @@ const MarkdownBlock: React.FC<{
 
         return (
             <Markdown
-                remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
+                remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }], remarkBrToBreak]}
                 rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
                 components={components}
                 urlTransform={(url) => {

@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { useIsGuest } from '../providers/IsGuestProvider';
 import type { WhatsNewFeature } from '../ui/components/WhatsNew/types';
-import { getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../utils/whatsNewStorage';
+import { getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../util/whatsNewStorage';
 import { useFeatureFlags } from './useFeatureFlags';
 
 interface UseStaggeredWhatsNewFeaturesReturn {

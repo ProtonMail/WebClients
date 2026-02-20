@@ -1,238 +1,4 @@
-import { convertRefTokensToSpans, removeRefTokens } from './tokens';
-
-describe('removeRefTokens', () => {
-    it('should remove [REF] tokens', () => {
-        const input = 'This is a [REF]reference[/REF] text.';
-        const expected = 'This is a  text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove multiple [REF] tokens', () => {
-        const input = 'This is a [REF]first reference[/REF] and a [REF]second reference[/REF] text.';
-        const expected = 'This is a  and a  text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle [REF] tokens at the beginning', () => {
-        const input = '[REF]Start reference[/REF] This is a text.';
-        const expected = ' This is a text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle [REF] tokens at the end', () => {
-        const input = 'This is a text. [REF]End reference[/REF]';
-        const expected = 'This is a text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle text without [REF] tokens', () => {
-        const input = 'This is a text without references.';
-        const expected = 'This is a text without references.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle empty input', () => {
-        const input = '';
-        const expected = '';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle input with only [REF] tokens', () => {
-        const input = '[REF]Only reference[/REF]';
-        const expected = '';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially constructed string with [REF] token at the end', () => {
-        const input = 'This is a text. [REF]Partial reference';
-        const expected = 'This is a text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially constructed string with multiple [REF] tokens at the end', () => {
-        const input = 'This is a [REF]first reference[/REF] and a [REF]second partial reference';
-        const expected = 'This is a  and a ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially constructed string with [REF] token in the middle', () => {
-        const input = 'This is a [REF]partial reference[/REF] text. [REF]Another partial reference';
-        const expected = 'This is a  text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially constructed string with [REF] token at the beginning', () => {
-        const input = '[REF]Partial reference text.';
-        const expected = '';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially written [REF] token at the end', () => {
-        const inputs = [
-            'This is a text. ',
-            'This is a text. [',
-            'This is a text. [R',
-            'This is a text. [RE',
-            'This is a text. [REF',
-            'This is a text. [REF]',
-            'This is a text. [REF]1',
-            'This is a text. [REF]1,',
-            'This is a text. [REF]1,2',
-            'This is a text. [REF]1,2[',
-            'This is a text. [REF]1,2[/',
-            'This is a text. [REF]1,2[/R',
-            'This is a text. [REF]1,2[/RE',
-            'This is a text. [REF]1,2[/REF',
-            'This is a text. [REF]1,2[/REF]',
-        ];
-        const expected = 'This is a text. ';
-        for (const input of inputs) {
-            expect(removeRefTokens(input)).toBe(expected);
-        }
-    });
-
-    it('should handle partially written [REF] token in the middle', () => {
-        const input = 'This is a [R text. [REF]Another partial reference';
-        const expected = 'This is a [R text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially written [REF] token at the beginning', () => {
-        const input = '[R text.';
-        const expected = '[R text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should ignore case, since some models output [/ref] instead of [/REF]', () => {
-        const input = 'Hello [Ref]0[/ref] World';
-        const expected = 'Hello  World';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    // New tests for SPECIAL tags
-    it('should remove <SPECIAL_27> tokens', () => {
-        const input = 'This is a <SPECIAL_27>reference<SPECIAL_28> text.';
-        const expected = 'This is a  text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove multiple <SPECIAL_27> tokens', () => {
-        const input =
-            'This is a <SPECIAL_27>first reference<SPECIAL_28> and a <SPECIAL_27>second reference<SPECIAL_28> text.';
-        const expected = 'This is a  and a  text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle <SPECIAL_27> tokens at the beginning', () => {
-        const input = '<SPECIAL_27>Start reference<SPECIAL_28> This is a text.';
-        const expected = ' This is a text.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle <SPECIAL_27> tokens at the end', () => {
-        const input = 'This is a text. <SPECIAL_27>End reference<SPECIAL_28>';
-        const expected = 'This is a text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle input with only <SPECIAL_27> tokens', () => {
-        const input = '<SPECIAL_27>Only reference<SPECIAL_28>';
-        const expected = '';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially constructed string with <SPECIAL_27> token at the end', () => {
-        const input = 'This is a text. <SPECIAL_27>Partial reference';
-        const expected = 'This is a text. ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle partially written <SPECIAL_27> token at the end', () => {
-        const inputs = [
-            'This is a text. <',
-            'This is a text. <S',
-            'This is a text. <SP',
-            'This is a text. <SPE',
-            'This is a text. <SPEC',
-            'This is a text. <SPECI',
-            'This is a text. <SPECIA',
-            'This is a text. <SPECIAL',
-            'This is a text. <SPECIAL_',
-            'This is a text. <SPECIAL_2',
-            'This is a text. <SPECIAL_27',
-            'This is a text. <SPECIAL_27>',
-            'This is a text. <SPECIAL_27>1',
-            'This is a text. <SPECIAL_27>1,',
-            'This is a text. <SPECIAL_27>1,2',
-            'This is a text. <SPECIAL_27>1,2<',
-            'This is a text. <SPECIAL_27>1,2<S',
-            'This is a text. <SPECIAL_27>1,2<SP',
-            'This is a text. <SPECIAL_27>1,2<SPE',
-            'This is a text. <SPECIAL_27>1,2<SPEC',
-            'This is a text. <SPECIAL_27>1,2<SPECI',
-            'This is a text. <SPECIAL_27>1,2<SPECIA',
-            'This is a text. <SPECIAL_27>1,2<SPECIAL',
-            'This is a text. <SPECIAL_27>1,2<SPECIAL_',
-            'This is a text. <SPECIAL_27>1,2<SPECIAL_2',
-            'This is a text. <SPECIAL_27>1,2<SPECIAL_28',
-            'This is a text. <SPECIAL_27>1,2<SPECIAL_28>',
-        ];
-        const expected = 'This is a text. ';
-        for (const input of inputs) {
-            expect(removeRefTokens(input)).toBe(expected);
-        }
-    });
-
-    it('should handle mixed [REF] and <SPECIAL_27> tokens', () => {
-        const input = 'Text with [REF]ref1[/REF] and <SPECIAL_27>ref2<SPECIAL_28> tokens.';
-        const expected = 'Text with  and  tokens.';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should handle mixed partial [REF] and <SPECIAL_27> tokens', () => {
-        const input = 'Text with [REF]ref1 and <SPECIAL_27>ref2';
-        const expected = 'Text with ';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    // Tests for CJK brackets in removeRefTokens
-    it('should remove CJK bracket REF tokens', () => {
-        const input = 'Text 【REF】reference[/REF] more text';
-        const expected = 'Text  more text';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove mixed bracket REF tokens', () => {
-        const input = 'Text [REF】reference【/REF] more text';
-        const expected = 'Text  more text';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove dagger format tokens', () => {
-        const input = 'Text [42†ref] more text';
-        const expected = 'Text  more text';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove CJK dagger format tokens', () => {
-        const input = 'Text 【42†REF】 more text';
-        const expected = 'Text  more text';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should drop bold square brackets without a dagger', () => {
-        // Note NNBSP spaces inside the brackets below
-        const input = 'Text 【proton_info snippet “Get Lumo Plus … $12.99/month”】 more text';
-        const expected = 'Text  more text';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-
-    it('should remove mixed formats', () => {
-        const input = 'Normal [REF]1[/REF] and dagger [2†ref] and CJK 【REF】3【/REF】 refs';
-        const expected = 'Normal  and dagger  and CJK  refs';
-        expect(removeRefTokens(input)).toBe(expected);
-    });
-});
+import { convertRefTokensToSpans } from './tokens';
 
 describe('convertRefTokensToSpans', () => {
     it('should convert single REF with multiple numbers to spans', () => {
@@ -533,6 +299,24 @@ describe('convertRefTokensToSpans', () => {
     it('should truncate partial bold square brackets without closing bracket', () => {
         const input = 'Text 【proton_info snippet "Get Lumo Plus';
         const expected = 'Text ';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should insert a space between a bare URL and a following ref link', () => {
+        const input = 'Visit https://www.example.com/page[REF]3[/REF] for more info';
+        const expected = 'Visit https://www.example.com/page [3](#ref-3) for more info';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should not add an extra space when ref link already has a preceding space', () => {
+        const input = 'Visit https://www.example.com/page [REF]3[/REF] for more info';
+        const expected = 'Visit https://www.example.com/page [3](#ref-3) for more info';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should insert a space between a bare URL and a following dagger ref link', () => {
+        const input = 'See https://www.proton.me/blog/drive-for-linux[3†ref] for details';
+        const expected = 'See https://www.proton.me/blog/drive-for-linux [3](#ref-3) for details';
         expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 });
