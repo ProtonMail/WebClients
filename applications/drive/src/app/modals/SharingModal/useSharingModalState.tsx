@@ -44,6 +44,7 @@ const defaultSharingInfo = {
     nonProtonInvitations: [],
     publicLink: undefined,
     members: [],
+    editorsCanShare: false,
 };
 
 const getIsShared = (shareResult: ShareResult) => {
