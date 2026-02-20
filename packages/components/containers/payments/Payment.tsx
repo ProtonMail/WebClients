@@ -231,7 +231,9 @@ export const PaymentsNoApi = ({
         savedPaymentMethods,
     });
 
-    const taxFields = <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} />;
+    const taxFields = (
+        <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} subscription={subscription} />
+    );
 
     return (
         <>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
 import Alert3DS from '@proton/components/containers/payments/Alert3ds';
 import DefaultPaymentMethodMessage from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
@@ -124,7 +124,9 @@ const PaymentMethodForm = ({
         directDebit,
     };
 
-    const taxFields = <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} />;
+    const taxFields = (
+        <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} subscription={subscription} />
+    );
 
     const { loading: loadingHookProps, ...bitcoinProps } = bitcoinChargebee;
     const loadingBitcoin = useStableLoading([loadingHookProps]);
