@@ -696,6 +696,12 @@
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
         "(Ад А да Я)"
+      ],
+      "column ${ columnLetter }": [
+        "слупок ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Сартаваць аркуш па"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -713,6 +719,15 @@
       ],
       "Undo": [
         "Адрабіць"
+      ],
+      "Formula only": [
+        "Толькі формула"
+      ],
+      "Link only": [
+        "Толькі спасылка"
+      ],
+      "Transposed": [
+        "Транспанаваны"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -720,7 +735,7 @@
         "Значэнні, раздзеленыя коскамі (.csv)"
       ],
       "Download": [
-        "Спампавана"
+        "Спампаваць"
       ],
       "Download logs": [
         "Спампаваць журналы"
@@ -785,7 +800,7 @@
         "Лічба"
       ],
       "Strikethrough": [
-        "Перакрэслены"
+        "Закрэслены"
       ],
       "Text": [
         "з тэкстам"
@@ -936,6 +951,9 @@
     "sheets_2025:Spreadsheet editor search dialog": {
       "Close": [
         "Закрыць"
+      ],
+      "Go to previous": [
+        "Перайсці да папярэдняга"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -979,7 +997,7 @@
         "Курсіў"
       ],
       "More": [
-        "Больш"
+        "Яшчэ"
       ],
       "More formats": [
         "Больш фарматаў"
@@ -1001,6 +1019,12 @@
       ],
       "Zoom": [
         "Маштаб"
+      ],
+      "Paint format": [
+        "Фармат малюнка"
+      ],
+      "Text wrapping": [
+        "Перанос радкоў"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1048,6 +1072,104 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Стварэнне прапаноў у блоках кода не падтрымліваецца"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "Vertical borders": [
+        "Вертыкальныя межы"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Памылка"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "Clear": [
+        "Ачысціць"
+      ],
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Formatting only": [
+        "Толькі фарматаванне"
+      ],
+      "Pipe": [
+        "Раздзяляльнік"
+      ],
+      "Values only": [
+        "Толькі значэнні"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "above": [
+        "вышэй"
+      ],
+      "Insert": [
+        "Уставіць"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Рэдагаванне на мабільнай прыладзе з'явіцца неўзабаве"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Стварыць фільтр"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "Insert": [
+        "Уставіць"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Copy": [
+        "Копія"
+      ],
+      "Filter by condition": [
+        "Фільтрацыя па ўмовах"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Indent": [
+        "Водступ"
+      ],
+      "Overflow": [
+        "Перапаўненне"
+      ],
+      "Strikethrough": [
+        "Закрэслены"
+      ],
+      "Underline": [
+        "Падкрэслены"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Chart data range": [
+        "Дыяпазон даных дыяграмы"
+      ],
+      "Horizontal axis title": [
+        "Назва гарызантальнай восі"
+      ],
+      "Select a range": [
+        "Выберыце дыяпазон"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Apply to range": [
+        "Ужыць да дыяпазону"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Formula": [
+        "Формула"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Закрыць"
       ]
     }
   }

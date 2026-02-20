@@ -683,13 +683,16 @@
     },
     "sheets_2025:Color picker": {
       "Recent colors": [
-        "Son kullanılan renkler"
+        "Son renkler"
       ],
       "Reset": [
         "Sıfırla"
       ],
       "Standard colors": [
         "Standart renkler"
+      ],
+      "Theme colors": [
+        "Tema renkleri"
       ]
     },
     "sheets_2025:Range selector menu": {
@@ -700,7 +703,7 @@
         "Adlandırılmış aralıklar"
       ],
       "Sheets": [
-        "Sayfalar"
+        "Tablolar"
       ],
       "Tables": [
         "Tablolar"
@@ -714,7 +717,7 @@
         "Tüm satırlar silinemez"
       ],
       "Find in sheet": [
-        "Sayfada bul"
+        "Tablo içinde bul"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -725,13 +728,13 @@
         "Veri doğrulama"
       ],
       "Protect range": [
-        "Aralığı koru"
+        "Koruma aralığı"
       ],
       "Remove filter": [
         "Filtreyi kaldır"
       ],
       "Sort sheet": [
-        "Sayfayı sırala"
+        "Tabloyu sırala"
       ],
       "Unlock range": [
         "Aralık kilidini aç"
@@ -739,16 +742,16 @@
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
-        "(A-Z)"
+        "(A'dan Z'ye)"
       ],
       "(Z to A)": [
-        "(Z-A)"
+        "(Z'den A'ya)"
       ],
       "column ${ columnLetter }": [
         "sütun ${ columnLetter }"
       ],
       "Sort sheet by": [
-        "Sayfayı şuna göre sırala"
+        "Tabloyu şuna göre sırala"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -774,24 +777,30 @@
         "Yinele"
       ],
       "Transposed": [
-        "Devrik"
+        "Aktarılmış"
       ],
       "Undo": [
         "Geri al"
       ],
       "Values only": [
-        "Yalnızca değerler"
+        "Yalnızca değer"
+      ],
+      "Formula only": [
+        "Yalnızca formül"
+      ],
+      "Link only": [
+        "Sadece bağlantı"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
       "Comma Separated Values (.csv)": [
-        "Virgülle Ayrılmış Değerler (.csv)"
+        "Virgülle Ayrılan Değerler (.csv)"
       ],
       "Download": [
-        "İndirme"
+        "İndir"
       ],
       "Download logs": [
-        "Günlüğü indir"
+        "Günlükleri indir"
       ],
       "Help": [
         "Yardım"
@@ -809,10 +818,10 @@
         "Klasöre taşı"
       ],
       "Move to trash": [
-        "Çöpe at"
+        "Çöp kutusuna taşı"
       ],
       "New spreadsheet": [
-        "Yeni elektronik tablo"
+        "Yeni hesap tablosu"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını aç"
@@ -821,13 +830,25 @@
         "Yazdır"
       ],
       "See version history": [
-        "Sürüm geçmişini görüntüle"
+        "Sürüm geçmişini gör"
       ],
       "Tab Separated Values (.tsv)": [
-        "Sekmeyle Ayrılmış Değerler (.tsv)"
+        "Sekmeyle Ayrılan Değerler (.tsv)"
       ],
       "View recent spreadsheets": [
-        "Son elektronik tabloları görüntüle"
+        "Son hesap tablolarını görüntüle"
+      ],
+      "New document": [
+        "Yeni belge"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument Hesap Tablosu (.ods) (Beta)"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Toggle debug mode": [
+        "Hata ayıklama modunu aç/kapat"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -835,7 +856,7 @@
         "Hizalama"
       ],
       "Bold": [
-        "Koyu"
+        "Kalın"
       ],
       "Cell styles": [
         "Hücre stilleri"
@@ -853,10 +874,10 @@
         "Koşullu biçimlendirme"
       ],
       "Font size": [
-        "Yazı boyutu"
+        "Yazı tipi boyutu"
       ],
       "Italic": [
-        "Yatık"
+        "İtalik"
       ],
       "Number": [
         "Sayı"
@@ -865,10 +886,10 @@
         "Üstü çizili"
       ],
       "Table formatting": [
-        "Tablo biçimlendirmesi"
+        "Tablo biçimlendirme"
       ],
       "Text": [
-        "Yazı"
+        "Metin"
       ],
       "Theme": [
         "Tema"
@@ -877,7 +898,7 @@
         "Altı çizili"
       ],
       "Wrapping": [
-        "Metni kaydırma"
+        "Kaydırma"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
@@ -885,7 +906,7 @@
         "Alt"
       ],
       "Center": [
-        "Ortaya"
+        "Orta"
       ],
       "Left": [
         "Sol"
@@ -905,7 +926,7 @@
         "Kırp"
       ],
       "Overflow": [
-        "Taşır"
+        "Taşma"
       ],
       "Wrap": [
         "Kaydır"
@@ -919,7 +940,7 @@
         "Grafik"
       ],
       "Checkbox": [
-        "İşaret kutusu"
+        "Onay kutusu"
       ],
       "Columns": [
         "Sütunlar"
@@ -928,10 +949,10 @@
         "Açılır menü"
       ],
       "Function": [
-        "İşlev"
+        "Fonksyion"
       ],
       "Image": [
-        "Görsel"
+        "Görüntü"
       ],
       "Insert cells and shift down": [
         "Hücreleri ekle ve aşağı kaydır"
@@ -949,12 +970,12 @@
         "Satırlar"
       ],
       "Sheet": [
-        "Sayfa"
+        "Tablo"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
       "Data": [
-        "Veriler"
+        "Veri"
       ],
       "Edit": [
         "Düzenle"
@@ -980,10 +1001,10 @@
         "Dondur"
       ],
       "Gridlines": [
-        "Kılavuz çizgileri"
+        "Izgara çizgileri"
       ],
       "Show": [
-        "Görüntüle"
+        "Göster"
       ],
       "Zoom": [
         "Yakınlaştır"
@@ -994,10 +1015,10 @@
         "sütun ${ columnLetter }"
       ],
       "row ${ rowNumber }": [
-        "satır ${ rowNumber }"
+        "${ rowNumber } satır"
       ],
       "Up to": [
-        "kadar"
+        "En fazla"
       ]
     },
     "sheets_2025:Spreadsheet editor number formats menu": {
@@ -1014,7 +1035,7 @@
         "Para birimi"
       ],
       "Currency rounded": [
-        "Para birimi (yuvarlanmış)"
+        "Para birimi yuvarlatıldı"
       ],
       "Date": [
         "Tarih"
@@ -1026,7 +1047,7 @@
         "Süre"
       ],
       "Financial": [
-        "Finansal"
+        "Mali"
       ],
       "General": [
         "Genel"
@@ -1035,22 +1056,22 @@
         "Uzun tarih"
       ],
       "More currency": [
-        "Diğer para birimleri"
+        "Daha fazla para birimi"
       ],
       "Number": [
-        "Sayı"
+        "Rakam"
       ],
       "Percent": [
         "Yüzde"
       ],
       "Plain text": [
-        "Düz yazı"
+        "Düz metin"
       ],
       "Scientific": [
         "Bilimsel"
       ],
       "Time": [
-        "Saat"
+        "Zaman"
       ],
       "£ Pound": [
         "£ Sterlin"
@@ -1063,6 +1084,12 @@
       ],
       "₹ Rupee": [
         "₹ Rupi"
+      ],
+      "Custom currency": [
+        "Özel para birimi"
+      ],
+      "Custom number format": [
+        "Özel sayı biçimi"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -1078,7 +1105,7 @@
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
-        "Koyu"
+        "Kalın"
       ],
       "Border": [
         "Kenarlık"
@@ -1087,10 +1114,10 @@
         "Biçimlendirmeyi temizle"
       ],
       "Decrease decimal places": [
-        "Ondalık basamak sayısını azalt"
+        "Ondalık basamakları azalt"
       ],
       "Decrease font size": [
-        "Yazı boyutunu küçült"
+        "Yazı tipi boyutunu küçült"
       ],
       "Default (${ defaultFont })": [
         "Varsayılan (${ defaultFont })"
@@ -1105,7 +1132,7 @@
         "Yazı tipi"
       ],
       "Font size": [
-        "Yazı boyutu"
+        "Yazı tipi boyutu"
       ],
       "Format as currency": [
         "Para birimi olarak biçimlendir"
@@ -1117,13 +1144,13 @@
         "Yatay hizalama"
       ],
       "Increase decimal places": [
-        "Ondalık basamak sayısını artır"
+        "Ondalık basamakları artır"
       ],
       "Increase font size": [
-        "Yazı boyutunu artır"
+        "Yazı tipi boyutunu artır"
       ],
       "Insert chart": [
-        "Çizelge ekle"
+        "Grafik ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -1132,19 +1159,19 @@
         "Not ekle"
       ],
       "Italic": [
-        "Yatık"
+        "İtalik"
       ],
       "Merge cells": [
         "Hücreleri birleştir"
       ],
       "More": [
-        "Diğer"
+        "Daha fazla"
       ],
       "More formats": [
         "Daha fazla biçim"
       ],
       "Paint format": [
-        "Biçim boyayıcısı"
+        "Boya biçimi"
       ],
       "Redo": [
         "Yinele"
@@ -1153,22 +1180,37 @@
         "Üstü çizili"
       ],
       "Text color": [
-        "Yazı rengi"
+        "Metin rengi"
       ],
       "Text wrapping": [
-        "Metni kaydırma"
+        "Metin kaydırma"
       ],
       "Underline": [
         "Altı çizili"
       ],
       "Undo": [
-        "Geri Al"
+        "Geri al"
       ],
       "Vertical align": [
         "Dikey hizalama"
       ],
       "Zoom": [
         "Yakınlaştır"
+      ],
+      "Create a filter": [
+        "Filtre oluştur"
+      ],
+      "Insert function": [
+        "Fonksiyon ekle"
+      ],
+      "Remove filter": [
+        "Filtreyi kaldır"
+      ],
+      "Select merge type": [
+        "Birleştirme türünü seçin"
+      ],
+      "Unmerge cells": [
+        "Hücreleri ayır"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1219,6 +1261,840 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Kod blokları içinde öneride bulunulamaz"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Tüm tablolar"
+      ],
+      "New sheet": [
+        "Yeni tablo"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Rengi değiştir"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Duplicate": [
+        "Yinele"
+      ],
+      "Hide sheet": [
+        "Tebloyu gizle"
+      ],
+      "Move left": [
+        "Sola kaydır"
+      ],
+      "Move right": [
+        "Sağa taşı"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Tüm kenarlıklar"
+      ],
+      "Bottom border": [
+        "Alt kenarlık"
+      ],
+      "Dashed": [
+        "Kesik çizgi"
+      ],
+      "Dotted": [
+        "Noktalı"
+      ],
+      "Double": [
+        "Çift"
+      ],
+      "Horizontal borders": [
+        "Yatay kenarlıklar"
+      ],
+      "Inner borders": [
+        "İç kenarlıklar"
+      ],
+      "Left border": [
+        "Sol kenarlık"
+      ],
+      "No borders": [
+        "Kenarlık yok"
+      ],
+      "Outer borders": [
+        "Dış kenarlıklar"
+      ],
+      "Right border": [
+        "Sağ kenarlık"
+      ],
+      "Solid": [
+        "Düz"
+      ],
+      "Solid medium": [
+        "Katı ortam"
+      ],
+      "Solid thick": [
+        "Düz kalın"
+      ],
+      "Top border": [
+        "Üst kenarlık"
+      ],
+      "Vertical borders": [
+        "Dikey kenarlıklar"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Hata"
+      ],
+      "Invalid": [
+        "Geçersiz"
+      ],
+      "Note": [
+        "Not"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Yapay Zeka Hızlı Düzenleme"
+      ],
+      "Auto fit to data": [
+        "Veriye göre otomatik sığdır"
+      ],
+      "Cell value": [
+        "Hücre değeri"
+      ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Clear content": [
+        "İçeriği temizle"
+      ],
+      "Clear formatting": [
+        "Biçimlendirmeyi temizle"
+      ],
+      "Comma": [
+        "Virgül"
+      ],
+      "Conditional format": [
+        "Koşullu biçim"
+      ],
+      "Convert to range": [
+        "Aralığa dönüştür"
+      ],
+      "Convert to table": [
+        "Tabloya dönüştür"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Create a filter": [
+        "Filtre oluştur"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Data validation": [
+        "Veri doğrulama"
+      ],
+      "Define named range": [
+        "Adlandırılmış aralık tanımla"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete cells and shift cells left": [
+        "Hücreleri sil ve hücreleri sola kaydır"
+      ],
+      "Delete cells and shift cells up": [
+        "Hücreleri sil ve hücreleri yukarı kaydır"
+      ],
+      "Delete column": [
+        "Sütunu sil"
+      ],
+      "Delete row": [
+        "Satırı sil"
+      ],
+      "Delete table column": [
+        "Tablo sütununu sil"
+      ],
+      "Delete table row": [
+        "Tablo satırını sil"
+      ],
+      "Edit table": [
+        "Tabloyu düzenle"
+      ],
+      "Filter": [
+        "Filtre"
+      ],
+      "Formatting only": [
+        "Yalnızca biçimlendirme"
+      ],
+      "Formula only": [
+        "Yalnızca formül"
+      ],
+      "Freeze up to column": [
+        "Sütunu dondur"
+      ],
+      "Freeze up to row": [
+        "Satırı dondur"
+      ],
+      "Hide column": [
+        "Sütunu gizle"
+      ],
+      "Hide row": [
+        "Satırı gizle"
+      ],
+      "Insert cells and shift cells down": [
+        "Hücreleri ekle ve hücreleri aşağı kaydır"
+      ],
+      "Insert cells and shift cells right": [
+        "Hücreleri ekle ve hücreleri sağa kaydır"
+      ],
+      "Insert link": [
+        "Bağlantı ekle"
+      ],
+      "Insert note": [
+        "Not ekle"
+      ],
+      "Insert table column to the left": [
+        "Tablo sütununu sola ekle"
+      ],
+      "Insert table column to the right": [
+        "Sağa tablo sütunu ekle"
+      ],
+      "Insert table row": [
+        "Tablo satırı ekle"
+      ],
+      "Link only": [
+        "Yalnızca bağlantı"
+      ],
+      "More cell actions": [
+        "Daha fazla hücre eylemi"
+      ],
+      "Paste": [
+        "Yapıştır"
+      ],
+      "Paste special": [
+        "Özel yapıştır"
+      ],
+      "Period": [
+        "Dönem"
+      ],
+      "Pipe": [
+        "Hat"
+      ],
+      "Remove filter": [
+        "Filtreyi kaldır"
+      ],
+      "Resize column": [
+        "Sütunu yeniden boyutlandır"
+      ],
+      "Resize row": [
+        "Satırı yeniden boyutlandır"
+      ],
+      "Semicolon": [
+        "Noktalı virgül"
+      ],
+      "Sort": [
+        "Sırala"
+      ],
+      "Sort range A → Z": [
+        "A → Z aralığını sırala"
+      ],
+      "Sort range Z → A": [
+        "Z → A aralığını sırala"
+      ],
+      "Sort sheet A to Z": [
+        "Tabloyu A'dan Z'ye sırala"
+      ],
+      "Sort sheet Z to A": [
+        "Tabloyu Z'den A'ya sırala"
+      ],
+      "Space": [
+        "Boşluk"
+      ],
+      "Table": [
+        "Tablo"
+      ],
+      "Transposed": [
+        "Aktarılmış"
+      ],
+      "Unfreeze columns": [
+        "Sütunları çöz"
+      ],
+      "Unfreeze rows": [
+        "Satırları çöz"
+      ],
+      "Values only": [
+        "Yalnızca değer"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sütun",
+        "${ numberOfColumns } sütun"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } satır",
+        "${ numberOfRows } satır"
+      ],
+      "above": [
+        "üstünde"
+      ],
+      "below": [
+        "aşağı"
+      ],
+      "Insert": [
+        "Ekle"
+      ],
+      "left": [
+        "sol"
+      ],
+      "right": [
+        "sağ"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "${ sheetName } tablosunu silmek istediğinizden emin misiniz?"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete sheet": [
+        "Tabloyu sil"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Mobil Düzenleme Çok Yakında"
+      ],
+      "Screen too small for editing": [
+        "Ekran düzenleme için çok küçük"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Bu özelliği yakında kullanıma sunmak için çalışıyoruz. Tablolar şu anda yalnızca masaüstü bilgisayarlarda düzenlenebilir."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Ekranınız bu hesap tablosunu düzenlemek için çok küçük. Yalnızca görüntüleme modundasınız. Değişiklik yapmak için lütfen bu hesap tablosunu daha büyük bir ekranda açın veya tarayıcı pencerenizi genişletin."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Tümünü birleştir"
+      ],
+      "Merge cells": [
+        "Hücreleri birleştir"
+      ],
+      "Merge horizontally": [
+        "Yatay olarak birleştir"
+      ],
+      "Merge vertically": [
+        "Dikey olarak birleştir"
+      ],
+      "Unmerge": [
+        "Ayır"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sütun",
+        "${ numberOfColumns } sütun"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } satır",
+        "${ numberOfRows } satır"
+      ],
+      "above": [
+        "üstüne"
+      ],
+      "below": [
+        "aşağı"
+      ],
+      "Insert": [
+        "Ekle"
+      ],
+      "left": [
+        "sol"
+      ],
+      "right": [
+        "sağ"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Gizli sayfalar"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Otomatik"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Locale": [
+        "Yerel Ayarlar"
+      ],
+      "Save and reload": [
+        "Kaydet ve yeniden yükle"
+      ],
+      "Settings for this spreadsheet": [
+        "Bu hesap tablosunun ayarları"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Bu işlem işlevler, tarihler ve para birimi gibi biçimlendirme ayrıntılarını etkiler"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Uygula"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Delete table column": [
+        "Tablo sütununu sil"
+      ],
+      "Enter value": [
+        "Değer gir"
+      ],
+      "Filter by condition": [
+        "Koşula göre filtrele"
+      ],
+      "Filter by value": [
+        "Değere göre filtrele"
+      ],
+      "Insert 1 table column left": [
+        "Sol tarafa 1 tablo sütunu ekle"
+      ],
+      "Insert 1 table column right": [
+        "Sağ tarafa 1 tablo sütunu ekle"
+      ],
+      "Paste": [
+        "Yapıştır"
+      ],
+      "Select all": [
+        "Tümünü seç"
+      ],
+      "Sort A → Z": [
+        "A → Z sırala"
+      ],
+      "Sort Z → A": [
+        "Z → A sırala"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "İptal et"
+      ],
+      "column": [
+        "sütun"
+      ],
+      "column width": [
+        "sütun genişliği"
+      ],
+      "Default": [
+        "Varsayılan"
+      ],
+      "OK": [
+        "TAMAM"
+      ],
+      "row": [
+        "satır"
+      ],
+      "row height": [
+        "satır yüksekliği"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Hizalama"
+      ],
+      "Bold": [
+        "Kalın"
+      ],
+      "Border": [
+        "Kenarlık"
+      ],
+      "Border style": [
+        "Kenarlık stili"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Choose Category": [
+        "Kategori Seç"
+      ],
+      "Color": [
+        "Renk"
+      ],
+      "Currency Symbol": [
+        "Para Birimi Sembolü"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Decimal places": [
+        "Ondalık basamaklar"
+      ],
+      "Effects": [
+        "Efektler"
+      ],
+      "Font": [
+        "Yazı tipi"
+      ],
+      "Font size": [
+        "Yazı tipi boyutu"
+      ],
+      "Format cells": [
+        "Hücreleri biçimlendir"
+      ],
+      "General": [
+        "Genel"
+      ],
+      "Horizontal Alignment": [
+        "Yatay Hizalama"
+      ],
+      "Indent": [
+        "Girinti"
+      ],
+      "Italic": [
+        "İtalik"
+      ],
+      "Merge": [
+        "Birleştir"
+      ],
+      "Merge all": [
+        "Tümünü birleştir"
+      ],
+      "Merge horizontally": [
+        "Yatay olarak birleştir"
+      ],
+      "Merge vertically": [
+        "Dikey olarak birleştir"
+      ],
+      "Number": [
+        "Rakam"
+      ],
+      "Overflow": [
+        "Taşma"
+      ],
+      "Preview": [
+        "Önizleme"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Strikethrough": [
+        "Üstü çizili"
+      ],
+      "Text control": [
+        "Metin kontrolü"
+      ],
+      "Thousands separator": [
+        "Binler basamağı ayırıcısı"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "Underline": [
+        "Altı çizili"
+      ],
+      "Unmerge": [
+        "Ayır"
+      ],
+      "Use 1000 Separator (,)": [
+        "Binlik ayırıcı (,) kullan"
+      ],
+      "Vertical Alignment": [
+        "Dikey Hizalama"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Ekle"
+      ],
+      "Aggregate": [
+        "Küme"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Chart data range": [
+        "Çizelge veri aralığı"
+      ],
+      "Chart editor": [
+        "Grafik düzenleyici"
+      ],
+      "Chart title": [
+        "Grafik başlığı"
+      ],
+      "Chart type": [
+        "Grafik türü"
+      ],
+      "Enter title": [
+        "Başlık gir"
+      ],
+      "Horizontal (category) axis labels": [
+        "Yatay (kategori) eksen etiketleri"
+      ],
+      "Horizontal axis title": [
+        "Yatay eksen başlığı"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Range": [
+        "Aralık"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Select a range": [
+        "Aralık seç"
+      ],
+      "Series": [
+        "Seriler"
+      ],
+      "Show data in hidden rows and columns": [
+        "Gizli satır ve sütunlardaki verileri göster"
+      ],
+      "Value": [
+        "Değer"
+      ],
+      "Vertical axis title": [
+        "Dikey eksen başlığı"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Başka bir aralık ekle"
+      ],
+      "Add another rule": [
+        "Başka bir kural ekle"
+      ],
+      "Add rule": [
+        "Kural ekle"
+      ],
+      "Apply to range": [
+        "Aralığa uygula"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Color scale": [
+        "Renk ölçeği"
+      ],
+      "Conditional formatting": [
+        "Koşullu biçimlendirme"
+      ],
+      "Delete range": [
+        "Aralığı sil"
+      ],
+      "Delete rule": [
+        "Kuralı sil"
+      ],
+      "Enter a formula": [
+        "Formül gir"
+      ],
+      "Enter value": [
+        "Değer gir"
+      ],
+      "Format rules": [
+        "Biçimlendirme kuralları"
+      ],
+      "Format style": [
+        "Biçim stili"
+      ],
+      "Max point": [
+        "Maksimum nokta"
+      ],
+      "Max value": [
+        "Maksimum değer"
+      ],
+      "Mid point": [
+        "Orta nokta"
+      ],
+      "Min point": [
+        "Minimum nokta"
+      ],
+      "Min value": [
+        "En küçük değer"
+      ],
+      "None": [
+        "Hiçbiri"
+      ],
+      "Number": [
+        "Rakam"
+      ],
+      "Preview": [
+        "Önizleme"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Select a range": [
+        "Aralık seç"
+      ],
+      "Single color": [
+        "Tek renk"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Uygula"
+      ],
+      "Apply to create a custom currency": [
+        "Özel para birimi oluşturmak için uygula"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Currency symbol": [
+        "Para birimi sembolü"
+      ],
+      "Custom currenices": [
+        "Özel para birimleri"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Başka bir adlandırılmış aralık ekle"
+      ],
+      "Add another range": [
+        "Başka bir aralık ekle"
+      ],
+      "Add named range": [
+        "Adlandırılmış aralık ekle"
+      ],
+      "Allow blanks": [
+        "Boşluklara izin ver"
+      ],
+      "Apply to range": [
+        "Aralığa uygula"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Data validation": [
+        "Veri doğrulama"
+      ],
+      "Delete data validation rule": [
+        "Veri doğrulama kuralını sil"
+      ],
+      "Enter a formula": [
+        "Formül yazın"
+      ],
+      "Enter value": [
+        "Değer gir"
+      ],
+      "Formula": [
+        "Formül"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Select a range": [
+        "Aralık seç"
+      ],
+      "Validation rules": [
+        "Doğrulama kuralları"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Kapat"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Başka bir adlandırılmış aralık ekle"
+      ],
+      "Add named range": [
+        "Adlandırılmış aralık ekle"
+      ],
+      "Apply to range": [
+        "Aralığa uygula"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Delete named range": [
+        "Adlandırılmış aralığı sil"
+      ],
+      "Enter a formula": [
+        "Formül gir"
+      ],
+      "Enter text or formula": [
+        "Metin veya formül girin"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Name should not contain spaces": [
+        "Ad boşluk içermemelidir"
+      ],
+      "Named Ranges": [
+        "Adlandırılmış Aralıklar"
+      ],
+      "Range": [
+        "Aralık"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Text or formula": [
+        "Metin veya formül"
+      ],
+      "Type": [
+        "Tür"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Şeritli sütunlar"
+      ],
+      "Banded rows": [
+        "Çizgili satırlar"
+      ],
+      "Cancel": [
+        "İptal et"
+      ],
+      "Edit table": [
+        "Tabloyu düzenle"
+      ],
+      "More settings": [
+        "Daha fazla ayar"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Select a range": [
+        "Aralık seç"
+      ],
+      "Show filter button": [
+        "Filtre düğmesini göster"
+      ],
+      "Table data range": [
+        "Tablo veri aralığı"
+      ],
+      "Table title": [
+        "Tablo başlığı"
       ]
     }
   }

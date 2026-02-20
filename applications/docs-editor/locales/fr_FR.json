@@ -1063,6 +1063,12 @@
       ],
       "₹ Rupee": [
         "₹ Roupie"
+      ],
+      "Custom currency": [
+        "Devise personnalisée"
+      ],
+      "Custom number format": [
+        "Format de nombre personnalisé"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
@@ -1169,6 +1175,9 @@
       ],
       "Zoom": [
         "Zoomer"
+      ],
+      "Insert function": [
+        "Insérer une fonction"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1219,6 +1228,61 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "L'ajout de suggestions dans des blocs de code n'est pas pris en charge."
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Modification rapide par IA"
+      ],
+      "Cell value": [
+        "Valeur de cellule"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } colonne",
+        "${ numberOfColumns } colonnes"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfRows } row": [
+        "${ numberOfRows } ligne",
+        "${ numberOfRows } lignes"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Feuilles masquées"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Appliquer"
+      ],
+      "Apply to create a custom currency": [
+        "Appliquer pour créer une devise personnalisée"
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Currency symbol": [
+        "Symbole de la devise"
+      ],
+      "Custom currenices": [
+        "Devises personnalisées"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Enter text or formula": [
+        "Entrez du texte ou une formule"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded rows": [
+        "Rangées en bandes"
+      ],
+      "Table data range": [
+        "Plage de données du tableau"
       ]
     }
   }
