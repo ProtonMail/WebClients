@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Toggle } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+
+import { ConditionalTooltip } from './ConditionalTooltip/ConditionalTooltip';
 
 export const BackgroundBlurToggle = ({
     backgroundBlur,
@@ -20,29 +21,16 @@ export const BackgroundBlurToggle = ({
     return (
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
             <label
-                className={clsx('setting-label text-ellipsis text-rg', backgroundBlur ? 'color-norm' : 'color-hint')}
-                htmlFor={withTooltip ? 'blur-background-with-tooltip' : 'blur-background'}
+                className={clsx('setting-label text-ellipsis', backgroundBlur ? 'color-norm' : 'color-hint')}
+                htmlFor="blur-background"
             >{c('Action').t`Background blur`}</label>
-            {withTooltip ? (
-                <Tooltip
-                    title={
-                        !isBackgroundBlurSupported
-                            ? c('Tooltip').t`Background blur is not supported on your browser`
-                            : c('Tooltip').t`Background blur`
-                    }
-                >
-                    <span>
-                        <Toggle
-                            id="blur-background-with-tooltip"
-                            checked={backgroundBlur}
-                            onChange={onChange}
-                            className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
-                            loading={loadingBackgroundBlur}
-                            disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
-                        />
-                    </span>
-                </Tooltip>
-            ) : (
+            <ConditionalTooltip
+                title={
+                    withTooltip && !isBackgroundBlurSupported
+                        ? c('Tooltip').t`Background blur is not supported on your browser`
+                        : undefined
+                }
+            >
                 <Toggle
                     id="blur-background"
                     checked={backgroundBlur}
@@ -52,7 +40,7 @@ export const BackgroundBlurToggle = ({
                     loading={loadingBackgroundBlur}
                     disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
                 />
-            )}
+            </ConditionalTooltip>
         </div>
     );
 };
