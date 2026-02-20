@@ -3991,6 +3991,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "La exoneración de impuestos no es compatible con este plan"
       ]
     },
     "error": {
@@ -4452,7 +4455,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
       ]
     },
     "fido2: Info": {
@@ -5459,7 +5462,7 @@
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Ingrese ${ digit }."
+        "Ingrese el código de verificación. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ingrese su propia contraseña (como administrador de la organización)."
@@ -10456,6 +10459,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Mejore el plan y ahorre más contratando ${ planName } por 2 años"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenga sus contraseñas seguras y organizadas en múltiples cajas fuertes."
       ]
     },
     "specialoffer: Tooltip": {
@@ -11231,6 +11237,9 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "Billing information updated": [
+        "Información de facturación actualizada"
       ]
     },
     "Suffix": {

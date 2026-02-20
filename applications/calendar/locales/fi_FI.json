@@ -3901,6 +3901,12 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Failed loading group members": [
+        "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Verovapautusta ei tueta tälle tilaukselle"
       ]
     },
     "error": {
@@ -6044,7 +6050,7 @@
         "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat myös palautuskoodit, joilla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
+        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "Where will the appointment take place?": [
         "Missä tapaaminen järjestetään?"
@@ -10855,6 +10861,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Billing information updated": [
+        "Laskutustiedot päivitetty"
       ]
     },
     "Suffix": {

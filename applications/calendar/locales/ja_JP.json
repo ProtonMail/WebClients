@@ -3953,6 +3953,12 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
       ]
     },
     "error": {
@@ -5346,7 +5352,7 @@
         "重複した鍵がアップデートされました"
       ],
       "Each code can only be used once": [
-        "各コードは1度のみ使用可能です"
+        "各コードは 1 回のみ使用可能です"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -5379,7 +5385,7 @@
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "認証コードを入力してください。${ digit }桁です。"
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -6126,7 +6132,7 @@
         "VPNに接続することで、暗号化技術により、お客様のIPアドレス(デバイス毎に割り振られる一意のコード)は秘匿されます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定した時、認証アプリにアクセスできなくなってしまった場合にサインインに使用できる回復用コードを提供します。"
+        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Where will the appointment take place?": [
         "ご予定はどこで行われますか？"
@@ -8138,6 +8144,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8499,6 +8508,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11017,6 +11029,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Billing information updated": [
+        "請求情報が更新されました"
       ]
     },
     "Suffix": {
@@ -11910,6 +11925,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }サブスクリプションが開始されました"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
