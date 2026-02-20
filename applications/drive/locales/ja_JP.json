@@ -1223,6 +1223,21 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Encrypted": [
+        "暗号化済み"
+      ],
+      "Scan and Download": [
+        "スキャンしてダウンロード"
+      ],
+      "Set password or expiration date": [
+        "パスワードまたは有効期限を設定"
+      ],
+      "Shared": [
+        "共有済み"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "共有はエンドツーエンドで暗号化されています"
       ]
     },
     "Action: Docs": {
@@ -3823,6 +3838,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
+      ],
+      "We were not able to load some search results": [
+        "一部の検索結果を読み込めませんでした"
       ]
     },
     "error": {
@@ -6706,6 +6730,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Computed hash does not match XAttr": [
+        "計算されたハッシュがXAttrと一致しません"
+      ],
+      "Link copied": [
+        "リンクをコピーしました"
+      ],
+      "owner": [
+        "所有者"
+      ],
+      "Preparing": [
+        "準備中"
+      ],
+      "Requested item doesn't exist anymore": [
+        "リクエストされたアイテムはもう存在しません"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "お客様を保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックできます。しかし、それでも信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
+      ],
+      "Unexpected download error": [
+        "予期せぬダウンロードエラー"
+      ],
+      "Who has access": [
+        "アクセスできる人"
       ]
     },
     "info": {
@@ -7429,6 +7477,42 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Access": [
+        "アクセス"
+      ],
+      "Active": [
+        "アクティブ"
+      ],
+      "admin": [
+        "管理者"
+      ],
+      "Allow editors to change permissions and share": [
+        "編集者が権限を変更して共有できるようにする"
+      ],
+      "Anyone on the Internet with the link": [
+        "リンクを知っているインターネット上のすべてのユーザー"
+      ],
+      "can edit": [
+        "編集可能"
+      ],
+      "can view": [
+        "閲覧可能"
+      ],
+      "Delete link and remove access for everyone": [
+        "リンクを削除し、全員のアクセスを削除"
+      ],
+      "Disable this link on a specific date": [
+        "特定の日付でこのリンクを無効にする"
+      ],
+      "Expiry": [
+        "有効期限"
+      ],
+      "Not active": [
+        "非アクティブ"
+      ],
+      "Set a password to limit access via link": [
+        "リンクによるアクセスを制限するにはパスワードを設定してください"
       ]
     },
     "Label for contact group color": {
@@ -8444,6 +8528,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8800,6 +8887,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9155,6 +9245,12 @@
       ],
       "Your settings have been changed successfully": [
         "設定が正常に変更されました"
+      ],
+      "\"${ name }\" shared": [
+        "「${ name }」 が共有しました"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "設定が更新されました。編集者は権限を変更して共有できます。"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11381,6 +11477,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Billing information updated": [
+        "請求情報が更新されました"
       ]
     },
     "Suffix": {
@@ -12539,6 +12638,21 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount }件の結果が見つかりました"
+      ],
+      "Public link": [
+        "公開リンク"
+      ],
+      "Public link settings": [
+        "公開リンク設定"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } の設定"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }サブスクリプションが開始されました"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12831,6 +12945,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "承認済み"
+      ],
+      "pending": [
+        "保留中"
       ]
     }
   }
