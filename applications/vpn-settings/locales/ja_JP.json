@@ -4352,6 +4352,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
       ]
     },
     "error": {
@@ -8137,6 +8140,9 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "${ total } user found": [
+        "${ total } 人のユーザーが見つかりました"
       ]
     },
     "info": {
@@ -10331,6 +10337,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ]
     },
     "new_plans: feature highlight": {
@@ -10727,6 +10736,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ]
     },
     "new_plans: upgrade": {
@@ -14345,6 +14357,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "有効なリカバリーメールアドレスを入力した場合、数分以内にSMSでユーザーネームを受信します。"
+      ],
+      "Billing information updated": [
+        "請求情報が更新されました"
       ]
     },
     "Success message": {
