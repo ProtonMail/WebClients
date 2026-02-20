@@ -1,4 +1,4 @@
-import { type ComponentPropsWithRef, createContext, forwardRef, useContext, useMemo } from 'react'
+import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Icon } from '../ui'
 import clsx from '@proton/utils/clsx'
@@ -141,20 +141,19 @@ export const Input = createComponent(function Input(props: ComponentPropsWithRef
 
 export function SelectFallbackLabel() {
   const store = Ariakit.useSelectContext()
-  const items = Ariakit.useStoreState(store, (s) => s?.items)
-  const value = Ariakit.useStoreState(store, (s) => s?.value)
-  const label = useMemo(() => {
+
+  return Ariakit.useStoreState(store, (s) => {
+    const items = s?.items
+
     if (items) {
-      const selectedItem = items.find((item) => item.value === value)
+      const selectedItem = items.find((item) => item.value === s.value)
       if (selectedItem?.element?.textContent) {
         return selectedItem.element.textContent
       }
     }
 
     return ''
-  }, [items, value])
-
-  return label
+  })
 }
 
 export const Select = createComponent(function Select({ children, ...props }: Ariakit.SelectProps) {
