@@ -159,7 +159,7 @@ export const getVersionHistory = (options?: 'generic' | 365 | '10y'): PlanCardFe
         return {
             text: c('new_plans: feature').ngettext(
                 msgid`${options}-day file version history`,
-                `${options}-day file version history`,
+                `${options}-days file version history`,
                 options
             ),
             included: true,
