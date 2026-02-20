@@ -12,16 +12,21 @@ import type { Event } from '../../models/event';
  */
 export const queryEvents = async (api: Api, lastEvent?: string, signal?: AbortSignal) => {
     if (lastEvent) {
-        return apiHelper<Event>(api, signal, getEvents(lastEvent), 'getEvents');
+        return apiHelper<Event>({ api, signal, options: getEvents(lastEvent), callingContext: 'getEvents' });
     }
-    return apiHelper<Event>(api, signal, getLatestID(), 'getLatestID');
+    return apiHelper<Event>({ api, signal, options: getLatestID(), callingContext: 'getLatestID' });
 };
 
 /**
  * Fetch one message
  */
 export const queryMessage = async (api: Api, messageID: string, signal?: AbortSignal) => {
-    const result = await apiHelper<{ Message: Message }>(api, signal, getMessage(messageID), 'getMessage');
+    const result = await apiHelper<{ Message: Message }>({
+        api,
+        signal,
+        options: getMessage(messageID),
+        callingContext: 'getMessage',
+    });
     return result?.Message;
 };
 
@@ -29,11 +34,11 @@ export const queryMessage = async (api: Api, messageID: string, signal?: AbortSi
  * Fetch one conversation
  */
 export const queryConversation = async (api: Api, conversationID: string, signal?: AbortSignal) => {
-    const result = await apiHelper<{ Messages: (Message | MessageMetadata)[] }>(
+    const result = await apiHelper<{ Messages: (Message | MessageMetadata)[] }>({
         api,
         signal,
-        getConversation(conversationID),
-        'getConversation'
-    );
+        options: getConversation(conversationID),
+        callingContext: 'getConversation',
+    });
     return result?.Messages;
 };
