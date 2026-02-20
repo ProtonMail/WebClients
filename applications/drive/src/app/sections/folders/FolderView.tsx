@@ -6,10 +6,10 @@ import { Loader, Toolbar, useAppTitle } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
-import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
+import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
 import { useUserSettings } from '../../store';
 import { useControlledSorting } from '../../store/_views/utils';
 import { useDeviceStore } from '../devices/devices.store';
@@ -25,7 +25,7 @@ interface FolderViewProps {
 }
 
 export function FolderView({ shareId, nodeUid }: FolderViewProps) {
-    const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
+    const { albumOnboardingModal } = useAlbumOnboardingModal();
     const { load } = useFolder();
 
     const {
@@ -90,7 +90,7 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
 
     return (
         <FileBrowserStateProvider itemIds={sortedUids}>
-            {renderAlbumOnboardingModal}
+            {albumOnboardingModal}
             {permissions.canEdit ? (
                 <UploadDragDrop
                     shareId={shareId}
