@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import type { FreeSubscription } from '../../core/interface';
+import type { Subscription } from '../../core/subscription/interface';
 import { useEditBillingAddressModal } from '../containers/EditBillingAddress/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
@@ -13,9 +15,10 @@ interface Props {
     user: User | undefined;
     taxCountry: TaxCountryHook | undefined;
     vatNumber: VatNumberHook | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
 }
 
-export const TaxFields = ({ user, taxCountry, vatNumber }: Props) => {
+export const TaxFields = ({ user, taxCountry, vatNumber, subscription }: Props) => {
     const { editBillingAddressModal, openBillingAddressModal, loadingByKey } = useEditBillingAddressModal();
     const { createNotification } = useNotifications();
 
@@ -24,6 +27,7 @@ export const TaxFields = ({ user, taxCountry, vatNumber }: Props) => {
             const fullBillingAddress = await openBillingAddressModal({
                 paymentsApi: taxCountry?.paymentsApi,
                 loadingKey,
+                subscription,
             });
 
             createNotification({
