@@ -1,8 +1,9 @@
-import type { FC, PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
+import { isCustomIconFile } from '@proton/pass/lib/file-attachments/custom-icon';
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { filesResolve } from '@proton/pass/store/actions';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -30,8 +31,11 @@ export const FileAttachmentsContentView: FC<{ revision: ItemRevision<any> & Part
     revision,
 }) => {
     const { shareId, itemId, optimistic, failed } = revision;
-    const files = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision.revision]);
+    const allFiles = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision.revision]);
     const loading = useSelector(selectRequestInFlight(filesResolve.requestID(revision))) || (optimistic && !failed);
+
+    /** Filter out custom icon files — they are displayed as item icons */
+    const files = useMemo(() => allFiles.filter((f) => !isCustomIconFile(f.name)), [allFiles]);
     const filesCount = files.length;
 
     return (

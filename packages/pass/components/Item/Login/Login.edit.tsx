@@ -9,6 +9,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { CustomIconField } from '@proton/pass/components/Form/Field/CustomIconField';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -21,6 +22,7 @@ import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPane
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
+import { useCustomIcon } from '@proton/pass/hooks/files/useCustomIcon';
 import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
@@ -53,6 +55,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
     const domain = url ? resolveSubdomain(url) : null;
     const { shareId } = share;
     const { data: item, itemId, revision: lastRevision } = revision;
+    const { iconSrc: existingIconSrc } = useCustomIcon({ shareId, itemId, revision: lastRevision });
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
     /** On initial mount: expand username field by default IIF:
@@ -206,13 +209,22 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                <Field
-                                    lengthLimiters
-                                    name="name"
-                                    label={c('Label').t`Title`}
-                                    component={TitleField}
-                                    maxLength={MAX_ITEM_NAME_LENGTH}
-                                />
+                                <div className="flex items-center">
+                                    <Field
+                                        name="files"
+                                        component={CustomIconField}
+                                        icon="user"
+                                        shareId={shareId}
+                                        existingIconSrc={existingIconSrc}
+                                    />
+                                    <Field
+                                        lengthLimiters
+                                        name="name"
+                                        label={c('Label').t`Title`}
+                                        component={TitleField}
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </div>
                             </FieldsetCluster>
 
                             {form.values.passkeys.map((passkey, idx, passkeys) => (
