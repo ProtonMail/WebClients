@@ -1,17 +1,20 @@
 import type { FormEvent } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import Loader from '@proton/components/components/loader/Loader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { VPN_TV_CLIENT_IDS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
+import type { Api } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import TVCodeInputs from './TVCodeInputs';
@@ -19,6 +22,17 @@ import TVCodeInputs from './TVCodeInputs';
 enum STEP {
     ENTER_CODE,
     DEVICE_CONNECTED,
+    DEVICE_CONNECTION_ERROR,
+}
+
+async function forkSession(api: Api, childClientId: string, code: string) {
+    await api(
+        pushForkSession({
+            ChildClientID: childClientId,
+            Independent: 1,
+            UserCode: code,
+        })
+    );
 }
 
 interface Props {
@@ -31,6 +45,9 @@ const TVContainer = ({ background = true }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const tvAuthCode = searchParams.get('code');
+
     const [error, setError] = useState('');
     const childClientId = (() => {
         if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
@@ -38,6 +55,14 @@ const TVContainer = ({ background = true }: Props) => {
         }
         return VPN_TV_CLIENT_IDS.ANDROID;
     })();
+
+    useEffect(() => {
+        if (tvAuthCode) {
+            withLoading(forkSession(api, childClientId, tvAuthCode))
+                .then(() => setStep(STEP.DEVICE_CONNECTED))
+                .catch(() => setStep(STEP.DEVICE_CONNECTION_ERROR));
+        }
+    }, []);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -48,13 +73,7 @@ const TVContainer = ({ background = true }: Props) => {
 
         try {
             setError('');
-            await api(
-                pushForkSession({
-                    ChildClientID: childClientId,
-                    Independent: 1,
-                    UserCode: code,
-                })
-            );
+            await forkSession(api, childClientId, code);
             setStep(STEP.DEVICE_CONNECTED);
         } catch (error: any) {
             const { data: { Error = '' } = {} } = error;
@@ -64,7 +83,7 @@ const TVContainer = ({ background = true }: Props) => {
     };
 
     const render = () => {
-        if (step === STEP.ENTER_CODE) {
+        if (step === STEP.ENTER_CODE && !tvAuthCode) {
             return (
                 <form onSubmit={(event) => withLoading(handleSubmit(event))}>
                     <label className="h3 text-center mb-3" htmlFor="code-input">{c('Label')
@@ -73,7 +92,7 @@ const TVContainer = ({ background = true }: Props) => {
                     {error ? (
                         <>
                             <p className="mt-8 mb-0 pl-4 text-center color-danger">{c('Error')
-                                .t`Code wrong or not valid anymore`}</p>
+                                .t`Code is incorrect or not valid anymore`}</p>
                             <p className="m-0 text-center border-none">{c('Error')
                                 .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
                         </>
@@ -106,6 +125,27 @@ const TVContainer = ({ background = true }: Props) => {
                     </div>
                 </>
             );
+        }
+
+        if (step === STEP.DEVICE_CONNECTION_ERROR) {
+            return (
+                <>
+                    <h2 className="text-center">{c('Title').t`Error`}</h2>
+                    <div className="flex justify-center my-8">
+                        <span className="inline-flex color-danger rounded-50 p-7">
+                            <IcCrossCircle size={15} />
+                        </span>
+                    </div>
+                    <p className="mt-8 mb-0 pl-4 text-center color-danger">{c('Error')
+                        .t`Code is incorrect or not valid anymore`}</p>
+                    <p className="m-0 text-center border-none">{c('Error')
+                        .t`If the time on your TV has expired, click on Refresh on your TV and try again.`}</p>
+                </>
+            );
+        }
+
+        if (loading) {
+            return <Loader size="large" />;
         }
 
         return null;
