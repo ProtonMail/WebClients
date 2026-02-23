@@ -6,8 +6,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Info, Label, Progress, Toggle, useModalState } from '@proton/components';
-import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import type { ESIndexingState } from '@proton/encrypted-search/models';
+import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';

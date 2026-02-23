@@ -11,7 +11,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { defaultESContext } from '@proton/encrypted-search/constants';
-import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
+import type { ESCalendarSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';

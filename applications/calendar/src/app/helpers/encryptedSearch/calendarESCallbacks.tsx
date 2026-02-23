@@ -3,9 +3,9 @@ import type { History } from 'history';
 import { ES_MAX_CONCURRENT, ES_MAX_ITEMS_PER_BATCH } from '@proton/encrypted-search/constants';
 import { esSentryReport, normalizeKeyword, storeItemsMetadata, testKeywords } from '@proton/encrypted-search/esHelpers';
 import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
-import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type {
     CachedItem,
+    ESCalendarSearchParams,
     ESCallbacks,
     ESItemInfo,
     ESStatusBooleans,

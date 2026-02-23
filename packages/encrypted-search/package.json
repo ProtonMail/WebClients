@@ -9,7 +9,8 @@
         "./esHelpers": "./lib/esHelpers/index.ts",
         "./models": "./lib/models/index.d.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
-        "./useSearchTelemetry": "./lib/useSearchTelemetry.ts"
+        "./useSearchTelemetry": "./lib/useSearchTelemetry.ts",
+        "./useIndexedDBSupport": "./lib/hooks/useIndexedDBSupport.ts"
     },
     "scripts": {
         "check-types": "tsc",

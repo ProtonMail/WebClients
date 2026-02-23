@@ -8,7 +8,7 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import { INDEXING_STATUS } from '@proton/encrypted-search/constants';
 import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
-import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
+import type { ESDriveSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';

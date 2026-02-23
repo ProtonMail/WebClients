@@ -3,8 +3,14 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { normalizeKeyword, testKeywords } from '@proton/encrypted-search/esHelpers';
 import { readAllLastEvents } from '@proton/encrypted-search/esIDB';
-import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
-import type { CachedItem, ESCallbacks, ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search/models';
+import type {
+    CachedItem,
+    ESCallbacks,
+    ESDriveSearchParams,
+    ESEvent,
+    ESTimepoint,
+    EventsObject,
+} from '@proton/encrypted-search/models';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Api, User } from '@proton/shared/lib/interfaces';
