@@ -1,5 +1,4 @@
-import type { EncryptedSearchFunctions } from '@proton/encrypted-search';
-import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
+import type { ESDriveSearchParams, EncryptedSearchFunctions } from '@proton/encrypted-search/models';
 
 export interface ESLink {
     createTime: number;
@@ -14,18 +13,17 @@ export interface ESLink {
     order: number;
 }
 
-export interface EncryptedSearchFunctionsDrive
-    extends Pick<
-        EncryptedSearchFunctions<ESLink, ESDriveSearchParams>,
-        | 'handleEvent'
-        | 'encryptedSearch'
-        | 'enableEncryptedSearch'
-        | 'esDelete'
-        | 'esStatus'
-        | 'progressRecorderRef'
-        | 'esIndexingProgressState'
-        | 'cacheIndexedDB'
-    > {}
+export interface EncryptedSearchFunctionsDrive extends Pick<
+    EncryptedSearchFunctions<ESLink, ESDriveSearchParams>,
+    | 'handleEvent'
+    | 'encryptedSearch'
+    | 'enableEncryptedSearch'
+    | 'esDelete'
+    | 'esStatus'
+    | 'progressRecorderRef'
+    | 'esIndexingProgressState'
+    | 'cacheIndexedDB'
+> {}
 
 export interface Session {
     sessionName: string;

@@ -4,7 +4,7 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { ProtonBadgeType, useActiveBreakpoint, useHotkeys } from '@proton/components';
-import { highlightNode } from '@proton/encrypted-search';
+import { highlightNode } from '@proton/encrypted-search/esHelpers';
 import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

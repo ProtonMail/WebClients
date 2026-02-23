@@ -1,5 +1,25 @@
 import type { History } from 'history';
 
+import {
+    ES_BACKGROUND_METADATA_BATCH,
+    ES_MAX_METADATA_BATCH,
+    ES_MAX_PARALLEL_ITEMS,
+} from '@proton/encrypted-search/constants';
+import {
+    apiHelper,
+    buildContentDB,
+    esSentryReport,
+    serializeAndEncryptItem,
+    testKeywords,
+} from '@proton/encrypted-search/esHelpers';
+import {
+    checkVersionedESDB,
+    executeContentOperations,
+    metadataIndexingProgress,
+    readLastEvent,
+    readMetadataItem,
+    readNumContent,
+} from '@proton/encrypted-search/esIDB';
 import type {
     CachedItem,
     ESCallbacks,
@@ -9,25 +29,9 @@ import type {
     ESTimepoint,
     EncryptedItemWithInfo,
     EventsObject,
+    NormalizedSearchParams,
     RecordProgress,
-} from '@proton/encrypted-search';
-import {
-    ES_BACKGROUND_METADATA_BATCH,
-    ES_MAX_METADATA_BATCH,
-    ES_MAX_PARALLEL_ITEMS,
-    apiHelper,
-    buildContentDB,
-    checkVersionedESDB,
-    esSentryReport,
-    executeContentOperations,
-    metadataIndexingProgress,
-    readLastEvent,
-    readMetadataItem,
-    readNumContent,
-    serializeAndEncryptItem,
-    testKeywords,
-} from '@proton/encrypted-search';
-import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+} from '@proton/encrypted-search/models';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
