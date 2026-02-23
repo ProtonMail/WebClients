@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import { useEffect } from 'react';
 
 import { c } from 'ttag';
@@ -97,6 +98,7 @@ export interface Props {
     showTaxCountry: boolean;
     subscription?: Subscription | FreeSubscription;
     currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
+    creditCardDetailsRef?: Ref<HTMLDivElement>;
 }
 
 export const PaymentsNoApi = ({
@@ -133,6 +135,7 @@ export const PaymentsNoApi = ({
     subscription,
     startTrial,
     currencyOverride,
+    creditCardDetailsRef,
 }: Props) => {
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
@@ -269,6 +272,7 @@ export const PaymentsNoApi = ({
                                     // if we don't let user select the tax country then we still need a fallback way to
                                     // collect the card country and the postal code
                                     showCountry={!showTaxCountry}
+                                    creditCardDetailsRef={creditCardDetailsRef}
                                 />
                                 {showAlert3ds && <Alert3DS />}
                             </>
