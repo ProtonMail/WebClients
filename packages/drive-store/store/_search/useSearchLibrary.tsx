@@ -6,13 +6,9 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useNotifications } from '@proton/components';
-import {
-    INDEXING_STATUS,
-    checkVersionedESDB,
-    metadataIndexingProgress,
-    useEncryptedSearch,
-} from '@proton/encrypted-search';
+import { INDEXING_STATUS, checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
+import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
