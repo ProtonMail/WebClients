@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@proton/crypto';
-import type { ESEvent, ESItemEvent, EventsObject } from '@proton/encrypted-search';
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
+import type { ESEvent, ESItemEvent, EventsObject } from '@proton/encrypted-search/models';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 

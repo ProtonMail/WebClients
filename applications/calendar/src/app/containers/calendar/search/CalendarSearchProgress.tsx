@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import Progress from '@proton/components/components/progress/Progress';
-import type { ESIndexingState } from '@proton/encrypted-search/lib';
+import type { ESIndexingState } from '@proton/encrypted-search/models';
 import clsx from '@proton/utils/clsx';
 
 const getProgressStatusText = ({

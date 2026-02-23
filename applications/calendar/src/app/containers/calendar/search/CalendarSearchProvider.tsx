@@ -2,8 +2,8 @@ import type { MutableRefObject, ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import type { ESItem } from '@proton/encrypted-search/lib';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
+import type { ESItem } from '@proton/encrypted-search/models';
 import { useLoading } from '@proton/hooks';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';

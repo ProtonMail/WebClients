@@ -7,6 +7,7 @@
         ".": "./lib/index.ts",
         "./constants": "./lib/constants.ts",
         "./esIDB": "./lib/esIDB/index.ts",
+        "./models": "./lib/models/index.d.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
         "./useSearchTelemetry": "./lib/useSearchTelemetry.ts"
     },
