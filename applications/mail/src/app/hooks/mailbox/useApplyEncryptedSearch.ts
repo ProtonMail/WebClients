@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';

@@ -12,7 +12,7 @@ import type { ESIndexingState, RecordProgress } from './models';
 /**
  * This hook provides helpers related to the progress of the ES indexing
  */
-const useEncryptedSearchIndexingProgress = () => {
+export const useEncryptedSearchIndexingProgress = () => {
     const [user] = useUser();
 
     /**
@@ -109,5 +109,3 @@ const useEncryptedSearchIndexingProgress = () => {
 
     return { esIndexingProgressState, progressRecorderRef, recordProgress };
 };
-
-export default useEncryptedSearchIndexingProgress;

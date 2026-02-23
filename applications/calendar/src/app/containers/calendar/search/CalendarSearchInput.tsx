@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { useSearchTelemetry } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
