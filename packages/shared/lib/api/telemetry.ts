@@ -56,6 +56,7 @@ export enum TelemetryMeasurementGroups {
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
     bringYourOwnEmail = 'any.web.bring_your_own_email',
+    appSwitcher = 'any.web.app_switcher',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
@@ -412,6 +413,10 @@ export enum TelemetryUnlimitedToDuoOffer {
     clickHideOffer = 'click_hide_offer',
 }
 
+export enum TelemetryAppSwitcher {
+    dropdown_app_click = 'dropdown_app_click',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -457,7 +462,8 @@ export type TelemetryEvents =
     | TelemetryUnlimitedOffer2025
     | TelemetryAlwaysOnUpsellEvents
     | TelemetryUnlimitedToDuoOffer
-    | TelemetryListSetting;
+    | TelemetryListSetting
+    | TelemetryAppSwitcher;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
