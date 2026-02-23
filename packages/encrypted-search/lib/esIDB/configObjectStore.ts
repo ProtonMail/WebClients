@@ -125,7 +125,7 @@ const writeConfigProperty = async (userID: string, configID: ConfigKeys, value: 
         return;
     }
 
-    await safelyWriteToIDBAbsolutely(value, configID, 'config', esDB);
+    await safelyWriteToIDBAbsolutely({ value, key: configID, storeName: 'config', esDB });
 
     esDB.close();
 };
@@ -144,7 +144,7 @@ export const updateSize = async (esDB: IDBPDatabase<EncryptedSearchDB>, sizeDelt
         return;
     }
 
-    return safelyWriteToIDBAbsolutely(oldSize + sizeDelta, 'size', 'config', esDB);
+    return safelyWriteToIDBAbsolutely({ value: oldSize + sizeDelta, key: 'size', storeName: 'config', esDB });
 };
 
 /**

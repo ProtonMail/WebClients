@@ -260,13 +260,13 @@ export const getESCallbacks = ({
 
             // if we reach this part of code, es is considered supported
             const esSupported = true;
-            const success = await storeItemsMetadata<ESCalendarMetadata>(
+            const success = await storeItemsMetadata<ESCalendarMetadata>({
                 userID,
-                decryptedMetadatas,
+                resultMetadata: decryptedMetadatas,
                 esSupported,
                 indexKey,
-                getItemInfo
-            ).catch((error: any) => {
+                getItemInfo,
+            }).catch((error: any) => {
                 if (!(error?.message === 'Operation aborted') && !(error?.name === 'AbortError')) {
                     esSentryReport('storeItemsBatches: storeItems', { error });
                 }

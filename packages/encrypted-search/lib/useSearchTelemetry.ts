@@ -220,7 +220,7 @@ const getCacheSizeRange = (cacheSize: number) => {
     }
 };
 
-const useSearchTelemetry = () => {
+export const useSearchTelemetry = () => {
     const api = useApi();
     const { APP_NAME } = useConfig();
 
@@ -409,5 +409,3 @@ const useSearchTelemetry = () => {
         sendSwitchSearchTypeReport,
     };
 };
-
-export default useSearchTelemetry;

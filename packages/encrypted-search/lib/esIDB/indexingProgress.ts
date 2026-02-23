@@ -39,7 +39,7 @@ const write = async (userID: string, progress: ESProgress, row: IndexedDBRow) =>
         return;
     }
 
-    await safelyWriteToIDBAbsolutely(progress, row, 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({ value: progress, key: row, storeName: 'indexingProgress', esDB });
 
     esDB.close();
 };
@@ -60,7 +60,7 @@ const incrementNumPauses = async (userID: string, row: IndexedDBRow) => {
 
     progress.numPauses += 1;
 
-    await safelyWriteToIDBAbsolutely(progress, row, 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({ value: progress, key: row, storeName: 'indexingProgress', esDB });
 
     esDB.close();
 };
@@ -82,7 +82,12 @@ const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMESTAMP_TYP
     const { timestamps } = progress;
     timestamps.push({ type, time: roundMilliseconds(Date.now()) });
 
-    await safelyWriteToIDBAbsolutely({ ...progress, timestamps }, row, 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({
+        value: { ...progress, timestamps },
+        key: row,
+        storeName: 'indexingProgress',
+        esDB,
+    });
 
     esDB.close();
 };
@@ -104,12 +109,12 @@ const setOriginalEstimate = async (userID: string, inputEstimate: number, row: I
 
     const { originalEstimate } = progress;
     if (originalEstimate === 0) {
-        await safelyWriteToIDBAbsolutely(
-            { ...progress, originalEstimate: inputEstimate },
-            row,
-            'indexingProgress',
-            esDB
-        );
+        await safelyWriteToIDBAbsolutely({
+            value: { ...progress, originalEstimate: inputEstimate },
+            key: row,
+            storeName: 'indexingProgress',
+            esDB,
+        });
     }
 
     esDB.close();
@@ -129,7 +134,12 @@ const set = async (userID: string, newProperties: Partial<ESProgress>, row: Inde
         return;
     }
 
-    await safelyWriteToIDBAbsolutely({ ...progress, ...newProperties }, row, 'indexingProgress', esDB);
+    await safelyWriteToIDBAbsolutely({
+        value: { ...progress, ...newProperties },
+        key: row,
+        storeName: 'indexingProgress',
+        esDB,
+    });
 
     esDB.close();
 };
@@ -180,15 +190,15 @@ const setActiveStatus = async (userID: string, row: IndexedDBRow) => {
         return;
     }
 
-    await safelyWriteToIDBAbsolutely(
-        {
+    await safelyWriteToIDBAbsolutely({
+        value: {
             ...defaultESProgress,
             status: INDEXING_STATUS.ACTIVE,
         },
-        row,
-        'indexingProgress',
-        esDB
-    );
+        key: row,
+        storeName: 'indexingProgress',
+        esDB,
+    });
 
     esDB.close();
 };

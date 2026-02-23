@@ -12,7 +12,7 @@ import type { ESIndexingState, RecordProgress } from './models';
 /**
  * This hook provides helpers related to the progress of the ES indexing
  */
-const useEncryptedSearchIndexingProgress = () => {
+export const useEncryptedSearchIndexingProgress = () => {
     const [user] = useUser();
 
     /**
@@ -79,15 +79,15 @@ const useEncryptedSearchIndexingProgress = () => {
         const elapsedTime = currentRecordTimestamp - startTimestamp;
 
         if (prevRecordTimestamp && prevProgress) {
-            const estimationResult = await estimateIndexingProgress(
-                user.ID,
+            const estimationResult = await estimateIndexingProgress({
+                userID: user.ID,
                 totalItems,
                 prevProgress,
                 prevRecordTimestamp,
-                currentProgress,
+                indexedItems: currentProgress,
                 elapsedTime,
-                indexedDbRow
-            );
+                indexedDBRow: indexedDbRow,
+            });
 
             if (!estimationResult) {
                 return;
@@ -109,5 +109,3 @@ const useEncryptedSearchIndexingProgress = () => {
 
     return { esIndexingProgressState, progressRecorderRef, recordProgress };
 };
-
-export default useEncryptedSearchIndexingProgress;
