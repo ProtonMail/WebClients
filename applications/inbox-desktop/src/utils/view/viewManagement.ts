@@ -20,7 +20,7 @@ import {
     isSameURL,
     trimLocalID,
 } from "../urls/urlTests";
-import { getWindowConfig } from "../view/windowHelpers";
+import { getWindowConfig, getWindowPlaywrightConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
@@ -100,8 +100,10 @@ export const viewCreationAppStartup = async () => {
     // to be loaded before connecting to the browser view.
     // We need to check if removing this after the Electron version update
     // will work
-    if (process.env.PLAYWRIGHT_TEST === "true") {
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    if (isPlaywrightTest) {
         await mainWindow.loadURL("about:blank");
+        mainWindow.show();
     }
 
     createViews();
@@ -140,6 +142,14 @@ export const viewCreationAppStartup = async () => {
     mainWindow.on("closed", () => {
         mainWindow = null;
     });
+
+    // For e2e playwright tests load mail immediately.
+    if (isPlaywrightTest) {
+        await loadURL("mail", getAppURL().mail);
+        showView("mail");
+        mainWindow!.show();
+        return;
+    }
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -232,7 +242,8 @@ const createViews = () => {
 };
 
 const createBrowserWindow = () => {
-    mainWindow = new BrowserWindow(getWindowConfig());
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    mainWindow = new BrowserWindow(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
 
     setApplicationMenu();
 
