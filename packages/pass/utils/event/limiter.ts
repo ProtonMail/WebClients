@@ -1,7 +1,8 @@
 type EventLimiterItem = { count: number; start: number };
 type EventLimiterState = Map<string, EventLimiterItem>;
+type EventLimiterOptions = { windowMax: number; windowMs: number };
 
-export const createEventLimiter = (windowMax: number, windowMs: number) => {
+export const createEventLimiter = ({ windowMax, windowMs }: EventLimiterOptions) => {
     const state: EventLimiterState = new Map();
 
     const getItem = (key: string): EventLimiterItem => {
@@ -26,12 +27,12 @@ export const createEventLimiter = (windowMax: number, windowMs: number) => {
     };
 
     return {
-        allowMessage: (key: string = '*') => {
+        allowMessage: (key: string = '*', override?: Partial<EventLimiterOptions>) => {
             const item = getItem(key);
             const now = Date.now();
 
-            if (now - item.start >= windowMs) reset(key);
-            if (item.count >= windowMax) return false;
+            if (now - item.start >= (override?.windowMs ?? windowMs)) reset(key);
+            if (item.count >= (override?.windowMax ?? windowMax)) return false;
 
             item.count += 1;
             return true;
