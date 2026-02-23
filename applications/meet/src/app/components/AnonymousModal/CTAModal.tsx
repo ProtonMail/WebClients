@@ -146,8 +146,8 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     const actionButton = (
         <Button
             className={clsx(
-                'rounded-full reload-button px-10 py-4 text-semibold primary',
-                isUpsellModal() && 'upsell-modal-button w-full'
+                'rounded-full px-10 py-4 text-semibold primary w-full',
+                isUpsellModal() && 'upsell-modal-button'
             )}
             onClick={() => {
                 onClose();
@@ -161,12 +161,11 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
 
     const greyActionButton = (
         <Button
-            className="create-account-button rounded-full reload-button px-10 py-4 text-semibold"
+            className="secondary rounded-full px-10 py-4 text-semibold flex-auto w-full md:w-auto"
             onClick={() => {
                 onClose();
                 action();
             }}
-            color="norm"
             size="medium"
         >
             {actionText[ctaModalType]}
@@ -175,7 +174,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
 
     const secondaryActionButton = (
         <Button
-            className="create-account-secondary-button rounded-full reload-button px-10 py-4 text-semibold"
+            className="tertiary rounded-full px-10 py-4 text-semibold flex-auto w-full md:w-auto"
             onClick={() => {
                 onClose();
                 action();
@@ -188,7 +187,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
 
     const lowPressureActionButton = (
         <Button
-            className="create-account-low-pressure-button rounded-full reload-button px-10 py-4 text-semibold"
+            className="create-account-low-pressure-button rounded-full px-10 py-4 text-semibold"
             onClick={() => {
                 onClose();
                 action();
@@ -266,7 +265,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                 setIsFinished(true);
             })
             .catch(() => {
-                close();
+                onClose();
                 notifications.createNotification({
                     type: 'error',
                     text: c('Notification').t`Could not send feedback`,
@@ -310,21 +309,18 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
     return (
         <TranslucentModal open={open} onClose={onClose}>
             <div
-                className={clsx(
-                    'flex flex-column justify-end items-center text-center pt-10 pb-10',
-                    isUpsellModal() && 'max-w-custom'
-                )}
-                style={{ '--max-w-custom': '28.25rem' }}
+                className={clsx('flex flex-column justify-end items-center text-center pt-10 pb-10 w-full')}
+                style={{ '--max-w-custom': '32.75rem' }}
             >
                 {getIcon()}
                 {isFinished && (
                     <>
-                        <div className="flex flex-column gap-2 pt-10 pb-10">
+                        <div className="flex flex-column gap-2 pt-10 pb-10 max-w-custom">
                             <div className="cta-modal-title text-semibold color-norm">{c('Title').t`Thank you!`}</div>
                             <div className="cta-modal-subtitle color-weak">{c('Title')
                                 .t`Your feedback has been submitted`}</div>
                         </div>
-                        <div className="flex flex-column gap-2 items-center cta-modal-content-container w-full">
+                        <div className="flex flex-column gap-2 items-center cta-modal-content-container w-full max-w-custom">
                             <Button
                                 className="back-dashboard-button rounded-full py-4 text-semibold px-10"
                                 onClick={() => {
@@ -341,7 +337,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                     <>
                         <div
                             className={clsx(
-                                'flex flex-column gap-2 pb-10',
+                                'flex flex-column gap-2 pb-10 max-w-custom',
                                 !isUpsellModal() && 'pt-10',
                                 isUpsellModal() && 'upsell-modal pt-6 meet-glow-effect relative'
                             )}
@@ -357,13 +353,8 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                             </div>
                             <div className="cta-modal-subtitle color-weak">{subtitles[ctaModalType]}</div>
                         </div>
-                        <div className="flex flex-column gap-2 items-center cta-modal-content-container w-full">
-                            <div
-                                className={clsx(
-                                    'flex flex-column md:flex-row gap-2 items-center justify-between',
-                                    isUpsellModal() && 'w-full'
-                                )}
-                            >
+                        <div className="flex flex-column gap-2 items-center cta-modal-content-container w-full max-w-custom">
+                            <div className="flex flex-column md:flex-row gap-2 items-center w-full">
                                 {redirectToDashboard(ctaModalType) && (
                                     <SettingsLink
                                         className={clsx(isUpsellModal() && 'w-full')}
@@ -383,7 +374,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                 {ctaModalType === UpsellModalTypes.FreeAccount && <>{lowPressureActionButton}</>}
                             </div>
                             {rejoin && (
-                                <div className="w-full flex justify-center gap-2 pt-10 pb-5 text-semibold">
+                                <div className="w-full flex justify-center gap-2 pt-10 pb-5 text-semibold max-w-custom">
                                     <span className="color-weak">{c('Info').t`Left by mistake?`}</span>
                                     <InlineLinkButton
                                         className="rejoin-meeting-button"
@@ -396,23 +387,29 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                             )}
                         </div>
                         {isUpsellModal() && (
-                            <div className="sign-in-button-container flex flex-row items-baseline py-6">
+                            <div className="sign-in-button-container flex flex-row items-baseline py-6 max-w-custom">
                                 {c('Go to sign in').jt`Already have an account? ${signIn}`}
                             </div>
                         )}
                         {meetFeedbackEnabled && rejoin && (
-                            <div className="flex items-center gap-5 mt-20 mb-5 cta-modal-rating-container">
-                                <span className="text-semibold text-left cta-modal-rating-label">{c('Label')
+                            <div
+                                className="flex flex-column md:flex-row items-center gap-2 mt-20 mb-5 w-full max-w-custom"
+                                style={{ '--max-w-custom': '37rem' }}
+                            >
+                                <span className="text-semibold text-left cta-modal-rating-label md:flex-1">{c('Label')
                                     .t`How was the call quality?`}</span>
-                                <StarRating value={rating} onChange={SetRating}></StarRating>
+                                <StarRating
+                                    value={rating}
+                                    onChange={SetRating}
+                                    className="md:flex-1 flex-nowrap"
+                                ></StarRating>
                                 {rating && rating >= 3 && (
                                     <Button
-                                        className="submit-rating-button rounded-full reload-button py-3 px-10 text-semibold text-invert"
+                                        className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto"
                                         onClick={() => {
                                             onClose();
                                             action();
                                         }}
-                                        color="weak"
                                         size="medium"
                                     >
                                         {c('Action').t`Submit`}
@@ -459,7 +456,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                         }}
                                     />
                                 </div>
-                                <div className="w-full flex flex-nowrap items-center justify-start gap-2 text-semibold mt-7">
+                                <div className="w-full flex flex-nowrap items-center justify-start gap-2 text-semibold mt-7 max-w-custom">
                                     <InlineLinkButton
                                         className="flex add-details-button items-center gap-2"
                                         onClick={() => setOptionalDetails(!optionalDetails)}
@@ -469,7 +466,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                     </InlineLinkButton>
                                 </div>
                                 {optionalDetails && (
-                                    <div className="mt-4 w-full">
+                                    <div className="mt-4 w-full max-w-custom">
                                         <InputFieldTwo
                                             className="feedback-comment w-full md:w-2/3"
                                             as={TextAreaTwo}
@@ -480,15 +477,14 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                         />
                                     </div>
                                 )}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 cta-modal-rating-container">
+                                <div className="flex flex-column md:flex-row gap-2 items-center mt-4 w-full max-w-custom">
                                     <Button
-                                        className="submit-rating-button rounded-full reload-button py-3 px-10 text-semibold"
+                                        className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
                                         onClick={async () => {
                                             await withLoadingSkip(
                                                 handleSubmit(rating, selectedOptions, optionalDetails ? comment : '')
                                             );
                                         }}
-                                        color="weak"
                                         size="medium"
                                         loading={isLoadingSkip}
                                         disabled={isLoadingSkip || isLoading}
@@ -496,11 +492,10 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                         {c('Action').t`Skip`}
                                     </Button>
                                     <Button
-                                        className="submit-rating-button-secondary rounded-full reload-button py-3 px-10 text-semibold"
+                                        className="primary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
                                         onClick={async () => {
                                             await withLoading(handleSubmit(rating));
                                         }}
-                                        color="norm"
                                         size="medium"
                                         loading={isLoading}
                                         disabled={isLoading || isLoadingSkip}

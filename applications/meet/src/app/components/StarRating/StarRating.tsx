@@ -24,7 +24,7 @@ export const StarRating = ({ value, onChange, className }: StarRatingProps) => {
     const stars = range(1, 6);
 
     return (
-        <div className={clsx('star-rating flex flex-row items-center', className)}>
+        <div className={clsx('star-rating flex flex-row items-center justify-center', className)}>
             <svg width="0" height="0" className="absolute">
                 <defs>
                     <linearGradient id="starGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -42,7 +42,7 @@ export const StarRating = ({ value, onChange, className }: StarRatingProps) => {
                     <button
                         key={numberOfStars}
                         type="button"
-                        className={clsx('star-rating-button', shouldShowGold && 'star-rating-button--filled')}
+                        className={clsx('star-rating-button shrink-0', shouldShowGold && 'star-rating-button--filled')}
                         onClick={() => handleChange(numberOfStars)}
                         onMouseEnter={() => setHoveredStar(numberOfStars)}
                         onMouseLeave={() => setHoveredStar(undefined)}
