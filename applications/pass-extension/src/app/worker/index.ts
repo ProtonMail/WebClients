@@ -37,6 +37,7 @@ if (typeof browser !== 'undefined') {
             'chunk.crypto-argon2.js',
             'chunk.crypto-nacl.js',
             'chunk.crypto-pqc.js',
+            'chunk.crypto-noblehashes.js',
             'chunk.pass-core.main.js',
         ];
 
