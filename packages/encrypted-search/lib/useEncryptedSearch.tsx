@@ -8,7 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
-import useSearchTelemetry, { SEARCH_TYPE } from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -84,7 +84,7 @@ import type {
     HighlightString,
     InternalESCallbacks,
 } from './models';
-import useEncryptedSearchIndexingProgress from './useEncryptedSearchIndexingProgress';
+import { useEncryptedSearchIndexingProgress } from './useEncryptedSearchIndexingProgress';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
@@ -103,7 +103,7 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
  * @param contentIndexingSuccessMessage The text that is showing in a green notification upon completing indexing
  * @returns An empty instance of the ES IndexedDB
  */
-const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
+export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
     refreshMask,
     esCallbacks: inputESCallbacks,
     contentIndexingSuccessMessage,
@@ -1439,5 +1439,3 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
     return esFunctions;
 };
-
-export default useEncryptedSearch;
