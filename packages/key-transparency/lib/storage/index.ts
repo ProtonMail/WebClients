@@ -1,2 +1,2 @@
-export * from './ktStorageAPI';
-export * from './storageHelpers';
+export { getKTLocalStorage } from './ktStorageAPI';
+export { getAuditResult, storeAuditResult } from './storageHelpers';

@@ -2,7 +2,7 @@ import { MAX_CHARS_API } from '@proton/account';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
-import { createPreAuthKTVerifier } from '@proton/key-transparency';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import type { Subscription } from '@proton/payments';
 import { type PaymentsVersion, SubscriptionMode, hasPlanIDs } from '@proton/payments';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';

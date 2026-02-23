@@ -1,2 +1,2 @@
-export * from './verifyKeys';
-export * from './self-audit/selfAudit';
+export { verifySKLSignature } from './verifyKeys';
+export { selfAudit } from './self-audit/selfAudit';

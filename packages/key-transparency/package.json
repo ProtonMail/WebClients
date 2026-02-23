@@ -4,9 +4,12 @@
     "license": "MIT",
     "author": "ProtonMail",
     "exports": {
-        ".": "./lib/index.ts",
         "./constants": "./lib/constants/index.ts",
-        "./interfaces": "./lib/interfaces.ts"
+        "./helpers": "./lib/helpers/index.ts",
+        "./interfaces": "./lib/interfaces.ts",
+        "./shared": "./lib/shared/index.ts",
+        "./storage": "./lib/storage/index.ts",
+        "./verification": "./lib/verification/index.ts"
     },
     "scripts": {
         "check-types": "tsc",

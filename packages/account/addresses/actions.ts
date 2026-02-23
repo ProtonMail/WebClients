@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { type UserInvitationsState, userInvitationsThunk } from '@proton/account/userInvitations';
 import { createBYOEAddress as createBYOEAddressApi } from '@proton/activation/src/api/api';
-import { createKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import {

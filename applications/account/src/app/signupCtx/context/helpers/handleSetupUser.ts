@@ -1,4 +1,4 @@
-import { createPreAuthKTVerifier } from '@proton/key-transparency/lib';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import {
     type BillingAddress,
     type Currency,
