@@ -193,7 +193,7 @@ const Step3 = ({
 
     return (
         <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan} background={background}>
-            <Main>
+            <Main className={clsx(isB2bPlan && 'ui-standard')}>
                 <Header
                     title={c('Title').t`Set your password`}
                     subTitle={getContinueToString(product)}
