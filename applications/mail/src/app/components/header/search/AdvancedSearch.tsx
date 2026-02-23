@@ -13,7 +13,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
-import { useSearchTelemetry } from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
