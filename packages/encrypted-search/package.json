@@ -6,6 +6,7 @@
     "exports": {
         ".": "./lib/index.ts",
         "./constants": "./lib/constants.ts",
+        "./esIDB": "./lib/esIDB/index.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
         "./useSearchTelemetry": "./lib/useSearchTelemetry.ts"
     },

@@ -8,15 +8,9 @@ import type {
     EventsObject,
     RecordProgress,
 } from '@proton/encrypted-search';
-import {
-    checkVersionedESDB,
-    esSentryReport,
-    metadataIndexingProgress,
-    normalizeKeyword,
-    storeItemsMetadata,
-    testKeywords,
-} from '@proton/encrypted-search';
+import { esSentryReport, normalizeKeyword, storeItemsMetadata, testKeywords } from '@proton/encrypted-search';
 import { ES_MAX_CONCURRENT, ES_MAX_ITEMS_PER_BATCH } from '@proton/encrypted-search/constants';
+import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';

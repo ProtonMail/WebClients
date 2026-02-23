@@ -14,13 +14,7 @@ import type {
 import {
     apiHelper,
     buildContentDB,
-    checkVersionedESDB,
     esSentryReport,
-    executeContentOperations,
-    metadataIndexingProgress,
-    readLastEvent,
-    readMetadataItem,
-    readNumContent,
     serializeAndEncryptItem,
     testKeywords,
 } from '@proton/encrypted-search';
@@ -29,6 +23,14 @@ import {
     ES_MAX_METADATA_BATCH,
     ES_MAX_PARALLEL_ITEMS,
 } from '@proton/encrypted-search/constants';
+import {
+    checkVersionedESDB,
+    executeContentOperations,
+    metadataIndexingProgress,
+    readLastEvent,
+    readMetadataItem,
+    readNumContent,
+} from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
