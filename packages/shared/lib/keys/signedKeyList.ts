@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib/constants/constants';
+import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/address';

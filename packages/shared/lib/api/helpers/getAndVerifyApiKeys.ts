@@ -1,5 +1,5 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
-import { verifyOutboundPublicKeys } from '@proton/key-transparency/lib/helpers/verifyOutboundPublicKeys';
+import { verifyOutboundPublicKeys } from '@proton/key-transparency';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type {
