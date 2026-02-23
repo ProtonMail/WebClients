@@ -1,6 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { createKTVerifier, resignSKLWithPrimaryKey } from '@proton/key-transparency';
+import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

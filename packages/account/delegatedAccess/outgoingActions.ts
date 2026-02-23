@@ -2,7 +2,7 @@ import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
-import { verifySKLSignature } from '@proton/key-transparency/lib';
+import { verifySKLSignature } from '@proton/key-transparency/verification';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';

@@ -9,7 +9,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { createPreAuthKTVerifier } from '@proton/key-transparency/lib';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';

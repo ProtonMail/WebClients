@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { createKTVerifier } from '@proton/key-transparency';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -496,12 +496,7 @@ export const createMember = ({
         disableAddressValidation?: boolean;
     };
     api: Api;
-}): ThunkAction<
-    Promise<Member>,
-    KtState & OrganizationKeyState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<Member>, KtState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         let [user, userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
             dispatch(userThunk()),
