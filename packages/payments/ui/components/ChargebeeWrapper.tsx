@@ -1,4 +1,4 @@
-import type { ChangeEvent, ReactNode } from 'react';
+import type { ChangeEvent, ReactNode, Ref } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -51,6 +51,7 @@ export interface ChargebeeCardWrapperProps extends ChargebeeWrapperProps {
     initialCountryCode?: string;
     suffix?: ReactNode;
     showCountry: boolean;
+    creditCardDetailsRef?: Ref<HTMLDivElement>;
 }
 
 export const ChargebeeCreditCardWrapper = ({
@@ -59,6 +60,7 @@ export const ChargebeeCreditCardWrapper = ({
     initialCountryCode,
     suffix,
     showCountry,
+    creditCardDetailsRef,
     ...rest
 }: ChargebeeCardWrapperProps) => {
     const formWrapperRef = useRef<HTMLDivElement>(null);
@@ -110,7 +112,10 @@ export const ChargebeeCreditCardWrapper = ({
                     <SkeletonPaymentsForm />
                 </div>
             )}
-            <div className={clsx('flex flex-column', !initialized && 'visibility-hidden absolute')}>
+            <div
+                className={clsx('flex flex-column', !initialized && 'visibility-hidden absolute')}
+                ref={creditCardDetailsRef}
+            >
                 <Label className="field-two-label field-two-label-container flex pt-3">
                     {c('Label').t`Card details`}
                 </Label>
