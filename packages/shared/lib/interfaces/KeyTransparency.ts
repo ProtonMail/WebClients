@@ -1,5 +1,5 @@
 import type { PublicKeyReference } from '@proton/crypto';
-import type { Epoch, SelfAuditResult } from '@proton/key-transparency';
+import type { Epoch, SelfAuditResult } from '@proton/key-transparency/interfaces';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { PrimaryAddressKeysForSigning } from '../keys';

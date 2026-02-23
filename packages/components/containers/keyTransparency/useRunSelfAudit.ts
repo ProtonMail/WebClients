@@ -8,7 +8,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
-    type SelfAuditResult,
     StaleEpochError,
     getKTLocalStorage,
     getLatestEpoch,
@@ -17,6 +16,7 @@ import {
     reportSelfAuditErrors,
     selfAudit,
 } from '@proton/key-transparency';
+import type { SelfAuditResult } from '@proton/key-transparency/interfaces';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
