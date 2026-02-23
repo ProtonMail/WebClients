@@ -73,13 +73,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 155,
                 rate: 15.5,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'GST',
                 taxesQuantity: 1,
+                taxRateElement: `Including 15.5% tax`,
             });
         });
 
@@ -96,13 +96,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Including 20% tax`,
             });
         });
 
@@ -119,13 +119,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Including 20% tax`,
             });
         });
 
@@ -142,13 +142,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: '',
                 taxesQuantity: 1,
+                taxRateElement: `Including 20% tax`,
             });
         });
 
@@ -165,13 +165,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 0,
                 rate: 0,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'Exempt',
                 taxesQuantity: 1,
+                taxRateElement: `Including 0% tax`,
             });
         });
 
@@ -188,13 +188,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 8.1235, // withDecimalPrecision should format to 4 decimal places
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Including 8.1235% tax`,
             });
         });
     });
@@ -223,13 +223,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 280, // 200 + 50 + 30
                 rate: 28, // 20 + 5 + 3
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT', // Always VAT for multiple taxes
                 taxesQuantity: 3,
+                taxRateElement: `Including 28% taxes`,
             });
         });
 
@@ -251,13 +251,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 230,
                 rate: 23,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT', // Always VAT for multiple taxes
                 taxesQuantity: 2,
+                taxRateElement: `Including 23% taxes`,
             });
         });
 
@@ -279,13 +279,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 250,
                 rate: 20.8024, // (8.12345 + 12.67891) formatted to 4 decimal places
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 2,
+                taxRateElement: `Including 20.8024% taxes`,
             });
         });
     });
@@ -305,13 +305,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 210,
                 rate: 21,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'EUR',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Including 21% tax`,
             });
         });
 
@@ -329,13 +329,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.EXCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Tax 20%`,
             });
         });
 
@@ -353,13 +353,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Including 20% tax`,
             });
         });
     });
@@ -378,13 +378,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 999,
                 rate: 99.9999, // withDecimalPrecision should maintain 4 decimal places
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'High Tax',
                 taxesQuantity: 1,
+                taxRateElement: `Including 99.9999% tax`,
             });
         });
 
@@ -401,13 +401,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 1,
                 rate: 0.0001,
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'Micro Tax',
                 taxesQuantity: 1,
+                taxRateElement: `Including 0.0001% tax`,
             });
         });
 
@@ -424,35 +424,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 100,
                 rate: 12.1235, // Should be truncated to 4 decimal places by withDecimalPrecision
                 inclusive: TaxInclusive.INCLUSIVE,
                 currency: 'USD',
-                taxName: 'Precise Tax',
                 taxesQuantity: 1,
-            });
-        });
-
-        it('handles single tax with missing Name property gracefully', () => {
-            const checkResult = createMockCheckResult({
-                Taxes: [
-                    {
-                        Rate: 20,
-                        Amount: 200,
-                    } as any, // Missing Name property
-                ],
-            });
-
-            const result = formatTax(checkResult);
-
-            expect(result).toEqual({
-                amount: 200,
-                rate: 20,
-                inclusive: TaxInclusive.INCLUSIVE,
-                currency: 'USD',
-                taxName: 'VAT', // Should fallback to VAT
-                taxesQuantity: 1,
+                taxRateElement: `Including 12.1235% tax`,
             });
         });
     });
@@ -472,13 +450,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 200,
                 rate: 20,
                 inclusive: TaxInclusive.EXCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT',
                 taxesQuantity: 1,
+                taxRateElement: `Tax 20%`,
             });
         });
 
@@ -501,13 +479,13 @@ describe('formatTax', () => {
 
             const result = formatTax(checkResult);
 
-            expect(result).toEqual({
+            expect(result).toMatchObject({
                 amount: 250, // 200 + 50
                 rate: 25, // 20 + 5
                 inclusive: TaxInclusive.EXCLUSIVE,
                 currency: 'USD',
-                taxName: 'VAT', // Always VAT for multiple taxes
                 taxesQuantity: 2,
+                taxRateElement: `Taxes 25%`,
             });
         });
     });

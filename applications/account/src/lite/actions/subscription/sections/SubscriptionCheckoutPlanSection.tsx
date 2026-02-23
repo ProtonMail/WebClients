@@ -229,9 +229,7 @@ const SubscriptionCheckoutPlanSection = ({
 
             taxExclusive: (item) => (
                 <div className="flex justify-space-between">
-                    <span>
-                        {item.taxesQuantity > 1 ? c('Payments').t`Taxes` : item.taxName} {item.rate}%
-                    </span>
+                    <span>{item.taxRateElement}</span>
                     <WithLoadingIndicator loading={loading}>
                         <Price currency={item.currency}>{item.amount}</Price>
                     </WithLoadingIndicator>
