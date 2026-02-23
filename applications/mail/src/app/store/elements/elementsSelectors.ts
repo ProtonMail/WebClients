@@ -1,8 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search/constants';
-import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import type { ESStatus } from '@proton/encrypted-search/models';
+import type { ESStatus, NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

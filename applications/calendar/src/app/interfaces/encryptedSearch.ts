@@ -1,5 +1,4 @@
-import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
-import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models';
+import type { ESCalendarSearchParams, EncryptedSearchFunctions } from '@proton/encrypted-search/models';
 import type {
     AttendeeModel,
     CalendarEventMetadata,

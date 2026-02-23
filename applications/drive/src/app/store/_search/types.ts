@@ -1,5 +1,4 @@
-import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
-import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models';
+import type { ESDriveSearchParams, EncryptedSearchFunctions } from '@proton/encrypted-search/models';
 
 export interface ESLink {
     createTime: number;
