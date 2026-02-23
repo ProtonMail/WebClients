@@ -1,7 +1,7 @@
 import { getUnixTime } from 'date-fns';
 import { default as frLocale } from 'date-fns/locale/fr';
 
-import type { ESItem } from '@proton/encrypted-search/lib';
+import type { ESItem } from '@proton/encrypted-search/models';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { differenceInCalendarYears } from '@proton/shared/lib/date-fns-utc';

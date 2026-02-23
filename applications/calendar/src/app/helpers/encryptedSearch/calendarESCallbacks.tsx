@@ -1,24 +1,17 @@
 import type { History } from 'history';
 
+import { ES_MAX_CONCURRENT, ES_MAX_ITEMS_PER_BATCH } from '@proton/encrypted-search/constants';
+import { esSentryReport, normalizeKeyword, storeItemsMetadata, testKeywords } from '@proton/encrypted-search/esHelpers';
+import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
 import type {
     CachedItem,
+    ESCalendarSearchParams,
     ESCallbacks,
     ESItemInfo,
     ESStatusBooleans,
     EventsObject,
     RecordProgress,
-} from '@proton/encrypted-search';
-import {
-    ES_MAX_CONCURRENT,
-    ES_MAX_ITEMS_PER_BATCH,
-    checkVersionedESDB,
-    esSentryReport,
-    metadataIndexingProgress,
-    normalizeKeyword,
-    storeItemsMetadata,
-    testKeywords,
-} from '@proton/encrypted-search';
-import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
+} from '@proton/encrypted-search/models';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';

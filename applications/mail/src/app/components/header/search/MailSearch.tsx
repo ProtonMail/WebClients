@@ -4,7 +4,7 @@ import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { TopNavbarListItemSearchButton, useActiveBreakpoint, usePopperAnchor, useToggle } from '@proton/components';
-import { useSearchTelemetry } from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';

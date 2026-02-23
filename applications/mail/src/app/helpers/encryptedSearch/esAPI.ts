@@ -1,4 +1,4 @@
-import { apiHelper } from '@proton/encrypted-search';
+import { apiHelper } from '@proton/encrypted-search/esHelpers';
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage } from '@proton/shared/lib/api/messages';

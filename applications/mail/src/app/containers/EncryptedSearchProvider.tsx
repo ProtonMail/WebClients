@@ -8,15 +8,11 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useSubscribeEventManager } from '@proton/components';
-import {
-    checkVersionedESDB,
-    contentIndexingProgress,
-    getIndexKey,
-    useEncryptedSearch,
-    wrappedGetOldestInfo,
-} from '@proton/encrypted-search';
-import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
-import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+import { getIndexKey } from '@proton/encrypted-search/esHelpers';
+import { checkVersionedESDB, contentIndexingProgress, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
+import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import { useGetMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
