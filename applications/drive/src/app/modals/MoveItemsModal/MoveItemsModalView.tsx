@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { ModalProps } from '@proton/components';
 import {
     Alert,
     ButtonWithTextAndIcon,
@@ -12,7 +13,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { generateNodeUid, useDrive } from '@proton/drive/index';
+import { NodeType, splitNodeUid, useDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
 import FolderTree from '../../components/FolderTree/FolderTree';
@@ -22,10 +23,16 @@ import type { DecryptedLink, TreeItem } from '../../store';
 import { getMovedFiles } from '../../utils/moveTexts';
 import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
 import { useMoveEligibility } from './useMoveEligibility';
-import type { MoveItemsModalStateItem } from './useMoveItemsModalState';
+import type { NodeTarget } from './useMoveItemsModalState';
 
-export type MoveItemsModalViewProps = {
-    items: MoveItemsModalStateItem[];
+export type MoveItemsModalViewProps =
+    | ({
+          loaded: true;
+      } & LoadedMoveItemsModalViewProps)
+    | { loaded: false };
+
+export type LoadedMoveItemsModalViewProps = {
+    nodes: NodeTarget[];
     handleSubmit: () => Promise<void>;
     rootItems: TreeItem[];
     createFolder: () => void;
@@ -38,8 +45,8 @@ export type MoveItemsModalViewProps = {
     onClose?: () => void;
 };
 
-export const MoveItemsModalView = ({
-    items,
+export const MoveItemsModalContent = ({
+    nodes,
     handleSubmit,
     rootItems,
     createFolder,
@@ -51,22 +58,22 @@ export const MoveItemsModalView = ({
     targetFolderUid,
     onClose,
     ...modalProps
-}: MoveItemsModalViewProps) => {
+}: LoadedMoveItemsModalViewProps) => {
     const [loading, withLoading] = useLoading();
 
-    const itemsToMove = items.map((item) => item.linkId);
+    const itemsToMove = nodes.map((node) => splitNodeUid(node.uid).nodeId);
     const itemsToMoveCount = itemsToMove.length;
     const messages = getMovedFiles(itemsToMoveCount);
 
-    const selectedItemConfigs = items.map((item) => ({
-        nodeUid: generateNodeUid(item.volumeId, item.linkId),
-        parentNodeUid: generateNodeUid(item.volumeId, item.parentLinkId),
+    const selectedItemConfigs = nodes.map((node) => ({
+        nodeUid: node.uid,
+        parentNodeUid: node.parentUid,
     }));
     const { drive } = useDrive();
     const { isInvalidMove, invalidMoveMessage } = useMoveEligibility(selectedItemConfigs, targetFolderUid, drive);
 
     const title = selectMessageForItemList(
-        items.map((item) => item.isFile),
+        nodes.map((node) => node.type === NodeType.File),
         messages
     );
 
@@ -145,4 +152,17 @@ export const MoveItemsModalView = ({
             {createFolderModal}
         </>
     );
+};
+
+export const MoveItemsModalView: React.FC<MoveItemsModalViewProps & ModalProps> = (props) => {
+    if (!props.loaded) {
+        return (
+            <ModalTwo as="form" open={true} size="large">
+                <ModalTwoContent>
+                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+                </ModalTwoContent>
+            </ModalTwo>
+        );
+    }
+    return <MoveItemsModalContent {...props} />;
 };

@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import type { MaybeMissingNode, MaybeNode, MissingNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
+import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import { shouldTrackError, useSdkErrorHandler } from '../../../../utils/errorHandling/useSdkErrorHandler';
@@ -11,15 +11,8 @@ import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole
 import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
+import { isMissingNode } from '../../../../utils/sdk/node';
 import { useSearchViewStore } from '../../searchView/store';
-
-const isMissingNode = (result: MaybeMissingNode): result is { ok: false; error: MissingNode } => {
-    return result.ok === false && result.error && 'missingUid' in result.error;
-};
-
-const isMaybeNode = (result: MaybeMissingNode): result is MaybeNode => {
-    return !isMissingNode(result);
-};
 
 // Nodes don't inherit trashTime when their parent folder is trashed,
 // so we must check ancestors.
@@ -91,7 +84,7 @@ export const useSearchViewNodesLoader = () => {
 
                 for await (const maybeMissingNode of drive.iterateNodes(nodeUids, abortSignal)) {
                     try {
-                        if (!isMaybeNode(maybeMissingNode)) {
+                        if (isMissingNode(maybeMissingNode)) {
                             // The search index engine does not do a good job at tracking deleted nodes.
                             // We silence these errors for now but when integrating the new search index,
                             // we should
