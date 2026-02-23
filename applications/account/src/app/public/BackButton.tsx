@@ -12,7 +12,7 @@ interface Props {
 const BackButton = ({ onClick }: Props) => {
     return (
         <Button
-            className="sm:shadow-lifted shadow-color-primary"
+            className="sm:shadow-lifted shadow-color-primary ui-standard"
             icon
             shape="outline"
             onClick={onClick}
