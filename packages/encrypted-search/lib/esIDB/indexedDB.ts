@@ -1,4 +1,4 @@
-import type { IDBPDatabase } from 'idb';
+import type { IDBPDatabase, OpenDBCallbacks } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
 import type { ESCiphertext } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
@@ -10,6 +10,8 @@ import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } fro
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
 import { getOldestID, getOldestInfo } from './metadata';
+
+type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
 /**
  * Format the name of the ES database for the given user ID
@@ -29,10 +31,46 @@ async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string
     await deleteESDB(userID);
 }
 
+const upgrade: UpgradeCallback = (database) => {
+    // The object store containing the content of items, indexed by their ID.
+    // Out-of-line keys are used
+    if (!database.objectStoreNames.contains('content')) {
+        database.createObjectStore('content');
+    }
+
+    // The object store containing all metadata of items, indexed by their ID
+    // In-line keys are used, defined by the ID property. A temporal index
+    // is created as well
+    if (!database.objectStoreNames.contains('metadata')) {
+        const metadataOS = database.createObjectStore('metadata');
+        metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
+    }
+
+    // The config object store contains ES-wide values (e.g. the encrypted index key),
+    // configuration (e.g. whether ES is enabled) and information (e.g. an estimate
+    // of the size)
+    if (!database.objectStoreNames.contains('config')) {
+        database.createObjectStore('config');
+    }
+
+    // The events object store contains the last event ID according to which the index has
+    // been updated for every component of the product
+    if (!database.objectStoreNames.contains('events')) {
+        database.createObjectStore('events');
+    }
+
+    // The indexingProgress object store contains metadata information on indexing. It always
+    // will contain a 'metadata' row, for items metadata to either search those exclusively or
+    // to enable ES for free users, as well as a row for content in case a product decides to
+    // have any
+    if (!database.objectStoreNames.contains('indexingProgress')) {
+        database.createObjectStore('indexingProgress');
+    }
+};
+
 /**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
- * undefined is returned instead. WARNING: this function will delete an old
- * version of IDB if it exists
+ * undefined is returned instead.
  */
 export const openESDB = async (userID: string) => {
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
@@ -43,18 +81,22 @@ export const openESDB = async (userID: string) => {
             esSentryReport('openESDB: indexedDB not accessible', { isAccessible, hasIndexedDB });
             return;
         }
-        esDB = await openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION);
-        // return esDB if the esDB contains a metadata and content table
-        if (esDB?.objectStoreNames.contains('metadata') && esDB.objectStoreNames.contains('content')) {
-            return esDB;
+
+        const dbName = getDBName(userID);
+        const databases = await indexedDB.databases();
+        if (!databases.some(({ name }) => name === dbName)) {
+            removeESFlags(userID);
+            return;
         }
-        await cleanupESDB(esDB, userID);
-        return;
+
+        esDB = await openDB<EncryptedSearchDB>(dbName, INDEXEDDB_VERSION, {
+            upgrade,
+        });
+        return esDB;
     } catch (error: any) {
         if (esDB) {
             await cleanupESDB(esDB, userID);
         }
-        // Currently our openESDB usage expects undefined in case a db was never there (see !dbExisted conditional above)
         return;
     }
 };
@@ -78,32 +120,7 @@ export const createESDB = async (userID: string) => {
     // might arise when removing it and creating a new one immediately after
     await deleteESDB(userID);
     return openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
-        upgrade: (esDB) => {
-            // The object store containing the content of items, indexed by their ID.
-            // Out-of-line keys are used
-            esDB.createObjectStore('content');
-
-            // The object store containing all metadata of items, indexed by their ID
-            // In-line keys are used, defined by the ID property. A temporal index
-            // is created as well
-            const metadataOS = esDB.createObjectStore('metadata');
-            metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
-
-            // The config object store contains ES-wide values (e.g. the encrypted index key),
-            // configuration (e.g. whether ES is enabled) and information (e.g. an estimate
-            // of the size)
-            esDB.createObjectStore('config');
-
-            // The events object store contains the last event ID according to which the index has
-            // been updated for every component of the product
-            esDB.createObjectStore('events');
-
-            // The indexingProgress object store contains metadata information on indexing. It always
-            // will contain a 'metadata' row, for items metadata to either search those exclusively or
-            // to enable ES for free users, as well as a row for content in case a product decides to
-            // have any
-            esDB.createObjectStore('indexingProgress');
-        },
+        upgrade,
     });
 };
 
