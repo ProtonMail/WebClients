@@ -25,27 +25,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.create-account-button {
-	background: var(--interaction-weak);
-
-	&:hover,
-	&:focus {
-		background-color: var(--interaction-weak-major-1);
-		border: 1px solid var(--interaction-weak-major-1);
-	}
-}
-
-.create-account-secondary-button {
-	background: var(--circle-button-transparent);
-	border: 1px solid var(--circle-button-transparent);
-
-	&:hover,
-	&:focus {
-		background: var(--interaction-weak);
-		border: 1px solid var(--interaction-weak);
-	}
-}
-
 .create-account-low-pressure-button {
 	background: #ffffff0a;
 	border: 1px solid #ffffff0a;
@@ -80,43 +59,6 @@ im.$media-expressions: $media-expressions;
 .cta-modal-content-container {
 	@include im.media('<=small') {
 		inline-size: 100% !important;
-	}
-}
-
-.cta-modal-rating-container {
-	flex-direction: row;
-	align-items: center;
-
-	@include im.media('<=small') {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: var(--space-1) !important;
-	}
-}
-
-.submit-rating-button {
-	background: var(--interaction-weak);
-	border: 1px solid var(--interaction-weak);
-	color: var(--text-norm);
-
-	&:hover,
-	&:active {
-		background-color: var(--interaction-weak-major-1);
-		border: 1px solid var(--interaction-weak-major-1);
-	}
-}
-
-.submit-rating-button-secondary {
-	color: var(--interaction-norm-contrast);
-	background-color: var(--interaction-norm);
-
-	&:hover,
-	&:focus {
-		background-color: var(--interaction-norm-major-1);
-	}
-
-	&:active {
-		background-color: var(--interaction-norm-major-2);
 	}
 }
 

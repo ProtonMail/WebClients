@@ -374,28 +374,28 @@ button {
 	&.primary {
 		background-color: var(--interaction-norm);
 		color: var(--text-invert);
-		border: none;
+		border: 1px solid var(--interaction-norm);
 
 		&:hover,
 		&:active,
 		&:focus-visible {
 			background-color: var(--interaction-norm-major-1);
 			color: var(--text-invert);
-			border: none;
+			border: 1px solid var(--interaction-norm-major-1);
 		}
 	}
 
 	&.secondary {
 		background-color: var(--interaction-weak);
 		color: var(--text-norm);
-		border: none;
+		border: 1px solid var(--interaction-weak);
 
 		&:hover,
 		&:active,
 		&:focus-visible {
 			background-color: var(--interaction-weak-major-1);
 			color: var(--text-norm);
-			border: none;
+			border: 1px solid var(--interaction-weak-major-1);
 		}
 	}
 
