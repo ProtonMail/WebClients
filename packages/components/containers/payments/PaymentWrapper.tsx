@@ -1,3 +1,5 @@
+import type { Ref } from 'react';
+
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -29,6 +31,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     vatNumber?: VatNumberHook;
     loadingBitcoin?: boolean;
     subscription?: Subscription | FreeSubscription;
+    creditCardDetailsRef?: Ref<HTMLDivElement>;
 };
 
 const PaymentWrapper = ({
