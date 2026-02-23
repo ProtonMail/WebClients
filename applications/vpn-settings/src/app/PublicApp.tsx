@@ -26,7 +26,7 @@ import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useInstance from '@proton/hooks/useInstance';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -216,7 +216,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                             onLogin={async (args) => {
                                                 if (
                                                     initialLocation?.pathname &&
-                                                    ['/appletv', '/tv'].includes(initialLocation?.pathname)
+                                                    VPN_TV_PATHS.includes(initialLocation?.pathname)
                                                 ) {
                                                     handleLoginWithDefaultPath(args);
                                                     return completeResult;
