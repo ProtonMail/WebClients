@@ -54,6 +54,7 @@ const config: ForgeConfig = {
               }),
         extendInfo: {
             ...getAppTransportSecuity(),
+            CFBundleIconName: "Mail", // macOS26 customizable icons
         },
     },
     rebuildConfig: {},
