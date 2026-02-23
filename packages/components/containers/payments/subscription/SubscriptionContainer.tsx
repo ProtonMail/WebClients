@@ -78,6 +78,7 @@ import {
 } from '@proton/payments';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
+import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
@@ -352,6 +353,8 @@ const SubscriptionContainerInner = ({
         paymentStatus,
         plan,
     });
+
+    const creditCardDetailsRef = useRef<HTMLDivElement>(null);
 
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(latestSubscription);
@@ -1193,6 +1196,8 @@ const SubscriptionContainerInner = ({
                 if (e instanceof DisplayablePaymentError) {
                     createNotification({ text: e.message, type: 'error' });
                     tokenDidntHaveEmail = true;
+                } else if (e instanceof InvalidChargebeeCardDataError) {
+                    creditCardDetailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
 
                 const error = getSentryError(e);
@@ -1515,6 +1520,7 @@ const SubscriptionContainerInner = ({
                                 vatNumber={vatNumber}
                                 subscription={subscription}
                                 showTaxCountry={paymentFacade.showTaxCountry && !model.paymentForbiddenReason.forbidden}
+                                creditCardDetailsRef={creditCardDetailsRef}
                             />
                             <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
                         </div>
