@@ -20,6 +20,7 @@ interface ProductLinkProps {
     children: ReactNode;
     reloadDocument?: AppLinkProps['reloadDocument'];
     target?: AppLinkProps['target'];
+    onAppClick?: () => void;
 }
 
 const ProductLink = ({
@@ -32,6 +33,7 @@ const ProductLink = ({
     children,
     reloadDocument,
     target,
+    onAppClick,
 }: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
 
@@ -52,6 +54,7 @@ const ProductLink = ({
                 aria-current={current}
                 reloadDocument={reloadDocument}
                 target={target}
+                onClick={onAppClick}
             >
                 {children}
             </AppLink>
@@ -85,6 +88,7 @@ const ProductLink = ({
                 aria-current={current}
                 reloadDocument={reloadDocument}
                 target={target}
+                onClick={onAppClick}
             >
                 {children}
             </SettingsLink>
@@ -101,6 +105,7 @@ const ProductLink = ({
             aria-current={current}
             reloadDocument={reloadDocument}
             target={target}
+            onClick={onAppClick}
         >
             {children}
         </AppLink>
