@@ -32,9 +32,9 @@ export const createPasskeyService = () => {
     const listeners = createListenerStore();
     const state = objectHandler<PasskeyServiceState>({ requestToken: null });
 
-    /** Rate limiter to prevent DoS attacks: allows max 1 WebAuthn message every 500ms.
-     * Mitigates resource exhaustion from malicious pages flooding the extension. */
-    const limiter = createEventLimiter(1, 500);
+    /** Rate limiter guarding against malicious pages flooding the extension with
+     * WebAuthn requests. Default window: max 1 message per key per 500ms. */
+    const limiter = createEventLimiter({ windowMax: 1, windowMs: 500 });
 
     /** Verifies that a given token matches the current request token in state.
      * This prevents race conditions and ensures only the current request proceeds. */
@@ -188,7 +188,9 @@ export const createPasskeyService = () => {
             }
 
             case WorkerMessageType.PASSKEY_INTERCEPT: {
-                if (limiter.allowMessage(data.request.type)) {
+                /** Use a more permissive rate limit per reason key (5/500ms) to accommodate
+                 * sites like paypal.com that fire multiple rapid availability checks on login. */
+                if (limiter.allowMessage(data.request.payload.reason, { windowMax: 5 })) {
                     return window.postMessage(
                         createBridgeResponse<WorkerMessageType.PASSKEY_INTERCEPT>(
                             {

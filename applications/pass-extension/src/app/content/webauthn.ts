@@ -110,23 +110,31 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
             resolve(clone(intoPublicKeyCredential(result.response.credential, response, clone)));
         });
 
-    const shouldIntercept = async (): Promise<boolean> =>
+    /** Asks the passkey service whether it can handle a WebAuthn operations. The `reason`
+     * string is used as a rate-limit key so each call site is tracked independently.
+     * Returns `false` on any bridge failure so the native API can be used as fallback. */
+    const shouldIntercept = async (reason: string): Promise<boolean> =>
         bridge.getState().connected
             ? bridge
-                  .sendMessage({ type: WorkerMessageType.PASSKEY_INTERCEPT }, {})
+                  .sendMessage({ type: WorkerMessageType.PASSKEY_INTERCEPT, payload: { reason } }, {})
                   .then((res) => (res.type === 'success' ? res.intercept : false))
                   .catch(() => false)
             : false;
 
+    /** Override for `PublicKeyCredential.isConditionalMediationAvailable`. Returns `true`
+     * when the passkey service can intercept or falls back to the native implementation. */
     const mediationAvailable = () =>
         promise<boolean>(async (resolve) => {
-            const intercept = await shouldIntercept();
+            const intercept = await shouldIntercept('conditionalMediationAvailable');
             resolve(Boolean(intercept || (await conditionalMediationAvailable?.())));
         });
 
+    /** Override for `PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable`.
+     * Returns `true` when the passkey service can intercept or falls back to the native
+     * implementation. */
     const authenticatorAvailable = () =>
         promise<boolean>(async (resolve) => {
-            const intercept = await shouldIntercept();
+            const intercept = await shouldIntercept('verifyingPlatformAuthenticatorAvailable');
             resolve(Boolean(intercept || (await verifyingPlatformAuthenticatorAvailable?.())));
         });
 

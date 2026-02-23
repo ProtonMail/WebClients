@@ -180,11 +180,12 @@ describe('PasskeyService', () => {
         });
 
         const createPasskeyInterceptRequest = (
-            token: string = uniqueId()
+            token: string = uniqueId(),
+            reason: string = 'conditionalMediationAvailable'
         ): BridgeRequest<WorkerMessageType.PASSKEY_INTERCEPT> => ({
             type: BRIDGE_REQUEST,
             token,
-            request: { type: WorkerMessageType.PASSKEY_INTERCEPT },
+            request: { type: WorkerMessageType.PASSKEY_INTERCEPT, payload: { reason } },
         });
 
         describe('PASSKEY_CREATE handler', () => {
@@ -406,24 +407,33 @@ describe('PasskeyService', () => {
                 expect(postMessage).toHaveBeenCalledWith(res);
             });
 
-            test('should block rapid requests within rate limit window', async () => {
+            test('should block rapid requests exceeding per-reason rate limit window', async () => {
+                /** PASSKEY_INTERCEPT uses windowMax=5 per reason key - send 6 to trigger blocking */
+                const tokens = Array.from({ length: 6 }, () => uniqueId());
+                const reason = 'conditionalMediationAvailable';
+
+                await Promise.all(tokens.map((token) => service.handler(createPasskeyInterceptRequest(token, reason))));
+
+                expect(postMessage).toHaveBeenCalledTimes(5);
+                tokens.slice(0, 5).forEach((token) => {
+                    expect(postMessage).toHaveBeenCalledWith(
+                        createBridgeResponse<WorkerMessageType.PASSKEY_INTERCEPT>(
+                            { type: 'success', intercept: true },
+                            token
+                        )
+                    );
+                });
+            });
+
+            test('should track rate limits independently per reason', async () => {
                 const token1 = uniqueId();
                 const token2 = uniqueId();
-                const token3 = uniqueId();
 
-                await Promise.all([
-                    service.handler(createPasskeyInterceptRequest(token1)),
-                    service.handler(createPasskeyInterceptRequest(token2)),
-                    service.handler(createPasskeyInterceptRequest(token3)),
-                ]);
+                /** each reason gets its own 5/500ms bucket */
+                await service.handler(createPasskeyInterceptRequest(token1, 'conditionalMediationAvailable'));
+                await service.handler(createPasskeyInterceptRequest(token2, 'verifyingPlatformAuthenticatorAvailable'));
 
-                const res = createBridgeResponse<WorkerMessageType.PASSKEY_INTERCEPT>(
-                    { type: 'success', intercept: true },
-                    token1
-                );
-
-                expect(postMessage).toHaveBeenCalledWith(res);
-                expect(postMessage).toHaveBeenCalledTimes(1);
+                expect(postMessage).toHaveBeenCalledTimes(2);
             });
 
             test('should not modify request token state', async () => {
