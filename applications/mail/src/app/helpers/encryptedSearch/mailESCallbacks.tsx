@@ -12,9 +12,6 @@ import type {
     RecordProgress,
 } from '@proton/encrypted-search';
 import {
-    ES_BACKGROUND_METADATA_BATCH,
-    ES_MAX_METADATA_BATCH,
-    ES_MAX_PARALLEL_ITEMS,
     apiHelper,
     buildContentDB,
     checkVersionedESDB,
@@ -27,6 +24,11 @@ import {
     serializeAndEncryptItem,
     testKeywords,
 } from '@proton/encrypted-search';
+import {
+    ES_BACKGROUND_METADATA_BATCH,
+    ES_MAX_METADATA_BATCH,
+    ES_MAX_PARALLEL_ITEMS,
+} from '@proton/encrypted-search/constants';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
