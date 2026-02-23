@@ -77,6 +77,7 @@ export function getAddVatNumberText(countryCode: string): string {
 }
 
 type Props = VatNumberHook & {
+    className?: string;
     taxCountry: TaxCountryHook;
     onInlineClick: () => void | Promise<void>;
     loadingBillingAddressModal?: boolean;
@@ -92,6 +93,7 @@ export const VatNumberInput = ({
     isAuthenticated,
     onInlineClick,
     loadingBillingAddressModal,
+    className,
 }: Props) => {
     if (!renderVatNumberInput || !enableVatNumber) {
         return null;
@@ -103,7 +105,7 @@ export const VatNumberInput = ({
 
     if (isAuthenticated) {
         return (
-            <div data-testid="billing-country" className="mb-4">
+            <div data-testid="billing-country" className={className}>
                 <span className="text-bold">{c('Payments').t`VAT number`}</span>
                 <>
                     <span className="text-bold mr-2">:</span>
@@ -117,7 +119,7 @@ export const VatNumberInput = ({
     }
 
     return (
-        <div className="mb-4">
+        <div className={className}>
             <InputFieldTwo
                 label={getVatNumberName(taxCountry.selectedCountryCode)}
                 hint={c('info').t`Optional`}
