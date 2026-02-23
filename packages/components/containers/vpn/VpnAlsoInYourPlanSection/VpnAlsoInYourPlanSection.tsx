@@ -125,8 +125,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
         {
             app: APPS.PROTONDRIVE,
             copy: () =>
-                c('VPN Dashboard')
-                    .t`Keep your files, photos, and documents safe with ${maxDriveSpace} free cloud storage.`,
+                c('VPN Dashboard').t`Keep your files, photos, and documents safe with ${maxDriveSpace} cloud storage.`,
             image: drive,
             buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
             logo: <DriveLogo />,
