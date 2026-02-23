@@ -1,7 +1,3 @@
-import { c } from 'ttag';
-
-import Price from '@proton/components/components/price/Price';
-
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { formatTax } from '../tax-helpers';
 import type { BaseLineItem } from './base-line-item';
@@ -16,31 +12,20 @@ function formatTaxExclusive(ctx: HeadlessCheckoutContextInner) {
 
     const formattedTaxInfo = formatTax(ctx.checkResult);
 
-    const taxName = formattedTaxInfo?.taxName ?? '';
     const taxRate = formattedTaxInfo?.rate ?? 0;
     const taxAmount = formattedTaxInfo?.amount ?? 0;
-
-    const taxAmountElement = (
-        <Price key="taxAmount" currency={currency} data-testid="taxAmount">
-            {taxAmount}
-        </Price>
-    );
 
     const taxesQuantity = formattedTaxInfo?.taxesQuantity ?? 0;
 
     return {
-        taxName,
         rate: taxRate,
         amount: taxAmount,
         taxesQuantity,
         currency: formattedTaxInfo?.currency ?? currency,
         visible: isTaxExclusive && formattedTaxInfo !== null,
-        taxRateElement: taxesQuantity > 1 ? `${taxRate}% taxes` : `${taxRate}% ${taxName}`,
-        taxAmountElement,
-        taxRateAndAmountElement:
-            taxesQuantity > 1
-                ? c('Payments').jt`${taxRate}% taxes: ${taxAmountElement}`
-                : c('Payments').jt`${taxRate}% ${taxName}: ${taxAmountElement}`,
+        taxRateElement: formattedTaxInfo?.taxRateElement,
+        taxAmountElement: formattedTaxInfo?.taxAmountElement,
+        taxRateAndAmountElement: formattedTaxInfo?.taxRateAndAmountElement,
     };
 }
 
