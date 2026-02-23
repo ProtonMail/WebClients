@@ -33,8 +33,7 @@ const AlsoInYourPlanProtonDrive = () => {
 
     const cardConfig = {
         app: APPS.PROTONDRIVE,
-        copy: () =>
-            c('Dashboard').t`Keep your files, photos, and documents safe with ${maxDriveSpace} free cloud storage.`,
+        copy: () => c('Dashboard').t`Keep your files, photos, and documents safe with ${maxDriveSpace} cloud storage.`,
         image: drive,
         buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
         logo: <DriveLogo />,
