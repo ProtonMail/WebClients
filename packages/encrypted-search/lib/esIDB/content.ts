@@ -22,7 +22,7 @@ export const readContentItem = async <ESItemContent>(userID: string, itemID: str
         return;
     }
 
-    return decryptFromDB<ESItemContent>(aesGcmCiphertext, indexKey, 'readContentItem');
+    return decryptFromDB<ESItemContent>({ aesGcmCiphertext, indexKey, source: 'readContentItem' });
 };
 
 /**
@@ -67,11 +67,15 @@ export const readContentBatch = async (userID: string, IDs: string[]) => {
  * that this function will throw if the IDB quota is exceeded, therefore
  * a check needs to happen in advance to verify all items to add do fit
  */
-export const executeContentOperations = async (
-    userID: string,
-    itemsToRemove: string[],
-    itemsToAdd: EncryptedItemWithInfo[]
-) => {
+export const executeContentOperations = async ({
+    userID,
+    itemsToRemove,
+    itemsToAdd,
+}: {
+    userID: string;
+    itemsToRemove: string[];
+    itemsToAdd: EncryptedItemWithInfo[];
+}) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
         return;
@@ -95,7 +99,7 @@ export const executeContentOperations = async (
 
     // Then all items to add are inserted
     for (const itemToAdd of itemsToAdd) {
-        storingOutcomes.push(await safelyWriteToIDBConditionally(itemToAdd, 'content', esDB));
+        storingOutcomes.push(await safelyWriteToIDBConditionally({ value: itemToAdd, storeName: 'content', esDB }));
     }
 
     esDB.close();

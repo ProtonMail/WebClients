@@ -151,10 +151,10 @@ export const externalIDExists = async (ExternalID: string, ConversationID: strin
     let promise = EXTERNAL_ID_QUERY_CACHE.get(cacheKey);
 
     if (!promise) {
-        promise = apiHelper<{ Total: number }>(
+        promise = apiHelper<{ Total: number }>({
             api,
-            undefined,
-            {
+            signal: undefined,
+            options: {
                 method: 'get',
                 url: 'mail/v4/messages',
                 params: {
@@ -162,8 +162,8 @@ export const externalIDExists = async (ExternalID: string, ConversationID: strin
                     ConversationID,
                 },
             },
-            'externalIDExists'
-        );
+            callingContext: 'externalIDExists',
+        });
         EXTERNAL_ID_QUERY_CACHE.set(cacheKey, promise);
     }
 

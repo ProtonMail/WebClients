@@ -26,11 +26,15 @@ const handleMaxRetriesReached = (retryID: string, retryMap?: Map<string, RetryOb
  * Increase the number of retries by one and set a new retryTime accordingly
  * with exponential backoff capped at 24 hours
  */
-export const updateRetryObject = (
-    retry: RetryObject,
-    retryID: string,
-    retryMap?: Map<string, RetryObject>
-): RetryObject | undefined => {
+export const updateRetryObject = ({
+    retry,
+    retryID,
+    retryMap,
+}: {
+    retry: RetryObject;
+    retryID: string;
+    retryMap?: Map<string, RetryObject>;
+}): RetryObject | undefined => {
     // If we've reached max retries, return undefined to indicate removal
     if (retry.numberRetries >= ES_MAX_RETRIES) {
         return handleMaxRetriesReached(retryID, retryMap);
@@ -57,7 +61,7 @@ export const addRetry = async (userID: string, retryID: string) => {
     if (!!retryObject) {
         const { retryTime } = retryObject;
         if (retryTime < now) {
-            const updatedRetry = updateRetryObject(retryObject, retryID, retryMap);
+            const updatedRetry = updateRetryObject({ retry: retryObject, retryID, retryMap });
             if (updatedRetry) {
                 retryMap.set(retryID, updatedRetry);
             }
@@ -108,11 +112,15 @@ export const getRetries = async (userID: string) => {
 /**
  * Retry previously failed API calls
  */
-export const retryAPICalls = async <ESItemContent>(
-    userID: string,
-    indexKey: IndexKey,
-    fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent']
-) => {
+export const retryAPICalls = async <ESItemContent>({
+    userID,
+    indexKey,
+    fetchESItemContent,
+}: {
+    userID: string;
+    indexKey: IndexKey;
+    fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent'];
+}) => {
     const retryMap = await getRetries(userID);
     if (!retryMap.size || !fetchESItemContent) {
         return;
@@ -156,7 +164,7 @@ export const retryAPICalls = async <ESItemContent>(
                 const timepoint = metadataMap.get(ID);
 
                 if (!result) {
-                    const updatedRetry = updateRetryObject(retryObject, ID);
+                    const updatedRetry = updateRetryObject({ retry: retryObject, retryID: ID });
                     return updatedRetry ? [ID, updatedRetry] : undefined;
                 }
 
@@ -168,7 +176,7 @@ export const retryAPICalls = async <ESItemContent>(
 
                 // For any other error, or if content is missing/empty, retry
                 if (error || !content || isObjectEmpty(content) || !timepoint) {
-                    const updatedRetry = updateRetryObject(retryObject, ID);
+                    const updatedRetry = updateRetryObject({ retry: retryObject, retryID: ID });
                     return updatedRetry ? [ID, updatedRetry] : undefined;
                 }
 
@@ -182,13 +190,13 @@ export const retryAPICalls = async <ESItemContent>(
                     return undefined;
                 } catch (error: any) {
                     // If encryption fails, retry
-                    const updatedRetry = updateRetryObject(retryObject, ID);
+                    const updatedRetry = updateRetryObject({ retry: retryObject, retryID: ID });
                     return updatedRetry ? [ID, updatedRetry] : undefined;
                 }
             })
         )
     ).filter(isTruthy);
 
-    await executeContentOperations(userID, [], contentToAdd);
+    await executeContentOperations({ userID, itemsToRemove: [], itemsToAdd: contentToAdd });
     return setRetries(userID, newArrayMap);
 };

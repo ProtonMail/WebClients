@@ -24,7 +24,11 @@ export const readMetadataItem = async <ESItemMetadata>(userID: string, itemID: s
         return;
     }
 
-    return decryptFromDB<ESItemMetadata>(encryptedMetadataItem.aesGcmCiphertext, indexKey, 'readMetadataItem');
+    return decryptFromDB<ESItemMetadata>({
+        aesGcmCiphertext: encryptedMetadataItem.aesGcmCiphertext,
+        indexKey,
+        source: 'readMetadataItem',
+    });
 };
 
 /**
@@ -154,7 +158,7 @@ export const executeMetadataOperations = async (
 
     // Then all items to add are inserted
     for (const itemToAdd of itemsToAdd) {
-        storingOutcomes.push(await safelyWriteToIDBConditionally(itemToAdd, 'metadata', esDB));
+        storingOutcomes.push(await safelyWriteToIDBConditionally({ value: itemToAdd, storeName: 'metadata', esDB }));
     }
 
     esDB.close();

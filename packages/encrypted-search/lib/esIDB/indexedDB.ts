@@ -152,12 +152,17 @@ const getItemSize = async (ID: string, storeName: 'metadata' | 'content', esDB: 
  * Write to the ES IDB and manage the case of running out of disk space.
  * If we do run out of space we must remove the oldest item to make space
  */
-export const safelyWriteToIDBConditionally = async (
-    value: EncryptedItemWithInfo,
-    storeName: 'metadata' | 'content',
-    esDB: IDBPDatabase<EncryptedSearchDB>,
-    inputStoringOutcome?: STORING_OUTCOME
-): Promise<STORING_OUTCOME> => {
+export const safelyWriteToIDBConditionally = async ({
+    value,
+    storeName,
+    esDB,
+    inputStoringOutcome,
+}: {
+    value: EncryptedItemWithInfo;
+    storeName: 'metadata' | 'content';
+    esDB: IDBPDatabase<EncryptedSearchDB>;
+    inputStoringOutcome?: STORING_OUTCOME;
+}): Promise<STORING_OUTCOME> => {
     const valueToStore: EncryptedMetadataItem | ESCiphertext =
         storeName === 'metadata'
             ? { aesGcmCiphertext: value.aesGcmCiphertext, timepoint: value.timepoint }
@@ -197,7 +202,12 @@ export const safelyWriteToIDBConditionally = async (
 
             await deleteOldestItem(oldestItemInfo.ID, esDB);
 
-            return safelyWriteToIDBConditionally(value, storeName, esDB, STORING_OUTCOME.QUOTA);
+            return safelyWriteToIDBConditionally({
+                value,
+                storeName,
+                esDB,
+                inputStoringOutcome: STORING_OUTCOME.QUOTA,
+            });
         } else {
             // Any other error should be interpreted as a failure
             esSentryReport('safelyWriteToIDBConditionally: put failed', { error });
@@ -210,12 +220,17 @@ export const safelyWriteToIDBConditionally = async (
  * Write to the ES IDB and always remove the oldest item to make space for this write
  * in case we run out of it
  */
-export const safelyWriteToIDBAbsolutely = async (
-    value: any,
-    key: string,
-    storeName: 'config' | 'events' | 'indexingProgress',
-    esDB: IDBPDatabase<EncryptedSearchDB>
-): Promise<void> => {
+export const safelyWriteToIDBAbsolutely = async ({
+    value,
+    key,
+    storeName,
+    esDB,
+}: {
+    value: any;
+    key: string;
+    storeName: 'config' | 'events' | 'indexingProgress';
+    esDB: IDBPDatabase<EncryptedSearchDB>;
+}): Promise<void> => {
     try {
         await esDB.put(storeName, value, key);
     } catch (error: any) {
@@ -233,7 +248,7 @@ export const safelyWriteToIDBAbsolutely = async (
 
             await deleteOldestItem(oldestItemID, esDB);
 
-            return safelyWriteToIDBAbsolutely(value, key, storeName, esDB);
+            return safelyWriteToIDBAbsolutely({ value, key, storeName, esDB });
         } else {
             // Any other error should be interpreted as a failure
             esSentryReport('safelyWriteToIDBAbsolutely: put failed', { error });

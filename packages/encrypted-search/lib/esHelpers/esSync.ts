@@ -52,15 +52,23 @@ const prefetchContentToSync = async <ESItemMetadata extends object, ESItemConten
 /**
  * Synchronise IDB (and optionally cache and search results) with new ES events
  */
-export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Object, ESSearchParameters>(
-    Items: ESItemEvent<ESItemMetadata>[],
-    userID: string,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    permanentResults: ESItem<ESItemMetadata, ESItemContent>[],
-    indexKey: IndexKey | undefined,
-    esSearchParams: ESSearchParameters | undefined,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
-) => {
+export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Object, ESSearchParameters>({
+    Items,
+    userID,
+    esCacheRef,
+    permanentResults,
+    indexKey,
+    esSearchParams,
+    esCallbacks,
+}: {
+    Items: ESItemEvent<ESItemMetadata>[];
+    userID: string;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
+    indexKey: IndexKey | undefined;
+    esSearchParams: ESSearchParameters | undefined;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+}) => {
     const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esCallbacks;
 
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
@@ -129,9 +137,13 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     contentToRemove.push(ID);
                 }
 
-                removeFromESCache<ESItemMetadata, ESItemContent>(ID, esCacheRef, false);
+                removeFromESCache<ESItemMetadata, ESItemContent>({ itemID: ID, esCacheRef, contentOnly: false });
 
-                const resultIndex = findItemIndex<ESItemMetadata>(ID, permanentResults, getItemInfo);
+                const resultIndex = findItemIndex<ESItemMetadata>({
+                    itemID: ID,
+                    itemArray: permanentResults,
+                    getItemInfo,
+                });
                 if (!!esSearchParams && resultIndex !== -1) {
                     updatePermanentResults({ resultIndex });
                 }
@@ -190,11 +202,11 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     }
                 }
 
-                addToESCache<ESItemMetadata, ESItemContent>(itemToCache, esCacheRef, getItemInfo);
+                addToESCache<ESItemMetadata, ESItemContent>({ inputItem: itemToCache, esCacheRef, getItemInfo });
 
                 if (!!esSearchParams) {
                     const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
-                    if (applySearch(esSearchParams, itemToCache, hasApostrophe, esCallbacks)) {
+                    if (applySearch({ esSearchParams, item: itemToCache, hasApostrophe, esCallbacks })) {
                         updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
                     }
                 }
@@ -262,7 +274,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     }
                 }
 
-                addToESCache<ESItemMetadata, ESItemContent>(itemToCache, esCacheRef, getItemInfo);
+                addToESCache<ESItemMetadata, ESItemContent>({ inputItem: itemToCache, esCacheRef, getItemInfo });
 
                 /**
                  * If results are being shown:
@@ -272,15 +284,15 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                  */
                 if (!!esSearchParams) {
                     const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
-                    const resultIndex = findItemIndex(ID, permanentResults, getItemInfo);
+                    const resultIndex = findItemIndex({ itemID: ID, itemArray: permanentResults, getItemInfo });
                     if (resultIndex !== -1) {
                         if (
-                            applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+                            applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>({
                                 esSearchParams,
-                                itemToCache,
+                                item: itemToCache,
                                 hasApostrophe,
-                                esCallbacks
-                            )
+                                esCallbacks,
+                            })
                         ) {
                             updatePermanentResults({
                                 resultIndex,
@@ -290,12 +302,12 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                             updatePermanentResults({ resultIndex });
                         }
                     } else if (
-                        applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+                        applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>({
                             esSearchParams,
-                            itemToCache,
+                            item: itemToCache,
                             hasApostrophe,
-                            esCallbacks
-                        )
+                            esCallbacks,
+                        })
                     ) {
                         updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
                     }
@@ -313,7 +325,11 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
 
         const metadataOutcome = await executeMetadataOperations(userID, metadataToRemove, metadataToAdd);
 
-        const contentOutcome = await executeContentOperations(userID, contentToRemove, contentToAdd);
+        const contentOutcome = await executeContentOperations({
+            userID,
+            itemsToRemove: contentToRemove,
+            itemsToAdd: contentToAdd,
+        });
 
         if (!wasLimited && metadataOutcome === STORING_OUTCOME.SUCCESS && contentOutcome === STORING_OUTCOME.SUCCESS) {
             await setLimited(userID, false);

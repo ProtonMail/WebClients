@@ -91,12 +91,17 @@ export const testKeywords = (normalizedKeywords: string[], stringsToSearch: stri
 /**
  * Combine both metadata and content search, the latter only if available
  */
-export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
-    esSearchParams: ESSearchParameters,
-    item: CachedItem<ESItemMetadata, ESItemContent>,
-    hasApostrophe: boolean,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
-) => {
+export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>({
+    esSearchParams,
+    item,
+    hasApostrophe,
+    esCallbacks,
+}: {
+    esSearchParams: ESSearchParameters;
+    item: CachedItem<ESItemMetadata, ESItemContent>;
+    hasApostrophe: boolean;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+}) => {
     const { applyFilters, searchKeywords, getKeywords } = esCallbacks;
 
     const filters = applyFilters(esSearchParams, item.metadata);
@@ -111,11 +116,15 @@ export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
 /**
  * Decrypt encrypted object from IndexedDB
  */
-export const decryptFromDB = async <Plaintext>(
-    aesGcmCiphertext: ESCiphertext,
-    indexKey: IndexKey,
-    source: 'uncachedSearch' | 'cacheIDB' | 'readMetadataItem' | 'readContentItem' | 'searchUndecryptedElements'
-): Promise<Plaintext> => {
+export const decryptFromDB = async <Plaintext>({
+    aesGcmCiphertext,
+    indexKey,
+    source,
+}: {
+    aesGcmCiphertext: ESCiphertext;
+    indexKey: IndexKey;
+    source: 'uncachedSearch' | 'cacheIDB' | 'readMetadataItem' | 'readContentItem' | 'searchUndecryptedElements';
+}): Promise<Plaintext> => {
     try {
         const textDecoder = new TextDecoder();
 
@@ -148,17 +157,27 @@ export const decryptFromDB = async <Plaintext>(
 /**
  * Perform an uncached search, i.e. with data being retrieved directly from IDB
  */
-export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>(
-    userID: string,
-    indexKey: IndexKey,
-    esSearchParams: ESSearchParameters,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    lastTimePoint: ESTimepoint | undefined,
-    itemLimit: number,
-    hasApostrophe: boolean,
-    setIncrementalResults?: (newResults: ESItem<ESItemMetadata, ESItemContent>[]) => void,
-    abortSearchingRef?: React.MutableRefObject<AbortController>
-): Promise<{ resultsArray: ESItem<ESItemMetadata, ESItemContent>[]; newLastTimePoint: ESTimepoint | undefined }> => {
+export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>({
+    userID,
+    indexKey,
+    esSearchParams,
+    esCallbacks,
+    lastTimePoint,
+    itemLimit,
+    hasApostrophe,
+    setIncrementalResults,
+    abortSearchingRef,
+}: {
+    userID: string;
+    indexKey: IndexKey;
+    esSearchParams: ESSearchParameters;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    lastTimePoint: ESTimepoint | undefined;
+    itemLimit: number;
+    hasApostrophe: boolean;
+    setIncrementalResults?: (newResults: ESItem<ESItemMetadata, ESItemContent>[]) => void;
+    abortSearchingRef?: React.MutableRefObject<AbortController>;
+}): Promise<{ resultsArray: ESItem<ESItemMetadata, ESItemContent>[]; newLastTimePoint: ESTimepoint | undefined }> => {
     const { getItemInfo, checkIsReverse } = esCallbacks;
 
     const resultsArray: ESItem<ESItemMetadata, ESItemContent>[] = [];
@@ -191,9 +210,17 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
 
                 const encryptedContent = content[index];
                 const [plaintextMetadata, plaintextContent] = await Promise.all([
-                    decryptFromDB<ESItemMetadata>(encryptedMetadata.aesGcmCiphertext, indexKey, 'uncachedSearch'),
+                    decryptFromDB<ESItemMetadata>({
+                        aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
+                        indexKey,
+                        source: 'uncachedSearch',
+                    }),
                     !!encryptedContent
-                        ? decryptFromDB<ESItemContent>(encryptedContent, indexKey, 'uncachedSearch')
+                        ? decryptFromDB<ESItemContent>({
+                              aesGcmCiphertext: encryptedContent,
+                              indexKey,
+                              source: 'uncachedSearch',
+                          })
                         : undefined,
                 ]);
 
@@ -212,12 +239,12 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
             }
 
             if (
-                applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+                applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>({
                     esSearchParams,
                     item,
                     hasApostrophe,
-                    esCallbacks
-                )
+                    esCallbacks,
+                })
             ) {
                 newLastTimePoint = getItemInfo(item.metadata).timepoint;
                 resultsArray.push({ ...item.metadata, ...item.content });
@@ -241,13 +268,19 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
  * cache, i.e. still being built, therefore we need to keep track of how many
  * items were searched
  */
-const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
-    iterator: IterableIterator<CachedItem<ESItemMetadata, ESItemContent>>,
-    esSearchParams: ESSearchParameters,
-    abortSearchingRef: React.MutableRefObject<AbortController>,
-    hasApostrophe: boolean,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
-) => {
+const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>({
+    iterator,
+    esSearchParams,
+    abortSearchingRef,
+    hasApostrophe,
+    esCallbacks,
+}: {
+    iterator: IterableIterator<CachedItem<ESItemMetadata, ESItemContent>>;
+    esSearchParams: ESSearchParameters;
+    abortSearchingRef: React.MutableRefObject<AbortController>;
+    hasApostrophe: boolean;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+}) => {
     const searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let iteration = iterator.next();
     let iterationCount = 0;
@@ -257,7 +290,7 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
             break;
         }
 
-        if (applySearch(esSearchParams, iteration.value, hasApostrophe, esCallbacks)) {
+        if (applySearch({ esSearchParams, item: iteration.value, hasApostrophe, esCallbacks })) {
             searchResults.push({ ...iteration.value.metadata, ...iteration.value.content });
         }
 
@@ -275,15 +308,19 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
  * also return the first time point from where to start the uncached search and potentially adjusted
  * search parameters that take into account the new time boundaries
  */
-const checkCacheTimespan = <ESItemMetadata, ESItemContent>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
+const checkCacheTimespan = <ESItemMetadata, ESItemContent>({
+    esCacheRef,
+    getItemInfo,
+    searchTimeInterval,
+}: {
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    getItemInfo: GetItemInfo<ESItemMetadata>;
     searchTimeInterval: {
         begin: number | undefined;
         end: number | undefined;
-    }
-): { shouldKeepSearching: boolean; lastTimePoint?: ESTimepoint } => {
-    const oldestCachedTimepoint = getOldestCachedTimepoint<ESItemMetadata>(esCacheRef, getItemInfo);
+    };
+}): { shouldKeepSearching: boolean; lastTimePoint?: ESTimepoint } => {
+    const oldestCachedTimepoint = getOldestCachedTimepoint<ESItemMetadata>({ esCacheRef, getItemInfo });
     if (!oldestCachedTimepoint) {
         return {
             shouldKeepSearching: true,
@@ -307,17 +344,27 @@ const checkCacheTimespan = <ESItemMetadata, ESItemContent>(
 /**
  * Perform a search by switching between cached and uncached search when necessary
  */
-export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>(
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>,
-    esSearchParams: ESSearchParameters,
-    cachedIndexKey: IndexKey | undefined,
-    getUserKeys: GetUserKeys,
-    userID: string,
-    setResultsList: (Elements: ESItem<ESItemMetadata, ESItemContent>[]) => void,
-    abortSearchingRef: React.MutableRefObject<AbortController>,
-    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    minimumItems: number | undefined
-) => {
+export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>({
+    esCacheRef,
+    esSearchParams,
+    cachedIndexKey,
+    getUserKeys,
+    userID,
+    setResultsList,
+    abortSearchingRef,
+    esCallbacks,
+    minimumItems,
+}: {
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, ESItemContent>>;
+    esSearchParams: ESSearchParameters;
+    cachedIndexKey: IndexKey | undefined;
+    getUserKeys: GetUserKeys;
+    userID: string;
+    setResultsList: (Elements: ESItem<ESItemMetadata, ESItemContent>[]) => void;
+    abortSearchingRef: React.MutableRefObject<AbortController>;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    minimumItems: number | undefined;
+}) => {
     const { checkIsReverse, getItemInfo, getSearchInterval, getKeywords } = esCallbacks;
 
     let searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
@@ -331,7 +378,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
         if (!indexKey) {
             throw new Error('Key not found');
         }
-        void cacheIDB<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef);
+        void cacheIDB<ESItemMetadata, ESItemContent>({ indexKey, userID, esCacheRef });
     }
 
     // Items in cache are the most recent ones, therefore if the cache is not ready and full and the search
@@ -350,7 +397,13 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             ESItemMetadata,
             ESItemContent,
             ESSearchParameters
-        >(esCacheRef.current.esCache.values(), esSearchParams, abortSearchingRef, hasApostrophe, esCallbacks);
+        >({
+            iterator: esCacheRef.current.esCache.values(),
+            esSearchParams,
+            abortSearchingRef,
+            hasApostrophe,
+            esCallbacks,
+        });
         searchResults = cachedSearchResults;
         searchedItemsCount += iterationCount;
 
@@ -385,7 +438,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
                     ESItemMetadata,
                     ESItemContent,
                     ESSearchParameters
-                >(searchCacheValues, esSearchParams, abortSearchingRef, hasApostrophe, esCallbacks);
+                >({ iterator: searchCacheValues, esSearchParams, abortSearchingRef, hasApostrophe, esCallbacks });
                 searchedItemsCount += iterationCount;
 
                 // Increment search result and execute callback
@@ -415,7 +468,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
         // If enough items to fill two pages were already found, we don't continue the search
         if (searchResults.length >= 2 * ES_EXTRA_RESULTS_LIMIT || abortSearchingRef.current.signal.aborted) {
             // The last item in cache is assumed to be the oldest
-            const lastTimePoint = getOldestCachedTimepoint<ESItemMetadata>(esCacheRef, getItemInfo);
+            const lastTimePoint = getOldestCachedTimepoint<ESItemMetadata>({ esCacheRef, getItemInfo });
             return {
                 searchResults,
                 isSearchPartial: true,
@@ -433,11 +486,11 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     if (isReverse) {
         // The remaining items are searched from DB, but only if the indicated timespan
         // hasn't been already covered by cache. The cache is ordered such that the last item is the oldest
-        ({ shouldKeepSearching, lastTimePoint } = checkCacheTimespan<ESItemMetadata, ESItemContent>(
+        ({ shouldKeepSearching, lastTimePoint } = checkCacheTimespan<ESItemMetadata, ESItemContent>({
             esCacheRef,
             getItemInfo,
-            getSearchInterval(esSearchParams)
-        ));
+            searchTimeInterval: getSearchInterval(esSearchParams),
+        }));
     }
 
     const remainingItems = Math.max(2 * ES_EXTRA_RESULTS_LIMIT - searchResults.length, minimumItems || 0);
@@ -455,17 +508,17 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             ESItemMetadata,
             ESItemContent,
             ESSearchParameters
-        >(
+        >({
             userID,
             indexKey,
             esSearchParams,
             esCallbacks,
             lastTimePoint,
-            remainingItems,
+            itemLimit: remainingItems,
             hasApostrophe,
             setIncrementalResults,
-            abortSearchingRef
-        );
+            abortSearchingRef,
+        });
         searchResults.push(...resultsArray);
         isSearchPartial = !!newLastTimePoint;
         lastTimePoint = newLastTimePoint;
