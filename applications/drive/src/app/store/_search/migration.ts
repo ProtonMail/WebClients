@@ -12,7 +12,7 @@
 import type { IDBPTransaction } from 'idb';
 import { openDB } from 'idb';
 
-import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search';
+import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search/esHelpers';
 import { ES_MAX_ITEMS_PER_BATCH, INDEXING_STATUS, defaultESProgress } from '@proton/encrypted-search/constants';
 import type { GetUserKeys } from '@proton/encrypted-search/models';
 import { getItem } from '@proton/shared/lib/helpers/storage';

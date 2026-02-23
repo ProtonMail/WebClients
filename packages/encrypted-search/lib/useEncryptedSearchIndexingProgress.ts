@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { IndexedDBRow } from '@proton/encrypted-search/lib/esIDB';
-import { contentIndexingProgress } from '@proton/encrypted-search/lib/esIDB';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
 import { estimateIndexingDuration, estimateIndexingProgress } from './esHelpers';
+import type { IndexedDBRow } from './esIDB';
+import { contentIndexingProgress } from './esIDB';
 import type { ESIndexingState, RecordProgress } from './models';
 
 /**
