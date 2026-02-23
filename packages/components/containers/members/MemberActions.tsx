@@ -85,7 +85,6 @@ export const getMemberPermissions = ({
 
     const canDelete = !member.Self;
     const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
-    const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
     // TODO: define more specific permission for managing member state
     const canUpdateMemberState = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
 
@@ -102,6 +101,7 @@ export const getMemberPermissions = ({
     const isMemberSetup = getIsMemberSetup(member);
     const isSelf = Boolean(member.Self);
     const isEnabled = getIsMemberEnabled(member);
+    const canRevokeSessions = !member.Self && isNonPrivate;
 
     const canLogin =
         !disableMemberSignIn &&
@@ -130,19 +130,19 @@ export const getMemberPermissions = ({
 
     const hasSSOAddress = Boolean(
         ssoDomainsSet.size &&
-            addresses?.length &&
-            addresses.some((address) => {
-                const [, domain] = getEmailParts(address.Email);
-                return ssoDomainsSet.has(domain.toLowerCase());
-            })
+        addresses?.length &&
+        addresses.some((address) => {
+            const [, domain] = getEmailParts(address.Email);
+            return ssoDomainsSet.has(domain.toLowerCase());
+        })
     );
     const canDetachSSO = isMemberSSO && isMemberSetup;
     const canAttachSSO = Boolean(
         !isMemberSSO &&
-            isMemberSetup &&
-            // Private admins will first perform unprivatization for themselves)
-            (isNonPrivate || (isPrivate && isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN)) &&
-            hasSSOAddress
+        isMemberSetup &&
+        // Private admins will first perform unprivatization for themselves)
+        (isNonPrivate || (isPrivate && isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN)) &&
+        hasSSOAddress
     );
 
     return {
