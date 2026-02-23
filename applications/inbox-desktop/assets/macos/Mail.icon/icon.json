@@ -1,0 +1,31 @@
+{
+    "fill": "automatic",
+    "groups": [
+        {
+            "blur-material": null,
+            "layers": [
+                {
+                    "glass": false,
+                    "hidden": false,
+                    "image-name": "Product_Symbols.svg",
+                    "name": "Mail",
+                    "position": {
+                        "scale": 0.82,
+                        "translation-in-points": [0, 0]
+                    }
+                }
+            ],
+            "shadow": {
+                "kind": "neutral",
+                "opacity": 0.5
+            },
+            "translucency": {
+                "enabled": true,
+                "value": 0.5
+            }
+        }
+    ],
+    "supported-platforms": {
+        "squares": ["macOS"]
+    }
+}
