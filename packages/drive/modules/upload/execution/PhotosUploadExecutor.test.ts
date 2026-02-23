@@ -1,6 +1,7 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
 import { CryptoProxy } from '@proton/crypto';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
@@ -13,6 +14,9 @@ jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
 jest.mock('../store/uploadController.store');
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: jest.fn(),
+}));
 jest.mock('@proton/crypto', () => {
     const actual = jest.requireActual('@proton/crypto');
     return {
@@ -448,6 +452,32 @@ describe('PhotosUploadExecutor', () => {
 
             const metadataArg = mockGetFileUploader.mock.calls[0][1];
             expect(metadataArg.mainPhotoLinkID).toBeUndefined();
+        });
+
+        it('should trace error and continue upload with fallback values when generatePhotosExtendedAttributes throws', async () => {
+            const exifError = new Error('EXIF parsing failed');
+            jest.mocked(generatePhotosExtendedAttributes).mockRejectedValue(exifError);
+
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(traceError).toHaveBeenCalledWith(exifError, {
+                level: 'debug',
+                tags: { component: 'generateExtendedAttributes' },
+            });
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
+            expect(metadataArg.additionalMetadata).toBeUndefined();
+            expect(metadataArg.captureTime).toBeUndefined();
+            expect(metadataArg.tags).toEqual([]);
+            expect(metadataArg.mediaType).toBe('image/jpeg');
+            expect(metadataArg.expectedSize).toBe(task.file.size);
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    type: 'file:complete',
+                    uploadId: 'task123',
+                })
+            );
         });
 
         it('should handle thumbnail generation failure gracefully', async () => {

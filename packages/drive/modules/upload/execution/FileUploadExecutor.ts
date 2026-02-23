@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import {
@@ -139,16 +140,33 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
         expectedSize: number;
         modificationTime: Date;
         overrideExistingDraftByOtherClient?: boolean;
-        additionalMetadata: ExtendedAttributesMetadata;
+        additionalMetadata: ExtendedAttributesMetadata | undefined;
     }> {
-        const { metadata } = await generateExtendedAttributes(file, mimeType, mediaInfo);
-        return {
-            mediaType: mimeType,
-            expectedSize: file.size,
-            modificationTime: new Date(file.lastModified),
-            overrideExistingDraftByOtherClient: isUnfinishedUpload,
-            additionalMetadata: metadata,
-        };
+        try {
+            const { metadata } = await generateExtendedAttributes(file, mimeType, mediaInfo);
+            return {
+                mediaType: mimeType,
+                expectedSize: file.size,
+                modificationTime: new Date(file.lastModified),
+                overrideExistingDraftByOtherClient: isUnfinishedUpload,
+                additionalMetadata: metadata,
+            };
+        } catch (error) {
+            // TODO: Implement upload logging
+            traceError(error, {
+                level: 'debug', // Debug as we need it only when we investigate issues.
+                tags: {
+                    component: 'generateExtendedAttributes',
+                },
+            });
+            return {
+                mediaType: mimeType,
+                expectedSize: file.size,
+                modificationTime: new Date(file.lastModified),
+                overrideExistingDraftByOtherClient: isUnfinishedUpload,
+                additionalMetadata: undefined,
+            };
+        }
     }
 
     private async getUploader(
@@ -159,7 +177,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
             expectedSize: number;
             modificationTime: Date;
             overrideExistingDraftByOtherClient?: boolean;
-            additionalMetadata: ExtendedAttributesMetadata;
+            additionalMetadata: ExtendedAttributesMetadata | undefined;
         },
         signal: AbortSignal
     ) {

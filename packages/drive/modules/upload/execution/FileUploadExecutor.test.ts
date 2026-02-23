@@ -1,5 +1,7 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+
 import { generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
@@ -11,6 +13,9 @@ jest.mock('../UploadDriveClientRegistry');
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
 jest.mock('../store/uploadController.store');
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: jest.fn(),
+}));
 jest.mock('../utils/createFileStream', () => ({
     createFileStream: jest.fn(() => {
         return new ReadableStream({
@@ -300,6 +305,30 @@ describe('FileUploadExecutor', () => {
             expect(metadataArg.additionalMetadata.Camera).toEqual({
                 Device: 'iPhone 12',
             });
+        });
+
+        it('should trace error and continue upload with undefined additionalMetadata when generateExtendedAttributes throws', async () => {
+            const exifError = new Error('EXIF parsing failed');
+            jest.mocked(generateExtendedAttributes).mockRejectedValue(exifError);
+
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(traceError).toHaveBeenCalledWith(exifError, {
+                level: 'debug',
+                tags: { component: 'generateExtendedAttributes' },
+            });
+            const metadataArg = mockGetFileUploader.mock.calls[0][2];
+            expect(metadataArg.additionalMetadata).toBeUndefined();
+            expect(metadataArg.mediaType).toBe('image/jpeg');
+            expect(metadataArg.expectedSize).toBe(task.file.size);
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    type: 'file:complete',
+                    uploadId: 'task123',
+                })
+            );
         });
 
         it('should handle thumbnail generation failure gracefully', async () => {
