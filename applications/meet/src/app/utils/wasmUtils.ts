@@ -26,13 +26,25 @@ interface SetupWasmDependenciesParameters {
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
 }
 
+// Store interval ID to allow cleanup
+let keyPollIntervalId: ReturnType<typeof setInterval> | null = null;
+
 export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: SetupWasmDependenciesParameters) => {
+    let lastEpoch: bigint | undefined;
+
+    // Clear existing interval if setupWasmDependencies was called before, generally happened when user joins the meeting multiple times
+    if (keyPollIntervalId !== null) {
+        clearInterval(keyPollIntervalId);
+        keyPollIntervalId = null;
+    }
+
     // Initialize window.new_group_key_event
     window.newGroupKeyEvent = {
         new_group_key_for: async function () {
             const groupKeyInfo = await getGroupKeyInfo();
 
             if (groupKeyInfo) {
+                lastEpoch = groupKeyInfo.epoch;
                 await onNewGroupKeyInfo(groupKeyInfo.key, groupKeyInfo.epoch);
             }
         },
@@ -43,6 +55,15 @@ export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: Se
             // Empty function for now
         },
     };
+
+    // Fallback poll in case newGroupKeyEvent is not triggered
+    keyPollIntervalId = setInterval(async () => {
+        const groupKeyInfo = await getGroupKeyInfo().catch(() => null);
+        if (groupKeyInfo && groupKeyInfo.epoch !== lastEpoch) {
+            lastEpoch = groupKeyInfo.epoch;
+            await onNewGroupKeyInfo(groupKeyInfo.key, groupKeyInfo.epoch);
+        }
+    }, 5_000);
 };
 
 interface SetupLiveKitAdminChangeEventParameters {
