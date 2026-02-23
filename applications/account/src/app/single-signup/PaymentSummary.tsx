@@ -165,7 +165,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
                     }
 
                     return getTotalBillingText(item.cycle, item.planIDs, {
-                        excludingTax: false,
+                        excludingTax: headless.isTaxExclusive,
                     });
                 })();
 
