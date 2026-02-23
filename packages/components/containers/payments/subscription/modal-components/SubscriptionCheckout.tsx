@@ -296,11 +296,7 @@ const SubscriptionCheckout = ({
 
             taxExclusive: (item) => (
                 <CheckoutRow
-                    title={
-                        <span>
-                            {item.taxesQuantity > 1 ? c('Payments').t`Taxes` : item.taxName} {item.rate}%
-                        </span>
-                    }
+                    title={item.taxRateElement}
                     amount={item.amount}
                     currency={item.currency}
                     loading={loading}

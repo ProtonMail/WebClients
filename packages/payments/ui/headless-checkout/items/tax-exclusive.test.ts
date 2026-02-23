@@ -40,7 +40,6 @@ describe('createTaxExclusiveItem', () => {
         expect(taxExclusive.visible).toBe(true);
         expect(taxExclusive.rate).toBe(20);
         expect(taxExclusive.amount).toBe(958);
-        expect(taxExclusive.taxName).toBe('VAT');
     });
 
     it('should hide net-amount and tax-exclusive when tax is inclusive', () => {
@@ -181,10 +180,9 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             const result = createTaxExclusiveItem(createMockContext(checkResult));
 
             expect(result.visible).toBe(true);
-            expect(result.taxRateElement).toBe('15.5% GST');
+            expect(result.taxRateElement).toBe('Tax 15.5%');
             expect(result.rate).toBe(15.5);
             expect(result.amount).toBe(155);
-            expect(result.taxName).toBe('GST');
             expect(result.taxesQuantity).toBe(1);
             expect(result.currency).toBe('USD');
         });
@@ -203,10 +201,9 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             const result = createTaxExclusiveItem(createMockContext(checkResult));
 
             expect(result.visible).toBe(true);
-            expect(result.taxRateElement).toBe('20% VAT');
+            expect(result.taxRateElement).toBe('Tax 20%');
             expect(result.rate).toBe(20);
             expect(result.amount).toBe(200);
-            expect(result.taxName).toBe('VAT');
         });
 
         it('formats tax rate with correct decimal precision', () => {
@@ -223,7 +220,7 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             const result = createTaxExclusiveItem(createMockContext(checkResult));
 
             expect(result.visible).toBe(true);
-            expect(result.taxRateElement).toBe('8.1235% VAT');
+            expect(result.taxRateElement).toBe('Tax 8.1235%');
             expect(result.rate).toBe(8.1235); // Rate is rounded to 4 decimal places
         });
 
@@ -266,7 +263,7 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             expect(result.visible).toBe(true);
             render(result.taxRateAndAmountElement);
             expect(screen.getByTestId('taxAmount')).toBeInTheDocument();
-            expect(screen.getByText('20% VAT:')).toBeInTheDocument();
+            expect(screen.getByText('20% tax:')).toBeInTheDocument();
         });
 
         it('renders completeElement with different currency', () => {
@@ -286,7 +283,7 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             expect(result.visible).toBe(true);
             render(result.taxRateAndAmountElement);
             expect(screen.getByTestId('taxAmount')).toBeInTheDocument();
-            expect(screen.getByText('21% VAT:')).toBeInTheDocument();
+            expect(screen.getByText('21% tax:')).toBeInTheDocument();
         });
     });
 
@@ -318,7 +315,7 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             expect(result.rate).toBe(28);
             expect(result.amount).toBe(280);
             expect(result.taxesQuantity).toBe(3);
-            expect(result.taxRateElement).toBe('28% taxes');
+            expect(result.taxRateElement).toBe('Taxes 28%');
         });
     });
 
@@ -335,7 +332,6 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
             expect(result).toHaveProperty('visible');
             expect(result).toHaveProperty('rate');
             expect(result).toHaveProperty('amount');
-            expect(result).toHaveProperty('taxName');
             expect(result).toHaveProperty('taxesQuantity');
             expect(result).toHaveProperty('currency');
         });
