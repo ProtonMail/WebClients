@@ -1,5 +1,6 @@
 import type { ESProgress } from '@proton/encrypted-search/lib';
-import { estimateIndexingDuration, readSize } from '@proton/encrypted-search/lib';
+import { estimateIndexingDuration } from '@proton/encrypted-search/lib';
+import { readSize } from '@proton/encrypted-search/lib/esIDB';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 

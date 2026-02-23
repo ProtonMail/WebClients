@@ -1,16 +1,9 @@
 import type { Location } from 'history';
 
 import type { CachedItem, ESEvent, ESItemEvent, EncryptedItemWithInfo, EventsObject } from '@proton/encrypted-search';
-import {
-    apiHelper,
-    decryptFromDB,
-    normalizeKeyword,
-    readAllLastEvents,
-    readMetadataBatch,
-    readMetadataItem,
-    readSortedIDs,
-} from '@proton/encrypted-search';
+import { apiHelper, decryptFromDB, normalizeKeyword } from '@proton/encrypted-search';
 import { ES_MAX_CONCURRENT, ES_MAX_ITEMS_PER_BATCH, ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
+import { readAllLastEvents, readMetadataBatch, readMetadataItem, readSortedIDs } from '@proton/encrypted-search/esIDB';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';

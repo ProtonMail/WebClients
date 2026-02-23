@@ -2,7 +2,8 @@ import { useLocation } from 'react-router-dom-v5-compat';
 
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { CachedItem, ESCallbacks, ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search';
-import { normalizeKeyword, readAllLastEvents, testKeywords } from '@proton/encrypted-search';
+import { normalizeKeyword, testKeywords } from '@proton/encrypted-search';
+import { readAllLastEvents } from '@proton/encrypted-search/esIDB';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

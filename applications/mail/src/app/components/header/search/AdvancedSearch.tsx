@@ -12,7 +12,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
-import { contentIndexingProgress } from '@proton/encrypted-search';
+import { contentIndexingProgress } from '@proton/encrypted-search/esIDB';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
