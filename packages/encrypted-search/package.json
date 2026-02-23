@@ -5,6 +5,7 @@
     "author": "ProtonMail",
     "exports": {
         ".": "./lib/index.ts",
+        "./constants": "./lib/constants.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
         "./useSearchTelemetry": "./lib/useSearchTelemetry.ts"
     },

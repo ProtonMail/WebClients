@@ -1,4 +1,4 @@
-import { defaultESContext } from '@proton/encrypted-search';
+import { defaultESContext } from '@proton/encrypted-search/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
