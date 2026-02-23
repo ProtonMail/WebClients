@@ -175,22 +175,29 @@ const config: ForgeConfig = {
                 },
             },
         }),
-        new FusesPlugin({
-            version: FuseVersion.V1,
-            // Disables ELECTRON_RUN_AS_NODE
-            [FuseV1Options.RunAsNode]: false,
-            // Disables the NODE_OPTIONS environment variable
-            [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
-            // Disables the --inspect and --inspect-brk family of CLI options
-            // Must be set to true in order for Playwright to connect to Electron.
-            [FuseV1Options.EnableNodeCliInspectArguments]: process.env.PLAYWRIGHT_TEST === "true",
-            // Enables validation of the app.asar archive on macOS
-            [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
-            // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
-            [FuseV1Options.OnlyLoadAppFromAsar]: true,
-            // Encrypt cookies to avoid session hijacking
-            [FuseV1Options.EnableCookieEncryption]: true,
-        }),
+
+        new FusesPlugin(
+            process.env.PLAYWRIGHT_TEST === "true"
+                ? {
+                      version: FuseVersion.V1,
+                      [FuseV1Options.EnableNodeCliInspectArguments]: true,
+                  }
+                : {
+                      version: FuseVersion.V1,
+                      // Disables ELECTRON_RUN_AS_NODE
+                      [FuseV1Options.RunAsNode]: false,
+                      // Disables the NODE_OPTIONS environment variable
+                      [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
+                      // Disables the --inspect and --inspect-brk family of CLI options
+                      [FuseV1Options.EnableNodeCliInspectArguments]: false,
+                      // Enables validation of the app.asar archive on macOS
+                      [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
+                      // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
+                      [FuseV1Options.OnlyLoadAppFromAsar]: true,
+                      // Encrypt cookies to avoid session hijacking
+                      [FuseV1Options.EnableCookieEncryption]: true,
+                  },
+        ),
     ],
 };
 

@@ -50,7 +50,9 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
     await handleSquirrelEvents();
 
     // Security addition
-    app.enableSandbox();
+    if (process.env.PLAYWRIGHT_TEST !== "true") {
+        app.enableSandbox();
+    }
 
     // Config initialization
     saveAppID();

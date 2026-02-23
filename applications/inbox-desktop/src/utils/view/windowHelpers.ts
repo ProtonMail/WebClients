@@ -59,3 +59,17 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         },
     };
 };
+
+export const getWindowPlaywrightConfig = (): BrowserWindowConstructorOptions => {
+    const config = getWindowConfig();
+
+    return {
+        ...config,
+        show: true,
+        paintWhenInitiallyHidden: false,
+        webPreferences: {
+            ...config.webPreferences,
+            backgroundThrottling: false,
+        },
+    };
+};
