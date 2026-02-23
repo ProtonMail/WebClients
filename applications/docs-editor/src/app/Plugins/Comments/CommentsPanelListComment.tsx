@@ -164,7 +164,7 @@ export function CommentsPanelListComment({
           {comment.author ? (
             <UserAvatar
               size={UserAvatarSizeEnum.Small}
-              name={displayNameForEmail(comment.author)}
+              name={authorDisplayName}
               color={color ? { hsl: color } : undefined}
               className="mr-1 flex-shrink-0 rounded-[--border-radius-md] text-[0.75rem]"
             />
