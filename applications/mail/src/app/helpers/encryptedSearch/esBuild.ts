@@ -1,4 +1,4 @@
-import { apiHelper } from '@proton/encrypted-search';
+import { apiHelper } from '@proton/encrypted-search/esHelpers';
 import type { ESCiphertext } from '@proton/encrypted-search/models';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';

@@ -17,7 +17,7 @@ import {
     esSentryReport,
     serializeAndEncryptItem,
     testKeywords,
-} from '@proton/encrypted-search';
+} from '@proton/encrypted-search/esHelpers';
 import {
     ES_BACKGROUND_METADATA_BATCH,
     ES_MAX_METADATA_BATCH,

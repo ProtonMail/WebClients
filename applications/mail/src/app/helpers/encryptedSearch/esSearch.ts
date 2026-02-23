@@ -1,4 +1,4 @@
-import { normalizeKeyword } from '@proton/encrypted-search';
+import { normalizeKeyword } from '@proton/encrypted-search/esHelpers';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

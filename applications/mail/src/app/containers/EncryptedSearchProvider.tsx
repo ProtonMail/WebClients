@@ -8,7 +8,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useSubscribeEventManager } from '@proton/components';
-import { getIndexKey } from '@proton/encrypted-search';
+import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { checkVersionedESDB, contentIndexingProgress, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import { useIndexedDBSupport } from '@proton/encrypted-search/lib/hooks/useIndexedDBSupport';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
