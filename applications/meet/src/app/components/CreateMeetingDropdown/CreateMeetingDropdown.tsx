@@ -50,7 +50,7 @@ export const CreateMeetingDropdown = ({
                 onClose={close}
                 className="create-meeting-dropdown meet-radius"
             >
-                <DropdownMenu className="flex flex-column items-start py-2 px-1 flex-nowrap meet-radius">
+                <DropdownMenu className="flex flex-column items-start p-2 flex-nowrap meet-radius">
                     <DropdownMenuButton
                         className="create-meeting-dropdown-menu text-left flex flex-nowrap items-center gap-2 border-none shrink-0"
                         liClassName="w-full"
