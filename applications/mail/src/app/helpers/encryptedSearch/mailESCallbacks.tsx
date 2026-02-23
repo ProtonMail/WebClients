@@ -10,7 +10,7 @@ import type {
     EncryptedItemWithInfo,
     EventsObject,
     RecordProgress,
-} from '@proton/encrypted-search';
+} from '@proton/encrypted-search/models';
 import {
     apiHelper,
     buildContentDB,
