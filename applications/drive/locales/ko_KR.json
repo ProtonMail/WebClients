@@ -1299,6 +1299,9 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips }개 전용 VPN 서버"
       ]
     },
     "Alert": {
@@ -1551,6 +1554,9 @@
       ],
       "Two-year": [
         "2년"
+      ],
+      "Yearly": [
+        "연간"
       ]
     },
     "Browser": {
@@ -12941,6 +12947,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }개월"
       ]
     }
   }

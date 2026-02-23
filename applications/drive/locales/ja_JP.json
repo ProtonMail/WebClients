@@ -1223,6 +1223,21 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Encrypted": [
+        "暗号化済み"
+      ],
+      "Scan and Download": [
+        "スキャンしてダウンロード"
+      ],
+      "Set password or expiration date": [
+        "パスワードまたは有効期限を設定"
+      ],
+      "Shared": [
+        "共有済み"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "共有はエンドツーエンドで暗号化されています"
       ]
     },
     "Action: Docs": {
@@ -1284,6 +1299,36 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 台の専用VPNサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } のシート"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
+      "Domains": [
+        "ドメイン"
+      ],
+      "Servers": [
+        "サーバー"
+      ],
+      "Users": [
+        "ユーザー"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
+      "Writing assistant seats": [
+        "執筆アシスタントシート"
       ]
     },
     "Alert": {
@@ -1474,19 +1519,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2TBのデータストレージ"
+        "2 TB のストレージ"
       ],
       "3 TB data storage": [
-        "3TBのデータストレージ"
+        "3 TB のストレージ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120か国以上の15,000台以上のサーバーにアクセス"
+        "120 か国以上の 15,000 以上のサーバーにアクセス"
       ],
       "Access advanced AI models": [
-        "高度なAIモデルへのアクセス"
+        "高度なAIモデルにアクセス"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+        "${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
       ],
       "Block ads, trackers, and malware": [
         "広告、トラッカー、マルウェアをブロック"
@@ -1495,16 +1540,16 @@
         "2要素認証システム内蔵"
       ],
       "Connect 10 devices at once": [
-        "10台のデバイスを同時接続"
+        "同時に10台のデバイスを接続"
       ],
       "Full chat history with easy search and favorites": [
-        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+        "検索とブックマークが容易な、全体チャット履歴"
       ],
       "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
+        "6人のユーザーの個人アカウント"
       ],
       "Individual accounts for you and a partner": [
-        "お客様とパートナー用の個別アカウント"
+        "あなたとパートナーのための個人アカウント"
       ],
       "Stronger protection against cyber threats": [
         "サイバー脅威に対するより強力な保護"
@@ -1536,6 +1581,21 @@
       ],
       "Two-year": [
         "2年払い"
+      ],
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
+      "Billed monthly": [
+        "毎月請求"
+      ],
+      "Lifetime access": [
+        "生涯アクセス"
+      ],
+      "Yearly": [
+        "年払い"
       ]
     },
     "Browser": {
@@ -1734,6 +1794,12 @@
       ],
       "Total for ${ n } month": [
         "合計 ${ n } か月"
+      ],
+      "Total (excl. tax)": [
+        "合計（税別）"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "${ cycle } ヶ月合計（税別）"
       ]
     },
     "Collapsible tooltip": {
@@ -3823,6 +3889,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
+      ],
+      "We were not able to load some search results": [
+        "一部の検索結果を読み込めませんでした"
       ]
     },
     "error": {
@@ -6706,6 +6781,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Computed hash does not match XAttr": [
+        "計算されたハッシュがXAttrと一致しません"
+      ],
+      "Link copied": [
+        "リンクをコピーしました"
+      ],
+      "owner": [
+        "所有者"
+      ],
+      "Preparing": [
+        "準備中"
+      ],
+      "Requested item doesn't exist anymore": [
+        "リクエストされたアイテムはもう存在しません"
+      ],
+      "that": [
+        "その"
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "お客様を保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックできます。しかし、それでも信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
+      ],
+      "Unexpected download error": [
+        "予期せぬダウンロードエラー"
+      ],
+      "who": [
+        "誰が"
+      ],
+      "Who has access": [
+        "アクセスできる人"
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "このフォルダにファイルをコピーする権限がありません。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "次回の請求日は${ renewalTime }です。いつでもキャンセルできます。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。いつでもキャンセルできます。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ]
     },
     "info": {
@@ -7429,6 +7546,42 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Access": [
+        "アクセス"
+      ],
+      "Active": [
+        "アクティブ"
+      ],
+      "admin": [
+        "管理者"
+      ],
+      "Allow editors to change permissions and share": [
+        "編集者が権限を変更して共有できるようにする"
+      ],
+      "Anyone on the Internet with the link": [
+        "リンクを知っているインターネット上のすべてのユーザー"
+      ],
+      "can edit": [
+        "編集可能"
+      ],
+      "can view": [
+        "閲覧可能"
+      ],
+      "Delete link and remove access for everyone": [
+        "リンクを削除し、全員のアクセスを削除"
+      ],
+      "Disable this link on a specific date": [
+        "特定の日付でこのリンクを無効にする"
+      ],
+      "Expiry": [
+        "有効期限"
+      ],
+      "Not active": [
+        "非アクティブ"
+      ],
+      "Set a password to limit access via link": [
+        "リンクによるアクセスを制限するにはパスワードを設定してください"
       ]
     },
     "Label for contact group color": {
@@ -8444,6 +8597,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8800,6 +8956,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9155,6 +9314,15 @@
       ],
       "Your settings have been changed successfully": [
         "設定が正常に変更されました"
+      ],
+      "\"${ name }\" shared": [
+        "「${ name }」 が共有しました"
+      ],
+      "Selected item was successfully removed from your list": [
+        "選択したアイテムをリストから正常に削除しました。"
+      ],
+      "Setting updated. Editors can change permission and share.": [
+        "設定が更新されました。編集者は権限を変更して共有できます。"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9548,6 +9716,9 @@
       ],
       "Verify thumbnails": [
         "サムネイルを確認"
+      ],
+      "Expected structure": [
+        "期待される構造"
       ]
     },
     "Option group label": {
@@ -9796,6 +9967,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（税別）"
       ]
     },
     "Payments.Error": {
@@ -10345,13 +10519,13 @@
         "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+        "${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+        "${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
+        "${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -10482,7 +10656,10 @@
         "新しいスプレッドシート"
       ],
       "Open in ${ appName }": [
-        "${ appName } で開く"
+        "${ appName }で開く"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (ベータ版) で開く"
       ]
     },
     "Signing preference for emails": {
@@ -10693,6 +10870,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "パスワードを複数の保管庫に安全に整理して保管"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11381,6 +11561,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Billing information updated": [
+        "請求情報が更新されました"
       ]
     },
     "Suffix": {
@@ -12539,6 +12722,21 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
+      ],
+      "Found ${ resultCount } result": [
+        "${ resultCount }件の結果が見つかりました"
+      ],
+      "Public link": [
+        "公開リンク"
+      ],
+      "Public link settings": [
+        "公開リンク設定"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } の設定"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }サブスクリプションが開始されました"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12831,6 +13029,33 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "更新価格は、請求地域とABNによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "更新価格は、請求地域と事業所番号によって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "更新価格は、請求地域とEINによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "更新価格は、請求地域およびVAT番号によって異なります。"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }ヶ月"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "承認済み"
+      ],
+      "pending": [
+        "保留中"
       ]
     }
   }

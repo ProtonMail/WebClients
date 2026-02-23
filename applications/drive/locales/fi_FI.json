@@ -1304,6 +1304,14 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } oma VPN-palvelin",
+        "${ ips } omaa VPN-palvelinta"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssiä"
       ]
     },
     "Alert": {
@@ -1545,6 +1553,9 @@
       ],
       "Two-year": [
         "Kaksivuotinen"
+      ],
+      "Yearly": [
+        "Vuosittain"
       ]
     },
     "Browser": {
@@ -9165,6 +9176,10 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Valittu kohde on poistettu listastasi onnistuneesti",
+        "Valitut kohteet poistettiin listastasi onnistuneesti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9498,6 +9513,9 @@
       ],
       "Verify thumbnails": [
         "Vahvista pienoiskuvat"
+      ],
+      "Expected structure": [
+        "Odotettu rakenne"
       ]
     },
     "Option group label": {
@@ -9744,6 +9762,30 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% vero: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% veroja: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Sisältää ${ rate }% veron"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veron: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Sisältää ${ rate }% veroja"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veroja: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Vero ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Verot ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12756,6 +12798,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Uusimishinta riippuu laskutusalueesta ja ABN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Uusimishinta riippuu laskutusalueesta ja yritystunnuksesta."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Uusimishinta riippuu laskutusalueesta ja EIN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } kuukausi",
+        "${ cycle } kuukautta"
       ]
     }
   }

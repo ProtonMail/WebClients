@@ -1310,6 +1310,38 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } αποκλειστικός διακομιστής VPN",
+        "${ ips } αποκλειστικοί διακομιστές VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } άδεια χρήσης AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
+        "${ seats } ${ LUMO_APP_NAME } άδειες χρήσης AI"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Domains": [
+        "Τομείς"
+      ],
+      "Servers": [
+        "Διακομιστές"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ],
+      "Writing assistant seats": [
+        "Άδειες βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -1503,10 +1535,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου"
+        "2 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου"
+        "3 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
@@ -1515,7 +1547,7 @@
         "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
@@ -1527,16 +1559,16 @@
         "Συνδέστε 10 συσκευές ταυτόχρονα"
       ],
       "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
       ],
       "Individual accounts for 6 users": [
         "Ατομικοί λογαριασμοί για 6 χρήστες"
       ],
       "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
       ],
       "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1565,6 +1597,23 @@
       ],
       "Two-year": [
         "Δύο έτη"
+      ],
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
+      "Billed monthly": [
+        "Με μηνιαία χρέωση"
+      ],
+      "Lifetime access": [
+        "Ισόβια πρόσβαση"
+      ],
+      "Yearly": [
+        "Ετησίως"
       ]
     },
     "Browser": {
@@ -1766,6 +1815,13 @@
       "Total for ${ n } month": [
         "Σύνολο για ${ n } μήνα",
         "Σύνολο για ${ n } μήνες"
+      ],
+      "Total (excl. tax)": [
+        "Σύνολο (χωρίς φόρους)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "Σύνολο για ${ cycle } μήνα (χωρίς φόρους)",
+        "Σύνολο για ${ cycle } μήνες (χωρίς φόρους)"
       ]
     },
     "Collapsible tooltip": {
@@ -6855,6 +6911,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Δεν έχετε άδεια να αντιγράψετε αρχεία σε αυτόν τον φάκελο."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι η ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ]
     },
     "info": {
@@ -9421,6 +9490,10 @@
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Το επιλεγμένο στοιχείο αφαιρέθηκε με επιτυχία από τη λίστα σας",
+        "Τα επιλεγμένα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9814,6 +9887,9 @@
       ],
       "Verify thumbnails": [
         "Επαληθεύστε τις μικρογραφίες"
+      ],
+      "Expected structure": [
+        "Αναμενόμενη δομή"
       ]
     },
     "Option group label": {
@@ -10069,6 +10145,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (χωρίς φόρους)"
       ]
     },
     "Payments.Error": {
@@ -10630,15 +10709,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -10773,6 +10852,9 @@
       ],
       "Open in ${ appName }": [
         "Άνοιγμα σε ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Άνοιγμα σε ${ appName }) (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -10988,6 +11070,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Αναβαθμίστε και εξοικονομήστε περισσότερα με 2 χρόνια ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13200,6 +13285,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον Αριθμό Επιχείρησης."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } μήνας",
+        "${ cycle } μήνες"
       ]
     }
   }

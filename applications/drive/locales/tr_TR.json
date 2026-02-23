@@ -1310,6 +1310,38 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Alert": {
@@ -1509,13 +1541,13 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
@@ -1524,7 +1556,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
         "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
@@ -1533,7 +1565,7 @@
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -1565,6 +1597,23 @@
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "Browser": {
@@ -1766,6 +1815,13 @@
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
+      ],
+      "Total (excl. tax)": [
+        "Toplam (vergi hariç)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "${ cycle } aylık toplam (vergi hariç)",
+        "${ cycle } aylık toplam (vergi hariç)"
       ]
     },
     "Collapsible tooltip": {
@@ -3690,7 +3746,7 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -6855,6 +6911,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Bu klasöre dosya kopyalama izniniz yok."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ]
     },
     "info": {
@@ -8079,7 +8148,7 @@
         "OpenDocument sunum belgesi"
       ],
       "OpenDocument spreadsheet document": [
-        "OpenDocument hesap sayfası belgesi"
+        "OpenDocument hesap tablosu belgesi"
       ],
       "OpenDocument text document": [
         "OpenDocument yazı belgesi"
@@ -9421,6 +9490,10 @@
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Seçilmiş öge listenizden kaldırıldı",
+        "Seçilmiş ögeler listenizden kaldırıldı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9814,6 +9887,9 @@
       ],
       "Verify thumbnails": [
         "Küçük görselleri doğrula"
+      ],
+      "Expected structure": [
+        "Beklenen yapı"
       ]
     },
     "Option group label": {
@@ -10069,6 +10145,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
       ]
     },
     "Payments.Error": {
@@ -10629,16 +10708,16 @@
         "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -10769,10 +10848,13 @@
     },
     "sheets_2025:Action": {
       "New spreadsheet": [
-        "Yeni e-tablo"
+        "Yeni hesap tablosu"
       ],
       "Open in ${ appName }": [
-        "${ appName } uygulamasında aç"
+        "${ appName } ile aç"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (Beta) ile aç"
       ]
     },
     "Signing preference for emails": {
@@ -10988,6 +11070,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13200,6 +13285,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
       ]
     }
   }

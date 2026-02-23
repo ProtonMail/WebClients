@@ -1208,6 +1208,9 @@
       ],
       "Two-year": [
         "Два роки"
+      ],
+      "Yearly": [
+        "Щороку"
       ]
     },
     "Browser": {
@@ -10946,6 +10949,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } місяць",
+        "${ cycle } місяці",
+        "${ cycle } місяців",
+        "${ cycle } місяця(ів)"
       ]
     }
   }

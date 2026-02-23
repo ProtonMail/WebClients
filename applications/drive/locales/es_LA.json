@@ -1310,6 +1310,38 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -1565,6 +1597,23 @@
       ],
       "Two-year": [
         "Dos años"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
+      "Billed monthly": [
+        "Facturación mensual"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -1766,6 +1815,13 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total por ${ n } meses"
+      ],
+      "Total (excl. tax)": [
+        "Total (impuestos no incl.)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "Total por ${ cycle } mes (impuestos no incl.)",
+        "Total por ${ cycle } meses (impuestos no incl.)"
       ]
     },
     "Collapsible tooltip": {
@@ -6855,6 +6911,16 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
+        "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
       ]
     },
     "info": {
@@ -9481,6 +9547,10 @@
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado."
+      ],
+      "Selected item was successfully removed from your list": [
+        "Se ha eliminado correctamente el elemento seleccionado de su lista",
+        "Se han eliminado correctamente los elementos seleccionados de su lista"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9874,6 +9944,9 @@
       ],
       "Verify thumbnails": [
         "Verificar miniaturas"
+      ],
+      "Expected structure": [
+        "Estructura esperada"
       ]
     },
     "Option group label": {
@@ -10129,6 +10202,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incl.)"
       ]
     },
     "Payments.Error": {
@@ -11048,6 +11124,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Mejore el plan y ahorre más contratando ${ planName } por 2 años"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenga sus contraseñas seguras y organizadas en múltiples cajas fuertes."
       ]
     },
     "specialoffer: Tooltip": {
@@ -13260,6 +13339,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } meses"
       ]
     }
   }

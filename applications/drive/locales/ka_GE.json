@@ -1310,6 +1310,14 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } გამოყოფილი VPN სერვერი",
+        "${ ips } გამოყოფილი VPN სერვერი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
       ]
     },
     "Alert": {
@@ -1559,6 +1567,9 @@
       ],
       "Two-year": [
         "ორი წლით"
+      ],
+      "Yearly": [
+        "წლიურად"
       ]
     },
     "Browser": {
@@ -12946,6 +12957,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } თვე",
+        "${ cycle } თვე"
       ]
     }
   }

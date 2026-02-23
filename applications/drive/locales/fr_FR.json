@@ -1310,6 +1310,38 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } serveur VPN dédié",
+        "${ ips } serveurs VPN dédiés"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licence IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } accès"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licence IA ${ LUMO_APP_NAME }",
+        "${ seats } licences IA ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Domains": [
+        "Domaines"
+      ],
+      "Servers": [
+        "Serveurs"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant seats": [
+        "Accès à l'assistant d'écriture"
       ]
     },
     "Alert": {
@@ -1503,40 +1535,40 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 To d'espace de stockage de données"
+        "2 To d'espace de stockage"
       ],
       "3 TB data storage": [
-        "3 To d'espace de stockage de données"
+        "3 To d'espace de stockage"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
       ],
       "Access advanced AI models": [
-        "Accès à des modèles d'IA avancés"
+        "Accéder aux modèles d'IA avancés"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+        "Bloquer les pubs, les traqueurs et les logiciels malveillants"
       ],
       "Built-in 2FA authenticator": [
-        "Authentificateur 2FA intégré"
+        "Authentificateur A2F intégré"
       ],
       "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
+        "Connectez 10 appareils en même temps"
       ],
       "Full chat history with easy search and favorites": [
         "Historique complet des discussions avec recherche facile et favoris"
       ],
       "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
+        "Comptes individuels pour 6 utilisateurs"
       ],
       "Individual accounts for you and a partner": [
         "Comptes individuels pour vous et un partenaire"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1565,6 +1597,23 @@
       ],
       "Two-year": [
         "Tous les deux ans"
+      ],
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ans"
+      ],
+      "Billed monthly": [
+        "Facturé mensuellement"
+      ],
+      "Lifetime access": [
+        "Accès à vie"
+      ],
+      "Yearly": [
+        "Annuel"
       ]
     },
     "Browser": {
@@ -1766,6 +1815,13 @@
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
         "Total pour ${ n } mois"
+      ],
+      "Total (excl. tax)": [
+        "Total (hors taxes)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "Total pour ${ cycle } mois (hors taxes)",
+        "Total pour ${ cycle } mois (hors taxes)"
       ]
     },
     "Collapsible tooltip": {
@@ -6855,6 +6911,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Vous n’avez pas l’autorisation de copier des fichiers dans ce dossier."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
       ]
     },
     "info": {
@@ -9481,6 +9550,10 @@
       ],
       "Your settings have been changed successfully": [
         "Vos réglages ont été modifiés."
+      ],
+      "Selected item was successfully removed from your list": [
+        "L'élément sélectionné a été retiré de votre liste",
+        "Les éléments sélectionnés ont été retirés de votre liste"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9874,6 +9947,9 @@
       ],
       "Verify thumbnails": [
         "Vérifier les vignettes"
+      ],
+      "Expected structure": [
+        "Structure attendue"
       ]
     },
     "Option group label": {
@@ -10129,6 +10205,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (hors taxe)"
       ]
     },
     "Payments.Error": {
@@ -10833,6 +10912,9 @@
       ],
       "Open in ${ appName }": [
         "Ouvrir dans ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Ouvrir dans ${ appName } (Bêta)"
       ]
     },
     "Signing preference for emails": {
@@ -11048,6 +11130,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Gardez vos mots de passe en sécurité et organisez-les dans plusieurs coffres-forts"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13260,6 +13345,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro d'entreprise."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro de TVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mois",
+        "${ cycle } mois"
       ]
     }
   }
