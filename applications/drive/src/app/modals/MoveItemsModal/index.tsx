@@ -13,12 +13,12 @@ const MoveItemsModal = withHoc<UseMoveItemsModalStateProps, MoveItemsModalViewPr
 export const useMoveItemsModal = () => {
     const [moveItemsModal, showMoveToFolderModal] = useModalTwoStatic(MoveItemsModal);
 
-    const showMoveItemsModal = ({ shareId, items, ...rest }: MoveItemsModalInnerProps) => {
-        if (!shareId || !items.length) {
+    const showMoveItemsModal = ({ shareId, nodeUids, ...rest }: MoveItemsModalInnerProps) => {
+        if (!shareId || !nodeUids.length) {
             return;
         }
 
-        void showMoveToFolderModal({ shareId, items, ...rest });
+        void showMoveToFolderModal({ shareId, nodeUids, ...rest });
     };
 
     return { moveItemsModal, showMoveItemsModal };

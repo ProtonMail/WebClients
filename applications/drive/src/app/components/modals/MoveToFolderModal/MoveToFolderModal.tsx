@@ -6,7 +6,6 @@ import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/compon
 import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 import type { DecryptedLink } from '../../../store';
 import { useActions, useTreeForModals } from '../../../store';
 import { getMovedFiles } from '../../../utils/moveTexts';
@@ -15,9 +14,18 @@ import { useCreateFolderModalDeprecated } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
+type LegacyMoveItemsModalStateItem = {
+    volumeId: string;
+    linkId: string;
+    parentLinkId: string;
+    rootShareId: string;
+    isFile: boolean;
+    name: string;
+};
+
 interface Props {
     shareId: string;
-    selectedItems: MoveItemsModalStateItem[];
+    selectedItems: LegacyMoveItemsModalStateItem[];
     onClose?: () => void;
     onSuccess?: (items: { uid: string; parentUid: string | undefined }[]) => void;
 }

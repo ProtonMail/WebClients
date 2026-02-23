@@ -28,6 +28,9 @@ interface Props {
     renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
+export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+    items.map((item) => generateNodeUid(item.volumeId, item.linkId));
+
 const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -62,7 +65,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveItemsModal({ shareId, items: selectedLinks }),
+            action: () => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedLinks) }),
         },
         {
             hidden: isMultiSelect || !isEditor,
