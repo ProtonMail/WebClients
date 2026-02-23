@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { NodeWithSameNameExistsValidationError } from '../../../index';
@@ -162,21 +163,41 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
         expectedSize: number;
         modificationTime: Date;
         overrideExistingDraftByOtherClient?: boolean;
-        additionalMetadata: ExtendedAttributesMetadata;
+        additionalMetadata: ExtendedAttributesMetadata | undefined;
         tags: (0 | 3 | 1 | 2 | 7 | 4 | 5 | 6 | 8 | 9)[];
         mainPhotoLinkID: string | undefined;
         captureTime: Date | undefined;
     }> {
-        const { metadata, tags, captureTime } = await generatePhotosExtendedAttributes(file, mimeType, mediaInfo);
-        return {
-            mediaType: mimeType,
-            expectedSize: file.size,
-            mainPhotoLinkID: undefined,
-            captureTime,
-            tags: tags as (0 | 3 | 1 | 2 | 7 | 4 | 5 | 6 | 8 | 9)[],
-            modificationTime: new Date(file.lastModified),
-            overrideExistingDraftByOtherClient: isUnfinishedUpload,
-            additionalMetadata: metadata,
-        };
+        try {
+            const { metadata, tags, captureTime } = await generatePhotosExtendedAttributes(file, mimeType, mediaInfo);
+            return {
+                mediaType: mimeType,
+                expectedSize: file.size,
+                mainPhotoLinkID: undefined,
+                captureTime,
+                tags: tags as (0 | 3 | 1 | 2 | 7 | 4 | 5 | 6 | 8 | 9)[],
+                modificationTime: new Date(file.lastModified),
+                overrideExistingDraftByOtherClient: isUnfinishedUpload,
+                additionalMetadata: metadata,
+            };
+        } catch (error) {
+            // TODO: Implement upload logging
+            traceError(error, {
+                level: 'debug', // Debug as we need it only when we investigate issues.
+                tags: {
+                    component: 'generateExtendedAttributes',
+                },
+            });
+            return {
+                mediaType: mimeType,
+                expectedSize: file.size,
+                mainPhotoLinkID: undefined,
+                captureTime: undefined,
+                tags: [],
+                modificationTime: new Date(file.lastModified),
+                overrideExistingDraftByOtherClient: isUnfinishedUpload,
+                additionalMetadata: undefined,
+            };
+        }
     }
 }
