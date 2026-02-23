@@ -3,7 +3,7 @@
     "description": "ProtonMail Encrypted Search library",
     "license": "MIT",
     "author": "ProtonMail",
-    "main": "lib/index.ts",
+    "exports": "./lib/index.ts",
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
