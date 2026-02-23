@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Label from '@proton/components/components/label/Label';
+import clsx from '@proton/utils/clsx';
 
 import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../../core/countries';
 import type { TaxCountryHook } from '../../hooks/useTaxCountry';
@@ -11,6 +12,7 @@ import { useCountries } from '../CountriesDropdown';
 type Props = {
     onClick?: () => void;
     loading?: boolean;
+    className?: string;
 } & Pick<TaxCountryHook, 'federalStateCode' | 'zipCode' | 'selectedCountryCode'>;
 
 export const CollapsedTaxCountrySelector = ({
@@ -19,6 +21,7 @@ export const CollapsedTaxCountrySelector = ({
     zipCode,
     selectedCountryCode,
     loading,
+    className,
 }: Props) => {
     const { getCountryByCode } = useCountries();
     const selectedCountry = getCountryByCode(selectedCountryCode);
@@ -45,7 +48,7 @@ export const CollapsedTaxCountrySelector = ({
     const Element = onClick ? InlineLinkButton : 'span';
 
     return (
-        <Label className="inline-block w-full mb-2" data-testid="billing-country">
+        <Label className={clsx('inline-block w-full', className)} data-testid="billing-country">
             <span className="text-bold">{c('Payments').t`Billing Country`}</span>
             <span className="text-bold mr-2">:</span>
             <Element onClick={onClick} data-testid="billing-country-collapsed">
