@@ -16,6 +16,9 @@ import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useActions } from '../../../store';
 
+export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+    items.map((item) => generateNodeUid(item.volumeId, item.linkId));
+
 type Item = {
     isFile: boolean;
     name: string;
@@ -66,7 +69,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveItemsModal({ shareId, items: selectedItems }),
+            action: () => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedItems) }),
         },
         {
             hidden: isMultiSelect || !isEditor,

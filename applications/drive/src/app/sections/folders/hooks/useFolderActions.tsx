@@ -30,6 +30,9 @@ type Props = {
     selectedItems: LegacyItem[];
 };
 
+export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+    items.map((item) => generateNodeUid(item.volumeId, item.linkId));
+
 export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkId, volumeId }: Props) => {
     const { createDocument } = useDocumentActions();
     const { drive } = useDrive();
@@ -95,7 +98,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         void createDocument({ type: 'sheet', shareId: shareId, parentLinkId: linkId });
     };
 
-    const moveAction = (shareId: string) => showMoveItemsModal({ shareId, items: selectedItems });
+    const moveAction = (shareId: string) => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedItems) });
 
     const copyAction = () => showCopyItemsModal(selectedItems);
 
