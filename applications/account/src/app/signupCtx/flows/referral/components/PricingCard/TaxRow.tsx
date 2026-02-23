@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { Price } from '@proton/components';
 import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
 import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
@@ -18,7 +16,7 @@ export const TaxRow = ({ checkResult }: Partial<TaxRowProps>) => {
         return null;
     }
 
-    const { rate: taxRate, currency, taxName: suggestedTaxName, amount, taxesQuantity } = formattedTax;
+    const { taxRateElement, currency, amount } = formattedTax;
 
     const price = (
         <Price key="price" currency={currency} data-testid="taxAmount">
@@ -26,14 +24,9 @@ export const TaxRow = ({ checkResult }: Partial<TaxRowProps>) => {
         </Price>
     );
 
-    const taxName = taxesQuantity > 1 ? c('Payments').t`Taxes` : suggestedTaxName;
-
     return (
         <div className="flex justify-space-between gap-2" data-testid="tax">
-            <span>
-                {taxName} {taxRate}
-                {'%'}
-            </span>
+            <span>{taxRateElement}</span>
             <span>{price}</span>
         </div>
     );

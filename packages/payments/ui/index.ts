@@ -18,7 +18,7 @@ export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPri
 export { PayButton } from './components/PayButton';
 export { InlineTaxCountrySelector } from './components/TaxCountrySelector/InlineTaxCountrySelector';
 export { getVatNumberName, VatNumberInput } from './components/VatNumberInput';
-export { ExclusiveVatText, InclusiveVatText } from './components/VatText';
+export { InclusiveVatText } from './components/VatText';
 export { default as EditCardModal } from './containers/EditCardModal';
 export {
     isPaymentsPreloaded,

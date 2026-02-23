@@ -250,11 +250,7 @@ const AccountStepPaymentSummary = ({
             tax?.inclusive === TaxInclusive.EXCLUSIVE &&
                 tax?.amount > 0 && {
                     id: 'vat-exclusive',
-                    left: (
-                        <span>
-                            {tax.taxesQuantity > 1 ? c('Payments').t`Taxes` : tax.taxName} {tax.rate}%
-                        </span>
-                    ),
+                    left: <span>{tax.taxRateElement}</span>,
                     right: (
                         <Price key="price" currency={tax.currency} data-testid="taxAmount">
                             {tax.amount}

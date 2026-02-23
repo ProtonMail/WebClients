@@ -89,7 +89,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Including 15.5% GST: US$1.55');
+            expect(taxContainer).toHaveTextContent('Including 15.5% tax: US$1.55');
         });
 
         it('renders single tax with default VAT name when tax name is undefined', () => {
@@ -107,7 +107,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
         });
 
         it('applies custom className when provided', () => {
@@ -118,7 +118,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toHaveClass(customClassName);
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
         });
 
         it('does not apply className when not provided', () => {
@@ -129,7 +129,7 @@ describe('InclusiveVatText', () => {
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).not.toHaveClass();
             expect(taxContainer.className).toBe('');
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
         });
 
         it('formats tax rate with correct decimal precision', () => {
@@ -147,7 +147,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Including 8.1235% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 8.1235% tax: US$2');
         });
 
         it('handles different currencies correctly', () => {
@@ -166,7 +166,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
-            expect(taxContainer).toHaveTextContent('Including 21% VAT: 2.10 €');
+            expect(taxContainer).toHaveTextContent('Including 21% tax: 2.10 €');
         });
     });
 
@@ -185,7 +185,7 @@ describe('InclusiveVatText', () => {
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer).toBeInTheDocument();
             expect(taxContainer.className).toBe('');
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
         });
     });
 
@@ -197,7 +197,7 @@ describe('InclusiveVatText', () => {
 
             const taxContainer = screen.getByTestId('tax');
             expect(taxContainer.tagName).toBe('DIV');
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
 
             const spanElement = taxContainer.querySelector('span');
             expect(spanElement).toBeInTheDocument();
@@ -209,7 +209,7 @@ describe('InclusiveVatText', () => {
             render(<InclusiveVatText checkResult={checkResult} />);
 
             const taxContainer = screen.getByTestId('tax');
-            expect(taxContainer).toHaveTextContent('Including 20% VAT: US$2');
+            expect(taxContainer).toHaveTextContent('Including 20% tax: US$2');
 
             const priceElement = screen.getByTestId('taxAmount');
             expect(priceElement).toBeInTheDocument();
