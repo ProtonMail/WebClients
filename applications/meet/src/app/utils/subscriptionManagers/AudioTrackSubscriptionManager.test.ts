@@ -997,7 +997,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const getStatsSpy = mockRoom.engine?.pcManager?.subscriber?.pc?.getStats;
 
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             expect(getStatsSpy).not.toHaveBeenCalled();
         });
@@ -1014,14 +1014,14 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check - should start tracking missing stats
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
             expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
 
             // Advance time past grace period (5 seconds)
             vi.advanceTimersByTime(6000);
 
             // Second check - should trigger recovery
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Wait for recovery attempt
             await vi.runAllTimersAsync();
@@ -1054,11 +1054,11 @@ describe('AudioTrackSubscriptionManager', () => {
 
             // First check with 100 packets
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Second check with same 100 packets (stalled)
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             await vi.runAllTimersAsync();
 
@@ -1087,10 +1087,10 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check to establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Second check to trigger recovery
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Since wait() is mocked to resolve immediately, we need to flush all pending promises
             await vi.waitFor(
@@ -1102,7 +1102,7 @@ describe('AudioTrackSubscriptionManager', () => {
             const firstCallCount = micPub.setSubscribed.mock.calls.length;
 
             // Third check while recovery is in progress (should not trigger another recovery)
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
             const secondCallCount = micPub.setSubscribed.mock.calls.length;
 
             // Call count should not have increased (no new recovery attempt)
@@ -1137,11 +1137,11 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Attempt recovery 3 times (max attempts)
             for (let i = 0; i < 3; i++) {
-                await (cache as any).checkBrokenTransceivers();
+                await (cache as any).runHealthCheck();
                 await vi.runAllTimersAsync();
                 // Advance past recovery cooldown (3 seconds)
                 vi.advanceTimersByTime(4000);
@@ -1150,7 +1150,7 @@ describe('AudioTrackSubscriptionManager', () => {
             const callCountAfterMaxAttempts = micPub.setSubscribed.mock.calls.length;
 
             // Try one more time - should not attempt recovery
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             const finalCallCount = micPub.setSubscribed.mock.calls.length;
@@ -1200,10 +1200,10 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check to establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Second check to trigger recovery (but should be skipped due to reconnecting)
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             await vi.runAllTimersAsync();
 
@@ -1235,10 +1235,10 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check to establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Second check to trigger recovery (should work now that room is connected)
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             await vi.runAllTimersAsync();
 
@@ -1262,7 +1262,7 @@ describe('AudioTrackSubscriptionManager', () => {
 
             const getStatsSpy = mockRoom.engine?.pcManager?.subscriber?.pc?.getStats;
 
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             expect(getStatsSpy).not.toHaveBeenCalled();
         });
@@ -1290,11 +1290,11 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check - should not trigger recovery yet (needs 2 consecutive)
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
             expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
 
             // Second check - should trigger recovery
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             // Should have attempted recovery
@@ -1336,8 +1336,8 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Multiple checks - should not trigger recovery
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             // Should not have attempted recovery
@@ -1365,7 +1365,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(highConcealmentStats);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             // Second check with normal concealment (should reset counter)
             const normalStats = new Map();
@@ -1379,11 +1379,11 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 5,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(normalStats);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             // Third check with high concealment again - should need 2 consecutive again
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(highConcealmentStats);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             // Should not have triggered recovery yet (only 1 consecutive after reset)
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
@@ -1416,8 +1416,8 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Two consecutive checks to trigger the overload detection
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
 
             // Should report E2EE overload
             expect(mockReportError).toHaveBeenCalledWith(
@@ -1475,8 +1475,8 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Multiple checks - should not trigger recovery for muted/unsubscribed
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             expect(mutedPub.setSubscribed).not.toHaveBeenCalled();
@@ -1509,8 +1509,8 @@ describe('AudioTrackSubscriptionManager', () => {
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
 
             // Should not attempt recovery because already recovering
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
@@ -1542,8 +1542,8 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Two checks to try to trigger recovery
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             // Should not have attempted recovery because room is reconnecting
@@ -1572,8 +1572,8 @@ describe('AudioTrackSubscriptionManager', () => {
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
 
             // Should not trigger recovery for insufficient samples
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
@@ -1636,7 +1636,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 5,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(goodAudioStats);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             // Should not trigger (good audio)
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
@@ -1655,7 +1655,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 50,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(brokenAudioStats);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             await vi.runAllTimersAsync();
 
@@ -1696,7 +1696,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 20,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats1);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             // First check doesn't trigger (needs 2 consecutive)
             expect(micPub.setSubscribed).not.toHaveBeenCalled();
@@ -1715,7 +1715,7 @@ describe('AudioTrackSubscriptionManager', () => {
                 concealmentEvents: 30,
             });
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats2);
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
 
             await vi.runAllTimersAsync();
 
@@ -1755,8 +1755,8 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // Multiple checks - should not trigger because non-silent concealment is only 1%
-            await (cache as any).checkAudioConcealment();
-            await (cache as any).checkAudioConcealment();
+            await (cache as any).runHealthCheck();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             // Should not trigger recovery (non-silent concealment < 15% threshold)
@@ -1783,10 +1783,10 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check to establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Second check with same packet count (stalled)
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
             await vi.runAllTimersAsync();
 
             // Should not trigger recovery for muted track
@@ -1814,7 +1814,7 @@ describe('AudioTrackSubscriptionManager', () => {
             mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
 
             // First check to establish baseline
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Verify packet count was tracked
             expect((cache as any).lastPacketCounts.has(trackKey)).toBe(true);
@@ -1823,7 +1823,7 @@ describe('AudioTrackSubscriptionManager', () => {
             micPub.isMuted = true;
 
             // Second check should clear the tracking
-            await (cache as any).checkBrokenTransceivers();
+            await (cache as any).runHealthCheck();
 
             // Verify packet count was cleared
             expect((cache as any).lastPacketCounts.has(trackKey)).toBe(false);
