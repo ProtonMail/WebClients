@@ -1135,6 +1135,9 @@
       ],
       "Two-year": [
         "दो वर्ष"
+      ],
+      "Yearly": [
+        "हर साल"
       ]
     },
     "Bug category": {
@@ -9383,6 +9386,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } महीना",
+        "${ cycle } महीने"
       ]
     }
   }

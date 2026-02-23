@@ -1310,6 +1310,38 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikeret VPN-server",
+        "${ ips } dedikerede VPN-servere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licens",
+        "${ seats } ${ LUMO_APP_NAME } AI licenser"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
+      ],
+      "Domains": [
+        "Domæner"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentpladser"
       ]
     },
     "Alert": {
@@ -1503,28 +1535,28 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagerplads"
+        "2 TB lagerplads"
       ],
       "3 TB data storage": [
-        "3 TB datalagerplads"
+        "3 TB lagerplads"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Adgang til 15.000+ servere i mere end 120 lande"
+        "Få adgang til 15.000+ servere i 120+ lande"
       ],
       "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
+        "Få adgang til avancerede AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium-funktioner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloker annoncer, trackere og malware"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-authenticator"
+        "Indbygget tofaktorgodkendelse"
       ],
       "Connect 10 devices at once": [
-        "Tilslut 10 enheder på én gang"
+        "Forbind 10 enheder på én gang"
       ],
       "Full chat history with easy search and favorites": [
         "Fuld chathistorik med nem søgning og favoritter"
@@ -1565,6 +1597,23 @@
       ],
       "Two-year": [
         "To-År"
+      ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
+      "Billed monthly": [
+        "Faktureres månedligt"
+      ],
+      "Lifetime access": [
+        "Livstidsadgang"
+      ],
+      "Yearly": [
+        "Årligt"
       ]
     },
     "Browser": {
@@ -1766,6 +1815,13 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "Total (excl. tax)": [
+        "I alt (ekskl. moms)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "I alt for ${ cycle } måned (ekskl. moms)",
+        "I alt for ${ cycle } måneder (ekskl. moms)"
       ]
     },
     "Collapsible tooltip": {
@@ -6855,6 +6911,19 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Du har ikke tilladelse til at kopiere filer til denne mappe."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan til enhver tid annullere."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
       ]
     },
     "info": {
@@ -9421,6 +9490,10 @@
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Det valgte element blev fjernet fra din liste",
+        "De valgte elementer blev fjernet fra din liste"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9814,6 +9887,9 @@
       ],
       "Verify thumbnails": [
         "Kontrollér miniaturer"
+      ],
+      "Expected structure": [
+        "Forventet struktur"
       ]
     },
     "Option group label": {
@@ -10069,6 +10145,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. moms)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Inkluderer ${ rate }% moms"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inkluderer ${ rate }% moms"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Moms ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -10773,6 +10876,9 @@
       ],
       "Open in ${ appName }": [
         "Åbn i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Åbn i ${ appName } (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -10988,6 +11094,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold dine adgangskoder sikre og organiserede i flere bokse"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13200,6 +13309,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måned",
+        "${ cycle } måneder"
       ]
     }
   }

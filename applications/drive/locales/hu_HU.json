@@ -1446,6 +1446,9 @@
       ],
       "Two-year": [
         "Kétévente"
+      ],
+      "Yearly": [
+        "Évente"
       ]
     },
     "Browser": {
@@ -12390,6 +12393,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "A próbaidőszak vége: ${ textDate }. Nem kerül díj felszámításra, ha ennél korábban lemondja: ${ textDate }. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     }
   }

@@ -1332,6 +1332,30 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverů",
+        "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licence"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Users": [
+        "Uživatelé"
+      ],
+      "Writing assistant seats": [
+        "Licence asistenta psaní"
       ]
     },
     "Alert": {
@@ -1531,7 +1555,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datové úložiště"
+        "2 TB úložiště dat"
       ],
       "3 TB data storage": [
         "3 TB datové úložiště"
@@ -1546,13 +1570,13 @@
         "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malwaru"
+        "Blokování reklam, sledovacích prvků a malware"
       ],
       "Built-in 2FA authenticator": [
-        "Vestavěné 2FA ověřování"
+        "Vestavěné ověřování 2FA"
       ],
       "Connect 10 devices at once": [
-        "Připojte 10 zařízení najednou"
+        "Připojte až 10 zařízení současně"
       ],
       "Full chat history with easy search and favorites": [
         "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
@@ -1572,7 +1596,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
+        "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
       ]
     },
     "Billing cycle option": {
@@ -1593,6 +1617,24 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
+      "Yearly": [
+        "Ročně"
       ]
     },
     "Browser": {
@@ -1800,6 +1842,15 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ],
+      "Total (excl. tax)": [
+        "Celkem (bez daně)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "Celkem za ${ cycle } měsíc (bez daně)",
+        "Celkem za ${ cycle } měsíce (bez daně)",
+        "Celkem za ${ cycle } měsíců (bez daně)",
+        "Celkem za ${ cycle } měsíců (bez daně)"
       ]
     },
     "Collapsible tooltip": {
@@ -3919,6 +3970,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "U tohoto tarifu není podporováno osvobození od daně"
       ]
     },
     "error": {
@@ -7042,6 +7096,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
       ]
     },
     "info": {
@@ -13676,6 +13736,22 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
       ]
     }
   }

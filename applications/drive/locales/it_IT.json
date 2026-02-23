@@ -1301,6 +1301,30 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licenza AI di ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licenze ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Domains": [
+        "Domini"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "Writing assistant": [
+        "Assistente per la scrittura"
+      ],
+      "Writing assistant seats": [
+        "Posti dell'assistente alla scrittura"
       ]
     },
     "Alert": {
@@ -1556,6 +1580,23 @@
       ],
       "Two-year": [
         "Due anni"
+      ],
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "${ n } year": [
+        "${ n } anno",
+        "${ n } anni"
+      ],
+      "Billed monthly": [
+        "Addebito mensile"
+      ],
+      "Lifetime access": [
+        "Accesso a vita"
+      ],
+      "Yearly": [
+        "Annuale"
       ]
     },
     "Browser": {
@@ -1757,6 +1798,13 @@
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
         "Totale per ${ n } mesi"
+      ],
+      "Total (excl. tax)": [
+        "Totale (escluse imposte)"
+      ],
+      "Total for ${ cycle } month (excl. tax)": [
+        "Totale per ${ cycle } mese (Imposte non incluse)",
+        "Totale per ${ cycle } mesi (Imposte non incluse)"
       ]
     },
     "Collapsible tooltip": {
@@ -6828,6 +6876,16 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La tua prossima data di fatturazione è il ${ renewalTime }. Puoi annullare in qualsiasi momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Puoi annullare in qualsiasi momento. Contatta il supporto se hai bisogno di un cambio di piano immediato."
       ]
     },
     "info": {
@@ -9418,6 +9476,10 @@
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
+      ],
+      "Selected item was successfully removed from your list": [
+        "È stato rimosso con successo un elemento selezionato dalla tua lista",
+        "Sono stati eliminati con successo gli elementi dalla tua lista"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10066,6 +10128,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA esclusa)"
       ]
     },
     "Payments.Error": {
@@ -13190,6 +13255,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mese",
+        "${ cycle } mesi"
       ]
     }
   }

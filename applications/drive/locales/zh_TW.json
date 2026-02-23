@@ -1429,6 +1429,9 @@
       ],
       "Two-year": [
         "兩年"
+      ],
+      "Yearly": [
+        "每年"
       ]
     },
     "Browser": {
@@ -11864,6 +11867,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }個月"
       ]
     }
   }
