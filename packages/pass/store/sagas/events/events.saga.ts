@@ -13,11 +13,11 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
+import { coreChannel } from './core/channel.core';
 import { groupInvitesChannel } from './v1/channel.group-invites';
 import { invitesChannel } from './v1/channel.invites';
 import { shareChannels } from './v1/channel.share';
 import { sharesChannel } from './v1/channel.shares';
-import { userChannel } from './v1/channel.user';
 import { userEventsChannel } from './v2/channel.user-events';
 
 type EventChannel = (api: Api, options: RootSagaOptions) => Generator;
@@ -28,14 +28,14 @@ type EventChannel = (api: Api, options: RootSagaOptions) => Generator;
 function* getEventChannels(): Generator<unknown, EventChannel[]> {
     switch (SYNC_STRATEGY) {
         case SyncStrategy.LEGACY:
-            const channels = [userChannel, shareChannels, sharesChannel, invitesChannel];
+            const channels = [coreChannel, shareChannels, sharesChannel, invitesChannel];
             const loadGroupInvites: boolean = yield select(selectLoadGroupInvites);
             if (loadGroupInvites) channels.push(groupInvitesChannel);
 
             return channels;
 
         case SyncStrategy.USER_EVENTS:
-            return [userChannel, userEventsChannel];
+            return [coreChannel, userEventsChannel];
     }
 }
 

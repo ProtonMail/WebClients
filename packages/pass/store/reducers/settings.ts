@@ -9,6 +9,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
+    coreEvent,
     extraPasswordToggle,
     itemCreate,
     lockCreateSuccess,
@@ -17,7 +18,6 @@ import {
     settingsEditSuccess,
     syncMigration,
     updatePauseListItem,
-    userEvent,
 } from '@proton/pass/store/actions';
 import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
@@ -91,7 +91,7 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     if (extraPasswordToggle.success.match(action)) return partialMerge(state, { extraPassword: action.payload });
     if (syncMigration.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
 
-    if (userEvent.match(action)) {
+    if (coreEvent.match(action)) {
         const locale = action.payload.UserSettings?.Locale;
         return locale ? partialMerge(state, { locale }) : state;
     }
