@@ -1,7 +1,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import { getDefaultSettings, getLumoSettings } from '../../providers/lumoThemeStorage';
-import { localSettingsToUserSettings } from '../../providers/lumoThemeUtils';
+import { getDefaultSettings, getLumoSettings } from '../../providers';
+import { localSettingsToUserSettings } from '../../providers';
 import type { FeatureFlag } from './featureFlags';
 import { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } from './lumoUserSettingsThunks';
 import type { PersonalizationSettings } from './personalization';

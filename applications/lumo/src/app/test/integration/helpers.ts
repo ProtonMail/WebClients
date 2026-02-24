@@ -1,32 +1,35 @@
-import type { AnyAction, Middleware } from '@reduxjs/toolkit';
-import { createMemoryHistory } from 'history';
+import type {AnyAction, Middleware} from '@reduxjs/toolkit';
+import {createMemoryHistory} from 'history';
 import createSagaMiddleware from 'redux-saga';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { createUnleash } from '@proton/account/bootstrap';
-import { KEY_LENGTH_BYTES } from '@proton/crypto/lib/subtle/aesGcm';
+import {createUnleash} from '@proton/account/bootstrap';
+import {KEY_LENGTH_BYTES} from '@proton/crypto/lib/subtle/aesGcm';
 import createApi from '@proton/shared/lib/api/createApi';
-import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
+import type {EventManager} from '@proton/shared/lib/eventManager/eventManager';
+import type {ProtonConfig, User} from '@proton/shared/lib/interfaces';
 
-import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
-import type { AesKwCryptoKey } from '../../crypto/types';
-import { DbApi } from '../../indexedDb/db';
-import { createLumoListenerMiddleware } from '../../redux/listeners';
-import { rootSaga } from '../../redux/sagas';
-import type { LumoSelector } from '../../redux/selectors';
-import { addConversation, newConversationId, pushConversationRequest } from '../../redux/slices/core/conversations';
-import { addMasterKey } from '../../redux/slices/core/credentials';
-import { addMessage, finishMessage, newMessageId, pushMessageRequest } from '../../redux/slices/core/messages';
-import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import type { LumoDispatch, LumoSaga, LumoSagaContext } from '../../redux/store';
-import { LumoApi } from '../../remote/api';
-import type { RemoteId } from '../../remote/types';
-import { serializeSpace } from '../../serialization';
-import type { AttachmentId } from '../../types';
+import {base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64} from '../../crypto';
+import type {AesKwCryptoKey} from '../../crypto/types';
+import {DbApi} from '../../indexedDb/db';
+import {createLumoListenerMiddleware} from '../../redux/listeners';
+import {rootSaga} from '../../redux/sagas';
+import type {LumoSelector} from '../../redux/selectors';
+import {addConversation, newConversationId, pushConversationRequest} from '../../redux/slices/core/conversations';
+import {addMasterKey} from '../../redux/slices/core/credentials';
+import {addMessage, finishMessage, newMessageId, pushMessageRequest} from '../../redux/slices/core/messages';
+import {addSpace, newSpaceId, pushSpaceRequest} from '../../redux/slices/core/spaces';
+import type {LumoDispatch, LumoSaga, LumoSagaContext} from '../../redux/store';
+import {LumoApi} from '../../remote/api';
+import type {RemoteId} from '../../remote/types';
+import {serializeSpace} from '../../serialization';
+import type {AttachmentId} from '../../types';
 import {
     type Base64,
+    cleanConversation,
+    cleanMessage,
+    cleanSpace,
     type Conversation,
     type ConversationId,
     ConversationStatus,
@@ -36,12 +39,9 @@ import {
     type Space,
     type SpaceId,
     type Status,
-    cleanConversation,
-    cleanMessage,
-    cleanSpace,
 } from '../../types';
-import { sleep } from '../../util/date';
-import type { MockDatabase, MockDbSpace } from './mock-server';
+import {sleep} from '../../util/date';
+import type {MockDatabase, MockDbSpace} from './mock-server';
 
 export const USER_TEST_UID = 'test-uid';
 
@@ -162,8 +162,7 @@ function createTestStore({
             });
             const m2 = m1.prepend(listenerMiddleware.middleware);
             const m3 = sagaMiddleware ? m2.concat(sagaMiddleware) : m2;
-            const m4 = m3.concat(actionHistoryMiddleware);
-            return m4;
+            return m3.concat(actionHistoryMiddleware);
         },
     });
 

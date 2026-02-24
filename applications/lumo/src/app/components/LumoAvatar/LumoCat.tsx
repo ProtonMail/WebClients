@@ -2,9 +2,9 @@ import { clsx } from 'clsx';
 
 import lumoGhost from '@proton/styles/assets/img/lumo/lumo-sit-side-ghost.svg';
 
-import { getActiveSpecialTheme } from '../../features/themes/utils/themeUtils';
+import { getActiveSpecialTheme } from '../../features/themes';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
-import { useLumoTheme } from '../../providers/LumoThemeProvider';
+import { useLumoTheme } from '../../providers';
 import { LazyLottie } from '../LazyLottie';
 
 import './LumoCat.scss';

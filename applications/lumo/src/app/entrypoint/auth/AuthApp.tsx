@@ -24,13 +24,13 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from '../../bootstrap';
-import LumoLoader from '../../components/LumoLoader';
+import LumoLoader from '../../components/Loading/LumoLoader';
 import config from '../../config';
 import locales from '../../locales';
-import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
+import { LumoThemeProvider } from '../../providers';
 import type { LumoStore } from '../../redux/store';
 import { extraThunkArguments } from '../../redux/thunk';
-import { IndexedDBConnectionMonitor } from '../../ui/components/IndexedDBConnectionMonitor';
+import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
 
 const RouterContainerLazy = lazy(
     () =>

@@ -352,7 +352,7 @@ export class SearchEngine {
                     break;
                 }
                 case QueryEventKind.Found: {
-                    console.log(`Search found event ${found.length}: "${name}"`);
+                    console.log(`Search found event ${found.length}"`);
                     const entry = queryEvent.found();
                     if (entry) found.push(entry);
                     break;

@@ -31,7 +31,7 @@ export class StreamProcessor {
                 parsedData.push(item);
             } catch (error) {
                 console.warn('Error parsing a data line from chat endpoint', error);
-                continue;
+
             }
         }
 

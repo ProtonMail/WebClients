@@ -1,10 +1,10 @@
 // noinspection ExceptionCaughtLocallyJS
-import { decode as msgpackDecode, encode as msgpackEncode } from '@msgpack/msgpack';
+import {decode as msgpackDecode, encode as msgpackEncode} from '@msgpack/msgpack';
 import stableStringify from 'json-stable-stringify';
 import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
 
-import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+import {generateAndImportKey} from '@proton/crypto/lib/subtle/aesGcm';
 
 import {
     base64ToSpaceKey,
@@ -16,10 +16,10 @@ import {
     unwrapAesKey,
     wrapAesKey,
 } from './crypto';
-import type { AesGcmCryptoKey, AesKwCryptoKey } from './crypto/types';
-import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
-import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
-import type { Encrypted } from './types';
+import type {AesGcmCryptoKey, AesKwCryptoKey} from './crypto/types';
+import type {LumoUserSettings} from './redux/slices/lumoUserSettings';
+import type {SerializedUserSettings, UserSettingsToApi} from './remote/types';
+import type {Encrypted} from './types';
 import {
     type AdString,
     type Attachment,
@@ -27,18 +27,6 @@ import {
     type Conversation,
     type ConversationPub,
     type EncryptedData,
-    type Message,
-    type MessagePriv,
-    type MessagePub,
-    type SerializedAttachment,
-    type SerializedConversation,
-    type SerializedMessage,
-    type SerializedSpace,
-    type ShallowAttachment,
-    type Space,
-    type SpaceKeyClear,
-    type SpaceKeyEnc,
-    type SpacePub,
     getAttachmentPub,
     getConversationPub,
     getMessagePriv,
@@ -51,12 +39,24 @@ import {
     isMessagePriv,
     isShallowAttachment,
     isSpacePriv,
+    type Message,
+    type MessagePriv,
+    type MessagePub,
+    type SerializedAttachment,
+    type SerializedConversation,
+    type SerializedMessage,
+    type SerializedSpace,
+    type ShallowAttachment,
+    type Space,
+    type SpaceKeyClear,
+    type SpaceKeyEnc,
+    type SpacePub,
     splitAttachment,
     splitConversation,
     splitSpace,
 } from './types';
-import { objectMapV } from './util/objects';
-import { safeLogger } from './util/safeLogger';
+import {objectMapV} from './util/objects';
+import {safeLogger} from './util/safeLogger';
 
 const APP_NAME = 'lumo';
 
@@ -248,8 +248,7 @@ export async function serializeMessage(message: Message, spaceDek: AesGcmCryptoK
         let encrypted: EncryptedData | undefined = undefined;
         if (!isEmptyMessagePriv(messagePriv)) {
             const messagePrivJson = JSON.stringify(messagePriv);
-            const messagePrivJsonEncrypted = await encryptString(messagePrivJson, spaceDek, ad);
-            encrypted = messagePrivJsonEncrypted;
+            encrypted = await encryptString(messagePrivJson, spaceDek, ad);
         }
 
         return {
@@ -461,9 +460,7 @@ export async function deserializeUserSettings(
         const ad = getUserSettingsAd();
         const userSettingsJson = await decryptString(combined.encrypted, userSettingsDek, ad);
 
-        const result = JSON.parse(userSettingsJson) as LumoUserSettings;
-
-        return result;
+        return JSON.parse(userSettingsJson) as LumoUserSettings;
     } catch (error) {
         safeLogger.warn('Failed to deserialize user settings:', error);
         return null;

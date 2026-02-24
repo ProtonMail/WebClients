@@ -1,15 +1,15 @@
-import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
-import type { AesGcmCryptoKey } from '../../crypto/types';
-import { DbApi } from '../../indexedDb/db';
-import { selectMasterKey } from '../../redux/selectors';
-import type { SpaceMap } from '../../redux/slices/core/spaces';
-import { getStoreRef } from '../../redux/storeRef';
-import { Role } from '../../types';
-import type { DriveDocument } from '../../types/documents';
-import { applyRetentionPolicy } from '../../ui/sidepanel/helpers';
-import { BM25Index } from './bm25Index';
-import { chunkDocument } from './documentChunker';
-import type { SearchResult, SearchServiceStatus, SearchState } from './types';
+import {ENABLE_FOUNDATION_SEARCH} from '../../config/search';
+import type {AesGcmCryptoKey} from '../../crypto/types';
+import {DbApi} from '../../indexedDb/db';
+import {selectMasterKey} from '../../redux/selectors';
+import type {SpaceMap} from '../../redux/slices/core/spaces';
+import {getStoreRef} from '../../redux/storeRef';
+import {Role} from '../../types';
+import type {DriveDocument} from '../../types/documents';
+import {applyRetentionPolicy} from '../../layouts/sidepanel/helpers';
+import {BM25Index} from './bm25Index';
+import {chunkDocument} from './documentChunker';
+import type {SearchResult, SearchServiceStatus, SearchState} from './types';
 
 const WorkerMessageType = {
     Search: 0,
@@ -185,11 +185,10 @@ export class SearchService {
         await this.workerReady;
         const id = message.id ?? crypto.randomUUID();
         const payload = { ...message, id, userId: this.userId, searchIndexKey };
-        const result = new Promise((resolve, reject) => {
-            this.pending.set(id, { resolve, reject });
+        return new Promise((resolve, reject) => {
+            this.pending.set(id, {resolve, reject});
             this.worker!.postMessage(payload);
         });
-        return result;
     }
 
     static get(userId?: string): SearchService {
