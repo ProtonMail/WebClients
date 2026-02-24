@@ -12,7 +12,7 @@ import { CYCLE } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';
 import { SubscriptionMode } from '../../core/subscription/constants';
-import type { EnrichedCheckResponse } from '../../core/subscription/interface';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import type { InitializeProps } from './PaymentContext';
 import { PaymentsContextProvider, type PaymentsContextType, type PlanToCheck, usePayments } from './PaymentContext';
@@ -30,7 +30,7 @@ interface InitializationStatus {
 
 type OptimisticOptions = PlanToCheck & {
     billingAddress: BillingAddress;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     vatNumber: string | undefined;
 };
 

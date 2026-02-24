@@ -5,7 +5,7 @@ import type { BillingAddress } from '../../core/billing-address/billing-address'
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
 import type { Currency, FreeSubscription, PaymentsApi } from '../../core/interface';
 import { getAutoCoupon, isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
-import type { EnrichedCheckResponse, FullPlansMap, Subscription } from '../../core/subscription/interface';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import type { PlanToCheck } from './PaymentContext';
 import type { useMultiCheckGroups } from './useMultiCheckGroups';
 
@@ -79,7 +79,7 @@ export const checkMultiplePlans = async ({
         .forEach((groupId) => multiCheckGroups.addPromiseToGroup(groupId, resultsPromise));
 
     const results = await resultsPromise;
-    const normalizedResults: EnrichedCheckResponse[] = [];
+    const normalizedResults: SubscriptionEstimation[] = [];
 
     let checkedIndex = 0;
     for (let index = 0; index < plansToCheck.length; index++) {

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { type RequiredCheckResponse, getCheckoutUi } from '../../core/checkout';
+import { getCheckoutUi } from '../../core/checkout';
 import { getCheckoutModifiers } from '../../core/checkout-modifiers';
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
 import type { FreeSubscription, PlanIDs } from '../../core/interface';
@@ -10,7 +10,11 @@ import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '../../core/pla
 import type { PlansMap } from '../../core/plan/interface';
 import { hasPlanIDs } from '../../core/planIDs';
 import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
-import type { Subscription, SubscriptionCheckForbiddenReason } from '../../core/subscription/interface';
+import type {
+    Subscription,
+    SubscriptionCheckForbiddenReason,
+    SubscriptionEstimation,
+} from '../../core/subscription/interface';
 import { ADDONS_LINE_ITEM_TYPE, type AddonLineItem, createAddonItem } from './items/addons';
 import { AMOUNT_DUE_LINE_ITEM_TYPE, type AmountDueLineItem, createAmountDueItem } from './items/amount-due';
 import { BILLING_CYCLE_LINE_ITEM_TYPE, type BillingCycleLineItem, createBillingCycleItem } from './items/billing-cycle';
@@ -82,7 +86,7 @@ export interface HeadlessCheckoutCouponConfig {
 export interface GetHeadlessCheckoutParams {
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
     /**
      * Whether the current checkout is for a trial. Auto-detected from checkResult if not provided. This property is
      * meant to tell the system if user intends to start a trial, or make a trial-to-trial modification.

@@ -6,14 +6,14 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import { buildSubscription } from '@proton/testing/builders';
 
-import { type RequiredCheckResponse, getCheckoutUi } from '../../core/checkout';
+import { getCheckoutUi } from '../../core/checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../../core/constants';
 import type { PlanIDs } from '../../core/interface';
 import type { PlansMap } from '../../core/plan/interface';
 import { getPrice } from '../../core/price-helpers';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import { getFreeCheckResult } from '../../core/subscription/freePlans';
-import type { Subscription } from '../../core/subscription/interface';
+import type { Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { getCheckoutRenewNoticeText, getCheckoutRenewNoticeTextFromCheckResult } from './RenewalNotice';
 
 const RenewalNotice = (...props: Parameters<typeof getCheckoutRenewNoticeText>) => {
@@ -202,7 +202,7 @@ const getProps = (
     }: {
         planIDs?: PlanIDs;
         plansMap?: PlansMap;
-        checkResult: RequiredCheckResponse;
+        checkResult: SubscriptionEstimation;
     } = {
         checkResult: getFreeCheckResult(),
     }
@@ -393,6 +393,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.MONTHLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
@@ -430,6 +435,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -466,6 +476,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -500,6 +515,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -534,6 +554,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -568,6 +593,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -628,6 +658,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -662,6 +697,11 @@ describe('RenewalNotice', () => {
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -703,6 +743,11 @@ describe('Trials (from check result)', () => {
                     BaseRenewAmount: null,
                     RenewCycle: CYCLE.MONTHLY,
                     PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                    requestData: {
+                        Plans: { [PLANS.MAIL]: 1 },
+                        Currency: 'CHF',
+                        Cycle: CYCLE.MONTHLY,
+                    },
                 }}
                 plansMap={getDefaultPlansMap()}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -733,6 +778,11 @@ describe('Trials (from check result)', () => {
                     BaseRenewAmount: null,
                     RenewCycle: CYCLE.THREE,
                     PeriodEnd: +addMonths(new Date(), CYCLE.THREE) / 1000,
+                    requestData: {
+                        Plans: { [PLANS.MAIL]: 1 },
+                        Currency: 'CHF',
+                        Cycle: CYCLE.THREE,
+                    },
                 }}
                 plansMap={getDefaultPlansMap()}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -771,6 +821,11 @@ describe('Coupons - multiple redemptions', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -807,6 +862,11 @@ describe('Coupons - multiple redemptions', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.YEARLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -843,6 +903,11 @@ describe('Coupons - multiple redemptions', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -879,6 +944,11 @@ describe('Coupons - multiple redemptions', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.YEARLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -925,6 +995,11 @@ describe('Coupons - one-time (standard notice)', () => {
                             BaseRenewAmount: 7995,
                             RenewCycle: 12,
                             PeriodEnd: +addMonths(new Date(), cycle) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.VPN2024]: 1 },
+                                Currency: 'CHF',
+                                Cycle: cycle,
+                            },
                         },
                     })}
                     cycle={cycle}
@@ -968,6 +1043,11 @@ describe('Coupons - one-time (standard notice)', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.YEARLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -1010,6 +1090,11 @@ describe('Coupons - one-time (standard notice)', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -1045,6 +1130,11 @@ describe('Coupons - one-time (standard notice)', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -1080,6 +1170,11 @@ describe('Coupons - one-time (standard notice)', () => {
                         BaseRenewAmount: 7995,
                         RenewCycle: 12,
                         PeriodEnd: +addMonths(new Date(), 12) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.VPN2024]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.YEARLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -1117,6 +1212,11 @@ describe('Coupons - one-time (short notice)', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -1181,6 +1281,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 5, 15) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.MONTHLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
@@ -1218,6 +1323,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 11, 31) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -1262,6 +1372,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 2, 15) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.MONTHLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
@@ -1304,6 +1419,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 8, 30) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -1346,6 +1466,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 1, 28) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.MONTHLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
@@ -1390,6 +1515,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 3, 10) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.MONTHLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
@@ -1432,6 +1562,11 @@ describe('Custom Billing', () => {
                             BaseRenewAmount: null,
                             RenewCycle: null,
                             PeriodEnd: +new Date(2024, 6, 20) / 1000,
+                            requestData: {
+                                Plans: { [PLANS.MAIL]: 1 },
+                                Currency: 'CHF',
+                                Cycle: CYCLE.YEARLY,
+                            },
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -1466,6 +1601,11 @@ describe('Custom Billing', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +new Date(2024, 4, 25) / 1000, // May 25, 2024
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.MONTHLY,
+                        },
                     }}
                     plansMap={getDefaultPlansMap()}
                     planIDs={{ [PLANS.MAIL]: 1 }}
@@ -1506,6 +1646,11 @@ describe('Custom Billing', () => {
                         BaseRenewAmount: null,
                         RenewCycle: null,
                         PeriodEnd: +new Date(2024, 9, 15) / 1000, // October 15, 2024
+                        requestData: {
+                            Plans: { [PLANS.MAIL]: 1 },
+                            Currency: 'CHF',
+                            Cycle: CYCLE.YEARLY,
+                        },
                     }}
                     plansMap={getDefaultPlansMap()}
                     planIDs={{ [PLANS.MAIL]: 1 }}

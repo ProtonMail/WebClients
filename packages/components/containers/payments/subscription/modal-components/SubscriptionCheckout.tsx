@@ -23,7 +23,7 @@ import {
     type Subscription,
     getPlanFromPlanIDs,
 } from '@proton/payments';
-import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { TaxCountryHook } from '@proton/payments/ui';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
@@ -66,7 +66,7 @@ type Props = {
     plansMap: FullPlansMap;
     cycle: Cycle;
     currency: Currency;
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
     vpnServers: VPNServersCountData;
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;

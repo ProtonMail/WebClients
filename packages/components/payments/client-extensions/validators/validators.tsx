@@ -13,7 +13,6 @@ import {
     type CardPayment,
     type ChargebeeIframeHandles,
     type ChargebeePaypalModalHandles,
-    type EnrichedCheckResponse,
     type FreeSubscription,
     type GooglePayModalHandles,
     PAYMENT_METHOD_TYPES,
@@ -21,6 +20,7 @@ import {
     type PaymentVerificatorV5,
     type PaymentVerificatorV5Params,
     type Subscription,
+    type SubscriptionEstimation,
     type V5PaymentToken,
     ensureTokenChargeableV5,
     toV5PaymentToken,
@@ -127,7 +127,7 @@ export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void
 type Dependencies = {
     user?: User;
     subscription?: Subscription | FreeSubscription;
-    checkResult?: EnrichedCheckResponse;
+    checkResult?: SubscriptionEstimation;
     product: ProductParam;
     telemetryContext: PaymentTelemetryContext;
 };

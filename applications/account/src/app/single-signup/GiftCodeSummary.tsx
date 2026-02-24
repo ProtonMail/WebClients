@@ -8,7 +8,8 @@ import { Input } from '@proton/atoms/Input/Input';
 import { Info, Price, useNotifications } from '@proton/components';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
+import type { Currency, PlanIDs, PlansMap } from '@proton/payments';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
 interface Props {
     coupon?: {
@@ -22,7 +23,7 @@ interface Props {
 
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    checkResult: SubscriptionCheckResponse;
+    checkResult: SubscriptionEstimation;
 }
 
 const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap, checkResult }: Props) => {

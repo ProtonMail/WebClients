@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import type { RequiredCheckResponse } from '../../core/checkout';
 import { TaxInclusive } from '../../core/subscription/constants';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 
 export type TaxInfo = ReturnType<typeof formatTax>;
 
-export const formatTax = (checkResult: RequiredCheckResponse) => {
+export const formatTax = (checkResult: SubscriptionEstimation) => {
     const taxesQuantity = checkResult.Taxes?.length ?? 0;
     if (!checkResult.Taxes || !taxesQuantity) {
         return null;

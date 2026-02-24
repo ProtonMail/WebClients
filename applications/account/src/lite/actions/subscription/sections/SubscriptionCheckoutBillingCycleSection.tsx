@@ -6,9 +6,9 @@ import { useAppName } from '@proton/account/appName';
 import SubscriptionCheckoutCycleItem from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
-import type { SubscriptionCheckResponse } from '@proton/payments';
 import { PLANS } from '@proton/payments';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 
 import { runAdditionalCycleChecks } from '../helpers';
@@ -32,7 +32,7 @@ const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
     } = usePayments();
     const { cycle, planIDs, currency } = checkoutUi;
     const disableCycleSelector = getIsCustomCycle(cycle) || selectedPlan.name === PLANS.PASS_LIFETIME;
-    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>([]);
+    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionEstimation[]>([]);
     const appName = useAppName();
 
     const allowedCycles = getAllowedCycles({

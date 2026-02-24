@@ -4,13 +4,13 @@ import type {
     BillingAddress,
     Currency,
     Cycle,
-    EnrichedCheckResponse,
     ExtendedTokenPayment,
     FreeSubscription,
     PAYMENT_METHOD_TYPES,
     PlanIDs,
     SavedPaymentMethod,
     Subscription,
+    SubscriptionEstimation,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -51,7 +51,7 @@ export interface SubscriptionData {
     minimumCycle?: Cycle;
     skipUpsell?: boolean;
     planIDs: PlanIDs;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     payment?: ExtendedTokenPayment;
     type?: 'cc' | 'pp' | 'btc';
     billingAddress: BillingAddress;

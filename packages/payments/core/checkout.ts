@@ -19,11 +19,9 @@ import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from
 import type { Plan, PlansMap } from './plan/interface';
 import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-helpers';
 import { SubscriptionMode } from './subscription/constants';
-import { customCycles, getHas2025OfferCoupon } from './subscription/helpers';
-import type { EnrichedCheckResponse, Subscription, SubscriptionCheckResponse } from './subscription/interface';
+import { customCycles, getHas2025OfferCoupon, getPlanIDs } from './subscription/helpers';
+import type { Subscription, SubscriptionEstimation } from './subscription/interface';
 import { isValidPlanName } from './type-guards';
-
-export type RequiredCheckResponse = SubscriptionCheckResponse;
 
 interface AddonDescription {
     name: ADDON_NAMES;
@@ -210,7 +208,7 @@ export const getCheckoutUi = ({
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
 }) => {
     const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
@@ -322,7 +320,7 @@ export type PaymentsCheckoutUI = ReturnType<typeof getCheckoutUi>;
 
 export const getCheckResultFromSubscription = (
     subscription: Subscription | undefined | null
-): RequiredCheckResponse => {
+): SubscriptionEstimation => {
     const Amount = subscription?.Amount || 0;
     const Discount = subscription?.Discount || 0;
     const Cycle = subscription?.Cycle || DEFAULT_CYCLE;
@@ -346,6 +344,11 @@ export const getCheckResultFromSubscription = (
         BaseRenewAmount: null,
         RenewCycle: null,
         PeriodEnd: +addMonths(new Date(), Cycle) / 1000,
+        requestData: {
+            Plans: getPlanIDs(subscription),
+            Currency,
+            Cycle,
+        },
     };
 };
 
@@ -359,7 +362,7 @@ export const getOptimisticCheckResult = ({
     planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
     currency: Currency;
-}): EnrichedCheckResponse => {
+}): SubscriptionEstimation => {
     const amount = getPrice(planIDs || {}, cycle, plansMap);
 
     return {

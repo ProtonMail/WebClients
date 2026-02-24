@@ -2,13 +2,13 @@ import { render, screen } from '@testing-library/react';
 
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import type { RequiredCheckResponse } from '../../core/checkout';
-import { CYCLE } from '../../core/constants';
+import { CYCLE, PLANS } from '../../core/constants';
 import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { InclusiveVatText } from './VatText';
 
 describe('InclusiveVatText', () => {
-    const createMockCheckResult = (overrides = {}): RequiredCheckResponse => ({
+    const createMockCheckResult = (overrides = {}): SubscriptionEstimation => ({
         Amount: 1000,
         AmountDue: 1200,
         Currency: 'USD',
@@ -26,6 +26,11 @@ describe('InclusiveVatText', () => {
                 Amount: 200,
             },
         ],
+        requestData: {
+            Plans: { [PLANS.MAIL]: 1 },
+            Currency: 'USD',
+            Cycle: CYCLE.YEARLY,
+        },
         ...overrides,
     });
 

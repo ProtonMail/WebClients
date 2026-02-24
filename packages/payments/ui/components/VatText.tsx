@@ -1,9 +1,9 @@
-import type { RequiredCheckResponse } from '../../core/checkout';
 import { isTaxInclusive } from '../../core/subscription/helpers';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { formatTax } from '../headless-checkout/tax-helpers';
 
 interface Props {
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
     className?: string;
 }
 

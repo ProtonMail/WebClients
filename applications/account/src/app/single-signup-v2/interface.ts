@@ -8,13 +8,13 @@ import type {
     BillingAddress,
     CYCLE,
     Currency,
-    EnrichedCheckResponse,
     FreePlanDefault,
     PLANS,
     PaymentStatus,
     Plan,
     PlanIDs,
     PlansMap,
+    SubscriptionEstimation,
     SubscriptionPlan,
 } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
@@ -53,7 +53,7 @@ export interface OptimisticOptions {
     currency: Currency;
     planIDs: PlanIDs;
     billingAddress: BillingAddress;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     coupon?: string;
     trial?: boolean;
     vatNumber?: string;
