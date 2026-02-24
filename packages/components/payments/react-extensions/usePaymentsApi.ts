@@ -9,7 +9,6 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import {
     type CheckSubscriptionData,
     DEFAULT_TAX_BILLING_ADDRESS,
-    type EnrichedCheckResponse,
     type FullBillingAddress,
     type MultiCheckOptions,
     PAYMENTS_API_ERROR_CODES,
@@ -17,6 +16,7 @@ import {
     type PaymentsApi,
     type PaymentsVersion,
     type RequestOptions,
+    type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
     getPaymentMethodStatus,
@@ -130,7 +130,7 @@ export const useReportRoutingError = () => {
 };
 
 export const useMultiCheckCache = () => {
-    const cacheRef = useRef<Record<string, EnrichedCheckResponse>>({});
+    const cacheRef = useRef<Record<string, SubscriptionEstimation>>({});
     const cacheByPlanRef = useRef<Record<string, Set<string> | undefined>>({});
 
     const getPlanID = (plans: CheckSubscriptionData['Plans']) => {
@@ -157,12 +157,12 @@ export const useMultiCheckCache = () => {
         return btoa(id);
     };
 
-    const get = (data: CheckSubscriptionData): EnrichedCheckResponse | undefined => {
+    const get = (data: CheckSubscriptionData): SubscriptionEstimation | undefined => {
         const id = hash(data);
         return cacheRef.current[id];
     };
 
-    const set = (data: CheckSubscriptionData, value: EnrichedCheckResponse) => {
+    const set = (data: CheckSubscriptionData, value: SubscriptionEstimation) => {
         const id = hash(data);
         cacheRef.current[id] = value;
 
@@ -228,7 +228,7 @@ const updateInvoiceBillingAddress = async (api: Api, invoiceId: string, fullBill
 
 export const usePaymentsApi = (
     apiOverride?: Api,
-    checkV5Fallback?: (data: CheckSubscriptionData) => EnrichedCheckResponse | null
+    checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionEstimation | null
 ): {
     paymentsApi: PaymentsApi;
     getPaymentsApi: (api: Api) => PaymentsApi;
@@ -255,7 +255,7 @@ export const usePaymentsApi = (
         const checkSubscription = async (
             data: CheckSubscriptionData,
             requestOptions: RequestOptions = {}
-        ): Promise<EnrichedCheckResponse> => {
+        ): Promise<SubscriptionEstimation> => {
             captureWrongPlanIDs(data.Plans, { source: 'check' });
 
             if (isLifetimePlanSelected(data.Plans)) {
@@ -335,7 +335,7 @@ export const usePaymentsApi = (
         const multiCheck = (
             requestData: CheckSubscriptionData[],
             { cached, signal, silence, ...optimisticFallbackOptions }: MultiCheckOptions = {}
-        ): Promise<EnrichedCheckResponse[]> => {
+        ): Promise<SubscriptionEstimation[]> => {
             return Promise.all(
                 requestData.map(async (data) => {
                     if (cached) {
@@ -345,7 +345,7 @@ export const usePaymentsApi = (
                         }
                     }
 
-                    let result: EnrichedCheckResponse;
+                    let result: SubscriptionEstimation;
                     try {
                         result = await checkSubscription(data, {
                             signal: signal,
@@ -373,12 +373,12 @@ export const usePaymentsApi = (
             );
         };
 
-        const cachedCheck = async (data: CheckSubscriptionData): Promise<EnrichedCheckResponse> => {
+        const cachedCheck = async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => {
             const result = await multiCheck([data], { cached: true });
             return result[0];
         };
 
-        const cacheMultiCheck = (data: CheckSubscriptionData, result: EnrichedCheckResponse) => {
+        const cacheMultiCheck = (data: CheckSubscriptionData, result: SubscriptionEstimation) => {
             multiCheckCache.set(data, result);
         };
 
@@ -456,7 +456,7 @@ export const usePaymentsApiWithCheckFallback = () => {
     const [subscription] = useSubscription();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
+    const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionEstimation | null => {
         const { Cycle, Currency, Plans } = data;
 
         const checkForbidden = isSubscriptionCheckForbidden(subscription, Plans, Cycle);
@@ -471,7 +471,7 @@ export const usePaymentsApiWithCheckFallback = () => {
 
         const amount = plansMap[planName]?.Pricing?.[Cycle] ?? 0;
 
-        const result: EnrichedCheckResponse & { __fallback: true } = {
+        const result: SubscriptionEstimation & { __fallback: true } = {
             Cycle,
             Currency,
             Amount: amount,

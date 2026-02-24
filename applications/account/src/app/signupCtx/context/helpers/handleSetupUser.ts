@@ -3,12 +3,12 @@ import {
     type BillingAddress,
     type Currency,
     type Cycle,
-    type EnrichedCheckResponse,
     type ExtendedTokenPayment,
     type FreeSubscription,
     type PaymentsVersion,
     type PlanIDs,
     type Subscription,
+    type SubscriptionEstimation,
     hasFreePlanIDs,
 } from '@proton/payments';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
@@ -37,7 +37,7 @@ export interface SignupContextSubscriptionData {
     currency: Currency;
     cycle: Cycle;
     planIDs: PlanIDs;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     paymentToken: ExtendedTokenPayment | undefined;
     billingAddress: BillingAddress;
     vatNumber: string | undefined;

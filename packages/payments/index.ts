@@ -418,12 +418,11 @@ export {
 } from './core/subscription/helpers';
 export {
     type Coupon,
-    type EnrichedCheckResponse,
+    type SubscriptionEstimation,
     type EnrichedCoupon,
     type FullPlansMap,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
-    type SubscriptionCheckResponse,
     type Tax,
 } from './core/subscription/interface';
 export {

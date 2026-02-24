@@ -1,9 +1,9 @@
 import { Price } from '@proton/components';
-import type { RequiredCheckResponse } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 
 interface TaxRowProps {
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
 }
 
 export const TaxRow = ({ checkResult }: Partial<TaxRowProps>) => {

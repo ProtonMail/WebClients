@@ -2,8 +2,9 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
-import { CYCLE, FREE_PLAN, PLANS, type SubscriptionCheckResponse, SubscriptionMode } from '@proton/payments';
+import { CYCLE, FREE_PLAN, PLANS, SubscriptionMode } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { useTaxCountry } from '@proton/payments/ui';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -35,7 +36,7 @@ const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'tax
 };
 
 describe('SubscriptionCheckout', () => {
-    let checkResult: SubscriptionCheckResponse;
+    let checkResult: SubscriptionEstimation;
 
     beforeEach(() => {
         checkResult = {
@@ -48,6 +49,11 @@ describe('SubscriptionCheckout', () => {
             SubscriptionMode: SubscriptionMode.Regular,
             BaseRenewAmount: null,
             RenewCycle: null,
+            requestData: {
+                Plans: { [PLANS.MAIL]: 1 },
+                Currency: 'CHF',
+                Cycle: CYCLE.MONTHLY,
+            },
         };
     });
 

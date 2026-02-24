@@ -13,10 +13,10 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
     type Plan,
-    type SubscriptionCheckResponse,
     getPlansMap,
 } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -57,7 +57,7 @@ const ContextSubscriptionContainer = applyHOCs(
     withPaymentContext()
 )(SubscriptionContainer);
 
-function mockCheckResult(checkData: Partial<SubscriptionCheckResponse> = {}) {
+function mockCheckResult(checkData: Partial<SubscriptionEstimation> = {}) {
     addApiMock(
         'payments/v5/subscription/check',
         ({ data }: { data: CheckSubscriptionData }) => {

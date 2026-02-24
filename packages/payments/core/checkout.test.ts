@@ -5,7 +5,7 @@ import { getCheckoutUi, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
-import type { SubscriptionCheckResponse } from './subscription/interface';
+import type { SubscriptionEstimation } from './subscription/interface';
 
 const getPlan = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.PLAN } as Plan;
@@ -106,7 +106,7 @@ const vpnBusinessMember = PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS] as Plan;
 
 describe('should get checkout result', () => {
     it('should calculate vpn2024', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 999,
             AmountDue: 999,
             Cycle: CYCLE.MONTHLY,
@@ -116,6 +116,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+            requestData: {
+                Plans: { [PLANS.VPN2024]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.MONTHLY,
+            },
         };
 
         expect(
@@ -162,7 +167,7 @@ describe('should get checkout result', () => {
     });
 
     it('should correctly handle the price increases', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 1199,
             AmountDue: 1199,
             Cycle: CYCLE.MONTHLY,
@@ -172,6 +177,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+            requestData: {
+                Plans: { [PLANS.VPN2024]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.MONTHLY,
+            },
         };
 
         expect(
@@ -238,7 +248,7 @@ describe('should get checkout result', () => {
     });
 
     it('should calculate BF 24 month visionary', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 47976,
             AmountDue: 47976,
             CouponDiscount: -4776,
@@ -253,6 +263,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+            requestData: {
+                Plans: { [PLANS.VISIONARY]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         expect(
@@ -299,7 +314,7 @@ describe('should get checkout result', () => {
     });
 
     it('should calculate BF 30 month vpn2024', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 29970,
             AmountDue: 29970,
             CouponDiscount: -17994,
@@ -314,6 +329,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.THIRTY) / 1000,
+            requestData: {
+                Plans: { [PLANS.VPN2024]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.THIRTY,
+            },
         };
 
         const result = getCheckoutUi({
@@ -376,7 +396,7 @@ describe('should get checkout result', () => {
     });
 
     it('should calculate business with addons', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 81288,
             AmountDue: 81288,
             CouponDiscount: 0,
@@ -387,6 +407,15 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+            requestData: {
+                Plans: {
+                    [PLANS.BUNDLE_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
+                    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
+                },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         expect(
@@ -458,7 +487,7 @@ describe('should get checkout result', () => {
         const cost24MonthlyCycles3Members =
             (vpnProPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 + (vpnProMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
 
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: twoYearPrice3Members,
             AmountDue: twoYearPrice3Members,
             CouponDiscount: 0,
@@ -469,6 +498,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+            requestData: {
+                Plans: { [PLANS.VPN_PRO]: 1, [ADDON_NAMES.MEMBER_VPN_PRO]: 2 },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         expect(
@@ -527,7 +561,7 @@ describe('should get checkout result', () => {
             (vpnBusinessPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 +
             (vpnBusinessMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
 
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: twoYearPrice3Members,
             AmountDue: twoYearPrice3Members,
             CouponDiscount: 0,
@@ -538,6 +572,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+            requestData: {
+                Plans: { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2 },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         expect(
@@ -597,7 +636,7 @@ describe('should get checkout result', () => {
     });
 
     it('should calculate 100% discount', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 47976,
             AmountDue: 0,
             CouponDiscount: -47976,
@@ -612,6 +651,11 @@ describe('should get checkout result', () => {
             BaseRenewAmount: null,
             RenewCycle: null,
             PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+            requestData: {
+                Plans: { [PLANS.VISIONARY]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         expect(
@@ -675,6 +719,11 @@ describe('should get checkout result', () => {
                 BaseRenewAmount: null,
                 RenewCycle: null,
                 PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+                requestData: {
+                    Plans: { [PLANS.PASS]: 1, [ADDON_NAMES.LUMO_PASS]: 1 },
+                    Currency: 'USD',
+                    Cycle: CYCLE.YEARLY,
+                },
             },
             plansMap: {
                 [PLANS.PASS]: PLANS_MAP[PLANS.PASS],
@@ -687,7 +736,7 @@ describe('should get checkout result', () => {
 
     describe('viewPricePerMonth', () => {
         it('should show price per member without discounts: plan with member addons', () => {
-            const checkResult: SubscriptionCheckResponse = {
+            const checkResult: SubscriptionEstimation = {
                 Amount: 129528,
                 Currency: 'EUR',
                 AmountDue: 97146,
@@ -714,6 +763,11 @@ describe('should get checkout result', () => {
                 BaseRenewAmount: null,
                 RenewCycle: null,
                 PeriodEnd: +addMonths(new Date(), 24) / 1000,
+                requestData: {
+                    Plans: { [PLANS.VPN_BUSINESS]: 1 },
+                    Currency: 'EUR',
+                    Cycle: 24,
+                },
             };
 
             expect(

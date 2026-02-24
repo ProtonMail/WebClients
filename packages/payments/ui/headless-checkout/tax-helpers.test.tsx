@@ -1,12 +1,12 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import type { RequiredCheckResponse } from '../../core/checkout';
-import { CYCLE } from '../../core/constants';
+import { CYCLE, PLANS } from '../../core/constants';
 import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { formatTax } from './tax-helpers';
 
 describe('formatTax', () => {
-    const createMockCheckResult = (overrides = {}): RequiredCheckResponse => ({
+    const createMockCheckResult = (overrides = {}): SubscriptionEstimation => ({
         Amount: 1000,
         AmountDue: 1200,
         Currency: 'USD',
@@ -24,6 +24,11 @@ describe('formatTax', () => {
                 Amount: 200,
             },
         ],
+        requestData: {
+            Plans: { [PLANS.MAIL]: 1 },
+            Currency: 'USD',
+            Cycle: CYCLE.YEARLY,
+        },
         ...overrides,
     });
 

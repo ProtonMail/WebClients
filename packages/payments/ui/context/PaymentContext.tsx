@@ -48,12 +48,7 @@ import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface'
 import { hasFreePlanIDs } from '../../core/planIDs';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { getPlanIDs, isSubscriptionCheckForbiddenWithReason } from '../../core/subscription/helpers';
-import type {
-    EnrichedCheckResponse,
-    FullPlansMap,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '../../core/subscription/interface';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { isFreeSubscription } from '../../core/type-guards';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
@@ -83,7 +78,7 @@ export interface InitializeProps {
 }
 
 interface PricesResult {
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     checkoutUi: PaymentsCheckoutUI;
 }
 
@@ -95,7 +90,7 @@ export interface PaymentsContextType {
     selectCycle: (cycle: Cycle) => Promise<void>;
     selectCurrency: (currency: Currency) => Promise<void>;
     selectBillingAddress: (billingAddress: BillingAddress) => Promise<void>;
-    checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionCheckResponse[]>;
+    checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>;
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
      * Make sure to call `checkMultiplePlans` first.
@@ -114,7 +109,7 @@ export interface PaymentsContextType {
     plansMap: PlansMap;
 
     // TODO: exposing for now. Will likely want to abstract this result
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     zipCodeValid: boolean;
 
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
@@ -128,7 +123,7 @@ export interface PaymentsContextType {
     subscription: Subscription | FreeSubscription | undefined;
 
     freePlan: FreePlanDefault;
-    selectNewPlan: (newPlanToCheck: PlanToCheck) => Promise<EnrichedCheckResponse>;
+    selectNewPlan: (newPlanToCheck: PlanToCheck) => Promise<SubscriptionEstimation>;
     selectedPlan: SelectedPlan;
     getOptimisticCheckResult: (planToCheck: PlanToCheck) => ReturnType<typeof getOptimisticCheckResult>;
     availableCurrencies: readonly Currency[];
@@ -144,7 +139,7 @@ export interface PaymentsContextType {
     telemetryContext: PaymentTelemetryContext;
     loading: boolean;
 
-    reRunPaymentChecks: () => Promise<EnrichedCheckResponse | void>;
+    reRunPaymentChecks: () => Promise<SubscriptionEstimation | void>;
     getShouldPassTrial: (planIds: PlanIDs, cycle: Cycle, canDowngrade: boolean) => boolean;
     coupon: string | undefined;
     selectCoupon: (coupon: string) => Promise<void>;
@@ -173,7 +168,7 @@ interface PaymentsContextProviderState {
     initialized: boolean;
     availableCurrencies: readonly Currency[];
     planToCheck: PlanToCheck;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     zipCodeValid: boolean;
     vatNumber: string | undefined;
     loading: boolean;
@@ -363,7 +358,7 @@ export const PaymentsContextProvider = ({
      */
     const calculateSubscriptionEstimation = async (
         diff: Partial<PaymentsContextProviderState>
-    ): Promise<EnrichedCheckResponse> => {
+    ): Promise<SubscriptionEstimation> => {
         const newPlanToCheck = diff.planToCheck ?? stateRef.current.planToCheck;
         const newBillingAddress = diff.billingAddress ?? stateRef.current.billingAddress;
         const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;

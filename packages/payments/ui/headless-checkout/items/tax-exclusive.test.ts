@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import type { RequiredCheckResponse } from '../../../core/checkout';
 import { CYCLE, PLANS } from '../../../core/constants';
 import type { Currency } from '../../../core/interface';
 import type { PlansMap } from '../../../core/plan/interface';
 import { SubscriptionMode, TaxInclusive } from '../../../core/subscription/constants';
+import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { createTaxExclusiveItem } from './tax-exclusive';
@@ -89,7 +89,7 @@ describe('createTaxExclusiveItem', () => {
 });
 
 describe('createTaxExclusiveItem - VatText style tests', () => {
-    const createMockCheckResult = (overrides = {}): RequiredCheckResponse => ({
+    const createMockCheckResult = (overrides = {}): SubscriptionEstimation => ({
         Amount: 1000,
         AmountDue: 1200,
         Currency: 'USD',
@@ -107,11 +107,16 @@ describe('createTaxExclusiveItem - VatText style tests', () => {
                 Amount: 200,
             },
         ],
+        requestData: {
+            Plans: { [PLANS.MAIL]: 1 },
+            Currency: 'USD',
+            Cycle: CYCLE.YEARLY,
+        },
         ...overrides,
     });
 
     const createMockContext = (
-        checkResult: RequiredCheckResponse,
+        checkResult: SubscriptionEstimation,
         currency: Currency = 'USD'
     ): HeadlessCheckoutContextInner =>
         ({

@@ -6,11 +6,11 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     type Currency,
-    type EnrichedCheckResponse,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
+    type SubscriptionEstimation,
     SubscriptionMode,
     SubscriptionPlatform,
     hasMigrationDiscount,
@@ -29,7 +29,7 @@ export type Props = {
     className?: string;
     currency: Currency;
     onDone?: () => void;
-    checkResult: EnrichedCheckResponse;
+    checkResult: SubscriptionEstimation;
     loading?: boolean;
     disabled?: boolean;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
