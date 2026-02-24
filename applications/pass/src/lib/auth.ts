@@ -25,7 +25,7 @@ import {
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
-import { extractBlobOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
+import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
@@ -373,7 +373,8 @@ export const createAuthService = ({
 
                     try {
                         if (blob?.type === 'offline') {
-                            const { offlineKD, offlineConfig } = extractBlobOfflineComponents(blob);
+                            const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
+                            const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
 
                             authStore.setOfflineKD(offlineKD);

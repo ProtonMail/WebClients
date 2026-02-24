@@ -9,7 +9,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { SESSION_RESUME_MAX_RETRIES } from '@proton/pass/constants';
 import {
     AccountForkResponse,
-    extractBlobOfflineComponents,
+    extractOfflineComponents,
     getAccountForkResponsePayload,
     getStateKey,
 } from '@proton/pass/lib/auth/fork';
@@ -162,7 +162,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 case ReauthAction.OFFLINE_SETUP:
                     if (blob?.type === 'offline') {
-                        const { offlineKD, offlineConfig } = extractBlobOfflineComponents(blob);
+                        const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
+                        const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                         const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                         authStore.setOfflineKD(offlineKD);
                         authStore.setOfflineConfig(offlineConfig);
