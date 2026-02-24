@@ -4,6 +4,7 @@ import { notifyInactiveShares } from '@proton/pass/lib/events/migrate';
 import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
@@ -11,7 +12,7 @@ import { sync } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { State } from '@proton/pass/store/types';
-import type { Invite, Share, ShareGetResponse } from '@proton/pass/types';
+import type { BreachesGetResponse, Invite, Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { diadic } from '@proton/pass/utils/fp/variadics';
@@ -21,12 +22,13 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getUserEventLatestID } from './user-events.requests';
 
 export type SyncResultV2 = {
-    v: 2;
-    userEventID: string;
-    shares: SharesState;
-    items: ItemsByShareId;
     access: HydratedAccessState;
+    breaches: BreachesGetResponse;
     invites: Invite[];
+    items: ItemsByShareId;
+    shares: SharesState;
+    userEventID: string;
+    v: 2;
 };
 
 type RemoteShare = { shareId: string; share?: Share };
@@ -62,10 +64,13 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     /** 5. Get all invites — filter out stale accepted invites before parsing */
     const vaultIDs = new Set(activeShares.map(prop('shareId')));
     const loadGroupInvites: boolean = selectLoadGroupInvites(state);
-    const invites: Invite[] = yield allInvites(vaultIDs, loadGroupInvites);
+    const invites: Invite[] = yield call(allInvites, vaultIDs, loadGroupInvites);
+    /** 6. Get all breaches */
+    const breaches: BreachesGetResponse = yield call(getAllBreaches);
 
     return {
         access,
+        breaches,
         invites,
         items: items.reduce(diadic(merge), {}),
         shares: toMap(activeShares.map(prop('share')), 'shareId'),
