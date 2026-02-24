@@ -9,7 +9,7 @@ import { type ProtonDriveClient, getDrive, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
@@ -33,7 +33,6 @@ export const useCreateFolderModalState = ({
     const { validator, onFormSubmit } = useFormErrors();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const inputFieldError = validator([validateLinkNameField(folderName) || '']);
 
@@ -80,7 +79,10 @@ export const useCreateFolderModalState = ({
 
             onClose();
         } catch (error) {
-            handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });
+            handleSdkError(error, {
+                fallbackMessage: c('Error').t`Failed to create folder`,
+                extra: { parentFolderUid },
+            });
         }
     };
 

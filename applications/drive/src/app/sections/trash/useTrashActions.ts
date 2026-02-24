@@ -6,7 +6,7 @@ import { NodeType, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNotifications } from './useTrashNotifications';
 import { useTrashPhotosStore } from './useTrashPhotos.store';
@@ -19,7 +19,6 @@ type SelectedNode = {
 };
 
 export const useTrashActions = () => {
-    const { handleError } = useSdkErrorHandler();
     const {
         drive,
         internal: { photos },
@@ -86,7 +85,7 @@ export const useTrashActions = () => {
                 }
             }
         } catch (e) {
-            handleError(e);
+            handleSdkError(e);
         } finally {
             setLoading(false);
         }
@@ -114,7 +113,7 @@ export const useTrashActions = () => {
         if (!uids.length) {
             return [];
         }
-        return (await Array.fromAsync(sdk.deleteNodes(uids)).catch(handleError)) ?? [];
+        return (await Array.fromAsync(sdk.deleteNodes(uids)).catch(handleSdkError)) ?? [];
     };
 
     const deleteNodes = async (selectedNodes: SelectedNode[], showNotification = true) => {
@@ -148,7 +147,7 @@ export const useTrashActions = () => {
             });
             createEmptyTrashNotificationSuccess();
         } catch (e) {
-            handleError(e, { fallbackMessage: c('Notification').t`Trash failed to be emptied` });
+            handleSdkError(e, { fallbackMessage: c('Notification').t`Trash failed to be emptied` });
         }
     };
 

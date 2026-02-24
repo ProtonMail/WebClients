@@ -3,12 +3,12 @@ import { renderHook, waitFor } from '@testing-library/react';
 import type { ProtonDriveClient } from '@proton/drive/index';
 import { generateNodeUid } from '@proton/drive/index';
 
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { useMoveEligibility } from './useMoveEligibility';
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
+jest.mock('../../utils/errorHandling/handleSdkError', () => ({
     handleSdkError: jest.fn(),
 }));
 
@@ -172,7 +172,7 @@ describe('useMoveEligibility', () => {
             renderHook(() => useMoveEligibility(selectedItemConfigs, targetFolderUid, drive));
 
             await waitFor(() => {
-                expect(mockHandleSdkError).toHaveBeenCalledWith(mockError);
+                expect(mockHandleSdkError).toHaveBeenCalledWith(mockError, { showNotification: false });
             });
         });
     });

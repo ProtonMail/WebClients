@@ -6,7 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { useNotifications } from '@proton/components';
 import { splitInvitationUid, useDrive } from '@proton/drive/index';
 
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useInvitationsLoader = () => {
@@ -15,7 +15,6 @@ export const useInvitationsLoader = () => {
         internal: { photos },
     } = useDrive();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const { setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems } = useSharedWithMeListingStore(
         useShallow((state) => ({
@@ -60,7 +59,7 @@ export const useInvitationsLoader = () => {
                             shareId,
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -93,7 +92,7 @@ export const useInvitationsLoader = () => {
                             shareId,
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -109,7 +108,7 @@ export const useInvitationsLoader = () => {
 
                 cleanupStaleItems(ItemType.INVITATION, loadedUids);
             } catch (e) {
-                handleError(e, {
+                handleSdkError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some of your invitation to shared items`,
                     showNotification: false,
                 });
@@ -117,15 +116,7 @@ export const useInvitationsLoader = () => {
                 setLoadingInvitations(false);
             }
         },
-        [
-            photos,
-            drive,
-            handleError,
-            createNotification,
-            setSharedWithMeItemInStore,
-            setLoadingInvitations,
-            cleanupStaleItems,
-        ]
+        [photos, drive, createNotification, setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems]
     );
 
     return {

@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
@@ -18,7 +18,6 @@ type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | '
 
 export const useSharedByMeNodesLoader = () => {
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const fetchSharedByNodes = useCallback(
         async (abortSignal: AbortSignal, drive: Drive): Promise<Set<string>> => {
@@ -31,7 +30,7 @@ export const useSharedByMeNodesLoader = () => {
                     const { node } = getNodeEntity(sharedByMeMaybeNode);
                     const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
                     if (!node.deprecatedShareId) {
-                        handleError(
+                        handleSdkError(
                             new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                                 tags: { component: 'drive-sdk' },
                                 extra: { uid: node.uid },
@@ -92,7 +91,7 @@ export const useSharedByMeNodesLoader = () => {
                         }
                     });
                 } catch (e) {
-                    handleError(e, {
+                    handleSdkError(e, {
                         showNotification: false,
                     });
                     showErrorNotification = true;
@@ -107,7 +106,7 @@ export const useSharedByMeNodesLoader = () => {
 
             return loadedUids;
         },
-        [createNotification, handleError]
+        [createNotification]
     );
 
     const loadSharedByMeNodes = useCallback(
@@ -126,12 +125,14 @@ export const useSharedByMeNodesLoader = () => {
                     cleanupStaleItems(new Set([...driveUids, ...photosUids]));
                 }
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`We were not able to load some of your shared items` });
+                handleSdkError(e, {
+                    fallbackMessage: c('Error').t`We were not able to load some of your shared items`,
+                });
             } finally {
                 setLoadingNodes(false);
             }
         },
-        [fetchSharedByNodes, handleError]
+        [fetchSharedByNodes]
     );
 
     return {

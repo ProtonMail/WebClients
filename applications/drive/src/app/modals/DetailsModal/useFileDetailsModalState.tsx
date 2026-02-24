@@ -8,7 +8,7 @@ import { type Author, type MaybeNode, MemberRole, NodeType, getDrive } from '@pr
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { isOwnFile } from '../../utils/sdk/isOwnFile';
@@ -68,8 +68,6 @@ export function useFileDetailsModalState({
     onClose,
     onExit,
 }: UseFileDetailsModalProps) {
-    const { handleError } = useSdkErrorHandler();
-
     const [isLoading, withLoading] = useLoading();
     const [title, setTitle] = useState<string>(getTitle());
     const [hasError, setHasError] = useState<boolean>(false);
@@ -139,12 +137,12 @@ export function useFileDetailsModalState({
                             : undefined,
                 });
             } catch (error: unknown) {
-                handleError(error, { showNotification: false, extra: { nodeUid } });
+                handleSdkError(error, { showNotification: false, extra: { nodeUid } });
                 setHasError(true);
             }
         };
         void withLoading(fetchFileDetails());
-    }, [nodeUid, drive, withLoading, handleError, verifySignatures]);
+    }, [nodeUid, drive, withLoading, verifySignatures]);
 
     return {
         open,

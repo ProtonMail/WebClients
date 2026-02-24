@@ -6,7 +6,6 @@ import { useNotifications } from '@proton/components';
 import type { MaybeNode, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
-import { useSdkErrorHandler } from '../../../../utils/errorHandling/useSdkErrorHandler';
 import type { EffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
@@ -24,10 +23,7 @@ jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
 }));
 
-jest.mock('../../../../utils/errorHandling/useSdkErrorHandler', () => ({
-    ...jest.requireActual('../../../../utils/errorHandling/useSdkErrorHandler'),
-    useSdkErrorHandler: jest.fn(),
-}));
+jest.mock('../../../../utils/errorHandling/handleSdkError');
 
 jest.mock('../../../../utils/sdk/getNodeLocation', () => ({
     getFormattedNodeLocation: jest.fn(),
@@ -39,7 +35,6 @@ jest.mock('../../../../utils/sdk/getNodeEffectiveRole', () => ({
 
 const mockedUseNotifications = jest.mocked(useNotifications);
 const mockedUseDrive = jest.mocked(useDrive);
-const mockedUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockedGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockedGetNodeEffectiveRole = jest.mocked(getNodeEffectiveRole);
 
@@ -75,10 +70,6 @@ describe('useSearchViewLoader', () => {
 
         mockedUseDrive.mockReturnValue({
             drive: mockDrive as ProtonDriveClient,
-        } as any);
-
-        mockedUseSdkErrorHandler.mockReturnValue({
-            handleError: mockHandleError,
         } as any);
 
         jest.spyOn(useSearchViewStore, 'getState').mockReturnValue({

@@ -5,7 +5,7 @@ import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/dr
 
 import { useMovedItemsNotification } from '../../modals/MoveItemsModal/useMovedItemsNotification';
 import { useDriveEventManager } from '../../store';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export type MoveNodeItem = {
     name: string;
@@ -17,7 +17,6 @@ export type MoveNodesItemMap = Record<string, MoveNodeItem>;
 export const useMoveNodes = () => {
     const { drive } = useDrive();
     const events = useDriveEventManager();
-    const { handleError } = useSdkErrorHandler();
     const { createMovedItemsNotifications } = useMovedItemsNotification();
     const [isLoading, setIsLoading] = useState(false);
 
@@ -54,7 +53,7 @@ export const useMoveNodes = () => {
                     }
                 }
             } catch (e) {
-                handleError(e, { extra: { itemsUId: uids, toFolderUid } });
+                handleSdkError(e, { extra: { itemsUId: uids, toFolderUid } });
             }
         }
 
@@ -97,7 +96,7 @@ export const useMoveNodes = () => {
             const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, { extra: { itemsUId: uids, targetFolderUid } });
+            handleSdkError(e, { extra: { itemsUId: uids, targetFolderUid } });
             throw e;
         } finally {
             setIsLoading(false);

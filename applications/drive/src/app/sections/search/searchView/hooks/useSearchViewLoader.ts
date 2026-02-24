@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 import type { MaybeNode, NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
-import { shouldTrackError, useSdkErrorHandler } from '../../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError, shouldTrackError } from '../../../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../../utils/sdk/getNodeLocation';
@@ -73,7 +73,6 @@ const addNodeToStore = async (maybeNode: MaybeNode, drive: ProtonDriveClient): P
 export const useSearchViewNodesLoader = () => {
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const loadNodes = useCallback(
         async (nodeUids: string[], abortSignal: AbortSignal) => {
@@ -97,7 +96,7 @@ export const useSearchViewNodesLoader = () => {
                             loadedUids.add(node.uid);
                         }
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -114,7 +113,7 @@ export const useSearchViewNodesLoader = () => {
                 if (e instanceof Error && shouldTrackError(e)) {
                     return;
                 }
-                handleError(e, { fallbackMessage: c('Error').t`We were not able to load some search results` });
+                handleSdkError(e, { fallbackMessage: c('Error').t`We were not able to load some search results` });
             } finally {
                 // Remove previously loaded node uids from previous search queries.
                 useSearchViewStore.getState().cleanupStaleItems(loadedUids);
@@ -123,7 +122,7 @@ export const useSearchViewNodesLoader = () => {
             }
         },
 
-        [drive, handleError, createNotification]
+        [drive, createNotification]
     );
 
     return {

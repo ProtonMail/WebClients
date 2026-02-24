@@ -8,7 +8,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
@@ -17,33 +17,29 @@ import { type FolderViewItem, useFolderStore } from './useFolder.store';
 
 export function useFolder() {
     const { drive } = useDrive();
-    const { handleError } = useSdkErrorHandler();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
-    const handleFolderError = useCallback(
-        (error?: Error) => {
-            if (!error) {
-                return;
-            }
-            const { setError } = useFolderStore.getState();
+    const handleFolderError = useCallback((error?: Error) => {
+        if (!error) {
+            return;
+        }
+        const { setError } = useFolderStore.getState();
 
-            const errorMessage = error
-                ? ('message' in error ? error.message : error) || 'Unknown node error'
-                : 'Unknown node error';
+        const errorMessage = error
+            ? ('message' in error ? error.message : error) || 'Unknown node error'
+            : 'Unknown node error';
 
-            const enrichedError = new EnrichedError(errorMessage, {
-                tags: { component: 'drive-sdk' },
-                extra: { originalError: error },
-            });
+        const enrichedError = new EnrichedError(errorMessage, {
+            tags: { component: 'drive-sdk' },
+            extra: { originalError: error },
+        });
 
-            handleError(error);
-            setError(enrichedError);
-            //TODO: Implement better way of handling error (Retry capability for ex)
-        },
-        [handleError]
-    );
+        handleSdkError(error);
+        setError(enrichedError);
+        //TODO: Implement better way of handling error (Retry capability for ex)
+    }, []);
 
     const load = useCallback(
         // TODO: after FileBrowser migration, this params can be passed in the hook main function
@@ -116,7 +112,7 @@ export function useFolder() {
                             const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive, node);
                             itemsBatch.push(legacyItem);
                         } catch (e) {
-                            handleError(e, {
+                            handleSdkError(e, {
                                 showNotification: false,
                             });
                             showErrorNotification = true;
@@ -140,7 +136,7 @@ export function useFolder() {
                 setIsLoading(false);
             }
         },
-        [copyFeatureEnabled, createNotification, drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
+        [copyFeatureEnabled, createNotification, drive, handleFolderError, isDocsEnabled, isSheetsEnabled]
     );
 
     return {

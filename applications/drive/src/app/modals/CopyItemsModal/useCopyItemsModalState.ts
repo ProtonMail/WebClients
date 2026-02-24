@@ -8,7 +8,7 @@ import { MemberRole, NodeType } from '@proton/drive';
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useCreateFolderModal } from '../CreateFolderModal';
 import { useCopyItems } from './useCopyItems';
 
@@ -38,7 +38,6 @@ export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: 
     const [isLoading, setIsLoading] = useState(true);
     const [isCopying, setIsCopying] = useState(false);
     const copyItems = useCopyItems();
-    const { handleError } = useSdkErrorHandler();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
 
     useEffect(() => {
@@ -46,8 +45,8 @@ export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: 
 
         initializeTree()
             .then(() => setIsLoading(false))
-            .catch(handleError);
-    }, [initializeTree, handleError]);
+            .catch(handleSdkError);
+    }, [initializeTree]);
 
     const [copyTargetTreeId, setCopyTargetTreeId] = useState<string>();
     const copyTargetUid = copyTargetTreeId ? getNodeUidFromTreeItemId(copyTargetTreeId) : undefined;
@@ -69,7 +68,7 @@ export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: 
         setIsCopying(true);
         copyItems(itemsToCopy, copyTargetUid)
             .then(onClose)
-            .catch((e) => handleError(e, { extra: { itemsToCopy, target: copyTargetTreeId } }))
+            .catch((e) => handleSdkError(e, { extra: { itemsToCopy, target: copyTargetTreeId } }))
             .finally(() => setIsCopying(false));
     };
 

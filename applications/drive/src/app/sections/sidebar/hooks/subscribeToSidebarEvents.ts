@@ -2,7 +2,7 @@ import { NodeType, getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { handleSdkError } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useSidebarStore } from './useSidebar.store';
 

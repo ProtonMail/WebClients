@@ -9,7 +9,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 
@@ -32,7 +32,6 @@ export const useRenameDeviceModalState = ({
     const { validator, onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
 
-    const { handleError } = useSdkErrorHandler();
     const [deviceName, setDeviceName] = useState<string>('');
     const [inputName, setInputName] = useState(() => deviceName);
 
@@ -64,7 +63,7 @@ export const useRenameDeviceModalState = ({
                 createNotification({ text: successNotificationText });
             })
             .catch((e) => {
-                handleError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { deviceUid } });
+                handleSdkError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { deviceUid } });
             });
 
         onClose?.();

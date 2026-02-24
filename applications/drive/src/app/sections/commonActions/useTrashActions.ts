@@ -2,13 +2,12 @@ import { useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useListNotifications from '../../store/_actions/useListNotifications';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 type Item = { uid: string; parentUid: string | undefined };
 
 export const useTrashActions = () => {
     const { drive } = useDrive();
-    const { handleError } = useSdkErrorHandler();
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
         const restored = [];
@@ -22,7 +21,7 @@ export const useTrashActions = () => {
                 }
             }
         } catch (e) {
-            handleError(e);
+            handleSdkError(e);
         }
     };
 
@@ -42,7 +41,7 @@ export const useTrashActions = () => {
                 }
             }
         } catch (e) {
-            handleError(e);
+            handleSdkError(e);
         }
         createTrashedItemsNotifications(Object.values(itemsMap), success, failures, () => restoreItems(items));
     };

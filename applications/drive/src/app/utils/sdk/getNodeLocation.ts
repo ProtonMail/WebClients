@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { type Device, type MaybeNode, NodeType, type Result } from '@proton/drive';
 
-import { handleSdkError } from '../errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../errorHandling/handleSdkError';
 import { getNodeAncestry } from './getNodeAncestry';
 import { getNodeEntity } from './getNodeEntity';
 import { getNodeName } from './getNodeName';

@@ -1,7 +1,7 @@
 import { getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity, isPhotoNode } from '../../utils/sdk/getNodeEntity';
 import { trashLogDebug } from './trashLogger';
 import { useTrashStore } from './useTrash.store';

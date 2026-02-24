@@ -26,7 +26,7 @@ import type {
 } from '../../statelessComponents/DriveExplorer/types';
 import { UploadDragDrop } from '../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicFolderCells } from './PublicFolderDriveExplorerCells';
@@ -49,7 +49,6 @@ interface PublicFolderViewProps {
 const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState<CrumbDefinition[]>([]);
-    const { handleError } = useSdkErrorHandler();
 
     const load = useCallback(
         async (nodeUid: string) => {
@@ -68,12 +67,12 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
                 });
                 setData(data);
             } else {
-                handleError(result.error);
+                handleSdkError(result.error);
                 setData([]);
             }
             setLoading(false);
         },
-        [driveClient, handleError]
+        [driveClient]
     );
 
     return {
