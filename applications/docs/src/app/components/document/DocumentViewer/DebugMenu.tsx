@@ -19,6 +19,8 @@ import {
 } from '@proton/docs-core/lib/utils/document-update-compression'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
+import type { UpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
+import { createUpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -128,9 +130,12 @@ export function DebugMenu({ docController, editorController, documentState, docu
     if (!baseCommit) {
       return
     }
+    const timelineEntries: UpdateTimelineEntry[] = []
     const JSZip = (await import('jszip')).default
     const zip = new JSZip()
     for (const message of baseCommit.messages) {
+      const entry = await createUpdateTimelineEntry(message)
+      timelineEntries.push(entry)
       const content = message.content
       if (isCompressedDocumentUpdate(content)) {
         const decompressed = decompressDocumentUpdate(content)
@@ -148,6 +153,16 @@ export function DebugMenu({ docController, editorController, documentState, docu
     zipLink.click()
     document.body.removeChild(zipLink)
     URL.revokeObjectURL(zipUrl)
+    const timelineJSON = JSON.stringify(timelineEntries, null, 2)
+    const timelineBlob = new Blob([timelineJSON], { type: 'application/json' })
+    const timelineUrl = URL.createObjectURL(timelineBlob)
+    const timelineLink = document.createElement('a')
+    timelineLink.href = timelineUrl
+    timelineLink.download = 'timeline.json'
+    document.body.appendChild(timelineLink)
+    timelineLink.click()
+    document.body.removeChild(timelineLink)
+    URL.revokeObjectURL(timelineUrl)
   }
 
   const isDocument = documentType === 'doc'
