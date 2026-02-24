@@ -1179,14 +1179,20 @@
       "${ domains } additional custom domain": [
         "사용자 지정 이메일 도메인 ${ domains }개"
       ],
-      "${ ips } server": [
-        "${ ips }개 서버"
+      "${ ips } dedicated VPN server": [
+        "${ ips }개 전용 VPN 서버"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } AI 어시스턴트"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 이용 권한"
       ],
       "${ price } per dedicated server": [
         "전용 서버당 ${ price }"
@@ -1211,6 +1217,24 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Domains": [
+        "도메인"
+      ],
+      "Servers": [
+        "서버"
+      ],
+      "Users": [
+        "사용자"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ],
+      "Writing assistant seats": [
+        "글쓰기 도우미 이용 권한"
       ]
     },
     "Address action": {
@@ -1604,48 +1628,45 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2TB 데이터 저장공간"
+        "총 2 TB 저장공간"
       ],
       "3 TB data storage": [
-        "3TB 데이터 저장공간"
+        "3 TB 저장공간"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120개 이상 국가에서 15,000여개 이상의 서버에 액세스"
-      ],
-      "Access advanced AI models": [
-        "고급 AI 모델 액세스"
+        "120개 이상 국가 내의 15,000개 이상 서버에 접근"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
       "Block ads, trackers, and malware": [
-        "광고, 멀웨어 및 트래커 차단"
+        "광고, 트래커 및 멀웨어 차단"
       ],
       "Built-in 2FA authenticator": [
         "내장형 2단계 인증기"
       ],
       "Connect 10 devices at once": [
-        "한 번에 기기 10대 연결"
+        "한 번에 10대 기기 연결"
       ],
       "Full chat history with easy search and favorites": [
-        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+        "쉬운 검색과 즐겨찾기 기능으로 전체 채팅 기록 보관"
       ],
       "Individual accounts for 6 users": [
-        "6인용 개별 계정"
+        "6명 사용자에 대한 개별 계정"
       ],
       "Individual accounts for you and a partner": [
-        "귀하와 파트너를 위한 개별 계정"
+        "회원님과 파트너를 위한 개별 계정"
       ],
       "Stronger protection against cyber threats": [
-        "사이버 위협에 대한 더욱 강력한 보호"
+        "사이버 위협으로부터 대항하는 더 강력한 보호"
       ],
       "Unlimited daily chats": [
-        "무제한 일일 채팅"
+        "일일 무제한 채팅"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
+        "특수 설계된 NetShield는 광고나 추적기 및 멀웨어를 차단하여 기기를 보호하고 브라우징 성능을 향상시켜줍니다."
       ]
     },
     "Billing cycle": {
@@ -1666,14 +1687,23 @@
       "Annually": [
         "연간"
       ],
+      "Billed monthly": [
+        "매월 청구"
+      ],
       "Lifetime": [
         "평생"
+      ],
+      "Lifetime access": [
+        "평생 접근"
       ],
       "Monthly": [
         "매월"
       ],
       "Two-year": [
         "2년"
+      ],
+      "Yearly": [
+        "연간"
       ]
     },
     "Blog": {
@@ -1822,9 +1852,6 @@
       ],
       "Sign in to Google Workspace": [
         "Google Workspace에 로그인"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "조직의 데이터를 이전하기 위해, Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 작업 도우미를 설치해야 합니다. 데이터 복사를 위해 ${ BRAND_NAME }에 권한 부여가 필요합니다. 설치 완료 후, 작업을 계속하기 위해 다시 이 탭으로 전환하세요. 더 알아보기"
       ],
       "Transfer errors": [
         "전송 오류"
@@ -2038,12 +2065,6 @@
     "Checkout summary": {
       "month": [
         "월"
-      ],
-      "Servers": [
-        "서버"
-      ],
-      "Users": [
-        "사용자"
       ]
     },
     "Collapsible tooltip": {
@@ -3380,6 +3401,11 @@
         "주소를 비활성화합니까?"
       ]
     },
+    "dollar_offer": {
+      "Special offer: Save 90% off our premium plan": [
+        "특별 할인: 프리미엄 플랜 90% 절약된 가격으로 구매"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "인증됨"
@@ -3801,6 +3827,9 @@
       "Added on ${ formattedDate }": [
         "${ formattedDate }에 추가됨"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "복구 담당자에게 도움을 요청하세요. 요청을 확인하고 데이터를 잠금 해제하기 위한 이메일을 받게 됩니다."
+      ],
       "Immediate": [
         "즉시"
       ],
@@ -3852,9 +3881,6 @@
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
-      ],
-      "Code wrong or not valid anymore": [
-        "틀렸거나 더 이상 유효하지 않는 코드"
       ],
       "Couldn't load invoices. Please try again later.": [
         "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
@@ -4182,6 +4208,9 @@
       ],
       "Tab closed": [
         "탭 닫힘"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "이 플랜에서는 면세가 제공되지 않습니다."
       ],
       "The amount due has changed. Please try again.": [
         "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
@@ -6486,9 +6515,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
       ],
-      "Free forever": [
-        "영구적으로 무료"
-      ],
       "Free trial": [
         "무료 체험"
       ],
@@ -7620,6 +7646,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "${ monitorLink } 잠금 해제하려면 업그레이드"
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
       ],
@@ -8001,8 +8030,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
@@ -8052,11 +8081,11 @@
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "다음 결제일은 ${ renewalTime } 입니다."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "다음 청구 예정일자는 ${ renewalTime } 입니다. 언제든지 취소할 수 있습니다."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 언제든지 취소할 수 있습니다. 즉시 플랜 변경이 필요한 경우 고객 지원팀에 문의해 주세요."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
@@ -8201,6 +8230,9 @@
     "invitation status": {
       "Declined": [
         "거절됨"
+      ],
+      "Owner": [
+        "소유자"
       ],
       "Paused": [
         "일시정지됨"
@@ -9879,9 +9911,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
-      ],
-      "${ options }-day file version history": [
-        "${ options }일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
@@ -11571,6 +11600,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (세금 제외)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "세금 ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "세금 ${ rate }%: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate }에 체험판 종료 후 청구될 금액"
       ],
@@ -11592,20 +11630,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% 세금 제외: ${ taxAmount }"
-      ],
       "Got it": [
         "확인했습니다"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "세금 ${ rate }% 포함"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% 세금 포함: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 세금 포함: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "세금 ${ rate }% 포함"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "세금 ${ rate }% 포함: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -11631,8 +11669,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "죄송합니다, 현재 플랜에서는 이 제안이 제공되지 않습니다."
       ],
-      "Taxes": [
-        "세금"
+      "Tax ${ rate }%": [
+        "세금 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "세금 ${ rate }%"
       ],
       "terms and conditions": [
         "이용 약관"
@@ -11678,9 +11719,6 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
-      ],
-      "VAT": [
-        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -11776,6 +11814,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "갱신 가격은 청구 가격 및 ABN(사업자 등록번호)에 따라 변동될 수 있습니다."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "갱신 가격은 청구 지역이나 사업자 등록 번호에 따라 변동될 수 있습니다."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "갱신 가격은 청구 가격 및 EIN(세금 식별 번호)에 따라 변동될 수 있습니다."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12780,15 +12832,6 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -13026,7 +13069,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "${ appName }(에)서 열기"
+        "${ appName }에서 열기"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (베타)(에)서 열기"
       ]
     },
     "Signup": {
@@ -13249,8 +13295,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "비밀번호를 여러 보관함에 안전하고 체계적으로 보관해 보세요."
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel로 계정을 위협으로부터 보호하세요"
@@ -13654,17 +13700,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별칭, 20개 금고를 잃게 됩니다."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2년마다 청구"
-      ],
-      "Billed monthly": [
-        "매달 청구"
-      ],
-      "Billed yearly": [
-        "매년 청구"
       ]
     },
     "Subscription attribute": {
@@ -14160,6 +14195,9 @@
       ],
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
+      ],
+      "Billing information updated": [
+        "청구 정보 업데이트됨"
       ],
       "Canceling import": [
         "가져오기 취소 중"
@@ -16054,6 +16092,9 @@
       ],
       "Recommended": [
         "권장"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "${ price.checkoutUi.discountPercent }% 절약"
       ]
     },
     "User role": {
@@ -16210,9 +16251,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "${ planTitle } 구독에 대해 더 알아보기"
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "${ maxDriveSpace } 무료 클라우드 스토리지로 파일과 사진 및 문서를 안전하게 보관하세요."
-      ],
       "Set secure passwords without the hassle.": [
         "번거로움 없이 안전한 비밀번호를 설정헤 보세요."
       ],
@@ -16259,11 +16297,6 @@
         "${ numberOfCountries }개 이상 국가 내 서버"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "매달 청구"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1년"
@@ -16302,12 +16335,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n }개월"
-      ],
-      "${ n } year": [
-        "${ n }년"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "${ plan } 포함 (첫 1년은 무료입니다!)"
       ],

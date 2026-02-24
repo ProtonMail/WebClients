@@ -1186,9 +1186,9 @@
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
       ],
-      "${ ips } server": [
-        "${ ips } διακομιστής",
-        "${ ips } διακομιστές"
+      "${ ips } dedicated VPN server": [
+        "${ ips } αποκλειστικός διακομιστής VPN",
+        "${ ips } αποκλειστικοί διακομιστές VPN"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης"
@@ -1196,6 +1196,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστη)",
         "${ LUMO_APP_NAME } Βοηθός τεχνητής νοημοσύνης (για ${ quantity } χρήστες)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } άδεια χρήσης AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } θέσεις"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1213,6 +1219,10 @@
         "${ quantity } προσαρμοσμένος τομέας",
         "${ quantity } προσαρμοσμένοι τομείς"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
+        "${ seats } ${ LUMO_APP_NAME } άδειες χρήσης AI"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
         "${ seats } ${ LUMO_APP_NAME } θέσεις"
@@ -1224,6 +1234,24 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Domains": [
+        "Τομείς"
+      ],
+      "Servers": [
+        "Διακομιστές"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ],
+      "Writing assistant seats": [
+        "Άδειες βοηθού γραφής"
       ]
     },
     "Address action": {
@@ -1626,10 +1654,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου"
+        "2 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου"
+        "3 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
@@ -1638,7 +1666,7 @@
         "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
@@ -1650,16 +1678,16 @@
         "Συνδέστε 10 συσκευές ταυτόχρονα"
       ],
       "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
       ],
       "Individual accounts for 6 users": [
         "Ατομικοί λογαριασμοί για 6 χρήστες"
       ],
       "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
       ],
       "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1680,6 +1708,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
       "1 month": [
         "1 μήνας"
       ],
@@ -1689,14 +1725,23 @@
       "Annually": [
         "Ετησίως"
       ],
+      "Billed monthly": [
+        "Με μηνιαία χρέωση"
+      ],
       "Lifetime": [
         "Εφ' όρου ζωής"
+      ],
+      "Lifetime access": [
+        "Ισόβια πρόσβαση"
       ],
       "Monthly": [
         "Μηνιαία"
       ],
       "Two-year": [
         "Δύο έτη"
+      ],
+      "Yearly": [
+        "Ετησίως"
       ]
     },
     "Blog": {
@@ -1850,8 +1895,8 @@
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Markeplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
       ],
       "Transfer errors": [
         "Σφάλματα μεταφοράς"
@@ -2075,6 +2120,13 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Subtotal": [
+        "Υποσύνολο"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Υποσύνολο για ${ cycle } μήνα",
+        "Υποσύνολο για ${ cycle } μήνες"
+      ],
       "Total": [
         "Σύνολο"
       ],
@@ -2086,12 +2138,6 @@
     "Checkout summary": {
       "month": [
         "μήνας"
-      ],
-      "Servers": [
-        "Διακομιστές"
-      ],
-      "Users": [
-        "Χρήστες"
       ]
     },
     "Collapsible tooltip": {
@@ -3961,8 +4007,8 @@
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
-      "Code wrong or not valid anymore": [
-        "Κωδικός λανθασμένος ή μη έγκυρος πλέον"
+      "Code is incorrect or not valid anymore": [
+        "Ο κωδικός είναι λανθασμένος ή δεν είναι πλέον έγκυρος"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -4034,6 +4080,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στην επιλογή Ανανέωση στην τηλεόρασή σας και δοκιμάστε ξανά."
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
@@ -6674,9 +6723,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
       ],
-      "Free forever": [
-        "Δωρεάν για πάντα"
-      ],
       "Free trial": [
         "Δωρεάν δοκιμή"
       ],
@@ -8225,9 +8271,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
-        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές.",
@@ -8278,11 +8324,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι η ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
@@ -10156,10 +10202,6 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
-      "${ options }-day file version history": [
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
       ],
@@ -11861,6 +11903,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (χωρίς φόρους)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% φόρος: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% φόροι: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
@@ -11882,20 +11933,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
-      ],
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων ${ taxAmountElement }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -11921,8 +11972,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
       ],
-      "Taxes": [
-        "Φόροι"
+      "Tax ${ rate }%": [
+        "Φόρος ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Φόροι ${ rate }%"
       ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
@@ -11974,9 +12028,6 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
-      ],
-      "VAT": [
-        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -12072,6 +12123,20 @@
     "Payments.plan_name": {
       "Free": [
         "Δωρεάν"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον Αριθμό Επιχείρησης."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13092,15 +13157,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -13344,6 +13409,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Άνοιγμα σε ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Άνοιγμα σε ${ appName }) (Beta)"
       ]
     },
     "Signup": {
@@ -13571,8 +13639,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Αποκτήστε απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας και να μειώσετε τα ενοχλητικά"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες"
       ],
       "Protect your account from threats with Sentinel": [
         "Προστατέψτε τον λογαριασμό σας από απειλές με το Sentinel"
@@ -13985,17 +14053,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Θα χάσετε την πρόσβαση σε απεριόριστες συνδέσεις και σημειώσεις, απεριόριστα ψευδώνυμα hide-my-email, 20 κρύπτες, καθώς και υποστήριξη προτεραιότητας."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Χρέωση κάθε 2 χρόνια"
-      ],
-      "Billed monthly": [
-        "Μηνιαία χρέωση"
-      ],
-      "Billed yearly": [
-        "Ετήσια χρέωση"
       ]
     },
     "Subscription attribute": {
@@ -16613,8 +16670,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Εκμεταλλευτείτε στο έπακρο την ${ planTitle } συνδρομή σας."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Διατηρήστε ασφαλή τα αρχεία, τις φωτογραφίες, και τα έγγραφά σας με ${ maxDriveSpace } δωρεάν χώρο αποθήκευσης στο cloud."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Διατηρήστε ασφαλή τα αρχεία, τις φωτογραφίες, και τα έγγραφά σας με ${ maxDriveSpace } χώρο αποθήκευσης στο cloud."
       ],
       "Set secure passwords without the hassle.": [
         "Δημιουργήστε ασφαλείς κωδικούς χωρίς ταλαιπωρία."
@@ -16670,11 +16727,6 @@
         "Διακομιστές σε ${ numberOfCountries }+ χώρες"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Μηνιαία χρέωση"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1ετής"
@@ -16713,14 +16765,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } μήνας",
-        "${ n } μήνες"
-      ],
-      "${ n } year": [
-        "${ n } έτος",
-        "${ n } έτη"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Περιλαμβάνει ${ plan } (δωρεάν για το πρώτο έτος!)"
       ],

@@ -1186,9 +1186,9 @@
         "${ domains } დამატებითი მორგებული დომენი",
         "${ domains } დამატებითი მორგებული დომენი"
       ],
-      "${ ips } server": [
-        "${ ips } სერვერი",
-        "${ ips } სერვერი"
+      "${ ips } dedicated VPN server": [
+        "${ ips } გამოყოფილი VPN სერვერი",
+        "${ ips } გამოყოფილი VPN სერვერი"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "ხი დამხმარე ${ LUMO_APP_NAME }"
@@ -1212,6 +1212,10 @@
       "${ quantity } custom domain": [
         "${ quantity } მომხმარებლის დომენი",
         "${ quantity } მომხმარებლის დომენი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } ლიცენზია",
@@ -1610,52 +1614,6 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ტბ მონაცემთა საცავი"
-      ],
-      "3 TB data storage": [
-        "3 ტბ მონაცემთა საცავი"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
-      ],
-      "Access advanced AI models": [
-        "წვდომა განვითარებულ AI მოდელებთან"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "ყველა ფასიანი ფუნქცია ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
-      ],
-      "Built-in 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
-      "Connect 10 devices at once": [
-        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
-      ],
-      "Full chat history with easy search and favorites": [
-        "სრული ჩატის ისტორია მარტივი ძიებით და ფავორიტებით"
-      ],
-      "Individual accounts for 6 users": [
-        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
-      ],
-      "Individual accounts for you and a partner": [
-        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
-      ],
-      "Stronger protection against cyber threats": [
-        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
-      ],
-      "Unlimited daily chats": [
-        "შეუზღუდავი ყოველდღიური ჩატები"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
@@ -1683,6 +1641,9 @@
       ],
       "Two-year": [
         "ორი წლით"
+      ],
+      "Yearly": [
+        "წლიურად"
       ]
     },
     "Blog": {
@@ -2054,12 +2015,6 @@
     "Checkout summary": {
       "month": [
         "თვე"
-      ],
-      "Servers": [
-        "სერვერი"
-      ],
-      "Users": [
-        "მომხმარებლები"
       ]
     },
     "Collapsible tooltip": {
@@ -3878,9 +3833,6 @@
       ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
-      ],
-      "Code wrong or not valid anymore": [
-        "კოდი არასწორია ან აღარ მოქმედებს"
       ],
       "Couldn't load invoices. Please try again later.": [
         "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
@@ -6558,9 +6510,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
       ],
-      "Free forever": [
-        "სამუდამოდ უფასო"
-      ],
       "Free trial": [
         "უფასო საცდელი პერიოდი"
       ],
@@ -8055,10 +8004,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "თქვენ არ გექნებათ შესაძლებლობა აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით. ეს ასევე გათიშავს მოწყობილობებით აღდგენასაც"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
-        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
-      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "მიაღწიეთ ამ ფილტრის ლიმიტს, რომელიც 50 მომხმარებელს შეადგენს. წაშალეთ ერთი, რომ მეორე დაამატოთ."
       ],
@@ -8100,12 +8045,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }. დაუკავშირდით მხარდაჭერის გუნდს, თუ სატარიფო გეგმის შეცვლა დაუყოვნებლივ გჭირდებათ."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "თქვენი ორგანიზაცია შესვლის ერთწერტილიან სისტემას (SSO) იყენებს. შედით, რომ თქვენს SSO-ის მომწოდებელზე გადახვიდეთ."
@@ -9929,10 +9868,6 @@
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
       ],
-      "${ options }-day file version history": [
-        "${ options }-დღიანი ფაილის ვერსიის ისტორია",
-        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
       ],
@@ -11649,20 +11584,8 @@
       "CVC": [
         "CVC"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
-      ],
       "Got it": [
         "გავიგე"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -11687,9 +11610,6 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Taxes": [
-        "გადასახადები"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -11727,9 +11647,6 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -12791,18 +12708,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
         "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "გაქვთ ${ timeRemaining.inHours } საათი, ჩამოყაროთ თქვენი პაროლი.",
-        " გაქვთ ${ timeRemaining.inHours } საათი ჩამოყაროთ თქვენი პაროლი."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "გაქვთ ${ timeRemaining.inMinutes } წუთი, ჩამოყაროთ თქვენი პაროლი.",
-        " გაქვთ ${ timeRemaining.inMinutes } წუთი ჩამოყაროთ თქვენი პაროლი."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "გაქვთ ${ timeRemaining.inSeconds } წამი, ჩამოყაროთ თქვენი პაროლი.",
-        " გაქვთ ${ timeRemaining.inSeconds } წამი ჩამოყაროთ თქვენი პაროლი."
       ]
     },
     "session_recovery:available:link": {
@@ -13043,11 +12948,6 @@
         "გაზიარებულია ${ ownerName }-ის მიერ"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "${ appName }-ში გახსნა"
-      ]
-    },
     "Signup": {
       "1 month": [
         "1 თვე"
@@ -13272,9 +13172,6 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
-      ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
       ],
       "Protect your account from threats with Sentinel": [
         "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
@@ -13678,17 +13575,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "დაკარგავთ წვდომას შეუზღუდავ შესვლის დეტალებთან და შენიშვნებთან, შეუზღუდავ hide-my-email-ის ფსევდონიმებთან, 20 საცავთან და პრიორიტეტულ ხარდაჭერასთან."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed monthly": [
-        "გადაიხდით თვეში ერთხელ"
-      ],
-      "Billed yearly": [
-        "გადახდა წელიწადში ერთხელ"
       ]
     },
     "Subscription attribute": {
@@ -16273,9 +16159,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "მიიღეთ მეტი თქენი ${ planTitle } გამოწერისგან."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "იქონიეთ თქვენი ფაილები, სურათები და დოკუმენტები დაცულად ${ maxDriveSpace } უფასო ღრუბლოვან საცავთან ერთად."
-      ],
       "Set secure passwords without the hassle.": [
         "დააყენეთ დაცული პაროლები პრობლემის გარეშე."
       ],
@@ -16330,11 +16213,6 @@
         "სერვერები ${ numberOfCountries }+ ქვეყანაში"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "გადაიხდით თვეში ერთხელ"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1-წლიანი"
@@ -16373,14 +16251,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
-      "${ n } year": [
-        "${ n } წელი",
-        "${ n } წელი"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "შეიცავს ${ plan } (უფასოა პირველი წლისთვის!)"
       ],
