@@ -444,9 +444,10 @@ export class AudioTrackSubscriptionManager {
                 const track = publication.track;
                 const trackKey = `${participant.sid}-${publication.trackSid}`;
 
-                // Clear packet tracking for muted tracks to avoid false positives when unmuting
+                // Clear packet and concealment tracking for muted tracks to avoid false positives when unmuting
                 if (publication.isMuted) {
                     this.lastPacketCounts.delete(trackKey);
+                    this.lastConcealmentStats.delete(trackKey);
                 }
 
                 // Skip if not subscribed, muted, or already recovering
