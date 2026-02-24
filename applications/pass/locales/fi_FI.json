@@ -1851,10 +1851,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2391,6 +2387,9 @@
       ],
       "You may close this tab.": [
         "Voit sulkea tämän välilehden."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Saatat joutua myöntämään käyttöoikeusluvan ${ PASS_APP_NAME } -sovellukselle."
       ],
       "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
         "Sinulla ei ole enää pääsyä joihinkin holveihin tai kohteisiin, koska ryhmäsi ${ groupName } käyttöoikeudet on poistettu."

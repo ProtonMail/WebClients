@@ -1926,8 +1926,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2505,8 +2504,8 @@
       "You may close this tab.": [
         "Puedes cerrar esta pestaña."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Puede que necesites otorgar permiso de accesibilidad a ${ PASS_APP_NAME }."
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Es posible que debas conceder permisos de accesibilidad a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Necesitas una caja fuerte con permiso de edición antes de poder importar elementos."

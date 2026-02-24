@@ -1872,9 +1872,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
-      ],
       "Moving items": [
         "Đang chuyển mục"
       ],
@@ -2429,9 +2426,6 @@
       ],
       "You may close this tab.": [
         "Có thể đóng tab này."
-      ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Có thể cần cấp quyền trợ năng cho ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Cần một kho có quyền chỉnh sửa trước khi có thể nhập các mục."
