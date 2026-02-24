@@ -1438,9 +1438,6 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
-      "${ ips } server": [
-        "${ ips } 台伺服器"
-      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -1818,52 +1815,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取 15,000+ 個伺服器，分布於 120+ 個國家"
-      ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有進階功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "可同時連接 10 部裝置"
-      ],
-      "Full chat history with easy search and favorites": [
-        "完整的聊天記錄，具備輕鬆搜尋和我的最愛功能"
-      ],
-      "Individual accounts for 6 users": [
-        "供 6 位使用者使用的個人帳戶"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與一位夥伴使用的個人帳戶"
-      ],
-      "Stronger protection against cyber threats": [
-        "更強大的保護，抵禦網路威脅"
-      ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Billing cycle": {
@@ -2277,12 +2228,6 @@
     "Checkout summary": {
       "month": [
         "月"
-      ],
-      "Servers": [
-        "伺服器"
-      ],
-      "Users": [
-        "使用者"
       ]
     },
     "Collapsible tooltip": {
@@ -4360,9 +4305,6 @@
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
-      ],
-      "Code wrong or not valid anymore": [
-        "代碼錯誤或不再有效"
       ],
       "Condition incomplete": [
         "條件不完整"
@@ -7716,9 +7658,6 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
-      "No credit card required": [
-        "無需信用卡"
-      ],
       "No folder selected": [
         "未選取任何資料夾"
       ],
@@ -8901,9 +8840,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
       ],
@@ -8960,12 +8896,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一個結算日期為${ renewalTime }。"
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的組織機構使用單一登入(SSO)。按「登入」以 SSO 登入。"
@@ -11438,9 +11368,6 @@
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
       ],
-      "${ options }-day file version history": [
-        "${ options }-天的檔案版本紀錄"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 終身"
       ],
@@ -13339,20 +13266,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
-      ],
       "Got it": [
         "瞭解"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -13377,9 +13292,6 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Taxes": [
-        "稅金"
       ],
       "terms and conditions": [
         "合約條款"
@@ -13419,9 +13331,6 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
-      ],
-      "VAT": [
-        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -13743,9 +13652,6 @@
       ],
       "For next-level password management and identity protection.": [
         "使用密碼管理器及身分保護以增加安全性。"
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "為您的日常通訊提供進階功能的安全電子郵件。"
       ]
     },
     "Plans": {
@@ -14362,15 +14268,6 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 你有${ timeRemaining.inHours }小時重設密碼。"
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -14649,11 +14546,6 @@
         "由 ${ ownerName } 分享"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "於 ${ appName } 開啟"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "簽章驗證錯誤"
@@ -14708,9 +14600,6 @@
       "Advanced account protection": [
         "進階的帳號保護"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
-      ],
       "Compare plans": [
         "比較方案"
       ],
@@ -14726,14 +14615,8 @@
       "End-to-end encryption": [
         "端對端加密"
       ],
-      "Fast P2P/BitTorrent downloads": [
-        "迅速的 P2P/BitTorrent 下載"
-      ],
       "Free": [
         "免費"
-      ],
-      "Highest VPN speed": [
-        "最高 VPN 速度"
       ],
       "Manage user access": [
         "管理使用者存取"
@@ -14744,14 +14627,8 @@
       "Most popular": [
         "最受歡迎"
       ],
-      "No credit card required:": [
-        "毋須信用卡:"
-      ],
       "Online document editor": [
         "線上文件編輯器"
-      ],
-      "Password manager": [
-        "密碼管理員"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -14780,14 +14657,8 @@
       "Set your password": [
         "設定您的密碼"
       ],
-      "Start free trial": [
-        "開始免費試用"
-      ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
-      ],
-      "Storage": [
-        "雲端儲存"
       ],
       "Swiss-based": [
         "總部設於瑞士"
@@ -15514,17 +15385,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "瞭解如何取得私密行事曆連結。"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "雙年繳制"
-      ],
-      "Billed monthly": [
-        "月繳"
-      ],
-      "Billed yearly": [
-        "年繳"
       ]
     },
     "Subscription attribute": {
@@ -18240,11 +18100,6 @@
         "伺服器遍布 ${ numberOfCountries }+ 國家"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "月繳制"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1-年"
@@ -18280,12 +18135,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } 月"
-      ],
-      "${ n } year": [
-        "${ n } 年"
-      ],
       "Just ${ price }": [
         "只要 ${ price }"
       ],

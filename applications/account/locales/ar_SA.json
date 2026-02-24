@@ -1548,14 +1548,6 @@
         "${ domains } نطاقًا مخصصًا إضافيًا",
         "${ domains } نطاق مخصص إضافي"
       ],
-      "${ ips } servers": [
-        "${ ips } خادم",
-        "${ ips } خادم",
-        "${ ips } خادم",
-        "${ ips } خوادم",
-        "${ ips } خوادم",
-        "${ ips } خوادم"
-      ],
       "${ LUMO_APP_NAME } AI assistant": [
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME }"
       ],
@@ -2080,49 +2072,8 @@
       ]
     },
     "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 تيرابايت تخزين بيانات"
-      ],
-      "3 TB data storage": [
-        "3 تيرابايت تخزين بيانات"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "الوصول إلى أكثر من 15,000 خادم في أكثر من 120 دولة"
-      ],
-      "Access advanced AI models": [
-        "الوصول إلى نماذج الذكاء الاصطناعي المتقدمة"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "جميع الميزات المميزة لـ ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Block ads, trackers, and malware": [
-        "حظر الإعلانات، وأدوات التتبع، والبرامج الضارة"
-      ],
-      "Built-in 2FA authenticator": [
-        "مدقق مصادقة ثنائية (2FA) مدمج"
-      ],
-      "Connect 10 devices at once": [
-        "ربط 10 أجهزة في وقت واحد"
-      ],
-      "Full chat history with easy search and favorites": [
-        "سجل دردشة كامل مع بحث سهل ومفضلة"
-      ],
-      "Individual accounts for 6 users": [
-        "حسابات فردية لـ 6 مستخدمين"
-      ],
-      "Individual accounts for you and a partner": [
-        "حسابات فردية لك ولشريك"
-      ],
-      "Stronger protection against cyber threats": [
-        "حماية أقوى ضد التهديدات السيبرانية"
-      ],
-      "Unlimited daily chats": [
-        "محادثات يومية غير محدودة"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "يحمي NetShield المصمم خصيصًا أجهزتك ويسرّع تصفحك عن طريق حظر الإعلانات وأدوات التتبع والبرامج الضارة."
+        "حظر الإعلانات،المتتبعات والبرامج المشبوهة"
       ]
     },
     "Billing cycle": {
@@ -2405,6 +2356,11 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "عنوان بريدك الإلكتروني الشخصي جزء أساسي من هويتك الرقمية. وعل غرار رقم هاتفك، لا تعطه لكل شخص تقابله. من المُستحسن أن تتوفر على عناوين أخرى لاستخدامها لأغراض مختلفة."
+      ]
+    },
+    "BOSS": {
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "لنقل بيانات مؤسستك، تحتاج إلى تثبيت تطبيق ${ BRAND_NAME } Migration Assistant من Google Workspace Marketplace. سيمنح هذا الإذن لـ ${ BRAND_NAME } بنسخ بياناتك. بعد تثبيته، عُد إلى هنا للمتابعة. تعرّف على المزيد"
       ]
     },
     "Browser": {
@@ -2742,12 +2698,6 @@
     "Checkout summary": {
       "month": [
         "شهر"
-      ],
-      "Servers": [
-        "الخوادم"
-      ],
-      "Users": [
-        "المستخدمين"
       ]
     },
     "Collapsible tooltip": {
@@ -4098,8 +4048,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "استفد أكثر من اشتراكك في ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "احتفظ بملفاتك وصورك ومستنداتك بأمان مع مساحة تخزين سحابية مجانية تصل إلى ${ maxDriveSpace }."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "حافظ على أمان ملفاتك وصورك ومستنداتك مع مساحة تخزين سحابية بسعة ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "عيّن كلمات مرور آمنة دون عناء."
@@ -5551,9 +5501,6 @@
       ],
       "Checkout expired, please try again": [
         "انتهت صلاحية تسجيل الخروج، حاول مره اخرى"
-      ],
-      "Code wrong or not valid anymore": [
-        "الرمز خاطئ أو غير صالح بعد الآن"
       ],
       "Condition incomplete": [
         "الشرط غير مكتمل"
@@ -9593,11 +9540,11 @@
       "No addresses exist": [
         "لا توجد عناوين"
       ],
+      "No card required": [
+        "لا توجد بطاقة مطلوبة"
+      ],
       "No countries enabled": [
         "لا توجد بلدان مفعلة"
-      ],
-      "No credit card required": [
-        "لا حاجة لبطاقة ائتمان"
       ],
       "No folder selected": [
         "لم يتم تحديد أي مجلد"
@@ -11008,14 +10955,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "لن تتمكن من استرداد البيانات المقفلة باستخدام ملفات الاسترداد التي نزّلتها. سيؤدي هذا أيضًا إلى تعطيل الاسترداد بالأجهزة."
       ],
-      "You'll then be billed every ${ renewCycle } months at ${ renewAmountStr }.": [
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } من الأشهر بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل شهر (${ renewCycle }) بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل شهرين (${ renewCycle }) بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } أشهر بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } شهرًا بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } شهرًا بسعر ${ renewAmountStr }."
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
@@ -11085,12 +11024,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "لن يتم حفظ معلومات تسجيل الدخول الخاصة بك بعد اكتمال الاستيراد."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "تاريخ الفوترة التالي هو ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "تاريخ الفوترة التالي هو ${ renewalTime }. يُرجى الاتصال بالدعم إذا كنت تحتاج إلى تغيير فوري في الخطة."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -13942,14 +13875,6 @@
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
       ],
-      "${ options }-day file version history": [
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يومين",
-        "سجل إصدارات الملف لمدة ${ options } أيام",
-        "سجل إصدارات الملف لمدة ${ options } يومًا",
-        "سجل إصدارات الملف لمدة ${ options } يوم"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin مدى الحياة"
       ],
@@ -16153,6 +16078,12 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "ضريبة بنسبة ${ rate }٪: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% الضرائب: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "المبلغ المستحق بعد الفترة التجريبية في ${ formattedDate }"
       ],
@@ -16174,20 +16105,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "خلال هذا الوقت، لن تتمكن من تعديل اشتراكك أو إلغائه. يُرجى الانتظار حتى اكتمال دفعتك قبل محاولة إجراء أي تغييرات. شكرًا لصبرك."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "باستثناء ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "باستثناء ${ taxRate }% ضرائب: ${ taxAmount }"
-      ],
       "Got it": [
         "أحصل عليها"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "متضمنًا ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "شامل ضريبة بنسبة ${ rate }٪"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "متضمنًا ${ taxRate }% ضرائب: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "شامل ضريبة بنسبة ${ rate }٪: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "شامل ضرائب بنسبة ${ rate }٪"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "شامل ضرائب بنسبة ${ rate }٪: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "ش/س"
@@ -16216,8 +16147,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "عذرًا، هذا العرض غير متوفر مع خطتك الحالية."
       ],
-      "Taxes": [
-        "الضرائب"
+      "Tax ${ rate }%": [
+        "الضريبة ${ rate }٪"
+      ],
+      "Taxes ${ rate }%": [
+        "الضرائب ${ rate }٪"
       ],
       "terms and conditions": [
         "الشروط والأحكام"
@@ -16293,9 +16227,6 @@
       ],
       "Timeout exceeded": [
         "انتهت المهلة المحددة"
-      ],
-      "VAT": [
-        "ضريبة القيمة المضافة"
       ],
       "VAT number": [
         "الرقم الضريبي:"
@@ -16391,6 +16322,20 @@
     "Payments.plan_name": {
       "Free": [
         "مجاني"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم الأعمال الأسترالي (ABN)."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم تعريف النشاط التجاري."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم تعريف صاحب العمل (EIN)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم ضريبة القيمة المضافة (VAT)."
       ]
     },
     "Payments.Saved payment method details": {
@@ -16661,8 +16606,8 @@
       ]
     },
     "Plan description": {
-      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "حل VPN يوفر وصولًا آمنًا وغير مقيد وعالي السرعة إلى الإنترنت."
+      "A VPN solution that provides secure, high-speed access to the internet.": [
+        "حل VPN يوفر وصولا آمنا وعالي السرعة إلى الإنترنت."
       ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "جميع منتجات ${ BRAND_NAME } المميزة مضمنة في Duo."
@@ -16679,6 +16624,12 @@
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "تخزين سحابي ومشاركة للملفات، مؤمَّن بتشفير من طرف إلى طرف."
       ],
+      "Comprehensive privacy and security suite.": [
+        "مجموعة شاملة من الخصوصية والأمان."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "تغلّب على الرسائل المزعجة والتتبّع والإعلانات باستخدام بريد إلكتروني مُشفّر وتقويم آمن."
+      ],
       "For next-level password management and identity protection.": [
         "لحماية هويتك وإدارة كلمات المرور على مستوى عالي من الحماية"
       ],
@@ -16693,9 +16644,6 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "تخزين سحابي آمن وتعاون مُتكامِل للفرق"
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "بريد الكتروني امن مع مميزات متقدمة لأعمالك اليومية"
       ],
       "The ideal plan for privacy-conscious power users.": [
         "الباقة المثالية للمستخدمين الضليعين المهتمين بالخصوصية."
@@ -17801,30 +17749,6 @@
       ]
     },
     "session_recovery:available:info": {
-      " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "لديك ${ timeRemaining.inHours } من الساعات لإعادة تعيين كلمة مرورك.",
-        "لديك ساعة (${ timeRemaining.inHours }) لإعادة تعيين كلمة مرورك.",
-        "لديك ساعتان (${ timeRemaining.inHours }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعات لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعةً لإعادة تعيين كلمة مرورك."
-      ],
-      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        "لديك ${ timeRemaining.inMinutes } من الدقائق لإعادة تعيين كلمة مرورك.",
-        "لديك دقيقة (${ timeRemaining.inMinutes }) لإعادة تعيين كلمة مرورك.",
-        "لديك دقيقتان (${ timeRemaining.inMinutes }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقائق لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقيقةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقيقةً لإعادة تعيين كلمة مرورك."
-      ],
-      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        "لديك ${ timeRemaining.inSeconds } من الثواني لإعادة تعيين كلمة مرورك.",
-        "لديك ثانية (${ timeRemaining.inSeconds }) لإعادة تعيين كلمة مرورك.",
-        "لديك ثانيتان (${ timeRemaining.inSeconds }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثوانٍ لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثانيةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثانيةً لإعادة تعيين كلمة مرورك."
-      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays } العديد من الايام",
         "${ timeRemaining.inDays } يوم",
@@ -18215,6 +18139,11 @@
         "تمت المشاركة بواسطة ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "فتح في ${ appName }"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "خطأ في التحقق من التوقيع"
@@ -18286,8 +18215,8 @@
         "${ PASS_PLUS_VAULTS } خزنة لكلمات المرور",
         "${ PASS_PLUS_VAULTS } خزنة لكلمات المرور"
       ],
-      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
-        "${ referrerName } يدعوك لتجربة ${ BRAND_NAME }."
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } يدعوك للانضمام إلى أكثر من 100 مليون شخص اختاروا البقاء مسيطرين على بياناتهم ضمن منظومة ${ BRAND_NAME } المُشفّرة."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "تخزين سحابي للملفات والصور بسعة ${ totalDriveStorageSize }"
@@ -18297,6 +18226,9 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } من التخزين الآمن لكل مستخدم"
+      ],
+      "${ value } total encrypted storage": [
+        "${ value } إجمالي مساحة التخزين المُشفّرة"
       ],
       "${ value } total storage": [
         "إجمالي مساحة التخزين ${ value }"
@@ -18354,9 +18286,6 @@
       "Advanced account protection": [
         "الحماية المتقدمة للحساب"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "جميع خدمات ${ BRAND_NAME } الأساسية (${ MAIL_SHORT_APP_NAME }، ${ VPN_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME })"
-      ],
       "Amount due now": [
         "المبلغ المستحق الآن"
       ],
@@ -18393,17 +18322,11 @@
       "Create a ${ BRAND_NAME } Account": [
         "إنشاء حساب ${ BRAND_NAME }"
       ],
-      "Custom fields and file attachment": [
-        "حقول مخصصة ومرفقات ملفات"
-      ],
-      "Encrypted cloud storage": [
-        "تخزين سحابي مشفر"
+      "Custom email domain": [
+        "نطاق بريد إلكتروني مخصص"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "بريد إلكتروني مشفر مع مساحة تخزين ${ totalMailStorageSize }"
-      ],
-      "Encrypted file sharing and document editor": [
-        "مشاركة ملفات مشفرة ومحرر مستندات"
       ],
       "Encrypted password manager": [
         "مدير كلمات المرور المشفر"
@@ -18416,9 +18339,6 @@
       ],
       "Every free account comes with:": [
         "يأتي كل حساب مجاني مع:"
-      ],
-      "Fast P2P/BitTorrent downloads": [
-        "تنزيلات P2P/BitTorrent سريعة"
       ],
       "Free": [
         "مجاني"
@@ -18441,12 +18361,6 @@
       "Gifted by **${ referrerName }**": [
         "مُهداة من **${ referrerName }**"
       ],
-      "Highest VPN speed": [
-        "أعلى سرعة VPN"
-      ],
-      "Mailboxes and custom domains for aliases": [
-        "صناديق بريد ونطاقات مخصصة للأسماء المستعارة"
-      ],
       "Manage user access": [
         "إدارة وصول المستخدم"
       ],
@@ -18462,20 +18376,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "هل تحتاج إلى مساحة تخزين أكبر؟ يمكنك الترقية وقتما شئت والاستفادة من خطط توفر من 200 جيجابايت إلى 3 تيرابايت. 5 جيجابايت كافية لتخزين 2500 صورة مُلتقطة بالهواتف الحديثة (بمعدل 2 ميجابايت لكل صورة)."
       ],
-      "No credit card required:": [
-        "بطاقة الائتمان غير ضرورية:"
-      ],
       "Online document editor": [
         "المحرر الإلكتروني للمستندات"
       ],
       "Online documents": [
         "المستندات عبر الإنترنت"
       ],
-      "Password manager": [
-        "مدير كلمات المرور"
-      ],
       "Password manager for all your devices": [
         "مدير كلمات المرور لجميع أجهزتك"
+      ],
+      "Pick a service to get started.": [
+        "اختر خدمة للبدء."
       ],
       "Pick your perfect plan": [
         "اختر خطتك المثالية"
@@ -18503,14 +18414,11 @@
       "Secure vault sharing and link sharing": [
         "مشاركة آمنة للخزائن والروابط"
       ],
-      "Securely share files, photos and documents": [
-        "شارك الملفات والصور والمستندات بأمان"
+      "Securely share files and photos": [
+        "مشاركة الملفات والصور بشكل آمن"
       ],
       "Select ${ title }": [
         "اختار ${ title }"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
-        "حدّد خدمة واستمتع بالإصدار المميز مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا."
       ],
       "Selected": [
         "مختارة"
@@ -18533,17 +18441,8 @@
       "Sign up, protect your files": [
         "تسجيل، حماية ملفاتك"
       ],
-      "Start free trial": [
-        "بدء فترة تجريبية مجانية"
-      ],
       "Start using ${ PASS_APP_NAME }": [
         "ابدأ باستخدام ${ PASS_APP_NAME }"
-      ],
-      "Storage": [
-        "التخزين"
-      ],
-      "Stream your favorite TV shows and movies": [
-        "بث برامجك التلفزيونية وأفلامك المفضلة"
       ],
       "Swiss-based": [
         "شركة سويسرية"
@@ -18553,6 +18452,9 @@
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "سيكون اسم المؤسسة مرئيًا للمستخدمين أثناء تسجيل دخولهم."
+      ],
+      "Then ${ priceElement }": [
+        "ثم ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "ثم ${ priceWithDiscountPerMonth } شهريًا، إذا اشتركت."
@@ -18571,6 +18473,9 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "جرب ${ BRAND_NAME } مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "جرّب ${ BRAND_NAME } مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا،${ br }واحصل على ${ referralInfo.uiData.refereeRewardAmount } كرصيد."
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "جرِّب ${ BRAND_NAME } مجانًا لمدة 14 يومًا"
@@ -18633,6 +18538,9 @@
       ],
       "Your trial": [
         "خطتك التجريبية"
+      ],
+      "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "أنت مدعو للانضمام إلى أكثر من 100 مليون شخص اختاروا البقاء مسيطرين على بياناتهم ضمن منظومة ${ BRAND_NAME } المُشفّرة."
       ]
     },
     "Signup label": {
@@ -18976,8 +18884,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "احصل على أسماء مستعارة غير محدودة لحماية هويتك وتقليل البريد المزعج"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "حافظ على كلمات مرورك آمنة ومنظمة في خزنات متعددة "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "حافظ على كلمات المرور الخاصة بك آمنة ومنظمة في خزائن متعددة"
       ],
       "Protect your account from threats with Sentinel": [
         "احمِ حسابك من التهديدات باستخدام Sentinel"
@@ -19476,17 +19384,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "تعرّف على كيفية الحصول على رابط تقويم خاص."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "تُدفع الفاتورة كل عامين"
-      ],
-      "Billed monthly": [
-        "فاتورة شهرية"
-      ],
-      "Billed yearly": [
-        "تُدفع الفاتورة سنويًا"
       ]
     },
     "Subscription attribute": {
@@ -22789,8 +22686,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "احصل على المزيد من اشتراكك في ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "حافظ على أمان ملفاتك وصورك ومستنداتك مع مساحة تخزين سحابي مجانية تبلغ ${ maxDriveSpace }."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "حافظ على أمان ملفاتك وصورك ومستنداتك مع مساحة تخزين سحابية بسعة ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "ضع كلمات مرور آمنة دون عناء."
@@ -22878,11 +22775,6 @@
         "خوادم في أكثر من ${ numberOfCountries } بلدًا"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "فاتورة شهرية"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "لمدة عام واحد"
@@ -22921,22 +22813,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } months": [
-        "${ n } شهر",
-        "${ n } شهر",
-        "${ n } شهر",
-        "${ n } أشهر",
-        "${ n } أشهر",
-        "${ n } أشهر"
-      ],
-      "${ n } years": [
-        "${ n } سنة",
-        "${ n } سنة",
-        "${ n } سنة",
-        "${ n } سنوات",
-        "${ n } سنوات",
-        "${ n } سنوات"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "يشمل ${ plan } (مجانًا للسنة الأولى!)"
       ],
