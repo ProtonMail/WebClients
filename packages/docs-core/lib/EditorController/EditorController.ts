@@ -46,6 +46,7 @@ export interface EditorControllerInterface {
   importDataIntoSheet(data: SheetImportData): Promise<void>
   handleFileMenuAction(action: FileMenuAction): Promise<void>
   focusSpreadsheet(): void
+  applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -464,5 +465,16 @@ export class EditorController implements EditorControllerInterface {
       },
       InternalEventPublishStrategy.SEQUENCE,
     )
+  }
+
+  async applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to apply update before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.receiveMessage({
+      type: { wrapper: 'du' },
+      content: update,
+    })
   }
 }
