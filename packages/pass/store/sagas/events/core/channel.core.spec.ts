@@ -7,7 +7,7 @@ import type { PassCryptoWorker } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import { onUserRefreshed } from './channel.user';
+import { onUserRefreshed } from './channel.core';
 
 describe('`onUserRefreshed`', () => {
     const UserKeys = [
