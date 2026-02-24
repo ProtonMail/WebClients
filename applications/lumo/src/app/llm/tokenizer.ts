@@ -6,7 +6,6 @@ const CHARS_PER_TOKEN = 4;
 /**
  * Simple token count approximation (4 characters per token)
  * This is fast and sufficient for most use cases
- * @deprecated Use getTokenCount for accurate token counting
  */
 export const getApproximateTokenCount = (text: string): number => {
     if (!text || text.length === 0) return 0;

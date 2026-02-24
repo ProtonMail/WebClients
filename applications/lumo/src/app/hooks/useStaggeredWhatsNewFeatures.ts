@@ -1,9 +1,9 @@
-import { useCallback, useMemo } from 'react';
+import {useCallback, useMemo} from 'react';
 
-import { useIsGuest } from '../providers/IsGuestProvider';
-import type { WhatsNewFeature } from '../ui/components/WhatsNew/types';
-import { getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../util/whatsNewStorage';
-import { useFeatureFlags } from './useFeatureFlags';
+import {useIsGuest} from '../providers/IsGuestProvider';
+import type {WhatsNewFeature} from '../components/WhatsNew/types';
+import {getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen} from '../util/whatsNewStorage';
+import {useFeatureFlags} from './useFeatureFlags';
 
 interface UseStaggeredWhatsNewFeaturesReturn {
     currentFeature: WhatsNewFeature | null;
@@ -56,7 +56,7 @@ export const useStaggeredWhatsNewFeatures = (
         [isDismissed, isGuest]
     );
 
-    const result = useMemo(() => {
+    return useMemo(() => {
         if (!isFeatureEnabled) {
             return {
                 currentFeature: null,
@@ -120,6 +120,4 @@ export const useStaggeredWhatsNewFeatures = (
             isFeatureDismissed,
         };
     }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags, declineFeature]);
-
-    return result;
 };

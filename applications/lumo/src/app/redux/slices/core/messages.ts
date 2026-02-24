@@ -1,9 +1,9 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import {createAction, createReducer} from '@reduxjs/toolkit';
+import {v4 as uuidv4} from 'uuid';
 
-import { appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks } from '../../../messageHelpers';
-import type { Priority } from '../../../remote/scheduler';
-import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
+import {appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks} from '../../../messageHelpers';
+import type {Priority} from '../../../remote/scheduler';
+import type {IdMapEntry, RemoteMessage} from '../../../remote/types';
 import type {
     ChunkAction,
     FinishMessageAction,
@@ -29,7 +29,7 @@ export type AddImageAttachmentAction = {
     attachment: ShallowAttachment;
 };
 
-// Low-level Redux store operations without side-effects.
+// Low-level Redux store operations without side effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
 export const appendReasoning = createAction<ChunkAction>('lumo/message/appendReasoning');
@@ -54,9 +54,7 @@ export const pullMessageFailure = createAction<RemoteMessage>('lumo/message/pull
 export type MessageMap = { [id: MessageId]: Message };
 export const EMPTY_MESSAGE_MAP: MessageMap = {};
 
-const initialState: MessageMap = EMPTY_MESSAGE_MAP;
-
-const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
+const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) => {
     builder
         .addCase(addMessage, (state, action) => {
             const message = action.payload;
@@ -89,13 +87,13 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`appendReasoning: message ${chunk.messageId} not found`);
                 return;
             }
-            
+
             message.thinkingTimeline ??= [];
             message.reasoningChunks ??= [];
-            
+
             const lastEvent = message.thinkingTimeline[message.thinkingTimeline.length - 1];
             const isNewReasoningBlock = !lastEvent || lastEvent.type !== 'reasoning';
-            
+
             if (isNewReasoningBlock) {
                 message.thinkingTimeline.push({
                     type: 'reasoning',
@@ -105,10 +103,10 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             } else {
                 lastEvent.content += chunk.content;
             }
-            
+
             message.reasoning ??= '';
             message.reasoning += chunk.content;
-            
+
             message.reasoningChunks.push({
                 content: chunk.content,
                 sequence: chunk.sequence ?? message.reasoningChunks.length,
@@ -121,7 +119,7 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`setToolCall: message ${chunk.messageId} not found`);
                 return;
             }
-            
+
             message.thinkingTimeline ??= [];
             const toolCallIndex = (message.blocks?.filter(b => b.type === 'tool_call').length ?? 0);
             message.thinkingTimeline.push({
@@ -170,7 +168,7 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 return;
             }
 
-            // Only update content if message has no content yet (wasn't streamed)
+            // Only update content if a message has no content yet (wasn't streamed)
             // If content was streamed via appendChunk, keep the streamed version
             if (!message.content || message.content.length === 0) {
                 message.content = content;

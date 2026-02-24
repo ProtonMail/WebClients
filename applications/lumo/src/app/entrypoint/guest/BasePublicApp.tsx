@@ -5,7 +5,7 @@ import { ConversationProvider } from '../../providers/ConversationProvider';
 import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
-import { LumoUpsellModalProvider } from '../../ui/upsells/providers/LumoUpsellModalProvider';
+import { LumoUpsellModalProvider } from '../../upsells/providers/LumoUpsellModalProvider';
 import { InnerApp } from '../InnerApp';
 
 const BasePublicApp = () => {

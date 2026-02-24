@@ -1,12 +1,12 @@
 import isEqual from 'lodash/isEqual';
-import type { SagaIterator } from 'redux-saga';
-import { call, delay, fork, getContext, put, select, take } from 'redux-saga/effects';
+import type {SagaIterator} from 'redux-saga';
+import {call, delay, fork, getContext, put, select, take} from 'redux-saga/effects';
 
-import type { AesGcmCryptoKey } from '../../crypto/types';
-import type { DbApi } from '../../indexedDb/db';
-import type { LumoApi, RemoteStatus } from '../../remote/api';
-import { convertConversationToApi, convertNewConversationToApi } from '../../remote/conversion';
-import type { Priority } from '../../remote/scheduler';
+import type {AesGcmCryptoKey} from '../../crypto/types';
+import type {DbApi} from '../../indexedDb/db';
+import type {LumoApi, RemoteStatus} from '../../remote/api';
+import {convertConversationToApi, convertNewConversationToApi} from '../../remote/conversion';
+import type {Priority} from '../../remote/scheduler';
 import type {
     GetConversationRemote,
     IdMapEntry,
@@ -15,42 +15,42 @@ import type {
     RemoteId,
     ResourceType,
 } from '../../remote/types';
-import { deserializeConversation, serializeConversation } from '../../serialization';
+import {deserializeConversation, serializeConversation} from '../../serialization';
 import {
+    cleanConversation,
+    cleanSerializedConversation,
     type Conversation,
     type ConversationId,
     type DeletedConversation,
+    getSpaceDek,
     type SerializedConversation,
     type Space,
-    cleanConversation,
-    cleanSerializedConversation,
-    getSpaceDek,
 } from '../../types';
-import { selectConversationById, selectRemoteIdFromLocal, selectSpaceByConversationId } from '../selectors';
+import {selectConversationById, selectRemoteIdFromLocal, selectSpaceByConversationId} from '../selectors';
 import {
-    type PullConversationRequest,
-    type PushConversationFailure,
-    type PushConversationRequest,
-    type PushConversationSuccess,
     addConversation,
     deleteConversation,
     locallyDeleteConversationFromRemoteRequest,
     locallyRefreshConversationFromRemoteRequest,
     pullConversationFailure,
+    type PullConversationRequest,
     pullConversationSuccess,
+    type PushConversationFailure,
     pushConversationFailure,
     pushConversationNeedsRetry,
     pushConversationNoop,
+    type PushConversationRequest,
     pushConversationRequest,
+    type PushConversationSuccess,
     pushConversationSuccess,
 } from '../slices/core/conversations';
-import { addIdMapEntry } from '../slices/core/idmap';
-import { locallyRefreshMessageFromRemoteRequest } from '../slices/core/messages';
-import type { LumoState } from '../store';
-import { waitForMapping } from './idmap';
-import { ClientError, RETRY_PUSH_EVERY_MS, callWithRetry, isClientError } from './index';
-import { considerRequestingFullMessage } from './messages';
-import { waitForSpace } from './spaces';
+import {addIdMapEntry} from '../slices/core/idmap';
+import {locallyRefreshMessageFromRemoteRequest} from '../slices/core/messages';
+import type {LumoState} from '../store';
+import {waitForMapping} from './idmap';
+import {callWithRetry, ClientError, isClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {considerRequestingFullMessage} from './messages';
+import {waitForSpace} from './spaces';
 
 /*** helpers ***/
 
@@ -166,8 +166,7 @@ export function* deserializeConversationSaga(
             `deserializeConversationSaga ${localId}: cannot deserialize conversation ${localId} from remote`
         );
     }
-    const cleanRemote = cleanConversation(deserializedRemoteConversation);
-    return cleanRemote;
+    return cleanConversation(deserializedRemoteConversation);
 }
 
 export function* softDeleteConversationFromRemote({

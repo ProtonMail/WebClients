@@ -1,10 +1,10 @@
-import { createAction, createReducer, createSelector } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import {createAction, createReducer, createSelector} from '@reduxjs/toolkit';
+import {v4 as uuidv4} from 'uuid';
 
-import type { Priority } from '../../../remote/scheduler';
-import type { GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace } from '../../../remote/types';
-import type { SerializedSpace, Space, SpaceId } from '../../../types';
-import type { LumoState } from '../../store';
+import type {Priority} from '../../../remote/scheduler';
+import type {GetSpaceRemote, IdMapEntry, ListSpacesRemote, RemoteSpace} from '../../../remote/types';
+import type {SerializedSpace, Space, SpaceId} from '../../../types';
+import type {LumoState} from '../../store';
 
 export type PushSpaceRequest = {
     id: SpaceId;
@@ -56,9 +56,8 @@ export const deleteAllSpacesFailure = createAction<DeleteAllSpacesFailure>('lumo
 
 export type SpaceMap = Record<SpaceId, Space>;
 export const EMPTY_SPACE_MAP: SpaceMap = {};
-const initialState: SpaceMap = EMPTY_SPACE_MAP;
 
-const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
+const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
     builder
         .addCase(addSpace, (state, action) => {
             const space = action.payload;

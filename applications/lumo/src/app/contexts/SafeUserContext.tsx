@@ -1,9 +1,9 @@
-import { type ReactNode, createContext, useContext } from 'react';
+import {createContext, type ReactNode, useContext} from 'react';
 
-import { useUser } from '@proton/account/user/hooks';
-import type { User } from '@proton/shared/lib/interfaces';
+import {useUser} from '@proton/account/user/hooks';
+import type {User} from '@proton/shared/lib/interfaces';
 
-import { useIsGuest } from '../providers/IsGuestProvider';
+import {useIsGuest} from '../providers/IsGuestProvider';
 
 const SafeUserContext = createContext<User | undefined>(undefined);
 
@@ -45,9 +45,7 @@ export function SafeUserProvider({ children }: { children: ReactNode }) {
  * Returns undefined for guest users, User object for authenticated users.
  */
 export function useSafeUser(): User | undefined {
-    const context = useContext(SafeUserContext);
-
     // Note: We don't throw here because undefined is a valid value (guest mode)
     // If SafeUserProvider is missing, context will be undefined, which is the same as guest mode
-    return context;
+    return useContext(SafeUserContext);
 }

@@ -104,7 +104,7 @@ export type FileProcessingServiceProps = {
 
 export class FileProcessingService {
     private static instance: FileProcessingService | null = null;
-    
+
     private enableImageTools: boolean;
 
     private worker: Worker | null = null;
@@ -175,10 +175,10 @@ export class FileProcessingService {
 
     private onError(error: ErrorEvent) {
         console.error('[FileProcessingService] Worker error:', error.message);
-        
+
         // Worker failed to initialize - mark it as dead
         this.worker = null;
-        
+
         // Reject all pending requests
         this.pendingRequests.forEach(({ reject }) => {
             reject(new Error('Worker error: ' + error.message));
@@ -208,7 +208,7 @@ export class FileProcessingService {
         } else if (fileSize > 5 * 1024 * 1024) {
             // > 5MB
             timeout = 90000; // 1.5 minutes
-        } else if (fileSize > 1 * 1024 * 1024) {
+        } else if (fileSize > 1024 * 1024) {
             // > 1MB
             timeout = 60000; // 1 minute
         }
@@ -324,7 +324,7 @@ export class FileProcessingService {
                 // Worker may already be terminated
                 console.warn('Failed to send cleanup message to worker:', e);
             }
-            
+
             // Give worker a brief moment to cleanup, then terminate
             setTimeout(() => {
                 if (this.worker) {

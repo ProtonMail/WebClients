@@ -10,11 +10,11 @@ import {
     unwrapKey,
     wrapKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
-import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import {computeSHA256} from '@proton/crypto/lib/subtle/hash';
+import {uint8ArrayToUtf8String, utf8StringToUint8Array} from '@proton/crypto/lib/utils';
 
-import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from '../types';
-import type { AesGcmCryptoKey, AesKwCryptoKey } from './types';
+import {type AdString, type Base64, type EncryptedData, isOldEncryptedData} from '../types';
+import type {AesGcmCryptoKey, AesKwCryptoKey} from './types';
 
 export const generateMasterKeyBytes = () => generateAesWrapKeyBytes();
 export const generateSpaceKeyBytes = () => generateAesGcmKeyBytes(); // meant to go through HKDF to achieve domain separation (e.g. `SPACE_DEK_CONTEXT`)
@@ -105,8 +105,7 @@ export async function decryptUint8Array(
     }
     const adBytes = utf8StringToUint8Array(ad);
     try {
-        const decryptedBytes = await decryptData(encryptKey, encryptedBytes, adBytes);
-        return decryptedBytes;
+        return await decryptData(encryptKey, encryptedBytes, adBytes);
     } catch (error) {
         if (error instanceof DOMException && error.name === 'OperationError' && ad !== undefined) {
             // prettier-ignore

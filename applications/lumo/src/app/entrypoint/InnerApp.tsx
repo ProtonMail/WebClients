@@ -2,14 +2,14 @@ import React, {Suspense, lazy} from 'react';
 import {Route, BrowserRouter as Router, Switch, useRouteMatch} from 'react-router-dom';
 
 import {PandocProvider} from '../providers/PandocProvider';
-import {MainLayout} from '../ui/MainLayout';
-import ConversationSkeleton from '../ui/components/ConversationSkeleton';
-import PerformanceMonitor from '../ui/components/PerformanceMonitor';
+import {MainLayout} from '../layouts/MainLayout';
+import ConversationSkeleton from '../components/ConversationSkeleton';
+import DebugView from '../features/dev/DebugView';
 
-const ConversationPage = lazy(() => import('../pages/ConversationPage').then((m) => ({default: m.ConversationPage})));
-const ProjectsView = lazy(() => import('../ui/projects/ProjectsView').then((m) => ({default: m.ProjectsView})));
+const ConversationPage = lazy(() => import('../layouts/ConversationPage').then((m) => ({default: m.ConversationPage})));
+const ProjectsView = lazy(() => import('../features/projects/ProjectsView').then((m) => ({default: m.ProjectsView})));
 const ProjectDetailView = lazy(() =>
-    import('../ui/projects/ProjectDetailView').then((m) => ({default: m.ProjectDetailView}))
+    import('../features/projects/ProjectDetailView').then((m) => ({default: m.ProjectDetailView}))
 );
 
 export function InnerApp() {
@@ -29,7 +29,7 @@ export function InnerApp() {
                         </Switch>
                     </Suspense>
                 </MainLayout>
-                <PerformanceMonitor/>
+                <DebugView/>
             </Router>
         </PandocProvider>
     );

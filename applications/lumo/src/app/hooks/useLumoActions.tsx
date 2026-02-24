@@ -22,7 +22,7 @@ import {
     regenerateMessage,
     retrySendMessage,
     sendMessage,
-} from '../ui/interactiveConversation/helper';
+} from '../components/Conversation/helper';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';

@@ -1,16 +1,16 @@
-import { createListenerMiddleware } from '@reduxjs/toolkit';
+import {createListenerMiddleware} from '@reduxjs/toolkit';
 
-import { startAccountSessionsListener, startPersistListener } from '@proton/account';
-import { getPersistedState } from '@proton/redux-shared-store/persist';
-import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
-import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
-import { selectPersistModel } from '@proton/redux-utilities';
+import {startAccountSessionsListener, startPersistListener} from '@proton/account';
+import {getPersistedState} from '@proton/redux-shared-store/persist';
+import {startSharedListening} from '@proton/redux-shared-store/sharedListeners';
+import {sharedPersistReducer} from '@proton/redux-shared-store/sharedReducers';
+import {selectPersistModel} from '@proton/redux-utilities';
 
-import type { AppStartListening, LumoListener, LumoState } from '../store';
-import type { LumoThunkArguments } from '../thunk';
-import { startFeatureFlagsListeners } from './featureFlagsListener';
-import { startLumoUserSettingsListeners } from './lumoUserSettingsListener';
-import { startPersonalizationListeners } from './personalizationListener';
+import type {AppStartListening, LumoListener, LumoState} from '../store';
+import type {LumoThunkArguments} from '../thunk';
+import {startFeatureFlagsListeners} from './featureFlagsListener';
+import {startLumoUserSettingsListeners} from './lumoUserSettingsListener';
+import {startPersonalizationListeners} from './personalizationListener';
 
 const persistReducer: Partial<{ [key in keyof LumoState]: any }> = {
     ...sharedPersistReducer,
@@ -35,6 +35,5 @@ export const start = (startListening: AppStartListening) => {
 };
 
 export const createLumoListenerMiddleware = ({ extra }: { extra: LumoThunkArguments }): LumoListener => {
-    const listener = createListenerMiddleware({ extra }) as LumoListener;
-    return listener;
+    return createListenerMiddleware({extra}) as LumoListener;
 };
