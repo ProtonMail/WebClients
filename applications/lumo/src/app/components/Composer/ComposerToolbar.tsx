@@ -4,16 +4,14 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
-import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcSliders } from '@proton/icons/icons/IcSliders';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
-import { useWebSearch } from '../../providers/WebSearchProvider';
-import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
 import { getAcceptAttributeString } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
-import PressEnterToReturn from './PressEnterToReturn';
+import { ToolMenuDropdown } from './ToolMenuDropdown';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
 
@@ -21,23 +19,24 @@ export interface ComposerToolbarProps {
     onFilesSelected: (files: File[]) => void;
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
-    hasAttachments: boolean;
-    canShowLumoUpsellToggle?: boolean;
     fileUploadMode: FileUploadMode;
+
+    // From legacy composer component - can delete
+    // hasAttachments: boolean;
+    // canShowLumoUpsellToggle?: boolean;
 }
 
 export const ComposerToolbar = ({
     onFilesSelected,
     onBrowseDrive,
     onDrawSketch,
-    hasAttachments,
-    canShowLumoUpsellToggle,
     fileUploadMode,
 }: ComposerToolbarProps) => {
-    const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
+    const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [showUploadMenu, setShowUploadMenu] = useState(false);
+    const [showToolsMenu, setShowToolsMenu] = useState(false);
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
 
     const handleFileInputChange = useCallback(
@@ -58,9 +57,13 @@ export const ComposerToolbar = ({
         setShowUploadMenu((prev) => !prev);
     }, []);
 
+    const handleToolsButtonClick = useCallback(() => {
+        setShowToolsMenu((prev) => !prev);
+    }, []);
+
     return (
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
-            <div className="flex flex-row flex-nowrap items-center gap-2 pl-1">
+            <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <input
                     type="file"
                     ref={fileInputRef}
@@ -74,15 +77,14 @@ export const ComposerToolbar = ({
                     ref={uploadButtonRef}
                     icon
                     className={clsx(
-                        'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak',
+                        'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak rounded-full',
                         showUploadMenu && 'is-active'
                     )}
                     onClick={handleUploadButtonClick}
                     shape="ghost"
                     size="small"
                 >
-                    <IcPaperClip size={6} />
-                    <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button').t`Upload`}</span>
+                    <IcPlus size={4} />
                 </Button>
                 <UploadMenuDropdown
                     isOpen={showUploadMenu}
@@ -94,32 +96,30 @@ export const ComposerToolbar = ({
                     fileUploadMode={fileUploadMode}
                 />
                 {isLumoToolingEnabled && (
-                    <Button
-                        icon
-                        className={clsx(
-                            'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak',
-                            isWebSearchButtonToggled && 'is-active'
-                        )}
-                        disabled={hasAttachments}
-                        onClick={handleWebSearchButtonClick}
-                        shape="ghost"
-                        size="small"
-                    >
-                        <IcGlobe size={6} />
-                        <span className="hidden sm:block text-sm mt-0.5">
-                            {c('collider_2025: Button').t`Web search`}
-                        </span>
-                    </Button>
+                    <>
+                        <Button
+                            ref={toolsButtonRef}
+                            className={clsx(
+                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center color-weak py-1.5 rounded-full',
+                                showToolsMenu && 'is-active'
+                            )}
+                            onClick={handleToolsButtonClick}
+                            shape="ghost"
+                            size="small"
+                        >
+                            <IcSliders size={4} />
+                            <span className="hidden sm:block text-sm">{c('collider_2025: Button').t`Tools`}</span>
+                        </Button>
+                        <ToolMenuDropdown
+                            isOpen={showToolsMenu}
+                            anchorRef={toolsButtonRef}
+                            onClose={() => setShowToolsMenu(false)}
+                            // TODO: add create image logic here
+                        />
+                    </>
                 )}
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
-                {canShowLumoUpsellToggle ? (
-                    <div className="flex flex-row">
-                        <LumoComposerToggleUpsell />
-                    </div>
-                ) : (
-                    <PressEnterToReturn />
-                )}
                 <div className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')} id="voice-entry-mobile">
                     <Button
                         icon
