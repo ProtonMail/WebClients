@@ -916,9 +916,19 @@
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
       ],
-      "${ ips } server": [
-        "${ ips } Server",
-        "${ ips } Server"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedizierter VPN-Server",
+        "${ ips } dedizierte VPN-Server"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-Lizenz"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenzen"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
@@ -931,6 +941,24 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "Domains": [
+        "Domains"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ],
+      "Writing assistant seats": [
+        "Lizenzen für Schreibassistenten"
       ]
     },
     "Alert": {
@@ -1102,7 +1130,7 @@
         "3 TB Datenspeicher"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+        "Greife auf über 15.000 Server in mehr als 120 Ländern zu"
       ],
       "Access advanced AI models": [
         "Zugriff auf erweiterte KI-Modelle"
@@ -1111,10 +1139,10 @@
         "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
+        "Werbung, Tracker und Malware blockieren"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Connect 10 devices at once": [
         "Verbinde 10 Geräte gleichzeitig"
@@ -1123,13 +1151,13 @@
         "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
       ],
       "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
+        "Individuelle Konten für 6 Benutzer"
       ],
       "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
+        "Individuelle Konten für dich und einen Partner"
       ],
       "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
@@ -4831,6 +4859,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Öffentliche Dokumente sind für deine Organisation noch nicht aktiviert."
       ],
+      "Readonly": [
+        "Schreibgeschützt"
+      ],
       "Recent documents": [
         "Letzte Dokumente"
       ],
@@ -5002,6 +5033,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Für dieses Dokument findet viel Aktivität statt. Einige Funktionen sind möglicherweise vorübergehend nicht verfügbar."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Dieses Dokument hat viele aktive Mitwirkende. Echtzeitbearbeitung ist vorübergehend nicht verfügbar. Aktualisiere, um die letzten Änderungen anzuzeigen."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dieses Dokument existiert möglicherweise nicht, oder es gibt Probleme beim Laden. Bitte lade die Seite neu und versuche es erneut."
@@ -5254,9 +5288,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
-        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
+        "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du bist dabei, die Einladung zum Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
@@ -5330,11 +5364,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich. Bitte wende dich an den Support, wenn du eine sofortige Änderung deines Abonnements wünschst."
       ],
       "Your online activity is protected": [
         "Deine Online-Aktivitäten sind geschützt."
@@ -6557,10 +6591,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ options }-day file version history": [
-        "Dateiversionsverlauf für ${ options } Tag",
-        "Dateiversionsverlauf für ${ options } Tag"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
@@ -7906,6 +7936,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (zzgl. MwSt.)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -8383,17 +8416,9 @@
         "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
         "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
       ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du hast ${ timeRemaining.inHours } Stunde um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inHours } Stunden um dein Passwort zurücksetzen."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du hast ${ timeRemaining.inMinutes } Minute um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inMinutes } Minuten um dein Passwort zurücksetzen."
-      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du hast ${ timeRemaining.inSeconds } Sekunde um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inSeconds } Sekunden um dein Passwort zurücksetzen."
+        "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunde, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunden, um dein Passwort zurückzusetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -8530,13 +8555,16 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Neue Tabelle"
+        "Neue Tabellenkalkulation"
       ],
       "Tab Separated Values (.tsv)": [
-        "Tabulatorgetrennte Werte (.tsv)"
+        "Tab-getrennte Werte (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
+      ],
       "Detect automatically": [
         "Automatisch erkennen"
       ],
@@ -8548,11 +8576,20 @@
       ],
       "Replace data at selected cell": [
         "Daten in der ausgewählten Zelle ersetzen"
+      ],
+      "Replace spreadsheet": [
+        "Tabellenkalkulation ersetzen"
+      ],
+      "Select a file to import": [
+        "Eine Datei zum Importieren auswählen"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Deine aktuelle Tabelle, einschließlich aller darin enthaltenen Arbeitsblätter, wird durch diese Version ersetzt."
       ]
     },
     "sheets_2025:Label": {
       "Convert text to numbers, dates, and formulas": [
-        "Text in Zahlen, Daten und Formeln umwandeln"
+        "Text in Zahlen, Datumsangaben und Formeln umwandeln"
       ],
       "Destination": [
         "Ziel"
@@ -8561,7 +8598,7 @@
         "Formatieren"
       ],
       "Separator type": [
-        "Trennzeichenart"
+        "Trennertyp"
       ]
     },
     "sheets_2025:Title": {
@@ -8782,8 +8819,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Hol dir unbegrenzt Aliase, um deine Identität zu schützen und Spam zu reduzieren"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Halte deine Passwörter sicher und organisiere sie in mehreren Tresoren"
       ],
       "Protect your account from threats with Sentinel": [
         "Schütze dein Konto vor Bedrohungen mit Sentinel"
@@ -9661,6 +9698,9 @@
       ],
       "Re-signing contacts": [
         "Kontakte neu signieren"
+      ],
+      "Readonly": [
+        "Schreibgeschützt"
       ],
       "Recommended actions": [
         "Empfohlene Aktionen"

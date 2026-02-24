@@ -916,9 +916,19 @@
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servrar"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikerad VPN-server",
+        "${ ips } dedikerade VPN-servrar"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI-licens",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
@@ -931,6 +941,21 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Domains": [
+        "Domäner"
+      ],
+      "Servers": [
+        "Servrar"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Alert": {
@@ -1096,19 +1121,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagring"
+        "2 TB datalagringsutrymme"
       ],
       "3 TB data storage": [
-        "3 TB datalagring"
+        "3 TB datalagringsutrymme"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+        "Åtkomst till över 15 000 servrar i över 120 länder"
       ],
       "Access advanced AI models": [
         "Åtkomst till avancerade AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+        "Alla premiumfunktioner för ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
@@ -1120,7 +1145,7 @@
         "Anslut 10 enheter samtidigt"
       ],
       "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkel sökning och favoriter"
+        "Fullständig konversationshistorik med enkel sökning och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -4825,6 +4850,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Offentliga dokument är inte aktiverade för din organisation än."
       ],
+      "Readonly": [
+        "Skrivskyddad"
+      ],
       "Recent documents": [
         "Senaste dokumenten"
       ],
@@ -5248,9 +5276,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
-        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i albumet ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du är på väg att avböja inbjudan att gå med i mappen ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt den om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
@@ -5318,11 +5345,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
@@ -6544,7 +6571,7 @@
         "${ n } VPN-anslutningar"
       ],
       "${ options }-day file version history": [
-        "${ options }-dagars filversionshistorik",
+        "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -7891,6 +7918,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (exkl. moms)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -8370,15 +8400,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Du har ${ timeRemaining.inHours } timme på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Du har ${ timeRemaining.inMinutes } minut på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Du har ${ timeRemaining.inSeconds } sekund på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
       ]
     },
     "session_recovery:available:link": {
@@ -8518,21 +8548,30 @@
         "Nytt kalkylblad"
       ],
       "Tab Separated Values (.tsv)": [
-        "Tabbseparerade värden (.tsv)"
+        "Flikseparerade värden (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Skapar nytt kalkylblad …"
+      ],
       "Detect automatically": [
         "Upptäck automatiskt"
       ],
       "Insert as new sheet": [
-        "Infoga som nytt blad"
+        "Infoga som nytt kalkylblad"
       ],
       "Replace current sheet": [
-        "Ersätt nuvarande blad"
+        "Ersätt nuvarande kalkylblad"
       ],
       "Replace data at selected cell": [
         "Ersätt data i vald cell"
+      ],
+      "Replace spreadsheet": [
+        "Ersätt kalkylblad"
+      ],
+      "Select a file to import": [
+        "Välj en fil att importera"
       ]
     },
     "sheets_2025:Label": {
@@ -8767,8 +8806,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Håll dina lösenord säkra och organiserade i flera valv "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Håll dina lösenord säkra och organiserade i flera valv"
       ],
       "Protect your account from threats with Sentinel": [
         "Skydda ditt konto från hot med Sentinel"
@@ -9640,6 +9679,9 @@
       ],
       "Re-signing contacts": [
         "Återsignerar kontakter"
+      ],
+      "Readonly": [
+        "Skrivskyddad"
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
