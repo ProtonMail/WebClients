@@ -16,6 +16,8 @@ export interface SettingsStore {
     rolloutProportion?: number;
     appCacheEnabled?: boolean;
     mailtoBannerDismissedPermanently?: boolean;
+    profilingEnabled?: boolean;
+    profilingMode?: "warm" | "cold";
 }
 
 const defaultSettings = {
