@@ -1181,14 +1181,6 @@
         "${ domains } نطاقًا مخصصًا إضافيًا",
         "${ domains } نطاق مخصص إضافي"
       ],
-      "${ ips } servers": [
-        "${ ips } خوادم",
-        "${ ips } خادم",
-        "${ ips } خوادم",
-        "${ ips } خوادم",
-        "${ ips } خوادم",
-        "${ ips } خوادم"
-      ],
       "${ LUMO_APP_NAME } AI assistant": [
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME }"
       ],
@@ -1654,49 +1646,8 @@
       ]
     },
     "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 تيرابايت تخزين بيانات"
-      ],
-      "3 TB data storage": [
-        "3 تيرابايت تخزين بيانات"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "الوصول إلى أكثر من 15,000 خادم في أكثر من 120 دولة"
-      ],
-      "Access advanced AI models": [
-        "الوصول إلى نماذج الذكاء الاصطناعي المتقدمة"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "جميع الميزات المميزة لـ ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Block ads, trackers, and malware": [
-        "حظر الإعلانات، وأدوات التتبع، والبرامج الضارة"
-      ],
-      "Built-in 2FA authenticator": [
-        "مدقق مصادقة ثنائية (2FA) مدمج"
-      ],
-      "Connect 10 devices at once": [
-        "ربط 10 أجهزة في وقت واحد"
-      ],
-      "Full chat history with easy search and favorites": [
-        "سجل دردشة كامل مع بحث سهل ومفضلة"
-      ],
-      "Individual accounts for 6 users": [
-        "حسابات فردية لـ 6 مستخدمين"
-      ],
-      "Individual accounts for you and a partner": [
-        "حسابات فردية لك ولشريك"
-      ],
-      "Stronger protection against cyber threats": [
-        "حماية أقوى ضد التهديدات السيبرانية"
-      ],
-      "Unlimited daily chats": [
-        "محادثات يومية غير محدودة"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "يحمي NetShield المصمم خصيصًا أجهزتك ويسرّع تصفحك عن طريق حظر الإعلانات وأدوات التتبع والبرامج الضارة."
+        "حظر الإعلانات،المتتبعات والبرامج المشبوهة"
       ]
     },
     "Billing cycle": {
@@ -1722,6 +1673,9 @@
       ],
       "Two-year": [
         "سنتين"
+      ],
+      "Yearly": [
+        "سنويًا"
       ]
     },
     "Blog": {
@@ -1787,6 +1741,11 @@
       ],
       "Working with sensitive data?": [
         "هل تعمل ببيانات حساسة؟"
+      ]
+    },
+    "BOSS": {
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "لنقل بيانات مؤسستك، تحتاج إلى تثبيت تطبيق ${ BRAND_NAME } Migration Assistant من Google Workspace Marketplace. سيمنح هذا الإذن لـ ${ BRAND_NAME } بنسخ بياناتك. بعد تثبيته، عُد إلى هنا للمتابعة. تعرّف على المزيد"
       ]
     },
     "Browser": {
@@ -2018,12 +1977,6 @@
     "Checkout summary": {
       "month": [
         "شهر"
-      ],
-      "Servers": [
-        "الخوادم"
-      ],
-      "Users": [
-        "المستخدمين"
       ]
     },
     "Collapsible tooltip": {
@@ -3880,9 +3833,6 @@
       ],
       "Checkout expired, please try again": [
         "انتهت صلاحية تسجيل الخروج، حاول مره اخرى"
-      ],
-      "Code wrong or not valid anymore": [
-        "الرمز خاطئ أو غير صالح بعد الآن"
       ],
       "Couldn't load invoices. Please try again later.": [
         "تعذر تحميل الفواتير. يُرجى المحاولة مرة أخرى لاحقًا."
@@ -6797,9 +6747,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "للمستخدمين الذين يرغبون في الانتقال إلى ${ MAIL_APP_NAME } من خدمة بريد إلكتروني أخرى، اختارو علامة التبويب ${ boldAddresses } وأضيفو جميع عناوين البريد الإلكتروني النشطة قبل تغيير سجل MX لضمان انتقال سلس."
       ],
-      "Free forever": [
-        "مجاني للأبد"
-      ],
       "Free trial": [
         "فترة تجريبية مجانية"
       ],
@@ -8414,14 +8361,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "لن تتمكن من استرداد البيانات المقفلة باستخدام ملفات الاسترداد التي نزّلتها. سيؤدي هذا أيضًا إلى تعطيل الاسترداد بالأجهزة."
       ],
-      "You'll then be billed every ${ renewCycle } months at ${ renewAmountStr }.": [
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } من الأشهر بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل شهر (${ renewCycle }) بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل شهرين (${ renewCycle }) بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } أشهر بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } شهرًا بسعر ${ renewAmountStr }.",
-        "ستتم محاسبتك بعد ذلك كل ${ renewCycle } شهرًا بسعر ${ renewAmountStr }."
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
@@ -8474,12 +8413,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "لن يتم حفظ معلومات تسجيل الدخول الخاصة بك بعد اكتمال الاستيراد."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "تاريخ الفوترة التالي هو ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "تاريخ الفوترة التالي هو ${ renewalTime }. يُرجى الاتصال بالدعم إذا كنت تحتاج إلى تغيير فوري في الخطة."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -10387,14 +10320,6 @@
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
       ],
-      "${ options }-day file version history": [
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يومين",
-        "سجل إصدارات الملف لمدة ${ options } أيام",
-        "سجل إصدارات الملف لمدة ${ options } يومًا",
-        "سجل إصدارات الملف لمدة ${ options } يوم"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin مدى الحياة"
       ],
@@ -12135,6 +12060,12 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "ضريبة بنسبة ${ rate }٪: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% الضرائب: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "المبلغ المستحق بعد الفترة التجريبية في ${ formattedDate }"
       ],
@@ -12156,20 +12087,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "خلال هذا الوقت، لن تتمكن من تعديل اشتراكك أو إلغائه. يُرجى الانتظار حتى اكتمال دفعتك قبل محاولة إجراء أي تغييرات. شكرًا لصبرك."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "باستثناء ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "باستثناء ${ taxRate }% ضرائب: ${ taxAmount }"
-      ],
       "Got it": [
         "أحصل عليها"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "متضمنًا ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "شامل ضريبة بنسبة ${ rate }٪"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "متضمنًا ${ taxRate }% ضرائب: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "شامل ضريبة بنسبة ${ rate }٪: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "شامل ضرائب بنسبة ${ rate }٪"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "شامل ضرائب بنسبة ${ rate }٪: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "شهر / سنة"
@@ -12195,8 +12126,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "عذرًا، هذا العرض غير متوفر مع خطتك الحالية."
       ],
-      "Taxes": [
-        "الضرائب"
+      "Tax ${ rate }%": [
+        "الضريبة ${ rate }٪"
+      ],
+      "Taxes ${ rate }%": [
+        "الضرائب ${ rate }٪"
       ],
       "terms and conditions": [
         "الشروط والأحكام"
@@ -12272,9 +12206,6 @@
       ],
       "Timeout exceeded": [
         "انتهت المهلة المحددة"
-      ],
-      "VAT": [
-        "ضريبة القيمة المضافة"
       ],
       "VAT number": [
         "الرقم الضريبي:"
@@ -12370,6 +12301,20 @@
     "Payments.plan_name": {
       "Free": [
         "مجاني"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم الأعمال الأسترالي (ABN)."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم تعريف النشاط التجاري."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم تعريف صاحب العمل (EIN)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "يعتمد سعر التجديد على منطقة الفوترة ورقم ضريبة القيمة المضافة (VAT)."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13361,30 +13306,6 @@
       ]
     },
     "session_recovery:available:info": {
-      " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "لديك ${ timeRemaining.inHours } من الساعات لإعادة تعيين كلمة مرورك.",
-        "لديك ساعة (${ timeRemaining.inHours }) لإعادة تعيين كلمة مرورك.",
-        "لديك ساعتان (${ timeRemaining.inHours }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعات لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inHours } ساعةً لإعادة تعيين كلمة مرورك."
-      ],
-      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        "لديك ${ timeRemaining.inMinutes } من الدقائق لإعادة تعيين كلمة مرورك.",
-        "لديك دقيقة (${ timeRemaining.inMinutes }) لإعادة تعيين كلمة مرورك.",
-        "لديك دقيقتان (${ timeRemaining.inMinutes }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقائق لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقيقةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inMinutes } دقيقةً لإعادة تعيين كلمة مرورك."
-      ],
-      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        "لديك ${ timeRemaining.inSeconds } من الثواني لإعادة تعيين كلمة مرورك.",
-        "لديك ثانية (${ timeRemaining.inSeconds }) لإعادة تعيين كلمة مرورك.",
-        "لديك ثانيتان (${ timeRemaining.inSeconds }) لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثوانٍ لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثانيةً لإعادة تعيين كلمة مرورك.",
-        "لديك ${ timeRemaining.inSeconds } ثانيةً لإعادة تعيين كلمة مرورك."
-      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays } العديد من الايام",
         "${ timeRemaining.inDays } يوم",
@@ -13711,6 +13632,11 @@
         "تمت المشاركة بواسطة ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "فتح في ${ appName }"
+      ]
+    },
     "Signup": {
       "1 month": [
         "شهر واحد"
@@ -13953,8 +13879,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "احصل على أسماء مستعارة غير محدودة لحماية هويتك وتقليل البريد المزعج"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "حافظ على كلمات مرورك آمنة ومنظمة في خزنات متعددة "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "حافظ على كلمات المرور الخاصة بك آمنة ومنظمة في خزائن متعددة"
       ],
       "Protect your account from threats with Sentinel": [
         "احمِ حسابك من التهديدات باستخدام Sentinel"
@@ -14397,17 +14323,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "ستفقد الوصول إلى عمليات تسجيل الدخول والملاحظات غير المحدودة، وأسماء hide-my-email المستعارة غير المحدودة، و 20 خزنة، بالإضافة إلى الدعم ذي الأولوية."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "تُدفع الفاتورة كل عامين"
-      ],
-      "Billed monthly": [
-        "فاتورة شهرية"
-      ],
-      "Billed yearly": [
-        "تُدفع الفاتورة سنويًا"
       ]
     },
     "Subscription attribute": {
@@ -17111,8 +17026,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "احصل على المزيد من اشتراكك في ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "حافظ على أمان ملفاتك وصورك ومستنداتك مع مساحة تخزين سحابي مجانية تبلغ ${ maxDriveSpace }."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "حافظ على أمان ملفاتك وصورك ومستنداتك مع مساحة تخزين سحابية بسعة ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "ضع كلمات مرور آمنة دون عناء."
@@ -17200,11 +17115,6 @@
         "خوادم في أكثر من ${ numberOfCountries } بلدًا"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "فاتورة شهرية"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "لمدة عام واحد"
@@ -17243,22 +17153,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } months": [
-        "${ n } شهر",
-        "${ n } شهر",
-        "${ n } شهر",
-        "${ n } أشهر",
-        "${ n } أشهر",
-        "${ n } أشهر"
-      ],
-      "${ n } years": [
-        "${ n } سنة",
-        "${ n } سنة",
-        "${ n } سنة",
-        "${ n } سنوات",
-        "${ n } سنوات",
-        "${ n } سنوات"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "يشمل ${ plan } (مجانًا للسنة الأولى!)"
       ],

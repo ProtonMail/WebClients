@@ -788,52 +788,6 @@
         "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "۲ ترابایت ذخیره‌سازی داده"
-      ],
-      "3 TB data storage": [
-        "۳ ترابایت ذخیره‌سازی داده"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "دسترسی به بیش از ۱۵,۰۰۰ سرور در بیش از ۱۲۰ کشور"
-      ],
-      "Access advanced AI models": [
-        "دسترسی به مدل‌های پیشرفته هوش مصنوعی"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "همه قابلیت‌های ویژه ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، ${ VPN_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "مسدود کردن آگهی‌ها، ردیاب‌ها و بدافزارها"
-      ],
-      "Built-in 2FA authenticator": [
-        "احراز هویت اصالت‌سنجی دو-عاملی یکپارچه"
-      ],
-      "Connect 10 devices at once": [
-        "همزمان به ۱۰ دستگاه متصل شوید"
-      ],
-      "Full chat history with easy search and favorites": [
-        "تاریخچه کامل چت با جستجوی آسان و موارد دلخواه"
-      ],
-      "Individual accounts for 6 users": [
-        "حساب‌های کاربری فردی برای ۶ کاربر"
-      ],
-      "Individual accounts for you and a partner": [
-        "حساب‌های کاربری فردی برای شما و یک شریک"
-      ],
-      "Stronger protection against cyber threats": [
-        "محافظت قوی‌تر در برابر تهدیدات سایبری"
-      ],
-      "Unlimited daily chats": [
-        "چت‌های روزانه نامحدود"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield به گونه‌ای طراحی شده تا با مسدود کردن تبلیغات، ردیاب‌ها و بدافزارها، از دستگاه‌های شما محافظت کرده و سرعت مرور شما را افزایش دهد."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "بطور خودکار در ${ subscriptionManagerName } تمدید میشود"
@@ -854,6 +808,9 @@
       ],
       "Two-year": [
         "دو ساله"
+      ],
+      "Yearly": [
+        "سالانه"
       ]
     },
     "Blog": {
@@ -975,12 +932,6 @@
     "Checkout summary": {
       "month": [
         "ماه"
-      ],
-      "Servers": [
-        "سرورها"
-      ],
-      "Users": [
-        "کاربر"
       ]
     },
     "Collapsible tooltip": {
@@ -2156,9 +2107,6 @@
       ],
       "Checkout expired, please try again": [
         "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید"
-      ],
-      "Code wrong or not valid anymore": [
-        "کد غلط یا دیگر غیر معتبر است"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "حداقل ${ calendarsToFixCount } تقویم را انتخاب نکنید",
@@ -6126,11 +6074,6 @@
         "سازمان"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "باز کردن در ${ appName }"
-      ]
-    },
     "Signup": {
       "1 month": [
         "۱ ماه"
@@ -6293,11 +6236,6 @@
       ],
       "Your storage is full": [
         "فضای ذخیره سازی شما پر شده است"
-      ]
-    },
-    "Subscription": {
-      "Billed monthly": [
-        "صورتحساب ماهانه"
       ]
     },
     "Subscription attribute": {
@@ -7434,11 +7372,6 @@
         "${ numberOfServers } در ${ numberOfCountries } کشور"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "صورتحساب ماهانه"
-      ]
-    },
     "vpn_2step: discount": {
       "monthly": [
         "ماهانه"
@@ -7447,16 +7380,6 @@
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "سفارشی‌سازی پیشرفته VPN"
-      ]
-    },
-    "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
-      "${ n } year": [
-        "${ n } سال",
-        "${ n } سال"
       ]
     },
     "Warning": {

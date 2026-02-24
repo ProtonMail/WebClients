@@ -1190,11 +1190,11 @@
         "${ domains } dodatočných vlastných domén",
         "${ domains } dodatočných vlastných domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverov",
-        "${ ips } serverov"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverov",
+        "${ ips } dedikovaných VPN serverov"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } AI asistent"
@@ -1204,6 +1204,12 @@
         "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
         "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)",
         "${ LUMO_APP_NAME } AI asistent (pre ${ quantity } používateľov)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licencia"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencií"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -1223,6 +1229,12 @@
         "${ quantity } vlastných domén",
         "${ quantity } vlastných domén"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } AI licencia",
+        "${ seats }${ LUMO_APP_NAME } AI licencie",
+        "${ seats }${ LUMO_APP_NAME } AI licencií",
+        "${ seats }${ LUMO_APP_NAME } AI licencií"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } licencia",
         "${ seats }${ LUMO_APP_NAME } licencie",
@@ -1240,6 +1252,24 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Users": [
+        "Používatelia"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
+      ],
+      "Writing assistant seats": [
+        "Licencie pre asistenta písania"
       ]
     },
     "Address action": {
@@ -1650,16 +1680,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dátového úložiska"
+        "2 TB úložisko dát"
       ],
       "3 TB data storage": [
-        "3 TB dátového úložiska"
+        "3 TB úložisko dát"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+        "Pristupujte k 15 000+ serverom vo viac ako 120 krajinách"
       ],
       "Access advanced AI models": [
-        "Prístup k pokročilým modelom umelej inteligencie"
+        "Prístup k pokročilým modelom AI"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
@@ -1671,7 +1701,7 @@
         "Zabudovaný 2FA autentifikátor"
       ],
       "Connect 10 devices at once": [
-        "Pripojte 10 zariadení súčasne"
+        "Pripojte 10 zariadení naraz"
       ],
       "Full chat history with easy search and favorites": [
         "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
@@ -1683,7 +1713,7 @@
         "Individuálne účty pre vás a partnera"
       ],
       "Stronger protection against cyber threats": [
-        "Silnejšia ochrana proti kybernetickým hrozbám"
+        "Silnejšia ochrana pred kybernetickými hrozbami"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -1706,6 +1736,18 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } rokov",
+        "${ n } rokov"
+      ],
       "1 month": [
         "1 mesiac"
       ],
@@ -1715,14 +1757,23 @@
       "Annually": [
         "Ročne"
       ],
+      "Billed monthly": [
+        "Fakturované mesačne"
+      ],
       "Lifetime": [
         "Doživotne"
+      ],
+      "Lifetime access": [
+        "Doživotný prístup"
       ],
       "Monthly": [
         "Mesačne"
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročne"
       ]
     },
     "Blog": {
@@ -1878,7 +1929,7 @@
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali. Zistiť viac"
       ],
       "Transfer errors": [
@@ -2120,12 +2171,6 @@
     "Checkout summary": {
       "month": [
         "mesiac"
-      ],
-      "Servers": [
-        "Servery"
-      ],
-      "Users": [
-        "Používatelia"
       ]
     },
     "Collapsible tooltip": {
@@ -4005,9 +4050,6 @@
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
-      "Code wrong or not valid anymore": [
-        "Nesprávny alebo neplatný kód"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
       ],
@@ -4067,6 +4109,9 @@
       ],
       "Failed to process the logo": [
         "Spracovanie loga zlyhalo"
+      ],
+      "Failed to update billing address": [
+        "Chyba pri aktualizácii fakturačnej adresy"
       ],
       "Failed to update detailed monitoring.": [
         "Aktualizácia podrobného monitorovania zlyhala."
@@ -4349,6 +4394,9 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Pre tento plán daňová výnimka nie je podporovaná"
       ],
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
@@ -6848,9 +6896,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
-      "Free forever": [
-        "Navždy zadarmo"
-      ],
       "Free trial": [
         "Bezplatné skúšobné obdobie"
       ],
@@ -8441,11 +8486,11 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
@@ -8498,11 +8543,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaša ďalšia fakturácia bude ${ renewalTime }. Zrušiť môžete kedykoľvek."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Zrušiť môžete kedykoľvek. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
@@ -12161,6 +12206,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez DPH)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% dane: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
@@ -12182,20 +12236,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
-      ],
       "Got it": [
         "Rozumiem"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Vrátane ${ rate }% dane"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Vrátane ${ rate }% dane: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Vrátane ${ rate }% daní"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Vrátane ${ rate }% daní: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -12221,8 +12275,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
       ],
-      "Taxes": [
-        "Dane"
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Dane ${ rate }%"
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
@@ -12286,9 +12343,6 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -12384,6 +12438,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovenia závisí od fakturačného regiónu a ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovenia závisí od fakturačného regiónu a IČO firmy."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena obnovenia závisí od fakturačného regiónu a identifikačného čísla pre daň z pridanej hodnoty (IČ DPH)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovenia závisí od fakturačného regiónu a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13430,21 +13498,21 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodinu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minútu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
@@ -13698,6 +13766,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otvoriť v ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Otvoriť v ${ appName } (Beta)"
       ]
     },
     "Signup": {
@@ -13935,8 +14006,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Získajte neobmedzené aliasy na ochranu svojej identity a zníženie spamu"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch"
       ],
       "Protect your account from threats with Sentinel": [
         "Chráňte svoj účet pred hrozbami so Sentinelom"
@@ -14367,17 +14438,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Účtované každé 2 roky"
-      ],
-      "Billed monthly": [
-        "Účtované mesačne"
-      ],
-      "Billed yearly": [
-        "Účtované ročne"
       ]
     },
     "Subscription attribute": {
@@ -14938,6 +14998,9 @@
         "Záložné heslo aktualizované"
       ],
       "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
+      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Canceling import": [
@@ -16901,6 +16964,9 @@
       ],
       "Recommended": [
         "Odporúčané"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ušetrite ${ price.checkoutUi.discountPercent }%"
       ]
     },
     "User role": {
@@ -17063,9 +17129,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "Získajte viac zo svojho predplatného ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Uchovávajte svoje súbory, fotografie a dokumenty v bezpečí s ${ maxDriveSpace } bezplatným cloudovým úložiskom."
-      ],
       "Set secure passwords without the hassle.": [
         "Nastavenie bezpečných hesiel bez problémov."
       ],
@@ -17130,11 +17193,6 @@
         "Servery v ${ numberOfCountries }+ krajinách"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Účtované mesačne"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1-ročným"
@@ -17173,18 +17231,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "${ n } year": [
-        "${ n } rok",
-        "${ n } roky",
-        "${ n } rokov",
-        "${ n } rokov"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Vrátane ${ plan } (bezplatne počas prvého roka!)"
       ],

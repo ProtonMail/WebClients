@@ -1097,12 +1097,6 @@
         "${ domains } dodatne domene po meri",
         "${ domains } dodatnih domen po meri"
       ],
-      "${ ips } server": [
-        "${ ips } strežnik",
-        "${ ips } strežnika",
-        "${ ips } strežnikov",
-        "${ ips } strežnikov"
-      ],
       "${ price } per dedicated server": [
         "${ price } na namenski strežnik"
       ],
@@ -1415,52 +1409,6 @@
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB shrambe podatkov"
-      ],
-      "3 TB data storage": [
-        "3 TB shrambe podatkov"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostop do več kot 15.000 strežnikov v več kot 120 državah"
-      ],
-      "Access advanced AI models": [
-        "Dostop do naprednih modelov umetne inteligence"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Vse premium funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
-      ],
-      "Built-in 2FA authenticator": [
-        "Vgrajen overitelj 2FA"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 naprav hkrati"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Celotna zgodovina klepetov z enostavnim iskanjem in priljubljenimi"
-      ],
-      "Individual accounts for 6 users": [
-        "Posamezni računi za 6 uporabnikov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Posamezni računi za vas in partnerja"
-      ],
-      "Stronger protection against cyber threats": [
-        "Močnejša zaščita pred kibernetskimi grožnjami"
-      ],
-      "Unlimited daily chats": [
-        "Neomejeno število dnevnih klepetov"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebej zasnovan NetShield ščiti vaše naprave in pospeši vaše brskanje z blokiranjem oglasov, sledilnikov in zlonamerne programske opreme."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Se podaljša samodejno za ${ renewPrice } za ${ renewCycle } mesec",
@@ -1490,6 +1438,9 @@
       ],
       "Two-year": [
         "Dve leti"
+      ],
+      "Yearly": [
+        "Letno"
       ]
     },
     "Blog": {
@@ -1734,12 +1685,6 @@
     "Checkout summary": {
       "month": [
         "mesec"
-      ],
-      "Servers": [
-        "Strežniki"
-      ],
-      "Users": [
-        "Uporabniki"
       ]
     },
     "Collapsible tooltip": {
@@ -3416,9 +3361,6 @@
       ],
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
-      ],
-      "Code wrong or not valid anymore": [
-        "Koda je neveljavna ali je potekla"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Računov ni bilo mogoče naložiti. Poskusite kasneje."
@@ -5888,9 +5830,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Za uporabnike, ki prehajajo na ${ MAIL_APP_NAME } iz druge e-poštne storitve, izberite zavihek ${ boldAddresses } in dodajte vse aktivne e-poštne naslove, preden spremenite zapis MX, da zagotovite nemoten prenos."
       ],
-      "Free forever": [
-        "Brezplačno za vedno."
-      ],
       "Gateways": [
         "prehode"
       ],
@@ -7162,12 +7101,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Datum vašega naslednjega računa je ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Datum vašega naslednjega računa za plačilo je ${ renewalTime }. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizacija uporablja enotno prijavo (SSO). Pritisnite Prijava, da nadaljujete s svojim ponudnikom SSO."
@@ -8836,12 +8769,6 @@
         "${ n } VPN povezave",
         "${ n } VPN povezav"
       ],
-      "${ options }-day file version history": [
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
       ],
@@ -10444,9 +10371,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumem"
       ],
@@ -10471,9 +10395,6 @@
       "Sorry, this offer is not available with your current plan.": [
         "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
       ],
-      "Taxes": [
-        "Davki"
-      ],
       "terms and conditions": [
         "pravili in pogoji"
       ],
@@ -10494,9 +10415,6 @@
       ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
-      ],
-      "VAT": [
-        "DDV"
       ],
       "VAT number": [
         "DDV številka"
@@ -11291,24 +11209,6 @@
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dneva.",
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dni.",
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dni."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inHours } uro.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } uri.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } ur.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } ur."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minuto.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minuti.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minut.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minut."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekundo.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekundi.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekund.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -11551,11 +11451,6 @@
         "Delil z ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Odpri v ${ appName }"
-      ]
-    },
     "Signup": {
       "1 month": [
         "1 mesec"
@@ -11761,9 +11656,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Imejte svoja gesla varna in organizirana v več trezorjih "
-      ],
       "Protect your account from threats with Sentinel": [
         "Zaščitite svoj račun pred grožnjami s Sentinelom"
       ],
@@ -12021,13 +11913,13 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } shrambe"
+        "Prostor za shrambo ${ app }"
       ],
       "${ app } storage used": [
-        "Porabljene shrambe ${ app }"
+        "Porabljene shrambe za ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } je ${ percentage }% polna"
+        "${ storage } je ${ percentage } % poln."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Z zmanjšanjem paketa boste izgubili naslednje ugodnosti. Ste prepričani, da želite nadaljevati?"
@@ -12063,10 +11955,10 @@
         "Na trenutnem paketu **${ currentPlanName }** vam je preostalo še **${ daysRemaining }** dni uporabe."
       ],
       "Your ${ appStorage } is almost full": [
-        "${ appStorage } je skoraj polna"
+        "${ appStorage } je skoraj poln."
       ],
       "Your ${ appStorage } is full": [
-        "${ appStorage } je polna"
+        "${ appStorage } je poln."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Vaš ${ productString } je poln ${ percentage } %. ${ cta }."
@@ -12075,7 +11967,7 @@
         "Vaš ${ productString } je poln. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Vaša shramba je polna ${ percentage } %. ${ cta }."
+        "Vaša shramba je ${ percentage } % polna. ${ cta }."
       ],
       "Your storage is full": [
         "Vaša shramba je polna"
@@ -12094,17 +11986,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Izgubili boste dostop do neomejenega števila prijav in opomb, neomejenega števila vzdevkov hide-my-email za skrivanje e-pošte, 20 trezorjev in prednostne podpore."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Zaračunano vsaki dve leti."
-      ],
-      "Billed monthly": [
-        "Obračunano mesečno"
-      ],
-      "Billed yearly": [
-        "Letno zaračunano."
       ]
     },
     "Subscription attribute": {
@@ -14346,11 +14227,6 @@
         "Strežniki v več kot ${ numberOfCountries } državah"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Obračunano mesečno"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "enoletno"
@@ -14389,18 +14265,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mesec",
-        "${ n } meseca",
-        "${ n } mesece",
-        "${ n } mesecev"
-      ],
-      "${ n } year": [
-        "${ n } leto",
-        "${ n } leti",
-        "${ n } let",
-        "${ n } let"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Vključuje ${ plan } (prvo leto brezplačno!)"
       ],
