@@ -1,10 +1,13 @@
 import { withTimeout } from './withTimeout';
 
-jest.useFakeTimers();
-
 describe('withTimeout', () => {
     beforeEach(() => {
+        jest.useFakeTimers();
         void jest.runAllTimersAsync();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
     });
 
     it('should call the promise and return its result', async () => {

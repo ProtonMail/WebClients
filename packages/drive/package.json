@@ -12,6 +12,7 @@
     "dependencies": {
         "@proton/components": "workspace:^",
         "@proton/crypto": "workspace:^",
+        "@proton/metrics": "workspace:^",
         "@proton/shared": "workspace:^",
         "@protontech/drive-sdk": "^0.10.0",
         "@types/node": "^24.10.13"
