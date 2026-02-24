@@ -209,6 +209,9 @@
       "Previous page": [
         "Poprzednia strona"
       ],
+      "Redo": [
+        "Powtórz"
+      ],
       "Refer a friend": [
         "Poleć znajomemu"
       ],
@@ -308,6 +311,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Undo": [
+        "Cofnij"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
@@ -357,12 +363,6 @@
         "${ domains } dodatkowe niestandardowe domeny",
         "${ domains } dodatkowych niestandardowych domen",
         "${ domains } dodatkowych niestandardowych domen"
-      ],
-      "${ ips } server": [
-        "${ ips } serwer",
-        "${ ips } serwery",
-        "${ ips } serwerów",
-        "${ ips } serwerów"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedykowany serwer"
@@ -529,52 +529,6 @@
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB przestrzeni dyskowej na dane"
-      ],
-      "3 TB data storage": [
-        "3 TB przestrzeni dyskowej na dane"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
-      ],
-      "Access advanced AI models": [
-        "Dostęp do zaawansowanych modeli AI"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } oraz ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, trackery i złośliwe oprogramowanie"
-      ],
-      "Built-in 2FA authenticator": [
-        "Wbudowana aplikacja uwierzytelniająca"
-      ],
-      "Connect 10 devices at once": [
-        "Połącz 10 urządzeń jednocześnie"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
-      ],
-      "Individual accounts for 6 users": [
-        "Indywidualne konta dla 6 użytkowników"
-      ],
-      "Individual accounts for you and a partner": [
-        "Indywidualne konta dla Ciebie i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silniejsza ochrona przed cyberzagrożeniami"
-      ],
-      "Unlimited daily chats": [
-        "Nieograniczone codzienne czaty"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia i przyspiesza przeglądanie, blokując reklamy, elementy śledzące i złośliwe oprogramowanie."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -593,6 +547,9 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ],
+      "Yearly": [
+        "Rocznie"
       ]
     },
     "Browser": {
@@ -833,9 +790,6 @@
     "collider_2025: Button": {
       "Close": [
         "Zamknij"
-      ],
-      "Join waitlist": [
-        "Dołącz do listy oczekujących"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -1263,17 +1217,8 @@
       "Save your favorites": [
         "Zapisz swoje ulubione"
       ],
-      "Secure your spot": [
-        "Zabezpiecz swoje miejsce"
-      ],
       "Upload files": [
         "Prześlij pliki"
-      ],
-      "You're on the list": [
-        "Jesteś na liście"
-      ],
-      "You're on the waitlist": [
-        "Jesteś na liście oczekujących"
       ]
     },
     "collider_2025: Top nav link": {
@@ -1292,17 +1237,6 @@
     "collider_2025: Upsell Title": {
       "Get": [
         "Zdobądź"
-      ]
-    },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Dziękujemy za dołączenie do listy oczekujących. Wyślemy Ci wiadomość e-mail, gdy możliwe będzie rozpoczęcie czatowania z ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Dziękujemy za rejestrację. Stopniowo otwieramy dostęp do ${ LUMO_SHORT_APP_NAME } i powiadomimy Cię, gdy Twoje miejsce będzie dostępne."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "Stopniowo otwieramy dostęp do ${ LUMO_SHORT_APP_NAME }. Dołącz do listy oczekujących, a powiadomimy Cię, gdy Twoje miejsce będzie dostępne."
       ]
     },
     "collider_2025: Warning": {
@@ -3355,12 +3289,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiąca ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
@@ -3369,12 +3297,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Twoja następna data rozliczeniowa to ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
@@ -3879,12 +3801,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -4820,9 +4736,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
-      "Taxes": [
-        "Podatki"
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
@@ -4984,9 +4897,6 @@
       "Thomas": [
         "Jan"
       ],
-      "VAT number": [
-        "Numer VAT"
-      ],
       "Your organization name": [
         "Twoja nazwa organizacji"
       ],
@@ -5005,6 +4915,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } miesiąc",
+        "${ cycle } miesiące",
+        "${ cycle } miesięcy",
+        "${ cycle } miesięca"
       ]
     },
     "plus_block": {
@@ -5321,17 +5239,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Po obniżeniu planu stracisz dostęp do nieograniczonych danych logowania, notatek, aliasów hide-my-email, 20 sejfów i priorytetowego wsparcia."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Płatne co 2 lata"
-      ],
-      "Billed monthly": [
-        "Płatne miesięcznie"
-      ],
-      "Billed yearly": [
-        "Płatne rocznie"
       ]
     },
     "Subscription attribute": {
