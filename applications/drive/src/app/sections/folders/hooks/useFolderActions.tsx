@@ -1,6 +1,6 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
 
-import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
+import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
@@ -57,7 +57,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     // Modal hooks
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
-    const [createFileModal, showCreateFileModal] = useCreateFileModal();
+    const { createFileModal, showCreateFileModal } = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
