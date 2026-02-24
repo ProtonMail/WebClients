@@ -9,7 +9,7 @@ import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { type MoveNodesItemMap, useMoveNodes } from '../../hooks/sdk/useMoveNodes';
 import { useTreeForModals } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
 import { useCreateFolderModal } from '../CreateFolderModal';
@@ -49,7 +49,6 @@ export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalPro
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
     const { activeFolder } = useActiveShare();
-    const { handleError } = useSdkErrorHandler();
     const { moveNodes } = useMoveNodes();
     const [nodes, setNodes] = useState<NodeTarget[] | null>(null);
 
@@ -84,13 +83,13 @@ export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalPro
                 }
                 setNodes(fetchedNodes);
             } catch (e) {
-                handleError(e, { showNotification: true });
+                handleSdkError(e, { showNotification: true });
                 onExit();
             }
         };
 
         void fetchNodes();
-    }, [uids, drive, handleError, onExit]);
+    }, [uids, drive, onExit]);
 
     if (!nodes) {
         return {

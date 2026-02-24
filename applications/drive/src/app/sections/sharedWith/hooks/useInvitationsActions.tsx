@@ -8,7 +8,7 @@ import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 
 interface UseInvitationsActions {
@@ -17,7 +17,6 @@ interface UseInvitationsActions {
 
 export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActions) => {
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     // useCallback is needed as this can be called inside useEffect, like accepting an invite on page load
     const handleAcceptInvitation = useCallback(
@@ -50,10 +49,10 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                     text: c('Notification').t`Share invitation accepted successfully`,
                 });
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Notification').t`Failed to accept share invitation` });
+                handleSdkError(e, { fallbackMessage: c('Notification').t`Failed to accept share invitation` });
             }
         },
-        [createNotification, handleError, setVolumeShareIds]
+        [createNotification, setVolumeShareIds]
     );
 
     const rejectInvitationInternal = async (uid: string, invitationUid: string, type: NodeType) => {
@@ -71,7 +70,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                 text: c('Notification').t`Share invitation declined`,
             });
         } catch (e) {
-            handleError(e, { fallbackMessage: c('Notification').t`Failed to reject share invitation` });
+            handleSdkError(e, { fallbackMessage: c('Notification').t`Failed to reject share invitation` });
         }
     };
 

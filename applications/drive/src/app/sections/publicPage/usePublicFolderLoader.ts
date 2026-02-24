@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useAuthentication, useNotifications } from '@proton/components';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
@@ -13,7 +13,6 @@ import { usePublicFolderStore } from './usePublicFolder.store';
 
 export const usePublicFolderLoader = () => {
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
     const auth = useAuthentication();
 
     const loadPublicFolderChildren = useCallback(
@@ -62,7 +61,7 @@ export const usePublicFolderLoader = () => {
                                 undefined,
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -76,12 +75,12 @@ export const usePublicFolderLoader = () => {
                     });
                 }
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`We were not able to load the folder contents` });
+                handleSdkError(e, { fallbackMessage: c('Error').t`We were not able to load the folder contents` });
             } finally {
                 setLoading(false);
             }
         },
-        [auth, createNotification, handleError]
+        [auth, createNotification]
     );
 
     return {

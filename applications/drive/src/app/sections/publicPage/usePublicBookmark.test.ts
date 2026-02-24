@@ -7,7 +7,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { needPublicRedirectSpotlight, setPublicRedirectSpotlightToPending } from '../../utils/publicRedirectSpotlight';
 import { getBookmark } from '../../utils/sdk/getBookmark';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
@@ -31,8 +31,8 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
     openNewTab: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: jest.fn(),
+jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+    handleSdkError: jest.fn(),
 }));
 
 jest.mock('../../utils/publicRedirectSpotlight', () => ({
@@ -61,7 +61,7 @@ jest.mock('./usePublicAuth.store', () => ({
 
 const mockIterateBookmarks = jest.fn();
 const mockCreateBookmark = jest.fn();
-const mockHandleError = jest.fn();
+const mockHandleError = jest.mocked(handleSdkError);
 const mockWithLoading = jest.fn((fn: () => Promise<void>) => fn());
 
 describe('usePublicBookmark', () => {
@@ -79,10 +79,6 @@ describe('usePublicBookmark', () => {
         jest.mocked(useLoading).mockReturnValue([false, mockWithLoading] as any);
 
         jest.mocked(useFlag).mockReturnValue(false);
-
-        jest.mocked(useSdkErrorHandler).mockReturnValue({
-            handleError: mockHandleError,
-        } as any);
 
         jest.mocked(getPublicTokenAndPassword).mockReturnValue({
             token: mockToken,

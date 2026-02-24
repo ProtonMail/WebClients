@@ -7,7 +7,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
 import { getSharedWithMeSortValue } from '../../sections/sharedWith/sharedWithMe.sorting';
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 

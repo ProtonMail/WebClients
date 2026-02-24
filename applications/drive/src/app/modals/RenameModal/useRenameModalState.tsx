@@ -8,7 +8,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import type { RenameModalViewProps } from './RenameModalView';
 import type { Drive } from './interface';
@@ -53,7 +53,6 @@ export const useRenameModalState = ({
     ...modalProps
 }: UseRenameModalProps): RenameModalViewProps => {
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
     const [node, setNode] = useState<null | NodeEntity>(null);
     // The initial name for the rename modal. this can be different from the node name
     // in case of node errors (e.g. decryption errors).
@@ -83,7 +82,7 @@ export const useRenameModalState = ({
                 }
                 setInitialName(initialName);
             } catch (e) {
-                handleError(e, { showNotification: true });
+                handleSdkError(e, { showNotification: true });
                 modalProps.onExit();
             }
         };
@@ -112,7 +111,7 @@ export const useRenameModalState = ({
                 onClose();
             })
             .catch((e) => {
-                handleError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { nodeUid } });
+                handleSdkError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { nodeUid } });
             });
     };
 

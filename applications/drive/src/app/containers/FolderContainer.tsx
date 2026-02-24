@@ -17,14 +17,13 @@ import { FolderView } from '../sections/folders/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useFolderStore } from '../sections/folders/useFolder.store';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 
 export function FolderContainer() {
     const [isLoading, withLoading] = useLoading(true);
     const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useLegacyContextShareHandler();
     const { shareId, linkId } = useParams<DriveSectionRouteProps>();
-    const { handleError } = useSdkErrorHandler();
     const { setFolder } = useActiveShare();
     const [nodeUid, setNodeUid] = useState<string | undefined>();
     const { createNotification } = useNotifications();
@@ -46,7 +45,7 @@ export function FolderContainer() {
         }
         void withLoading(async () => {
             if (!shareId || !linkId) {
-                handleError(
+                handleSdkError(
                     new EnrichedError('Drive is not initilized, cache has been cleared unexpectedly', {
                         extra: {
                             reason: 'Missing URL parameters',
@@ -83,7 +82,7 @@ export function FolderContainer() {
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkId, withLoading, handleError, navigateToRoot, setFolder, handleContextShare, createNotification]);
+    }, [shareId, linkId, withLoading, navigateToRoot, setFolder, handleContextShare, createNotification]);
 
     useEffect(() => {
         const unsubscribe = subscribeToFolderEvents();

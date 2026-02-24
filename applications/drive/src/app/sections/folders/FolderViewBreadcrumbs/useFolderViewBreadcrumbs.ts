@@ -7,7 +7,7 @@ import type { ProtonDriveClient, Result } from '@proton/drive/index';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import type { CrumbDefinition } from '../../../statelessComponents/Breadcrumbs/types';
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { NodeLocation, getNodeLocation } from '../../../utils/sdk/getNodeLocation';
@@ -19,7 +19,6 @@ export const SYNTHETIC_UID_SHARED_WITH_ME = 'synthetic-uid-shared-with-me';
 export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<CrumbDefinition[]>([]);
-    const { handleError } = useSdkErrorHandler();
     const { navigateToDevices, navigateToSharedWithMe } = useDriveNavigation();
 
     const computeCrumbs = useCallback(
@@ -107,12 +106,12 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                 setData(crumbsResult.value);
             } else {
                 setData([]);
-                handleError(crumbsResult.error);
+                handleSdkError(crumbsResult.error);
             }
 
             setLoading(false);
         },
-        [computeCrumbs, driveClient, handleError]
+        [computeCrumbs, driveClient]
     );
 
     return {

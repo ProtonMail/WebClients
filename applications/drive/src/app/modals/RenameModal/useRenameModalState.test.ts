@@ -5,6 +5,7 @@ import type { InvalidNameError } from '@proton/drive/index';
 import { type NodeEntity, NodeType } from '@proton/drive/index';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import type { RenameModalViewProps } from './RenameModalView';
 import { useRenameModalState } from './useRenameModalState';
 
@@ -14,13 +15,11 @@ jest.mock('@proton/components', () => ({
     })),
 }));
 
-const mockHandleError = jest.fn();
-
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: () => ({
-        handleError: mockHandleError,
-    }),
+jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+    handleSdkError: jest.fn(),
 }));
+
+const mockHandleError = jest.mocked(handleSdkError);
 
 const mockedGetNode = jest.fn();
 const mockDrive = {

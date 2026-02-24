@@ -9,7 +9,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { needPublicRedirectSpotlight, setPublicRedirectSpotlightToPending } from '../../utils/publicRedirectSpotlight';
 import { getBookmark } from '../../utils/sdk/getBookmark';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
@@ -30,7 +30,6 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
     const [showSaveForLaterSpotlight, setShowSaveFarLaterSpotlight] = useState(false);
     const [isLoading, withLoading] = useLoading(false);
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
-    const { handleError } = useSdkErrorHandler();
     const isLoggedIn = usePublicAuthStore(useShallow((state) => state.isLoggedIn));
     const [error, setError] = useState(false);
 
@@ -53,13 +52,13 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
                         }
                     } catch (e) {
                         // Handle gracefully to prevent stopping iterating
-                        handleError(e, { showNotification: false });
+                        handleSdkError(e, { showNotification: false });
                         setError(true);
                     }
                 }
             } catch (e) {
                 setError(true);
-                handleError(e);
+                handleSdkError(e);
             }
         });
 
@@ -70,7 +69,7 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
         return () => {
             abortController.abort();
         };
-    }, [isLoggedIn, bookmarksFeatureDisabled, withLoading, handleError]);
+    }, [isLoggedIn, bookmarksFeatureDisabled, withLoading]);
 
     const handleAddBookmark = async (customPassword?: string) => {
         try {
@@ -80,7 +79,7 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
             setPublicRedirectSpotlightToPending();
             setShowSaveFarLaterSpotlight(true);
         } catch (error) {
-            handleError(error);
+            handleSdkError(error);
         }
     };
 

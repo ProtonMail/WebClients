@@ -6,7 +6,7 @@ import { type ModalStateProps, useApi, useNotifications } from '@proton/componen
 import type { NodeType, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import type { ReportAbuseModalViewProps } from './ReportAbuseModalView';
@@ -70,7 +70,6 @@ export const useReportAbuseModalState = ({
     open,
 }: UseReportAbuseModalProps): ReportAbuseModalViewProps => {
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
     const api = useApi();
     const [nodeData, setNodeData] = useState<
         | {
@@ -94,13 +93,13 @@ export const useReportAbuseModalState = ({
                     type: node.type,
                 });
             } catch (e) {
-                handleError(e, { showNotification: true });
+                handleSdkError(e, { showNotification: true });
                 onExit();
             }
         };
 
         void fetchNodeData();
-    }, [nodeUid, drive, handleError, onExit]);
+    }, [nodeUid, drive, onExit]);
 
     if (!nodeData) {
         return {
@@ -124,7 +123,7 @@ export const useReportAbuseModalState = ({
             createNotification({ text: c('Info').t`Report has been sent` });
             onClose();
         } catch (e) {
-            handleError(e, { fallbackMessage: c('Error').t`Report failed to be sent` });
+            handleSdkError(e, { fallbackMessage: c('Error').t`Report failed to be sent` });
         }
     };
 
