@@ -1925,10 +1925,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2508,8 +2504,8 @@
       "You may close this tab.": [
         "Du kannst diesen Tab schließen."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Du musst eventuell ${ PASS_APP_NAME } die Bedienungshilfen-Berechtigung erteilen."
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Möglicherweise musst du ${ PASS_APP_NAME } die Berechtigung für Bedienungshilfen erteilen."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Du benötigst einen Tresor mit Bearbeitungsberechtigung, bevor du Einträge importieren kannst."
