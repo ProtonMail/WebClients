@@ -52,7 +52,7 @@ export const handleSpaceAttachmentFileAsync =
             rawBytes: file.size,
             processing: true,
             filename: file.name,
-            // Note: data is included for processing, but will be removed before Redux storage
+            // Note: data is included for processing but will be removed before Redux storage
             data: fileData,
         };
 
@@ -77,8 +77,7 @@ export const handleSpaceAttachmentFileAsync =
                 if (processedAttachment.markdown) {
                     try {
                         const filename = `Filename: ${processedAttachment.filename}`;
-                        const tokenCount = getApproximateTokenCount(`${filename}\n${processedAttachment.markdown}`);
-                        processedAttachment.tokenCount = tokenCount;
+                        processedAttachment.tokenCount = getApproximateTokenCount(`${filename}\n${processedAttachment.markdown}`);
                     } catch (tokenError) {
                         console.warn('Failed to calculate token count:', tokenError);
                     }
@@ -102,11 +101,11 @@ export const handleSpaceAttachmentFileAsync =
         // This avoids non-serializable Uint8Array in Redux actions/state
         storePendingAttachment(processedAttachment);
 
-        // Remove binary data before storing in Redux (but keep markdown for LLM context)
-        // Use destructuring instead of delete to ensure clean object
+        // Remove binary data before storing in Redux (but keep Markdown for LLM context)
+        // Use destructuring instead of delete to ensure a clean object
         const { data, ...attachmentForRedux } = processedAttachment;
 
-        // Add attachment to Redux store (without binary data, but with markdown for LLM)
+        // Add attachment to Redux store (without binary data, but with Markdown for LLM)
         dispatch(upsertAttachment(attachmentForRedux));
 
         // Trigger persistence to backend (saga will fetch full attachment from pendingAttachmentsMap)

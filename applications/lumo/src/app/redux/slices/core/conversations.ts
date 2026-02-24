@@ -1,8 +1,8 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import {createAction, createReducer} from '@reduxjs/toolkit';
+import {v4 as uuidv4} from 'uuid';
 
-import type { Priority } from '../../../remote/scheduler';
-import type { GetConversationRemote, IdMapEntry, RemoteConversation } from '../../../remote/types';
+import type {Priority} from '../../../remote/scheduler';
+import type {GetConversationRemote, IdMapEntry, RemoteConversation} from '../../../remote/types';
 import type {
     Conversation,
     ConversationId,
@@ -50,9 +50,8 @@ export const pullConversationFailure = createAction<ConversationId>('lumo/conver
 
 export type ConversationMap = Record<ConversationId, Conversation>;
 export const EMPTY_CONVERSATION_MAP: ConversationMap = {};
-const initialState: ConversationMap = EMPTY_CONVERSATION_MAP;
 
-const conversationsReducer = createReducer<ConversationMap>(initialState, (builder) => {
+const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_MAP, (builder) => {
     builder
         .addCase(addConversation, (state, action) => {
             console.log('Action triggered: addConversation', action.payload);

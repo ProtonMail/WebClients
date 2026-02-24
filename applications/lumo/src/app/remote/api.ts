@@ -433,8 +433,7 @@ export class LumoApi {
             if (!userSettingsFromApi) {
                 return null;
             }
-            const result = convertUserSettingsFromApi(userSettingsFromApi);
-            return result;
+            return convertUserSettingsFromApi(userSettingsFromApi);
         } catch (error) {
             console.warn('Failed to get user settings:', error);
             return null;

@@ -1,4 +1,5 @@
 // File and context management hooks
+export { useAutoRetrievedAttachments } from './useAutoRetrievedAttachments';
 export { useConversationFiles } from './useConversationFiles';
 export { useFilteredFiles } from './useFilteredFiles';
 export { useFileProcessing } from './useFileProcessing';

@@ -1,5 +1,5 @@
-import { setLumoSettings } from '../../providers/lumoThemeStorage';
-import { matchDarkTheme, userSettingsToLocalSettings } from '../../providers/lumoThemeUtils';
+import { setLumoSettings } from '../../providers';
+import { matchDarkTheme, userSettingsToLocalSettings } from '../../providers';
 import { safeLogger } from '../../util/safeLogger';
 import { loadUserSettingsFromStorage, saveUserSettingsToStorage } from '../../util/userSettingsStorage';
 import { selectMasterKey } from '../selectors';

@@ -12,7 +12,7 @@ class MockConfig implements IMockConfig {
     private currentScenario: ScenarioType = 'success';
 
     private constructor() {
-        // Private constructor to enforce singleton pattern
+        // Private constructor to enforce a singleton pattern
     }
 
     public static getInstance(): IMockConfig {

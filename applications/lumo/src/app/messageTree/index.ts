@@ -1,5 +1,5 @@
-import type { MessageMap } from '../redux/slices/core/messages';
-import type { Message, MessageId } from '../types';
+import type {MessageMap} from '../redux/slices/core/messages';
+import type {Message, MessageId} from '../types';
 
 type MessageNode = {
     id: MessageId;
@@ -33,8 +33,7 @@ function findMostRecentMessage(
     console.assert(subTreeRootNode !== undefined);
     const mostRecentNode = findMostRecent(subTreeRootNode);
     const mostRecentId = mostRecentNode.id;
-    const mostRecentMessage = messageMap[mostRecentId];
-    return mostRecentMessage;
+    return messageMap[mostRecentId];
 }
 
 function hasAncestor(maybeDescendant: MessageId, maybeAncestor: MessageId, messageMap: MessageMap): boolean {

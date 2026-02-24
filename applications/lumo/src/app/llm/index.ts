@@ -35,7 +35,7 @@ import {
     type Turn,
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
-import { type ConversationContext, formatPersonalization } from '../ui/interactiveConversation/helper';
+import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { separateAttachmentsByType } from './attachments';
 
 export type ContextFilter = {

@@ -141,7 +141,5 @@ export function normalizeBrTags(markdown: string): string {
 export const processForLatexMarkdown = (content: string) => {
     const processedContent = processForLatexParentheses(content);
     const blockProcessedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (_, equation) => `$$${equation}$$`);
-    const inlineProcessedContent = blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
-
-    return inlineProcessedContent;
+    return blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
 };

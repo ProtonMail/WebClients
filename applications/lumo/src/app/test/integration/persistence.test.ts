@@ -217,8 +217,7 @@ describe('Lumo Persistence Integration Tests', () => {
                     console.log('in waitForValue: space =', space);
                     const remoteId = await dbApi.getRemoteIdFromLocalId('space', spaceId);
                     console.log('in waitForValue: remoteId =', remoteId);
-                    const isSynced = !space?.dirty && remoteId !== undefined;
-                    return isSynced;
+                    return !space?.dirty && remoteId !== undefined;
                 });
 
                 // Verify the local object has a remote id mapping
