@@ -916,9 +916,19 @@
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
       ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
@@ -931,6 +941,24 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Alert": {
@@ -1102,13 +1130,13 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
@@ -1117,7 +1145,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
         "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
@@ -1126,7 +1154,7 @@
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -3050,7 +3078,7 @@
         "durum sayfası"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -4831,6 +4859,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Kuruluşunuzda herkese açık belgeler henüz kullanıma alınmamış."
       ],
+      "Readonly": [
+        "Salt okunur"
+      ],
       "Recent documents": [
         "Son kullanılan belgeler"
       ],
@@ -5002,6 +5033,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Bu belge üzerinde çok sayıda kişi çalışıyor. Gerçek zamanlı düzenleyici geçici olarak kullanılamıyor. Güncel durumu görüntülemek için sayfayı yenileyin."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Bu belge var olmayabilir veya yüklerken sorun çıktı. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
@@ -5254,9 +5288,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "${ invitationName } albümüne katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece bu albüme erişemezsiniz. İlerlemek istediğinize emin misiniz?"
@@ -5330,11 +5364,11 @@
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sonraki fatura zamanınız ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
       "Your online activity is protected": [
         "Çevrim içi etkinlikleriniz korunuyor"
@@ -6296,7 +6330,7 @@
         "OpenDocument sunum belgesi"
       ],
       "OpenDocument spreadsheet document": [
-        "OpenDocument hesap sayfası belgesi"
+        "OpenDocument hesap tablosu belgesi"
       ],
       "OpenDocument text document": [
         "OpenDocument yazı belgesi"
@@ -7849,6 +7883,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -8327,16 +8364,16 @@
         "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -8467,19 +8504,22 @@
     },
     "sheets_2025:Action": {
       "Comma Separated Values (.csv)": [
-        "Virgül ile Ayrılmış Değerler (.csv)"
+        "Virgül ile ayrılmış değerler (.csv)"
       ],
       "Microsoft Excel (.xlsx)": [
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Yeni e-tablo"
+        "Yeni hesap tablosu"
       ],
       "Tab Separated Values (.tsv)": [
-        "Sekme ile Ayrılmış Değerler (.tsv)"
+        "Sekme ile ayrılmış değerler (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Yeni hesap tablosu oluşturuluyor..."
+      ],
       "Detect automatically": [
         "Otomatik olarak algıla"
       ],
@@ -8487,15 +8527,24 @@
         "Yeni sayfa olarak ekle"
       ],
       "Replace current sheet": [
-        "Mevcut sayfayı değiştirin"
+        "Geçerli sayfayı değiştir"
       ],
       "Replace data at selected cell": [
-        "Seçili hücredeki verileri değiştirin"
+        "Seçilmiş hücredeki verileri değiştir"
+      ],
+      "Replace spreadsheet": [
+        "Hesap tablosunu değiştir"
+      ],
+      "Select a file to import": [
+        "İçe aktarılacak bir dosya seçin"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Geçerli hesap tablonuz ve içindeki tüm sayfalar bu sürümdekiler ile değiştirilecek."
       ]
     },
     "sheets_2025:Label": {
       "Convert text to numbers, dates, and formulas": [
-        "Metni sayılara, tarihlere ve formüllere dönüştürün"
+        "Yazıyı sayılara, tarihlere ve formüllere dönüştürün"
       ],
       "Destination": [
         "Hedef"
@@ -8504,7 +8553,7 @@
         "Biçim"
       ],
       "Separator type": [
-        "Ayırıcı türü"
+        "Ayraç türü"
       ]
     },
     "sheets_2025:Title": {
@@ -8725,8 +8774,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Kimliğinizi korumak ve istenmeyen e-postaları azaltmak için sınırsız sayıda takma ad edinin"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun"
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel ile hesabınızı tehditlere karşı koruyun"
@@ -9604,6 +9653,9 @@
       ],
       "Re-signing contacts": [
         "Kişiler yeniden imzalanıyor"
+      ],
+      "Readonly": [
+        "Salt okunur"
       ],
       "Recommended actions": [
         "Önerilen işlemler"

@@ -248,6 +248,9 @@
       "Resend code": [
         "Reinvia il codice"
       ],
+      "Room": [
+        "Stanza"
+      ],
       "Rotate personal meeting link": [
         "Reimposta link della riunione personale"
       ],
@@ -304,6 +307,9 @@
       ],
       "Start Recording Track Stats": [
         "Avvia statistiche registrazione traccia"
+      ],
+      "Start your own meeting": [
+        "Avvia la tua riunione"
       ],
       "Stay in meeting": [
         "Resta nella riunione"
@@ -414,6 +420,9 @@
       ],
       "Rotate personal meeting link": [
         "Reimposta link della riunione personale"
+      ],
+      "Screen share": [
+        "Condivisione schermo"
       ],
       "Settings": [
         "Impostazioni"
@@ -1477,6 +1486,9 @@
       "Incorrect username": [
         "Username non corretto"
       ],
+      "Invalid meeting link": [
+        "Link riunione non valido"
+      ],
       "Invalid passphrase": [
         "Frase d'accesso non valida"
       ],
@@ -1747,11 +1759,17 @@
       "Create an account": [
         "Crea un account"
       ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Crea un account per organizzare riunioni con un massimo di 50 partecipanti."
+      ],
       "Created on ${ formattedDate }": [
         "Creato il ${ formattedDate }"
       ],
       "Custom combination": [
         "Combinazione personalizzata"
+      ],
+      "Decrypting meetings...": [
+        "Decrittazione delle riunioni..."
       ],
       "Default": [
         "Predefinito"
@@ -1819,6 +1837,9 @@
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Le riunioni gratuite sono limitate a 1 ora. Questa chiamata si disconnetterà a breve."
       ],
+      "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
+        "Ottieni una sala riunioni personale. Crea un account per avere un link di riunione personale che puoi usare in qualsiasi momento."
+      ],
       "Get a secure meeting link then add it to your calendar": [
         "Ottieni un link sicuro per la riunione e aggiungilo al tuo calendario"
       ],
@@ -1830,6 +1851,9 @@
       ],
       "Host your own secure meeting": [
         "Ospita la tua riunione sicura"
+      ],
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Organizza la tua riunione sicura. Avvia una chiamata in ${ MEET_APP_NAME } e condividi il link per invitare chiunque a unirsi. Semplice, sicuro e gratuito."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
@@ -1843,11 +1867,17 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
+      "Joined ${ roomNameLabel }": [
+        "Entrato/a in ${ roomNameLabel }"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
       "Leaving will stop your screen sharing. Do you want to continue?": [
         "Uscire interromperà la tua condivisione dello schermo. Vuoi continuare?"
+      ],
+      "Left ${ roomNameLabel }": [
+        "Hai abbandonato ${ roomNameLabel }"
       ],
       "Left by mistake?": [
         "Sei uscito per errore?"
@@ -1864,6 +1894,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
+      "Loading meetings...": [
+        "Caricamento riunioni..."
+      ],
       "Loading...": [
         "Caricamento in corso..."
       ],
@@ -1873,8 +1906,14 @@
       "Meet without restrictions": [
         "Incontra senza restrizioni"
       ],
+      "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
+        "Organizza riunioni senza limiti. Effettua l'upgrade per rimuovere il limite di 1 ora e ospitare fino a 100 partecipanti."
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Riunione piena (${ maxParticipants } partecipanti)"
+      ],
+      "Meeting is decrypting...": [
+        "La riunione sta venendo decriptata..."
       ],
       "Meeting link": [
         "Collegamento alla riunione"
@@ -1942,6 +1981,9 @@
       "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
         "Ora le tue riunioni verranno aperte nell'app desktop ${ MEET_APP_NAME }"
       ],
+      "Only meetings you created appear here": [
+        "Solo le riunioni che hai creato compaiono qui"
+      ],
       "Open external link": [
         "Apri link esterno"
       ],
@@ -1971,6 +2013,9 @@
       ],
       "Poor connection": [
         "Connessione debole"
+      ],
+      "Premium meeting": [
+        "Riunione premium"
       ],
       "Recording saved": [
         "Registrazione salvata"
@@ -2014,6 +2059,9 @@
       "Sign in": [
         "Accedi"
       ],
+      "Sort by": [
+        "Ordina per"
+      ],
       "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Avvia una chiamata in ${ MEET_APP_NAME } e condividi il link per invitare chiunque a unirsi. Semplice, sicuro e gratuito."
       ],
@@ -2022,6 +2070,12 @@
       ],
       "Successfully deleted meeting": [
         "Riunione eliminata con successo"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Grazie per aver organizzato una riunione premium."
+      ],
+      "Thank you for joining.": [
+        "Grazie per aver partecipato."
       ],
       "The host has ended the meeting": [
         "L'organizzatore ha terminato la riunione"
@@ -2161,6 +2215,9 @@
         "${ numberOfStars } stella",
         "${ numberOfStars } stelle"
       ],
+      "Add optional details": [
+        "Aggiungi ulteriori dettagli"
+      ],
       "Add to calendar": [
         "Aggiungi al calendario"
       ],
@@ -2209,6 +2266,9 @@
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
       ],
+      "Does not repeat": [
+        "Nessuna ripetizione"
+      ],
       "Download .ics": [
         "Scarica .ics"
       ],
@@ -2236,11 +2296,14 @@
       "Every year": [
         "Ogni anno"
       ],
-      "Google calendar": [
-        "Google calendar"
+      "Google Calendar": [
+        "Calendario di Google"
       ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "How was the call quality?": [
+        "Com'è stata la qualità della chiamata?"
       ],
       "Identity": [
         "Identità"
@@ -2272,7 +2335,7 @@
       "Operating system version": [
         "Versione del sistema operativo"
       ],
-      "Outlook calendar": [
+      "Outlook Calendar": [
         "Calendario di Outlook"
       ],
       "Passphrase": [
@@ -2283,6 +2346,12 @@
       ],
       "Phone number": [
         "Numero di telefono"
+      ],
+      "Remember my name on this device": [
+        "Ricorda il mio nome su questo dispositivo"
+      ],
+      "Repeat event": [
+        "Ripetizione evento"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -2342,6 +2411,9 @@
       ]
     },
     "meet": {
+      "Create and copy link": [
+        "Crea e copia link"
+      ],
       "Create new room": [
         "Crea un nuovo canale"
       ],
@@ -2394,6 +2466,9 @@
       "Successfully rotated your personal meeting": [
         "Riunione personale ruotata con successo"
       ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Non puoi inviare un feedback per una riunione a cui non hai partecipato"
+      ],
       "Your personal meeting link has been copied to the clipboard": [
         "Il tuo link personale per la riunione è stato copiato negli appunti"
       ]
@@ -2404,14 +2479,29 @@
       ]
     },
     "Option": {
+      "Audio was breaking up": [
+        "L'audio si interrompeva"
+      ],
+      "I couldn't hear others": [
+        "Non riuscivo a sentire gli altri"
+      ],
       "I couldn't present ": [
         "Non sono riuscito a presentare. "
+      ],
+      "I couldn't see others' video": [
+        "Non riuscivo a vedere i video degli altri"
+      ],
+      "I couldn't see the presentation": [
+        "Non riuscivo a vedere la presentazione"
       ],
       "Others couldn't hear me": [
         "Non potevano sentirmi"
       ],
       "The presentation was blurry": [
         "La presentazione era sfocata."
+      ],
+      "Video was blurry": [
+        "Il video era poco definito"
       ],
       "Video was breaking up": [
         "Il video si stava interrompendo"
@@ -2436,6 +2526,9 @@
       "Enter time": [
         "Inserisci ora"
       ],
+      "Enter your name": [
+        "Inserisci il tuo nome"
+      ],
       "Find...": [
         "Cerca..."
       ],
@@ -2456,6 +2549,9 @@
       ],
       "Select": [
         "Seleziona"
+      ],
+      "Share more details": [
+        "Condividi ulteriori dettagli"
       ],
       "Type an encrypted message...": [
         "Digita un messaggio crittografato..."
@@ -2513,8 +2609,14 @@
       ]
     },
     "Sort option": {
+      "Newly created": [
+        "Create recentemente"
+      ],
       "Past meetings": [
         "Riunioni passate"
+      ],
+      "Upcoming": [
+        "In programma"
       ]
     },
     "specialoffer: Link": {
@@ -2721,6 +2823,9 @@
       "Talk confidentially": [
         "Parla in confidenza"
       ],
+      "Thank you!": [
+        "Grazie!"
+      ],
       "Time": [
         "Ora"
       ],
@@ -2732,6 +2837,12 @@
       ],
       "Video": [
         "Video"
+      ],
+      "What went wrong?": [
+        "Cosa non ha funzionato?"
+      ],
+      "Your feedback has been submitted": [
+        "Il tuo feedback è stato inviato"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2740,9 +2851,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur": [
-        "Sfondo sfocato"
-      ],
       "Background blur is not supported on your browser": [
         "La sfocatura dello sfondo non è supportata dal tuo browser"
       ],

@@ -222,7 +222,7 @@
         "Opțiuni tabel"
       ],
       "Underline": [
-        "Subliniere"
+        "Subliniat"
       ],
       "Undo": [
         "Anulare"
@@ -682,6 +682,14 @@
         "text"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Toate foile de calcul"
+      ],
+      "New sheet": [
+        "Foaie de calcul nouă"
+      ]
+    },
     "sheets_2025:Color picker": {
       "Recent colors": [
         "Culori recente"
@@ -691,20 +699,320 @@
       ],
       "Standard colors": [
         "Culori standard"
+      ],
+      "Theme colors": [
+        "Culori temă"
       ]
     },
     "sheets_2025:Range selector menu": {
-      "Add new": [
-        "Adăugare"
-      ],
       "Named ranges": [
         "Intervale denumite"
       ],
       "Sheets": [
-        "Foi"
+        "Foi de calcul"
       ],
       "Tables": [
         "Tabele"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Modificare culoare"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Duplicate": [
+        "Duplicare"
+      ],
+      "Hide sheet": [
+        "Ascundere foaie de calcul"
+      ],
+      "Move left": [
+        "Mutare la stânga"
+      ],
+      "Move right": [
+        "Mutare la dreapta"
+      ],
+      "Rename": [
+        "Redenumire"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Toate bordurile"
+      ],
+      "Bottom border": [
+        "Bordură jos"
+      ],
+      "Dashed": [
+        "Linie întreruptă"
+      ],
+      "Dotted": [
+        "Punctat"
+      ],
+      "Double": [
+        "Dublă"
+      ],
+      "Horizontal borders": [
+        "Borduri orizontale"
+      ],
+      "Inner borders": [
+        "Borduri interioare"
+      ],
+      "Left border": [
+        "Bordură stânga"
+      ],
+      "No borders": [
+        "Fără borduri"
+      ],
+      "Outer borders": [
+        "Borduri exterioare"
+      ],
+      "Right border": [
+        "Bordură dreapta"
+      ],
+      "Solid": [
+        "Continuă"
+      ],
+      "Solid medium": [
+        "Continuă medie"
+      ],
+      "Solid thick": [
+        "Continuă groasă"
+      ],
+      "Top border": [
+        "Bordură sus"
+      ],
+      "Vertical borders": [
+        "Borduri verticale"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Eroare"
+      ],
+      "Invalid": [
+        "Nevalidă"
+      ],
+      "Note": [
+        "Notă"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Editare rapidă IA"
+      ],
+      "Auto fit to data": [
+        "Autopotrivire la date"
+      ],
+      "Cell value": [
+        "Valoare celulă"
+      ],
+      "Clear": [
+        "Golire"
+      ],
+      "Clear content": [
+        "Golire conținut"
+      ],
+      "Clear formatting": [
+        "Eliminare formatare"
+      ],
+      "Comma": [
+        "Virgulă"
+      ],
+      "Conditional format": [
+        "Formatare condiționată"
+      ],
+      "Convert to range": [
+        "Convertire în interval"
+      ],
+      "Convert to table": [
+        "Convertire în tabel"
+      ],
+      "Copy": [
+        "Copiere"
+      ],
+      "Create a filter": [
+        "Creare filtru"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Define named range": [
+        "Definire interval denumit"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Delete cells and shift cells left": [
+        "Ștergere celule și deplasare celule la stânga"
+      ],
+      "Delete cells and shift cells up": [
+        "Ștergere celule și deplasare celule în sus"
+      ],
+      "Delete column": [
+        "Ștergere coloană"
+      ],
+      "Delete row": [
+        "Ștergere rând"
+      ],
+      "Delete table column": [
+        "Ștergere coloană tabel"
+      ],
+      "Delete table row": [
+        "Ștergere rând tabel"
+      ],
+      "Edit table": [
+        "Editare tabel"
+      ],
+      "Filter": [
+        "Filtru"
+      ],
+      "Formatting only": [
+        "Doar formatare"
+      ],
+      "Freeze up to column": [
+        "Înghețare până la coloană"
+      ],
+      "Freeze up to row": [
+        "Înghețare până la rândul"
+      ],
+      "Hide column": [
+        "Ascundere coloană"
+      ],
+      "Hide row": [
+        "Ascundere rând"
+      ],
+      "Insert cells and shift cells down": [
+        "Inserare celule și deplasare celule în jos"
+      ],
+      "Insert cells and shift cells right": [
+        "Inserare celule și deplasare celule la dreapta"
+      ],
+      "Insert link": [
+        "Inserare legătură web"
+      ],
+      "Insert note": [
+        "Inserare notă"
+      ],
+      "Insert table column to the left": [
+        "Inserare coloană la stânga"
+      ],
+      "Insert table row": [
+        "Inserare rând tabel"
+      ],
+      "Link only": [
+        "Doar legătura web"
+      ],
+      "More cell actions": [
+        "Mai multe acțiuni pentru celulă"
+      ],
+      "Paste": [
+        "Lipire"
+      ],
+      "Paste special": [
+        "Lipire specială"
+      ],
+      "Period": [
+        "Punct"
+      ],
+      "Pipe": [
+        "Bară verticală"
+      ],
+      "Remove filter": [
+        "Eliminare filtru"
+      ],
+      "Resize column": [
+        "Redimensionare coloană"
+      ],
+      "Resize row": [
+        "Redimensionare rând"
+      ],
+      "Semicolon": [
+        "Punct și virgulă"
+      ],
+      "Sort": [
+        "Sortare"
+      ],
+      "Sort range A → Z": [
+        "Sortare interval A → Z"
+      ],
+      "Sort range Z → A": [
+        "Sortare interval Z → A"
+      ],
+      "Sort sheet A to Z": [
+        "Sortare foaie de la A la Z"
+      ],
+      "Sort sheet Z to A": [
+        "Sortare foaie de la Z la A"
+      ],
+      "Table": [
+        "Tabel"
+      ],
+      "Transposed": [
+        "Transpusă"
+      ],
+      "Unfreeze columns": [
+        "Dezghețare coloane"
+      ],
+      "Unfreeze rows": [
+        "Dezghețare rânduri"
+      ],
+      "Values only": [
+        "Doar valori"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } coloană",
+        "${ numberOfColumns } coloane",
+        "${ numberOfColumns } de coloane"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rând",
+        "${ numberOfRows } rânduri",
+        "${ numberOfRows } de rânduri"
+      ],
+      "above": [
+        "deasupra"
+      ],
+      "below": [
+        "dedesubt"
+      ],
+      "Insert": [
+        "Inserare"
+      ],
+      "left": [
+        "stânga"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Sigur doriți să ștergeți „${ sheetName }”?"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Delete sheet": [
+        "Ștergere foaie de calcul"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Editare pe mobil în curând"
+      ],
+      "Screen too small for editing": [
+        "Ecran prea mic pentru editare"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Lucrăm pentru a vă oferi în curând această opțiune. Deocamdată, foile pot fi editate doar pe desktop."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Ecranul este prea mic pentru a edita această foaie de calcul. Sunteți în modul doar vizualizare. Pentru a face modificări, deschideți această foaie de calcul pe un ecran mai mare sau extindeți fereastra navigatorului web."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -715,7 +1023,24 @@
         "Nu se pot șterge toate rândurile"
       ],
       "Find in sheet": [
-        "Găsire în foaie"
+        "Găsire în foaia de calcul"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Îmbinare toate"
+      ],
+      "Merge cells": [
+        "Îmbinare celule"
+      ],
+      "Merge horizontally": [
+        "Îmbinare orizontală"
+      ],
+      "Merge vertically": [
+        "Îmbinare verticală"
+      ],
+      "Unmerge": [
+        "Despărțire"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -743,7 +1068,7 @@
         "(De la A la Z)"
       ],
       "(Z to A)": [
-        "(De la Z la A)"
+        "(Z la A)"
       ],
       "column ${ columnLetter }": [
         "coloana ${ columnLetter }"
@@ -765,6 +1090,12 @@
       "Formatting only": [
         "Doar formatare"
       ],
+      "Formula only": [
+        "Doar formula"
+      ],
+      "Link only": [
+        "Doar legătura web"
+      ],
       "Paste": [
         "Lipire"
       ],
@@ -775,10 +1106,10 @@
         "Refacere"
       ],
       "Transposed": [
-        "Transpunere"
+        "Transpus"
       ],
       "Undo": [
-        "Refacere"
+        "Anulare"
       ],
       "Values only": [
         "Doar valori"
@@ -792,7 +1123,7 @@
         "Descărcare"
       ],
       "Download logs": [
-        "Jurnal descărcare"
+        "Descărcare jurnale"
       ],
       "Help": [
         "Ajutor"
@@ -810,13 +1141,19 @@
         "Mutare în folder"
       ],
       "Move to trash": [
-        "Mutare în „Gunoi”"
+        "Mutare în gunoi"
+      ],
+      "New document": [
+        "Document nou"
       ],
       "New spreadsheet": [
-        "Registru de lucru nou"
+        "Foaie de calcul nouă"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Deschidere ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Registru de lucru OpenDocument (.ods) (Beta)"
       ],
       "Print": [
         "Tipărire"
@@ -824,8 +1161,14 @@
       "See version history": [
         "Afișare istoric versiuni"
       ],
+      "Settings": [
+        "Setări"
+      ],
       "Tab Separated Values (.tsv)": [
         "Valori separate prin tab (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Comutare mod depanare"
       ],
       "View recent spreadsheets": [
         "Afișare registre de lucru recente"
@@ -839,7 +1182,7 @@
         "Îngroșat"
       ],
       "Cell styles": [
-        "Stiluri celulă"
+        "Stiluri celule"
       ],
       "Clear": [
         "Golire"
@@ -863,22 +1206,22 @@
         "Număr"
       ],
       "Strikethrough": [
-        "Tăiere cu o linie"
+        "Tăiat cu o linie"
       ],
       "Table formatting": [
         "Formatare tabel"
       ],
       "Text": [
-        "text"
+        "Text"
       ],
       "Theme": [
-        "Tema"
+        "Temă"
       ],
       "Underline": [
-        "Subliniere"
+        "Subliniat"
       ],
       "Wrapping": [
-        "Încadrare text"
+        "Încadrare"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
@@ -892,7 +1235,7 @@
         "Stânga"
       ],
       "Middle": [
-        "La mijloc"
+        "Mijloc"
       ],
       "Right": [
         "Dreapta"
@@ -903,7 +1246,7 @@
     },
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
-        "Trunchiere"
+        "Retezare"
       ],
       "Overflow": [
         "Depășire"
@@ -926,7 +1269,7 @@
         "Coloane"
       ],
       "Dropdown": [
-        "Listă derulantă"
+        "Lista derulantă"
       ],
       "Function": [
         "Funcție"
@@ -940,17 +1283,41 @@
       "Insert cells and shift right": [
         "Inserare celule și deplasare la dreapta"
       ],
-      "Link": [
-        "Legătură web"
-      ],
       "Note": [
-        "Notiță"
+        "Notă"
       ],
       "Rows": [
         "Rânduri"
       ],
       "Sheet": [
         "Foaie de calcul"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } coloană",
+        "${ numberOfColumns } coloane",
+        "${ numberOfColumns } de coloane"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rând",
+        "${ numberOfRows } rânduri",
+        "${ numberOfRows } de rânduri"
+      ],
+      "above": [
+        "deasupra"
+      ],
+      "below": [
+        "dedesubt"
+      ],
+      "Insert": [
+        "Inserare"
+      ],
+      "left": [
+        "stânga"
+      ],
+      "right": [
+        "dreapta"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -975,7 +1342,7 @@
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
       "Formula bar": [
-        "Bară de formule"
+        "Bară formule"
       ],
       "Freeze": [
         "Înghețare"
@@ -1001,6 +1368,11 @@
         "Până la"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Foi de calcul ascunse"
+      ]
+    },
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
         "$ Dolar SUA"
@@ -1012,16 +1384,19 @@
         "CN¥ Yuan chinezesc"
       ],
       "Currency": [
-        "Moneda"
+        "Monedă"
       ],
       "Currency rounded": [
         "Monedă rotunjită"
       ],
+      "Custom currency": [
+        "Monedă personalizată"
+      ],
+      "Custom number format": [
+        "Formatare număr personalizată"
+      ],
       "Date": [
         "Dată"
-      ],
-      "Date time": [
-        "Dată și oră"
       ],
       "Duration": [
         "Durată"
@@ -1040,9 +1415,6 @@
       ],
       "Number": [
         "Număr"
-      ],
-      "Percent": [
-        "Procent"
       ],
       "Plain text": [
         "Text simplu"
@@ -1074,7 +1446,27 @@
         "Următorul"
       ],
       "Go to previous": [
-        "Anteriorul"
+        "Anterior"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Automat"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Locale": [
+        "Setări regionale"
+      ],
+      "Save and reload": [
+        "Salvare și reîncărcare"
+      ],
+      "Settings for this spreadsheet": [
+        "Setări pentru această foaie de calcul"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Aceasta afectează detaliile de formatare precum funcții, date și monedă"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -1087,20 +1479,23 @@
       "Clear formatting": [
         "Eliminare formatare"
       ],
+      "Create a filter": [
+        "Creare filtru"
+      ],
       "Decrease decimal places": [
         "Reducere număr zecimale"
       ],
       "Decrease font size": [
-        "Reducere font"
+        "Micșorare font"
       ],
       "Default (${ defaultFont })": [
         "Implicit (${ defaultFont })"
       ],
       "Fill color": [
-        "Culoare de umplere"
+        "Culoare umplere"
       ],
       "Find": [
-        "Găsire"
+        "Căutare"
       ],
       "Font": [
         "Font"
@@ -1126,6 +1521,9 @@
       "Insert chart": [
         "Inserare diagramă"
       ],
+      "Insert function": [
+        "Inserare funcție"
+      ],
       "Insert link": [
         "Inserare legătură web"
       ],
@@ -1139,19 +1537,25 @@
         "Îmbinare celule"
       ],
       "More": [
-        "Detalii"
+        "Mai multe"
       ],
       "More formats": [
         "Mai multe formate"
       ],
       "Paint format": [
-        "Copiere format"
+        "Aplicare formatare"
       ],
       "Redo": [
         "Refacere"
       ],
+      "Remove filter": [
+        "Eliminare filtru"
+      ],
+      "Select merge type": [
+        "Selectare tip de îmbinare"
+      ],
       "Strikethrough": [
-        "Tăiere cu o linie"
+        "Tăiat cu o linie"
       ],
       "Text color": [
         "Culoare text"
@@ -1160,16 +1564,63 @@
         "Încadrare text"
       ],
       "Underline": [
-        "Subliniere"
+        "Subliniat"
       ],
       "Undo": [
-        "Refacere"
+        "Anulare"
+      ],
+      "Unmerge cells": [
+        "Separare celule"
       ],
       "Vertical align": [
         "Aliniere verticală"
       ],
       "Zoom": [
         "Scalare"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Aplicare"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Clear": [
+        "Golire"
+      ],
+      "Copy": [
+        "Copiere"
+      ],
+      "Delete table column": [
+        "Ștergere coloană tabel"
+      ],
+      "Enter value": [
+        "Introduceți valoarea"
+      ],
+      "Filter by condition": [
+        "Filtrare după condiție"
+      ],
+      "Filter by value": [
+        "Filtrare după valoare"
+      ],
+      "Insert 1 table column left": [
+        "Inserare o coloană tabel stânga"
+      ],
+      "Insert 1 table column right": [
+        "Inserare o coloană la dreapta"
+      ],
+      "Paste": [
+        "Lipire"
+      ],
+      "Select all": [
+        "Selectare toate"
+      ],
+      "Sort A → Z": [
+        "Sortare A → Z"
+      ],
+      "Sort Z → A": [
+        "Sortare Z → A"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1194,13 +1645,409 @@
         "Editare legătură web"
       ],
       "Link copied to clipboard": [
-        "Legătura a fost copiată în memorie."
+        "Legătura web s-a copiat în memorie"
       ],
       "Link removed": [
-        "Legătură eliminată"
+        "Legătură web eliminată"
       ],
       "Remove link": [
         "Eliminare legătură web"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Anulare"
+      ],
+      "column": [
+        "coloana"
+      ],
+      "column width": [
+        "lățime coloană"
+      ],
+      "Default": [
+        "Implicit"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "rând"
+      ],
+      "row height": [
+        "Înălțime rând"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Aliniere"
+      ],
+      "Bold": [
+        "Îngroșat"
+      ],
+      "Border": [
+        "Bordură"
+      ],
+      "Border style": [
+        "Stil bordură"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Choose Category": [
+        "Alegere categorie"
+      ],
+      "Color": [
+        "Culoare"
+      ],
+      "Currency Symbol": [
+        "Simbol monedă"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Decimal places": [
+        "Zecimale"
+      ],
+      "Effects": [
+        "Efecte"
+      ],
+      "Font": [
+        "Font"
+      ],
+      "Font size": [
+        "Mărime font"
+      ],
+      "Format cells": [
+        "Formatare celule"
+      ],
+      "General": [
+        "General"
+      ],
+      "Horizontal Alignment": [
+        "Aliniere orizontală"
+      ],
+      "Indent": [
+        "Indentare"
+      ],
+      "Italic": [
+        "Înclinat"
+      ],
+      "Merge": [
+        "Îmbinare"
+      ],
+      "Merge all": [
+        "Îmbinare toate"
+      ],
+      "Merge horizontally": [
+        "Îmbinare orizontală"
+      ],
+      "Merge vertically": [
+        "Îmbinare verticală"
+      ],
+      "Number": [
+        "Număr"
+      ],
+      "Overflow": [
+        "Depășire"
+      ],
+      "Preview": [
+        "Examinare"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Strikethrough": [
+        "Tăiat cu o linie"
+      ],
+      "Text control": [
+        "Control text"
+      ],
+      "Thousands separator": [
+        "Separatori de mii"
+      ],
+      "Type": [
+        "Tip"
+      ],
+      "Underline": [
+        "Subliniat"
+      ],
+      "Unmerge": [
+        "Despărțire"
+      ],
+      "Use 1000 Separator (,)": [
+        "Folosire separator 1000 (,)"
+      ],
+      "Vertical Alignment": [
+        "Aliniere verticală"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Adăugare"
+      ],
+      "Aggregate": [
+        "Agregare"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Chart data range": [
+        "Interval de date diagramă"
+      ],
+      "Chart editor": [
+        "Editor diagramă"
+      ],
+      "Chart title": [
+        "Titlu diagramă"
+      ],
+      "Chart type": [
+        "Tip diagramă"
+      ],
+      "Enter title": [
+        "Introduceți titlul"
+      ],
+      "Horizontal (category) axis labels": [
+        "Etichete axă orizontală (categorie)"
+      ],
+      "Horizontal axis title": [
+        "Titlu axă orizontală"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Range": [
+        "Interval"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Select a range": [
+        "Selectați un interval"
+      ],
+      "Series": [
+        "Serie"
+      ],
+      "Show data in hidden rows and columns": [
+        "Afișare date din rânduri și coloane ascunse"
+      ],
+      "Value": [
+        "Valoare"
+      ],
+      "Vertical axis title": [
+        "Titlu axă verticală"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Adăugare alt interval"
+      ],
+      "Add another rule": [
+        "Adăugare altă regulă"
+      ],
+      "Add rule": [
+        "Adăugare regulă"
+      ],
+      "Apply to range": [
+        "Aplicare la interval"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Color scale": [
+        "Scală de culori"
+      ],
+      "Conditional formatting": [
+        "Formatare condiționată"
+      ],
+      "Delete range": [
+        "Ștergere interval"
+      ],
+      "Delete rule": [
+        "Ștergere regulă"
+      ],
+      "Enter a formula": [
+        "Introduceți o formulă"
+      ],
+      "Enter value": [
+        "Introduceți valoarea"
+      ],
+      "Format rules": [
+        "Reguli de formatare"
+      ],
+      "Max point": [
+        "Punct maxim"
+      ],
+      "Max value": [
+        "Valoare maximă"
+      ],
+      "Mid point": [
+        "Punct median"
+      ],
+      "Min point": [
+        "Punct minim"
+      ],
+      "Min value": [
+        "Valoare minimă"
+      ],
+      "None": [
+        "Niciuna"
+      ],
+      "Number": [
+        "Număr"
+      ],
+      "Preview": [
+        "Examinare"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Select a range": [
+        "Selectați un interval"
+      ],
+      "Single color": [
+        "O singură culoare"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Aplicare"
+      ],
+      "Apply to create a custom currency": [
+        "Aplicare pentru creare monedă personalizată"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Currency symbol": [
+        "Simbol monedă"
+      ],
+      "Custom currencies": [
+        "Monede personalizate"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Adăugare alt interval denumit"
+      ],
+      "Add another range": [
+        "Adăugare alt interval"
+      ],
+      "Add named range": [
+        "Adăugare interval denumit"
+      ],
+      "Allow blanks": [
+        "Permitere spații"
+      ],
+      "Apply to range": [
+        "Aplicare la interval"
+      ],
+      "Data validation": [
+        "Validare date"
+      ],
+      "Delete data validation rule": [
+        "Ștergere regulă validare date"
+      ],
+      "Enter a formula": [
+        "Introduceți o formulă"
+      ],
+      "Enter value": [
+        "Introduceți valoarea"
+      ],
+      "Formula": [
+        "Formula"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Select a range": [
+        "Selectați un interval"
+      ],
+      "Validation rules": [
+        "Reguli de validare"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Închidere"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Adăugare alt interval denumit"
+      ],
+      "Add named range": [
+        "Adăugare interval denumit"
+      ],
+      "Apply to range": [
+        "Aplicare la interval"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Delete named range": [
+        "Ștergere interval denumit"
+      ],
+      "Enter a formula": [
+        "Introduceți o formulă"
+      ],
+      "Enter text or formula": [
+        "Introduceți text sau formulă"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Name should not contain spaces": [
+        "Numele nu trebuie să conțină spații"
+      ],
+      "Named Ranges": [
+        "Intervale denumite"
+      ],
+      "Range": [
+        "Interval"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Text or formula": [
+        "Text sau formulă"
+      ],
+      "Type": [
+        "Tip"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Coloane colorate alternativ"
+      ],
+      "Banded rows": [
+        "Rânduri colorate alternativ"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Edit table": [
+        "Editare tabel"
+      ],
+      "More settings": [
+        "Mai multe setări"
+      ],
+      "Save": [
+        "Salvare"
+      ],
+      "Select a range": [
+        "Selectați un interval"
+      ],
+      "Show filter button": [
+        "Afișare buton de filtrare"
+      ],
+      "Table data range": [
+        "Interval de date tabel"
+      ],
+      "Table title": [
+        "Titlu tabel"
       ]
     },
     "Title": {

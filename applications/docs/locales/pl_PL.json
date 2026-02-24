@@ -883,12 +883,6 @@
         "${ domains } dodatkowych niestandardowych domen",
         "${ domains } dodatkowych niestandardowych domen"
       ],
-      "${ ips } server": [
-        "${ ips } serwer",
-        "${ ips } serwery",
-        "${ ips } serwerów",
-        "${ ips } serwerów"
-      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licencja",
         "${ seats } ${ LUMO_APP_NAME } licencje",
@@ -1051,52 +1045,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB przestrzeni dyskowej na dane"
-      ],
-      "3 TB data storage": [
-        "3 TB przestrzeni dyskowej na dane"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
-      ],
-      "Access advanced AI models": [
-        "Dostęp do zaawansowanych modeli AI"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Wszystkie funkcje premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } oraz ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokuj reklamy, trackery i złośliwe oprogramowanie"
-      ],
-      "Built-in 2FA authenticator": [
-        "Wbudowana aplikacja uwierzytelniająca"
-      ],
-      "Connect 10 devices at once": [
-        "Połącz 10 urządzeń jednocześnie"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
-      ],
-      "Individual accounts for 6 users": [
-        "Indywidualne konta dla 6 użytkowników"
-      ],
-      "Individual accounts for you and a partner": [
-        "Indywidualne konta dla Ciebie i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silniejsza ochrona przed cyberzagrożeniami"
-      ],
-      "Unlimited daily chats": [
-        "Nieograniczone codzienne czaty"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia i przyspiesza przeglądanie, blokując reklamy, elementy śledzące i złośliwe oprogramowanie."
       ]
     },
     "Browser": {
@@ -5077,12 +5025,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nie zostaniesz obciążony opłatą, jeśli anulujesz przed ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiąca ${ renewAmountStr }."
-      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Zamierzasz odrzucić zaproszenie dołączenia do albumu ${ invitationName }. Spowoduje to utratę dostępu do albumu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
       ],
@@ -5154,12 +5096,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Twoja następna data rozliczeniowa to ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
       ],
       "Your online activity is protected": [
         "Twoja aktywność online jest chroniona"
@@ -6359,12 +6295,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -8167,24 +8097,6 @@
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -8317,53 +8229,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Udostępniony przez ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Comma Separated Values (.csv)": [
-        "Wartości rozdzielone przecinkami (.csv)"
-      ],
-      "Microsoft Excel (.xlsx)": [
-        "Microsoft Excel (.xlsx)"
-      ],
-      "New spreadsheet": [
-        "Nowy arkusz kalkulacyjny"
-      ],
-      "Tab Separated Values (.tsv)": [
-        "Wartości rozdzielone tabulatorami (.tsv)"
-      ]
-    },
-    "sheets_2025:Info": {
-      "Detect automatically": [
-        "Wykryj automatycznie"
-      ],
-      "Insert as new sheet": [
-        "Wstaw jako nowy arkusz"
-      ],
-      "Replace current sheet": [
-        "Zastąp bieżący arkusz"
-      ],
-      "Replace data at selected cell": [
-        "Zastąp dane w wybranej komórce"
-      ]
-    },
-    "sheets_2025:Label": {
-      "Convert text to numbers, dates, and formulas": [
-        "Konwertuj tekst na liczby, daty i formuły"
-      ],
-      "Destination": [
-        "Miejsce docelowe"
-      ],
-      "Format": [
-        "Format"
-      ],
-      "Separator type": [
-        "Typ separatora"
-      ]
-    },
-    "sheets_2025:Title": {
-      "Import data": [
-        "Importuj dane"
       ]
     },
     "Signing preference for emails": {
@@ -8562,9 +8427,6 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
-      ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
       ],
       "Protect your account from threats with Sentinel": [
         "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"

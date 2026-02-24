@@ -1046,9 +1046,9 @@
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
       ],
-      "${ ips } server": [
-        "${ ips } palvelin",
-        "${ ips } palvelinta"
+      "${ ips } dedicated VPN server": [
+        "${ ips } oma VPN-palvelin",
+        "${ ips } omaa VPN-palvelinta"
       ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
@@ -1061,6 +1061,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssiä"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-lisenssi",
@@ -1299,52 +1303,6 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 Tt datatallennustilaa"
-      ],
-      "3 TB data storage": [
-        "3 Tt datatallennustilaa"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pääsy yli 15 000 palvelimelle yli 120 maassa"
-      ],
-      "Access advanced AI models": [
-        "Pääsy edistyneisiin tekoälymalleihin"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki ${ MAIL_SHORT_APP_NAME }-, ${ PASS_SHORT_APP_NAME }-, ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- ja ${ CALENDAR_SHORT_APP_NAME }-sovellusten premium-ominaisuudet"
-      ],
-      "Block ads, trackers, and malware": [
-        "Estä mainoksia, seurantoja ja haittaohjelmia"
-      ],
-      "Built-in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todennussovellus"
-      ],
-      "Connect 10 devices at once": [
-        "10 samanaikaista laiteyhteyttä"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
-      ],
-      "Individual accounts for 6 users": [
-        "Yksilölliset tilit 6 käyttäjälle"
-      ],
-      "Individual accounts for you and a partner": [
-        "Yksilölliset tilit sinulle ja kumppanillesi"
-      ],
-      "Stronger protection against cyber threats": [
-        "Vahvempi suojaus kyberuhkia vastaan"
-      ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 kuukausi"
@@ -1363,6 +1321,9 @@
       ],
       "Two-year": [
         "Kaksivuotinen"
+      ],
+      "Yearly": [
+        "Vuosittain"
       ]
     },
     "Browser": {
@@ -6198,10 +6159,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
-      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -6261,12 +6218,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Seuraava laskutuspäivä on ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
       "Your online activity is protected": [
         "Verkkotoimintasi on suojattu"
@@ -7658,10 +7609,6 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
-      "${ options }-day file version history": [
-        "${ options } päivän tiedostojen versiohistoria",
-        "${ options } päivän tiedostojen versiohistoria"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
       ],
@@ -9013,6 +8960,12 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% vero: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% veroja: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Maksu erääntyy kokeilun jälkeen ${ formattedDate }"
       ],
@@ -9031,20 +8984,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%:n ${ taxName } poisluettuna: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ilman ${ taxRate }% veroja: ${ taxAmount }"
-      ],
       "Got it": [
         "Selvä"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName } sisältäen: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Sisältää ${ rate }% veron"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Sisältää ${ taxRate }% veroja: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veron: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Sisältää ${ rate }% veroja"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veroja: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "KK/VV"
@@ -9064,8 +9017,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
-      "Taxes": [
-        "Verot"
+      "Tax ${ rate }%": [
+        "Vero ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Verot ${ rate }%"
       ],
       "terms and conditions": [
         "käyttöehdot"
@@ -9108,9 +9064,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "VAT": [
-        "ALV"
       ],
       "VAT number": [
         "ALV-numero"
@@ -9187,6 +9140,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Uusimishinta riippuu laskutusalueesta ja ABN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Uusimishinta riippuu laskutusalueesta ja yritystunnuksesta."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Uusimishinta riippuu laskutusalueesta ja EIN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
       ]
     },
     "Payments.Saved payment method details": {
@@ -9385,9 +9352,6 @@
       "Thomas": [
         "Tuomas"
       ],
-      "VAT number": [
-        "ALV-numero"
-      ],
       "Your organization name": [
         "Organisaatiosi nimi"
       ],
@@ -9408,6 +9372,12 @@
     "plan customizer, users": {
       "contact": [
         "ole yhteydessä"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } kuukausi",
+        "${ cycle } kuukautta"
       ]
     },
     "plus_block": {
@@ -9694,18 +9664,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
         "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {
@@ -10081,9 +10039,6 @@
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
@@ -10254,17 +10209,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Lue miten saat yksityisen kalenterilinkin."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed monthly": [
-        "Laskutetaan kuukausittain"
-      ],
-      "Billed yearly": [
-        "Laskutetaan vuosittain"
       ]
     },
     "Subscription attribute": {

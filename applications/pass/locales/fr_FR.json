@@ -1926,8 +1926,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2508,7 +2507,7 @@
       "You may close this tab.": [
         "Vous pouvez fermer cet onglet."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Vous devrez peut-être accorder l'autorisation d'accessibilité à ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [

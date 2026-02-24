@@ -1268,10 +1268,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "Aqeddac ${ ips }",
-        "${ ips } yiqeddacen"
-      ],
       "${ price } per dedicated server": [
         "${ price } i uqeddac yettwamudden"
       ],
@@ -1398,52 +1394,6 @@
         "${ storageSize } n uḥraz"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TAṬ n uḥraz n isefka"
-      ],
-      "3 TB data storage": [
-        "3 TAṬ n uḥraz n isefka"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Kcem ɣer wugar n 15,000 yiqeddacen deg wugar n 120 tmura"
-      ],
-      "Access advanced AI models": [
-        "Kcem ɣer imedyaten n AI yeɛlayen"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Timahilin akw n uswir ɛlayan n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Sewḥel adellel, ineḍfaren d yir aseɣẓan"
-      ],
-      "Built-in 2FA authenticator": [
-        "Aseftay n 2FA yebnan"
-      ],
-      "Connect 10 devices at once": [
-        "Qqen 10 yibenkan ɣef tikkelt"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Amezruy n tiɣtas akmal s unadi d imenyafen yeshel"
-      ],
-      "Individual accounts for 6 users": [
-        "Imiḍanen ibeddilen i 6 n yimseqdacen"
-      ],
-      "Individual accounts for you and a partner": [
-        "Imiḍanen ibeddilen i kečč d umeddakel"
-      ],
-      "Stronger protection against cyber threats": [
-        "Tameḥmiwt iǧehden mgal iɣṣan n Cyber"
-      ],
-      "Unlimited daily chats": [
-        "Tiɣtas n yal ass war tilas"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield yettufeṣṣel s wudem uslig i ummesten n yibenkan-nnek yerna ad yerr iminig-ik ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 wayyur"
@@ -1459,6 +1409,9 @@
       ],
       "Two-year": [
         "Snat n tikkal i useggas"
+      ],
+      "Yearly": [
+        "S useggas"
       ]
     },
     "Bug category": {
@@ -7754,6 +7707,12 @@
         "anermis"
       ]
     },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } wayyur",
+        "${ cycle } wayyuren"
+      ]
+    },
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Leqqem ɣer ${ upsellPlanTitle }"
@@ -8069,11 +8028,6 @@
         "Yebḍa-t ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Ldi deg ${ appName }"
-      ]
-    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Izen i yettwawgelhen n PGP. Asenqed n umazan yecceḍ: ${ verificationErrorsMessage }"
@@ -8285,14 +8239,6 @@
       ],
       "Your storage is full": [
         "Aḥraz-ik yeččuṛ"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "After n yal 2 yiseggasen"
-      ],
-      "Billed monthly": [
-        "Tifaṭurin n wayyuren"
       ]
     },
     "Subscription attribute": {

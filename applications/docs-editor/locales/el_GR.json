@@ -681,19 +681,415 @@
         "Κείμενο"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Όλα τα φύλλα"
+      ],
+      "New sheet": [
+        "Νέο φύλλο"
+      ]
+    },
     "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Πρόσφατα χρώματα"
+      ],
       "Reset": [
         "Επαναφορά"
+      ],
+      "Standard colors": [
+        "Τυπικά χρώματα"
+      ],
+      "Theme colors": [
+        "Χρώματα θέματος"
       ]
     },
     "sheets_2025:Range selector menu": {
       "Add new": [
-        "Προσθήκη νέας"
+        "Προσθήκη νέου"
+      ],
+      "Named ranges": [
+        "Ονομασμένα εύρη"
+      ],
+      "Sheets": [
+        "Φύλλα"
+      ],
+      "Tables": [
+        "Πίνακες"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Αλλαγή χρώματος"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Duplicate": [
+        "Κλωνοποίηση"
+      ],
+      "Hide sheet": [
+        "Απόκρυψη φύλλου"
+      ],
+      "Move left": [
+        "Μετακίνηση αριστερά"
+      ],
+      "Move right": [
+        "Μετακίνηση δεξιά"
+      ],
+      "Rename": [
+        "Μετονομασία"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Όλα τα όρια"
+      ],
+      "Bottom border": [
+        "Κάτω όριο"
+      ],
+      "Dashed": [
+        "Διακεκομμένη"
+      ],
+      "Dotted": [
+        "Διάστικτη"
+      ],
+      "Double": [
+        "Διπλό"
+      ],
+      "Horizontal borders": [
+        "Οριζόντια όρια"
+      ],
+      "Inner borders": [
+        "Εσωτερικά όρια"
+      ],
+      "Left border": [
+        "Αριστερό όριο"
+      ],
+      "No borders": [
+        "Χωρίς όρια"
+      ],
+      "Outer borders": [
+        "Εξωτερικά όρια"
+      ],
+      "Right border": [
+        "Δεξιό όριο"
+      ],
+      "Solid": [
+        "Συμπαγές"
+      ],
+      "Solid medium": [
+        "Στερεό μέσο"
+      ],
+      "Solid thick": [
+        "Στερεό παχύ"
+      ],
+      "Top border": [
+        "Πάνω όριο"
+      ],
+      "Vertical borders": [
+        "Κάθετα όρια"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Σφάλμα"
+      ],
+      "Invalid": [
+        "Άκυρο"
+      ],
+      "Note": [
+        "Σημείωση"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Γρήγορη επεξεργασία AI"
+      ],
+      "Auto fit to data": [
+        "Αυτόματη προσαρμογή στα δεδομένα"
+      ],
+      "Cell value": [
+        "Τιμή κελιού"
+      ],
+      "Clear": [
+        "Εκκαθάριση"
+      ],
+      "Clear content": [
+        "Διαγραφή περιεχομένου"
+      ],
+      "Clear formatting": [
+        "Εκκαθάριση μορφοποίησης"
+      ],
+      "Comma": [
+        "Κόμμα"
+      ],
+      "Conditional format": [
+        "Μορφοποίηση υπό συνθήκες"
+      ],
+      "Convert to range": [
+        "Μετατροπή σε εύρος"
+      ],
+      "Convert to table": [
+        "Μετατροπή σε πίνακα"
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Create a filter": [
+        "Δημιουργία φίλτρου"
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Data validation": [
+        "Επικύρωση δεδομένων"
+      ],
+      "Define named range": [
+        "Ορισμός ονομασμένου εύρους"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Delete cells and shift cells left": [
+        "Διαγράψτε κελιά και μετακινήστε τα κελιά προς τα αριστερά"
+      ],
+      "Delete cells and shift cells up": [
+        "Διαγράψτε κελιά και μετακινήστε τα κελιά προς τα πάνω"
+      ],
+      "Delete column": [
+        "Διαγραφή στήλης"
+      ],
+      "Delete row": [
+        "Διαγραφή σειράς"
+      ],
+      "Delete table column": [
+        "Διαγραφή στήλης πίνακα"
+      ],
+      "Delete table row": [
+        "Διαγραφή γραμμής πίνακα"
+      ],
+      "Edit table": [
+        "Επεξεργασία πίνακα"
+      ],
+      "Filter": [
+        "Φίλτρο"
+      ],
+      "Formatting only": [
+        "Μόνο μορφοποίηση"
+      ],
+      "Formula only": [
+        "Μόνο φόρμουλα"
+      ],
+      "Freeze up to column": [
+        "Πάγωμα μέχρι τη στήλη"
+      ],
+      "Freeze up to row": [
+        "Πάγωμα μέχρι τη σειρά"
+      ],
+      "Hide column": [
+        "Απόκρυψη στήλης"
+      ],
+      "Hide row": [
+        "Απόκρυψη σειράς"
+      ],
+      "Insert cells and shift cells down": [
+        "Εισαγάγετε κελιά και μετακινήστε τα κελιά προς τα κάτω"
+      ],
+      "Insert cells and shift cells right": [
+        "Εισαγάγετε κελιά και μετακινήστε τα κελιά προς τα δεξιά"
+      ],
+      "Insert link": [
+        "Εισαγωγή συνδέσμου"
+      ],
+      "Insert note": [
+        "Εισαγωγή σημείωσης"
+      ],
+      "Insert table column to the left": [
+        "Εισαγωγή στήλης πίνακα στα αριστερά"
+      ],
+      "Insert table column to the right": [
+        "Εισαγωγή στήλης πίνακα στα δεξιά"
+      ],
+      "Insert table row": [
+        "Εισαγωγή γραμμής πίνακα"
+      ],
+      "Link only": [
+        "Σύνδεσμος μόνο"
+      ],
+      "More cell actions": [
+        "Περισσότερες ενέργειες κελιών"
+      ],
+      "Paste": [
+        "Επικόλληση"
+      ],
+      "Paste special": [
+        "Ειδική επικόλληση"
+      ],
+      "Period": [
+        "Περίοδος"
+      ],
+      "Pipe": [
+        "Σωλήνας"
+      ],
+      "Remove filter": [
+        "Κατάργηση φίλτρου"
+      ],
+      "Resize column": [
+        "Αλλαγή μεγέθους στήλης"
+      ],
+      "Resize row": [
+        "Αλλαγή μεγέθους σειράς"
+      ],
+      "Semicolon": [
+        "Άνω τελεία"
+      ],
+      "Sort": [
+        "Ταξινόμηση"
+      ],
+      "Sort range A → Z": [
+        "Ταξινόμηση εύρους Α → Ω"
+      ],
+      "Sort range Z → A": [
+        "Ταξινόμηση εύρους Ω → A"
+      ],
+      "Sort sheet A to Z": [
+        "Ταξινόμηση φύλλου από Α έως Ω"
+      ],
+      "Sort sheet Z to A": [
+        "Ταξινόμηση φύλλου από Ω έως Α"
+      ],
+      "Space": [
+        "Διάστημα"
+      ],
+      "Table": [
+        "Πίνακας"
+      ],
+      "Transposed": [
+        "Μεταφερθείς"
+      ],
+      "Unfreeze columns": [
+        "Ξεπάγωμα στηλών"
+      ],
+      "Unfreeze rows": [
+        "Ξεπάγωμα σειρών"
+      ],
+      "Values only": [
+        "Μόνο τιμές"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } στήλη",
+        "${ numberOfColumns } στήλες"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } γραμμή",
+        "${ numberOfRows } γραμμές"
+      ],
+      "above": [
+        "πάνω"
+      ],
+      "below": [
+        "κάτω"
+      ],
+      "Insert": [
+        "Εισαγωγή"
+      ],
+      "left": [
+        "αριστερά"
+      ],
+      "right": [
+        "δεξιά"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Θέλετε σίγουρα να διαγράψετε το ${ sheetName }?"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Delete sheet": [
+        "Διαγραφή φύλου"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Επεξεργασία για Κινητά Σύντομα Διαθέσιμη"
+      ],
+      "Screen too small for editing": [
+        "Η οθόνη είναι πολύ μικρή για επεξεργασία"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Εργαζόμαστε για να σας προσφέρουμε σύντομα αυτή τη λειτουργία. Προς το παρόν, τα φύλλα μπορούν να επεξεργαστούν μόνο σε επιτραπέζιους υπολογιστές."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Η οθόνη σας είναι πολύ μικρή για να επεξεργαστείτε αυτό το υπολογιστικό φύλλο. Βρίσκεστε σε λειτουργία μόνο για προβολή. Για να κάνετε αλλαγές, ανοίξτε αυτό το υπολογιστικό φύλλο σε μεγαλύτερη οθόνη ή διευρύνετε το παράθυρο του προγράμματος περιήγησης."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Δεν είναι δυνατή η διαγραφή όλων των στηλών"
+      ],
+      "Cannot delete all rows": [
+        "Δεν είναι δυνατή η διαγραφή όλων των γραμμών"
+      ],
+      "Find in sheet": [
+        "Εύρεση στο φύλλο"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Συγχώνευση όλων"
+      ],
+      "Merge cells": [
+        "Συγχώνευση κελιών"
+      ],
+      "Merge horizontally": [
+        "Συγχώνευση οριζόντια"
+      ],
+      "Merge vertically": [
+        "Συγχώνευση κάθετα"
+      ],
+      "Unmerge": [
+        "Κατάργηση συγχώνευσης"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Δημιουργία φίλτρου"
+      ],
+      "Data validation": [
+        "Επικύρωση δεδομένων"
+      ],
+      "Protect range": [
+        "Προστασία εύρους"
+      ],
+      "Remove filter": [
+        "Κατάργηση φίλτρου"
+      ],
+      "Sort sheet": [
+        "Ταξινόμηση φύλλου"
+      ],
+      "Unlock range": [
+        "Ξεκλείδωμα εύρους"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
         "(Α έως Ω)"
+      ],
+      "(Z to A)": [
+        "(Ω έως Α)"
+      ],
+      "column ${ columnLetter }": [
+        "στήλη ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Ταξινόμηση φύλλου κατά"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -703,14 +1099,35 @@
       "Cut": [
         "Αποκοπή"
       ],
+      "Find": [
+        "Εύρεση"
+      ],
+      "Formatting only": [
+        "Μόνο μορφοποίηση"
+      ],
+      "Formula only": [
+        "Μόνο φόρμουλα"
+      ],
+      "Link only": [
+        "Σύνδεσμος μόνο"
+      ],
       "Paste": [
         "Επικόλληση"
       ],
+      "Paste special": [
+        "Ειδική Επικόλληση"
+      ],
       "Redo": [
-        "Ακύρωση αναίρεσης"
+        "Επανάληψη"
+      ],
+      "Transposed": [
+        "Μεταφερθείς"
       ],
       "Undo": [
         "Αναίρεση"
+      ],
+      "Values only": [
+        "Μόνο τιμές"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -736,10 +1153,13 @@
         "Microsoft Excel (.xlsx)"
       ],
       "Move to folder": [
-        "Μετακίνηση σε φάκελο"
+        "Μετακίνηση στο φάκελο"
       ],
       "Move to trash": [
-        "Μετακίνηση στα διαγραμμένα"
+        "Μετακίνηση στον κάδο απορριμμάτων"
+      ],
+      "New document": [
+        "Νέο έγγραφο"
       ],
       "New spreadsheet": [
         "Νέο υπολογιστικό φύλλο"
@@ -747,14 +1167,23 @@
       "Open ${ DRIVE_APP_NAME }": [
         "Άνοιγμα ${ DRIVE_APP_NAME }"
       ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Έγγραφο υπολογιστικού φύλλου OpenDocument (.ods) (Beta)"
+      ],
       "Print": [
         "Εκτύπωση"
       ],
       "See version history": [
         "Δείτε το ιστορικό εκδόσεων"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Tab Separated Values (.tsv)": [
         "Tab Separated Values (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Εναλλαγή λειτουργίας εντοπισμού σφαλμάτων"
       ],
       "View recent spreadsheets": [
         "Προβολή πρόσφατων υπολογιστικών φύλλων"
@@ -765,13 +1194,22 @@
         "Στοίχιση"
       ],
       "Bold": [
-        "Έντονη γραφή"
+        "Έντονοι Χαρακτήρες"
+      ],
+      "Cell styles": [
+        "Στυλ κελιού"
       ],
       "Clear": [
         "Εκκαθάριση"
       ],
+      "Clear content": [
+        "Διαγραφή περιεχομένου"
+      ],
       "Clear formatting": [
-        "Εκκαθάριση μορφοποίησης"
+        "Διαγραφή μορφοποίησης"
+      ],
+      "Conditional formatting": [
+        "Μορφοποίηση υπό συνθήκες"
       ],
       "Font size": [
         "Μέγεθος γραμματοσειράς"
@@ -785,6 +1223,9 @@
       "Strikethrough": [
         "Διακριτή διαγραφή"
       ],
+      "Table formatting": [
+        "Μορφοποίηση πίνακα"
+      ],
       "Text": [
         "Κείμενο"
       ],
@@ -793,11 +1234,40 @@
       ],
       "Underline": [
         "Υπογράμμιση"
+      ],
+      "Wrapping": [
+        "Περιτύλιγμα"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Κάτω"
+      ],
       "Center": [
-        "Κέντρο"
+        "Κεντραρισμένο"
+      ],
+      "Left": [
+        "Αριστερά"
+      ],
+      "Middle": [
+        "Μεσαία"
+      ],
+      "Right": [
+        "Δεξιά"
+      ],
+      "Top": [
+        "Πάνω"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Κλιπ"
+      ],
+      "Overflow": [
+        "Υπερχείλιση"
+      ],
+      "Wrap": [
+        "Αναδίπλωση γραμμής"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -813,14 +1283,17 @@
       "Columns": [
         "Στήλες"
       ],
+      "Dropdown": [
+        "Αναπτυσσόμενου μενού"
+      ],
       "Function": [
-        "Λειτουργία"
+        "Συνάρτηση"
       ],
       "Image": [
         "Εικόνα"
       ],
       "Insert cells and shift down": [
-        "Εισαγωγή κελιών και μετατόπιση προς τα κάτω"
+        "Εισαγάγετε κελιά και μετακινήστε προς τα κάτω"
       ],
       "Insert cells and shift right": [
         "Εισαγάγετε κελιά και μετακινηθείτε προς τα δεξιά"
@@ -836,6 +1309,31 @@
       ],
       "Sheet": [
         "Φύλλο"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } στήλη",
+        "${ numberOfColumns } στήλες"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } γραμμή",
+        "${ numberOfRows } γραμμές"
+      ],
+      "above": [
+        "από πάνω"
+      ],
+      "below": [
+        "κάτω"
+      ],
+      "Insert": [
+        "Εισαγωγή"
+      ],
+      "left": [
+        "αριστερά"
+      ],
+      "right": [
+        "δεξιά"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -859,11 +1357,36 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Μπάρα φόρμουλας"
+      ],
+      "Freeze": [
+        "Πάγωμα"
+      ],
+      "Gridlines": [
+        "Γραμμές πλέγματος"
+      ],
       "Show": [
         "Εμφάνιση"
       ],
       "Zoom": [
-        "Zoom"
+        "Μεγέθυνση"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "στήλη ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "σειρά ${ rowNumber }"
+      ],
+      "Up to": [
+        "Εώς και"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Κρυμμένα φύλλα"
       ]
     },
     "sheets_2025:Spreadsheet editor number formats menu": {
@@ -871,7 +1394,7 @@
         "$ Δολάριο ΗΠΑ"
       ],
       "Accounting": [
-        "Λογιστικά"
+        "Λογιστική"
       ],
       "CN¥ Chinese Yuan": [
         "CN¥ Κινεζικό Γιουάν"
@@ -881,6 +1404,12 @@
       ],
       "Currency rounded": [
         "Στρογγυλοποιημένο νόμισμα"
+      ],
+      "Custom currency": [
+        "Προσαρμοσμένη νομισματική μονάδα"
+      ],
+      "Custom number format": [
+        "Προσαρμοσμένη μορφή αριθμών"
       ],
       "Date": [
         "Ημερομηνία"
@@ -892,7 +1421,7 @@
         "Διάρκεια"
       ],
       "Financial": [
-        "Οικονομικό"
+        "Οικονομικά"
       ],
       "General": [
         "Γενικά"
@@ -910,13 +1439,13 @@
         "Τοις Εκατό"
       ],
       "Plain text": [
-        "Ακατέργαστο κείμενο"
+        "Απλό κείμενο"
       ],
       "Scientific": [
-        "Επιστημονική"
+        "Επιστημονικό"
       ],
       "Time": [
-        "Ώρα"
+        "Χρόνος"
       ],
       "£ Pound": [
         "£ Λίρα"
@@ -934,14 +1463,46 @@
     "sheets_2025:Spreadsheet editor search dialog": {
       "Close": [
         "Κλείσιμο"
+      ],
+      "Go to next": [
+        "Συνέχεια στο επόμενο"
+      ],
+      "Go to previous": [
+        "Πηγαίνετε στο προηγούμενο"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Αυτόματο"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Locale": [
+        "Τοπικές ρυθμίσεις"
+      ],
+      "Save and reload": [
+        "Αποθήκευση και επαναφόρτωση"
+      ],
+      "Settings for this spreadsheet": [
+        "Ρυθμίσεις για αυτό το υπολογιστικό φύλλο"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Αυτό επηρεάζει λεπτομέρειες μορφοποίησης όπως λειτουργίες, ημερομηνίες και νόμισμα."
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
-        "Έντονη γραφή"
+        "Έντονοι Χαρακτήρες"
+      ],
+      "Border": [
+        "Περίγραμμα"
       ],
       "Clear formatting": [
-        "Εκκαθάριση μορφοποίησης"
+        "Διαγραφή μορφοποίησης"
+      ],
+      "Create a filter": [
+        "Δημιουργία φίλτρου"
       ],
       "Decrease decimal places": [
         "Μείωση δεκαδικών ψηφίων"
@@ -951,6 +1512,12 @@
       ],
       "Default (${ defaultFont })": [
         "Προεπιλογή (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Χρώμα γεμίσματος"
+      ],
+      "Find": [
+        "Εύρεση"
       ],
       "Font": [
         "Γραμματοσειρά"
@@ -964,14 +1531,26 @@
       "Format as percent": [
         "Μορφοποίηση ως ποσοστό"
       ],
+      "Horizontal align": [
+        "Οριζόντια στοίχιση"
+      ],
       "Increase decimal places": [
         "Αύξηση δεκαδικών ψηφίων"
       ],
       "Increase font size": [
         "Αύξηση μεγέθους γραμματοσειράς"
       ],
+      "Insert chart": [
+        "Εισαγωγή διαγράμματος"
+      ],
+      "Insert function": [
+        "Προσθήκη λειτουργείας"
+      ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
+      ],
+      "Insert note": [
+        "Εισαγωγή σημείωσης"
       ],
       "Italic": [
         "Πλάγια γραφή"
@@ -985,8 +1564,17 @@
       "More formats": [
         "Περισσότερες μορφές"
       ],
+      "Paint format": [
+        "Μορφή βαφής"
+      ],
       "Redo": [
-        "Ακύρωση αναίρεσης"
+        "Επανάληψη"
+      ],
+      "Remove filter": [
+        "Κατάργηση φίλτρου"
+      ],
+      "Select merge type": [
+        "Επιλέξτε τύπο συγχώνευσης"
       ],
       "Strikethrough": [
         "Διακριτή διαγραφή"
@@ -994,14 +1582,67 @@
       "Text color": [
         "Χρώμα κειμένου"
       ],
+      "Text wrapping": [
+        "Περιτύλιξη κειμένου"
+      ],
       "Underline": [
         "Υπογράμμιση"
       ],
       "Undo": [
         "Αναίρεση"
       ],
+      "Unmerge cells": [
+        "Κατάργηση συγχώνευσης κελιών"
+      ],
+      "Vertical align": [
+        "Κάθετη στοίχιση"
+      ],
       "Zoom": [
-        "Zoom"
+        "Μεγέθυνση"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Εφαρμογή"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Clear": [
+        "Εκκαθάριση"
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Delete table column": [
+        "Διαγραφή στήλης πίνακα"
+      ],
+      "Enter value": [
+        "Εισάγετε τιμή"
+      ],
+      "Filter by condition": [
+        "Φιλτράρισμα κατά κατάσταση"
+      ],
+      "Filter by value": [
+        "Φιλτράρισμα κατά αξία"
+      ],
+      "Insert 1 table column left": [
+        "Εισαγωγή 1 στήλης πίνακα αριστερά"
+      ],
+      "Insert 1 table column right": [
+        "Εισαγωγή 1 στήλης πίνακα δεξιά"
+      ],
+      "Paste": [
+        "Επικόλληση"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
+      ],
+      "Sort A → Z": [
+        "Ταξινόμηση Α → Ω"
+      ],
+      "Sort Z → A": [
+        "Ταξινόμηση Ω → A"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1028,8 +1669,413 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
+      "Link removed": [
+        "Ο σύνδεσμος αφαιρέθηκε"
+      ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "column": [
+        "στήλη"
+      ],
+      "column width": [
+        "πλάτος στήλης"
+      ],
+      "Default": [
+        "Προεπιλογή"
+      ],
+      "OK": [
+        "ΟΚ"
+      ],
+      "row": [
+        "σειρά"
+      ],
+      "row height": [
+        "ύψος σειράς"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Στοίχιση"
+      ],
+      "Bold": [
+        "Έντονοι Χαρακτήρες"
+      ],
+      "Border": [
+        "Όρια"
+      ],
+      "Border style": [
+        "Μορφή ορίων"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Choose Category": [
+        "Επιλέξτε Κατηγορία"
+      ],
+      "Color": [
+        "Χρώμα"
+      ],
+      "Currency Symbol": [
+        "Σύμβολο Νομίσματος"
+      ],
+      "Custom": [
+        "Προσαρμοσμένο"
+      ],
+      "Decimal places": [
+        "Δεκαδικά ψηφία"
+      ],
+      "Effects": [
+        "Εφέ"
+      ],
+      "Font": [
+        "Γραμματοσειρά"
+      ],
+      "Font size": [
+        "Μέγεθος γραμματοσειράς"
+      ],
+      "Format cells": [
+        "Μορφοποίηση κελιών"
+      ],
+      "General": [
+        "Γενικά"
+      ],
+      "Horizontal Alignment": [
+        "Στοίχιση Οριζόντια"
+      ],
+      "Indent": [
+        "Εσοχή"
+      ],
+      "Italic": [
+        "Πλάγια γραφή"
+      ],
+      "Merge": [
+        "Συγχώνευση"
+      ],
+      "Merge all": [
+        "Συγχώνευση όλων"
+      ],
+      "Merge horizontally": [
+        "Συγχώνευση οριζόντια"
+      ],
+      "Merge vertically": [
+        "Συγχώνευση κάθετα"
+      ],
+      "Number": [
+        "Αριθμός"
+      ],
+      "Overflow": [
+        "Υπερχείλιση"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Strikethrough": [
+        "Διακριτή διαγραφή"
+      ],
+      "Text control": [
+        "Έλεγχος κειμένου"
+      ],
+      "Thousands separator": [
+        "Διαχωριστικό χιλιάδων"
+      ],
+      "Type": [
+        "Τύπος"
+      ],
+      "Underline": [
+        "Υπογράμμιση"
+      ],
+      "Unmerge": [
+        "Κατάργηση συγχώνευσης"
+      ],
+      "Use 1000 Separator (,)": [
+        "Χρήση διαχωριστικού 1000 (,)"
+      ],
+      "Vertical Alignment": [
+        "Κάθετη Στοίχιση"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Προσθήκη"
+      ],
+      "Aggregate": [
+        "Συνάθροιση"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Chart data range": [
+        "Εύρος δεδομένων γραφήματος"
+      ],
+      "Chart editor": [
+        "Επεξεργαστής γραφημάτων"
+      ],
+      "Chart title": [
+        "Τίτλος Γραφήματος"
+      ],
+      "Chart type": [
+        "Τύπος γραφήματος"
+      ],
+      "Enter title": [
+        "Εισάγετε τίτλο"
+      ],
+      "Horizontal (category) axis labels": [
+        "Ετικέτες οριζόντιου άξονα (κατηγορίας)"
+      ],
+      "Horizontal axis title": [
+        "Τίτλος οριζόντιου άξονα"
+      ],
+      "Name": [
+        "Ονομα"
+      ],
+      "Range": [
+        "Εύρος"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Select a range": [
+        "Επιλέξτε ένα εύρος"
+      ],
+      "Series": [
+        "Σειρές"
+      ],
+      "Show data in hidden rows and columns": [
+        "Εμφάνιση δεδομένων σε κρυφές σειρές και στήλες"
+      ],
+      "Value": [
+        "Ποσό"
+      ],
+      "Vertical axis title": [
+        "Τίτλος κάθετου άξονα"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Προσθήκη άλλου εύρους"
+      ],
+      "Add another rule": [
+        "Προσθήκη άλλου κανόνα"
+      ],
+      "Add rule": [
+        "Προσθήκη κανόνα"
+      ],
+      "Apply to range": [
+        "Εφαρμογή σε εύρος"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Color scale": [
+        "Κλίμακα χρώματος"
+      ],
+      "Conditional formatting": [
+        "Μορφοποίηση υπό συνθήκες"
+      ],
+      "Delete range": [
+        "Διαγραφή εύρους"
+      ],
+      "Delete rule": [
+        "Διαγραφή κανόνα"
+      ],
+      "Enter a formula": [
+        "Εισάγετε μια φόρμουλα"
+      ],
+      "Enter value": [
+        "Εισάγετε τιμή"
+      ],
+      "Format rules": [
+        "Κανόνες μορφοποίησης"
+      ],
+      "Format style": [
+        "Στυλ μορφοποίησης"
+      ],
+      "Max point": [
+        "Μέγιστο σημείο"
+      ],
+      "Max value": [
+        "Μέγιστη τιμή"
+      ],
+      "Mid point": [
+        "Μεσαίο σημείο"
+      ],
+      "Min point": [
+        "Ελάχιστο σημείο"
+      ],
+      "Min value": [
+        "Ελάχιστη τιμή"
+      ],
+      "None": [
+        "Κανένα"
+      ],
+      "Number": [
+        "Αριθμός"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Select a range": [
+        "Επιλέξτε ένα εύρος"
+      ],
+      "Single color": [
+        "Ενιαίου χρώματος"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Εφαρμογή"
+      ],
+      "Apply to create a custom currency": [
+        "Υποβάλετε αίτηση για τη δημιουργία μιας προσαρμοσμένης νομισματικής μονάδας"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Currency symbol": [
+        "Σύμβολο νομίσματος"
+      ],
+      "Custom currencies": [
+        "Προσαρμοσμένη νομισματικές μονάδες"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Προσθήκη άλλου ονομασμένου εύρους"
+      ],
+      "Add another range": [
+        "Προσθήκη άλλου εύρους"
+      ],
+      "Add named range": [
+        "Προσθήκη ονομασμένου εύρους"
+      ],
+      "Allow blanks": [
+        "Επιτρέψτε κενά"
+      ],
+      "Apply to range": [
+        "Εφαρμογή σε εύρος"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Data validation": [
+        "Επικύρωση δεδομένων"
+      ],
+      "Delete data validation rule": [
+        "Διαγραφή κανόνα επικύρωσης δεδομένων"
+      ],
+      "Enter a formula": [
+        "Εισάγετε μια φόρμουλα"
+      ],
+      "Enter value": [
+        "Εισάγετε τιμή"
+      ],
+      "Formula": [
+        "Φόρμουλα"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Select a range": [
+        "Επιλέξτε ένα εύρος"
+      ],
+      "Validation rules": [
+        "Κανόνες επικύρωσης"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Προσθήκη άλλου ονομασμένου εύρους"
+      ],
+      "Add named range": [
+        "Προσθήκη ονομασμένου εύρους"
+      ],
+      "Apply to range": [
+        "Εφαρμογή σε εύρος"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Delete named range": [
+        "Διαγραφή ονομασμένου εύρους"
+      ],
+      "Enter a formula": [
+        "Εισάγετε μια φόρμουλα"
+      ],
+      "Enter text or formula": [
+        "Εισαγάγετε κείμενο ή φόρμουλα"
+      ],
+      "Name": [
+        "Ονομα"
+      ],
+      "Name should not contain spaces": [
+        "Το όνομα δεν πρέπει να περιέχει κενά"
+      ],
+      "Named Ranges": [
+        "Ονομασμένα Εύρη"
+      ],
+      "Range": [
+        "Εύρος"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Text or formula": [
+        "Κείμενο ή φόρμουλα"
+      ],
+      "Type": [
+        "Τύπος"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Ζώνες στηλών"
+      ],
+      "Banded rows": [
+        "Ζώνες γραμμών"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Edit table": [
+        "Επεξεργασία πίνακα"
+      ],
+      "More settings": [
+        "Περισσότερες ρυθμίσεις"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Select a range": [
+        "Επιλέξτε ένα εύρος"
+      ],
+      "Show filter button": [
+        "Εμφάνιση κουμπιού φίλτρου"
+      ],
+      "Table data range": [
+        "Εύρος δεδομένων πίνακα"
+      ],
+      "Table title": [
+        "Τίτλος πίνακα"
       ]
     },
     "Title": {

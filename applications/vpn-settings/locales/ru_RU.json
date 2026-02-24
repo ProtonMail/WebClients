@@ -1094,12 +1094,6 @@
         "${ domains } дополнительных пользовательских доменов",
         "${ domains } дополнительных пользовательских доменов"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
-      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -1441,52 +1435,6 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ТБ для хранения данных"
-      ],
-      "3 TB data storage": [
-        "Хранилище на 3 ТБ"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к более чем 15 000 серверам в более чем 120 странах"
-      ],
-      "Access advanced AI models": [
-        "Доступ к расширенным моделям ИИ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и избранным"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнёра"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Обновляется автоматически в ${ subscriptionManagerName }"
@@ -1510,6 +1458,9 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ]
     },
     "Blog": {
@@ -1755,12 +1706,6 @@
     "Checkout summary": {
       "month": [
         "месяц"
-      ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Users": [
-        "Пользователи"
       ]
     },
     "Collapsible tooltip": {
@@ -3431,9 +3376,6 @@
       ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
-      ],
-      "Code wrong or not valid anymore": [
-        "Неверный или недействительный код"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Не удалось загрузить счета-фактуры. Повторите попытку позже."
@@ -6015,9 +5957,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."
       ],
-      "Free forever": [
-        "Бесплатно навсегда"
-      ],
       "Gateways": [
         "Шлюзы"
       ],
@@ -7452,12 +7391,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление на основе устройства."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
@@ -7502,12 +7435,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Следующая дата выставления счета - ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
@@ -9182,12 +9109,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
@@ -11582,24 +11503,6 @@
         "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -11848,11 +11751,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Доступ предоставил ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Открыть в ${ appName }"
       ]
     },
     "Signup": {
@@ -12471,17 +12369,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
@@ -14874,9 +14761,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "Получите больше от подписки ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Храните ваши файлы, фотографии и документы в безопасности в бесплатном облачном хранилище ${ maxDriveSpace }."
-      ],
       "Set secure passwords without the hassle.": [
         "Устанавливайте надежные пароли без лишних хлопот."
       ],
@@ -14930,11 +14814,6 @@
         "Серверы в более чем ${ numberOfCountries } странах"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "год"
@@ -14973,18 +14852,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "${ n } year": [
-        "${ n } год",
-        "${ n } года",
-        "${ n } лет",
-        "${ n } лет"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Включает ${ plan } (бесплатно в течение первого года!)"
       ],

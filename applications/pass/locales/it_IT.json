@@ -1919,10 +1919,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
-      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -2501,9 +2497,6 @@
       ],
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
-      ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."

@@ -1726,9 +1726,15 @@
         "${ domains } πρόσθετος προσαρμοσμένος τομέας",
         "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
       ],
-      "${ ips } server": [
-        "${ ips } διακομιστής",
-        "${ ips } διακομιστές"
+      "${ ips } dedicated VPN server": [
+        "${ ips } αποκλειστικός διακομιστής VPN",
+        "${ ips } αποκλειστικοί διακομιστές VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } άδεια χρήσης AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } θέσεις"
       ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
@@ -1742,6 +1748,10 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
+        "${ seats } ${ LUMO_APP_NAME } άδειες χρήσης AI"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
         "${ seats } ${ LUMO_APP_NAME } θέσεις"
@@ -1753,6 +1763,24 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Domains": [
+        "Τομείς"
+      ],
+      "Servers": [
+        "Διακομιστές"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ],
+      "Writing assistant seats": [
+        "Άδειες βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -2031,10 +2059,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου"
+        "2 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου"
+        "3 TB αποθηκευτικού χώρου δεδομένων"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
@@ -2043,7 +2071,7 @@
         "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλα τα premium χαρακτηριστικά των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
@@ -2055,16 +2083,16 @@
         "Συνδέστε 10 συσκευές ταυτόχρονα"
       ],
       "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλίας με εύκολη αναζήτηση και αγαπημένα"
+        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
       ],
       "Individual accounts for 6 users": [
         "Ατομικοί λογαριασμοί για 6 χρήστες"
       ],
       "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
+        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
       ],
       "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
+        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -2076,6 +2104,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
       "1 month": [
         "1 μήνας"
       ],
@@ -2085,14 +2121,23 @@
       "Annually": [
         "Ετησίως"
       ],
+      "Billed monthly": [
+        "Με μηνιαία χρέωση"
+      ],
       "Lifetime": [
         "Εφ' όρου ζωής"
+      ],
+      "Lifetime access": [
+        "Ισόβια πρόσβαση"
       ],
       "Monthly": [
         "Μηνιαία"
       ],
       "Two-year": [
         "Δύο έτη"
+      ],
+      "Yearly": [
+        "Ετησίως"
       ]
     },
     "Browser": {
@@ -2564,6 +2609,13 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "Subtotal": [
+        "Υποσύνολο"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Υποσύνολο για ${ cycle } μήνα",
+        "Υποσύνολο για ${ cycle } μήνες"
       ],
       "Total": [
         "Σύνολο"
@@ -7576,6 +7628,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "Η μετακίνηση αυτού του μηνύματος θα ακυρώσει την προγραμματισμένη αποστολή του."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -8153,6 +8208,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η μετακίνησή της θα ακυρώσει την προγραμματισμένη αποστολή."
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η αποστολή αυτού του μηνύματος θα ακυρωθεί."
       ],
@@ -8721,9 +8779,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
-        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στις ομάδες επαφών:"
@@ -8792,11 +8850,11 @@
       "Your message will expire tomorrow.": [
         "Το μήνυμά σας θα λήξει αύριο."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι η ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ],
       "Your online activity is protected": [
         "Η δραστηριότητά σας στο διαδίκτυο προστατεύεται"
@@ -10750,10 +10808,6 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
-      "${ options }-day file version history": [
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
       ],
@@ -12157,6 +12211,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (χωρίς φόρους)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% φόρος: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% φόροι: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
@@ -12175,20 +12238,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
-      ],
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων ${ taxAmountElement }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -12208,8 +12271,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
       ],
-      "Taxes": [
-        "Φόροι"
+      "Tax ${ rate }%": [
+        "Φόρος ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Φόροι ${ rate }%"
       ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
@@ -12258,9 +12324,6 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
-      ],
-      "VAT": [
-        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -12340,6 +12403,20 @@
     "Payments.plan_name": {
       "Free": [
         "Δωρεάν"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον Αριθμό Επιχείρησης."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12586,9 +12663,6 @@
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
       ],
-      "VAT number": [
-        "Α.Φ.Μ."
-      ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
       ],
@@ -12612,6 +12686,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } μήνας",
+        "${ cycle } μήνες"
       ]
     },
     "plus_block": {
@@ -13076,15 +13156,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -13216,6 +13296,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Άνοιγμα σε ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Άνοιγμα σε ${ appName }) (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13483,8 +13566,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Αποκτήστε απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας και να μειώσετε τα ενοχλητικά"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Διατηρήστε τους κωδικούς σας ασφαλείς και οργανωμένους σε πολλαπλές κρύπτες"
       ],
       "Protect your account from threats with Sentinel": [
         "Προστατέψτε τον λογαριασμό σας από απειλές με το Sentinel"
@@ -13703,17 +13786,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Θα χάσετε την πρόσβαση σε απεριόριστες συνδέσεις και σημειώσεις, απεριόριστα ψευδώνυμα hide-my-email, 20 κρύπτες, καθώς και υποστήριξη προτεραιότητας."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Χρέωση κάθε 2 χρόνια"
-      ],
-      "Billed monthly": [
-        "Μηνιαία χρέωση"
-      ],
-      "Billed yearly": [
-        "Ετήσια χρέωση"
       ]
     },
     "Subscription attribute": {
@@ -14280,10 +14352,6 @@
       "Conversation removed from Starred.": [
         "Η συνομιλία αφαιρέθηκε από τις Σημασμένες."
       ],
-      "Conversation updated": [
-        "Η συνομιλία ενημερώθηκε",
-        "Η συνομιλίες ενημερώθηκαν"
-      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Συνομιλίες από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
       ],
@@ -14358,10 +14426,6 @@
       ],
       "Message removed from Starred.": [
         "Το μήνυμα αφαιρέθηκε από τα Σημασμένα."
-      ],
-      "Message updated": [
-        "Το μήνυμα ενημερώθηκε",
-        "Τα μηνύματα ενημερώθηκαν"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Τα μηνύματα από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"

@@ -1977,12 +1977,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2574,7 +2568,7 @@
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Магчыма, што спатрэбіцца даць дазвол на доступ для ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [

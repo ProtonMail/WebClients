@@ -1926,8 +1926,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2508,8 +2507,8 @@
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "És possible que hàgiu de concedir permís d'accessibilitat a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."

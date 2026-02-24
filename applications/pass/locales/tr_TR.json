@@ -1926,8 +1926,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2508,7 +2507,7 @@
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
       ],
       "You need a vault with edit permission before you can import items.": [

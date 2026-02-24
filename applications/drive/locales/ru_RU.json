@@ -1158,12 +1158,6 @@
         "${ domains } дополнительных пользовательских доменов",
         "${ domains } дополнительных пользовательских доменов"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
-      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -1350,52 +1344,6 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ТБ для хранения данных"
-      ],
-      "3 TB data storage": [
-        "Хранилище на 3 ТБ"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к более чем 15 000 серверам в более чем 120 странах"
-      ],
-      "Access advanced AI models": [
-        "Доступ к расширенным моделям ИИ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и избранным"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнёра"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 месяц"
@@ -1414,6 +1362,9 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ]
     },
     "Browser": {
@@ -6193,12 +6144,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Вы собираетесь отклонить приглашение присоединиться к альбому ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
       ],
@@ -6258,12 +6203,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Следующая дата выставления счета - ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your online activity is protected": [
         "Ваши действия в Интернете защищены"
@@ -7626,12 +7565,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
@@ -9337,9 +9270,6 @@
       "Thomas": [
         "Томас"
       ],
-      "VAT number": [
-        "Номер плательщика НДС"
-      ],
       "Your organization name": [
         "Название вашей организации"
       ],
@@ -9355,6 +9285,14 @@
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяца",
+        "${ cycle } месяцев",
+        "${ cycle } месяцев"
       ]
     },
     "plus_block": {
@@ -9588,24 +9526,6 @@
         "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -9738,14 +9658,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Доступ предоставил ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "New spreadsheet": [
-        "Новая таблица"
-      ],
-      "Open in ${ appName }": [
-        "Открыть в ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -10086,17 +9998,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {

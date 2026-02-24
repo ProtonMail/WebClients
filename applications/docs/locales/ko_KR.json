@@ -910,8 +910,14 @@
       "${ domains } additional custom domain": [
         "사용자 지정 이메일 도메인 ${ domains }개"
       ],
-      "${ ips } server": [
-        "${ ips }개 서버"
+      "${ ips } dedicated VPN server": [
+        "${ ips }개 전용 VPN 서버"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 이용 권한"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
@@ -921,6 +927,24 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Domains": [
+        "도메인"
+      ],
+      "Servers": [
+        "서버"
+      ],
+      "Users": [
+        "사용자"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ],
+      "Writing assistant seats": [
+        "글쓰기 도우미 이용 권한"
       ]
     },
     "Alert": {
@@ -1083,48 +1107,45 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2TB 데이터 저장공간"
+        "총 2 TB 저장공간"
       ],
       "3 TB data storage": [
-        "3TB 데이터 저장공간"
+        "3 TB 저장공간"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120개 이상 국가에서 15,000여개 이상의 서버에 액세스"
-      ],
-      "Access advanced AI models": [
-        "고급 AI 모델 액세스"
+        "120개 이상 국가 내의 15,000개 이상 서버에 접근"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
       "Block ads, trackers, and malware": [
-        "광고, 멀웨어 및 트래커 차단"
+        "광고, 트래커 및 멀웨어 차단"
       ],
       "Built-in 2FA authenticator": [
         "내장형 2단계 인증기"
       ],
       "Connect 10 devices at once": [
-        "한 번에 기기 10대 연결"
+        "한 번에 10대 기기 연결"
       ],
       "Full chat history with easy search and favorites": [
-        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+        "쉬운 검색과 즐겨찾기 기능으로 전체 채팅 기록 보관"
       ],
       "Individual accounts for 6 users": [
-        "6인용 개별 계정"
+        "6명 사용자에 대한 개별 계정"
       ],
       "Individual accounts for you and a partner": [
-        "귀하와 파트너를 위한 개별 계정"
+        "회원님과 파트너를 위한 개별 계정"
       ],
       "Stronger protection against cyber threats": [
-        "사이버 위협에 대한 더욱 강력한 보호"
+        "사이버 위협으로부터 대항하는 더 강력한 보호"
       ],
       "Unlimited daily chats": [
-        "무제한 일일 채팅"
+        "일일 무제한 채팅"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
+        "특수 설계된 NetShield는 광고나 추적기 및 멀웨어를 차단하여 기기를 보호하고 브라우징 성능을 향상시켜줍니다."
       ]
     },
     "Browser": {
@@ -3023,6 +3044,9 @@
       ],
       "status page": [
         "상태 페이지"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "이 플랜에서는 면세가 제공되지 않습니다."
       ],
       "The address might be misspelled": [
         "주소가 철자가 틀렸을 수 있습니다"
@@ -5180,8 +5204,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "${ invitationName } 앨범에 가입하는 초대를 거절하려고 합니다. 계속 진행하면 소유자가 다시 초대하지 않는 한 접근할 수 없습니다. 정말 계속하시겠어요?"
@@ -5255,11 +5279,11 @@
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "다음 결제일은 ${ renewalTime } 입니다."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "다음 청구 예정일자는 ${ renewalTime } 입니다. 언제든지 취소할 수 있습니다."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "다음 청구일은 ${ renewalTime }입니다. 즉시 플랜 변경이 필요한 경우 지원 팀에 연락해 주세요."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "다음 청구일은 ${ renewalTime }입니다. 언제든지 취소할 수 있습니다. 즉시 플랜 변경이 필요한 경우 고객 지원팀에 문의해 주세요."
       ],
       "Your online activity is protected": [
         "온라인 활동이 보호됩니다"
@@ -6399,9 +6423,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
-      ],
-      "${ options }-day file version history": [
-        "${ options }일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
@@ -7718,6 +7739,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (세금 제외)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate }에 체험판 종료 후 청구될 금액"
       ],
@@ -8177,15 +8201,6 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -8309,53 +8324,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName }님이 공유함"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Comma Separated Values (.csv)": [
-        "Comma Separated Values (.csv)"
-      ],
-      "Microsoft Excel (.xlsx)": [
-        "Microsoft Excel (.xlsx)"
-      ],
-      "New spreadsheet": [
-        "새로운 스트레드시트"
-      ],
-      "Tab Separated Values (.tsv)": [
-        "Tab Separated Values (.tsv)"
-      ]
-    },
-    "sheets_2025:Info": {
-      "Detect automatically": [
-        "자동 감지"
-      ],
-      "Insert as new sheet": [
-        "새 시트로 삽입"
-      ],
-      "Replace current sheet": [
-        "현재 시트 바꾸기"
-      ],
-      "Replace data at selected cell": [
-        "선택한 셀에서 데이터 바꾸기"
-      ]
-    },
-    "sheets_2025:Label": {
-      "Convert text to numbers, dates, and formulas": [
-        "텍스트를 숫자, 날짜 및 수식으로 변환"
-      ],
-      "Destination": [
-        "대상"
-      ],
-      "Format": [
-        "양식"
-      ],
-      "Separator type": [
-        "구분자 유형"
-      ]
-    },
-    "sheets_2025:Title": {
-      "Import data": [
-        "데이터 불러오기"
       ]
     },
     "Signing preference for emails": {
@@ -8566,8 +8534,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "회원님의 모든 비밀번호를 여러 보관함에 안전하고 체계적으로 보관하세요. "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "비밀번호를 여러 보관함에 안전하고 체계적으로 보관해 보세요."
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel로 계정을 위협으로부터 보호하세요"

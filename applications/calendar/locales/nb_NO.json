@@ -1070,9 +1070,15 @@
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
       ],
-      "${ ips } server": [
-        "${ ips } tjener",
-        "${ ips } tjenere"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikert VPN-tjener",
+        "${ ips } dedikerte VPN-tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-lisens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-lisenser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1086,6 +1092,10 @@
       "${ price } per user": [
         "${ price } per bruker"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-lisens",
+        "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
@@ -1097,6 +1107,24 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Domains": [
+        "Domener"
+      ],
+      "Servers": [
+        "Tjenere"
+      ],
+      "Users": [
+        "Brukere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentlisenser"
       ]
     },
     "Alarm notification": {
@@ -1345,25 +1373,25 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15,000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ tjenere i 120+ land"
       ],
       "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
+        "Få tilgang til avanserte KI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfunksjoner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blokkér annonser, sporere og skadelig programvare"
+        "Blokker annonser, sporere og skadelig programvare"
       ],
       "Built-in 2FA authenticator": [
-        "Innebygget 2FA-autentisering"
+        "Innebygd 2FA-autentisering"
       ],
       "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
+        "Koble til 10 enheter om gangen"
       ],
       "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
+        "Full chathistorikk med enkelt søk og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle kontoer for 6 brukere"
@@ -1380,10 +1408,18 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
+        "Spesialdesignet NetShield beskytter enhetene dine og øker hastigheten på nettlesingen ved å blokkere annonser, sporingsprogrammer og skadelig programvare."
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 måned"
       ],
@@ -1393,14 +1429,23 @@
       "Annually": [
         "Årlig"
       ],
+      "Billed monthly": [
+        "Faktureres månedlig"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livslang tilgang"
       ],
       "Monthly": [
         "Månedlig"
       ],
       "Two-year": [
         "Toårig"
+      ],
+      "Yearly": [
+        "Årlig"
       ]
     },
     "Browser": {
@@ -3878,7 +3923,7 @@
         "Fane lukket"
       ],
       "Tax exemption is not supported for this plan": [
-        "Skattefritak støttes ikke for dette abonnementet"
+        "Skattefritak støttes ikke for denne planen"
       ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
@@ -6362,9 +6407,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nådd maksimalt antall adresser i kontaktgruppen(e):"
@@ -6429,11 +6474,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Din neste faktureringsdato er ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
@@ -9300,6 +9345,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. MVA)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% MVA: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% MVA: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
@@ -9318,20 +9372,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
-      ],
       "Got it": [
         "Skjønner"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inkludert ${ rate }% MVA"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inkludert ${ rate }% MVA: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inkludert ${ rate }% MVA"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inkludert ${ rate }% MVA: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -9351,8 +9405,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
-      "Taxes": [
-        "Avgifter"
+      "Tax ${ rate }%": [
+        "MVA ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "MVA ${ rate }%"
       ],
       "terms and conditions": [
         "vilkår og betingelser"
@@ -9401,9 +9458,6 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
-      ],
-      "VAT": [
-        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -9483,6 +9537,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og forretningsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Fornyelsesprisen avhenger av faktureringsregionen og VAT-nummeret."
       ]
     },
     "Payments.Saved payment method details": {
@@ -9693,9 +9761,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "MVA-nummer"
-      ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
       ],
@@ -9724,6 +9789,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måneds",
+        "${ cycle } måneders"
       ]
     },
     "plus_block": {
@@ -10034,15 +10105,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {
@@ -10433,8 +10504,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Skaff deg ubegrenset med alias for å beskytte din identitet og redusere søppelpost"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Hold passordene dine trygge og organiserte i flere hvelv "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold passordene dine trygge og organiserte i flere hvelv"
       ],
       "Protect your account from threats with Sentinel": [
         "Beskytt din konto mot trusler med Sentinel"
@@ -10612,17 +10683,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Finn ut hvordan du kan få en privat kalenderkobling."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faktureres hvert 2. år"
-      ],
-      "Billed monthly": [
-        "Faktureres månedlig"
-      ],
-      "Billed yearly": [
-        "Faktureres årlig"
       ]
     },
     "Subscription attribute": {

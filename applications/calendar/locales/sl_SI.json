@@ -975,12 +975,6 @@
         "${ domains } dodatne domene po meri",
         "${ domains } dodatnih domen po meri"
       ],
-      "${ ips } server": [
-        "${ ips } strežnik",
-        "${ ips } strežnika",
-        "${ ips } strežnikov",
-        "${ ips } strežnikov"
-      ],
       "${ price } per dedicated server": [
         "${ price } na namenski strežnik"
       ],
@@ -1212,52 +1206,6 @@
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB shrambe podatkov"
-      ],
-      "3 TB data storage": [
-        "3 TB shrambe podatkov"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Dostop do več kot 15.000 strežnikov v več kot 120 državah"
-      ],
-      "Access advanced AI models": [
-        "Dostop do naprednih modelov umetne inteligence"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Vse premium funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
-      ],
-      "Built-in 2FA authenticator": [
-        "Vgrajen overitelj 2FA"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 naprav hkrati"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Celotna zgodovina klepetov z enostavnim iskanjem in priljubljenimi"
-      ],
-      "Individual accounts for 6 users": [
-        "Posamezni računi za 6 uporabnikov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Posamezni računi za vas in partnerja"
-      ],
-      "Stronger protection against cyber threats": [
-        "Močnejša zaščita pred kibernetskimi grožnjami"
-      ],
-      "Unlimited daily chats": [
-        "Neomejeno število dnevnih klepetov"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebej zasnovan NetShield ščiti vaše naprave in pospeši vaše brskanje z blokiranjem oglasov, sledilnikov in zlonamerne programske opreme."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 mesec"
@@ -1276,6 +1224,9 @@
       ],
       "Two-year": [
         "Dve leti"
+      ],
+      "Yearly": [
+        "Letno"
       ]
     },
     "Browser": {
@@ -6035,12 +5986,6 @@
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Datum vašega naslednjega računa je ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Datum vašega naslednjega računa za plačilo je ${ renewalTime }. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
-      ],
       "Your online activity is protected": [
         "Vaša spletna aktivnost je zaščitena"
       ],
@@ -7431,12 +7376,6 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -8860,9 +8799,6 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumem"
       ],
@@ -8881,9 +8817,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
-      "Taxes": [
-        "Davki"
-      ],
       "terms and conditions": [
         "pravili in pogoji"
       ],
@@ -8901,9 +8834,6 @@
       ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
-      ],
-      "VAT": [
-        "DDV"
       ],
       "VAT number": [
         "DDV številka"
@@ -9134,9 +9064,6 @@
       "Thomas": [
         "Janez"
       ],
-      "VAT number": [
-        "ID za DDV"
-      ],
       "Your organization name": [
         "Ime vaše organizacije"
       ],
@@ -9157,6 +9084,14 @@
     "plan customizer, users": {
       "contact": [
         "kontaktirajte"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mesec",
+        "${ cycle } meseca",
+        "${ cycle } meseci",
+        "${ cycle } mesecev"
       ]
     },
     "plus_block": {
@@ -9421,24 +9356,6 @@
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dneva.",
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dni.",
         "Za ponastavitev gesla imate ${ timeRemaining.inDays } dni."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inHours } uro.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } uri.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } ur.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inHours } ur."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minuto.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minuti.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minut.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inMinutes } minut."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekundo.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekundi.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekund.",
-        " Za ponastavitev gesla imate ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -9820,9 +9737,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Imejte svoja gesla varna in organizirana v več trezorjih "
-      ],
       "Protect your account from threats with Sentinel": [
         "Zaščitite svoj račun pred grožnjami s Sentinelom"
       ],
@@ -9909,13 +9823,13 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } shrambe"
+        "Prostor za shrambo ${ app }"
       ],
       "${ app } storage used": [
-        "Porabljene shrambe ${ app }"
+        "Porabljene shrambe za ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } je ${ percentage }% polna"
+        "${ storage } je ${ percentage } % poln."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Z zmanjšanjem paketa boste izgubili naslednje ugodnosti. Ste prepričani, da želite nadaljevati?"
@@ -9951,10 +9865,10 @@
         "Na trenutnem paketu **${ currentPlanName }** vam je preostalo še **${ daysRemaining }** dni uporabe."
       ],
       "Your ${ appStorage } is almost full": [
-        "${ appStorage } je skoraj polna"
+        "${ appStorage } je skoraj poln."
       ],
       "Your ${ appStorage } is full": [
-        "${ appStorage } je polna"
+        "${ appStorage } je poln."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "Vaš ${ productString } je poln ${ percentage } %. ${ cta }."
@@ -9963,7 +9877,7 @@
         "Vaš ${ productString } je poln. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Vaša shramba je polna ${ percentage } %. ${ cta }."
+        "Vaša shramba je ${ percentage } % polna. ${ cta }."
       ],
       "Your storage is full": [
         "Vaša shramba je polna"
@@ -9995,17 +9909,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Preberite, kako pridobiti zasebno povezavo do koledarja."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Zaračunano vsaki dve leti."
-      ],
-      "Billed monthly": [
-        "Obračunano mesečno"
-      ],
-      "Billed yearly": [
-        "Letno zaračunano."
       ]
     },
     "Subscription attribute": {

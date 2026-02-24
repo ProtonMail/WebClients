@@ -1951,11 +1951,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2541,8 +2536,8 @@
       "You may close this tab.": [
         "Puteți închide această filă."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Trebuie să acordați aplicației ${ PASS_APP_NAME } permisiunea pentru accesibilitate."
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Trebuie să acordați permisiunea de accesibilitate pentru ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Aveți nevoie de un seif cu permisiune de editare înainte de a putea importa articole."
@@ -3873,7 +3868,7 @@
         "Spații"
       ],
       "Underscores": [
-        "Subliniere"
+        "Subliniat"
       ]
     },
     "Pass_file_attachments": {

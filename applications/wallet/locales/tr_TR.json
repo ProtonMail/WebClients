@@ -427,9 +427,15 @@
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
       ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
@@ -454,6 +464,24 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Address list": {
@@ -557,6 +585,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
       "1 month": [
         "1 ay"
       ],
@@ -566,14 +602,23 @@
       "Annually": [
         "Yıllık"
       ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
       ],
       "Monthly": [
         "Aylık"
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "BIP 21 error": {
@@ -1016,6 +1061,13 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
       ],
       "Total": [
         "Toplam"
@@ -2229,11 +2281,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Giriş geçerli bir e-posta veya Bitcoin adresi değil"
@@ -2262,8 +2320,14 @@
       "Invalid ZIP code": [
         "Posta kodu geçersiz"
       ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "Payment process canceled": [
         "Ödeme işlemi iptal edildi"
@@ -2320,10 +2384,13 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
+      ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -2331,17 +2398,32 @@
       "The passphrases do not match": [
         "Parola ifadeleri eşleşmiyor"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
       "This offer is not available in your country": [
         "Bu teklif ülkeniz için geçerli değil"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
@@ -3042,9 +3124,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -3058,11 +3140,11 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sonraki fatura zamanınız ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -4502,6 +4584,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -4520,20 +4611,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi hariç: ${ taxAmount }"
-      ],
       "Got it": [
         "Anladım"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "%${ rate } vergi dahil"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -4553,8 +4644,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Taxes": [
-        "Vergiler"
+      "Tax ${ rate }%": [
+        "%${ rate } vergi"
+      ],
+      "Taxes ${ rate }%": [
+        "%${ rate } vergi"
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
@@ -4603,9 +4697,6 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -4685,6 +4776,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4799,9 +4904,6 @@
       "Thomas": [
         "Ali"
       ],
-      "VAT number": [
-        "KDV numarası"
-      ],
       "Your organization name": [
         "Kuruluşunuzun adı"
       ],
@@ -4820,6 +4922,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
       ]
     },
     "plus_block": {
@@ -5081,17 +5189,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2 yılda bir faturalanır"
-      ],
-      "Billed monthly": [
-        "Ayda bir faturalanır"
-      ],
-      "Billed yearly": [
-        "Yılda bir faturalanır"
       ]
     },
     "Subscription attribute": {
@@ -5588,6 +5685,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
     "VPN Plan Feature": {

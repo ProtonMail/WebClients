@@ -1186,9 +1186,9 @@
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
       ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } yapay zeka yardımcısı"
@@ -1196,6 +1196,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
         "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -1213,6 +1219,10 @@
         "${ quantity } özel etki alanı",
         "${ quantity } özel etki alanı"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
@@ -1224,6 +1234,24 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Address action": {
@@ -1632,13 +1660,13 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
@@ -1647,7 +1675,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
         "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
@@ -1656,7 +1684,7 @@
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -1680,6 +1708,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
       "1 month": [
         "1 ay"
       ],
@@ -1689,14 +1725,23 @@
       "Annually": [
         "Yıllık"
       ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
       ],
       "Monthly": [
         "Aylık"
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "Blog": {
@@ -1850,8 +1895,8 @@
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Kuruluşunuzun verilerini taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmanız gerekir. Bu işlem, ${ BRAND_NAME } uygulamasına verilerinizi kopyalama izni verir. Uygulamayı kurduktan sonra buraya geri dönerek ilerleyin. Ayrıntılı bilgi alın"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin. Ayrıntılı bilgi alın"
       ],
       "Transfer errors": [
         "Aktarım hataları"
@@ -2075,6 +2120,13 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
+      ],
       "Total": [
         "Toplam"
       ],
@@ -2086,12 +2138,6 @@
     "Checkout summary": {
       "month": [
         "ay"
-      ],
-      "Servers": [
-        "Sunucular"
-      ],
-      "Users": [
-        "Kullanıcılar"
       ]
     },
     "Collapsible tooltip": {
@@ -3961,8 +4007,8 @@
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
-      "Code wrong or not valid anymore": [
-        "Kod yanlış ya da artık geçersiz"
+      "Code is incorrect or not valid anymore": [
+        "Kod yanlış veya artık geçerli değil"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Faturalar yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
@@ -4034,6 +4080,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "TV'nizin süresi dolmuşsa, TV'nizde Yenile'ye tıklayın ve tekrar deneyin."
       ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
@@ -4302,7 +4351,7 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -6674,9 +6723,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
-      "Free forever": [
-        "Sonsuza kadar ücretsiz"
-      ],
       "Free trial": [
         "Ücretsiz deneme"
       ],
@@ -8225,9 +8271,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "İndirdiğiniz kurtarma dosyalarını kullanarak kilitlenmiş verileri kurtaramazsınız. Ayrıca bu işlem aygıt ile kurtarmayı da kullanımdan kaldırır."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın.",
@@ -8278,11 +8324,11 @@
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sonraki fatura zamanınız ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
@@ -11849,6 +11895,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -11870,20 +11925,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi hariç: ${ taxAmount }"
-      ],
       "Got it": [
         "Anladım"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "%${ rate } vergi dahil"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -11909,8 +11964,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
       ],
-      "Taxes": [
-        "Vergiler"
+      "Tax ${ rate }%": [
+        "%${ rate } vergi"
+      ],
+      "Taxes ${ rate }%": [
+        "%${ rate } vergi"
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
@@ -11962,9 +12020,6 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -12060,6 +12115,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13079,16 +13148,16 @@
         "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -13331,7 +13400,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "${ appName } uygulamasında aç"
+        "${ appName } ile aç"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (Beta) ile aç"
       ]
     },
     "Signup": {
@@ -13559,8 +13631,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Kimliğinizi korumak ve istenmeyen e-postaları azaltmak için sınırsız sayıda takma ad edinin"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun"
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel ile hesabınızı tehditlere karşı koruyun"
@@ -13973,17 +14045,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2 yılda bir faturalanır"
-      ],
-      "Billed monthly": [
-        "Ayda bir faturalanır"
-      ],
-      "Billed yearly": [
-        "Yılda bir faturalanır"
       ]
     },
     "Subscription attribute": {
@@ -16434,7 +16495,7 @@
         "Önerilen"
       ],
       "Save ${ price.checkoutUi.discountPercent }%": [
-        "%${ price.checkoutUi.discountPercent } tasarruf edin"
+        "%${ price.checkoutUi.discountPercent } indirim"
       ]
     },
     "User role": {
@@ -16593,8 +16654,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "${ planTitle } aboneliğinizle daha fazlasını elde edin."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "${ maxDriveSpace } ücretsiz bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi güvende tutun."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi güvende tutun."
       ],
       "Set secure passwords without the hassle.": [
         "Uğraşmadan güvenli parolalar oluşturun."
@@ -16646,11 +16707,6 @@
         "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Ayda bir faturalanır"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 yıl"
@@ -16689,14 +16745,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "${ n } year": [
-        "${ n } yıl",
-        "${ n } yıl"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "${ plan } tarifesini içerir (ilk yıl ücretsiz!)"
       ],

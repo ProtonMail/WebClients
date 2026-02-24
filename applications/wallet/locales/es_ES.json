@@ -427,9 +427,15 @@
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
       ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidores"
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Plazas de ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "${ price } por usuario"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME } AI",
+        "${ seats } licencias de ${ LUMO_APP_NAME } AI"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
@@ -454,6 +464,24 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Address list": {
@@ -557,6 +585,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
       "1 month": [
         "1 mes"
       ],
@@ -566,14 +602,23 @@
       "Annually": [
         "Anual"
       ],
+      "Billed monthly": [
+        "Facturado mensualmente"
+      ],
       "Lifetime": [
         "De por vida"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
       ],
       "Monthly": [
         "Mensual"
       ],
       "Two-year": [
         "Bienal"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "BIP 21 error": {
@@ -1016,6 +1061,13 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
       ],
       "Total": [
         "Total"
@@ -2229,11 +2281,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
       ],
+      "Email is not valid": [
+        "El correo no es válido."
+      ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
+      ],
+      "Incorrect username": [
+        "El nombre de usuario no es correcto."
       ],
       "Input isn't a valid email or bitcoin address": [
         "La entrada no es una dirección de correo electrónico o de Bitcoin válida"
@@ -2262,8 +2320,14 @@
       "Invalid ZIP code": [
         "Código postal inválido"
       ],
+      "Not a valid number": [
+        "No es un número válido."
+      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
         "Se ha cancelado el proceso de pago"
@@ -2325,23 +2389,41 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
+      "The email addresses do not match": [
+        "Las direcciones de correo electrónico no coinciden"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
       "The passphrases do not match": [
         "Las frases de contraseña no coinciden."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo es obligatorio."
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
       "This offer is not available in your country": [
         "Esta oferta no está disponible en tu país"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Utiliza solo letras, números y _.-"
       ],
       "Unknown error": [
         "Error desconocido"
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o un número."
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
@@ -3042,9 +3124,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
-        "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } mes. Puedes cancelar en cualquier momento.",
+        "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puedes cancelar en cualquier momento."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
@@ -3058,11 +3140,11 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Tu próxima fecha de facturación es el ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Puedes cancelar en cualquier momento."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Puedes cancelar en cualquier momento. Ponte en contacto con el servicio de asistencia si necesitas cambiar de plan de inmediato."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
@@ -3627,10 +3709,6 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
-      ],
-      "${ options }-day file version history": [
-        "Historial de ${ options } días de las versiones de los archivos",
-        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
@@ -4502,6 +4580,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incluidos)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
@@ -4520,20 +4607,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
       "Got it": [
         "Entiendo"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Incluye un ${ rate }% de impuestos"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuestos: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -4553,8 +4640,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
       ],
-      "Taxes": [
-        "Impuestos"
+      "Tax ${ rate }%": [
+        "Impuesto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impuestos ${ rate }%"
       ],
       "terms and conditions": [
         "términos y condiciones"
@@ -4603,9 +4693,6 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -4685,6 +4772,20 @@
     "Payments.plan_name": {
       "Free": [
         "Gratuito"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y del ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y del EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4799,9 +4900,6 @@
       "Thomas": [
         "Andrea"
       ],
-      "VAT number": [
-        "Número de IVA"
-      ],
       "Your organization name": [
         "El nombre de tu organización"
       ],
@@ -4820,6 +4918,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } meses"
       ]
     },
     "plus_block": {
@@ -5081,17 +5185,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Perderás acceso a notas e inicios de sesión ilimitados, alias ilimitados de hide-my-email y 20 bóvedas así como al soporte prioritario."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturado cada 2 años"
-      ],
-      "Billed monthly": [
-        "Facturación mensual"
-      ],
-      "Billed yearly": [
-        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -5588,6 +5681,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "VPN Plan Feature": {

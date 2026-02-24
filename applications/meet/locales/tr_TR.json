@@ -2105,16 +2105,16 @@
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Bir oda oluşturmak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
+        "Bir oda oluşturmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Toplantı planlamak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
+        "Bir toplantı zamanlamak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Kişisel toplantı odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı oluşturun**. Otomatik olarak ${ MEET_APP_NAME } sayfasına geri dönersiniz."
+        "Kişisel görüşme odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
       "Turn off camera": [
         "Kamerayı kapat"
@@ -2162,7 +2162,7 @@
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
       "You are almost there": [
-        "Neredeyse vardınız"
+        "Neredeyse tamam"
       ],
       "You can close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
@@ -2296,8 +2296,8 @@
       "Every year": [
         "Her yıl"
       ],
-      "Google calendar": [
-        "Google takvim"
+      "Google Calendar": [
+        "Google Takvim"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -2335,8 +2335,8 @@
       "Operating system version": [
         "İşletim sistemi sürümü"
       ],
-      "Outlook calendar": [
-        "Outlook takvimi"
+      "Outlook Calendar": [
+        "Outlook Takvim"
       ],
       "Passphrase": [
         "Parola ifadesi"
@@ -2411,6 +2411,9 @@
       ]
     },
     "meet": {
+      "Create and copy link": [
+        "Bağlantı oluştur ve kopyala"
+      ],
       "Create new room": [
         "Yeni oda oluştur"
       ],
@@ -2462,6 +2465,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Kişisel görüşme bağlantınız değiştirildi"
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Katılmadığınız bir toplantı için geri bildirim gönderemezsiniz"
       ],
       "Your personal meeting link has been copied to the clipboard": [
         "Kişisel görüşme bağlantınız panoya kopyalandı"
@@ -2845,9 +2851,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur": [
-        "Arka plan bulanıklığı"
-      ],
       "Background blur is not supported on your browser": [
         "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
       ],

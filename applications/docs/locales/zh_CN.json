@@ -910,8 +910,17 @@
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
-      "${ ips } server": [
-        "${ ips } 台服务器"
+      "${ ips } dedicated VPN server": [
+        "${ ips } 个专属 VPN 服务器"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 许可"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 席位"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } 席位"
@@ -921,6 +930,24 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
+      "Domains": [
+        "域名"
+      ],
+      "Servers": [
+        "服务器"
+      ],
+      "Users": [
+        "用户"
+      ],
+      "Writing assistant": [
+        "写作助手"
+      ],
+      "Writing assistant seats": [
+        "写作助手席位"
       ]
     },
     "Alert": {
@@ -1089,42 +1116,42 @@
         "3 TB 数据存储空间"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "访问 120 多个国家/地区的 15,000 多个伺服器"
+        "访问遍布 120 多个国家/地区的 15,000+ 台服务器"
       ],
       "Access advanced AI models": [
         "访问高级 AI 模型"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+        "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "屏蔽广告、跟踪器和恶意软件"
+        "拦截广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
       ],
       "Connect 10 devices at once": [
-        "可同时连接 10 台设备"
+        "同时连接 10 台设备"
       ],
       "Full chat history with easy search and favorites": [
-        "完整的聊天记录，方便搜索和收藏"
+        "完整的聊天历史记录，支持轻松搜索和收藏"
       ],
       "Individual accounts for 6 users": [
         "为 6 位用户提供独立账户"
       ],
       "Individual accounts for you and a partner": [
-        "为您和伴侣提供独立账户"
+        "为您和您的伴侣提供独立账户"
       ],
       "Stronger protection against cyber threats": [
-        "更强大的网络威胁防护"
+        "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "无限聊天次数"
+        "每日无限制聊天"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
+        "专为设备设计的 NetShield 功能，通过拦截广告、跟踪器和恶意软件来保护您的设备并提升浏览速度。"
       ]
     },
     "Browser": {
@@ -4766,6 +4793,9 @@
       "Public documents are not yet enabled for your organization.": [
         "您的组织尚未启用公开文档。"
       ],
+      "Readonly": [
+        "只读"
+      ],
       "Recent documents": [
         "最近使用的文档"
       ],
@@ -4936,6 +4966,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "此文档操作频繁。部分功能可能暂时不可用。"
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "此文档有许多协作者正在同时编辑。实时编辑功能暂时不可用。请刷新以查看最新更新。"
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "该文档可能不存在，或我们暂时无法加载。请刷新页面后重试。"
@@ -5186,8 +5219,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "您即将拒绝加入 ${ invitationName } 相册的邀请。继续操作后，除非相册所有者重新邀请，否则您将无法查看该相册内容。确定要执行此操作吗？"
@@ -5261,11 +5294,11 @@
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一个结算日期是${ renewalTime }。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。"
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。如需立即更改套餐，请联系支持人员。"
       ],
       "Your online activity is protected": [
         "您的在线活动受到保护"
@@ -6407,7 +6440,7 @@
         "${ n } 台设备可同时接入 VPN"
       ],
       "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
+        "${ options } 天的文件版本历史记录"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 终身"
@@ -7724,6 +7757,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（不含税）"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后 ${ formattedDate } 的应付金额"
       ],
@@ -8185,13 +8221,13 @@
         "您有 ${ timeRemaining.inDays } 天重置您的密码。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 您有 ${ timeRemaining.inHours } 小时重置您的密码。"
+        "您有 ${ timeRemaining.inHours } 小时重置您的密码。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
+        "您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
+        "您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
       ]
     },
     "session_recovery:available:link": {
@@ -8318,13 +8354,57 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "逗号分隔值 (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "新建电子表格"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "制表符分隔值 (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "正在创建新电子表格..."
+      ],
+      "Detect automatically": [
+        "自动检测"
+      ],
+      "Insert as new sheet": [
+        "插入为新工作表"
+      ],
+      "Replace current sheet": [
+        "替换当前工作表"
+      ],
+      "Replace data at selected cell": [
+        "替换选定单元格处的数据"
+      ],
+      "Replace spreadsheet": [
+        "替换电子表格"
+      ],
+      "Select a file to import": [
+        "选择要导入的文件"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "当前电子表格（包括其中的所有工作表）将被此版本替换。"
       ]
     },
     "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "将文本转换为数字、日期和公式"
+      ],
+      "Destination": [
+        "目标位置"
+      ],
       "Format": [
         "格式"
+      ],
+      "Separator type": [
+        "分隔符类型"
       ]
     },
     "sheets_2025:Title": {
@@ -8540,8 +8620,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "将您的密码安全地存储并分类管理在多个保险库中"
+      "Keep your passwords safe and organized in multiple vaults": [
+        "将您的密码安全地保存在多个保险库中并进行整理"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保护您的账户免受威胁"
@@ -9393,6 +9473,9 @@
       "Re-signing contacts": [
         "重新签署联系人"
       ],
+      "Readonly": [
+        "只读"
+      ],
       "Recommended actions": [
         "建议采取的行动"
       ],
@@ -9538,7 +9621,7 @@
         "VPN 能为您防护哪些威胁？"
       ],
       "What is a VPN?": [
-        "什么是 VPN？\n"
+        "什么是 VPN？"
       ],
       "What would you like to import?": [
         "您需要导入哪些信息？"

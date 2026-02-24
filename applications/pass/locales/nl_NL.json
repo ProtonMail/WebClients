@@ -1926,8 +1926,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2508,7 +2507,7 @@
       "You may close this tab.": [
         "U kunt dit tabblad nu sluiten."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
