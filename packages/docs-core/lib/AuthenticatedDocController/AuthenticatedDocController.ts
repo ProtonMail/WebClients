@@ -29,7 +29,9 @@ import type { DocumentUpdate } from '@proton/docs-proto'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
-import { decodeUpdate, obfuscateUpdate } from 'yjs'
+import { obfuscateUpdate } from 'yjs'
+import type { UpdateTimelineEntry } from '../utils/create-update-timeline'
+import { createUpdateTimelineEntry, getUpdateHash } from '../utils/create-update-timeline'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -490,39 +492,17 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public async downloadUpdatesInformation() {
-    const entries: {
-      timestamp: number
-      authorAddress: string
-      size: number
-      structCount: number
-      structClientIds: number[]
-      structTypes: string[]
-      deleteSet: Record<number, number>
-    }[] = []
+    const entries: UpdateTimelineEntry[] = []
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (baseCommit) {
       for (const message of baseCommit.messages) {
-        let content = message.content
-        if (isCompressedDocumentUpdate(content)) {
-          content = decompressDocumentUpdate(content)
-        }
-        const info = await getUpdateInfo(content)
-        entries.push({
-          timestamp: message.timestamp,
-          authorAddress: message.authorAddress ?? '',
-          size: content.byteLength,
-          ...info,
-        })
+        const info = await createUpdateTimelineEntry(message)
+        entries.push(info)
       }
     }
     for (const update of this.receivedOrSentDUs) {
-      const info = await getUpdateInfo(update.content)
-      entries.push({
-        timestamp: update.timestamp,
-        authorAddress: update.authorAddress,
-        size: update.content.byteLength,
-        ...info,
-      })
+      const info = await createUpdateTimelineEntry(update)
+      entries.push(info)
     }
     const json = JSON.stringify(entries, null, 2)
     const blob = new Blob([json], { type: 'application/json' })
@@ -570,36 +550,4 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   deinit() {}
-}
-
-async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
-  const decoded = decodeUpdate(content)
-  const structClientIds = new Set<number>()
-  const structTypes = new Set<string>()
-  let structCount = 0
-  for (const struct of decoded.structs) {
-    structClientIds.add(struct.id.client)
-    structTypes.add(struct.constructor.name)
-    structCount++
-  }
-  const deleteCountsPerClientId: Record<number, number> = {}
-  for (const [clientId, items] of decoded.ds.clients) {
-    deleteCountsPerClientId[clientId] = items.length
-  }
-  const hash = await getUpdateHash(content)
-  return {
-    structCount,
-    structClientIds: Array.from(structClientIds),
-    structTypes: Array.from(structTypes),
-    deleteSet: deleteCountsPerClientId,
-    hash,
-  }
-}
-
-async function getUpdateHash(content: Uint8Array<ArrayBuffer>) {
-  const hash = await window.crypto.subtle.digest('SHA-1', content)
-  const hashHex = Array.from(new Uint8Array(hash))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('')
-  return hashHex
 }
