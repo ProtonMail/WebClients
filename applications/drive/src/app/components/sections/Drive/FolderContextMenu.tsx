@@ -7,12 +7,12 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
-import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
@@ -58,7 +58,7 @@ export function FolderContextMenu({
         handleChange: folderChange,
     } = useFolderUploadInput(activeFolder.volumeId, activeFolder.shareId, activeFolder.linkId);
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
-    const [createFileModal, showCreateFileModal] = useCreateFileModal();
+    const { createFileModal, showCreateFileModal } = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const { sharingModal, showSharingModal } = useSharingModal();
 

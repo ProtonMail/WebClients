@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcFile } from '@proton/icons/icons/IcFile';
 
-import { useCreateFileModal } from '../../../modals/CreateFileModal';
+import { useCreateFileModal } from '../../../../modals/CreateFileModal';
 
 const CreateNewFileButton = () => {
-    const [createFileModal, showCreateFileModal] = useCreateFileModal();
+    const { createFileModal, showCreateFileModal } = useCreateFileModal();
 
     return (
         <>
