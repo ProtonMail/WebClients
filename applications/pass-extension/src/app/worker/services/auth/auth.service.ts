@@ -165,9 +165,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                         const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
                         const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                         const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-                        authStore.setOfflineKD(offlineKD);
-                        authStore.setOfflineConfig(offlineConfig);
-                        authStore.setOfflineVerifier(offlineVerifier);
+                        authStore.setOfflineComponents({ offlineKD, offlineConfig, offlineVerifier });
                         await authService.persistSession();
                         ctx.service.store.dispatch(settingsEditIntent('offline', { offlineEnabled: true }, true));
                     }

@@ -58,10 +58,8 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
             await onBeforeCreate?.();
 
             if (!authStore.hasOfflinePassword()) {
-                const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(secret);
-                authStore.setOfflineConfig(offlineConfig);
-                authStore.setOfflineKD(offlineKD);
-                authStore.setOfflineVerifier(offlineVerifier);
+                const components = await generateOfflineComponents(secret);
+                authStore.setOfflineComponents(components);
             }
 
             authStore.setLockMode(adapter.type);

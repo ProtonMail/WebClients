@@ -376,10 +376,7 @@ export const createAuthService = ({
                             const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
                             const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-
-                            authStore.setOfflineKD(offlineKD);
-                            authStore.setOfflineConfig(offlineConfig);
-                            authStore.setOfflineVerifier(offlineVerifier);
+                            authStore.setOfflineComponents({ offlineKD, offlineConfig, offlineVerifier });
 
                             switch (fork.reauth.type) {
                                 case ReauthAction.PW_LOCK_SETUP: {
