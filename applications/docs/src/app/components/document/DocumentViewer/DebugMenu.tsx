@@ -153,6 +153,10 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const isDocument = documentType === 'doc'
   const isSpreadsheet = documentType === 'sheet'
 
+  const [updatesToApply, setUpdatesToApply] = useState<Uint8Array<ArrayBuffer>[]>([])
+  const [appliedUpdates, setAppliedUpdates] = useState(0)
+  const [applyMultiple, setApplyMultiple] = useState(1)
+
   if (!isOpen) {
     return (
       <button
@@ -284,6 +288,91 @@ export function DebugMenu({ docController, editorController, documentState, docu
             </Button>
           </>
         )}
+        <details className="border-weak rounded border">
+          <summary className="bg-norm border-weak flex items-center justify-between rounded border px-3 py-1">
+            Apply updates (ephemeral)
+            <Icon name="chevron-down" />
+          </summary>
+          <div className="flex flex-col gap-2 p-2">
+            <label>
+              <div className="mb-1.5 text-sm leading-none">Updates to apply:</div>
+              <input
+                type="file"
+                accept="application/zip"
+                onChange={async (event) => {
+                  if (!event.target.files) {
+                    return
+                  }
+                  const file = event.target.files[0]
+                  if (!file) {
+                    return
+                  }
+                  const JSZip = (await import('jszip')).default
+                  const zip = new JSZip()
+                  const content = await zip.loadAsync(file)
+                  const filenames = Object.keys(content.files)
+                  filenames.sort((a, b) => parseInt(a) - parseInt(b))
+                  const updates: Uint8Array<ArrayBuffer>[] = []
+                  for (const filename of filenames) {
+                    const file = content.files[filename]
+                    if (!file) {
+                      continue
+                    }
+                    const update = await file.async('uint8array')
+                    updates.push(update as Uint8Array<ArrayBuffer>)
+                  }
+                  setUpdatesToApply(updates)
+                }}
+                disabled={updatesToApply.length > 0}
+              />
+            </label>
+            <div>
+              Applied: {appliedUpdates} / {updatesToApply.length}
+            </div>
+            <label>
+              <div className="mb-1.5 text-sm leading-none">Apply mulitple:</div>
+              <input
+                className="bg-norm"
+                id="ephemeral-updates-apply-multiple-input"
+                type="number"
+                min={1}
+                value={applyMultiple}
+                onChange={(event) => setApplyMultiple(parseInt(event.target.value))}
+                disabled={updatesToApply.length === 0}
+              />
+            </label>
+            <Button
+              size="small"
+              onClick={() => {
+                for (let i = 0; i < applyMultiple; i++) {
+                  const update = updatesToApply[appliedUpdates + i]
+                  if (!update) {
+                    continue
+                  }
+                  void editorController.applyUpdate(update)
+                }
+                setAppliedUpdates(appliedUpdates + applyMultiple)
+              }}
+              disabled={updatesToApply.length === 0}
+            >
+              Apply {applyMultiple} updates
+            </Button>
+            <Button
+              size="small"
+              onClick={() => {
+                const update = updatesToApply[appliedUpdates]
+                if (!update) {
+                  return
+                }
+                void editorController.applyUpdate(update)
+                setAppliedUpdates(appliedUpdates + 1)
+              }}
+              disabled={updatesToApply.length === 0}
+            >
+              Apply next update
+            </Button>
+          </div>
+        </details>
       </div>
     </div>
   )
