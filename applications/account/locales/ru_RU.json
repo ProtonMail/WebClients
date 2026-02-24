@@ -1416,12 +1416,6 @@
         "${ domains } дополнительных пользовательских доменов",
         "${ domains } дополнительных пользовательских доменов"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
-      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -1820,52 +1814,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ТБ для хранения данных"
-      ],
-      "3 TB data storage": [
-        "Хранилище на 3 ТБ"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к более чем 15 000 серверам в более чем 120 странах"
-      ],
-      "Access advanced AI models": [
-        "Доступ к расширенным моделям ИИ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и избранным"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнёра"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
       ]
     },
     "Billing cycle": {
@@ -2327,12 +2275,6 @@
     "Checkout summary": {
       "month": [
         "месяц"
-      ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Users": [
-        "Пользователи"
       ]
     },
     "Collapsible tooltip": {
@@ -4477,9 +4419,6 @@
       ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
-      ],
-      "Code wrong or not valid anymore": [
-        "Неверный или недействительный код"
       ],
       "Condition incomplete": [
         "Условие неполное"
@@ -9356,12 +9295,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление на основе устройства."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
@@ -9415,12 +9348,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Следующая дата выставления счета - ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
@@ -11916,12 +11843,6 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
       ],
@@ -14224,9 +14145,6 @@
       "Secure cloud storage and collaboration for teams.": [
         "Безопасное облачное хранилище и совместная работа для команд."
       ],
-      "Secure email with advanced features for your everyday communications.": [
-        "Защищенная электронная почта с дополнительными функциями для вашего повседневного общения."
-      ],
       "The ideal plan for privacy-conscious power users.": [
         "Идеальный тариф для опытных пользователей, заботящихся о конфиденциальности."
       ]
@@ -15014,24 +14932,6 @@
         "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
         "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -15339,11 +15239,6 @@
         "Доступ предоставил ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Открыть в ${ appName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Ошибка проверки подписи"
@@ -15410,9 +15305,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
-      ],
       "Billing Cycle": [
         "Платежный цикл"
       ],
@@ -15440,9 +15332,6 @@
       "End-to-end encryption": [
         "Сквозное шифрование"
       ],
-      "Fast P2P/BitTorrent downloads": [
-        "Быстрые загрузки P2P/BitTorrent"
-      ],
       "Free": [
         "Free"
       ],
@@ -15451,9 +15340,6 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "получить безопасный адрес ${ MAIL_APP_NAME }."
-      ],
-      "Highest VPN speed": [
-        "Высочайшая скорость VPN"
       ],
       "Manage user access": [
         "Управляйте доступом пользователей"
@@ -15470,17 +15356,11 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Нужно больше места для хранения? Вы можете улучшить тариф в любое время, выбрав от 200 ГБ до 3 ТБ. 5 ГБ достаточно для 2500 фотографий с современного телефона (примерно по 2 МБ каждая)."
       ],
-      "No credit card required:": [
-        "Кредитная карта не требуется:"
-      ],
       "Online document editor": [
         "Онлайн-редактор документов"
       ],
       "Online documents": [
         "Онлайн-документы"
-      ],
-      "Password manager": [
-        "Менеджер паролей"
       ],
       "Pick your perfect plan": [
         "Выберите свой идеальный тариф"
@@ -15517,12 +15397,6 @@
       ],
       "Sign up, protect your files": [
         "Зарегистрируйтесь, защитите свои файлы"
-      ],
-      "Start free trial": [
-        "Начать бесплатный пробный период"
-      ],
-      "Storage": [
-        "Хранилище"
       ],
       "Sync files across devices and users": [
         "Синхронизируйте файлы между устройствами и пользователями"
@@ -16321,17 +16195,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Узнайте как создать приватную ссылку на календарь."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
@@ -19286,9 +19149,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "Получите больше от подписки ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Храните ваши файлы, фотографии и документы в безопасности в бесплатном облачном хранилище ${ maxDriveSpace }."
-      ],
       "Set secure passwords without the hassle.": [
         "Устанавливайте надежные пароли без лишних хлопот."
       ],
@@ -19354,11 +19214,6 @@
         "Серверы в более чем ${ numberOfCountries } странах"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "год"
@@ -19397,18 +19252,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "${ n } year": [
-        "${ n } год",
-        "${ n } года",
-        "${ n } лет",
-        "${ n } лет"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Включает ${ plan } (бесплатно в течение первого года!)"
       ],

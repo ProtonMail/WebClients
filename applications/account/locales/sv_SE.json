@@ -1742,17 +1742,9 @@
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
       ],
-      "${ domains } custom email domain": [
-        "${ domains } anpassad e-postdomän",
-        "${ domains } anpassade e-postdomäner"
-      ],
       "${ ips } dedicated VPN server": [
         "${ ips } dedikerad VPN-server",
         "${ ips } dedikerade VPN-servrar"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servrar"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } AI-assistent"
@@ -1760,6 +1752,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)",
         "${ LUMO_APP_NAME } AI-assistent (för ${ quantity } användare)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-licenser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -1792,6 +1790,21 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Domains": [
+        "Domäner"
+      ],
+      "Servers": [
+        "Servrar"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Address action": {
@@ -2309,19 +2322,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagring"
+        "2 TB datalagringsutrymme"
       ],
       "3 TB data storage": [
-        "3 TB datalagring"
+        "3 TB datalagringsutrymme"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+        "Åtkomst till över 15 000 servrar i över 120 länder"
       ],
       "Access advanced AI models": [
         "Åtkomst till avancerade AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+        "Alla premiumfunktioner för ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
@@ -2333,7 +2346,7 @@
         "Anslut 10 enheter samtidigt"
       ],
       "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkel sökning och favoriter"
+        "Fullständig konversationshistorik med enkel sökning och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -2363,6 +2376,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 månad"
       ],
@@ -2372,8 +2393,14 @@
       "Annually": [
         "Årligen"
       ],
+      "Billed monthly": [
+        "Faktureras månadsvis"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livstidsåtkomst"
       ],
       "Monthly": [
         "Månadsvis"
@@ -3143,13 +3170,6 @@
         "${ users } användare",
         "${ users } användare"
       ],
-      "${ years } year": [
-        "${ years } år",
-        "${ years } år"
-      ],
-      "Forever access": [
-        "Åtkomst för alltid"
-      ],
       "Started ${ formattedStartDate }": [
         "Startade ${ formattedStartDate }"
       ],
@@ -3158,6 +3178,10 @@
       ],
       "Starting today": [
         "Börjar idag"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsumma för ${ cycle } månad",
+        "Delsumma för ${ cycle } månader"
       ],
       "Total": [
         "Totalt"
@@ -3170,12 +3194,6 @@
     "Checkout summary": {
       "month": [
         "månad"
-      ],
-      "Servers": [
-        "Servrar"
-      ],
-      "Users": [
-        "Användare"
       ]
     },
     "Collapsible tooltip": {
@@ -4523,9 +4541,6 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Få ut mer av din ${ planTitle }-prenumeration."
-      ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } gratis molnlagring."
       ],
       "Set secure passwords without the hassle.": [
         "Ställ in säkra lösenord utan krångel."
@@ -6293,9 +6308,6 @@
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
-      ],
-      "Code wrong or not valid anymore": [
-        "Kod fel eller inte giltig längre"
       ],
       "Condition incomplete": [
         "Villkor ofullständig"
@@ -9383,9 +9395,6 @@
       "Cancel anytime": [
         "Avbryt när som helst"
       ],
-      "Cancel anytime.": [
-        "Avbryt när som helst."
-      ],
       "Can’t access your recovery email?": [
         "Kan du inte komma åt din e-post för återställning?"
       ],
@@ -10410,11 +10419,11 @@
       "No addresses exist": [
         "Inga adresser finns"
       ],
+      "No card required": [
+        "Inget kort krävs"
+      ],
       "No countries enabled": [
         "Inga länder aktiverade"
-      ],
-      "No credit card required": [
-        "Inget kreditkort krävs"
       ],
       "No folder selected": [
         "Ingen mapp vald"
@@ -11878,10 +11887,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
-        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
-      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Du har nått gränsen på 50 användare för detta filter. Ta bort ett för att lägga till ett annat."
       ],
@@ -11940,11 +11945,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -14189,9 +14194,6 @@
       "Common sign up issues": [
         "Vanliga registreringsproblem"
       ],
-      "create a ticket": [
-        "skapa ett supportärende"
-      ],
       "Create account": [
         "Skapa konto"
       ],
@@ -15257,7 +15259,7 @@
         "${ n } VPN-anslutningar"
       ],
       "${ options }-day file version history": [
-        "${ options }-dagars filversionshistorik",
+        "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -17590,11 +17592,17 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (exkl. moms)"
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
-      "${ taxRate }% taxes": [
-        "${ taxRate } % moms"
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
@@ -17617,32 +17625,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
-      ],
       "Got it": [
         "Jag förstår"
       ],
-      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inkl. ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inklusive ${ rate } % moms"
       ],
-      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inkl. ${ taxRate } % moms: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
       ],
-      "Including ${ taxRate }% ${ suggestedTaxName }": [
-        "Inklusive ${ taxRate } % ${ suggestedTaxName }"
+      "Including ${ rate }% taxes": [
+        "Inklusive ${ rate } % moms"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes": [
-        "Inklusive ${ taxRate } % moms"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -17674,8 +17670,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
       ],
-      "Taxes": [
-        "Moms"
+      "Tax ${ rate }%": [
+        "Moms ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate } %"
       ],
       "terms and conditions": [
         "användarvillkor"
@@ -17727,9 +17726,6 @@
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "VAT number": [
         "Momsnummer"
@@ -17825,6 +17821,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -18103,8 +18107,8 @@
       ]
     },
     "Plan description": {
-      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "En VPN-lösning som ger säker, obegränsad höghastighetsåtkomst till internet."
+      "A VPN solution that provides secure, high-speed access to the internet.": [
+        "En VPN-lösning som tillhandahåller säker, höghastighetsåtkomst till internet."
       ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Alla ${ BRAND_NAME } premiumprodukter inkluderat i Duo."
@@ -18132,9 +18136,6 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Säker molnlagring och samarbete för team."
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Det idealiska paketet för integritetsmedvetna kraftanvändare."
@@ -19364,15 +19365,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Du har ${ timeRemaining.inHours } timme på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Du har ${ timeRemaining.inMinutes } minut på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Du har ${ timeRemaining.inSeconds } sekund på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
       ]
     },
     "session_recovery:available:link": {
@@ -19703,6 +19704,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Öppna i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Öppna i ${ appName } (beta)"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19716,6 +19720,10 @@
     "Signup": {
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias",
+        "${ FREE_PASS_ALIASES } hide-my-email-alias"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost",
@@ -19736,6 +19744,10 @@
         "${ maxAddresses } extra e-postadress",
         "${ maxAddresses } extra e-postadresser"
       ],
+      "${ maxAddresses } extra email address for you": [
+        "${ maxAddresses } extra e-postadress för dig",
+        "${ maxAddresses } extra e-postadresser för dig"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } kalender",
         "${ maxCalendars } kalendrar"
@@ -19748,9 +19760,6 @@
         "${ PASS_PLUS_VAULTS } valv för dina lösenord",
         "${ PASS_PLUS_VAULTS } valv för dina lösenord"
       ],
-      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
-        "${ referrerName } bjuder in dig att prova ${ BRAND_NAME }."
-      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } molnlagringsutrymme för filer och foton"
       ],
@@ -19759,6 +19768,9 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } säkert lagringsutrymme per användare"
+      ],
+      "${ value } total encrypted storage": [
+        "${ value } total krypterat lagringsutrymme"
       ],
       "${ value } total storage": [
         "${ value } totalt lagringsutrymme"
@@ -19800,9 +19812,6 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
-      ],
       "Amount due now": [
         "Att betala nu"
       ],
@@ -19842,17 +19851,11 @@
       "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Custom fields and file attachment": [
-        "Anpassade fält och filbilagor"
-      ],
-      "Encrypted cloud storage": [
-        "Krypterad molnlagring"
+      "Custom email domain": [
+        "Anpassad e-postdomän"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Krypterad e-post med ${ totalMailStorageSize } lagringsutrymme"
-      ],
-      "Encrypted file sharing and document editor": [
-        "Krypterad fildelning och dokumentredigerare"
       ],
       "Encrypted password manager": [
         "Krypterad lösenordshanterare"
@@ -19865,9 +19868,6 @@
       ],
       "Every free account comes with:": [
         "Varje gratiskonto levereras med:"
-      ],
-      "Fast P2P/BitTorrent downloads": [
-        "Snabba P2P/BitTorrent-nedladdningar"
       ],
       "Free": [
         "Free"
@@ -19890,15 +19890,6 @@
       "Gifted by **${ referrerName }**": [
         "Gåva från **${ referrerName }**"
       ],
-      "Highest VPN speed": [
-        "Högsta VPN-hastighet"
-      ],
-      "Mail": [
-        "E-post"
-      ],
-      "Mailboxes and custom domains for aliases": [
-        "Brevlådor och anpassade domäner för alias"
-      ],
       "Manage user access": [
         "Hantera användaråtkomst"
       ],
@@ -19914,20 +19905,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Behöver du mer lagringsutrymme? Du kan uppgradera när som helst med paket från 200 GB till 3 TB. 5 GB räcker för 2 500 foton från en modern telefon (ca. ~2 MB styck)."
       ],
-      "No credit card required:": [
-        "Inget kreditkort krävs:"
-      ],
       "Online document editor": [
         "Dokumentredigerare online"
       ],
       "Online documents": [
         "Onlinedokument"
       ],
-      "Password manager": [
-        "Lösenordshanterare"
-      ],
       "Password manager for all your devices": [
         "Lösenordshanterare för alla dina enheter"
+      ],
+      "Pick a service to get started.": [
+        "Välj en tjänst för att komma igång."
       ],
       "Pick your perfect plan": [
         "Välj ditt perfekta paket"
@@ -19935,8 +19923,8 @@
       "Private AI assistant with encrypted chat history": [
         "Privat AI-assistent med krypterad chatthistorik"
       ],
-      "Promo applied – ${ checkoutUi.discountPercent }% off": [
-        "Kampanj tillämpad – ${ checkoutUi.discountPercent } % rabatt"
+      "Promo applied – ${ discountItem.discountPercent }% off": [
+        "Kampanj tillämpad – ${ discountItem.discountPercent } % rabatt"
       ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
@@ -19957,14 +19945,11 @@
       "Secure vault sharing and link sharing": [
         "Säker valvdelning och länkdelning"
       ],
-      "Securely share files, photos and documents": [
-        "Dela filer, foton och dokument säkert"
+      "Securely share files and photos": [
+        "Dela filer och foton säkert"
       ],
       "Select ${ title }": [
         "Välj ${ title }"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
-        "Välj en tjänst och njut av premiumversionen i ${ TRIAL_DURATION_DAYS } dagar gratis."
       ],
       "Selected": [
         "Vald"
@@ -19987,17 +19972,8 @@
       "Sign up, protect your files": [
         "Registrera dig, skydda dina filer"
       ],
-      "Start free trial": [
-        "Starta gratis provperiod"
-      ],
       "Start using ${ PASS_APP_NAME }": [
         "Börja använda ${ PASS_APP_NAME }"
-      ],
-      "Storage": [
-        "Lagringsutrymme"
-      ],
-      "Stream your favorite TV shows and movies": [
-        "Streama dina favorit-TV-serier och filmer"
       ],
       "Swiss-based": [
         "Schweizbaserat"
@@ -20007,6 +19983,9 @@
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Organisationsnamnet kommer vara synligt för dina användare när de är inloggade."
+      ],
+      "Then ${ priceElement }": [
+        "Sedan ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Sedan ${ priceWithDiscountPerMonth } per månad, om du prenumererar."
@@ -20426,8 +20405,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Håll dina lösenord säkra och organiserade i flera valv "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Håll dina lösenord säkra och organiserade i flera valv"
       ],
       "Protect your account from threats with Sentinel": [
         "Skydda ditt konto från hot med Sentinel"
@@ -20901,23 +20880,14 @@
       ]
     },
     "Subscription": {
-      "${ discountPercent }% discount applied": [
-        "${ discountPercent } % rabatt tillämpad"
+      "${ discountItem.discountPercent }% discount applied": [
+        "${ discountItem.discountPercent } % rabatt tillämpad"
       ],
-      "${ discountPercent }% off": [
-        "${ discountPercent } % rabatt"
+      "${ discountItem.discountPercent }% off": [
+        "${ discountItem.discountPercent } % rabatt"
       ],
-      "${ trailCycleText } free": [
-        "${ trailCycleText } gratis"
-      ],
-      "Billed every 2 years": [
-        "Faktureras vartannat år"
-      ],
-      "Billed monthly": [
-        "Faktureras månadsvis"
-      ],
-      "Billed yearly": [
-        "Faktureras årligen"
+      "${ trialCycleText } free": [
+        "${ trialCycleText } gratis"
       ],
       "Bound to **${ nameToDisplay }**": [
         "Bunden till **${ nameToDisplay }**"
@@ -24442,9 +24412,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "Få ut mer av din ${ planTitle }-prenumeration."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } gratis molnlagring."
-      ],
       "Set secure passwords without the hassle.": [
         "Ställ in säkra lösenord utan krångel."
       ],
@@ -24499,11 +24466,6 @@
         "Servrar i ${ numberOfCountries }+ länder"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Faktureras månadsvis"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 års"
@@ -24542,14 +24504,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "${ n } year": [
-        "${ n } år",
-        "${ n } år"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Inkluderar ${ plan } (gratis det första året!)"
       ],
