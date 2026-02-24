@@ -1712,7 +1712,7 @@
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "Anonyme ${ particle } ${ participantNumber }"
+        "${ particle } Anonyme ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
         "Voulez-vous vraiment quitter ?"
@@ -1904,7 +1904,7 @@
         "sont importantes"
       ],
       "Meet without restrictions": [
-        "Meet sans restrictions"
+        "Rencontrez sans restrictions"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Réunissez-vous sans restrictions. Passez à la version supérieure pour supprimer la limite d'une heure et accueillir jusqu'à 100 participants."
@@ -2296,7 +2296,7 @@
       "Every year": [
         "Tous les ans"
       ],
-      "Google calendar": [
+      "Google Calendar": [
         "Calendrier Google"
       ],
       "Hide password": [
@@ -2335,7 +2335,7 @@
       "Operating system version": [
         "Version du système d'exploitation"
       ],
-      "Outlook calendar": [
+      "Outlook Calendar": [
         "Calendrier Outlook"
       ],
       "Passphrase": [
@@ -2465,6 +2465,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Votre réunion personnelle a été renouvelée avec succès."
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Vous ne pouvez pas envoyer de commentaire pour une réunion à laquelle vous n'avez pas assisté"
       ],
       "Your personal meeting link has been copied to the clipboard": [
         "Le lien pour votre réunion personnelle a été copié dans le presse-papier"
@@ -2848,9 +2851,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur": [
-        "Flou d'arrière-plan"
-      ],
       "Background blur is not supported on your browser": [
         "Le flou d'arrière-plan n'est pas pris en charge sur votre navigateur"
       ],
