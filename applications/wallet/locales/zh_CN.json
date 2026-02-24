@@ -426,8 +426,14 @@
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
-      "${ ips } server": [
-        "${ ips } 台服务器"
+      "${ ips } dedicated VPN server": [
+        "${ ips } 个专属 VPN 服务器"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 许可"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 席位"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -441,6 +447,9 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
@@ -449,6 +458,24 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
+      "Domains": [
+        "域名"
+      ],
+      "Servers": [
+        "服务器"
+      ],
+      "Users": [
+        "用户"
+      ],
+      "Writing assistant": [
+        "写作助手"
+      ],
+      "Writing assistant seats": [
+        "写作助手席位"
       ]
     },
     "Address list": {
@@ -552,6 +579,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 个月"
       ],
@@ -561,14 +594,23 @@
       "Annually": [
         "按年付费"
       ],
+      "Billed monthly": [
+        "按月计费"
+      ],
       "Lifetime": [
         "终身"
+      ],
+      "Lifetime access": [
+        "终身使用权"
       ],
       "Monthly": [
         "月费"
       ],
       "Two-year": [
         "两年付费"
+      ],
+      "Yearly": [
+        "每年"
       ]
     },
     "BIP 21 error": {
@@ -2221,11 +2263,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "目前无法编辑帐单地址。请稍后重试。"
       ],
+      "Email is not valid": [
+        "无效邮箱"
+      ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
       ],
       "Input isn't a valid email or bitcoin address": [
         "输入的不是有效的邮箱地址或比特币地址"
@@ -2254,8 +2302,14 @@
       "Invalid ZIP code": [
         "无效的邮政编码"
       ],
+      "Not a valid number": [
+        "无效号码"
+      ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
+      ],
+      "Passwords do not match": [
+        "密码不匹配"
       ],
       "Payment process canceled": [
         "支付已取消"
@@ -2317,23 +2371,41 @@
       "The amount due has changed. Please try again.": [
         "应付金额已更改，请重试。"
       ],
+      "The email addresses do not match": [
+        "邮箱地址不一致"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
       ],
       "The passphrases do not match": [
         "密码不匹配"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "该字段至少需要 ${ minimumLength } 个字符。"
+      ],
       "This offer is not available in your country": [
         "此优惠在您所在的国家/地区不可用"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
       ],
       "Unknown payment token status": [
         "支付状态不明"
+      ],
+      "Username must begin with a letter or digit": [
+        "用户名必须以字母或数字开头"
+      ],
+      "Username must end with a letter or digit": [
+        "用户名必须以字母或数字结尾"
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
@@ -3022,8 +3094,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -3037,11 +3109,11 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一个结算日期是${ renewalTime }。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。"
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。如需立即更改套餐，请联系支持人员。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
@@ -3588,7 +3660,7 @@
         "${ n } 台设备可同时接入 VPN"
       ],
       "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
+        "${ options } 天的文件版本历史记录"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 终身"
@@ -4447,6 +4519,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（不含税）"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 税费：${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% 税费：${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后 ${ formattedDate } 的应付金额"
       ],
@@ -4465,20 +4546,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "不含 ${ taxRate }% 税费：${ taxAmount }"
-      ],
       "Got it": [
         "了解"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "含 ${ rate }% 税费"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "包含 ${ taxRate }% 税费：${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "含 ${ rate }% 税费：${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "含 ${ rate }% 税费"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "含 ${ rate }% 税费：${ taxAmountElement }"
       ],
       "MM/YY": [
         "月/年"
@@ -4498,8 +4579,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
-      "Taxes": [
-        "税费"
+      "Tax ${ rate }%": [
+        "税费 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税费 ${ rate }%"
       ],
       "terms and conditions": [
         "服务条款"
@@ -4542,9 +4626,6 @@
       ],
       "Timeout exceeded": [
         "超时"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "VAT number": [
         "增值税号"
@@ -4624,6 +4705,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "续订价格取决于账单地区和 ABN。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "续订价格取决于账单地区和商业编号。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "续订价格取决于账单地区和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "续订价格取决于账单地区和增值税号。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -4738,9 +4833,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "增值税号"
-      ],
       "Your organization name": [
         "您的组织名称"
       ],
@@ -4759,6 +4851,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } 个月"
       ]
     },
     "plus_block": {
@@ -5018,17 +5115,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "每两年付费"
-      ],
-      "Billed monthly": [
-        "每月付费"
-      ],
-      "Billed yearly": [
-        "每年付费"
       ]
     },
     "Subscription attribute": {
@@ -5517,6 +5603,14 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "管理员无法访问私人用户的数据，也无法重置他们的密码。"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "VPN Plan Feature": {

@@ -427,9 +427,15 @@
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
       ],
-      "${ ips } server": [
-        "${ ips } tjener",
-        "${ ips } tjenere"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikert VPN-tjener",
+        "${ ips } dedikerte VPN-tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-lisens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-lisenser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "${ price } per bruker"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-lisens",
+        "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
@@ -454,6 +464,24 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Domains": [
+        "Domener"
+      ],
+      "Servers": [
+        "Tjenere"
+      ],
+      "Users": [
+        "Brukere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentlisenser"
       ]
     },
     "Address list": {
@@ -557,6 +585,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 måned"
       ],
@@ -566,14 +602,23 @@
       "Annually": [
         "Årlig"
       ],
+      "Billed monthly": [
+        "Faktureres månedlig"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livslang tilgang"
       ],
       "Monthly": [
         "Månedlig"
       ],
       "Two-year": [
         "Toårig"
+      ],
+      "Yearly": [
+        "Årlig"
       ]
     },
     "BIP 21 error": {
@@ -2229,11 +2274,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
       ],
+      "Email is not valid": [
+        "E-post er ikke gyldig"
+      ],
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Uriktig brukernavn"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inndata er ikke en gyldig e-postadresse eller bitcoin-adresse"
@@ -2262,8 +2313,14 @@
       "Invalid ZIP code": [
         "Ugyldig postnummer"
       ],
+      "Not a valid number": [
+        "Ikke et gyldig tall"
+      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
+      ],
+      "Passwords do not match": [
+        "Passordene samsvarer ikke"
       ],
       "Payment process canceled": [
         "Betalingsprosessen ble avbrutt"
@@ -2320,10 +2377,13 @@
         "Fane lukket"
       ],
       "Tax exemption is not supported for this plan": [
-        "Skattefritak støttes ikke for dette abonnementet"
+        "Skattefritak støttes ikke for denne planen"
       ],
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
+      ],
+      "The email addresses do not match": [
+        "E-postadressene samsvarer ikke"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
@@ -2331,17 +2391,32 @@
       "The passphrases do not match": [
         "Passordfrasene samsvarer ikke"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
+      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette feltet krever minimum ${ minimumLength } tegn."
+      ],
       "This offer is not available in your country": [
         "Dette tilbudet er ikke tilgjengelig i landet ditt"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv å bruke bare bokstaver, tall og _.-"
       ],
       "Unknown error": [
         "Ukjent feil"
       ],
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brukernavn må begynne med en bokstav eller ett tall"
+      ],
+      "Username must end with a letter or digit": [
+        "Brukernavn må ende med en bokstav eller ett tall"
       ],
       "ZIP code is required": [
         "Postnummer kreves"
@@ -3042,9 +3117,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
@@ -3058,11 +3133,11 @@
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Din neste faktureringsdato er ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
@@ -4502,6 +4577,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. MVA)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% MVA: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% MVA: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
@@ -4520,20 +4604,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
-      ],
       "Got it": [
         "Skjønner"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inkludert ${ rate }% MVA"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inkludert ${ rate }% MVA: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inkludert ${ rate }% MVA"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inkludert ${ rate }% MVA: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4553,8 +4637,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
-      "Taxes": [
-        "Avgifter"
+      "Tax ${ rate }%": [
+        "MVA ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "MVA ${ rate }%"
       ],
       "terms and conditions": [
         "vilkår og betingelser"
@@ -4603,9 +4690,6 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
-      ],
-      "VAT": [
-        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -4685,6 +4769,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og forretningsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen avhenger av faktureringsregion og EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Fornyelsesprisen avhenger av faktureringsregionen og VAT-nummeret."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4799,9 +4897,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "MVA-nummer"
-      ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
       ],
@@ -4820,6 +4915,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måneds",
+        "${ cycle } måneders"
       ]
     },
     "plus_block": {
@@ -5081,17 +5182,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister tilgangen til ubegrensede pålogginger og notater, ubegrensede hide-my-email-aliaser, 20 hvelv samt prioritert støtte."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faktureres hvert 2. år"
-      ],
-      "Billed monthly": [
-        "Faktureres månedlig"
-      ],
-      "Billed yearly": [
-        "Faktureres årlig"
       ]
     },
     "Subscription attribute": {
@@ -5588,6 +5678,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     },
     "VPN Plan Feature": {

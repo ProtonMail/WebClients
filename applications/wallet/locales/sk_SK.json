@@ -429,11 +429,17 @@
         "${ domains } dodatočných vlastných domén",
         "${ domains } dodatočných vlastných domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverov",
-        "${ ips } serverov"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverov",
+        "${ ips } dedikovaných VPN serverov"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licencia"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencií"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -446,6 +452,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } AI licencia",
+        "${ seats }${ LUMO_APP_NAME } AI licencie",
+        "${ seats }${ LUMO_APP_NAME } AI licencií",
+        "${ seats }${ LUMO_APP_NAME } AI licencií"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } licencia",
@@ -464,6 +476,24 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Users": [
+        "Používatelia"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
+      ],
+      "Writing assistant seats": [
+        "Licencie pre asistenta písania"
       ]
     },
     "Address list": {
@@ -567,6 +597,18 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } rokov",
+        "${ n } rokov"
+      ],
       "1 month": [
         "1 mesiac"
       ],
@@ -576,14 +618,23 @@
       "Annually": [
         "Ročne"
       ],
+      "Billed monthly": [
+        "Fakturované mesačne"
+      ],
       "Lifetime": [
         "Doživotne"
+      ],
+      "Lifetime access": [
+        "Doživotný prístup"
       ],
       "Monthly": [
         "Mesačne"
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročne"
       ]
     },
     "BIP 21 error": {
@@ -2245,11 +2296,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
+      "Email is not valid": [
+        "Emailová adresa nie je platná"
+      ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Nesprávne používateľské meno"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Vstup nie je platná emailová alebo bitcoinová adresa"
@@ -2278,8 +2335,14 @@
       "Invalid ZIP code": [
         "Neplatné PSČ"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "Payment process canceled": [
         "Proces platby zrušený"
@@ -2335,8 +2398,14 @@
       "Tab closed": [
         "Karta zatvorená"
       ],
+      "Tax exemption is not supported for this plan": [
+        "Pre tento plán daňová výnimka nie je podporovaná"
+      ],
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
+      ],
+      "The email addresses do not match": [
+        "Emailové adresy sa nezhodujú"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
@@ -2344,17 +2413,32 @@
       "The passphrases do not match": [
         "Heslá sa nezhodujú"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
+      ],
       "This field is required": [
         "Povinné pole"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
+      ],
       "This offer is not available in your country": [
         "Táto ponuka nie je vo vašej krajine dostupná."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Skúste používať iba písmená, číslice a _.-"
       ],
       "Unknown error": [
         "Neznáma chyba"
       ],
       "Unknown payment token status": [
         "Neznámy stav platobného tokenu"
+      ],
+      "Username must begin with a letter or digit": [
+        "Používateľské meno musí začínať písmenom alebo číslom"
+      ],
+      "Username must end with a letter or digit": [
+        "Používateľské meno musí končiť písmenom alebo číslom"
       ],
       "ZIP code is required": [
         "PSČ je povinné"
@@ -3079,11 +3163,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -3097,11 +3181,11 @@
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaša ďalšia fakturácia bude ${ renewalTime }. Zrušiť môžete kedykoľvek."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Zrušiť môžete kedykoľvek. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
@@ -4609,6 +4693,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez DPH)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% dane: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
@@ -4627,20 +4720,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "S výnimkou ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez zahrnutia ${ taxRate }% daní: ${ taxAmount }"
-      ],
       "Got it": [
         "Rozumiem"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Vrátane ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Vrátane ${ rate }% dane"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Vrátane ${ taxRate }% daní: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Vrátane ${ rate }% dane: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Vrátane ${ rate }% daní"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Vrátane ${ rate }% daní: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -4660,8 +4753,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
       ],
-      "Taxes": [
-        "Dane"
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Dane ${ rate }%"
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
@@ -4722,9 +4818,6 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -4804,6 +4897,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovenia závisí od fakturačného regiónu a ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovenia závisí od fakturačného regiónu a IČO firmy."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena obnovenia závisí od fakturačného regiónu a identifikačného čísla pre daň z pridanej hodnoty (IČ DPH)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovenia závisí od fakturačného regiónu a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4918,9 +5025,6 @@
       "Thomas": [
         "Tomáš"
       ],
-      "VAT number": [
-        "IČ DPH"
-      ],
       "Your organization name": [
         "Názov vašej organizácie"
       ],
@@ -4939,6 +5043,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mesiac",
+        "${ cycle } mesiace",
+        "${ cycle } mesiacov",
+        "${ cycle } mesiacov"
       ]
     },
     "plus_block": {
@@ -5206,17 +5318,6 @@
         "Stratíte prístup k neobmedzenému počtu prihlásení a poznámok, neobmedzenému počtu hide-my-email aliasov, 20 trezorom, ako aj prioritnej podpore."
       ]
     },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Účtované každé 2 roky"
-      ],
-      "Billed monthly": [
-        "Účtované mesačne"
-      ],
-      "Billed yearly": [
-        "Účtované ročne"
-      ]
-    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "${ n } VPN pripojenie zdarma na používateľa",
@@ -5352,6 +5453,9 @@
     },
     "Success": {
       "Billing details updated": [
+        "Fakturačné údaje aktualizované"
+      ],
+      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Code sent to ${ methodTo }": [
@@ -5724,6 +5828,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     },
     "VPN Plan Feature": {

@@ -427,9 +427,15 @@
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servers"
+      "${ ips } dedicated VPN server": [
+        "${ ips } toegewijde VPN-server",
+        "${ ips } toegewijde VPN-servers"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licentie"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licenties"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "${ price } per gebruiker"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
@@ -454,6 +464,24 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Dedicated VPN servers": [
+        "Toegewijde VPN-servers"
+      ],
+      "Domains": [
+        "Domeinen"
+      ],
+      "Servers": [
+        "Servers"
+      ],
+      "Users": [
+        "Gebruikers"
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "Writing assistant seats": [
+        "Licenties voor schrijfassistent"
       ]
     },
     "Address list": {
@@ -557,6 +585,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
       "1 month": [
         "1 maand"
       ],
@@ -566,14 +602,23 @@
       "Annually": [
         "Jaarlijks"
       ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
       "Lifetime": [
         "Levenslang"
+      ],
+      "Lifetime access": [
+        "Levenslange toegang"
       ],
       "Monthly": [
         "Maandelijks"
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ],
+      "Yearly": [
+        "Jaarlijks"
       ]
     },
     "BIP 21 error": {
@@ -2229,11 +2274,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Invoer is geen geldig e-mailadres of bitcoin-adres"
@@ -2262,8 +2313,14 @@
       "Invalid ZIP code": [
         "Ongeldige postcode"
       ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -2325,23 +2382,41 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
       "The passphrases do not match": [
         "De wachtwoordzinnen komen niet overeen"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
       "This offer is not available in your country": [
         "Dit aanbod is niet beschikbaar in uw land"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
       "Unknown error": [
         "Onbekende fout"
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "ZIP code is required": [
         "Postcode is vereist"
@@ -3042,9 +3117,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
-        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -3058,11 +3133,11 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Uw volgende facturatiedatum is ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren. Neem contact op met de klantenservice als u een onmiddellijke wijziging van uw abonnement nodig heeft."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3629,8 +3704,8 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
+        "${ options }-daagse bestand versiegeschiedenis",
+        "${ options }-daage bestand versiegeschiedenis"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
@@ -4502,6 +4577,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (excl. btw)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
       ],
@@ -4520,20 +4604,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
-      ],
       "Got it": [
         "Begrepen"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclusief ${ rate }% belasting"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclusief ${ rate }% belasting"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -4553,8 +4637,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
-      "Taxes": [
-        "Belastingen"
+      "Tax ${ rate }%": [
+        "Belasting ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Belasting ${ rate }%"
       ],
       "terms and conditions": [
         "algemene voorwaarden"
@@ -4603,9 +4690,6 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
-      ],
-      "VAT": [
-        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -4685,6 +4769,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het Bedrijfsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4799,9 +4897,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "BTW-nummer"
-      ],
       "Your organization name": [
         "Uw organisatienaam"
       ],
@@ -4820,6 +4915,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } maand",
+        "${ cycle } maanden"
       ]
     },
     "plus_block": {
@@ -5081,17 +5182,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed monthly": [
-        "Maandelijks gefactureerd"
-      ],
-      "Billed yearly": [
-        "Jaarlijks gefactureerd"
       ]
     },
     "Subscription attribute": {
@@ -5588,6 +5678,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "VPN Plan Feature": {

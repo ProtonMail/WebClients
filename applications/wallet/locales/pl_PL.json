@@ -423,12 +423,6 @@
         "${ domains } dodatkowych niestandardowych domen",
         "${ domains } dodatkowych niestandardowych domen"
       ],
-      "${ ips } server": [
-        "${ ips } serwer",
-        "${ ips } serwery",
-        "${ ips } serwerów",
-        "${ ips } serwerów"
-      ],
       "${ price } per dedicated server": [
         "${ price } za dedykowany serwer"
       ],
@@ -569,6 +563,9 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ],
+      "Yearly": [
+        "Rocznie"
       ]
     },
     "BIP 21 error": {
@@ -2159,11 +2156,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
       ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Input isn't a valid email or bitcoin address": [
         "To nie jest adres e-mail lub adres Bitcoin"
@@ -2192,8 +2195,14 @@
       "Invalid ZIP code": [
         "Kod pocztowy jest nieprawidłowy"
       ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
       ],
       "Payment process canceled": [
         "Przetwarzanie płatności zostało anulowane"
@@ -2252,20 +2261,38 @@
       "The amount due has changed. Please try again.": [
         "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
       "The passphrases do not match": [
         "Frazy zabezpieczające nie pasują do siebie"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
@@ -2967,12 +2994,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesięcy ${ renewAmountStr }.",
-        "Następnie zapłacisz co ${ renewCycle } miesiąca ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
@@ -2981,12 +3002,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Twoja następna data rozliczeniowa to ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
@@ -3525,12 +3540,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
@@ -4437,9 +4446,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
-      "Taxes": [
-        "Podatki"
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy ${ subscriptionLength } miesiąc.",
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwsze ${ subscriptionLength } miesiące.",
@@ -4613,9 +4619,6 @@
       "Thomas": [
         "Jan"
       ],
-      "VAT number": [
-        "Numer VAT"
-      ],
       "Your organization name": [
         "Twoja nazwa organizacji"
       ],
@@ -4634,6 +4637,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } miesiąc",
+        "${ cycle } miesiące",
+        "${ cycle } miesięcy",
+        "${ cycle } miesięca"
       ]
     },
     "plus_block": {
@@ -4893,17 +4904,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Po obniżeniu planu stracisz dostęp do nieograniczonych danych logowania, notatek, aliasów hide-my-email, 20 sejfów i priorytetowego wsparcia."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Płatne co 2 lata"
-      ],
-      "Billed monthly": [
-        "Płatne miesięcznie"
-      ],
-      "Billed yearly": [
-        "Płatne rocznie"
       ]
     },
     "Subscription attribute": {
@@ -5407,6 +5407,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "VPN Plan Feature": {
