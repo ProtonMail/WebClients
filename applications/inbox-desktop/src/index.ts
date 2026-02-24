@@ -25,7 +25,7 @@ import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mail
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
-import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
+import { setRequestPermission, extendAppVersionHeader, appSession } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
@@ -34,15 +34,23 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
 import { handleSecondInstance } from "./utils/event-handlers/second-instance";
 import { preventRemoteDebugging, registerDebugStartOptions } from "./debug/start-options";
 import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
+import { profiler } from "./utils/profiler/profiler";
+import { performance } from "node:perf_hooks";
 
 (async function () {
+    const PROFILER_IIFE_START = Date.now();
+    const PROFILER_IIFE_START_PERF = performance.now();
+
     // Prevent remote debugging through CDP (Chrome Dev-Tools Protocol)
     preventRemoteDebugging();
+
+    profiler.init(PROFILER_IIFE_START, PROFILER_IIFE_START_PERF);
 
     initializeLog();
     captureUncaughtErrors();
     registerIOStreamErrorHandlers();
     await initializeSentry();
+    profiler.mark("sentry-done");
     logInitialAppInfo();
     handleStartupMailto();
     handleStartupDeepLink();
@@ -51,6 +59,7 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
     // WARN: We need to wait for this promise because we do not want any code to be executed
     // during the uninstall process (or any other procees that implies application restart).
     await handleSquirrelEvents();
+    profiler.mark("squirrel-done");
 
     // Security addition
     if (process.env.PLAYWRIGHT_TEST !== "true") {
@@ -72,6 +81,7 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
 
     // Store migrations
     performStoreMigrations();
+    profiler.mark("migrations-done");
 
     // Used to make the app run on Parallels Desktop
     // app.commandLine.appendSwitch("no-sandbox");
@@ -117,11 +127,14 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
 
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
+    profiler.mark("app-ready");
 
     handleSecondInstance();
     checkDefaultProtocols();
     connectNetLogger(getWebContentsViewName);
     measureRequestTime();
+    profiler.registerElectronSession(appSession());
+
     initializeUpdateChecks();
     new Notification();
     handleIPCCalls();
@@ -130,6 +143,7 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
     handleWinNotification();
 
     // After this point the main window and views have been created
+    profiler.mark("pre-view-creation");
     viewCreationAppStartup();
     metrics.initialize();
 

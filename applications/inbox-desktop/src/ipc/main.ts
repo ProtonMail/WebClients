@@ -1,4 +1,5 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
+import { performance } from "node:perf_hooks";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update/update";
 import type {
@@ -38,6 +39,7 @@ import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { showPrintDialog } from "../utils/printing/print";
 import { handleLogoutIPC } from "../utils/logout/logout";
+import { profiler } from "../utils/profiler/profiler";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -49,6 +51,7 @@ export const handleIPCCalls = () => {
     });
 
     ipcMain.on("getUserInfo", (event: IpcMainEvent, message: IPCInboxGetUserInfoMessage["type"], userID: string) => {
+        const _t = performance.now();
         switch (message) {
             case "esUserChoice":
                 event.returnValue = getESUserChoice(userID);
@@ -57,9 +60,11 @@ export const handleIPCCalls = () => {
                 ipcLogger.error(`Invalid getUserInfo message: ${message}`);
                 break;
         }
+        profiler.ipcMessage("getUserInfo", message, performance.now() - _t);
     });
 
     ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCInboxGetInfoMessage["type"]) => {
+        const _t = performance.now();
         switch (message) {
             case "theme":
                 event.returnValue = getTheme();
@@ -102,6 +107,7 @@ export const handleIPCCalls = () => {
                 event.returnValue = null;
                 break;
         }
+        profiler.ipcMessage("getInfo", message, performance.now() - _t);
     });
 
     ipcMain.on("clientUpdate", (_e, message: unknown) => {
@@ -110,6 +116,7 @@ export const handleIPCCalls = () => {
             return;
         }
 
+        const _t = performance.now();
         const { type, payload } = message;
 
         switch (type) {
@@ -237,6 +244,7 @@ export const handleIPCCalls = () => {
                 ipcLogger.error(`unknown message type: ${type}`);
                 break;
         }
+        profiler.ipcMessage("clientUpdate", type, performance.now() - _t);
     });
 
     ipcMain.handle(
