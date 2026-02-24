@@ -396,9 +396,6 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
-      "${ ips } server": [
-        "${ ips } 台伺服器"
-      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -513,6 +510,9 @@
       ],
       "Two-year": [
         "兩年"
+      ],
+      "Yearly": [
+        "每年"
       ]
     },
     "bitcoin buy": {
@@ -1948,11 +1948,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "目前不可編輯付款地址。請稍後再試。"
       ],
+      "Email is not valid": [
+        "電郵無效"
+      ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
       ],
       "Error connecting to the Bitcoin API.": [
         "連線到比特幣 API 時發生錯誤。"
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
       ],
       "Input isn't a valid email or bitcoin address": [
         "輸入的電子郵件或比特幣地址無效"
@@ -1981,8 +1987,14 @@
       "Invalid ZIP code": [
         "無效的郵遞區號"
       ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
       ],
       "Payment process canceled": [
         "付款過程已取消"
@@ -2041,23 +2053,41 @@
       "The amount due has changed. Please try again.": [
         "應付金額已變更。請再試一次。"
       ],
+      "The email addresses do not match": [
+        "電子郵件位址不相符"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
       "The passphrases do not match": [
         "密碼片語不符"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
       "This field is required": [
         "此欄位必填"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
+      ],
       "This offer is not available in your country": [
         "此優惠在您的國家/地區無法使用"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
       ],
       "Unknown error": [
         "未知錯誤"
       ],
       "Unknown payment token status": [
         "未知的付款權仗狀態"
+      ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
@@ -2700,9 +2730,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
       ],
@@ -2711,12 +2738,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一個結算日期為${ renewalTime }。"
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
@@ -3237,9 +3258,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-天的檔案版本紀錄"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 終身"
@@ -4083,20 +4101,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
-      ],
       "Got it": [
         "瞭解"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -4112,9 +4118,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
-      ],
-      "Taxes": [
-        "稅金"
       ],
       "terms and conditions": [
         "合約條款"
@@ -4154,9 +4157,6 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
-      ],
-      "VAT": [
-        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -4341,9 +4341,6 @@
       "Thomas": [
         "湯姆斯"
       ],
-      "VAT number": [
-        "增值稅編號（VAT）"
-      ],
       "Your organization name": [
         "貴組織名稱"
       ],
@@ -4359,6 +4356,11 @@
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }個月"
       ]
     },
     "plus_block": {
@@ -4550,17 +4552,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "雙年繳制"
-      ],
-      "Billed monthly": [
-        "月繳"
-      ],
-      "Billed yearly": [
-        "年繳"
       ]
     },
     "Subscription attribute": {
@@ -4975,6 +4966,14 @@
       ],
       "Name": [
         "名稱"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "VPN Plan Feature": {

@@ -402,12 +402,6 @@
         "${ domains } дополнительных пользовательских доменов",
         "${ domains } дополнительных пользовательских доменов"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
-      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -542,6 +536,9 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ]
     },
     "BIP 21 error": {
@@ -2110,11 +2107,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Введён неверный адрес эл. почты или bitcoin-адрес"
@@ -2140,8 +2143,14 @@
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -2185,20 +2194,38 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
       "The passphrases do not match": [
         "Кодовые фразы не совпадают"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
       "ZIP code is required": [
         "Необходимо указать почтовый индекс"
@@ -2885,12 +2912,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
       ],
@@ -2899,12 +2920,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Следующая дата выставления счета - ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
@@ -3429,12 +3444,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
@@ -4432,9 +4441,6 @@
       "Thomas": [
         "Томас"
       ],
-      "VAT number": [
-        "Номер плательщика НДС"
-      ],
       "Your organization name": [
         "Название вашей организации"
       ],
@@ -4445,6 +4451,14 @@
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяца",
+        "${ cycle } месяцев",
+        "${ cycle } месяцев"
       ]
     },
     "plus_block": {
@@ -4695,17 +4709,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
@@ -5203,6 +5206,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "VPN Plan Feature": {

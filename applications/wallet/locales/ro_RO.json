@@ -428,10 +428,16 @@
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }"
       ],
-      "${ ips } server": [
-        "Servere: ${ ips }",
-        "Servere: ${ ips }",
-        "Servere: ${ ips }"
+      "${ ips } dedicated VPN server": [
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licențe ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -444,6 +450,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -459,6 +470,24 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Domains": [
+        "Domenii"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ],
+      "Writing assistant seats": [
+        "Licențe asistent de scriere"
       ]
     },
     "Address list": {
@@ -562,6 +591,16 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ani",
+        "${ n } de ani"
+      ],
       "1 month": [
         "O lună"
       ],
@@ -571,14 +610,23 @@
       "Annually": [
         "Anual"
       ],
+      "Billed monthly": [
+        "Facturat lunar"
+      ],
       "Lifetime": [
         "Pe viață"
+      ],
+      "Lifetime access": [
+        "Acces pe viață"
       ],
       "Monthly": [
         "Lunar"
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "BIP 21 error": {
@@ -2237,11 +2285,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Editarea adresei de facturare nu este disponibilă momentan. Reîncercați mai târziu."
       ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Nume de utilizator incorect."
       ],
       "Input isn't a valid email or bitcoin address": [
         "Intrarea nu este o adresă de e-mail sau bitcoin validă."
@@ -2270,8 +2324,14 @@
       "Invalid ZIP code": [
         "Cod poștal nevalid"
       ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
       ],
       "Payment process canceled": [
         "Procesarea plății a fost anulată."
@@ -2333,23 +2393,41 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
+      "The email addresses do not match": [
+        "Adresele de e-mail nu se potrivesc."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
       ],
       "The passphrases do not match": [
         "Frazele de acces nu se potrivesc."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minimum de ${ minimumLength } caractere."
+      ],
       "This offer is not available in your country": [
         "Această ofertă nu este disponibilă țara actuală."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
       ],
       "Unknown error": [
         "Eroare necunoscută"
       ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
+      ],
+      "Username must begin with a letter or digit": [
+        "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
+      ],
+      "Username must end with a letter or digit": [
+        "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
@@ -3062,10 +3140,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
@@ -3079,11 +3157,11 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Data următoarei facturi este ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -3670,9 +3748,9 @@
         "${ n } de conexiuni VPN"
       ],
       "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin pe viață"
@@ -4557,6 +4635,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (fără TVA)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% TVA: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% TVA: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după probare la ${ formattedDate }"
       ],
@@ -4575,20 +4662,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Am înțeles"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclusiv ${ rate }% TVA"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusiv ${ rate }% TVA: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclusiv ${ rate }% TVA"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclusiv ${ rate }% TVA: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -4608,8 +4695,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
-      "Taxes": [
-        "Taxe"
+      "Tax ${ rate }%": [
+        "TVA ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "TVA ${ rate }%"
       ],
       "terms and conditions": [
         "termenii și condițiile"
@@ -4664,9 +4754,6 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -4746,6 +4833,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4860,9 +4961,6 @@
       "Thomas": [
         "Toma"
       ],
-      "VAT number": [
-        "Valoare TVA"
-      ],
       "Your organization name": [
         "Numele organizației"
       ],
@@ -4881,6 +4979,13 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } lună",
+        "${ cycle } luni",
+        "${ cycle } de luni"
       ]
     },
     "plus_block": {
@@ -5144,17 +5249,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Veți pierde accesul la autentificări și note nelimitate, aliasuri hide-my-email nelimitate, 20 de seifuri, precum și la asistența prioritară."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturat la doi ani"
-      ],
-      "Billed monthly": [
-        "Facturat lunar"
-      ],
-      "Billed yearly": [
-        "Facturat anual"
       ]
     },
     "Subscription attribute": {
@@ -5659,6 +5753,18 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "VPN Plan Feature": {

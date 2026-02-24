@@ -426,9 +426,6 @@
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
-      "${ ips } server": [
-        "${ ips } server"
-      ],
       "${ price } per dedicated server": [
         "${ price } per server khusus"
       ],
@@ -569,6 +566,9 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ],
+      "Yearly": [
+        "Tahunan"
       ]
     },
     "BIP 21 error": {
@@ -2221,11 +2221,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Pengeditan alamat tagihan tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
+      "Email is not valid": [
+        "Email tidak valid"
+      ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
         "Terjadi kesalahan saat menghubungkan ke API Bitcoin."
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Input bukan merupakan alamat email atau bitcoin yang valid"
@@ -2254,8 +2260,14 @@
       "Invalid ZIP code": [
         "Kode pos tidak valid"
       ],
+      "Not a valid number": [
+        "Nomor telepon tidak valid"
+      ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
+      ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
       ],
       "Payment process canceled": [
         "Proses pembayaran dibatalkan"
@@ -2314,20 +2326,38 @@
       "The amount due has changed. Please try again.": [
         "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
+      "The email addresses do not match": [
+        "Alamat email tidak sesuai"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
       ],
       "The passphrases do not match": [
         "Frasa sandi tidak cocok"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Isi kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
       "This field is required": [
         "Kolom ini wajib diisi"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nama pengguna harus dimulai dengan huruf atau angka"
+      ],
+      "Username must end with a letter or digit": [
+        "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "ZIP code is required": [
         "Kode pos wajib diisi"
@@ -3016,9 +3046,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah file baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
@@ -3030,12 +3057,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
@@ -3571,9 +3592,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
-      ],
-      "${ options }-day file version history": [
-        "Riwayat versi file ${ options } hari"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
@@ -4444,20 +4462,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Belum termasuk pajak ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Paham"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Termasuk pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "BB/TT"
@@ -4476,9 +4482,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
-      ],
-      "Taxes": [
-        "Pajak"
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -4512,9 +4515,6 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
-      ],
-      "VAT": [
-        "PPN"
       ],
       "VAT number": [
         "Nomor PPN"
@@ -4708,9 +4708,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "Nomor PPN"
-      ],
       "Your organization name": [
         "Nama organisasi Anda"
       ],
@@ -4729,6 +4726,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } bulan"
       ]
     },
     "plus_block": {
@@ -4988,17 +4990,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Anda akan kehilangan akses ke login dan catatan tanpa batas, alias hide-my-email tanpa batas, 20 brankas, serta dukungan prioritas."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed monthly": [
-        "Ditagihkan bulanan"
-      ],
-      "Billed yearly": [
-        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
@@ -5484,6 +5475,14 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admin tidak dapat mengakses data pengguna pribadi dan tidak dapat mengatur ulang kata sandinya."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "VPN Plan Feature": {

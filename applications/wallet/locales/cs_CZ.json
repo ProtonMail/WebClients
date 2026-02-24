@@ -429,11 +429,14 @@
         "${ domains } dalších vlastních domén",
         "${ domains } dalších vlastních domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverů",
-        "${ ips } serverů"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverů",
+        "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licence"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -446,6 +449,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -464,6 +473,15 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Users": [
+        "Uživatelé"
+      ],
+      "Writing assistant seats": [
+        "Licence asistenta psaní"
       ]
     },
     "Address list": {
@@ -567,6 +585,18 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
       "1 month": [
         "1 měsíc"
       ],
@@ -576,6 +606,9 @@
       "Annually": [
         "Ročně"
       ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
       "Lifetime": [
         "Doživotní"
       ],
@@ -584,6 +617,9 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročně"
       ]
     },
     "BIP 21 error": {
@@ -2245,11 +2281,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
+      "Email is not valid": [
+        "E-mailová adresa není platná"
+      ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Nesprávné uživatelské jméno"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Zadání není platnou e-mailovou nebo Bitcoinovou adresou"
@@ -2278,8 +2320,14 @@
       "Invalid ZIP code": [
         "Neplatné PSČ"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
       ],
       "Payment process canceled": [
         "Platba byla zrušena"
@@ -2335,8 +2383,14 @@
       "Tab closed": [
         "Záložka zavřena"
       ],
+      "Tax exemption is not supported for this plan": [
+        "U tohoto tarifu není podporováno osvobození od daně"
+      ],
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
+      ],
+      "The email addresses do not match": [
+        "E-mailové adresy se neshodují"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
@@ -2344,17 +2398,32 @@
       "The passphrases do not match": [
         "Hesla se neshodují"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
       "This field is required": [
         "Toto pole je povinné"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
+      ],
       "This offer is not available in your country": [
         "Tato nabídka není ve vaší zemi dostupná"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
       ],
       "Unknown error": [
         "Neznámá chyba"
       ],
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
+      ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
@@ -3079,11 +3148,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
-        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -3096,12 +3165,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Datum příští platby je ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -3706,12 +3769,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -4627,20 +4684,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% daně: ${ taxAmount }"
-      ],
       "Got it": [
         "Rozumím"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -4659,9 +4704,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
-      ],
-      "Taxes": [
-        "Daně"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -4722,9 +4764,6 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -4804,6 +4843,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4918,9 +4965,6 @@
       "Thomas": [
         "Jméno"
       ],
-      "VAT number": [
-        "DIČ"
-      ],
       "Your organization name": [
         "Název vaší organizace"
       ],
@@ -4939,6 +4983,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
       ]
     },
     "plus_block": {
@@ -5204,17 +5256,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Účtováno každé 2 roky"
-      ],
-      "Billed monthly": [
-        "Účtováno měsíčně"
-      ],
-      "Billed yearly": [
-        "Účtováno ročně"
       ]
     },
     "Subscription attribute": {
@@ -5724,6 +5765,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "VPN Plan Feature": {

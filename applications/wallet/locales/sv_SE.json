@@ -427,9 +427,15 @@
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servrar"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikerad VPN-server",
+        "${ ips } dedikerade VPN-servrar"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-licenser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "${ price } per användare"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI-licens",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenser"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
@@ -454,6 +464,21 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Domains": [
+        "Domäner"
+      ],
+      "Servers": [
+        "Servrar"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Address list": {
@@ -557,6 +582,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 månad"
       ],
@@ -566,14 +599,23 @@
       "Annually": [
         "Årligen"
       ],
+      "Billed monthly": [
+        "Faktureras månadsvis"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livstidsåtkomst"
       ],
       "Monthly": [
         "Månadsvis"
       ],
       "Two-year": [
         "Tvåårig"
+      ],
+      "Yearly": [
+        "Årsvis"
       ]
     },
     "BIP 21 error": {
@@ -1016,6 +1058,10 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsumma för ${ cycle } månad",
+        "Delsumma för ${ cycle } månader"
       ],
       "Total": [
         "Totalt"
@@ -2223,11 +2269,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadress är inte tillgänglig just nu. Försök igen senare."
       ],
+      "Email is not valid": [
+        "E-post är inte giltig"
+      ],
       "Enter 6 digits": [
         "Ange 6 siffror"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
+      ],
+      "Incorrect username": [
+        "Felaktigt användarnamn"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inmatning är inte en giltig e-postadress eller Bitcoin-adress"
@@ -2256,8 +2308,14 @@
       "Invalid ZIP code": [
         "Ogiltigt postnummer"
       ],
+      "Not a valid number": [
+        "Inte ett giltigt nummer"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
+      ],
+      "Passwords do not match": [
+        "Lösenorden matchar inte"
       ],
       "Payment process canceled": [
         "Betalningsprocess avbruten"
@@ -2319,23 +2377,41 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
+      "The email addresses do not match": [
+        "E-postadresserna matchar inte"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
       ],
       "The passphrases do not match": [
         "Lösenfraserna matchar inte"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
+      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
       "This offer is not available in your country": [
         "Detta erbjudande är inte tillgängligt i ditt land"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova använda endast bokstäver, siffror och _.-"
       ],
       "Unknown error": [
         "Okänt fel"
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
+      ],
+      "Username must begin with a letter or digit": [
+        "Användarnamn måste börja med en bokstav eller siffra"
+      ],
+      "Username must end with a letter or digit": [
+        "Användarnamn måste sluta med en bokstav eller siffra"
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
@@ -3033,10 +3109,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
-        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
@@ -3046,11 +3118,11 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
@@ -3614,7 +3686,7 @@
         "${ n } VPN-anslutningar"
       ],
       "${ options }-day file version history": [
-        "${ options }-dagars filversionshistorik",
+        "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -4493,6 +4565,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (exkl. moms)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -4511,20 +4592,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
-      ],
       "Got it": [
         "Jag förstår"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inklusive ${ rate } % moms"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inklusive ${ rate } % moms"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -4544,8 +4625,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
-      "Taxes": [
-        "Moms"
+      "Tax ${ rate }%": [
+        "Moms ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate } %"
       ],
       "terms and conditions": [
         "användarvillkor"
@@ -4594,9 +4678,6 @@
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "VAT number": [
         "Momsnummer"
@@ -4676,6 +4757,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4790,9 +4879,6 @@
       "Thomas": [
         "Tomas"
       ],
-      "VAT number": [
-        "Momsnummer"
-      ],
       "Your organization name": [
         "Ditt organisationsnamn"
       ],
@@ -4811,6 +4897,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } månad",
+        "${ cycle } månader"
       ]
     },
     "plus_block": {
@@ -5072,17 +5164,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du kommer förlora åtkomst till obegränsat antal inloggningar och anteckningar, obegränsat antal hide-my-email, 20 valv samt prioriterad support."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faktureras vartannat år"
-      ],
-      "Billed monthly": [
-        "Faktureras månadsvis"
-      ],
-      "Billed yearly": [
-        "Faktureras årligen"
       ]
     },
     "Subscription attribute": {
@@ -5579,6 +5660,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     },
     "VPN Plan Feature": {
