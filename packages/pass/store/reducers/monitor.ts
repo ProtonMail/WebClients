@@ -5,12 +5,11 @@ import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress }
 import { AddressType, type MonitorAddress, type MonitorDomain } from '@proton/pass/lib/monitor/types';
 import {
     addCustomAddress,
-    bootSuccess,
     deleteCustomAddress,
     getBreaches,
+    matchSyncAction,
     resolveAddressMonitor,
     setBreaches,
-    sync,
     toggleAddressMonitor,
     verifyCustomAddress,
 } from '@proton/pass/store/actions';
@@ -36,8 +35,7 @@ const intoMonitorState = (breaches: BreachesGetResponse): MonitorState => ({
 });
 
 const monitorReducer: Reducer<MonitorState> = (state = null, action) => {
-    if (bootSuccess.match(action) && action.payload?.v === 2) return intoMonitorState(action.payload.breaches);
-    if (sync.match(action) && action.payload.v === 2) return intoMonitorState(action.payload.breaches);
+    if (matchSyncAction(action) && action.payload?.v === 2) return intoMonitorState(action.payload.breaches);
     if (or(getBreaches.success.match, setBreaches.match)(action)) return intoMonitorState(action.payload);
 
     if (state) {

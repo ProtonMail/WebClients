@@ -43,6 +43,6 @@ export const getUserAccessFailure = createAction(
 
 export const getUserSettings = requestActionsFactory<string, UserSettings>('user::settings::get')({ key: identity });
 export const setUserAccess = createAction<HydratedAccessState>('user::access');
-export const setUserEventID = createAction('user::userEventID::set', (userEventID: MaybeNull<string>) =>
-    withCache({ payload: { userEventID } })
+export const setUserEventID = createAction('user::userEventID::set', (userEventId: MaybeNull<string>) =>
+    withCache({ payload: { userEventId } })
 );

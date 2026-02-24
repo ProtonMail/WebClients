@@ -61,9 +61,9 @@ export function* drainInvites() {
     yield call(processGroupInvitePollingEvent, groupInvites);
 }
 
-export function* updateSyncStrategy(strategy: SyncStrategy, userEventID: MaybeNull<string>) {
+export function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNull<string>) {
     setSyncStrategy(strategy);
-    yield put(syncMigration({ userEventID, strategy }));
+    yield put(syncMigration({ userEventId, strategy }));
 }
 
 export function* notifyInactiveShares() {
@@ -101,7 +101,7 @@ export function* notifyInactiveShares() {
  * on next boot. */
 export function* migrateV2(options: RootSagaOptions) {
     /** 1. Anchor V2 event cursor at current server state */
-    const userEventID: string = yield call(getUserEventLatestID);
+    const userEventId: string = yield call(getUserEventLatestID);
 
     /** 2. Revalidate user-access */
     const userAccess: HydratedAccessState = yield call(getUserAccess);
@@ -117,7 +117,7 @@ export function* migrateV2(options: RootSagaOptions) {
     yield call(drainInvites);
 
     /** 4. Commit strategy switch + V2 cursor */
-    yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS, userEventID);
+    yield call(updateSyncStrategy, SyncStrategy.USER_EVENTS, userEventId);
 }
 
 /** V2 → V1 rollback. Full V1 sync re-establishes all per-share state
