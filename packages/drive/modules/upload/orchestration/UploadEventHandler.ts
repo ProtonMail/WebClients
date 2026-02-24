@@ -1,10 +1,13 @@
+import metrics from '@proton/metrics';
+
+import { TransferSpeedMetrics } from '../../../internal/performance/transferSpeedMetrics';
 import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadEvent, FolderCreationEvent, PhotosUploadEvent, UploadEvent } from '../types';
 import { UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
-import { uploadLogError } from '../utils/uploadLogger';
+import { uploadLogDebug, uploadLogError } from '../utils/uploadLogger';
 import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
 
@@ -17,6 +20,13 @@ export class UploadEventHandler {
         [K in UploadEvent['type']]: (event: Extract<UploadEvent, { type: K }>) => void | Promise<void>;
     };
     private eventSubscriptions = new Map<string, (event: UploadEvent) => Promise<void>>();
+    private uploadSpeedMetrics = new TransferSpeedMetrics((values) => {
+        uploadLogDebug('Upload speed metrics', values);
+        metrics.drive_upload_speed_histogram.observe({
+            Labels: { context: 'foreground', pipeline: 'default' },
+            Value: Math.round(values.kibibytesPerSecond),
+        });
+    });
 
     constructor(
         private capacityManager: CapacityManager,
@@ -87,6 +97,7 @@ export class UploadEventHandler {
     private handleFileStarted(event: FileUploadEvent & { type: 'file:started' }): void {
         const controllerStore = useUploadControllerStore.getState();
         controllerStore.setUploadController(event.uploadId, event.controller);
+        this.uploadSpeedMetrics.onFileStarted(event.uploadId);
     }
 
     private handleFileProgress(event: FileUploadEvent & { type: 'file:progress' }): void {
@@ -94,6 +105,7 @@ export class UploadEventHandler {
         const isPaused = event.isForPhotos
             ? this.sdkPhotosTransferActivity.isPaused()
             : this.sdkTransferActivity.isPaused();
+        this.uploadSpeedMetrics.onFileProgress(event.uploadId, event.uploadedBytes, isPaused);
         if (isPaused || queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled) {
             return;
         }
@@ -109,6 +121,7 @@ export class UploadEventHandler {
         const queueStore = useUploadQueueStore.getState();
         const controllerStore = useUploadControllerStore.getState();
 
+        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.Finished,
             nodeUid: event.nodeUid,
@@ -123,6 +136,7 @@ export class UploadEventHandler {
 
     private async handleFileError(event: FileUploadEvent & { type: 'file:error' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
+        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
         if (queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled) {
             return;
         }
@@ -184,6 +198,7 @@ export class UploadEventHandler {
     private async handlePhotoExist(event: PhotosUploadEvent & { type: 'photo:exist' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
 
+        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.PhotosDuplicate,
             nodeUid: event.duplicateUids[0],
@@ -194,6 +209,7 @@ export class UploadEventHandler {
         const queueStore = useUploadQueueStore.getState();
         const controllerStore = useUploadControllerStore.getState();
 
+        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
         const controller = controllerStore.getController(event.uploadId);
         if (controller) {
             controller.abortController.abort();
@@ -218,5 +234,9 @@ export class UploadEventHandler {
         });
         this.cancelFolderChildren(event.uploadId);
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    }
+
+    dispose(): void {
+        this.uploadSpeedMetrics.dispose();
     }
 }

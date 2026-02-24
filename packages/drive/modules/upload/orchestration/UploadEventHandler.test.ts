@@ -87,6 +87,10 @@ describe('UploadEventHandler', () => {
         );
     });
 
+    afterEach(() => {
+        handler?.dispose();
+    });
+
     describe('handleEvent - file:queued', () => {
         it('should set abort controller for queued file', async () => {
             const mockAbortController = new AbortController();
