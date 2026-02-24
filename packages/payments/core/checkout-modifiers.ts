@@ -1,5 +1,5 @@
-import type { RequiredCheckResponse } from './checkout';
 import { SubscriptionMode } from './subscription/constants';
+import type { SubscriptionEstimation } from './subscription/interface';
 
 export interface CheckoutModifiers {
     isProration: boolean;
@@ -9,7 +9,7 @@ export interface CheckoutModifiers {
     isCustomBilling: boolean;
 }
 
-export const getCheckoutModifiers = (checkResult: RequiredCheckResponse): CheckoutModifiers => {
+export const getCheckoutModifiers = (checkResult: SubscriptionEstimation): CheckoutModifiers => {
     if (checkResult.optimistic) {
         return {
             isProration: false,

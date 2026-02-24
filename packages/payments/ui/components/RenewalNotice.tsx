@@ -9,7 +9,7 @@ import Time, { getReadableTime } from '@proton/components/components/time/Time';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
-import { type PaymentsCheckoutUI, type RequiredCheckResponse, getCheckoutUi } from '../../core/checkout';
+import { type PaymentsCheckoutUI, getCheckoutUi } from '../../core/checkout';
 import { type CheckoutModifiers, getCheckoutModifiers } from '../../core/checkout-modifiers';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '../../core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '../../core/interface';
@@ -17,7 +17,7 @@ import { getPlanNameFromIDs, isLifetimePlanSelected } from '../../core/plan/help
 import type { PlansMap } from '../../core/plan/interface';
 import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
 import { getPlanName, getPlanTitle } from '../../core/subscription/helpers';
-import type { Coupon, Subscription } from '../../core/subscription/interface';
+import type { Coupon, Subscription, SubscriptionEstimation } from '../../core/subscription/interface';
 import { isFreeSubscription } from '../../core/type-guards';
 
 const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
@@ -433,7 +433,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     subscription,
     app,
 }: {
-    checkResult: RequiredCheckResponse;
+    checkResult: SubscriptionEstimation;
     plansMap: PlansMap;
     planIDs: PlanIDs;
     short?: boolean;

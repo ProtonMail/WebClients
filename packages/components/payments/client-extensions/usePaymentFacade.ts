@@ -12,7 +12,6 @@ import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type Currency,
-    type EnrichedCheckResponse,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type PLANS,
@@ -25,6 +24,7 @@ import {
     type PlanIDs,
     type SavedPaymentMethod,
     type Subscription,
+    type SubscriptionEstimation,
     SubscriptionMode,
 } from '@proton/payments';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -100,7 +100,7 @@ type PaymentFacadeProps = {
      * The selected plan will impact the displayed payment methods.
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
-    checkResult?: EnrichedCheckResponse;
+    checkResult?: SubscriptionEstimation;
     theme?: ThemeLike;
     billingAddress?: BillingAddress;
     user?: User;

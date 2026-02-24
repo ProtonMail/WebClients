@@ -1,8 +1,8 @@
 import {
     type CheckSubscriptionData,
     type Currency,
-    type EnrichedCheckResponse,
     type RequestOptions,
+    type SubscriptionEstimation,
     isMainCurrency,
 } from '@proton/payments';
 import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -22,7 +22,7 @@ export const useRegionalPricing = () => {
         data: CheckSubscriptionData;
         currency: Currency;
         requestOptions?: RequestOptions;
-    }): Promise<EnrichedCheckResponse> => {
+    }): Promise<SubscriptionEstimation> => {
         const optimisticCheckResult = getOptimisticCheckResult({
             planIDs: data.Plans,
             cycle: data.Cycle,

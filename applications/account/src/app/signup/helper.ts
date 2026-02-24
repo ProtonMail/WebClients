@@ -5,10 +5,10 @@ import {
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
-    type EnrichedCheckResponse,
     PLANS,
     type PaymentsApi,
     type PlanIDs,
+    type SubscriptionEstimation,
     getFreeCheckResult,
     hasPlanIDs,
 } from '@proton/payments';
@@ -36,7 +36,7 @@ export async function getSubscriptionPrices({
     trial?: boolean;
     ValidateZipCode?: boolean;
     VatId: string | undefined;
-}): Promise<EnrichedCheckResponse> {
+}): Promise<SubscriptionEstimation> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
     }

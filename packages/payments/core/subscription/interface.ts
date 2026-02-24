@@ -70,7 +70,7 @@ export type EnrichedCoupon = Nullable<
     }
 >;
 
-export interface SubscriptionCheckResponse {
+interface SubscriptionCheckResponse {
     /**
      * Full amount for the selected subscription. It doesn't include any discounts. The amount is in cents.
      */
@@ -140,7 +140,7 @@ export interface SubscriptionCheckResponse {
     RenewCycle: Cycle | null;
 }
 
-export type EnrichedCheckResponse = SubscriptionCheckResponse & {
+export type SubscriptionEstimation = SubscriptionCheckResponse & {
     requestData: CheckSubscriptionData;
 };
 

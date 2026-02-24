@@ -1,4 +1,5 @@
-import { CYCLE, PLANS, type SubscriptionCheckResponse } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
 import type { CouponConfig, CouponConfigProps } from './interface';
 import { matchCouponConfig } from './useCouponConfig';
@@ -48,7 +49,7 @@ describe('matchCouponConfig', () => {
     });
 
     it('matches config by coupon code (monthlyNudgeConfig)', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 9999,
             AmountDue: 7499,
             Coupon: {
@@ -63,6 +64,11 @@ describe('matchCouponConfig', () => {
             SubscriptionMode: 0,
             BaseRenewAmount: 9999,
             RenewCycle: CYCLE.YEARLY,
+            requestData: {
+                Plans: { [PLANS.MAIL]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.YEARLY,
+            },
         };
 
         const config: CouponConfigProps = {
@@ -78,7 +84,7 @@ describe('matchCouponConfig', () => {
     });
 
     it('matches config by special case when coupon code is missing (bf2025Config)', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 14999,
             AmountDue: 11999,
             Coupon: null,
@@ -88,6 +94,11 @@ describe('matchCouponConfig', () => {
             SubscriptionMode: 0,
             BaseRenewAmount: 14999,
             RenewCycle: CYCLE.FIFTEEN,
+            requestData: {
+                Plans: { [PLANS.VPN2024]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.FIFTEEN,
+            },
         };
 
         const config: CouponConfigProps = {
@@ -104,7 +115,7 @@ describe('matchCouponConfig', () => {
     });
 
     it('matches Black Friday 2025 coupon', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 29999,
             AmountDue: 17999,
             Coupon: {
@@ -119,6 +130,11 @@ describe('matchCouponConfig', () => {
             SubscriptionMode: 0,
             BaseRenewAmount: 29999,
             RenewCycle: CYCLE.YEARLY,
+            requestData: {
+                Plans: { [PLANS.BUNDLE]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.YEARLY,
+            },
         };
 
         const config: CouponConfigProps = {
@@ -135,7 +151,7 @@ describe('matchCouponConfig', () => {
     });
 
     it('matches Black Friday 2025 bundle coupon', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 47976,
             AmountDue: 23988,
             Coupon: {
@@ -150,6 +166,11 @@ describe('matchCouponConfig', () => {
             SubscriptionMode: 0,
             BaseRenewAmount: 47976,
             RenewCycle: CYCLE.TWO_YEARS,
+            requestData: {
+                Plans: { [PLANS.BUNDLE]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.TWO_YEARS,
+            },
         };
 
         const config: CouponConfigProps = {
@@ -166,7 +187,7 @@ describe('matchCouponConfig', () => {
     });
 
     it('returns undefined when no config matches', () => {
-        const checkResult: SubscriptionCheckResponse = {
+        const checkResult: SubscriptionEstimation = {
             Amount: 9999,
             AmountDue: 9999,
             Coupon: {
@@ -180,6 +201,11 @@ describe('matchCouponConfig', () => {
             SubscriptionMode: 0,
             BaseRenewAmount: 9999,
             RenewCycle: CYCLE.MONTHLY,
+            requestData: {
+                Plans: { [PLANS.MAIL]: 1 },
+                Currency: 'USD',
+                Cycle: CYCLE.MONTHLY,
+            },
         };
 
         const config: CouponConfigProps = {

@@ -5,8 +5,9 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
-import type { CYCLE, Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
+import type { CYCLE, Currency, PlanIDs, PlansMap } from '@proton/payments';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -42,9 +43,9 @@ export interface Props {
     disabled?: boolean;
     loading?: boolean;
     faded?: boolean;
-    additionalCheckResults: SubscriptionCheckResponse[] | undefined;
+    additionalCheckResults: SubscriptionEstimation[] | undefined;
     allowedCycles: CYCLE[];
-    checkResult: SubscriptionCheckResponse | undefined;
+    checkResult: SubscriptionEstimation | undefined;
     listItemClassName?: string;
 }
 

@@ -35,7 +35,6 @@ import {
     type Currency,
     type Cycle,
     DisplayablePaymentError,
-    type EnrichedCheckResponse,
     type FreePlanDefault,
     type FreeSubscription,
     type FullPlansMap,
@@ -51,6 +50,7 @@ import {
     ProrationMode,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
+    type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
@@ -241,7 +241,7 @@ export interface SubscriptionContainerProps {
     onCheck?: (
         data:
             | { model: Model; newModel: Model; type: 'error'; error: any }
-            | { model: Model; newModel: Model; type: 'success'; result: EnrichedCheckResponse }
+            | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
     ) => void;
     metrics: {
         source: Source;
@@ -329,7 +329,7 @@ const SubscriptionContainerInner = ({
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
-    const [additionalCheckResults, setAdditionalCheckResults] = useState<EnrichedCheckResponse[]>();
+    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionEstimation[]>();
     const scribeEnabled = useAssistantFeatureEnabled();
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
@@ -471,7 +471,7 @@ const SubscriptionContainerInner = ({
         setAudienceInner(newAudience);
     };
 
-    const [checkResult, setCheckResult] = useState<EnrichedCheckResponse>(
+    const [checkResult, setCheckResult] = useState<SubscriptionEstimation>(
         getFreeCheckResult(model.currency, model.cycle)
     );
 
@@ -742,7 +742,7 @@ const SubscriptionContainerInner = ({
     const runAdditionalChecks = async (
         newModel: Model,
         checkPayload: CheckSubscriptionData,
-        checkResult: EnrichedCheckResponse,
+        checkResult: SubscriptionEstimation,
         signal: AbortSignal
     ) => {
         setAdditionalCheckResults([]);
@@ -938,7 +938,7 @@ const SubscriptionContainerInner = ({
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: PlainPaymentMethodType
-    ): Promise<EnrichedCheckResponse | undefined> => {
+    ): Promise<SubscriptionEstimation | undefined> => {
         const copyNewModel: Model = {
             ...newModel,
             initialCheckComplete: true,

@@ -39,7 +39,7 @@ import type {
 } from './constants';
 import type { PaymentProcessorType } from './payment-processors/interface';
 import type { PlansMap } from './plan/interface';
-import type { EnrichedCheckResponse } from './subscription/interface';
+import type { SubscriptionEstimation } from './subscription/interface';
 
 export interface CreateCardDetailsBackend {
     Number: string;
@@ -367,13 +367,16 @@ export type GetPlansData = {
 };
 
 export interface PaymentsApi {
-    checkSubscription: (data: CheckSubscriptionData, requestOptions?: RequestOptions) => Promise<EnrichedCheckResponse>;
+    checkSubscription: (
+        data: CheckSubscriptionData,
+        requestOptions?: RequestOptions
+    ) => Promise<SubscriptionEstimation>;
 
-    multiCheck: (data: CheckSubscriptionData[], options?: MultiCheckOptions) => Promise<EnrichedCheckResponse[]>;
+    multiCheck: (data: CheckSubscriptionData[], options?: MultiCheckOptions) => Promise<SubscriptionEstimation[]>;
 
-    cachedCheck: (data: CheckSubscriptionData) => Promise<EnrichedCheckResponse>;
+    cachedCheck: (data: CheckSubscriptionData) => Promise<SubscriptionEstimation>;
 
-    cacheMultiCheck: (data: CheckSubscriptionData, result: EnrichedCheckResponse) => void;
+    cacheMultiCheck: (data: CheckSubscriptionData, result: SubscriptionEstimation) => void;
 
     paymentStatus: () => Promise<PaymentStatus>;
 
@@ -381,8 +384,8 @@ export interface PaymentsApi {
     updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
     updateInvoiceBillingAddress: (invoiceId: string, fullBillingAddress: FullBillingAddress) => Promise<void>;
     getInvoiceBillingAddress: (invoiceId: string) => Promise<FullBillingAddress>;
-    getCachedCheck: (data: CheckSubscriptionData) => EnrichedCheckResponse | undefined;
-    getCachedCheckByPlans: (plans: CheckSubscriptionData['Plans']) => EnrichedCheckResponse[];
+    getCachedCheck: (data: CheckSubscriptionData) => SubscriptionEstimation | undefined;
+    getCachedCheckByPlans: (plans: CheckSubscriptionData['Plans']) => SubscriptionEstimation[];
 }
 
 export type RemoveEventListener = () => void;
