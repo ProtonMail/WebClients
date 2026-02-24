@@ -1726,9 +1726,15 @@
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
       ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidores"
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licencias de ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1742,6 +1748,10 @@
       "${ price } per user": [
         "${ price } por usuario"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
@@ -1753,6 +1763,24 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -2029,53 +2057,15 @@
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquee anuncios, rastreadores y malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos a la vez"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda fácil y favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y otra persona"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
-      ]
-    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
       "1 month": [
         "1 mes"
       ],
@@ -2085,14 +2075,23 @@
       "Annually": [
         "Cada año"
       ],
+      "Billed monthly": [
+        "Facturación mensual"
+      ],
       "Lifetime": [
         "De por vida"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
       ],
       "Monthly": [
         "Cada mes"
       ],
       "Two-year": [
         "Dos años"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -2564,6 +2563,13 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
       ],
       "Total": [
         "Total"
@@ -7576,6 +7582,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes Wi-Fi públicas son seguras, pero algunas carecen de seguridad, exponiéndole a amenazas cibernéticas. Una VPN cifra su tráfico brindándole protección."
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "Mover este mensaje cancelará su envío programado."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre la carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
       ],
@@ -8153,6 +8162,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Esta conversación contiene un mensaje programado. Si la mueve, se cancelará el envío programado."
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Esta conversación contiene un mensaje programado. Se cancelará el envío de este mensaje."
       ],
@@ -8721,9 +8733,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escribió «${ attachmentsFoundKeyword }», pero no se agregó ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
-        "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
+        "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ha alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
@@ -8792,11 +8804,11 @@
       "Your message will expire tomorrow.": [
         "El mensaje expirará mañana."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La próxima fecha de facturación es el ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Su próxima fecha de facturación es el ${ renewalTime }. Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
       ],
       "Your online activity is protected": [
         "Su actividad en línea está protegida."
@@ -10750,10 +10762,6 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
-      "${ options }-day file version history": [
-        "Historial de ${ options } días de las versiones de los archivos",
-        "Historial de ${ options } días de las versiones de los archivos"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
       ],
@@ -12157,6 +12165,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incl.)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad por pagar después de la prueba el ${ formattedDate }"
       ],
@@ -12175,20 +12192,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
       "Got it": [
         "Entiendo"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Incluye un ${ rate }% de impuestos"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuestos: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -12208,8 +12225,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr }, cancele en cualquier momento."
       ],
-      "Taxes": [
-        "Impuestos"
+      "Tax ${ rate }%": [
+        "Impuesto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impuestos ${ rate }%"
       ],
       "terms and conditions": [
         "términos y condiciones"
@@ -12258,9 +12278,6 @@
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -12340,6 +12357,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12586,9 +12617,6 @@
       "Type text or keyword": [
         "Escriba el texto o la palabra clave"
       ],
-      "VAT number": [
-        "Número de IVA"
-      ],
       "Your organization name": [
         "El nombre de su organización"
       ],
@@ -12612,6 +12640,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } meses"
       ]
     },
     "plus_block": {
@@ -13073,18 +13107,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tiene ${ timeRemaining.inDays } día para restablecer la contraseña.",
         "Tiene ${ timeRemaining.inDays } días para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Tiene ${ timeRemaining.inHours } hora para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inHours } horas para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer la contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -13211,11 +13233,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartido por ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Abrir en ${ appName }"
       ]
     },
     "Signature verification warning": {
@@ -13483,8 +13500,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtenga alias ilimitados para proteger su identidad y reducir el spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Proteja sus contraseñas y organícelas en múltiples bóvedas "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenga sus contraseñas seguras y organizadas en múltiples cajas fuertes."
       ],
       "Protect your account from threats with Sentinel": [
         "Proteja su cuenta de amenazas con Sentinel"
@@ -13703,17 +13720,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Perderá acceso a notas e inicios de sesión ilimitados, alias ilimitados de hide-my-email y 20 bóvedas así como al soporte prioritario."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturación cada 2 años"
-      ],
-      "Billed monthly": [
-        "Facturación mensual"
-      ],
-      "Billed yearly": [
-        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -14280,10 +14286,6 @@
       "Conversation removed from Starred.": [
         "Conversación borrada de Destacados."
       ],
-      "Conversation updated": [
-        "Conversación actualizada",
-        "Conversaciones actualizadas"
-      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones desde ${ sendersList } serán etiquetadas como ${ labelsList }"
       ],
@@ -14358,10 +14360,6 @@
       ],
       "Message removed from Starred.": [
         "Mensaje borrado de Destacados."
-      ],
-      "Message updated": [
-        "Mensaje actualizado",
-        "Mensajes actualizados"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes desde ${ sendersList } serán etiquetados como ${ labelsList }"

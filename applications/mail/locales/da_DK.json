@@ -1726,9 +1726,15 @@
         "${ domains } ekstra tilpasset domæne",
         "${ domains } yderligere tilpassede domæner"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servere"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikeret VPN-server",
+        "${ ips } dedikerede VPN-servere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } pladser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerede server"
@@ -1742,6 +1748,10 @@
       "${ price } per user": [
         "${ price } per bruger"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licens",
+        "${ seats } ${ LUMO_APP_NAME } AI licenser"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
@@ -1753,6 +1763,24 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
+      ],
+      "Domains": [
+        "Domæner"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentpladser"
       ]
     },
     "Alert": {
@@ -2031,28 +2059,28 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagerplads"
+        "2 TB lagerplads"
       ],
       "3 TB data storage": [
-        "3 TB datalagerplads"
+        "3 TB lagerplads"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Adgang til 15.000+ servere i mere end 120 lande"
+        "Få adgang til 15.000+ servere i 120+ lande"
       ],
       "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
+        "Få adgang til avancerede AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium-funktioner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloker annoncer, trackere og malware"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-authenticator"
+        "Indbygget tofaktorgodkendelse"
       ],
       "Connect 10 devices at once": [
-        "Tilslut 10 enheder på én gang"
+        "Forbind 10 enheder på én gang"
       ],
       "Full chat history with easy search and favorites": [
         "Fuld chathistorik med nem søgning og favoritter"
@@ -2076,6 +2104,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 måned"
       ],
@@ -2085,14 +2121,23 @@
       "Annually": [
         "Årlig"
       ],
+      "Billed monthly": [
+        "Faktureres månedligt"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livstidsadgang"
       ],
       "Monthly": [
         "Månedlig"
       ],
       "Two-year": [
         "To-År"
+      ],
+      "Yearly": [
+        "Årligt"
       ]
     },
     "Browser": {
@@ -7576,6 +7621,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "Hvis du flytter denne besked, annulleres dens planlagte afsendelse."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -8153,6 +8201,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download filen."
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Denne samtale indeholder en planlagt besked. Flytning af den vil annullere den planlagte afsendelse."
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
       ],
@@ -8721,9 +8772,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
-        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nået det maksimale antal adresser i kontaktgruppen(erne):"
@@ -8792,11 +8843,11 @@
       "Your message will expire tomorrow.": [
         "Din besked udløber i morgen."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Din næste faktureringsdato er ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan til enhver tid annullere."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
       ],
       "Your online activity is protected": [
         "Din online aktivitet er beskyttet"
@@ -10750,10 +10801,6 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
-      "${ options }-day file version history": [
-        "${ options }-dags filversionshistorik",
-        "${ options }-dags filversionshistorik"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
       ],
@@ -12157,6 +12204,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. moms)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
@@ -12175,20 +12231,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Eksklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Eksklusiv ${ taxRate }% moms: ${ taxAmount }"
-      ],
       "Got it": [
         "Forstået"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inklusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inkluderer ${ rate }% moms"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inklusiv ${ taxRate }% moms: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inkluderer ${ rate }% moms"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -12208,8 +12264,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
       ],
-      "Taxes": [
-        "Moms"
+      "Tax ${ rate }%": [
+        "Moms ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate }%"
       ],
       "terms and conditions": [
         "vilkår og betingelser"
@@ -12258,9 +12317,6 @@
       ],
       "Timeout exceeded": [
         "Tidsgrænse overskredet"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "VAT number": [
         "Momsnummer"
@@ -12586,9 +12642,6 @@
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
       ],
-      "VAT number": [
-        "Momsnummer"
-      ],
       "Your organization name": [
         "Dit organisationsnavn"
       ],
@@ -12612,6 +12665,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måned",
+        "${ cycle } måneder"
       ]
     },
     "plus_block": {
@@ -13073,18 +13132,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
@@ -13216,6 +13263,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Åbn i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Åbn i ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13483,8 +13533,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Få ubegrænsede aliasser for at beskytte din identitet og reducere spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Opbevar dine adgangskoder sikkert og organiseret i flere bokse "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold dine adgangskoder sikre og organiserede i flere bokse"
       ],
       "Protect your account from threats with Sentinel": [
         "Beskyt din konto mod trusler med Sentinel"
@@ -13703,17 +13753,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister adgang til ubegrænsede logins og noter, ubegrænset hide-my-email aliaser, 20 bokse samt prioriteret support."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faktureres hvert 2. år"
-      ],
-      "Billed monthly": [
-        "Faktureres månedligt"
-      ],
-      "Billed yearly": [
-        "Faktureres årligt"
       ]
     },
     "Subscription attribute": {
@@ -14280,10 +14319,6 @@
       "Conversation removed from Starred.": [
         "Samtale fjernet fra Stjernemarkeret."
       ],
-      "Conversation updated": [
-        "Samtale opdateret",
-        "Samtaler opdateret"
-      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Samtaler fra ${ sendersList } vil blive mærket som ${ labelsList }"
       ],
@@ -14358,10 +14393,6 @@
       ],
       "Message removed from Starred.": [
         "Besked fjernet fra Stjernemarkeret."
-      ],
-      "Message updated": [
-        "Besked opdateret",
-        "Beskeder opdateret"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Beskeder fra ${ sendersList } vil blive mærket som ${ labelsList }"

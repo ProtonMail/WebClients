@@ -1726,9 +1726,15 @@
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
       ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -1742,6 +1748,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
@@ -1753,6 +1763,24 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Alert": {
@@ -2037,13 +2065,13 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
@@ -2052,7 +2080,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
         "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
@@ -2061,7 +2089,7 @@
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -2076,6 +2104,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
       "1 month": [
         "1 ay"
       ],
@@ -2085,14 +2121,23 @@
       "Annually": [
         "Yıllık"
       ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
       ],
       "Monthly": [
         "Aylık"
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "Browser": {
@@ -2564,6 +2609,13 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
       ],
       "Total": [
         "Toplam"
@@ -4895,7 +4947,7 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "Text is too long to refine": [
         "Yazı, özetlenemeyecek kadar uzun"
@@ -7576,6 +7628,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "Bu iletinin taşınması zamanlanmış gönderimi iptal eder."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -8153,6 +8208,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Bu yazışmada bir zamanlanmış ileti var. İletinin taşınması zamanlanmış gönderimi iptal eder."
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Bu yazışmada zamanlanmış bir ileti var. Bu iletinin gönderimi iptal edilecek."
       ],
@@ -8721,9 +8779,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir ek dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -8792,11 +8850,11 @@
       "Your message will expire tomorrow.": [
         "İletinizin geçerlilik süresi yarın dolacak."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sonraki fatura zamanınız ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
       "Your online activity is protected": [
         "Çevrim içi etkinlikleriniz korunuyor"
@@ -12157,6 +12215,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -12175,20 +12242,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi hariç: ${ taxAmount }"
-      ],
       "Got it": [
         "Anladım"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "%${ rate } vergi dahil"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -12208,8 +12275,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Taxes": [
-        "Vergiler"
+      "Tax ${ rate }%": [
+        "%${ rate } vergi"
+      ],
+      "Taxes ${ rate }%": [
+        "%${ rate } vergi"
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
@@ -12258,9 +12328,6 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -12340,6 +12407,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12586,9 +12667,6 @@
       "Type text or keyword": [
         "Yazı ya da anahtar sözcük yazın"
       ],
-      "VAT number": [
-        "KDV numarası"
-      ],
       "Your organization name": [
         "Kuruluşunuzun adı"
       ],
@@ -12612,6 +12690,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
       ]
     },
     "plus_block": {
@@ -13075,16 +13159,16 @@
         "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -13215,7 +13299,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "${ appName } uygulamasında aç"
+        "${ appName } ile aç"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (Beta) ile aç"
       ]
     },
     "Signature verification warning": {
@@ -13483,8 +13570,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Kimliğinizi korumak ve istenmeyen e-postaları azaltmak için sınırsız sayıda takma ad edinin"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun"
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinel ile hesabınızı tehditlere karşı koruyun"
@@ -13703,17 +13790,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2 yılda bir faturalanır"
-      ],
-      "Billed monthly": [
-        "Ayda bir faturalanır"
-      ],
-      "Billed yearly": [
-        "Yılda bir faturalanır"
       ]
     },
     "Subscription attribute": {
@@ -14280,10 +14356,6 @@
       "Conversation removed from Starred.": [
         "Yazışmanın yıldızı kaldırıldı."
       ],
-      "Conversation updated": [
-        "Yazışma güncellendi",
-        "Yazışmalar güncellendi"
-      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen yazışmalar ${ labelsList } olarak etiketlenecek"
       ],
@@ -14358,10 +14430,6 @@
       ],
       "Message removed from Starred.": [
         "İletinin yıldızı kaldırıldı."
-      ],
-      "Message updated": [
-        "İleti güncellendi",
-        "İletiler güncellendi"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen iletiler ${ labelsList } olarak etiketlenecek"

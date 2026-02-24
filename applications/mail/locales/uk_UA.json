@@ -1525,12 +1525,6 @@
         "${ domains } додаткових власних доменів",
         "${ domains } додаткових власних доменів"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервери",
-        "${ ips } серверів",
-        "${ ips } серверів"
-      ],
       "${ price } per dedicated server": [
         "${ price } за виділений сервер"
       ],
@@ -1755,52 +1749,6 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ТБ сховища даних"
-      ],
-      "3 TB data storage": [
-        "3 ТБ сховища даних"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ до понад 15 000 серверів у понад 120 країнах"
-      ],
-      "Access advanced AI models": [
-        "Доступ до розширених моделей ШІ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усі преміум функції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокування реклами, трекерів і шкідливих програм"
-      ],
-      "Built-in 2FA authenticator": [
-        "Вбудований 2FA автентифікатор"
-      ],
-      "Connect 10 devices at once": [
-        "Підключіть 10 пристроїв одночасно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Повна історія чатів зі зручним пошуком та обраним"
-      ],
-      "Individual accounts for 6 users": [
-        "Індивідуальні облікові записи для 6 користувачів"
-      ],
-      "Individual accounts for you and a partner": [
-        "Індивідуальні облікові записи для вас та партнера"
-      ],
-      "Stronger protection against cyber threats": [
-        "Сильніший захист від кіберзагроз"
-      ],
-      "Unlimited daily chats": [
-        "Необмежена кількість щоденних чатів"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 місяць"
@@ -1819,6 +1767,9 @@
       ],
       "Two-year": [
         "Два роки"
+      ],
+      "Yearly": [
+        "Щороку"
       ]
     },
     "Browser": {
@@ -7996,12 +7947,6 @@
       "Your message will expire tomorrow.": [
         "Термін дії повідомлення завершиться завтра."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Наступна дата оплати – ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
-      ],
       "Your online activity is protected": [
         "Ваша онлайн активність захищена"
       ],
@@ -9652,12 +9597,6 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
-      "${ options }-day file version history": [
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin lifetime"
       ],
@@ -11138,9 +11077,6 @@
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
       ],
-      "VAT number": [
-        "Номер платника ПДВ"
-      ],
       "ZIP code": [
         "Поштовий індекс"
       ]
@@ -11153,6 +11089,14 @@
     "plan customizer, users": {
       "contact": [
         "зверніться"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } місяць",
+        "${ cycle } місяці",
+        "${ cycle } місяців",
+        "${ cycle } місяця(ів)"
       ]
     },
     "plus_block": {
@@ -11555,24 +11499,6 @@
         "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
         "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
         "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } години, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } хвилина, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилини, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунди, щоб скинути пароль",
-        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -11705,11 +11631,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Надано спільний доступ від ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Відкрити в ${ appName }"
       ]
     },
     "Signature verification warning": {
@@ -12136,17 +12057,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ви втратите доступ до необмеженої кількості даних входу і нотаток, необмеженої кількості псевдонімів для hide-my-email, 20 сховищ, а також до пріоритетної підтримки."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Сплачується кожні 2 роки"
-      ],
-      "Billed monthly": [
-        "Сплачується щомісяця"
-      ],
-      "Billed yearly": [
-        "Сплачується щороку"
       ]
     },
     "Subscription attribute": {
