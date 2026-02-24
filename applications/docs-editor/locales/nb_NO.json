@@ -681,19 +681,415 @@
         "Tekst"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Alle ark"
+      ],
+      "New sheet": [
+        "Nytt ark"
+      ]
+    },
     "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Nylige farger"
+      ],
       "Reset": [
-        "Tilbakestill"
+        "Nullstill"
+      ],
+      "Standard colors": [
+        "Standardfarger"
+      ],
+      "Theme colors": [
+        "Temafarger"
       ]
     },
     "sheets_2025:Range selector menu": {
       "Add new": [
         "Legg til ny"
+      ],
+      "Named ranges": [
+        "Navngitte områder"
+      ],
+      "Sheets": [
+        "Ark"
+      ],
+      "Tables": [
+        "Tabeller"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Endre farge"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Duplicate": [
+        "Dupliser"
+      ],
+      "Hide sheet": [
+        "Skjul ark"
+      ],
+      "Move left": [
+        "Flytt venstre"
+      ],
+      "Move right": [
+        "Flytt høyre"
+      ],
+      "Rename": [
+        "Gi nytt navn"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Alle kantlinjer"
+      ],
+      "Bottom border": [
+        "Bunnkantlinje"
+      ],
+      "Dashed": [
+        "Stiplet"
+      ],
+      "Dotted": [
+        "Prikket"
+      ],
+      "Double": [
+        "Dobbel"
+      ],
+      "Horizontal borders": [
+        "Horisontale kanter"
+      ],
+      "Inner borders": [
+        "Indre kantlinjer"
+      ],
+      "Left border": [
+        "Venstre kantlinje"
+      ],
+      "No borders": [
+        "Ingen kantlinjer"
+      ],
+      "Outer borders": [
+        "Ytre kantlinjer"
+      ],
+      "Right border": [
+        "Høyre kantlinje"
+      ],
+      "Solid": [
+        "Solid"
+      ],
+      "Solid medium": [
+        "Solid medium"
+      ],
+      "Solid thick": [
+        "Solid tykk"
+      ],
+      "Top border": [
+        "Øvre kantlinje"
+      ],
+      "Vertical borders": [
+        "Vertikale kanter"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Feil"
+      ],
+      "Invalid": [
+        "Ugyldig"
+      ],
+      "Note": [
+        "Merk"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "KI-hurtigredigering"
+      ],
+      "Auto fit to data": [
+        "Tilpass automatisk til data"
+      ],
+      "Cell value": [
+        "Celleverdi"
+      ],
+      "Clear": [
+        "Tøm"
+      ],
+      "Clear content": [
+        "Tøm innhold"
+      ],
+      "Clear formatting": [
+        "Fjern formatering"
+      ],
+      "Comma": [
+        "Komma"
+      ],
+      "Conditional format": [
+        "Betinget formatering"
+      ],
+      "Convert to range": [
+        "Konverter til område"
+      ],
+      "Convert to table": [
+        "Konverter til tabell"
+      ],
+      "Copy": [
+        "Kopier"
+      ],
+      "Create a filter": [
+        "Opprett et filter"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Define named range": [
+        "Definer navngitt område"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Delete cells and shift cells left": [
+        "Slett celler og flytt celler til venstre"
+      ],
+      "Delete cells and shift cells up": [
+        "Slett celler og flytt celler opp"
+      ],
+      "Delete column": [
+        "Slett kolonne"
+      ],
+      "Delete row": [
+        "Slett rad"
+      ],
+      "Delete table column": [
+        "Slett tabellkolonne"
+      ],
+      "Delete table row": [
+        "Slett tabellrad"
+      ],
+      "Edit table": [
+        "Rediger tabell"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Formatting only": [
+        "Kun formatering"
+      ],
+      "Formula only": [
+        "Kun formel"
+      ],
+      "Freeze up to column": [
+        "Frys opp til kolonne"
+      ],
+      "Freeze up to row": [
+        "Frys opp til rad"
+      ],
+      "Hide column": [
+        "Skjul kolonne"
+      ],
+      "Hide row": [
+        "Skjul rad"
+      ],
+      "Insert cells and shift cells down": [
+        "Sett inn celler og flytt celler nedover"
+      ],
+      "Insert cells and shift cells right": [
+        "Sett inn celler og flytt celler til høyre"
+      ],
+      "Insert link": [
+        "Sett inn kobling"
+      ],
+      "Insert note": [
+        "Sett inn notat"
+      ],
+      "Insert table column to the left": [
+        "Sett inn tabellkolonne til venstre"
+      ],
+      "Insert table column to the right": [
+        "Sett inn tabellkolonne til høyre"
+      ],
+      "Insert table row": [
+        "Sett inn tabellrad"
+      ],
+      "Link only": [
+        "Kun kobling"
+      ],
+      "More cell actions": [
+        "Flere cellehandlinger"
+      ],
+      "Paste": [
+        "Lim inn"
+      ],
+      "Paste special": [
+        "Lim inn spesial"
+      ],
+      "Period": [
+        "Punktum"
+      ],
+      "Pipe": [
+        "Loddrett strek"
+      ],
+      "Remove filter": [
+        "Fjern filter"
+      ],
+      "Resize column": [
+        "Endre kolonnestørrelse"
+      ],
+      "Resize row": [
+        "Endre radstørrelse"
+      ],
+      "Semicolon": [
+        "Semikolon"
+      ],
+      "Sort": [
+        "Sorter"
+      ],
+      "Sort range A → Z": [
+        "Sorter A → Å"
+      ],
+      "Sort range Z → A": [
+        "Sorter område Å → A"
+      ],
+      "Sort sheet A to Z": [
+        "Sorter ark A til Å"
+      ],
+      "Sort sheet Z to A": [
+        "Sorter ark Å til A"
+      ],
+      "Space": [
+        "Mellomrom"
+      ],
+      "Table": [
+        "Tabell"
+      ],
+      "Transposed": [
+        "Transponert"
+      ],
+      "Unfreeze columns": [
+        "Opphev frysing av kolonner"
+      ],
+      "Unfreeze rows": [
+        "Opphev frysing av rader"
+      ],
+      "Values only": [
+        "Kun verdier"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolonne",
+        "${ numberOfColumns } kolonner"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rad",
+        "${ numberOfRows } rader"
+      ],
+      "above": [
+        "over"
+      ],
+      "below": [
+        "nedenfor"
+      ],
+      "Insert": [
+        "Sett inn"
+      ],
+      "left": [
+        "venstre"
+      ],
+      "right": [
+        "høyre"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Er du sikker på at du vil slette ${ sheetName }?"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Delete sheet": [
+        "Slett ark"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Redigering på mobil kommer snart"
+      ],
+      "Screen too small for editing": [
+        "Skjerm for liten for redigering"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Vi jobber med å bringe denne funksjonen til deg snart. Foreløpig kan ark bare redigeres på datamaskinen."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Skjermen din er for liten til å redigere dette regnearket. Du er i skrivebeskyttet modus. For å gjøre endringer, må du åpne dette regnearket på en større skjerm eller utvide nettleservinduet."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Kan ikke slette alle kolonner"
+      ],
+      "Cannot delete all rows": [
+        "Kan ikke slette alle rader"
+      ],
+      "Find in sheet": [
+        "Finn i ark"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Flett alle"
+      ],
+      "Merge cells": [
+        "Flett celler"
+      ],
+      "Merge horizontally": [
+        "Flett horisontalt"
+      ],
+      "Merge vertically": [
+        "Flett vertikalt"
+      ],
+      "Unmerge": [
+        "Opphev fletting"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Opprett et filter"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Protect range": [
+        "Beskytt område"
+      ],
+      "Remove filter": [
+        "Fjern filter"
+      ],
+      "Sort sheet": [
+        "Sorter ark"
+      ],
+      "Unlock range": [
+        "Lås opp område"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
         "(A til Å)"
+      ],
+      "(Z to A)": [
+        "(Å til A)"
+      ],
+      "column ${ columnLetter }": [
+        "kolonne ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Sorter ark etter"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -703,14 +1099,35 @@
       "Cut": [
         "Klipp ut"
       ],
+      "Find": [
+        "Finn"
+      ],
+      "Formatting only": [
+        "Kun formatering"
+      ],
+      "Formula only": [
+        "Kun formel"
+      ],
+      "Link only": [
+        "Kun kobling"
+      ],
       "Paste": [
         "Lim inn"
+      ],
+      "Paste special": [
+        "Lim inn spesial"
       ],
       "Redo": [
         "Gjør om"
       ],
+      "Transposed": [
+        "Transponert"
+      ],
       "Undo": [
         "Angre"
+      ],
+      "Values only": [
+        "Kun verdier"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -718,7 +1135,7 @@
         "Kommaseparerte verdier (.csv)"
       ],
       "Download": [
-        "Nedlastet"
+        "Last ned"
       ],
       "Download logs": [
         "Last ned logger"
@@ -739,7 +1156,10 @@
         "Flytt til mappe"
       ],
       "Move to trash": [
-        "Flytt til papirkurv"
+        "Flytt til papirkurven"
+      ],
+      "New document": [
+        "Nytt dokument"
       ],
       "New spreadsheet": [
         "Nytt regneark"
@@ -747,17 +1167,26 @@
       "Open ${ DRIVE_APP_NAME }": [
         "Åpne ${ DRIVE_APP_NAME }"
       ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument-regneark (.ods) (beta)"
+      ],
       "Print": [
         "Skriv ut"
       ],
       "See version history": [
         "Se versjonshistorikk"
       ],
+      "Settings": [
+        "Innstillinger"
+      ],
       "Tab Separated Values (.tsv)": [
         "Tabulatorseparerte verdier (.tsv)"
       ],
+      "Toggle debug mode": [
+        "Veksle feilsøkingsmodus"
+      ],
       "View recent spreadsheets": [
-        "Vis nylige regneark"
+        "Se nylige regneark"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -767,11 +1196,20 @@
       "Bold": [
         "Fet"
       ],
+      "Cell styles": [
+        "Cellestiler"
+      ],
       "Clear": [
         "Tøm"
       ],
+      "Clear content": [
+        "Tøm innhold"
+      ],
       "Clear formatting": [
         "Fjern formatering"
+      ],
+      "Conditional formatting": [
+        "Betinget formatering"
       ],
       "Font size": [
         "Skriftstørrelse"
@@ -780,10 +1218,13 @@
         "Kursiv"
       ],
       "Number": [
-        "Tall"
+        "Nummer"
       ],
       "Strikethrough": [
-        "Gjennomstrek"
+        "Gjennomstreking"
+      ],
+      "Table formatting": [
+        "Tabellformatering"
       ],
       "Text": [
         "Tekst"
@@ -792,12 +1233,41 @@
         "Tema"
       ],
       "Underline": [
-        "Understrek"
+        "Understreking"
+      ],
+      "Wrapping": [
+        "Brytning"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Bunn"
+      ],
       "Center": [
-        "Midtstill"
+        "Senter"
+      ],
+      "Left": [
+        "Venstre"
+      ],
+      "Middle": [
+        "Midten"
+      ],
+      "Right": [
+        "Høyre"
+      ],
+      "Top": [
+        "Topp"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Klipp"
+      ],
+      "Overflow": [
+        "Overflyt"
+      ],
+      "Wrap": [
+        "Bryt"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -808,10 +1278,13 @@
         "Diagram"
       ],
       "Checkbox": [
-        "Avmerkingsboks"
+        "Avkrysningsboks"
       ],
       "Columns": [
         "Kolonner"
+      ],
+      "Dropdown": [
+        "Nedtrekksmeny"
       ],
       "Function": [
         "Funksjon"
@@ -829,13 +1302,38 @@
         "Kobling"
       ],
       "Note": [
-        "Merk"
+        "Notat"
       ],
       "Rows": [
         "Rader"
       ],
       "Sheet": [
         "Ark"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolonne",
+        "${ numberOfColumns } kolonner"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rad",
+        "${ numberOfRows } rader"
+      ],
+      "above": [
+        "ovenfor"
+      ],
+      "below": [
+        "nedenfor"
+      ],
+      "Insert": [
+        "Sett inn"
+      ],
+      "left": [
+        "venstre"
+      ],
+      "right": [
+        "høyre"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -855,10 +1353,19 @@
         "Sett inn"
       ],
       "View": [
-        "Visning"
+        "Vis"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Formellinje"
+      ],
+      "Freeze": [
+        "Frys"
+      ],
+      "Gridlines": [
+        "Rutenettlinjer"
+      ],
       "Show": [
         "Vis"
       ],
@@ -866,21 +1373,43 @@
         "Zoom"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "kolonne ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "rad ${ rowNumber }"
+      ],
+      "Up to": [
+        "Opptil"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Skjulte ark"
+      ]
+    },
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
-        "$ Amerikanske dollar"
+        "Amerikanske dollar"
       ],
       "Accounting": [
-        "Regnskap"
+        "Bokføring"
       ],
       "CN¥ Chinese Yuan": [
-        "CN¥ Kinesisk yuan"
+        "CN¥ Kinesisk Yuan"
       ],
       "Currency": [
         "Valuta"
       ],
       "Currency rounded": [
         "Valuta avrundet"
+      ],
+      "Custom currency": [
+        "Tilpasset valuta"
+      ],
+      "Custom number format": [
+        "Tilpasset tallformat"
       ],
       "Date": [
         "Dato"
@@ -892,19 +1421,19 @@
         "Varighet"
       ],
       "Financial": [
-        "Finanser"
+        "Finans"
       ],
       "General": [
         "Generelt"
       ],
       "Long date": [
-        "Langt datoformat"
+        "Lang dato"
       ],
       "More currency": [
         "Flere valuta"
       ],
       "Number": [
-        "Tall"
+        "Nummer"
       ],
       "Percent": [
         "Prosent"
@@ -934,23 +1463,61 @@
     "sheets_2025:Spreadsheet editor search dialog": {
       "Close": [
         "Lukk"
+      ],
+      "Go to next": [
+        "Gå til neste"
+      ],
+      "Go to previous": [
+        "Gå til forrige"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Auto"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Locale": [
+        "Språk"
+      ],
+      "Save and reload": [
+        "Lagre og last inn på nytt"
+      ],
+      "Settings for this spreadsheet": [
+        "Innstillinger for dette regnearket"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Dette påvirker formateringsdetaljer som funksjoner, datoer og valuta"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Fet"
       ],
+      "Border": [
+        "Kantlinjer"
+      ],
       "Clear formatting": [
         "Fjern formatering"
       ],
+      "Create a filter": [
+        "Opprett et filter"
+      ],
       "Decrease decimal places": [
-        "Reduser antall desimaler"
+        "Reduser desimaler"
       ],
       "Decrease font size": [
         "Reduser skriftstørrelsen"
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Fyllfarge"
+      ],
+      "Find": [
+        "Finn"
       ],
       "Font": [
         "Skrifttype"
@@ -964,20 +1531,32 @@
       "Format as percent": [
         "Formater som prosent"
       ],
+      "Horizontal align": [
+        "Horisontal justering"
+      ],
       "Increase decimal places": [
         "Øk antall desimaler"
       ],
       "Increase font size": [
         "Øk skriftstørrelsen"
       ],
+      "Insert chart": [
+        "Sett inn diagram"
+      ],
+      "Insert function": [
+        "Sett inn funksjon"
+      ],
       "Insert link": [
         "Sett inn kobling"
+      ],
+      "Insert note": [
+        "Sett inn notat"
       ],
       "Italic": [
         "Kursiv"
       ],
       "Merge cells": [
-        "Slå sammen celler"
+        "Flett celler"
       ],
       "More": [
         "Mer"
@@ -985,28 +1564,90 @@
       "More formats": [
         "Flere formater"
       ],
+      "Paint format": [
+        "Mal"
+      ],
       "Redo": [
         "Gjør om"
       ],
+      "Remove filter": [
+        "Fjern filter"
+      ],
+      "Select merge type": [
+        "Velg flettetype"
+      ],
       "Strikethrough": [
-        "Gjennomstrek"
+        "Gjennomstreking"
       ],
       "Text color": [
         "Tekstfarge"
       ],
+      "Text wrapping": [
+        "Tekstbryting"
+      ],
       "Underline": [
-        "Understrek"
+        "Understreking"
       ],
       "Undo": [
         "Angre"
+      ],
+      "Unmerge cells": [
+        "Opphev fletting av celler"
+      ],
+      "Vertical align": [
+        "Vertikal justering"
       ],
       "Zoom": [
         "Zoom"
       ]
     },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Bruk"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Clear": [
+        "Tøm"
+      ],
+      "Copy": [
+        "Kopier"
+      ],
+      "Delete table column": [
+        "Slett tabellkolonne"
+      ],
+      "Enter value": [
+        "Skriv inn verdi"
+      ],
+      "Filter by condition": [
+        "Filtrer etter vilkår"
+      ],
+      "Filter by value": [
+        "Filtrer etter verdi"
+      ],
+      "Insert 1 table column left": [
+        "Sett inn 1 tabellkolonne til venstre"
+      ],
+      "Insert 1 table column right": [
+        "Sett inn 1 tabellkolonne til høyre"
+      ],
+      "Paste": [
+        "Lim inn"
+      ],
+      "Select all": [
+        "Velg alle"
+      ],
+      "Sort A → Z": [
+        "Sorter A → Å"
+      ],
+      "Sort Z → A": [
+        "Sorter Å → A"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
-        "Anvend"
+        "Bruk"
       ],
       "Cancel": [
         "Avbryt"
@@ -1028,8 +1669,413 @@
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
+      "Link removed": [
+        "Kobling fjernet"
+      ],
       "Remove link": [
         "Fjern kobling"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Avbryt"
+      ],
+      "column": [
+        "kolonne"
+      ],
+      "column width": [
+        "kolonnebredde"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "rad"
+      ],
+      "row height": [
+        "radhøyde"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Justering"
+      ],
+      "Bold": [
+        "Fet"
+      ],
+      "Border": [
+        "Kantlinje"
+      ],
+      "Border style": [
+        "Kantstil"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Choose Category": [
+        "Velg kategori"
+      ],
+      "Color": [
+        "Farge"
+      ],
+      "Currency Symbol": [
+        "Valutasymbol"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Decimal places": [
+        "Desimaler"
+      ],
+      "Effects": [
+        "Effekter"
+      ],
+      "Font": [
+        "Skrifttype"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
+      "Format cells": [
+        "Formater celler"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Horizontal Alignment": [
+        "Horisontal justering"
+      ],
+      "Indent": [
+        "Innrykk"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Merge": [
+        "Slå sammen"
+      ],
+      "Merge all": [
+        "Flett alle"
+      ],
+      "Merge horizontally": [
+        "Flett horisontalt"
+      ],
+      "Merge vertically": [
+        "Flett vertikalt"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Overflow": [
+        "Overflyt"
+      ],
+      "Preview": [
+        "Forhåndsvis"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Strikethrough": [
+        "Gjennomstreking"
+      ],
+      "Text control": [
+        "Tekstkontroll"
+      ],
+      "Thousands separator": [
+        "Tusenskilletegn"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Underline": [
+        "Understreking"
+      ],
+      "Unmerge": [
+        "Opphev fletting"
+      ],
+      "Use 1000 Separator (,)": [
+        "Bruk 1000-skilletegn (,)"
+      ],
+      "Vertical Alignment": [
+        "Vertikal justering"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Legg til"
+      ],
+      "Aggregate": [
+        "Kombiner"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Chart data range": [
+        "Diagramdataområde"
+      ],
+      "Chart editor": [
+        "Diagramredigerer"
+      ],
+      "Chart title": [
+        "Diagramtittel"
+      ],
+      "Chart type": [
+        "Diagramtype"
+      ],
+      "Enter title": [
+        "Skriv inn tittel"
+      ],
+      "Horizontal (category) axis labels": [
+        "Horisontale (kategori) akseetiketter"
+      ],
+      "Horizontal axis title": [
+        "Tittel på horisontal akse"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Range": [
+        "Område"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Select a range": [
+        "Velg et område"
+      ],
+      "Series": [
+        "Serie"
+      ],
+      "Show data in hidden rows and columns": [
+        "Vis data i skjulte rader og kolonner"
+      ],
+      "Value": [
+        "Verdi"
+      ],
+      "Vertical axis title": [
+        "Tittel på vertikal akse"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Legg til et nytt område"
+      ],
+      "Add another rule": [
+        "Legg til en ny regel"
+      ],
+      "Add rule": [
+        "Legg til regel"
+      ],
+      "Apply to range": [
+        "Bruk på område"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Close": [
+        "Lukk"
+      ],
+      "Color scale": [
+        "Fargeskala"
+      ],
+      "Conditional formatting": [
+        "Betinget formatering"
+      ],
+      "Delete range": [
+        "Slett område"
+      ],
+      "Delete rule": [
+        "Slett regel"
+      ],
+      "Enter a formula": [
+        "Skriv inn en formel"
+      ],
+      "Enter value": [
+        "Skriv inn verdi"
+      ],
+      "Format rules": [
+        "Formateringsregler"
+      ],
+      "Format style": [
+        "Formatstil"
+      ],
+      "Max point": [
+        "Makspunkt"
+      ],
+      "Max value": [
+        "Maks verdi"
+      ],
+      "Mid point": [
+        "Midtpunkt"
+      ],
+      "Min point": [
+        "Minimumsverdi"
+      ],
+      "Min value": [
+        "Minste verdi"
+      ],
+      "None": [
+        "Ingen"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Preview": [
+        "Forhåndsvis"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Select a range": [
+        "Velg et område"
+      ],
+      "Single color": [
+        "Enkel farge"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Bruk"
+      ],
+      "Apply to create a custom currency": [
+        "Bruk for å opprette en egendefinert valuta"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Currency symbol": [
+        "Valutasymbol"
+      ],
+      "Custom currencies": [
+        "Egendefinerte valutaer"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Legg til et navngitt område til"
+      ],
+      "Add another range": [
+        "Legg til et annet område"
+      ],
+      "Add named range": [
+        "Legg til navngitt område"
+      ],
+      "Allow blanks": [
+        "Tillat blanke felt"
+      ],
+      "Apply to range": [
+        "Bruk på område"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Delete data validation rule": [
+        "Slett datavalideringsregel"
+      ],
+      "Enter a formula": [
+        "Skriv inn en formel"
+      ],
+      "Enter value": [
+        "Skriv inn verdi"
+      ],
+      "Formula": [
+        "Formel"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Select a range": [
+        "Velg et område"
+      ],
+      "Validation rules": [
+        "Valideringsregler"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Legg til et navngitt område til"
+      ],
+      "Add named range": [
+        "Legg til navngitt område"
+      ],
+      "Apply to range": [
+        "Bruk på område"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete named range": [
+        "Slett navngitt område"
+      ],
+      "Enter a formula": [
+        "Skriv inn en formel"
+      ],
+      "Enter text or formula": [
+        "Skriv inn tekst eller formel"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Name should not contain spaces": [
+        "Navn må ikke inneholde mellomrom"
+      ],
+      "Named Ranges": [
+        "Navngitte områder"
+      ],
+      "Range": [
+        "Område"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Text or formula": [
+        "Tekst eller formel"
+      ],
+      "Type": [
+        "Type"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Stripete kolonner"
+      ],
+      "Banded rows": [
+        "Båndede rader"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Edit table": [
+        "Rediger tabell"
+      ],
+      "More settings": [
+        "Flere innstillinger"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Select a range": [
+        "Velg et område"
+      ],
+      "Show filter button": [
+        "Vis filterknapp"
+      ],
+      "Table data range": [
+        "Tabelldataområde"
+      ],
+      "Table title": [
+        "Tabelltittel"
       ]
     },
     "Title": {

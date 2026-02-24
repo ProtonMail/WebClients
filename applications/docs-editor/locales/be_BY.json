@@ -683,27 +683,382 @@
         "з тэкстам"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Усе аркушы"
+      ],
+      "New sheet": [
+        "Новы аркуш"
+      ]
+    },
     "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Нядаўнія колеры"
+      ],
       "Reset": [
         "Скінуць"
+      ],
+      "Theme colors": [
+        "Колеры тэмы"
       ]
     },
     "sheets_2025:Range selector menu": {
       "Add new": [
         "Дадаць новы"
+      ],
+      "Named ranges": [
+        "Найменныя дыяпазоны"
+      ],
+      "Sheets": [
+        "Аркушы"
+      ],
+      "Tables": [
+        "Табліцы"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Змяніць колер"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Duplicate": [
+        "Дубліраваць"
+      ],
+      "Hide sheet": [
+        "Схаваць аркуш"
+      ],
+      "Move left": [
+        "Перамясціць улева"
+      ],
+      "Move right": [
+        "Перамясціць управа"
+      ],
+      "Rename": [
+        "Перайменаваць"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Усе межы"
+      ],
+      "Dashed": [
+        "Штрыхавы"
+      ],
+      "Dotted": [
+        "Пункцірам"
+      ],
+      "Double": [
+        "Падвоены"
+      ],
+      "Horizontal borders": [
+        "Гарызантальныя межы"
+      ],
+      "Inner borders": [
+        "Унутраныя межы"
+      ],
+      "Left border": [
+        "Левая мяжа"
+      ],
+      "No borders": [
+        "Без межаў"
+      ],
+      "Outer borders": [
+        "Знешнія межы"
+      ],
+      "Right border": [
+        "Правая мяжа"
+      ],
+      "Top border": [
+        "Верхняя мяжа"
+      ],
+      "Vertical borders": [
+        "Вертыкальныя межы"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Памылка"
+      ],
+      "Invalid": [
+        "Памылковае"
+      ],
+      "Note": [
+        "Нататка"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Хуткі рэдактар ШІ"
+      ],
+      "Cell value": [
+        "Значэнне ячэйкі"
+      ],
+      "Clear": [
+        "Ачысціць"
+      ],
+      "Clear content": [
+        "Ачысціць змесціва"
+      ],
+      "Clear formatting": [
+        "Ачысціць фарматаванне"
+      ],
+      "Conditional format": [
+        "Умоўнае фарматаванне"
+      ],
+      "Convert to range": [
+        "Пераўтварыць у дыяпазон"
+      ],
+      "Convert to table": [
+        "Пераўтварыць у табліцу"
+      ],
+      "Copy": [
+        "Капіяваць"
+      ],
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Custom": [
+        "Карыстальніцкая"
+      ],
+      "Data validation": [
+        "Праверка даных"
+      ],
+      "Define named range": [
+        "Вызначыць найменны дыяпазон"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete cells and shift cells up": [
+        "Выдаліць ячэйкі і зрушыць ячэйкі ўверх"
+      ],
+      "Delete column": [
+        "Выдаліць слупок"
+      ],
+      "Delete row": [
+        "Выдаліць радок"
+      ],
+      "Delete table column": [
+        "Выдаліць слупок табліцы"
+      ],
+      "Delete table row": [
+        "Выдаліць радок табліцы"
+      ],
+      "Edit table": [
+        "Рэдагаваць табліцу"
+      ],
+      "Formatting only": [
+        "Толькі фарматаванне"
+      ],
+      "Formula only": [
+        "Толькі формула"
+      ],
+      "Freeze up to column": [
+        "Замарозіць да слупка"
+      ],
+      "Freeze up to row": [
+        "Замарозіць да радка"
+      ],
+      "Hide column": [
+        "Схаваць слупок"
+      ],
+      "Hide row": [
+        "Схаваць радок"
+      ],
+      "Insert cells and shift cells down": [
+        "Уставіць ячэйкі і зрушыць ячэйкі ўніз"
+      ],
+      "Insert link": [
+        "Уставіць спасылку"
+      ],
+      "Insert note": [
+        "Уставіць нататку"
+      ],
+      "Insert table column to the left": [
+        "Уставіць слупок табліцы злева"
+      ],
+      "Insert table column to the right": [
+        "Уставіць слупок табліцы справа"
+      ],
+      "Insert table row": [
+        "Уставіць радок табліцы"
+      ],
+      "Link only": [
+        "Толькі спасылка"
+      ],
+      "More cell actions": [
+        "Больш дзеянняў з ячэйкамі"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Paste special": [
+        "Спецыяльная ўстаўка"
+      ],
+      "Period": [
+        "Перыяд"
+      ],
+      "Pipe": [
+        "Раздзяляльнік"
+      ],
+      "Remove filter": [
+        "Выдаліць фільтр"
+      ],
+      "Resize row": [
+        "Змяніць памер радка"
+      ],
+      "Semicolon": [
+        "Кропка з коскай"
+      ],
+      "Sort range A → Z": [
+        "Сартаваць у дыяпазоне А → Я"
+      ],
+      "Sort sheet A to Z": [
+        "Сартаваць аркуш ад А да Я"
+      ],
+      "Sort sheet Z to A": [
+        "Сартаваць аркуш ад Я да А"
+      ],
+      "Space": [
+        "Прабел"
+      ],
+      "Table": [
+        "Табліца"
+      ],
+      "Transposed": [
+        "Транспанаваны"
+      ],
+      "Unfreeze columns": [
+        "Размарозіць слупкі"
+      ],
+      "Values only": [
+        "Толькі значэнні"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } слупок",
+        "${ numberOfColumns } слупкі",
+        "${ numberOfColumns } слупкоў",
+        "${ numberOfColumns } слупкоў"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } радок",
+        "${ numberOfRows } радкі",
+        "${ numberOfRows } радкоў",
+        "${ numberOfRows } радкоў"
+      ],
+      "above": [
+        "вышэй"
+      ],
+      "Insert": [
+        "Уставіць"
+      ],
+      "left": [
+        "злева"
+      ],
+      "right": [
+        "справа"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Вы сапраўды хочаце выдаліць ${ sheetName }?"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete sheet": [
+        "Выдаліць аркуш"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Рэдагаванне на мабільнай прыладзе з'явіцца неўзабаве"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Наша каманда працуе над тым, каб гэта функцыя неўзабаве стала даступна нашым карыстальнікам. У цяперашні час аркушы можна рэдагаваць толькі на камп'ютары"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Памер вашага экрана не пасуе, каб рэдагаваць гэту электронную табліцу. Вы знаходзіцеся ў рэжыме прагляду. Адкрыйце гэту электронную табліцу на прыладзе з большым экранам або разгарніце акно браўзера, каб зрабіць змены."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all rows": [
+        "Немагчыма выдаліць усе радкі"
+      ],
+      "Find in sheet": [
+        "Знайсці ў аркушы"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Аб'яднаць усе"
+      ],
+      "Merge cells": [
+        "Аб'яднаць ячэйкі"
+      ],
+      "Merge horizontally": [
+        "Аб'яднаць гарызантальна"
+      ],
+      "Merge vertically": [
+        "Аб'яднаць вертыкальна"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Data validation": [
+        "Праверка даных"
+      ],
+      "Protect range": [
+        "Абараніць дыяпазон"
+      ],
+      "Remove filter": [
+        "Выдаліць фільтр"
+      ],
+      "Sort sheet": [
+        "Сартаваць аркуш"
+      ],
+      "Unlock range": [
+        "Разблакіраваць дыяпазон"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
         "(Ад А да Я)"
+      ],
+      "(Z to A)": [
+        "(Ад Я да А)"
+      ],
+      "column ${ columnLetter }": [
+        "слупок ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Сартаваць аркуш па"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
       "Copy": [
-        "Скапіяваць"
+        "Капіяваць"
       ],
       "Cut": [
         "Выразаць"
+      ],
+      "Find": [
+        "Знайсці"
+      ],
+      "Formatting only": [
+        "Толькі фарматаванне"
+      ],
+      "Formula only": [
+        "Толькі формула"
+      ],
+      "Link only": [
+        "Толькі спасылка"
       ],
       "Paste": [
         "Уставіць"
@@ -711,8 +1066,14 @@
       "Redo": [
         "Узнавіць"
       ],
+      "Transposed": [
+        "Транспанаваны"
+      ],
       "Undo": [
         "Адрабіць"
+      ],
+      "Values only": [
+        "Толькі значэнні"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
@@ -720,16 +1081,16 @@
         "Значэнні, раздзеленыя коскамі (.csv)"
       ],
       "Download": [
-        "Спампавана"
+        "Спампаваць"
       ],
       "Download logs": [
         "Спампаваць журналы"
       ],
       "Help": [
-        "Даведка"
+        "Дапамога"
       ],
       "Import": [
-        "Імпартаванне"
+        "Імпарт"
       ],
       "Make a copy": [
         "Зрабіць копію"
@@ -743,23 +1104,32 @@
       "Move to trash": [
         "Перамясціць у сметніцу"
       ],
+      "New document": [
+        "Новы дакумент"
+      ],
       "New spreadsheet": [
         "Новая электронная табліца"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Адкрыць ${ DRIVE_APP_NAME }"
       ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Электронная табліца OpenDocument (.ods) (бэта)"
+      ],
       "Print": [
-        "Друкаваць"
+        "Друк"
       ],
       "See version history": [
         "Паглядзець гісторыю версій"
       ],
-      "Tab Separated Values (.tsv)": [
-        "Значэнні, раздзеленыя ўкладкамі (.tsv)"
+      "Settings": [
+        "Налады"
+      ],
+      "Toggle debug mode": [
+        "Пераключыць рэжым адладкі"
       ],
       "View recent spreadsheets": [
-        "Прагледзець нядаўнія табліцы"
+        "Паглядзець нядаўнія электронныя табліцы"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -767,13 +1137,19 @@
         "Выраўноўванне"
       ],
       "Bold": [
-        "Тлусты"
+        "Тоўсты"
       ],
       "Clear": [
         "Ачысціць"
       ],
+      "Clear content": [
+        "Ачысціць змесціва"
+      ],
       "Clear formatting": [
         "Ачысціць фарматаванне"
+      ],
+      "Conditional formatting": [
+        "Умоўнае фарматаванне"
       ],
       "Font size": [
         "Памер шрыфту"
@@ -782,24 +1158,53 @@
         "Курсіў"
       ],
       "Number": [
-        "Лічба"
+        "Нумар"
       ],
       "Strikethrough": [
-        "Перакрэслены"
+        "Закрэслены"
+      ],
+      "Table formatting": [
+        "Фарматаванне табліцы"
       ],
       "Text": [
-        "з тэкстам"
+        "Тэкст"
       ],
       "Theme": [
-        "Тэма"
+        "Тема"
       ],
       "Underline": [
         "Падкрэслены"
+      ],
+      "Wrapping": [
+        "Пераносы"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Унізе"
+      ],
       "Center": [
         "Па цэнтры"
+      ],
+      "Left": [
+        "Злева"
+      ],
+      "Middle": [
+        "Пасярэдзіне"
+      ],
+      "Right": [
+        "Справа"
+      ],
+      "Top": [
+        "Уверсе"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Overflow": [
+        "Перапаўненне"
+      ],
+      "Wrap": [
+        "Перанос"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -810,10 +1215,13 @@
         "Дыяграма"
       ],
       "Checkbox": [
-        "Сцяжок"
+        "Птушка"
       ],
       "Columns": [
         "Слупкі"
+      ],
+      "Dropdown": [
+        "Выпадаючы спіс"
       ],
       "Function": [
         "Функцыя"
@@ -840,6 +1248,35 @@
         "Аркуш"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } слупок",
+        "${ numberOfColumns } слупкі",
+        "${ numberOfColumns } слупкоў",
+        "${ numberOfColumns } слупкоў"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } радок",
+        "${ numberOfRows } радкі",
+        "${ numberOfRows } радкоў",
+        "${ numberOfRows } радкоў"
+      ],
+      "above": [
+        "вышэй"
+      ],
+      "below": [
+        "ніжэй"
+      ],
+      "Insert": [
+        "Уставіць"
+      ],
+      "left": [
+        "злева"
+      ],
+      "right": [
+        "справа"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar title": {
       "Data": [
         "Даныя"
@@ -857,10 +1294,16 @@
         "Уставіць"
       ],
       "View": [
-        "Выгляд"
+        "Паглядзець"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Панэль формул"
+      ],
+      "Gridlines": [
+        "Лініі сеткі"
+      ],
       "Show": [
         "Паказаць"
       ],
@@ -868,12 +1311,25 @@
         "Маштаб"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "слупок ${ columnLetter }"
+      ],
+      "Up to": [
+        "Да"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Схаваныя аркушы"
+      ]
+    },
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
         "$ Долар ЗША"
       ],
       "Accounting": [
-        "Улік"
+        "Бухгалтарскі ўлік"
       ],
       "CN¥ Chinese Yuan": [
         "CN¥ Кітайскі юань"
@@ -884,8 +1340,8 @@
       "Currency rounded": [
         "Акругленая валюта"
       ],
-      "Date": [
-        "Дата"
+      "Custom currency": [
+        "Карыстальніцкая валюта"
       ],
       "Date time": [
         "Дата і час"
@@ -894,7 +1350,7 @@
         "Працягласць"
       ],
       "Financial": [
-        "Фінансавы"
+        "Фінансы"
       ],
       "General": [
         "Агульныя"
@@ -906,10 +1362,10 @@
         "Іншыя валюты"
       ],
       "Number": [
-        "Лічба"
+        "Нумар"
       ],
       "Percent": [
-        "Працэнт"
+        "Адсотак"
       ],
       "Plain text": [
         "Звычайны тэкст"
@@ -919,9 +1375,6 @@
       ],
       "Time": [
         "Час"
-      ],
-      "£ Pound": [
-        "£ Фунт"
       ],
       "¥ Yen": [
         "¥ Іена"
@@ -936,14 +1389,46 @@
     "sheets_2025:Spreadsheet editor search dialog": {
       "Close": [
         "Закрыць"
+      ],
+      "Go to next": [
+        "Перайсці да наступнага"
+      ],
+      "Go to previous": [
+        "Перайсці да папярэдняга"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Аўтаматычна"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Locale": [
+        "Лакаль"
+      ],
+      "Save and reload": [
+        "Захаваць і перазагрузіць"
+      ],
+      "Settings for this spreadsheet": [
+        "Налады для гэтай электроннай табліцы"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Гэта ўплывае на падрабязнасці фарматавання, такія як функцыі, даты і валюта"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
-        "Тлусты"
+        "Тоўсты"
+      ],
+      "Border": [
+        "Мяжа"
       ],
       "Clear formatting": [
         "Ачысціць фарматаванне"
+      ],
+      "Create a filter": [
+        "Стварыць фільтр"
       ],
       "Decrease decimal places": [
         "Паменшыць колькасць знакаў пасля коскі"
@@ -953,6 +1438,12 @@
       ],
       "Default (${ defaultFont })": [
         "Прадвызначаны (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Колер запаўнення"
+      ],
+      "Find": [
+        "Знайсці"
       ],
       "Font": [
         "Шрыфт"
@@ -966,32 +1457,53 @@
       "Format as percent": [
         "Фарматаваць як працэнты"
       ],
+      "Horizontal align": [
+        "Гарызантальнае выраўноўванне"
+      ],
       "Increase decimal places": [
         "Павялічыць колькасць знакаў пасля коскі"
       ],
       "Increase font size": [
         "Павялічыць памер шрыфту"
       ],
+      "Insert function": [
+        "Уставіць функцыю"
+      ],
       "Insert link": [
         "Уставіць спасылку"
+      ],
+      "Insert note": [
+        "Уставіць нататку"
       ],
       "Italic": [
         "Курсіў"
       ],
+      "Merge cells": [
+        "Аб'яднаць клеткі"
+      ],
       "More": [
-        "Больш"
+        "Яшчэ"
       ],
       "More formats": [
         "Больш фарматаў"
       ],
+      "Paint format": [
+        "Фармат малюнка"
+      ],
       "Redo": [
         "Узнавіць"
       ],
+      "Select merge type": [
+        "Выбраць тып аб'яднання"
+      ],
       "Strikethrough": [
-        "Перакрэслены"
+        "Закрэслены"
       ],
       "Text color": [
         "Колер тэксту"
+      ],
+      "Text wrapping": [
+        "Перанос радкоў"
       ],
       "Underline": [
         "Падкрэслены"
@@ -999,8 +1511,55 @@
       "Undo": [
         "Адрабіць"
       ],
+      "Unmerge cells": [
+        "Раз'яднаць ячэйкі"
+      ],
+      "Vertical align": [
+        "Вертыкальнае выраўноўванне"
+      ],
       "Zoom": [
         "Маштаб"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Ужыць"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Clear": [
+        "Ачысціць"
+      ],
+      "Copy": [
+        "Копія"
+      ],
+      "Delete table column": [
+        "Выдаліць слупок табліцы"
+      ],
+      "Enter value": [
+        "Увядзіце значэнне"
+      ],
+      "Filter by condition": [
+        "Фільтрацыя па ўмовах"
+      ],
+      "Filter by value": [
+        "Фільтраваць па значэнні"
+      ],
+      "Insert 1 table column right": [
+        "Уставіць 1 слупок табліцы справа"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Select all": [
+        "Выбраць усе"
+      ],
+      "Sort A → Z": [
+        "Сартаваць А → Я"
+      ],
+      "Sort Z → A": [
+        "Сартаваць Я → А"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1027,8 +1586,404 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Link removed": [
+        "Спасылка выдалена"
+      ],
       "Remove link": [
         "Выдаліць спасылку"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "column": [
+        "слупок"
+      ],
+      "column width": [
+        "шырыня слупка"
+      ],
+      "Default": [
+        "Прадвызначана"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "радок"
+      ],
+      "row height": [
+        "вышыня радка"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Выраўноўванне"
+      ],
+      "Bold": [
+        "Тоўсты"
+      ],
+      "Border": [
+        "Мяжа"
+      ],
+      "Border style": [
+        "Стыль мяжы"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Choose Category": [
+        "Выберыце катэгорыю"
+      ],
+      "Color": [
+        "Колер"
+      ],
+      "Currency Symbol": [
+        "Сімвал валюты"
+      ],
+      "Custom": [
+        "Карыстальніцкая"
+      ],
+      "Decimal places": [
+        "Дзесятковыя знакі"
+      ],
+      "Effects": [
+        "Эфекты"
+      ],
+      "Font": [
+        "Шрыфт"
+      ],
+      "Font size": [
+        "Памер шрыфту"
+      ],
+      "Format cells": [
+        "Фарматаваць ячэйкі"
+      ],
+      "General": [
+        "Агульныя"
+      ],
+      "Horizontal Alignment": [
+        "Гарызантальнае выроўніванне"
+      ],
+      "Indent": [
+        "Водступ"
+      ],
+      "Italic": [
+        "Курсіў"
+      ],
+      "Merge": [
+        "Аб'яднаць"
+      ],
+      "Merge all": [
+        "Аб'яднаць усе"
+      ],
+      "Merge horizontally": [
+        "Аб'яднаць гарызантальна"
+      ],
+      "Merge vertically": [
+        "Аб'яднаць вертыкальна"
+      ],
+      "Overflow": [
+        "Перапаўненне"
+      ],
+      "Preview": [
+        "Папярэдні прагляд"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Strikethrough": [
+        "Закрэслены"
+      ],
+      "Text control": [
+        "Кіраванне тэкстам"
+      ],
+      "Thousands separator": [
+        "Раздзяляльнік тысячных"
+      ],
+      "Type": [
+        "Тып"
+      ],
+      "Underline": [
+        "Падкрэслены"
+      ],
+      "Unmerge": [
+        "Раз'яднаць"
+      ],
+      "Use 1000 Separator (,)": [
+        "Выкарыстоўваць раздзяляльнік 1000 (,)"
+      ],
+      "Vertical Alignment": [
+        "Вертыкальнае выраўноўванне"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Дадаць"
+      ],
+      "Aggregate": [
+        "Сукупнасць"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Chart data range": [
+        "Дыяпазон даных дыяграмы"
+      ],
+      "Chart editor": [
+        "Рэдактар дыяграмы"
+      ],
+      "Chart title": [
+        "Назва дыяграмы"
+      ],
+      "Chart type": [
+        "Тып дыяграмы"
+      ],
+      "Enter title": [
+        "Увядзіце назву"
+      ],
+      "Horizontal axis title": [
+        "Назва гарызантальнай восі"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Range": [
+        "Дыяпазон"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Select a range": [
+        "Выберыце дыяпазон"
+      ],
+      "Series": [
+        "Серыі"
+      ],
+      "Show data in hidden rows and columns": [
+        "Паказаць даныя ў схаваных радках і слупках"
+      ],
+      "Value": [
+        "Значэнне"
+      ],
+      "Vertical axis title": [
+        "Назва вертыкальнай восі"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Дадаць яшчэ адзін дыяпазон"
+      ],
+      "Add another rule": [
+        "Дадаць яшчэ адно правіла"
+      ],
+      "Add rule": [
+        "Дадаць правіла"
+      ],
+      "Apply to range": [
+        "Ужыць да дыяпазону"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Color scale": [
+        "Каляровая шкала"
+      ],
+      "Conditional formatting": [
+        "Умоўнае фарматаванне"
+      ],
+      "Delete range": [
+        "Выдаліць дыяпазон"
+      ],
+      "Delete rule": [
+        "Выдаліць правіла"
+      ],
+      "Enter a formula": [
+        "Увядзіце формулу"
+      ],
+      "Enter value": [
+        "Увядзіце значэнне"
+      ],
+      "Format rules": [
+        "Фарматаваць правілы"
+      ],
+      "Format style": [
+        "Стыль фармату"
+      ],
+      "Max point": [
+        "Максімальны пункт"
+      ],
+      "Max value": [
+        "Максімальнае значэнне"
+      ],
+      "Mid point": [
+        "Сярэдні пункт"
+      ],
+      "Min point": [
+        "Мінімальны пункт"
+      ],
+      "Min value": [
+        "Мінімальнае значэнне"
+      ],
+      "Number": [
+        "Нумар"
+      ],
+      "Preview": [
+        "Папярэдні прагляд"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Select a range": [
+        "Выберыце дыяпазон"
+      ],
+      "Single color": [
+        "Адзін колер"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Ужыць"
+      ],
+      "Apply to create a custom currency": [
+        "Ужыць для стварэння карыстальніцкай валюты"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Currency symbol": [
+        "Сімвал валюты"
+      ],
+      "Custom currencies": [
+        "Карыстальніцкія валюты"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Дадаць яшчэ адзін найменны дыяпазон"
+      ],
+      "Add another range": [
+        "Дадаць яшчэ адзін дыяпазон"
+      ],
+      "Add named range": [
+        "Дадаць найменны дыяпазон"
+      ],
+      "Allow blanks": [
+        "Дазваляць пустыя значэнні"
+      ],
+      "Apply to range": [
+        "Ужыць да дыяпазону"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Data validation": [
+        "Праверка даных"
+      ],
+      "Delete data validation rule": [
+        "Выдаліць правіла праверкі даных"
+      ],
+      "Enter a formula": [
+        "Увядзіце формулу"
+      ],
+      "Enter value": [
+        "Увядзіце значэнне"
+      ],
+      "Formula": [
+        "Формула"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Select a range": [
+        "Выберыце дыяпазон"
+      ],
+      "Validation rules": [
+        "Правілы праверкі"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Закрыць"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Дадаць яшчэ адзін найменны дыяпазон"
+      ],
+      "Add named range": [
+        "Дадаць найменны дыяпазон"
+      ],
+      "Apply to range": [
+        "Ужыць да дыяпазону"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Delete named range": [
+        "Выдаліць найменны дыяпазон"
+      ],
+      "Enter a formula": [
+        "Увядзіце формулу"
+      ],
+      "Enter text or formula": [
+        "Увядзіце тэкст або формулу"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Name should not contain spaces": [
+        "Назва не павінна змяшчаць прабелы"
+      ],
+      "Named Ranges": [
+        "Найменныя дыяпазоны"
+      ],
+      "Range": [
+        "Дыяпазон"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Text or formula": [
+        "Тэкст або формула"
+      ],
+      "Type": [
+        "Тып"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Чаргаванне слупкоў"
+      ],
+      "Banded rows": [
+        "Чаргаванне радкоў"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Edit table": [
+        "Рэдагаваць табліцу"
+      ],
+      "More settings": [
+        "Дадатковыя налады"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Select a range": [
+        "Выберыце дыяпазон"
+      ],
+      "Show filter button": [
+        "Паказаць кнопку фільтра"
+      ],
+      "Table data range": [
+        "Дыяпазон даных табліцы"
+      ],
+      "Table title": [
+        "Назва табліцы"
       ]
     },
     "Title": {
