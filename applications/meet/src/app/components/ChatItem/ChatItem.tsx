@@ -102,7 +102,7 @@ export const ChatItem = ({
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
-                    <div className="flex justify-start items-start text-semibold color-weak">
+                    <div className="block text-semibold color-weak">
                         {
                             // translator: full sentence is "Joined <room name>" or "Left <room name>"
                             item.eventType === ParticipantEvent.Join
