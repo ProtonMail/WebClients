@@ -64,10 +64,12 @@ export type ComposerComponentProps = {
     handleOpenFiles?: () => void; // Optional for MainContainer (no files management needed)
     onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
     canShowLegalDisclaimer?: boolean;
-    canShowLumoUpsellToggle?: boolean;
     initialQuery?: string; // Initial query to populate and auto-execute
     prefillQuery?: string; // Query to prefill without auto-executing
     spaceId?: string; // Optional space ID to include space-level attachments
+
+    // From legacy composer component - can delete
+    // canShowLumoUpsellToggle?: boolean;
 };
 
 /**
@@ -88,7 +90,6 @@ const ComposerComponentInner = ({
     handleOpenFiles,
     onShowDriveBrowser,
     canShowLegalDisclaimer,
-    canShowLumoUpsellToggle,
     initialQuery,
     prefillQuery,
     spaceId,
@@ -264,8 +265,6 @@ const ComposerComponentInner = ({
                             onFilesSelected={handleFilesSelected}
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
-                            hasAttachments={hasAttachments}
-                            canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                             fileUploadMode={fileUploadMode}
                         />
                     </div>
