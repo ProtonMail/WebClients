@@ -1,5 +1,5 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
-import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
+import type { OfflineComponents, OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isObject } from '@proton/pass/utils/object/is-object';
@@ -76,6 +76,12 @@ export const createAuthStore = (store: Store) => {
 
         /** Checks wether the session can verify a password locally */
         hasOfflineComponents: () => Boolean(authStore.getOfflineConfig() && authStore.getOfflineVerifier()),
+
+        setOfflineComponents: (data: OfflineComponents) => {
+            authStore.setOfflineKD(data.offlineKD);
+            authStore.setOfflineConfig(data.offlineConfig);
+            authStore.setOfflineVerifier(data.offlineVerifier);
+        },
 
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',

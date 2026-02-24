@@ -622,11 +622,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     case PasswordVerification.EXTRA_PASSWORD: {
                         await verifyExtraPassword({ password });
 
-                        const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(password);
-
-                        authStore.setOfflineConfig(offlineConfig);
-                        authStore.setOfflineKD(offlineKD);
-                        authStore.setOfflineVerifier(offlineVerifier);
+                        const components = await generateOfflineComponents(password);
+                        authStore.setOfflineComponents(components);
 
                         /** Online extra password verification will happen on
                          * first login after a successful fork. At this point
@@ -664,7 +661,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             /** Compute the offline components in order to update the auth store on successful
              * extra password registration : this will affect any password locks or offline mode
              * setting. Users will now have to unlock the client with the extra password */
-            const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(password);
+            const components = await generateOfflineComponents(password);
             await registerExtraPassword({ password });
 
             /* Clear biometrics */
@@ -679,9 +676,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             authStore.setExtraPassword(true);
-            authStore.setOfflineConfig(offlineConfig);
-            authStore.setOfflineKD(offlineKD);
-            authStore.setOfflineVerifier(offlineVerifier);
+            authStore.setOfflineComponents(components);
 
             await authService.persistSession();
             return true;

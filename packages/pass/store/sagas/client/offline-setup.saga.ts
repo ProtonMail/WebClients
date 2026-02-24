@@ -1,5 +1,5 @@
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { type OfflineComponents, generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { offlineSetup } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 
@@ -16,10 +16,8 @@ export default createRequestSaga({
          * the authentication store, generate the `offlineConfig`
          * `offlineKD` and persist the session immediately */
         if (!authStore.hasOfflinePassword()) {
-            const data: OfflineComponents = await generateOfflineComponents(password);
-            authStore.setOfflineConfig(data.offlineConfig);
-            authStore.setOfflineKD(data.offlineKD);
-            authStore.setOfflineVerifier(data.offlineVerifier);
+            const components = await generateOfflineComponents(password);
+            authStore.setOfflineComponents(components);
             await auth.persistSession();
         }
 
