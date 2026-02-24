@@ -279,7 +279,10 @@ const MemberActions = ({
         },
         canDelete &&
             ({
-                text: canRevokeSessions ? c('Member action').t`Delete` : c('Member action').t`Remove`,
+                text:
+                    member.Type === MEMBER_TYPE.PROTON && !member.Self // Intended for users who are invited, e.g. in visionary or family plans
+                        ? c('Member action').t`Remove`
+                        : c('Member action').t`Delete`,
                 actionType: 'delete',
                 onClick: () => {
                     onDelete(member);
