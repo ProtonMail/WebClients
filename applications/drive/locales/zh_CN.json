@@ -1276,8 +1276,14 @@
       "${ domains } additional custom domain": [
         "${ domains } 个额外的自有域名"
       ],
-      "${ ips } server": [
-        "${ ips } 台服务器"
+      "${ ips } dedicated VPN server": [
+        "${ ips } 个专属 VPN 服务器"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 许可"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 席位"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -1291,6 +1297,9 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } 个 ${ LUMO_APP_NAME } AI 许可"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
@@ -1299,6 +1308,24 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
+      "Domains": [
+        "域名"
+      ],
+      "Servers": [
+        "服务器"
+      ],
+      "Users": [
+        "用户"
+      ],
+      "Writing assistant": [
+        "写作助手"
+      ],
+      "Writing assistant seats": [
+        "写作助手席位"
       ]
     },
     "Alert": {
@@ -1495,45 +1522,51 @@
         "3 TB 数据存储空间"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "访问 120 多个国家/地区的 15,000 多个伺服器"
+        "访问遍布 120 多个国家/地区的 15,000+ 台服务器"
       ],
       "Access advanced AI models": [
         "访问高级 AI 模型"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+        "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "屏蔽广告、跟踪器和恶意软件"
+        "拦截广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
       ],
       "Connect 10 devices at once": [
-        "可同时连接 10 台设备"
+        "同时连接 10 台设备"
       ],
       "Full chat history with easy search and favorites": [
-        "完整的聊天记录，方便搜索和收藏"
+        "完整的聊天历史记录，支持轻松搜索和收藏"
       ],
       "Individual accounts for 6 users": [
         "为 6 位用户提供独立账户"
       ],
       "Individual accounts for you and a partner": [
-        "为您和伴侣提供独立账户"
+        "为您和您的伴侣提供独立账户"
       ],
       "Stronger protection against cyber threats": [
-        "更强大的网络威胁防护"
+        "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "无限聊天次数"
+        "每日无限制聊天"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
+        "专为设备设计的 NetShield 功能，通过拦截广告、跟踪器和恶意软件来保护您的设备并提升浏览速度。"
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 个月"
       ],
@@ -1543,14 +1576,23 @@
       "Annually": [
         "按年付费"
       ],
+      "Billed monthly": [
+        "按月计费"
+      ],
       "Lifetime": [
         "终身"
+      ],
+      "Lifetime access": [
+        "终身使用权"
       ],
       "Monthly": [
         "月费"
       ],
       "Two-year": [
         "两年付费"
+      ],
+      "Yearly": [
+        "每年"
       ]
     },
     "Browser": {
@@ -6602,8 +6644,8 @@
       "You cannot undo this action.": [
         "您无法撤销此操作。"
       ],
-      "You don’t have permission to copy files to this folder.": [
-        "您无权将文件复制到此文件夹"
+      "You don't have permission to copy files to this folder.": [
+        "您无权将文件复制到此文件夹！"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
@@ -6641,8 +6683,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "您即将拒绝加入 ${ invitationName } 相册的邀请。继续操作后，除非相册所有者重新邀请，否则您将无法查看该相册内容。确定要执行此操作吗？"
@@ -6713,11 +6755,11 @@
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一个结算日期是${ renewalTime }。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。"
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "下次账单日期为 ${ renewalTime }，您可以随时取消。如需立即更改套餐，请联系支持人员。"
       ],
       "Your online activity is protected": [
         "您的在线活动受到保护"
@@ -8161,7 +8203,7 @@
         "${ n } 台设备可同时接入 VPN"
       ],
       "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
+        "${ options } 天的文件版本历史记录"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 终身"
@@ -9204,6 +9246,9 @@
       "Selected item was not removed from your list": [
         "所选项目未能从您的列表中移除"
       ],
+      "Selected item was successfully removed from your list": [
+        "所选项目已成功从您的列表中移除"
+      ],
       "Selected items were successfully removed from your list": [
         "所选项目已成功从您的列表中移除"
       ],
@@ -9627,7 +9672,7 @@
       "Create new group": [
         "创建群组"
       ],
-      "Expected strcuture": [
+      "Expected structure": [
         "预期结构"
       ],
       "Ignore group": [
@@ -9776,6 +9821,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（不含税）"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 税费：${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% 税费：${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后 ${ formattedDate } 的应付金额"
       ],
@@ -9794,20 +9848,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "不含 ${ taxRate }% ${ taxName }：${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "不含 ${ taxRate }% 税费：${ taxAmount }"
-      ],
       "Got it": [
         "了解"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "包含 ${ taxRate }% ${ taxName }：${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "含 ${ rate }% 税费"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "包含 ${ taxRate }% 税费：${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "含 ${ rate }% 税费：${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "含 ${ rate }% 税费"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "含 ${ rate }% 税费：${ taxAmountElement }"
       ],
       "MM/YY": [
         "月/年"
@@ -9827,8 +9881,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
-      "Taxes": [
-        "税费"
+      "Tax ${ rate }%": [
+        "税费 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税费 ${ rate }%"
       ],
       "terms and conditions": [
         "服务条款"
@@ -9871,9 +9928,6 @@
       ],
       "Timeout exceeded": [
         "超时"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "VAT number": [
         "增值税号"
@@ -9953,6 +10007,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "续订价格取决于账单地区和 ABN。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "续订价格取决于账单地区和商业编号。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "续订价格取决于账单地区和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "续订价格取决于账单地区和增值税号。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -10139,9 +10207,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "增值税号"
-      ],
       "Your organization name": [
         "您的组织名称"
       ],
@@ -10165,6 +10230,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } 个月"
       ]
     },
     "plus_block": {
@@ -10447,13 +10517,13 @@
         "您有 ${ timeRemaining.inDays } 天重置您的密码。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 您有 ${ timeRemaining.inHours } 小时重置您的密码。"
+        "您有 ${ timeRemaining.inHours } 小时重置您的密码。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
+        "您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
+        "您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
       ]
     },
     "session_recovery:available:link": {
@@ -10585,6 +10655,9 @@
       ],
       "Open in ${ appName }": [
         "在 ${ appName } 中打开"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "在 ${ appName }（测试版）中打开"
       ]
     },
     "Signing preference for emails": {
@@ -10787,8 +10860,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "将您的密码安全地存储并分类管理在多个保险库中"
+      "Keep your passwords safe and organized in multiple vaults": [
+        "将您的密码安全地保存在多个保险库中并进行整理"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保护您的账户免受威胁"
@@ -10960,17 +11033,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您将失去无限次登录和笔记、无限次 hide-my-email 别名、20个保险库以及优先支持的特权。"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "每两年付费"
-      ],
-      "Billed monthly": [
-        "每月付费"
-      ],
-      "Billed yearly": [
-        "每年付费"
       ]
     },
     "Subscription attribute": {
@@ -12612,7 +12674,7 @@
         "VPN 能为您防护哪些威胁？"
       ],
       "What is a VPN?": [
-        "什么是 VPN？\n"
+        "什么是 VPN？"
       ],
       "What would you like to import?": [
         "您需要导入哪些信息？"

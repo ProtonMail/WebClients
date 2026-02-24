@@ -1283,9 +1283,15 @@
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servrar"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikerad VPN-server",
+        "${ ips } dedikerade VPN-servrar"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-licenser"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
@@ -1299,6 +1305,10 @@
       "${ price } per user": [
         "${ price } per användare"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI-licens",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenser"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
@@ -1310,6 +1320,21 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "Domains": [
+        "Domäner"
+      ],
+      "Servers": [
+        "Servrar"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Alert": {
@@ -1503,19 +1528,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagring"
+        "2 TB datalagringsutrymme"
       ],
       "3 TB data storage": [
-        "3 TB datalagring"
+        "3 TB datalagringsutrymme"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till 15 000+ servrar i 120+ länder"
+        "Åtkomst till över 15 000 servrar i över 120 länder"
       ],
       "Access advanced AI models": [
         "Åtkomst till avancerade AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+        "Alla premiumfunktioner för ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blockera annonser, spårare och skadlig kod"
@@ -1527,7 +1552,7 @@
         "Anslut 10 enheter samtidigt"
       ],
       "Full chat history with easy search and favorites": [
-        "Fullständig chatthistorik med enkel sökning och favoriter"
+        "Fullständig konversationshistorik med enkel sökning och favoriter"
       ],
       "Individual accounts for 6 users": [
         "Individuella konton för 6 användare"
@@ -1548,6 +1573,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
       "1 month": [
         "1 månad"
       ],
@@ -1557,14 +1590,23 @@
       "Annually": [
         "Årligen"
       ],
+      "Billed monthly": [
+        "Faktureras månadsvis"
+      ],
       "Lifetime": [
         "Livstid"
+      ],
+      "Lifetime access": [
+        "Livstidsåtkomst"
       ],
       "Monthly": [
         "Månadsvis"
       ],
       "Two-year": [
         "Tvåårig"
+      ],
+      "Yearly": [
+        "Årsvis"
       ]
     },
     "Browser": {
@@ -1759,6 +1801,10 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsumma för ${ cycle } månad",
+        "Delsumma för ${ cycle } månader"
       ],
       "Total": [
         "Totalt"
@@ -6669,7 +6715,7 @@
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
       ],
-      "You don’t have permission to copy files to this folder.": [
+      "You don't have permission to copy files to this folder.": [
         "Du har inte behörighet att kopiera filer till denna mapp."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
@@ -6710,9 +6756,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du kommer sedan att faktureras varje ${ renewCycle } månad med ${ renewAmountStr }.",
-        "Du kommer sedan att faktureras var ${ renewCycle }:e månad med ${ renewAmountStr }."
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i albumet ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du är på väg att avböja inbjudan att gå med i mappen ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt den om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
@@ -6777,11 +6822,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ditt nästa faktureringsdatum är ${ renewalTime }. Kontakta support om du behöver ett omedelbart paketbyte."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
       ],
       "Your online activity is protected": [
         "Din aktivitet online är skyddad"
@@ -8306,7 +8351,7 @@
         "${ n } VPN-anslutningar"
       ],
       "${ options }-day file version history": [
-        "${ options }-dagars filversionshistorik",
+        "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
@@ -9803,7 +9848,7 @@
       "Create new group": [
         "Skapa ny grupp"
       ],
-      "Expected strcuture": [
+      "Expected structure": [
         "Förväntad struktur"
       ],
       "Ignore group": [
@@ -9959,6 +10004,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (exkl. moms)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % moms: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
@@ -9977,20 +10031,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exklusive ${ taxRate } % moms: ${ taxAmount }"
-      ],
       "Got it": [
         "Jag förstår"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inklusive ${ rate } % moms"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inklusive ${ taxRate } % moms: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inklusive ${ rate } % moms"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inklusive ${ rate } % moms: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -10010,8 +10064,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
-      "Taxes": [
-        "Moms"
+      "Tax ${ rate }%": [
+        "Moms ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate } %"
       ],
       "terms and conditions": [
         "användarvillkor"
@@ -10060,9 +10117,6 @@
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "VAT number": [
         "Momsnummer"
@@ -10142,6 +10196,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Förnyelsepriset är beroende av faktureringsregion och EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10328,9 +10390,6 @@
       "Thomas": [
         "Tomas"
       ],
-      "VAT number": [
-        "Momsnummer"
-      ],
       "Your organization name": [
         "Ditt organisationsnamn"
       ],
@@ -10354,6 +10413,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } månad",
+        "${ cycle } månader"
       ]
     },
     "plus_block": {
@@ -10648,15 +10713,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Du har ${ timeRemaining.inHours } timme på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Du har ${ timeRemaining.inMinutes } minut på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Du har ${ timeRemaining.inSeconds } sekund på dig att återställa ditt lösenord.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
+        "Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
       ]
     },
     "session_recovery:available:link": {
@@ -10791,6 +10856,9 @@
       ],
       "Open in ${ appName }": [
         "Öppna i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Öppna i ${ appName } (beta)"
       ]
     },
     "Signing preference for emails": {
@@ -10998,8 +11066,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Skaffa obegränsat antal alias för att skydda din identitet och minska skräppost"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Håll dina lösenord säkra och organiserade i flera valv "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Håll dina lösenord säkra och organiserade i flera valv"
       ],
       "Protect your account from threats with Sentinel": [
         "Skydda ditt konto från hot med Sentinel"
@@ -11172,17 +11240,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du kommer förlora åtkomst till obegränsat antal inloggningar och anteckningar, obegränsat antal hide-my-email, 20 valv samt prioriterad support."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faktureras vartannat år"
-      ],
-      "Billed monthly": [
-        "Faktureras månadsvis"
-      ],
-      "Billed yearly": [
-        "Faktureras årligen"
       ]
     },
     "Subscription attribute": {
