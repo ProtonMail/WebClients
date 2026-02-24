@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { NodeType, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashActions } from './useTrashActions';
 import { useTrashNotifications } from './useTrashNotifications';
@@ -14,9 +14,7 @@ jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: jest.fn(),
-}));
+jest.mock('../../utils/errorHandling/handleSdkError');
 
 jest.mock('./useTrash.store', () => {
     const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
@@ -40,7 +38,6 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
 }));
 
 const mockUseDrive = jest.mocked(useDrive);
-const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 const mockUseTrashPhotosStore = useTrashPhotosStore as jest.MockedFunction<typeof useTrashPhotosStore> & {
     getState: jest.Mock;
@@ -52,7 +49,7 @@ describe('useTrashActions', () => {
     describe('emptyTrash', () => {
         const emptyTrashDrive = jest.fn();
         const emptyTrashPhotos = jest.fn();
-        const handleError = jest.fn();
+        const handleError = jest.mocked(handleSdkError);
         const createEmptyTrashNotificationSuccess = jest.fn();
         const emit = jest.fn();
 
@@ -87,8 +84,6 @@ describe('useTrashActions', () => {
                     },
                 },
             } as any);
-
-            mockUseSdkErrorHandler.mockReturnValue({ handleError } as any);
 
             mockUseTrashNotifications.mockReturnValue({
                 createEmptyTrashNotificationSuccess,

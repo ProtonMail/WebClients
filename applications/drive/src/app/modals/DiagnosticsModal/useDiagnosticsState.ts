@@ -11,7 +11,7 @@ import {
 } from '@proton/drive/diagnostic';
 
 import config from '../../config';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export enum State {
     LOADING = 'loading',
@@ -51,7 +51,6 @@ export const useDiagnosticsState = () => {
 
     const { drive } = useDrive();
     const { init } = useDriveDiagnostics();
-    const { handleError } = useSdkErrorHandler();
     const params = useParams()['*'];
 
     const loadCurrentNode = (params?: string) => {
@@ -90,7 +89,7 @@ export const useDiagnosticsState = () => {
             .catch((error: unknown) => {
                 setError(error);
                 setState(State.ERROR);
-                handleError(error);
+                handleSdkError(error);
             });
     };
 
@@ -147,7 +146,7 @@ export const useDiagnosticsState = () => {
             } catch (error) {
                 setError(error);
                 setState(State.ERROR);
-                handleError(error);
+                handleSdkError(error);
             }
         };
 

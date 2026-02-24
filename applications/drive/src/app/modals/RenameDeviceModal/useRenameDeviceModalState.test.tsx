@@ -5,7 +5,6 @@ import { useFormErrors, useNotifications } from '@proton/components';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { useLoading } from '@proton/hooks';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { type UseRenameDeviceModalProps, useRenameDeviceModalState } from './useRenameDeviceModalState';
@@ -19,8 +18,8 @@ jest.mock('@proton/hooks', () => ({
     useLoading: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: jest.fn(),
+jest.mock('../../utils/errorHandling/handleSdkError', () => ({
+    handleSdkError: jest.fn(),
 }));
 
 jest.mock('../../utils/sdk/getDeviceByUid', () => ({
@@ -59,10 +58,6 @@ describe('useRenameDeviceModalState', () => {
 
         jest.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
-        } as any);
-
-        jest.mocked(useSdkErrorHandler).mockReturnValue({
-            handleError: mockHandleError,
         } as any);
 
         jest.mocked(useLoading).mockReturnValue([false, mockWithSubmitting] as any);

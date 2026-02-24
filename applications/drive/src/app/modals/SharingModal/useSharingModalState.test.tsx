@@ -13,7 +13,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { type DirectMember, MemberType } from './interfaces';
 import { useSharingModalState } from './useSharingModalState';
 
@@ -99,7 +99,6 @@ const mockedSplitInvitationUid = jest.mocked(splitInvitationUid);
 const mockedSplitNodeUid = jest.mocked(splitNodeUid);
 const mockedUseLoading = jest.mocked(useLoading);
 const mockedUseFlagsDriveDocsPublicSharing = jest.mocked(useFlagsDriveDocsPublicSharing);
-const mockedUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockedGetAppHref = jest.mocked(getAppHref);
 const mockedTextToClipboard = jest.mocked(textToClipboard);
 
@@ -110,7 +109,7 @@ jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');
 jest.mock('../../flags/useFlagsDriveDocsPublicSharing');
-jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('../../utils/errorHandling/handleSdkError');
 jest.mock('@proton/drive/internal/BusDriver');
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
@@ -143,7 +142,7 @@ const expectedDirectMembers: DirectMember[] = [
 describe('useSharingModalState', () => {
     const mockBusEmit = jest.fn();
 
-    const mockHandleError = jest.fn();
+    const mockHandleError = jest.mocked(handleSdkError);
 
     beforeEach(() => {
         mockedUseUser.mockReturnValue([mockUser, false]);
@@ -158,9 +157,6 @@ describe('useSharingModalState', () => {
         mockedUseFlagsDriveDocsPublicSharing.mockReturnValue({
             isDocsPublicSharingEnabled: true,
         });
-        mockedUseSdkErrorHandler.mockReturnValue({
-            handleError: mockHandleError,
-        } as any);
 
         when(mockedGenerateNodeUid).calledWith(mockVolumeId, mockLinkId).mockReturnValue(mockNodeUid);
 

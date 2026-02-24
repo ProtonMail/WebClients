@@ -8,7 +8,7 @@ import { splitNodeUid, useDrive } from '@proton/drive/index';
 
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
@@ -19,7 +19,6 @@ export const useSharedWithMeNodesLoader = () => {
         internal: { photos },
     } = useDrive();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
     const { setVolumeShareIds } = useVolumesState();
 
     const { setSharedWithMeItemInStore, setLoadingNodes, cleanupStaleItems } = useSharedWithMeListingStore(
@@ -46,14 +45,14 @@ export const useSharedWithMeNodesLoader = () => {
                         const { node } = getNodeEntity(sharedWithMeMaybeNode);
                         const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
                         if (!node.deprecatedShareId) {
-                            handleError(new Error('The shared with me node has missing deprecatedShareId'), {
+                            handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
                                 showNotification: false,
                                 extra: { nodeUid: node.uid },
                             });
                             continue;
                         }
                         if (!node.membership) {
-                            handleError(new Error('Shared with me node has missing membership'), {
+                            handleSdkError(new Error('Shared with me node has missing membership'), {
                                 showNotification: false,
                                 extra: { nodeUid: node.uid },
                             });
@@ -90,7 +89,7 @@ export const useSharedWithMeNodesLoader = () => {
                             shareId: node.deprecatedShareId,
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -103,7 +102,7 @@ export const useSharedWithMeNodesLoader = () => {
                         const { node } = getNodeEntity(sharedWithMeMaybeNode);
                         const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
                         if (!node.deprecatedShareId) {
-                            handleError(
+                            handleSdkError(
                                 new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                                     tags: { component: 'drive-sdk' },
                                     extra: { uid: node.uid },
@@ -113,7 +112,7 @@ export const useSharedWithMeNodesLoader = () => {
                             continue;
                         }
                         if (!node.membership) {
-                            handleError(
+                            handleSdkError(
                                 new EnrichedError('Shared with me node have missing membership', {
                                     tags: { component: 'drive-sdk' },
                                     extra: {
@@ -157,7 +156,7 @@ export const useSharedWithMeNodesLoader = () => {
                             shareId: node.deprecatedShareId,
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -177,7 +176,9 @@ export const useSharedWithMeNodesLoader = () => {
 
                 cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids);
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`We were not able to load some items shared with you` });
+                handleSdkError(e, {
+                    fallbackMessage: c('Error').t`We were not able to load some items shared with you`,
+                });
             } finally {
                 setLoadingNodes(false);
             }
@@ -188,7 +189,6 @@ export const useSharedWithMeNodesLoader = () => {
             // setVolumeShareIds,
             drive,
             photos,
-            handleError,
             createNotification,
             setSharedWithMeItemInStore,
             setLoadingNodes,

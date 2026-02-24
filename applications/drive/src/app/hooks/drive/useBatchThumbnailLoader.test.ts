@@ -7,14 +7,13 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { ThumbnailType } from '@proton/drive';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useBatchThumbnailLoader } from './useBatchThumbnailLoader';
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('../../utils/errorHandling/handleSdkError');
 jest.mock('../../zustand/thumbnails/thumbnails.store');
 
-const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockUseThumbnailStore = jest.mocked(useThumbnailStore);
 
 const mockDriveClient = {
@@ -23,7 +22,7 @@ const mockDriveClient = {
 
 const mockSetThumbnail = jest.fn();
 const mockGetThumbnail = jest.fn();
-const mockHandleError = jest.fn();
+const mockHandleError = jest.mocked(handleSdkError);
 
 const mockThumbnailItem = {
     uid: 'test-uid-1',
@@ -49,7 +48,6 @@ describe('useBatchThumbnailLoader', () => {
         jest.useFakeTimers();
         mockGetThumbnail.mockReturnValue(undefined);
 
-        mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockUseThumbnailStore.mockReturnValue({
             setThumbnail: mockSetThumbnail,
             getThumbnail: mockGetThumbnail,

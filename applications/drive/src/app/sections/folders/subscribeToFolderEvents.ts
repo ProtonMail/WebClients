@@ -3,7 +3,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 
 import { logging } from '../../modules/logging';
 import type { LinkShareUrl } from '../../store';
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';

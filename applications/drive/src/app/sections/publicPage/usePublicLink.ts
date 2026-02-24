@@ -13,7 +13,7 @@ import {
     openDocsOrSheetsDocument,
     openPublicDocsOrSheetsDocument,
 } from '../../utils/docs/openInDocs';
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient, setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';
@@ -69,7 +69,6 @@ export const usePublicLink = (): UsePublicLinkResult => {
     const authentication = useAuthentication();
     const passwordRef = useRef('');
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
     const loadPublicLink = useCallback(
         async (newCustomPassword?: string) => {
             const drive = getDrive();
@@ -148,14 +147,14 @@ export const usePublicLink = (): UsePublicLinkResult => {
                     });
                     return;
                 }
-                handleError(e);
+                handleSdkError(e);
             } finally {
                 if (!isRedirecting) {
                     setIsLoading(false);
                 }
             }
         },
-        [authentication, createNotification, handleError]
+        [authentication, createNotification]
     );
 
     return {

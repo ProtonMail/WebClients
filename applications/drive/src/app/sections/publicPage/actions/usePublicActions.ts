@@ -19,7 +19,7 @@ import {
     getOpenInDocsInfo,
     openPublicDocsOrSheetsDocument,
 } from '../../../utils/docs/openInDocs';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getPublicLinkClient } from '../publicLinkClient';
@@ -37,7 +37,6 @@ export const usePublicActions = () => {
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { createDeleteNotification } = usePublicPageNotifications();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const handlePreview = (uid: string) => {
         const { itemUids, getFolderItem } = usePublicFolderStore.getState();
@@ -197,7 +196,7 @@ export const usePublicActions = () => {
             });
             handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType }, customPassword);
         } catch (e) {
-            handleError(e);
+            handleSdkError(e);
         }
     };
 

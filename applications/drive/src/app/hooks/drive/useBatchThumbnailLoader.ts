@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { type ProtonDriveClient, ThumbnailType } from '@proton/drive';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 
 interface ThumbnailItem {
@@ -28,8 +28,6 @@ export const useBatchThumbnailLoader = ({
     intervalMs = 100,
     thumbnailType = ThumbnailType.Type1,
 }: UseBatchThumbnailLoaderOptions) => {
-    const { handleError } = useSdkErrorHandler();
-
     const pendingItems = useRef<Map<string, ThumbnailItem>>(new Map());
     const isProcessing = useRef(false);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -63,7 +61,7 @@ export const useBatchThumbnailLoader = ({
                 }
             }
         } catch (error) {
-            handleError(error, { showNotification: false });
+            handleSdkError(error, { showNotification: false });
             itemsToProcess.forEach((item) => setThumbnail(item.thumbnailId, {}));
         } finally {
             isProcessing.current = false;
@@ -75,7 +73,7 @@ export const useBatchThumbnailLoader = ({
                 intervalRef.current = null;
             }
         }
-    }, [drive, thumbnailType, handleError]);
+    }, [drive, thumbnailType]);
 
     processBatchRef.current = processBatch;
 

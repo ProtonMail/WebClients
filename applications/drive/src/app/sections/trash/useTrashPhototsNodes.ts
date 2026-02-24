@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useDrive } from '@proton/drive/index';
 import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 export type SimpleTrashNode = {
@@ -12,7 +12,6 @@ export type SimpleTrashNode = {
 };
 
 export const useTrashPhototsNodes = () => {
-    const { handleError } = useSdkErrorHandler();
     const {
         internal: { photos },
     } = useDrive();
@@ -31,17 +30,17 @@ export const useTrashPhototsNodes = () => {
                         const { node } = getNodeEntityFromMaybeNode(trashNode);
                         setNodes({ [node.uid]: node });
                     } catch (e) {
-                        handleError(e, { showNotification: !shownErrorNotification });
+                        handleSdkError(e, { showNotification: !shownErrorNotification });
                         shownErrorNotification = true;
                     }
                 }
             } catch (e) {
-                handleError(e);
+                handleSdkError(e);
             } finally {
                 setLoading(false);
             }
         },
-        [photos, handleError]
+        [photos]
     );
 
     return {

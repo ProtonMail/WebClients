@@ -12,7 +12,7 @@ import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveV
 import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 import PreviewContainer from './PreviewContainer';
 
 export function FileContainer() {
@@ -20,7 +20,6 @@ export function FileContainer() {
     const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useLegacyContextShareHandler();
     const { shareId, linkId } = useParams<DriveSectionRouteProps>();
-    const { handleError } = useSdkErrorHandler();
     const [nodeUid, setNodeUid] = useState<string | undefined>();
     const { createNotification } = useNotifications();
 
@@ -29,7 +28,7 @@ export function FileContainer() {
 
         void withLoading(async () => {
             if (!shareId || !linkId) {
-                handleError(
+                handleSdkError(
                     new EnrichedError('Drive is not initialized, cache has been cleared unexpectedly', {
                         extra: {
                             reason: 'Missing URL parameters',
@@ -64,7 +63,7 @@ export function FileContainer() {
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkId, withLoading, handleError, navigateToRoot, handleContextShare, createNotification]);
+    }, [shareId, linkId, withLoading, navigateToRoot, handleContextShare, createNotification]);
 
     if (!shareId || !linkId) {
         return null;
