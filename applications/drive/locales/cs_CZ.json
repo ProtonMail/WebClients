@@ -1297,11 +1297,14 @@
         "${ domains } dalších vlastních domén",
         "${ domains } dalších vlastních domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverů",
-        "${ ips } serverů"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverů",
+        "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licence"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -1314,6 +1317,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -1332,6 +1341,15 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Users": [
+        "Uživatelé"
+      ],
+      "Writing assistant seats": [
+        "Licence asistenta psaní"
       ]
     },
     "Alert": {
@@ -1531,51 +1549,36 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datové úložiště"
-      ],
-      "3 TB data storage": [
-        "3 TB datové úložiště"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Přístup k 15 000+ serverům ve 120+ zemích"
-      ],
-      "Access advanced AI models": [
-        "Přístup k pokročilým modelům AI"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+        "2 TB úložiště dat"
       ],
       "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malwaru"
+        "Blokování reklam, sledovacích prvků a malware"
       ],
       "Built-in 2FA authenticator": [
-        "Vestavěné 2FA ověřování"
+        "Vestavěné ověřování 2FA"
       ],
       "Connect 10 devices at once": [
-        "Připojte 10 zařízení najednou"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuální účty pro 6 uživatelů"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuální účty pro vás a partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnější ochrana proti kybernetickým hrozbám"
-      ],
-      "Unlimited daily chats": [
-        "Neomezený denní limit konverzací"
+        "Připojte až 10 zařízení současně"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
+        "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
       "1 month": [
         "1 měsíc"
       ],
@@ -1585,6 +1588,9 @@
       "Annually": [
         "Ročně"
       ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
       "Lifetime": [
         "Doživotní"
       ],
@@ -1593,6 +1599,9 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročně"
       ]
     },
     "Browser": {
@@ -3736,6 +3745,9 @@
       ],
       "Tab closed": [
         "Záložka zavřena"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "U tohoto tarifu není podporováno osvobození od daně"
       ],
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
@@ -6872,9 +6884,6 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
-      "You don’t have permission to copy files to this folder.": [
-        "Nemáte oprávnění kopírovat soubory do této složky."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -6917,11 +6926,11 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
-        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Chystáte se odmítnout pozvánku k připojení do alba ${ invitationName }. Pokud budete pokračovat, nebudete k němu mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
@@ -6991,12 +7000,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Datum příští platby je ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ],
       "Your online activity is protected": [
         "Vaše online aktivita je chráněna"
@@ -8528,12 +8531,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -10116,9 +10113,6 @@
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
-      "Expected strcuture": [
-        "Očekávaná struktura"
-      ],
       "Ignore group": [
         "Ignorovat skupinu"
       ],
@@ -10286,20 +10280,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% daně: ${ taxAmount }"
-      ],
       "Got it": [
         "Rozumím"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -10318,9 +10300,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
-      ],
-      "Taxes": [
-        "Daně"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -10381,9 +10360,6 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -10463,6 +10439,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10649,9 +10633,6 @@
       "Thomas": [
         "Jméno"
       ],
-      "VAT number": [
-        "DIČ"
-      ],
       "Your organization name": [
         "Název vaší organizace"
       ],
@@ -10675,6 +10656,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
       ]
     },
     "plus_block": {
@@ -10988,24 +10977,6 @@
         "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -11141,9 +11112,6 @@
       ]
     },
     "sheets_2025:Action": {
-      "New spreadsheet": [
-        "Nová tabulka"
-      ],
       "Open in ${ appName }": [
         "Otevřít v ${ appName }"
       ]
@@ -11363,9 +11331,6 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Získejte neomezený počet aliasů pro ochranu své identity a snížení spamu"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech "
-      ],
       "Protect your account from threats with Sentinel": [
         "Chraňte svůj účet před hrozbami pomocí programu Sentinel"
       ],
@@ -11539,17 +11504,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Účtováno každé 2 roky"
-      ],
-      "Billed monthly": [
-        "Účtováno měsíčně"
-      ],
-      "Billed yearly": [
-        "Účtováno ročně"
       ]
     },
     "Subscription attribute": {

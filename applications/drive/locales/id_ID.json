@@ -1239,9 +1239,6 @@
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
-      "${ ips } server": [
-        "${ ips } server"
-      ],
       "${ price } per dedicated server": [
         "${ price } per server khusus"
       ],
@@ -1450,52 +1447,6 @@
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "Penyimpanan data 2 TB"
-      ],
-      "3 TB data storage": [
-        "Penyimpanan data 3 TB"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Akses 15.000+ server di 120+ negara"
-      ],
-      "Access advanced AI models": [
-        "Akses model AI lanjutan"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Semua fitur premium dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokir iklan, pelacak, dan malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
-      "Connect 10 devices at once": [
-        "Sambungkan 10 perangkat sekaligus"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Riwayat chat lengkap dengan pencarian mudah dan favorit"
-      ],
-      "Individual accounts for 6 users": [
-        "Akun individual untuk 6 pengguna"
-      ],
-      "Individual accounts for you and a partner": [
-        "Akun individual untuk Anda dan pasangan"
-      ],
-      "Stronger protection against cyber threats": [
-        "Perlindungan lebih kuat terhadap ancaman siber"
-      ],
-      "Unlimited daily chats": [
-        "Tanpa batasan jumlah percakapan harian"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 bulan"
@@ -1514,6 +1465,9 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ],
+      "Yearly": [
+        "Tahunan"
       ]
     },
     "Browser": {
@@ -6493,9 +6447,6 @@
       "You cannot undo this action.": [
         "Anda tidak dapat mengurungkan tindakan ini."
       ],
-      "You don’t have permission to copy files to this folder.": [
-        "Anda tidak memiliki izin untuk menyalin file ke folder ini."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
@@ -6531,9 +6482,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ trialEndsOnFormatted }."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Anda akan menolak undangan untuk bergabung ke album ${ invitationName }. Jika Anda melanjutkan, Anda tidak akan dapat mengaksesnya kecuali pemiliknya mengundang Anda lagi. Apakah Anda yakin ingin melanjutkan?"
@@ -6603,12 +6551,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar login Anda tidak akan disimpan setelah impor selesai."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Tanggal penagihan berikutnya adalah ${ renewalTime }. Silakan hubungi dukungan jika Anda memerlukan perubahan paket segera."
       ],
       "Your online activity is protected": [
         "Aktivitas daring Anda terlindungi"
@@ -8059,9 +8001,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
-      ],
-      "${ options }-day file version history": [
-        "Riwayat versi file ${ options } hari"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin untuk seumur hidup"
@@ -9515,9 +9454,6 @@
       "Create new group": [
         "Buat grup baru"
       ],
-      "Expected strcuture": [
-        "Struktur yang diharapkan"
-      ],
       "Ignore group": [
         "Abaikan grup"
       ],
@@ -9682,20 +9618,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Tanpa termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Belum termasuk pajak ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Paham"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Termasuk ${ taxName } ${ taxRate }%: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Termasuk pajak ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "BB/TT"
@@ -9714,9 +9638,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
-      ],
-      "Taxes": [
-        "Pajak"
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -9750,9 +9671,6 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
-      ],
-      "VAT": [
-        "PPN"
       ],
       "VAT number": [
         "Nomor PPN"
@@ -10018,9 +9936,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "Nomor PPN"
-      ],
       "Your organization name": [
         "Nama organisasi Anda"
       ],
@@ -10044,6 +9959,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } bulan"
       ]
     },
     "plus_block": {
@@ -10324,15 +10244,6 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
       ]
     },
     "session_recovery:available:link": {
@@ -10456,14 +10367,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "New spreadsheet": [
-        "Lembar kerja baru"
-      ],
-      "Open in ${ appName }": [
-        "Buka di ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -10666,9 +10569,6 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Dapatkan alias tak terbatas untuk melindungi identitas Anda dan mengurangi spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Simpan sandi Anda dengan aman dan terorganisasi di beberapa brankas "
-      ],
       "Protect your account from threats with Sentinel": [
         "Lindungi akun Anda dari ancaman dengan Sentinel"
       ],
@@ -10831,17 +10731,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Anda akan kehilangan akses ke login dan catatan tanpa batas, alias hide-my-email tanpa batas, 20 brankas, serta dukungan prioritas."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed monthly": [
-        "Ditagihkan bulanan"
-      ],
-      "Billed yearly": [
-        "Ditagihkan tahunan"
       ]
     },
     "Subscription attribute": {
