@@ -1429,6 +1429,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -1653,10 +1657,6 @@
       "${ domains } additional custom domain": [
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
-      ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidores"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1895,52 +1895,6 @@
         "Proteja seus e-mails e agendamentos com encriptação ponta a ponta. Inclui 15 endereços de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Aceda a mais de 15 000 servidores em mais de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Aceda a modelos de IA avançados"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas as funcionalidades premium do ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloqueie anúncios, rastreadores e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Ligue 10 dispositivos em simultâneo"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Histórico de conversas completo com pesquisa fácil e favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 utilizadores"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para si e para um parceiro"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ciberameaças"
-      ],
-      "Unlimited daily chats": [
-        "Conversas diárias ilimitadas"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "O NetShield especialmente concebido protege os seus dispositivos e acelera a sua navegação ao bloquear anúncios, localizadores e malware."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 mês"
@@ -1959,6 +1913,9 @@
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -8232,10 +8189,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Será então cobrado a cada ${ renewCycle } mês no valor de ${ renewAmountStr }.",
-        "Será então cobrado a cada ${ renewCycle } meses no valor de ${ renewAmountStr }."
-      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
       ],
@@ -8302,12 +8255,6 @@
       ],
       "Your message will expire tomorrow.": [
         "A sua mensagem vai expirar amanhã."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "A data do próximo pagamento é ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A sua próxima data de faturação é ${ renewalTime }. Contacte o suporte se precisar de uma alteração imediata no plano."
       ],
       "Your online activity is protected": [
         "A sua atividade online está protegida."
@@ -10073,10 +10020,6 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
-      "${ options }-day file version history": [
-        "Histórico de versões de ficheiros de ${ options } dias",
-        "Histórico de versões de ficheiros de ${ options } dias"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
       ],
@@ -11453,9 +11396,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
-      "Taxes": [
-        "Impostos"
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
         "O preço especialmente descontado de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
@@ -11475,9 +11415,6 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
@@ -11734,9 +11671,6 @@
       "Type text or keyword": [
         "Introduza o texto ou palavra-chave"
       ],
-      "VAT number": [
-        "Número de IVA"
-      ],
       "Your organization name": [
         "O nome da sua organização"
       ],
@@ -11752,6 +11686,12 @@
     "plan customizer, users": {
       "contact": [
         "contacto"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mês",
+        "${ cycle } meses"
       ]
     },
     "plus_block": {
@@ -11858,6 +11798,12 @@
       ],
       "Stored with zero-access encryption": [
         "Armazenado com encriptação de acesso zero"
+      ]
+    },
+    "Referral": {
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Tem **${ daysRemaining } dia restante** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer.",
+        "Tem **${ daysRemaining } dias restantes** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer."
       ]
     },
     "Remaining days before the message expire": {
@@ -12139,18 +12085,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tem ${ timeRemaining.inDays } dia para redefinir a sua palavra-passe.",
         "Tem ${ timeRemaining.inDays } dias para redefinir a sua palavra-passe."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Tem ${ timeRemaining.inHours } hora para redefinir a sua palavra-passe.",
-        " Tem ${ timeRemaining.inHours } horas para redefinir a sua palavra-passe."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Tem ${ timeRemaining.inMinutes } minuto para redefinir a sua palavra-passe.",
-        "Tem ${ timeRemaining.inMinutes } minutos para redefinir a sua palavra-passe."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Tem ${ timeRemaining.inSeconds }segundo para redefinir a sua palavra-passe.",
-        " Tem ${ timeRemaining.inSeconds } segundos para redefinir a sua palavra passe."
       ]
     },
     "session_recovery:available:link": {
@@ -12277,11 +12211,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partilhado por ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Abrir no ${ appName }"
       ]
     },
     "Signature verification warning": {
@@ -12549,9 +12478,6 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtenha aliases ilimitados para proteger sua identidade e reduzir spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Mantenha as suas palavras-passe seguras e organizadas em vários cofres "
-      ],
       "Protect your account from threats with Sentinel": [
         "Proteja a sua conta de ameaças com o Sentinel"
       ],
@@ -12763,17 +12689,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Perderá acesso a credenciais e notas ilimitadas, alias ilimitados do hide-my-email , 20 cofres, bem como suporte prioritário."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Faturado a cada 2 anos"
-      ],
-      "Billed monthly": [
-        "Faturado mensalmente"
-      ],
-      "Billed yearly": [
-        "Faturação anual"
       ]
     },
     "Subscription attribute": {

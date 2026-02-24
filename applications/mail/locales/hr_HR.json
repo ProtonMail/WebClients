@@ -1294,11 +1294,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelja",
-        "${ ips } poslužitelja"
-      ],
       "${ price } per user": [
         "${ price } po korisniku"
       ],
@@ -1425,52 +1420,6 @@
         "Online uređivač dokumenata"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB prostora za pohranu"
-      ],
-      "3 TB data storage": [
-        "3 TB prostora za pohranu"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristup 15,000+ poslužitelja u 120+ država"
-      ],
-      "Access advanced AI models": [
-        "Pristup naprednim AI modelima"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ugrađeni 2FA autentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 uređaja istovremeno"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
-      ],
-      "Individual accounts for 6 users": [
-        "Individualni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individualni korisnički računi za Vas i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Jača zaštita od kibernetičkih prijetnji"
-      ],
-      "Unlimited daily chats": [
-        "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 mjesec"
@@ -1486,6 +1435,9 @@
       ],
       "Two-year": [
         "2 godine"
+      ],
+      "Yearly": [
+        "Godišnje"
       ]
     },
     "Bug category": {
@@ -7836,32 +7788,14 @@
       "CVC": [
         "CVC"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% poreza: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumijem"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
       ],
-      "Taxes": [
-        "Porezi"
-      ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
-      ],
-      "VAT": [
-        "Porez"
       ]
     },
     "Payments.Error": {
@@ -8042,9 +7976,6 @@
       ],
       "Type text or keyword": [
         "Unesite tekst ili ključnu riječ"
-      ],
-      "VAT number": [
-        "PDV broj"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -8450,11 +8381,6 @@
         "Dijeli ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Otvori u ${ appName }"
-      ]
-    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Poruka šifrirana PGP-om. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
@@ -8715,17 +8641,6 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Naplaćuje se svake 2 godine"
-      ],
-      "Billed monthly": [
-        "Mjesečni račun"
-      ],
-      "Billed yearly": [
-        "Godišnji račun"
       ]
     },
     "Subscription attribute": {
@@ -9044,11 +8959,6 @@
       "Conversation removed from ${ labelName }.": [
         "Razgovor uklonjen iz ${ labelName }."
       ],
-      "Conversation updated": [
-        "Razgovor je ažuriran",
-        "Razgovori su ažurirani",
-        "Razgovori su ažurirani"
-      ],
       "Copied to clipboard": [
         "Kopirano u međuspremnik"
       ],
@@ -9102,11 +9012,6 @@
       ],
       "Message removed from ${ labelName }.": [
         "Poruka uklonjena iz ${ labelName }."
-      ],
-      "Message updated": [
-        "Poruka ažurirana",
-        "Poruke ažurirane",
-        "Poruka ažurirano"
       ],
       "Move ${ selectionCount } conversation": [
         "Premjesti ${ selectionCount } razgovor",

@@ -1719,8 +1719,14 @@
       "${ domains } additional custom domain": [
         "${ domains } 追加カスタムドメイン"
       ],
-      "${ ips } server": [
-        "${ ips } 台のサーバー"
+      "${ ips } dedicated VPN server": [
+        "${ ips } 台の専用VPNサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } のシート"
       ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
@@ -1734,6 +1740,9 @@
       "${ price } per user": [
         "ユーザーあたり ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AIライセンス"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
@@ -1742,6 +1751,24 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
+      "Domains": [
+        "ドメイン"
+      ],
+      "Servers": [
+        "サーバー"
+      ],
+      "Users": [
+        "ユーザー"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
+      "Writing assistant seats": [
+        "執筆アシスタントシート"
       ]
     },
     "Alert": {
@@ -2017,19 +2044,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2TBのデータストレージ"
+        "2 TB のストレージ"
       ],
       "3 TB data storage": [
-        "3TBのデータストレージ"
+        "3 TB のストレージ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120か国以上の15,000台以上のサーバーにアクセス"
+        "120 か国以上の 15,000 以上のサーバーにアクセス"
       ],
       "Access advanced AI models": [
-        "高度なAIモデルへのアクセス"
+        "高度なAIモデルにアクセス"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+        "${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
       ],
       "Block ads, trackers, and malware": [
         "広告、トラッカー、マルウェアをブロック"
@@ -2038,16 +2065,16 @@
         "2要素認証システム内蔵"
       ],
       "Connect 10 devices at once": [
-        "10台のデバイスを同時接続"
+        "同時に10台のデバイスを接続"
       ],
       "Full chat history with easy search and favorites": [
-        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+        "検索とブックマークが容易な、全体チャット履歴"
       ],
       "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
+        "6人のユーザーの個人アカウント"
       ],
       "Individual accounts for you and a partner": [
-        "お客様とパートナー用の個別アカウント"
+        "あなたとパートナーのための個人アカウント"
       ],
       "Stronger protection against cyber threats": [
         "サイバー脅威に対するより強力な保護"
@@ -2062,6 +2089,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 か月"
       ],
@@ -2071,14 +2104,23 @@
       "Annually": [
         "1年払い"
       ],
+      "Billed monthly": [
+        "毎月請求"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "生涯アクセス"
       ],
       "Monthly": [
         "月額"
       ],
       "Two-year": [
         "2年払い"
+      ],
+      "Yearly": [
+        "年払い"
       ]
     },
     "Browser": {
@@ -4556,6 +4598,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "添付ファイルのアップロード中にエラーが発生しました。メッセージは送信されていません。"
       ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
       ],
@@ -4859,11 +4904,17 @@
       "Tab closed": [
         "タブが閉じられました"
       ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
+      ],
       "Text is too long to refine": [
         "テキストが長すぎて修正できません"
       ],
       "Thanks for the feedback!": [
         "ご意見ありがとうございます!"
+      ],
+      "That action can't be performed on emails in this folder": [
+        "このフォルダ内のメールに対して、そのアクションを実行することはできません。"
       ],
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
@@ -7364,6 +7415,9 @@
       "Low Priority": [
         "優先度：低"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
+      ],
       "Manage your folders": [
         "フォルダを管理"
       ],
@@ -7445,6 +7499,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "このメッセージを移動すると、送信予約がキャンセルされます。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -7483,6 +7540,9 @@
       ],
       "No links cleaned": [
         "クリアされたリンクはありません"
+      ],
+      "No messages found": [
+        "メッセージが見つかりませんでした"
       ],
       "No messages to show": [
         "表示するメッセージはありません"
@@ -8015,6 +8075,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "この会話には送信予約メッセージが含まれています。移動すると、送信予約がキャンセルされます。"
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"
       ],
@@ -8056,6 +8119,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "これは、お客様のISPと利用したウェブサイトが、お客様のオンライン上の活動と個人情報を紐づけられないことを意味します。"
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "このメッセージには、まだ信頼されていないキーが添付されています。"
       ],
       "This message has been adjusted to comply with a dark background.": [
         "このメッセージは暗い背景に合わせるために調整されました。"
@@ -8564,8 +8630,8 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "「${ attachmentsFoundKeyword }」 と書かれてありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }に請求されます。"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
@@ -8633,11 +8699,11 @@
       "Your message will expire tomorrow.": [
         "メッセージの有効期限は明日までです。"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "次回の請求日は ${ renewalTime } です。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "次回の請求日は${ renewalTime }です。いつでもキャンセルできます。"
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。いつでもキャンセルできます。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
       "Your online activity is protected": [
         "オンラインアクティビティは保護されています"
@@ -10556,9 +10622,6 @@
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
       ],
-      "${ options }-day file version history": [
-        "${ options }-日間のファイルバージョン履歴"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 一生涯"
       ],
@@ -10777,6 +10840,9 @@
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -11201,6 +11267,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
@@ -11943,6 +12012,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（税別）"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
@@ -11961,20 +12033,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% の税金を除く: ${ taxAmount }"
-      ],
       "Got it": [
         "分かりました"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -11993,9 +12053,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Taxes": [
-        "税金"
       ],
       "terms and conditions": [
         "利用規約"
@@ -12038,9 +12095,6 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -12120,6 +12174,20 @@
     "Payments.plan_name": {
       "Free": [
         "無料"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "更新価格は、請求地域とABNによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "更新価格は、請求地域と事業所番号によって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "更新価格は、請求地域とEINによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "更新価格は、請求地域およびVAT番号によって異なります。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -12366,9 +12434,6 @@
       "Type text or keyword": [
         "テキストまたはキーワードを入力"
       ],
-      "VAT number": [
-        "VAT 番号"
-      ],
       "Your organization name": [
         "あなたの組織の名前"
       ],
@@ -12392,6 +12457,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }ヶ月"
       ]
     },
     "plus_block": {
@@ -12838,13 +12908,13 @@
         "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+        "${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+        "${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
+        "${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -12972,7 +13042,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "${ appName } で開く"
+        "${ appName }で開く"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "${ appName } (ベータ版) で開く"
       ]
     },
     "Signature verification warning": {
@@ -13235,8 +13308,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "パスワードを複数の保管庫に安全に整理して保管する "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "パスワードを複数の保管庫に安全に整理して保管"
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinelでアカウントを脅威から保護する"
@@ -13454,17 +13527,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "無制限のログインとメモ、無制限のhide-my-email エイリアス、20 個の保管庫、および優先サポートにアクセスできなくなります。"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2年ごとに請求"
-      ],
-      "Billed monthly": [
-        "毎月請求"
-      ],
-      "Billed yearly": [
-        "年間請求"
       ]
     },
     "Subscription attribute": {
@@ -13939,6 +14001,9 @@
       "Billing details updated": [
         "請求の詳細が更新されました"
       ],
+      "Billing information updated": [
+        "請求情報が更新されました"
+      ],
       "Canceling import": [
         "インポートをキャンセル中"
       ],
@@ -13989,9 +14054,6 @@
       ],
       "Conversation removed from Starred.": [
         "会話がスター付きから削除されました。"
-      ],
-      "Conversation updated": [
-        "会話が更新されました"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }との会話は${ labelsList }のラベルが付きます"
@@ -14067,9 +14129,6 @@
       ],
       "Message removed from Starred.": [
         "メッセージがスター付きから削除されました。"
-      ],
-      "Message updated": [
-        "メッセージが更新されました"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } からのメッセージに ${ labelsList } ラベルをつけます"
@@ -15319,6 +15378,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }サブスクリプションが開始されました"
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"
