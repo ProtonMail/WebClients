@@ -211,7 +211,7 @@ export const useMemberActions = ({
         setTmpMemberID(member.ID);
 
         //  We can remove members if the user is a Proton member (excluding logged user)
-        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
+        if (member.Type === MEMBER_TYPE.PROTON && !member.Self) {
             setUserRemoveModalOpen(true);
         } else {
             setSubUserDeleteModalOpen(true);
@@ -308,12 +308,7 @@ export const useMemberActions = ({
         setTmpMemberID(member.ID);
 
         // We can open the invite modal if the user is a Proton member (excluding logged user)
-        if (
-            canInviteProtonUsers &&
-            member.Type === MEMBER_TYPE.PROTON &&
-            !member.Self &&
-            member.State === MEMBER_STATE.STATUS_INVITED
-        ) {
+        if (member.Type === MEMBER_TYPE.PROTON && !member.Self && member.State === MEMBER_STATE.STATUS_INVITED) {
             setUserInviteOrEditModalOpen(true);
         } else {
             setSubUserEditModalOpen(true);
