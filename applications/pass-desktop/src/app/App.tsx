@@ -87,6 +87,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     getApiState: api.getState,
 
     supportsBiometrics: async () => {
+        if (BUILD_TARGET === 'linux') return false;
         return window.ctxBridge?.canCheckPresence() ?? false;
     },
 

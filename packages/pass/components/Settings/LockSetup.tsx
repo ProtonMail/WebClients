@@ -29,6 +29,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
      */
     const showBiometricsOption =
         password.enabled &&
+        BUILD_TARGET !== 'linux' &&
         (DESKTOP_BUILD || (!EXTENSION_BUILD && prfFeatureFlag) || lock.mode === LockMode.BIOMETRICS);
 
     const biometricsHint = (() => {
