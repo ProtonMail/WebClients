@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { ProtonDriveClient } from '@proton/drive/index';
 
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
@@ -41,7 +41,7 @@ export const useMoveEligibility = (
             // Check: Can't move a folder into itself.
             const ancestryNodesResult = await getNodeAncestry(targetFolderUid, drive);
             if (!ancestryNodesResult.ok) {
-                handleSdkError(ancestryNodesResult.error);
+                handleSdkError(ancestryNodesResult.error, { showNotification: false });
                 return;
             }
             const ancestryNodeUids = ancestryNodesResult.value.map((maybeNode) => getNodeEntity(maybeNode).node.uid);

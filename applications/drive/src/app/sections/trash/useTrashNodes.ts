@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useDrive } from '@proton/drive/index';
 import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 
 export type SimpleTrashNode = {
@@ -12,7 +12,6 @@ export type SimpleTrashNode = {
 };
 
 export const useTrashNodes = () => {
-    const { handleError } = useSdkErrorHandler();
     const { drive } = useDrive();
 
     const loadTrashNodes = useCallback(
@@ -30,17 +29,17 @@ export const useTrashNodes = () => {
                         const { node } = getNodeEntityFromMaybeNode(trashNode);
                         setNodes({ [node.uid]: node });
                     } catch (e) {
-                        handleError(e, { showNotification: !shownErrorNotification });
+                        handleSdkError(e, { showNotification: !shownErrorNotification });
                         shownErrorNotification = true;
                     }
                 }
             } catch (e) {
-                handleError(e);
+                handleSdkError(e);
             } finally {
                 setLoading(false);
             }
         },
-        [drive, handleError]
+        [drive]
     );
 
     return {

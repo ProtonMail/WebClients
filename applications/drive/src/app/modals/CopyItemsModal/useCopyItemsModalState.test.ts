@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { MemberRole, NodeType } from '@proton/drive';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useCreateFolderModal } from '../CreateFolderModal';
 import { useCopyItems } from './useCopyItems';
 import { useCopyItemsModalState } from './useCopyItemsModalState';
@@ -25,11 +25,10 @@ jest.mock('../../modules/directoryTree', () => {
 });
 
 jest.mock('./useCopyItems');
-jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('../../utils/errorHandling/handleSdkError');
 jest.mock('../CreateFolderModal');
 
 const mockedUseCopyItems = jest.mocked(useCopyItems);
-const mockedUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockedUseCreateFolderModal = jest.mocked(useCreateFolderModal);
 const { _mockFns: mockTree } = jest.requireMock('../../modules/directoryTree');
 
@@ -44,7 +43,7 @@ const defaultProps = {
 };
 
 describe('useCopyItemsModalState', () => {
-    const mockHandleError = jest.fn();
+    const mockHandleError = jest.mocked(handleSdkError);
     const mockCopyItems = jest.fn().mockResolvedValue(undefined);
     const mockShowCreateFolderModal = jest.fn();
 
@@ -55,7 +54,6 @@ describe('useCopyItemsModalState', () => {
         mockTree.get.mockReturnValue(undefined);
 
         mockedUseCopyItems.mockReturnValue(mockCopyItems);
-        mockedUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockedUseCreateFolderModal.mockReturnValue({
             createFolderModal: null as any,
             showCreateFolderModal: mockShowCreateFolderModal,

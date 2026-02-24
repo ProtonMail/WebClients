@@ -3,7 +3,6 @@ import { act, renderHook } from '@testing-library/react';
 import { type NodeEntity, useDrive } from '@proton/drive/index';
 import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNodes } from './useTrashNodes';
 
@@ -11,9 +10,7 @@ jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
 }));
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: jest.fn(),
-}));
+jest.mock('../../utils/errorHandling/handleSdkError');
 
 jest.mock('@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode', () => ({
     getNodeEntityFromMaybeNode: jest.fn(),
@@ -26,7 +23,6 @@ jest.mock('./useTrash.store', () => {
 });
 
 const mockUseDrive = jest.mocked(useDrive);
-const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
 const mockGetNodeEntityFromMaybeNode = jest.mocked(getNodeEntityFromMaybeNode);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 
@@ -62,8 +58,6 @@ describe('useTrashNodes', () => {
                 iterateTrashedNodes,
             },
         } as any);
-
-        mockUseSdkErrorHandler.mockReturnValue({ handleError } as any);
 
         mockGetNodeEntityFromMaybeNode.mockImplementation((trashNode: any) => ({
             node: trashNode.node,

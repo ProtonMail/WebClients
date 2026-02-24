@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useNotifications } from '@proton/components';
 import { MemberRole, NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
 
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
@@ -12,14 +12,14 @@ import { useSharedByMeNodesLoader } from './useSharedByMeNodesLoader';
 
 jest.mock('@proton/components');
 jest.mock('@proton/drive');
-jest.mock('../../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('../../../utils/errorHandling/handleSdkError');
 jest.mock('../../../utils/sdk/getNodeEntity');
 jest.mock('../../../utils/sdk/getSignatureIssues');
 jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../useSharedByMe.store');
 
 const mockUseNotifications = jest.mocked(useNotifications);
-const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
+const mockHandleError = jest.mocked(handleSdkError);
 const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
@@ -35,7 +35,6 @@ const mockDrive = {
 };
 
 const mockCreateNotification = jest.fn();
-const mockHandleError = jest.fn();
 const mockSetLoadingNodes = jest.fn();
 const mockSetSharedByMeItem = jest.fn();
 const mockUpdateSharedByMeItem = jest.fn();
@@ -85,7 +84,6 @@ describe('useSharedByMeNodesLoader', () => {
         jest.clearAllMocks();
 
         mockUseNotifications.mockReturnValue({ createNotification: mockCreateNotification } as any);
-        mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockGetDrive.mockReturnValue(mockDrive as any);
         mockGetDriveForPhotos.mockReturnValue(mockDrive as any);
 
@@ -180,7 +178,6 @@ describe('useSharedByMeNodesLoader', () => {
 
             expect(result.current.loadSharedByMeNodes).toBeDefined();
             expect(mockUseNotifications).toHaveBeenCalled();
-            expect(mockUseSdkErrorHandler).toHaveBeenCalled();
         });
     });
 });

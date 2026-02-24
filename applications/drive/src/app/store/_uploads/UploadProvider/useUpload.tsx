@@ -17,7 +17,7 @@ import type { FileThresholdModalType } from '../../../components/modals/FileThre
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import {
     isPhotosDisabledUploadError,
@@ -85,7 +85,6 @@ function useBaseUpload(
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
     const shouldUseSdk = !isPublicContext;
-    const { handleError } = useSdkErrorHandler();
 
     const {
         drive,
@@ -266,7 +265,7 @@ function useBaseUpload(
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
-                            handleError(e);
+                            handleSdkError(e);
                         }
                     }
                     queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
@@ -346,7 +345,7 @@ function useBaseUpload(
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
-                            handleError(e);
+                            handleSdkError(e);
                         }
                     }
                     queue.updateState(nextFileUpload.id, TransferState.Done);

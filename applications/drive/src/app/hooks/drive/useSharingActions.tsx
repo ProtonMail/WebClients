@@ -4,12 +4,11 @@ import { type useConfirmActionModal, useNotifications } from '@proton/components
 import { useDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export const useSharingActions = () => {
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const stopSharing = (
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
@@ -28,7 +27,9 @@ export const useSharingActions = () => {
                     text: c('Notification').t`You stopped sharing this item`,
                 });
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Notification').t`Stopping the sharing of this item has failed` });
+                handleSdkError(e, {
+                    fallbackMessage: c('Notification').t`Stopping the sharing of this item has failed`,
+                });
             }
         };
         showConfirmModal({
@@ -51,7 +52,7 @@ export const useSharingActions = () => {
                     uids: [uid],
                 });
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Notification').t`Failed to remove the file` });
+                handleSdkError(e, { fallbackMessage: c('Notification').t`Failed to remove the file` });
                 throw e;
             }
         };

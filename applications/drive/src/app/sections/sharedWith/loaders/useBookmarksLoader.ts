@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getBookmark } from '../../../utils/sdk/getBookmark';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
@@ -15,7 +15,6 @@ export const useBookmarksLoader = () => {
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
-    const { handleError } = useSdkErrorHandler();
 
     const { setSharedWithMeItemInStore, setLoadingBookmarks, cleanupStaleItems } = useSharedWithMeListingStore(
         useShallow((state) => ({
@@ -53,7 +52,7 @@ export const useBookmarksLoader = () => {
                             },
                         });
                     } catch (e) {
-                        handleError(e, {
+                        handleSdkError(e, {
                             showNotification: false,
                         });
                         showErrorNotification = true;
@@ -69,7 +68,7 @@ export const useBookmarksLoader = () => {
 
                 cleanupStaleItems(ItemType.BOOKMARK, loadedUids);
             } catch (e) {
-                handleError(e, {
+                handleSdkError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some of your saved shared links`,
                 });
             } finally {
@@ -81,7 +80,6 @@ export const useBookmarksLoader = () => {
             setLoadingBookmarks,
             drive,
             setSharedWithMeItemInStore,
-            handleError,
             createNotification,
             cleanupStaleItems,
         ]

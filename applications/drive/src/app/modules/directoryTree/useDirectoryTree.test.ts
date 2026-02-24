@@ -3,14 +3,14 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { MemberRole, NodeType, useDrive } from '@proton/drive';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
 
 jest.mock('@proton/drive');
 const mockedUseDrive = jest.mocked(useDrive);
 
-jest.mock('../../utils/errorHandling/useSdkErrorHandler');
+jest.mock('../../utils/errorHandling/handleSdkError');
 const mockedHandleSdkError = jest.mocked(handleSdkError);
 
 jest.mock('../../utils/errorHandling');

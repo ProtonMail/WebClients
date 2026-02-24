@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { NodeType, useDrive } from '@proton/drive/index';
 
-import { handleSdkError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getDeviceName } from '../../../utils/sdk/getNodeName';
 import { useDeviceStore } from '../../devices/devices.store';
@@ -14,14 +14,13 @@ import { useSidebarStore } from './useSidebar.store';
 export const useSidebarFolders = () => {
     const { drive } = useDrive();
 
-    const { handleError } = useSdkErrorHandler();
-
     const loadFolderChildren = async (folderUid: string) => {
         const { setItem, getItem, updateItem } = useSidebarStore.getState();
         const parent = getItem(folderUid);
         if (!parent) {
             return handleSdkError(
-                new Error(`Cannot load children for folder ${folderUid} since it's not in the store`)
+                new Error(`Cannot load children for folder ${folderUid} since it's not in the store`),
+                { showNotification: false }
             );
         }
 
@@ -42,7 +41,7 @@ export const useSidebarFolders = () => {
                 }
             }
         } catch (error) {
-            handleError(error, { fallbackMessage: `Failed to load children for folder ${folderUid}` });
+            handleSdkError(error, { fallbackMessage: `Failed to load children for folder ${folderUid}` });
         } finally {
             updateItem(folderUid, { hasLoadedChildren: true, isLoading: false });
         }
@@ -69,10 +68,10 @@ export const useSidebarFolders = () => {
             }
         } catch (e) {
             const errorNotiticationText = c('Notification').t`Error while listing devices`;
-            handleError(e, { fallbackMessage: errorNotiticationText });
+            handleSdkError(e, { fallbackMessage: errorNotiticationText });
         }
         setDeviceLoading(false);
-    }, [drive, handleError]);
+    }, [drive]);
 
     const loadFoldersRoot = useCallback(async () => {
         const { setItem } = useSidebarStore.getState();

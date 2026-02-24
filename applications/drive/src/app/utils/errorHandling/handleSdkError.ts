@@ -1,8 +1,5 @@
-import { useCallback } from 'react';
-
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
 import {
     AbortError,
     ConnectionError,
@@ -14,6 +11,7 @@ import {
 } from '@proton/drive';
 
 import { sendErrorReport } from '.';
+import { getNotificationsManager } from '../../modules/notifications';
 import { EnrichedError } from './EnrichedError';
 
 export const shouldTrackError = (err: Error) =>
@@ -40,7 +38,7 @@ type HandleErrorOptions = {
  */
 export const handleSdkError = (
     error: Error | unknown,
-    { fallbackMessage = '', extra = {} }: Omit<HandleErrorOptions, 'showNotification'> = {}
+    { fallbackMessage = c('Error').t`An error occurred`, extra = {}, showNotification = true }: HandleErrorOptions = {}
 ) => {
     const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
     const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
@@ -69,35 +67,7 @@ export const handleSdkError = (
 
         sendErrorReport(enrichedError);
     }
-
-    return { errorToHandle, message };
-};
-
-/**
- * It DOES show notification to the user.
- */
-export const useSdkErrorHandler = () => {
-    const { createNotification } = useNotifications();
-
-    const handleError = useCallback(
-        (
-            error: Error | unknown,
-            {
-                fallbackMessage = c('Error').t`An error occurred`,
-                extra = {},
-                showNotification = true,
-            }: HandleErrorOptions = {}
-        ) => {
-            const { errorToHandle, message } = handleSdkError(error, { fallbackMessage, extra });
-
-            if (showNotification && shouldShowNotification(errorToHandle)) {
-                createNotification({ type: 'error', text: message, preWrap: true });
-            }
-        },
-        [createNotification]
-    );
-
-    return {
-        handleError,
-    };
+    if (showNotification && shouldShowNotification(errorToHandle)) {
+        getNotificationsManager().createNotification({ type: 'error', text: message, preWrap: true });
+    }
 };

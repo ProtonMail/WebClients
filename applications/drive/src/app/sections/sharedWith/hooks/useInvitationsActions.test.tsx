@@ -5,7 +5,7 @@ import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@pro
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { useInvitationsActions } from './useInvitationsActions';
 
@@ -30,8 +30,8 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     getBusDriver: jest.fn(),
 }));
 
-jest.mock('../../../utils/errorHandling/useSdkErrorHandler', () => ({
-    useSdkErrorHandler: jest.fn(),
+jest.mock('../../../utils/errorHandling/handleSdkError', () => ({
+    handleSdkError: jest.fn(),
 }));
 
 jest.mock('../../../utils/sdk/getNodeEntity', () => ({
@@ -39,7 +39,7 @@ jest.mock('../../../utils/sdk/getNodeEntity', () => ({
 }));
 
 const mockCreateNotification = jest.fn();
-const mockHandleError = jest.fn();
+const mockHandleError = jest.mocked(handleSdkError);
 const mockAcceptInvitation = jest.fn();
 const mockRejectInvitation = jest.fn();
 const mockGetNode = jest.fn();
@@ -77,10 +77,6 @@ describe('useInvitationsActions', () => {
         };
 
         jest.mocked(getDrivePerNodeType).mockReturnValue(mockDrive as any);
-
-        jest.mocked(useSdkErrorHandler).mockReturnValue({
-            handleError: mockHandleError,
-        } as any);
 
         jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 

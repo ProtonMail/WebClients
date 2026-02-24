@@ -2,7 +2,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
