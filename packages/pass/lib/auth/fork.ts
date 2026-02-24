@@ -17,7 +17,6 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
-import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import {
     ExtraSessionForkSearchParameters,
@@ -171,21 +170,15 @@ export const pullFork = async (options: ConsumeForkOptions): Promise<PullForkRes
 };
 
 export const extractOfflineComponents = (
-    password: string,
-    salt: string
+    offlineKeyPassword: string,
+    offlineKeySalt: string
 ): Omit<OfflineComponents, 'offlineVerifier'> => ({
-    offlineKD: atob(password),
+    offlineKD: atob(offlineKeyPassword),
     offlineConfig: {
-        salt: atob(salt),
+        salt: atob(offlineKeySalt),
         params: ARGON2_PARAMS.RECOMMENDED,
     },
 });
-
-export const extractBlobOfflineComponents = ({
-    offlineKeyPassword,
-    offlineKeySalt,
-}: Extract<ForkEncryptedBlob, { type: 'offline' }>): Omit<OfflineComponents, 'offlineVerifier'> =>
-    extractOfflineComponents(offlineKeyPassword, offlineKeySalt);
 
 /**
  * If `keyPassword` is not provided to `ConsumeForkOptions`, it will attempt to recover it from
@@ -256,7 +249,8 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
 
                     if (decryptedBlob?.type === 'offline' && offlineKeySupported) {
                         try {
-                            const { offlineKD, offlineConfig } = extractBlobOfflineComponents(decryptedBlob);
+                            const { offlineKeyPassword: password, offlineKeySalt: salt } = decryptedBlob;
+                            const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                             data.offlineKD = offlineKD;
                             data.offlineConfig = offlineConfig;
