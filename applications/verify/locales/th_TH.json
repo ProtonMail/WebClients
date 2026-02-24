@@ -1,0 +1,1562 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "th_TH"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "ยืนยันตัวตน"
+      ],
+      "Cancel": [
+        "ยกเลิก"
+      ],
+      "Change password": [
+        "เปลี่ยนรหัสผ่าน"
+      ],
+      "Close": [
+        "ปิด"
+      ],
+      "Continue": [
+        "ดำเนินการต่อ"
+      ],
+      "Dismiss": [
+        "ปิดไป"
+      ],
+      "Edit email address": [
+        "แก้ไขที่อยู่อีเมล"
+      ],
+      "Edit phone number": [
+        "แก้ไขหมายเลขโทรศัพท์มือถือ"
+      ],
+      "Edit sign-in details": [
+        "แก้ไขรายละเอียดการลงชื่อเข้าใช้"
+      ],
+      "Forgot password?": [
+        "ลืมรหัสผ่าน?"
+      ],
+      "Get verification code": [
+        "ใช้รหัสยืนยันตัวตน"
+      ],
+      "More info: ${ safeTitle }": [
+        "ข้อมูลเพิ่มเติม: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "รีเฟรชหน้านี้"
+      ],
+      "Request new code": [
+        "ขอรหัสใหม่"
+      ],
+      "Resend code": [
+        "ส่งรหัสอีกครั้ง"
+      ],
+      "Search countries": [
+        "ค้นหาประเทศ"
+      ],
+      "Try another method": [
+        "ลองวิธีอื่น"
+      ],
+      "Use authentication code": [
+        "ใช้รหัสการยืนยันตัวตน"
+      ],
+      "Use recovery code": [
+        "ใช้การกู้คืนโค้ด"
+      ],
+      "Verify": [
+        "ยืนยัน"
+      ],
+      "Verify account": [
+        "ตรวจสอบบัญชี"
+      ],
+      "View invoice": [
+        "ดูใบแจ้งการขำระค่าบริการ"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "แอปเดสก์ท็อป ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "ใช้โดเมนอีเมลของคุณเอง"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "พื้นที่จัดเก็บคลาวด์และการแชร์สำหรับไฟล์ขนาดใหญ่"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "อับคาเซีย"
+      ],
+      "Afghanistan": [
+        "อัฟกานิสถาน"
+      ],
+      "Albania": [
+        "อัลบาเนีย"
+      ],
+      "Algeria": [
+        "แอลจีเรีย"
+      ],
+      "American Samoa": [
+        "อเมริกันซามัว"
+      ],
+      "Andorra": [
+        "อันดอร์รา"
+      ],
+      "Angola": [
+        "แองโกลา"
+      ],
+      "Anguilla": [
+        "แองกวิลลา"
+      ],
+      "Antarctica": [
+        "แอนตาร์กติกา"
+      ],
+      "Antigua and Barbuda": [
+        "แอนติกาและบาร์บูดา"
+      ],
+      "Argentina": [
+        "อาร์เจนตินา"
+      ],
+      "Armenia": [
+        "อาร์เมเนีย"
+      ],
+      "Aruba": [
+        "อารูบา"
+      ],
+      "Ascension Island": [
+        "เกาะอัสเซนชัน"
+      ],
+      "Australia": [
+        "ออสเตรเลีย"
+      ],
+      "Austria": [
+        "ออสเตรีย"
+      ],
+      "Azerbaijan": [
+        "อาเซอร์ไบจาน"
+      ],
+      "Bahamas": [
+        "บาฮามาส"
+      ],
+      "Bahrain": [
+        "บาห์เรน"
+      ],
+      "Bangladesh": [
+        "บังคลาเทศ"
+      ],
+      "Barbados": [
+        "บาร์เบโดส"
+      ],
+      "Belarus": [
+        "เบลารุส"
+      ],
+      "Belgium": [
+        "เบลเยียม"
+      ],
+      "Belize": [
+        "เบลีซ"
+      ],
+      "Benin": [
+        "เบนิน"
+      ],
+      "Bermuda": [
+        "เบอร์มิวดา"
+      ],
+      "Bhutan": [
+        "ภูฏาน"
+      ],
+      "Bolivia": [
+        "โบลิเวีย"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "บอแนร์, ซินต์ยุสตาเชียส และซาบา"
+      ],
+      "Bosnia and Herzegovina": [
+        "บอสเนียและเฮอร์เซโกวีนา"
+      ],
+      "Botswana": [
+        "บอตสวานา"
+      ],
+      "Bouvet Island": [
+        "เกาะบูเวต"
+      ],
+      "Brazil": [
+        "บราซิล"
+      ],
+      "British Indian Ocean Territory": [
+        "บริติชอินเดียนโอเชียนเทร์ริทอรี"
+      ],
+      "Brunei Darussalam": [
+        "บรูไนดารุสซาลาม"
+      ],
+      "Bulgaria": [
+        "บัลแกเรีย"
+      ],
+      "Burkina Faso": [
+        "บูร์กินาฟาโซ"
+      ],
+      "Burundi": [
+        "บุรุนดี"
+      ],
+      "Cambodia": [
+        "กัมพูชา"
+      ],
+      "Cameroon": [
+        "แคเมอรูน"
+      ],
+      "Canada": [
+        "แคนาดา"
+      ],
+      "Cape Verde": [
+        "เคปเวิร์ด"
+      ],
+      "Cayman Islands": [
+        "หมู่เกาะเคย์แมน"
+      ],
+      "Central African Republic": [
+        "สาธารณรัฐแอฟริกากลาง"
+      ],
+      "Chad": [
+        "ชาด"
+      ],
+      "Chile": [
+        "ชิลี"
+      ],
+      "China": [
+        "จีน"
+      ],
+      "Christmas Island": [
+        "เกาะคริสต์มาส"
+      ],
+      "Cocos (Keeling) Islands": [
+        "หมู่เกาะโคโคส (คีลิง)"
+      ],
+      "Colombia": [
+        "โคลอมเบีย"
+      ],
+      "Comoros": [
+        "คอโมโรส"
+      ],
+      "Congo": [
+        "คองโก"
+      ],
+      "Congo, Democratic Republic of the": [
+        "สาธารณรัฐประชาธิปไตยคองโก"
+      ],
+      "Cook Islands": [
+        "หมู่เกาะคุก"
+      ],
+      "Costa Rica": [
+        "คอสตาริกา"
+      ],
+      "Croatia": [
+        "โครเอเชีย"
+      ],
+      "Cuba": [
+        "คิวบา"
+      ],
+      "Curaçao": [
+        "คูราเซา"
+      ],
+      "Cyprus": [
+        "ไซปรัส"
+      ],
+      "Czech Republic": [
+        "สาธารณรัฐเช็ก"
+      ],
+      "Côte d'Ivoire": [
+        "โกตดิวัวร์"
+      ],
+      "Denmark": [
+        "เดนมาร์ก"
+      ],
+      "Djibouti": [
+        "จิบูตี"
+      ],
+      "Dominica": [
+        "โดมินิกา"
+      ],
+      "Dominican Republic": [
+        "สาธารณรัฐโดมินิกัน"
+      ],
+      "Ecuador": [
+        "เอกวาดอร์"
+      ],
+      "Egypt": [
+        "อียิปต์"
+      ],
+      "El Salvador": [
+        "เอลซัลวาดอร์"
+      ],
+      "Equatorial Guinea": [
+        "อิเควทอเรียลกินี"
+      ],
+      "Eritrea": [
+        "เอริเทรีย"
+      ],
+      "Estonia": [
+        "เอสโตเนีย"
+      ],
+      "Eswatini": [
+        "เอสวาตินี"
+      ],
+      "Ethiopia": [
+        "เอธิโอเปีย"
+      ],
+      "Falkland Islands": [
+        "หมู่เกาะฟอล์กแลนด์"
+      ],
+      "Faroe Islands": [
+        "หมู่เกาะแฟโร"
+      ],
+      "Federated States of Micronesia": [
+        "สหพันธรัฐไมโครนีเซีย"
+      ],
+      "Fiji": [
+        "ฟิจิ"
+      ],
+      "Finland": [
+        "ฟินแลนด์"
+      ],
+      "France": [
+        "ฝรั่งเศส"
+      ],
+      "French Guiana": [
+        "เฟรนช์เกียนา"
+      ],
+      "French Polynesia": [
+        "เฟรนช์พอลินีเซีย"
+      ],
+      "French Southern Territories": [
+        "เฟรนช์เซาเทิร์นเทร์ริทอรีส์"
+      ],
+      "Gabon": [
+        "กาบอง"
+      ],
+      "Gambia": [
+        "แกมเบีย"
+      ],
+      "Georgia": [
+        "จอร์เจีย"
+      ],
+      "Germany": [
+        "เยอรมนี"
+      ],
+      "Ghana": [
+        "กานา"
+      ],
+      "Gibraltar": [
+        "ยิบรอลตาร์"
+      ],
+      "Greece": [
+        "กรีซ"
+      ],
+      "Greenland": [
+        "กรีนแลนด์"
+      ],
+      "Grenada": [
+        "เกรเนดา"
+      ],
+      "Guadeloupe": [
+        "กัวเดอลุป"
+      ],
+      "Guam": [
+        "กวม"
+      ],
+      "Guatemala": [
+        "กัวเตมาลา"
+      ],
+      "Guernsey": [
+        "เกิร์นซีย์"
+      ],
+      "Guinea": [
+        "กินี"
+      ],
+      "Guinea-Bissau": [
+        "กินี-บิสเซา"
+      ],
+      "Guyana": [
+        "กายอานา"
+      ],
+      "Haiti": [
+        "เฮติ"
+      ],
+      "Heard Island and McDonald Islands": [
+        "เกาะเฮิร์ดและหมู่เกาะแมกโดนัลด์"
+      ],
+      "Holy See (Vatican City State)": [
+        "นครรัฐวาติกัน"
+      ],
+      "Honduras": [
+        "ฮอนดูรัส"
+      ],
+      "Hong Kong": [
+        "ฮ่องกง"
+      ],
+      "Hungary": [
+        "ฮังการี"
+      ],
+      "Iceland": [
+        "ไอซ์แลนด์"
+      ],
+      "India": [
+        "อินเดีย"
+      ],
+      "Indonesia": [
+        "อินโดนีเซีย"
+      ],
+      "International": [
+        "นานาชาติ"
+      ],
+      "Iran": [
+        "อิหร่าน"
+      ],
+      "Iraq": [
+        "อิรัก"
+      ],
+      "Ireland": [
+        "ไอร์แลนด์"
+      ],
+      "Isle of Man": [
+        "เกาะแมน"
+      ],
+      "Israel": [
+        "อิสราเอล"
+      ],
+      "Italy": [
+        "อิตาลี"
+      ],
+      "Jamaica": [
+        "จาเมกา"
+      ],
+      "Japan": [
+        "ญี่ปุ่น"
+      ],
+      "Jersey": [
+        "เจอร์ซีย์"
+      ],
+      "Jordan": [
+        "จอร์แดน"
+      ],
+      "Kazakhstan": [
+        "คาซัคสถาน"
+      ],
+      "Kenya": [
+        "เคนยา"
+      ],
+      "Kiribati": [
+        "คิริบาส"
+      ],
+      "Kosovo": [
+        "โคโซโว"
+      ],
+      "Kuwait": [
+        "คูเวต"
+      ],
+      "Kyrgyzstan": [
+        "คีร์กีซสถาน"
+      ],
+      "Laos": [
+        "ลาว"
+      ],
+      "Latvia": [
+        "ลัตเวีย"
+      ],
+      "Lebanon": [
+        "เลบานอน"
+      ],
+      "Lesotho": [
+        "เลโซโท"
+      ],
+      "Liberia": [
+        "ไลบีเรีย"
+      ],
+      "Libya": [
+        "ลิเบีย"
+      ],
+      "Liechtenstein": [
+        "ลิกเตนสไตน์"
+      ],
+      "Lithuania": [
+        "ลิทัวเนีย"
+      ],
+      "Luxembourg": [
+        "ลักเซมเบิร์ก"
+      ],
+      "Macao": [
+        "มาเก๊า"
+      ],
+      "Madagascar": [
+        "มาดากัสการ์"
+      ],
+      "Malawi": [
+        "มาลาวี"
+      ],
+      "Malaysia": [
+        "มาเลเซีย"
+      ],
+      "Maldives": [
+        "มัลดีฟส์"
+      ],
+      "Mali": [
+        "มาลี"
+      ],
+      "Malta": [
+        "มอลตา"
+      ],
+      "Marshall Islands": [
+        "หมู่เกาะมาร์แชลล์"
+      ],
+      "Martinique": [
+        "มาร์ตินีก"
+      ],
+      "Mauritania": [
+        "มอริเตเนีย"
+      ],
+      "Mauritius": [
+        "มอริเชียส"
+      ],
+      "Mayotte": [
+        "มายอต"
+      ],
+      "Mexico": [
+        "เม็กซิโก"
+      ],
+      "Moldova": [
+        "มอลโดวา"
+      ],
+      "Monaco": [
+        "โมนาโก"
+      ],
+      "Mongolia": [
+        "มองโกเลีย"
+      ],
+      "Montenegro": [
+        "มอนเตเนโกร"
+      ],
+      "Montserrat": [
+        "มอนต์เซอร์รัต"
+      ],
+      "Morocco": [
+        "โมร็อกโก"
+      ],
+      "Mozambique": [
+        "โมซัมบิก"
+      ],
+      "Myanmar": [
+        "เมียนมา"
+      ],
+      "Namibia": [
+        "นามิเบีย"
+      ],
+      "Nauru": [
+        "นาอูรู"
+      ],
+      "Nepal": [
+        "เนปาล"
+      ],
+      "Netherlands": [
+        "เนเธอร์แลนด์"
+      ],
+      "New Caledonia": [
+        "นิวแคลิโดเนีย"
+      ],
+      "New Zealand": [
+        "นิวซีแลนด์"
+      ],
+      "Nicaragua": [
+        "นิการากัว"
+      ],
+      "Niger": [
+        "ไนเจอร์"
+      ],
+      "Nigeria": [
+        "ไนจีเรีย"
+      ],
+      "Niue": [
+        "นีอูเอ"
+      ],
+      "Norfolk Island": [
+        "เกาะนอร์ฟอล์ก"
+      ],
+      "North Korea": [
+        "เกาหลีเหนือ"
+      ],
+      "North Macedonia": [
+        "มาซิโดเนียเหนือ"
+      ],
+      "Northern Mariana Islands": [
+        "หมู่เกาะนอร์เทิร์นมาเรียนา"
+      ],
+      "Norway": [
+        "นอร์เวย์"
+      ],
+      "Oman": [
+        "โอมาน"
+      ],
+      "Pakistan": [
+        "ปากีสถาน"
+      ],
+      "Palau": [
+        "ปาเลา"
+      ],
+      "Palestine": [
+        "ปาเลสไตน์"
+      ],
+      "Panama": [
+        "ปานามา"
+      ],
+      "Papua New Guinea": [
+        "ปาปัวนิวกินี"
+      ],
+      "Paraguay": [
+        "ปารากวัย"
+      ],
+      "Peru": [
+        "เปรู"
+      ],
+      "Philippines": [
+        "ฟิลิปปินส์"
+      ],
+      "Pitcairn": [
+        "พิตแคร์น"
+      ],
+      "Poland": [
+        "โปแลนด์"
+      ],
+      "Portugal": [
+        "โปรตุเกส"
+      ],
+      "Puerto Rico": [
+        "ปวยร์โตรีโก"
+      ],
+      "Qatar": [
+        "กาตาร์"
+      ],
+      "Reunion": [
+        "เรอูนิยง"
+      ],
+      "Romania": [
+        "โรมาเนีย"
+      ],
+      "Russia": [
+        "รัสเซีย"
+      ],
+      "Rwanda": [
+        "รวันดา"
+      ],
+      "Saint Barthélemy": [
+        "ซางต์ บาร์เตเลมี"
+      ],
+      "Saint Helena": [
+        "เซนต์เฮเลนา"
+      ],
+      "Saint Kitts and Nevis": [
+        "เซนต์คิตส์และเนวิส"
+      ],
+      "Saint Lucia": [
+        "เซนต์ลูเซีย"
+      ],
+      "Saint Martin (French Part)": [
+        "เซนต์มาร์ติน (ส่วนของฝรั่งเศส)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "เซนต์ปิแอร์และมีเกอลง"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "เซนต์วินเซนต์และเกรนาดีนส์"
+      ],
+      "Samoa": [
+        "ซามัว"
+      ],
+      "San Marino": [
+        "ซานมารีโน"
+      ],
+      "Sao Tome and Principe": [
+        "เซาตูเมและปรินซิปี"
+      ],
+      "Saudi Arabia": [
+        "ซาอุดีอาระเบีย"
+      ],
+      "Senegal": [
+        "เซเนกัล"
+      ],
+      "Serbia": [
+        "เซอร์เบีย"
+      ],
+      "Seychelles": [
+        "เซเชลส์"
+      ],
+      "Sierra Leone": [
+        "เซียร์ราลีโอน"
+      ],
+      "Singapore": [
+        "สิงคโปร์"
+      ],
+      "Sint Maarten": [
+        "ซินต์มาร์เติน"
+      ],
+      "Slovakia": [
+        "สโลวาเกีย"
+      ],
+      "Slovenia": [
+        "สโลวีเนีย"
+      ],
+      "Solomon Islands": [
+        "หมู่เกาะโซโลมอน"
+      ],
+      "Somalia": [
+        "โซมาเลีย"
+      ],
+      "South Africa": [
+        "แอฟริกาใต้"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "เกาะเซาท์จอร์เจียและหมู่เกาะเซาท์แซนด์วิช"
+      ],
+      "South Korea": [
+        "เกาหลีใต้"
+      ],
+      "South Ossetia": [
+        "เซาท์ออสซีเชีย"
+      ],
+      "South Sudan": [
+        "ซูดานใต้"
+      ],
+      "Spain": [
+        "สเปน"
+      ],
+      "Sri Lanka": [
+        "ศรีลังกา"
+      ],
+      "Sudan": [
+        "ซูดาน"
+      ],
+      "Suriname": [
+        "ซูรินาเม"
+      ],
+      "Svalbard and Jan Mayen": [
+        "สวาลบาร์ดและยานไมเอน"
+      ],
+      "Sweden": [
+        "สวีเดน"
+      ],
+      "Switzerland": [
+        "สวิตเซอร์แลนด์"
+      ],
+      "Syria": [
+        "ซีเรีย"
+      ],
+      "Taiwan": [
+        "ไต้หวัน"
+      ],
+      "Tajikistan": [
+        "ทาจิกิสถาน"
+      ],
+      "Tanzania": [
+        "แทนซาเนีย"
+      ],
+      "Thailand": [
+        "ไทย"
+      ],
+      "Timor-Leste": [
+        "ติมอร์-เลสเต"
+      ],
+      "Togo": [
+        "โตโก"
+      ],
+      "Tokelau": [
+        "โตเกเลา"
+      ],
+      "Tonga": [
+        "ตองกา"
+      ],
+      "Trinidad and Tobago": [
+        "ตรินิแดดและโตเบโก"
+      ],
+      "Tristan da Cunha": [
+        "ทริสตันดากูนยา"
+      ],
+      "Tunisia": [
+        "ตูนีเซีย"
+      ],
+      "Turkey": [
+        "ตุรกี"
+      ],
+      "Turkmenistan": [
+        "เติร์กเมนิสถาน"
+      ],
+      "Turks and Caicos Islands": [
+        "หมู่เกาะเติกส์และไคคอส"
+      ],
+      "Tuvalu": [
+        "ตูวาลู"
+      ],
+      "Uganda": [
+        "ยูกันดา"
+      ],
+      "Ukraine": [
+        "ยูเครน"
+      ],
+      "United Arab Emirates": [
+        "สหรัฐอาหรับเอมิเรตส์"
+      ],
+      "United Kingdom": [
+        "สหราชอาณาจักร"
+      ],
+      "United States": [
+        "สหรัฐอเมริกา"
+      ],
+      "United States Minor Outlying Islands": [
+        "เกาะเล็กรอบนอกของสหรัฐอเมริกา"
+      ],
+      "Uruguay": [
+        "อุรุกวัย"
+      ],
+      "Uzbekistan": [
+        "อุซเบกิสถาน"
+      ],
+      "Vanuatu": [
+        "วานูอาตู"
+      ],
+      "Venezuela": [
+        "เวเนซุเอลา"
+      ],
+      "Vietnam": [
+        "เวียดนาม"
+      ],
+      "Virgin Islands, British": [
+        "หมู่เกาะบริติชเวอร์จิน"
+      ],
+      "Virgin Islands, U.S.": [
+        "หมู่เกาะเวอร์จินของสหรัฐอเมริกา"
+      ],
+      "Wallis and Futuna": [
+        "วาลลิสและฟุตูนา"
+      ],
+      "Western Sahara": [
+        "เวสเทิร์นสะฮารา"
+      ],
+      "Yemen": [
+        "เยเมน"
+      ],
+      "Zambia": [
+        "แซมเบีย"
+      ],
+      "Zimbabwe": [
+        "ซิมบับเว"
+      ],
+      "Åland Islands": [
+        "หมู่เกาะโอลันด์"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "ใบแจ้งหนี้เกินกำหนดการชำระค่าบริการ"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "โดเมนไม่พร้อมใช้งาน โปรดลองอีกครั้งในภายหลัง"
+      ],
+      "Email is not valid": [
+        "อีเมลไม่ถูกต้อง"
+      ],
+      "Enter 6 digits": [
+        "ป้อนหมายเลข 6 หลัก"
+      ],
+      "Incorrect username": [
+        "ชื่อผู้ใช้ไม่ถูกต้อง"
+      ],
+      "Invalid verification code": [
+        "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
+      ],
+      "Not a valid number": [
+        "หมายเลขไม่ถูกต้อง"
+      ],
+      "Passwords do not match": [
+        "รหัสผ่านไม่ตรงกัน"
+      ],
+      "Request timed out": [
+        "คำขอหมดเวลา"
+      ],
+      "The email addresses do not match": [
+        "ที่อยู่อีเมลไม่ตรงกัน"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "ช่องกรอกนี้เกินขนาดสูงสุด ${ maximumLength } ตัวอักษรแล้ว"
+      ],
+      "This field is required": [
+        "ต้องระบุข้อมูลในช่องนี้"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "ต้องใส่อักษรอย่างน้อย ${ minimumLength } ตัวอักษรซึ่งเป็นจำนวนที่กำหนดไว้ในช่องนี้"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "ลองใหม่ให้ใช้ตัวอักษร ตัวเลข และ _ - เท่านั้น"
+      ],
+      "Unknown error": [
+        "ข้อผิดพลาดที่ไม่รู้จัก"
+      ],
+      "Username must begin with a letter or digit": [
+        "ชื่อผู้ใช้ต้องขึ้นต้นด้วยตัวอักษรหรือตัวเลข"
+      ],
+      "Username must end with a letter or digit": [
+        "ชื่อผู้ใช้ต้องลงท้ายด้วยตัวอักษรหรือตัวเลข"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "เกิดข้อผิดพลาด: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "โปรดรีเฟรชหน้าเว็บหรือลองใหม่อีกครั้งในภายหลัง"
+      ],
+      "Something went wrong": [
+        "เกิดข้อผิดพลาดบางอย่าง"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "ไม่สามารถโหลดหน้านี้ได้ โปรดรีเฟรชหน้าหรือตรวจสอบการเชื่อมต่ออินเทอร์เน็ต"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME } ของคุณ"
+      ],
+      "Security key": [
+        "คีย์ความปลอดภัย"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "คีย์ความปลอดภัย"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "ไบต์"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "ไบต์"
+      ],
+      "Gigabyte": [
+        "กิกะไบต์"
+      ],
+      "Kilobyte": [
+        "กิโลไบต์"
+      ],
+      "Megabyte": [
+        "เมกะไบต์"
+      ],
+      "Terabyte": [
+        "เทราไบต์"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "ค่าเริ่มต้นของระบบ"
+      ],
+      "Theme font": [
+        "แบบอักษรของธีม"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "ใหญ่"
+      ],
+      "Medium (recommended)": [
+        "ปานกลาง (แนะนำ)"
+      ],
+      "Small": [
+        "เล็ก"
+      ],
+      "Very large": [
+        "ใหญ่มาก"
+      ],
+      "Very small": [
+        "เล็กมาก"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "อีเมล"
+      ],
+      "Manual": [
+        "คู่มือการใช้"
+      ],
+      "No verification method available": [
+        "ไม่พบวิธีการยืนยันตนที่ใช้งานได้"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "หมายเลขโทรศัพท์หนึ่งหมายเลขสามารถใช้ยืนยันบัญชี ${ BRAND_NAME } ได้เพียงหนึ่งบัญชีเท่านั้น"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "ก่อนขอรหัสยืนยันใหม่ โปรดตรวจสอบโฟลเดอร์สแปมของคุณและตรวจสอบว่า ${ strong } เป็นที่อยู่ที่ถูกต้อง"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "โปรดคลิก \"ส่งคำร้องขอรหัสใหม่\" เพื่อรับรหัสยืนยันตัวตนใหม่ที่ได้ส่งไปที่ ${ strong } หากหมายเลขโทรศัพท์นี้ไม่ถูกต้อง สามารถเปลี่ยนได้โดยคลิกที่ \"แก้ไข\""
+      ],
+      "Country code": [
+        "รหัสประเทศ"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "การสร้างบัญชีฟรีหลายบัญชีไม่ได้รับอนุญาตตาม ${ termsLink }"
+      ],
+      "Each code can only be used once": [
+        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
+      ],
+      "Edit email address": [
+        "แก้ไขที่อยู่อีเมล"
+      ],
+      "Enter the code from your authenticator app": [
+        "ป้อนรหัสจากแอปยืนยันตัวตนของคุณ"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "ป้อนรหัสยืนยัน ตัวเลข ${ digit }"
+      ],
+      "Enter your own password (as organization admin).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ดูแลระบบองค์กร)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ติดต่อที่เชื่อถือได้)"
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "สำหรับข้อมูลเพิ่มเติมและเพื่อลบข้อจำกัดออก โปรดเข้าสู่ระบบที่ ${ mailLink }"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "หากพบปัญหาในการสร้างบัญชี โปรดส่งคำร้องขอการเชิญและเราจะตอบกลับคุณภายในหนึ่งวันทำการ"
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "หากเชื่อว่ามีข้อผิดพลาด โปรด ${ contactLink }"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "หากไม่พบอีเมลเพื่อการยืนยันตัวตนในกล่องขาเข้าของคุณ โปรดดูที่แฟ้มสแปม"
+      ],
+      "Internet connection lost": [
+        "การเชื่อมต่ออินเทอร์เน็ตขาดหาย"
+      ],
+      "Learn more": [
+        "เรียนรู้เพิ่มเติม"
+      ],
+      "Loading": [
+        "กำลังโหลด"
+      ],
+      "No results found": [
+        "ไม่พบผลการค้นหา"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "ไม่สามารถติดต่อเซิร์ฟเวอร์ได้ โปรดลองอีกครั้งในอีกสักครู่"
+      ],
+      "Session timed out": [
+        "เซสชันหมดเวลา"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "เพื่อป้องกันการโจมตีจากสแปมและการละเมิด โปรดยืนยันว่าคุณไม่ใช่หุ่นยนต์"
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "สามารถอัปเกรดเป็นแผนแบบชำระเงินเพื่อลบข้อจำกัดออกได้"
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "มีแผนที่ออกแบบมาโดยเฉพาะสำหรับผู้ใช้ที่ต้องการที่อยู่อีเมลมากกว่าหนึ่งที่อยู่"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "เราจะส่งรหัสยืนยันใหม่ไปยัง ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "เมื่อคุณตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน เราจะให้รหัสกู้คืนซึ่งคุณสามารถใช้เพื่อเข้าสู่ระบบหากคุณสูญเสียการเข้าถึงแอปยืนยันตัวตนของคุณ"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "คุณต้องการรับรหัสยืนยันตัวตนใหม่หรือใช้วิธีการยืนยันตัวตนอื่น หรือไม่?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "คุณต้องการรับรหัสยืนยันใหม่หรือไม่?"
+      ],
+      "You can now return to the application to continue": [
+        "สามารถกลับไปที่แอปพลิเคชั่นเพื่อดำเนินการต่อได้"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "บัญชี ${ BRAND_NAME } ถูกระงับชั่วคราว หลังจาก 28 วัน อีเมลจะไม่ถูกส่งไปยังกล่องขาเข้าอีก ลิงก์แชร์ไดรฟ์จะถูกบล็อก และจะไม่สามารถอัปโหลดไฟล์ใหม่ได้ เพื่อให้กลับมาใช้งานได้ตามปกติ โปรดชำระใบแจ้งหนี้เกินกำหนดการชำระค่าบริการ"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "จะมีการใช้อีเมลของคุณในการยืนยันตัวตนเพียงหนึ่งครั้งเท่านั้น"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "จะมีการใช้หมายเลขโทรศัพท์ของคุณในการยืนยันตัวตนเพียงหนึ่งครั้งเท่านั้น"
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "แอปยืนยันตัวตน"
+      ],
+      "Code is 6 digits without spaces": [
+        "รหัสเป็นตัวเลข 6 หลักโดยไม่มีช่องว่าง"
+      ],
+      "Email address": [
+        "ที่อยู่อีเมล"
+      ],
+      "Hide password": [
+        "ซ่อนรหัสผ่าน"
+      ],
+      "Password": [
+        "รหัสผ่าน"
+      ],
+      "Phone number": [
+        "หมายเลขโทรศัพท์"
+      ],
+      "Reveal password": [
+        "เปิดเผยรหัสผ่าน"
+      ],
+      "Verification code": [
+        "รหัสยืนยัน"
+      ],
+      "Your password (admin)": [
+        "รหัสผ่านของคุณ (สำหรับผู้บริหารบัญชี หรือ admin)"
+      ],
+      "Your password (trusted contact)": [
+        "รหัสผ่านของคุณ (ผู้ติดต่อที่เชื่อถือได้)"
+      ]
+    },
+    "Link": {
+      "contact us": [
+        "ติดต่อเรา"
+      ],
+      "Learn more": [
+        "เรียนรู้เพิ่มเติม"
+      ],
+      "Request an invite": [
+        "ร้องขอคำเชิญ"
+      ],
+      "terms of service": [
+        "ข้อตกลงการใช้บริการ"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "จัดระเบียบกล่องขาเข้าของคุณด้วยโฟลเดอร์"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "รับ ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "ผู้ช่วยด้านการเขียน ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } custom email domain": [
+        "${ n }คัสตอมอีเมลโดเมน"
+      ],
+      "${ n } email address": [
+        "${ n }ที่อยู่อีเมล"
+      ],
+      "${ n } email address per user": [
+        "${ n }ที่อยู่อีเมลต่อบุคคล"
+      ],
+      "${ n } filter": [
+        "${ n }ตัวกรอง"
+      ],
+      "${ n } folder": [
+        "${ n }โฟลเดอร์"
+      ],
+      "${ n } folder and label": [
+        "${ n }โฟลเดอร์และป้ายกำกับ"
+      ],
+      "${ n } label": [
+        "${ n }ป้ายกำกับ"
+      ],
+      "${ n } message per day": [
+        "${ n }ข้อความต่อวัน"
+      ],
+      "${ options }-day file version history": [
+        "ประวัติเวอร์ชันไฟล์ ${ options } วัน"
+      ],
+      "${ size } attachment size": [
+        "ขนาดไฟล์แนบ ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "พื้นที่จัดเก็บที่ปลอดภัย ${ size } ต่อผู้ใช้"
+      ],
+      "${ size } storage": [
+        "พื้นที่จัดเก็บ ${ size }"
+      ],
+      "${ size } storage per user": [
+        "พื้นที่จัดเก็บ ${ size } ต่อผู้ใช้"
+      ],
+      "1 TB secure storage": [
+        "พื้นที่จัดเก็บที่ปลอดภัย 1 TB"
+      ],
+      "10 email addresses/aliases": [
+        "ที่อยู่อีเมล/นามแฝง 10 รายการ"
+      ],
+      "10 more premium features": [
+        "คุณสมบัติพรีเมียมอีก 10 รายการ"
+      ],
+      "10-year file version history": [
+        "ประวัติเวอร์ชันไฟล์ 10 ปี"
+      ],
+      "15 GB storage": [
+        "พื้นที่จัดเก็บ 15 GB"
+      ],
+      "200 GB of storage": [
+        "พื้นที่จัดเก็บ 200 GB"
+      ],
+      "Advanced account protection": [
+        "การปกป้องบัญชีขั้นสูง"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "ผลิตภัณฑ์และคุณสมบัติทั้งหมดของ ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "บริการพื้นฐานทั้งหมดของ ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Auto-delete Spam and Trash": [
+        "ลบสแปมและถังขยะโดยอัตโนมัติ"
+      ],
+      "Auto-reply": [
+        "ตอบกลับอัตโนมัติ"
+      ],
+      "Automatic email forwarding": [
+        "การส่งต่ออีเมลอัตโนมัติ"
+      ],
+      "Calendar sharing": [
+        "การแชร์ปฏิทิน"
+      ],
+      "Catch-all": [
+        "ครอบคลุมทั้งหมด"
+      ],
+      "Collaborate and share large files": [
+        "ทำงานร่วมกันและแชร์ไฟล์ขนาดใหญ่"
+      ],
+      "Contact groups": [
+        "กลุ่มผู้ติดต่อ"
+      ],
+      "Contact groups management": [
+        "การจัดการกลุ่มผู้ติดต่อ"
+      ],
+      "Custom and secure business email": [
+        "อีเมลธุรกิจที่กำหนดเองและปลอดภัย"
+      ],
+      "Custom email domains": [
+        "โดเมนอีเมลที่กำหนดเอง"
+      ],
+      "Desktop app": [
+        "แอปเดสก์ท็อป"
+      ],
+      "Easy Switch import assistant": [
+        "ตัวช่วยนำเข้า Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "ฝ่ายสนับสนุนโปรแกรมอีเมล (ผ่าน IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "กลุ่มอีเมล"
+      ],
+      "Encrypted contact details": [
+        "เข้ารหัสรายละเอียดของชื่อติดต่อแล้ว"
+      ],
+      "End-to-end encryption": [
+        "การเข้ารหัสลับจากต้นทางถึงปลายทาง"
+      ],
+      "Generate emails with a prompt": [
+        "สร้างอีเมลด้วยพรอมต์"
+      ],
+      "HTML signatures": [
+        "ลายเซ็น HTML"
+      ],
+      "Online document editor": [
+        "โปรแกรมแก้ไขเอกสารออนไลน์"
+      ],
+      "Password health": [
+        "ความปลอดภัยของรหัสผ่าน"
+      ],
+      "Password-protected Emails": [
+        "อีเมลที่ป้องกันด้วยรหัสผ่าน"
+      ],
+      "Private photo backup": [
+        "การสำรองข้อมูลรูปภาพส่วนตัว"
+      ],
+      "Proofread and refine your emails": [
+        "พิสูจน์อักษรและขัดเกลาอีเมลของคุณ"
+      ],
+      "Quickly craft replies": [
+        "สร้างคำตอบกลับอย่างรวดเร็ว"
+      ],
+      "Recover previous file versions": [
+        "กู้คืนเวอร์ชันไฟล์ก่อนหน้า"
+      ],
+      "Save time emailing": [
+        "ประหยัดเวลาในการส่งอีเมล"
+      ],
+      "Schedule and snooze emails for any time": [
+        "กำหนดเวลาและปิดเสียงเตือนชั่วคราวอีเมลได้ทุกเมื่อ"
+      ],
+      "Secure file storage and sharing": [
+        "พื้นที่จัดเก็บไฟล์และการแชร์ที่ปลอดภัย"
+      ],
+      "Share files with no size limit": [
+        "แชร์ไฟล์โดยไม่มีขีดจำกัดขนาด"
+      ],
+      "Short domain (@pm.me)": [
+        "โดเมนสั้น (@pm.me)"
+      ],
+      "SMTP submission": [
+        "การส่ง SMTP"
+      ],
+      "Support for up to 2 users": [
+        "รองรับผู้ใช้สูงสุด 2 คน"
+      ],
+      "Sync and backup all your files across devices": [
+        "ซิงค์และสำรองข้อมูลไฟล์ทั้งหมดของคุณข้ามอุปกรณ์"
+      ],
+      "Unlimited filters": [
+        "ตัวกรองไม่จำกัด"
+      ],
+      "Unlimited folders": [
+        "โฟลเดอร์ไม่จำกัด"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
+      ],
+      "Unlimited labels": [
+        "ป้ายกำกับไม่จำกัด"
+      ],
+      "Unlimited messages per day": [
+        "ข้อความไม่จำกัดต่อวัน"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "พื้นที่จัดเก็บสูงสุด ${ totalStorageSize }"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "โดเมนอีเมลที่กำหนดเอง 1 โดเมน"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "สร้างที่อยู่อีเมลหลายรายการสำหรับตัวตนออนไลน์ของคุณ เช่น JohnShopper@${ domain } สำหรับบัญชีช้อปปิ้ง, JohnNews@${ domain2 } สำหรับการสมัครรับข่าวสาร"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "พื้นที่จัดเก็บถูกแชร์ระหว่าง ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } และ ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: ปกป้องไฟล์ของคุณด้วยพื้นที่จัดเก็บคลาวด์ที่เข้ารหัส รวมถึงการซิงค์อัตโนมัติ การแชร์ไฟล์ที่เข้ารหัส และอื่นๆ"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: ปกป้องอีเมลของคุณด้วยการเข้ารหัสลับจากต้นทางถึงปลายทาง รวมการรองรับโดเมนอีเมลแบบกำหนดเอง ที่อยู่อีเมล 15 รายการ นามแฝง hide-my-email ไม่จำกัด และอื่นๆ"
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "เข้าถึง ${ MAIL_APP_NAME } และ ${ CALENDAR_APP_NAME } ได้อย่างสะดวกสบายจากเดสก์ท็อป"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "ที่อยู่มีความสามารถในการส่งและรับเต็มรูปแบบ ผู้ใช้หนึ่งคนสามารถมีที่อยู่หลายรายการที่กำหนดให้ตนเองได้ แต่ที่อยู่เดียวไม่สามารถกำหนดให้กับผู้ใช้หลายคนได้"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "ช่วยให้คุณตั้งค่าการตอบกลับอัตโนมัติ (auto-reply) สำหรับข้อความขาเข้าของคุณได้"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "ล้างข้อความที่เก่ากว่า 30 วันออกจากถังขยะและสแปมโดยอัตโนมัติ"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "ส่งต่ออีเมลที่ส่งไปยังบัญชี ${ MAIL_APP_NAME } ของคุณโดยอัตโนมัติไปยังที่อยู่อีเมลอื่น"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "ปัจจุบันยังไม่รองรับการส่งอีเมลส่งเสริมการขายหรืออีเมลโปรแกรมจำนวนมาก เราขอแนะนำให้ใช้ผู้ให้บริการอีเมลเฉพาะทางสำหรับกรณีการใช้งานนี้"
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "เลือกเวลากำหนดเองเพื่อรับการแจ้งเตือนเกี่ยวกับอีเมลหรือให้ข้อความส่งถึง"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "สร้างที่อยู่อีเมลหลายรายการสำหรับข้อมูลระบุตัวตนออนไลน์ของคุณ เช่น JohnShopper@${ domain } สำหรับบัญชีช้อปปิ้ง, JohnNews@${ domain } สำหรับการสมัครสมาชิกข่าวสาร"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "สร้างที่อยู่อีเมล/นามแฝงได้สูงสุด ${ n } รายการเพื่อมอบหมายให้สมาชิกในครอบครัว ใช้สำหรับข้อมูลระบุตัวตนออนไลน์ เช่น JohnShopper@${ domain } สำหรับบัญชีช้อปปิ้ง"
+      ],
+      "Email everyone in a group with a single email address": [
+        "อีเมลถึงทุกคนในกลุ่มด้วยที่อยู่อีเมลเดียว"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "ช่วยให้มั่นใจได้ว่าคุณจะได้รับอีเมลทั้งหมดที่ส่งไปยังโดเมนของคุณ แม้ว่าที่อยู่อีเมลจะไม่มีอยู่จริง ไม่มีอยู่อีกต่อไป หรือสะกดผิดก็ตาม"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "ฝ่ายสนับสนุน IMAP จำกัดเฉพาะการใช้งานแอปเดสก์ท็อป (เช่น Outlook, Apple Mail, Thunderbird) ผ่าน ${ MAIL_APP_NAME } Bridge ปัจจุบันยังไม่รองรับการรวม IMAP บนคลาวด์"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "ป้ายกำกับคือแท็กง่ายๆ ที่คุณสามารถเพิ่มลงในข้อความเพื่อให้ค้นหาได้ง่ายขึ้นหรือเพื่อนำไปใช้กับตัวกรอง"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "ปรับแต่งลายเซ็นอีเมลของคุณด้วยโลโก้ รูปภาพ ไอคอนโซเชียลมีเดีย ลิงก์ไปยังรายละเอียดผู้ติดต่อ และอื่นๆ"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "ป้องกันไม่ให้ข้อความถูกเข้าถึงโดย ${ BRAND_NAME } หรือบุคคลที่สาม ผู้ที่สามารถอ่านข้อความได้มีเพียงผู้ส่งและผู้รับที่ตั้งใจไว้เท่านั้น"
+      ],
+      "Quickly set up out-of-office messages": [
+        "ตั้งค่าข้อความไม่อยู่ที่ออฟฟิศได้อย่างรวดเร็ว"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "โอนย้ายอีเมล ปฏิทิน หรือรายชื่อผู้ติดต่อจากผู้ให้บริการรายใดก็ได้รวดเร็วทันใจ"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "ปกป้องไฟล์ด้วยพื้นที่จัดเก็บข้อมูลบนคลาวด์ที่เข้ารหัส รวมถึงการซิงค์อัตโนมัติ การแชร์ไฟล์ที่เข้ารหัส และอื่นๆ"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "จัดเก็บรายละเอียดรายชื่อผู้ติดต่อของคุณอย่างปลอดภัย เช่น หมายเลขโทรศัพท์ ที่อยู่ วันเกิด และบันทึกส่วนตัว การเข้ารหัสลับแบบ Zero-access ช่วยให้มั่นใจได้ว่าแม้แต่ ${ BRAND_NAME } ก็ไม่สามารถเข้าถึงข้อมูลเหล่านั้นได้"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "ส่งอีเมลถึงกลุ่มขนาดใหญ่ได้อย่างรวดเร็วและง่ายดายโดยสร้างกลุ่มผู้ติดต่อได้มากเท่าที่คุณต้องการ (สูงสุด 100 รายชื่อต่อกลุ่ม)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "ตั้งค่าตัวกรองเพื่อตอบกลับ จัดเรียง และ/หรือติดป้ายกำกับอีเมลของคุณโดยอัตโนมัติ"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "แชร์ไฟล์หรือโฟลเดอร์ของคุณกับใครก็ได้โดยใช้ลิงก์ที่ปลอดภัยและแชร์ได้"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP อนุญาตให้บริการหรืออุปกรณ์ของบุคคลที่ 3 ส่งอีเมลผ่าน ${ MAIL_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "พื้นที่จัดเก็บจะถูกแชร์ใน ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } และ ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "พื้นที่จัดเก็บถูกแชร์ระหว่าง ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } และ ${ DRIVE_APP_NAME } ผู้ดูแลระบบสามารถจัดสรรพื้นที่จัดเก็บในปริมาณที่แตกต่างกันให้กับผู้ใช้ในองค์กรได้"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "พื้นที่จัดเก็บจะถูกแชร์ระหว่างผู้ใช้ใน ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } และ ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "ใช้ที่อยู่โดเมนอีเมลที่กำหนดเองของคุณ เช่น you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "เมื่อส่งถึงผู้ใช้ ${ MAIL_APP_NAME } รายอื่น การเข้ารหัสลับจะเป็นไปโดยอัตโนมัติ การส่งถึงผู้ใช้ที่ไม่ใช่ ${ MAIL_APP_NAME_TWO } จำเป็นต้องตั้งรหัสผ่านก่อนส่ง"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "เพิ่มความเป็นส่วนตัวมากขึ้นด้วยที่อยู่อีเมล 15 รายการและการรองรับโดเมนอีเมลที่กำหนดเอง 3 โดเมน"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "เพิ่มพื้นที่จัดเก็บข้อมูลของคุณเป็น ${ bundleStorage } ต่อผู้ใช้"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "เพิ่มพื้นที่จัดเก็บของคุณเป็น ${ bundleStorage } ทั้งหมด"
+      ],
+      "Support for ${ n } custom email domain": [
+        "รองรับโดเมนอีเมลที่กำหนดเอง ${ n } โดเมน"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "รหัสผ่าน"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "คุณสมบัติพรีเมียมทั้งหมดจาก ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "การเข้าสู่ระบบไม่เสร็จสมบูรณ์"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "เข้าสู่ระบบ"
+      ],
+      "Sign in to your organization": [
+        "ลงชื่อเข้าใช้องค์กร"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "คุณจะถูกเปลี่ยนเส้นทางไปยังผู้ให้บริการ SSO บุคคลที่สามของคุณ"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "พื้นที่จัดเก็บสำหรับข้อมูลที่สร้างโดย ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } และ ${ PASS_SHORT_APP_NAME } ของ ${ BRAND_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "พื้นที่จัดเก็บ Drive สูงสุด ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "พื้นที่จัดเก็บ Mail สูงสุด ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "สำหรับบริการ ${ BRAND_NAME } ทั้งหมด"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "ได้ส่งรหัสไปที่ ${ methodTo }"
+      ],
+      "Verification successful": [
+        "ยืนยันสำเร็จ"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "บัญชีถูกจำกัด"
+      ],
+      "Account temporarily locked": [
+        "บัญชีถูกล็อกชั่วคราว"
+      ],
+      "Enter your password": [
+        "ป้อนรหัสผ่าน"
+      ],
+      "Human verification": [
+        "ยืนยันตัวตนว่าไม่ใช่หุ่นยนต์"
+      ],
+      "Invalid verification code": [
+        "รหัสยืนยันไม่ถูกต้อง"
+      ],
+      "Request new code": [
+        "ขอรหัสใหม่"
+      ],
+      "Two-factor authentication": [
+        "การยืนยันตัวตนผ่านสองขั้นตอน"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "รหัสต้องมีอักขระอย่างน้อย ${ MIN_PASSWORD_LENGTH } อักษร"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ลองใช้ชื่อผู้ใช้ที่สั้นกว่านี้ (สูงสุด ${ n } อักขระ)"
+      ]
+    }
+  }
+}
