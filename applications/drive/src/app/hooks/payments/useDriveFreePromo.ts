@@ -4,7 +4,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CYCLE, type CheckSubscriptionData, type EnrichedCheckResponse, PLANS } from '@proton/payments';
+import { CYCLE, type CheckSubscriptionData, PLANS, type SubscriptionEstimation } from '@proton/payments';
 
 interface UseDriveFreePromoProps {
     codes: string[] | undefined;
@@ -16,7 +16,7 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
     const [plansResult] = usePlans();
     const [paymentStatus] = usePaymentStatus();
 
-    const [result, setResult] = useState<EnrichedCheckResponse | null>(null);
+    const [result, setResult] = useState<SubscriptionEstimation | null>(null);
     const [hasError, setHasError] = useState(false);
     const codesKey = codes?.join(',') ?? '';
     const currency = getPreferredCurrency({

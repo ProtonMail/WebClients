@@ -1,10 +1,10 @@
 import { getCheckoutModifiers } from './checkout-modifiers';
-import { CYCLE } from './constants';
+import { CYCLE, PLANS } from './constants';
 import { SubscriptionMode } from './subscription/constants';
-import type { SubscriptionCheckResponse } from './subscription/interface';
+import type { SubscriptionEstimation } from './subscription/interface';
 
 describe('getCheckoutModifiers', () => {
-    let checkResult: SubscriptionCheckResponse;
+    let checkResult: SubscriptionEstimation;
 
     beforeEach(() => {
         checkResult = {
@@ -17,6 +17,11 @@ describe('getCheckoutModifiers', () => {
             SubscriptionMode: SubscriptionMode.Regular,
             BaseRenewAmount: null,
             RenewCycle: null,
+            requestData: {
+                Plans: { [PLANS.MAIL]: 1 },
+                Currency: 'CHF',
+                Cycle: CYCLE.MONTHLY,
+            },
         };
     });
 

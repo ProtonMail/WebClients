@@ -3,7 +3,7 @@ import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, Cycle } from '../interface';
 import type { FreePlanDefault } from '../plan/interface';
 import { SubscriptionMode } from './constants';
-import type { EnrichedCheckResponse } from './interface';
+import type { SubscriptionEstimation } from './interface';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',
@@ -48,7 +48,7 @@ export const FREE_PLAN: FreePlanDefault = {
 export const getFreeCheckResult = (
     currency: Currency = getDefaultMainCurrency(),
     cycle: Cycle = DEFAULT_CYCLE
-): EnrichedCheckResponse => {
+): SubscriptionEstimation => {
     return {
         Amount: 0,
         AmountDue: 0,

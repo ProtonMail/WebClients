@@ -39,13 +39,13 @@ import {
     CYCLE,
     type Currency,
     type Cycle,
-    type EnrichedCheckResponse,
     FREE_PLAN,
     type FreeSubscription,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
     type Subscription,
+    type SubscriptionEstimation,
     SubscriptionMode,
     type SubscriptionPlan,
     getFallbackCurrency,
@@ -299,7 +299,7 @@ const Step1 = ({
         coupon?: string;
         trial?: boolean;
         vatNumber?: string;
-    }): Promise<EnrichedCheckResponse> => {
+    }): Promise<SubscriptionEstimation> => {
         if (isSubscriptionCheckForbidden(subscription, values.planIDs, values.cycle)) {
             return getOptimisticCheckResult({
                 plansMap: model.plansMap,

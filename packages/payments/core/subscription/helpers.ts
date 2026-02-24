@@ -26,7 +26,7 @@ import { getPlanFromIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
 import { Renew, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
-import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionCheckResponse } from './interface';
+import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionEstimation } from './interface';
 
 export function getPlan(subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) {
     const result = (subscription?.Plans || []).find(
@@ -638,11 +638,11 @@ export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) =>
     return currency && isRegionalCurrency(currency) ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
 };
 
-export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
+export function isTaxInclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
 
-export function isTaxExclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
+export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.EXCLUSIVE;
 }
 

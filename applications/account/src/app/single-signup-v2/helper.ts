@@ -23,7 +23,6 @@ import {
     SelectedPlan,
     type StrictPlan,
     type Subscription,
-    type SubscriptionCheckResponse,
     type SubscriptionPlan,
     getAddonsFromIDs,
     getDefaultMainCurrency,
@@ -50,6 +49,7 @@ import {
 } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -382,7 +382,7 @@ const getUpsell = ({
 export const getRelativeUpsellPrice = (
     upsell: Upsell,
     plansMap: PlansMap,
-    checkResult: SubscriptionCheckResponse | undefined,
+    checkResult: SubscriptionEstimation | undefined,
     subscription: Subscription | FreeSubscription | undefined,
     cycle: CYCLE
 ) => {

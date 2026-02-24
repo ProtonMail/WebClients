@@ -32,9 +32,9 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type {
     BillingAddress,
-    EnrichedCheckResponse,
     ExtendedTokenPayment,
     PaymentProcessorHook,
+    SubscriptionEstimation,
     TokenPayment,
 } from '@proton/payments';
 import {
@@ -479,7 +479,7 @@ const Step1 = ({
         const optimisticCheckResultWithoutTaxes = {
             ...optimisticCheckResult,
             Taxes: [],
-        } satisfies EnrichedCheckResponse;
+        } satisfies SubscriptionEstimation;
 
         const newOptimistic = {
             ...optimistic,

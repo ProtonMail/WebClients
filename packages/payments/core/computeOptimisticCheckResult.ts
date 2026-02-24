@@ -2,7 +2,7 @@ import { getOptimisticCheckResult } from './checkout';
 import { computeOptimisticRenewProperties } from './computeOptimisticRenewProperties';
 import type { FreeSubscription } from './interface';
 import { computeOptimisticSubscriptionMode } from './optimisticSubscriptionMode';
-import type { EnrichedCheckResponse, Subscription } from './subscription/interface';
+import type { Subscription, SubscriptionEstimation } from './subscription/interface';
 
 export function computeOptimisticCheckResult(
     params: Parameters<typeof getOptimisticCheckResult>[0],
@@ -10,7 +10,7 @@ export function computeOptimisticCheckResult(
     options: {
         isTrial?: boolean;
     }
-): EnrichedCheckResponse {
+): SubscriptionEstimation {
     const subscriptionMode = computeOptimisticSubscriptionMode(params, subscription, options);
     const optimisticCheckResult = getOptimisticCheckResult(params);
     optimisticCheckResult.SubscriptionMode = subscriptionMode;
