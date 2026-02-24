@@ -72,7 +72,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
         /** By this time: hydration of an existing cache will have hydrated the sync strategy. */
-        const syncResult: Maybe<SyncResult> = fromCache ? undefined : yield sync(state, options);
+        const syncResult: Maybe<SyncResult> = fromCache ? undefined : yield call(sync, state, options);
 
         if (fromCache && state && online) {
             /** If the feature flag has changed since this cache was created,
