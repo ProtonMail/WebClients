@@ -262,10 +262,10 @@ describe('formatNodeLocation', () => {
         ).toBe('/My files/folder1/folder2');
     });
 
-    it('should not render leading slash for one folder deep path: My files', async () => {
+    it('should render leading slash for one folder deep path e.g. "/My files"', async () => {
         const rootNode = createMockNode('uid1', NO_PARENT_UID);
         rootNode.name = 'volume1Root';
-        expect(formatNodeLocation(NodeLocation.MY_FILES, [createMaybeNode(rootNode)])).toBe('My files');
+        expect(formatNodeLocation(NodeLocation.MY_FILES, [createMaybeNode(rootNode)])).toBe('/My files');
     });
 
     it('should format Shared With Me location', async () => {

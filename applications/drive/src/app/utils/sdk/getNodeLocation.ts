@@ -81,10 +81,6 @@ export async function getNodeLocation(
 }
 
 const formatPath = (pathItems: string[], additionalTopNodeName?: string) => {
-    if (pathItems.length === 0 && additionalTopNodeName) {
-        // Do not render leading slash when showing only the custom top root folder
-        return additionalTopNodeName;
-    }
     const paths = additionalTopNodeName ? [additionalTopNodeName, ...pathItems] : pathItems;
     return `/${paths.join('/')}`;
 };
