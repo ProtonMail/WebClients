@@ -14,4 +14,4 @@ export enum SyncStrategy {
 
 export type EventProcessor = Generator<any, boolean>;
 
-export type SyncMigration = { userEventID: MaybeNull<string>; strategy: SyncStrategy };
+export type SyncMigration = { userEventId: MaybeNull<string>; strategy: SyncStrategy };

@@ -1,14 +1,6 @@
 import type { Reducer } from 'redux';
 
-import {
-    groupInviteAccept,
-    groupInviteReject,
-    inviteAccept,
-    inviteReject,
-    sync,
-    syncInvites,
-    syncSuccess,
-} from '@proton/pass/store/actions';
+import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject, matchSyncAction, syncInvites } from '@proton/pass/store/actions';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -18,9 +10,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 export type InviteState = Record<string, Invite>;
 
 const reducer: Reducer<InviteState> = (state = {}, action) => {
-    if (or(sync.match, syncSuccess.match)(action) && action.payload.v === 2) {
-        return toMap(action.payload.invites, 'token');
-    }
+    if (matchSyncAction(action) && action.payload?.v === 2) return toMap(action.payload.invites, 'token');
 
     if (syncInvites.match(action)) {
         return {

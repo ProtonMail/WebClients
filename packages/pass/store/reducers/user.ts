@@ -6,17 +6,15 @@ import {
     aliasPendingCreated,
     aliasSyncEnable,
     aliasSyncStatus,
-    bootSuccess,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
+    matchSyncAction,
     monitorToggle,
     sentinelToggle,
     setUserAccess,
     setUserEventID,
-    sync,
     syncMigration,
-    syncSuccess,
     userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
@@ -110,15 +108,14 @@ export const INITIAL_HIGHSECURITY_SETTINGS = {
 };
 
 const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
-    if (bootSuccess.match(action) && action.payload?.v === 2) {
-        return partialMerge(state, { userEventId: action.payload.userEventID });
+    if (matchSyncAction(action) && action.payload?.v === 2) {
+        const { userEventId, access } = action.payload;
+        return partialMerge(state, { userEventId, ...access });
     }
 
-    /** Sync V2 state */
-    if (setUserEventID.match(action)) return partialMerge(state, { userEventId: action.payload.userEventID });
-    if (syncMigration.match(action)) return partialMerge(state, { userEventId: action.payload.userEventID });
+    if (setUserEventID.match(action)) return partialMerge(state, { userEventId: action.payload.userEventId });
+    if (syncMigration.match(action)) return partialMerge(state, { userEventId: action.payload.userEventId });
     if (setUserAccess.match(action)) return partialMerge(state, action.payload);
-    if (or(sync.match, syncSuccess.match)(action) && action.payload.v === 2) return partialMerge(state, action.payload.access);
 
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;

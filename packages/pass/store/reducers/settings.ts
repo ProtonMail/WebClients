@@ -9,7 +9,6 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
-    commitSyncStrategy,
     extraPasswordToggle,
     itemCreate,
     lockCreateSuccess,
@@ -90,7 +89,6 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     if (passwordOptionsEdit.match(action)) return partialMerge(state, { passwordOptions: action.payload });
     if (itemCreate.success.match(action)) return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
     if (extraPasswordToggle.success.match(action)) return partialMerge(state, { extraPassword: action.payload });
-    if (commitSyncStrategy.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
     if (syncMigration.match(action)) return partialMerge(state, { syncStrategy: action.payload.strategy });
 
     if (userEvent.match(action)) {

@@ -6,7 +6,6 @@ import {
     aliasPendingCreate,
     aliasPendingCreated,
     aliasSyncStatusToggle,
-    bootSuccess,
     emptyTrashProgress,
     fileLinkPending,
     importItemsProgress,
@@ -30,6 +29,7 @@ import {
     itemsDeleteEvent,
     itemsUpdated,
     itemsUsedEvent,
+    matchSyncAction,
     resolveAddressMonitor,
     restoreTrashProgress,
     setItemFlags,
@@ -37,8 +37,6 @@ import {
     shareDeleted,
     shareLeaveSuccess,
     sharesEventNew,
-    sync,
-    syncSuccess,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
@@ -114,8 +112,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         },
     ],
     (state = {}, action: Action) => {
-        if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
-        if (or(sync.match, syncSuccess.match)(action)) return action.payload.items;
+        if (matchSyncAction(action) && action.payload?.items) return action.payload.items;
         if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
 
         if (shareCreated.match(action)) {

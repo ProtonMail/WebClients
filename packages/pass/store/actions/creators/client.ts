@@ -12,6 +12,7 @@ import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { or } from '@proton/pass/utils/fp/predicates';
 import type { Chunk } from '@proton/pass/utils/object/chunk';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
@@ -84,8 +85,6 @@ export const syncSuccess = createAction('sync::success', (payload: SyncResult) =
     )({ payload })
 );
 
-export const sync = createAction('sync::v2', (payload: SyncResult) => pipe(withCache, withStreamableAction)({ payload }));
-
 export const syncFailure = createAction('sync::failure', (error: unknown) =>
     pipe(
         withRequest({ id: syncRequest(), status: 'failure' }),
@@ -96,6 +95,8 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
 export const offlineResume = requestActionsFactory<{ localID?: number; retryable?: boolean; silence?: boolean }, boolean, void>(
     'offline::resume'
 )();
+
+export const syncResult = createAction('sync::result', (payload: SyncResult) => pipe(withCache, withStreamableAction)({ payload }));
 
 /** Commits a sync strategy migration without triggering cache writes.
  * During boot, a `withCache` action would trip the `isCachingAction`
@@ -108,3 +109,5 @@ export const syncMigration = createAction<SyncMigration>('sync::migration');
 export const actionStream = createAction('action::stream', (chunk: Chunk, options?: EndpointOptions) =>
     withReceiver(options ?? {})({ payload: { chunk } })
 );
+
+export const matchSyncAction = or(bootSuccess.match, syncSuccess.match, syncResult.match);
