@@ -366,9 +366,9 @@ const AdvancedSearch = ({
                                         filter: target.checked ? 'has-file' : UNDEFINED,
                                     })
                                 }
-                                className="block"
+                                className="flex items-center"
                             >
-                                {c('Label').t`Has attachments`}
+                                <span className="mt-0.5">{c('Label').t`Has attachments`}</span>
                             </Checkbox>
                         </div>
                     </>
