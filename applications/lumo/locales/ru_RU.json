@@ -197,6 +197,9 @@
       "Previous page": [
         "Предыдущая страница"
       ],
+      "Redo": [
+        "Повторить"
+      ],
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
@@ -293,6 +296,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Undo": [
+        "Отменить"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
@@ -342,12 +348,6 @@
         "${ domains } дополнительных пользовательских домена",
         "${ domains } дополнительных пользовательских доменов",
         "${ domains } дополнительных пользовательских доменов"
-      ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
       ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
@@ -502,52 +502,6 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 ТБ для хранения данных"
-      ],
-      "3 TB data storage": [
-        "Хранилище на 3 ТБ"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к более чем 15 000 серверам в более чем 120 странах"
-      ],
-      "Access advanced AI models": [
-        "Доступ к расширенным моделям ИИ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все премиум-функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и избранным"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнёра"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 месяц"
@@ -566,6 +520,9 @@
       ],
       "Two-year": [
         "Каждые 2 года"
+      ],
+      "Yearly": [
+        "Ежегодно"
       ]
     },
     "Browser": {
@@ -794,9 +751,6 @@
     "collider_2025: Button": {
       "Close": [
         "Закрыть"
-      ],
-      "Join waitlist": [
-        "Присоединиться к списку ожидания"
       ],
       "Learn more": [
         "Подробнее"
@@ -1185,17 +1139,8 @@
       "Save your favorites": [
         "Сохраните избранное"
       ],
-      "Secure your spot": [
-        "Зарезервируйте свое место"
-      ],
       "Upload files": [
         "Загрузить файлы"
-      ],
-      "You're on the list": [
-        "Вы в списке"
-      ],
-      "You're on the waitlist": [
-        "Вы в списке ожидания"
       ]
     },
     "collider_2025: Top nav link": {
@@ -1209,17 +1154,6 @@
     "collider_2025: Upsell": {
       "Create free account": [
         "Создать бесплатный аккаунт"
-      ]
-    },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Спасибо, что присоединились к списку ожидания. Мы отправим вам письмо, когда вы сможете начать общаться с ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Спасибо за регистрацию. Мы постепенно открываем доступ к ${ LUMO_SHORT_APP_NAME } и уведомим вас, когда ваше место будет доступно."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "Мы постепенно открываем доступ к ${ LUMO_SHORT_APP_NAME }. Присоединяйтесь к списку ожидания, и мы уведомим вас, когда ваше место станет доступным."
       ]
     },
     "collider_2025: Warning": {
@@ -3210,12 +3144,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
       ],
@@ -3224,12 +3152,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Следующая дата выставления счета - ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
@@ -3720,12 +3642,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
@@ -4740,9 +4656,6 @@
       "Thomas": [
         "Томас"
       ],
-      "VAT number": [
-        "Номер плательщика НДС"
-      ],
       "Your organization name": [
         "Название вашей организации"
       ],
@@ -4753,6 +4666,14 @@
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяца",
+        "${ cycle } месяцев",
+        "${ cycle } месяцев"
       ]
     },
     "plus_block": {
@@ -5086,17 +5007,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы потеряете доступ к неограниченному количеству логинов и заметок, неограниченному количеству псевдонимов hide-my-email, 20 хранилищам, а также к приоритетной поддержке."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed monthly": [
-        "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
