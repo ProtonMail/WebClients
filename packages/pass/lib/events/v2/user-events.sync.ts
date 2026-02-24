@@ -8,7 +8,7 @@ import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { sync } from '@proton/pass/store/actions';
+import { syncResult } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { State } from '@proton/pass/store/types';
@@ -27,7 +27,7 @@ export type SyncResultV2 = {
     invites: Invite[];
     items: ItemsByShareId;
     shares: SharesState;
-    userEventID: string;
+    userEventId: string;
     v: 2;
 };
 
@@ -49,7 +49,7 @@ const intoItemsByShareId = async ({ shareId }: RemoteShare): Promise<ItemsByShar
  * user state (plan, groups, feature flags) is guaranteed to be hydrated.  */
 export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     /** 1. Get latest user-events eventID */
-    const userEventID: string = yield getUserEventLatestID();
+    const userEventId: string = yield getUserEventLatestID();
     /** 2. Get user info */
     const access: HydratedAccessState = yield getUserAccess();
     /** 3a. Get all shares */
@@ -74,7 +74,7 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
         invites,
         items: items.reduce(diadic(merge), {}),
         shares: toMap(activeShares.map(prop('share')), 'shareId'),
-        userEventID,
+        userEventId,
         v: 2,
     };
 }
@@ -83,7 +83,7 @@ export function* processFullRefresh(): EventProcessor {
     try {
         const state: State = yield select();
         const result: SyncResultV2 = yield call(syncV2, state);
-        yield put(sync(result));
+        yield put(syncResult(result));
         return true;
     } catch {
         return false;
