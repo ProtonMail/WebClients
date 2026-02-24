@@ -8,6 +8,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
@@ -17,6 +18,7 @@ import {
     selectExcludedItems,
     selectMonitorState,
     selectProtonBreaches,
+    selectSyncStrategy,
     selectTotalBreaches,
     selectVisibleAliasItems,
 } from '@proton/pass/store/selectors';
@@ -35,6 +37,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const { createNotification } = useNotifications();
 
     const didLoad = useSelector(selectMonitorState) !== null;
+    const syncStrategy = useSelector(selectSyncStrategy);
 
     const aliases = useSelector(selectVisibleAliasItems) ?? [];
     const proton = useSelector(selectProtonBreaches) ?? [];
@@ -96,12 +99,14 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
         [breaches, insecure, duplicates, missing2FAs, excluded, didLoad]
     );
 
-    useEffect(() => loadBreaches.dispatch(), []);
+    useEffect(() => {
+        /** Rely on `BreachesUpdate` when `SyncStrategy.USER_EVENTS` */
+        if (syncStrategy === SyncStrategy.LEGACY) loadBreaches.dispatch();
+    }, []);
 
     return (
         <MonitorContext.Provider value={context}>
             {children}
-
             {action?.type === 'add' && <CustomAddressAddModal onClose={onClose} />}
             {action?.type === 'verify' && <CustomAddressVerifyModal {...action.data} onClose={onClose} />}
         </MonitorContext.Provider>
