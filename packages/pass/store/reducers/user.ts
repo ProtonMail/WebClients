@@ -6,6 +6,7 @@ import {
     aliasPendingCreated,
     aliasSyncEnable,
     aliasSyncStatus,
+    coreEvent,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
@@ -15,7 +16,6 @@ import {
     setUserAccess,
     setUserEventID,
     syncMigration,
-    userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
 import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
@@ -117,7 +117,7 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     if (syncMigration.match(action)) return partialMerge(state, { userEventId: action.payload.userEventId });
     if (setUserAccess.match(action)) return partialMerge(state, action.payload);
 
-    if (userEvent.match(action)) {
+    if (coreEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 
         const { Addresses = [], User, EventID, UserSettings, AuthDevices } = action.payload;

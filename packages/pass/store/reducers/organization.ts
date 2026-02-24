@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
+import { coreEvent, getUserAccessSuccess } from '@proton/pass/store/actions';
 import { getOrganizationSettings, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
@@ -47,7 +47,7 @@ const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null
     if (state !== null) {
         /* Actions applied to the organization state should only be processed
          * if we actually have an organization state in the first place. */
-        if (userEvent.match(action) && action.payload.Organization) {
+        if (coreEvent.match(action) && action.payload.Organization) {
             return { ...state, organization: action.payload.Organization };
         }
 
