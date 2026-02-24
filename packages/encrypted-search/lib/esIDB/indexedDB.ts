@@ -1,4 +1,4 @@
-import type { IDBPDatabase, OpenDBCallbacks } from 'idb';
+import type { IDBPDatabase } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
 import type { ESCiphertext } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
@@ -9,9 +9,8 @@ import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
 import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } from '../esHelpers';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
+import { upgrade } from './indexedDBUpgrade';
 import { getOldestID, getOldestInfo } from './metadata';
-
-type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
 /**
  * Format the name of the ES database for the given user ID
@@ -30,43 +29,6 @@ async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string
     removeESFlags(userID);
     await deleteESDB(userID);
 }
-
-const upgrade: UpgradeCallback = (database) => {
-    // The object store containing the content of items, indexed by their ID.
-    // Out-of-line keys are used
-    if (!database.objectStoreNames.contains('content')) {
-        database.createObjectStore('content');
-    }
-
-    // The object store containing all metadata of items, indexed by their ID
-    // In-line keys are used, defined by the ID property. A temporal index
-    // is created as well
-    if (!database.objectStoreNames.contains('metadata')) {
-        const metadataOS = database.createObjectStore('metadata');
-        metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
-    }
-
-    // The config object store contains ES-wide values (e.g. the encrypted index key),
-    // configuration (e.g. whether ES is enabled) and information (e.g. an estimate
-    // of the size)
-    if (!database.objectStoreNames.contains('config')) {
-        database.createObjectStore('config');
-    }
-
-    // The events object store contains the last event ID according to which the index has
-    // been updated for every component of the product
-    if (!database.objectStoreNames.contains('events')) {
-        database.createObjectStore('events');
-    }
-
-    // The indexingProgress object store contains metadata information on indexing. It always
-    // will contain a 'metadata' row, for items metadata to either search those exclusively or
-    // to enable ES for free users, as well as a row for content in case a product decides to
-    // have any
-    if (!database.objectStoreNames.contains('indexingProgress')) {
-        database.createObjectStore('indexingProgress');
-    }
-};
 
 /**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
