@@ -1,21 +1,20 @@
 import { c } from 'ttag';
 
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
-import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
-import { IcPen } from '@proton/icons/icons/IcPen';
+import type { IconName } from '@proton/icons/types';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import type { MenuDropdownProps, MenuItemProps } from './components/MenuDropdown';
+import { MenuDropdown, MenuItem } from './components/MenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
 
 import './UploadMenuDropdown.scss';
 
-interface UploadMenuDropdownProps {
-    isOpen: boolean;
-    anchorRef: React.RefObject<HTMLElement>;
-    onClose: () => void;
+interface UploadActionItemProps extends MenuItemProps {
+    canShow: boolean;
+}
+
+interface UploadMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onUploadFromComputer: () => void;
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
@@ -31,80 +30,51 @@ export const UploadMenuDropdown = ({
     onDrawSketch,
     fileUploadMode,
 }: UploadMenuDropdownProps) => {
-    const { imageTools: ffImageTools } = useLumoFlags();
+    const { imageTools: ffImageToolsEnabled } = useLumoFlags();
 
     // Show "Add from Drive" browse option only for authenticated users without a linked folder and guest users (will trigger upsell)
     const showBrowseDriveOption = fileUploadMode !== 'linked-drive';
     // If drive fodler linked, uploads should go to drive, otherwise they will be handled locally
     const showUploadToDrive = fileUploadMode === 'linked-drive';
 
+    const uploadMenuItems: UploadActionItemProps[] = [
+        {
+            iconName: 'brand-proton-drive' as IconName,
+            getLabel: () => c('collider_2025: Action').t`Add from ${DRIVE_APP_NAME}`,
+            onClick: onBrowseDrive,
+            onClose: onClose,
+            canShow: showBrowseDriveOption,
+        },
+        {
+            iconName: showUploadToDrive ? ('brand-proton-drive-filled' as IconName) : ('file-arrow-in-up' as IconName),
+            getLabel: () =>
+                showUploadToDrive
+                    ? c('collider_2025: Action').t`Add file to ${DRIVE_APP_NAME}`
+                    : c('collider_2025: Action').t`Upload from device`,
+            onClick: onUploadFromComputer,
+            onClose: onClose,
+            canShow: true,
+        },
+        {
+            iconName: 'pencil' as IconName,
+            getLabel: () => c('collider_2025: Action').t`Draw a sketch`,
+            onClick: onDrawSketch,
+            onClose: onClose,
+            canShow: ffImageToolsEnabled,
+        },
+    ].filter((item) => item.canShow);
+
     return (
-        <Dropdown
+        <MenuDropdown
             isOpen={isOpen}
             anchorRef={anchorRef}
             onClose={onClose}
-            originalPlacement="top-start"
-            size={{
-                width: '200px',
-            }}
             className="upload-menu-dropdown"
+            width="200px"
         >
-            {showBrowseDriveOption && (
-                <DropdownMenuButton
-                    onClick={() => {
-                        onBrowseDrive();
-                        onClose();
-                    }}
-                    className="justify-start"
-                >
-                    <div className="flex items-center gap-3">
-                        <IcBrandProtonDriveFilled size={5} className="color-weak" />
-                        <div className="flex flex-column">
-                            <span className="text-sm font-medium">
-                                {c('collider_2025: Action').t`Add from ${DRIVE_APP_NAME}`}
-                            </span>
-                        </div>
-                    </div>
-                </DropdownMenuButton>
-            )}
-            <DropdownMenuButton
-                onClick={() => {
-                    onUploadFromComputer();
-                    onClose();
-                }}
-                className="justify-start"
-            >
-                <div className="flex items-center gap-3">
-                    {showUploadToDrive ? (
-                        <IcBrandProtonDriveFilled size={5} className="color-weak" />
-                    ) : (
-                        <IcArrowUpLine size={5} className="color-weak" />
-                    )}
-                    <div className="flex flex-column">
-                        <span className="text-sm font-medium">
-                            {showUploadToDrive
-                                ? c('collider_2025: Action').t`Add file to ${DRIVE_APP_NAME}`
-                                : c('collider_2025: Action').t`Upload from device`}
-                        </span>
-                    </div>
-                </div>
-            </DropdownMenuButton>
-            {ffImageTools && (
-                <DropdownMenuButton
-                    onClick={() => {
-                        onDrawSketch();
-                        onClose();
-                    }}
-                    className="justify-start"
-                >
-                    <div className="flex items-center gap-3">
-                        <IcPen size={5} className="color-weak" />
-                        <div className="flex flex-column">
-                            <span className="text-sm font-medium">{c('collider_2025: Action').t`Draw a sketch`}</span>
-                        </div>
-                    </div>
-                </DropdownMenuButton>
-            )}
-        </Dropdown>
+            {uploadMenuItems.map((item) => (
+                <MenuItem key={item.iconName} {...item} />
+            ))}
+        </MenuDropdown>
     );
 };
