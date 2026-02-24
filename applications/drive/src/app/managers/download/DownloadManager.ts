@@ -1,5 +1,7 @@
 import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { NodeType, SDKEvent } from '@proton/drive';
+import { TransferSpeedMetrics } from '@proton/drive/internal/performance/transferSpeedMetrics';
+import metrics from '@proton/metrics';
 
 import { bufferToStream } from '../../utils/stream';
 import { TransferCancel } from '../../utils/transfer';
@@ -52,6 +54,13 @@ export class DownloadManager {
     private readonly activeDownloads = new Map<string, ActiveDownload>();
     private requestedDownloads = new Map<string, NodeEntity[]>();
     private readonly malwareDetection: MalwareDetection;
+    private readonly downloadSpeedMetrics = new TransferSpeedMetrics((values) => {
+        downloadLogDebug('Download speed metrics', values);
+        metrics.drive_download_speed_histogram.observe({
+            Labels: { context: 'foreground', pipeline: 'default' },
+            Value: Math.round(values.kibibytesPerSecond),
+        });
+    });
 
     constructor() {
         this.hasListeners = false;
@@ -246,7 +255,7 @@ export class DownloadManager {
     }
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
-        const { updateDownloadItem } = useDownloadManagerStore.getState();
+        const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
 
         const abortController = new AbortController();
         let completionPromise: Promise<void>;
@@ -255,6 +264,7 @@ export class DownloadManager {
         try {
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
+            this.downloadSpeedMetrics.onFileStarted(downloadId);
 
             const { stream, controller, closeWriter, abortWriter } = await createFileDownloadStream({
                 downloadId,
@@ -264,6 +274,10 @@ export class DownloadManager {
                     currentDownloadedBytes = downloadedBytes;
                     updateDownloadItem(downloadId, { downloadedBytes });
                     this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
+                    const isPaused =
+                        getQueueItem(downloadId)?.status === DownloadStatus.Paused ||
+                        getQueueItem(downloadId)?.status === DownloadStatus.PausedServer;
+                    this.downloadSpeedMetrics.onFileProgress(downloadId, downloadedBytes, isPaused);
                 },
                 malwareDetection: this.malwareDetection,
             });
@@ -321,6 +335,7 @@ export class DownloadManager {
                 },
             });
         } catch (error) {
+            this.downloadSpeedMetrics.onFileEnded(downloadId);
             handleDownloadError(downloadId, [node], error);
             completionPromise = Promise.reject(error);
         }
@@ -342,6 +357,7 @@ export class DownloadManager {
                 nodes,
                 abortController.signal
             );
+            this.downloadSpeedMetrics.onFileStarted(downloadId);
 
             void traversalCompletedPromise.then((traversalResult) => {
                 downloadLogDebug('Archive traversal complete', traversalResult);
@@ -357,6 +373,10 @@ export class DownloadManager {
                 updateDownloadItem(downloadId, { downloadedBytes });
                 this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
                 currentDownloadedBytes = downloadedBytes;
+                const isPaused =
+                    getQueueItem(downloadId)?.status === DownloadStatus.Paused ||
+                    getQueueItem(downloadId)?.status === DownloadStatus.PausedServer;
+                this.downloadSpeedMetrics.onFileProgress(downloadId, downloadedBytes, isPaused);
             };
 
             const archiveGenerator = new ArchiveGenerator();
@@ -442,6 +462,7 @@ export class DownloadManager {
                 },
             });
         } catch (error) {
+            this.downloadSpeedMetrics.onFileEnded(downloadId);
             handleDownloadError(downloadId, nodes, error, abortController.signal.aborted);
         }
     }
@@ -471,6 +492,7 @@ export class DownloadManager {
             })
             .finally(() => {
                 this.activeDownloads.delete(downloadId);
+                this.downloadSpeedMetrics.onFileEnded(downloadId);
             });
 
         activeDownload.completionPromise = completionPromise;
@@ -563,6 +585,7 @@ export class DownloadManager {
 
     private async stopDownload(downloadIds: string[]) {
         downloadIds.forEach((id) => {
+            this.downloadSpeedMetrics.onFileEnded(id);
             const active = this.activeDownloads.get(id);
             active?.abortController.abort(new TransferCancel({ id }));
         });
