@@ -59,6 +59,9 @@
       "Clean up orphaned documents": [
         "Başvurulmayan belgeleri temizle"
       ],
+      "Clear canvas": [
+        "Tuvali temizle"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -133,6 +136,9 @@
       ],
       "Forgot password?": [
         "Parolamı unuttum"
+      ],
+      "Generate image": [
+        "Görsel oluştur"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
@@ -229,6 +235,9 @@
       ],
       "Re-index all content - conversations and files": [
         "Tüm içeriği yeniden dizine ekle - Yazışmalar ve dosyalar"
+      ],
+      "Redo": [
+        "Yinele"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -338,6 +347,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
+      "Undo": [
+        "Geri al"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -386,9 +398,15 @@
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
       ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -402,6 +420,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
@@ -413,6 +435,24 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Apps dropdown": {
@@ -560,6 +600,11 @@
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB veri depolama alanı"
@@ -568,13 +613,13 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
+        "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm premium özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
@@ -583,7 +628,7 @@
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
-        "Aynı anda 10 aygıta bağlanın"
+        "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
         "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
@@ -592,7 +637,7 @@
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -607,6 +652,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
       "1 month": [
         "1 ay"
       ],
@@ -616,14 +669,23 @@
       "Annually": [
         "Yıllık"
       ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
       ],
       "Monthly": [
         "Aylık"
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "Browser": {
@@ -796,6 +858,13 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
+      ],
       "Total": [
         "Toplam"
       ],
@@ -856,6 +925,9 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Draw a sketch": [
+        "Bir taslak çiz"
       ],
       "Enable ghost mode": [
         "Hayalet kipini aç"
@@ -929,9 +1001,6 @@
       ],
       "Delete all": [
         "Tümünü sil"
-      ],
-      "Join waitlist": [
-        "Bekleme listesine katılın"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1470,6 +1539,9 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Sormak için ${ shiftEnterBoldText } üzerine basın."
       ],
+      "Preview quality - full resolution not loaded": [
+        "Ön izleme kalitesi - Tam çözünürlükte yüklenmedi"
+      ],
       "Private video calls for the conversations that matter.": [
         "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ],
@@ -1536,6 +1608,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Sohbet bilgi tabanınıza ${ DRIVE_APP_NAME } (uçtan uca şifrelenmiş bulut depolama alanı) hizmetinizdeki dosyalara göz atmak ve dosya eklemek için oturum açın veya bir hesap oluşturun."
       ],
+      "Sketch added as attachment": [
+        "Taslak dosya olarak eklendi"
+      ],
       "Space usage: ": [
         "Kullanılan alan: "
       ],
@@ -1589,65 +1664,6 @@
       ],
       "Your information is zero-access encrypted": [
         "Bilgilerinize sıfır erişim şifrelemesi uygulanır"
-      ]
-    },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-posta adresi geçersiz"
-      ],
-      "Email address is required": [
-        "E-posta adresinin yazılması zorunludur"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Kapat"
-      ],
-      "Invite friends": [
-        "Arkadaşlarınızı davet edin"
-      ],
-      "Maybe later": [
-        "Belki daha sonra"
-      ],
-      "Send invitation": [
-        "Davet gönder"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "Arkadaşınızın e-posta adresi"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. ${ remainingInvitesText } davet gönderebilirsiniz."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "${ remainingInvitesText } davet hakkınız kaldı."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Davet gönderildi"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Davet gönderildi!"
-      ],
-      "No invites left  ": [
-        "Davet gönderme hakkınız kalmamış  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Başkalarının ${ LUMO_SHORT_APP_NAME } uygulamasını keşfetmesine yardımcı olduğunuz için teşekkür ederiz! Daha fazla davet hakkı verebildiğimizde sizi bilgilendireceğiz."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "${ emailText } davet edildi. Kendisine bekleme listesine nasıl katılacağı bilgisini vereceğiz."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimine davet edin"
       ]
     },
     "collider_2025: Job": {
@@ -1872,9 +1888,6 @@
       "Search Index": [
         "Arama dizini"
       ],
-      "Secure your spot": [
-        "Yerinizi alın"
-      ],
       "Show project chats in history": [
         "Geçmiş proje sohbetlerini görüntüle"
       ],
@@ -1886,12 +1899,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "You're on the list": [
-        "Listedesiniz"
-      ],
-      "You're on the waitlist": [
-        "Bekleme listesindesiniz"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2004,20 +2011,12 @@
         "Edinin"
       ]
     },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bekleme listesine katıldığınız için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeye başlayabileceğiniz zaman size e-posta göndereceğiz."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Hesap açtığınız için teşekkür ederiz. ${ LUMO_SHORT_APP_NAME } erişimini aşamalı olarak açıyoruz ve yeriniz hazır olduğunda sizi bilgilendireceğiz."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "${ LUMO_SHORT_APP_NAME } erişimini aşamalı olarak açıyoruz. Bekleme listesine kaydolun. Yeriniz hazır olduğunda sizi bilgilendireceğiz."
-      ]
-    },
     "collider_2025: Warning": {
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } meşgul bir kedidir"
+      ],
+      "Failed to index file for search: ${ processingResult.message }": [
+        "Dosya arama dizinine eklenemedi: ${ processingResult.message }"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı",
@@ -2623,7 +2622,7 @@
         "Bu kodun ne işe yaradığını anlamama yardım et"
       ],
       "How does the world celebrate Lunar New Year?": [
-        "Ay Yeni Yılı dünyada nasıl kutluyor?"
+        "Dünyada ay yeni yılı nasıl kutlanıyor?"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Olağandışı veya potansiyel olarak olumsuz şartları belirle"
@@ -2672,6 +2671,14 @@
       ],
       "What should I know about emergency funds and where to keep them?": [
         "Acil durum fonları hakkında neleri bilmeliyim ve bunları nerede saklamalıyım?"
+      ]
+    },
+    "collider_2025:Reasoning": {
+      "Thinking...": [
+        "Düşünüyor..."
+      ],
+      "Thought about this": [
+        "Bunu düşündüm"
       ]
     },
     "collider_2025:Status": {
@@ -2864,6 +2871,26 @@
       ],
       "This will also permanently delete:": [
         "Bu işlem şunları da kalıcı olarak siler:"
+      ]
+    },
+    "Color": {
+      "Black": [
+        "Siyah"
+      ],
+      "Blue": [
+        "Mavi"
+      ],
+      "Green": [
+        "Yeşil"
+      ],
+      "Orange": [
+        "Turuncu"
+      ],
+      "Purple": [
+        "Mor"
+      ],
+      "Red": [
+        "Kırmızı"
       ]
     },
     "color": {
@@ -4033,7 +4060,7 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -4812,9 +4839,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -4825,11 +4852,11 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sonraki fatura zamanınız ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5270,6 +5297,9 @@
       "Streaming": [
         "Yayın akışı"
       ],
+      "Test Renderer": [
+        "Deneme görselleştirici"
+      ],
       "to toggle": [
         "açmak/kapatmak için"
       ],
@@ -5278,6 +5308,32 @@
       ],
       "Tokens/sec": [
         "Kod/sn"
+      ]
+    },
+    "lumo: Test Renderer": {
+      "Cancel": [
+        "İptal et"
+      ],
+      "Deselect All": [
+        "Tümünü bırak"
+      ],
+      "Inject Test Content": [
+        "Deneme içeriğini ekle"
+      ],
+      "Select All": [
+        "Tümünü seç"
+      ],
+      "Select test cases to inject into the current conversation. This will help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Geçerli yazışmaya eklenecek deneme durumlarını seçin. HTML dönüştürme, LaTeX, kod blokları ve kenar durumları gibi çeşitli görselleştirme senaryolarını denemeye yardımcı olur."
+      ],
+      "Select test cases to inject. A new test conversation will be created with the selected test cases to help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Eklenecek deneme durumlarını seçin. HTML dönüştürme, LaTeX, kod blokları ve kenar durumları gibi çeşitli görselleştirme senaryolarını denemek için seçilmiş deneme durumlarıyla yeni bir deneme yazışması oluşturur."
+      ],
+      "Selected:": [
+        "Seçilmiş:"
+      ],
+      "Test Renderer": [
+        "Deneme görselleştirici"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6364,6 +6420,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
@@ -6382,20 +6447,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi hariç: ${ taxAmount }"
-      ],
       "Got it": [
         "Anladım"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "%${ rate } vergi dahil"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "%${ taxRate } vergi dahil: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -6415,8 +6480,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Taxes": [
-        "Vergiler"
+      "Tax ${ rate }%": [
+        "%${ rate } vergi"
+      ],
+      "Taxes ${ rate }%": [
+        "%${ rate } vergi"
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
@@ -6465,9 +6533,6 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -6547,6 +6612,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
       ]
     },
     "Payments.Saved payment method details": {
@@ -6655,9 +6734,6 @@
       "Thomas": [
         "Ali"
       ],
-      "VAT number": [
-        "KDV numarası"
-      ],
       "Your organization name": [
         "Kuruluşunuzun adı"
       ],
@@ -6676,6 +6752,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
       ]
     },
     "plus_block": {
@@ -7021,17 +7103,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2 yılda bir faturalanır"
-      ],
-      "Billed monthly": [
-        "Ayda bir faturalanır"
-      ],
-      "Billed yearly": [
-        "Yılda bir faturalanır"
       ]
     },
     "Subscription attribute": {

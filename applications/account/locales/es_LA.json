@@ -1742,17 +1742,9 @@
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
       ],
-      "${ domains } custom email domain": [
-        "${ domains } dominio de correo personalizado",
-        "${ domains } dominios de correo personalizados"
-      ],
       "${ ips } dedicated VPN server": [
         "${ ips } servidor VPN dedicado",
         "${ ips } servidores VPN dedicados"
-      ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidores"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "Asistente de IA ${ LUMO_APP_NAME }"
@@ -1760,6 +1752,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
         "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licencias de ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1792,6 +1790,24 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Address action": {
@@ -2307,52 +2323,6 @@
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquee anuncios, rastreadores y malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos a la vez"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda fácil y favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y otra persona"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } mes",
@@ -2363,6 +2333,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
       "1 month": [
         "1 mes"
       ],
@@ -2372,8 +2350,14 @@
       "Annually": [
         "Cada año"
       ],
+      "Billed monthly": [
+        "Facturación mensual"
+      ],
       "Lifetime": [
         "De por vida"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
       ],
       "Monthly": [
         "Cada mes"
@@ -2743,8 +2727,8 @@
       "Start migration": [
         "Iniciar migración"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Para migrar los datos de su organización, debe instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto concederá permiso a ${ BRAND_NAME } para copiar sus datos. Una vez instalada, vuelva aquí para continuar. Más información"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar. Más información"
       ],
       "Transfer errors": [
         "Errores de transferencia"
@@ -3173,13 +3157,6 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
-      "${ years } year": [
-        "${ years } año",
-        "${ years } años"
-      ],
-      "Forever access": [
-        "Acceso para siempre"
-      ],
       "Started ${ formattedStartDate }": [
         "Inició el ${ formattedStartDate }"
       ],
@@ -3188,6 +3165,13 @@
       ],
       "Starting today": [
         "Desde hoy"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
       ],
       "Total": [
         "Total"
@@ -3200,12 +3184,6 @@
     "Checkout summary": {
       "month": [
         "mes"
-      ],
-      "Servers": [
-        "Servidores"
-      ],
-      "Users": [
-        "Usuarios"
       ]
     },
     "Collapsible tooltip": {
@@ -4560,8 +4538,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Obtenga más de su suscripción ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Mantenga seguros sus archivos, fotos y documentos con ${ maxDriveSpace } de almacenamiento gratuito en la nube."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantenga sus archivos, fotos y documentos seguros con ${ maxDriveSpace } de almacenamiento en la nube."
       ],
       "Set secure passwords without the hassle.": [
         "Configure contraseñas seguras sin complicaciones."
@@ -6346,8 +6324,8 @@
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
-      "Code wrong or not valid anymore": [
-        "Código incorrecto o inválido"
+      "Code is incorrect or not valid anymore": [
+        "El código es incorrecto o ya no es válido."
       ],
       "Condition incomplete": [
         "Condición incompleta"
@@ -6458,6 +6436,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si la hora en el televisor ha expirado, haga clic en Actualizar en el televisor e ingrese el código de nuevo."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Si el tiempo en su TV ha caducado, haga clic en Actualizar en su TV e inténtelo de nuevo."
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
@@ -9441,9 +9422,6 @@
       "Cancel anytime": [
         "Cancele en cualquier momento"
       ],
-      "Cancel anytime.": [
-        "Cancele en cualquier momento."
-      ],
       "Can’t access your recovery email?": [
         "¿No puede acceder a el correo de recuperación?"
       ],
@@ -10474,11 +10452,11 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No card required": [
+        "No se requiere tarjeta"
+      ],
       "No countries enabled": [
         "Sin países activados"
-      ],
-      "No credit card required": [
-        "No se requiere tarjeta de crédito"
       ],
       "No folder selected": [
         "Ninguna carpeta seleccionada"
@@ -10985,9 +10963,6 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, por favor ${ createTicket } describiendo sus casos de uso, qué dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "El envío por SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para usar esta función, comience generando un token nuevo."
@@ -11957,9 +11932,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podrá recuperar datos bloqueados usando los archivos de recuperación descargados. Esto también desactivará la recuperación desde un dispositivo."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
-        "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
+        "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívela.",
@@ -12026,11 +12001,11 @@
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La próxima fecha de facturación es el ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Su próxima fecha de facturación es el ${ renewalTime }. Contacte con el servicio de asistencia si necesita un cambio de plan inmediato."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "la organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con el proveedor de SSO."
@@ -13548,9 +13523,6 @@
       "Navigation": [
         "Navegación"
       ],
-      "Net amount": [
-        "Importe neto"
-      ],
       "New display name": [
         "Nombre a mostrar nuevo"
       ],
@@ -14286,9 +14258,6 @@
       ],
       "Common sign up issues": [
         "Problemas comunes de registro"
-      ],
-      "create a ticket": [
-        "cree un tiquete"
       ],
       "Create account": [
         "Crear una cuenta"
@@ -15361,10 +15330,6 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
-      ],
-      "${ options }-day file version history": [
-        "Historial de ${ options } días de las versiones de los archivos",
-        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
@@ -17693,11 +17658,17 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incl.)"
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
-      "${ taxRate }% taxes": [
-        "${ taxRate }% de impuestos"
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de impuestos: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad por pagar después de la prueba el ${ formattedDate }"
@@ -17720,32 +17691,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
-      ],
       "Got it": [
         "Entiendo"
       ],
-      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incl. el ${ taxRate }% de ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Incluye un ${ rate }% de impuestos"
       ],
-      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incl. el ${ taxRate }% de impuestos: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuesto: ${ taxAmountElement }"
       ],
-      "Including ${ taxRate }% ${ suggestedTaxName }": [
-        "Incluido ${ taxRate }% de ${ suggestedTaxName }"
+      "Including ${ rate }% taxes": [
+        "Incluye un ${ rate }% de impuestos"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes": [
-        "Incluido ${ taxRate }% de impuestos"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuestos: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -17780,8 +17739,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con su plan actual."
       ],
-      "Taxes": [
-        "Impuestos"
+      "Tax ${ rate }%": [
+        "Impuesto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impuestos ${ rate }%"
       ],
       "terms and conditions": [
         "términos y condiciones"
@@ -17833,9 +17795,6 @@
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -17931,6 +17890,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -18209,8 +18182,8 @@
       ]
     },
     "Plan description": {
-      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La solución VPN que brinda acceso seguro, sin restricciones y de alta velocidad a Internet."
+      "A VPN solution that provides secure, high-speed access to the internet.": [
+        "Una solución VPN que proporciona acceso seguro y de alta velocidad a internet."
       ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Todos los productos premium de ${ BRAND_NAME } incluidos en Duo."
@@ -18227,6 +18200,12 @@
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Almacenamiento en la nube e intercambio de archivos, protegido por cifrado de extremo a extremo."
       ],
+      "Comprehensive privacy and security suite.": [
+        "Suite integral de privacidad y seguridad."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "Protéjase del spam, rastreo y anuncios con un correo electrónico cifrado y un calendario seguro."
+      ],
       "For next-level password management and identity protection.": [
         "Para una gestión de contraseñas e identidad del más alto nivel."
       ],
@@ -18241,9 +18220,6 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Almacenamiento seguro en la nube y colaboración para equipos."
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "Correo electrónico seguro con funciones avanzadas para su día a día."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "El plan ideal para usuarios avanzados conscientes de la privacidad."
@@ -19494,18 +19470,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tiene ${ timeRemaining.inDays } día para restablecer la contraseña.",
         "Tiene ${ timeRemaining.inDays } días para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Tiene ${ timeRemaining.inHours } hora para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inHours } horas para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer la contraseña."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer la contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -19833,11 +19797,6 @@
         "Compartido por ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Abrir en ${ appName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Error al verificar la firma"
@@ -19849,6 +19808,10 @@
     "Signup": {
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias": [
+        "${ FREE_PASS_ALIASES } alias de hide-my-email",
+        "${ FREE_PASS_ALIASES } alias de hide-my-email"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam",
@@ -19869,6 +19832,10 @@
         "${ maxAddresses } dirección de correo electrónico extra",
         "${ maxAddresses } direcciones de correo electrónico extra"
       ],
+      "${ maxAddresses } extra email address for you": [
+        "${ maxAddresses } dirección de correo electrónico adicional para usted",
+        "${ maxAddresses } direcciones de correo electrónico adicionales para usted"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } calendario",
         "${ maxCalendars } calendarios"
@@ -19881,8 +19848,8 @@
         "${ PASS_PLUS_VAULTS } bóveda para sus contraseñas",
         "${ PASS_PLUS_VAULTS } bóvedas para sus contraseñas"
       ],
-      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
-        "${ referrerName } le invita a probar ${ BRAND_NAME }."
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } le invita a unirse a los más de 100 millones de personas que eligen mantener el control de sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } de almacenamiento en la nube para sus archivos y fotos"
@@ -19892,6 +19859,9 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } de almacenamiento seguro por usuario"
+      ],
+      "${ value } total encrypted storage": [
+        "${ value } de almacenamiento cifrado total"
       ],
       "${ value } total storage": [
         "${ value } de almacenamiento total"
@@ -19933,9 +19903,6 @@
       "Advanced account protection": [
         "Protección de cuenta avanzada"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
-      ],
       "Amount due now": [
         "Importe por pagar ahora"
       ],
@@ -19975,17 +19942,11 @@
       "Create a ${ BRAND_NAME } Account": [
         "Crear cuenta de ${ BRAND_NAME }"
       ],
-      "Custom fields and file attachment": [
-        "Campos personalizados y archivo adjunto"
-      ],
-      "Encrypted cloud storage": [
-        "Almacenamiento cifrado en la nube"
+      "Custom email domain": [
+        "Dominio de correo electrónico personalizado"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Correo electrónico cifrado con ${ totalMailStorageSize } de almacenamiento"
-      ],
-      "Encrypted file sharing and document editor": [
-        "Intercambio de archivos cifrado y editor de documentos"
       ],
       "Encrypted password manager": [
         "Gestor de contraseñas cifrado"
@@ -19998,9 +19959,6 @@
       ],
       "Every free account comes with:": [
         "Cada cuenta gratuita incluye:"
-      ],
-      "Fast P2P/BitTorrent downloads": [
-        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free": [
         "Free"
@@ -20023,15 +19981,6 @@
       "Gifted by **${ referrerName }**": [
         "Obsequiado por **${ referrerName }**"
       ],
-      "Highest VPN speed": [
-        "Velocidad VPN máxima"
-      ],
-      "Mail": [
-        "Correo"
-      ],
-      "Mailboxes and custom domains for aliases": [
-        "Buzones y dominios personalizados para alias"
-      ],
       "Manage user access": [
         "Gestionar el acceso de los usuarios"
       ],
@@ -20047,20 +19996,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "¿Necesita más almacenamiento? Puede mejorar su plan en cualquier momento con planes desde 200 GB hasta 3 TB. 5 GB son suficientes para 2.500 fotos de un teléfono moderno (aproximadamente 2 MB cada una)."
       ],
-      "No credit card required:": [
-        "No se requiere tarjeta de crédito:"
-      ],
       "Online document editor": [
         "Editor de documentos en línea"
       ],
       "Online documents": [
         "Documentos en línea"
       ],
-      "Password manager": [
-        "Gestor de contraseñas"
-      ],
       "Password manager for all your devices": [
         "Gestor de contraseñas para todos sus dispositivos"
+      ],
+      "Pick a service to get started.": [
+        "Seleccione un servicio para empezar."
       ],
       "Pick your perfect plan": [
         "Elija el plan perfecto para usted"
@@ -20068,8 +20014,8 @@
       "Private AI assistant with encrypted chat history": [
         "Asistente de IA privado con historial de chat cifrado"
       ],
-      "Promo applied – ${ checkoutUi.discountPercent }% off": [
-        "Promoción aplicada: ${ checkoutUi.discountPercent }% de descuento"
+      "Promo applied – ${ discountItem.discountPercent }% off": [
+        "Promoción aplicada: ${ discountItem.discountPercent }% de descuento"
       ],
       "Recover previous file versions": [
         "Recuperar versiones previas de archivos"
@@ -20090,14 +20036,11 @@
       "Secure vault sharing and link sharing": [
         "Uso compartido seguro de bóvedas y enlaces"
       ],
-      "Securely share files, photos and documents": [
-        "Comparta de forma segura archivos, fotos y documentos"
+      "Securely share files and photos": [
+        "Comparta archivos y fotos de forma segura"
       ],
       "Select ${ title }": [
         "Seleccionar ${ title }"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
-        "Seleccione un servicio y disfrute de la versión premium gratis por ${ TRIAL_DURATION_DAYS } días."
       ],
       "Selected": [
         "Seleccionado"
@@ -20120,17 +20063,8 @@
       "Sign up, protect your files": [
         "Regístrese y proteja sus archivos"
       ],
-      "Start free trial": [
-        "Iniciar prueba gratuita"
-      ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenzar con ${ PASS_APP_NAME }"
-      ],
-      "Storage": [
-        "Almacenamiento"
-      ],
-      "Stream your favorite TV shows and movies": [
-        "Disfrute sus programas de televisión y películas favoritas"
       ],
       "Swiss-based": [
         "Con sede en Suiza"
@@ -20140,6 +20074,9 @@
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "El nombre de la organización será visible para sus usuarios mientras estén conectados."
+      ],
+      "Then ${ priceElement }": [
+        "Luego ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Luego ${ priceWithDiscountPerMonth } al mes, si se suscribe."
@@ -20158,6 +20095,9 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prueba ${ BRAND_NAME } gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Pruebe ${ BRAND_NAME } gratis por ${ TRIAL_DURATION_DAYS } días${ br }y obtenga ${ referralInfo.uiData.refereeRewardAmount } en créditos"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Pruebe ${ BRAND_NAME } gratis durante 14 días"
@@ -20216,6 +20156,9 @@
       ],
       "Your trial": [
         "Su prueba"
+      ],
+      "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Le invitamos a unirse a más de 100 millones de personas que eligen mantener el control de sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
       ]
     },
     "Signup label": {
@@ -20562,8 +20505,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtenga alias ilimitados para proteger su identidad y reducir el spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Proteja sus contraseñas y organícelas en múltiples bóvedas "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenga sus contraseñas seguras y organizadas en múltiples cajas fuertes."
       ],
       "Protect your account from threats with Sentinel": [
         "Proteja su cuenta de amenazas con Sentinel"
@@ -21040,23 +20983,14 @@
       ]
     },
     "Subscription": {
-      "${ discountPercent }% discount applied": [
-        "${ discountPercent }% de descuento aplicado"
+      "${ discountItem.discountPercent }% discount applied": [
+        "${ discountItem.discountPercent }% de descuento aplicado"
       ],
-      "${ discountPercent }% off": [
-        "${ discountPercent }% de descuento"
+      "${ discountItem.discountPercent }% off": [
+        "${ discountItem.discountPercent }% de descuento"
       ],
-      "${ trailCycleText } free": [
-        "${ trailCycleText } gratuito"
-      ],
-      "Billed every 2 years": [
-        "Facturación cada 2 años"
-      ],
-      "Billed monthly": [
-        "Facturación mensual"
-      ],
-      "Billed yearly": [
-        "Facturación anual"
+      "${ trialCycleText } free": [
+        "${ trialCycleText } gratis"
       ],
       "Bound to **${ nameToDisplay }**": [
         "Vinculado a **${ nameToDisplay }**"
@@ -24587,8 +24521,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Obtenga más de su suscripción ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Mantenga seguros sus archivos, fotos y documentos con ${ maxDriveSpace } de almacenamiento gratuito en la nube."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantenga sus archivos, fotos y documentos seguros con ${ maxDriveSpace } de almacenamiento en la nube."
       ],
       "Set secure passwords without the hassle.": [
         "Configure contraseñas seguras sin complicaciones."
@@ -24644,11 +24578,6 @@
         "Servidores en más de ${ numberOfCountries } países"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Facturado cada mes"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 año"
@@ -24687,14 +24616,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "${ n } year": [
-        "${ n } año",
-        "${ n } años"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Incluye ${ plan } (¡gratis por el primer año!)"
       ],

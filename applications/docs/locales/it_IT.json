@@ -916,9 +916,11 @@
         "${ domains } dominio personalizzato aggiuntivo",
         "${ domains } domini personalizzati aggiuntivi"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } server"
+      "${ LUMO_APP_NAME } AI license": [
+        "Licenza AI di ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licenze ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
@@ -931,6 +933,24 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Domains": [
+        "Domini"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "Writing assistant": [
+        "Assistente per la scrittura"
+      ],
+      "Writing assistant seats": [
+        "Posti dell'assistente alla scrittura"
       ]
     },
     "Alert": {
@@ -1092,52 +1112,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB di archiviazione dati"
-      ],
-      "3 TB data storage": [
-        "3 TB di archiviazione dati"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in oltre 120 Paesi"
-      ],
-      "Access advanced AI models": [
-        "Accedi a modelli di IA avanzati"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Strumento di autenticazione 2FA integrato"
-      ],
-      "Connect 10 devices at once": [
-        "Connetti 10 dispositivi contemporaneamente"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Cronologia chat completa con ricerca facile e preferiti"
-      ],
-      "Individual accounts for 6 users": [
-        "Account individuali per 6 utenti"
-      ],
-      "Individual accounts for you and a partner": [
-        "Account individuali per te e un'altra persona"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protezione più efficace dalle minacce informatiche"
-      ],
-      "Unlimited daily chats": [
-        "Numero illimitato di chat al giorno"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
       ]
     },
     "Browser": {
@@ -5251,9 +5225,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
-        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Stai per rifiutare l'invito a unirti all'album ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
@@ -5327,11 +5301,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La tua prossima data di fatturazione è il ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La tua prossima data di fatturazione è il ${ renewalTime }. Puoi annullare in qualsiasi momento."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Puoi annullare in qualsiasi momento. Contatta il supporto se hai bisogno di un cambio di piano immediato."
       ],
       "Your online activity is protected": [
         "La tua attività online è protetta"
@@ -6545,10 +6519,6 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
-      ],
-      "${ options }-day file version history": [
-        "Cronologia delle versioni dei file per ${ options } giorni",
-        "Cronologia delle versioni dei file per ${ options } giorni"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin a vita"
@@ -7894,6 +7864,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA esclusa)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Importo dovuto dopo la prova il ${ formattedDate }"
       ],
@@ -8370,18 +8343,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Hai ${ timeRemaining.inHours } ora rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inHours } ore rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Hai ${ timeRemaining.inMinutes } minuto rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inMinutes } minuti rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Hai ${ timeRemaining.inSeconds } secondo rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inSeconds } secondi rimanenti per reimpostare la password."
       ]
     },
     "session_recovery:available:link": {
@@ -8508,53 +8469,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Condiviso da ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Comma Separated Values (.csv)": [
-        "Comma Separated Values (.csv)"
-      ],
-      "Microsoft Excel (.xlsx)": [
-        "Microsoft Excel (.xlsx)"
-      ],
-      "New spreadsheet": [
-        "Nuovo foglio di calcolo"
-      ],
-      "Tab Separated Values (.tsv)": [
-        "Tab Separated Values (.tsv)"
-      ]
-    },
-    "sheets_2025:Info": {
-      "Detect automatically": [
-        "Rileva automaticamente"
-      ],
-      "Insert as new sheet": [
-        "Inserisci come nuovo foglio"
-      ],
-      "Replace current sheet": [
-        "Sostituisci il foglio corrente"
-      ],
-      "Replace data at selected cell": [
-        "Sostituisci i dati nella cella selezionata"
-      ]
-    },
-    "sheets_2025:Label": {
-      "Convert text to numbers, dates, and formulas": [
-        "Converti testo in numeri, date e formule"
-      ],
-      "Destination": [
-        "Destinazione"
-      ],
-      "Format": [
-        "Formato"
-      ],
-      "Separator type": [
-        "Tipo di separatore"
-      ]
-    },
-    "sheets_2025:Title": {
-      "Import data": [
-        "Importa dati"
       ]
     },
     "Signing preference for emails": {
@@ -8769,9 +8683,6 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Ottieni alias illimitati per proteggere la tua identità e ridurre lo spam"
-      ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Mantieni le tue password al sicuro e organizzate in varie casseforti "
       ],
       "Protect your account from threats with Sentinel": [
         "Proteggi il tuo account dalle minacce con Sentinel"

@@ -59,6 +59,9 @@
       "Clean up orphaned documents": [
         "Verwaiste Dokumente bereinigen"
       ],
+      "Clear canvas": [
+        "Leere Zeichenfläche"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -133,6 +136,9 @@
       ],
       "Forgot password?": [
         "Passwort vergessen?"
+      ],
+      "Generate image": [
+        "Bild erzeugen"
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } holen"
@@ -229,6 +235,9 @@
       ],
       "Re-index all content - conversations and files": [
         "Alle Inhalte neu indexieren: Unterhaltungen und Dateien"
+      ],
+      "Redo": [
+        "Wiederholen"
       ],
       "Refer a friend": [
         "Wirb einen Freund"
@@ -338,6 +347,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
       ],
+      "Undo": [
+        "Rückgängig"
+      ],
       "Upgrade": [
         "Wechseln"
       ],
@@ -386,9 +398,15 @@
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
       ],
-      "${ ips } server": [
-        "${ ips } Server",
-        "${ ips } Server"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedizierter VPN-Server",
+        "${ ips } dedizierte VPN-Server"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-Lizenz"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } Lizenzen"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -402,6 +420,10 @@
       "${ price } per user": [
         "${ price } pro Benutzer"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenzen"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
@@ -413,6 +435,24 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "Domains": [
+        "Domains"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ],
+      "Writing assistant seats": [
+        "Lizenzen für Schreibassistenten"
       ]
     },
     "Apps dropdown": {
@@ -560,6 +600,11 @@
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB Datenspeicher"
@@ -568,7 +613,7 @@
         "3 TB Datenspeicher"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+        "Greife auf über 15.000 Server in mehr als 120 Ländern zu"
       ],
       "Access advanced AI models": [
         "Zugriff auf erweiterte KI-Modelle"
@@ -577,10 +622,10 @@
         "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
+        "Werbung, Tracker und Malware blockieren"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Connect 10 devices at once": [
         "Verbinde 10 Geräte gleichzeitig"
@@ -589,13 +634,13 @@
         "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
       ],
       "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
+        "Individuelle Konten für 6 Benutzer"
       ],
       "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
+        "Individuelle Konten für dich und einen Partner"
       ],
       "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
@@ -607,6 +652,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "${ n } year": [
+        "${ n } Jahr",
+        "${ n } Jahre"
+      ],
       "1 month": [
         "1 Monat"
       ],
@@ -616,14 +669,23 @@
       "Annually": [
         "Jährlich"
       ],
+      "Billed monthly": [
+        "Wird monatlich abgerechnet"
+      ],
       "Lifetime": [
         "Lebenslang"
+      ],
+      "Lifetime access": [
+        "Lebenslanger Zugang"
       ],
       "Monthly": [
         "Monatlich"
       ],
       "Two-year": [
         "Zwei Jahre"
+      ],
+      "Yearly": [
+        "Jährlich"
       ]
     },
     "Browser": {
@@ -857,6 +919,9 @@
       "Dismiss": [
         "Verwerfen"
       ],
+      "Draw a sketch": [
+        "Eine Skizze zeichnen"
+      ],
       "Enable ghost mode": [
         "Ghost-Modus aktivieren"
       ],
@@ -929,9 +994,6 @@
       ],
       "Delete all": [
         "Alle löschen"
-      ],
-      "Join waitlist": [
-        "Warteliste beitreten"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -1470,6 +1532,9 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Drücke ${ shiftEnterBoldText }, um zu fragen"
       ],
+      "Preview quality - full resolution not loaded": [
+        "Vorschauqualität – Vollauflösung nicht geladen"
+      ],
       "Private video calls for the conversations that matter.": [
         "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
       ],
@@ -1536,6 +1601,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Melde dich an oder erstelle ein Konto, um Dateien von deinem ${ DRIVE_APP_NAME } (Ende-zu-Ende-verschlüsselter Cloud-Speicher) zu durchsuchen und zu deinem Chat-Wissen hinzuzufügen."
       ],
+      "Sketch added as attachment": [
+        "Skizze als Anhang hinzugefügt"
+      ],
       "Space usage: ": [
         "Speichernutzung: "
       ],
@@ -1589,65 +1657,6 @@
       ],
       "Your information is zero-access encrypted": [
         "Deine Informationen sind Zero-Access-verschlüsselt."
-      ]
-    },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-Mail-Adresse ist ungültig"
-      ],
-      "Email address is required": [
-        "E-Mail-Adresse ist erforderlich"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Schließen"
-      ],
-      "Invite friends": [
-        "Freunde einladen"
-      ],
-      "Maybe later": [
-        "Vielleicht später"
-      ],
-      "Send invitation": [
-        "Einladung senden"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "Die E-Mail-Adresse deines Freundes"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Kennst du jemanden, dem eine datenschutzorientierte KI nützen würde? Lade ihn ein, der ${ LUMO_SHORT_APP_NAME }-Warteliste beizutreten. Du hast noch ${ remainingInvitesText } Einladungen übrig."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "Du hast noch ${ remainingInvitesText } Einladungen übrig."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Einladung gesendet"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Einladung gesendet"
-      ],
-      "No invites left  ": [
-        "Keine Einladungen mehr übrig  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Danke, dass du anderen hilfst, ${ LUMO_SHORT_APP_NAME } zu entdecken. Falls weitere Einladungen verfügbar werden, benachrichtigen wir dich."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Wir haben ${ emailText } eingeladen. Sie erhalten Anweisungen, wie sie der Warteliste beitreten können."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Freunde einladen, ${ LUMO_APP_NAME } zu nutzen"
       ]
     },
     "collider_2025: Job": {
@@ -1872,9 +1881,6 @@
       "Search Index": [
         "Suchindex"
       ],
-      "Secure your spot": [
-        "Sichere dir deinen Platz"
-      ],
       "Show project chats in history": [
         "Projektchats im Verlauf anzeigen"
       ],
@@ -1886,12 +1892,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "You're on the list": [
-        "Du stehst auf der Liste"
-      ],
-      "You're on the waitlist": [
-        "Du stehst auf der Warteliste"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2004,20 +2004,12 @@
         "Hol dir"
       ]
     },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Danke, dass du der Warteliste beigetreten bist. Wir schicken dir eine E-Mail, sobald du mit ${ LUMO_SHORT_APP_NAME } chatten kannst."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Danke fürs Anmelden. Wir öffnen den Zugang zu ${ LUMO_SHORT_APP_NAME } schrittweise und benachrichtigen dich, sobald dein Platz verfügbar ist."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "Wir öffnen den Zugang zu ${ LUMO_SHORT_APP_NAME } schrittweise. Tritt der Warteliste bei, und wir benachrichtigen dich, sobald dein Platz verfügbar ist."
-      ]
-    },
     "collider_2025: Warning": {
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } ist beschäftigt"
+      ],
+      "Failed to index file for search: ${ processingResult.message }": [
+        "Datei konnte nicht für die Suche indiziert werden: ${ processingResult.message }"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdächtig: ${ urlParts.subdomainCount } Subdomain",
@@ -2219,7 +2211,7 @@
         "Einblenden"
       ],
       "Expand projects": [
-        "Projekte aufklappen"
+        "Projekte erweitern"
       ],
       "Favorite": [
         "Favorit"
@@ -2674,6 +2666,14 @@
         "Was sollte ich über Notfallguthaben wissen und wo bewahre ich es am besten auf?"
       ]
     },
+    "collider_2025:Reasoning": {
+      "Thinking...": [
+        "Denke nach..."
+      ],
+      "Thought about this": [
+        "Daran gedacht"
+      ]
+    },
     "collider_2025:Status": {
       "Complete": [
         "Abgeschlossen"
@@ -2864,6 +2864,26 @@
       ],
       "This will also permanently delete:": [
         "Dies wird auch dauerhaft gelöscht:"
+      ]
+    },
+    "Color": {
+      "Black": [
+        "Schwarz"
+      ],
+      "Blue": [
+        "Blau"
+      ],
+      "Green": [
+        "Grün"
+      ],
+      "Orange": [
+        "Orange"
+      ],
+      "Purple": [
+        "Violett"
+      ],
+      "Red": [
+        "Rot"
       ]
     },
     "color": {
@@ -4812,9 +4832,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
-        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
+        "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -4825,11 +4845,11 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich. Bitte wende dich an den Support, wenn du eine sofortige Änderung deines Abonnements wünschst."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -5270,6 +5290,9 @@
       "Streaming": [
         "Streaming"
       ],
+      "Test Renderer": [
+        "Test-Renderer"
+      ],
       "to toggle": [
         "zum Umschalten"
       ],
@@ -5278,6 +5301,32 @@
       ],
       "Tokens/sec": [
         "Tokens/Sek."
+      ]
+    },
+    "lumo: Test Renderer": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Deselect All": [
+        "Alle abwählen"
+      ],
+      "Inject Test Content": [
+        "Testinhalt einfügen"
+      ],
+      "Select All": [
+        "Alle auswählen"
+      ],
+      "Select test cases to inject into the current conversation. This will help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Wähle Testfälle zum Einfügen in die aktuelle Unterhaltung aus. Das hilft, verschiedene Rendering-Szenarien zu testen, einschließlich HTML-Konvertierung, LaTeX, Codeblöcke und Sonderfälle."
+      ],
+      "Select test cases to inject. A new test conversation will be created with the selected test cases to help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Wähle Testfälle zum Einfügen aus. Eine neue Testunterhaltung wird mit den ausgewählten Testfällen erstellt, um verschiedene Rendering-Szenarien zu testen, darunter HTML-Konvertierung, LaTeX, Codeblöcke und Sonderfälle."
+      ],
+      "Selected:": [
+        "Ausgewählt:"
+      ],
+      "Test Renderer": [
+        "Test-Renderer"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5460,10 +5509,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ options }-day file version history": [
-        "Dateiversionsverlauf für ${ options } Tag",
-        "Dateiversionsverlauf für ${ options } Tag"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
@@ -6364,6 +6409,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (zzgl. MwSt.)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -6382,20 +6430,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ohne ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ohne ${ taxRate } % Steuern: ${ taxAmount }"
-      ],
       "Got it": [
         "Verstanden"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Einschließlich ${ taxRate } % Steuern: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -6414,9 +6450,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
-      ],
-      "Taxes": [
-        "Steuern"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
@@ -6465,9 +6498,6 @@
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
-      ],
-      "VAT": [
-        "Mehrwertsteuer"
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -6547,6 +6577,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Unternehmenskennung (ABN)."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Geschäftsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Steuernummer (EIN)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -6655,9 +6699,6 @@
       "Thomas": [
         "Max"
       ],
-      "VAT number": [
-        "Umsatzsteuernummer"
-      ],
       "Your organization name": [
         "Name deiner Organisation"
       ],
@@ -6676,6 +6717,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } Monat",
+        "${ cycle } Monate"
       ]
     },
     "plus_block": {
@@ -7021,17 +7068,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du verlierst den Zugang zu einer unbegrenzten Anzahl von Logins und Notizen, einer unbegrenzten Anzahl von Hide-my-email-Aliassen, 20 Tresoren und vorrangigem Support."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Wird alle 2 Jahre abgerechnet"
-      ],
-      "Billed monthly": [
-        "Wird monatlich abgerechnet"
-      ],
-      "Billed yearly": [
-        "Wird jährlich abgerechnet"
       ]
     },
     "Subscription attribute": {

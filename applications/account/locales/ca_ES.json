@@ -1742,17 +1742,9 @@
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
       ],
-      "${ domains } custom email domain": [
-        "Domini de correu electrònic personalitzat ${ domains }",
-        "dominis de correu electrònic personalitzat ${ domains }"
-      ],
       "${ ips } dedicated VPN server": [
         "${ ips } servidor VPN dedicat",
         "${ ips } servidors VPN dedicats"
-      ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidors"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "Assistent d'IA ${ LUMO_APP_NAME }"
@@ -1760,6 +1752,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuari)",
         "Assistent d'IA ${ LUMO_APP_NAME } (per a ${ quantity } usuaris)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Llicència d'IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "llicències de ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1792,6 +1790,24 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
+      "Writing assistant seats": [
+        "Llicències de l'assistent d'escriptura"
       ]
     },
     "Address action": {
@@ -2315,42 +2331,42 @@
         "3 TB d'emmagatzematge de dades"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accedeixi a més de 15.000 servidors en més de 120 països"
+        "Accediu a més de 15.000 servidors en més de 120 països"
       ],
       "Access advanced AI models": [
-        "Accedeixi a models d'IA avançats"
+        "Accediu a models d'IA avançats"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les funcions prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+        "Bloqueja anuncis, rastrejadors i programari maliciós"
       ],
       "Built-in 2FA authenticator": [
         "Autenticador 2FA integrat"
       ],
       "Connect 10 devices at once": [
-        "Connecti 10 dispositius alhora"
+        "Connecteu 10 dispositius alhora"
       ],
       "Full chat history with easy search and favorites": [
-        "Historial de xat complet amb cerca fàcil i favorits"
+        "Historial complet de xats amb cerca fàcil i preferits"
       ],
       "Individual accounts for 6 users": [
         "Comptes individuals per a 6 usuaris"
       ],
       "Individual accounts for you and a partner": [
-        "Comptes individuals per a dues persones"
+        "Comptes individuals per a vós i un company"
       ],
       "Stronger protection against cyber threats": [
-        "Protecció més forta contra les ciberamenaces"
+        "Protecció més forta contra amenaces cibernètiques"
       ],
       "Unlimited daily chats": [
-        "Xats diaris sense límits"
+        "Xats diaris il·limitats"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
+        "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle": {
@@ -2363,6 +2379,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } year": [
+        "${ n } any",
+        "${ n } anys"
+      ],
       "1 month": [
         "1 mes"
       ],
@@ -2372,8 +2396,14 @@
       "Annually": [
         "Cada any"
       ],
+      "Billed monthly": [
+        "Facturat mensualment"
+      ],
       "Lifetime": [
         "Per sempre"
+      ],
+      "Lifetime access": [
+        "Accés de per vida"
       ],
       "Monthly": [
         "Mensual"
@@ -2743,8 +2773,8 @@
       "Start migration": [
         "Inicieu la migració"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Per migrar les dades de la vostra organització, cal que instal·leu l’aplicació Migration Asistant de ${ BRAND_NAME } des de Google Workspace Marketplace. Això donarà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Més informació"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Per migrar les dades de la vostra organització, cal que instal·leu l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això concedirà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Per saber-ne més"
       ],
       "Transfer errors": [
         "Errors de transferència"
@@ -3173,13 +3203,6 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
-      "${ years } year": [
-        "${ years } any",
-        "${ years } anys"
-      ],
-      "Forever access": [
-        "Accés per sempre"
-      ],
       "Started ${ formattedStartDate }": [
         "Va començar el ${ formattedStartDate }"
       ],
@@ -3188,6 +3211,13 @@
       ],
       "Starting today": [
         "Comença avui"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal per ${ cycle } mes",
+        "Subtotal per ${ cycle } mesos"
       ],
       "Total": [
         "Total"
@@ -3200,12 +3230,6 @@
     "Checkout summary": {
       "month": [
         "mes"
-      ],
-      "Servers": [
-        "Servidors"
-      ],
-      "Users": [
-        "Usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -4560,8 +4584,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Traieu més profit de la vostra subscripció ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Mantingueu els vostres fitxers, fotos i documents segurs amb ${ maxDriveSpace } d'emmagatzematge gratuït al núvol."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantingueu els vostres fitxers, fotos i documents segurs amb ${ maxDriveSpace } d'emmagatzematge al núvol."
       ],
       "Set secure passwords without the hassle.": [
         "Establiu contrasenyes segures sense complicacions"
@@ -6346,8 +6370,8 @@
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
-      "Code wrong or not valid anymore": [
-        "El codi és incorrecte o ja no és vàlid."
+      "Code is incorrect or not valid anymore": [
+        "El codi és incorrecte o ja no és vàlid"
       ],
       "Condition incomplete": [
         "La condició està incompleta"
@@ -6458,6 +6482,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el temps a la vostra televisió s'ha exhaurit, premeu-hi a Refresca i escriviu-hi el codi un altre cop."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Si el temps del vostre televisor ha vençut, feu clic a Actualitzar al televisor i torneu-ho a provar."
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
@@ -9438,9 +9465,6 @@
       "Cancel anytime": [
         "Cancel·leu en qualsevol moment"
       ],
-      "Cancel anytime.": [
-        "Cancel·leu-ho en qualsevol moment."
-      ],
       "Can’t access your recovery email?": [
         "No podeu accedir al vostre correu de recuperació?"
       ],
@@ -10471,11 +10495,11 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
+      "No card required": [
+        "No cal targeta"
+      ],
       "No countries enabled": [
         "No hi ha cap país habilitat"
-      ],
-      "No credit card required": [
-        "No es requereix targeta de crèdit"
       ],
       "No folder selected": [
         "No hi ha carpetes seleccionades"
@@ -10982,9 +11006,6 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "L'enviament SMTP permet que serveis o dispositius de tercers enviïn correus a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per les adreces del vostre domini personalitzat. Per sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per les vostres adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un testimoni nou."
@@ -11954,9 +11975,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
+        "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
@@ -12023,11 +12044,11 @@
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La pròxima data de facturació és ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La vostra pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
@@ -13545,9 +13566,6 @@
       "Navigation": [
         "Navegació"
       ],
-      "Net amount": [
-        "Import net"
-      ],
       "New display name": [
         "Nou nom per a mostrar"
       ],
@@ -14283,9 +14301,6 @@
       ],
       "Common sign up issues": [
         "Problemes comuns de registre"
-      ],
-      "create a ticket": [
-        "creeu un tiquet"
       ],
       "Create account": [
         "Crea un compte"
@@ -15360,8 +15375,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
+        "Historial de versions de fitxer de ${ options } dia",
+        "Historial de versions de fitxer de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
@@ -17690,11 +17705,17 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA no inclòs)"
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
-      "${ taxRate }% taxes": [
-        "${ taxRate }% d'impostos"
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Impost del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% d'impostos: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
@@ -17717,32 +17738,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excloent el ${ taxRate }% d'impostos: ${ taxAmount }"
-      ],
       "Got it": [
         "Fet"
       ],
-      "Incl. ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclou ${ taxRate }% de ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclou un impost del ${ rate }%"
       ],
-      "Incl. ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclou un impost del ${ rate }%: ${ taxAmountElement }"
       ],
-      "Including ${ taxRate }% ${ suggestedTaxName }": [
-        "Inclòs el ${ taxRate }% ${ suggestedTaxName }"
+      "Including ${ rate }% taxes": [
+        "Inclou un ${ rate }% d'impostos"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes": [
-        "Inclòs el ${ taxRate }% d'impostos"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclou el ${ rate }% d'impostos: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -17777,8 +17786,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
       ],
-      "Taxes": [
-        "Impostos"
+      "Tax ${ rate }%": [
+        "Impost ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impostos ${ rate }%"
       ],
       "terms and conditions": [
         "termes i condicions"
@@ -17830,9 +17842,6 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -17928,6 +17937,20 @@
     "Payments.plan_name": {
       "Free": [
         "Gratuït"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -18206,8 +18229,8 @@
       ]
     },
     "Plan description": {
-      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Una solució VPN que proporciona accés segur, il·limitat i d'alta velocitat a internet."
+      "A VPN solution that provides secure, high-speed access to the internet.": [
+        "Una solució VPN que proporciona un accés a internet segur i d'alta velocitat."
       ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Tots els productes prèmium de ${ BRAND_NAME } s'inclouen a Duo."
@@ -18224,6 +18247,12 @@
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Emmagatzematge al núvol i compartició de fitxers, tot amb la seguretat del xifratge d'extrem a extrem."
       ],
+      "Comprehensive privacy and security suite.": [
+        "Paquet complet de privadesa i seguretat."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "Derroteu el correu brossa, el seguiment i els anuncis amb el correu xifrat i un calendari segur."
+      ],
       "For next-level password management and identity protection.": [
         "Per una gestió de contrasenyes i una protecció de la identitat del més alt nivell."
       ],
@@ -18238,9 +18267,6 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Emmagatzematge segur al núvol i col·laboració per a equips."
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "Correu electrònic segur amb característiques avançades per a les vostres comunicacions diàries."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "El pla ideal per a usuaris avançats preocupats per la privacitat."
@@ -19496,16 +19522,16 @@
         "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inHours } hora per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inHours } hores per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inMinutes } minut per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inMinutes } minuts per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
-        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
+        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la vostra contrasenya.",
+        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la vostra contrasenya."
       ]
     },
     "session_recovery:available:link": {
@@ -19835,7 +19861,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "Obre al ${ appName }"
+        "Obriu-ho a ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Obriu-ho a ${ appName } (Beta)"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19849,6 +19878,10 @@
     "Signup": {
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias": [
+        "${ FREE_PASS_ALIASES } àlies hide-my-email",
+        "${ FREE_PASS_ALIASES } àlies hide-my-email"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } àlies de hide-my-email per a combatre el correu brossa",
@@ -19869,6 +19902,10 @@
         "${ maxAddresses } adreça de correu electrònic addicional",
         "${ maxAddresses } adreces de correu electrònic addicionals"
       ],
+      "${ maxAddresses } extra email address for you": [
+        "${ maxAddresses } adreça de correu electrònic addicional per a vós",
+        "${ maxAddresses } adreces de correu electrònic addicionals per a vós"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } calendari",
         "${ maxCalendars } calendaris"
@@ -19881,8 +19918,8 @@
         "${ PASS_PLUS_VAULTS } caixa forta per a les vostres contrasenyes",
         "${ PASS_PLUS_VAULTS } caixes fortes per a les vostres contrasenyes"
       ],
-      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
-        "${ referrerName } us convida a provar ${ BRAND_NAME }."
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } us convida a unir-vos a més de 100 milions de persones que han triat mantenir el control de les seves dades amb l'ecosistema xifrat de ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } d'emmagatzematge al núvol per a fitxers i fotos"
@@ -19892,6 +19929,9 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } d'emmagatzematge segur per usuari"
+      ],
+      "${ value } total encrypted storage": [
+        "${ value } d'emmagatzematge xifrat total"
       ],
       "${ value } total storage": [
         "${ value } d\"emmagatzematge total"
@@ -19933,9 +19973,6 @@
       "Advanced account protection": [
         "Protecció avançada dels comptes"
       ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
-      ],
       "Amount due now": [
         "Import pendent de pagament"
       ],
@@ -19975,17 +20012,11 @@
       "Create a ${ BRAND_NAME } Account": [
         "Creeu un compte de ${ BRAND_NAME }"
       ],
-      "Custom fields and file attachment": [
-        "Camps personalitzats i fitxers adjunts"
-      ],
-      "Encrypted cloud storage": [
-        "Emmagatzematge xifrat al núvol"
+      "Custom email domain": [
+        "Domini de correu electrònic personalitzat"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Correu electrònic xifrat amb ${ totalMailStorageSize } d'emmagatzematge"
-      ],
-      "Encrypted file sharing and document editor": [
-        "Intercanvi d'arxius xifrat i editor de documents"
       ],
       "Encrypted password manager": [
         "Gestor de contrasenyes xifrat"
@@ -19998,9 +20029,6 @@
       ],
       "Every free account comes with:": [
         "Cada compte gratuït inclou:"
-      ],
-      "Fast P2P/BitTorrent downloads": [
-        "Descàrregues ràpides de P2P/BitTorrent"
       ],
       "Free": [
         "Gratuït"
@@ -20023,15 +20051,6 @@
       "Gifted by **${ referrerName }**": [
         "Regalat per **${ referrerName }**"
       ],
-      "Highest VPN speed": [
-        "Velocitat de VPN màxima"
-      ],
-      "Mail": [
-        "Correu"
-      ],
-      "Mailboxes and custom domains for aliases": [
-        "Bústies de correu i dominis personalitzats per als àlies"
-      ],
       "Manage user access": [
         "Gestiona l'accés dels usuaris"
       ],
@@ -20047,20 +20066,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Necessiteu més emmagatzematge? Podeu millorar en qualsevol moment amb plans de 200 GB a 3 TB. 5 GB són suficients per a 2.500 fotos d'un telèfon modern (a ~2 MB cadascuna)."
       ],
-      "No credit card required:": [
-        "No cal targeta de crèdit:"
-      ],
       "Online document editor": [
         "Editor de documents en línia"
       ],
       "Online documents": [
         "Documents en línia"
       ],
-      "Password manager": [
-        "Gestor de contrasenyes"
-      ],
       "Password manager for all your devices": [
         "Gestor de contrasenyes per a tots els vostres dispositius"
+      ],
+      "Pick a service to get started.": [
+        "Trieu un servei per començar."
       ],
       "Pick your perfect plan": [
         "Trieu el pla que més us convingui"
@@ -20068,8 +20084,8 @@
       "Private AI assistant with encrypted chat history": [
         "Assistent d'IA privat amb historial de xat xifrat"
       ],
-      "Promo applied – ${ checkoutUi.discountPercent }% off": [
-        "S'ha aplicat la promoció: ${ checkoutUi.discountPercent }% de descompte"
+      "Promo applied – ${ discountItem.discountPercent }% off": [
+        "Promoció aplicada: ${ discountItem.discountPercent }% de descompte"
       ],
       "Recover previous file versions": [
         "Recupereu versions anteriors del fitxer"
@@ -20090,14 +20106,11 @@
       "Secure vault sharing and link sharing": [
         "Compartició segura de caixes fortes i enllaços"
       ],
-      "Securely share files, photos and documents": [
-        "Compartiu fitxers, fotos i documents de manera segura"
+      "Securely share files and photos": [
+        "Compartiu fitxers i fotos de manera segura"
       ],
       "Select ${ title }": [
         "Selecciona ${ title }"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
-        "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant ${ TRIAL_DURATION_DAYS } dies."
       ],
       "Selected": [
         "Seleccionat"
@@ -20120,17 +20133,8 @@
       "Sign up, protect your files": [
         "Creeu un compte i protegiu els vostres fitxers"
       ],
-      "Start free trial": [
-        "Inicieu el període de prova gratuït"
-      ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenceu a utilitzar ${ PASS_APP_NAME }"
-      ],
-      "Storage": [
-        "Emmagatzematge"
-      ],
-      "Stream your favorite TV shows and movies": [
-        "Reproduïu en estríming les vostres pel·lícules i programes de televisió favorits"
       ],
       "Swiss-based": [
         "Amb seu a Suïssa"
@@ -20140,6 +20144,9 @@
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "El nom de l'organització serà visible per als vostres usuaris mentre tinguin la sessió iniciada."
+      ],
+      "Then ${ priceElement }": [
+        "Després ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Després, ${ priceWithDiscountPerMonth } al mes, si us subscriviu."
@@ -20158,6 +20165,9 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Proveu ${ BRAND_NAME } de franc durant ${ TRIAL_DURATION_DAYS } dies"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Proveu ${ BRAND_NAME } durant ${ TRIAL_DURATION_DAYS } dies de franc,${ br } i obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Proveu ${ BRAND_NAME } de franc durant 14 dies"
@@ -20216,6 +20226,9 @@
       ],
       "Your trial": [
         "La vostra prova"
+      ],
+      "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Esteu convidat a unir-vos a més de 100 milions de persones que han triat mantenir el control de les seves dades amb l'ecosistema xifrat de ${ BRAND_NAME }."
       ]
     },
     "Signup label": {
@@ -20562,8 +20575,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Manteniu les vostres contrasenyes segures i organitzades en diverses caixes fortes"
       ],
       "Protect your account from threats with Sentinel": [
         "Protegiu el vostre compte d'amenaces amb Sentinel"
@@ -21040,23 +21053,14 @@
       ]
     },
     "Subscription": {
-      "${ discountPercent }% discount applied": [
-        "S'ha aplicat un descompte del ${ discountPercent }%"
+      "${ discountItem.discountPercent }% discount applied": [
+        "S'ha aplicat un descompte del ${ discountItem.discountPercent }%"
       ],
-      "${ discountPercent }% off": [
-        "${ discountPercent }% de descompte"
+      "${ discountItem.discountPercent }% off": [
+        "${ discountItem.discountPercent }% de descompte"
       ],
-      "${ trailCycleText } free": [
-        "${ trailCycleText } gratuït"
-      ],
-      "Billed every 2 years": [
-        "Facturació cada 2 anys"
-      ],
-      "Billed monthly": [
-        "Facturació mensual"
-      ],
-      "Billed yearly": [
-        "Facturació anual"
+      "${ trialCycleText } free": [
+        "${ trialCycleText } gratuït"
       ],
       "Bound to **${ nameToDisplay }**": [
         "Vinculat a **${ nameToDisplay }**"
@@ -24587,8 +24591,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Obteniu més de la vostra subscripció a ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Manteniu els vostres arxius, fotos i documents segurs amb ${ maxDriveSpace } d'emmagatzematge al núvol gratuït."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantingueu segurs els vostres fitxers, fotos i documents amb ${ maxDriveSpace } d'emmagatzematge al núvol."
       ],
       "Set secure passwords without the hassle.": [
         "Establiu contrasenyes segures sense complicacions"
@@ -24644,11 +24648,6 @@
         "Servidors en més de ${ numberOfCountries } països"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Facturat mensualment"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 any"
@@ -24687,14 +24686,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
-      "${ n } year": [
-        "${ n } any",
-        "${ n } anys"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Inclou ${ plan } (gratuït durant el primer any!)"
       ],

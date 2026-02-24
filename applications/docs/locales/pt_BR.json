@@ -919,9 +919,19 @@
         "${ domains } domínio personalizado adicional",
         "${ domains } domínios personalizados adicionais"
       ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidores"
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licença de IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licenças"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licença de IA do ${ LUMO_APP_NAME }",
+        "${ seats } licenças de IA do ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
@@ -934,6 +944,24 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
+      "Domains": [
+        "Domínios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
+      "Writing assistant seats": [
+        "Licenças de assistente de escrita"
       ]
     },
     "Alert": {
@@ -1105,13 +1133,13 @@
         "3 TB de armazenamento de dados"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Acesse mais de 15.000 servidores em mais de 120 países"
+        "Acesse 15.000+ servidores em 120+ países"
       ],
       "Access advanced AI models": [
-        "Acesso a modelos de IA avançados"
+        "Acesse modelos de IA avançados"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+        "Todos os recursos premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloqueie anúncios, rastreadores e malware"
@@ -1123,13 +1151,13 @@
         "Conecte 10 dispositivos de uma só vez"
       ],
       "Full chat history with easy search and favorites": [
-        "Histórico de bate-papo completo com busca fácil e favoritos."
+        "Histórico completo de bate-papo com pesquisa fácil e favoritos"
       ],
       "Individual accounts for 6 users": [
         "Contas individuais para 6 usuários"
       ],
       "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
+        "Contas individuais para você e seu parceiro"
       ],
       "Stronger protection against cyber threats": [
         "Proteção mais forte contra ameaças cibernéticas"
@@ -3052,6 +3080,9 @@
       "status page": [
         "página de status"
       ],
+      "Tax exemption is not supported for this plan": [
+        "A isenção de impostos não é suportada para este plano"
+      ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
@@ -4831,6 +4862,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Os documentos públicos ainda não estão ativados na sua organização."
       ],
+      "Readonly": [
+        "Apenas leitura"
+      ],
       "Recent documents": [
         "Documentos recentes"
       ],
@@ -5254,9 +5288,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
-        "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
+        "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Você está prestes a recusar o convite para participar do álbum ${ invitationName }. Se você prosseguir, não poderá acessá-lo a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
@@ -5330,11 +5364,8 @@
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Sua próxima data de cobrança é ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
       "Your online activity is protected": [
         "Sua atividade on-line está protegida"
@@ -6551,10 +6582,6 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
-      ],
-      "${ options }-day file version history": [
-        "Histórico de versões de arquivo de ${ options } dias",
-        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
@@ -7900,6 +7927,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (sem impostos)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Valor devido após a avaliação em ${ formattedDate }"
       ],
@@ -8379,15 +8409,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Você tem ${ timeRemaining.inHours } hora para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
+        "Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Você tem ${ timeRemaining.inMinutes } minuto para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
+        "Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Você tem ${ timeRemaining.inSeconds } segundo para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
+        "Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
       ]
     },
     "session_recovery:available:link": {
@@ -8531,6 +8561,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Criando nova planilha..."
+      ],
       "Detect automatically": [
         "Detectar automaticamente"
       ],
@@ -8542,6 +8575,15 @@
       ],
       "Replace data at selected cell": [
         "Substituir dados na célula selecionada"
+      ],
+      "Replace spreadsheet": [
+        "Substituir planilha"
+      ],
+      "Select a file to import": [
+        "Selecionar um arquivo para importar"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Sua planilha atual, incluindo todas as planilhas nela contidas, será substituída por esta versão."
       ]
     },
     "sheets_2025:Label": {
@@ -8560,7 +8602,7 @@
     },
     "sheets_2025:Title": {
       "Import data": [
-        "Importar dados"
+        "Importação de dados"
       ]
     },
     "Signing preference for emails": {
@@ -8776,8 +8818,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtenha aliases ilimitados para proteger a sua identidade e reduzir spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Mantenha suas senhas seguras e organizadas em vários cofres "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenha suas senhas seguras e organizadas em vários cofres"
       ],
       "Protect your account from threats with Sentinel": [
         "Proteja sua conta contra ameaças com o Sentinel"
@@ -9655,6 +9697,9 @@
       ],
       "Re-signing contacts": [
         "Assinando os contatos novamente"
+      ],
+      "Readonly": [
+        "Apenas leitura"
       ],
       "Recommended actions": [
         "Ações recomendadas"

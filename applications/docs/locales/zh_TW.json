@@ -838,9 +838,6 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
-      "${ ips } server": [
-        "${ ips } 台伺服器"
-      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
@@ -1001,52 +998,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "存取 15,000+ 個伺服器，分布於 120+ 個國家"
-      ],
-      "Access advanced AI models": [
-        "存取進階 AI 模型"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有進階功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "封鎖廣告、追蹤程式和惡意軟體"
-      ],
-      "Built-in 2FA authenticator": [
-        "內建雙重驗證驗證器"
-      ],
-      "Connect 10 devices at once": [
-        "可同時連接 10 部裝置"
-      ],
-      "Full chat history with easy search and favorites": [
-        "完整的聊天記錄，具備輕鬆搜尋和我的最愛功能"
-      ],
-      "Individual accounts for 6 users": [
-        "供 6 位使用者使用的個人帳戶"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與一位夥伴使用的個人帳戶"
-      ],
-      "Stronger protection against cyber threats": [
-        "更強大的保護，抵禦網路威脅"
-      ],
-      "Unlimited daily chats": [
-        "無限每日聊天"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Browser": {
@@ -4872,9 +4823,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
-      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
       ],
@@ -4925,12 +4873,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "您的下一個結算日期為${ renewalTime }。"
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
       ],
       "Your online activity is protected": [
         "你的線上活動受到保護"
@@ -6046,9 +5988,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-天的檔案版本紀錄"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 終身"
@@ -7720,15 +7659,6 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 你有${ timeRemaining.inHours }小時重設密碼。"
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -7852,53 +7782,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Comma Separated Values (.csv)": [
-        "逗號分隔值 (.csv)"
-      ],
-      "Microsoft Excel (.xlsx)": [
-        "Microsoft Excel (.xlsx)"
-      ],
-      "New spreadsheet": [
-        "新試算表"
-      ],
-      "Tab Separated Values (.tsv)": [
-        "Tab 分隔值 (.tsv)"
-      ]
-    },
-    "sheets_2025:Info": {
-      "Detect automatically": [
-        "自動偵測"
-      ],
-      "Insert as new sheet": [
-        "插入為新工作表"
-      ],
-      "Replace current sheet": [
-        "取代目前工作表"
-      ],
-      "Replace data at selected cell": [
-        "取代所選儲存格中的資料"
-      ]
-    },
-    "sheets_2025:Label": {
-      "Convert text to numbers, dates, and formulas": [
-        "將文字轉換為數字、日期和公式"
-      ],
-      "Destination": [
-        "目的地"
-      ],
-      "Format": [
-        "格式化"
-      ],
-      "Separator type": [
-        "分隔符號類型"
-      ]
-    },
-    "sheets_2025:Title": {
-      "Import data": [
-        "匯入資料"
       ]
     },
     "Signing preference for emails": {

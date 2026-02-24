@@ -1925,10 +1925,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2508,7 +2504,7 @@
       "You may close this tab.": [
         "Du kan lukke denne fanen."
       ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [

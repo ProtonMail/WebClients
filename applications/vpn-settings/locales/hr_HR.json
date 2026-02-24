@@ -848,11 +848,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelj"
-      ],
       "${ price } per user": [
         "${ price } po korisniku"
       ],
@@ -1089,52 +1084,6 @@
         "Online uređivač dokumenata"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB prostora za pohranu"
-      ],
-      "3 TB data storage": [
-        "3 TB prostora za pohranu"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristup 15,000+ poslužitelja u 120+ država"
-      ],
-      "Access advanced AI models": [
-        "Pristup naprednim AI modelima"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ugrađeni 2FA autentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 uređaja istovremeno"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
-      ],
-      "Individual accounts for 6 users": [
-        "Individualni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individualni korisnički računi za Vas i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Jača zaštita od kibernetičkih prijetnji"
-      ],
-      "Unlimited daily chats": [
-        "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatski se obnavlja na ${ subscriptionManagerName }"
@@ -1155,6 +1104,9 @@
       ],
       "Two-year": [
         "2 godine"
+      ],
+      "Yearly": [
+        "Godišnje"
       ]
     },
     "Blog": {
@@ -1330,12 +1282,6 @@
     "Checkout summary": {
       "month": [
         "mjesec"
-      ],
-      "Servers": [
-        "Poslužitelji"
-      ],
-      "Users": [
-        "Korisnici"
       ]
     },
     "Collapsible tooltip": {
@@ -2734,9 +2680,6 @@
       ],
       "Checkout expired, please try again": [
         "Naplata je istekla, pokušajte ponovno"
-      ],
-      "Code wrong or not valid anymore": [
-        "Kôd je pogrešan ili više ne vrijedi"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Uređivanje adrese za naplatu trenutno nije dostupno. Molimo pokušajte ponovno kasnije."
@@ -4268,9 +4211,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Za korisnike koji prelaze na ${ MAIL_APP_NAME } s druge usluge e-pošte, odaberite karticu ${ boldAddresses } i dodajte sve aktivne e-mail adrese prije promjene MX zapisa kako biste osigurali nesmetan prijelaz."
-      ],
-      "Free forever": [
-        "Besplatno zauvijek"
       ],
       "Gateway monitor": [
         "Nadzor pristupnika"
@@ -7115,20 +7055,8 @@
       "CVC": [
         "CVC"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% poreza: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumijem"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
@@ -7136,14 +7064,8 @@
       "Processing payment": [
         "Obrada plaćanja"
       ],
-      "Taxes": [
-        "Porezi"
-      ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
-      ],
-      "VAT": [
-        "Porez"
       ]
     },
     "Payments.Error": {
@@ -7905,11 +7827,6 @@
         "Dijeli ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Otvori u ${ appName }"
-      ]
-    },
     "Signup": {
       "1 month": [
         "1 mjesec"
@@ -8269,17 +8186,6 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Naplaćuje se svake 2 godine"
-      ],
-      "Billed monthly": [
-        "Mjesečni račun"
-      ],
-      "Billed yearly": [
-        "Godišnji račun"
       ]
     },
     "Subscription attribute": {
@@ -9857,9 +9763,6 @@
       "Communicate and schedule with end-to-end encryption.": [
         "Komunicirajte i planirajte koristeći end-to-end šifriranje"
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Čuvajte svoje datoteke, fotografije i dokumente na sigurnom uz ${ maxDriveSpace } besplatne pohrane u oblaku."
-      ],
       "Set secure passwords without the hassle.": [
         "Postavite sigurne lozinke bez komplikacija."
       ]
@@ -9884,11 +9787,6 @@
         "Poslužitelji u ${ numberOfCountries }+ državi",
         "Poslužitelji u ${ numberOfCountries }+ država",
         "Poslužitelji u ${ numberOfCountries }+ država"
-      ]
-    },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Mjesečni račun"
       ]
     },
     "vpn_2step: discount": {
@@ -9920,16 +9818,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "${ n } year": [
-        "${ n } godina",
-        "${ n } godine",
-        "${ n } godina"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Uključuje ${ plan } (besplatno prvu godinu!)"
       ],

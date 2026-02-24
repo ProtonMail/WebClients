@@ -718,11 +718,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelja",
-        "${ ips } poslužitelja"
-      ],
       "${ price } per user": [
         "${ price } po korisniku"
       ],
@@ -824,52 +819,6 @@
         "Online uređivač dokumenata"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB prostora za pohranu"
-      ],
-      "3 TB data storage": [
-        "3 TB prostora za pohranu"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristup 15,000+ poslužitelja u 120+ država"
-      ],
-      "Access advanced AI models": [
-        "Pristup naprednim AI modelima"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ugrađeni 2FA autentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 uređaja istovremeno"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
-      ],
-      "Individual accounts for 6 users": [
-        "Individualni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individualni korisnički računi za Vas i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Jača zaštita od kibernetičkih prijetnji"
-      ],
-      "Unlimited daily chats": [
-        "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 mjesec"
@@ -885,6 +834,9 @@
       ],
       "Two-year": [
         "2 godine"
+      ],
+      "Yearly": [
+        "Godišnje"
       ]
     },
     "Bug category": {
@@ -5752,32 +5704,14 @@
       "CVC": [
         "CVC"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% poreza: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumijem"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
       ],
-      "Taxes": [
-        "Porezi"
-      ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
-      ],
-      "VAT": [
-        "Porez"
       ]
     },
     "Payments.Error": {
@@ -5934,9 +5868,6 @@
       ],
       "Thomas": [
         "Toma"
-      ],
-      "VAT number": [
-        "PDV broj"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -6399,17 +6330,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Saznajte kako dohvatiti poveznicu privatnog kalendara."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Naplaćuje se svake 2 godine"
-      ],
-      "Billed monthly": [
-        "Mjesečni račun"
-      ],
-      "Billed yearly": [
-        "Godišnji račun"
       ]
     },
     "Subscription attribute": {

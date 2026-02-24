@@ -928,11 +928,23 @@
         "${ domains } dodatočných vlastných domén",
         "${ domains } dodatočných vlastných domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverov",
-        "${ ips } serverov"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverov",
+        "${ ips } dedikovaných VPN serverov"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licencia"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencií"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } AI licencia",
+        "${ seats }${ LUMO_APP_NAME } AI licencie",
+        "${ seats }${ LUMO_APP_NAME } AI licencií",
+        "${ seats }${ LUMO_APP_NAME } AI licencií"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } licencia",
@@ -951,6 +963,24 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Users": [
+        "Používatelia"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
+      ],
+      "Writing assistant seats": [
+        "Licencie pre asistenta písania"
       ]
     },
     "Alert": {
@@ -1122,16 +1152,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dátového úložiska"
+        "2 TB úložisko dát"
       ],
       "3 TB data storage": [
-        "3 TB dátového úložiska"
+        "3 TB úložisko dát"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupujte k 15 000+ serverom v 120+ krajinách"
+        "Pristupujte k 15 000+ serverom vo viac ako 120 krajinách"
       ],
       "Access advanced AI models": [
-        "Prístup k pokročilým modelom umelej inteligencie"
+        "Prístup k pokročilým modelom AI"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všetky prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
@@ -1143,7 +1173,7 @@
         "Zabudovaný 2FA autentifikátor"
       ],
       "Connect 10 devices at once": [
-        "Pripojte 10 zariadení súčasne"
+        "Pripojte 10 zariadení naraz"
       ],
       "Full chat history with easy search and favorites": [
         "Úplná história chatu s jednoduchým vyhľadávaním a obľúbenými položkami"
@@ -1155,7 +1185,7 @@
         "Individuálne účty pre vás a partnera"
       ],
       "Stronger protection against cyber threats": [
-        "Silnejšia ochrana proti kybernetickým hrozbám"
+        "Silnejšia ochrana pred kybernetickými hrozbami"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -3093,6 +3123,9 @@
       "status page": [
         "stránka stavu"
       ],
+      "Tax exemption is not supported for this plan": [
+        "Pre tento plán daňová výnimka nie je podporovaná"
+      ],
       "The address might be misspelled": [
         "Adresa môže obsahovať preklep"
       ],
@@ -4958,6 +4991,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Verejné dokumenty zatiaľ nie sú pre vašu organizáciu povolené."
       ],
+      "Readonly": [
+        "Len na čítanie"
+      ],
       "Recent documents": [
         "Nedávne dokumenty"
       ],
@@ -5131,6 +5167,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument obsahuje veľa aktivít. Niektoré funkcie môžu byť dočasne nedostupné."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Tento dokument má veľa aktívnych spolupracovníkov. Úpravy v reálnom čase nie sú dočasne k dispozícii. Obnovením zobrazíte najnovšie aktualizácie."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Tento dokument možno neexistuje alebo máme problémy s jeho načítaním. Znovu načítajte stránku a skúste to znova."
@@ -5387,11 +5426,11 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Chystáte sa odmietnuť pozvánku do albumu ${ invitationName }. Ak budete pokračovať, nebudete mať k nemu prístup, pokiaľ vás vlastník znovu nepozve. Skutočne chcete pokračovať?"
@@ -5465,11 +5504,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaša ďalšia fakturácia bude ${ renewalTime }. Zrušiť môžete kedykoľvek."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Váš ďalší dátum fakturácie je ${ renewalTime }. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Váš ďalší dátum fakturácie je ${ renewalTime }. Zrušiť môžete kedykoľvek. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
       ],
       "Your online activity is protected": [
         "Vaša online aktivita je chránená"
@@ -8096,6 +8135,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez DPH)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
@@ -8609,21 +8651,21 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodinu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minútu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
-        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
@@ -8773,6 +8815,12 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Vytváranie novej tabuľky..."
+      ],
+      "Detect automatically": [
+        "Zistiť automaticky"
+      ],
       "Insert as new sheet": [
         "Vložiť ako nový hárok"
       ],
@@ -8781,16 +8829,34 @@
       ],
       "Replace data at selected cell": [
         "Nahradiť údaje vo vybratej bunke"
+      ],
+      "Replace spreadsheet": [
+        "Nahradiť tabuľku"
+      ],
+      "Select a file to import": [
+        "Vyberte súbor, ktorý chcete importovať"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Vaša aktuálna tabuľka, vrátane všetkých hárkov v nej, bude nahradená touto verziou."
       ]
     },
     "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Prevod textu na čísla, dátumy a vzorce"
+      ],
+      "Destination": [
+        "Cieľ"
+      ],
       "Format": [
         "Formát"
+      ],
+      "Separator type": [
+        "Typ oddeľovača"
       ]
     },
     "sheets_2025:Title": {
       "Import data": [
-        "Importovať dáta"
+        "Importovať údaje"
       ]
     },
     "Signing preference for emails": {
@@ -9016,8 +9082,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Získajte neobmedzené aliasy na ochranu svojej identity a zníženie spamu"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Udržujte si svoje heslá v bezpečí a usporiadané vo viacerých trezoroch"
       ],
       "Protect your account from threats with Sentinel": [
         "Chráňte svoj účet pred hrozbami so Sentinelom"
@@ -9949,6 +10015,9 @@
       ],
       "Re-signing contacts": [
         "Znovu podpísať kontakty"
+      ],
+      "Readonly": [
+        "Len na čítanie"
       ],
       "Recommended actions": [
         "Odporúčané opatrenia"

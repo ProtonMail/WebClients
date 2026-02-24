@@ -427,9 +427,15 @@
         "${ domains } zusätzliche eigene Domain",
         "${ domains } zusätzliche eigene Domains"
       ],
-      "${ ips } server": [
-        "${ ips } Server",
-        "${ ips } Server"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedizierter VPN-Server",
+        "${ ips } dedizierte VPN-Server"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-Lizenz"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } Lizenzen"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -443,6 +449,10 @@
       "${ price } per user": [
         "${ price } pro Benutzer"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenzen"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
@@ -454,6 +464,24 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "Domains": [
+        "Domains"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ],
+      "Writing assistant seats": [
+        "Lizenzen für Schreibassistenten"
       ]
     },
     "Address list": {
@@ -557,6 +585,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "${ n } year": [
+        "${ n } Jahr",
+        "${ n } Jahre"
+      ],
       "1 month": [
         "1 Monat"
       ],
@@ -566,14 +602,23 @@
       "Annually": [
         "Jährlich"
       ],
+      "Billed monthly": [
+        "Wird monatlich abgerechnet"
+      ],
       "Lifetime": [
         "Lebenslang"
+      ],
+      "Lifetime access": [
+        "Lebenslanger Zugang"
       ],
       "Monthly": [
         "Monatlich"
       ],
       "Two-year": [
         "Zwei Jahre"
+      ],
+      "Yearly": [
+        "Jährlich"
       ]
     },
     "BIP 21 error": {
@@ -2229,11 +2274,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
       ],
+      "Email is not valid": [
+        "E-Mail-Adresse ungültig"
+      ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
+      ],
+      "Incorrect username": [
+        "Falscher Benutzername"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Die Eingabe ist keine gültige E-Mail-Adresse oder Bitcoin-Adresse"
@@ -2262,8 +2313,14 @@
       "Invalid ZIP code": [
         "Ungültige Postleitzahl"
       ],
+      "Not a valid number": [
+        "Keine gültige Zahl"
+      ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
       ],
       "Payment process canceled": [
         "Bezahlvorgang abgebrochen"
@@ -2325,23 +2382,41 @@
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
       ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
       "The passphrases do not match": [
         "Die Passphrasen stimmen nicht überein."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
       "This offer is not available in your country": [
         "Dieses Angebot ist in deinem Land nicht verfügbar"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
+      ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
@@ -3042,9 +3117,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
-        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
+        "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -3058,11 +3133,11 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Dein nächstes Abrechnungsdatum ist ${ renewalTime }. Bitte wende dich an den Support, wenn du eine sofortige Abonnementsänderung benötigst."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich. Bitte wende dich an den Support, wenn du eine sofortige Änderung deines Abonnements wünschst."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -3627,10 +3702,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ options }-day file version history": [
-        "Dateiversionsverlauf für ${ options } Tag",
-        "Dateiversionsverlauf für ${ options } Tag"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
@@ -4502,6 +4573,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (zzgl. MwSt.)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -4520,20 +4594,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Ohne ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ohne ${ taxRate } % Steuern: ${ taxAmount }"
-      ],
       "Got it": [
         "Verstanden"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Einschließlich ${ taxRate } % Steuern: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -4552,9 +4614,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
-      ],
-      "Taxes": [
-        "Steuern"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
@@ -4603,9 +4662,6 @@
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
-      ],
-      "VAT": [
-        "Mehrwertsteuer"
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -4685,6 +4741,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Unternehmenskennung (ABN)."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Geschäftsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Steuernummer (EIN)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -4799,9 +4869,6 @@
       "Thomas": [
         "Max"
       ],
-      "VAT number": [
-        "Umsatzsteuernummer"
-      ],
       "Your organization name": [
         "Name deiner Organisation"
       ],
@@ -4820,6 +4887,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } Monat",
+        "${ cycle } Monate"
       ]
     },
     "plus_block": {
@@ -5081,17 +5154,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du verlierst den Zugang zu einer unbegrenzten Anzahl von Logins und Notizen, einer unbegrenzten Anzahl von Hide-my-email-Aliassen, 20 Tresoren und vorrangigem Support."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Wird alle 2 Jahre abgerechnet"
-      ],
-      "Billed monthly": [
-        "Wird monatlich abgerechnet"
-      ],
-      "Billed yearly": [
-        "Wird jährlich abgerechnet"
       ]
     },
     "Subscription attribute": {
@@ -5588,6 +5650,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ]
     },
     "VPN Plan Feature": {

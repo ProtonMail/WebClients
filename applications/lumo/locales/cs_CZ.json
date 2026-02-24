@@ -230,6 +230,9 @@
       "Re-index all content - conversations and files": [
         "Znovu indexovat veškerý obsah – konverzace a soubory"
       ],
+      "Redo": [
+        "Opakovat akci"
+      ],
       "Refer a friend": [
         "Doporučit přátelům"
       ],
@@ -338,6 +341,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
       ],
+      "Undo": [
+        "Zpět"
+      ],
       "Upgrade": [
         "Přejít na placený tarif"
       ],
@@ -388,11 +394,14 @@
         "${ domains } dalších vlastních domén",
         "${ domains } dalších vlastních domén"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverů",
-        "${ ips } serverů"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverů",
+        "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licence"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -405,6 +414,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } licence",
@@ -423,6 +438,15 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Users": [
+        "Uživatelé"
+      ],
+      "Writing assistant seats": [
+        "Licence asistenta psaní"
       ]
     },
     "Apps dropdown": {
@@ -576,51 +600,36 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datové úložiště"
-      ],
-      "3 TB data storage": [
-        "3 TB datové úložiště"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Přístup k 15 000+ serverům ve 120+ zemích"
-      ],
-      "Access advanced AI models": [
-        "Přístup k pokročilým modelům AI"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+        "2 TB úložiště dat"
       ],
       "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malwaru"
+        "Blokování reklam, sledovacích prvků a malware"
       ],
       "Built-in 2FA authenticator": [
-        "Vestavěné 2FA ověřování"
+        "Vestavěné ověřování 2FA"
       ],
       "Connect 10 devices at once": [
-        "Připojte 10 zařízení najednou"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuální účty pro 6 uživatelů"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuální účty pro vás a partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnější ochrana proti kybernetickým hrozbám"
-      ],
-      "Unlimited daily chats": [
-        "Neomezený denní limit konverzací"
+        "Připojte až 10 zařízení současně"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
+        "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
       "1 month": [
         "1 měsíc"
       ],
@@ -630,6 +639,9 @@
       "Annually": [
         "Ročně"
       ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
       "Lifetime": [
         "Doživotní"
       ],
@@ -638,6 +650,9 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "Yearly": [
+        "Ročně"
       ]
     },
     "Browser": {
@@ -949,9 +964,6 @@
       ],
       "Delete all": [
         "Smazat vše"
-      ],
-      "Join waitlist": [
-        "Připojit se na pořadník"
       ],
       "Learn more": [
         "Více informací"
@@ -1611,65 +1623,6 @@
         "Vaše informace jsou šifrovány s nulovým přístupem"
       ]
     },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-mailová adresa je neplatná"
-      ],
-      "Email address is required": [
-        "E-mailová adresa je povinná"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Zavřít"
-      ],
-      "Invite friends": [
-        "Pozvat přátele"
-      ],
-      "Maybe later": [
-        "Možná později"
-      ],
-      "Send invitation": [
-        "Odeslat pozvánku"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "E-mail vašeho přítele"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Znáte někoho, kdo by ocenil AI chránící soukromí? Pozvěte je na pořadník ${ LUMO_SHORT_APP_NAME }. Zbývá vám ještě ${ remainingInvitesText } pozvánek."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "Zbývá vám ${ remainingInvitesText } pozvánek."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Pozvánka odeslána"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Pozvánka odeslána!"
-      ],
-      "No invites left  ": [
-        "Použili jste všechny pozvánky  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Děkujeme, že pomáháte ostatním objevit ${ LUMO_SHORT_APP_NAME }! Pokud budou k dispozici další pozvánky, dáme vám vědět."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Pozvali jsme ${ emailText }. Dostanou informace, jak se přidat na pořadník."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Pozvěte přátele, aby vyzkoušeli ${ LUMO_APP_NAME }"
-      ]
-    },
     "collider_2025: Job": {
       "Cat herder": [
         "Chovatelka koček"
@@ -1892,9 +1845,6 @@
       "Search Index": [
         "Vyhledávací index"
       ],
-      "Secure your spot": [
-        "Zajistěte si své místo"
-      ],
       "Show project chats in history": [
         "Zobrazit historii chatů projektu"
       ],
@@ -1906,12 +1856,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "You're on the list": [
-        "Jste na seznamu"
-      ],
-      "You're on the waitlist": [
-        "Jste na pořadníku"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2022,17 +1966,6 @@
     "collider_2025: Upsell Title": {
       "Get": [
         "Získejte"
-      ]
-    },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Děkujeme, že jste se připojili k čekací listině. Pošleme vám e-mail, až budete moci začít chatovat s ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Děkujeme za registraci. Postupně otevíráme přístup k ${ LUMO_SHORT_APP_NAME } a dáme vám vědět, až se vaše místo uvolní."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "Postupně otevíráme přístup k ${ LUMO_SHORT_APP_NAME }. Přidejte se na pořadník a my vás upozorníme, až na vás přijde řada."
       ]
     },
     "collider_2025: Warning": {
@@ -2222,9 +2155,6 @@
       "Close sidebar": [
         "Zavřít postranní panel"
       ],
-      "Collapse projects": [
-        "Sbalit projekty"
-      ],
       "Create a free account": [
         "Vytvořit bezplatný účet"
       ],
@@ -2239,9 +2169,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ],
-      "Expand projects": [
-        "Rozbalit projekty"
       ],
       "Favorite": [
         "Oblíbené"
@@ -2273,17 +2200,11 @@
       "New project": [
         "Nový projekt"
       ],
-      "Projects": [
-        "Projekty"
-      ],
       "Save": [
         "Uložit"
       ],
       "Search": [
         "Hledat"
-      ],
-      "See all": [
-        "Zobrazit vše"
       ],
       "Send": [
         "Odeslat"
@@ -2447,9 +2368,6 @@
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Připojte soubory z ${ DRIVE_APP_NAME } nebo je nahrajte ze svého počítače."
-      ],
-      "No projects yet": [
-        "Zatím žádné projekty"
       ],
       "Processing file...": [
         "Zpracovávám soubor..."
@@ -4053,6 +3971,9 @@
       "Tab closed": [
         "Záložka zavřena"
       ],
+      "Tax exemption is not supported for this plan": [
+        "U tohoto tarifu není podporováno osvobození od daně"
+      ],
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
@@ -4852,11 +4773,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
-        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -4866,12 +4787,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Datum příští platby je ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -5542,12 +5457,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ options }-day file version history": [
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -6492,20 +6401,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% daně: ${ taxAmount }"
-      ],
       "Got it": [
         "Rozumím"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/RR"
@@ -6524,9 +6421,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
-      ],
-      "Taxes": [
-        "Daně"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -6587,9 +6481,6 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
-      ],
-      "VAT": [
-        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -6669,6 +6560,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -6777,9 +6676,6 @@
       "Thomas": [
         "Jméno"
       ],
-      "VAT number": [
-        "DIČ"
-      ],
       "Your organization name": [
         "Název vaší organizace"
       ],
@@ -6798,6 +6694,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
       ]
     },
     "plus_block": {
@@ -7157,17 +7061,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Ztratíte přístup k neomezeným přihlášením a poznámkám, neomezeným hide-my-email adresám, 20 trezorům a prioritní podpoře."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Účtováno každé 2 roky"
-      ],
-      "Billed monthly": [
-        "Účtováno měsíčně"
-      ],
-      "Billed yearly": [
-        "Účtováno ročně"
       ]
     },
     "Subscription attribute": {

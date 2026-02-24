@@ -1070,9 +1070,15 @@
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
       ],
-      "${ ips } server": [
-        "${ ips } serveur",
-        "${ ips } serveurs"
+      "${ ips } dedicated VPN server": [
+        "${ ips } serveur VPN dédié",
+        "${ ips } serveurs VPN dédiés"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licence IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } accès"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1086,6 +1092,10 @@
       "${ price } per user": [
         "${ price } par utilisateur"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licence IA ${ LUMO_APP_NAME }",
+        "${ seats } licences IA ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
         "${ seats } accès à ${ LUMO_APP_NAME }"
@@ -1097,6 +1107,24 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Domains": [
+        "Domaines"
+      ],
+      "Servers": [
+        "Serveurs"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant seats": [
+        "Accès à l'assistant d'écriture"
       ]
     },
     "Alarm notification": {
@@ -1339,40 +1367,34 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 To d'espace de stockage de données"
+        "2 To d'espace de stockage"
       ],
       "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+        "3 To d'espace de stockage"
       ],
       "Access advanced AI models": [
-        "Accès à des modèles d'IA avancés"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+        "Accéder aux modèles d'IA avancés"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+        "Bloquer les pubs, les traqueurs et les logiciels malveillants"
       ],
       "Built-in 2FA authenticator": [
-        "Authentificateur 2FA intégré"
+        "Authentificateur A2F intégré"
       ],
       "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
+        "Connectez 10 appareils en même temps"
       ],
       "Full chat history with easy search and favorites": [
         "Historique complet des discussions avec recherche facile et favoris"
       ],
       "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
+        "Comptes individuels pour 6 utilisateurs"
       ],
       "Individual accounts for you and a partner": [
         "Comptes individuels pour vous et un partenaire"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1384,6 +1406,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ans"
+      ],
       "1 month": [
         "1 mois"
       ],
@@ -1393,14 +1423,23 @@
       "Annually": [
         "Annuel"
       ],
+      "Billed monthly": [
+        "Facturé mensuellement"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Accès à vie"
       ],
       "Monthly": [
         "Mensuel"
       ],
       "Two-year": [
         "Tous les deux ans"
+      ],
+      "Yearly": [
+        "Annuel"
       ]
     },
     "Browser": {
@@ -1773,6 +1812,13 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Subtotal": [
+        "Sous-total"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Sous-total pour ${ cycle } mois",
+        "Sous-total pour ${ cycle } mois"
       ],
       "Total": [
         "Total"
@@ -6362,9 +6408,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -6429,11 +6475,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Votre prochaine date de facturation est le ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
       ],
       "Your online activity is protected": [
         "Votre activité en ligne est protégée."
@@ -7888,10 +7934,6 @@
         "${ n } connexion VPN",
         "${ n } connexions VPN"
       ],
-      "${ options }-day file version history": [
-        "Historique des versions de fichiers datant de ${ options } jours",
-        "Historique des versions de fichiers datant de ${ options } jours"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
@@ -9300,6 +9342,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (hors taxe)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
@@ -9318,20 +9369,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
-      ],
       "Got it": [
         "J'ai compris"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Comprenant ${ rate } % de taxes"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Comprenant ${ taxRate } % de taxes : ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Comprenant ${ rate } % de taxes"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -9351,8 +9402,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
       ],
-      "Taxes": [
-        "Taxes"
+      "Tax ${ rate }%": [
+        "Taxe ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Taxes ${ rate } %"
       ],
       "terms and conditions": [
         "conditions générales d'utilisation"
@@ -9401,9 +9455,6 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
-      ],
-      "VAT": [
-        "TVA"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -9483,6 +9534,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro d'entreprise."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro de TVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -9693,9 +9758,6 @@
       "Thomas": [
         "Camille"
       ],
-      "VAT number": [
-        "Numéro de TVA"
-      ],
       "Your organization name": [
         "Nom de votre organisation"
       ],
@@ -9724,6 +9786,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mois",
+        "${ cycle } mois"
       ]
     },
     "plus_block": {
@@ -10031,18 +10099,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
@@ -10433,8 +10489,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Bénéficiez d'un nombre illimité d'alias pour protéger votre identité et réduire les indésirables."
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Protégez vos mots de passe et organisez-les dans plusieurs coffres-forts "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Gardez vos mots de passe en sécurité et organisez-les dans plusieurs coffres-forts"
       ],
       "Protect your account from threats with Sentinel": [
         "Protégez votre compte contre les menaces avec Sentinel"
@@ -10612,17 +10668,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Découvrez comment obtenir un lien de calendrier privé."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturé tous les 2 ans"
-      ],
-      "Billed monthly": [
-        "Facturé mensuellement"
-      ],
-      "Billed yearly": [
-        "Facturé annuellement"
       ]
     },
     "Subscription attribute": {

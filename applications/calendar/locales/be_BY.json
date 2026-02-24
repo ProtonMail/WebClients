@@ -1080,11 +1080,17 @@
         "${ domains } дадатковых карыстальніцкіх даменаў",
         "${ domains } дадатковых карыстальніцкіх даменаў"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } серверы",
-        "${ ips } сервераў",
-        "${ ips } сервераў"
+      "${ ips } dedicated VPN server": [
+        "${ ips } вылучаны сервер VPN",
+        "${ ips } вылучаныя серверы VPN",
+        "${ ips } вылучаных сервераў VPN",
+        "${ ips } вылучаных сервераў VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Ліцэнзіі ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
@@ -1097,6 +1103,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -1115,6 +1127,24 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
+      ],
+      "Domains": [
+        "Дамены"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant seats": [
+        "Ліцэнзій памочніка ў напісанні"
       ]
     },
     "Alarm notification": {
@@ -1363,13 +1393,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "Сховішча даных памерам у 2 ТБ"
+        "2 ТБ даных у сховішчы"
       ],
       "3 TB data storage": [
-        "Сховішча даных памерам у 3 ТБ"
+        "3 ТБ даных у сховішчы"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Доступ да 15 000+ сервераў у 120+ краінах"
+        "Доступ да больш чым 15 000 сервераў у больш чым 120 краінах"
       ],
       "Access advanced AI models": [
         "Доступ да перадавых мадэляў ШІ"
@@ -1384,19 +1414,19 @@
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
       "Connect 10 devices at once": [
-        "Падключыце 10 прылад адначасова"
+        "Падключайце да 10 прылад адначасова"
       ],
       "Full chat history with easy search and favorites": [
-        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+        "Поўная гісторыя чата з простым пошукам і абранымі"
       ],
       "Individual accounts for 6 users": [
         "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
       ],
       "Individual accounts for you and a partner": [
-        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+        "Індывідуальныя ўліковыя запісы для вас і вашых партнёраў"
       ],
       "Stronger protection against cyber threats": [
-        "Больш моцная абарона ад кіберпагроз"
+        "Больш надзейная абарона супраць кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1404,10 +1434,22 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіроўкі рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
       "1 month": [
         "1 месяц"
       ],
@@ -1417,14 +1459,23 @@
       "Annually": [
         "Штогод"
       ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
       "Lifetime": [
         "Пажыццёва"
+      ],
+      "Lifetime access": [
+        "Пажыццёвы доступ"
       ],
       "Monthly": [
         "Штомесяц"
       ],
       "Two-year": [
         "Кожныя два гады"
+      ],
+      "Yearly": [
+        "Штогод"
       ]
     },
     "Browser": {
@@ -6530,11 +6581,11 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
@@ -6599,11 +6650,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ваша наступная дата выстаўлення рахунку: ${ renewalTime }. Скасаваць можна ў любы час."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
       "Your online activity is protected": [
         "Ваша актыўнасць у інтэрнэце абаронена"
@@ -9614,6 +9665,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (з улікам падатка)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -9632,20 +9686,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Зразумела"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -9664,9 +9706,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
-      ],
-      "Taxes": [
-        "Падаткі"
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
@@ -9727,9 +9766,6 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
-      ],
-      "VAT": [
-        "ПДВ"
       ],
       "VAT number": [
         "Нумар ПДВ"
@@ -9809,6 +9845,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумар прадпрыемства."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара ПДВ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10019,9 +10069,6 @@
       "Thomas": [
         "Янка"
       ],
-      "VAT number": [
-        "Нумар ПДВ"
-      ],
       "Your organization name": [
         "Ваша назва арганізацыі"
       ],
@@ -10050,6 +10097,14 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяцы",
+        "${ cycle } месяцаў",
+        "${ cycle } месяцаў"
       ]
     },
     "plus_block": {
@@ -10388,9 +10443,9 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
@@ -10805,8 +10860,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч"
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"
@@ -10986,17 +11041,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Даведайцеся, як атрымаць прыватную спасылку на каляндар."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed monthly": [
-        "Аплачваецца штомесяц"
-      ],
-      "Billed yearly": [
-        "Аплачваецца штогод"
       ]
     },
     "Subscription attribute": {

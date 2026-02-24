@@ -1174,9 +1174,9 @@
         "${ domains } oma lisäverkkotunnus",
         "${ domains } omaa lisäverkkotunnusta"
       ],
-      "${ ips } server": [
-        "${ ips } palvelin",
-        "${ ips } palvelinta"
+      "${ ips } dedicated VPN server": [
+        "${ ips } oma VPN-palvelin",
+        "${ ips } omaa VPN-palvelinta"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } tekoälyavustaja (${ quantity } käyttäjä)",
@@ -1197,6 +1197,10 @@
       "${ quantity } custom domain": [
         "${ quantity } oma verkkotunnus",
         "${ quantity } omaa verkkotunnusta"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-tekoälylisenssiä"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-lisenssi",
@@ -1551,52 +1555,6 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 Tt datatallennustilaa"
-      ],
-      "3 TB data storage": [
-        "3 Tt datatallennustilaa"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pääsy yli 15 000 palvelimelle yli 120 maassa"
-      ],
-      "Access advanced AI models": [
-        "Pääsy edistyneisiin tekoälymalleihin"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki ${ MAIL_SHORT_APP_NAME }-, ${ PASS_SHORT_APP_NAME }-, ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- ja ${ CALENDAR_SHORT_APP_NAME }-sovellusten premium-ominaisuudet"
-      ],
-      "Block ads, trackers, and malware": [
-        "Estä mainoksia, seurantoja ja haittaohjelmia"
-      ],
-      "Built-in 2FA authenticator": [
-        "Sisäänrakennettu 2FA-todennussovellus"
-      ],
-      "Connect 10 devices at once": [
-        "10 samanaikaista laiteyhteyttä"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
-      ],
-      "Individual accounts for 6 users": [
-        "Yksilölliset tilit 6 käyttäjälle"
-      ],
-      "Individual accounts for you and a partner": [
-        "Yksilölliset tilit sinulle ja kumppanillesi"
-      ],
-      "Stronger protection against cyber threats": [
-        "Vahvempi suojaus kyberuhkia vastaan"
-      ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }",
@@ -1624,6 +1582,9 @@
       ],
       "Two-year": [
         "Kaksivuotinen"
+      ],
+      "Yearly": [
+        "Vuosittain"
       ]
     },
     "Blog": {
@@ -1761,9 +1722,6 @@
       ],
       "Sign in to Google Workspace": [
         "Kirjaudu Google Workspace -palveluun"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Organisaatiosi tietojen siirtämiseksi sinun on asennettava ${ BRAND_NAME } Migration Assistant -sovellus Google Workspace Marketplacesta. Tämä antaa ${ BRAND_NAME }:lle luvan kopioida tietosi. Asennuksen jälkeen palaa takaisin tänne jatkaaksesi. Lisätietoja"
       ],
       "Transfer errors": [
         "Siirtovirheet"
@@ -1998,12 +1956,6 @@
     "Checkout summary": {
       "month": [
         "kuukausi"
-      ],
-      "Servers": [
-        "Palvelimet"
-      ],
-      "Users": [
-        "Käyttäjät"
       ]
     },
     "Collapsible tooltip": {
@@ -3805,9 +3757,6 @@
       ],
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
-      ],
-      "Code wrong or not valid anymore": [
-        "Koodi on virheellinen tai erääntynyt"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
@@ -6435,9 +6384,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
-      "Free forever": [
-        "Pysyvästi ilmainen"
-      ],
       "Gateway monitor": [
         "Yhdyskäytävän valvonta"
       ],
@@ -7920,10 +7866,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
-      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
         "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
@@ -7966,12 +7908,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Seuraava laskutuspäivä on ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäiväsi on ${ renewalTime }. Jos haluat muuttaa tilausta heti, ota yhteyttä asiakaspalveluun."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -9735,10 +9671,6 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
-      "${ options }-day file version history": [
-        "${ options } päivän tiedostojen versiohistoria",
-        "${ options } päivän tiedostojen versiohistoria"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
       ],
@@ -11366,6 +11298,12 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% vero: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% veroja: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Maksu erääntyy kokeilun jälkeen ${ formattedDate }"
       ],
@@ -11387,20 +11325,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }%:n ${ taxName } poisluettuna: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Ilman ${ taxRate }% veroja: ${ taxAmount }"
-      ],
       "Got it": [
         "Selvä"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName } sisältäen: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Sisältää ${ rate }% veron"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Sisältää ${ taxRate }% veroja: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veron: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Sisältää ${ rate }% veroja"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Sisältää ${ rate }% veroja: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "KK/VV"
@@ -11423,8 +11361,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
-      "Taxes": [
-        "Verot"
+      "Tax ${ rate }%": [
+        "Vero ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Verot ${ rate }%"
       ],
       "terms and conditions": [
         "käyttöehdot"
@@ -11470,9 +11411,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "VAT": [
-        "ALV"
       ],
       "VAT number": [
         "ALV-numero"
@@ -11557,6 +11495,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Uusimishinta riippuu laskutusalueesta ja ABN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Uusimishinta riippuu laskutusalueesta ja yritystunnuksesta."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Uusimishinta riippuu laskutusalueesta ja EIN-numerosta."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12448,18 +12400,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
         "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {
@@ -12700,11 +12640,6 @@
         "Jakanut ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Avaa ${ appName }ssä"
-      ]
-    },
     "Signup": {
       "1 month": [
         "1 kuukausi"
@@ -12914,9 +12849,6 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
-      ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa "
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -13323,17 +13255,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Menetät oikeuden käyttää rajattomasti kirjautumistunnuksia ja muistiinpanoja, rajattomasti hide-my-email-aliaksia, 20 holvia sekä ensisijaista tukea."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed monthly": [
-        "Laskutetaan kuukausittain"
-      ],
-      "Billed yearly": [
-        "Laskutetaan vuosittain"
       ]
     },
     "Subscription attribute": {
@@ -15827,8 +15748,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Saa enemmän irti ${ planTitle } -tilauksestasi."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Säilytä tiedostosi, kuvasi ja dokumenttisi turvassa ${ maxDriveSpace } ilmaisella pilvitallennustilalla."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Säilytä tiedostosi, kuvasi ja dokumenttisi turvassa ${ maxDriveSpace } pilvitallennustilassa."
       ],
       "Set secure passwords without the hassle.": [
         "Aseta turvallisia salasanoja vaivatta."
@@ -15874,11 +15795,6 @@
         "Palvelimet ${ numberOfCountries }+ maassa"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Laskutetaan kuukausittain"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 vuoden"
@@ -15917,14 +15833,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } kuukausi",
-        "${ n } kuukautta"
-      ],
-      "${ n } year": [
-        "${ n } vuosi",
-        "${ n } vuotta"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Sisältää ${ plan } (ilmainen ensimmäisen vuoden ajan)"
       ],

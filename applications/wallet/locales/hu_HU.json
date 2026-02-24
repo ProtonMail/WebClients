@@ -418,10 +418,6 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
-      "${ ips } server": [
-        "${ ips } szerver",
-        "${ ips } szerver"
-      ],
       "${ price } per dedicated server": [
         "${ price } / dedikált szerver"
       ],
@@ -555,6 +551,9 @@
       ],
       "Two-year": [
         "Kétévente"
+      ],
+      "Yearly": [
+        "Évente"
       ]
     },
     "BIP 21 error": {
@@ -2165,11 +2164,17 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "A számlázási cím szerkesztése jelenleg nem elérhető. Kérjük, próbálja meg később újra."
       ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
       ],
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
+      ],
+      "Incorrect username": [
+        "Helytelen felhasználónév"
       ],
       "Input isn't a valid email or bitcoin address": [
         "A megadott érték nem egy érvényes e-mail cím vagy bitcoin cím"
@@ -2195,8 +2200,14 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek"
       ],
       "Payment process canceled": [
         "A fizetés folyamata megszakítva"
@@ -2240,20 +2251,38 @@
       "The amount due has changed. Please try again.": [
         "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
+      "The email addresses do not match": [
+        "Az e-mail címek nem egyeznek"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
       "The passphrases do not match": [
         "A kulcsszövegek nem egyeznek meg"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
       "Unknown payment token status": [
         "Ismeretlen fizetési token állapot"
+      ],
+      "Username must begin with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
+      ],
+      "Username must end with a letter or digit": [
+        "Felhasználónévnek betűvel vagy számmal kell végződnie"
       ],
       "ZIP code is required": [
         "Irányítószám szükséges"
@@ -2919,21 +2948,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "A következő számlázási időpont: ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A következő számlázási dátum ${ renewalTime }. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálattal, ha azonnali csomagváltásra van szüksége."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -3435,10 +3454,6 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
-      ],
-      "${ options }-day file version history": [
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin élettartam"
@@ -4313,20 +4328,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }-t nem tartalmazza: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% adó nélkül: ${ taxAmount }"
-      ],
       "Got it": [
         "Értem."
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }-t tartalmaz: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% adót tartalmaz: ${ taxAmount }"
       ],
       "MM/YY": [
         "HH/ÉÉ"
@@ -4345,9 +4348,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
-      ],
-      "Taxes": [
-        "Adók"
       ],
       "terms and conditions": [
         "felhasználási feltételek"
@@ -4381,9 +4381,6 @@
       ],
       "Timeout exceeded": [
         "Időtúllépés"
-      ],
-      "VAT": [
-        "ÁFA"
       ],
       "VAT number": [
         "Áfa-szám"
@@ -4559,9 +4556,6 @@
       "Thomas": [
         "Tamás"
       ],
-      "VAT number": [
-        "Áfa-szám"
-      ],
       "Your organization name": [
         "A szervezet neve"
       ],
@@ -4572,6 +4566,12 @@
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     },
     "plus_block": {
@@ -4824,17 +4824,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Elveszíti a hozzáférést korlátlan számú bejelentkezéshez és jegyzethez, korlátlan ide-my-email e-mail álnevekhez, 20 tárolóhoz és az elsőbbségi támogatáshoz."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Kétéves számlázás"
-      ],
-      "Billed monthly": [
-        "Havonta számlázva"
-      ],
-      "Billed yearly": [
-        "Éves számlázás"
       ]
     },
     "Subscription attribute": {
@@ -5322,6 +5311,16 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "VPN Plan Feature": {

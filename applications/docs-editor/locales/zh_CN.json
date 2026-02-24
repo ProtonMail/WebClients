@@ -680,19 +680,413 @@
         "文本"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "所有工作表"
+      ],
+      "New sheet": [
+        "新建工作表"
+      ]
+    },
     "sheets_2025:Color picker": {
+      "Recent colors": [
+        "最近使用的颜色"
+      ],
       "Reset": [
         "重置"
+      ],
+      "Standard colors": [
+        "标准色"
+      ],
+      "Theme colors": [
+        "主题颜色"
       ]
     },
     "sheets_2025:Range selector menu": {
       "Add new": [
-        "新建"
+        "新增"
+      ],
+      "Named ranges": [
+        "命名范围"
+      ],
+      "Sheets": [
+        "工作表"
+      ],
+      "Tables": [
+        "表格"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "更改颜色"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Duplicate": [
+        "复制"
+      ],
+      "Hide sheet": [
+        "隐藏工作表"
+      ],
+      "Move left": [
+        "左移"
+      ],
+      "Move right": [
+        "右移"
+      ],
+      "Rename": [
+        "重命名"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "所有框线"
+      ],
+      "Bottom border": [
+        "下边框"
+      ],
+      "Dashed": [
+        "虚线"
+      ],
+      "Dotted": [
+        "虚线"
+      ],
+      "Double": [
+        "双线"
+      ],
+      "Horizontal borders": [
+        "水平边框"
+      ],
+      "Inner borders": [
+        "内边框"
+      ],
+      "Left border": [
+        "左边框"
+      ],
+      "No borders": [
+        "无边框"
+      ],
+      "Outer borders": [
+        "外边框"
+      ],
+      "Right border": [
+        "右边框"
+      ],
+      "Solid": [
+        "实线"
+      ],
+      "Solid medium": [
+        "中等实线"
+      ],
+      "Solid thick": [
+        "粗实线"
+      ],
+      "Top border": [
+        "上边框"
+      ],
+      "Vertical borders": [
+        "垂直边框"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "错误"
+      ],
+      "Invalid": [
+        "无效"
+      ],
+      "Note": [
+        "备注"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "AI 快速编辑"
+      ],
+      "Auto fit to data": [
+        "自动调整以适应数据"
+      ],
+      "Cell value": [
+        "单元格值"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Clear content": [
+        "清除内容"
+      ],
+      "Clear formatting": [
+        "清除格式"
+      ],
+      "Comma": [
+        "逗号"
+      ],
+      "Conditional format": [
+        "条件格式"
+      ],
+      "Convert to range": [
+        "转换为区域"
+      ],
+      "Convert to table": [
+        "转换为表格"
+      ],
+      "Copy": [
+        "复制"
+      ],
+      "Create a filter": [
+        "创建筛选器"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Data validation": [
+        "数据验证"
+      ],
+      "Define named range": [
+        "定义命名范围"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Delete cells and shift cells left": [
+        "删除单元格并将右侧单元格左移"
+      ],
+      "Delete cells and shift cells up": [
+        "删除单元格并将下方单元格上移"
+      ],
+      "Delete column": [
+        "删除列"
+      ],
+      "Delete row": [
+        "删除行"
+      ],
+      "Delete table column": [
+        "删除表格列"
+      ],
+      "Delete table row": [
+        "删除表格行"
+      ],
+      "Edit table": [
+        "编辑表格"
+      ],
+      "Filter": [
+        "筛选器"
+      ],
+      "Formatting only": [
+        "仅设置格式"
+      ],
+      "Formula only": [
+        "仅公式"
+      ],
+      "Freeze up to column": [
+        "冻结至列"
+      ],
+      "Freeze up to row": [
+        "冻结至行"
+      ],
+      "Hide column": [
+        "隐藏列"
+      ],
+      "Hide row": [
+        "隐藏行"
+      ],
+      "Insert cells and shift cells down": [
+        "插入单元格并将现有单元格下移"
+      ],
+      "Insert cells and shift cells right": [
+        "插入单元格并将现有单元格右移"
+      ],
+      "Insert link": [
+        "插入链接"
+      ],
+      "Insert note": [
+        "插入备注"
+      ],
+      "Insert table column to the left": [
+        "在左侧插入表格列"
+      ],
+      "Insert table column to the right": [
+        "在右侧插入表格列"
+      ],
+      "Insert table row": [
+        "插入表格行"
+      ],
+      "Link only": [
+        "仅链接"
+      ],
+      "More cell actions": [
+        "更多单元格操作"
+      ],
+      "Paste": [
+        "粘贴"
+      ],
+      "Paste special": [
+        "选择性粘贴"
+      ],
+      "Period": [
+        "期间"
+      ],
+      "Pipe": [
+        "竖线"
+      ],
+      "Remove filter": [
+        "清除筛选器"
+      ],
+      "Resize column": [
+        "调整列宽"
+      ],
+      "Resize row": [
+        "调整行高"
+      ],
+      "Semicolon": [
+        "分号"
+      ],
+      "Sort": [
+        "排序"
+      ],
+      "Sort range A → Z": [
+        "按范围排序 (从 A 到 Z)"
+      ],
+      "Sort range Z → A": [
+        "按范围排序 (从 Z 到 A)"
+      ],
+      "Sort sheet A to Z": [
+        "按工作表排序 (从 A 到 Z)"
+      ],
+      "Sort sheet Z to A": [
+        "按工作表排序 (从 Z 到 A)"
+      ],
+      "Space": [
+        "空格"
+      ],
+      "Table": [
+        "表格"
+      ],
+      "Transposed": [
+        "转置"
+      ],
+      "Unfreeze columns": [
+        "取消冻结列"
+      ],
+      "Unfreeze rows": [
+        "取消冻结行"
+      ],
+      "Values only": [
+        "仅数值"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } 列"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } 行"
+      ],
+      "above": [
+        "上方"
+      ],
+      "below": [
+        "下方"
+      ],
+      "Insert": [
+        "插入"
+      ],
+      "left": [
+        "左对齐"
+      ],
+      "right": [
+        "右对齐"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "确定要删除 ${ sheetName } 吗？"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Delete": [
+        "删除"
+      ],
+      "Delete sheet": [
+        "删除工作表"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "移动端编辑即将推出"
+      ],
+      "Screen too small for editing": [
+        "屏幕太小，无法编辑"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "我们正在努力为您尽快带来此功能。目前，电子表格只能在桌面设备上编辑。"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "您的屏幕太小，无法编辑此电子表格。您当前处于仅查看模式。如需进行更改，请在更大的屏幕上打开此电子表格或展开浏览器窗口。"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "无法删除所有列"
+      ],
+      "Cannot delete all rows": [
+        "无法删除所有行"
+      ],
+      "Find in sheet": [
+        "在工作表中查找"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "全部合并"
+      ],
+      "Merge cells": [
+        "合并单元格"
+      ],
+      "Merge horizontally": [
+        "水平合并"
+      ],
+      "Merge vertically": [
+        "垂直合并"
+      ],
+      "Unmerge": [
+        "取消合并"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "创建筛选器"
+      ],
+      "Data validation": [
+        "数据验证"
+      ],
+      "Protect range": [
+        "保护范围"
+      ],
+      "Remove filter": [
+        "清除筛选器"
+      ],
+      "Sort sheet": [
+        "按排序列工作表"
+      ],
+      "Unlock range": [
+        "解锁范围"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
-        "(按名称排序)"
+        "(从 A 到 Z)"
+      ],
+      "(Z to A)": [
+        "(从 Z 到 A)"
+      ],
+      "column ${ columnLetter }": [
+        "列 ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "按排序列工作表"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -702,17 +1096,41 @@
       "Cut": [
         "剪切"
       ],
+      "Find": [
+        "查找"
+      ],
+      "Formatting only": [
+        "仅设置格式"
+      ],
+      "Formula only": [
+        "仅公式"
+      ],
+      "Link only": [
+        "仅链接"
+      ],
       "Paste": [
         "粘贴"
+      ],
+      "Paste special": [
+        "选择性粘贴"
       ],
       "Redo": [
         "重做"
       ],
+      "Transposed": [
+        "转置"
+      ],
       "Undo": [
         "撤销"
+      ],
+      "Values only": [
+        "仅数值"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "逗号分隔值 (.csv)"
+      ],
       "Download": [
         "下载"
       ],
@@ -728,11 +1146,17 @@
       "Make a copy": [
         "创建副本"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "Move to folder": [
-        "移动至文件夹"
+        "移动到文件夹"
       ],
       "Move to trash": [
         "移至回收站"
+      ],
+      "New document": [
+        "新建文档"
       ],
       "New spreadsheet": [
         "新建电子表格"
@@ -740,11 +1164,26 @@
       "Open ${ DRIVE_APP_NAME }": [
         "打开 ${ DRIVE_APP_NAME }"
       ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument 电子表格 (.ods) （测试版）"
+      ],
       "Print": [
         "打印"
       ],
       "See version history": [
-        "查看版本历史"
+        "查看版本历史记录"
+      ],
+      "Settings": [
+        "设置"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "制表符分隔值 (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "切换调试模式"
+      ],
+      "View recent spreadsheets": [
+        "查看最近的电子表格"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -752,13 +1191,22 @@
         "对齐方式"
       ],
       "Bold": [
-        "粗体"
+        "加粗"
+      ],
+      "Cell styles": [
+        "单元格样式"
       ],
       "Clear": [
-        "清空"
+        "清除"
+      ],
+      "Clear content": [
+        "清除内容"
       ],
       "Clear formatting": [
         "清除格式"
+      ],
+      "Conditional formatting": [
+        "条件格式"
       ],
       "Font size": [
         "字号"
@@ -766,8 +1214,14 @@
       "Italic": [
         "斜体"
       ],
+      "Number": [
+        "数字"
+      ],
       "Strikethrough": [
         "删除线"
+      ],
+      "Table formatting": [
+        "表格格式"
       ],
       "Text": [
         "文本"
@@ -777,28 +1231,104 @@
       ],
       "Underline": [
         "下划线"
+      ],
+      "Wrapping": [
+        "换行"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "底部"
+      ],
       "Center": [
         "居中"
+      ],
+      "Left": [
+        "左对齐"
+      ],
+      "Middle": [
+        "居中"
+      ],
+      "Right": [
+        "右对齐"
+      ],
+      "Top": [
+        "顶部"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "截断"
+      ],
+      "Overflow": [
+        "溢出"
+      ],
+      "Wrap": [
+        "换行"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "单元格"
+      ],
+      "Chart": [
+        "图表"
+      ],
       "Checkbox": [
         "复选框"
       ],
+      "Columns": [
+        "列"
+      ],
+      "Dropdown": [
+        "下拉菜单"
+      ],
       "Function": [
-        "功能"
+        "函数"
       ],
       "Image": [
         "图片"
+      ],
+      "Insert cells and shift down": [
+        "插入单元格并将现有单元格下移"
+      ],
+      "Insert cells and shift right": [
+        "插入单元格并将现有单元格右移"
       ],
       "Link": [
         "链接"
       ],
       "Note": [
-        "注释"
+        "备注"
+      ],
+      "Rows": [
+        "行"
+      ],
+      "Sheet": [
+        "工作表"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } 列"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } 行"
+      ],
+      "above": [
+        "上方"
+      ],
+      "below": [
+        "下方"
+      ],
+      "Insert": [
+        "插入"
+      ],
+      "left": [
+        "左对齐"
+      ],
+      "right": [
+        "右对齐"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -806,7 +1336,7 @@
         "数据"
       ],
       "Edit": [
-        "更改"
+        "编辑"
       ],
       "File": [
         "文件"
@@ -822,6 +1352,15 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "编辑栏"
+      ],
+      "Freeze": [
+        "冻结"
+      ],
+      "Gridlines": [
+        "网格线"
+      ],
       "Show": [
         "显示"
       ],
@@ -829,43 +1368,151 @@
         "缩放"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "列 ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "第 ${ rowNumber } 行"
+      ],
+      "Up to": [
+        "上限为"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "隐藏的工作表"
+      ]
+    },
     "sheets_2025:Spreadsheet editor number formats menu": {
       "$ US Dollar": [
         "$ 美元"
       ],
+      "Accounting": [
+        "会计"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ 人民币"
+      ],
       "Currency": [
         "货币"
+      ],
+      "Currency rounded": [
+        "货币 (取整)"
+      ],
+      "Custom currency": [
+        "自定义货币"
+      ],
+      "Custom number format": [
+        "自定义数字格式"
       ],
       "Date": [
         "日期"
       ],
+      "Date time": [
+        "日期时间"
+      ],
       "Duration": [
         "时长"
       ],
+      "Financial": [
+        "财务"
+      ],
       "General": [
-        "全局"
+        "常规"
+      ],
+      "Long date": [
+        "长日期"
+      ],
+      "More currency": [
+        "更多货币"
+      ],
+      "Number": [
+        "数字"
+      ],
+      "Percent": [
+        "百分比"
       ],
       "Plain text": [
         "纯文本"
       ],
+      "Scientific": [
+        "科学计数"
+      ],
       "Time": [
         "时间"
       ],
+      "£ Pound": [
+        "£ 英镑"
+      ],
+      "¥ Yen": [
+        "¥ 日元"
+      ],
       "€ Euro": [
         "€ 欧元"
+      ],
+      "₹ Rupee": [
+        "₹ 卢比"
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
       "Close": [
         "关闭"
+      ],
+      "Go to next": [
+        "转到下一个"
+      ],
+      "Go to previous": [
+        "转到上一个"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "自动"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Locale": [
+        "区域设置"
+      ],
+      "Save and reload": [
+        "保存并重新加载"
+      ],
+      "Settings for this spreadsheet": [
+        "此电子表格的设置"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "这会影响函数、日期和货币等格式细节"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
-        "粗体"
+        "加粗"
+      ],
+      "Border": [
+        "边框"
       ],
       "Clear formatting": [
         "清除格式"
+      ],
+      "Create a filter": [
+        "创建筛选器"
+      ],
+      "Decrease decimal places": [
+        "减少小数位数"
+      ],
+      "Decrease font size": [
+        "减小字号"
+      ],
+      "Default (${ defaultFont })": [
+        "默认 (${ defaultFont })"
+      ],
+      "Fill color": [
+        "填充颜色"
+      ],
+      "Find": [
+        "查找"
       ],
       "Font": [
         "字体"
@@ -873,17 +1520,56 @@
       "Font size": [
         "字号"
       ],
+      "Format as currency": [
+        "格式化为货币"
+      ],
+      "Format as percent": [
+        "格式化为百分比"
+      ],
+      "Horizontal align": [
+        "水平对齐"
+      ],
+      "Increase decimal places": [
+        "增加小数位数"
+      ],
+      "Increase font size": [
+        "增大字号"
+      ],
+      "Insert chart": [
+        "插入图表"
+      ],
+      "Insert function": [
+        "插入函数"
+      ],
       "Insert link": [
         "插入链接"
+      ],
+      "Insert note": [
+        "插入备注"
       ],
       "Italic": [
         "斜体"
       ],
+      "Merge cells": [
+        "合并单元格"
+      ],
       "More": [
         "更多"
       ],
+      "More formats": [
+        "更多格式"
+      ],
+      "Paint format": [
+        "格式刷"
+      ],
       "Redo": [
         "重做"
+      ],
+      "Remove filter": [
+        "清除筛选器"
+      ],
+      "Select merge type": [
+        "选择合并类型"
       ],
       "Strikethrough": [
         "删除线"
@@ -891,14 +1577,67 @@
       "Text color": [
         "文本颜色"
       ],
+      "Text wrapping": [
+        "文本换行"
+      ],
       "Underline": [
         "下划线"
       ],
       "Undo": [
         "撤销"
       ],
+      "Unmerge cells": [
+        "取消合并单元格"
+      ],
+      "Vertical align": [
+        "垂直对齐"
+      ],
       "Zoom": [
         "缩放"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "应用"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Clear": [
+        "清除"
+      ],
+      "Copy": [
+        "复制"
+      ],
+      "Delete table column": [
+        "删除表格列"
+      ],
+      "Enter value": [
+        "输入值"
+      ],
+      "Filter by condition": [
+        "按条件筛选"
+      ],
+      "Filter by value": [
+        "按值筛选"
+      ],
+      "Insert 1 table column left": [
+        "在左侧插入 1 个表格列"
+      ],
+      "Insert 1 table column right": [
+        "在右侧插入 1 个表格列"
+      ],
+      "Paste": [
+        "粘贴"
+      ],
+      "Select all": [
+        "全选"
+      ],
+      "Sort A → Z": [
+        "升序排序"
+      ],
+      "Sort Z → A": [
+        "降序排序"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -925,8 +1664,413 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
+      "Link removed": [
+        "链接已移除"
+      ],
       "Remove link": [
         "移除链接"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "取消"
+      ],
+      "column": [
+        "列"
+      ],
+      "column width": [
+        "列宽"
+      ],
+      "Default": [
+        "默认"
+      ],
+      "OK": [
+        "确定"
+      ],
+      "row": [
+        "行"
+      ],
+      "row height": [
+        "行高"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "对齐方式"
+      ],
+      "Bold": [
+        "加粗"
+      ],
+      "Border": [
+        "边框"
+      ],
+      "Border style": [
+        "边框样式"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Choose Category": [
+        "选择类别"
+      ],
+      "Color": [
+        "颜色"
+      ],
+      "Currency Symbol": [
+        "货币符号"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Decimal places": [
+        "小数位数"
+      ],
+      "Effects": [
+        "效果"
+      ],
+      "Font": [
+        "字体"
+      ],
+      "Font size": [
+        "字号"
+      ],
+      "Format cells": [
+        "设置单元格格式"
+      ],
+      "General": [
+        "常规"
+      ],
+      "Horizontal Alignment": [
+        "水平对齐"
+      ],
+      "Indent": [
+        "增加缩进"
+      ],
+      "Italic": [
+        "斜体"
+      ],
+      "Merge": [
+        "合并"
+      ],
+      "Merge all": [
+        "全部合并"
+      ],
+      "Merge horizontally": [
+        "水平合并"
+      ],
+      "Merge vertically": [
+        "垂直合并"
+      ],
+      "Number": [
+        "数字"
+      ],
+      "Overflow": [
+        "溢出"
+      ],
+      "Preview": [
+        "预览"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Strikethrough": [
+        "删除线"
+      ],
+      "Text control": [
+        "文本控制"
+      ],
+      "Thousands separator": [
+        "千位分隔符"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "Underline": [
+        "下划线"
+      ],
+      "Unmerge": [
+        "取消合并"
+      ],
+      "Use 1000 Separator (,)": [
+        "使用千位分隔符 (,)"
+      ],
+      "Vertical Alignment": [
+        "垂直对齐"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "添加"
+      ],
+      "Aggregate": [
+        "聚合"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Chart data range": [
+        "图表数据范围"
+      ],
+      "Chart editor": [
+        "图表编辑器"
+      ],
+      "Chart title": [
+        "图表标题"
+      ],
+      "Chart type": [
+        "图表类型"
+      ],
+      "Enter title": [
+        "输入标题"
+      ],
+      "Horizontal (category) axis labels": [
+        "水平（类别）轴标签"
+      ],
+      "Horizontal axis title": [
+        "水平轴标题"
+      ],
+      "Name": [
+        "名称"
+      ],
+      "Range": [
+        "范围"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Select a range": [
+        "选择范围"
+      ],
+      "Series": [
+        "系列"
+      ],
+      "Show data in hidden rows and columns": [
+        "在隐藏的行与列中显示数据"
+      ],
+      "Value": [
+        "值"
+      ],
+      "Vertical axis title": [
+        "垂直轴标题"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "添加其他范围"
+      ],
+      "Add another rule": [
+        "添加其他规则"
+      ],
+      "Add rule": [
+        "添加规则"
+      ],
+      "Apply to range": [
+        "应用于范围"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "Color scale": [
+        "色阶"
+      ],
+      "Conditional formatting": [
+        "条件格式"
+      ],
+      "Delete range": [
+        "删除范围"
+      ],
+      "Delete rule": [
+        "删除规则"
+      ],
+      "Enter a formula": [
+        "输入公式"
+      ],
+      "Enter value": [
+        "输入值"
+      ],
+      "Format rules": [
+        "格式规则"
+      ],
+      "Format style": [
+        "格式样式"
+      ],
+      "Max point": [
+        "最大值点"
+      ],
+      "Max value": [
+        "最大值"
+      ],
+      "Mid point": [
+        "中点"
+      ],
+      "Min point": [
+        "最小值点"
+      ],
+      "Min value": [
+        "最小值"
+      ],
+      "None": [
+        "无"
+      ],
+      "Number": [
+        "数字"
+      ],
+      "Preview": [
+        "预览"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Select a range": [
+        "选择范围"
+      ],
+      "Single color": [
+        "单色"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "应用"
+      ],
+      "Apply to create a custom currency": [
+        "应用以创建自定义货币"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Currency symbol": [
+        "货币符号"
+      ],
+      "Custom currencies": [
+        "自定义货币"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "添加其他命名范围"
+      ],
+      "Add another range": [
+        "添加其他范围"
+      ],
+      "Add named range": [
+        "添加命名范围"
+      ],
+      "Allow blanks": [
+        "允许空白"
+      ],
+      "Apply to range": [
+        "应用于范围"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Data validation": [
+        "数据验证"
+      ],
+      "Delete data validation rule": [
+        "删除数据验证规则"
+      ],
+      "Enter a formula": [
+        "输入公式"
+      ],
+      "Enter value": [
+        "输入值"
+      ],
+      "Formula": [
+        "公式"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Select a range": [
+        "选择范围"
+      ],
+      "Validation rules": [
+        "验证规则"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "关闭"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "添加另一个命名范围"
+      ],
+      "Add named range": [
+        "添加命名范围"
+      ],
+      "Apply to range": [
+        "应用于范围"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Delete named range": [
+        "删除命名范围"
+      ],
+      "Enter a formula": [
+        "输入公式"
+      ],
+      "Enter text or formula": [
+        "输入文本或公式"
+      ],
+      "Name": [
+        "名称"
+      ],
+      "Name should not contain spaces": [
+        "名称不能包含空格"
+      ],
+      "Named Ranges": [
+        "命名范围"
+      ],
+      "Range": [
+        "范围"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Text or formula": [
+        "文本或公式"
+      ],
+      "Type": [
+        "类型"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "隔列带色"
+      ],
+      "Banded rows": [
+        "隔行带色"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Edit table": [
+        "编辑表格"
+      ],
+      "More settings": [
+        "更多设置"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Select a range": [
+        "选择范围"
+      ],
+      "Show filter button": [
+        "显示筛选按钮"
+      ],
+      "Table data range": [
+        "表格数据范围"
+      ],
+      "Table title": [
+        "表格标题"
       ]
     },
     "Title": {

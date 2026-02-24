@@ -1,0 +1,1562 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "vi_VN"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "Xác thực"
+      ],
+      "Cancel": [
+        "Hủy"
+      ],
+      "Change password": [
+        "Thay đổi mật khẩu"
+      ],
+      "Close": [
+        "Đóng"
+      ],
+      "Continue": [
+        "Tiếp tục"
+      ],
+      "Dismiss": [
+        "Bỏ qua"
+      ],
+      "Edit email address": [
+        "Chỉnh sửa địa chỉ email"
+      ],
+      "Edit phone number": [
+        "Chỉnh sửa số điện thoại"
+      ],
+      "Edit sign-in details": [
+        "Chỉnh sửa chi tiết đăng nhập"
+      ],
+      "Forgot password?": [
+        "Quên mật khẩu?"
+      ],
+      "Get verification code": [
+        "Lấy mã xác thực"
+      ],
+      "More info: ${ safeTitle }": [
+        "Thông tin thêm: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "Làm mới trang"
+      ],
+      "Request new code": [
+        "Yêu cầu mã mới"
+      ],
+      "Resend code": [
+        "Gửi lại mã"
+      ],
+      "Search countries": [
+        "Tìm quốc gia"
+      ],
+      "Try another method": [
+        "Thử một cách khác"
+      ],
+      "Use authentication code": [
+        "Sử dụng mã xác thực"
+      ],
+      "Use recovery code": [
+        "Sử dụng mã khôi phục"
+      ],
+      "Verify": [
+        "Xác minh"
+      ],
+      "Verify account": [
+        "Xác minh tài khoản"
+      ],
+      "View invoice": [
+        "Xem hóa đơn"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Ứng dụng ${ MAIL_APP_NAME } trên máy tính để bàn"
+      ],
+      "Use your own email domain": [
+        "Sử dụng miền email của riêng bạn"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Lưu trữ đám mây và chia sẻ cho các tệp lớn"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhazia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albani"
+      ],
+      "Algeria": [
+        "Angiêri"
+      ],
+      "American Samoa": [
+        "Samoa thuộc Mỹ"
+      ],
+      "Andorra": [
+        "Anđorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Nam Cực"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua và Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Argentina"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Đảo Ascension"
+      ],
+      "Australia": [
+        "Úc"
+      ],
+      "Austria": [
+        "Áo"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbađos"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Bỉ"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bôlivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius và Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia and Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Đảo Bouvet"
+      ],
+      "Brazil": [
+        "Brazil"
+      ],
+      "British Indian Ocean Territory": [
+        "Lãnh thổ Ấn Độ Dương thuộc Anh"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgari"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Campuchia"
+      ],
+      "Cameroon": [
+        "Cameroon"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Cape Verde"
+      ],
+      "Cayman Islands": [
+        "Quần đảo Cayman"
+      ],
+      "Central African Republic": [
+        "Cộng hòa Trung Phi"
+      ],
+      "Chad": [
+        "Chad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Trung Quốc"
+      ],
+      "Christmas Island": [
+        "Đảo Giáng Sinh"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Quần đảo Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Cộng hòa Dân chủ Congo"
+      ],
+      "Cook Islands": [
+        "Quần đảo Cook"
+      ],
+      "Costa Rica": [
+        "Cốsta Rica"
+      ],
+      "Croatia": [
+        "Croatia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cộng hoà Síp"
+      ],
+      "Czech Republic": [
+        "Cộng hòa Séc"
+      ],
+      "Côte d'Ivoire": [
+        "Bờ Biển Ngà"
+      ],
+      "Denmark": [
+        "Đan Mạch"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Đôminica"
+      ],
+      "Dominican Republic": [
+        "Cộng hòa Đôminican"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Ai Cập"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ghinê Xích Đạo"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Ethiopia"
+      ],
+      "Falkland Islands": [
+        "Quần đảo Falkland"
+      ],
+      "Faroe Islands": [
+        "Quần đảo Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "Liên bang Micronesia"
+      ],
+      "Fiji": [
+        "Cộng hòa Fiji"
+      ],
+      "Finland": [
+        "Phần Lan"
+      ],
+      "France": [
+        "Pháp"
+      ],
+      "French Guiana": [
+        "Guyane thuộc Pháp"
+      ],
+      "French Polynesia": [
+        "Polynesia thuộc Pháp"
+      ],
+      "French Southern Territories": [
+        "Vùng đất phía Nam thuộc Pháp"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gămbia"
+      ],
+      "Georgia": [
+        "Gruzia"
+      ],
+      "Germany": [
+        "Đức"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Hy Lạp"
+      ],
+      "Greenland": [
+        "Greenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Ghinê"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Đảo Heard và quần đảo McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Tòa Thánh (Thành quốc Vatican)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hồng Kông"
+      ],
+      "Hungary": [
+        "Hungary"
+      ],
+      "Iceland": [
+        "Iceland"
+      ],
+      "India": [
+        "Ấn Độ"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Quốc Tế"
+      ],
+      "Iran": [
+        "I-ran"
+      ],
+      "Iraq": [
+        "I-rắc"
+      ],
+      "Ireland": [
+        "Ireland"
+      ],
+      "Isle of Man": [
+        "Đảo Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Ý"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Nhật Bản"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kadắcstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kyrgyzstan"
+      ],
+      "Laos": [
+        "Lào"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Libăng"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Líchtenstên"
+      ],
+      "Lithuania": [
+        "Lithuania"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldives"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Quần đảo Marshall"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Môritani"
+      ],
+      "Mauritius": [
+        "Môrixơ"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mông Cổ"
+      ],
+      "Montenegro": [
+        "Môntênêgrô"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Ma-rốc"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Myanmar": [
+        "Miến Điện"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Hà Lan"
+      ],
+      "New Caledonia": [
+        "New Caledonia"
+      ],
+      "New Zealand": [
+        "New Zealand"
+      ],
+      "Nicaragua": [
+        "Nicaragoa"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Đảo Norfolk"
+      ],
+      "North Korea": [
+        "Triều Tiên"
+      ],
+      "North Macedonia": [
+        "Bắc Macedonia"
+      ],
+      "Northern Mariana Islands": [
+        "Quần đảo Bắc Mariana"
+      ],
+      "Norway": [
+        "Na Uy"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palétstin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua New Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Philippin"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Ba Lan"
+      ],
+      "Portugal": [
+        "Bồ Đào Nha"
+      ],
+      "Puerto Rico": [
+        "Puertô Ricô"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Rêunion"
+      ],
+      "Romania": [
+        "Rômania"
+      ],
+      "Russia": [
+        "Nga"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthêlemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts và Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Phần thuộc Pháp)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint-Pierre và Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent và Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marinô"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome và Principe"
+      ],
+      "Saudi Arabia": [
+        "Ả Rập Xê Út"
+      ],
+      "Senegal": [
+        "Sênêgal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slôvenia"
+      ],
+      "Solomon Islands": [
+        "Quần đảo Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Nam Phi"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Nam Georgia và Quần đảo Nam Sandwich"
+      ],
+      "South Korea": [
+        "Hàn Quốc"
+      ],
+      "South Ossetia": [
+        "Nam Ossetia"
+      ],
+      "South Sudan": [
+        "Nam Sudan"
+      ],
+      "Spain": [
+        "Tây Ban Nha"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard và Jan Mayen"
+      ],
+      "Sweden": [
+        "Thụy Điển"
+      ],
+      "Switzerland": [
+        "Thụy Sĩ"
+      ],
+      "Syria": [
+        "Syria"
+      ],
+      "Taiwan": [
+        "Đài Loan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thái Lan"
+      ],
+      "Timor-Leste": [
+        "Đông Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Triniđát và Tôbagô"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Thổ Nhĩ Kỳ"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks và Quần đảo Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Ả Rập Thống Nhất"
+      ],
+      "United Kingdom": [
+        "Vương quốc Anh"
+      ],
+      "United States": [
+        "Hoa Kỳ"
+      ],
+      "United States Minor Outlying Islands": [
+        "Các tiểu đảo xa của Hoa Kỳ"
+      ],
+      "Uruguay": [
+        "Urugoay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Việt Nam"
+      ],
+      "Virgin Islands, British": [
+        "Virgin (Quần đảo, Anh)"
+      ],
+      "Virgin Islands, U.S.": [
+        "Virgin (Quần đảo, Hoa Kỳ)"
+      ],
+      "Wallis and Futuna": [
+        "Wallis và Futuna"
+      ],
+      "Western Sahara": [
+        "Tây Sahara"
+      ],
+      "Yemen": [
+        "Yêmen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Quần đảo Åland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Hóa đơn quá hạn"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Miền không khả dụng, vui lòng thử lại sau"
+      ],
+      "Email is not valid": [
+        "Email không hợp lệ"
+      ],
+      "Enter 6 digits": [
+        "Nhập 6 chữ số"
+      ],
+      "Incorrect username": [
+        "Sai tên người dùng"
+      ],
+      "Invalid verification code": [
+        "Mã xác thực không hợp lệ"
+      ],
+      "Not a valid number": [
+        "Số không hợp lệ"
+      ],
+      "Passwords do not match": [
+        "Mật khẩu không khớp"
+      ],
+      "Request timed out": [
+        "Yêu cầu đã hết hạn"
+      ],
+      "The email addresses do not match": [
+        "Địa chỉ email không giống nhau"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Trường này vượt quá giới hạn ${ maximumLength } kí tự"
+      ],
+      "This field is required": [
+        "Trường này là bắt buộc"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Trường này yêu cầu tối thiểu ${ minimumLength } ký tự."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Hãy thử chỉ sử dụng chữ cái, số và _.-"
+      ],
+      "Unknown error": [
+        "Lỗi không xác định"
+      ],
+      "Username must begin with a letter or digit": [
+        "Tên người dùng phải bắt đầu bằng chữ hoặc số"
+      ],
+      "Username must end with a letter or digit": [
+        "Tên người dùng phải kết thúc bằng chữ hoặc số"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "Lỗi: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "Vui lòng làm mới trang hoặc thử lại sau."
+      ],
+      "Something went wrong": [
+        "Đã xảy ra sự cố"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Không thể tải trang này. Vui lòng làm mới trang hoặc kiểm tra kết nối internet."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Có lỗi xảy ra khi xác thực với khóa bảo mật. Vui lòng thử lại."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Chèn khóa bảo mật liên kết với Tài khoản ${ BRAND_NAME }"
+      ],
+      "Security key": [
+        "Khóa bảo mật"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Khóa bảo mật"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Mặc định hệ thống"
+      ],
+      "Theme font": [
+        "Phông chữ chủ đề"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Lớn"
+      ],
+      "Medium (recommended)": [
+        "Trung bình (khuyên dùng)"
+      ],
+      "Small": [
+        "Nhỏ"
+      ],
+      "Very large": [
+        "Rất lớn"
+      ],
+      "Very small": [
+        "Rất nhỏ"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Sổ tay"
+      ],
+      "No verification method available": [
+        "Không có phương thức xác thực khả dụng"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Một số điện thoại chỉ có thể được sử dụng để xác minh một tài khoản ${ BRAND_NAME }"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Trước khi yêu cầu mã xác minh mới, hãy kiểm tra thư mục thư rác và đảm bảo rằng ${ strong } là địa chỉ chính xác."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Nhấn \"Yêu cầu mã mới\" để lấy mã xác thực mới được gửi tới ${ strong }. Nếu số điện thoại này chưa đúng, nhấn \"Chỉnh sửa\" để sửa cho đúng."
+      ],
+      "Country code": [
+        "Mã quốc gia"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Việc tạo nhiều tài khoản miễn phí không được phép theo ${ termsLink } của chúng tôi."
+      ],
+      "Each code can only be used once": [
+        "Mỗi mã chỉ có thể được sử dụng một lần"
+      ],
+      "Edit email address": [
+        "Chỉnh sửa địa chỉ email"
+      ],
+      "Enter the code from your authenticator app": [
+        "Nhập mã từ ứng dụng xác thực của bạn"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Số ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Nhập mật khẩu của chính bạn (với tư cách là quản trị viên tổ chức)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Nhập mật khẩu của chính bạn (với tư cách liên hệ tin cậy)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Để biết thêm thông tin và xóa các hạn chế, vui lòng đăng nhập tại ${ mailLink }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Nếu bạn đang gặp khó khăn trong việc tạo tài khoản, vui lòng yêu cầu một lời mời và chúng tôi sẽ hồi đáp trong một ngày làm việc."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Nếu cho rằng chúng tôi đã nhầm lẫn, vui lòng ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Nếu bạn không thấy thư điện tử đó trong hộp thư, vui lòng kiểm tra thư mục thư rác."
+      ],
+      "Internet connection lost": [
+        "Kết nối internet bị lỗi"
+      ],
+      "Learn more": [
+        "Tìm hiểu thêm"
+      ],
+      "Loading": [
+        "Đang tải"
+      ],
+      "No results found": [
+        "Không tìm thấy kết quả nào"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Máy chủ không thể truy cập được. Vui lòng thử lại sau vài phút"
+      ],
+      "Session timed out": [
+        "Phiên hết hạn"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Để chống lại thư rác và lạm dụng, vui lòng xác thực rằng bạn là con người."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Để xóa các hạn chế, có thể nâng cấp lên gói trả phí."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "Chúng tôi có các gói được thiết kế riêng cho những người dùng cần nhiều hơn một địa chỉ email như bạn."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Chúng tôi sẽ gửi mã xác minh mới đến ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Khi bạn thiết lập xác thực hai yếu tố, chúng tôi sẽ cung cấp mã khôi phục bạn có thể sử dụng để đăng nhập nếu bạn mất quyền truy cập vào ứng dụng xác thực của mình."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Bạn có muốn nhận một mã xác thực mới hoặc sử dụng một cách xác thực khác không?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Bạn có muốn nhận mã xác minh mới không?"
+      ],
+      "You can now return to the application to continue": [
+        "Bây giờ có thể quay lại ứng dụng để tiếp tục"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Tài khoản ${ BRAND_NAME } hiện đang bị tạm ngưng. Sau 28 ngày, email sẽ không còn được gửi đến hộp thư đến nữa, các liên kết chia sẻ Drive sẽ bị chặn và bạn sẽ không thể tải lên tệp mới. Để tiếp tục dịch vụ bình thường, vui lòng thanh toán mọi hóa đơn quá hạn."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Thư điện tử của bạn sẽ chỉ được dùng cho xác thực một-lần này."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Số điện thoại của bạn sẽ chỉ được dùng cho xác thực một-lần này."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "Ứng dụng xác thực"
+      ],
+      "Code is 6 digits without spaces": [
+        "Mã gồm 6 chữ số không có khoảng trắng"
+      ],
+      "Email address": [
+        "Địa chỉ email"
+      ],
+      "Hide password": [
+        "Ẩn mật khẩu"
+      ],
+      "Password": [
+        "Mật khẩu"
+      ],
+      "Phone number": [
+        "Số điện thoại"
+      ],
+      "Reveal password": [
+        "Hiện mật khẩu"
+      ],
+      "Verification code": [
+        "Mã xác thực"
+      ],
+      "Your password (admin)": [
+        "Mật khẩu (quản trị viên)"
+      ],
+      "Your password (trusted contact)": [
+        "Mật khẩu (liên hệ tin cậy)"
+      ]
+    },
+    "Link": {
+      "contact us": [
+        "liên hệ với chúng tôi"
+      ],
+      "Learn more": [
+        "Tìm hiểu thêm"
+      ],
+      "Request an invite": [
+        "Yêu cầu một lời mời"
+      ],
+      "terms of service": [
+        "điều khoản dịch vụ"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Giữ hộp thư đến ngăn nắp với các thư mục"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Nhận ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Trợ lý soạn thảo ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } custom email domain": [
+        "${ n } miền email tùy chỉnh"
+      ],
+      "${ n } email address": [
+        "${ n } địa chỉ email/biệt danh"
+      ],
+      "${ n } email address per user": [
+        "${ n } địa chỉ email/người dùng"
+      ],
+      "${ n } filter": [
+        "${ n } bộ lọc"
+      ],
+      "${ n } folder": [
+        "${ n } thư mục"
+      ],
+      "${ n } folder and label": [
+        "${ n } thư mục và nhãn"
+      ],
+      "${ n } label": [
+        "${ n } nhãn"
+      ],
+      "${ n } message per day": [
+        "${ n } thư mỗi ngày"
+      ],
+      "${ options }-day file version history": [
+        "Lịch sử phiên bản tệp trong ${ options } ngày"
+      ],
+      "${ size } attachment size": [
+        "Kích thước tập tin đính kèm ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } dung lượng lưu trữ bảo mật cho mỗi người dùng"
+      ],
+      "${ size } storage": [
+        "${ size } dung lượng lưu trữ"
+      ],
+      "${ size } storage per user": [
+        "${ size } dung lượng lưu trữ cho mỗi người dùng"
+      ],
+      "1 TB secure storage": [
+        "1 TB lưu trữ bảo mật"
+      ],
+      "10 email addresses/aliases": [
+        "10 địa chỉ email/biệt danh"
+      ],
+      "10 more premium features": [
+        "Thêm 10 tính năng cao cấp"
+      ],
+      "10-year file version history": [
+        "Lịch sử phiên bản tệp 10 năm"
+      ],
+      "15 GB storage": [
+        "15 GB dung lượng lưu trữ"
+      ],
+      "200 GB of storage": [
+        "200 GB dung lượng lưu trữ"
+      ],
+      "Advanced account protection": [
+        "Bảo vệ tài khoản nâng cao"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tất cả sản phẩm và tính năng của ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tất cả dịch vụ cơ bản của ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Tự động xóa Thư rác và Thùng rác"
+      ],
+      "Auto-reply": [
+        "Tự động trả lời"
+      ],
+      "Automatic email forwarding": [
+        "Tự động chuyển tiếp email"
+      ],
+      "Calendar sharing": [
+        "Chia sẻ lịch"
+      ],
+      "Catch-all": [
+        "Nhận tất cả"
+      ],
+      "Collaborate and share large files": [
+        "Cộng tác và chia sẻ các tệp lớn"
+      ],
+      "Contact groups": [
+        "Nhóm liên hệ"
+      ],
+      "Contact groups management": [
+        "Quản lý nhóm liên hệ"
+      ],
+      "Custom and secure business email": [
+        "Email doanh nghiệp tùy chỉnh và bảo mật"
+      ],
+      "Custom email domains": [
+        "Miền email tùy chỉnh"
+      ],
+      "Desktop app": [
+        "Ứng dụng cho máy tính để bàn"
+      ],
+      "Easy Switch import assistant": [
+        "Trợ lý nhập Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Hỗ trợ trình quản lý email (qua IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Nhóm email"
+      ],
+      "Encrypted contact details": [
+        "Chi tiết liên hệ đã mã hóa"
+      ],
+      "End-to-end encryption": [
+        "Mã hóa đầu cuối"
+      ],
+      "Generate emails with a prompt": [
+        "Tạo email bằng lời nhắc"
+      ],
+      "HTML signatures": [
+        "Chữ ký HTML"
+      ],
+      "Online document editor": [
+        "Trình chỉnh sửa tài liệu trực tuyến"
+      ],
+      "Password health": [
+        "Tình trạng mật khẩu"
+      ],
+      "Password-protected Emails": [
+        "Email được bảo vệ bằng mật khẩu"
+      ],
+      "Private photo backup": [
+        "Sao lưu ảnh riêng tư"
+      ],
+      "Proofread and refine your emails": [
+        "Soát lỗi và hoàn thiện email"
+      ],
+      "Quickly craft replies": [
+        "Soạn câu trả lời nhanh chóng"
+      ],
+      "Recover previous file versions": [
+        "Khôi phục các phiên bản tệp trước đó"
+      ],
+      "Save time emailing": [
+        "Tiết kiệm thời gian gửi email"
+      ],
+      "Schedule and snooze emails for any time": [
+        "Lên lịch và hoãn email bất cứ lúc nào"
+      ],
+      "Secure file storage and sharing": [
+        "Lưu trữ và chia sẻ tệp an toàn"
+      ],
+      "Share files with no size limit": [
+        "Chia sẻ tệp không giới hạn kích thước"
+      ],
+      "Short domain (@pm.me)": [
+        "Miền rút gọn (@pm.me)"
+      ],
+      "SMTP submission": [
+        "Gửi qua SMTP"
+      ],
+      "Support for up to 2 users": [
+        "Hỗ trợ tối đa 2 người dùng"
+      ],
+      "Sync and backup all your files across devices": [
+        "Đồng bộ và sao lưu tất cả các tệp trên các thiết bị"
+      ],
+      "Unlimited filters": [
+        "Không giới hạn bộ lọc"
+      ],
+      "Unlimited folders": [
+        "Không giới hạn thư mục"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Không giới hạn thư mục, nhãn dán và bộ lọc"
+      ],
+      "Unlimited labels": [
+        "Không giới hạn nhãn"
+      ],
+      "Unlimited messages per day": [
+        "Không giới hạn thư mỗi ngày"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Lên đến ${ totalStorageSize } dung lượng lưu trữ"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 miền email tùy chỉnh"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Tạo nhiều địa chỉ email cho danh tính trực tuyến, ví dụ: JohnShopper@${ domain } cho tài khoản mua sắm, JohnNews@${ domain2 } để đăng ký nhận tin tức"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Dung lượng lưu trữ được chia sẻ giữa ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } và ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Bảo vệ tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp đã mã hóa và hơn thế nữa."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Bảo vệ email bằng mã hóa đầu cuối. Bao gồm hỗ trợ cho miền email tùy chỉnh, 15 địa chỉ email, biệt danh hide-my-email không giới hạn và hơn thế nữa."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Truy cập ${ MAIL_APP_NAME } và ${ CALENDAR_APP_NAME } thuận tiện từ máy tính của bạn"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Các địa chỉ có đầy đủ khả năng gửi và nhận. Một người dùng có thể được gán nhiều địa chỉ; tuy nhiên, một địa chỉ duy nhất không thể được gán cho nhiều người dùng."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Cho phép thiết lập phản hồi tự động (tự động trả lời) cho các thư đến"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Tự động xóa các thư cũ hơn 30 ngày khỏi Thùng rác và Thư rác"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Tự động chuyển tiếp email gửi đến tài khoản ${ MAIL_APP_NAME } sang bất kỳ địa chỉ email nào khác."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Việc gửi email quảng cáo hoặc lập trình hàng loạt hiện không được hỗ trợ. Khuyến nghị sử dụng nhà cung cấp dịch vụ email chuyên dụng cho trường hợp này."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Chọn thời gian tùy chỉnh để được nhắc về email hoặc để thư đến"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Tạo nhiều địa chỉ email cho các danh tính trực tuyến, ví dụ: JohnShopper@${ domain } cho tài khoản mua sắm, JohnNews@${ domain } cho đăng ký tin tức"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Tạo tối đa ${ n } địa chỉ/biệt danh email để gán cho thành viên gia đình. Sử dụng chúng cho danh tính trực tuyến, ví dụ: JohnShopper@${ domain } cho các tài khoản mua sắm."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gửi email cho mọi người trong nhóm bằng một địa chỉ email duy nhất"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Đảm bảo nhận được tất cả email gửi đến miền, ngay cả khi địa chỉ email không tồn tại, không còn tồn tại hoặc bị lỗi đánh máy"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Hỗ trợ IMAP được giới hạn ở việc sử dụng các ứng dụng máy tính để bàn (ví dụ: Outlook, Apple Mail, Thunderbird) qua ${ MAIL_APP_NAME } Bridge. Các tích hợp IMAP dựa trên đám mây hiện không được hỗ trợ."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Nhãn là các thẻ đơn giản có thể thêm vào thư để tìm kiếm dễ dàng hơn hoặc để áp dụng bộ lọc"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Cá nhân hóa chữ ký email với logo, hình ảnh, biểu tượng mạng xã hội, liên kết đến chi tiết liên hệ và hơn thế nữa"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Ngăn chặn thư bị truy cập bởi ${ BRAND_NAME } hoặc bên thứ ba. Những người duy nhất có thể đọc thư là người gửi và người nhận dự kiến."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Nhanh chóng thiết lập thư vắng mặt"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Chuyển nhanh email, lịch hoặc liên hệ từ bất kỳ nhà cung cấp nào"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Bảo mật tệp bằng lưu trữ đám mây đã mã hóa. Bao gồm đồng bộ tự động, chia sẻ tệp đã mã hóa và hơn thế nữa."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Lưu trữ an toàn chi tiết liên hệ, chẳng hạn như số điện thoại, địa chỉ, sinh nhật và ghi chú cá nhân. Mã hóa không truy cập đảm bảo ngay cả ${ BRAND_NAME } cũng không thể truy cập các chi tiết đó."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Gửi email đến các nhóm lớn nhanh chóng và dễ dàng bằng cách tạo bao nhiêu nhóm liên hệ tùy ý (tối đa 100 liên hệ mỗi nhóm)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Thiết lập bộ lọc để tự động trả lời, sắp xếp và/hoặc gắn nhãn email"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Chia sẻ tệp hoặc thư mục với bất kỳ ai bằng các liên kết an toàn, có thể chia sẻ"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP cho phép các dịch vụ hoặc thiết bị của bên thứ 3 gửi email thông qua ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Dung lượng lưu trữ được chia sẻ trên ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } và ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Dung lượng lưu trữ được chia sẻ giữa ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, và ${ DRIVE_APP_NAME }. Quản trị viên có thể phân bổ lượng lưu trữ khác nhau cho người dùng trong tổ chức"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Dung lượng lưu trữ được chia sẻ giữa các người dùng trên ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } và ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Sử dụng các địa chỉ miền email tùy chỉnh riêng, ví dụ: you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Khi gửi cho người dùng ${ MAIL_APP_NAME } khác, mã hóa là tự động. Gửi cho người dùng không sử dụng ${ MAIL_APP_NAME_TWO } yêu cầu thiết lập mật khẩu trước khi gửi."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Cá nhân hóa nhiều hơn với 15 địa chỉ email và hỗ trợ 3 miền email tùy chỉnh"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Tăng không gian lưu trữ lên ${ bundleStorage } mỗi người dùng"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Tăng dung lượng lưu trữ lên tổng cộng ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Hỗ trợ cho ${ n } miền tùy chỉnh"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Mật khẩu"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tất cả tính năng cao cấp từ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Đăng nhập không thành công."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Dăng nhập"
+      ],
+      "Sign in to your organization": [
+        "Đăng nhập vào tổ chức "
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sẽ được chuyển hướng đến nhà cung cấp SSO bên thứ ba."
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Lưu trữ dữ liệu được tạo bởi ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } và ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Lên tới ${ totalStorageSize } dung lượng lưu trữ ổ đĩa"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Lên tới ${ totalStorageSize } dung lượng lưu trữ thư"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Đối với tất cả dịch vụ ${ BRAND_NAME }"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Mã được gửi tới ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Xác thực thành công"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Tài khoản bị hạn chế"
+      ],
+      "Account temporarily locked": [
+        "Tài khoản tạm thời bị khóa"
+      ],
+      "Enter your password": [
+        "Nhập mật khẩu"
+      ],
+      "Human verification": [
+        "Xác minh con người"
+      ],
+      "Invalid verification code": [
+        "Mã xác minh không hợp lệ"
+      ],
+      "Request new code": [
+        "Yêu cầu mã mới"
+      ],
+      "Two-factor authentication": [
+        "Xác thực hai yếu tố"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Mật khẩu phải có ít nhất ${ MIN_PASSWORD_LENGTH } ký tự"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Hãy thử đặt một tên người dùng ngắn hơn (tối đa${ n } ký tự)"
+      ]
+    }
+  }
+}

@@ -1114,11 +1114,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelja",
-        "${ ips } poslužitelja"
-      ],
       "${ price } per user": [
         "${ price } po korisniku"
       ],
@@ -1387,52 +1382,6 @@
         "Online uređivač dokumenata"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB prostora za pohranu"
-      ],
-      "3 TB data storage": [
-        "3 TB prostora za pohranu"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristup 15,000+ poslužitelja u 120+ država"
-      ],
-      "Access advanced AI models": [
-        "Pristup naprednim AI modelima"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke usluga ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ugrađeni 2FA autentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 uređaja istovremeno"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
-      ],
-      "Individual accounts for 6 users": [
-        "Individualni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individualni korisnički računi za Vas i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Jača zaštita od kibernetičkih prijetnji"
-      ],
-      "Unlimited daily chats": [
-        "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti Vaše uređaje i ubrzava Vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
-      ]
-    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatski se obnavlja na ${ subscriptionManagerName }"
@@ -1683,12 +1632,6 @@
     "Checkout summary": {
       "month": [
         "mjesec"
-      ],
-      "Servers": [
-        "Poslužitelji"
-      ],
-      "Users": [
-        "Korisnici"
       ]
     },
     "Collapsible tooltip": {
@@ -3503,9 +3446,6 @@
       ],
       "Checkout expired, please try again": [
         "Naplata je istekla, pokušajte ponovno"
-      ],
-      "Code wrong or not valid anymore": [
-        "Kôd je pogrešan ili više ne vrijedi"
       ],
       "Condition incomplete": [
         "Uvjet je nepotpun"
@@ -9539,20 +9479,8 @@
       "CVC": [
         "CVC"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Bez ${ taxRate }% poreza: ${ taxAmount }"
-      ],
       "Got it": [
         "Razumijem"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/GG"
@@ -9560,14 +9488,8 @@
       "Processing payment": [
         "Obrada plaćanja"
       ],
-      "Taxes": [
-        "Porezi"
-      ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
-      ],
-      "VAT": [
-        "Porez"
       ]
     },
     "Payments.Error": {
@@ -9801,9 +9723,6 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Sigurna pohrana u oblaku i suradnja za timove."
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        "Sigurna e-pošta s naprednim značajkama za svakodnevnu komunikaciju."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Idealana pretplata za napredne korisnike koji brinu o privatnosti."
@@ -10586,11 +10505,6 @@
         "Dijeli ${ ownerName }"
       ]
     },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Otvori u ${ appName }"
-      ]
-    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "Pogreška pri potvrdi potpisa"
@@ -10653,17 +10567,11 @@
       "End-to-end encryption": [
         "Krajnje šifriranje"
       ],
-      "Fast P2P/BitTorrent downloads": [
-        "Brza P2P/BitTorrent preuzimanja"
-      ],
       "Free": [
         "Free"
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Besplatno ${ TRIAL_DURATION_DAYS } dana"
-      ],
-      "Highest VPN speed": [
-        "Najviša VPN brzina"
       ],
       "Monthly": [
         "Mjesečno"
@@ -10676,9 +10584,6 @@
       ],
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Trebate više pohrane? Možete nadograditi bilo kada s planovima od 200 GB do 3 TB. 5 GB je dovoljno za 2500 fotografija s modernog telefona (svaka otprilike 2 MB)."
-      ],
-      "No credit card required:": [
-        "Nije potrebna kreditna kartica:"
       ],
       "Online document editor": [
         "Online uređivač dokumenata"
@@ -10706,15 +10611,6 @@
       ],
       "Sign up, protect your files": [
         "Registrirajte se, zaštitite svoje datoteke"
-      ],
-      "Start free trial": [
-        "Započnite besplatni probni period"
-      ],
-      "Storage": [
-        "Pohrana"
-      ],
-      "Stream your favorite TV shows and movies": [
-        "Streamajte svoje omiljene TV emisije i filmove"
       ],
       "Swiss-based": [
         "Bazirano u Švicarskoj"
@@ -11208,17 +11104,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Saznajte kako dohvatiti poveznicu privatnog kalendara."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Naplaćuje se svake 2 godine"
-      ],
-      "Billed monthly": [
-        "Mjesečni račun"
-      ],
-      "Billed yearly": [
-        "Godišnji račun"
       ]
     },
     "Subscription attribute": {
@@ -13194,9 +13079,6 @@
       "Communicate and schedule with end-to-end encryption.": [
         "Komunicirajte i planirajte koristeći end-to-end šifriranje"
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Čuvajte svoje datoteke, fotografije i dokumente na sigurnom uz ${ maxDriveSpace } besplatne pohrane u oblaku."
-      ],
       "Set secure passwords without the hassle.": [
         "Postavite sigurne lozinke bez komplikacija."
       ]
@@ -13228,11 +13110,6 @@
         "Poslužitelji u ${ numberOfCountries }+ država"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Mjesečni račun"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 godina"
@@ -13262,16 +13139,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "${ n } year": [
-        "${ n } godina",
-        "${ n } godine",
-        "${ n } godina"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Uključuje ${ plan } (besplatno prvu godinu!)"
       ],

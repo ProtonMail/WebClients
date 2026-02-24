@@ -1283,9 +1283,15 @@
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
       ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidors"
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicat",
+        "${ ips } servidors VPN dedicats"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Llicència d'IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "llicències de ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
@@ -1299,6 +1305,10 @@
       "${ price } per user": [
         "${ price } per usuari"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
+        "${ seats } llicències d'IA ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
         "${ seats } llicències ${ LUMO_APP_NAME }"
@@ -1310,6 +1320,24 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
+      "Writing assistant seats": [
+        "Llicències de l'assistent d'escriptura"
       ]
     },
     "Alert": {
@@ -1509,45 +1537,53 @@
         "3 TB d'emmagatzematge de dades"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accedeixi a més de 15.000 servidors en més de 120 països"
+        "Accediu a més de 15.000 servidors en més de 120 països"
       ],
       "Access advanced AI models": [
-        "Accedeixi a models d'IA avançats"
+        "Accediu a models d'IA avançats"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les funcions prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+        "Bloqueja anuncis, rastrejadors i programari maliciós"
       ],
       "Built-in 2FA authenticator": [
         "Autenticador 2FA integrat"
       ],
       "Connect 10 devices at once": [
-        "Connecti 10 dispositius alhora"
+        "Connecteu 10 dispositius alhora"
       ],
       "Full chat history with easy search and favorites": [
-        "Historial de xat complet amb cerca fàcil i favorits"
+        "Historial complet de xats amb cerca fàcil i preferits"
       ],
       "Individual accounts for 6 users": [
         "Comptes individuals per a 6 usuaris"
       ],
       "Individual accounts for you and a partner": [
-        "Comptes individuals per a dues persones"
+        "Comptes individuals per a vós i un company"
       ],
       "Stronger protection against cyber threats": [
-        "Protecció més forta contra les ciberamenaces"
+        "Protecció més forta contra amenaces cibernètiques"
       ],
       "Unlimited daily chats": [
-        "Xats diaris sense límits"
+        "Xats diaris il·limitats"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
+        "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } year": [
+        "${ n } any",
+        "${ n } anys"
+      ],
       "1 month": [
         "1 mes"
       ],
@@ -1557,14 +1593,23 @@
       "Annually": [
         "Cada any"
       ],
+      "Billed monthly": [
+        "Facturat mensualment"
+      ],
       "Lifetime": [
         "Per sempre"
+      ],
+      "Lifetime access": [
+        "Accés de per vida"
       ],
       "Monthly": [
         "Mensual"
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -1759,6 +1804,13 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal per ${ cycle } mes",
+        "Subtotal per ${ cycle } mesos"
       ],
       "Total": [
         "Total"
@@ -6693,8 +6745,8 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
-      "You don’t have permission to copy files to this folder.": [
-        "No teniu permís per copiar fitxers a aquesta carpeta."
+      "You don't have permission to copy files to this folder.": [
+        "No teniu permís per copiar fitxers en aquesta carpeta."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
@@ -6734,9 +6786,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
+        "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
@@ -6807,11 +6859,11 @@
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La pròxima data de facturació és ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La vostra pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
       ],
       "Your online activity is protected": [
         "La vostra activitat en línia està protegida."
@@ -8345,8 +8397,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
+        "Historial de versions de fitxer de ${ options } dia",
+        "Historial de versions de fitxer de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
@@ -9426,6 +9478,10 @@
         "L'element seleccionat no s'ha esborrat de la llista",
         "Els elements seleccionats no s'han esborrat de la llista"
       ],
+      "Selected item was successfully removed from your list": [
+        "L'element seleccionat s'ha eliminat correctament de la vostra llista",
+        "Els elements seleccionats s'han esborrat correctament de la vostra llista"
+      ],
       "Selected items were successfully removed from your list": [
         "L'element seleccionat s'ha esborrat correctament de la llista",
         "Els elements seleccionats s'han esborrat correctament de la llista"
@@ -9851,7 +9907,7 @@
       "Create new group": [
         "Crea un grup nou"
       ],
-      "Expected strcuture": [
+      "Expected structure": [
         "Estructura esperada"
       ],
       "Ignore group": [
@@ -10001,6 +10057,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA no inclòs)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Impost del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% d'impostos: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
@@ -10019,20 +10084,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excloent el ${ taxRate }% d'impostos: ${ taxAmount }"
-      ],
       "Got it": [
         "Fet"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclou un impost del ${ rate }%"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclou un impost del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclou un ${ rate }% d'impostos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclou el ${ rate }% d'impostos: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -10052,8 +10117,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
       ],
-      "Taxes": [
-        "Impostos"
+      "Tax ${ rate }%": [
+        "Impost ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impostos ${ rate }%"
       ],
       "terms and conditions": [
         "termes i condicions"
@@ -10102,9 +10170,6 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -10184,6 +10249,20 @@
     "Payments.plan_name": {
       "Free": [
         "Gratuït"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'IVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10370,9 +10449,6 @@
       "Thomas": [
         "Adrià"
       ],
-      "VAT number": [
-        "Núm. IVA"
-      ],
       "Your organization name": [
         "El nom de la vostra organització"
       ],
@@ -10396,6 +10472,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } mesos"
       ]
     },
     "plus_block": {
@@ -10689,16 +10771,16 @@
         "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inHours } hora per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inHours } hores per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inMinutes } minut per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inMinutes } minuts per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
-        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
+        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la vostra contrasenya.",
+        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la vostra contrasenya."
       ]
     },
     "session_recovery:available:link": {
@@ -10829,10 +10911,13 @@
     },
     "sheets_2025:Action": {
       "New spreadsheet": [
-        "Crea un full de càlcul"
+        "Full de càlcul nou"
       ],
       "Open in ${ appName }": [
-        "Obre al ${ appName }"
+        "Obriu-ho a ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Obriu-ho a ${ appName } (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -11040,8 +11125,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Manteniu les vostres contrasenyes segures i organitzades en diverses caixes fortes"
       ],
       "Protect your account from threats with Sentinel": [
         "Protegiu el vostre compte d'amenaces amb Sentinel"
@@ -11214,17 +11299,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Perdreu l'accés a les notes i als inicis de sessió il·limitats, als àlies il·limitats de hide-my-email, a 20 caixes fortes, així com al suport prioritari."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturació cada 2 anys"
-      ],
-      "Billed monthly": [
-        "Facturació mensual"
-      ],
-      "Billed yearly": [
-        "Facturació anual"
       ]
     },
     "Subscription attribute": {

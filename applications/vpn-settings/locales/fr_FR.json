@@ -1186,9 +1186,9 @@
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
       ],
-      "${ ips } server": [
-        "${ ips } serveur",
-        "${ ips } serveurs"
+      "${ ips } dedicated VPN server": [
+        "${ ips } serveur VPN dédié",
+        "${ ips } serveurs VPN dédiés"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "Assistant IA ${ LUMO_APP_NAME }"
@@ -1196,6 +1196,12 @@
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
         "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licence IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } accès"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1213,6 +1219,10 @@
         "${ quantity } domaine personnalisé",
         "${ quantity } domaines personnalisés"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licence IA ${ LUMO_APP_NAME }",
+        "${ seats } licences IA ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
         "${ seats } accès à ${ LUMO_APP_NAME }"
@@ -1224,6 +1234,24 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Domains": [
+        "Domaines"
+      ],
+      "Servers": [
+        "Serveurs"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant seats": [
+        "Accès à l'assistant d'écriture"
       ]
     },
     "Address action": {
@@ -1626,40 +1654,34 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 To d'espace de stockage de données"
+        "2 To d'espace de stockage"
       ],
       "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+        "3 To d'espace de stockage"
       ],
       "Access advanced AI models": [
-        "Accès à des modèles d'IA avancés"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+        "Accéder aux modèles d'IA avancés"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+        "Bloquer les pubs, les traqueurs et les logiciels malveillants"
       ],
       "Built-in 2FA authenticator": [
-        "Authentificateur 2FA intégré"
+        "Authentificateur A2F intégré"
       ],
       "Connect 10 devices at once": [
-        "Connectez 10 appareils en même temps"
+        "Connectez 10 appareils en même temps"
       ],
       "Full chat history with easy search and favorites": [
         "Historique complet des discussions avec recherche facile et favoris"
       ],
       "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
+        "Comptes individuels pour 6 utilisateurs"
       ],
       "Individual accounts for you and a partner": [
         "Comptes individuels pour vous et un partenaire"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1680,6 +1702,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ans"
+      ],
       "1 month": [
         "1 mois"
       ],
@@ -1689,14 +1719,23 @@
       "Annually": [
         "Annuel"
       ],
+      "Billed monthly": [
+        "Facturé mensuellement"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "Accès à vie"
       ],
       "Monthly": [
         "Mensuel"
       ],
       "Two-year": [
         "Tous les deux ans"
+      ],
+      "Yearly": [
+        "Annuel"
       ]
     },
     "Blog": {
@@ -1850,8 +1889,8 @@
       "Sign in to Google Workspace": [
         "Se connecter à Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Pour migrer les données de votre organisation, vous devez installer l'application ${ BRAND_NAME } Migration Assistant depuis le Google Workspace Marketplace. Cela accordera l'autorisation à ${ BRAND_NAME } de copier vos données. Après l'avoir installée, revenez ici pour continuer. En savoir plus"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Pour migrer les données de votre organisation, vous devez installer l'application ${ BRAND_NAME } Migration Assistant depuis le Google Workspace Marketplace. Cela accordera l'autorisation à ${ BRAND_NAME } de copier vos données. Une fois l'application installée, revenez ici pour continuer. En savoir plus"
       ],
       "Transfer errors": [
         "Erreurs pendant le transfert"
@@ -2075,6 +2114,13 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Subtotal": [
+        "Sous-total"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Sous-total pour ${ cycle } mois",
+        "Sous-total pour ${ cycle } mois"
+      ],
       "Total": [
         "Total"
       ],
@@ -2086,12 +2132,6 @@
     "Checkout summary": {
       "month": [
         "mois"
-      ],
-      "Servers": [
-        "Serveurs"
-      ],
-      "Users": [
-        "Utilisateurs"
       ]
     },
     "Collapsible tooltip": {
@@ -3961,7 +4001,7 @@
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
-      "Code wrong or not valid anymore": [
+      "Code is incorrect or not valid anymore": [
         "Le code n'est pas correct ou n'est plus valide."
       ],
       "Couldn't load invoices. Please try again later.": [
@@ -4034,6 +4074,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et saisissez à nouveau votre code."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et essayez à nouveau."
       ],
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
@@ -6674,9 +6717,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pour les utilisateurs qui passent d'un autre service de messagerie à ${ MAIL_APP_NAME }, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses de messagerie actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
       ],
-      "Free forever": [
-        "Gratuit pour toujours"
-      ],
       "Free trial": [
         "Essai gratuit"
       ],
@@ -8225,9 +8265,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés. Cela désactivera aussi la récupération depuis un appareil."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, veuillez d’abord la désactiver.",
@@ -8278,11 +8318,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Votre prochaine date de facturation est le ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
@@ -10156,10 +10196,6 @@
         "${ n } connexion VPN",
         "${ n } connexions VPN"
       ],
-      "${ options }-day file version history": [
-        "Historique des versions de fichiers datant de ${ options } jours",
-        "Historique des versions de fichiers datant de ${ options } jours"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
@@ -11868,6 +11904,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (hors taxe)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
@@ -11889,20 +11934,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
-      ],
       "Got it": [
         "J'ai compris"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Comprenant ${ rate } % de taxes"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Comprenant ${ taxRate } % de taxes : ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Comprenant ${ rate } % de taxes"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11928,8 +11973,11 @@
       "Sorry, this offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
-      "Taxes": [
-        "Taxes"
+      "Tax ${ rate }%": [
+        "Taxe ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Taxes ${ rate } %"
       ],
       "terms and conditions": [
         "conditions générales d'utilisation"
@@ -11981,9 +12029,6 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
-      ],
-      "VAT": [
-        "TVA"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -12079,6 +12124,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro d'entreprise."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro de TVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13099,18 +13158,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
-        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
@@ -13354,6 +13401,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Ouvrir dans ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Ouvrir dans ${ appName } (Bêta)"
       ]
     },
     "Signup": {
@@ -13581,8 +13631,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Bénéficiez d'un nombre illimité d'alias pour protéger votre identité et réduire les indésirables."
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Protégez vos mots de passe et organisez-les dans plusieurs coffres-forts "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Gardez vos mots de passe en sécurité et organisez-les dans plusieurs coffres-forts"
       ],
       "Protect your account from threats with Sentinel": [
         "Protégez votre compte contre les menaces avec Sentinel"
@@ -13995,17 +14045,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Vous n'aurez plus accès à un nombre illimité d'identifiants et de notes, à un nombre illimité d'alias « hide-my-email », à 20 coffres-forts, ainsi qu'à l'assistance prioritaire."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturé tous les 2 ans"
-      ],
-      "Billed monthly": [
-        "Facturé mensuellement"
-      ],
-      "Billed yearly": [
-        "Facturé annuellement"
       ]
     },
     "Subscription attribute": {
@@ -16623,8 +16662,8 @@
       "Get more from your ${ planTitle } subscription.": [
         "Profitez pleinement de votre abonnement ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Protégez vos fichiers, photos et documents avec ${ maxDriveSpace } de stockage cloud gratuit."
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Protégez vos fichiers, photos et documents avec ${ maxDriveSpace } de stockage cloud."
       ],
       "Set secure passwords without the hassle.": [
         "Créez des mots de passe sécurisés en toute simplicité."
@@ -16680,11 +16719,6 @@
         "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Facturé mensuellement"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 an"
@@ -16723,14 +16757,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "${ n } year": [
-        "${ n } an",
-        "${ n } ans"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Comprend ${ plan } (gratuit la première année)"
       ],

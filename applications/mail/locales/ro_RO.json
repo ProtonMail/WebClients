@@ -1434,7 +1434,7 @@
         "Oprire mutare în „Gunoi”"
       ],
       "Strikethrough": [
-        "Tăiere cu o linie"
+        "Tăiat cu o linie"
       ],
       "Submit": [
         "Trimitere"
@@ -1514,7 +1514,7 @@
         "Deblocare"
       ],
       "Underline": [
-        "Subliniere"
+        "Subliniat"
       ],
       "Undo": [
         "Anulare"
@@ -1733,10 +1733,16 @@
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }"
       ],
-      "${ ips } server": [
-        "Servere: ${ ips }",
-        "Servere: ${ ips }",
-        "Servere: ${ ips }"
+      "${ ips } dedicated VPN server": [
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licențe ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1749,6 +1755,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -1764,6 +1775,24 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Domains": [
+        "Domenii"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ],
+      "Writing assistant seats": [
+        "Licențe asistent de scriere"
       ]
     },
     "Alert": {
@@ -2045,31 +2074,31 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB spațiu de stocare a datelor"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
-        "3 TB spațiu de stocare a datelor"
+        "3 TiB spațiu de stocare"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accesați peste 15.000 de servere în peste 120 de țări"
+        "Accesați peste 15.000 de servere din peste 120 de țări"
       ],
       "Access advanced AI models": [
-        "Accesați modele AI avansate"
+        "Accesare modele de IA avansate"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate funcțiile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+        "Toate funcțiile premium de la ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blocare reclame, urmăritori și programe malițioase"
+        "Blocați reclamele, urmăritorii și programele malware"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator de A2F încorporat"
       ],
       "Connect 10 devices at once": [
         "Conectați 10 dispozitive simultan"
       ],
       "Full chat history with easy search and favorites": [
-        "Istoric complet al chatului cu căutare ușoară și favorite"
+        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
       ],
       "Individual accounts for 6 users": [
         "Conturi individuale pentru 6 utilizatori"
@@ -2090,6 +2119,16 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ani",
+        "${ n } de ani"
+      ],
       "1 month": [
         "O lună"
       ],
@@ -2099,14 +2138,23 @@
       "Annually": [
         "Anual"
       ],
+      "Billed monthly": [
+        "Facturat lunar"
+      ],
       "Lifetime": [
         "Pe viață"
+      ],
+      "Lifetime access": [
+        "Acces pe viață"
       ],
       "Monthly": [
         "Lunar"
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -7695,6 +7743,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
       ],
+      "Moving this message will cancel its scheduled send.": [
+        "Mutarea acestui mesaj va anula trimiterea programată."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -8275,6 +8326,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Această conversație conține un mesaj programat. Mutarea lui va anula trimiterea programată."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Această conversație conține un mesaj planificat. Trimiterea acestui mesaj va fi anulată."
@@ -8860,10 +8914,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ați atins numărul maxim de adrese din grupul de contacte:"
@@ -8933,11 +8987,11 @@
       "Your message will expire tomorrow.": [
         "Mesajul va expira mâine."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Data următoarei facturi este ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
       ],
       "Your online activity is protected": [
         "Activitatea online vă este protejată"
@@ -10927,9 +10981,9 @@
         "${ n } de conexiuni VPN"
       ],
       "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin pe viață"
@@ -12347,6 +12401,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (fără TVA)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% TVA: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% TVA: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după probare la ${ formattedDate }"
       ],
@@ -12365,20 +12428,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Am înțeles"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclusiv ${ rate }% TVA"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusiv ${ rate }% TVA: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclusiv ${ rate }% TVA"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclusiv ${ rate }% TVA: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -12398,8 +12461,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
-      "Taxes": [
-        "Taxe"
+      "Tax ${ rate }%": [
+        "TVA ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "TVA ${ rate }%"
       ],
       "terms and conditions": [
         "termenii și condițiile"
@@ -12454,9 +12520,6 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -12536,6 +12599,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Prețul de reînnoire depinde de regiunea de facturare și de TVA."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12782,9 +12859,6 @@
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
       ],
-      "VAT number": [
-        "Valoare TVA"
-      ],
       "Your organization name": [
         "Numele organizației"
       ],
@@ -12808,6 +12882,13 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } lună",
+        "${ cycle } luni",
+        "${ cycle } de luni"
       ]
     },
     "plus_block": {
@@ -13435,6 +13516,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Deschidere în ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Deschidere în ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13707,7 +13791,7 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obțineți aliasuri nelimitate pentru a vă proteja identitatea și a reduce mesajele nedorite"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
+      "Keep your passwords safe and organized in multiple vaults": [
         "Păstrați-vă parolele în siguranță și organizate în mai multe seifuri"
       ],
       "Protect your account from threats with Sentinel": [
@@ -13928,17 +14012,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Veți pierde accesul la autentificări și note nelimitate, aliasuri hide-my-email nelimitate, 20 de seifuri, precum și la asistența prioritară."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Facturat la doi ani"
-      ],
-      "Billed monthly": [
-        "Facturat lunar"
-      ],
-      "Billed yearly": [
-        "Facturat anual"
       ]
     },
     "Subscription attribute": {
@@ -14543,11 +14616,6 @@
       "Conversation removed from Starred.": [
         "Conversația a fost eliminată din favorite."
       ],
-      "Conversation updated": [
-        "Conversație actualizată",
-        "Conversații actualizate",
-        "Conversații actualizate"
-      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Conversațiile din ${ sendersList } vor fi etichetate cu ${ labelsList }."
       ],
@@ -14622,11 +14690,6 @@
       ],
       "Message removed from Starred.": [
         "Mesajul a fost eliminat din „Favorite”."
-      ],
-      "Message updated": [
-        "Mesaj actualizat",
-        "Mesaje actualizate",
-        "Mesaje actualizate"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Mesajele de la ${ sendersList } vor fi etichetate cu ${ labelsList }."

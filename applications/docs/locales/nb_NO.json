@@ -916,9 +916,19 @@
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
       ],
-      "${ ips } server": [
-        "${ ips } tjener",
-        "${ ips } tjenere"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikert VPN-tjener",
+        "${ ips } dedikerte VPN-tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-lisens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-lisenser"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-lisens",
+        "${ seats } ${ LUMO_APP_NAME } KI-lisenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
@@ -931,6 +941,24 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Domains": [
+        "Domener"
+      ],
+      "Servers": [
+        "Tjenere"
+      ],
+      "Users": [
+        "Brukere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentlisenser"
       ]
     },
     "Alert": {
@@ -1102,25 +1130,25 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Tilgang til 15,000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ tjenere i 120+ land"
       ],
       "Access advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
+        "Få tilgang til avanserte KI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfunksjoner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blokkér annonser, sporere og skadelig programvare"
+        "Blokker annonser, sporere og skadelig programvare"
       ],
       "Built-in 2FA authenticator": [
-        "Innebygget 2FA-autentisering"
+        "Innebygd 2FA-autentisering"
       ],
       "Connect 10 devices at once": [
-        "Koble til 10 enheter samtidig"
+        "Koble til 10 enheter om gangen"
       ],
       "Full chat history with easy search and favorites": [
-        "Full chatlogg med enkelt søk og favoritter"
+        "Full chathistorikk med enkelt søk og favoritter"
       ],
       "Individual accounts for 6 users": [
         "Individuelle kontoer for 6 brukere"
@@ -1137,7 +1165,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
+        "Spesialdesignet NetShield beskytter enhetene dine og øker hastigheten på nettlesingen ved å blokkere annonser, sporingsprogrammer og skadelig programvare."
       ]
     },
     "Browser": {
@@ -3050,7 +3078,7 @@
         "statusside"
       ],
       "Tax exemption is not supported for this plan": [
-        "Skattefritak støttes ikke for dette abonnementet"
+        "Skattefritak støttes ikke for denne planen"
       ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
@@ -4831,6 +4859,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Offentlige dokumenter er ikke aktivert for organisasjonen enda."
       ],
+      "Readonly": [
+        "Skrivebeskyttet"
+      ],
       "Recent documents": [
         "Nylige dokumenter"
       ],
@@ -5002,6 +5033,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dette dokumentet har mye aktivitet. Noen funksjoner kan være midlertidig utilgjengelige."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Dette dokumentet har mange aktive samarbeidspartnere. Redigering i sanntid er midlertidig utilgjengelig. Oppdater for å se de siste endringene."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dette dokumentet eksisterer kanskje ikke, eller vi har problemer med å laste det inn. Last inn siden på nytt og prøv igjen."
@@ -5254,9 +5288,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
+        "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du er i ferd med å avslå invitasjonen til å bli med i ${ invitationName }-albumet. Hvis du fortsetter, får du ikke tilgang til det med mindre eieren inviterer deg på nytt. Er du sikker på at du vil fortsette?"
@@ -5330,11 +5364,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Din neste faktureringsdato er ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
       "Your online activity is protected": [
         "Nettaktiviteten din er beskyttet"
@@ -7906,6 +7940,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. MVA)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
@@ -8385,15 +8422,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
+        "Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {
@@ -8537,6 +8574,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Oppretter nytt regneark..."
+      ],
       "Detect automatically": [
         "Oppdag automatisk"
       ],
@@ -8548,6 +8588,15 @@
       ],
       "Replace data at selected cell": [
         "Erstatt data i valgt celle"
+      ],
+      "Replace spreadsheet": [
+        "Erstatt regneark"
+      ],
+      "Select a file to import": [
+        "Velg en fil å importere"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Ditt nåværende regneark, inkludert alle ark i det, vil bli erstattet med denne versjonen."
       ]
     },
     "sheets_2025:Label": {
@@ -8555,7 +8604,7 @@
         "Konverter tekst til tall, datoer og formler"
       ],
       "Destination": [
-        "Plassering"
+        "Mål"
       ],
       "Format": [
         "Format"
@@ -8782,8 +8831,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Skaff deg ubegrenset med alias for å beskytte din identitet og redusere søppelpost"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Hold passordene dine trygge og organiserte i flere hvelv "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold passordene dine trygge og organiserte i flere hvelv"
       ],
       "Protect your account from threats with Sentinel": [
         "Beskytt din konto mot trusler med Sentinel"
@@ -9661,6 +9710,9 @@
       ],
       "Re-signing contacts": [
         "Signerer kontakter på nytt"
+      ],
+      "Readonly": [
+        "Skrivebeskyttet"
       ],
       "Recommended actions": [
         "Anbefalte tiltak"

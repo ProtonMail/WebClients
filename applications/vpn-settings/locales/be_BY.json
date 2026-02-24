@@ -1190,11 +1190,11 @@
         "${ domains } дадатковых карыстальніцкіх даменаў",
         "${ domains } дадатковых карыстальніцкіх даменаў"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } серверы",
-        "${ ips } сервераў",
-        "${ ips } сервераў"
+      "${ ips } dedicated VPN server": [
+        "${ ips } вылучаны сервер VPN",
+        "${ ips } вылучаныя серверы VPN",
+        "${ ips } вылучаных сервераў VPN",
+        "${ ips } вылучаных сервераў VPN"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "Памочнік ШІ ${ LUMO_APP_NAME }"
@@ -1204,6 +1204,12 @@
         "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
         "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)",
         "${ LUMO_APP_NAME } памочнік ШІ (для ${ quantity } карыстальнікаў)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Ліцэнзіі ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
@@ -1223,6 +1229,12 @@
         "${ quantity } карыстальніцкіх даменаў",
         "${ quantity } карыстальніцкіх даменаў"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
@@ -1240,6 +1252,24 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
+      ],
+      "Domains": [
+        "Дамены"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant seats": [
+        "Ліцэнзій памочніка ў напісанні"
       ]
     },
     "Address action": {
@@ -1650,13 +1680,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "Сховішча даных памерам у 2 ТБ"
+        "2 ТБ даных у сховішчы"
       ],
       "3 TB data storage": [
-        "Сховішча даных памерам у 3 ТБ"
+        "3 ТБ даных у сховішчы"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Доступ да 15 000+ сервераў у 120+ краінах"
+        "Доступ да больш чым 15 000 сервераў у больш чым 120 краінах"
       ],
       "Access advanced AI models": [
         "Доступ да перадавых мадэляў ШІ"
@@ -1671,19 +1701,19 @@
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
       "Connect 10 devices at once": [
-        "Падключыце 10 прылад адначасова"
+        "Падключайце да 10 прылад адначасова"
       ],
       "Full chat history with easy search and favorites": [
-        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+        "Поўная гісторыя чата з простым пошукам і абранымі"
       ],
       "Individual accounts for 6 users": [
         "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
       ],
       "Individual accounts for you and a partner": [
-        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+        "Індывідуальныя ўліковыя запісы для вас і вашых партнёраў"
       ],
       "Stronger protection against cyber threats": [
-        "Больш моцная абарона ад кіберпагроз"
+        "Больш надзейная абарона супраць кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1691,7 +1721,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіроўкі рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Billing cycle": {
@@ -1706,6 +1736,18 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
       "1 month": [
         "1 месяц"
       ],
@@ -1715,14 +1757,23 @@
       "Annually": [
         "Штогод"
       ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
       "Lifetime": [
         "Пажыццёва"
+      ],
+      "Lifetime access": [
+        "Пажыццёвы доступ"
       ],
       "Monthly": [
         "Штомесяц"
       ],
       "Two-year": [
         "Кожныя два гады"
+      ],
+      "Yearly": [
+        "Штогод"
       ]
     },
     "Blog": {
@@ -1878,7 +1929,7 @@
       "Sign in to Google Workspace": [
         "Увайсці ў Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана. Даведацца больш"
       ],
       "Transfer errors": [
@@ -2120,12 +2171,6 @@
     "Checkout summary": {
       "month": [
         "месяц"
-      ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Users": [
-        "Карыстальнікі"
       ]
     },
     "Collapsible tooltip": {
@@ -3932,6 +3977,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Звяжыцеся з імі зараз, каб даведацца, ці могуць яны дапамагчы. Рэкамендуецца асабіста звязацца з імі і паведаміць, што менавіта вы спрабуеце разблакіраваць свае даныя."
+      ],
       "Immediate": [
         "Неадкладна"
       ],
@@ -4001,9 +4049,6 @@
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
-      ],
-      "Code wrong or not valid anymore": [
-        "Няправільны або пратэрмінаваны код"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
@@ -6851,9 +6896,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для забеспячэння плаўнага пераходу карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншых служб электроннай пошты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
       ],
-      "Free forever": [
-        "Бясплатна назаўсёды"
-      ],
       "Free trial": [
         "Бясплатны пробны перыяд"
       ],
@@ -8444,11 +8486,11 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне з дапамогай даверанай прылады."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
@@ -8501,11 +8543,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ваша наступная дата выстаўлення рахунку: ${ renewalTime }. Скасаваць можна ў любы час."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
@@ -12179,6 +12221,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (з улікам падатка)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -12200,20 +12245,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Зразумела"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -12238,9 +12271,6 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Taxes": [
-        "Падаткі"
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
@@ -12304,9 +12334,6 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
-      ],
-      "VAT": [
-        "ПДВ"
       ],
       "VAT number": [
         "Нумар ПДВ"
@@ -12402,6 +12429,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумар прадпрыемства."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара ПДВ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13454,9 +13495,9 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
@@ -13716,6 +13757,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Адкрыць у ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Адкрыць у ${ appName } (бэта-версія)"
       ]
     },
     "Signup": {
@@ -13953,8 +13997,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч"
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"
@@ -14385,17 +14429,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed monthly": [
-        "Аплачваецца штомесяц"
-      ],
-      "Billed yearly": [
-        "Аплачваецца штогод"
       ]
     },
     "Subscription attribute": {
@@ -17081,9 +17114,6 @@
       "Get more from your ${ planTitle } subscription.": [
         "Атрымайце больш ад падпіскі ${ planTitle }."
       ],
-      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Захоўвайце свае файлы, фатаграфіі і дакументы ў бяспецы з ${ maxDriveSpace } бясплатнага воблачнага сховішча."
-      ],
       "Set secure passwords without the hassle.": [
         "Без цяжкасцей задавайце бяспечныя паролі"
       ],
@@ -17154,11 +17184,6 @@
         "Серверы ў больш, чым ${ numberOfCountries } краінах"
       ]
     },
-    "vpn_2step: billing": {
-      "Billed monthly": [
-        "Аплачваецца штомесяц"
-      ]
-    },
     "vpn_2step: discount": {
       "1-year": [
         "1 год"
@@ -17197,18 +17222,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяцы",
-        "${ n } месяцаў",
-        "${ n } месяцаў"
-      ],
-      "${ n } year": [
-        "${ n } год",
-        "${ n } гады",
-        "${ n } гадоў",
-        "${ n } гадоў"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Уключае ${ plan } (бясплатна на працягу першага года)"
       ],

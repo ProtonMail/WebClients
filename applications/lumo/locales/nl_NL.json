@@ -230,6 +230,9 @@
       "Re-index all content - conversations and files": [
         "Indexeer alle inhoud opnieuw – gesprekken en bestanden"
       ],
+      "Redo": [
+        "Opnieuw"
+      ],
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
@@ -338,6 +341,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
+      "Undo": [
+        "Ongedaan maken"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -386,9 +392,15 @@
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servers"
+      "${ ips } dedicated VPN server": [
+        "${ ips } toegewijde VPN-server",
+        "${ ips } toegewijde VPN-servers"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licentie"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licenties"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -402,6 +414,10 @@
       "${ price } per user": [
         "${ price } per gebruiker"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
@@ -413,6 +429,24 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Dedicated VPN servers": [
+        "Toegewijde VPN-servers"
+      ],
+      "Domains": [
+        "Domeinen"
+      ],
+      "Servers": [
+        "Servers"
+      ],
+      "Users": [
+        "Gebruikers"
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "Writing assistant seats": [
+        "Licenties voor schrijfassistent"
       ]
     },
     "Apps dropdown": {
@@ -562,10 +596,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dataopslag"
+        "2 TB opslagruimte"
       ],
       "3 TB data storage": [
-        "3 TB dataopslag"
+        "3 TB opslagruimte"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Toegang tot 15.000+ servers in 120+ landen"
@@ -574,7 +608,7 @@
         "Toegang tot geavanceerde AI-modellen"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfuncties van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokkeer advertenties, trackers en malware"
@@ -583,22 +617,22 @@
         "Ingebouwde 2FA-authenticator"
       ],
       "Connect 10 devices at once": [
-        "Verbind 10 apparaten tegelijkertijd"
+        "Verbind 10 apparaten tegelijk"
       ],
       "Full chat history with easy search and favorites": [
-        "Volledige chatgeschiedenis met eenvoudige zoekfunctie en favorieten"
+        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
       ],
       "Individual accounts for 6 users": [
-        "Afzonderlijke accounts voor 6 gebruikers"
+        "Individuele accounts voor 6 gebruikers"
       ],
       "Individual accounts for you and a partner": [
-        "Afzonderlijke accounts voor u en een partner"
+        "Individuele accounts voor u en een partner"
       ],
       "Stronger protection against cyber threats": [
         "Sterkere bescherming tegen cyberdreigingen"
       ],
       "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse gesprekken"
+        "Onbeperkt aantal dagelijkse chats"
       ]
     },
     "BF2025: Tooltip": {
@@ -607,6 +641,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
       "1 month": [
         "1 maand"
       ],
@@ -616,14 +658,23 @@
       "Annually": [
         "Jaarlijks"
       ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
       "Lifetime": [
         "Levenslang"
+      ],
+      "Lifetime access": [
+        "Levenslange toegang"
       ],
       "Monthly": [
         "Maandelijks"
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ],
+      "Yearly": [
+        "Jaarlijks"
       ]
     },
     "Browser": {
@@ -929,9 +980,6 @@
       ],
       "Delete all": [
         "Alles verwijderen"
-      ],
-      "Join waitlist": [
-        "Meld u aan voor de wachtlijst"
       ],
       "Learn more": [
         "Meer informatie"
@@ -1591,65 +1639,6 @@
         "Uw informatie is zero-access versleuteld"
       ]
     },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-mailadres is ongeldig"
-      ],
-      "Email address is required": [
-        "E-mailadres is vereist"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Sluiten"
-      ],
-      "Invite friends": [
-        "Vrienden uitnodigen"
-      ],
-      "Maybe later": [
-        "Misschien later"
-      ],
-      "Send invitation": [
-        "Uitnodiging verzenden"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "E-mail van uw vriend"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Kent u iemand die baat zou hebben bij een privacy-eerst AI? Nodig hen uit om zich aan te melden voor de wachtlijst van ${ LUMO_SHORT_APP_NAME }. U heeft nog ${ remainingInvitesText } uitnodigingen over."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "U heeft nog ${ remainingInvitesText } uitnodigingen over."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Uitnodiging verzonden"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Uitnodiging verzonden!"
-      ],
-      "No invites left  ": [
-        "Geen uitnodigingen meer over  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Dank u om anderen ${ LUMO_SHORT_APP_NAME } te leren ontdekken! Als er meer uitnodigingen beschikbaar komen, laten we u dat weten."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "We hebben ${ emailText } uitgenodigd. Zij ontvangen instructies over hoe ze zich kunnen aanmelden voor de wachtlijst."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Nodig vrienden uit om ${ LUMO_APP_NAME } te ervaren"
-      ]
-    },
     "collider_2025: Job": {
       "Cat herder": [
         "Kattenhoeder"
@@ -1872,9 +1861,6 @@
       "Search Index": [
         "Zoekindex"
       ],
-      "Secure your spot": [
-        "Beveilig uw plek"
-      ],
       "Show project chats in history": [
         "Toon projectchats in geschiedenis"
       ],
@@ -1886,12 +1872,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "You're on the list": [
-        "U staat op de lijst"
-      ],
-      "You're on the waitlist": [
-        "U staat op de wachtlijst"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2002,17 +1982,6 @@
     "collider_2025: Upsell Title": {
       "Get": [
         "Krijg"
-      ]
-    },
-    "collider_2025: Waitlist Info": {
-      "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bedankt voor uw aanmelding voor de wachtlijst. Wij sturen u een e-mail wanneer u kunt beginnen met chatten met ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Thanks for signing up. We’re gradually opening access to ${ LUMO_SHORT_APP_NAME } and will let you know when your spot opens.": [
-        "Bedankt voor uw aanmelding. Wij openen geleidelijk toegang tot ${ LUMO_SHORT_APP_NAME } en laten u weten wanneer uw plek beschikbaar is."
-      ],
-      "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
-        "Wij openen geleidelijk toegang tot ${ LUMO_SHORT_APP_NAME }. Meld u aan voor de wachtlijst, en wij brengen u op de hoogte wanneer uw plek beschikbaar komt."
       ]
     },
     "collider_2025: Warning": {
@@ -2261,7 +2230,7 @@
         "Zoeken"
       ],
       "See all": [
-        "Alles weergeven"
+        "Bekijk alles"
       ],
       "Send": [
         "Verzenden"
@@ -4812,9 +4781,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
-        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -4825,11 +4794,11 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Uw volgende facturatiedatum is ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren. Neem contact op met de klantenservice als u een onmiddellijke wijziging van uw abonnement nodig heeft."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5462,8 +5431,8 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
+        "${ options }-daagse bestand versiegeschiedenis",
+        "${ options }-daage bestand versiegeschiedenis"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
@@ -6364,6 +6333,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (excl. btw)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
       ],
@@ -6382,20 +6360,20 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
-      ],
       "Got it": [
         "Begrepen"
       ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      "Including ${ rate }% tax": [
+        "Inclusief ${ rate }% belasting"
       ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclusief ${ rate }% belasting"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -6415,8 +6393,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
-      "Taxes": [
-        "Belastingen"
+      "Tax ${ rate }%": [
+        "Belasting ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Belasting ${ rate }%"
       ],
       "terms and conditions": [
         "algemene voorwaarden"
@@ -6465,9 +6446,6 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
-      ],
-      "VAT": [
-        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -6547,6 +6525,20 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het Bedrijfsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -6655,9 +6647,6 @@
       "Thomas": [
         "Thomas"
       ],
-      "VAT number": [
-        "BTW-nummer"
-      ],
       "Your organization name": [
         "Uw organisatienaam"
       ],
@@ -6676,6 +6665,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } maand",
+        "${ cycle } maanden"
       ]
     },
     "plus_block": {
@@ -7021,17 +7016,6 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed monthly": [
-        "Maandelijks gefactureerd"
-      ],
-      "Billed yearly": [
-        "Jaarlijks gefactureerd"
       ]
     },
     "Subscription attribute": {

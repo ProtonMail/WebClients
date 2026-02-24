@@ -1,0 +1,1580 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "fil_PH"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "Mag-authenticate"
+      ],
+      "Cancel": [
+        "Kanselahin"
+      ],
+      "Change password": [
+        "Palitan ang password"
+      ],
+      "Close": [
+        "Isara"
+      ],
+      "Continue": [
+        "Magpatuloy"
+      ],
+      "Dismiss": [
+        "I-dismiss"
+      ],
+      "Edit email address": [
+        "I-edit ang email address"
+      ],
+      "Edit phone number": [
+        "I-edit ang phone number"
+      ],
+      "Edit sign-in details": [
+        "I-edit ang mga detalye ng pag-sign in"
+      ],
+      "Forgot password?": [
+        "Nakalimutan ang password?"
+      ],
+      "Get verification code": [
+        "Kumuha ng verification code"
+      ],
+      "More info: ${ safeTitle }": [
+        "Karagdagang impormasyon: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "I-refresh ang page"
+      ],
+      "Request new code": [
+        "Humingi ng bagong code"
+      ],
+      "Resend code": [
+        "Ipadalang muli ang code"
+      ],
+      "Search countries": [
+        "Maghanap ng mga bansa"
+      ],
+      "Try another method": [
+        "Sumubok ng ibang paraan"
+      ],
+      "Use authentication code": [
+        "Gamitin ang authentication code"
+      ],
+      "Use recovery code": [
+        "Gamitin ang recovery code"
+      ],
+      "Verify": [
+        "I-verify"
+      ],
+      "Verify account": [
+        "I-verify ang account"
+      ],
+      "View invoice": [
+        "Tingnan ang invoice"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } desktop app"
+      ],
+      "Use your own email domain": [
+        "Gamitin ang sariling domain ng email"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloud storage at pag-share para sa malalaking file"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhazia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "American Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarctica"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua and Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension Island"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgium"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius at Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia and Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Island"
+      ],
+      "Brazil": [
+        "Brazil"
+      ],
+      "British Indian Ocean Territory": [
+        "British Indian Ocean Territory"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodia"
+      ],
+      "Cameroon": [
+        "Cameroon"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Cape Verde"
+      ],
+      "Cayman Islands": [
+        "Cayman Islands"
+      ],
+      "Central African Republic": [
+        "Central African Republic"
+      ],
+      "Chad": [
+        "Chad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Christmas Island"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocos (Keeling) Islands"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comoros"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, Democratic Republic of the"
+      ],
+      "Cook Islands": [
+        "Cook Islands"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croatia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cyprus"
+      ],
+      "Czech Republic": [
+        "Czech Republic"
+      ],
+      "Côte d'Ivoire": [
+        "Côte d'Ivoire"
+      ],
+      "Denmark": [
+        "Denmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominican Republic"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypt"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Equatorial Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Ethiopia"
+      ],
+      "Falkland Islands": [
+        "Falkland Islands"
+      ],
+      "Faroe Islands": [
+        "Faroe Islands"
+      ],
+      "Federated States of Micronesia": [
+        "Federated States of Micronesia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "France"
+      ],
+      "French Guiana": [
+        "French Guiana"
+      ],
+      "French Polynesia": [
+        "French Polynesia"
+      ],
+      "French Southern Territories": [
+        "French Southern Territories"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germany"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Greece"
+      ],
+      "Greenland": [
+        "Greenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Island and McDonald Islands"
+      ],
+      "Holy See (Vatican City State)": [
+        "Holy See (Vatican City State)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungary"
+      ],
+      "Iceland": [
+        "Iceland"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "International"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Ireland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italy"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kazakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kyrgyzstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Lebanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lithuania"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldives"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Islands"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Morocco"
+      ],
+      "Mozambique": [
+        "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Netherlands"
+      ],
+      "New Caledonia": [
+        "New Caledonia"
+      ],
+      "New Zealand": [
+        "New Zealand"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Island"
+      ],
+      "North Korea": [
+        "North Korea"
+      ],
+      "North Macedonia": [
+        "Hilagang Macedonia"
+      ],
+      "Northern Mariana Islands": [
+        "Northern Mariana Islands"
+      ],
+      "Norway": [
+        "Norway"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestine"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua New Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Pilipinas"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Poland"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Russia"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts and Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (French Part)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre and Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent and the Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome and Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi Arabia"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Solomon Islands"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "South Africa"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "South Georgia and the South Sandwich Islands"
+      ],
+      "South Korea": [
+        "South Korea"
+      ],
+      "South Ossetia": [
+        "South Ossetia"
+      ],
+      "South Sudan": [
+        "South Sudan"
+      ],
+      "Spain": [
+        "Spain"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard and Jan Mayen"
+      ],
+      "Sweden": [
+        "Sweden"
+      ],
+      "Switzerland": [
+        "Switzerland"
+      ],
+      "Syria": [
+        "Syria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad and Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turkey"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks and Caicos Islands"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraine"
+      ],
+      "United Arab Emirates": [
+        "United Arab Emirates"
+      ],
+      "United Kingdom": [
+        "United Kingdom"
+      ],
+      "United States": [
+        "United States"
+      ],
+      "United States Minor Outlying Islands": [
+        "United States Minor Outlying Islands"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Virgin Islands, British"
+      ],
+      "Virgin Islands, U.S.": [
+        "Virgin Islands, U.S."
+      ],
+      "Wallis and Futuna": [
+        "Wallis and Futuna"
+      ],
+      "Western Sahara": [
+        "Western Sahara"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Åland Islands"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Overdue na invoice"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Hindi available ang domain, subukang muli mamaya"
+      ],
+      "Email is not valid": [
+        "Hindi valid ang email"
+      ],
+      "Enter 6 digits": [
+        "Ilagay ang 6 na digit"
+      ],
+      "Incorrect username": [
+        "Maling username"
+      ],
+      "Invalid verification code": [
+        "Hindi valid na verification code"
+      ],
+      "Not a valid number": [
+        "Hindi valid na numero"
+      ],
+      "Passwords do not match": [
+        "Hindi magkatugma ang mga password"
+      ],
+      "Request timed out": [
+        "Nag-time out ang request"
+      ],
+      "The email addresses do not match": [
+        "Hindi magkatugma ang mga email address"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Lumalagpas ang field na ito sa maximum na ${ maximumLength } na character."
+      ],
+      "This field is required": [
+        "Kailangan ang field na ito"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Kailangan ng field na ito ng minimum na ${ minimumLength } na character."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Subukan gamit ang mga letra, numero, at _.-"
+      ],
+      "Unknown error": [
+        "Hindi tukoy na error"
+      ],
+      "Username must begin with a letter or digit": [
+        "Dapat magsimula ang username sa titik o numero"
+      ],
+      "Username must end with a letter or digit": [
+        "Dapat magtapos ang username sa titik o numero"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "Error: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "Paki-refresh ang pahina o subukang muli mamaya."
+      ],
+      "Something went wrong": [
+        "Nagkaproblema"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Hindi ma-load ang page na ito. Paki-refresh ang page o suriin ang koneksyon sa internet."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Nagkaproblema sa pag-authenticate gamit ang security key. Pakisubukang muli."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Ipasok ang isang security key na naka-link sa ${ BRAND_NAME } Account."
+      ],
+      "Security key": [
+        "Security key"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Security key"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Default ng system"
+      ],
+      "Theme font": [
+        "Font ng tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Malaki"
+      ],
+      "Medium (recommended)": [
+        "Katamtaman (inirerekomenda)"
+      ],
+      "Small": [
+        "Maliit"
+      ],
+      "Very large": [
+        "Napakalaki"
+      ],
+      "Very small": [
+        "Napakaliit"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "Walang available na paraan ng pag-verify"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Ang isang numero ng telepono ay magagamit lang upang i-verify ang isang ${ BRAND_NAME } account"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Bago humiling ng bagong verification code, tingnan ang spam folder at tiyaking tama ang address na ${ strong }."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "I-click ang \"Request new code\" para maipadala ang bagong verification code sa ${ strong }. Kung mali ang numero ng teleponong ito, i-click ang \"Edit\" para itama ito."
+      ],
+      "Country code": [
+        "Country code"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Hindi pinahihintulutan ng ${ termsLink } ang paggawa ng maraming libreng account."
+      ],
+      "Each code can only be used once": [
+        "Ang bawat code ay magagamit lang nang isang beses"
+      ],
+      "Edit email address": [
+        "I-edit ang email address"
+      ],
+      "Enter the code from your authenticator app": [
+        "Ilagay ang code mula sa authenticator app"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Ilagay ang verification code na ipinadala sa ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ilagay ang verification code. Digit ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ilagay ang sariling password (bilang admin ng organisasyon)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ilagay ang sariling password (bilang pinagkakatiwalaang contact)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Para sa karagdagang impormasyon at upang alisin ang mga paghihigpit, mangyaring mag-login sa ${ mailLink }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Kung nagkakaproblema sa paggawa ng account, mangyaring humiling ng imbitasyon at tutugon kami sa loob ng isang araw ng negosyo."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Kung sa palagay ay may pagkakamali, mangyaring ${ contactLink }."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Kung hindi makita ang email sa inbox, mangyaring tingnan ang spam folder."
+      ],
+      "Internet connection lost": [
+        "Nawala ang koneksyon sa internet"
+      ],
+      "Learn more": [
+        "Matuto pa"
+      ],
+      "Loading": [
+        "Naglo-load"
+      ],
+      "No results found": [
+        "Walang nahanap na resulta"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Hindi maabot ang mga server. Pakisubukang muli sa ilang minuto"
+      ],
+      "Session timed out": [
+        "Nag-time out ang session"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Upang labanan ang spam at pang-aabuso, mangyaring i-verify na ikaw ay tao."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "Upang alisin ang mga paghihigpit, maaari kang mag-upgrade sa isang bayad na plano."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "May mga planong idinisenyo para sa mga user na nangangailangan ng higit sa isang email address."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Magpapadala ng bagong verification code sa ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Kapag nag-set up ka ng two-factor authentication, nagbibigay kami ng mga recovery code na magagamit mo para mag-sign in kung mawalan ka ng access sa iyong authenticator app."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Gustong makatanggap ng bagong verification code o gumamit ng alternatibong paraan ng pag-verify?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Gustong makatanggap ng bagong verification code?"
+      ],
+      "You can now return to the application to continue": [
+        "Maaari nang bumalik sa application upang magpatuloy"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Kasalukuyang suspendido ang ${ BRAND_NAME } account. Pagkalipas ng 28 araw, hindi na ihahatid ang mga email sa inbox, haharangin ang mga link sa pag-share ng Drive, at hindi na makakapag-upload ng mga bagong file. Upang ipagpatuloy ang normal na serbisyo, pakibayaran ang anumang overdue na invoice."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Gagamitin lang ang email para sa one-time na pag-verify na ito."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Gagamitin lang ang numero ng telepono para sa one-time na pag-verify na ito."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "Authenticator app"
+      ],
+      "Code is 6 digits without spaces": [
+        "Ang code ay 6 na digit na walang mga espasyo"
+      ],
+      "Email address": [
+        "Email address"
+      ],
+      "Hide password": [
+        "Itago ang password"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Phone number": [
+        "Numero ng telepono"
+      ],
+      "Reveal password": [
+        "Ipakita ang password"
+      ],
+      "Verification code": [
+        "Verification code"
+      ],
+      "Your password (admin)": [
+        "Password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ang password (pinagkakatiwalaang contact)"
+      ]
+    },
+    "Link": {
+      "contact us": [
+        "makipag-ugnayan sa amin"
+      ],
+      "Learn more": [
+        "Matuto pa"
+      ],
+      "Request an invite": [
+        "Humiling ng imbitasyon"
+      ],
+      "terms of service": [
+        "mga tuntunin ng serbisyo"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "Panatilihing organisado ang inbox gamit ang mga folder"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "Kunin ang ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe writing assistant"
+      ],
+      "${ n } custom email domain": [
+        "${ n } custom na domain ng email",
+        "${ n } na custom na domain ng email"
+      ],
+      "${ n } email address": [
+        "${ n } email address",
+        "${ n } na email address/alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } email address bawat user",
+        "${ n } na email address bawat user"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } na filter"
+      ],
+      "${ n } folder": [
+        "${ n } folder",
+        "${ n } na folder"
+      ],
+      "${ n } folder and label": [
+        "${ n } folder at label",
+        "${ n } na folder at label"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } na label"
+      ],
+      "${ n } message per day": [
+        "${ n } mensahe bawat araw",
+        "${ n } na mensahe bawat araw"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-araw na history ng bersyon ng file",
+        "${ options }-araw na history ng bersyon ng file"
+      ],
+      "${ size } attachment size": [
+        "${ size } na laki ng attachment"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } ng secure na storage kada user"
+      ],
+      "${ size } storage": [
+        "${ size } na storage"
+      ],
+      "${ size } storage per user": [
+        "${ size } storage bawat user"
+      ],
+      "1 TB secure storage": [
+        "1 TB na secure na storage"
+      ],
+      "10 email addresses/aliases": [
+        "10 email address/alias"
+      ],
+      "10 more premium features": [
+        "10 pang premium feature"
+      ],
+      "10-year file version history": [
+        "10-taong history ng bersyon ng file"
+      ],
+      "15 GB storage": [
+        "15 GB na storage"
+      ],
+      "200 GB of storage": [
+        "200 GB na storage"
+      ],
+      "Advanced account protection": [
+        "Advanced na proteksyon sa account"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Lahat ng produkto at feature ng ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Lahat ng pangunahing serbisyo ng ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Auto-delete Spam and Trash": [
+        "I-auto-delete ang Spam at Basura"
+      ],
+      "Auto-reply": [
+        "Auto-reply"
+      ],
+      "Automatic email forwarding": [
+        "Awtomatikong pag-forward ng email"
+      ],
+      "Calendar sharing": [
+        "Pag-share ng kalendaryo"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Collaborate and share large files": [
+        "Makipagtulungan at i-share ang malalaking file"
+      ],
+      "Contact groups": [
+        "Mga grupo ng contact"
+      ],
+      "Contact groups management": [
+        "Pamamahala ng mga grupo ng contact"
+      ],
+      "Custom and secure business email": [
+        "Custom at secure na email ng negosyo"
+      ],
+      "Custom email domains": [
+        "Mga custom na domain ng email"
+      ],
+      "Desktop app": [
+        "Desktop app"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch na assistant sa pag-import"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Suporta sa email client (sa pamamagitan ng IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Mga pangkat ng email"
+      ],
+      "Encrypted contact details": [
+        "Mga naka-encrypt na detalye ng contact"
+      ],
+      "End-to-end encryption": [
+        "End-to-end na encryption"
+      ],
+      "Generate emails with a prompt": [
+        "Mag-generate ng mga email gamit ang isang prompt"
+      ],
+      "HTML signatures": [
+        "Mga HTML signature"
+      ],
+      "Online document editor": [
+        "Online na editor ng dokumento"
+      ],
+      "Password health": [
+        "Katatagan ng Password"
+      ],
+      "Password-protected Emails": [
+        "Mga Email na protektado ng password"
+      ],
+      "Private photo backup": [
+        "Pribadong backup ng larawan"
+      ],
+      "Proofread and refine your emails": [
+        "I-proofread at pinuhin ang mga email"
+      ],
+      "Quickly craft replies": [
+        "Mabilis na gumawa ng mga tugon"
+      ],
+      "Recover previous file versions": [
+        "I-recover ang mga nakaraang bersyon ng file"
+      ],
+      "Save time emailing": [
+        "I-save ang oras sa pag-i-email"
+      ],
+      "Schedule and snooze emails for any time": [
+        "I-schedule at i-snooze ang mga email sa anumang oras"
+      ],
+      "Secure file storage and sharing": [
+        "Secure na storage at pagbabahagi ng file"
+      ],
+      "Share files with no size limit": [
+        "I-share ang mga file nang walang limitasyon sa laki"
+      ],
+      "Short domain (@pm.me)": [
+        "Maikling domain (@pm.me)"
+      ],
+      "SMTP submission": [
+        "SMTP submission"
+      ],
+      "Support for up to 2 users": [
+        "Suporta para sa hanggang 2 user"
+      ],
+      "Sync and backup all your files across devices": [
+        "I-sync at i-backup ang lahat ng file sa mga device"
+      ],
+      "Unlimited filters": [
+        "Walang limitasyong mga filter"
+      ],
+      "Unlimited folders": [
+        "Walang limitasyong mga folder"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Walang limitasyong mga folder, label, at filter"
+      ],
+      "Unlimited labels": [
+        "Walang limitasyong mga label"
+      ],
+      "Unlimited messages per day": [
+        "Walang limitasyong mga mensahe bawat araw"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Hanggang ${ totalStorageSize } na storage"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 custom na domain ng email"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Gumawa ng maraming email address para sa mga online na pagkakakilanlan hal. JohnShopper@${ domain } para sa mga shopping account, JohnNews@${ domain2 } para sa news subscription"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ang espasyo ng storage ay naka-share sa ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } at ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, naka-encrypt na pagbabahagi ng file, at iba pa."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: I-secure ang iyong mga email gamit ang end-to-end na encryption. Kasama ang suporta para sa mga custom na domain ng email, 15 email address, walang limitasyong mga alias ng hide-my-email, at higit pa."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "I-access ang ${ MAIL_APP_NAME } at ${ CALENDAR_APP_NAME } mula sa kaginhawaan ng iyong desktop"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Ang mga address ay may buong kakayahan sa pagpapadala at pagtanggap. Ang isang user ay maaaring magkaroon ng maraming address na nakatalaga sa kanila; gayunpaman, ang isang address ay hindi maaaring italaga sa maraming user."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Pinapayagan kang mag-set up ng mga awtomatikong tugon (auto-reply) para sa iyong mga papasok na mensahe"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Awtomatikong i-clear ang mga mensaheng mas luma sa 30 araw mula sa Basura at Spam"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Awtomatikong i-forward ang mga email na ipinadala sa iyong ${ MAIL_APP_NAME } account sa anumang ibang email address."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Ang maramihang promotional o programmatic na pagpapadala ng email ay kasalukuyang hindi sinusuportahan. Inirerekomenda namin ang paggamit ng nakalaang service provider ng email para sa use case na ito."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Pumili ng mga custom na oras upang mapaalalahanan tungkol sa isang email o para dumating ang iyong mensahe"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Gumawa ng maraming email address para sa mga online na pagkakakilanlan, hal., JohnShopper@${ domain } para sa mga shopping account, JohnNews@${ domain } para sa subscription sa balita"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Gumawa ng hanggang ${ n } email address/alias na maaaring italaga sa mga miyembro ng pamilya. Gamitin ang mga ito para sa mga online na pagkakakilanlan, hal., JohnShopper@${ domain } para sa mga shopping account."
+      ],
+      "Email everyone in a group with a single email address": [
+        "I-email ang lahat sa isang pangkat gamit ang isang email address"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Tinitiyak na matatanggap mo ang lahat ng email na ipinadala sa iyong domain, kahit na hindi umiiral ang email address, hindi na umiiral o may typo"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Limitado ang suporta sa IMAP sa paggamit ng mga desktop app (hal., Outlook, Apple Mail, Thunderbird) sa pamamagitan ng ${ MAIL_APP_NAME } Bridge. Kasalukuyang hindi suportado ang mga cloud-based IMAP integration."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Ang mga label ay simpleng tag na maaari mong idagdag sa mga mensahe upang mas madaling mahanap ang mga ito o upang ilapat ang mga filter sa mga ito"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "I-personalize ang email signature gamit ang mga logo, larawan, icon ng social media, link sa mga detalye ng contact at higit pa"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Pinipigilan ang mga mensahe na ma-access ng ${ BRAND_NAME } o mga third party. Ang mga tao lang na makakabasa ng mga mensahe ay ang nagpadala at ang nilalayong tatanggap."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Mabilis na i-set up ang mga out-of-office na mensahe"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Mabilis na ilipat ang mga email, kalendaryo o contact mula sa anumang provider"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, naka-encrypt na pagbabahagi ng file, at higit pa."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Ligtas na i-store ang mga detalye ng mga contact, tulad ng numero ng telepono, address, kaarawan, at mga personal na tala. Tinitiyak ng zero-access na encryption na kahit ang ${ BRAND_NAME } ay hindi maa-access ang mga ito."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Magpadala ng mga email sa malalaking pangkat nang mabilis at madali sa pamamagitan ng paggawa ng mga grupo ng contact hangga't kailangan (hanggang 100 contact bawat pangkat)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Mag-set up ng mga filter upang awtomatikong mag-reply sa, mag-sort at/o mag-label ng mga email"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "I-share ang mga file o folder sa sinuman gamit ang mga secure at shareable na link"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Ang SMTP ay nagbibigay-daan sa mga 3rd-party service o device na magpadala ng email sa pamamagitan ng ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Naka-share ang espasyo ng storage sa buong ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, at ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Ang espasyo ng storage ay naka-share sa ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, at ${ DRIVE_APP_NAME }. Maaaring maglaan ang mga administrator ng iba't ibang halaga ng storage sa mga user sa kanilang organisasyon"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Naka-share ang espasyo ng storage sa pagitan ng mga user sa buong ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, at ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Gamitin ang iyong sariling mga address ng custom na domain ng email, hal., you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Kapag nagpapadala sa ibang user ng ${ MAIL_APP_NAME }, automatic ang encryption. Ang pagpapadala sa mga user na hindi ${ MAIL_APP_NAME_TWO } ay nangangailangan ng pagtatakda ng password bago ipadala."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Magdagdag ng higit pang personalization na may 15 email address at suporta para sa 3 custom na domain ng email"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Palakihin ang iyong espasyo ng storage sa ${ bundleStorage } kada user"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Palakihin ang espasyo ng storage sa ${ bundleStorage } kabuuan"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suporta para sa ${ n } custom na domain ng email",
+        "Suporta para sa ${ n } na custom na domain ng email"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Password"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Lahat ng premium feature mula sa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, at ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Hindi matagumpay na nakumpleto ang pag-sign in."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Mag-sign in"
+      ],
+      "Sign in to your organization": [
+        "Mag-sign in sa organisasyon"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Ire-redirect ka sa iyong third-party SSO provider."
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Storage para sa data na na-generate ng ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, at ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Hanggang ${ totalStorageSize } na storage ng Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Hanggang ${ totalStorageSize } na storage ng Mail"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "Para sa lahat ng serbisyo ng ${ BRAND_NAME }"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Ipinadala ang code sa ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Matagumpay ang pag-verify"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "Limitado ang account"
+      ],
+      "Account temporarily locked": [
+        "Pansamantalang naka-lock ang account"
+      ],
+      "Enter your password": [
+        "Ilagay ang password"
+      ],
+      "Human verification": [
+        "Pag-verify ng tao"
+      ],
+      "Invalid verification code": [
+        "Invalid na verification code"
+      ],
+      "Request new code": [
+        "Humingi ng bagong code"
+      ],
+      "Two-factor authentication": [
+        "Two-factor authentication"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } character",
+        "Dapat maglaman ang password ng hindi bababa sa ${ MIN_PASSWORD_LENGTH } na character"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Sumubok ng mas maikling username (${ n } character max)",
+        "Sumubok ng mas maikling username (${ n } na character max)"
+      ]
+    }
+  }
+}
