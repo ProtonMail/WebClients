@@ -113,18 +113,6 @@ export const checkVersionedESDB = async (userID: string) => {
 };
 
 /**
- * Create an up-to-date IDB for the given user
- */
-export const createESDB = async (userID: string) => {
-    // Remove the database first, in case there is an old stale version that
-    // might arise when removing it and creating a new one immediately after
-    await deleteESDB(userID);
-    return openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
-        upgrade,
-    });
-};
-
-/**
  * Delete the oldest item from ESDB, both from the metadata table and the content table
  */
 const deleteOldestItem = async (ID: string, esDB: IDBPDatabase<EncryptedSearchDB>) => {
