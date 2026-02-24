@@ -812,10 +812,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } सर्वर",
-        "${ ips } सर्वर"
-      ],
       "${ price } per dedicated server": [
         "${ price } प्रति समर्पित सर्वर"
       ],
@@ -937,52 +933,6 @@
         "${ storageSize } स्टोरेज"
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 टीबी डेटा स्टोरेज"
-      ],
-      "3 TB data storage": [
-        "3 टीबी डेटा स्टोरेज"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120+ देशो में 15,000+ सर्वर एक्सेस करें"
-      ],
-      "Access advanced AI models": [
-        "उन्नत एआई मॉडल एक्सेस करें"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
-      ],
-      "Block ads, trackers, and malware": [
-        "विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करें"
-      ],
-      "Built-in 2FA authenticator": [
-        "बिल्ट-इन 2-एफए ऑथेंटिकेटर"
-      ],
-      "Connect 10 devices at once": [
-        "एक समय में 10 डिवाइस कनेक्ट करें"
-      ],
-      "Full chat history with easy search and favorites": [
-        "आसान खोज और पसंदीदा के साथ पूरी चैट हिस्ट्री"
-      ],
-      "Individual accounts for 6 users": [
-        "6 उपयोगकर्ताओं के लिए व्यक्तिगत खाते"
-      ],
-      "Individual accounts for you and a partner": [
-        "आपके और एक साथी के लिए व्यक्तिगत खाते"
-      ],
-      "Stronger protection against cyber threats": [
-        "साइबर खतरों के खिलाफ मजबूत सुरक्षा"
-      ],
-      "Unlimited daily chats": [
-        "असीमित दैनिक चैट"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "खास तौर पर डिज़ाइन किया गया NetShield विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करके आपके डिवाइस की सुरक्षा करता है और आपकी ब्राउज़िंग को तेज़ करता है।"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 महीना"
@@ -998,6 +948,9 @@
       ],
       "Two-year": [
         "दो वर्ष"
+      ],
+      "Yearly": [
+        "हर साल"
       ]
     },
     "Bug category": {
@@ -4855,9 +4808,6 @@
       "Your login information will not be saved after the import is completed.": [
         "आयात पूर्ण होने के बाद आपकी लॉगिन जानकारी सहेजी नहीं जाएगी।"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "आपकी अगली बिलिंग तिथि ${ renewalTime } है।"
-      ],
       "Your password was leaked:": [
         "आपका पासवर्ड लीक हो गया:"
       ],
@@ -7109,9 +7059,6 @@
       "Thomas": [
         "उदा. अर्जुन"
       ],
-      "VAT number": [
-        "वैट नंबर"
-      ],
       "ZIP code": [
         "ज़िप कोड"
       ]
@@ -7129,6 +7076,12 @@
     "plan customizer, users": {
       "contact": [
         "संपर्क करें"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } महीना",
+        "${ cycle } महीने"
       ]
     },
     "plus_block": {
@@ -7687,17 +7640,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "जानिए की कैसे एक निजी कैलेंडर लिंक लेते है।"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "बिल हर 2 साल पे"
-      ],
-      "Billed monthly": [
-        "मासिक बिल"
-      ],
-      "Billed yearly": [
-        "वार्षिक बिल"
       ]
     },
     "Subscription attribute": {

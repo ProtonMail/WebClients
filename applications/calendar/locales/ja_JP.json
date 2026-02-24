@@ -1065,8 +1065,14 @@
       "${ domains } additional custom domain": [
         "${ domains } 追加カスタムドメイン"
       ],
-      "${ ips } server": [
-        "${ ips } 台のサーバー"
+      "${ ips } dedicated VPN server": [
+        "${ ips } 台の専用VPNサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } のシート"
       ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
@@ -1080,6 +1086,9 @@
       "${ price } per user": [
         "ユーザーあたり ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AIライセンス"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
@@ -1088,6 +1097,24 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
+      "Domains": [
+        "ドメイン"
+      ],
+      "Servers": [
+        "サーバー"
+      ],
+      "Users": [
+        "ユーザー"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
+      "Writing assistant seats": [
+        "執筆アシスタントシート"
       ]
     },
     "Alarm notification": {
@@ -1327,19 +1354,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2TBのデータストレージ"
+        "2 TB のストレージ"
       ],
       "3 TB data storage": [
-        "3TBのデータストレージ"
+        "3 TB のストレージ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120か国以上の15,000台以上のサーバーにアクセス"
+        "120 か国以上の 15,000 以上のサーバーにアクセス"
       ],
       "Access advanced AI models": [
-        "高度なAIモデルへのアクセス"
+        "高度なAIモデルにアクセス"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
+        "${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
       ],
       "Block ads, trackers, and malware": [
         "広告、トラッカー、マルウェアをブロック"
@@ -1348,16 +1375,16 @@
         "2要素認証システム内蔵"
       ],
       "Connect 10 devices at once": [
-        "10台のデバイスを同時接続"
+        "同時に10台のデバイスを接続"
       ],
       "Full chat history with easy search and favorites": [
-        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+        "検索とブックマークが容易な、全体チャット履歴"
       ],
       "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
+        "6人のユーザーの個人アカウント"
       ],
       "Individual accounts for you and a partner": [
-        "お客様とパートナー用の個別アカウント"
+        "あなたとパートナーのための個人アカウント"
       ],
       "Stronger protection against cyber threats": [
         "サイバー脅威に対するより強力な保護"
@@ -1372,6 +1399,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 か月"
       ],
@@ -1381,14 +1414,23 @@
       "Annually": [
         "1年払い"
       ],
+      "Billed monthly": [
+        "毎月請求"
+      ],
       "Lifetime": [
         "Lifetime"
+      ],
+      "Lifetime access": [
+        "生涯アクセス"
       ],
       "Monthly": [
         "月額"
       ],
       "Two-year": [
         "2年払い"
+      ],
+      "Yearly": [
+        "年払い"
       ]
     },
     "Browser": {
@@ -3549,6 +3591,9 @@
       "Event not found": [
         "イベントが見つかりません"
       ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } ビデオ会議の追加に失敗しました"
       ],
@@ -3839,6 +3884,9 @@
       ],
       "Tab closed": [
         "タブが閉じられました"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "このプランでは税金の免除はサポートされていません"
       ],
       "The address might be misspelled": [
         "アドレスの綴りが違う可能性があります"
@@ -6269,8 +6317,8 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }に請求されます。"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
@@ -6335,11 +6383,11 @@
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "次回の請求日は ${ renewalTime } です。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "次回の請求日は${ renewalTime }です。いつでもキャンセルできます。"
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。いつでもキャンセルできます。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
       "Your online activity is protected": [
         "オンラインアクティビティは保護されています"
@@ -7761,9 +7809,6 @@
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
       ],
-      "${ options }-day file version history": [
-        "${ options }-日間のファイルバージョン履歴"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 一生涯"
       ],
@@ -7982,6 +8027,9 @@
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "電話サポート (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }人以上のユーザー)"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -8406,6 +8454,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用してメールの署名をパーソナライズします"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }名以上のユーザーを持つお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマーサポートチームから電話サポートをご利用いただけます。"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
@@ -9128,6 +9179,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（税別）"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
@@ -9146,20 +9200,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% の税金を除く: ${ taxAmount }"
-      ],
       "Got it": [
         "分かりました"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -9178,9 +9220,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Taxes": [
-        "税金"
       ],
       "terms and conditions": [
         "利用規約"
@@ -9223,9 +9262,6 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -9305,6 +9341,20 @@
     "Payments.plan_name": {
       "Free": [
         "無料"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "更新価格は、請求地域とABNによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "更新価格は、請求地域と事業所番号によって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "更新価格は、請求地域とEINによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "更新価格は、請求地域およびVAT番号によって異なります。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -9515,9 +9565,6 @@
       "Thomas": [
         "トーマス"
       ],
-      "VAT number": [
-        "VAT 番号"
-      ],
       "Your organization name": [
         "あなたの組織の名前"
       ],
@@ -9546,6 +9593,11 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }ヶ月"
       ]
     },
     "plus_block": {
@@ -9844,13 +9896,13 @@
         "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+        "${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+        "${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " ${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
+        "${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
       ]
     },
     "session_recovery:available:link": {
@@ -10232,8 +10284,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "パスワードを複数の保管庫に安全に整理して保管する "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "パスワードを複数の保管庫に安全に整理して保管"
       ],
       "Protect your account from threats with Sentinel": [
         "Sentinelでアカウントを脅威から保護する"
@@ -10410,17 +10462,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "プライベートなカレンダーリンクの取得方法の詳細"
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "2年ごとに請求"
-      ],
-      "Billed monthly": [
-        "毎月請求"
-      ],
-      "Billed yearly": [
-        "年間請求"
       ]
     },
     "Subscription attribute": {
@@ -10843,6 +10884,9 @@
       ],
       "Billing details updated": [
         "請求の詳細が更新されました"
+      ],
+      "Billing information updated": [
+        "請求情報が更新されました"
       ],
       "Booking page created": [
         "予約ページが作成されました"
@@ -11868,6 +11912,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName }の無料トライアルは${ textDate }に終了します"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "${ planTitle }サブスクリプションが開始されました"
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"

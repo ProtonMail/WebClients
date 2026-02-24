@@ -1070,9 +1070,11 @@
         "${ domains } dominio personalizzato aggiuntivo",
         "${ domains } domini personalizzati aggiuntivi"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } server"
+      "${ LUMO_APP_NAME } AI license": [
+        "Licenza AI di ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licenze ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
@@ -1097,6 +1099,24 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Domains": [
+        "Domini"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "Writing assistant": [
+        "Assistente per la scrittura"
+      ],
+      "Writing assistant seats": [
+        "Posti dell'assistente alla scrittura"
       ]
     },
     "Alarm notification": {
@@ -1337,53 +1357,15 @@
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB di archiviazione dati"
-      ],
-      "3 TB data storage": [
-        "3 TB di archiviazione dati"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accedi a oltre 15.000 server in oltre 120 Paesi"
-      ],
-      "Access advanced AI models": [
-        "Accedi a modelli di IA avanzati"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Tutte le funzionalità premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Strumento di autenticazione 2FA integrato"
-      ],
-      "Connect 10 devices at once": [
-        "Connetti 10 dispositivi contemporaneamente"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Cronologia chat completa con ricerca facile e preferiti"
-      ],
-      "Individual accounts for 6 users": [
-        "Account individuali per 6 utenti"
-      ],
-      "Individual accounts for you and a partner": [
-        "Account individuali per te e un'altra persona"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protezione più efficace dalle minacce informatiche"
-      ],
-      "Unlimited daily chats": [
-        "Numero illimitato di chat al giorno"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
-      ]
-    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "${ n } year": [
+        "${ n } anno",
+        "${ n } anni"
+      ],
       "1 month": [
         "1 mese"
       ],
@@ -1393,14 +1375,23 @@
       "Annually": [
         "Annuale"
       ],
+      "Billed monthly": [
+        "Addebito mensile"
+      ],
       "Lifetime": [
         "A vita"
+      ],
+      "Lifetime access": [
+        "Accesso a vita"
       ],
       "Monthly": [
         "Mensile"
       ],
       "Two-year": [
         "Due anni"
+      ],
+      "Yearly": [
+        "Annuale"
       ]
     },
     "Browser": {
@@ -6359,9 +6350,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
-        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo o gruppi di contatti:"
@@ -6426,11 +6417,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La tua prossima data di fatturazione è il ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La tua prossima data di fatturazione è il ${ renewalTime }. Puoi annullare in qualsiasi momento."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "La tua prossima data di fatturazione è ${ renewalTime }. Contatta il supporto se hai bisogno di un cambio di piano immediato."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Puoi annullare in qualsiasi momento. Contatta il supporto se hai bisogno di un cambio di piano immediato."
       ],
       "Your online activity is protected": [
         "La tua attività online è protetta"
@@ -7885,10 +7876,6 @@
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
       ],
-      "${ options }-day file version history": [
-        "Cronologia delle versioni dei file per ${ options } giorni",
-        "Cronologia delle versioni dei file per ${ options } giorni"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin a vita"
       ],
@@ -9297,6 +9284,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA esclusa)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Importo dovuto dopo la prova il ${ formattedDate }"
       ],
@@ -9315,20 +9305,8 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
-      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
-      ],
-      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
-      ],
       "Got it": [
         "Tutto chiaro"
-      ],
-      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
-        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
-      ],
-      "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -9347,9 +9325,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
-      ],
-      "Taxes": [
-        "Tasse"
       ],
       "terms and conditions": [
         "Termini e Condizioni"
@@ -9398,9 +9373,6 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -9690,9 +9662,6 @@
       "Thomas": [
         "Mario"
       ],
-      "VAT number": [
-        "Numero partita IVA"
-      ],
       "Your organization name": [
         "Il nome della tua organizzazione"
       ],
@@ -9721,6 +9690,12 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mese",
+        "${ cycle } mesi"
       ]
     },
     "plus_block": {
@@ -10028,18 +10003,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
         "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Hai ${ timeRemaining.inHours } ora rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inHours } ore rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Hai ${ timeRemaining.inMinutes } minuto rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inMinutes } minuti rimanenti per reimpostare la password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Hai ${ timeRemaining.inSeconds } secondo rimanente per reimpostare la password.",
-        " Hai ${ timeRemaining.inSeconds } secondi rimanenti per reimpostare la password."
       ]
     },
     "session_recovery:available:link": {
@@ -10430,9 +10393,6 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Ottieni alias illimitati per proteggere la tua identità e ridurre lo spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Mantieni le tue password al sicuro e organizzate in varie casseforti "
-      ],
       "Protect your account from threats with Sentinel": [
         "Proteggi il tuo account dalle minacce con Sentinel"
       ],
@@ -10609,17 +10569,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Scopri come ottenere un link per il calendario privato."
-      ]
-    },
-    "Subscription": {
-      "Billed every 2 years": [
-        "Fatturazione biennale"
-      ],
-      "Billed monthly": [
-        "Fatturazione mensile"
-      ],
-      "Billed yearly": [
-        "Fatturazione annuale"
       ]
     },
     "Subscription attribute": {
