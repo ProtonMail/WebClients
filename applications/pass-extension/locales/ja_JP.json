@@ -1029,6 +1029,9 @@
       "Error reporting problem": [
         "エラー報告の問題"
       ],
+      "Failed loading group members": [
+        "グループメンバーの読み込みに失敗しました"
+      ],
       "Failed removing the invite.": [
         "招待の削除に失敗しました。"
       ],
@@ -2609,9 +2612,6 @@
       ],
       "You may close this tab.": [
         "このタブを閉じても構いません。"
-      ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
       ],
       "You need a vault with edit permission before you can import items.": [
         "アイテムをインポートするには、編集権限のある保管庫が必要です。"
