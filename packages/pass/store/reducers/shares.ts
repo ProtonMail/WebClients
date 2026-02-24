@@ -1,8 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
 import {
-    bootSuccess,
     inviteAccept,
+    matchSyncAction,
     shareCreated,
     shareDeleted,
     shareEvent,
@@ -12,8 +12,6 @@ import {
     sharesEventNew,
     sharesEventSync,
     sharesVisibilityEdit,
-    sync,
-    syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
     vaultEditSuccess,
@@ -30,8 +28,7 @@ export type VaultShareItem = ShareItem<ShareType.Vault>;
 export type SharesState = Record<ShareId, ShareItem>;
 
 export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
-    if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
-    if (or(sync.match, syncSuccess.match)(action)) return action.payload.shares;
+    if (matchSyncAction(action) && action.payload?.shares) return action.payload.shares;
     if (sharesEventNew.match(action)) return fullMerge(state, action.payload.shares);
 
     if (shareEvent.match(action) && state !== null) {
