@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import type {ReactNode} from 'react';
+import {createContext, useCallback, useContext, useEffect, useState} from 'react';
 
-import { useTierErrors } from '../hooks/useTierErrors';
-import { useLumoPlan } from './LumoPlanProvider';
+import {useTierErrors} from '../hooks/useTierErrors';
+import {useLumoPlan} from './LumoPlanProvider';
 
 const STORAGE_KEY = 'lumo_guest';
 const GUEST_QUESTION_LIMIT = 25;
@@ -30,8 +30,7 @@ const loadFromLocalStorage = (): GuestQuestionTracking => {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) return getInitialTracking();
 
-        const parsed = JSON.parse(stored);
-        return parsed;
+        return JSON.parse(stored);
     } catch (error) {
         console.error('Error loading guest question tracking:', error);
         return getInitialTracking();
@@ -102,6 +101,5 @@ export const GuestTrackingProvider = ({ children }: Props) => {
 };
 
 export const useGuestTracking = (): GuestTrackingContextValue | null => {
-    const context = useContext(GuestTrackingContext);
-    return context;
+    return useContext(GuestTrackingContext);
 };

@@ -281,7 +281,6 @@ class PaymentApi {
             });
 
             const result = await this.handleApiResponse(response, 'getUUID');
-
             return result;
         })();
 
@@ -298,7 +297,7 @@ class PaymentApi {
         const url = `${this.baseUrl}/plans`;
         console.log(`PaymentApi: GET ${url}`);
 
-        var requireUUID = platform == 'ios';
+        const requireUUID = platform == 'ios';
 
         let uuidData = null;
         if (requireUUID) {

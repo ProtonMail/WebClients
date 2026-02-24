@@ -1,9 +1,9 @@
 /**
  * In-memory cache for attachment binary data.
- * 
+ *
  * This prevents storing non-serializable Uint8Array data in Redux state,
  * which would trigger serialization warnings and performance issues.
- * 
+ *
  * The cache stores:
  * - `data`: Full binary data for attachments (original file or HD image)
  * - `imagePreview`: Thumbnail preview data for image attachments
@@ -52,14 +52,14 @@ class AttachmentDataCache {
     }
 
     /**
-     * Check if attachment has data cached
+     * Check if the attachment has data cached
      */
     hasData(attachmentId: AttachmentId): boolean {
         return !!this.cache.get(attachmentId)?.data;
     }
 
     /**
-     * Check if attachment has image preview cached
+     * Check if the attachment has image preview cached
      */
     hasImagePreview(attachmentId: AttachmentId): boolean {
         return !!this.cache.get(attachmentId)?.imagePreview;

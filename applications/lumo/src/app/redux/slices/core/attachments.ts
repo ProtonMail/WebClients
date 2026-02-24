@@ -1,15 +1,15 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import {createAction, createReducer} from '@reduxjs/toolkit';
+import {v4 as uuidv4} from 'uuid';
 
-import type { Priority } from '../../../remote/scheduler';
+import type {Priority} from '../../../remote/scheduler';
 import type {
     IdMapEntry,
     RemoteDeletedAttachment,
     RemoteFilledAttachment,
     RemoteShallowAttachment,
 } from '../../../remote/types';
-import { attachmentDataCache } from '../../../services/attachmentDataCache';
-import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
+import {attachmentDataCache} from '../../../services/attachmentDataCache';
+import type {Attachment, AttachmentId, SerializedAttachment, SpaceId} from '../../../types';
 
 export type PushAttachmentRequest = {
     id: AttachmentId;
@@ -73,10 +73,8 @@ export const unindexAttachmentRequest = createAction<UnindexAttachmentRequest>('
 
 export type AttachmentMap = Record<AttachmentId, Attachment>;
 export const EMPTY_ATTACHMENT_MAP: AttachmentMap = {};
-export const EMPTY_ATTACHMENT_ARRAY = [];
 
-const initialState: AttachmentMap = EMPTY_ATTACHMENT_MAP;
-const attachmentsReducer = createReducer<AttachmentMap>(initialState, (builder) => {
+const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (builder) => {
     builder
         .addCase(upsertAttachment, (state, action) => {
             console.log('Action triggered: upsertAttachment', action.payload);

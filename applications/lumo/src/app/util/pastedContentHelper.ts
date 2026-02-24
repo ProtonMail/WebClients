@@ -2,9 +2,9 @@
  * Utility functions for handling pasted content in the composer
  */
 
-import type { Attachment } from '../types';
-import { newAttachmentId } from '../redux/slices/core/attachments';
-import { getApproximateTokenCount } from '../llm/tokenizer';
+import type {Attachment} from '../types';
+import {newAttachmentId} from '../redux/slices/core/attachments';
+import {getApproximateTokenCount} from '../llm/tokenizer';
 
 /**
  * Configuration for paste-to-attachment conversion
@@ -26,7 +26,7 @@ export function shouldConvertPasteToAttachment(content: string): boolean {
     const lineCount = content.split('\n').length;
     const charCount = content.length;
 
-    return lineCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_LINES || 
+    return lineCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_LINES ||
            charCount >= PASTE_TO_ATTACHMENT_CONFIG.MIN_CHARS;
 }
 
@@ -45,17 +45,17 @@ export function createAttachmentFromPastedContent(content: string): Attachment {
     const filename = generateFilenameForPastedContent(content);
     const encoder = new TextEncoder();
     const data = encoder.encode(content);
-    
+
     const mimeType = 'text/plain';
-    
+
     const filenameHeader = `Filename: ${filename}`;
     const header = 'File contents:';
     const beginMarker = '----- BEGIN FILE CONTENTS -----';
     const endMarker = '----- END FILE CONTENTS -----';
     const fullContext = [filenameHeader, header, beginMarker, content.trim(), endMarker].join('\n');
     const tokenCount = getApproximateTokenCount(fullContext);
-    
-    const attachment: Attachment = {
+
+    return {
         id: newAttachmentId(),
         mimeType,
         uploadedAt: new Date().toISOString(),
@@ -66,8 +66,6 @@ export function createAttachmentFromPastedContent(content: string): Attachment {
         markdown: content,
         tokenCount,
     };
-    
-    return attachment;
 }
 
 export function getPasteConversionMessage(lineCount: number, charCount: number): string {

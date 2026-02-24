@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 // /* eslint-disable @typescript-eslint/ban-ts-comment,@typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars,@typescript-eslint/naming-convention */
 // // @ts-nocheck
-import { ConsoleStdout, File, OpenFile, PreopenDirectory, WASI } from '@bjorn3/browser_wasi_shim';
+import {ConsoleStdout, File, OpenFile, PreopenDirectory, WASI} from '@bjorn3/browser_wasi_shim';
 
 // import pandocWasmAsset from '../../../assets/pandoc.wasm';
 
@@ -13,11 +13,11 @@ let cachedWasmModule: WebAssembly.Module | null = null;
 async function getWasmModule(): Promise<WebAssembly.Module> {
     if (!cachedWasmModule) {
         const response = await fetch(pandocWasmAsset);
-        
+
         if (!response.ok) {
             throw new Error(`Failed to fetch pandoc.wasm: ${response.status} ${response.statusText}`);
         }
-        
+
         const arrayBuffer = await response.arrayBuffer();
         cachedWasmModule = await WebAssembly.compile(arrayBuffer);
     }
@@ -29,7 +29,7 @@ const DEBUG_MEMORY = typeof globalThis !== 'undefined' && (globalThis as any).DE
 
 function logMemoryUsage(label: string) {
     if (!DEBUG_MEMORY) return;
-    
+
     // Simple synchronous logging for debugging
     if (typeof window !== 'undefined' && (window.performance as any)?.memory) {
         const memory = (window.performance as any).memory;
@@ -179,9 +179,7 @@ export class PandocConverter {
                 // @ts-ignore
                 this.wasmInstance.exports.wasm_main(args_ptr, args_str.length);
 
-                const output = new TextDecoder('utf-8', { fatal: true }).decode(this.outFile!.data);
-
-                return output;
+                return new TextDecoder('utf-8', {fatal: true}).decode(this.outFile!.data);
             } finally {
                 // Free the allocated memory for args
                 if (this.wasmInstance?.exports.free) {

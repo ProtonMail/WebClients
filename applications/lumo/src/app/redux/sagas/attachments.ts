@@ -212,7 +212,7 @@ export function* deserializeAttachmentSaga(
     if (!deserializedRemoteAttachment) {
         throw new Error(`deserializeAttachmentSaga ${localId}: cannot deserialize attachment ${localId} from remote`);
     }
-    
+
     // Store binary data in cache before cleaning
     // This ensures the cache is populated when loading from IndexedDB
     if (deserializedRemoteAttachment.data) {
@@ -221,9 +221,8 @@ export function* deserializeAttachmentSaga(
     if (deserializedRemoteAttachment.imagePreview) {
         attachmentDataCache.setImagePreview(localId, deserializedRemoteAttachment.imagePreview);
     }
-    
-    const cleanRemote = cleanAttachment(deserializedRemoteAttachment);
-    return cleanRemote;
+
+    return cleanAttachment(deserializedRemoteAttachment);
 }
 
 export function* softDeleteAttachmentFromRemote({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {

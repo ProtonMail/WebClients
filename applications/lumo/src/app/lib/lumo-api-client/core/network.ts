@@ -1,6 +1,6 @@
-import type { Api } from '@proton/shared/lib/interfaces';
+import type {Api} from '@proton/shared/lib/interfaces';
 
-import type { ChatEndpointGenerationRequest } from './types';
+import type {ChatEndpointGenerationRequest} from './types';
 
 export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat';
 

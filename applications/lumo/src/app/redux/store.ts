@@ -1,19 +1,19 @@
 import {
+    configureStore,
     type ListenerMiddlewareInstance,
     type Middleware,
     type TypedStartListening,
-    configureStore,
 } from '@reduxjs/toolkit';
-import type { SagaMiddleware } from 'redux-saga';
+import type {SagaMiddleware} from 'redux-saga';
 
-import { ignoredActions, ignoredPaths } from '@proton/account/serializable';
+import {ignoredActions, ignoredPaths} from '@proton/account/serializable';
 
-import type { DbApi } from '../indexedDb/db';
-import type { LumoApi } from '../remote/api';
-import { start } from './listeners';
-import { rootReducer } from './rootReducer';
-import type { LumoThunkArguments } from './thunk';
-import { extraThunkArguments } from './thunk';
+import type {DbApi} from '../indexedDb/db';
+import type {LumoApi} from '../remote/api';
+import {start} from './listeners';
+import {rootReducer} from './rootReducer';
+import type {LumoThunkArguments} from './thunk';
+import {extraThunkArguments} from './thunk';
 
 export const setupStore = ({
     preloadedState,
@@ -41,8 +41,7 @@ export const setupStore = ({
                 thunk: { extraArgument: extraThunkArguments },
             });
             const m2 = m1.prepend(listenerMiddleware.middleware);
-            const m3 = sagaMiddleware ? m2.concat(sagaMiddleware) : m2;
-            return m3;
+            return sagaMiddleware ? m2.concat(sagaMiddleware) : m2;
         },
     });
 

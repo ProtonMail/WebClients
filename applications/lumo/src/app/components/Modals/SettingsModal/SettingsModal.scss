@@ -1,0 +1,435 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.lumo-settings-modal {
+	// Mobile adjustments
+	@include im.media('<=small') {
+		block-size: auto;
+		min-block-size: calc(100vh - 2rem);
+		max-block-size: calc(100vh - 2rem);
+
+		// Make modal nearly full screen on mobile with spacing
+		.modal-two-dialog {
+			block-size: calc(100vh - 2rem);
+			max-block-size: calc(100vh - 2rem);
+			border-radius: 0.75rem;
+			margin: 1rem;
+		}
+
+		.modal-two-content {
+			block-size: 100%;
+			max-block-size: calc(100vh - 2rem);
+		}
+
+		// Reset ul styles specifically for settings modal
+		.settings-modal-panel ul,
+		.mobile-settings-section ul {
+			margin-block-start: 0 !important;
+			padding-inline-start: 0 !important;
+			list-style: none !important;
+		}
+	}
+
+	// Target the actual scroll containers
+	.scroll-inner,
+	.scroll-inner--contained {
+		overflow: hidden !important; // Prevent scrolling on desktop
+
+		// Allow natural scrolling on mobile
+		@include im.media('<=small') {
+			overflow: auto !important;
+		}
+	}
+
+	.toggle-container {
+
+		&::before {
+			border-color: #4b5563 !important;
+			background-color: #aaaaaa;
+
+		}
+
+		&.toggle-container--checked::before {
+			background-color: var(--primary);
+		}
+
+		&.toggle-container {
+			background-color: var(--interaction-weak-major-3);
+		}
+
+		:not(.toggle-container--disabled):hover::before {
+			background-color: #4b5563;
+
+		}
+	}
+
+	// Allow content container to scroll
+	.content-container {
+		.overflow-y-auto {
+			overflow-y: auto !important;
+		}
+	}
+
+	// Completely override all modal content padding/margins for flush borders
+	.modal-two-content {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	// Main container with proper padding
+	.modal-main-container {
+		padding: 1rem;
+		min-block-size: 60vh; // Ensure minimum height for the modal
+		block-size: 60vh; // Set explicit height for proper flex behavior
+		display: flex;
+		flex-direction: column;
+
+		// Mobile specific adjustments
+		@include im.media('<=small') {
+			padding: 1rem;
+			min-block-size: auto;
+			block-size: calc(100vh - 2rem);
+		}
+	}
+
+	// Sidebar container with border that extends full height to edges
+	.sidebar-container {
+		border-inline-end: 1px solid var(--border-norm);
+		padding-inline-end: 2rem;
+		margin-inline-end: 2rem;
+
+		// Ensure border extends to very top and bottom of modal
+		margin-block: -2rem;
+		padding-block: 2.4rem 1rem;
+
+		// Make sidebar match the height of its parent container on desktop only
+		@include im.media('>small') {
+			min-block-size: calc(60vh + 4rem);
+		}
+	}
+
+	// Close button positioning in top-right corner
+	.modal-close-button {
+		position: absolute;
+		inset-block-start: 1.3rem;
+		inset-inline-end: 1rem;
+		z-index: 10;
+		color: var(--text-weak);
+
+		// Adjust positioning on mobile to align with Settings text
+		@include im.media('<=small') {
+			inset-block-start: 1rem;
+			inset-inline-end: 1rem;
+		}
+	}
+
+	// Top bar with border that extends full width to edges
+	.top-bar {
+		margin-block-end: 0.5rem;
+		border-block-end: 1px solid var(--border-weak);
+
+		// Extend border to very edges
+		margin-inline: -2rem;
+		padding-block: 0.6rem 1.3rem;
+		padding-inline: 2rem;
+	}
+
+	// Mobile tab content should be constrained and scrollable
+	.mobile-tab-content {
+		overflow: hidden;
+		min-block-size: 0;
+
+		// Only apply height constraints to personalization panel specifically
+		.personalization-panel {
+			block-size: 100%;
+			max-block-size: 100%;
+			overflow: hidden;
+		}
+	}
+
+	// Mobile section styling
+	@include im.media('<=small') {
+		.mobile-section-header {
+			border-block-end: 1px solid var(--border-weak);
+			padding-block-end: 0.75rem;
+			margin-block-end: 1rem;
+		}
+
+		// Mobile tabs styling - minimal design
+		.mobile-tabs-container {
+			margin-block-end: 1rem;
+			max-inline-size: 100%;
+		}
+
+		.mobile-tabs {
+			display: flex;
+			background-color: transparent;
+			border-radius: 0;
+			padding: 0;
+			gap: 0;
+			overflow-x: auto;
+		}
+
+		.mobile-tab {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+			padding-block: 0.75rem;
+			padding-inline: 0.5rem;
+			border-radius: 0.375rem;
+			transition: all 0.2s ease;
+			min-block-size: auto;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			margin-block: 0;
+			margin-inline: 0.125rem;
+
+			&:hover {
+				background-color: var(--background-weak);
+			}
+
+			&.mobile-tab-active {
+				background-color: var(--background-weak);
+				box-shadow: none;
+			}
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+
+			// Icon styling - smaller and inline
+			.icon {
+				color: var(--text-weak);
+				inline-size: 16px;
+				block-size: 16px;
+			}
+
+			&.mobile-tab-active .icon {
+				color: var(--text-norm);
+			}
+
+			// Text styling - inline with icon
+			span {
+				font-weight: 500;
+				color: var(--text-weak);
+				text-align: center;
+				line-height: 1.2;
+				font-size: 0.875rem;
+			}
+
+			&.mobile-tab-active span {
+				color: var(--text-norm);
+				font-weight: 600;
+			}
+		}
+
+		.mobile-tab-content {
+			flex: 1;
+			overflow: hidden;
+			min-block-size: 0;
+		}
+
+		// Hide Lumo cat image on mobile for the upgrade panel
+		.settings-modal-panel {
+			.flex.items-end.justify-end {
+				display: none;
+			}
+
+			// Adjust layout to single column
+
+			// Make the content area full width
+			> div:first-child {
+				inline-size: 100%;
+				margin-block-end: 0.75rem;
+				flex-shrink: 0;
+				min-block-size: 240px;
+
+				img {
+					block-size: 22px !important;
+				}
+			}
+
+			// Mobile specific adjustments
+			padding: 1.5rem !important;
+			min-block-size: 200px;
+			display: flex !important;
+			flex-direction: column !important;
+
+			// Layout features vertically on mobile
+			ul {
+				display: flex !important;
+				flex-flow: column nowrap !important;
+				gap: 0.5rem !important;
+				margin-block: 1rem 1.5rem !important;
+				margin-inline: 0 !important;
+				padding: 0 !important;
+				inline-size: 100% !important;
+
+				li {
+					display: flex !important;
+					align-items: center !important;
+					gap: 0.5rem !important;
+					padding: 0 !important;
+					margin: 0 !important;
+					inline-size: 100% !important;
+					min-block-size: 20px !important;
+
+					.shrink-0 {
+						inline-size: 14px !important;
+						block-size: 14px !important;
+						flex-shrink: 0 !important;
+						min-inline-size: 14px !important;
+					}
+
+					span {
+						font-size: 0.875rem !important;
+						line-height: 1.3 !important;
+						flex: 1 !important;
+						white-space: nowrap !important;
+						overflow: hidden !important;
+						text-overflow: ellipsis !important;
+					}
+				}
+			}
+
+			// Button area - ensure it's at the bottom
+			.mt-2 {
+				margin-block-start: auto !important;
+				flex-shrink: 0;
+			}
+		}
+	}
+}
+
+.lumo-plus-settings-gradient {
+	background:
+		linear-gradient(132.7deg, rgb(109 74 255 / 0) 58%, rgb(109 74 255 / 0.2) 100.13%),
+		linear-gradient(0deg, var(--settings-modal-upsell-background), var(--settings-modal-upsell-background));
+	color: #4b5563;
+
+	// Mobile adjustments for better proportions
+	@include im.media('>small') {
+		min-block-size: 200px;
+		border-radius: 0.75rem;
+	}
+
+	// Fix features list layout on all screen sizes
+	ul {
+		li {
+			display: flex !important;
+			align-items: center !important;
+			flex-wrap: nowrap !important;
+			inline-size: 100% !important;
+
+			.shrink-0 {
+				flex-shrink: 0 !important;
+				min-inline-size: 14px !important;
+			}
+
+			span {
+				flex: 1 !important;
+				white-space: nowrap !important;
+				overflow: hidden !important;
+				text-overflow: ellipsis !important;
+				color: var(--settings-modal-upsell-text) !important;
+			}
+		}
+	}
+
+	p {
+		color: var(--settings-modal-upsell-text) !important;
+	}
+
+	.color-success {
+		color: rgb(255 255 255 / 0.9) !important;
+	}
+
+	.bg-weak {
+		background-color: rgb(255 255 255 / 0.15) !important;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgb(255 255 255 / 0.2);
+
+		.color-weak {
+			color: rgb(255 255 255 / 0.9) !important;
+		}
+	}
+
+	.bg-success-minor {
+		background-color: rgb(46 125 50 / 0.2) !important;
+		border: 1px solid rgb(46 125 50 / 0.3);
+
+		.color-success {
+			color: #4caf50 !important;
+		}
+	}
+
+	// Let the promotion button use its default styling (rainbow border, text color, etc.)
+	// Just ensure text is centered
+	.button-promotion {
+		text-align: center !important;
+		justify-content: center !important;
+		display: flex !important;
+		align-items: center !important;
+	}
+}
+
+.plan-name {
+	background-color: var(--interaction-norm-minor-2);
+	color: var(--interaction-norm);
+}
+
+.user-settings-card {
+	transition: background-color 0.2s ease;
+	border: none !important;
+	text-decoration: none !important;
+
+	&:hover {
+		background-color: var(--background-weak) !important;
+		text-decoration: none !important;
+	}
+
+	.text-bold {
+		line-height: 1.2;
+	}
+
+	.color-weak {
+		line-height: 1.3;
+	}
+
+	.avatar {
+		background-color: var(--background-norm) !important;
+		border: 1px solid var(--border-weak) !important;
+		color: var(--text-norm) !important;
+	}
+}
+
+.is-active {
+	font-weight: bold;
+}
+
+.settings-section-icon {
+	background-color: var(--background-norm);
+	border: 1px solid var(--border-weak);
+	inline-size: 2.5rem;
+	block-size: 2.5rem;
+}
+
+// Lumo Plus panel styling
+.lumo-plus-panel {
+	// Ensure manage button stays on the right
+	.flex.items-center.justify-between {
+		inline-size: 100%;
+
+		> :last-child {
+			margin-inline-start: auto;
+		}
+	}
+}

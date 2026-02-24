@@ -15,7 +15,7 @@ function tryParseJSON(jsonString: string): unknown {
 
 /**
  * Get message text content as a single string.
- * This omits the tool calls, though, so use only if you need flat text in a "lossy" way ie without the tool calls
+ * This omits the tool calls, though, so use only if you need flat text in a "lossy" way i.e., without the tool calls
  */
 export function getMessageContent(message: Message): string {
     // V2
@@ -63,21 +63,21 @@ export function getMessageBlocks(message: Message): ContentBlock[] {
 }
 
 /**
- * Get all tool call blocks from message.
+ * Get all tool call blocks from a message.
  */
 export function getMessageToolCalls(message: Message): ToolCallBlock[] {
     return getMessageBlocks(message).filter(isToolCallBlock);
 }
 
 /**
- * Get all tool result blocks from message.
+ * Get all tool result blocks from a message.
  */
 export function getMessageToolResults(message: Message): ToolResultBlock[] {
     return getMessageBlocks(message).filter(isToolResultBlock);
 }
 
 /**
- * Check if message has any text content.
+ * Check if a message has any text content.
  */
 export function hasMessageContent(message: Message): boolean {
     const blocks = getMessageBlocks(message);
