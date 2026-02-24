@@ -1851,6 +1851,15 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "Subtotal": [
+        "Прамежкавы вынік"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Прамежкавы вынік за ${ cycle } месяц",
+        "Прамежкавы вынік за ${ cycle } месяцы",
+        "Прамежкавы вынік за ${ cycle } месяцаў",
+        "Прамежкавы вынік за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -10504,6 +10513,30 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "З улікам падатку ў памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "З улікам падаткаў у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "З улікам падатку ў памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "З улікам падатку ў ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "З улікам падаткаў у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "З улікам падаткаў у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Падатак у памеры ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Падаткі ў памеры ${ rate }%"
       ]
     },
     "Payments.Error": {
