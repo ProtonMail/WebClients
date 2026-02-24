@@ -874,10 +874,6 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
-      "${ ips } server": [
-        "${ ips } szerver",
-        "${ ips } szerver"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } írási segéd licenc",
         "${ seats } írási segéd licenc"
@@ -1008,52 +1004,6 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB adattárhely"
-      ],
-      "3 TB data storage": [
-        "3 TB adattárhely"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "15,000+ szerver elérése, 120+ országban"
-      ],
-      "Access advanced AI models": [
-        "Hozzáférés a fejlett AI-modellekhez"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
-      ],
-      "Block ads, trackers, and malware": [
-        "Hirdetések, trackerek és rosszindulatú programok blokkolása"
-      ],
-      "Built-in 2FA authenticator": [
-        "Beépített Kétlépcsős hitelesítés"
-      ],
-      "Connect 10 devices at once": [
-        "Csatlakoztasson 10 eszközt egyszerre"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Teljes csevegési előzmények egyszerű kereséssel és kedvencekkel"
-      ],
-      "Individual accounts for 6 users": [
-        "Egyéni fiókok 6 felhasználó számára"
-      ],
-      "Individual accounts for you and a partner": [
-        "Egyéni fiókok Önnek és partnerének"
-      ],
-      "Stronger protection against cyber threats": [
-        "Erősebb védelem a kiberfenyegetések ellen"
-      ],
-      "Unlimited daily chats": [
-        "Korlátlan napi csevegés"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "A speciálisan tervezett NetShield megvédi eszközeit, és felgyorsítja a böngészést a hirdetések, követők és rosszindulatú szoftverek blokkolásával."
       ]
     },
     "Browser": {
@@ -5027,10 +4977,6 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nem kerül felszámításra, ha ${ trialEndsOnFormatted } előtt lemondja."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
-      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Ön készül visszautasítani a ${ invitationName } albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
       ],
@@ -5099,12 +5045,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
-      ],
-      "Your next billing date is ${ renewalTime }.": [
-        "A következő számlázási időpont: ${ renewalTime }."
-      ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "A következő számlázási dátum ${ renewalTime }. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálattal, ha azonnali csomagváltásra van szüksége."
       ],
       "Your online activity is protected": [
         "Az online tevékenysége védett"
@@ -6195,10 +6135,6 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
-      ],
-      "${ options }-day file version history": [
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin élettartam"
@@ -7948,18 +7884,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát.",
         "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát."
       ]
     },
     "session_recovery:available:link": {
@@ -8086,53 +8010,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Comma Separated Values (.csv)": [
-        "Vesszővel elválasztott értékek (.csv)"
-      ],
-      "Microsoft Excel (.xlsx)": [
-        "Microsoft Excel (.xlsx)"
-      ],
-      "New spreadsheet": [
-        "Új munkafüzet"
-      ],
-      "Tab Separated Values (.tsv)": [
-        "Tabulátorral elválasztott értékek (.tsv)"
-      ]
-    },
-    "sheets_2025:Info": {
-      "Detect automatically": [
-        "Automatikus észlelés"
-      ],
-      "Insert as new sheet": [
-        "Beszúrás új lapként"
-      ],
-      "Replace current sheet": [
-        "Jelenlegi lap cseréje"
-      ],
-      "Replace data at selected cell": [
-        "Adatok cseréje a kiválasztott cellában"
-      ]
-    },
-    "sheets_2025:Label": {
-      "Convert text to numbers, dates, and formulas": [
-        "Szöveg konvertálása számokká, dátumokká és képletekké"
-      ],
-      "Destination": [
-        "Cél"
-      ],
-      "Format": [
-        "Formátum"
-      ],
-      "Separator type": [
-        "Elválasztó típusa"
-      ]
-    },
-    "sheets_2025:Title": {
-      "Import data": [
-        "Adatok importálása"
       ]
     },
     "Signing preference for emails": {
@@ -8347,9 +8224,6 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Korlátlan számú e-mail álnevet használhat személyazonosságának védelme és a levélszemét csökkentése érdekében"
-      ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Tartsa jelszavait biztonságban és rendszerezve több tárolóban"
       ],
       "Protect your account from threats with Sentinel": [
         "Védje fiókját a fenyegetésektől a Sentinel segítségével"

@@ -919,9 +919,19 @@
         "${ domains } domini personalitzat addicional",
         "${ domains } dominis personalitzats addicionals"
       ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidors"
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicat",
+        "${ ips } servidors VPN dedicats"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Llicència d'IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
+        "${ seats } llicències d'IA ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
@@ -934,6 +944,24 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
+      "Writing assistant seats": [
+        "Llicències de l'assistent d'escriptura"
       ]
     },
     "Alert": {
@@ -1105,42 +1133,42 @@
         "3 TB d'emmagatzematge de dades"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accedeixi a més de 15.000 servidors en més de 120 països"
+        "Accediu a més de 15.000 servidors en més de 120 països"
       ],
       "Access advanced AI models": [
-        "Accedeixi a models d'IA avançats"
+        "Accediu a models d'IA avançats"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les funcions prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
+        "Bloqueja anuncis, rastrejadors i programari maliciós"
       ],
       "Built-in 2FA authenticator": [
         "Autenticador 2FA integrat"
       ],
       "Connect 10 devices at once": [
-        "Connecti 10 dispositius alhora"
+        "Connecteu 10 dispositius alhora"
       ],
       "Full chat history with easy search and favorites": [
-        "Historial de xat complet amb cerca fàcil i favorits"
+        "Historial complet de xats amb cerca fàcil i preferits"
       ],
       "Individual accounts for 6 users": [
         "Comptes individuals per a 6 usuaris"
       ],
       "Individual accounts for you and a partner": [
-        "Comptes individuals per a dues persones"
+        "Comptes individuals per a vós i un company"
       ],
       "Stronger protection against cyber threats": [
-        "Protecció més forta contra les ciberamenaces"
+        "Protecció més forta contra amenaces cibernètiques"
       ],
       "Unlimited daily chats": [
-        "Xats diaris sense límits"
+        "Xats diaris il·limitats"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
+        "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Browser": {
@@ -4834,6 +4862,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Els documents públics encara no estan activats per a la vostra organització."
       ],
+      "Readonly": [
+        "Només de lectura"
+      ],
       "Recent documents": [
         "Documents recents"
       ],
@@ -5005,6 +5036,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Aquest document té molta activitat. Algunes funcions poden estar temporalment no disponibles."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Aquest document té molts col·laboradors actius. L'edició en temps real no està disponible temporalment. Actualitzeu-lo per veure les últimes novetats."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "És possible que aquest document no existeixi o estem tenint problemes per carregar-lo. Torneu a carregar la pàgina i torneu-ho a provar."
@@ -5257,9 +5291,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
+        "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
@@ -5333,11 +5367,11 @@
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "La pròxima data de facturació és ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La vostra pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
       ],
       "Your online activity is protected": [
         "La vostra activitat en línia està protegida."
@@ -6562,8 +6596,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
+        "Historial de versions de fitxer de ${ options } dia",
+        "Historial de versions de fitxer de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
@@ -7909,6 +7943,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA no inclòs)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
@@ -8387,16 +8424,16 @@
         "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inHours } hora per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inHours } hores per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inMinutes } minut per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inMinutes } minuts per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
-        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
+        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la vostra contrasenya.",
+        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la vostra contrasenya."
       ]
     },
     "session_recovery:available:link": {
@@ -8533,24 +8570,36 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Crea un full de càlcul"
+        "Full de càlcul nou"
       ],
       "Tab Separated Values (.tsv)": [
-        "Valors separats per pestanyes (.tsv)"
+        "Valors separats per tabulador (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "S'està creant el full de càlcul nou..."
+      ],
       "Detect automatically": [
-        "Detecta automàticament"
+        "Ho detecta automàticament"
       ],
       "Insert as new sheet": [
-        "Insereix com a full nou"
+        "Inseriu-ho com a full nou"
       ],
       "Replace current sheet": [
-        "Substitueix el full actual"
+        "Reemplaça el full actual"
       ],
       "Replace data at selected cell": [
         "Substitueix les dades a la cel·la seleccionada"
+      ],
+      "Replace spreadsheet": [
+        "Substituïu el full de càlcul"
+      ],
+      "Select a file to import": [
+        "Seleccioneu un fitxer a importar"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "El vostre full de càlcul actual, amb tots els fulls que conté, se substituirà per aquesta versió."
       ]
     },
     "sheets_2025:Label": {
@@ -8569,7 +8618,7 @@
     },
     "sheets_2025:Title": {
       "Import data": [
-        "Importa dades"
+        "Importeu dades"
       ]
     },
     "Signing preference for emails": {
@@ -8785,8 +8834,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Manteniu les vostres contrasenyes segures i organitzades en diverses caixes fortes"
       ],
       "Protect your account from threats with Sentinel": [
         "Protegiu el vostre compte d'amenaces amb Sentinel"
@@ -9664,6 +9713,9 @@
       ],
       "Re-signing contacts": [
         "Tornant a signar contactes"
+      ],
+      "Readonly": [
+        "Només de lectura"
       ],
       "Recommended actions": [
         "Accions recomanades"

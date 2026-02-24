@@ -931,11 +931,23 @@
         "${ domains } дадатковых карыстальніцкіх даменаў",
         "${ domains } дадатковых карыстальніцкіх даменаў"
       ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } серверы",
-        "${ ips } сервераў",
-        "${ ips } сервераў"
+      "${ ips } dedicated VPN server": [
+        "${ ips } вылучаны сервер VPN",
+        "${ ips } вылучаныя серверы VPN",
+        "${ ips } вылучаных сервераў VPN",
+        "${ ips } вылучаных сервераў VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Ліцэнзіі ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -954,6 +966,24 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
+      ],
+      "Domains": [
+        "Дамены"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant seats": [
+        "Ліцэнзій памочніка ў напісанні"
       ]
     },
     "Alert": {
@@ -1125,13 +1155,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "Сховішча даных памерам у 2 ТБ"
+        "2 ТБ даных у сховішчы"
       ],
       "3 TB data storage": [
-        "Сховішча даных памерам у 3 ТБ"
+        "3 ТБ даных у сховішчы"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Доступ да 15 000+ сервераў у 120+ краінах"
+        "Доступ да больш чым 15 000 сервераў у больш чым 120 краінах"
       ],
       "Access advanced AI models": [
         "Доступ да перадавых мадэляў ШІ"
@@ -1146,19 +1176,19 @@
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
       "Connect 10 devices at once": [
-        "Падключыце 10 прылад адначасова"
+        "Падключайце да 10 прылад адначасова"
       ],
       "Full chat history with easy search and favorites": [
-        "Поўная гісторыя чатаў з простым пошукам і абранымі"
+        "Поўная гісторыя чата з простым пошукам і абранымі"
       ],
       "Individual accounts for 6 users": [
         "Індывідуальныя ўліковыя запісы для 6 карыстальнікаў"
       ],
       "Individual accounts for you and a partner": [
-        "Індывідуальныя ўліковыя запісы для вас і партнёра"
+        "Індывідуальныя ўліковыя запісы для вас і вашых партнёраў"
       ],
       "Stronger protection against cyber threats": [
-        "Больш моцная абарона ад кіберпагроз"
+        "Больш надзейная абарона супраць кіберпагроз"
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
@@ -1166,7 +1196,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіроўкі рэкламы, праграм сачэння і шкодных праграм."
       ]
     },
     "Browser": {
@@ -4964,6 +4994,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Публічныя дакументы пакуль не ўключаны для вашай арганізацыі."
       ],
+      "Readonly": [
+        "Толькі для чытання"
+      ],
       "Recent documents": [
         "Апошнія дакументы"
       ],
@@ -5137,6 +5170,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "У гэтага дакумента занадта высокая актыўнасць. Некаторыя функцыі могуць быць часова недаступныя."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Гэты дакумент мае шмат актыўных супрацоўнікаў. Рэдагаванне ў рэжыме рэальнага часу часова недаступна. Абнавіце, каб убачыць апошнія змены."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Магчыма, што гэты дакумент не існуе або сістэма не змагла загрузіць яго. Перазагрузіце старонку і паўтарыце спробу."
@@ -5393,11 +5429,11 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
-        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Вы збіраецеся адхіліць запрашэнне на далучэнне да альбома ${ invitationName }. Калі вы працягніце, то ў вас не будзе магчымасці атрымаць да яго доступ, пакуль уладальнік не адправіць запрашэнне яшчэ раз. Вы сапраўды хочаце працягнуць?"
@@ -5471,11 +5507,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }"
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ваша наступная дата выстаўлення рахунку: ${ renewalTime }. Скасаваць можна ў любы час."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
       "Your online activity is protected": [
         "Ваша актыўнасць у інтэрнэце абаронена"
@@ -8153,6 +8189,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (з улікам падатка)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -8672,9 +8711,9 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
@@ -8830,8 +8869,11 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Стварэнне новай табліцы..."
+      ],
       "Detect automatically": [
-        "Выяўляць аўтаматычна"
+        "Вызначаць аўтаматычна"
       ],
       "Insert as new sheet": [
         "Уставіць як новы аркуш"
@@ -8841,6 +8883,15 @@
       ],
       "Replace data at selected cell": [
         "Замяніць даныя ў выбранай ячэйцы"
+      ],
+      "Replace spreadsheet": [
+        "Замяніць электронную табліцу"
+      ],
+      "Select a file to import": [
+        "Выбраць файл для імпарту"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Ваша бягучая электронная табліца, уключаючы ўсе аркушы ў ёй, будзе заменена гэтай версіяй."
       ]
     },
     "sheets_2025:Label": {
@@ -9085,8 +9136,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч"
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"
@@ -10018,6 +10069,9 @@
       ],
       "Re-signing contacts": [
         "Паўторна падпісаць кантакты"
+      ],
+      "Readonly": [
+        "Толькі для чытання"
       ],
       "Recommended actions": [
         "Рэкамендаваныя дзеянні"

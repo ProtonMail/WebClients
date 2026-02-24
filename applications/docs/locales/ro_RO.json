@@ -691,7 +691,7 @@
         "Căutare documente recente"
       ],
       "Search recent spreadsheets": [
-        "Căutare foi de calcul recente"
+        "Căutare registre de lucru recente"
       ],
       "Search recents": [
         "Căutare recente"
@@ -922,10 +922,21 @@
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }"
       ],
-      "${ ips } server": [
-        "Servere: ${ ips }",
-        "Servere: ${ ips }",
-        "Servere: ${ ips }"
+      "${ ips } dedicated VPN server": [
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }",
+        "Servere VPN dedicate: ${ ips }"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licențe ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -941,6 +952,24 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Domains": [
+        "Domenii"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ],
+      "Writing assistant seats": [
+        "Licențe asistent de scriere"
       ]
     },
     "Alert": {
@@ -1109,31 +1138,31 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB spațiu de stocare a datelor"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
-        "3 TB spațiu de stocare a datelor"
+        "3 TiB spațiu de stocare"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accesați peste 15.000 de servere în peste 120 de țări"
+        "Accesați peste 15.000 de servere din peste 120 de țări"
       ],
       "Access advanced AI models": [
-        "Accesați modele AI avansate"
+        "Accesare modele de IA avansate"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate funcțiile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+        "Toate funcțiile premium de la ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blocare reclame, urmăritori și programe malițioase"
+        "Blocați reclamele, urmăritorii și programele malware"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator de A2F încorporat"
       ],
       "Connect 10 devices at once": [
         "Conectați 10 dispozitive simultan"
       ],
       "Full chat history with easy search and favorites": [
-        "Istoric complet al chatului cu căutare ușoară și favorite"
+        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
       ],
       "Individual accounts for 6 users": [
         "Conturi individuale pentru 6 utilizatori"
@@ -4399,7 +4428,7 @@
         "Creați un document cu criptare bilaterală."
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
-        "Creați documente și foi de calcul criptate bilateral."
+        "Creați documente și registre de lucru criptate bilateral."
       ],
       "Create in": [
         "Creare în"
@@ -4896,11 +4925,14 @@
       "Public documents are not yet enabled for your organization.": [
         "Documentele publice nu sunt încă activate pentru această organizație."
       ],
+      "Readonly": [
+        "Doar citire"
+      ],
       "Recent documents": [
         "Documente recente"
       ],
       "Recent spreadsheets": [
-        "Foi de calcul recente"
+        "Registre de lucru recente"
       ],
       "Recents": [
         "Recente"
@@ -4993,7 +5025,7 @@
         "Ceva nu a mers bine."
       ],
       "Spreadsheets": [
-        "Foi de calcul"
+        "Registre de lucru"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
@@ -5068,6 +5100,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Acest document are multă activitate. Este posibil ca unele funcții să fie temporar indisponibile."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Acest document are mulți colaboratori activi. Editarea în timp real este indisponibilă temporar. Împrospătați pagina pentru a vizualiza cele mai recente actualizări."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Acest document s-ar putea să nu existe sau sunt probleme cu încărcarea sa. Reîncărcați pagina și reîncercați."
@@ -5322,10 +5357,10 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
+        "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Urmează să refuzați invitația de a vă alătura albumului ${ invitationName }. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Continuați?"
@@ -5399,11 +5434,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Data următoarei facturi este ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
       ],
       "Your online activity is protected": [
         "Activitatea online vă este protejată"
@@ -6597,9 +6632,9 @@
         "${ n } de conexiuni VPN"
       ],
       "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }",
+        "Zile istoric versiuni fișiere: ${ options }"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin pe viață"
@@ -7974,6 +8009,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (fără TVA)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după probare la ${ formattedDate }"
       ],
@@ -8621,13 +8659,16 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Registru de lucru nou"
+        "Foaie de calcul nouă"
       ],
       "Tab Separated Values (.tsv)": [
         "Valori separate prin tab (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Se creează un registru de lucru nou..."
+      ],
       "Detect automatically": [
         "Detectare automată"
       ],
@@ -8639,6 +8680,15 @@
       ],
       "Replace data at selected cell": [
         "Înlocuire date în celula selectată"
+      ],
+      "Replace spreadsheet": [
+        "Înlocuire registru de lucru"
+      ],
+      "Select a file to import": [
+        "Selectați un fișier de importat"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Registrul de lucru curent, inclusiv toate foile din el, va fi înlocuit cu această versiune."
       ]
     },
     "sheets_2025:Label": {
@@ -8878,7 +8928,7 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obțineți aliasuri nelimitate pentru a vă proteja identitatea și a reduce mesajele nedorite"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
+      "Keep your passwords safe and organized in multiple vaults": [
         "Păstrați-vă parolele în siguranță și organizate în mai multe seifuri"
       ],
       "Protect your account from threats with Sentinel": [
@@ -9785,6 +9835,9 @@
       "Re-signing contacts": [
         "Resemnare contacte"
       ],
+      "Readonly": [
+        "Doar citire"
+      ],
       "Recommended actions": [
         "Acțiuni recomandate"
       ],
@@ -10239,7 +10292,7 @@
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
       ],
       "This will replace all the data in the spreadsheet": [
-        "Aceasta va înlocui toate datele din foaia de calcul"
+        "Aceasta va înlocui toate datele din registrul de lucru."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

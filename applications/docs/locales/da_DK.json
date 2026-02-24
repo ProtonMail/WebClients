@@ -919,9 +919,19 @@
         "${ domains } ekstra tilpasset domæne",
         "${ domains } yderligere tilpassede domæner"
       ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servere"
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikeret VPN-server",
+        "${ ips } dedikerede VPN-servere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licens",
+        "${ seats } ${ LUMO_APP_NAME } AI licenser"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
@@ -934,6 +944,24 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
+      ],
+      "Domains": [
+        "Domæner"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentpladser"
       ]
     },
     "Alert": {
@@ -1099,28 +1127,28 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagerplads"
+        "2 TB lagerplads"
       ],
       "3 TB data storage": [
-        "3 TB datalagerplads"
+        "3 TB lagerplads"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Adgang til 15.000+ servere i mere end 120 lande"
+        "Få adgang til 15.000+ servere i 120+ lande"
       ],
       "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
+        "Få adgang til avancerede AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium-funktioner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloker annoncer, trackere og malware"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-authenticator"
+        "Indbygget tofaktorgodkendelse"
       ],
       "Connect 10 devices at once": [
-        "Tilslut 10 enheder på én gang"
+        "Forbind 10 enheder på én gang"
       ],
       "Full chat history with easy search and favorites": [
         "Fuld chathistorik med nem søgning og favoritter"
@@ -4834,6 +4862,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Offentlige dokumenter er endnu ikke aktiveret for din organisation."
       ],
+      "Readonly": [
+        "Skrivebeskyttet"
+      ],
       "Recent documents": [
         "Seneste dokumenter"
       ],
@@ -5005,6 +5036,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dette dokument har stor aktivitet. Nogle funktioner kan være kortvarigt utilgængelige."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Der er mange der redigerer dette dokument. Redigering i realtid er midlertidigt utilgængeligt. Opdater siden for at se de seneste ændringer."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dette dokument eksisterer muligvis ikke, eller vi har problemer med at indlæse det. Genindlæs siden, og prøv igen."
@@ -5257,9 +5291,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
-        "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du er ved at afvise invitationen til at deltage i albummet ${ invitationName }. Hvis du fortsætter, vil du ikke kunne få adgang til det, medmindre ejeren inviterer dig igen. Er du sikker på, at du vil fortsætte?"
@@ -5333,11 +5367,11 @@
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
       ],
-      "Your next billing date is ${ renewalTime }.": [
-        "Din næste faktureringsdato er ${ renewalTime }."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan til enhver tid annullere."
       ],
-      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "Din næste faktureringsdato er ${ renewalTime }. Kontakt venligst support, hvis du har brug for en abonnementsændring."
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
       ],
       "Your online activity is protected": [
         "Din online aktivitet er beskyttet"
@@ -6503,10 +6537,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dags filversionshistorik",
-        "${ options }-dags filversionshistorik"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
@@ -7852,6 +7882,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. moms)"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
@@ -8328,18 +8361,6 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
-        " Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
@@ -8479,10 +8500,13 @@
         "Nyt regneark"
       ],
       "Tab Separated Values (.tsv)": [
-        "Tabulatorseparerede værdier (.tsv)"
+        "Tabseparerede værdier (.tsv)"
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Opretter nyt regneark..."
+      ],
       "Detect automatically": [
         "Registrer automatisk"
       ],
@@ -8490,10 +8514,19 @@
         "Indsæt som nyt ark"
       ],
       "Replace current sheet": [
-        "Erstat nuværende ark"
+        "Erstat det aktuelle ark"
       ],
       "Replace data at selected cell": [
-        "Erstat data i valgte celle"
+        "Erstat data i den valgte celle"
+      ],
+      "Replace spreadsheet": [
+        "Erstat regneark"
+      ],
+      "Select a file to import": [
+        "Vælg en fil, der skal importeres"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Dit aktuelle regneark, inklusiv alle ark inde i, vil blive erstattet med denne version."
       ]
     },
     "sheets_2025:Label": {
@@ -8507,7 +8540,7 @@
         "Format"
       ],
       "Separator type": [
-        "Separatortype"
+        "Type af skilletegn"
       ]
     },
     "sheets_2025:Title": {
@@ -8728,8 +8761,8 @@
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Få ubegrænsede aliasser for at beskytte din identitet og reducere spam"
       ],
-      "Keep your passwords safe and organized in multiple vaults ": [
-        "Opbevar dine adgangskoder sikkert og organiseret i flere bokse "
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Hold dine adgangskoder sikre og organiserede i flere bokse"
       ],
       "Protect your account from threats with Sentinel": [
         "Beskyt din konto mod trusler med Sentinel"
@@ -9607,6 +9640,9 @@
       ],
       "Re-signing contacts": [
         "Gensignering af kontakter"
+      ],
+      "Readonly": [
+        "Skrivebeskyttet"
       ],
       "Recommended actions": [
         "Anbefalede handlinger"
