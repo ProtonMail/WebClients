@@ -2,10 +2,9 @@ import { put, select } from 'redux-saga/effects';
 
 import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { parseGroupInvite, parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
-import { isAcceptedInvite, partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
+import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
-import { selectAllVaultIDs } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type {
     GroupInvite,
@@ -37,12 +36,9 @@ export function* processUserInvitePollingEvent(event: InvitesGetResponse): Event
         if (noop) return true;
 
         logger.info(`[Polling::Invites] ${event.Invites.length} new invite(s) received`);
-        const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
-        const isAcceptedUserInvite = isAcceptedInvite(vaultIDs);
 
         const invites: MaybeNull<UserInvite>[] = yield Promise.all(
             event.Invites.map<Promise<MaybeNull<UserInvite>>>(async (invite) => {
-                if (isAcceptedUserInvite(invite)) return null;
                 const cached = cachedInvites[invite.InviteToken] as Maybe<UserInvite>;
                 return cached ?? parseUserInvite(invite);
             })
@@ -72,12 +68,9 @@ export function* processGroupInvitePollingEvent(event: GroupInvitesGetResponse):
         if (noop) return true;
 
         logger.info(`[Polling::GroupInvites] ${event.Invites.Invites.length} new invite(s) received`);
-        const vaultIDs: Set<string> = yield select(selectAllVaultIDs);
-        const isAcceptedGroupInvite = isAcceptedInvite(vaultIDs);
 
         const invites: MaybeNull<GroupInvite>[] = yield Promise.all(
             event.Invites.Invites.map<Promise<MaybeNull<GroupInvite>>>(async (invite) => {
-                if (isAcceptedGroupInvite(invite)) return null;
                 const cached = cachedInvites[invite.InviteToken] as Maybe<GroupInvite>;
                 return cached ?? parseGroupInvite(invite);
             })
