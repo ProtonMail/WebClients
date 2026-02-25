@@ -1,15 +1,14 @@
 .chat-item {
-	.chat-message {
-		white-space: pre-line;
-		word-break: break-word;
-		overflow: hidden;
-	}
-
-	.chat-message-one-line {
-		word-break: keep-all;
-	}
-
 	.room-name {
 		color: var(--interaction-norm) !important;
+	}
+
+	.participant-enter--ellipsis {
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		/* stylelint-disable-next-line */
+		display: -webkit-box;
+		/* stylelint-disable-next-line */
+		-webkit-box-orient: vertical;
 	}
 }
