@@ -5,7 +5,7 @@ import type { EncryptedSearchDB } from '../models';
 type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
 export const upgrade: UpgradeCallback = (database, oldVersion: number) => {
-    // Database created before version 3 didn't had a upgrade callback.
+    // Database created before version 3 wasn't consistently opened with an upgrade callback.
     // Resulting in potentially non-complete schema.
     if (oldVersion < 3) {
         if (!database.objectStoreNames.contains('content')) {
