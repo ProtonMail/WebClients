@@ -7,7 +7,6 @@ import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getItemKeys } from '@proton/pass/lib/items/item.requests';
 import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
-import type { ShareId } from '@proton/pass/types';
 import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
 import type {
     GroupInvite,
@@ -39,7 +38,6 @@ import chunk from '@proton/utils/chunk';
 
 import { parseGroupInvite, parseUserInvite } from './invite.parser';
 import type { InviteBatchResult } from './invite.utils';
-import { isAcceptedInvite } from './invite.utils';
 
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
 
@@ -49,25 +47,23 @@ export const getGroupInvitesQuery = () => ({ url: `pass/v1/invite/group`, method
 export const getGroupInvites = () => api(getGroupInvitesQuery());
 
 /** Retrieves all user invites */
-export const resolveUserInvites = async (vaultIDs: Set<ShareId>): Promise<UserInvite[]> => {
+export const resolveUserInvites = async (): Promise<UserInvite[]> => {
     const { Invites } = await getUserInvites();
-    const userInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseUserInvite));
+    const userInvites = await Promise.all(Invites.map(parseUserInvite));
     return userInvites.filter(truthy);
 };
 
 /** Retrieves all group invites */
-export const resolveGroupInvites = async (vaultIDs: Set<ShareId>): Promise<GroupInvite[]> => {
+export const resolveGroupInvites = async (): Promise<GroupInvite[]> => {
     const { Invites } = (await getGroupInvites()).Invites;
-    const groupInvites = await Promise.all(Invites.filter(isAcceptedInvite(vaultIDs)).map(parseGroupInvite));
+    const groupInvites = await Promise.all(Invites.map(parseGroupInvite));
     return groupInvites.filter(truthy);
 };
 
-/** Retrieves all invites (user + groups), filters accepted, and parses.
- * `vaultIDs` filters stale invites targeting already-owned vaults (BE delay).
- * `resolveGroups` gates the group-invites request behind B2B + groups. */
-export const allInvites = async (vaultIDs: Set<string>, resolveGroups: boolean): Promise<Invite[]> => {
-    const userInvites: Invite[] = await resolveUserInvites(vaultIDs);
-    const groupInvites = resolveGroups ? await resolveGroupInvites(vaultIDs) : [];
+/** Retrieves all invites (user + groups), filters accepted, and parses */
+export const allInvites = async (resolveGroups: boolean): Promise<Invite[]> => {
+    const userInvites: Invite[] = await resolveUserInvites();
+    const groupInvites = resolveGroups ? await resolveGroupInvites() : [];
     return userInvites.concat(groupInvites);
 };
 
