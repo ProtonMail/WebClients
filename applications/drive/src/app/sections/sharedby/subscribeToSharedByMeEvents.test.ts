@@ -1,4 +1,4 @@
-import { type NodeEntity, getDrive } from '@proton/drive';
+import { type NodeEntity, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
@@ -23,7 +23,7 @@ jest.mock('../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('./useSharedByMe.store');
 jest.mock('./utils/getOldestShareCreationTime');
 
-const mockGetDrive = jest.mocked(getDrive);
+const mockGetDrivePerNodeType = jest.mocked(getDrivePerNodeType);
 const mockGetBusDriver = jest.mocked(getBusDriver);
 const mockHandleSdkError = jest.mocked(handleSdkError);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
@@ -95,7 +95,7 @@ describe('subscribeToSharedByMeEvents', () => {
 
         mockUnsubscribeFunctions = [jest.fn(), jest.fn(), jest.fn()];
 
-        mockGetDrive.mockReturnValue(mockDrive as any);
+        mockGetDrivePerNodeType.mockReturnValue(mockDrive as any);
         mockGetBusDriver.mockReturnValue(mockEventManager as any);
         mockUseSharedByMeStore.getState = jest.fn().mockReturnValue(mockStore);
 
@@ -124,7 +124,7 @@ describe('subscribeToSharedByMeEvents', () => {
     });
 
     it('should subscribe to all required event types', () => {
-        subscribeToSharedByMeEvents(mockDrive as any);
+        subscribeToSharedByMeEvents();
 
         expect(mockEventManager.subscribe).toHaveBeenCalledWith(BusDriverEventName.CREATED_NODES, expect.any(Function));
         expect(mockEventManager.subscribe).toHaveBeenCalledWith(BusDriverEventName.UPDATED_NODES, expect.any(Function));
@@ -132,7 +132,7 @@ describe('subscribeToSharedByMeEvents', () => {
     });
 
     it('should return cleanup function that unsubscribes from all events', () => {
-        const cleanup = subscribeToSharedByMeEvents(mockDrive as any);
+        const cleanup = subscribeToSharedByMeEvents();
 
         cleanup();
 
@@ -145,14 +145,14 @@ describe('subscribeToSharedByMeEvents', () => {
         let createdNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents(mockDrive as any);
+            subscribeToSharedByMeEvents();
             createdNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.CREATED_NODES
             )[1];
         });
 
-        it('should add shared items that are not already in store', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+        it('should update shared items that are already in store', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
                 items: [{ uid: 'node-uid-123', isShared: true }],
@@ -169,8 +169,8 @@ describe('subscribeToSharedByMeEvents', () => {
             );
         });
 
-        it('should not add items that are already in store', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+        it('should not add items that are not already in store', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
 
             const event = {
                 items: [{ uid: 'node-uid-123', isShared: true }],
@@ -192,7 +192,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should handle errors and not add items when node creation fails', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
             mockGetNodeEntity.mockImplementation(() => {
                 throw new Error('Node fetch failed');
             });
@@ -212,7 +212,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let updatedNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents(mockDrive as any);
+            subscribeToSharedByMeEvents();
             updatedNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.UPDATED_NODES
             )[1];
@@ -231,7 +231,9 @@ describe('subscribeToSharedByMeEvents', () => {
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
 
-        it('should update items that are shared', async () => {
+        it('should update items that are shared and already in store', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+
             const event = {
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
@@ -260,6 +262,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should handle errors and not update items when node update fails', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
             mockGetNodeEntity.mockImplementation(() => {
                 throw new Error('Node update failed');
             });
@@ -279,7 +282,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let deletedNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents(mockDrive as any);
+            subscribeToSharedByMeEvents();
             deletedNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.DELETED_NODES
             )[1];
@@ -315,14 +318,14 @@ describe('subscribeToSharedByMeEvents', () => {
         let createdNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents(mockDrive as any);
+            subscribeToSharedByMeEvents();
             createdNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.CREATED_NODES
             )[1];
         });
 
         it('should create item with public link when available', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
                 items: [{ uid: 'node-uid-123', isShared: true }],
@@ -342,7 +345,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should create item without public link when not available', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
             mockDrive.getSharingInfo.mockResolvedValue({});
 
             const event = {
@@ -359,7 +362,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should set signature issues when present', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
             mockGetSignatureIssues.mockReturnValue({
                 ok: false,
                 issues: {
@@ -383,7 +386,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should handle missing deprecatedShareId', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
             mockGetNodeEntity.mockReturnValue({
                 node: createMockNode({ deprecatedShareId: undefined }),
                 errors: new Map(),
