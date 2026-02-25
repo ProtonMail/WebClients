@@ -265,6 +265,7 @@ enum MeetFeatureFlag {
     MeetErrorReporting = 'MeetErrorReporting',
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
     MeetUpsell = 'MeetUpsell',
+    MeetRemainingTime = 'MeetRemainingTime',
     PersonalMeetingRotation = 'PersonalMeetingRotation',
     MeetPromptOnTabClose = 'MeetPromptOnTabClose',
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
