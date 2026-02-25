@@ -34,8 +34,8 @@ const PassLifetimeSpecialOffer = ({ currency, price, email }: Props) => {
         <Card rounded className="flex justify-center items-center gap-2 text-lg text-semibold mt-4">
             <span>
                 {
-                    // translator: full sentence example: "Special: Pass + SimpleLogin Lifetime at $199."
-                    c('pass_signup_2023: Info').t`Special: ${PLAN_NAMES[PLANS.PASS_LIFETIME]} at ${priceString}.`
+                    // translator: full sentence example: "Pass + SimpleLogin Lifetime at $199."
+                    c('pass_signup_2023: Info').t`${PLAN_NAMES[PLANS.PASS_LIFETIME]} at ${priceString}.`
                 }
             </span>
             <Button size="small" color="norm" onClick={handleClick}>
