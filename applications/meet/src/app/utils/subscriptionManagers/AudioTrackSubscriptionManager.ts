@@ -8,6 +8,7 @@ import {
     Track,
 } from 'livekit-client';
 
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 interface PublicationItem {
@@ -345,9 +346,9 @@ export class AudioTrackSubscriptionManager {
             console.log(`Recovery attempt ${attempts + 1}/${this.MAX_RECOVERY_ATTEMPTS}`);
             // Make sure we detach old audio element before unsubscribing, helps to avoid a random echo
             publication.setEnabled(false);
-            await wait(100);
+            await wait(isSafari() ? 300 : 100);
             publication.setSubscribed(false);
-            await wait(500);
+            await wait(isSafari() ? 1500 : 500);
 
             // Check if recovery is still active and publication is still valid after the wait
             if (!this.activeRecoveries.has(trackKey)) {
@@ -370,7 +371,7 @@ export class AudioTrackSubscriptionManager {
             this.lastConcealmentStats.delete(trackKey);
 
             publication.setSubscribed(true);
-            await wait(100);
+            await wait(isSafari() ? 500 : 100);
             // Attach new audio element cleanly
             publication.setEnabled(true);
 
