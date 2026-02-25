@@ -465,9 +465,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         })
       },
 
-      async replaceLocalSpreadsheetState(state) {
+      async replaceLocalSpreadsheetState(state, broadcastPatches) {
         if (spreadsheetRef.current) {
-          spreadsheetRef.current.replaceLocalSpreadsheetState(state)
+          spreadsheetRef.current.replaceLocalSpreadsheetState(state, broadcastPatches)
         }
       },
 

@@ -44,7 +44,7 @@ import { c } from 'ttag'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
-  replaceLocalSpreadsheetState: (state: object) => void
+  replaceLocalSpreadsheetState: (state: object, broadcastPatches: boolean) => void
   focusSheet: (() => void) | undefined
 }
 

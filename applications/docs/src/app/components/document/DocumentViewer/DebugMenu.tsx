@@ -21,6 +21,7 @@ import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
 import type { UpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
 import { createUpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
+import { UpdateReplayTool } from './UpdateReplayTool'
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -168,9 +169,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const isDocument = documentType === 'doc'
   const isSpreadsheet = documentType === 'sheet'
 
-  const [updatesToApply, setUpdatesToApply] = useState<Uint8Array<ArrayBuffer>[]>([])
-  const [appliedUpdates, setAppliedUpdates] = useState(0)
-  const [applyMultiple, setApplyMultiple] = useState(1)
+  const [showUpdateReplayTool, setShowUpdateReplayTool] = useState(false)
 
   if (!isOpen) {
     return (
@@ -191,203 +190,135 @@ export function DebugMenu({ docController, editorController, documentState, docu
 
   return (
     <div
-      id="debug-menu"
       className={clsx(
-        'fixed bottom-2 z-20 flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left',
+        'fixed bottom-2 z-20 flex items-end gap-2',
+        isDocument && 'flex-row-reverse',
         isSpreadsheet ? 'right-2' : 'left-2',
       )}
-      data-testid="debug-menu"
     >
-      <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
-        <div>Debug menu</div>
-        <button
-          className="flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-1 hover:bg-[--background-strong]"
-          onClick={() => setIsOpen(false)}
-        >
-          <div className="sr-only">Close menu</div>
-          <Icon name="cross" className="h-3.5 w-3.5" />
-        </button>
-      </div>
-      <div className="mb-1 flex flex-col gap-2 px-1">
-        {docController && (
-          <>
-            <div>ClientID: {clientId}</div>
-          </>
+      {showUpdateReplayTool && (
+        <UpdateReplayTool
+          onClose={() => setShowUpdateReplayTool(false)}
+          editorController={editorController}
+          isSpreadsheet={isSpreadsheet}
+        />
+      )}
+      <div
+        id="debug-menu"
+        className={clsx(
+          'flex min-w-[12.5rem] flex-col gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left',
         )}
-        {isDevOrBlack() && (
-          <>
-            {docController && (
-              <>
-                <Button size="small" onClick={commitToRTS}>
-                  Commit Doc with RTS
-                </Button>
-                <Button size="small" onClick={squashDocument}>
-                  Squash Last Commit with DX
-                </Button>
-                <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
-                  Create Initial Commit
-                </Button>
-              </>
-            )}
-            <Button size="small" onClick={closeConnection}>
-              Close Connection
-            </Button>
-          </>
-        )}
-        <Button size="small" onClick={copyYDocAsJSON}>
-          Copy Y.Doc as JSON
-        </Button>
-        {isDocument && (
-          <>
-            <Button size="small" onClick={copyEditorJSON}>
-              Copy Editor JSON
-            </Button>
-            <Button size="small" onClick={toggleDebugTreeView}>
-              Toggle Tree View
-            </Button>
-          </>
-        )}
-        {isSpreadsheet && (
-          <>
-            <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
-              Copy Spreadsheet State
-            </Button>
-          </>
-        )}
-        <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
-          Download state as JSON
-          <Ariakit.TooltipProvider>
-            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-            <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
-          </Ariakit.TooltipProvider>
-        </Button>
-        <Button size="small" onClick={downloadYJSStateAsUpdate}>
-          Download YJS state as single update
-          <Ariakit.TooltipProvider>
-            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-            <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
-          </Ariakit.TooltipProvider>
-        </Button>
-        <Button size="small" onClick={downloadBaseCommit}>
-          Download base commit updates
-          <Ariakit.TooltipProvider>
-            <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-            <Tooltip>Downloads the updates from the base commit only</Tooltip>
-          </Ariakit.TooltipProvider>
-        </Button>
-        {docController && (
-          <>
-            <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
-              Download all updates as ZIP
-              <Ariakit.TooltipProvider>
-                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-                <Tooltip>Downloads all updates as a ZIP file</Tooltip>
-              </Ariakit.TooltipProvider>
-            </Button>
-            <Button size="small" onClick={() => docController.downloadUpdatesInformation()}>
-              Download update debug information
-              <Ariakit.TooltipProvider>
-                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-                <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
-              </Ariakit.TooltipProvider>
-            </Button>
-            <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
-              Download obfuscated updates
-              <Ariakit.TooltipProvider>
-                <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
-                <Tooltip>
-                  Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
-                  data
-                </Tooltip>
-              </Ariakit.TooltipProvider>
-            </Button>
-          </>
-        )}
-        <details className="border-weak rounded border">
-          <summary className="bg-norm border-weak flex items-center justify-between rounded border px-3 py-1">
-            Apply updates (ephemeral)
-            <Icon name="chevron-down" />
-          </summary>
-          <div className="flex flex-col gap-2 p-2">
-            <label>
-              <div className="mb-1.5 text-sm leading-none">Updates to apply:</div>
-              <input
-                type="file"
-                accept="application/zip"
-                onChange={async (event) => {
-                  if (!event.target.files) {
-                    return
-                  }
-                  const file = event.target.files[0]
-                  if (!file) {
-                    return
-                  }
-                  const JSZip = (await import('jszip')).default
-                  const zip = new JSZip()
-                  const content = await zip.loadAsync(file)
-                  const filenames = Object.keys(content.files)
-                  filenames.sort((a, b) => parseInt(a) - parseInt(b))
-                  const updates: Uint8Array<ArrayBuffer>[] = []
-                  for (const filename of filenames) {
-                    const file = content.files[filename]
-                    if (!file) {
-                      continue
-                    }
-                    const update = await file.async('uint8array')
-                    updates.push(update as Uint8Array<ArrayBuffer>)
-                  }
-                  setUpdatesToApply(updates)
-                }}
-                disabled={updatesToApply.length > 0}
-              />
-            </label>
-            <div>
-              Applied: {appliedUpdates} / {updatesToApply.length}
-            </div>
-            <label>
-              <div className="mb-1.5 text-sm leading-none">Apply mulitple:</div>
-              <input
-                className="bg-norm"
-                id="ephemeral-updates-apply-multiple-input"
-                type="number"
-                min={1}
-                value={applyMultiple}
-                onChange={(event) => setApplyMultiple(parseInt(event.target.value))}
-                disabled={updatesToApply.length === 0}
-              />
-            </label>
-            <Button
-              size="small"
-              onClick={() => {
-                for (let i = 0; i < applyMultiple; i++) {
-                  const update = updatesToApply[appliedUpdates + i]
-                  if (!update) {
-                    continue
-                  }
-                  void editorController.applyUpdate(update)
-                }
-                setAppliedUpdates(appliedUpdates + applyMultiple)
-              }}
-              disabled={updatesToApply.length === 0}
-            >
-              Apply {applyMultiple} updates
-            </Button>
-            <Button
-              size="small"
-              onClick={() => {
-                const update = updatesToApply[appliedUpdates]
-                if (!update) {
-                  return
-                }
-                void editorController.applyUpdate(update)
-                setAppliedUpdates(appliedUpdates + 1)
-              }}
-              disabled={updatesToApply.length === 0}
-            >
-              Apply next update
-            </Button>
-          </div>
-        </details>
+        data-testid="debug-menu"
+      >
+        <div className="mt-1 flex items-center justify-between gap-2 px-2 font-semibold">
+          <div>Debug menu</div>
+          <button
+            className="flex items-center justify-center rounded-full border border-[--border-weak] bg-[--background-weak] p-1 hover:bg-[--background-strong]"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="sr-only">Close menu</div>
+            <Icon name="cross" className="h-3.5 w-3.5" />
+          </button>
+        </div>
+        <div className="mb-1 flex flex-col gap-2 px-1">
+          {docController && (
+            <>
+              <div>ClientID: {clientId}</div>
+            </>
+          )}
+          {isDevOrBlack() && (
+            <>
+              {docController && (
+                <>
+                  <Button size="small" onClick={commitToRTS}>
+                    Commit Doc with RTS
+                  </Button>
+                  <Button size="small" onClick={squashDocument}>
+                    Squash Last Commit with DX
+                  </Button>
+                  <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
+                    Create Initial Commit
+                  </Button>
+                </>
+              )}
+              <Button size="small" onClick={closeConnection}>
+                Close Connection
+              </Button>
+            </>
+          )}
+          <Button size="small" onClick={copyYDocAsJSON}>
+            Copy Y.Doc as JSON
+          </Button>
+          {isDocument && (
+            <>
+              <Button size="small" onClick={copyEditorJSON}>
+                Copy Editor JSON
+              </Button>
+              <Button size="small" onClick={toggleDebugTreeView}>
+                Toggle Tree View
+              </Button>
+            </>
+          )}
+          {isSpreadsheet && (
+            <>
+              <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
+                Copy Spreadsheet State
+              </Button>
+            </>
+          )}
+          <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
+            Download state as JSON
+            <Ariakit.TooltipProvider>
+              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
+            </Ariakit.TooltipProvider>
+          </Button>
+          <Button size="small" onClick={downloadYJSStateAsUpdate}>
+            Download YJS state as single update
+            <Ariakit.TooltipProvider>
+              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
+            </Ariakit.TooltipProvider>
+          </Button>
+          <Button size="small" onClick={downloadBaseCommit}>
+            Download base commit updates
+            <Ariakit.TooltipProvider>
+              <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+              <Tooltip>Downloads the updates from the base commit only</Tooltip>
+            </Ariakit.TooltipProvider>
+          </Button>
+          {docController && (
+            <>
+              <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
+                Download all updates as ZIP
+                <Ariakit.TooltipProvider>
+                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Tooltip>Downloads all updates as a ZIP file</Tooltip>
+                </Ariakit.TooltipProvider>
+              </Button>
+              <Button size="small" onClick={() => docController.downloadUpdatesInformation()}>
+                Download update debug information
+                <Ariakit.TooltipProvider>
+                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
+                </Ariakit.TooltipProvider>
+              </Button>
+              <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
+                Download obfuscated updates
+                <Ariakit.TooltipProvider>
+                  <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
+                  <Tooltip>
+                    Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
+                    data
+                  </Tooltip>
+                </Ariakit.TooltipProvider>
+              </Button>
+            </>
+          )}
+          <Button size="small" onClick={() => setShowUpdateReplayTool(true)}>
+            Update Replay Tool
+          </Button>
+        </div>
       </div>
     </div>
   )
