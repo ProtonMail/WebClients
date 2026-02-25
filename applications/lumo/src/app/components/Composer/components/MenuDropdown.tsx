@@ -54,7 +54,7 @@ export const MenuDropdown = ({
             isOpen={isOpen}
             anchorRef={anchorRef}
             onClose={onClose}
-            originalPlacement="top-start"
+            originalPlacement="bottom-start"
             size={{
                 width: width as Unit,
             }}
