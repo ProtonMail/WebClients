@@ -5,6 +5,8 @@
 // Library
 @use 'lib/' as *;
 
+$focus-ring-size: 0.0625rem; // 1px
+
 // Vendors
 @use 'lib/include-media' as im;
 im.$breakpoints: $breakpoints;
@@ -38,5 +40,20 @@ im.$media-expressions: $media-expressions;
 	.toggle-container::before {
 		--field-norm: var(--interaction-norm-minor-1);
 		--field-hover: var(--interaction-norm-major-1);
+	}
+}
+
+// reset focus visible for some elements
+@supports selector(:focus-visible) {
+	.button:focus-visible,
+	.checkbox-input:focus-visible + .checkbox-fakecheck,
+	button:focus-visible,
+	.interactive-pseudo-protrude:focus-visible::after {
+		box-shadow: none !important;
+	}
+
+	button:focus-visible {
+		outline: 1px solid var(--focus-outline) !important;
+		transition: none !important;
 	}
 }

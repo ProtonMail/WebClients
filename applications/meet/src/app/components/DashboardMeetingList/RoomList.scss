@@ -10,6 +10,7 @@
 		&:active,
 		&:focus {
 			background: var(--background-weak);
+			outline: none;
 
 			.placeholder-button-icon-container {
 				border-color: var(--text-disabled);

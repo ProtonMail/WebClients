@@ -60,7 +60,7 @@ module.exports = {
         'font-weight-notation': 'named-where-possible',
         'function-url-no-scheme-relative': null,
         'keyframes-name-pattern': null,
-        'number-max-precision': 3,
+        'number-max-precision': 4,
         'time-min-milliseconds': null,
         'shorthand-property-no-redundant-values': true,
         'value-no-vendor-prefix': true,
