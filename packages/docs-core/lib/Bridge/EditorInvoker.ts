@@ -130,8 +130,8 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('getLocalSpreadsheetStateJSON', [])
   }
 
-  async replaceLocalSpreadsheetState(state: object): Promise<void> {
-    return this.invokeEditorMethod('replaceLocalSpreadsheetState', [state])
+  async replaceLocalSpreadsheetState(state: object, broadcastPatches: boolean): Promise<void> {
+    return this.invokeEditorMethod('replaceLocalSpreadsheetState', [state, broadcastPatches])
   }
 
   async getYDocAsJSON(): Promise<unknown> {
