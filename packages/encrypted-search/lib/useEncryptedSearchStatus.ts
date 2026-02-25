@@ -37,7 +37,8 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
                 const esdbExists = await checkVersionedESDB(userID);
 
                 if (esdbExists) {
-                    const indexKey = await getIndexKey(getUserKeys, userID);
+                    const userKeys = await getUserKeys();
+                    const indexKey = await getIndexKey(userKeys, userID);
                     const esEnabled = await readEnabled(userID);
                     const isDBLimited = await readLimited(userID);
                     const metadataIndexingProgressState = await metadataIndexingProgress.read(userID);

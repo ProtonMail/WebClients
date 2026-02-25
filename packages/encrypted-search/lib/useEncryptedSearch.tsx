@@ -271,7 +271,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             return;
         }
 
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             await dbCorruptError();
             return;
@@ -288,7 +289,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     const correctDecryptionErrors = async () => {
         const { cachedIndexKey } = esStatus;
 
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             await dbCorruptError();
             return 0;
@@ -556,7 +558,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
 
             // Otherwise indexing should resume
             const esDB = await openESDB(userID);
-            indexKey = await getIndexKey(getUserKeys, userID);
+            const userKeys = await getUserKeys();
+            indexKey = await getIndexKey(userKeys, userID);
 
             esSupported = !!indexKey && !!esDB;
             esDB?.close();
@@ -780,7 +783,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             return;
         }
 
-        const indexKey = await getIndexKey(getUserKeys, userID);
+        const userKeys = await getUserKeys();
+        const indexKey = await getIndexKey(userKeys, userID);
         if (!indexKey) {
             return dbCorruptError();
         }
@@ -1083,7 +1087,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             isSearching: true,
         }));
 
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             await dbCorruptError();
             return false;
@@ -1302,7 +1307,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             return;
         }
 
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             return dbCorruptError();
         }
@@ -1330,7 +1336,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         }
 
         // At this point the indexKey must exist
-        const indexKey = await getIndexKey(getUserKeys, userID);
+        const userKeys = await getUserKeys();
+        const indexKey = await getIndexKey(userKeys, userID);
         if (!indexKey) {
             return dbCorruptError();
         }
