@@ -4,23 +4,16 @@ import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { resolveGroupInvites, resolveUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
 import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
-import { selectAllVaultIDs, selectItemsByShareId, selectShare } from '@proton/pass/store/selectors';
+import { selectItemsByShareId, selectShare } from '@proton/pass/store/selectors';
 import type { GroupInvite, ItemRevision, Maybe, Share, SyncEventShareOutput, UserInvite } from '@proton/pass/types';
-import {
-    InviteType,
-    type MaybeNull,
-    type ShareId,
-    ShareType,
-    type SyncEventChangedWithTokenOutput,
-} from '@proton/pass/types';
+import { InviteType, type MaybeNull, ShareType, type SyncEventChangedWithTokenOutput } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 export function* processInvitesChanged(event?: MaybeNull<SyncEventChangedWithTokenOutput>): EventProcessor {
     if (!event) return true;
 
     try {
-        const vaultIDs: Set<ShareId> = yield select(selectAllVaultIDs);
-        const invites: UserInvite[] = yield resolveUserInvites(vaultIDs);
+        const invites: UserInvite[] = yield resolveUserInvites();
         yield put(syncInvites({ type: InviteType.User, invites: toMap(invites, 'token') }));
 
         return true;
@@ -33,8 +26,7 @@ export function* processGroupInvitesChanged(event?: MaybeNull<SyncEventChangedWi
     if (!event) return true;
 
     try {
-        const vaultIDs: Set<ShareId> = yield select(selectAllVaultIDs);
-        const invites: GroupInvite[] = yield resolveGroupInvites(vaultIDs);
+        const invites: GroupInvite[] = yield resolveGroupInvites();
         const [owners, orgs] = partitionGroupInvites(invites);
         yield put(syncInvites({ type: InviteType.GroupOwner, invites: toMap(owners, 'token') }));
         yield put(syncInvites({ type: InviteType.GroupOrg, invites: toMap(orgs, 'token') }));
