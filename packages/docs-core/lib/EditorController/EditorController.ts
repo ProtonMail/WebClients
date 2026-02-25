@@ -35,6 +35,7 @@ export interface EditorControllerInterface {
   receiveEditor(editorInvoker: ClientRequiresEditorMethods): void
   restoreRevisionByReplacingLexicalState(lexicalState: SerializedEditorState): Promise<void>
   restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void>
+  replaceLocalSpreadsheetState(spreadsheetState: unknown, broadcastPatches: boolean): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(
@@ -378,7 +379,15 @@ export class EditorController implements EditorControllerInterface {
       )
     }
 
-    await this.editorInvoker.replaceLocalSpreadsheetState(spreadsheetState)
+    await this.editorInvoker.replaceLocalSpreadsheetState(spreadsheetState, true)
+  }
+
+  async replaceLocalSpreadsheetState(spreadsheetState: object, broadcastPatches: boolean): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to replace local spreadsheet state before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.replaceLocalSpreadsheetState(spreadsheetState, broadcastPatches)
   }
 
   reloadEditingLockedState(): void {
