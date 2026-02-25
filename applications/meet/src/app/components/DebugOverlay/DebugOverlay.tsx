@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRemoteParticipants, useRoomContext } from '@livekit/components-react';
 import type {
@@ -460,6 +460,7 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
     const [remoteInfos, setRemoteInfos] = useState<ParticipantDebugInfo[]>([]);
     const [recordingParticipantIdentity, setRecordingParticipantIdentity] = useState<string | null>(null);
     const [trackRecordings, setTrackRecordings] = useState<Map<string, TrackRecording>>(new Map());
+    const isCapturing = useRef(false);
 
     // Update debug info periodically
     useEffect(() => {
@@ -531,41 +532,51 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
         }
 
         const captureSnapshots = async () => {
-            const timestamp = new Date().toISOString();
-            const participant = remoteParticipants.find((p) => p.identity === recordingParticipantIdentity);
+            if (isCapturing.current) {
+                // avoid duplicate capture
+                return;
+            }
+            isCapturing.current = true;
 
-            if (participant) {
-                // Capture stats for each track
-                for (const pub of participant.trackPublications.values()) {
-                    const webrtcStats = await getWebRTCStats(pub);
+            try {
+                const timestamp = new Date().toISOString();
+                const participant = remoteParticipants.find((p) => p.identity === recordingParticipantIdentity);
 
-                    if (webrtcStats) {
-                        const trackSnapshot: TrackStatsSnapshot = {
-                            timestamp,
-                            stats: webrtcStats,
-                        };
+                if (participant) {
+                    // Capture stats for each track
+                    for (const pub of participant.trackPublications.values()) {
+                        const webrtcStats = await getWebRTCStats(pub);
 
-                        setTrackRecordings((prev) => {
-                            const updated = new Map(prev);
-                            let trackRecording = updated.get(pub.trackSid);
+                        if (webrtcStats) {
+                            const trackSnapshot: TrackStatsSnapshot = {
+                                timestamp,
+                                stats: webrtcStats,
+                            };
 
-                            if (!trackRecording) {
-                                // Initialize new track recording
-                                trackRecording = {
-                                    trackSid: pub.trackSid || 'N/A',
-                                    trackName: pub.trackName || 'N/A',
-                                    kind: pub.kind || 'N/A',
-                                    source: pub.source || 'N/A',
-                                    snapshots: [],
-                                };
-                            }
+                            setTrackRecordings((prev) => {
+                                const updated = new Map(prev);
+                                let trackRecording = updated.get(pub.trackSid);
 
-                            trackRecording.snapshots.push(trackSnapshot);
-                            updated.set(pub.trackSid, trackRecording);
-                            return updated;
-                        });
+                                if (!trackRecording) {
+                                    // Initialize new track recording
+                                    trackRecording = {
+                                        trackSid: pub.trackSid || 'N/A',
+                                        trackName: pub.trackName || 'N/A',
+                                        kind: pub.kind || 'N/A',
+                                        source: pub.source || 'N/A',
+                                        snapshots: [],
+                                    };
+                                }
+
+                                trackRecording.snapshots.push(trackSnapshot);
+                                updated.set(pub.trackSid, trackRecording);
+                                return updated;
+                            });
+                        }
                     }
                 }
+            } finally {
+                isCapturing.current = false;
             }
         };
 
