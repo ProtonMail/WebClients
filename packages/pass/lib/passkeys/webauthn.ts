@@ -71,7 +71,13 @@ export const intoPublicKeyCredential = (
     };
 
     return Object.setPrototypeOf(
-        { ...publicKeyCredential, toJSON: () => clone(publicKeyCredential) },
+        {
+            ...publicKeyCredential,
+            toJSON: () => {
+                const { getClientExtensionResults, ...data } = publicKeyCredential;
+                return clone({ ...data, clientExtensionResults: getClientExtensionResults() });
+            },
+        },
         PublicKeyCredential.prototype
     );
 };
