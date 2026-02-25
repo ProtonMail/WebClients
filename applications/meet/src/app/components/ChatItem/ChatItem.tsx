@@ -58,7 +58,7 @@ export const ChatItem = ({
         <div
             key={`${type}-${name}-${timestamp}`}
             className={clsx(
-                'chat-item flex gap-2 height-custom flex-nowrap shrink-0',
+                'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2',
                 (shouldGrow || ellipsisOverflow) && 'flex-1'
             )}
             style={{ '--height-custom': 'fit-content' }}
@@ -94,17 +94,22 @@ export const ChatItem = ({
                 {isMeetChatMessage(item) && (
                     <div
                         className={clsx(
-                            'color-norm text-semibold chat-message',
-                            ellipsisOverflow && 'text-ellipsis chat-message-one-line'
+                            'color-norm text-semibold chat-message text-break',
+                            ellipsisOverflow && 'text-ellipsis-four-lines'
                         )}
                     >
                         <ChatMessageContent message={item.message} />
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
-                    <div className="block text-semibold color-weak">
+                    <div
+                        className={clsx(
+                            'block text-semibold color-weak text-break',
+                            ellipsisOverflow && 'participant-enter--ellipsis'
+                        )}
+                    >
                         {
-                            // translator: full sentence is "Joined <room name>" or "Left <room name>"
+                            // translator: full sentence is "Joined <room name>" or "Left <room name>" (please keep the style, do NOT translate by saying "You joined...", as it might be misleading)
                             item.eventType === ParticipantEvent.Join
                                 ? c('Info').jt`Joined ${roomNameLabel}`
                                 : c('Info').jt`Left ${roomNameLabel}`
