@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@proton/drive';
+import { type ProtonDriveClient, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -60,15 +60,19 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
     }
 };
 
-export const subscribeToSharedByMeEvents = (drive: Drive) => {
+export const subscribeToSharedByMeEvents = () => {
     const eventManager = getBusDriver();
 
     const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
-            if (item.isShared && !store.getSharedByMeItem(item.uid)) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, drive);
+            const storeItem = store.getSharedByMeItem(item.uid);
+            if (item.isShared && storeItem) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(
+                    item.uid,
+                    getDrivePerNodeType(storeItem.type)
+                );
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
@@ -80,10 +84,14 @@ export const subscribeToSharedByMeEvents = (drive: Drive) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
-            if (item.isShared === false && store.getSharedByMeItem(item.uid)) {
+            const storeItem = store.getSharedByMeItem(item.uid);
+            if (item.isShared === false && storeItem) {
                 store.removeSharedByMeItem(item.uid);
-            } else if (item.isShared) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, drive);
+            } else if (item.isShared && storeItem) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(
+                    item.uid,
+                    getDrivePerNodeType(storeItem.type)
+                );
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
