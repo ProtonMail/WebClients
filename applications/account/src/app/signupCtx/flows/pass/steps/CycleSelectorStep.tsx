@@ -156,12 +156,6 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
                 {showLifetime && (
                     <Item
                         className="border-gradient"
-                        label={
-                            <span
-                                className="banner-gradient-bg w-fit-content color-invert rounded text-semibold px-2 py-1"
-                                style={{ backgroundColor: 'var(--interaction-norm)' }}
-                            >{c('Label').t`Limited time`}</span>
-                        }
                         title={c('Title').t`Lifetime`}
                         subtitle={c('Label').t`Pay once, access forever.`}
                         price={getPlusLifetimePrice()}
