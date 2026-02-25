@@ -172,7 +172,6 @@ export const RecoveryContactFormStep2 = ({
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
-    const goToSettings = useSettingsLink();
 
     const handleSubmit = async () => {
         try {
@@ -187,7 +186,6 @@ export const RecoveryContactFormStep2 = ({
 
             createNotification(getKeyReactivationNotification(result));
             onClose?.();
-            goToSettings(getViewRecoveryContactInfoRoute(recoveryContact.outgoingDelegatedAccess.DelegatedAccessID));
         } catch (error) {
             handleError(error);
         } finally {
