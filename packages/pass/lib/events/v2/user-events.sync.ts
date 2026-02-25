@@ -62,9 +62,8 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     /** 4. Get all items for all active shares */
     const items: ItemsByShareId[] = yield all(activeShares.map((s) => call(intoItemsByShareId, s)));
     /** 5. Get all invites — filter out stale accepted invites before parsing */
-    const vaultIDs = new Set(activeShares.map(prop('shareId')));
     const loadGroupInvites: boolean = selectLoadGroupInvites(state);
-    const invites: Invite[] = yield call(allInvites, vaultIDs, loadGroupInvites);
+    const invites: Invite[] = yield call(allInvites, loadGroupInvites);
     /** 6. Get all breaches */
     const breaches: BreachesGetResponse = yield call(getAllBreaches);
 
