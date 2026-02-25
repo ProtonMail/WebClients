@@ -573,13 +573,15 @@ export function useLocalState(
   )
 
   const replaceLocalSpreadsheetState = useCallback(
-    async (newState: object) => {
+    async (newState: object, broadcastPatches: boolean = true) => {
       useLocalSpreadsheetState.setState({
         ...(newState as LocalStateWithoutActions),
         cellXfs: 'cellXfs' in newState ? new Map(Object.entries(newState.cellXfs as object)) : undefined,
       })
-      const patches = await state.generateStatePatches()
-      state.yjsState.onBroadcastPatch([[patches]])
+      if (broadcastPatches) {
+        const patches = await state.generateStatePatches()
+        state.yjsState.onBroadcastPatch([[patches]])
+      }
     },
     [state],
   )

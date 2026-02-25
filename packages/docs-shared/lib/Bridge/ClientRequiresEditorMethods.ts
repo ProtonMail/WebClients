@@ -25,7 +25,7 @@ export interface ClientRequiresEditorMethods {
    * used when restoring a document from history
    */
   replaceEditorState(state: SerializedEditorState): Promise<void>
-  replaceLocalSpreadsheetState(state: object): Promise<void>
+  replaceLocalSpreadsheetState(state: object, broadcastPatches: boolean): Promise<void>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>
