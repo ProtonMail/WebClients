@@ -98,7 +98,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                 </div>
             }
         >
-            <div className="flex-1 overflow-auto min-h-0 px-4">
+            <div className="flex-1 overflow-auto min-h-0 px-4 outline-none--at-all">
                 <div className="meeting-info-wrapper meet-radius p-4">
                     <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting details`}</h3>
                     <Table className="mb-0">
