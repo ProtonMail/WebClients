@@ -425,12 +425,14 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                             const signatureResult = getSignatureIssues(maybeNode);
                             if (!node.deprecatedShareId) {
                                 handleSdkError(new Error('The shared with me node has missing deprecatedShareId'), {
+                                    showNotification: false,
                                     extra: { nodeUid: node.uid },
                                 });
                                 continue;
                             }
                             if (!node.membership) {
                                 handleSdkError(new Error('Shared with me node has missing membership'), {
+                                    showNotification: false,
                                     extra: { nodeUid: node.uid },
                                 });
                                 continue;

@@ -29,7 +29,7 @@ export const useCopyItems = () => {
                 }
             }
         } catch (error) {
-            handleSdkError(error, { extra: { uidsToDelete, errors } });
+            handleSdkError(error, { showNotification: false, extra: { uidsToDelete, errors } });
         }
 
         showUndoCopyNotification(deleted, errors);
@@ -77,7 +77,7 @@ export const useCopyItems = () => {
                 }
             }
         } catch (error) {
-            handleSdkError(error, { extra: { itemsToCopy, targetFolderUid, errors } });
+            handleSdkError(error, { showNotification: false, extra: { itemsToCopy, targetFolderUid, errors } });
         }
 
         const copiesList = Object.values(copies);

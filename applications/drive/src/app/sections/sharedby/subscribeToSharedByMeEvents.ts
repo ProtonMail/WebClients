@@ -23,7 +23,8 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
                 new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                     tags: { component: 'drive-sdk' },
                     extra: { uid: node.uid },
-                })
+                }),
+                { showNotification: false }
             );
             return null;
         }
@@ -55,7 +56,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
             haveSignatureIssues: !signatureResult.ok,
         };
     } catch (error) {
-        handleSdkError(error);
+        handleSdkError(error, { showNotification: false });
         return null;
     }
 };
