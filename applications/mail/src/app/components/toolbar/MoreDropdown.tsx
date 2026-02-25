@@ -13,6 +13,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
+import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -85,6 +87,9 @@ const MoreDropdown = ({
     onCheckAll,
 }: Props) => {
     const labelID = useMailSelector(selectLabelID);
+
+    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
+    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
 
     const [mailSettings] = useMailSettings();
     const { selectAll } = useSelectAll({ labelID });
@@ -208,14 +213,20 @@ const MoreDropdown = ({
                                 </>
                             ) : null}
 
-                            {showMoveAllToTrash ? <MoveAllToTrashAction labelID={labelID} /> : null}
-                            {showMoveAllToArchive ? <MoveAllToArchiveAction labelID={labelID} /> : null}
-                            {showDelete ? <DeleteAllAction labelID={labelID} /> : null}
+                            {showMoveAllToTrash ? (
+                                <MoveAllToTrashAction labelID={labelID} moveAllToFolder={moveAllToFolder} />
+                            ) : null}
+                            {showMoveAllToArchive ? (
+                                <MoveAllToArchiveAction labelID={labelID} moveAllToFolder={moveAllToFolder} />
+                            ) : null}
+                            {showDelete ? <DeleteAllAction labelID={labelID} emptyLabel={emptyLabel} /> : null}
                         </DropdownMenu>
                     ),
                 }}
             </ToolbarDropdown>
             {renderUpsellModal && <SnoozeUpsellModal {...upsellModalProps} />}
+            {moveAllModal}
+            {deleteAllModal}
         </>
     );
 };
