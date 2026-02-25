@@ -27,7 +27,11 @@ const getSidebarItemFromUid = async (uid: string) => {
             };
         }
     } catch (error) {
-        handleSdkError(error, { fallbackMessage: 'Error while getting the sidebar node', extra: { uid } });
+        handleSdkError(error, {
+            showNotification: false,
+            fallbackMessage: 'Error while getting the sidebar node',
+            extra: { uid },
+        });
     }
 };
 

@@ -14,7 +14,7 @@ const getNode = async (uid: string) => {
         const { node } = getNodeEntity(maybeNode);
         return node;
     } catch (error) {
-        handleSdkError(error, { fallbackMessage: 'Unhandled Error', extra: { uid } });
+        handleSdkError(error, { showNotification: false, fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
 };
 

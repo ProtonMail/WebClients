@@ -203,7 +203,7 @@ describe('subscribeToSharedByMeEvents', () => {
 
             await createdNodesHandler(event);
 
-            expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error));
+            expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error), { showNotification: false });
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
     });
@@ -273,7 +273,7 @@ describe('subscribeToSharedByMeEvents', () => {
 
             await updatedNodesHandler(event);
 
-            expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error));
+            expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error), { showNotification: false });
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
     });
@@ -401,7 +401,8 @@ describe('subscribeToSharedByMeEvents', () => {
             expect(mockHandleSdkError).toHaveBeenCalledWith(
                 expect.objectContaining({
                     message: 'The shared with me node entity is missing deprecatedShareId',
-                })
+                }),
+                { showNotification: false }
             );
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
