@@ -302,17 +302,6 @@ export class DownloadManager {
                 await savePromise.catch(() => undefined);
             };
 
-            await validateDownloadSignatures({
-                downloadId,
-                node,
-                controller,
-                onApproved: closeWriter,
-                onRejected: () => {
-                    throw new TransferCancel({ id: downloadId });
-                },
-                onError: abortSaving,
-            });
-
             completionPromise = this.attachActiveDownload({
                 downloadId,
                 controller,
@@ -333,6 +322,17 @@ export class DownloadManager {
                     await abortSaving(error);
                     handleDownloadError(downloadId, [node], error);
                 },
+            });
+
+            await validateDownloadSignatures({
+                downloadId,
+                node,
+                controller,
+                onApproved: closeWriter,
+                onRejected: () => {
+                    throw new TransferCancel({ id: downloadId });
+                },
+                onError: abortSaving,
             });
         } catch (error) {
             this.downloadSpeedMetrics.onFileEnded(downloadId);
@@ -546,15 +546,15 @@ export class DownloadManager {
             const storeItem = getQueueItem(id);
             if (storeItem && this.activeDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isActive: true });
-                void this.stopDownload(downloadIds);
+                void this.stopDownload([id]);
                 this.scheduler.cancelDownloadsById(id);
                 this.activeDownloads.delete(id);
             } else if (storeItem && this.requestedDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isPending: true });
                 this.scheduler.cancelDownloadsById(id);
             }
-            this.updateStatus(downloadIds, DownloadStatus.Cancelled);
         });
+        this.updateStatus(downloadIds, DownloadStatus.Cancelled);
     }
 
     retry(downloadIds: string[] = []) {
@@ -564,7 +564,7 @@ export class DownloadManager {
             const requestedDownload = this.requestedDownloads.get(id);
             if (storeItem && requestedDownload) {
                 downloadLogDebug('Retry download', { downloadId: id });
-                updateDownloadItem(id, { isRetried: true });
+                updateDownloadItem(id, { isRetried: true, downloadedBytes: 0 });
                 if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
                     void this.scheduleSingleFileDownload(id, requestedDownload[0]);
                 } else {
