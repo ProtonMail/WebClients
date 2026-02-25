@@ -48,7 +48,7 @@ interface SelectAllParams {
     onCheckAll?: (check: boolean) => void;
 }
 
-type MoveAllToFolderArgs = MoveAllParams | SelectAllParams;
+export type MoveAllToFolderArgs = MoveAllParams | SelectAllParams;
 
 /**
  * If you need to use move on a full location, prefer to use the hook "useMoveToFolder" with selectAll to true instead.
