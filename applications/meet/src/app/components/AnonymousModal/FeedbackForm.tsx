@@ -8,10 +8,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-// import { useFeedback } from '../../hooks/useFeedback';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
+import { isValidMeetingLink, parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
+import useFlag from '@proton/unleash/useFlag';
 
+import { useFeedback } from '../../hooks/useFeedback';
 import { FeedbackOptionColumn } from '../FeedbackOptionColumn/FeedbackOptionColumn';
 import { StarRating } from '../StarRating/StarRating';
 
@@ -22,15 +24,16 @@ type Props = {
     setIsFinished: Dispatch<SetStateAction<boolean>>;
 };
 
-export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }: Props) => {
+export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) => {
+    const meetFeedbackOnSkipEnabled = useFlag('MeetFeedbackOnSkip');
+
     const [rating, SetRating] = useState<number | undefined>(undefined);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [comment, setComment] = useState('');
     const [optionalDetails, setOptionalDetails] = useState(false);
 
     const [isLoading, withLoading] = useLoading();
-    const [isLoadingSkip, withLoadingSkip] = useLoading();
-    // const _submitFeedback = useFeedback();
+    const submitFeedback = useFeedback();
     const notifications = useNotifications();
     const previousMeetingLink = useMeetSelector(selectPreviousMeetingLink);
 
@@ -42,7 +45,17 @@ export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }
         }
     };
 
-    const handleSubmit = async (score: number, feedbackOptions?: string[], comment?: string) => {
+    const handleSubmit = async ({
+        score,
+        feedbackOptions,
+        comment,
+        closeAfterSubmit = false,
+    }: {
+        score: number;
+        feedbackOptions?: string[];
+        comment?: string;
+        closeAfterSubmit?: boolean;
+    }) => {
         const allFeedback: string[] = [];
 
         if (feedbackOptions && feedbackOptions.length > 0) {
@@ -61,23 +74,36 @@ export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }
             return;
         }
 
-        setIsFinished(true);
+        if (!isValidMeetingLink(previousMeetingLink)) {
+            onClose();
+            notifications.createNotification({
+                type: 'error',
+                text: c('Notification').t`Could not send feedback`,
+            });
+            return;
+        }
 
-        // await submitFeedback({
-        //     meetingLinkName: previousMeetingLink,
-        //     score: score,
-        //     feedbackOptions: allFeedback,
-        // })
-        //     .then(() => {
-        //         setIsFinished(true);
-        //     })
-        //     .catch(() => {
-        //         onClose();
-        //         notifications.createNotification({
-        //             type: 'error',
-        //             text: c('Notification').t`Could not send feedback`,
-        //         });
-        //     });
+        const { meetingId } = parseMeetingLink(previousMeetingLink);
+
+        await submitFeedback({
+            meetingId,
+            score,
+            feedbackOptions: allFeedback,
+        })
+            .then(() => {
+                if (closeAfterSubmit) {
+                    onClose();
+                } else {
+                    setIsFinished(true);
+                }
+            })
+            .catch(() => {
+                onClose();
+                notifications.createNotification({
+                    type: 'error',
+                    text: c('Notification').t`Could not send feedback`,
+                });
+            });
     };
 
     const audioOptions = [
@@ -112,7 +138,7 @@ export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }
                         loading={isLoading}
                         disabled={isLoading}
                         onClick={async () => {
-                            await withLoading(handleSubmit(rating));
+                            await withLoading(handleSubmit({ score: rating }));
                         }}
                         size="medium"
                     >
@@ -167,24 +193,32 @@ export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }
                         <Button
                             className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
                             onClick={async () => {
-                                await withLoadingSkip(
-                                    handleSubmit(rating, selectedOptions, optionalDetails ? comment : '')
-                                );
+                                if (meetFeedbackOnSkipEnabled) {
+                                    await handleSubmit({
+                                        score: rating,
+                                        feedbackOptions: selectedOptions,
+                                        closeAfterSubmit: true,
+                                    });
+                                }
                             }}
                             size="medium"
-                            loading={isLoadingSkip}
-                            disabled={isLoadingSkip || isLoading}
                         >
                             {c('Action').t`Skip`}
                         </Button>
                         <Button
                             className="primary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
                             onClick={async () => {
-                                await withLoading(handleSubmit(rating));
+                                await withLoading(
+                                    handleSubmit({
+                                        score: rating,
+                                        feedbackOptions: selectedOptions,
+                                        comment: optionalDetails ? comment : undefined,
+                                    })
+                                );
                             }}
                             size="medium"
                             loading={isLoading}
-                            disabled={isLoading || isLoadingSkip}
+                            disabled={isLoading}
                         >
                             {c('Action').t`Submit`}
                         </Button>

@@ -5,18 +5,18 @@ export const useFeedback = () => {
     const api = useApi();
 
     const submitFeedback = async ({
-        meetingLinkName,
+        meetingId,
         score,
         feedbackOptions = [],
     }: {
-        meetingLinkName: string;
+        meetingId: string;
         score: number;
         feedbackOptions?: string[];
     }) => {
         const feedback = feedbackOptions.join(', ');
 
         await api(
-            sendFeedback(meetingLinkName, {
+            sendFeedback(meetingId, {
                 Score: score,
                 Feedback: feedback,
             })
