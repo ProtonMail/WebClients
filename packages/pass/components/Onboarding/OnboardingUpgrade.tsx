@@ -112,10 +112,6 @@ export const Content: FC = () => {
             {selected === PLANS.PASS ? (
                 displayLifetimeCard && (
                     <div className="relative">
-                        <div
-                            className="description--banner-badge absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center text-ellipsis rounded-sm"
-                            style={{ '--top-custom': '-7px', '--left-custom': '1rem' }}
-                        >{c('Label').t`Limited time`}</div>
                         <div className="description--banner-card flex justify-space-between rounded-lg p-3 gap-2">
                             <div className="description--banner-card-content">
                                 <div className="text-semibold">{c('PassOnboardingOffer')
