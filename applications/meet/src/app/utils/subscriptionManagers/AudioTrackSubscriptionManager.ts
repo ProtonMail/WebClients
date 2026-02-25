@@ -42,6 +42,7 @@ export class AudioTrackSubscriptionManager {
     private lastSortingResult: PublicationItem[] = [];
     private reconcileInterval: NodeJS.Timeout | null = null;
     private healthCheckInterval: NodeJS.Timeout | null = null;
+    private isHealthCheckRunning = false;
     private recoveryAttempts = new Map<string, number>();
     private recoveryTimeouts = new Map<string, NodeJS.Timeout>();
     private activeRecoveries = new Set<string>();
@@ -409,6 +410,11 @@ export class AudioTrackSubscriptionManager {
     }
 
     private runHealthCheck = async () => {
+        if (this.isHealthCheckRunning) {
+            // avoid duplicate health check in same time which might cause performance issues
+            return;
+        }
+
         if (this.room.state !== ConnectionState.Connected) {
             return;
         }
@@ -418,11 +424,17 @@ export class AudioTrackSubscriptionManager {
             return;
         }
 
-        const stats = await subscriberPC.getStats();
-        const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+        this.isHealthCheckRunning = true;
 
-        await this.checkBrokenTransceivers(stats, currentCacheValues);
-        await this.checkAudioConcealment(stats, currentCacheValues);
+        try {
+            const stats = await subscriberPC.getStats();
+            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
+
+            await this.checkBrokenTransceivers(stats, currentCacheValues);
+            await this.checkAudioConcealment(stats, currentCacheValues);
+        } finally {
+            this.isHealthCheckRunning = false;
+        }
     };
 
     private checkBrokenTransceivers = async (stats: RTCStatsReport, currentCacheValues: PublicationItem[]) => {
@@ -789,7 +801,7 @@ export class AudioTrackSubscriptionManager {
 
     setupHealthCheckLoop = () => {
         this.healthCheckInterval = setInterval(() => {
-            void this.runHealthCheck();
+            void this.runHealthCheck(); // the health check will be skip if previous health check is not finished
         }, this.HEALTH_CHECK_INTERVAL);
     };
 
