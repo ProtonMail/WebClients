@@ -42,15 +42,14 @@ export const IconOnly: Story = {
     },
 };
 
-// TODO: Check why the snapshots are failing for this story
-// export const Responsive: Story = {
-//     args: {
-//         iconName: 'upgrade',
-//         icon: true,
-//         responsive: true,
-//         children: 'Icon Ghost',
-//     },
-// };
+export const Responsive: Story = {
+    args: {
+        iconName: 'upgrade',
+        icon: true,
+        responsive: true,
+        children: 'Responsive',
+    },
+};
 
 export const Upsell: Story = {
     args: {
