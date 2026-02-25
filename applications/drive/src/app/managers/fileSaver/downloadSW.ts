@@ -348,7 +348,7 @@ class DownloadServiceWorker {
                         console.error('Error handling stream range request:', error);
                         return new Response(null, {
                             status: 500,
-                            statusText: 'Internal Server Error',
+                            statusText: error instanceof Error ? error.message : 'Internal Server Error',
                             headers: new Headers(SECURITY_HEADERS),
                         });
                     }

@@ -52,24 +52,15 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
         if (error instanceof Error) {
             videoError = error;
         } else {
-            let eventErrorMessage;
-            try {
-                eventErrorMessage = (error as any)?.target?.error?.message;
-            } catch {
-                // We take the message from the event for simpler debugging.
-                // If its not there, we ignore the error as we still provide the full error event.
-            }
+            const eventDetails = serializaEventPayload(error);
+            const logMessage = eventDetails ? JSON.stringify(eventDetails) : errorToString(error);
 
-            if (eventErrorMessage) {
-                logger.warn(`Video streaming failed because of event error: ${eventErrorMessage}`);
-            } else {
-                logger.warn(`Video streaming failed because of error: ${errorToString(error)}`);
-            }
+            logger.warn(`Video streaming failed because of error: ${logMessage}`);
 
             videoError = new EnrichedError('Failed to load the video for streaming preview', {
                 extra: {
                     error,
-                    eventErrorMessage,
+                    eventDetails,
                 },
             });
         }
@@ -199,4 +190,35 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
         onVideoPlaybackError: handleBrokenVideo,
         isLoading: false,
     };
+}
+
+/**
+ * Extracts serializable data from a React SyntheticEvent (or event-like object)
+ * so Sentry receives useful context instead of "[SyntheticEvent]".
+ */
+function serializaEventPayload(
+    error: SyntheticEvent<HTMLVideoElement, Event> | unknown
+): Record<string, unknown> | undefined {
+    if (!error || typeof error !== 'object') {
+        return undefined;
+    }
+    const e = error as Record<string, unknown>;
+    const hasEventShape = 'target' in e && ('type' in e || 'nativeEvent' in e);
+    if (!hasEventShape) {
+        return undefined;
+    }
+    const payload: Record<string, unknown> = {
+        eventType: typeof e.type === 'string' ? e.type : undefined,
+    };
+    const target = e.target as HTMLVideoElement | undefined;
+    if (target?.error) {
+        const mediaError = target.error;
+        payload.mediaErrorCode = mediaError.code;
+        payload.mediaErrorMessage = mediaError.message || undefined;
+    }
+    if (target && 'networkState' in target) {
+        payload.networkState = target.networkState;
+        payload.readyState = target.readyState;
+    }
+    return payload;
 }
