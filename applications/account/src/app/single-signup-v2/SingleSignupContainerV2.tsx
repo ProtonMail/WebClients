@@ -196,7 +196,6 @@ const SingleSignupContainerV2 = ({
     const getKtActivation = useGetAccountKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const passLifetimeOfferEnabled = useFlag('PassSimpleLoginLifetimeOffer');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const isMeetPlansEnabled = useFlag('MeetPlans');
@@ -263,7 +262,6 @@ const SingleSignupContainerV2 = ({
             toApp,
             location,
             visionarySignupEnabled,
-            passLifetimeOfferEnabled,
             initialSearchParams,
             partner,
         });
