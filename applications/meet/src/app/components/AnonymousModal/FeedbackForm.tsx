@@ -1,0 +1,196 @@
+import { type Dispatch, type SetStateAction, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
+import useLoading from '@proton/hooks/useLoading';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+// import { useFeedback } from '../../hooks/useFeedback';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
+
+import { FeedbackOptionColumn } from '../FeedbackOptionColumn/FeedbackOptionColumn';
+import { StarRating } from '../StarRating/StarRating';
+
+import './FeedbackForm.scss';
+
+type Props = {
+    onClose: () => void;
+    setIsFinished: Dispatch<SetStateAction<boolean>>;
+};
+
+export const FeedbackForm = ({ onClose: _onClose, setIsFinished: setIsFinished }: Props) => {
+    const [rating, SetRating] = useState<number | undefined>(undefined);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+    const [comment, setComment] = useState('');
+    const [optionalDetails, setOptionalDetails] = useState(false);
+
+    const [isLoading, withLoading] = useLoading();
+    const [isLoadingSkip, withLoadingSkip] = useLoading();
+    // const _submitFeedback = useFeedback();
+    const notifications = useNotifications();
+    const previousMeetingLink = useMeetSelector(selectPreviousMeetingLink);
+
+    const handleOptionSelect = (option: string) => {
+        if (selectedOptions.includes(option)) {
+            setSelectedOptions(selectedOptions.filter((o) => o !== option));
+        } else {
+            setSelectedOptions([...selectedOptions, option]);
+        }
+    };
+
+    const handleSubmit = async (score: number, feedbackOptions?: string[], comment?: string) => {
+        const allFeedback: string[] = [];
+
+        if (feedbackOptions && feedbackOptions.length > 0) {
+            allFeedback.push(...feedbackOptions);
+        }
+
+        if (comment) {
+            allFeedback.push(comment);
+        }
+
+        if (previousMeetingLink === null) {
+            notifications.createNotification({
+                type: 'error',
+                text: c('Notification').t`You can't send a feedback for a meeting you haven't been to`,
+            });
+            return;
+        }
+
+        setIsFinished(true);
+
+        // await submitFeedback({
+        //     meetingLinkName: previousMeetingLink,
+        //     score: score,
+        //     feedbackOptions: allFeedback,
+        // })
+        //     .then(() => {
+        //         setIsFinished(true);
+        //     })
+        //     .catch(() => {
+        //         onClose();
+        //         notifications.createNotification({
+        //             type: 'error',
+        //             text: c('Notification').t`Could not send feedback`,
+        //         });
+        //     });
+    };
+
+    const audioOptions = [
+        c('Option').t`Audio was breaking up`,
+        c('Option').t`I couldn't hear others`,
+        c('Option').t`Others couldn't hear me`,
+    ];
+    const videoOptions = [
+        c('Option').t`Video was breaking up`,
+        c('Option').t`Video was blurry`,
+        c('Option').t`I couldn't see others' video`,
+    ];
+    const screenShareOptions = [
+        c('Option').t`The presentation was blurry`,
+        c('Option').t`I couldn't see the presentation`,
+        c('Option').t`I couldn't present `,
+    ];
+
+    return (
+        <>
+            <div
+                className="flex flex-column md:flex-row items-center gap-2 mt-20 mb-5 w-full max-w-custom"
+                style={{ '--max-w-custom': '37rem' }}
+            >
+                <span className="text-semibold text-left feedback-form-rating-label">{c('Label')
+                    .t`How was the call quality?`}</span>
+                <StarRating value={rating} onChange={SetRating} className="md:flex-1 flex-nowrap"></StarRating>
+                {/* is high rating */}
+                {rating && rating >= 3 && (
+                    <Button
+                        className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto"
+                        loading={isLoading}
+                        disabled={isLoading}
+                        onClick={async () => {
+                            await withLoading(handleSubmit(rating));
+                        }}
+                        size="medium"
+                    >
+                        {c('Action').t`Submit`}
+                    </Button>
+                )}
+            </div>
+            {/* is low rating */}
+            {rating && rating < 3 && (
+                <>
+                    <div className="cta-modal-title text-semibold color-norm pt-10 pb-10">{c('Title')
+                        .t`What went wrong?`}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
+                        <FeedbackOptionColumn
+                            options={audioOptions}
+                            selectedOptions={selectedOptions}
+                            onOptionSelect={handleOptionSelect}
+                        />
+                        <FeedbackOptionColumn
+                            options={videoOptions}
+                            selectedOptions={selectedOptions}
+                            onOptionSelect={handleOptionSelect}
+                        />
+                        <FeedbackOptionColumn
+                            options={screenShareOptions}
+                            selectedOptions={selectedOptions}
+                            onOptionSelect={handleOptionSelect}
+                        />
+                    </div>
+                    <div className="w-full flex flex-nowrap items-center justify-start gap-2 text-semibold mt-7 max-w-custom">
+                        <InlineLinkButton
+                            className="flex add-details-button items-center gap-2"
+                            onClick={() => setOptionalDetails(!optionalDetails)}
+                        >
+                            <IcPlus />
+                            {c('Label').t`Add optional details`}
+                        </InlineLinkButton>
+                    </div>
+                    {optionalDetails && (
+                        <div className="mt-4 w-full max-w-custom">
+                            <InputFieldTwo
+                                className="feedback-comment w-full md:w-2/3"
+                                as={TextAreaTwo}
+                                rows={3}
+                                value={comment}
+                                onValue={setComment}
+                                placeholder={c('Placeholder').t`Share more details`}
+                            />
+                        </div>
+                    )}
+                    <div className="flex flex-column md:flex-row gap-2 items-center mt-4 w-full max-w-custom">
+                        <Button
+                            className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
+                            onClick={async () => {
+                                await withLoadingSkip(
+                                    handleSubmit(rating, selectedOptions, optionalDetails ? comment : '')
+                                );
+                            }}
+                            size="medium"
+                            loading={isLoadingSkip}
+                            disabled={isLoadingSkip || isLoading}
+                        >
+                            {c('Action').t`Skip`}
+                        </Button>
+                        <Button
+                            className="primary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
+                            onClick={async () => {
+                                await withLoading(handleSubmit(rating));
+                            }}
+                            size="medium"
+                            loading={isLoading}
+                            disabled={isLoading || isLoadingSkip}
+                        >
+                            {c('Action').t`Submit`}
+                        </Button>
+                    </div>
+                </>
+            )}
+        </>
+    );
+};
