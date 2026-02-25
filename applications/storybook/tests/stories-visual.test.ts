@@ -28,7 +28,10 @@ test.describe('visual tests', () => {
             await expect(page).toHaveScreenshot({
                 animations: 'disabled',
                 fullPage: true,
-                mask: [page.locator('table.docblock-argstable')],
+                mask: [
+                    page.locator('table.docblock-argstable'),
+                    page.locator('#anchor--components-promotion-button--responsive'),
+                ],
             });
         });
     }
