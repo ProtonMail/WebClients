@@ -497,6 +497,10 @@ describe('DownloadManager', () => {
         manager.retry(['download-retry']);
 
         expect(storeMockState.addDownloadItem).not.toHaveBeenCalled();
+        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith(
+            'download-retry',
+            expect.objectContaining({ downloadedBytes: 0 })
+        );
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const retriedTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
         expect(retriedTask.node).toEqual(node);
@@ -746,6 +750,59 @@ describe('DownloadManager', () => {
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-3', {
             status: DownloadStatus.Cancelled,
         });
+    });
+
+    it('should abort the download when cancel is called while the file is actively downloading', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('download-cancel-active');
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
+
+        const node: NodeEntity = createMockNodeEntity({ uid: 'file-cancel-active', name: 'active.txt' });
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: jest.fn(() => controller),
+        };
+        sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
+
+        const readableStream = {
+            cancel: jest.fn().mockResolvedValue(undefined),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        await manager.download([node.uid]);
+
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const completionPromise = scheduledTask.start();
+
+        // Wait for startSingleFileDownload to reach attachActiveDownload so the download is registered
+        await flushAsync();
+
+        const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
+        expect(activeDownloads.has('download-cancel-active')).toBe(true);
+
+        manager.cancel(['download-cancel-active']);
+
+        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith(
+            'download-cancel-active',
+            expect.objectContaining({ status: DownloadStatus.Cancelled })
+        );
+        expect(activeDownloads.has('download-cancel-active')).toBe(false);
+
+        controllerCompletion.reject(new TransferCancel({ id: 'download-cancel-active' }));
+        await expect(completionPromise).rejects.toBeInstanceOf(TransferCancel);
     });
 
     it('should clear active downloads, scheduler, and queue', async () => {

@@ -30,12 +30,12 @@ im.$media-expressions: $media-expressions;
 		border-start-end-radius: var(--border-radius-md);
 		border-start-start-radius: var(--border-radius-md);
 	}
-}
 
-.tm-progress {
-	background-color: var(--background-strong);
-
-	&::-webkit-progress-bar {
+	.tm-progress {
 		background-color: var(--background-strong);
+
+		&::-webkit-progress-bar {
+			background-color: var(--background-strong);
+		}
 	}
 }
