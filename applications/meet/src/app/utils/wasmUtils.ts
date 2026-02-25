@@ -29,14 +29,21 @@ interface SetupWasmDependenciesParameters {
 // Store interval ID to allow cleanup
 let keyPollIntervalId: ReturnType<typeof setInterval> | null = null;
 
-export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: SetupWasmDependenciesParameters) => {
-    let lastEpoch: bigint | undefined;
-
-    // Clear existing interval if setupWasmDependencies was called before, generally happened when user joins the meeting multiple times
+/**
+ * Cleanup function to stop the polling interval when leaving a meeting
+ */
+export const cleanupWasmDependencies = () => {
     if (keyPollIntervalId !== null) {
         clearInterval(keyPollIntervalId);
         keyPollIntervalId = null;
     }
+};
+
+export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: SetupWasmDependenciesParameters) => {
+    let lastEpoch: bigint | undefined;
+
+    // Clear existing interval if setupWasmDependencies was called before, generally happened when user joins the meeting multiple times
+    cleanupWasmDependencies();
 
     // Initialize window.new_group_key_event
     window.newGroupKeyEvent = {
