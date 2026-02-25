@@ -1,7 +1,6 @@
 import type * as H from 'history';
-import { c } from 'ttag';
 
-import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -15,28 +14,19 @@ export const getSignupParameters = ({
     toApp,
     initialSearchParams,
     visionarySignupEnabled,
-    passLifetimeOfferEnabled,
     location,
     partner,
 }: {
     toApp?: APP_NAMES;
     initialSearchParams?: URLSearchParams;
     visionarySignupEnabled: boolean;
-    passLifetimeOfferEnabled: boolean;
     location: H.Location<{ invite?: InviteData }>;
     partner?: 'porkbun';
 }): SignupParameters2 => {
     const searchParams = new URLSearchParams(location.search);
-    let notificationText: string | undefined;
-
     if (toApp !== APPS.PROTONWALLET && !visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
         searchParams.delete('plan');
     }
-    if (!passLifetimeOfferEnabled && searchParams.get('plan') === PLANS.PASS_LIFETIME) {
-        searchParams.delete('plan');
-        notificationText = c('Warning').t`${PLAN_NAMES[PLANS.PASS_LIFETIME]} offer has ended`;
-    }
-
     const result = getSignupSearchParams(location.pathname, searchParams);
     if (!result.email && initialSearchParams) {
         result.email = initialSearchParams.get('email') || result.email;
@@ -187,6 +177,5 @@ export const getSignupParameters = ({
         mode,
         invite,
         isMailVariantB,
-        notificationText,
     };
 };
