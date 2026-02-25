@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { type NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
+import type { NodeType } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
@@ -42,7 +42,6 @@ interface SharedByMeStore {
     hasEverLoaded: boolean;
 
     eventSubscription: (() => void) | null;
-    eventPhotosSubscription: (() => void) | null;
     activeContexts: Set<string>;
 
     setLoadingNodes: (loading: boolean) => void;
@@ -200,9 +199,8 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                     eventManager.subscribePhotosEventsMyUpdates(context),
                 ]);
 
-                const unsubscribeFromEvents = subscribeToSharedByMeEvents(getDrive());
-                const unsubscribeFromPhotosEvents = subscribeToSharedByMeEvents(getDriveForPhotos());
-                set({ eventSubscription: unsubscribeFromEvents, eventPhotosSubscription: unsubscribeFromPhotosEvents });
+                const unsubscribeFromEvents = subscribeToSharedByMeEvents();
+                set({ eventSubscription: unsubscribeFromEvents });
             },
             unsubscribeToEvents: async (context: string) => {
                 const eventManager = getBusDriver();
@@ -211,20 +209,14 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                     eventManager.unsubscribePhotosEventsMyUpdates(context),
                 ]);
 
-                const { activeContexts, eventSubscription, eventPhotosSubscription } = get();
+                const { activeContexts, eventSubscription } = get();
                 const newActiveContexts = new Set(activeContexts);
                 newActiveContexts.delete(context);
                 set({ activeContexts: newActiveContexts });
 
-                if (newActiveContexts.size === 0) {
-                    if (eventSubscription) {
-                        eventSubscription();
-                        set({ eventSubscription: null });
-                    }
-                    if (eventPhotosSubscription) {
-                        eventPhotosSubscription();
-                        set({ eventPhotosSubscription: null });
-                    }
+                if (newActiveContexts.size === 0 && eventSubscription) {
+                    eventSubscription();
+                    set({ eventSubscription: null });
                 }
             },
         }),
