@@ -58,7 +58,7 @@ import { checkIfUsingTurnRelay } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { getDisplayNameStorageKey } from '../../utils/storage';
-import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
+import { cleanupWasmDependencies, setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
 
@@ -618,6 +618,9 @@ export const ProtonMeetContainer = ({
                 void wasmApp?.leaveMeeting();
                 void stopPiP();
 
+                // Cleanup WASM polling interval to prevent MLS errors after leaving
+                cleanupWasmDependencies();
+
                 dispatch(resetMeetingState());
 
                 if (reason === DisconnectReason.ROOM_DELETED) {
@@ -891,6 +894,9 @@ export const ProtonMeetContainer = ({
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         disallowHealthCheck();
 
+        // Cleanup WASM polling interval to prevent MLS errors after leaving
+        cleanupWasmDependencies();
+
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
             keyRotationScheduler.clean();
@@ -919,6 +925,9 @@ export const ProtonMeetContainer = ({
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         disallowHealthCheck();
 
+        // Cleanup WASM polling interval to prevent MLS errors after leaving
+        cleanupWasmDependencies();
+
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
             keyRotationScheduler.clean();
@@ -942,6 +951,9 @@ export const ProtonMeetContainer = ({
         instantMeetingRef.current = false;
         resetParticipantNameMap();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
+
+        // Cleanup WASM polling interval to prevent MLS errors after leaving
+        cleanupWasmDependencies();
 
         setJoinedRoom(false);
 
