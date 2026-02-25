@@ -59,6 +59,10 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     if (!e.shiftKey && message.trim() !== '') {
                         e.preventDefault();
 
+                        if (chatMessageLoading) {
+                            return;
+                        }
+
                         const result = await withChatMessageLoading(handleChatMessageSubmit);
 
                         if (!result) {
