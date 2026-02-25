@@ -32,7 +32,7 @@ const addPublicFolderItemToStore = async (uid: string) => {
             uploadedBy: (node.keyAuthor.ok ? node.keyAuthor.value : node.keyAuthor.error.claimedAuthor) || undefined,
         });
     } catch (e) {
-        handleSdkError(e);
+        handleSdkError(e, { showNotification: false });
     }
 };
 

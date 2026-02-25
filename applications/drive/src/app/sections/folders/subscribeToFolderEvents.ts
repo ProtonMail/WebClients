@@ -18,7 +18,7 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
         const maybeNode = await drive.getNode(uid);
         legacyItem = await mapNodeToLegacyItem(maybeNode, folder.shareId);
     } catch (error) {
-        handleSdkError(error, { fallbackMessage: 'Unhandled Error', extra: { uid } });
+        handleSdkError(error, { showNotification: false, fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
     return legacyItem ? { ...legacyItem, shareUrl } : undefined;
 };
