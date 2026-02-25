@@ -12,7 +12,7 @@
 	&:hover,
 	&:focus-visible {
 		background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
-		outline: none !important;
+		outline: none !important; // specificity issue with focus-visible
 	}
 }
 
