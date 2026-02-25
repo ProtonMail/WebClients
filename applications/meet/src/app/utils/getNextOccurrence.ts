@@ -64,7 +64,7 @@ export const getNextOccurrence = (meeting: Meeting): NextOccurrence => {
 
         if (occurrences.length > 0) {
             // Find the first occurrence that is >= now
-            const nextOccurrence = occurrences.find((occurrence) => occurrence.utcStart.getTime() >= nowTimestamp);
+            const nextOccurrence = occurrences.find((occurrence) => occurrence.utcEnd.getTime() >= nowTimestamp);
 
             if (nextOccurrence) {
                 return {
