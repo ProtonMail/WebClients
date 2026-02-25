@@ -1,4 +1,5 @@
 @use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/meet/meet-breakpoints' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints;
@@ -63,15 +64,15 @@ im.$media-expressions: $media-expressions;
 		}
 
 		.user-initials {
-			font-size: 1rem !important;
+			font-size: rem(12);
 			inline-size: 2.5rem !important;
 			block-size: 2.5rem !important;
+			font-weight: var(--font-weight-semibold);
 		}
 
-		.user-dropdown-displayName,
-		.user-dropdown-email {
-			font-size: 0.875rem !important;
+		.user-dropdown-displayName {
 			color: var(--text-norm);
+			font-size: rem(14);
 		}
 
 		.user-dropdown-email {
