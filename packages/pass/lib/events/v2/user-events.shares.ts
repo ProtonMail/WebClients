@@ -1,3 +1,4 @@
+import type { Action } from 'redux';
 import { call, put, select } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
@@ -31,30 +32,6 @@ async function shareWithItemsFetcher(shareId: ShareId): Promise<MaybeNull<ShareC
     return { share, items };
 }
 
-/** Async generator that fetches shares in parallel batches, yielding each
- * non-null result individually. Failed or null-resolved fetches are silently
- * omitted. Returns `true` if every fetch in every batch succeeded. */
-async function* batchedShareFetcher<T>(
-    output: SyncEventShareOutput[],
-    fetcher: (shareID: ShareId) => Promise<T>
-): AsyncGenerator<NonNullable<T>, boolean> {
-    const batches = chunk(output, MIN_MAX_BATCH_PER_REQUEST);
-    let processed = true;
-
-    for (const batch of batches) {
-        const results = await Promise.allSettled(batch.map(({ ShareID }) => fetcher(ShareID)));
-
-        const data = results
-            .filter((res): res is PromiseFulfilledResult<Awaited<T>> => res.status === 'fulfilled')
-            .map(prop('value'));
-
-        if (data.length < batch.length) processed = false;
-        for (const value of data) if (value) yield value;
-    }
-
-    return processed;
-}
-
 /** Unconditionally cleans up crypto state and drafts for a share.
  * Dispatches `shareDeleted` only if the share exists in the store. */
 function* onShareDeleted(shareId: ShareId) {
@@ -65,6 +42,32 @@ function* onShareDeleted(shareId: ShareId) {
     if (share) yield put(shareDeleted(share));
 }
 
+/** Fetches shares in batches using the provided fetcher, dispatching an action
+ * per resolved result. Null-resolved and failed fetches are silently omitted.
+ * Returns `true` if every fetch in every batch succeeded. */
+function* processShareBatches<T>(
+    shares: SyncEventShareOutput[],
+    fetcher: (shareId: ShareId) => Promise<MaybeNull<T>>,
+    action: (value: T) => Action
+): EventProcessor {
+    let processed = true;
+
+    for (const batch of chunk(shares, MIN_MAX_BATCH_PER_REQUEST)) {
+        const results: PromiseSettledResult<MaybeNull<T>>[] = yield call(() =>
+            Promise.allSettled(batch.map(({ ShareID }) => fetcher(ShareID)))
+        );
+
+        const resolved = results
+            .filter((res): res is PromiseFulfilledResult<T> => res.status === 'fulfilled' && res.value !== null)
+            .map(prop('value'));
+
+        if (resolved.length < batch.length) processed = false;
+        for (const value of resolved) yield put(action(value));
+    }
+
+    return processed;
+}
+
 /** Processes newly created shares in batches. For each share, fetches the share
  * details (with decryption) and all its items. The CS-restore edge-case (delete
  * then re-create) is handled at the reducer level: `shareCreated` wipes any
@@ -72,13 +75,7 @@ function* onShareDeleted(shareId: ShareId) {
  * fetched state. Returns `true` if all fetches succeeded. */
 export function* processSharesCreated(created: SyncEventShareOutput[]): EventProcessor {
     if (created.length === 0) return true;
-    const fetcher = batchedShareFetcher(created, shareWithItemsFetcher);
-
-    while (true) {
-        const res: IteratorResult<ShareCreatedDTO, boolean> = yield call(() => fetcher.next());
-        if (res.done) return res.value;
-        yield put(shareCreated(res.value));
-    }
+    return yield call(processShareBatches<ShareCreatedDTO>, created, shareWithItemsFetcher, shareCreated);
 }
 
 /** Processes share deletions by discarding drafts and removing share
@@ -94,12 +91,5 @@ export function* processSharesDeleted(deleted: SyncEventShareOutput[]): EventPro
  * Returns `true` if all fetches succeeded. */
 export function* processSharesUpdated(updated: SyncEventShareOutput[]): EventProcessor {
     if (updated.length === 0) return true;
-
-    const fetcher = batchedShareFetcher(updated, shareFetcher);
-
-    while (true) {
-        const res: IteratorResult<Share, boolean> = yield call(() => fetcher.next());
-        if (res.done) return res.value;
-        yield put(shareUpdated(res.value));
-    }
+    return yield call(processShareBatches<Share>, updated, shareFetcher, shareUpdated);
 }
