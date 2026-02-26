@@ -4,27 +4,6 @@
 im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
-.anonymous-modal {
-	background-color: #0006 !important;
-
-	.rejoin-meeting-button {
-		text-decoration: none;
-		color: var(--interaction-norm);
-	}
-
-	.modal-two-dialog-container,
-	.modal-two-dialog {
-		inline-size: 90%;
-		box-shadow: none !important;
-		box-shadow: 0 0 44px 0 #0003;
-
-		@include im.media('>medium') {
-			inline-size: 24.5rem !important;
-			block-size: fit-content !important;
-		}
-	}
-}
-
 .create-account-low-pressure-button {
 	background: #ffffff0a;
 	border: 1px solid #ffffff0a;
@@ -52,20 +31,10 @@ im.$media-expressions: $media-expressions;
 	text-decoration: none !important;
 }
 
-.cta-modal-rating-label {
-	font-size: 1.125em;
-}
-
 .cta-modal-content-container {
 	@include im.media('<=small') {
 		inline-size: 100% !important;
 	}
-}
-
-.feedback-comment {
-	background: var(--background-weak);
-	border: 1px solid var(--interaction-norm) !important;
-	border-radius: 1em !important;
 }
 
 .add-optional-details-button {
@@ -83,11 +52,6 @@ im.$media-expressions: $media-expressions;
 		background-color: var(--background-weak);
 		border: 1px solid var(--background-weak);
 	}
-}
-
-.add-details-button {
-	font-size: 0.875em;
-	text-decoration: none !important;
 }
 
 .sign-in-button-container {

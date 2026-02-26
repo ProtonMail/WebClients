@@ -264,6 +264,7 @@ enum MeetFeatureFlag {
     MeetErrorReporting = 'MeetErrorReporting',
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
     MeetUpsell = 'MeetUpsell',
+    MeetRemainingTime = 'MeetRemainingTime',
     PersonalMeetingRotation = 'PersonalMeetingRotation',
     MeetPromptOnTabClose = 'MeetPromptOnTabClose',
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
@@ -291,6 +292,7 @@ enum MeetFeatureFlag {
     MeetDownloadDesktopAppEnabled = 'MeetDownloadDesktopAppEnabled',
     MeetDesktopAppBannerEnabled = 'MeetDesktopAppBannerEnabled',
     MeetFeedback = 'MeetFeedback',
+    MeetFeedbackOnSkip = 'MeetFeedbackOnSkip',
     MeetPastMeetings = 'MeetPastMeetings',
 }
 
