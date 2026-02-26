@@ -427,6 +427,9 @@
       "Delete account": [
         "Poista tili"
       ],
+      "Delete and confirm": [
+        "Poista ja vahvista"
+      ],
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
       ],
@@ -1689,6 +1692,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
+      ],
+      "Servers": [
+        "Palvelimet"
+      ],
+      "Users": [
+        "Käyttäjät"
       ]
     },
     "Address action": {
@@ -2124,6 +2136,14 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 Tt tallennustilaa"
+      ],
+      "3 TB data storage": [
+        "3 Tt tallennustilaa"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }",
@@ -2134,6 +2154,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "${ n } year": [
+        "${ n } vuosi",
+        "${ n } vuotta"
+      ],
       "1 month": [
         "1 kuukausi"
       ],
@@ -2520,6 +2548,9 @@
       ]
     },
     "Calendar link purpose update success message": {
+      "Label added": [
+        "Tunniste lisättiin"
+      ],
       "Label deleted": [
         "Tunniste poistettiin"
       ],
@@ -2786,7 +2817,7 @@
         "Loputtomasti suosikkeja nopean pääsyn takaamiseksi"
       ],
       "Upload and query multiple large files": [
-        "Lataa ja laita jonoon useita suuria tiedostoja"
+        "Lähetä ja laita jonoon useita suuria tiedostoja"
       ],
       "Upload and query small files": [
         "Lähetä ja laita jonoon pieniä tiedostoja"
@@ -5196,6 +5227,9 @@
       "Give immediate access?": [
         "Annetaanko välitön pääsy?"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "Immediate": [
         "Välitön"
       ],
@@ -5216,6 +5250,9 @@
       ],
       "People who have you as a recovery contact": [
         "Henkilöt joiden palautuskontakti olet"
+      ],
+      "Recover data": [
+        "Palauta tiedot"
       ],
       "Recovery contact enabled": [
         "Palautuskontakti otettu käyttöön"
@@ -10127,6 +10164,9 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
+      "Version history": [
+        "Versiohistoria"
+      ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
       ],
@@ -10805,6 +10845,11 @@
     "Key type hint": {
       "Faster": [
         "Nopeampi"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Valitse avaintyyppi"
       ]
     },
     "Keyboard shortcut name": {
@@ -11790,9 +11835,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
       ],
-      "Limited time": [
-        "Rajoitetun ajan"
-      ],
       "Link label (optional)": [
         "Linkin tunniste (valinnainen)"
       ],
@@ -12045,6 +12087,9 @@
       "Proration": [
         "Hyvitys"
       ],
+      "Protection mode": [
+        "Suojaustila"
+      ],
       "Public certificate (X.509)": [
         "Julkinen sertifikaatti (X.509)"
       ],
@@ -12274,6 +12319,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Lataa yksi tai useita palautustiedostoja tai salausavaimia"
       ],
+      "Uppercase": [
+        "Isot kirjaimet"
+      ],
       "Uppercase and lowercase letters": [
         "Isot ja pienet kirjaimet"
       ],
@@ -12312,6 +12360,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "Haavoittuvainen"
@@ -12459,6 +12510,9 @@
       ]
     },
     "Label to change density": {
+      "Comfortable": [
+        "Mukava"
+      ],
       "Compact": [
         "Tiivis"
       ]
@@ -14991,6 +15045,9 @@
       "Permanent": [
         "Pysyvä"
       ],
+      "Plain text": [
+        "Pelkkä teksti"
+      ],
       "Receive from all": [
         "Vastaanota kaikilta"
       ],
@@ -14999,6 +15056,9 @@
       ],
       "Repeat monthly": [
         "Toista kuukausittain"
+      ],
+      "Repeat weekly": [
+        "Toista viikottain"
       ],
       "Required": [
         "Vaaditaan"
@@ -15217,6 +15277,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Osta nyt"
+      ],
       "Contact us": [
         "Ota yhteyttä"
       ],
@@ -16504,6 +16567,9 @@
       "Leave calendar?": [
         "Poistutaanko kalenterista?"
       ],
+      "Remove calendar": [
+        "Poista kalenteri"
+      ],
       "Unsubscribe?": [
         "Perutaanko tilaus?"
       ]
@@ -16576,6 +16642,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Virheellinen arvo"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Elinajan on oltava pidempi, kuin ${ MIN_LIFETIME } päivä",
         "Voimassaoloajan on oltava pidempi, kuin ${ MIN_LIFETIME } päivää"
@@ -17781,7 +17850,7 @@
         "Enintään 6 käyttäjää"
       ],
       "Upload files of any size": [
-        "Lataa minkä tahansa kokoisia tiedostoja"
+        "Lähetä minkä tahansa kokoisia tiedostoja"
       ],
       "Use your current email": [
         "Käytä nykyistä sähköpostiosoitettasi"
@@ -20190,6 +20259,9 @@
       "Export": [
         "Vienti"
       ],
+      "Export calendar": [
+        "Vie kalenteri"
+      ],
       "Export private key": [
         "Vie yksityinen avain"
       ],
@@ -20593,6 +20665,9 @@
       ],
       "Remove all members?": [
         "Poistetaanko kaikki jäsenet?"
+      ],
+      "Remove calendar": [
+        "Poista kalenteri"
       ],
       "Remove device?": [
         "Poistetaanko laite?"
@@ -21074,6 +21149,9 @@
     "Title header for keys table": {
       "Actions": [
         "Toiminnot"
+      ],
+      "Creation date": [
+        "Luontipäivämäärä"
       ],
       "Fingerprint": [
         "Sormenjälki"
@@ -21950,9 +22028,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tarjous on päättynyt"
       ],
       "Are you sure you want to delete the phone number?": [
         "Haluatko varmasti poistaa puhelinnumeron?"

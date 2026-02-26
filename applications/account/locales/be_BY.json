@@ -3256,6 +3256,15 @@
       "Starting today": [
         "Пачынаючы з сённяшняга дня"
       ],
+      "Subtotal": [
+        "Прамежкавы вынік"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Прамежкавы вынік за ${ cycle } месяц",
+        "Прамежкавы вынік за ${ cycle } месяцы",
+        "Прамежкавы вынік за ${ cycle } месяцаў",
+        "Прамежкавы вынік за ${ cycle } месяцаў"
+      ],
       "Total": [
         "Агулам"
       ],
@@ -6441,6 +6450,9 @@
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Няправільны код або больш несапраўдны"
+      ],
       "Condition incomplete": [
         "Няпоўная ўмова"
       ],
@@ -6554,6 +6566,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Калі час на вашым тэлевізары мінуў, націсніце на ім кнопку \"Абнавіць\" і паспрабуйце яшчэ раз."
       ],
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
@@ -13739,9 +13754,6 @@
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
       ],
-      "Limited time": [
-        "Абмежаваны час"
-      ],
       "Link label (optional)": [
         "Метка спасылкі (неабавязкова)"
       ],
@@ -17567,6 +17579,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Купіць"
+      ],
       "Contact us": [
         "Звязацца з намі"
       ],
@@ -17661,6 +17676,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } даступна ў выглядзе пашырэння ў вэб-краме Chrome."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } за ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } у месяц"
@@ -18083,10 +18101,16 @@
     },
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
-        "${ formattedPrice } (з улікам падатка)"
+        "${ formattedPrice } (з улікам падатку)"
       ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Падатак у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "Падаткі ў памеры ${ rate }%: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
@@ -18111,6 +18135,18 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Including ${ rate }% tax": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "З улікам падатку ў памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "З улікам падаткаў у памеры ${ rate }%: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -18144,6 +18180,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Tax ${ rate }%": [
+        "Падатак у памеры ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Падаткі ў памеры ${ rate }%"
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
@@ -18309,7 +18351,7 @@
         "Кошт падаўжэння залежыць ад рэгіёна аплаты і ABN."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумар прадпрыемства."
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара прадпрыемства."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Кошт падаўжэння залежыць ад рэгіёна аплаты і EIN."
@@ -21022,7 +21064,7 @@
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч"
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішчаў"
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"
@@ -25143,6 +25185,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "Атрымайце больш ад падпіскі ${ planTitle }."
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Захоўвайце свае файлы, фатаграфіі і дакументы ў бяспецы з ${ maxDriveSpace } воблачнага сховішча."
+      ],
       "Set secure passwords without the hassle.": [
         "Без цяжкасцей задавайце бяспечныя паролі"
       ],
@@ -25392,9 +25437,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Прапанова на ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } больш не дзейнічае"
       ],
       "Are you sure you want to delete the phone number?": [
         "Вы сапраўды хочаце выдаліць гэты нумар тэлефона?"

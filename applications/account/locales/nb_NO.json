@@ -4893,7 +4893,7 @@
     },
     "dollar_offer": {
       "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
-        "${ offerPrice } den første måneden. Fornyes til ${ regularPrice }/mnd, avbryt når som helst."
+        "${ offerPrice } den første måneden. Fornyes til ${ regularPrice }/måned, avbryt når som helst."
       ],
       "Get VPN Plus for only ${ offerPrice }": [
         "Skaff deg VPN Plus for kun ${ offerPrice }"
@@ -13454,9 +13454,6 @@
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
       ],
-      "Limited time": [
-        "Kun i en begrenset periode"
-      ],
       "Link label (optional)": [
         "Etikett for kobling (valgfritt)"
       ],
@@ -21059,7 +21056,7 @@
         "Totalt å betale"
       ],
       "Total due on ${ formattedPeriodEnd }": [
-        "Totalt å betale ${ formattedPeriodEnd }"
+        "Totalt å betale på ${ formattedPeriodEnd }"
       ],
       "Total due today": [
         "Totalt forfalt i dag"
@@ -24802,9 +24799,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Tilbudet ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } har utløpt"
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på at du vil slette telefonnummeret?"
