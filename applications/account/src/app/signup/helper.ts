@@ -14,7 +14,12 @@ import {
 } from '@proton/payments';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+
+import { getTokenPayment } from '../signupCtx/context/helpers/handleCreateUser';
+import { SignupHVMode } from './interfaces';
 
 export async function getSubscriptionPrices({
     paymentsApi,
@@ -86,4 +91,24 @@ export const getOptimisticDomains = () => {
         secondLevelDomain = 'proton.me';
     }
     return [secondLevelDomain, 'protonmail.com'];
+};
+
+export const getPaymentTokenForExternalUsers = (mode: SignupHVMode | undefined, paymentToken: string | undefined) => {
+    if (mode === SignupHVMode.CRO && paymentToken) {
+        return {
+            Token: paymentToken,
+            TokenType: 'payment' as HumanVerificationMethodType,
+        };
+    }
+    if (mode === SignupHVMode.OV) {
+        return undefined;
+    }
+    return getTokenPayment(paymentToken);
+};
+
+export const getHVHeadersBasedOnSignupMode = (mode: SignupHVMode | undefined, paymentToken: string | undefined) => {
+    if (mode === SignupHVMode.CRO) {
+        return paymentToken ? getCroHeaders(paymentToken) : getOwnershipVerificationHeaders('lax');
+    }
+    return {};
 };
