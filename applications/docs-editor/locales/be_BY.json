@@ -698,6 +698,9 @@
       "Reset": [
         "Скінуць"
       ],
+      "Standard colors": [
+        "Стандартныя колеры"
+      ],
       "Theme colors": [
         "Колеры тэмы"
       ]
@@ -742,6 +745,9 @@
     "sheets_2025:Spreadsheet border editor menu": {
       "All borders": [
         "Усе межы"
+      ],
+      "Bottom border": [
+        "Ніжняя мяжа"
       ],
       "Dashed": [
         "Штрыхавы"
@@ -792,6 +798,9 @@
       "AI Quick Edit": [
         "Хуткі рэдактар ШІ"
       ],
+      "Auto fit to data": [
+        "Аўтаматычна падгонка да даных"
+      ],
       "Cell value": [
         "Значэнне ячэйкі"
       ],
@@ -803,6 +812,9 @@
       ],
       "Clear formatting": [
         "Ачысціць фарматаванне"
+      ],
+      "Comma": [
+        "Коска"
       ],
       "Conditional format": [
         "Умоўнае фарматаванне"
@@ -831,6 +843,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete cells and shift cells left": [
+        "Выдаліць ячэйкі і зрушыць ячэйкі ўлева"
+      ],
       "Delete cells and shift cells up": [
         "Выдаліць ячэйкі і зрушыць ячэйкі ўверх"
       ],
@@ -848,6 +863,9 @@
       ],
       "Edit table": [
         "Рэдагаваць табліцу"
+      ],
+      "Filter": [
+        "Фільтр"
       ],
       "Formatting only": [
         "Толькі фарматаванне"
@@ -869,6 +887,9 @@
       ],
       "Insert cells and shift cells down": [
         "Уставіць ячэйкі і зрушыць ячэйкі ўніз"
+      ],
+      "Insert cells and shift cells right": [
+        "Уставіць ячэйкі і зрушыць ячэйкі ўправа"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -906,14 +927,23 @@
       "Remove filter": [
         "Выдаліць фільтр"
       ],
+      "Resize column": [
+        "Змяніць памер слупка"
+      ],
       "Resize row": [
         "Змяніць памер радка"
       ],
       "Semicolon": [
         "Кропка з коскай"
       ],
+      "Sort": [
+        "Сартаваць"
+      ],
       "Sort range A → Z": [
         "Сартаваць у дыяпазоне А → Я"
+      ],
+      "Sort range Z → A": [
+        "Сартаваць у дыяпазоне Я → А"
       ],
       "Sort sheet A to Z": [
         "Сартаваць аркуш ад А да Я"
@@ -932,6 +962,9 @@
       ],
       "Unfreeze columns": [
         "Размарозіць слупкі"
+      ],
+      "Unfreeze rows": [
+        "Размарозіць радкі"
       ],
       "Values only": [
         "Толькі значэнні"
@@ -953,6 +986,9 @@
       "above": [
         "вышэй"
       ],
+      "below": [
+        "знізу"
+      ],
       "Insert": [
         "Уставіць"
       ],
@@ -967,6 +1003,9 @@
       "Are you sure you want to delete ${ sheetName }?": [
         "Вы сапраўды хочаце выдаліць ${ sheetName }?"
       ],
+      "Cancel": [
+        "Скасаваць"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -978,6 +1017,9 @@
       "Mobile Editing Coming Soon": [
         "Рэдагаванне на мабільнай прыладзе з'явіцца неўзабаве"
       ],
+      "Screen too small for editing": [
+        "Занадта маленькі экран для рэдагавання"
+      ],
       "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
         "Наша каманда працуе над тым, каб гэта функцыя неўзабаве стала даступна нашым карыстальнікам. У цяперашні час аркушы можна рэдагаваць толькі на камп'ютары"
       ],
@@ -986,6 +1028,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Немагчыма выдаліць усе слупкі"
+      ],
       "Cannot delete all rows": [
         "Немагчыма выдаліць усе радкі"
       ],
@@ -1005,6 +1050,9 @@
       ],
       "Merge vertically": [
         "Аб'яднаць вертыкальна"
+      ],
+      "Unmerge": [
+        "Раз'яднаць"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -1063,6 +1111,9 @@
       "Paste": [
         "Уставіць"
       ],
+      "Paste special": [
+        "Спецыяльная ўстаўка"
+      ],
       "Redo": [
         "Узнавіць"
       ],
@@ -1114,7 +1165,7 @@
         "Адкрыць ${ DRIVE_APP_NAME }"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
-        "Электронная табліца OpenDocument (.ods) (бэта)"
+        "Электронная табліца OpenDocument (.ods) (бэта-версія)"
       ],
       "Print": [
         "Друк"
@@ -1124,6 +1175,9 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Значэнні, раздзеленыя ўкладкамі (.tsv)"
       ],
       "Toggle debug mode": [
         "Пераключыць рэжым адладкі"
@@ -1138,6 +1192,9 @@
       ],
       "Bold": [
         "Тоўсты"
+      ],
+      "Cell styles": [
+        "Стылі ячэек"
       ],
       "Clear": [
         "Ачысціць"
@@ -1221,7 +1278,7 @@
         "Слупкі"
       ],
       "Dropdown": [
-        "Выпадаючы спіс"
+        "Выпадны спіс"
       ],
       "Function": [
         "Функцыя"
@@ -1301,6 +1358,9 @@
       "Formula bar": [
         "Панэль формул"
       ],
+      "Freeze": [
+        "Замарозіць"
+      ],
       "Gridlines": [
         "Лініі сеткі"
       ],
@@ -1314,6 +1374,9 @@
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
       "column ${ columnLetter }": [
         "слупок ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "радок ${ rowNumber }"
       ],
       "Up to": [
         "Да"
@@ -1342,6 +1405,12 @@
       ],
       "Custom currency": [
         "Карыстальніцкая валюта"
+      ],
+      "Custom number format": [
+        "Карыстальніцкі фармат лічбы"
+      ],
+      "Date": [
+        "Дата"
       ],
       "Date time": [
         "Дата і час"
@@ -1375,6 +1444,9 @@
       ],
       "Time": [
         "Час"
+      ],
+      "£ Pound": [
+        "£ Фунт"
       ],
       "¥ Yen": [
         "¥ Іена"
@@ -1466,6 +1538,9 @@
       "Increase font size": [
         "Павялічыць памер шрыфту"
       ],
+      "Insert chart": [
+        "Уставіць дыяграму"
+      ],
       "Insert function": [
         "Уставіць функцыю"
       ],
@@ -1492,6 +1567,9 @@
       ],
       "Redo": [
         "Узнавіць"
+      ],
+      "Remove filter": [
+        "Выдаліць фільтр"
       ],
       "Select merge type": [
         "Выбраць тып аб'яднання"
@@ -1545,6 +1623,9 @@
       ],
       "Filter by value": [
         "Фільтраваць па значэнні"
+      ],
+      "Insert 1 table column left": [
+        "Уставіць 1 слупок табліцы злева"
       ],
       "Insert 1 table column right": [
         "Уставіць 1 слупок табліцы справа"
@@ -1683,6 +1764,9 @@
       "Merge vertically": [
         "Аб'яднаць вертыкальна"
       ],
+      "Number": [
+        "Нумар"
+      ],
       "Overflow": [
         "Перапаўненне"
       ],
@@ -1741,6 +1825,9 @@
       ],
       "Enter title": [
         "Увядзіце назву"
+      ],
+      "Horizontal (category) axis labels": [
+        "Меткі гарызантальнай (катэгорыя) восі"
       ],
       "Horizontal axis title": [
         "Назва гарызантальнай восі"
@@ -1827,6 +1914,9 @@
       ],
       "Min value": [
         "Мінімальнае значэнне"
+      ],
+      "None": [
+        "Няма"
       ],
       "Number": [
         "Нумар"
