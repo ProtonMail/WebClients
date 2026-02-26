@@ -122,7 +122,7 @@ export const getSubscriptionData = async (
             billingAddress: options.billingAddress,
             coupon: options.coupon,
             trial: options.trial,
-            ValidateZipCode: options.ValidateZipCode,
+            ValidateBillingAddress: options.ValidateBillingAddress,
             VatId: options.VatId,
         });
     })();

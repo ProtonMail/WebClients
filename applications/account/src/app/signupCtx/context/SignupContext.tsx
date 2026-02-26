@@ -31,7 +31,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
 import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
-import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
@@ -244,7 +243,6 @@ export const InnerSignupContextProvider = ({
     const setLoadingDiff = (data: Partial<typeof loading>) => setLoading((prev) => ({ ...prev, ...data }));
     const domainsData = useSignupDomains();
     const { referralData, initReferralData } = useReferralData();
-    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const paymentsContext = usePaymentOptimistic();
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
@@ -510,7 +508,6 @@ export const InnerSignupContextProvider = ({
                 keyTransparencyActivation: await getKtActivation(),
                 subscriptionData: paymentData?.subscriptionData,
                 productParam: app,
-                hasZipCodeValidation,
                 traceSignupSentryError: traceSentryError,
                 referralData,
                 referralRegistrationPlan,
@@ -580,7 +577,6 @@ export const InnerSignupContextProvider = ({
         if (subscriptionData) {
             await handleSubscribeUser(api, subscriptionData, {
                 productParam: app,
-                hasZipCodeValidation,
                 build: APP_NAME,
                 telemetryContext: paymentsContext.telemetryContext,
                 userCurrency: undefined,

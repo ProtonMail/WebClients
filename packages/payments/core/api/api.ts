@@ -106,7 +106,7 @@ export type CheckSubscriptionData = {
     BillingAddress?: BillingAddress;
     ProrationMode?: ProrationMode;
     IsTrial?: boolean;
-    ValidateZipCode?: boolean;
+    ValidateBillingAddress?: boolean;
     VatId?: string;
 };
 
