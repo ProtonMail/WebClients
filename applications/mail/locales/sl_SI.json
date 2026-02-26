@@ -1456,7 +1456,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2027,6 +2030,9 @@
       ],
       "Two-year": [
         "Dve leti"
+      ],
+      "Yearly": [
+        "Letno"
       ]
     },
     "Browser": {
@@ -7315,10 +7321,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -16004,6 +16007,14 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mesec",
+        "${ cycle } meseca",
+        "${ cycle } meseci",
+        "${ cycle } mesecev"
       ]
     }
   }

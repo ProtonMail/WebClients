@@ -1492,7 +1492,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1772,6 +1775,42 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikovaný VPN server",
+        "${ ips } dedikované VPN servery",
+        "${ ips } dedikovaných VPN serverů",
+        "${ ips } dedikovaných VPN serverů"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licence"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencí"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
+      "Domains": [
+        "Domény"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Users": [
+        "Uživatelé"
+      ],
+      "Writing assistant": [
+        "Asistent psaní"
+      ],
+      "Writing assistant seats": [
+        "Licence asistenta psaní"
       ]
     },
     "Alert": {
@@ -2056,13 +2095,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datové úložiště"
+        "2 TB úložiště dat"
       ],
       "3 TB data storage": [
-        "3 TB datové úložiště"
+        "3 TB úložiště dat"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Přístup k 15 000+ serverům ve 120+ zemích"
+        "Přístup k 15000+ serverům v 120+ zemích"
       ],
       "Access advanced AI models": [
         "Přístup k pokročilým modelům AI"
@@ -2071,16 +2110,16 @@
         "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malwaru"
+        "Blokování reklam, sledovacích prvků a malware"
       ],
       "Built-in 2FA authenticator": [
-        "Vestavěné 2FA ověřování"
+        "Vestavěné ověřování 2FA"
       ],
       "Connect 10 devices at once": [
-        "Připojte 10 zařízení najednou"
+        "Připojte až 10 zařízení současně"
       ],
       "Full chat history with easy search and favorites": [
-        "Plná historie chatu s jednoduchým vyhledáváním a oblíbenými položkami"
+        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
       ],
       "Individual accounts for 6 users": [
         "Individuální účty pro 6 uživatelů"
@@ -2097,7 +2136,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware."
+        "Speciálně navržený NetShield chrání vaše zařízení a zrychluje vaše prohlížení blokováním reklam, sledovacích prvků a malwaru."
       ]
     },
     "Billing cycle option": {
@@ -2118,6 +2157,27 @@
       ],
       "Two-year": [
         "Dva roky"
+      ],
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
+      "Lifetime access": [
+        "Doživotní přístup"
+      ],
+      "Yearly": [
+        "Ročně"
       ]
     },
     "Browser": {
@@ -2602,6 +2662,15 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Mezisoučet za ${ cycle } měsíc",
+        "Mezisoučet za ${ cycle } měsíce",
+        "Mezisoučet za ${ cycle } měsíců",
+        "Mezisoučet za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -5122,6 +5191,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "U tohoto tarifu není podporováno osvobození od daně"
       ]
     },
     "error": {
@@ -7629,10 +7701,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9118,6 +9187,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Přesunutím této zprávy dojde ke zrušení jejího naplánovaného odeslání."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Tato konverzace obsahuje naplánovanou zprávu. Přesunutím se zruší naplánované odeslání."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaše další platba je ${ renewalTime }. Můžete kdykoli zrušit."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Datum vaší další fakturace je ${ renewalTime }. Můžete kdykoli zrušit. Pokud potřebujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ]
     },
     "info": {
@@ -12674,6 +12761,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez daně)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Daň ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13499,21 +13613,21 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -13651,6 +13765,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otevřít v ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Otevřít v ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -13936,6 +14053,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14973,6 +15093,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Billing information updated": [
+        "Informace o fakturaci aktualizovány"
       ]
     },
     "Success notification": {
@@ -16904,6 +17027,25 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
       ]
     }
   }

@@ -1462,6 +1462,9 @@
       ],
       "Two-year": [
         "Snat n tikkal i useggas"
+      ],
+      "Yearly": [
+        "S useggas"
       ]
     },
     "Bug category": {
@@ -5003,8 +5006,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -9904,6 +9906,12 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } wayyur",
+        "${ cycle } wayyuren"
       ]
     }
   }

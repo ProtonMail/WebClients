@@ -1484,7 +1484,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } size ayrılmış VPN sunucusu",
+        "${ ips } size ayrılmış VPN sunucusu"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } koltuğu"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı",
+        "${ seats } ${ LUMO_APP_NAME } yapay zeka lisansı"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "Writing assistant seats": [
+        "Yazma asistanı koltuk sayısı"
       ]
     },
     "Alert": {
@@ -2036,31 +2069,31 @@
         "3 TB veri depolama alanı"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+        "120 üzerinde ülkedeki 15.000 üzerinde sunucuya erişin"
       ],
       "Access advanced AI models": [
         "Gelişmiş yapay zeka modellerine erişin"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } uygulamalarının tüm ücretli özellikleri"
+        "Tüm ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ücretli özellikleri"
       ],
       "Block ads, trackers, and malware": [
         "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
       ],
       "Built-in 2FA authenticator": [
-        "Yerleşik İki adımlı kimlik doğrulayıcı"
+        "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Connect 10 devices at once": [
         "Aynı anda 10 aygıtı bağlayın"
       ],
       "Full chat history with easy search and favorites": [
-        "Kolay arama ve favoriler ile tam sohbet geçmişi"
+        "Kolay arama ve sık kullanılanlar ile tam sohbet geçmişi"
       ],
       "Individual accounts for 6 users": [
         "6 kullanıcı için bireysel hesaplar"
       ],
       "Individual accounts for you and a partner": [
-        "Sizin ve partneriniz için bireysel hesaplar"
+        "Siz ve bir arkadaşınız için bireysel hesaplar"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
@@ -2071,7 +2104,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield, reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek cihazlarınızı korur ve tarama hızınızı artırır."
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
       ]
     },
     "Billing cycle option": {
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "Iki yıllık"
+      ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
+      "Lifetime access": [
+        "Ömür boyu erişim"
+      ],
+      "Yearly": [
+        "Yıllık"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
+      ],
+      "Subtotal": [
+        "Ara toplam"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } aylık ara toplam",
+        "${ cycle } aylık ara toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -4894,7 +4951,7 @@
         "Sekme kapatıldı"
       ],
       "Tax exemption is not supported for this plan": [
-        "Bu tarife için vergi muafiyeti desteklenmemektedir"
+        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "Text is too long to refine": [
         "Yazı, özetlenemeyecek kadar uzun"
@@ -7396,8 +7453,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8839,10 +8895,20 @@
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
       ],
       "Moving this message will cancel its scheduled send.": [
-        "Bu iletiyi taşırsanız planlanan gönderimi iptal edilir."
+        "Bu iletinin taşınması zamanlanmış gönderimi iptal eder."
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Bu yazışma planlanmış bir mesaj içeriyor. Mesajı taşımak planlanmış gönderimi iptal edecektir."
+        "Bu yazışmada bir zamanlanmış ileti var. İletinin taşınması zamanlanmış gönderimi iptal eder."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ]
     },
     "info": {
@@ -12291,6 +12357,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (vergi hariç)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "%${ rate } vergi dahil"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "%${ rate } vergi dahil: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "%${ rate } vergi"
+      ],
+      "Taxes ${ rate }%": [
+        "%${ rate } vergi"
       ]
     },
     "Payments.Error": {
@@ -13081,16 +13174,16 @@
         "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz kaldı."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inMinutes } dakikanız kaldı."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
-        "Şifrenizi sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı.",
+        "Parolanızı sıfırlamak için ${ timeRemaining.inSeconds } saniyeniz kaldı."
       ]
     },
     "session_recovery:available:link": {
@@ -13221,10 +13314,10 @@
     },
     "sheets_2025:Action": {
       "Open in ${ appName }": [
-        "${ appName } uygulamasında aç"
+        "${ appName } ile aç"
       ],
       "Open in ${ appName } (Beta)": [
-        "${ appName } (Beta) uygulamasında aç"
+        "${ appName } (Beta) ile aç"
       ]
     },
     "Signature verification warning": {
@@ -13502,7 +13595,7 @@
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Parolalarınızı birden fazla kasada güvenli ve düzenli bir şekilde saklayın"
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun"
       ]
     },
     "specialoffer: Tooltip": {
@@ -16252,6 +16345,26 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Yenileme ücreti fatura bölgesine ve ABN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Yenileme ücreti fatura bölgesine ve kuruluş numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Yenileme ücreti fatura bölgesine ve EIN numarasına bağlıdır."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Yenileme ücreti fatura bölgesine ve KDV numarasına bağlıdır."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
       ]
     }
   }

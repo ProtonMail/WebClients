@@ -2074,6 +2074,9 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ],
+      "Yearly": [
+        "Tahunan"
       ]
     },
     "Browser": {
@@ -15834,6 +15837,11 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } bulan"
       ]
     }
   }

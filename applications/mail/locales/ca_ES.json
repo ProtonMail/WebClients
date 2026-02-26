@@ -1484,7 +1484,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicat",
+        "${ ips } servidors VPN dedicats"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Llicència d'IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
+        "${ seats } llicències d'IA ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
+      "Writing assistant seats": [
+        "Llicències de l'assistent d'escriptura"
       ]
     },
     "Alert": {
@@ -2036,7 +2069,7 @@
         "3 TB d'emmagatzematge de dades"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Accediu a més de 15.000 servidors a més de 120 països"
+        "Accediu a més de 15.000 servidors en més de 120 països"
       ],
       "Access advanced AI models": [
         "Accediu a models d'IA avançats"
@@ -2060,10 +2093,10 @@
         "Comptes individuals per a 6 usuaris"
       ],
       "Individual accounts for you and a partner": [
-        "Comptes individuals per a vosaltres i la vostra parella"
+        "Comptes individuals per a vós i un company"
       ],
       "Stronger protection against cyber threats": [
-        "Protecció més forta contra ciberamenaces"
+        "Protecció més forta contra amenaces cibernètiques"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -2071,7 +2104,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "El NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
+        "El NetShield està dissenyat especialment per protegir els vostres dispositius i accelerar la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle option": {
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } year": [
+        "${ n } any",
+        "${ n } anys"
+      ],
+      "Billed monthly": [
+        "Facturat mensualment"
+      ],
+      "Lifetime access": [
+        "Accés de per vida"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal per ${ cycle } mes",
+        "Subtotal per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -7396,8 +7453,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8843,6 +8899,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Aquesta conversa conté un missatge programat. Si el moveu, se'n cancel·larà l'enviament."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
+        "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La vostra pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
       ]
     },
     "info": {
@@ -10757,8 +10823,8 @@
         "${ n } connexions VPN"
       ],
       "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
+        "Historial de versions de fitxer de ${ options } dia",
+        "Historial de versions de fitxer de ${ options } dies"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
@@ -12291,6 +12357,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA no inclòs)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Impost del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% d'impostos: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Inclou un impost del ${ rate }%"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclou un impost del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclou un ${ rate }% d'impostos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclou el ${ rate }% d'impostos: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Impost ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impostos ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13081,12 +13174,12 @@
         "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inHours } hora per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inHours } hores per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+        "Tens ${ timeRemaining.inMinutes } minut per restablir la contrasenya.",
+        "Tens ${ timeRemaining.inMinutes } minuts per restablir la contrasenya."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Teniu ${ timeRemaining.inSeconds } segon per a restablir la vostra contrasenya.",
@@ -16252,6 +16345,26 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El preu de renovació depèn de la regió de facturació i del número d'IVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } mesos"
       ]
     }
   }

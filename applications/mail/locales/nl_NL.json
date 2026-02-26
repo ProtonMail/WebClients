@@ -1484,7 +1484,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } toegewijde VPN-server",
+        "${ ips } toegewijde VPN-servers"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licentie"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licenties"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+      ],
+      "Dedicated VPN servers": [
+        "Toegewijde VPN-servers"
+      ],
+      "Domains": [
+        "Domeinen"
+      ],
+      "Servers": [
+        "Servers"
+      ],
+      "Users": [
+        "Gebruikers"
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "Writing assistant seats": [
+        "Licenties voor schrijfassistent"
       ]
     },
     "Alert": {
@@ -2030,10 +2063,10 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB dataopslag"
+        "2 TB opslagruimte"
       ],
       "3 TB data storage": [
-        "3 TB dataopslag"
+        "3 TB opslagruimte"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Toegang tot 15.000+ servers in 120+ landen"
@@ -2042,7 +2075,7 @@
         "Toegang tot geavanceerde AI-modellen"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfuncties van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokkeer advertenties, trackers en malware"
@@ -2051,22 +2084,22 @@
         "Ingebouwde 2FA-authenticator"
       ],
       "Connect 10 devices at once": [
-        "Verbind 10 apparaten tegelijkertijd"
+        "Verbind 10 apparaten tegelijk"
       ],
       "Full chat history with easy search and favorites": [
-        "Volledige chatgeschiedenis met eenvoudige zoekfunctie en favorieten"
+        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
       ],
       "Individual accounts for 6 users": [
-        "Afzonderlijke accounts voor 6 gebruikers"
+        "Individuele accounts voor 6 gebruikers"
       ],
       "Individual accounts for you and a partner": [
-        "Afzonderlijke accounts voor u en een partner"
+        "Individuele accounts voor u en een partner"
       ],
       "Stronger protection against cyber threats": [
         "Sterkere bescherming tegen cyberdreigingen"
       ],
       "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse gesprekken"
+        "Onbeperkt aantal dagelijkse chats"
       ]
     },
     "BF2025: Tooltip": {
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
+      "Lifetime access": [
+        "Levenslange toegang"
+      ],
+      "Yearly": [
+        "Jaarlijks"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
         "Totaal voor ${ n } maanden"
+      ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -7396,8 +7453,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8843,6 +8899,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Dit gesprek bevat een gepland bericht. Het verplaatsen ervan annuleert het gepland verzenden."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren. Neem contact op met de klantenservice als u een onmiddellijke wijziging van uw abonnement nodig heeft."
       ]
     },
     "info": {
@@ -10757,8 +10823,8 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
+        "${ options }-daagse bestand versiegeschiedenis",
+        "${ options }-daage bestand versiegeschiedenis"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
@@ -12291,6 +12357,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (excl. btw)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Inclusief ${ rate }% belasting"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inclusief ${ rate }% belasting"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inclusief ${ rate }% belasting: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Belasting ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Belasting ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13082,15 +13175,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+        "U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
+        "U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {
@@ -13222,6 +13315,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Openen in ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Openen in ${ appName } (Bèta)"
       ]
     },
     "Signature verification warning": {
@@ -16249,6 +16345,26 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het Bedrijfsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } maand",
+        "${ cycle } maanden"
       ]
     }
   }

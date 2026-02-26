@@ -1469,7 +1469,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -2029,6 +2030,9 @@
       ],
       "Two-year": [
         "Kétévente"
+      ],
+      "Yearly": [
+        "Évente"
       ]
     },
     "Browser": {
@@ -6860,7 +6864,7 @@
         "Fedezze fel a ${ planTitle } csomaggal elérhetővé vált új funkciókat, és használja őket azonnal!"
       ],
       "Discover ProtectBuy logo": [
-        "Discover ProtectBuy logo"
+        "Fedezze fel a ProtectBuy-t logó"
       ],
       "Do you want to download this attachment anyway?": [
         "Ettől függetlenül letölti a mellékletet?",
@@ -7214,7 +7218,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -15784,6 +15787,12 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     }
   }

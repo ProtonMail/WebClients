@@ -1753,6 +1753,38 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedizierter VPN-Server",
+        "${ ips } dedizierte VPN-Server"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } KI-Lizenz"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenz",
+        "${ seats } ${ LUMO_APP_NAME } KI-Lizenzen"
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "Domains": [
+        "Domains"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ],
+      "Writing assistant seats": [
+        "Lizenzen für Schreibassistenten"
       ]
     },
     "Alert": {
@@ -2093,6 +2125,23 @@
       ],
       "Two-year": [
         "Zwei Jahre"
+      ],
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
+      "${ n } year": [
+        "${ n } Jahr",
+        "${ n } Jahre"
+      ],
+      "Billed monthly": [
+        "Wird monatlich abgerechnet"
+      ],
+      "Lifetime access": [
+        "Lebenslanger Zugang"
+      ],
+      "Yearly": [
+        "Jährlich"
       ]
     },
     "Browser": {
@@ -2571,6 +2620,13 @@
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
+      ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -7397,8 +7453,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8844,6 +8899,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Diese Unterhaltung enthält eine geplante Nachricht. Das Verschieben wird das geplante Senden abbrechen."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
+        "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich. Bitte wende dich an den Support, wenn du eine sofortige Änderung deines Abonnements wünschst."
       ]
     },
     "info": {
@@ -12292,6 +12357,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (zzgl. MwSt.)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Steuer ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Steuern ${ rate } %"
       ]
     },
     "Payments.Error": {
@@ -13090,8 +13182,8 @@
         "Du hast ${ timeRemaining.inMinutes } Minuten um dein Passwort zurücksetzen."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du hast ${ timeRemaining.inSeconds } Sekunde um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inSeconds } Sekunden um dein Passwort zurücksetzen."
+        "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunde, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunden, um dein Passwort zurückzusetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -16253,6 +16345,26 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Unternehmenskennung (ABN)."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Geschäftsnummer."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Steuernummer (EIN)."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } Monat",
+        "${ cycle } Monate"
       ]
     }
   }

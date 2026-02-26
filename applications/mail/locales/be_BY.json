@@ -1492,7 +1492,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1772,6 +1775,42 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } вылучаны сервер VPN",
+        "${ ips } вылучаныя серверы VPN",
+        "${ ips } вылучаных сервераў VPN",
+        "${ ips } вылучаных сервераў VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Ліцэнзія ШІ для ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Ліцэнзіі ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
+      ],
+      "Domains": [
+        "Дамены"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
+      "Writing assistant seats": [
+        "Ліцэнзій памочніка ў напісанні"
       ]
     },
     "Alert": {
@@ -2118,6 +2157,27 @@
       ],
       "Two-year": [
         "Кожныя два гады"
+      ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
+      "Lifetime access": [
+        "Пажыццёвы доступ"
+      ],
+      "Yearly": [
+        "Штогод"
       ]
     },
     "Browser": {
@@ -2602,6 +2662,15 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "Subtotal": [
+        "Прамежкавы вынік"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Прамежкавы вынік за ${ cycle } месяц",
+        "Прамежкавы вынік за ${ cycle } месяцы",
+        "Прамежкавы вынік за ${ cycle } месяцаў",
+        "Прамежкавы вынік за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -7632,10 +7701,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9121,6 +9187,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Перамяшчэнне гэтага паведамлення скасуе яго запланаваную адпраўку."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Гэта размова змяшчае запланаванае паведамленне. Перамяшчэнне яго скасуе запланаваную адпраўку."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Ваша наступная дата выстаўлення рахунку: ${ renewalTime }. Скасаваць можна ў любы час."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ]
     },
     "info": {
@@ -12677,6 +12761,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (з улікам падатку)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Падатак у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "Падаткі ў памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "З улікам падатку ў памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "З улікам падаткаў у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Падатак у памеры ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Падаткі ў памеры ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13508,9 +13619,9 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "У вас ёсць ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
-        "У вас ёсць ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+        "У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "У вас ёсць ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
@@ -13942,6 +14053,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішчаў"
       ]
     },
     "specialoffer: Tooltip": {
@@ -16913,6 +17027,28 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара прадпрыемства."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара ПДВ."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяцы",
+        "${ cycle } месяцаў",
+        "${ cycle } месяцаў"
       ]
     }
   }
