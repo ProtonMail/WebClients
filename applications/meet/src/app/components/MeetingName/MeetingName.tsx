@@ -25,6 +25,7 @@ interface MeetingNameProps {
 
 const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
+    const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
     const { paidUser } = useMeetContext();
@@ -46,8 +47,8 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     );
 
     useEffect(() => {
-        setShowRemainingTime(isExpiringSoon && meetUpsellEnabled);
-    }, [isExpiringSoon, meetUpsellEnabled]);
+        setShowRemainingTime(isExpiringSoon && showRemainingTimeEnabled);
+    }, [isExpiringSoon, showRemainingTimeEnabled]);
 
     const handleMouseEnter = () => {
         if (canOpenDropdown) {
