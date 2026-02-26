@@ -5039,7 +5039,7 @@
         "Navigateur"
       ],
       "Calendar": [
-        "Calendrier"
+        "Calendar"
       ],
       "Chrome": [
         "Chrome"
@@ -13467,9 +13467,6 @@
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
       ],
-      "Limited time": [
-        "Offre à durée limitée"
-      ],
       "Link label (optional)": [
         "Label du lien (facultatif)"
       ],
@@ -17185,6 +17182,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Acheter maintenant"
+      ],
       "Contact us": [
         "Contactez-nous"
       ],
@@ -17279,6 +17279,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } est disponible comme extension de navigateur dans le Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } à ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } par mois"
@@ -24805,9 +24808,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "L'offre ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a pris fin"
       ],
       "Are you sure you want to delete the phone number?": [
         "Voulez-vous vraiment supprimer ce numéro de téléphone ?"

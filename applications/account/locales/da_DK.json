@@ -3212,6 +3212,13 @@
       "Starting today": [
         "Starter i dag"
       ],
+      "Subtotal": [
+        "I alt"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Deltotal for ${ cycle } måned",
+        "Deltotal for ${ cycle } måneder"
+      ],
       "Total": [
         "I alt"
       ],
@@ -6363,6 +6370,9 @@
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Koden er forkert eller ikke længere gyldig"
+      ],
       "Condition incomplete": [
         "Betingelse mangelfuld"
       ],
@@ -6472,6 +6482,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Hvis tiden på dit tv er udløbet, skal du klikke på Opdater på dit TV og indtaste din kode igen."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Hvis tiden på dit TV er udløbet, skal du klikke på Opdater på dit TV og prøve igen."
       ],
       "IMAP server is required": [
         "IMAP-server er påkrævet."
@@ -13460,9 +13473,6 @@
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
-      "Limited time": [
-        "Begrænset tid"
-      ],
       "Link label (optional)": [
         "Link-etiket (valgfrit)"
       ],
@@ -17178,6 +17188,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Køb nu"
+      ],
       "Contact us": [
         "Kontakt os"
       ],
@@ -17272,6 +17285,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } er tilgængelig som en browserudvidelse i Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pr. måned"
@@ -24781,9 +24797,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Tilbuddet om ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er udløbet"
       ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
