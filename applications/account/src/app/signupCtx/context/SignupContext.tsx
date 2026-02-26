@@ -35,7 +35,7 @@ import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
 import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
-import type { AccountData, SignupType } from '../../signup/interfaces';
+import type { AccountData, SignupHVMode, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
@@ -178,6 +178,8 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
 
     unverifiedReferralData?: ReferralData;
     onReferralCheckError?: () => void;
+
+    hvMode?: SignupHVMode;
 }
 
 const getPaymentDataFromChargeableCallback = (
@@ -236,6 +238,7 @@ export const InnerSignupContextProvider = ({
     loginUrl,
     unverifiedReferralData,
     onReferralCheckError,
+    hvMode,
 }: SignupContextProviderProps) => {
     const { APP_NAME } = useConfig();
     const clientType = getClientType(app);
@@ -422,6 +425,7 @@ export const InnerSignupContextProvider = ({
                 humanVerificationResult: undefined,
                 inviteData: undefined,
                 invite: undefined,
+                mode: hvMode,
             });
 
             stageRef.current = 'userCreated';
