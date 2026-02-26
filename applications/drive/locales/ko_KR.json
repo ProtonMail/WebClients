@@ -1297,6 +1297,9 @@
       "${ price } per user": [
         "사용자당 ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스 ${ seats } 개"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
@@ -1521,6 +1524,9 @@
       "Access 15,000+ servers in 120+ countries": [
         "120개 이상 국가 내의 15,000개 이상 서버에 접근"
       ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
@@ -1555,6 +1561,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "${ n } year": [
+        "${ n }년"
+      ],
       "1 month": [
         "1개월"
       ],
@@ -1770,6 +1782,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "Subtotal": [
+        "부분합계"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle }개월간 합계"
       ],
       "Total": [
         "합계"
@@ -5117,6 +5135,9 @@
       "Calendar side panel": [
         "캘린더 사이드 패널"
       ],
+      "Can't move a folder into itself": [
+        "폴더를 자기자신 안으로 옮길 수 없습니다."
+      ],
       "Canceled": [
         "취소됨"
       ],
@@ -6173,6 +6194,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "구독해 주셔서 감사합니다. 지금부터 보안 브라우징이 시작됩니다."
       ],
+      "that": [
+        "그"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "이 계정이 새 키를 가지고 있거나, 다음이 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
       ],
@@ -6536,6 +6560,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
       ],
+      "who": [
+        "누가"
+      ],
       "Who has access": [
         "접근 가능한 사용자"
       ],
@@ -6619,6 +6646,9 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "이 폴더에 파일을 복사할 권한이 없습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
@@ -9216,6 +9246,9 @@
       "Selected item was not removed from your list": [
         "선택된 항목이 목록에서 삭제되지 않았습니다."
       ],
+      "Selected item was successfully removed from your list": [
+        "선택한 항목이 목록에서 성공적으로 삭제되었습니다."
+      ],
       "Selected items were successfully removed from your list": [
         "선택된 항목이 목록에서 성공적으로 삭제되었습니다"
       ],
@@ -9638,6 +9671,9 @@
       ],
       "Create new group": [
         "새 그룹 만들기"
+      ],
+      "Expected structure": [
+        "예상 구조"
       ],
       "Ignore group": [
         "그룹 무시"
@@ -10479,6 +10515,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours }시간 동안 비밀번호를 재설정할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes }분 동안 비밀번호를 재샐정 할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds }초 동안 비밀번호를 재설정할 수 있습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -10605,6 +10650,9 @@
       ]
     },
     "sheets_2025:Action": {
+      "New spreadsheet": [
+        "새로운 스트레드시트"
+      ],
       "Open in ${ appName }": [
         "${ appName }에서 열기"
       ],
