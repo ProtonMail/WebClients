@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { getKTActivationValue, getKTFlag } from '@proton/key-transparency';
+import { getKTActivationValue, getKTFlag } from '@proton/key-transparency/helpers';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
 

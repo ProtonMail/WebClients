@@ -1,5 +1,6 @@
 import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@proton/crypto';
-import { type KTVerifier, resignSKLWithPrimaryKey } from '@proton/key-transparency';
+import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
+import type { KTVerifier } from '@proton/key-transparency/helpers';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../constants';

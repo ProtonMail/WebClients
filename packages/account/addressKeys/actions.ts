@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { disconnectBYOEAddress, reconnectBYOEAddress } from '@proton/activation/src/api';
-import { createKTVerifier } from '@proton/key-transparency/lib';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

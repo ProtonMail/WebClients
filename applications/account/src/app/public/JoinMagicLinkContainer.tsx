@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { createPreAuthKTVerifier } from '@proton/key-transparency';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 // eslint-disable-next-line no-restricted-imports

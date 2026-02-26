@@ -1,9 +1,6 @@
 import { c } from 'ttag';
 
-import {
-    ktKeyVerificationFailureTelemetryAndMetrics,
-    ktSentryReport,
-} from '@proton/key-transparency/lib/helpers/utils';
+import { ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '@proton/key-transparency/helpers';
 
 import type { Api, ApiKeysConfig, KTUserContext } from '../../interfaces';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '../../interfaces';
