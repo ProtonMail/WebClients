@@ -26,7 +26,7 @@ export function* processUserRefresh(refresh: boolean): EventProcessor {
     if (!refresh) return true;
 
     try {
-        const access: HydratedAccessState = yield getUserAccess();
+        const access: HydratedAccessState = yield call(getUserAccess);
         yield put(setUserAccess(access));
         return true;
     } catch {
