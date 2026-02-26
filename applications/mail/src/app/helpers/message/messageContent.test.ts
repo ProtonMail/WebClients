@@ -12,7 +12,7 @@ import { addressID, messageID, subject } from '../../components/message/tests/Me
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { clearAll, removeLineBreaks } from '../test/helper';
 import { generateBlockquote } from './draftContent/html';
-import { getContentWithBlockquotes, getContentWithoutBlockquotes } from './messageContent';
+import { getContentWithBlockquotes, getContentWithoutBlockquotes, isMessageContentEmpty } from './messageContent';
 
 const getMessage = (isPlainText: boolean, isReferenceMessage: boolean, content: string) => {
     return {
@@ -201,6 +201,86 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
             );
 
             expect(removeLineBreaks(contentWithBlockquotes)).toEqual(removeLineBreaks(htmlTextContent));
+        });
+    });
+
+    describe('isMessageContentEmpty', () => {
+        describe('empty content', () => {
+            it('should be true when content is empty', () => {
+                const content = '';
+                expect(isMessageContentEmpty(content, true)).toBeTruthy();
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+
+            it('should be true when content contains spaces only', () => {
+                const content = '       ';
+                expect(isMessageContentEmpty(content, true)).toBeTruthy();
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+
+            it('should be true when HTML content is not readable', () => {
+                const content = `<div><hr/></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+
+            it('should be true when HTML contains only empty tags and whitespace', () => {
+                const content = `<div><p></p><span>   </span><br/></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+
+            it('should be true when HTML content contains only &nbsp;', () => {
+                const content = `<div>&nbsp;&nbsp;&nbsp;</div>`;
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+
+            it('should be true when HTML content contains only HTML comments', () => {
+                const content = `<!-- some comment --><div></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeTruthy();
+            });
+        });
+
+        describe('contains text', () => {
+            it('should be false when content contains plain text', () => {
+                const content = '       hey   ';
+                expect(isMessageContentEmpty(content, true)).toBeFalsy();
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+
+            it('should be false when HTML content contains text', () => {
+                const content = `<div>Some content</div>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+        });
+
+        describe('contains media', () => {
+            it('should be false when HTML content contains image placeholders', () => {
+                const content = `<div><span class="proton-image-anchor" data-proton-embedded="id1"></span></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+
+            it('should be false when HTML content contains inline style with url()', () => {
+                const content = `<div style="background-image: url('https://image.jpg')"></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+        });
+
+        describe('contains links', () => {
+            it('should be false when HTML content contains a link', () => {
+                const content = `<div><a href="https://example.com"></a></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+
+            it('should be false when HTML content contains a link wrapping media', () => {
+                const content = `<div><a href="https://example.com"><span class="proton-image-anchor" data-proton-remote="id1"></span></a></div>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
+        });
+
+        describe('contains tables', () => {
+            it('should be false when HTML content contains a table', () => {
+                const content = `<table><tr><td></td></tr></table>`;
+                expect(isMessageContentEmpty(content, false)).toBeFalsy();
+            });
         });
     });
 });
