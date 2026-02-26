@@ -2118,6 +2118,10 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mês",
+        "Subtotal por ${ cycle } meses"
+      ],
       "Total": [
         "Total"
       ],
@@ -3988,6 +3992,9 @@
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "Código está incorreto ou não é mais válido"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Não foi possível carregar faturas. Tente novamente mais tarde."

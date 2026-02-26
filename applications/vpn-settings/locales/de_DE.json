@@ -2120,6 +2120,13 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
+      ],
       "Total": [
         "Insgesamt"
       ],
@@ -4000,6 +4007,9 @@
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
+      "Code is incorrect or not valid anymore": [
+        "Code ist falsch oder nicht mehr gültig"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
@@ -4070,6 +4080,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Wenn die Zeit auf deinem Fernseher abgelaufen ist, klicke auf „Aktualisieren“ auf deinem Fernseher und versuche es erneut."
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
@@ -11885,6 +11898,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -11909,6 +11928,18 @@
       "Got it": [
         "Verstanden"
       ],
+      "Including ${ rate }% tax": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -11932,6 +11963,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Tax ${ rate }%": [
+        "Steuer ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Steuern ${ rate } %"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
@@ -16612,6 +16649,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Hole mehr aus deinem ${ planTitle }-Abonnement heraus"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Deine Dateien, Fotos und Dokumente sicher mit ${ maxDriveSpace } Cloud-Speicher aufbewahren."
       ],
       "Set secure passwords without the hassle.": [
         "Sichere Passwörter ohne Probleme festlegen"

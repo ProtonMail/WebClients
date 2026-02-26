@@ -1209,6 +1209,9 @@
       "${ quantity } custom domain": [
         "사용자 지정 도메인 ${ quantity }개"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스 ${ seats } 개"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
@@ -1636,6 +1639,9 @@
       "Access 15,000+ servers in 120+ countries": [
         "120개 이상 국가 내의 15,000개 이상 서버에 접근"
       ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
@@ -1678,6 +1684,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "${ n } year": [
+        "${ n }년"
+      ],
       "1 month": [
         "1개월"
       ],
@@ -2054,6 +2066,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "Subtotal": [
+        "부분합계"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle }개월간 합계"
       ],
       "Total": [
         "합계"
@@ -3835,6 +3853,9 @@
       ],
       "Less than a day": [
         "하루 미만"
+      ],
+      "Recovery request sent": [
+        "복구 요청 전송됨"
       ],
       "Trusted contact": [
         "신뢰하는 연락처"
@@ -9223,6 +9244,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "활동 모니터링"
+      ],
       "Add a gift code": [
         "기프트 코드 추가"
       ],
@@ -9682,6 +9706,9 @@
       ]
     },
     "Message": {
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "사용자 지정 도메인(예를 들면, yourcompany.com)을 연결해 외부인들을 위한 이메일 주소를 만들고, 사업체, 학교 혹은 단체의 ${ MAIL_APP_NAME }을 관리하세요."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
       ],
@@ -12832,6 +12859,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours }시간 동안 비밀번호를 재설정할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes }분 동안 비밀번호를 재샐정 할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds }초 동안 비밀번호를 재설정할 수 있습니다."
       ]
     },
     "session_recovery:available:link": {
