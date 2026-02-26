@@ -28,6 +28,18 @@ async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string
 }
 
 /**
+ * Checks if the given user's IDB exists
+ * @param userID
+ * @returns true if the IDB exists, false otherwise
+ */
+export const hasESDB = async (userID: string) => {
+    const dbName = getDBName(userID);
+    const databases = await indexedDB.databases();
+
+    return databases.some(({ name }) => name === dbName);
+};
+
+/**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
  * undefined is returned instead.
  */
@@ -42,11 +54,6 @@ export const openESDB = async (userID: string) => {
         }
 
         const dbName = getDBName(userID);
-        const databases = await indexedDB.databases();
-        if (!databases.some(({ name }) => name === dbName)) {
-            return;
-        }
-
         esDB = await openDB<EncryptedSearchDB>(dbName, INDEXEDDB_VERSION, {
             upgrade,
         });
@@ -57,17 +64,6 @@ export const openESDB = async (userID: string) => {
         }
         return;
     }
-};
-
-/**
- * Check whether the current version of IDB exists. WARNING: this function
- * will delete an old version of IDB if it exists
- */
-export const checkVersionedESDB = async (userID: string) => {
-    const esDB = await openESDB(userID);
-    const check = !!esDB;
-    esDB?.close();
-    return check;
 };
 
 /**
