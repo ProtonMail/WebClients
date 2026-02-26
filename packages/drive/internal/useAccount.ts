@@ -10,6 +10,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 
@@ -43,7 +44,9 @@ export function useAccount(): ProtonDriveAccount {
         };
     };
 
-    const getOwnAddress = async (emailOrAddressId: string): Promise<ProtonDriveAccountAddress> => {
+    const getOwnAddress = async (
+        emailOrAddressId: string
+    ): Promise<ProtonDriveAccountAddress & { isDisabled: boolean }> => {
         const addresses = await getAddresses();
         const address = addresses.find(
             (addr) =>
@@ -60,6 +63,7 @@ export function useAccount(): ProtonDriveAccount {
             email: address.Email,
             addressId: address.ID,
             primaryKeyIndex: 0,
+            isDisabled: address.Status !== ADDRESS_STATUS.STATUS_ENABLED,
             keys: keys.map((key) => ({
                 id: key.ID,
                 key: key.privateKey,
@@ -81,15 +85,35 @@ export function useAccount(): ProtonDriveAccount {
         if (!authentication.getUID()) {
             return [];
         }
+
+        // If the address is own address, use the keys from that directly
+        // as that is already imported in the cache.
+        // Except if the address is disabled, in which case we need to provide
+        // both the disabled keys and request the public keys. It is crucial
+        // for the following two use cases:
+        // 1. If user uploaded the file previously and now the address is
+        //    disabled, we still need to provide the disabled keys to verify
+        //    the signature.
+        // 2. If user disabled custom domain address and recreated it for
+        //    different user, we still need to provide the public keys of the
+        //    other user to encrypt invitation to the original user.
+        // Thus we need to provide both. The disabled address keys are ordered
+        // at the end of the array to have lower priority (so the second case
+        // works), but still present (so the first case works).
+        let disabledKeys: PublicKey[] = [];
         try {
             const address = await getOwnAddress(email);
             const keys = address.keys.map(({ key }) => key);
-            return keys;
+            if (!address.isDisabled) {
+                return keys;
+            } else {
+                disabledKeys = keys;
+            }
         } catch {}
 
         const cachedKeys = cachedPublicKeys.current.get(email);
         if (cachedKeys !== undefined) {
-            return cachedKeys;
+            return [...cachedKeys, ...disabledKeys];
         }
 
         const response = await api<{
@@ -122,7 +146,7 @@ export function useAccount(): ProtonDriveAccount {
 
         cachedPublicKeys.current.set(email, publicKeys);
 
-        return publicKeys;
+        return [...publicKeys, ...disabledKeys];
     };
 
     const hasProtonAccount = async (email: string): Promise<boolean> => {
