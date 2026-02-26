@@ -54,6 +54,10 @@ export function initializeUpdateChecks() {
         if (response === 0) {
             updateLogger.info("Restarting to apply update.");
             autoUpdater.quitAndInstall();
+            setTimeout(() => {
+                updateLogger.warn("quitAndInstall did not exit the process in time, forcing exit.");
+                app.exit(0);
+            }, 2000);
         } else {
             updateLogger.info("Skipping restart, update will be applied later.");
         }

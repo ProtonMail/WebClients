@@ -95,12 +95,12 @@ import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
         });
     });
 
-    app.on("window-all-closed", () => {
-        if (!isMac) {
+    if (!isMac) {
+        app.on("window-all-closed", () => {
             mainLogger.info("All windows closed");
             app.quit();
-        }
-    });
+        });
+    }
 
     app.on("web-contents-created", (_ev, contents) => {
         handleWebContents(contents);
