@@ -10,6 +10,7 @@ import type { Conversation } from 'proton-mail/models/conversation';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
 import {
+    getCurrentFolderID,
     isCategoryLabel,
     isCustomFolder,
     isCustomLabel,
@@ -56,7 +57,6 @@ export const markConversationsAsRead = (
             }
 
             const conversationCounter = state.value?.find((counter) => counter.LabelID === conversationLabel.ID);
-
             if (conversationCounter) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
@@ -66,7 +66,12 @@ export const markConversationsAsRead = (
 
 export const markMessagesAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{
+        messages: MessageMetadata[];
+        labelID: string;
+        conversations: Conversation[];
+        folders: Folder[];
+    }>
 ) => {
     const { conversations, messages, labelID } = action.payload;
 
@@ -89,26 +94,159 @@ export const markMessagesAsUnread = (
 
 export const markMessagesAsRead = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ messages: MessageMetadata[]; labelID: string; conversations: Conversation[] }>
+    action: PayloadAction<{
+        messages: MessageMetadata[];
+        labelID: string;
+        conversations: Conversation[];
+        folders: Folder[];
+        labels: Label[];
+    }>
 ) => {
-    const { messages, labelID, conversations } = action.payload;
+    const { messages, conversations, folders, labels } = action.payload;
 
+    /* In this action, we are updating messages while being in conversation mode.
+     * So we need to update the counters in several places (when needed):
+     * - The folder in which the message is (system or custom folder)
+     * - All mail
+     * - Almost all mail, when messages are not in trash/spam
+     * - Starred
+     * - Custom labels
+     * - Category
+     *
+     * For that we'll need to check each conversation that are impacted if the number of messages marked as read
+     * is marking the conversation as read in one of the location listed above.
+     * If so, we can decrease the counter
+     */
     conversations.forEach((conversation) => {
-        // Count number of messages associated with the conversation
-        const filteredMessages = messages.filter(
-            (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
-        );
-        const messagesCount = filteredMessages.length;
+        // Get all messages from this conversation that are being marked as read
+        const messagesFromConversation = messages.filter((message) => message.ConversationID === conversation.ID);
 
-        const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
+        if (messagesFromConversation.length === 0) {
+            return;
+        }
 
-        if (conversationLabel?.ContextNumUnread === messagesCount && messagesCount > 0) {
-            const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
+        // Count messages that are not in Spam/Trash to update ALMOST_ALL_MAIL counts
+        let nonSpamTrashMessagesCount = 0;
 
-            if (conversationCounter) {
-                conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+        /**
+         * Update message folder counts
+         */
+        // Group messages by their actual folder
+        const messagesByFolder = new Map<string, MessageMetadata[]>();
+        messagesFromConversation.forEach((message) => {
+            const folderID = getCurrentFolderID(message.LabelIDs, folders);
+            if (folderID) {
+                const existing = messagesByFolder.get(folderID) || [];
+                existing.push(message);
+                messagesByFolder.set(folderID, existing);
+            }
+        });
+
+        messagesByFolder.forEach((folderMessages, folderID) => {
+            const conversationLabel = conversation.Labels?.find((label) => label.ID === folderID);
+            const messagesCount = folderMessages.length;
+
+            // If all unread messages in this folder are being marked as read, decrease counter
+            if (conversationLabel?.ContextNumUnread === messagesCount && messagesCount > 0) {
+                const conversationCounter = state.value?.find((counter) => counter.LabelID === folderID);
+                if (conversationCounter) {
+                    conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                }
+            }
+
+            // Count messages that are not in Spam/Trash to update ALMOST_ALL_MAIL counts
+            if (folderID !== MAILBOX_LABEL_IDS.SPAM && folderID !== MAILBOX_LABEL_IDS.TRASH) {
+                nonSpamTrashMessagesCount += messagesCount;
+            }
+        });
+
+        /**
+         * Update ALL_MAIL counts
+         */
+        const totalMessagesCount = messagesFromConversation.length;
+        const conversationAllMailLabel = conversation.Labels?.find((label) => label.ID === MAILBOX_LABEL_IDS.ALL_MAIL);
+        if (conversationAllMailLabel?.ContextNumUnread === totalMessagesCount && totalMessagesCount > 0) {
+            const allMailCount = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
+            if (allMailCount) {
+                allMailCount.Unread = safeDecreaseCount(allMailCount.Unread, 1);
             }
         }
+
+        /**
+         * Update ALMOST_ALL_MAIL counts
+         * Messages in SPAM & TRASH needs to be ignored
+         */
+        const conversationAlmostAllMailLabel = conversation.Labels?.find(
+            (label) => label.ID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+        );
+        if (
+            conversationAlmostAllMailLabel?.ContextNumUnread === nonSpamTrashMessagesCount &&
+            nonSpamTrashMessagesCount > 0
+        ) {
+            const almostAllMailCount = state.value?.find(
+                (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+            );
+            if (almostAllMailCount) {
+                almostAllMailCount.Unread = safeDecreaseCount(almostAllMailCount.Unread, 1);
+            }
+        }
+
+        /**
+         * Update STARRED counts
+         */
+        const starredMessagesCount = messagesFromConversation.filter((message) =>
+            message.LabelIDs.includes(MAILBOX_LABEL_IDS.STARRED)
+        ).length;
+        const conversationStarredLabel = conversation.Labels?.find((label) => label.ID === MAILBOX_LABEL_IDS.STARRED);
+        // If all starred messages are being marked as read, decrease counter
+        if (conversationStarredLabel?.ContextNumUnread === starredMessagesCount && starredMessagesCount > 0) {
+            const starredCount = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.STARRED);
+            if (starredCount) {
+                starredCount.Unread = safeDecreaseCount(starredCount.Unread, 1);
+            }
+        }
+
+        /**
+         * Update custom labels counts
+         */
+        // Group messages by custom label
+        const messagesByCustomLabel = new Map<string, MessageMetadata[]>();
+        messagesFromConversation.forEach((message) => {
+            message.LabelIDs.forEach((labelID) => {
+                if (isCustomLabel(labelID, labels)) {
+                    const existing = messagesByCustomLabel.get(labelID) || [];
+                    existing.push(message);
+                    messagesByCustomLabel.set(labelID, existing);
+                }
+            });
+        });
+
+        messagesByCustomLabel.forEach((labelMessages, labelID) => {
+            const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
+            const messagesCount = labelMessages.length;
+
+            // If all messages in this custom label are being marked as read, decrease counter
+            if (conversationLabel?.ContextNumUnread === messagesCount && messagesCount > 0) {
+                const labelCounter = state.value?.find((counter) => counter.LabelID === labelID);
+                if (labelCounter) {
+                    labelCounter.Unread = safeDecreaseCount(labelCounter.Unread, 1);
+                }
+            }
+        });
+
+        /**
+         * Update category counts
+         * All messages in the conversation share the same category, so we can simply check if we're marking all unread messages as read
+         */
+        const categoryLabels = conversation.Labels?.filter((label) => isCategoryLabel(label.ID)) || [];
+        categoryLabels.forEach((categoryLabel) => {
+            if (categoryLabel.ContextNumUnread === totalMessagesCount && totalMessagesCount > 0) {
+                const categoryCounter = state.value?.find((counter) => counter.LabelID === categoryLabel.ID);
+                if (categoryCounter) {
+                    categoryCounter.Unread = safeDecreaseCount(categoryCounter.Unread, 1);
+                }
+            }
+        });
     });
 };
 
