@@ -9,7 +9,7 @@ import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKey
 import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
-import { createKTVerifier } from '@proton/key-transparency/lib';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';

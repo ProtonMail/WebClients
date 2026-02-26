@@ -7,16 +7,16 @@ import { userKeysThunk } from '@proton/account/userKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CryptoProxy, serverTime } from '@proton/crypto';
+import { getKTLocalStorage } from '@proton/key-transparency/storage';
 import {
-    type SelfAuditResult,
     StaleEpochError,
-    getKTLocalStorage,
     getLatestEpoch,
     getSelfAuditInterval,
     ktSentryReportError,
-    reportSelfAuditErrors,
-    selfAudit,
-} from '@proton/key-transparency';
+} from '@proton/key-transparency/helpers';
+import type { SelfAuditResult } from '@proton/key-transparency/interfaces';
+import { reportSelfAuditErrors } from '@proton/key-transparency/shared';
+import { selfAudit } from '@proton/key-transparency/verification';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

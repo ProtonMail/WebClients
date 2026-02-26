@@ -1,4 +1,4 @@
-import { defaultKeyTransparencyState } from '@proton/key-transparency';
+import { defaultKeyTransparencyState } from '@proton/key-transparency/shared';
 import type { KeyTransparencyState } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 

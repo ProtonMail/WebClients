@@ -8,7 +8,7 @@ import { getKTActivation, getKTUserContext } from '@proton/account/kt/actions';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
-import { createKTVerifier } from '@proton/key-transparency/lib';
+import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { deleteForwarding as deleteForwardingConfig, rejectForwarding } from '@proton/shared/lib/api/forwardings';

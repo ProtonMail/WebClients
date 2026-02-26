@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { fetchSignedKeyLists } from '@proton/key-transparency/lib/helpers/apiHelpers';
+import { fetchSignedKeyLists } from '@proton/key-transparency/helpers';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
@@ -458,11 +458,11 @@ export const getIsMemberUnprivatizationInAutomaticApproveState = (
 ): unprivatizationData is MemberUnprivatizationAutomaticApproveState => {
     return Boolean(
         unprivatizationData?.State === MemberUnprivatizationState.Ready &&
-            !unprivatizationData.PrivateIntent &&
-            unprivatizationData.InvitationData &&
-            unprivatizationData.InvitationSignature &&
-            unprivatizationData.ActivationToken &&
-            (unprivatizationData.PrivateKeys?.length || 0) > 0
+        !unprivatizationData.PrivateIntent &&
+        unprivatizationData.InvitationData &&
+        unprivatizationData.InvitationSignature &&
+        unprivatizationData.ActivationToken &&
+        (unprivatizationData.PrivateKeys?.length || 0) > 0
     );
 };
 
@@ -471,11 +471,11 @@ export const getIsMemberUnprivatizationInManualApproveState = (
 ): unprivatizationData is MemberUnprivatizationManualApproveState => {
     return Boolean(
         unprivatizationData?.State === MemberUnprivatizationState.Ready &&
-            !unprivatizationData.PrivateIntent &&
-            !unprivatizationData.InvitationData &&
-            !unprivatizationData.InvitationSignature &&
-            unprivatizationData.ActivationToken &&
-            (unprivatizationData.PrivateKeys?.length || 0) > 0
+        !unprivatizationData.PrivateIntent &&
+        !unprivatizationData.InvitationData &&
+        !unprivatizationData.InvitationSignature &&
+        unprivatizationData.ActivationToken &&
+        (unprivatizationData.PrivateKeys?.length || 0) > 0
     );
 };
 
@@ -484,11 +484,11 @@ export const getIsMemberUnprivatizationInManualAcceptState = (
 ): unprivatizationData is MemberUnprivatizationAcceptState => {
     return Boolean(
         unprivatizationData?.State === MemberUnprivatizationState.Pending &&
-            !unprivatizationData.PrivateIntent &&
-            unprivatizationData.InvitationData &&
-            unprivatizationData.InvitationSignature &&
-            !unprivatizationData.ActivationToken &&
-            !unprivatizationData.PrivateKeys?.length
+        !unprivatizationData.PrivateIntent &&
+        unprivatizationData.InvitationData &&
+        unprivatizationData.InvitationSignature &&
+        !unprivatizationData.ActivationToken &&
+        !unprivatizationData.PrivateKeys?.length
     );
 };
 

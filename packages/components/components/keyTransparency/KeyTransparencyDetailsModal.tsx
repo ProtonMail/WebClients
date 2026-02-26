@@ -18,7 +18,7 @@ import {
     AddressAuditWarningReason,
     type LocalStorageAuditResult,
     type SelfAuditResult,
-} from '@proton/key-transparency';
+} from '@proton/key-transparency/interfaces';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

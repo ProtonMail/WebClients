@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
-import { ktSentryReportError } from '@proton/key-transparency';
+import { ktSentryReportError } from '@proton/key-transparency/helpers';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { getKTActivationValueFromFlags } from '@proton/key-transparency';
+import { getKTActivationValueFromFlags } from '@proton/key-transparency/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { useUnleashClient } from '@proton/unleash';
 import { getUnleashReadyPromise } from '@proton/unleash/readyPromise';
