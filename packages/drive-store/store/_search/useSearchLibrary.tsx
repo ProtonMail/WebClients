@@ -68,23 +68,26 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     });
 
     const initializeESDrive = async () => {
-        // Migrate old IDBs
-        const userKeys = await getUserKeys();
-        const success = await migrate(user.ID, userKeys, defaultShareIdPromise);
-        if (!success) {
-            return esFunctions.esDelete();
-        }
+        // Only remove, migrate or check progress if the user has a ES database
+        if (await hasESDB(user.ID)) {
+            // In case of a downgrade from paid to free, remove everything
+            if (!isPaid(user)) {
+                return esFunctions.esDelete();
+            }
 
-        // In case of a downgrade from paid to free, remove everything
-        if ((await hasESDB(user.ID)) && !isPaid(user)) {
-            return esFunctions.esDelete();
-        }
+            // Migrate old IDBs
+            const userKeys = await getUserKeys();
+            const success = await migrate(user.ID, userKeys, defaultShareIdPromise);
+            if (!success) {
+                return esFunctions.esDelete();
+            }
 
-        // In case an interrupted indexing process is found, we remove anything ES
-        // has built so far since drive needs to finish indexing in one go
-        const progress = await metadataIndexingProgress.read(user.ID);
-        if (!!progress && progress.status !== INDEXING_STATUS.ACTIVE) {
-            await esFunctions.esDelete();
+            // In case an interrupted indexing process is found, we remove anything ES
+            // has built so far since drive needs to finish indexing in one go
+            const progress = await metadataIndexingProgress.read(user.ID);
+            if (!!progress && progress.status !== INDEXING_STATUS.ACTIVE) {
+                await esFunctions.esDelete();
+            }
         }
 
         await esFunctions.initializeES();
