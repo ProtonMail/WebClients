@@ -141,6 +141,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     loading={loadingOffer && !offer}
                     className={clsx([
                         offerConfig.topButton?.variant && `button-promotion--${offerConfig.topButton?.variant}`,
+                        'rounded',
                     ])}
                     pill={!!offerConfig.topButton?.variant}
                     data-testid="cta:special-offer"

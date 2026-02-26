@@ -298,3 +298,25 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		}
 	}
 }
+
+[class*='offer-spring-sale-2026-'] {
+	background:
+		url(./components/springSale2026/background.webp), linear-gradient(180deg, #e5f0fa 37.76%, #badef9 148.62%);
+	background-size: cover;
+	max-inline-size: 31rem;
+	padding-inline: 1rem;
+	padding-block-start: 1.5rem;
+
+	.scroll-child {
+		overflow-y: scroll;
+	}
+
+	.offer-close-button {
+		background: #fffc;
+		border-radius: 50%;
+	}
+
+	.modal-close-icon {
+		fill: black;
+	}
+}
