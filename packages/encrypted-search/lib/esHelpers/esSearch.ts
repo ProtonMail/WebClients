@@ -374,7 +374,8 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
 
     // Caching needs to be triggered here for when a refresh happens on a search URL
     if (!esCacheRef.current.isCacheReady && esCacheRef.current.esCache.size === 0) {
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             throw new Error('Key not found');
         }
@@ -499,7 +500,8 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             setResultsList(searchResults.concat(newResults));
         };
 
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        const userKeys = await getUserKeys();
+        const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
             throw new Error('Key not found');
         }

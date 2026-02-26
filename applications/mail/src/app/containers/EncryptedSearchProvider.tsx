@@ -177,7 +177,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // The reason for not initialising the library just yet is that
         // in case an upgrade/downgrade is needed, the flags would be set
         // incorrectly due to the way we encode the latter
-        const indexKey = await getIndexKey(getUserKeys, user.ID);
+        const userKeys = await getUserKeys();
+        const indexKey = await getIndexKey(userKeys, user.ID);
         if (!indexKey) {
             return esLibraryFunctions.esDelete();
         }
