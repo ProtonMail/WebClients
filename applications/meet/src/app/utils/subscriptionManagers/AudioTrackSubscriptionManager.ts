@@ -9,6 +9,7 @@ import {
 } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 interface PublicationItem {
@@ -416,6 +417,11 @@ export class AudioTrackSubscriptionManager {
         }
 
         if (this.room.state !== ConnectionState.Connected) {
+            return;
+        }
+
+        // Skip health check if page is in background and is Safari
+        if (!isDocumentVisible() && isSafari()) {
             return;
         }
 
