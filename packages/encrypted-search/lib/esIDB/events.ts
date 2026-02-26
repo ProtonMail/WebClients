@@ -8,7 +8,6 @@ import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
  */
 export const readAllLastEvents = async (userID: string) => {
     const result: EventsObject = {};
-
     const esDB = await openESDB(userID);
     if (!esDB) {
         return;
