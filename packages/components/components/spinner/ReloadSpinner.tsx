@@ -15,6 +15,7 @@ const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Pr
             return;
         }
         event.preventDefault();
+        event.stopPropagation();
         onRefresh?.();
     };
     return (
