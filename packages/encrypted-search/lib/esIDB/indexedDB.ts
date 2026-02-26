@@ -6,7 +6,7 @@ import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
-import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } from '../esHelpers';
+import { ciphertextSize, esSentryReport, isTimepointSmaller } from '../esHelpers';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
 import { upgrade } from './indexedDBUpgrade';
@@ -24,9 +24,6 @@ export const deleteESDB = async (userID: string) => deleteDB(getDBName(userID)).
 
 async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string) {
     esDB.close();
-    // Flags are removed from local storage in case this code
-    // is called due to an update from an outdated version of IDB
-    removeESFlags(userID);
     await deleteESDB(userID);
 }
 
@@ -47,7 +44,6 @@ export const openESDB = async (userID: string) => {
         const dbName = getDBName(userID);
         const databases = await indexedDB.databases();
         if (!databases.some(({ name }) => name === dbName)) {
-            removeESFlags(userID);
             return;
         }
 
