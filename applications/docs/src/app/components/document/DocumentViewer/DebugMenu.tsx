@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button'
 import { Icon } from '@proton/components'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import type {
@@ -21,7 +21,8 @@ import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
 import type { UpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
 import { createUpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
-import { UpdateReplayTool } from './UpdateReplayTool'
+
+const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -197,11 +198,13 @@ export function DebugMenu({ docController, editorController, documentState, docu
       )}
     >
       {showUpdateReplayTool && (
-        <UpdateReplayTool
-          onClose={() => setShowUpdateReplayTool(false)}
-          editorController={editorController}
-          isSpreadsheet={isSpreadsheet}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <UpdateReplayTool
+            onClose={() => setShowUpdateReplayTool(false)}
+            editorController={editorController}
+            isSpreadsheet={isSpreadsheet}
+          />
+        </Suspense>
       )}
       <div
         id="debug-menu"
