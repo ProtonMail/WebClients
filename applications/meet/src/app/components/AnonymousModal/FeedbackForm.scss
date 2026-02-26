@@ -1,0 +1,27 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
+
+.grid-row-full-width {
+	grid-column: 1 / -1;
+}
+
+.feedback-comment {
+	background: var(--background-weak);
+	border: 1px solid var(--interaction-norm) !important;
+	border-radius: 1em !important;
+}
+
+.add-details-button {
+	font-size: 0.875em;
+	text-decoration: none !important;
+}
+
+.feedback-form-rating-label {
+	font-size: 1.125em;
+	@include im.media('>medium') {
+		flex: 1.1;
+	}
+}
