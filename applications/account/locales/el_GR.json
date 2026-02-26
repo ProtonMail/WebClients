@@ -13470,9 +13470,6 @@
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
       ],
-      "Limited time": [
-        "Περιορισμένος χρόνος"
-      ],
       "Link label (optional)": [
         "Ετικέτα συνδέσμου (προαιρετικό)"
       ],
@@ -17188,6 +17185,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Αγοράστε τώρα"
+      ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -17282,6 +17282,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "Το ${ PASS_APP_NAME } είναι διαθέσιμο ως προέκταση προγράμματος περιήγησης στο Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } για ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } ανά μήνα"
@@ -24817,9 +24820,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Η προσφορά ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } έχει λήξει"
       ],
       "Are you sure you want to delete the phone number?": [
         "Θέλετε σίγουρα να διαγράψετε τον αριθμό τηλεφώνου;"

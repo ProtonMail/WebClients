@@ -3190,6 +3190,12 @@
       "Starting today": [
         "从今天开始"
       ],
+      "Subtotal": [
+        "小计"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "小计 ${ cycle } 个月"
+      ],
       "Total": [
         "总计"
       ],
@@ -4547,6 +4553,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "从您的 ${ planTitle } 订阅中获取更多价值"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "使用 ${ maxDriveSpace } 云存储空间，保护您的文件、照片和文档安全"
       ],
       "Set secure passwords without the hassle.": [
         "无需繁琐步骤，即可设置安全密码！"
@@ -6321,6 +6330,9 @@
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
+      "Code is incorrect or not valid anymore": [
+        "验证码错误或失效"
+      ],
       "Condition incomplete": [
         "条件不完整"
       ],
@@ -6428,6 +6440,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "如果电视上的时间过期了，点击电视上的“刷新”，重新输入一次代码。"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "如果您的电视时间已过期，请点击电视上的刷新并重试。"
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
@@ -13313,9 +13328,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
       ],
-      "Limited time": [
-        "限时"
-      ],
       "Link label (optional)": [
         "链接标签（可选）"
       ],
@@ -16982,6 +16994,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "立即购买"
+      ],
       "Contact us": [
         "联系我们"
       ],
@@ -17076,6 +17091,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } 可以在 Chrome Web Store 上作为浏览器扩展使用。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }，价格 ${ priceString }"
       ],
       "+ ${ relativePrice } per month": [
         "+ 每月 ${ relativePrice }"
@@ -24276,6 +24294,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "从您的 ${ planTitle } 订阅中获得更多信息。"
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "使用 ${ maxDriveSpace } 云存储空间，保护您的文件、照片和文档安全"
+      ],
       "Set secure passwords without the hassle.": [
         "轻松设置安全密码"
       ],
@@ -24492,9 +24513,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 优惠已结束"
       ],
       "Are you sure you want to delete the phone number?": [
         "确定要删除此号码吗？"

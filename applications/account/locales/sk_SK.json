@@ -3256,6 +3256,15 @@
       "Starting today": [
         "Začína dnes"
       ],
+      "Subtotal": [
+        "Medzisúčet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Medzisúčet za ${ cycle } mesiac",
+        "Medzisúčet za ${ cycle } mesiace",
+        "Medzisúčet za ${ cycle } mesiacov",
+        "Medzisúčet za ${ cycle } mesiacov"
+      ],
       "Total": [
         "Celkom"
       ],
@@ -4634,6 +4643,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Získajte viac zo svojho predplatného ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Uchovávajte svoje súbory, fotografie a dokumenty v bezpečí s ${ maxDriveSpace } cloudovým úložiskom."
       ],
       "Set secure passwords without the hassle.": [
         "Nastavenie bezpečných hesiel bez problémov."
@@ -6438,6 +6450,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Kód je nesprávny alebo už nie je platný"
+      ],
       "Condition incomplete": [
         "Neúplná podmienka"
       ],
@@ -6551,6 +6566,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a skúste to znova."
       ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
@@ -13735,9 +13753,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
-      ],
-      "Limited time": [
-        "Časovo obmedzené"
       ],
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
@@ -25164,6 +25179,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "Získajte viac zo svojho predplatného ${ planTitle }."
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Uchovávajte svoje súbory, fotografie a dokumenty v bezpečí s ${ maxDriveSpace } cloudovým úložiskom."
+      ],
       "Set secure passwords without the hassle.": [
         "Nastavenie bezpečných hesiel bez problémov."
       ],
@@ -25416,9 +25434,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Ponuka ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } už skončila"
       ],
       "Are you sure you want to delete the phone number?": [
         "Naozaj chcete vymazať telefónne číslo?"

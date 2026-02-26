@@ -1213,6 +1213,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
+      ],
+      "Servers": [
+        "Palvelimet"
+      ],
+      "Users": [
+        "Käyttäjät"
       ]
     },
     "Address action": {
@@ -1555,6 +1564,14 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 Tt tallennustilaa"
+      ],
+      "3 TB data storage": [
+        "3 Tt tallennustilaa"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }",
@@ -1565,6 +1582,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "${ n } year": [
+        "${ n } vuosi",
+        "${ n } vuotta"
+      ],
       "1 month": [
         "1 kuukausi"
       ],
@@ -1998,7 +2023,7 @@
         "Loputtomasti suosikkeja nopean pääsyn takaamiseksi"
       ],
       "Upload and query multiple large files": [
-        "Lataa ja laita jonoon useita suuria tiedostoja"
+        "Lähetä ja laita jonoon useita suuria tiedostoja"
       ],
       "Upload and query small files": [
         "Lähetä ja laita jonoon pieniä tiedostoja"
@@ -8861,6 +8886,9 @@
       "Verification code": [
         "Vahvistuskoodi"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Haavoittuvainen"
       ],
@@ -11983,6 +12011,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Virheellinen arvo"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Elinajan on oltava pidempi, kuin ${ MIN_LIFETIME } päivä",
         "Voimassaoloajan on oltava pidempi, kuin ${ MIN_LIFETIME } päivää"

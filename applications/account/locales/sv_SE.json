@@ -3179,6 +3179,9 @@
       "Starting today": [
         "Börjar idag"
       ],
+      "Subtotal": [
+        "Delsumma"
+      ],
       "Subtotal for ${ cycle } month": [
         "Delsumma för ${ cycle } månad",
         "Delsumma för ${ cycle } månader"
@@ -6308,6 +6311,9 @@
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "Kod är fel eller inte giltig längre"
       ],
       "Condition incomplete": [
         "Villkor ofullständig"
@@ -13362,9 +13368,6 @@
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
       ],
-      "Limited time": [
-        "Begränsad tid"
-      ],
       "Link label (optional)": [
         "Länketikett (valfritt)"
       ],
@@ -17645,6 +17648,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Net amount": [
+        "Nettobelopp"
       ],
       "Offer unavailable": [
         "Erbjudande otillgängligt"
@@ -24639,9 +24645,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Erbjudande för ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } har upphört"
       ],
       "Are you sure you want to delete the phone number?": [
         "Är du säker på att du vill ta bort telefonnumret?"

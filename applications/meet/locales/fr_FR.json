@@ -1469,16 +1469,16 @@
         "Échec du renouvellement du lien de réunion personnelle"
       ],
       "Failed to save recording": [
-        "L'enregistrement n'a pas abouti."
+        "La sauvegarde de l'enregistrement a échouée"
       ],
       "Failed to send chat message. Please try again.": [
         "Une erreur est survenue lors de l'envoi du message. Essayez à nouveau."
       ],
       "Failed to start recording": [
-        "Le démarrage de l'enregistrement n'a pas abouti."
+        "Le démarrage de l'enregistrement a échoué."
       ],
       "Failed to start screen share": [
-        "Le partage d'écran n'a pas abouti"
+        "Le partage d'écran n'a pas réussi"
       ],
       "Failed to unlock meeting": [
         "Échec du déverrouillage de la réunion"
@@ -1523,7 +1523,7 @@
         "Le lien de la réunion que vous tentez d'accéder n'existe pas ou a peut-être été supprimé."
       ],
       "The meeting password is incorrect": [
-        "Le mot de passe de la réunion n'est pas correct."
+        "Le mot de passe de la réunion est erroné."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -1712,7 +1712,7 @@
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "${ particle } Anonyme ${ participantNumber }"
+        "${ particle } anonyme : ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
         "Voulez-vous vraiment quitter ?"
@@ -1748,7 +1748,7 @@
         "Connexion perdue"
       ],
       "Connection lost, please join meeting again": [
-        "Connexion perdue, veuillez rejoindre la réunion à nouveau"
+        "La connexion a été perdue, veuillez rejoindre la réunion à nouveau"
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -1868,7 +1868,7 @@
         "La connexion internet est perdue."
       ],
       "Joined ${ roomNameLabel }": [
-        "Vous avez rejoint ${ roomNameLabel }"
+        "A rejoint ${ roomNameLabel }"
       ],
       "Learn more": [
         "En savoir plus"
@@ -1877,7 +1877,7 @@
         "En quittant, vous mettrez fin au partage d'écran. Voulez-vous continuer ?"
       ],
       "Left ${ roomNameLabel }": [
-        "Vous avez quitté ${ roomNameLabel }"
+        "A quitté ${ roomNameLabel }"
       ],
       "Left by mistake?": [
         "Vous avez quitté par erreur ?"
@@ -1922,7 +1922,7 @@
         "La réunion a été close. Aucun nouveau participant ne peut la rejoindre."
       ],
       "Meeting unlocked. Participants can join again.": [
-        "Réunion déverrouillée. Les participants peuvent se reconnecter."
+        "La réunion est déverrouillée. Les participants peuvent se reconnecter."
       ],
       "Meeting will end in ${ timeLeft }": [
         "La réunion se terminera dans ${ timeLeft }"
@@ -2036,7 +2036,7 @@
         "Sélectionnez un microphone"
       ],
       "Select a participant to assign as the new host before you go: ": [
-        "Sélectionnez un participant à désigner comme nouvel hôte avant votre départ : "
+        "Sélectionnez un participant comme prochain hôte avant votre départ : "
       ],
       "Select a speaker": [
         "Sélectionner une sortie audio"
@@ -2135,7 +2135,7 @@
         "Débloquez ${ unlimitedMeeting } et les fonctionnalités premium"
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
-        "Changez d'abonnement pour retirer la limite d'une heure et ignorer le compte à rebours. Profitez de réunions jusqu'à 24 heures."
+        "Changez d'abonnement pour lever la limite d'une heure et ignorer le compte à rebours. Vous pourrez profiter d'une durée de réunion jusqu'à 24 heures."
       ],
       "Video effects": [
         "Effets vidéo"
@@ -2648,7 +2648,7 @@
     },
     "Success": {
       "Assigned new host": [
-        "L'hôte a été désigné"
+        "L'hôte a été modifié"
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -2692,7 +2692,7 @@
         "Haut-parleurs disponibles"
       ],
       "Chat": [
-        "Chat"
+        "Discussion"
       ],
       "Create new room": [
         "Créer une nouvelle salle"
@@ -2782,7 +2782,7 @@
         "Salle de réunion personnelle"
       ],
       "Protecting meeting with end-to-end encryption...": [
-        "Protection de la réunion avec un chiffrement de bout en bout..."
+        "Protéger la réunion avec un chiffrement de bout en bout..."
       ],
       "Publications": [
         "Publications"

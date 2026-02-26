@@ -1859,6 +1859,15 @@
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
       ],
+      "Subtotal": [
+        "Прамежкавы вынік"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Прамежкавы вынік за ${ cycle } месяц",
+        "Прамежкавы вынік за ${ cycle } месяцы",
+        "Прамежкавы вынік за ${ cycle } месяцаў",
+        "Прамежкавы вынік за ${ cycle } месяцаў"
+      ],
       "Total": [
         "Агулам"
       ],
@@ -9666,7 +9675,13 @@
     },
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
-        "${ formattedPrice } (з улікам падатка)"
+        "${ formattedPrice } (з улікам падатку)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "Падатак у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "Падаткі ў памеры ${ rate }%: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
@@ -9689,6 +9704,18 @@
       "Got it": [
         "Зразумела"
       ],
+      "Including ${ rate }% tax": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "З улікам падатку ў памеры ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Уключаючы падатак у памеры ${ rate }%:"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "З улікам падаткаў у памеры ${ rate }%: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -9706,6 +9733,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Tax ${ rate }%": [
+        "Падатак у памеры ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Падаткі ў памеры ${ rate }%"
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
@@ -9852,7 +9885,7 @@
         "Кошт падаўжэння залежыць ад рэгіёна аплаты і ABN."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумар прадпрыемства."
+        "Кошт падаўжэння залежыць ад рэгіёна аплаты і нумара прадпрыемства."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Кошт падаўжэння залежыць ад рэгіёна аплаты і EIN."
@@ -10861,7 +10894,7 @@
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч"
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішчаў"
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"

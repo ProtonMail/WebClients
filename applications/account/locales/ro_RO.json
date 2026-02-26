@@ -3234,6 +3234,14 @@
       "Starting today": [
         "Începând de astăzi"
       ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal pentru ${ cycle } lună",
+        "Subtotal pentru ${ cycle } luni",
+        "Subtotal pentru ${ cycle } de luni"
+      ],
       "Total": [
         "Total"
       ],
@@ -6402,6 +6410,9 @@
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
+      "Code is incorrect or not valid anymore": [
+        "Codul nu este corect sau nu mai este valid."
+      ],
       "Condition incomplete": [
         "Condiție incompletă"
       ],
@@ -6513,6 +6524,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Dacă timpul de pe TV a expirat, apăsa'i pe «Împrospătare» pe TV și introduceți din nou codul."
       ],
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
@@ -13597,9 +13611,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
-      ],
-      "Limited time": [
-        "Timp limitat"
       ],
       "Link label (optional)": [
         "Etichetă legătură web (opțional)"
@@ -25115,9 +25126,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Oferta ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a expirat"
       ],
       "Are you sure you want to delete the phone number?": [
         "Ștergeți acest număr de telefon?"

@@ -13470,9 +13470,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
       ],
-      "Limited time": [
-        "Sınırlı süreli"
-      ],
       "Link label (optional)": [
         "Bağlantı etiketi (isteğe bağlı)"
       ],
@@ -17192,6 +17189,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Şimdi satın al"
+      ],
       "Contact us": [
         "Bizimle görüşün"
       ],
@@ -17286,6 +17286,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } Chrome Web Store üzerinde bir tarayıcı eklentisi olarak bulunabilir."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ priceString } karşılığında ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } aylık"
@@ -24821,9 +24824,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } teklifi sona erdi"
       ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"

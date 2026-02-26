@@ -3212,6 +3212,13 @@
       "Starting today": [
         "Vanaf vandaag"
       ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
+      ],
       "Total": [
         "Totaal"
       ],
@@ -6363,6 +6370,9 @@
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Code is onjuist of niet meer geldig"
+      ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
@@ -6472,6 +6482,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Als de tijd op uw TV is verlopen, klik dan op Vernieuwen op uw TV en probeer het opnieuw."
       ],
       "IMAP server is required": [
         "IMAP-server is vereist"
@@ -13457,9 +13470,6 @@
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
       ],
-      "Limited time": [
-        "Beperkte tijd"
-      ],
       "Link label (optional)": [
         "Link label (optioneel)"
       ],
@@ -17179,6 +17189,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Koop nu"
+      ],
       "Contact us": [
         "Contacteer ons"
       ],
@@ -17273,6 +17286,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } is beschikbaar als browserextensie in de Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } voor ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per maand"
@@ -24808,9 +24824,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Het aanbod voor ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is beëindigd"
       ],
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"

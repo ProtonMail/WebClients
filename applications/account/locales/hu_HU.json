@@ -4309,6 +4309,11 @@
         "Próbálja meg ismét megnyitni a hivatkozást."
       ]
     },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Műveletek"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "You can safely close this tab.": [
         "Most már nyugodtan bezárhatja ezt az ablakot."
@@ -7275,7 +7280,7 @@
         "Fedezze fel a ${ planTitle } csomaggal elérhetővé vált új funkciókat, és használja őket azonnal!"
       ],
       "Discover ProtectBuy logo": [
-        "Discover ProtectBuy logo"
+        "Fedezze fel a ProtectBuy-t logó"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "A DKIM lehetővé teszi, hogy a ${ BRAND_NAME } digitálisan aláírja az e-mailjeit és megakadályozza, hogy esetleges támadók manipulálják az üzeneteket. Vegye fel a következő CNAME rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta)."
@@ -10343,9 +10348,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
-      ],
-      "Limited time": [
-        "Korlátozott ideig"
       ],
       "Logo": [
         "Logó"
@@ -18086,6 +18088,9 @@
       ],
       "Passwords made easy": [
         "Jelszavak egyszerűen"
+      ],
+      "Pause list": [
+        "Kizárt címek listája"
       ],
       "Pay invoice": [
         "Számla kifizetése"

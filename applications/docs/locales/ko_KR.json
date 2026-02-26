@@ -919,6 +919,9 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } 이용 권한"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스 ${ seats } 개"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
@@ -1114,6 +1117,9 @@
       ],
       "Access 15,000+ servers in 120+ countries": [
         "120개 이상 국가 내의 15,000개 이상 서버에 접근"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
@@ -8201,6 +8207,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours }시간 동안 비밀번호를 재설정할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes }분 동안 비밀번호를 재샐정 할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds }초 동안 비밀번호를 재설정할 수 있습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -8324,6 +8339,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName }님이 공유함"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "새로운 스트레드시트"
       ]
     },
     "Signing preference for emails": {

@@ -2120,6 +2120,13 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
+      ],
       "Total": [
         "Totaal"
       ],
@@ -4000,6 +4007,9 @@
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Code is onjuist of niet meer geldig"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Kan facturen niet laden. Probeer het later nog een keer."
       ],
@@ -4070,6 +4080,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Als de tijd op uw TV is verlopen, klik dan op Vernieuwen op uw TV en probeer het opnieuw."
       ],
       "IMAP server is required": [
         "IMAP-server is vereist"

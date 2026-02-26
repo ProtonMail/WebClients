@@ -858,6 +858,13 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
+      ],
       "Total": [
         "Insgesamt"
       ],
@@ -1550,9 +1557,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevante Dateien werden automatisch basierend auf deinen Fragen abgerufen."
       ],
-      "Remove": [
-        "Entfernen"
-      ],
       "Remove file": [
         "Datei entfernen"
       ],
@@ -1576,9 +1580,6 @@
       ],
       "Secure connection (encrypted)": [
         "Sichere Verbindung (verschlüsselt)"
-      ],
-      "selected": [
-        "ausgewählt"
       ],
       "Show all files": [
         "Alle Dateien anzeigen"
@@ -2284,9 +2285,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "Datenbankverbindung verloren. Bitte lade die Seite neu, um fortzufahren."
       ],
-      "Error processing file: ${ file.name }": [
-        "Fehler beim Verarbeiten der Datei: ${ file.name }"
-      ],
       "Error uploading file: ${ file.name }": [
         "Fehler beim Hochladen der Datei: ${ file.name }"
       ],
@@ -2437,8 +2435,8 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Dieses Projekt hat bereits Dateien. Bitte entferne alle Dateien, bevor du einen Drive-Ordner verknüpfst."
       ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Das wird alle ${ files.length } Dateien aus diesem Projekt entfernen. Dies kann nicht rückgängig gemacht werden."
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Das wird alle ${ fileCount } Dateien aus diesem Projekt entfernen. Dies kann nicht rückgängig gemacht werden."
       ],
       "Tips on how to write useful instructions": [
         "Tipps, wie man nützliche Anweisungen schreibt"
@@ -6412,6 +6410,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -6433,6 +6437,18 @@
       "Got it": [
         "Verstanden"
       ],
+      "Including ${ rate }% tax": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -6450,6 +6466,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Tax ${ rate }%": [
+        "Steuer ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Steuern ${ rate } %"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"

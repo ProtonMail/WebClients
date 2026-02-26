@@ -696,11 +696,17 @@
       "Reset": [
         "Restablecer"
       ],
+      "Standard colors": [
+        "Colores estándar"
+      ],
       "Theme colors": [
         "Colores del tema"
       ]
     },
     "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Añadir nuevo"
+      ],
       "Named ranges": [
         "Rangos con nombre"
       ],
@@ -717,6 +723,9 @@
       ],
       "Duplicate": [
         "Duplicar"
+      ],
+      "Hide sheet": [
+        "Ocultar hoja"
       ],
       "Move left": [
         "Mover a la izquierda"
@@ -814,11 +823,20 @@
       "Define named range": [
         "Definir intervalo con nombre"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete cells and shift cells up": [
+        "Eliminar celdas y desplazar celdas hacia arriba"
+      ],
       "Delete column": [
         "Eliminar columna"
       ],
       "Delete row": [
         "Eliminar fila"
+      ],
+      "Delete table column": [
+        "Eliminar columna de la tabla"
       ],
       "Delete table row": [
         "Eliminar fila de la tabla"
@@ -828,6 +846,9 @@
       ],
       "Formatting only": [
         "Solo formato"
+      ],
+      "Formula only": [
+        "Solo fórmulas"
       ],
       "Freeze up to column": [
         "Inmovilizar hasta la columna"
@@ -843,6 +864,9 @@
       ],
       "Insert cells and shift cells down": [
         "Insertar celdas y desplazar hacia abajo"
+      ],
+      "Insert cells and shift cells right": [
+        "Insertar celdas y desplazar a la derecha"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -916,9 +940,15 @@
       ],
       "left": [
         "izquierda"
+      ],
+      "right": [
+        "derecha"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "¿Seguro que quieres eliminar ${ sheetName }?"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -954,6 +984,12 @@
       ],
       "Merge horizontally": [
         "Combinar horizontalmente"
+      ],
+      "Merge vertically": [
+        "Fusionar verticalmente"
+      ],
+      "Unmerge": [
+        "Separar"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar data menu": {
@@ -962,6 +998,9 @@
       ],
       "Data validation": [
         "Validación de datos"
+      ],
+      "Protect range": [
+        "Proteger rango"
       ],
       "Remove filter": [
         "Eliminar filtro"
@@ -1044,6 +1083,9 @@
       "Microsoft Excel (.xlsx)": [
         "Microsoft Excel (.xlsx)"
       ],
+      "Move to folder": [
+        "Mover a una carpeta"
+      ],
       "Move to trash": [
         "Mover a la papelera"
       ],
@@ -1072,6 +1114,12 @@
     "sheets_2025:Spreadsheet editor menubar format menu": {
       "Alignment": [
         "Alineación"
+      ],
+      "Bold": [
+        "Negrita"
+      ],
+      "Cell styles": [
+        "Estilos de celda"
       ],
       "Clear": [
         "Borrar"
@@ -1160,6 +1208,12 @@
       "Insert cells and shift down": [
         "Insertar celdas y desplazar hacia abajo"
       ],
+      "Insert cells and shift right": [
+        "Insertar celdas y desplazar a la derecha"
+      ],
+      "Link": [
+        "Enlace"
+      ],
       "Note": [
         "Nota"
       ],
@@ -1213,6 +1267,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Barra de fórmulas"
+      ],
       "Freeze": [
         "Inmovilizar"
       ],
@@ -1258,6 +1315,9 @@
       "Custom number format": [
         "Formato de número personalizado"
       ],
+      "Date time": [
+        "Fecha y hora"
+      ],
       "Duration": [
         "Duración"
       ],
@@ -1299,6 +1359,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Go to next": [
+        "Ir al siguiente"
+      ],
       "Go to previous": [
         "Ir al anterior"
       ]
@@ -1312,6 +1375,9 @@
       ],
       "Locale": [
         "Configuración regional"
+      ],
+      "Save and reload": [
+        "Guardar y volver a cargar"
       ],
       "Settings for this spreadsheet": [
         "Ajustes de esta hoja de cálculo"
@@ -1443,6 +1509,9 @@
       "Filter by value": [
         "Filtrar por valor"
       ],
+      "Insert 1 table column left": [
+        "Insertar 1 columna a la izquierda"
+      ],
       "Insert 1 table column right": [
         "Insertar 1 columna a la derecha"
       ],
@@ -1550,14 +1619,23 @@
       "Font size": [
         "Tamaño de fuente"
       ],
+      "Format cells": [
+        "Formato de celdas"
+      ],
       "General": [
         "General"
+      ],
+      "Horizontal Alignment": [
+        "Alineación horizontal"
       ],
       "Indent": [
         "Sangría"
       ],
       "Italic": [
         "Cursiva"
+      ],
+      "Merge": [
+        "Combinar"
       ],
       "Merge all": [
         "Combinar todo"
@@ -1582,6 +1660,9 @@
       ],
       "Strikethrough": [
         "Tachado"
+      ],
+      "Text control": [
+        "Ajuste de texto"
       ],
       "Thousands separator": [
         "Separador de miles"
@@ -1624,6 +1705,9 @@
       "Enter title": [
         "Introducir el título"
       ],
+      "Horizontal (category) axis labels": [
+        "Etiquetas del eje horizontal (de categorías)"
+      ],
       "Horizontal axis title": [
         "Título del eje horizontal"
       ],
@@ -1638,6 +1722,9 @@
       ],
       "Select a range": [
         "Seleccionar un rango"
+      ],
+      "Series": [
+        "Serie"
       ],
       "Show data in hidden rows and columns": [
         "Mostrar datos en filas y columnas ocultas"
@@ -1682,6 +1769,9 @@
       ],
       "Format rules": [
         "Reglas de formato"
+      ],
+      "Format style": [
+        "Estilo de formato"
       ],
       "Max point": [
         "Punto máximo"
@@ -1729,6 +1819,9 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another range": [
+        "Agregar otro rango"
+      ],
       "Add named range": [
         "Añadir intervalo con nombre"
       ],
@@ -1786,6 +1879,12 @@
       ],
       "Enter text or formula": [
         "Introducir texto o fórmula"
+      ],
+      "Named Ranges": [
+        "Rangos con nombre"
+      ],
+      "Save": [
+        "Guardar"
       ],
       "Text or formula": [
         "Texto o fórmula"
