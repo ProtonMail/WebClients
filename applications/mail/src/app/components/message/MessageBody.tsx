@@ -15,6 +15,7 @@ import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPl
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
 import { useMailboxContainerContext } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
+import { isMessageContentEmpty } from 'proton-mail/helpers/message/messageContent';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -79,6 +80,8 @@ const MessageBody = ({
         [message.messageDocument?.document?.innerHTML, message.messageDocument?.plainText, plain]
     );
 
+    const isContentEmpty = useMemo(() => isMessageContentEmpty(content, plain), [content, plain]);
+
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
@@ -87,8 +90,8 @@ const MessageBody = ({
     const contentModeShow = contentMode && isIframeContentSet;
     const placeholderMode = (loadingMode || decryptingMode || !contentModeShow) && !sourceMode;
     const isBlockquote = blockquote !== '';
-    const showButton = !forceBlockquote && isBlockquote;
-    const showBlockquote = forceBlockquote || originalMessageMode;
+    const showButton = !forceBlockquote && isBlockquote && !isContentEmpty;
+    const showBlockquote = forceBlockquote || originalMessageMode || isContentEmpty;
     const highlightedContent = useMemo(
         () => (!!content && highlightBody ? highlightString(content, true) : content),
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E4F9FB
