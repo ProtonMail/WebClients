@@ -73,10 +73,6 @@ export const initializeEncryptedSearch = async ({
     let generatedIndexKey: GeneratedIndexKey;
     try {
         esDB = await openESDB(userID);
-        if (!esDB) {
-            return { indexKey: undefined, esDB: undefined };
-        }
-
         generatedIndexKey = await generateIndexKey();
     } catch (error: any) {
         // In case IndexedDB cannot be initialised, or something is wrong with the index key,
