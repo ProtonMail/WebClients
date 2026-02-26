@@ -6,7 +6,9 @@ import type { IconName, IconSize } from '@proton/icons/types';
 import type { COUPON_CODES, CYCLE, Currency, PlanIDs } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly';
+import type { SpringSale2026OfferId } from './operations/springSale2026offers';
+
+export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | SpringSale2026OfferId;
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
