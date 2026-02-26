@@ -1,0 +1,42 @@
+.springSaleHeader {
+	font-size: 4.5rem;
+	color: #372580;
+	line-height: 1;
+	letter-spacing: -3%;
+}
+
+.springSaleButterfly {
+	block-size: 7rem;
+	transform: scaleX(-1);
+}
+
+.springSaleFeatures {
+	padding: 0;
+	list-style-type: none;
+	color: #372580;
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	li:not(:last-child) {
+		border-block-end: 1px solid rgb(55 37 128 / 0.28);
+	}
+}
+
+.springSalePrice {
+	font-size: 3rem;
+	line-height: 1;
+}
+
+.springSaleDiscount {
+	display: inline-block;
+	background-color: #ff4c81;
+	color: white;
+}
+
+.springSaleText {
+	color: #372580;
+}

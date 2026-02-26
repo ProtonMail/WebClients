@@ -1,7 +1,6 @@
 import type { Subscription } from '@proton/payments';
 import {
     CYCLE,
-    getHas2025OfferCoupon,
     getIsVariableCycleOffer,
     hasBundle,
     hasDeprecatedVPN,
@@ -13,6 +12,7 @@ import {
     hasMail,
     hasPass,
     hasPassFamily,
+    hasSpringSale2026Coupon,
     hasVPN2024,
     hasVPNPassBundle,
     isManagedExternally,
@@ -172,15 +172,11 @@ class OfferSubscription {
         return hasBundle(this.subscription);
     }
 
-    hasBF2025Coupon() {
+    usedSpringSale2026() {
         if (this.upcomingSubscription) {
-            return (
-                getHas2025OfferCoupon(this.upcomingSubscription.CouponCode) ||
-                getHas2025OfferCoupon(this.subscription.CouponCode)
-            );
+            return hasSpringSale2026Coupon(this.upcomingSubscription) || hasSpringSale2026Coupon(this.subscription);
         }
-
-        return getHas2025OfferCoupon(this.subscription.CouponCode);
+        return hasSpringSale2026Coupon(this.subscription);
     }
 }
 

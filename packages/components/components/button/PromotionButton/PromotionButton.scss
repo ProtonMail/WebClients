@@ -67,6 +67,21 @@
 		}
 	}
 
+	&--pink {
+		// used for some promotions
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: #ff4c81;
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
+	}
+
 	&--pinkblue {
 		// used for some promotions
 		&#{&} {
