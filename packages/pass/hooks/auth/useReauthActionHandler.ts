@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { useStablePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
@@ -28,7 +28,7 @@ export const useReauthActionHandler = (store: Store<State>) => {
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
     const dispatch = asyncRequestDispatcherFactory(store.dispatch);
-    const passwordTypeSwitch = usePasswordTypeSwitch();
+    const passwordTypeSwitch = useStablePasswordTypeSwitch(store);
 
     return useCallback(async (reauth: ReauthActionPayload) => {
         switch (reauth.type) {
