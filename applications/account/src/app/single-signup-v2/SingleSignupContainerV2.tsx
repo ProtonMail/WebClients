@@ -82,6 +82,7 @@ import type {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
+import { SignupHVMode } from '../signup/interfaces';
 import { getPlanIDsFromParamsWithForcedAddons } from '../signup/searchParams';
 import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
@@ -1462,7 +1463,7 @@ const SingleSignupContainerV2 = ({
                                         invite: signupParameters.invite,
                                         cache: tmpCache,
                                         api: silentApi,
-                                        mode: 'cro',
+                                        mode: SignupHVMode.CRO,
                                     });
                                     const setupCache = await handleSetupNewUser(userCreationResult.cache);
                                     const cacheWithOriginalSubscription = {
@@ -1489,8 +1490,8 @@ const SingleSignupContainerV2 = ({
                                             product === APPS.PROTONPASS ||
                                             product === APPS.PROTONDRIVE ||
                                             product === APPS.PROTONLUMO
-                                                ? 'ov'
-                                                : 'cro',
+                                                ? SignupHVMode.OV
+                                                : SignupHVMode.CRO,
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,
