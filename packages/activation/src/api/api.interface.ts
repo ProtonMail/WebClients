@@ -253,6 +253,19 @@ export interface CreateSignupOAuthTokenResponse {
     };
 }
 
+export enum ProductStatusState {
+    Initialized = 0,
+    Active = 1,
+    Completed = 2,
+    Error = 3,
+}
+
+export type ProductStatus = {
+    Product: ApiImporterProduct;
+    State: ProductStatusState;
+    Error: string;
+};
+
 export interface ApiImporterOrganizationUser {
     ID: string;
     Email: string;
@@ -267,6 +280,10 @@ export interface ApiImporterOrganizationUser {
     UsedQuota: number;
     ProductQuotas: {
         Mail: number;
+    };
+    ImporterOrganizationUser?: {
+        UserID: string;
+        ProductStatuses: ProductStatus[];
     };
 }
 
