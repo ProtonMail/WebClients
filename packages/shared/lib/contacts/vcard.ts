@@ -215,8 +215,11 @@ const getParameters = (type: string, property: any) => {
         ...parameters,
     };
 
+    // Here, "type" refers to the vCard value type (e.g. "text", "uri", "date"),
+    // not the TYPE parameter (e.g. "home", "work", "cell").
+    // If the imported value type is different from the property's default, we need to update it
     if (!isDefaultType) {
-        result.type = type;
+        result.value = type;
     }
 
     return result;
