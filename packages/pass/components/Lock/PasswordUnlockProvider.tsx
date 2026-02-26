@@ -1,15 +1,19 @@
 import { type FC, type PropsWithChildren, createContext, useCallback, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
+import type { Store } from 'redux';
 import { c } from 'ttag';
 
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ReauthModal } from '@proton/pass/components/Lock/ReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import type { PasswordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
-import { selectExtraPasswordEnabled, selectHasTwoPasswordMode, selectIsSSO } from '@proton/pass/store/selectors';
+import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { PasswordModalState } from './PasswordModal';
@@ -27,18 +31,26 @@ export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
  * NOTE: Requires unlocked session and hydrated app state */
 export const usePasswordTypeSwitch = () => {
     const authStore = useAuthStore();
-    const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
-    const twoPwd = useSelector(selectHasTwoPasswordMode) && hasOfflinePassword;
-    const sso = useSelector(selectIsSSO) && hasOfflinePassword;
-    const extra = useSelector(selectExtraPasswordEnabled);
+    const config = useMemoSelector(selectPasswordTypeConfig, [authStore]);
+    return useCallback(passwordTypeSwitch(config), [config]);
+};
 
-    return useCallback(passwordTypeSwitch({ extra, sso, twoPwd }), [extra, sso, twoPwd]);
+/** Stable callback variant that reads state lazily from the store.
+ * Use when outside `<ReduxProvider>` but with a store reference. */
+export const useStablePasswordTypeSwitch = (store: Store<State>) => {
+    const authStore = useAuthStore();
+
+    return useCallback(<T,>(values: PasswordTypeSwitch<T>) => {
+        const state = store.getState();
+        const config = selectPasswordTypeConfig(authStore)(state);
+        return passwordTypeSwitch(config)(values);
+    }, []);
 };
 
 /** Returns a password type switch function for use before app boot and state
  * hydration. Use this to derive i18n strings when the session is password-locked
  * and hydrated state is unavailable. Assumes offline password checks have already
- * been performed—SSO or two-password users should never reach a password-lock
+ * been performed: SSO or two-password users should never reach a password-lock
  * screen without a valid offline config/verifier.
  * NOTE: Only for pre-boot password-lock screens */
 export const useAuthStorePasswordTypeSwitch = () => {
