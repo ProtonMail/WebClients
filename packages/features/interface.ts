@@ -137,4 +137,29 @@ export enum FeatureCode {
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
     NPSFeedbackWebCalendar = 'NPSFeedbackWebCalendar',
     NPSFeedbackWebMail = 'NPSFeedbackWebMail',
+
+    // Spring sale 2026
+    // Mail
+    OfferMar26MailPlus = `OfferMar26MailPlus`,
+    OfferMar26MailPlusToYearly = `OfferMar26MailPlusToYearly`,
+    OfferMar26MailPlusRetention = `OfferMar26MailPlusRetention`,
+    // VPN
+    OfferMar26VpnPlus = `OfferMar26VpnPlus`,
+    OfferMar26VpnPlusToYearly = `OfferMar26VpnPlusToYearly`,
+    OfferMar26VpnPlusRetention = `OfferMar26VpnPlusRetention`,
+    // Drive
+    OfferMar26DrivePlus = `OfferMar26DrivePlus`,
+    OfferMar26DrivePlusRetention = `OfferMar26DrivePlusRetention`,
+    // Pass
+    OfferMar26PassPlus = `OfferMar26PassPlus`,
+    OfferMar26PassPlusRetention = `OfferMar26PassPlusRetention`,
+    // Unlimited
+    OfferMar26UnlimitedFromVpnPlus = `OfferMar26UnlimitedFromVpnPlus`,
+    OfferMar26UnlimitedFromMailPlus = `OfferMar26UnlimitedFromMailPlus`,
+    OfferMar26UnlimitedFromDrivePlus = `OfferMar26UnlimitedFromDrivePlus`,
+    OfferMar26UnlimitedFromPassPlus = `OfferMar26UnlimitedFromPassPlus`,
+    OfferMar26UnlimitedRetention = `OfferMar26UnlimitedRetention`,
+    // Multi-user
+    OfferMar26Duo = `OfferMar26Duo`,
+    OfferMar26Family = `OfferMar26Family`,
 }
