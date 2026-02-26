@@ -920,6 +920,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
+      ],
+      "Servers": [
+        "Palvelimet"
+      ],
+      "Users": [
+        "Käyttäjät"
       ]
     },
     "Alert": {
@@ -1065,6 +1074,14 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 Tt tallennustilaa"
+      ],
+      "3 TB data storage": [
+        "3 Tt tallennustilaa"
       ]
     },
     "Browser": {
@@ -1269,7 +1286,7 @@
         "Loputtomasti suosikkeja nopean pääsyn takaamiseksi"
       ],
       "Upload and query multiple large files": [
-        "Lataa ja laita jonoon useita suuria tiedostoja"
+        "Lähetä ja laita jonoon useita suuria tiedostoja"
       ],
       "Upload and query small files": [
         "Lähetä ja laita jonoon pieniä tiedostoja"
@@ -4722,6 +4739,9 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Julkiset dokumentit eivät ole vielä käytössä organisaatiollasi."
+      ],
+      "Read-only": [
+        "Vain luku"
       ],
       "Recents": [
         "Viimeisimmät"
@@ -8188,6 +8208,24 @@
         "Jakanut ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "Uusi laskentataulukko"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Destination": [
+        "Kohde"
+      ],
+      "Format": [
+        "Muoto"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Tuo tiedot"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Älä allekirjoita"
@@ -9247,6 +9285,9 @@
       ],
       "Re-signing contacts": [
         "Yhteystietojen allekirjoitus uudelleen"
+      ],
+      "Read-only": [
+        "Vain luku"
       ],
       "Recommended actions": [
         "Suositellut toimenpiteet"

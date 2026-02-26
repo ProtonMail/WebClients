@@ -2101,6 +2101,12 @@
       "${ users } user": [
         "用户 ${ users }"
       ],
+      "Subtotal": [
+        "小计"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "小计 ${ cycle } 个月"
+      ],
       "Total": [
         "总计"
       ],
@@ -3975,6 +3981,9 @@
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
+      "Code is incorrect or not valid anymore": [
+        "验证码错误或失效"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "账单加载失败，请稍后再试。"
       ],
@@ -4043,6 +4052,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "如果电视上的时间过期了，点击电视上的“刷新”，重新输入一次代码。"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "如果您的电视时间已过期，请点击电视上的刷新并重试。"
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
@@ -16420,6 +16432,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "从您的 ${ planTitle } 订阅中获得更多信息。"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "使用 ${ maxDriveSpace } 云存储空间，保护您的文件、照片和文档安全"
       ],
       "Set secure passwords without the hassle.": [
         "轻松设置安全密码"

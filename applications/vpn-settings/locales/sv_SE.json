@@ -2114,6 +2114,9 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Subtotal": [
+        "Delsumma"
+      ],
       "Subtotal for ${ cycle } month": [
         "Delsumma för ${ cycle } månad",
         "Delsumma för ${ cycle } månader"
@@ -3988,6 +3991,9 @@
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "Kod är fel eller inte giltig längre"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."

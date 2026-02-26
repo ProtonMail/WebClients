@@ -3212,6 +3212,13 @@
       "Starting today": [
         "Heute beginnend"
       ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
+      ],
       "Total": [
         "Insgesamt"
       ],
@@ -4576,6 +4583,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Mehr aus deinem ${ planTitle }-Abonnement herausholen"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Deine Dateien, Fotos und Dokumente sicher mit ${ maxDriveSpace } Cloud-Speicher aufbewahren."
       ],
       "Set secure passwords without the hassle.": [
         "Sichere Passwörter ohne Probleme festlegen"
@@ -6360,6 +6370,9 @@
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
+      "Code is incorrect or not valid anymore": [
+        "Code ist falsch oder nicht mehr gültig"
+      ],
       "Condition incomplete": [
         "Bedingung unvollständig"
       ],
@@ -6469,6 +6482,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Wenn die Zeit auf deinem Fernseher abgelaufen ist, klicke auf „Aktualisieren“ auf deinem Fernseher und versuche es erneut."
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
@@ -13454,9 +13470,6 @@
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
       ],
-      "Limited time": [
-        "Beschränkte Zeit"
-      ],
       "Link label (optional)": [
         "Link-Beschreibung (optional)"
       ],
@@ -17172,6 +17185,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Jetzt kaufen"
+      ],
       "Contact us": [
         "Kontaktiere uns"
       ],
@@ -17266,6 +17282,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } ist als Browser-Erweiterung im Chrome Web Store verfügbar."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } für ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pro Monat"
@@ -17691,6 +17710,12 @@
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -17714,6 +17739,18 @@
       ],
       "Got it": [
         "Verstanden"
+      ],
+      "Including ${ rate }% tax": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -17747,6 +17784,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Tax ${ rate }%": [
+        "Steuer ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Steuern ${ rate } %"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
@@ -24536,6 +24579,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "Hole mehr aus deinem ${ planTitle }-Abonnement heraus"
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Deine Dateien, Fotos und Dokumente sicher mit ${ maxDriveSpace } Cloud-Speicher aufbewahren."
+      ],
       "Set secure passwords without the hassle.": [
         "Sichere Passwörter ohne Probleme festlegen"
       ],
@@ -24766,9 +24812,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "Das Angebot \"${ PLAN_NAMES[PLANS.PASS_LIFETIME] }\" ist abgelaufen"
       ],
       "Are you sure you want to delete the phone number?": [
         "Möchtest du die Telefonnummer wirklich löschen?"

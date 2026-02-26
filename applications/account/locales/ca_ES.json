@@ -5859,7 +5859,7 @@
     },
     "email_forwarding_2023: Warning": {
       "Warning": [
-        "Advertència"
+        "Avís"
       ]
     },
     "emergency_access": {
@@ -13470,9 +13470,6 @@
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
       ],
-      "Limited time": [
-        "Oferta per temps limitat"
-      ],
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
       ],
@@ -17192,6 +17189,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Compreu-ho ara"
+      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -17286,6 +17286,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } està disponible com a extensió del navegador a la Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mes"
@@ -24824,9 +24827,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "L'oferta de ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ha finalitzat"
       ],
       "Are you sure you want to delete the phone number?": [
         "Confirmes que vols eliminar el número de telèfon?"

@@ -2139,6 +2139,14 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal pentru ${ cycle } lună",
+        "Subtotal pentru ${ cycle } luni",
+        "Subtotal pentru ${ cycle } de luni"
+      ],
       "Total": [
         "Total"
       ],
@@ -4025,6 +4033,9 @@
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
+      "Code is incorrect or not valid anymore": [
+        "Codul nu este corect sau nu mai este valid."
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Nu s-au putut încărca facturile. Reîncercați mai târziu."
       ],
@@ -4097,6 +4108,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
+        "Dacă timpul de pe TV a expirat, apăsa'i pe «Împrospătare» pe TV și introduceți din nou codul."
       ],
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"

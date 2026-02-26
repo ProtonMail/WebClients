@@ -105,7 +105,7 @@
         "Supprimer toutes les conversations ?"
       ],
       "Delete conversation?": [
-        "Supprimer la conversation?"
+        "Supprimer la conversation ?"
       ],
       "Dismiss": [
         "Annuler"
@@ -598,6 +598,11 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1546,9 +1551,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "Les fichiers pertinents seront récupérés automatiquement en fonction de votre question."
       ],
-      "Remove": [
-        "Supprimer"
-      ],
       "Remove file": [
         "Supprimer le fichier"
       ],
@@ -1572,9 +1574,6 @@
       ],
       "Secure connection (encrypted)": [
         "Connexion sécurisée (chiffrée)"
-      ],
-      "selected": [
-        "sélectionnés"
       ],
       "Show all files": [
         "Afficher tous les fichiers"
@@ -2280,9 +2279,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "La connexion à la base de données a été perdue. Veuillez actualiser la page pour continuer."
       ],
-      "Error processing file: ${ file.name }": [
-        "Une erreur s'est produite lors du traitement du fichier ${ file.name }."
-      ],
       "Error uploading file: ${ file.name }": [
         "Une erreur s'est produite lors du téléversement du fichier ${ file.name }."
       ],
@@ -2433,8 +2429,8 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Ce projet contient déjà des fichiers. Veuillez retirer tous les fichiers avant d'associer un dossier Drive."
       ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Ceci retirera tous les ${ files.length } fichiers de ce projet. Cette action est irréversible."
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Ceci retirera tous les ${ fileCount } fichiers de ce projet. Cette action ne peut être annulée."
       ],
       "Tips on how to write useful instructions": [
         "Conseils sur la manière de rédiger des instructions utiles"

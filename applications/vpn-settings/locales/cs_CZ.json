@@ -1208,6 +1208,9 @@
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licence"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencí"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1250,11 +1253,20 @@
         "${ users } uživatelů",
         "${ users } uživatelů"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
       "Domains": [
         "Domény"
       ],
+      "Servers": [
+        "Servery"
+      ],
       "Users": [
         "Uživatelé"
+      ],
+      "Writing assistant": [
+        "Asistent psaní"
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
@@ -1670,6 +1682,18 @@
       "2 TB data storage": [
         "2 TB úložiště dat"
       ],
+      "3 TB data storage": [
+        "3 TB úložiště dat"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15000+ serverům v 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokování reklam, sledovacích prvků a malware"
       ],
@@ -1678,6 +1702,21 @@
       ],
       "Connect 10 devices at once": [
         "Připojte až 10 zařízení současně"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
       ]
     },
     "BF2025: Tooltip": {
@@ -1723,6 +1762,9 @@
       ],
       "Lifetime": [
         "Doživotní"
+      ],
+      "Lifetime access": [
+        "Doživotní přístup"
       ],
       "Monthly": [
         "Měsíčně"
@@ -1886,6 +1928,9 @@
       ],
       "Sign in to Google Workspace": [
         "Přihlaste se do Google Workspace"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Pro migraci dat vaší organizace musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po instalaci se sem vraťte a pokračujte. Více informací"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -2112,6 +2157,15 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Mezisoučet za ${ cycle } měsíc",
+        "Mezisoučet za ${ cycle } měsíce",
+        "Mezisoučet za ${ cycle } měsíců",
+        "Mezisoučet za ${ cycle } měsíců"
       ],
       "Total": [
         "Celkem"
@@ -8495,6 +8549,12 @@
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaše další platba je ${ renewalTime }. Můžete kdykoli zrušit."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Datum vaší další fakturace je ${ renewalTime }. Můžete kdykoli zrušit. Pokud potřebujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
       ],
@@ -12143,6 +12203,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez daně)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Částka k úhradě po zkušební verzi ${ formattedDate }"
       ],
@@ -12167,6 +12236,18 @@
       "Got it": [
         "Rozumím"
       ],
+      "Including ${ rate }% tax": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "00/00"
       ],
@@ -12190,6 +12271,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Daň ${ rate }%"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -12356,6 +12443,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13399,6 +13489,24 @@
         "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -13652,6 +13760,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otevřít v ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Otevřít v ${ appName } (Beta)"
       ]
     },
     "Signup": {
@@ -13888,6 +13999,9 @@
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Získejte neomezený počet aliasů pro ochranu své identity a snížení spamu"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech"
       ],
       "Protect your account from threats with Sentinel": [
         "Chraňte svůj účet před hrozbami pomocí programu Sentinel"
@@ -14873,6 +14987,9 @@
       ],
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
+      ],
+      "Billing information updated": [
+        "Informace o fakturaci aktualizovány"
       ],
       "Canceling import": [
         "Ruším import"

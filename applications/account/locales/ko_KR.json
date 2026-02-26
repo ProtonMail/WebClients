@@ -1750,6 +1750,9 @@
       "${ quantity } custom domain": [
         "사용자 지정 도메인 ${ quantity }개"
       ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스 ${ seats } 개"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
@@ -2292,6 +2295,9 @@
       "Access 15,000+ servers in 120+ countries": [
         "120개 이상 국가 내의 15,000개 이상 서버에 접근"
       ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
@@ -2334,6 +2340,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "${ n } year": [
+        "${ n }년"
+      ],
       "1 month": [
         "1개월"
       ],
@@ -3126,11 +3138,23 @@
       ]
     },
     "Checkout row": {
+      "${ n } day": [
+        "${ n }일"
+      ],
+      "${ n } month": [
+        "${ n }개월"
+      ],
       "${ users } user": [
         "${ users }명 사용자"
       ],
       "Starting today": [
         "오늘부터 시작"
+      ],
+      "Subtotal": [
+        "부분합계"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle }개월간 합계"
       ],
       "Total": [
         "합계"
@@ -4490,6 +4514,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "${ planTitle } 구독에 대해 더 알아보기"
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "${ maxDriveSpace } 클라우드 저장공간에 파일, 사진, 문서를 안전하게 보관하세요."
+      ],
       "Set secure passwords without the hassle.": [
         "번거로움 없이 안전한 비밀번호를 설정해 보세요."
       ],
@@ -5772,6 +5799,9 @@
       "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
         "**${ contact }**님이 복구 연락처로 지정되었습니다. 비밀번호 재설정을 진행하는 경우 해당 연락처를 통해 데이터 복구가 가능합니다."
       ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**만약 도움을 요청한 사실이 없다면**, 다른 누군가가 해당 계정에 접근하려는 중일 수 있습니다. 그런 경우 이 요청을 무시하세요."
+      ],
       "Access granted": [
         "엑세스 승인됨."
       ],
@@ -5859,8 +5889,14 @@
       "Emergency contact removed": [
         "비상 연락처 삭제됨"
       ],
+      "Enable": [
+        "활성화"
+      ],
       "Enable auto-renew": [
         "자동 갱신 활성화"
+      ],
+      "For ${ email }": [
+        "${ email }"
       ],
       "Give access now": [
         "즉시 접근 권한 부여"
@@ -5892,6 +5928,9 @@
       "People I trust": [
         "내가 신뢰하는 사용자"
       ],
+      "People who have you as a recovery contact": [
+        "나를 복구 연락처로 지정한 사람들"
+      ],
       "People who trust me": [
         "나를 신뢰하는 사용자"
       ],
@@ -5900,6 +5939,12 @@
       ],
       "Protect your legacy with emergency access": [
         "긴급 접근으로 회원님의 유산을 보호하세요"
+      ],
+      "Recovery contact enabled": [
+        "복구 연락처 활성화됨"
+      ],
+      "Recovery request sent": [
+        "복구 요청 전송됨"
       ],
       "Refuse access": [
         "접근 권한 거부"
@@ -5924,6 +5969,9 @@
       ],
       "Revoke access?": [
         "접근 권한을 회수합니까?"
+      ],
+      "Stop being recovery contact?": [
+        "복구 연락처를 그만 두시겠습니까?"
       ],
       "Stop being trusted contact?": [
         "신뢰할 수 있는 연락처에서 해제합니까?"
@@ -6014,6 +6062,9 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "비상 연락처 ${ name }이(가) 사용자의 계정으로 접근을 요청하고 있습니다."
+      ],
+      "Your recovery contacts": [
+        "복구 연락처"
       ]
     },
     "Empty group name": {
@@ -12999,9 +13050,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
       ],
-      "Limited time": [
-        "기간 한정"
-      ],
       "Link label (optional)": [
         "링크 라벨 (선택 사항)"
       ],
@@ -13485,6 +13533,9 @@
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
       ],
+      "today": [
+        "오늘"
+      ],
       "Token name": [
         "토큰 이름"
       ],
@@ -13792,6 +13843,9 @@
     "Link": {
       "Activity log": [
         "활동 로그"
+      ],
+      "activity monitor": [
+        "활동 모니터링"
       ],
       "Add a gift code": [
         "기프트 코드 추가"
@@ -14425,6 +14479,9 @@
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
         "모든 필터 작업은 ${ MAIL_APP_NAME } 계정의 모든 메시지에 적용됩니다. 자동 회신 이메일은 전송되지 않습니다."
+      ],
+      "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
+        "사용자 지정 도메인(예를 들면, yourcompany.com)을 연결해 외부인들을 위한 이메일 주소를 만들고, 사업체, 학교 혹은 단체의 ${ MAIL_APP_NAME }을 관리하세요."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 드립니다."
@@ -16647,6 +16704,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "지금 구매"
+      ],
       "Contact us": [
         "문의하기"
       ],
@@ -17212,6 +17272,9 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
+      ],
+      "Net amount": [
+        "순 금액"
       ],
       "Offer unavailable": [
         "제안을 사용할 수 없음"
@@ -18943,6 +19006,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours }시간 동안 비밀번호를 재설정할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes }분 동안 비밀번호를 재샐정 할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds }초 동안 비밀번호를 재설정할 수 있습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -19299,6 +19371,9 @@
       "${ maxAddresses } extra email address": [
         "${ maxAddresses }개 추가 이메일 주소"
       ],
+      "${ maxAddresses } extra email address for you": [
+        "${ maxAddresses } 개 추가 이메일 주소"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars }개 캘린더"
       ],
@@ -19454,6 +19529,9 @@
       ],
       "Password manager for all your devices": [
         "내 모든 기기에서 사용할 수 있는 비밀번호 관리자"
+      ],
+      "Pick a service to get started.": [
+        "시작하려면 서비스를 선택하세요."
       ],
       "Pick your perfect plan": [
         "회원님에게 딱 맞는 플랜을 선택하세요"
@@ -24074,9 +24152,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송할 것입니다."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 제안이 종료되었습니다"
       ],
       "Are you sure you want to delete the phone number?": [
         "정말로 전화번호를 삭제하시겠습니까?"

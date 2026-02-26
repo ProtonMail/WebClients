@@ -3207,6 +3207,10 @@
       "Subtotal": [
         "Subtotal"
       ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mês",
+        "Subtotal por ${ cycle } meses"
+      ],
       "Total": [
         "Total"
       ],
@@ -6315,6 +6319,9 @@
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
+      ],
+      "Code is incorrect or not valid anymore": [
+        "Código está incorreto ou não é mais válido"
       ],
       "Condition incomplete": [
         "Condição incompleta"
@@ -13407,9 +13414,6 @@
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
       ],
-      "Limited time": [
-        "Tempo limitado"
-      ],
       "Link label (optional)": [
         "Link do marcador (opcional)"
       ],
@@ -17128,6 +17132,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Comprar agora"
+      ],
       "Contact us": [
         "Fale conosco"
       ],
@@ -18188,6 +18195,9 @@
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Armazenamento em nuvem e compartilhamento de arquivos, protegido por criptografia de ponta a ponta."
+      ],
+      "Comprehensive privacy and security suite.": [
+        "Suíte completa de privacidade e segurança."
       ],
       "For next-level password management and identity protection.": [
         "Para um gerenciamento de senhas e proteção de identidade de nível superior."
@@ -24748,9 +24758,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } offer has ended": [
-        "A oferta do ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } terminou"
       ],
       "Are you sure you want to delete the phone number?": [
         "Você tem certeza que deseja excluir o número de telefone?"
