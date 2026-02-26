@@ -2,6 +2,7 @@ import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
+import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     coreEvent,
@@ -15,7 +16,14 @@ import { getGroup } from '@proton/pass/store/actions/creators/groups';
 import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import {
+    selectAllAddresses,
+    selectLatestEventId,
+    selectSyncStrategy,
+    selectUser,
+    selectUserPlan,
+    selectUserSettings,
+} from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, CoreEvent, MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
@@ -66,6 +74,9 @@ function* onCoreEvent(
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
+
+    const strategy: SyncStrategy = yield select(selectSyncStrategy);
+    const legacySync = strategy === SyncStrategy.LEGACY;
 
     const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
     const userId = getAuthStore().getUserID()!;
@@ -121,12 +132,17 @@ function* onCoreEvent(
      * · Feature flags
      * · Organization
      * These actions are throttled via `maxAge` metadata */
-    yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
-    yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
     yield put(getUserFeaturesIntent(userId));
-    yield put(getOrganizationSettings.intent());
-    yield put(getInAppNotifications.intent());
+
     if (EXTENSION_BUILD) yield put(getOrganizationPauseList.intent());
+
+    yield put(getOrganizationPauseList.intent());
+    yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
+
+    if (legacySync) {
+        yield put((planChanged ? withRevalidate : identity)(getUserAccessIntent(userId)));
+        yield put(getOrganizationSettings.intent());
+    }
 }
 
 export const createCoreChannel = (api: Api, eventID: string) =>
