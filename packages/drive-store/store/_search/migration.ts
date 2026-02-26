@@ -14,9 +14,18 @@ import { openDB } from 'idb';
 
 import type { PrivateKeyReference } from '@proton/crypto';
 import { ES_MAX_ITEMS_PER_BATCH, INDEXING_STATUS, defaultESProgress } from '@proton/encrypted-search/constants';
-import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search/esHelpers';
-import { getItem } from '@proton/shared/lib/helpers/storage';
+import { decryptIndexKey } from '@proton/encrypted-search/esHelpers';
+import { getItem, removeItem } from '@proton/shared/lib/helpers/storage';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+const removeESFlags = (userID: string) => {
+    Object.keys(window.localStorage).forEach((key) => {
+        const chunks = key.split(':');
+        if (chunks[0] === 'ES' && chunks[1] === userID) {
+            removeItem(key);
+        }
+    });
+};
 
 /**
  * Interface of the old progress blob as we used to store in local

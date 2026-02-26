@@ -40,7 +40,6 @@ import {
     initializeEncryptedSearch,
     insertMarks,
     refreshESCache,
-    removeESFlags,
     requestPersistence,
     retryAPICalls,
     retryContentIndexing,
@@ -193,9 +192,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
         resetCache();
-        // Note that currently no local storage blobs exist,
-        // however in a legacy version they did
-        removeESFlags(userID);
         setESStatus(() => ({
             ...defaultESStatus,
             isConfigFromESDBLoaded: true,

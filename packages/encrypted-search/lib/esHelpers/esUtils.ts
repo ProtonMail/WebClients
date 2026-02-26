@@ -1,22 +1,9 @@
 import { type ESCiphertext, type IndexKey, encryptItem } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { removeItem } from '@proton/shared/lib/helpers/storage';
 import type { AddressEvent } from '@proton/shared/lib/interfaces';
 
 import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
 import type { ESTimepoint, GetItemInfo } from '../models';
-
-/**
- * Remove all ES blobs in local storage related to a user
- */
-export const removeESFlags = (userID: string) => {
-    Object.keys(window.localStorage).forEach((key) => {
-        const chunks = key.split(':');
-        if (chunks[0] === 'ES' && chunks[1] === userID) {
-            removeItem(key);
-        }
-    });
-};
 
 /**
  * Remove milliseconds from numeric value of a date
