@@ -49,7 +49,6 @@ export const handleSubscribeUser = async (
     subscriptionData: SignupContextSubscriptionData,
     {
         productParam,
-        hasZipCodeValidation,
         build,
         telemetryContext,
         userCurrency,
@@ -58,7 +57,6 @@ export const handleSubscribeUser = async (
         onPaymentFailure,
     }: {
         productParam: ProductParam;
-        hasZipCodeValidation: boolean;
         build: APP_NAMES;
         telemetryContext: PaymentTelemetryContext;
         userCurrency: Currency | undefined;
@@ -99,7 +97,6 @@ export const handleSubscribeUser = async (
             {
                 product: productParam,
                 version: paymentsVersion,
-                hasZipCodeValidation,
                 build,
                 telemetryContext,
                 userCurrency,
@@ -166,7 +163,6 @@ export const handleSetupUser = async ({
     subscriptionData,
     productParam,
     keyTransparencyActivation,
-    hasZipCodeValidation,
     traceSignupSentryError,
     referralData,
     referralRegistrationPlan,
@@ -180,7 +176,6 @@ export const handleSetupUser = async ({
     subscriptionData: SignupContextSubscriptionData | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
-    hasZipCodeValidation: boolean;
     traceSignupSentryError: (error: any) => void;
     referralData: ReferralData | undefined;
     referralRegistrationPlan: ReferralRegistrationPlan | undefined;
@@ -220,7 +215,6 @@ export const handleSetupUser = async ({
         // Perform the subscription first to prevent "locked user" while setting up keys.
         subscription = await handleSubscribeUser(api, subscriptionData, {
             productParam,
-            hasZipCodeValidation,
             build,
             telemetryContext,
             userCurrency: undefined,

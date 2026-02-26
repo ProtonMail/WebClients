@@ -43,7 +43,6 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api, User } from '@proton/shared/lib/interfaces';
-import { useGetFlag } from '@proton/unleash';
 
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
@@ -74,7 +73,6 @@ export interface OperationsInvoiceData {
 export interface OperationsData {
     subscription?: OperationsSubscriptionData;
     invoice?: OperationsInvoiceData;
-    hasZipCodeValidation: boolean;
 }
 
 /**
@@ -136,8 +134,6 @@ function getOperations(
                 ZipCode: taxBillingAddress.ZipCode,
             };
 
-            const hasZipCodeValidation = operationsData.hasZipCodeValidation;
-
             return createPaymentSubscription(
                 api,
                 {
@@ -150,7 +146,6 @@ function getOperations(
                 {
                     product,
                     version: paymentsVersion,
-                    hasZipCodeValidation,
                     paymentMethodType: params.type,
                     paymentMethodValue,
                     userCurrency,
@@ -182,7 +177,6 @@ function getOperations(
  */
 const usePaymentContext = () => {
     const subscriptionData = useRef<OperationsSubscriptionData>();
-    const getFlag = useGetFlag();
 
     return {
         setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {
@@ -194,7 +188,6 @@ const usePaymentContext = () => {
         getOperationsData: (): OperationsData => {
             return {
                 subscription: subscriptionData.current,
-                hasZipCodeValidation: getFlag('PaymentsZipCodeValidation'),
             };
         },
     };

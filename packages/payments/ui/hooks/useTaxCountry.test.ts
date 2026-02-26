@@ -819,243 +819,62 @@ describe('useTaxCountry hook', () => {
         });
     });
 
-    // must be removed once the PaymentsZipCodeValidation flag is removed
-    describe('Feature Flag Behavior', () => {
-        describe('when PaymentsZipCodeValidation flag is disabled', () => {
-            beforeEach(() => {
-                mockUseFlag.mockReturnValue(false);
-            });
-
-            it('should exclude ZipCode from billing address callback when flag is disabled', () => {
-                const onBillingAddressChange = jest.fn();
-                const { result } = renderHook(() =>
-                    useTaxCountry({
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                            ZipCode: '90210',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other',
-                    })
-                );
-
-                // Change country - should trigger callback without ZipCode
-                act(() => {
-                    result.current.setSelectedCountry('CA');
-                });
-
-                expect(onBillingAddressChange).toHaveBeenCalledWith({
-                    CountryCode: 'CA',
-                    State: 'AB', // First Canadian state
-                    // Note: ZipCode should be excluded from the callback
-                });
-
-                // Verify the hook still tracks the zip code internally
-                expect(result.current.zipCode).toBe('T5J 2R7'); // Default zip for AB
-            });
-
-            it('should exclude ZipCode from billing address callback when setting state', () => {
-                const onBillingAddressChange = jest.fn();
-                const { result } = renderHook(() =>
-                    useTaxCountry({
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'AL',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other',
-                    })
-                );
-
-                // Change state - should trigger callback without ZipCode
-                act(() => {
-                    result.current.setFederalStateCode('CA');
-                });
-
-                expect(onBillingAddressChange).toHaveBeenCalledWith({
-                    CountryCode: 'US',
-                    State: 'CA',
-                    // Note: ZipCode should be excluded from the callback
-                });
-            });
-
-            it('should not trigger callback when setting zip code (since validation is disabled)', () => {
-                const onBillingAddressChange = jest.fn();
-                const { result } = renderHook(() =>
-                    useTaxCountry({
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other',
-                    })
-                );
-
-                // Set a valid zip code - should not trigger callback when flag is disabled
-                act(() => {
-                    result.current.setZipCode('90210');
-                });
-
-                expect(result.current.zipCode).toBe('90210');
-                expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
-            });
-
-            it('should exclude ZipCode from initial billing address callback when paymentStatus changes', () => {
-                const onBillingAddressChange = jest.fn();
-                const { rerender } = renderHook((props) => useTaxCountry(props), {
-                    initialProps: {
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                            ZipCode: '90210',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other' as const,
-                    },
-                });
-
-                // Update paymentStatus - should trigger callback without ZipCode
-                rerender({
-                    onBillingAddressChange,
-                    paymentStatus: {
-                        CountryCode: 'CA',
-                        State: 'ON',
-                        ZipCode: 'M5H 2N2',
-                    },
-                    zipCodeBackendValid: true,
-                    telemetryContext: 'other',
-                });
-
-                expect(onBillingAddressChange).toHaveBeenCalledWith({
-                    CountryCode: 'CA',
-                    State: 'ON',
-                    // Note: ZipCode should be excluded from the callback
-                });
-            });
+    describe('when PaymentsZipCodeValidation flag is enabled', () => {
+        beforeEach(() => {
+            mockUseFlag.mockReturnValue(true);
         });
 
-        describe('when PaymentsZipCodeValidation flag is enabled', () => {
-            beforeEach(() => {
-                mockUseFlag.mockReturnValue(true);
-            });
-
-            it('should include ZipCode in billing address callback when flag is enabled', () => {
-                const onBillingAddressChange = jest.fn();
-                const { result } = renderHook(() =>
-                    useTaxCountry({
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                            ZipCode: '90210',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other' as const,
-                    })
-                );
-
-                // Change country - should trigger callback with ZipCode included
-                act(() => {
-                    result.current.setSelectedCountry('CA');
-                });
-
-                expect(onBillingAddressChange).toHaveBeenCalledWith({
-                    CountryCode: 'CA',
-                    State: 'AB',
-                    ZipCode: 'T5J 2R7',
-                });
-            });
-
-            it('should trigger callback when setting valid zip code', () => {
-                const onBillingAddressChange = jest.fn();
-                const { result } = renderHook(() =>
-                    useTaxCountry({
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other',
-                    })
-                );
-
-                // Set a valid zip code - should trigger callback when flag is enabled
-                act(() => {
-                    result.current.setZipCode('90210');
-                });
-
-                expect(result.current.zipCode).toBe('90210');
-                expect(onBillingAddressChange).toHaveBeenCalledWith({
-                    CountryCode: 'US',
-                    State: 'CA',
-                    ZipCode: '90210',
-                });
-            });
-        });
-
-        describe('feature flag transition scenarios', () => {
-            it('should maintain consistent behavior when flag transitions from disabled to enabled', () => {
-                const onBillingAddressChange = jest.fn();
-
-                // Start with flag disabled
-                mockUseFlag.mockReturnValue(false);
-
-                const { result, rerender } = renderHook((props) => useTaxCountry(props), {
-                    initialProps: {
-                        onBillingAddressChange,
-                        paymentStatus: {
-                            CountryCode: 'US',
-                            State: 'CA',
-                            ZipCode: '90210',
-                        },
-                        zipCodeBackendValid: true,
-                        telemetryContext: 'other' as const,
-                    },
-                });
-
-                // Make a change with flag disabled
-                act(() => {
-                    result.current.setSelectedCountry('CA');
-                });
-
-                expect(onBillingAddressChange).toHaveBeenLastCalledWith({
-                    CountryCode: 'CA',
-                    State: 'AB',
-                    // ZipCode excluded when flag disabled
-                });
-
-                // Enable the flag
-                mockUseFlag.mockReturnValue(true);
-
-                // Force re-render to pick up the new flag value
-                rerender({
+        it('should include ZipCode in billing address callback when flag is enabled', () => {
+            const onBillingAddressChange = jest.fn();
+            const { result } = renderHook(() =>
+                useTaxCountry({
                     onBillingAddressChange,
                     paymentStatus: {
-                        CountryCode: 'CA',
-                        State: 'AB',
-                        ZipCode: 'T5J 2R7',
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
                     },
                     zipCodeBackendValid: true,
                     telemetryContext: 'other' as const,
-                });
+                })
+            );
 
-                // Make another change with flag enabled
-                act(() => {
-                    result.current.setFederalStateCode('ON');
-                });
+            // Change country - should trigger callback with ZipCode included
+            act(() => {
+                result.current.setSelectedCountry('CA');
+            });
 
-                expect(onBillingAddressChange).toHaveBeenLastCalledWith({
-                    CountryCode: 'CA',
-                    State: 'ON',
-                    ZipCode: 'M5H 2N2', // ZipCode included when flag enabled
-                });
+            expect(onBillingAddressChange).toHaveBeenCalledWith({
+                CountryCode: 'CA',
+                State: 'AB',
+                ZipCode: 'T5J 2R7',
+            });
+        });
+
+        it('should trigger callback when setting valid zip code', () => {
+            const onBillingAddressChange = jest.fn();
+            const { result } = renderHook(() =>
+                useTaxCountry({
+                    onBillingAddressChange,
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                    },
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other',
+                })
+            );
+
+            // Set a valid zip code - should trigger callback when flag is enabled
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+
+            expect(result.current.zipCode).toBe('90210');
+            expect(onBillingAddressChange).toHaveBeenCalledWith({
+                CountryCode: 'US',
+                State: 'CA',
+                ZipCode: '90210',
             });
         });
     });

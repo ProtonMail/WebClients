@@ -308,7 +308,7 @@ const Step1 = ({
             billingAddress: values.billingAddress,
             coupon: values.coupon,
             trial: values.trial,
-            ValidateZipCode: true,
+            ValidateBillingAddress: true,
             VatId: values.vatNumber,
         });
     };

@@ -394,7 +394,7 @@ export const PaymentsContextProvider = ({
 
             const subscriptionData = getSubscriptionDataFromPlanToCheck({
                 ...newPlanToCheck,
-                ValidateZipCode: true,
+                ValidateBillingAddress: true,
                 BillingAddress: newBillingAddress,
                 VatId: newVatNumber,
                 trial: newPlanToCheck.trial || getShouldPassTrial(newPlanToCheck.planIDs, newPlanToCheck.cycle, true),

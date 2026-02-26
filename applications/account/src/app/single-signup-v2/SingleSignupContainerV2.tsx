@@ -196,7 +196,6 @@ const SingleSignupContainerV2 = ({
     const getKtActivation = useGetAccountKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const isMeetPlansEnabled = useFlag('MeetPlans');
 
@@ -628,7 +627,7 @@ const SingleSignupContainerV2 = ({
                         coupon,
                         billingAddress,
                         trial: signupTrial,
-                        ValidateZipCode: true,
+                        ValidateBillingAddress: true,
                         VatId: undefined,
                     },
                     toApp: product,
@@ -826,7 +825,7 @@ const SingleSignupContainerV2 = ({
                     coupon: signupParameters.coupon,
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
-                    ValidateZipCode: true,
+                    ValidateBillingAddress: true,
                     VatId: undefined,
                 },
                 planParameters: model.planParameters!,
@@ -942,7 +941,7 @@ const SingleSignupContainerV2 = ({
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
-                    ValidateZipCode: true,
+                    ValidateBillingAddress: true,
                     VatId: undefined,
                 },
                 toApp: product,
@@ -1176,7 +1175,6 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 subscriptionData: cache.subscriptionData,
                 productParam,
-                hasZipCodeValidation,
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 telemetryContext: getTelemetryContext(cache.session),
@@ -1210,7 +1208,6 @@ const SingleSignupContainerV2 = ({
                 api: silentApi,
                 ignoreVPN: true,
                 canGenerateMnemonic,
-                hasZipCodeValidation,
                 telemetryContext: getTelemetryContext(model.session),
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
