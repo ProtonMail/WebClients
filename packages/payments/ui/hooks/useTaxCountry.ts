@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useFlag } from '@proton/unleash';
 
 import {
     type BillingAddress,
@@ -93,8 +92,6 @@ function getBillingAddressFromProps(props: HookProps): BillingAddress {
 }
 
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
-    const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
-
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
 
@@ -112,14 +109,6 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     };
 
     const billingAddressChanged = (billingAddress: BillingAddress) => {
-        if (!zipCodeValidation) {
-            const billingAddressWithoutZipCode = { ...billingAddress };
-            delete billingAddressWithoutZipCode.ZipCode;
-
-            props.onBillingAddressChange?.(billingAddressWithoutZipCode);
-            return;
-        }
-
         props.onBillingAddressChange?.(billingAddress);
     };
 
@@ -145,7 +134,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             setTaxBillingAddress(currentFromProps);
             billingAddressChanged(currentFromProps);
         }
-    }, [currentFromProps.CountryCode, currentFromProps.State, currentFromProps.ZipCode, zipCodeValidation]);
+    }, [currentFromProps.CountryCode, currentFromProps.State, currentFromProps.ZipCode]);
 
     const selectedCountryCode = taxBillingAddressRef.current.CountryCode;
     const federalStateCode = taxBillingAddressRef.current.State ?? null;
@@ -224,12 +213,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         };
 
         setTaxBillingAddress(newValue);
-        if (
-            newValue.State &&
-            isPostalCodeValid(newValue.CountryCode, newValue.State, newZipCode) &&
-            !skipCallback &&
-            zipCodeValidation
-        ) {
+        if (newValue.State && isPostalCodeValid(newValue.CountryCode, newValue.State, newZipCode) && !skipCallback) {
             billingAddressChanged(newValue);
         }
     };

@@ -130,7 +130,7 @@ export interface Options {
     billingAddress: BillingAddress;
     skipUpsell?: boolean;
     trial?: boolean;
-    ValidateZipCode?: boolean;
+    ValidateBillingAddress?: boolean;
     VatId: string | undefined;
 }
 

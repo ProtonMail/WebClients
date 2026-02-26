@@ -38,17 +38,12 @@ import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { InvalidZipCodeError, TaxExemptionNotSupportedError } from './errors';
 import { enrichCoupon } from './helpers';
 
-const checkSubscriptionQuery = (
-    data: CheckSubscriptionData,
-    version: PaymentsVersion,
-    hasZipCodeValidation: boolean
-) => {
+const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
     const normalizedData: CheckSubscriptionData = {
         ...data,
     };
@@ -57,12 +52,7 @@ const checkSubscriptionQuery = (
         normalizedData.BillingAddress = getBillingAddressPayload({
             billingAddress: normalizedData.BillingAddress,
             vatId: data.VatId,
-            hasZipCodeValidation,
         });
-    }
-
-    if (!hasZipCodeValidation) {
-        delete normalizedData.ValidateZipCode;
     }
 
     if (!normalizedData.VatId) {
@@ -238,7 +228,6 @@ export const usePaymentsApi = (
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
     const multiCheckCache = useMultiCheckCache();
-    const getFlag = useGetFlag();
 
     const getPaymentsApi = (api: Api): PaymentsApi => {
         const paymentStatus = async (): Promise<PaymentStatus> => {
@@ -288,13 +277,10 @@ export const usePaymentsApi = (
 
             const fallback = checkV5Fallback?.(data);
             try {
-                // These functions get stale, so need to ensure the flag is up-to-date
-                const hasZipCodeValidation = getFlag('PaymentsZipCodeValidation');
-
                 const silence = !!fallback || !!requestOptions.silence;
 
                 const result = await api({
-                    ...checkSubscriptionQuery(data, 'v5', hasZipCodeValidation),
+                    ...checkSubscriptionQuery(data, 'v5'),
                     ...requestOptions,
                     silence,
                 });

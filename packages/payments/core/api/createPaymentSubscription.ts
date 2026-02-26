@@ -124,12 +124,7 @@ export function isSubscribeData(data: any): data is SubscribeData {
     return isSubscribeDataV4(data) || isSubscribeDataV5(data) || isSubscribeDataNoPayment(data);
 }
 
-const createSubscriptionQuery = (
-    rawData: SubscribeData,
-    product: ProductParam,
-    version: PaymentsVersion,
-    hasZipCodeValidation: boolean
-) => {
+const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
 
     // This covers both buyProduct + v4 and v5 createSubscription.
@@ -137,7 +132,6 @@ const createSubscriptionQuery = (
         sanitizedData.BillingAddress = getBillingAddressPayload({
             billingAddress: sanitizedData.BillingAddress,
             vatId: sanitizedData.VatId,
-            hasZipCodeValidation,
         });
     }
 
@@ -239,7 +233,6 @@ export const createPaymentSubscription = async (
         subscription,
         product,
         version,
-        hasZipCodeValidation,
         paymentMethodType,
         paymentMethodValue,
     }: {
@@ -249,7 +242,6 @@ export const createPaymentSubscription = async (
         subscription: Subscription | FreeSubscription | undefined;
         product: ProductParam;
         version: PaymentsVersion;
-        hasZipCodeValidation: boolean;
         paymentMethodType: PlainPaymentMethodType | undefined;
         paymentMethodValue: PaymentMethodType | undefined;
     }
@@ -269,7 +261,7 @@ export const createPaymentSubscription = async (
         paymentMethodValue,
     };
 
-    const createSubscriptionQueryConfig = createSubscriptionQuery(data, product, version, hasZipCodeValidation);
+    const createSubscriptionQueryConfig = createSubscriptionQuery(data, product, version);
 
     reportWrongBillingAddress(data);
 

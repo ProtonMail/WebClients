@@ -24,7 +24,7 @@ export async function getSubscriptionPrices({
     billingAddress,
     coupon: maybeCoupon,
     trial,
-    ValidateZipCode,
+    ValidateBillingAddress,
     VatId,
 }: {
     paymentsApi: PaymentsApi;
@@ -34,7 +34,7 @@ export async function getSubscriptionPrices({
     billingAddress?: BillingAddress;
     coupon?: string;
     trial?: boolean;
-    ValidateZipCode?: boolean;
+    ValidateBillingAddress?: boolean;
     VatId: string | undefined;
 }): Promise<SubscriptionEstimation> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
@@ -48,7 +48,7 @@ export async function getSubscriptionPrices({
         Currency: currency,
         Cycle: cycle,
         CouponCode: coupon,
-        ValidateZipCode,
+        ValidateBillingAddress,
         VatId,
     };
 

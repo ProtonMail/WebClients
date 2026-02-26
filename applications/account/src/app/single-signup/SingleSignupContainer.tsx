@@ -50,7 +50,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -190,8 +189,6 @@ const SingleSignupContainer = ({
     useMetaTags(metaTags);
 
     const isVariantB = getSearchParams().get('v') === 'b' || getSearchParams().get('v') === 'aff';
-
-    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
@@ -416,7 +413,7 @@ const SingleSignupContainer = ({
                 coupon,
                 billingAddress,
                 trial: checkSignupTrial,
-                ValidateZipCode: true,
+                ValidateBillingAddress: true,
                 VatId: model.subscriptionData.vatNumber,
             });
         }
@@ -576,7 +573,6 @@ const SingleSignupContainer = ({
                 api: silentApi,
                 ignoreVPN: true,
                 setupKeys: false,
-                hasZipCodeValidation,
                 canGenerateMnemonic: false,
                 telemetryContext,
                 reportPaymentSuccess: () => {

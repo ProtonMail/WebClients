@@ -503,7 +503,7 @@ const Step1B = ({
                 billingAddress: newBillingAddress,
                 coupon: coupon,
                 trial: signupTrial,
-                ValidateZipCode: true,
+                ValidateBillingAddress: true,
                 VatId: newVatId,
             });
 
@@ -1127,7 +1127,7 @@ const Step1B = ({
                             billingAddress: model.subscriptionData.billingAddress,
                             coupon: code,
                             trial: signupTrial,
-                            ValidateZipCode: true,
+                            ValidateBillingAddress: true,
                             VatId: model.subscriptionData.vatNumber,
                         });
 
@@ -1154,7 +1154,7 @@ const Step1B = ({
                             billingAddress: model.subscriptionData.billingAddress,
                             coupon: undefined, // don't pass coupon code, it will be removed
                             trial: signupTrial,
-                            ValidateZipCode: true,
+                            ValidateBillingAddress: true,
                             VatId: model.subscriptionData.vatNumber,
                         });
 
