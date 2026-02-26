@@ -407,6 +407,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     abortSignal
                 );
                 if (Code === 1000) {
+                    const results: DecryptedAlbum[] = [];
                     for (let i = 0; i < Albums.length; i += ALBUM_DECRYPT_BATCH_SIZE) {
                         const batch = Albums.slice(i, i + ALBUM_DECRYPT_BATCH_SIZE);
                         const batchResults = await Promise.all(
@@ -445,28 +446,27 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 }
                             })
                         );
-
-                        setAlbums((prevAlbums) => {
-                            const newAlbums = new Map(
-                                i === 0
-                                    ? Array.from(prevAlbums.entries()).filter(([, album]) => {
-                                          // For the first batch:
-                                          // Filter out albums that are not in the current volume,
-                                          // that is only own albums. All new shared albums will be
-                                          // set via newDecryptedAlbums.
-                                          return album.volumeId === volumeId;
-                                      })
-                                    : prevAlbums
-                            );
-                            batchResults.forEach((album) => {
-                                if (album !== undefined) {
-                                    newAlbums.set(album.linkId, album);
-                                    newAlbumsLinkIds.add(album.linkId);
-                                }
-                            });
-                            return newAlbums;
-                        });
+                        results.push(...batchResults.filter(isTruthy));
                     }
+
+                    setAlbums((prevAlbums) => {
+                        const newAlbums = new Map(
+                            Array.from(prevAlbums.entries()).filter(([, album]) => {
+                                // Filter out albums that are not in the current volume,
+                                // that is only own albums. All new shared albums will be
+                                // set via results.
+                                return album.volumeId === volumeId;
+                            })
+                        );
+                        results.forEach((album) => {
+                            if (album !== undefined) {
+                                newAlbums.set(album.linkId, album);
+                                newAlbumsLinkIds.add(album.linkId);
+                            }
+                        });
+                        return newAlbums;
+                    });
+
                     if (More) {
                         void sharedWithMeCall(AnchorID);
                     }
