@@ -1557,9 +1557,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "İlgili dosyalar sorularınıza göre otomatik olarak alınır."
       ],
-      "Remove": [
-        "Kaldır"
-      ],
       "Remove file": [
         "Dosyayı kaldır"
       ],
@@ -1583,9 +1580,6 @@
       ],
       "Secure connection (encrypted)": [
         "Güvenli bağlantı (şifrelenmiş)"
-      ],
-      "selected": [
-        "seçilmiş"
       ],
       "Show all files": [
         "Tüm dosyaları görüntüle"
@@ -2291,9 +2285,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
       ],
-      "Error processing file: ${ file.name }": [
-        "Dosya işlenirken sorun çıktı: ${ file.name }"
-      ],
       "Error uploading file: ${ file.name }": [
         "Dosya yüklenirken sorun çıktı: ${ file.name }"
       ],
@@ -2444,8 +2435,8 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Bu projede zaten dosyalar var. Lütfen bir Drive klasörü bağlamadan önce tüm dosyaları kaldırın."
       ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Bu işlem, bu projedeki ${ files.length } dosyanın tümünü kaldıracak. Bu işlem geri alınamaz."
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Bu işlem bu projedeki ${ fileCount } dosyanın tamamını silecek. Bu işlem geri alınamaz."
       ],
       "Tips on how to write useful instructions": [
         "Yararlı yönergeler yazmak için ipuçları"

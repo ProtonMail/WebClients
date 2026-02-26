@@ -403,6 +403,9 @@
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licence"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencí"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -439,11 +442,20 @@
         "${ users } uživatelů",
         "${ users } uživatelů"
       ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
       "Domains": [
         "Domény"
       ],
+      "Servers": [
+        "Servery"
+      ],
       "Users": [
         "Uživatelé"
+      ],
+      "Writing assistant": [
+        "Asistent psaní"
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
@@ -602,6 +614,18 @@
       "2 TB data storage": [
         "2 TB úložiště dat"
       ],
+      "3 TB data storage": [
+        "3 TB úložiště dat"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15000+ serverům v 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "Blokování reklam, sledovacích prvků a malware"
       ],
@@ -610,6 +634,21 @@
       ],
       "Connect 10 devices at once": [
         "Připojte až 10 zařízení současně"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
       ]
     },
     "BF2025: Tooltip": {
@@ -644,6 +683,9 @@
       ],
       "Lifetime": [
         "Doživotní"
+      ],
+      "Lifetime access": [
+        "Doživotní přístup"
       ],
       "Monthly": [
         "Měsíčně"
@@ -828,6 +870,15 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Mezisoučet za ${ cycle } měsíc",
+        "Mezisoučet za ${ cycle } měsíce",
+        "Mezisoučet za ${ cycle } měsíců",
+        "Mezisoučet za ${ cycle } měsíců"
       ],
       "Total": [
         "Celkem"
@@ -1016,7 +1067,7 @@
         "Neomezený denní limit konverzací"
       ],
       "Unlimited projects": [
-        "Neomezený počet projektů"
+        "Neomezené projekty"
       ],
       "We keep no logs of what you ask, or what ${ LUMO_SHORT_APP_NAME } replies. Your chats can’t be seen, shared, or used to profile you. ${ LUMO_SHORT_APP_NAME } saves nothing on our servers.": [
         "Nezaznamenáváme, na co se ptáte ani co odpovídá ${ LUMO_SHORT_APP_NAME }. Vaše konverzace nelze prohlížet, sdílet ani používat k profilování. ${ LUMO_SHORT_APP_NAME } nic neukládá na našich serverech."
@@ -1517,9 +1568,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevantní soubory budou automaticky načteny na základě vašich dotazů."
       ],
-      "Remove": [
-        "Odebrat"
-      ],
       "Remove file": [
         "Odebrat soubor"
       ],
@@ -1543,9 +1591,6 @@
       ],
       "Secure connection (encrypted)": [
         "Zabezpečené připojení (šifrované)"
-      ],
-      "selected": [
-        "vybráno"
       ],
       "Show all files": [
         "Zobrazit všechny soubory"
@@ -2235,9 +2280,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "Připojení k databázi ztraceno. Obnovte stránku pro pokračování."
       ],
-      "Error processing file: ${ file.name }": [
-        "Chyba při zpracování souboru: ${ file.name }"
-      ],
       "Error uploading file: ${ file.name }": [
         "Chyba při nahrávání souboru: ${ file.name }"
       ],
@@ -2386,9 +2428,6 @@
       ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Tento projekt již obsahuje soubory. Před propojením složky Drive odeberte všechny soubory."
-      ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Toto odebere všech ${ files.length } souborů z tohoto projektu. Tuto akci nelze vzít zpět."
       ],
       "Tips on how to write useful instructions": [
         "Tipy, jak psát užitečné instrukce"
@@ -4788,6 +4827,12 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaše další platba je ${ renewalTime }. Můžete kdykoli zrušit."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Datum vaší další fakturace je ${ renewalTime }. Můžete kdykoli zrušit. Pokud potřebujete okamžitou změnu tarifu, kontaktujte prosím podporu."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
@@ -6383,6 +6428,15 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez daně)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Částka k úhradě po zkušební verzi ${ formattedDate }"
       ],
@@ -6404,6 +6458,18 @@
       "Got it": [
         "Rozumím"
       ],
+      "Including ${ rate }% tax": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -6421,6 +6487,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Daň ${ rate }%"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -6568,6 +6640,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -7199,6 +7274,9 @@
     "Success": {
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
+      ],
+      "Billing information updated": [
+        "Informace o fakturaci aktualizovány"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"

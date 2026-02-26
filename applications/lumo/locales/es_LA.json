@@ -600,6 +600,57 @@
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acceda a más de 15 000 servidores en más de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Acceda a modelos avanzados de IA"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquee anuncios, rastreadores y malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecte 10 dispositivos a la vez"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de chat completo con búsqueda sencilla y favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para usted y un socio"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protección más sólida contra amenazas cibernéticas"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mes",
@@ -1506,9 +1557,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "Los archivos relevantes se recuperarán automáticamente en función de sus preguntas."
       ],
-      "Remove": [
-        "Borrar"
-      ],
       "Remove file": [
         "Borrar archivo"
       ],
@@ -1532,9 +1580,6 @@
       ],
       "Secure connection (encrypted)": [
         "Conexión segura (cifrada)"
-      ],
-      "selected": [
-        "seleccionado"
       ],
       "Show all files": [
         "Mostrar todos los archivos"
@@ -2240,9 +2285,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "Se perdió la conexión con la base de datos. Actualice la página para continuar."
       ],
-      "Error processing file: ${ file.name }": [
-        "Error al procesar el archivo: ${ file.name }"
-      ],
       "Error uploading file: ${ file.name }": [
         "Error al subir el archivo: ${ file.name }"
       ],
@@ -2393,8 +2435,8 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Este proyecto ya tiene archivos. Elimine todos los archivos antes de vincular una carpeta de Drive."
       ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Esto eliminará todos los ${ files.length } archivos de este proyecto. Esta acción no se puede deshacer."
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Se eliminarán los ${ fileCount } archivos de este proyecto. Esta acción no se puede deshacer."
       ],
       "Tips on how to write useful instructions": [
         "Consejos sobre cómo escribir instrucciones útiles"
@@ -5465,6 +5507,10 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historial de ${ options } días de las versiones de los archivos",
+        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"

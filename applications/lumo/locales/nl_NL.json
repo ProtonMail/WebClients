@@ -847,6 +847,13 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Subtotal": [
+        "Subtotaal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotaal voor ${ cycle } maand",
+        "Subtotaal voor ${ cycle } maanden"
+      ],
       "Total": [
         "Totaal"
       ],
@@ -1533,9 +1540,6 @@
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevante bestanden zullen automatisch opgehaald worden op basis van uw vragen"
       ],
-      "Remove": [
-        "Verwijderen"
-      ],
       "Remove file": [
         "Bestand verwijderen"
       ],
@@ -1559,9 +1563,6 @@
       ],
       "Secure connection (encrypted)": [
         "Beveiligde verbinding (versleuteld)"
-      ],
-      "selected": [
-        "geselecteerd"
       ],
       "Show all files": [
         "Alle bestanden weergeven"
@@ -2261,9 +2262,6 @@
       "Database connection lost. Please refresh the page to continue.": [
         "Databaseverbinding verbroken. Vernieuw de pagina om door te gaan."
       ],
-      "Error processing file: ${ file.name }": [
-        "Fout bij het verwerken van bestand: ${ file.name }"
-      ],
       "Error uploading file: ${ file.name }": [
         "Fout bij het opladen van bestand: ${ file.name }"
       ],
@@ -2414,8 +2412,8 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Dit project bevat al bestanden. Verwijder alle bestanden voordat u een Drive-map koppelt."
       ],
-      "This will remove all ${ files.length } files from this project. This action cannot be undone.": [
-        "Dit verwijdert alle ${ files.length } bestanden uit dit project. Deze actie kan niet ongedaan worden gemaakt."
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Dit verwijdert alle ${ fileCount } bestanden uit dit project. Deze actie kan niet ongedaan worden gemaakt."
       ],
       "Tips on how to write useful instructions": [
         "Tips voor het schrijven van nuttige instructies"
