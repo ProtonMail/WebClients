@@ -70,6 +70,11 @@ export enum SignupType {
     BringYourOwnEmail = 3,
 }
 
+export enum SignupHVMode {
+    CRO = 'cro',
+    OV = 'OV',
+}
+
 export type SignupInviteParameters =
     | { type: 'generic'; data: { selector: string; token: string } }
     | { type: 'drive'; data: { invitee: string; externalInvitationID: string; preVerifiedAddressToken: string } }

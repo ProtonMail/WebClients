@@ -3,16 +3,12 @@ import { isTokenPayment } from '@proton/payments';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
-    getCroHeaders,
-    getOwnershipVerificationHeaders,
-    mergeHeaders,
-    withVerificationHeaders,
-} from '@proton/shared/lib/fetch/headers';
+import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import type { SignupActionResponse, SignupCacheResult, SignupInviteParameters } from '../interfaces';
+import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../helper';
+import type { SignupActionResponse, SignupCacheResult, SignupHVMode, SignupInviteParameters } from '../interfaces';
 import { SignupType } from '../interfaces';
 
 const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
@@ -42,7 +38,7 @@ export const handleCreateUser = async ({
 }: {
     cache: SignupCacheResult;
     api: Api;
-    mode?: 'cro' | 'ov';
+    mode?: SignupHVMode;
     invite?: SignupInviteParameters;
 }): Promise<SignupActionResponse> => {
     const {
@@ -162,28 +158,12 @@ export const handleCreateUser = async ({
                                     };
                                 }
                             })(),
-                            ...(() => {
-                                if (mode === 'cro' && paymentToken) {
-                                    return {
-                                        Token: paymentToken,
-                                        TokenType: 'payment',
-                                    };
-                                }
-                                if (mode === 'ov') {
-                                    return undefined;
-                                }
-                                return getTokenPayment(paymentToken);
-                            })(),
+                            ...getPaymentTokenForExternalUsers(mode, paymentToken),
                         },
                         productParam
                     )
                 ),
-                (() => {
-                    if (mode === 'cro') {
-                        return paymentToken ? getCroHeaders(paymentToken) : getOwnershipVerificationHeaders('lax');
-                    }
-                    return {};
-                })()
+                getHVHeadersBasedOnSignupMode(mode, paymentToken)
             ),
         });
         return {

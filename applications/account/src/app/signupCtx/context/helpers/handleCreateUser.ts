@@ -2,11 +2,12 @@ import type { HumanVerificationResult } from '@proton/components';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import type { AccountData, InviteData, SignupInviteParameters } from '../../../signup/interfaces';
+import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../../../signup/helper';
+import type { AccountData, InviteData, SignupHVMode, SignupInviteParameters } from '../../../signup/interfaces';
 import { SignupType } from '../../../signup/interfaces';
 
 export const getTokenPayment = (tokenPayment: string | undefined) => {
@@ -28,6 +29,7 @@ export const handleCreateUser = async ({
     clientType,
     api,
     invite,
+    mode,
 }: {
     accountData: AccountData;
     clientType: CLIENT_TYPES;
@@ -37,6 +39,7 @@ export const handleCreateUser = async ({
     productParam: ProductParam | undefined;
     api: Api;
     invite: SignupInviteParameters | undefined;
+    mode: SignupHVMode | undefined;
 }): Promise<{ user: User; humanVerificationResult: HumanVerificationResult | undefined }> => {
     const { username, email, password, signupType, payload } = accountData;
     if (signupType === SignupType.Proton) {
@@ -92,33 +95,34 @@ export const handleCreateUser = async ({
         const { User } = await srpVerify<{ User: User }>({
             api,
             credentials: { password },
-            config: withVerificationHeaders(
-                humanVerificationResult?.token,
-                humanVerificationResult?.tokenType,
-                queryCreateUserExternal(
-                    {
-                        Type: clientType,
-                        Email: email,
-                        Payload: payload,
-                        ...(() => {
-                            if (
-                                invite &&
-                                ((invite.type === 'wallet' && invite.data.preVerifiedAddressToken) ||
-                                    (invite.type === 'drive' && invite.data.preVerifiedAddressToken) ||
-                                    (invite.type === 'pass' && invite.data.preVerifiedAddressToken) ||
-                                    (invite.type === 'porkbun' && invite.data.preVerifiedAddressToken))
-                            ) {
-                                return {
-                                    TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken,
-                                };
-                            }
-                        })(),
-                        ...(() => {
-                            return getTokenPayment(paymentToken);
-                        })(),
-                    },
-                    productParam
-                )
+            config: mergeHeaders(
+                withVerificationHeaders(
+                    humanVerificationResult?.token,
+                    humanVerificationResult?.tokenType,
+                    queryCreateUserExternal(
+                        {
+                            Type: clientType,
+                            Email: email,
+                            Payload: payload,
+                            ...(() => {
+                                if (
+                                    invite &&
+                                    ((invite.type === 'wallet' && invite.data.preVerifiedAddressToken) ||
+                                        (invite.type === 'drive' && invite.data.preVerifiedAddressToken) ||
+                                        (invite.type === 'pass' && invite.data.preVerifiedAddressToken) ||
+                                        (invite.type === 'porkbun' && invite.data.preVerifiedAddressToken))
+                                ) {
+                                    return {
+                                        TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken,
+                                    };
+                                }
+                            })(),
+                            ...getPaymentTokenForExternalUsers(mode, paymentToken),
+                        },
+                        productParam
+                    )
+                ),
+                getHVHeadersBasedOnSignupMode(mode, paymentToken)
             ),
         });
         return {
