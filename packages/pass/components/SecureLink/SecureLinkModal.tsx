@@ -31,10 +31,12 @@ export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, ite
     if (!item) return;
 
     const { heading, subheading } = presentListItem(item);
+    const key = `${secureLink ? 'details' : 'create'}`;
 
     return (
-        <PassModal size="small" open enableCloseWhenClickOutside {...props} key={secureLink ? 'details' : 'create'}>
+        <PassModal size="small" open enableCloseWhenClickOutside {...props} key={key}>
             <ModalTwoHeader
+                key={`${key}-header`}
                 title={c('Action').t`Share secure link`}
                 subline={
                     <div className="flex flex-nowrap items-center gap-2 mt-1 mb-4">
@@ -48,9 +50,14 @@ export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, ite
             />
 
             {secureLink ? (
-                <SecureLinkDetails {...secureLink} />
+                <SecureLinkDetails {...secureLink} key={`${key}-details`} />
             ) : (
-                <SecureLinkGenerate itemId={itemId} shareId={shareId} onLinkGenerated={setSecureLink} />
+                <SecureLinkGenerate
+                    itemId={itemId}
+                    shareId={shareId}
+                    onLinkGenerated={setSecureLink}
+                    key={`${key}-create`}
+                />
             )}
         </PassModal>
     );
