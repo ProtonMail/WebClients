@@ -136,10 +136,8 @@ const TVContainer = ({ background = true }: Props) => {
                             <IcCrossCircle size={15} />
                         </span>
                     </div>
-                    <p className="mt-8 mb-0 pl-4 text-center color-danger">{c('Error')
-                        .t`Code is incorrect or not valid anymore`}</p>
                     <p className="m-0 text-center border-none">{c('Error')
-                        .t`If the time on your TV has expired, click on Refresh on your TV and try again.`}</p>
+                        .t`Something went wrong connecting your TV. Scan the QR code on your TV once more.`}</p>
                 </>
             );
         }
