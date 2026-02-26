@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions } from '@proton/mail/store/counts/messageCountsSlice';
-import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import {
     labelConversations as labelConversationsApi,
     markConversationsAsRead as markConversationsAsReadApi,
@@ -136,14 +136,27 @@ export const markMessagesAsRead = createAsyncThunk<
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
+        folders: Folder[];
+        labels: Label[];
     },
     MailThunkExtra
 >(
     'mailbox/markMessagesAsRead',
-    async ({ messages, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
+    async (
+        { messages, labelID, showSuccessNotification = true, conversations, folders, labels },
+        { extra, dispatch }
+    ) => {
         try {
             dispatch(messageCountsActions.markMessagesAsReadPending({ messages, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsReadPending({ messages, labelID, conversations }));
+            dispatch(
+                conversationCountsActions.markMessagesAsReadPending({
+                    messages,
+                    labelID,
+                    conversations,
+                    folders,
+                    labels,
+                })
+            );
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
@@ -159,7 +172,15 @@ export const markMessagesAsRead = createAsyncThunk<
             return result;
         } catch (error) {
             dispatch(messageCountsActions.markMessagesAsReadRejected({ messages, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsReadRejected({ messages, labelID, conversations }));
+            dispatch(
+                conversationCountsActions.markMessagesAsReadRejected({
+                    messages,
+                    labelID,
+                    conversations,
+                    folders,
+                    labels,
+                })
+            );
             throw error;
         }
     }
@@ -172,14 +193,21 @@ export const markMessagesAsUnread = createAsyncThunk<
         conversations: Conversation[];
         labelID: string;
         showSuccessNotification?: boolean;
+        folders: Folder[];
+        labels: Label[];
     },
     MailThunkExtra
 >(
     'mailbox/markMessagesAsUnread',
-    async ({ messages, labelID, showSuccessNotification = true, conversations }, { extra, dispatch }) => {
+    async (
+        { messages, labelID, showSuccessNotification = true, conversations, folders, labels },
+        { extra, dispatch }
+    ) => {
         try {
             dispatch(messageCountsActions.markMessagesAsUnreadPending({ messages, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsUnreadPending({ messages, labelID, conversations }));
+            dispatch(
+                conversationCountsActions.markMessagesAsUnreadPending({ messages, labelID, conversations, folders })
+            );
             const result = await runAction({
                 extra,
                 notificationText: showSuccessNotification
@@ -195,7 +223,15 @@ export const markMessagesAsUnread = createAsyncThunk<
             return result;
         } catch (error) {
             dispatch(messageCountsActions.markMessagesAsUnreadRejected({ messages, labelID }));
-            dispatch(conversationCountsActions.markMessagesAsUnreadRejected({ messages, labelID, conversations }));
+            dispatch(
+                conversationCountsActions.markMessagesAsUnreadRejected({
+                    messages,
+                    labelID,
+                    conversations,
+                    folders,
+                    labels,
+                })
+            );
             throw error;
         }
     }

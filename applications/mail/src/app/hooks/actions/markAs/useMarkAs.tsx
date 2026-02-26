@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -44,6 +45,8 @@ export const useMarkAs = () => {
     const { sendSimpleActionReport } = useListTelemetry();
     const getConversationsByIDs = useGetConversationsByIDs();
     const handleOnBackMoveAction = useMoveBackAction();
+    const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
 
     const markAs = useCallback(
         async ({ elements, labelID = '', status, silent, selectAll, onCheckAll, sourceAction }: MarkAsParams) => {
@@ -82,6 +85,8 @@ export const useMarkAs = () => {
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,
+                                folders,
+                                labels,
                             })
                         );
                     } else {
@@ -91,6 +96,8 @@ export const useMarkAs = () => {
                                 conversations,
                                 labelID,
                                 showSuccessNotification: !silent,
+                                folders,
+                                labels,
                             })
                         );
                     }
