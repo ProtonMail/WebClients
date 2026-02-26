@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 
-type PasswordTypeSwitch<T> = { extra: T; sso: T; default: T; twoPwd: T };
+export type PasswordTypeSwitch<T> = { extra: T; sso: T; default: T; twoPwd: T };
 export type PasswordTypeConfig = Omit<PasswordTypeSwitch<boolean>, 'default'>;
 
 export const passwordTypeSwitch =
