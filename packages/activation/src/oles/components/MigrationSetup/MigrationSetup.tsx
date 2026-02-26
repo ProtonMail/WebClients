@@ -11,6 +11,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { MigrationConfiguration, MigrationSetupModel } from '../../types';
 import { useProviderTokens } from '../../useProviderTokens';
+import { useConnectionState } from '../../useConnectionState';
+import StepAuthenticate from './StepAuthenticate';
 import StepConfigureMigration from './StepConfigureMigration';
 import StepInstallApp from './StepInstallApp';
 
@@ -26,11 +28,16 @@ type MigrationSetupState = {
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const [tokens, tokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
+    const [connectionState, , , resetConnectionState] = useConnectionState();
 
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: 0,
         completedSteps: [],
     });
+
+    useEffect(() => {
+        resetConnectionState();
+    }, [tokens]);
 
     const steps: {
         id: string;
@@ -41,10 +48,16 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         () =>
             [
                 {
-                    id: 'install-app',
+                    id: 'authenticate',
                     text: c('BOSS').t`Authenticate`,
-                    component: StepInstallApp,
+                    component: StepAuthenticate,
                     isInvalid: () => !tokens?.length,
+                },
+                {
+                    id: 'install-app',
+                    text: c('BOSS').t`Install migration app`,
+                    component: StepInstallApp,
+                    isInvalid: () => connectionState !== 'connected',
                 },
                 {
                     id: 'configure-migration',
