@@ -1323,6 +1323,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 라이선스 ${ seats } 개"
       ]
     },
     "Alert": {
@@ -1547,6 +1550,9 @@
       ],
       "Unlimited daily chats": [
         "일일 무제한 채팅"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
       ]
     },
     "BF2025: Tooltip": {
@@ -1581,6 +1587,12 @@
       ],
       "Yearly": [
         "연간"
+      ],
+      "${ n } month": [
+        "${ n }개월"
+      ],
+      "${ n } year": [
+        "${ n }년"
       ]
     },
     "Browser": {
@@ -1776,6 +1788,12 @@
       ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
+      ],
+      "Subtotal": [
+        "부분합계"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle }개월간 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -6775,6 +6793,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Can't move a folder into itself": [
+        "폴더를 자기자신 안으로 옮길 수 없습니다."
+      ],
+      "that": [
+        "그"
+      ],
+      "who": [
+        "누가"
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "이 폴더에 파일을 복사할 권한이 없습니다."
       ]
     },
     "info": {
@@ -9269,6 +9299,9 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ],
+      "Selected item was successfully removed from your list": [
+        "선택한 항목이 목록에서 성공적으로 삭제되었습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9659,6 +9692,9 @@
       ],
       "Verify thumbnails": [
         "섬네일 확인"
+      ],
+      "Expected structure": [
+        "예상 구조"
       ]
     },
     "Option group label": {
@@ -10479,6 +10515,15 @@
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours }시간 동안 비밀번호를 재설정할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes }분 동안 비밀번호를 재샐정 할 수 있습니다."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds }초 동안 비밀번호를 재설정할 수 있습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -10610,6 +10655,9 @@
       ],
       "Open in ${ appName } (Beta)": [
         "${ appName } (베타)(에)서 열기"
+      ],
+      "New spreadsheet": [
+        "새로운 스트레드시트"
       ]
     },
     "Signing preference for emails": {

@@ -1350,6 +1350,18 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licencí"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované servery VPN"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Writing assistant": [
+        "Asistent psaní"
       ]
     },
     "Alert": {
@@ -1559,6 +1571,33 @@
       ],
       "Connect 10 devices at once": [
         "Připojte až 10 zařízení současně"
+      ],
+      "3 TB data storage": [
+        "3 TB úložiště dat"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15000+ serverům v 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
       ]
     },
     "BF2025: Tooltip": {
@@ -1602,6 +1641,9 @@
       ],
       "Yearly": [
         "Ročně"
+      ],
+      "Lifetime access": [
+        "Doživotní přístup"
       ]
     },
     "Browser": {
@@ -1809,6 +1851,15 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ],
+      "Subtotal": [
+        "Mezisoučet"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Mezisoučet za ${ cycle } měsíc",
+        "Mezisoučet za ${ cycle } měsíce",
+        "Mezisoučet za ${ cycle } měsíců",
+        "Mezisoučet za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -7045,6 +7096,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Nemáte oprávnění kopírovat soubory do této složky."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaše další platba je ${ renewalTime }. Můžete kdykoli zrušit."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Datum vaší další fakturace je ${ renewalTime }. Můžete kdykoli zrušit. Pokud potřebujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ]
     },
     "info": {
@@ -9743,6 +9803,12 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Vybraná položka byla úspěšně odebrána z vašeho seznamu",
+        "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
+        "Vybrané položky byly úspěšně odebrány z vašeho seznamu",
+        "Vybrané položky byly úspěšně odebrány z vašeho seznamu"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10133,6 +10199,9 @@
       ],
       "Verify thumbnails": [
         "Ověřit miniatury"
+      ],
+      "Expected structure": [
+        "Očekávaná struktura"
       ]
     },
     "Option group label": {
@@ -10384,6 +10453,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (bez daně)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% daň: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Včetně ${ rate }% daně"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Včetně ${ rate }% daně: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Daň ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Daň ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -10447,6 +10543,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10977,6 +11076,24 @@
         "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
         "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -11114,6 +11231,12 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Otevřít v ${ appName }"
+      ],
+      "New spreadsheet": [
+        "Nová tabulka"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Otevřít v ${ appName } (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -11336,6 +11459,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Navyšte tarif a ušetřete více s 2 roky ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Uchovávejte svá hesla v bezpečí a uspořádaná ve více trezorech"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12072,6 +12198,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Billing information updated": [
+        "Informace o fakturaci aktualizovány"
       ]
     },
     "Suffix": {
