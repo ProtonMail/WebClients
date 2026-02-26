@@ -1077,6 +1077,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
+      ],
+      "Servers": [
+        "Palvelimet"
+      ],
+      "Users": [
+        "Käyttäjät"
       ]
     },
     "Alarm notification": {
@@ -1303,7 +1312,23 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 Tt tallennustilaa"
+      ],
+      "3 TB data storage": [
+        "3 Tt tallennustilaa"
+      ]
+    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
+      "${ n } year": [
+        "${ n } vuosi",
+        "${ n } vuotta"
+      ],
       "1 month": [
         "1 kuukausi"
       ],
@@ -1745,7 +1770,7 @@
         "Loputtomasti suosikkeja nopean pääsyn takaamiseksi"
       ],
       "Upload and query multiple large files": [
-        "Lataa ja laita jonoon useita suuria tiedostoja"
+        "Lähetä ja laita jonoon useita suuria tiedostoja"
       ],
       "Upload and query small files": [
         "Lähetä ja laita jonoon pieniä tiedostoja"
