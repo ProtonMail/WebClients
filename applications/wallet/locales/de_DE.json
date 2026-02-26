@@ -1062,6 +1062,13 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Subtotal": [
+        "Zwischensumme"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Zwischensumme für ${ cycle } Monat",
+        "Zwischensumme für ${ cycle } Monate"
+      ],
       "Total": [
         "Insgesamt"
       ],
@@ -4576,6 +4583,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
@@ -4597,6 +4610,18 @@
       "Got it": [
         "Verstanden"
       ],
+      "Including ${ rate }% tax": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Einschließlich ${ rate } % Steuern"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Einschließlich ${ rate } % Steuern: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -4614,6 +4639,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Tax ${ rate }%": [
+        "Steuer ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Steuern ${ rate } %"
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
