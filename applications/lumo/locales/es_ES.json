@@ -1423,9 +1423,6 @@
       "Processing file contents...": [
         "Procesando contenido del archivo..."
       ],
-      "Remove": [
-        "Eliminar"
-      ],
       "Remove file": [
         "Eliminar archivo"
       ],
@@ -1443,9 +1440,6 @@
       ],
       "Secure connection (encrypted)": [
         "Conexión segura (cifrada)"
-      ],
-      "selected": [
-        "seleccionado"
       ],
       "Show all files": [
         "Mostrar todos los archivos"
@@ -1954,6 +1948,9 @@
       ],
       "This message is empty. Sorry about that.": [
         "Este mensaje está vacío. Lo sentimos."
+      ],
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Se eliminarán los ${ fileCount } archivos de este proyecto. Esta acción no se puede deshacer."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Tus archivos son grandes. ${ LUMO_SHORT_APP_NAME } quizás no pueda procesar toda la información."
