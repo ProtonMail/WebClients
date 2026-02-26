@@ -66,7 +66,7 @@ export const DeleteIncomingRecoveryContactModal = ({ value, ...rest }: Props) =>
             <br />
             <br />
             {c('emergency_access')
-                .jt`You will no longer be able to help recover access to the account of ${user} in case of a password reset.`}
+                .jt`You will no longer be able to help ${user} recover their data after they reset their password.`}
         </Prompt>
     );
 };
