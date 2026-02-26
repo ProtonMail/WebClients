@@ -411,8 +411,8 @@ END:VCARD`;
         const expected: VCardContact = {
             fn: [{ field: 'fn', value: 'Name', uid: '' }],
             version: { field: 'version', value: '4.0', uid: '' },
-            bday: { field: 'bday', value: { text: 'bidet' }, params: { type: 'text' }, uid: '' },
-            anniversary: { field: 'anniversary', value: { text: 'annie' }, params: { type: 'text' }, uid: '' },
+            bday: { field: 'bday', value: { text: 'bidet' }, params: { value: 'text' }, uid: '' },
+            anniversary: { field: 'anniversary', value: { text: 'annie' }, params: { value: 'text' }, uid: '' },
         };
 
         const contact = getSupportedContact(vCard);
