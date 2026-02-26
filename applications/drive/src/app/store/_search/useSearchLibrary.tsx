@@ -72,7 +72,8 @@ export const SearchLibraryProvider = ({ children }: Props) => {
 
     const initializeESDrive = async () => {
         // Migrate old IDBs
-        const success = await migrate(user.ID, getUserKeys, defaultShareIdPromise);
+        const userKeys = await getUserKeys();
+        const success = await migrate(user.ID, userKeys, defaultShareIdPromise);
         if (!success) {
             return esFunctions.esDelete();
         }

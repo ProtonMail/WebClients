@@ -1,6 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
 import {
     type ESCiphertext,
     type GeneratedIndexKey,
@@ -10,6 +10,7 @@ import {
 } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -108,12 +109,11 @@ export const initializeEncryptedSearch = async ({
 /**
  * Decrypt the given encrypted index key.
  */
-export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: string) => {
-    const userKeysList = await getUserKeys();
+export const decryptIndexKey = async (userKeys: DecryptedKey<PrivateKeyReference>[], encryptedKey: string) => {
     const decryptionResult = await CryptoProxy.decryptMessage({
         armoredMessage: encryptedKey,
-        verificationKeys: userKeysList.map(({ publicKey }) => publicKey),
-        decryptionKeys: userKeysList.map(({ privateKey }) => privateKey),
+        verificationKeys: userKeys.map(({ publicKey }) => publicKey),
+        decryptionKeys: userKeys.map(({ privateKey }) => privateKey),
     });
 
     const { data: decryptedKey } = decryptionResult;
@@ -126,13 +126,13 @@ export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: st
  * Retrieve and decrypt the index key. Return undefined if something goes wrong
  * or if there is no key.
  */
-export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
+export const getIndexKey = async (userKeys: DecryptedKey<PrivateKeyReference>[], userID: string) => {
     try {
         const encrypted = await readIndexKey(userID);
         if (!encrypted) {
             throw new Error('Reading index key error');
         }
-        return await decryptIndexKey(getUserKeys, encrypted);
+        return await decryptIndexKey(userKeys, encrypted);
     } catch (error: any) {
         esSentryReport('getIndexKey', { error });
     }

@@ -12,10 +12,11 @@
 import type { IDBPTransaction } from 'idb';
 import { openDB } from 'idb';
 
-import type { GetUserKeys } from '@proton/encrypted-search/models';
-import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search/esHelpers';
+import type { PrivateKeyReference } from '@proton/crypto';
 import { ES_MAX_ITEMS_PER_BATCH, INDEXING_STATUS, defaultESProgress } from '@proton/encrypted-search/constants';
+import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search/esHelpers';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 /**
  * Interface of the old progress blob as we used to store in local
@@ -68,7 +69,11 @@ const moveCiphertexts = async (tx: IDBPTransaction<unknown, string[], 'versionch
  *   3. ES was indexing. In this case we just act as if the migration
  *      failed, since drive doesn't allow recovering indexing
  */
-export const migrate = async (userID: string, getUserKeys: GetUserKeys, promiseShareID: Promise<string>) => {
+export const migrate = async (
+    userID: string,
+    userKeys: DecryptedKey<PrivateKeyReference>[],
+    promiseShareID: Promise<string>
+) => {
     const { armoredIndexKey, progressBlob, lastEventID, size, isEnabled } = getESBlobs(userID);
 
     // Case 1. ES was never activated
@@ -86,7 +91,7 @@ export const migrate = async (userID: string, getUserKeys: GetUserKeys, promiseS
     // cases. If this operation fails, ES is in a corrupt state and
     // should be deactivated
     try {
-        await decryptIndexKey(getUserKeys, armoredIndexKey);
+        await decryptIndexKey(userKeys, armoredIndexKey);
     } catch (error: any) {
         return false;
     }
