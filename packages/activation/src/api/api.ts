@@ -202,8 +202,8 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     data: { Email, OrganizationId },
 });
 
-export const getOrganizationUsers = () => ({
-    url: 'importer/v1/organizations/users',
+export const getOrganizationUsers = (importerOrganizationId: string) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}/users`,
     method: 'GET',
 });
 
