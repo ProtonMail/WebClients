@@ -7,6 +7,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
@@ -23,6 +24,9 @@ type Props = {
     onClose: () => void;
     setIsFinished: Dispatch<SetStateAction<boolean>>;
 };
+
+// Used to determine if the rating is high or low and display the feedback form accordingly.
+const RATING_THRESHOLD = 4;
 
 export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) => {
     const meetFeedbackOnSkipEnabled = useFlag('MeetFeedbackOnSkip');
@@ -122,6 +126,9 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
         c('Option').t`I couldn't present `,
     ];
 
+    const isHighRating = rating && rating >= RATING_THRESHOLD;
+    const isLowRating = rating && rating < RATING_THRESHOLD;
+
     return (
         <>
             <div
@@ -131,8 +138,7 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                 <span className="text-semibold text-left feedback-form-rating-label">{c('Label')
                     .t`How was the call quality?`}</span>
                 <StarRating value={rating} onChange={SetRating} className="md:flex-1 flex-nowrap"></StarRating>
-                {/* is high rating */}
-                {rating && rating >= 3 && (
+                {isHighRating && (
                     <Button
                         className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto"
                         loading={isLoading}
@@ -146,12 +152,11 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                     </Button>
                 )}
             </div>
-            {/* is low rating */}
-            {rating && rating < 3 && (
+            {isLowRating && (
                 <>
                     <div className="cta-modal-title text-semibold color-norm pt-10 pb-10">{c('Title')
                         .t`What went wrong?`}</div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4 w-full md:w-auto">
                         <FeedbackOptionColumn
                             options={audioOptions}
                             selectedOptions={selectedOptions}
@@ -167,28 +172,28 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                             selectedOptions={selectedOptions}
                             onOptionSelect={handleOptionSelect}
                         />
-                    </div>
-                    <div className="w-full flex flex-nowrap items-center justify-start gap-2 text-semibold mt-7 max-w-custom">
-                        <InlineLinkButton
-                            className="flex add-details-button items-center gap-2"
-                            onClick={() => setOptionalDetails(!optionalDetails)}
-                        >
-                            <IcPlus />
-                            {c('Label').t`Add optional details`}
-                        </InlineLinkButton>
-                    </div>
-                    {optionalDetails && (
-                        <div className="mt-4 w-full max-w-custom">
-                            <InputFieldTwo
-                                className="feedback-comment w-full md:w-2/3"
-                                as={TextAreaTwo}
-                                rows={3}
-                                value={comment}
-                                onValue={setComment}
-                                placeholder={c('Placeholder').t`Share more details`}
-                            />
+                        <div className="w-full flex flex-nowrap items-center justify-start gap-2 text-semibold mt-4 grid-row-full-width">
+                            <InlineLinkButton
+                                className="flex add-details-button items-center gap-2"
+                                onClick={() => setOptionalDetails(!optionalDetails)}
+                            >
+                                {optionalDetails ? <IcMinus /> : <IcPlus />}
+                                {c('Label').t`Add optional details`}
+                            </InlineLinkButton>
                         </div>
-                    )}
+                        {optionalDetails && (
+                            <div className="mt-4 grid-row-full-width">
+                                <InputFieldTwo
+                                    className="feedback-comment w-full p-6"
+                                    as={TextAreaTwo}
+                                    rows={3}
+                                    value={comment}
+                                    onValue={setComment}
+                                    placeholder={c('Placeholder').t`Share more details`}
+                                />
+                            </div>
+                        )}
+                    </div>
                     <div className="flex flex-column md:flex-row gap-2 items-center mt-4 w-full max-w-custom">
                         <Button
                             className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto flex-auto"
@@ -201,7 +206,7 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                                     });
                                 }
                             }}
-                            size="medium"
+                            size="large"
                         >
                             {c('Action').t`Skip`}
                         </Button>
@@ -216,7 +221,7 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                                     })
                                 );
                             }}
-                            size="medium"
+                            size="large"
                             loading={isLoading}
                             disabled={isLoading}
                         >

@@ -4,6 +4,10 @@
 im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
+.grid-row-full-width {
+	grid-column: 1 / -1;
+}
+
 .feedback-comment {
 	background: var(--background-weak);
 	border: 1px solid var(--interaction-norm) !important;
