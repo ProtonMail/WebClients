@@ -234,3 +234,51 @@ export const insertTextBeforeContent = (
     }
     return newBody;
 };
+
+export const isMessageContentEmpty = (messageContent: string, plain: boolean) => {
+    if (!messageContent) {
+        return true;
+    }
+
+    // In plaintext mode, we can simply check if the string contains text
+    if (plain) {
+        return messageContent.trim().length === 0;
+    }
+
+    // For HTML mode, we can expand blockquotes when the content has no text or media (img, video, svg, etc...)
+    const doc = new DOMParser().parseFromString(messageContent, 'text/html');
+
+    const hasText = (doc.body.textContent?.trim() || '').length > 0;
+
+    // Early return to prevent searching for images for no reason in large content
+    if (hasText) {
+        return false;
+    }
+
+    // We should replace images in the body with a span because we are showing them in a portal
+    const hasImagePlaceholder = doc.body.querySelectorAll('.proton-image-anchor').length > 0;
+
+    if (hasImagePlaceholder) {
+        return false;
+    }
+
+    // Elements can be placed in links, such as videos
+    const hasLinks = doc.body.querySelectorAll('a').length > 0;
+
+    if (hasLinks) {
+        return false;
+    }
+
+    const hasTables = doc.body.querySelectorAll('table').length > 0;
+
+    if (hasTables) {
+        return false;
+    }
+
+    // Some images can also be present in styles
+    const hasUrlInStyle = Array.from(doc.querySelectorAll('[style]')).some((el) =>
+        el.getAttribute('style')?.includes('url(')
+    );
+
+    return !hasUrlInStyle;
+};
