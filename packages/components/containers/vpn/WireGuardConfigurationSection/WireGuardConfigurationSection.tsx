@@ -33,7 +33,6 @@ import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
-import useFlag from '@proton/unleash/useFlag';
 
 import Prompt from '../../../components/prompt/Prompt';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
@@ -109,8 +108,7 @@ const getCertificateModel = (
     certificateDto: CertificateDTO & { id?: string },
     peer: Peer,
     privateKey?: string,
-    id?: string,
-    isIPv6Enabled?: boolean
+    id?: string
 ): Certificate => {
     if (!id && !certificateDto.id) {
         certificateDto.id = `c${Date.now()}-${Math.random()}`;
@@ -128,7 +126,7 @@ const getCertificateModel = (
         publicKey: certificateDto.ClientKey,
         publicKeyFingerprint: certificateDto.ClientKeyFingerprint,
         expirationTime: certificateDto.ExpirationTime,
-        config: getConfigTemplate(privateKey || privateKeyPlaceholder, name, features, peer, isIPv6Enabled),
+        config: getConfigTemplate(privateKey || privateKeyPlaceholder, name, features, peer),
     };
 };
 
@@ -194,7 +192,6 @@ const WireGuardConfigurationSection = () => {
     const { loading: certificatesLoading, result: certificatesResult, moreToLoad } = useCertificates(limit);
 
     const countryOptions = getCountryOptions(userSettings);
-    const isIpv6ForWgConfig = useFlag('Ipv6ForWgConfig');
     const logicalInfoLoading = logicalsLoading || vpnLoading;
     const maxTier = userVPN?.MaxTier || 0;
     const logicals = useMemo(
@@ -230,8 +227,7 @@ const WireGuardConfigurationSection = () => {
                 certificateDto,
                 peer,
                 undefined,
-                undefined,
-                isIpv6ForWgConfig
+                undefined
             );
         });
 
@@ -380,13 +376,7 @@ const WireGuardConfigurationSection = () => {
                     certificate.DeviceName = deviceName;
                 }
 
-                const newCertificate = getCertificateModel(
-                    certificate,
-                    addedPeer || peer,
-                    x25519PrivateKey,
-                    undefined,
-                    isIpv6ForWgConfig
-                );
+                const newCertificate = getCertificateModel(certificate, addedPeer || peer, x25519PrivateKey, undefined);
                 const id = newCertificate.id;
                 let name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
@@ -566,13 +556,7 @@ const WireGuardConfigurationSection = () => {
                 renewedCertificate.DeviceName = nameInputRef?.current?.value || '';
             }
 
-            const newCertificate = getCertificateModel(
-                renewedCertificate,
-                peer,
-                certificate.privateKey,
-                undefined,
-                isIpv6ForWgConfig
-            );
+            const newCertificate = getCertificateModel(renewedCertificate, peer, certificate.privateKey, undefined);
             setCertificates([...(certificates || []), newCertificate]);
             setCurrentCertificate(newCertificate.id);
             const formattedExpirationDate = readableTime(newCertificate.expirationTime, {
