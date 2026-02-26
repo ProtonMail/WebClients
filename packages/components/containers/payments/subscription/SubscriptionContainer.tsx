@@ -1041,7 +1041,7 @@ const SubscriptionContainerInner = ({
                             ? ProrationMode.Exact
                             : undefined,
                     IsTrial: shouldPassIsTrial(newModel, false),
-                    ValidateZipCode: true,
+                    ValidateBillingAddress: true,
                 };
 
                 const checkResult = await paymentsApi.checkSubscription(checkPayload, {

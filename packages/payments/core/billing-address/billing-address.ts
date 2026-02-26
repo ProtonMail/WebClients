@@ -97,25 +97,11 @@ export type PayloadBillingAddress = BillingAddress & {
     VatId?: string | null;
 };
 
-function normalizeZipCodeInBillingAddress({
-    billingAddress,
-    hasZipCodeValidation,
-}: {
-    billingAddress: BillingAddress;
-    hasZipCodeValidation: boolean;
-}): BillingAddress {
+function normalizeZipCodeInBillingAddress({ billingAddress }: { billingAddress: BillingAddress }): BillingAddress {
     if (!billingAddress.ZipCode) {
         return billingAddress;
     }
 
-    // If the feature flag is off, delete the ZipCode completely to revert to the pre-zip code feature behavior
-    if (!hasZipCodeValidation) {
-        const copy = {
-            ...billingAddress,
-        };
-        delete copy.ZipCode;
-        return copy;
-    }
     return {
         ...billingAddress,
         ZipCode: normalizePostalCode(billingAddress.ZipCode, billingAddress.CountryCode),
@@ -143,15 +129,12 @@ function normalizeVatIdInBillingAddress({
 export function getBillingAddressPayload({
     billingAddress,
     vatId,
-    hasZipCodeValidation,
 }: {
     billingAddress: BillingAddress;
     vatId: string | undefined;
-    hasZipCodeValidation: boolean;
 }): PayloadBillingAddress {
     const withNormalizedZipCode = normalizeZipCodeInBillingAddress({
         billingAddress,
-        hasZipCodeValidation,
     });
 
     const withNormalizedVatId = normalizeVatIdInBillingAddress({

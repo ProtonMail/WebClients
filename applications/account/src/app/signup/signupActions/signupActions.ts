@@ -317,7 +317,6 @@ export const handleSubscribeUser = async ({
     api,
     subscriptionData,
     productParam,
-    hasZipCodeValidation,
     reportPaymentSuccess,
     reportPaymentFailure,
     telemetryContext,
@@ -325,7 +324,6 @@ export const handleSubscribeUser = async ({
     api: Api;
     subscriptionData: SubscriptionData;
     productParam: ProductParam;
-    hasZipCodeValidation: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
@@ -367,7 +365,6 @@ export const handleSubscribeUser = async ({
                 subscription: undefined,
                 product: productParam,
                 version: paymentsVersion,
-                hasZipCodeValidation,
                 telemetryContext: telemetryContext ?? 'other',
                 paymentMethodType: subscriptionData.payment?.paymentMethodType,
                 paymentMethodValue: subscriptionData.payment?.paymentMethodValue,
@@ -391,7 +388,6 @@ export const handleSetupUser = async ({
     setupKeys = true,
     reportPaymentSuccess,
     reportPaymentFailure,
-    hasZipCodeValidation,
     telemetryContext,
 }: {
     cache: SignupCacheResult;
@@ -401,7 +397,6 @@ export const handleSetupUser = async ({
     setupKeys?: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
-    hasZipCodeValidation: boolean;
     telemetryContext?: PaymentTelemetryContext;
 }): Promise<SignupActionResponse> => {
     const {
@@ -443,7 +438,6 @@ export const handleSetupUser = async ({
             api,
             subscriptionData,
             productParam,
-            hasZipCodeValidation,
             reportPaymentSuccess,
             reportPaymentFailure,
             telemetryContext,

@@ -15,11 +15,11 @@ export const getSubscriptionDataFromPlanToCheck = ({
     currency,
     coupon,
     trial = false,
-    ValidateZipCode,
+    ValidateBillingAddress,
     VatId,
     BillingAddress,
 }: PlanToCheck & {
-    ValidateZipCode?: boolean;
+    ValidateBillingAddress?: boolean;
     VatId: string | undefined;
     BillingAddress: BillingAddress;
 }): CheckSubscriptionData => ({
@@ -32,7 +32,7 @@ export const getSubscriptionDataFromPlanToCheck = ({
         State: BillingAddress.State,
         ZipCode: BillingAddress.ZipCode,
     },
-    ValidateZipCode,
+    ValidateBillingAddress,
     IsTrial: trial,
     VatId,
 });
