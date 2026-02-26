@@ -1283,6 +1283,9 @@
       ],
       "Two-year": [
         "Kétévente"
+      ],
+      "Yearly": [
+        "Évente"
       ]
     },
     "Browser": {
@@ -5088,7 +5091,7 @@
         "Fedezze fel a ${ planTitle } csomaggal elérhetővé vált új funkciókat, és használja őket azonnal!"
       ],
       "Discover ProtectBuy logo": [
-        "Discover ProtectBuy logo"
+        "Fedezze fel a ProtectBuy-t logó"
       ],
       "Display events for calendar ${ Name }": [
         "Események megjelenítése a ${ Name } naptárnak"
@@ -6033,6 +6036,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 órával előtte"
       ]
     },
     "info": {
@@ -11924,6 +11930,12 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     }
   }

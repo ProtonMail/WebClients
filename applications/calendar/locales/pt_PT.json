@@ -917,6 +917,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Desativar a funcionalidade de adição automática de links do ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Desativar adição automática"
       ]
     },
     "action": {
@@ -1231,6 +1237,9 @@
       ],
       "Two-year": [
         "Bianual"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -3597,6 +3606,15 @@
       ],
       "ZIP code is required": [
         "O código postal é necessário."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Falha ao adicionar a videoconferência existente do ${ MEET_APP_NAME }"
+      ],
+      "Failed to update settings": [
+        "Falha ao atualizar definições"
+      ],
+      "You cannot enter the organizer's email": [
+        "Não é possível introduzir o e-mail do organizador"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5830,6 +5848,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-mail de contacto da reserva: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Com que antecedência é possível efetuar uma reserva?"
+      ],
+      "Min. 2 hours before": [
+        "Mín. 2 horas antes"
+      ],
+      "Min. 48 hours before": [
+        "Mín. 48 horas antes"
+      ],
+      "Not on the same day": [
+        "Não no mesmo dia"
+      ],
+      "Other location": [
+        "Outra localização"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Adicionámos automaticamente um link do ${ MEET_APP_NAME }"
+      ],
+      "Which calendars should block bookings?": [
+        "Quais os calendários que devem bloquear reservas?"
       ]
     },
     "info": {
@@ -6497,6 +6539,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Add notice period": [
+        "Adicionar período de aviso"
+      ],
+      "Check additional calendars for availability": [
+        "Verificar calendários adicionais para disponibilidade"
       ]
     },
     "Label for contact group color": {
@@ -10136,6 +10184,9 @@
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Adição automática de links do ${ MEET_APP_NAME } desativada"
       ]
     },
     "Suffix": {
@@ -11525,6 +11576,18 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mês",
+        "${ cycle } meses"
+      ]
+    },
+    "Referral": {
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Tem **${ daysRemaining } dia restante** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer.",
+        "Tem **${ daysRemaining } dias restantes** para explorar todos os recursos poderosos que o **${ planTitle }** tem para oferecer."
       ]
     }
   }

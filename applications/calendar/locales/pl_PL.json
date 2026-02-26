@@ -1312,6 +1312,9 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ],
+      "Yearly": [
+        "Rocznie"
       ]
     },
     "Browser": {
@@ -12228,6 +12231,14 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } miesiąc",
+        "${ cycle } miesiące",
+        "${ cycle } miesięcy",
+        "${ cycle } miesięca"
       ]
     }
   }

@@ -1088,6 +1088,36 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 台の専用VPNサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } のシート"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AIライセンス"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
+      "Domains": [
+        "ドメイン"
+      ],
+      "Servers": [
+        "サーバー"
+      ],
+      "Users": [
+        "ユーザー"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
+      "Writing assistant seats": [
+        "執筆アシスタントシート"
       ]
     },
     "Alarm notification": {
@@ -1389,6 +1419,21 @@
       ],
       "Two-year": [
         "2年払い"
+      ],
+      "${ n } month": [
+        "${ n } ヶ月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
+      "Billed monthly": [
+        "毎月請求"
+      ],
+      "Lifetime access": [
+        "生涯アクセス"
+      ],
+      "Yearly": [
+        "年払い"
       ]
     },
     "Browser": {
@@ -6385,6 +6430,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "次回の請求日は${ renewalTime }です。いつでもキャンセルできます。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "次回の請求日は ${ renewalTime }です。いつでもキャンセルできます。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ]
     },
     "info": {
@@ -9262,6 +9316,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice }（税別）"
       ]
     },
     "Payments.Error": {
@@ -9856,10 +9913,10 @@
         "${ timeRemaining.inDays } 日後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " ${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
+        "${ timeRemaining.inHours } 時間後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " ${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
+        "${ timeRemaining.inMinutes } 分後にパスワードをリセットできます。"
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "${ timeRemaining.inSeconds } 秒後にパスワードをリセットできます。"
@@ -12442,6 +12499,25 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "更新価格は、請求地域とABNによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "更新価格は、請求地域と事業所番号によって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "更新価格は、請求地域とEINによって異なります。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "更新価格は、請求地域およびVAT番号によって異なります。"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }ヶ月"
       ]
     }
   }

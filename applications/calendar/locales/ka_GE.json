@@ -1097,6 +1097,14 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } გამოყოფილი VPN სერვერი",
+        "${ ips } გამოყოფილი VPN სერვერი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
       ]
     },
     "Alarm notification": {
@@ -1395,6 +1403,9 @@
       ],
       "Two-year": [
         "ორი წლით"
+      ],
+      "Yearly": [
+        "წლიურად"
       ]
     },
     "Browser": {
@@ -12513,6 +12524,12 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } თვე",
+        "${ cycle } თვე"
       ]
     }
   }

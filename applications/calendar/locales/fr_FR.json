@@ -1097,6 +1097,38 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } serveur VPN dédié",
+        "${ ips } serveurs VPN dédiés"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licence IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } accès"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licence IA ${ LUMO_APP_NAME }",
+        "${ seats } licences IA ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Domains": [
+        "Domaines"
+      ],
+      "Servers": [
+        "Serveurs"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ],
+      "Writing assistant seats": [
+        "Accès à l'assistant d'écriture"
       ]
     },
     "Alarm notification": {
@@ -1342,7 +1374,7 @@
         "2 To d'espace de stockage"
       ],
       "3 TB data storage": [
-        "3 To d'espace de stockage de données"
+        "3 To d'espace de stockage"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
@@ -1360,7 +1392,7 @@
         "Authentificateur A2F intégré"
       ],
       "Connect 10 devices at once": [
-        "Connectez 10 appareils à la fois"
+        "Connectez 10 appareils en même temps"
       ],
       "Full chat history with easy search and favorites": [
         "Historique complet des discussions avec recherche facile et favoris"
@@ -1372,7 +1404,7 @@
         "Comptes individuels pour vous et un partenaire"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection plus forte contre les menaces cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1401,6 +1433,23 @@
       ],
       "Two-year": [
         "Tous les deux ans"
+      ],
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ans"
+      ],
+      "Billed monthly": [
+        "Facturé mensuellement"
+      ],
+      "Lifetime access": [
+        "Accès à vie"
+      ],
+      "Yearly": [
+        "Annuel"
       ]
     },
     "Browser": {
@@ -1780,6 +1829,13 @@
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
         "Total pour ${ n } mois"
+      ],
+      "Subtotal": [
+        "Sous-total"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Sous-total pour ${ cycle } mois",
+        "Sous-total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -6474,6 +6530,16 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
+        "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
       ]
     },
     "info": {
@@ -9428,6 +9494,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (hors taxe)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Comprenant ${ rate } % de taxes"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Comprenant ${ rate } % de taxes"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Comprenant ${ rate } % de taxes : ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Taxe ${ rate } %"
+      ],
+      "Taxes ${ rate }%": [
+        "Taxes ${ rate } %"
       ]
     },
     "Payments.Error": {
@@ -12706,6 +12799,26 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro d'entreprise."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Le prix du renouvellement dépend de la région de facturation et de l'EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Le prix du renouvellement dépend de la région de facturation et du numéro de TVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mois",
+        "${ cycle } mois"
       ]
     }
   }

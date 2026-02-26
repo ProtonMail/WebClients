@@ -1276,6 +1276,9 @@
       ],
       "Two-year": [
         "Dve leti"
+      ],
+      "Yearly": [
+        "Letno"
       ]
     },
     "Browser": {
@@ -12089,6 +12092,14 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mesec",
+        "${ cycle } meseca",
+        "${ cycle } meseci",
+        "${ cycle } mesecev"
       ]
     }
   }

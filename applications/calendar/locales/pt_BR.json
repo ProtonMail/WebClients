@@ -1097,6 +1097,38 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licença de IA"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } licenças"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licença de IA do ${ LUMO_APP_NAME }",
+        "${ seats } licenças de IA do ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
+      "Domains": [
+        "Domínios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
+      "Writing assistant seats": [
+        "Licenças de assistente de escrita"
       ]
     },
     "Alarm notification": {
@@ -1363,13 +1395,13 @@
         "Conecte 10 dispositivos de uma só vez"
       ],
       "Full chat history with easy search and favorites": [
-        "Histórico de bate-papo completo com busca fácil e favoritos."
+        "Histórico completo de bate-papo com pesquisa fácil e favoritos"
       ],
       "Individual accounts for 6 users": [
         "Contas individuais para 6 usuários"
       ],
       "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
+        "Contas individuais para você e seu parceiro"
       ],
       "Stronger protection against cyber threats": [
         "Proteção mais forte contra ameaças cibernéticas"
@@ -1401,6 +1433,23 @@
       ],
       "Two-year": [
         "Dois anos"
+      ],
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } ano",
+        "${ n } anos"
+      ],
+      "Billed monthly": [
+        "Cobrado mensalmente"
+      ],
+      "Lifetime access": [
+        "Acesso vitalício"
+      ],
+      "Yearly": [
+        "Anualmente"
       ]
     },
     "Browser": {
@@ -1780,6 +1829,13 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mês",
+        "Subtotal por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -3988,6 +4044,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Tax exemption is not supported for this plan": [
+        "A isenção de impostos não é suportada para este plano"
       ]
     },
     "error": {
@@ -6471,6 +6530,13 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
+        "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ]
     },
     "info": {
@@ -9431,6 +9497,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (sem impostos)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de imposto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de imposto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Incluindo ${ rate }% de imposto"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluindo ${ rate }% de imposto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluindo ${ rate }% de impostos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluindo ${ rate }% de impostos: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Imposto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impostos ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -10037,15 +10130,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Você tem ${ timeRemaining.inHours } hora para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
+        "Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Você tem ${ timeRemaining.inMinutes } minuto para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
+        "Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Você tem ${ timeRemaining.inSeconds } segundo para redefinir sua senha.",
-        " Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
+        "Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
       ]
     },
     "session_recovery:available:link": {
@@ -10444,6 +10537,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Faça upgrade e economize mais com 2 anos de ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Mantenha suas senhas seguras e organizadas em vários cofres"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12706,6 +12802,26 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "O preço de renovação depende da região de faturamento e do ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "O preço de renovação depende da região de faturamento e do número comercial."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "O preço de renovação depende da região de faturamento e do EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "O preço de renovação depende da região de faturamento e do número de IVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mês",
+        "${ cycle } meses"
       ]
     }
   }

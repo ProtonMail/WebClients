@@ -921,6 +921,9 @@
       ],
       "Two-year": [
         "Snat n tikkal i useggas"
+      ],
+      "Yearly": [
+        "S useggas"
       ]
     },
     "Bug category": {
@@ -7515,6 +7518,12 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } wayyur",
+        "${ cycle } wayyuren"
       ]
     }
   }
