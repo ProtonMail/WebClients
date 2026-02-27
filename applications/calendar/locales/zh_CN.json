@@ -4464,12 +4464,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错。请重试。"
+        "使用安全密钥认证时出现问题，请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Security key": [
         "安全密钥"
@@ -5400,7 +5400,7 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每条恢复码只能使用一次"
+        "每个恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -5433,7 +5433,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -6183,7 +6183,7 @@
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ],
       "Where will the appointment take place?": [
         "预约将在何处进行？"
@@ -12551,6 +12551,16 @@
     "Plans": {
       "${ cycle } month": [
         "${ cycle } 个月"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 春季特惠"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "春季特惠"
       ]
     }
   }
