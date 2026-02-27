@@ -6,8 +6,7 @@
  * upper bound for when to remove the migration code, and that is three
  * weeks. All users who login before three weeks will have their IDB
  * migrated, while all those who don't would anyway receive a refresh
- * flag from the BE, thus once this migration code no longer exists
- * the checkVersionedESDB will remove the old index
+ * flag from the BE
  */
 import type { IDBPTransaction } from 'idb';
 import { openDB } from 'idb';
