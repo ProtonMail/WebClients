@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
+import type { ConnectionState } from 'livekit-client';
+
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
@@ -57,6 +59,10 @@ interface MeetContainerProps {
     expirationTime: number | null;
     isGuestAdmin: boolean;
     isUsingTurnRelay: boolean;
+    liveKitConnectionState: ConnectionState | null;
+    showReconnectedMessage: boolean;
+    setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
+    setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
 }
 
 export const MeetContainer = ({
@@ -91,6 +97,10 @@ export const MeetContainer = ({
     isRecordingInProgress,
     getKeychainIndexInformation,
     isUsingTurnRelay,
+    liveKitConnectionState,
+    showReconnectedMessage,
+    setShowReconnectedMessage,
+    setLiveKitConnectionState,
 }: MeetContainerProps) => {
     const [resolution, setResolution] = useState<string | null>(null);
     const debugOverlay = useDebugOverlay();
@@ -188,6 +198,11 @@ export const MeetContainer = ({
                             screenShareTrack={screenShareTrack}
                             screenShareParticipant={screenShareParticipant}
                             isUsingTurnRelay={isUsingTurnRelay}
+                            liveKitConnectionState={liveKitConnectionState}
+                            showReconnectedMessage={showReconnectedMessage}
+                            setShowReconnectedMessage={setShowReconnectedMessage}
+                            setLiveKitConnectionState={setLiveKitConnectionState}
+                            isDisconnected={isDisconnected}
                         />
                     </MeetContext.Provider>
                     <AutoCloseMeetingModal participantCount={sortedParticipants.length} onLeave={handleLeave} />
