@@ -5,6 +5,7 @@ import { useFormErrors, useNotifications } from '@proton/components';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { useLoading } from '@proton/hooks';
 
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { type UseRenameDeviceModalProps, useRenameDeviceModalState } from './useRenameDeviceModalState';
@@ -15,6 +16,7 @@ jest.mock('@proton/components', () => ({
 }));
 
 jest.mock('@proton/hooks', () => ({
+    ...jest.requireActual('@proton/hooks'),
     useLoading: jest.fn(),
 }));
 
@@ -133,6 +135,45 @@ describe('useRenameDeviceModalState', () => {
         expect(mockDrive.renameDevice).toHaveBeenCalledWith(DEVICE_UID, 'Renamed device');
         expect(mockCreateNotification).toHaveBeenCalledWith({ text: 'Device renamed' });
         expect(onClose).toHaveBeenCalled();
+    });
+
+    describe('device name loading', () => {
+        it('pre-populates inputName/deviceName with the device name', async () => {
+            const { hook } = renderUseRenameDeviceModalState();
+
+            await waitFor(() => {
+                expect(hook.result.current.inputName).toBe('My laptop');
+                expect(hook.result.current.deviceName).toBe('My laptop');
+                expect(hook.result.current.isReady).toBe(true);
+            });
+        });
+
+        it('leaves device name and inputName empty when device is not found', async () => {
+            jest.mocked(getDeviceByUid).mockResolvedValue(undefined);
+            const { hook } = renderUseRenameDeviceModalState();
+
+            await waitFor(() => {
+                expect(hook.result.current.isReady).toBe(true);
+            });
+
+            expect(hook.result.current.deviceName).toBe('');
+            expect(hook.result.current.inputName).toBe('');
+        });
+
+        it('calls handleSdkError and still marks the modal as ready when fetching the device fails', async () => {
+            jest.mocked(getDeviceByUid).mockRejectedValue(new Error('network'));
+            const { hook } = renderUseRenameDeviceModalState();
+
+            await waitFor(() => {
+                expect(hook.result.current.isReady).toBe(true);
+            });
+
+            expect(handleSdkError).toHaveBeenCalledWith(
+                expect.any(Error),
+                expect.objectContaining({ fallbackMessage: "Can't retrieve device name" })
+            );
+            expect(hook.result.current.deviceName).toBe('');
+        });
     });
 
     it('skips renaming when form validation fails', async () => {
