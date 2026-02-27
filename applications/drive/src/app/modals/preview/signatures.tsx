@@ -5,16 +5,32 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SignatureIcon } from '../../components/SignatureIcon';
 
-export function getContentSignatureIssue(
+/**
+ * The method provides a label displayed to a user when there is a signature
+ * issue regarding the content of a file that requires acknowledgement before
+ * opening the preview.
+ *
+ * It checks the content author from the revision metadata and also the result
+ * of the content itself.
+ *
+ * The label is not returned if the verification is not requested. It is
+ * expected in some contexts to not have the possibility to access the public
+ * keys, such as on a public page.
+ */
+export function getContentSignatureIssueLabel(
     verifyMetadataSignatures: boolean,
     node?: MaybeNode,
     hasContentSignatureIssues?: boolean
 ): string | undefined {
+    if (!verifyMetadataSignatures) {
+        return undefined;
+    }
+
     if (hasContentSignatureIssues) {
         return c('Error').t`Data integrity check failed`;
     }
 
-    if (!verifyMetadataSignatures || !node) {
+    if (!node) {
         return undefined;
     }
 

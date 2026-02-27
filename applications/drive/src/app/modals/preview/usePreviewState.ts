@@ -14,7 +14,7 @@ import type { Drive } from './interface';
 import { logger } from './logger';
 import { getNavigation } from './navigation';
 import { getNodeActiveRevisionUid, getNodeMimeType, getNodeName, getSharedStatus } from './nodeUtils';
-import { getContentSignatureIssue } from './signatures';
+import { getContentSignatureIssueLabel } from './signatures';
 import { useVideoStreaming } from './streaming';
 import { getLargeThumbnail, useThumbnailLoader } from './thumbnails';
 import usePreviewActions from './usePreviewActions';
@@ -188,7 +188,11 @@ export function usePreviewState({
             mediaType: mimeType,
             sharedStatus: getSharedStatus(node),
             displaySize: node ? getNodeDisplaySize(node) : undefined,
-            contentSignatureIssue: getContentSignatureIssue(verifySignatures, node, nodeData?.hasSignatureIssues),
+            contentSignatureIssueLabel: getContentSignatureIssueLabel(
+                verifySignatures,
+                node,
+                nodeData?.hasSignatureIssues
+            ),
         },
         content: {
             thumbnailUrl: largeThumbnail?.url || smallThumbnailUrl,
