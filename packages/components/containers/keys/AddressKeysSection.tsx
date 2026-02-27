@@ -25,7 +25,7 @@ import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ChangePrimaryKeyForwardingNoticeModal from './changePrimaryKeyForwardingNotice/ChangePrimaryKeyForwardingNoticeModal';
-import DeleteKeyModal from './deleteKey/DeleteKeyModal';
+import { DeleteAddressKeyModal } from './deleteKey/DeleteAddressKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
@@ -320,7 +320,7 @@ const AddressKeysSection = () => {
                 />
             )}
             {renderDeleteKey && Address && tmpAddressKey && addressDisplayKey && (
-                <DeleteKeyModal
+                <DeleteAddressKeyModal
                     name={addressEmail}
                     address={Address}
                     addressKey={tmpAddressKey}

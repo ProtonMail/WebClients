@@ -10,6 +10,7 @@ import type { KeyDisplay, KeyStatus } from './interface';
 import { KeyType } from './interface';
 
 interface Arguments extends KeyMetadata<Key> {
+    type: 'user' | 'address';
     user: UserModel;
     address?: Address;
     isLoading: boolean;
@@ -19,6 +20,7 @@ interface Arguments extends KeyMetadata<Key> {
 }
 
 export const getDisplayKey = ({
+    type,
     user,
     address,
     algorithmInfos,
@@ -42,7 +44,8 @@ export const getDisplayKey = ({
     const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(address);
     const primary = signedKeyListItem?.Primary ?? Primary;
 
-    const isAddressKey = !!address;
+    const isAddressKey = type === 'address';
+    const isUserKey = type === 'user';
     const isAddressDisabled = address?.Status === 0;
 
     const isPrimary = primary === 1;
@@ -89,6 +92,7 @@ export const getDisplayKey = ({
             ...status,
             canModify,
             canEncryptAndSign,
+            isUserKey,
             isAddressKey,
             hasUserPermission,
             canDeleteForwarding,
