@@ -116,10 +116,12 @@ export const retryAPICalls = async <ESItemContent>({
     userID,
     indexKey,
     fetchESItemContent,
+    version,
 }: {
     userID: string;
     indexKey: IndexKey;
     fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent'];
+    version: number;
 }) => {
     const retryMap = await getRetries(userID);
     if (!retryMap.size || !fetchESItemContent) {
@@ -181,7 +183,7 @@ export const retryAPICalls = async <ESItemContent>({
                 }
 
                 try {
-                    const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, content);
+                    const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, content, version);
                     contentToAdd.push({
                         ID,
                         timepoint,

@@ -59,7 +59,7 @@ export const ES_MAX_ITEMS_PER_BATCH = 1_000;
 /**
  * Current version of the most up-to-date ES IndexedDB
  */
-export const INDEXEDDB_VERSION = 3;
+export const INDEXEDDB_VERSION = 4;
 
 /**
  * Maximum number of times an API call to fetch an item

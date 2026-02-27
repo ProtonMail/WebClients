@@ -106,7 +106,7 @@ export const hasReactivatedKey = ({
 /**
  * Create the encrypted object to store in IndexedDB
  */
-export const serializeAndEncryptItem = (indexKey: IndexKey, itemToStore: object) => {
+export const serializeAndEncryptItem = (indexKey: IndexKey, itemToStore: object, version: number) => {
     const serializedItem = new TextEncoder().encode(JSON.stringify(itemToStore));
-    return encryptItem(indexKey, serializedItem);
+    return encryptItem(indexKey, serializedItem, version);
 };
