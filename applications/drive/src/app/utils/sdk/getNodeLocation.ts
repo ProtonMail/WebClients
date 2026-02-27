@@ -96,7 +96,7 @@ export const formatNodeLocation = (nodeLocationRoot: NodeLocation, path: MaybeNo
     const pathItems = path.map(getNodeName);
     switch (nodeLocationRoot) {
         case NodeLocation.PHOTOS:
-            return BreadcrumbsTopitemLabels.PHOTOS;
+            return formatPath([], BreadcrumbsTopitemLabels.PHOTOS);
         case NodeLocation.MY_FILES:
             // Replace root folder generic/technical name by a human-readable one:
             pathItems.shift();

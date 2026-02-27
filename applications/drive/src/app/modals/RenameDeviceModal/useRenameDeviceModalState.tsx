@@ -33,18 +33,29 @@ export const useRenameDeviceModalState = ({
     const { createNotification } = useNotifications();
 
     const [deviceName, setDeviceName] = useState<string>('');
-    const [inputName, setInputName] = useState(() => deviceName);
+    const [inputName, setInputName] = useState('');
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         const getDeviceFromUid = async () => {
-            const device = await getDeviceByUid(deviceUid);
-            if (device) {
-                setDeviceName(getDeviceName(device));
+            try {
+                const device = await getDeviceByUid(deviceUid);
+                if (device) {
+                    setDeviceName(getDeviceName(device));
+                    setInputName(getDeviceName(device));
+                }
+            } catch (e) {
+                handleSdkError(e, {
+                    showNotification: true,
+                    fallbackMessage: c('Error').t`Can't retrieve device name`,
+                });
+            } finally {
+                setIsReady(true);
             }
         };
 
         void getDeviceFromUid();
-    }, [deviceUid, drive]);
+    }, [deviceUid]);
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
@@ -75,6 +86,7 @@ export const useRenameDeviceModalState = ({
         inputName,
         setInputName,
         submitting,
+        isReady,
         handleSubmit: () => withSubmitting(handleSubmit()),
         deviceNameValidation,
         onClose,
