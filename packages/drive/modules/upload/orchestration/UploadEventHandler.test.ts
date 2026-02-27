@@ -553,7 +553,7 @@ describe('UploadEventHandler', () => {
 
             expect(mockSetAbortController).toHaveBeenCalledTimes(1);
             expect(mockSetUploadController).toHaveBeenCalledTimes(1);
-            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(4);
             expect(mockCapacityManager.updateProgress).toHaveBeenCalledTimes(2);
             expect(mockRemoveController).toHaveBeenCalledTimes(1);
         });

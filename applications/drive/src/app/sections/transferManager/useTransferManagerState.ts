@@ -135,7 +135,8 @@ export const useTransferManagerState = () => {
         } else if (
             statesMap.get(BaseTransferStatus.InProgress) ||
             statesMap.get(BaseTransferStatus.Pending) ||
-            statesMap.get(UploadStatus.Preparing)
+            statesMap.get(UploadStatus.Preparing) ||
+            statesMap.get(UploadStatus.Waiting)
         ) {
             status = TransferManagerStatus.InProgress;
         } else if (statesMap.get(BaseTransferStatus.Failed) || statesMap.get(BaseTransferStatus.MalwareDetected)) {
@@ -167,11 +168,14 @@ export const useTransferManagerState = () => {
         const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) => {
             switch (status) {
                 case BaseTransferStatus.InProgress:
+                    return 4;
+                case UploadStatus.Preparing:
                     return 3;
                 case BaseTransferStatus.Failed:
                 case BaseTransferStatus.MalwareDetected:
                     return 2;
                 case BaseTransferStatus.Pending:
+                case UploadStatus.Waiting:
                     return 1;
                 default:
                     return 0;

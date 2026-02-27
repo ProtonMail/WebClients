@@ -11,6 +11,7 @@ import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import type { PhotosUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
+import { uploadLogError } from '../utils/uploadLogger';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
@@ -48,7 +49,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 abortController.signal
             );
             if (duplicateUids.length > 0) {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'photo:exist',
                     uploadId: task.uploadId,
                     duplicateUids,
@@ -77,11 +78,21 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 return;
             }
 
+            await this.eventCallback?.({
+                type: 'file:prepared',
+                uploadId: task.uploadId,
+                isForPhotos: true,
+            });
+
+            if (abortController.signal.aborted) {
+                return;
+            }
+
             const uploader = await drivePhotos.getFileUploader(task.file.name, metadata, abortController.signal);
 
             const stream = createFileStream(task.file);
             const controller = await uploader.uploadFromStream(stream, thumbnails, (uploadedBytes: number) => {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:progress',
                     uploadId: task.uploadId,
                     uploadedBytes,
@@ -89,7 +100,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 });
             });
 
-            this.eventCallback?.({
+            void this.eventCallback?.({
                 type: 'file:started',
                 uploadId: task.uploadId,
                 controller,
@@ -98,7 +109,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
 
             const { nodeUid } = await controller.completion();
 
-            this.eventCallback?.({
+            void this.eventCallback?.({
                 type: 'file:complete',
                 uploadId: task.uploadId,
                 nodeUid,
@@ -112,14 +123,14 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             }
 
             if (error instanceof NodeWithSameNameExistsValidationError) {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:conflict',
                     uploadId: task.uploadId,
                     error,
                     isForPhotos: true,
                 });
             } else {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:error',
                     uploadId: task.uploadId,
                     error: error instanceof Error ? error : new Error(c('Error').t`Upload failed`),
@@ -181,7 +192,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 additionalMetadata: metadata,
             };
         } catch (error) {
-            // TODO: Implement upload logging
+            uploadLogError('Failed to generate extended attributes', error, { fileName: file.name });
             traceError(error, {
                 level: 'debug', // Debug as we need it only when we investigate issues.
                 tags: {

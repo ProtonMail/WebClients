@@ -3,6 +3,7 @@ import type { NodeType, NodeWithSameNameExistsValidationError, UploadController 
 export type FileUploadEvent =
     | { type: 'file:queued'; uploadId: string; isForPhotos: boolean; abortController: AbortController }
     | { type: 'file:preparing'; uploadId: string; isForPhotos: boolean }
+    | { type: 'file:prepared'; uploadId: string; isForPhotos: boolean }
     | {
           type: 'file:started';
           uploadId: string;
@@ -82,7 +83,8 @@ export type ExecutionResult = {
 };
 
 export type SchedulerLoad = {
-    activeFiles: number;
+    activePreparingFiles: number;
+    activeUploadingFiles: number;
     activeFolders: number;
     activeBytesTotal: number;
     taskLoads: Map<string, { totalBytes: number; uploadedBytes: number }>;
@@ -112,6 +114,7 @@ export enum UploadConflictType {
 export enum UploadStatus {
     Pending = BaseTransferStatus.Pending,
     Preparing = 'preparing',
+    Waiting = 'waiting',
     InProgress = BaseTransferStatus.InProgress,
     Finished = BaseTransferStatus.Finished,
     Failed = BaseTransferStatus.Failed,
@@ -171,4 +174,4 @@ export function isPhotosUploadItem(item: UploadItem): item is PhotosUploadItem {
     return 'isForPhotos' in item && item.isForPhotos === true;
 }
 
-export type EventCallback = (event: UploadEvent) => void;
+export type EventCallback = (event: UploadEvent) => Promise<void>;
