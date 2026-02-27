@@ -38,10 +38,12 @@ import type { HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson } from './typ
 import type { HttpsProtonMeDocsSuggestionsResolvedTotalV1SchemaJson } from './types/docs_suggestions_resolved_total_v1.schema';
 import type { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import type { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveCryptoSpeedHistogramV1SchemaJson } from './types/drive_crypto_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
 import type { HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson } from './types/drive_download_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson } from './types/drive_download_verifier_attempts_total_v1.schema';
 import type { HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson } from './types/drive_error_erroring_users_total_v1.schema';
 import type { MeProtonDriveObservabilityDomainMetricsDriveErrorTotal } from './types/drive_error_total_v1.schema';
 import type { HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson } from './types/drive_file_preview_errors_total_v1.schema';
@@ -84,6 +86,8 @@ import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/dr
 import type { HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_upload_errors_transfer_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadSpeedHistogramV1SchemaJson } from './types/drive_upload_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson } from './types/drive_upload_success_rate_total_v2.schema';
+import type { HttpsProtonMeDriveUploadVerifierAttemptsTotalV1SchemaJson } from './types/drive_upload_verifier_attempts_total_v1.schema';
+import type { HttpsProtonMeDriveUploadWorkerCancellationTotalV1SchemaJson } from './types/drive_upload_worker_cancellation_total_v1.schema';
 import type { HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson } from './types/drive_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
 import type { CalendarEventDisplayTime } from './types/web_calendar_calendar_event_display_time_histogram_v1.schema';
@@ -249,6 +253,8 @@ class Metrics extends MetricsBase {
 
     public docs_users_success_rate_total: Counter<HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson>;
 
+    public drive_crypto_speed_histogram: Histogram<HttpsProtonMeDriveCryptoSpeedHistogramV1SchemaJson>;
+
     public drive_download_erroring_users_total: Counter<HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson>;
 
     public drive_download_errors_total: Counter<HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson>;
@@ -256,6 +262,8 @@ class Metrics extends MetricsBase {
     public drive_download_speed_histogram: Histogram<HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson>;
 
     public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
+
+    public drive_download_verifier_attempts_total: Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson>;
 
     public drive_error_erroring_users_total: Counter<HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson>;
 
@@ -340,6 +348,10 @@ class Metrics extends MetricsBase {
     public drive_upload_speed_histogram: Histogram<HttpsProtonMeDriveUploadSpeedHistogramV1SchemaJson>;
 
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson>;
+
+    public drive_upload_verifier_attempts_total: Counter<HttpsProtonMeDriveUploadVerifierAttemptsTotalV1SchemaJson>;
+
+    public drive_upload_worker_cancellation_total: Counter<HttpsProtonMeDriveUploadWorkerCancellationTotalV1SchemaJson>;
 
     public drive_users_success_rate_total: Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>;
 
@@ -709,6 +721,11 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_crypto_speed_histogram = new Histogram<HttpsProtonMeDriveCryptoSpeedHistogramV1SchemaJson>(
+            { name: 'drive_crypto_speed_histogram', version: 1 },
+            this.requestService
+        );
+
         this.drive_download_erroring_users_total =
             new Counter<HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson>(
                 { name: 'drive_download_erroring_users_total', version: 1 },
@@ -729,6 +746,12 @@ class Metrics extends MetricsBase {
             { name: 'drive_download_success_rate_total', version: 1 },
             this.requestService
         );
+
+        this.drive_download_verifier_attempts_total =
+            new Counter<HttpsProtonMeDriveDownloadVerifierAttemptsTotalV1SchemaJson>(
+                { name: 'drive_download_verifier_attempts_total', version: 1 },
+                this.requestService
+            );
 
         this.drive_error_erroring_users_total = new Counter<HttpsProtonMeDriveErrorErroringUsersTotalV1SchemaJson>(
             { name: 'drive_error_erroring_users_total', version: 1 },
@@ -961,6 +984,18 @@ class Metrics extends MetricsBase {
             { name: 'drive_upload_success_rate_total', version: 2 },
             this.requestService
         );
+
+        this.drive_upload_verifier_attempts_total =
+            new Counter<HttpsProtonMeDriveUploadVerifierAttemptsTotalV1SchemaJson>(
+                { name: 'drive_upload_verifier_attempts_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_upload_worker_cancellation_total =
+            new Counter<HttpsProtonMeDriveUploadWorkerCancellationTotalV1SchemaJson>(
+                { name: 'drive_upload_worker_cancellation_total', version: 1 },
+                this.requestService
+            );
 
         this.drive_users_success_rate_total = new Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>(
             { name: 'drive_users_success_rate_total', version: 1 },

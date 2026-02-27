@@ -8,6 +8,7 @@ import type {
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
 } from '@protontech/drive-sdk';
+import type { MetricPerformanceEvent } from '@protontech/drive-sdk/dist/interface/telemetry';
 import type { LogHandler, MetricRecord, MetricHandler as SDKMetricHandler } from '@protontech/drive-sdk/dist/telemetry';
 import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
@@ -51,6 +52,17 @@ export class MetricHandler {
 
     private lastIntegrityError: Date | undefined;
 
+    private performanceMetricsInterval: ReturnType<typeof setInterval> | undefined;
+    private performanceMetrics: Map<
+        string,
+        {
+            type: 'content_encryption' | 'content_decryption';
+            cryptoModel: 'v1' | 'v1.5';
+            bytesProcessed: number;
+            milliseconds: number;
+        }
+    > = new Map();
+
     constructor(private userPlan: UserPlan) {
         this.userPlan = userPlan;
     }
@@ -72,6 +84,8 @@ export class MetricHandler {
             this.onBlockVerificationError(metric.event);
         } else if (metric.event.eventName === 'volumeEventsSubscriptionsChanged') {
             this.onVolumeEventsSubscriptionsChanged(metric.event);
+        } else if (metric.event.eventName === 'performance') {
+            this.onPerformance(metric.event);
         } else {
             captureMessage(`Metric event details: unknown metric event`, {
                 level: 'error',
@@ -290,6 +304,46 @@ export class MetricHandler {
                 userPlan: this.userPlan,
             },
         });
+    }
+
+    private onPerformance(metric: MetricPerformanceEvent) {
+        if (!this.performanceMetricsInterval) {
+            this.performanceMetricsInterval = setInterval(() => {
+                this.sendPerformanceMetrics();
+            }, 30 * 1000);
+        }
+
+        const key = `${metric.type}-${metric.cryptoModel}`;
+        const performanceMetric = this.performanceMetrics.get(key);
+        if (performanceMetric) {
+            performanceMetric.bytesProcessed += metric.bytesProcessed;
+            performanceMetric.milliseconds += metric.milliseconds;
+        } else {
+            this.performanceMetrics.set(key, {
+                type: metric.type,
+                cryptoModel: metric.cryptoModel,
+                bytesProcessed: metric.bytesProcessed,
+                milliseconds: metric.milliseconds,
+            });
+        }
+    }
+
+    private sendPerformanceMetrics() {
+        for (const { type, cryptoModel, bytesProcessed, milliseconds } of this.performanceMetrics.values()) {
+            if (bytesProcessed > 0 && milliseconds > 0) {
+                const megabytesProcessed = bytesProcessed / 1024 / 1024;
+                const seconds = milliseconds / 1000;
+                const mbps = megabytesProcessed / seconds;
+                metrics.drive_crypto_speed_histogram.observe({
+                    Value: mbps,
+                    Labels: {
+                        type,
+                        cryptoModel,
+                    },
+                });
+            }
+        }
+        this.performanceMetrics.clear();
     }
 
     private getYesNoUnknown(value: boolean | undefined): 'yes' | 'no' | 'unknown' {
