@@ -7,7 +7,12 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../../../signup/helper';
-import type { AccountData, InviteData, SignupHVMode, SignupInviteParameters } from '../../../signup/interfaces';
+import type {
+    AccountData,
+    InviteData,
+    SignupHumanVerification,
+    SignupInviteParameters,
+} from '../../../signup/interfaces';
 import { SignupType } from '../../../signup/interfaces';
 
 export const getTokenPayment = (tokenPayment: string | undefined) => {
@@ -29,7 +34,7 @@ export const handleCreateUser = async ({
     clientType,
     api,
     invite,
-    mode,
+    hvMode,
 }: {
     accountData: AccountData;
     clientType: CLIENT_TYPES;
@@ -39,7 +44,7 @@ export const handleCreateUser = async ({
     productParam: ProductParam | undefined;
     api: Api;
     invite: SignupInviteParameters | undefined;
-    mode: SignupHVMode | undefined;
+    hvMode: SignupHumanVerification | undefined;
 }): Promise<{ user: User; humanVerificationResult: HumanVerificationResult | undefined }> => {
     const { username, email, password, signupType, payload } = accountData;
     if (signupType === SignupType.Proton) {
@@ -117,12 +122,12 @@ export const handleCreateUser = async ({
                                     };
                                 }
                             })(),
-                            ...getPaymentTokenForExternalUsers(mode, paymentToken),
+                            ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
                         },
                         productParam
                     )
                 ),
-                getHVHeadersBasedOnSignupMode(mode, paymentToken)
+                getHVHeadersBasedOnSignupMode(hvMode, paymentToken)
             ),
         });
         return {
