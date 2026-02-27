@@ -363,10 +363,14 @@ export const getESCallbacks = ({
                                         : decryptedBody
                                     : undefined;
 
-                            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, {
-                                decryptedBody: cleanDecryptedBody,
-                                decryptedSubject,
-                            });
+                            const aesGcmCiphertext = await serializeAndEncryptItem(
+                                indexKey,
+                                {
+                                    decryptedBody: cleanDecryptedBody,
+                                    decryptedSubject,
+                                },
+                                getContentVersion()
+                            );
                             const timepoint: ESTimepoint = [Time, Order];
                             return { ID: messageID, timepoint, aesGcmCiphertext };
                         }
@@ -411,6 +415,7 @@ export const getESCallbacks = ({
             fetchESItemContent,
             inputrecoveryPoint: timepoint,
             isInitialIndexing: false,
+            version: getContentVersion(),
         });
 
         const count = (await readNumContent(userID)) || 0;

@@ -259,6 +259,7 @@ export const getESCallbacks = ({
                 esSupported,
                 indexKey,
                 getItemInfo,
+                version: CALENDAR_CONTENT_VERSION,
             }).catch((error: any) => {
                 if (!(error?.message === 'Operation aborted') && !(error?.name === 'AbortError')) {
                     esSentryReport('storeItemsBatches: storeItems', { error });

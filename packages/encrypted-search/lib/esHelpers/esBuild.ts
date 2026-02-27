@@ -147,6 +147,7 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>({
     indexKey,
     getItemInfo,
     esCacheRef,
+    version,
 }: {
     userID: string;
     resultMetadata: ESItemMetadata[];
@@ -154,6 +155,7 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>({
     indexKey: IndexKey | undefined;
     getItemInfo: GetItemInfo<ESItemMetadata>;
     esCacheRef?: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
+    version: number;
 }) => {
     const batchSize = resultMetadata.reduce((sum, item) => sum + sizeOfESItem(item), 0);
 
@@ -164,7 +166,7 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>({
             resultMetadata.map(async (itemToStore) => ({
                 ID: getItemInfo(itemToStore).ID,
                 timepoint: getItemInfo(itemToStore).timepoint,
-                aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToStore),
+                aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToStore, version),
             }))
         );
 
@@ -194,6 +196,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
     recordProgress,
     isInitialIndexing = true,
     isBackgroundIndexing,
+    version,
 }: {
     userID: string;
     esSupported: boolean;
@@ -205,6 +208,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
     recordProgress: () => Promise<void>;
     isInitialIndexing?: boolean;
     isBackgroundIndexing?: boolean;
+    version: number;
 }) => {
     if (isInitialIndexing) {
         await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.START);
@@ -227,6 +231,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
             indexKey,
             getItemInfo,
             esCacheRef,
+            version,
         }).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&
@@ -284,6 +289,7 @@ export const buildContentDB = async <ESItemContent>({
     inputrecoveryPoint,
     isInitialIndexing = true,
     isBackgroundIndexing,
+    version,
 }: {
     userID: string;
     indexKey: IndexKey;
@@ -293,6 +299,7 @@ export const buildContentDB = async <ESItemContent>({
     inputrecoveryPoint: ESTimepoint | undefined;
     isInitialIndexing: boolean;
     isBackgroundIndexing?: boolean;
+    version: number;
 }): Promise<STORING_OUTCOME> => {
     let counter = 0;
 
@@ -343,7 +350,7 @@ export const buildContentDB = async <ESItemContent>({
                 return { ID, timepoint };
             }
 
-            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, itemToStore);
+            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, itemToStore, version);
             recordProgress(++counter);
             return { ID, timepoint, aesGcmCiphertext };
         } catch (error) {
@@ -486,11 +493,13 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
     indexKey,
     esCallbacks,
     abortIndexingRef,
+    version,
 }: {
     userID: string;
     indexKey: IndexKey;
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     abortIndexingRef: React.MutableRefObject<AbortController>;
+    version: number;
 }) => {
     const isDBLimited = await readLimited(userID);
     if (!isDBLimited) {
@@ -515,6 +524,7 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
         fetchESItemContent,
         inputrecoveryPoint: itemInfo.timepoint,
         isInitialIndexing: false,
+        version,
     });
 
     // In case we have recovered, we set the flag accordingly

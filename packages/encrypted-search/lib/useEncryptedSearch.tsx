@@ -223,6 +223,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         });
     };
 
+    const getContentVersion = () => {
+        return esCallbacks.getContentVersion();
+    };
+
     /**
      * Reset to default only the parameters of ESStatus that are related to a search
      */
@@ -366,6 +370,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             indexKey,
             esSearchParams,
             esCallbacks,
+            version: getContentVersion(),
         });
 
         // Do not update results list when ES is disabled
@@ -400,7 +405,13 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             const contentProgress = await contentIndexingProgress.read(userID);
             if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
                 abortIndexingRef.current = new AbortController();
-                await retryContentIndexing({ userID, indexKey, esCallbacks, abortIndexingRef });
+                await retryContentIndexing({
+                    userID,
+                    indexKey,
+                    esCallbacks,
+                    abortIndexingRef,
+                    version: getContentVersion(),
+                });
             }
             await refreshESCache<ESItemMetadata, ESItemContent>({
                 indexKey,
@@ -413,6 +424,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 userID,
                 indexKey,
                 fetchESItemContent: esCallbacks.fetchESItemContent,
+                version: getContentVersion(),
             });
 
             // Check if DB became limited or not after the update
@@ -647,6 +659,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 recordProgress: recordMetadataProgress,
                 isInitialIndexing,
                 isBackgroundIndexing,
+                version: getContentVersion(),
             });
 
             // Kill switch in case user logs out or deletes data
@@ -882,6 +895,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                     inputrecoveryPoint: recoveryPoint,
                     isInitialIndexing: true,
                     isBackgroundIndexing,
+                    version: getContentVersion(),
                 });
             } catch (error: any) {
                 if (abortIndexingRef.current.signal.aborted) {
