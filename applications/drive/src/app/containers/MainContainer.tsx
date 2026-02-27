@@ -26,6 +26,7 @@ import config from '../config';
 import { useFlagsDriveSDKTransfer } from '../flags/useFlagsDriveSDKTransfer';
 import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
+import { useSearchModule } from '../hooks/search/useSearchModule';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
 import { logging } from '../modules/logging';
@@ -92,6 +93,10 @@ function InitContainer() {
     const { photosEnabled } = useUserSettings();
     const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
+
+    // Bootstrap search module.
+    useSearchModule();
+
     useActivePing();
     useReactRouterNavigationLog();
     useEffect(() => {
