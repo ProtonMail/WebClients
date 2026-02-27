@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import type { ContentPreviewMethod } from './content';
 import type { Drive } from './interface';
+import { SignatureInformation } from './signatures';
 import { usePreviewState } from './usePreviewState';
 
 export interface PartialPreviewProps {
@@ -18,11 +19,9 @@ export interface PartialPreviewProps {
 }
 
 /**
- * PartialPreview component is intended to be used in those cases:
- * - You don't want the Header with all actions (Details, Download, etc...)
- * - You don't want the component to take the whole screen
- * For exemple in PublicFileView we need the preview but we want to handle all actions,
- * as well as adding custom header.
+ * PartialPreview component is intended to be used only in public page.
+ * It doesn't include the header with all actions (Details, Download, etc...)
+ * and it doesn't take the whole screen.
  */
 export function PartialPreview({
     drive,
@@ -49,19 +48,24 @@ export function PartialPreview({
     return (
         <div className={clsx('flex flex-column flex-nowrap', className)}>
             <FilePreviewContent
+                isPublic={true}
                 isMetaLoading={preview.isLoading}
                 isLoading={preview.isContentLoading}
-                mimeType={preview.node.mediaType}
                 error={preview.errorMessage}
-                imgThumbnailUrl={preview.content.thumbnailUrl}
-                fileSize={preview.node.displaySize}
-                fileName={preview.node.name}
-                videoStreaming={preview.content.videoStreaming}
-                isPublic={true}
-                sheetsEnabled={sheetsEnabled}
-                onOpenInDocs={preview.actions.openInDocs}
                 contents={preview.content.data}
+                fileName={preview.node.name}
+                mimeType={preview.node.mediaType}
+                fileSize={preview.node.displaySize}
                 onDownload={onDownload}
+                videoStreaming={preview.content.videoStreaming}
+                onOpenInDocs={preview.actions.openInDocs}
+                imgThumbnailUrl={preview.content.thumbnailUrl}
+                signatureConfirmation={
+                    preview.node.contentSignatureIssueLabel && (
+                        <SignatureInformation contentSignatureIssue={preview.node.contentSignatureIssueLabel} />
+                    )
+                }
+                sheetsEnabled={sheetsEnabled}
             />
         </div>
     );
