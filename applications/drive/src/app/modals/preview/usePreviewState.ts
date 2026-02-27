@@ -39,7 +39,9 @@ export function usePreviewState({
     const [node, setNode] = useState<MaybeNode | undefined>(undefined);
     const [isLoading, withIsLoading] = useLoading(true);
     const [isContentLoading, withIsContentLoading] = useLoading(false);
-    const [nodeData, setNodeData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
+    const [nodeData, setNodeData] = useState<
+        { contents: Uint8Array<ArrayBuffer>[]; hasSignatureIssues: boolean } | undefined
+    >(undefined);
     const [role, setRole] = useState<MemberRole>();
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
@@ -127,8 +129,8 @@ export function usePreviewState({
 
             void withIsContentLoading(
                 downloadContent(drive, nodeUid, abortSignal)
-                    .then((contents) => {
-                        setNodeData(contents);
+                    .then(({ contents, hasSignatureIssues }) => {
+                        setNodeData({ contents, hasSignatureIssues });
                     })
                     .catch((error) => {
                         if (shouldIgnoreError(nodeUid, error)) {
@@ -177,7 +179,7 @@ export function usePreviewState({
         onNodeChange?.(nodeUid);
     });
 
-    const actions = usePreviewActions({ drive, nodeUid, node, nodeData, role });
+    const actions = usePreviewActions({ drive, nodeUid, node, nodeData: nodeData?.contents, role });
 
     const result = {
         node: {
@@ -186,11 +188,11 @@ export function usePreviewState({
             mediaType: mimeType,
             sharedStatus: getSharedStatus(node),
             displaySize: node ? getNodeDisplaySize(node) : undefined,
-            contentSignatureIssue: verifySignatures ? getContentSignatureIssue(node) : undefined,
+            contentSignatureIssue: getContentSignatureIssue(verifySignatures, node, nodeData?.hasSignatureIssues),
         },
         content: {
             thumbnailUrl: largeThumbnail?.url || smallThumbnailUrl,
-            data: previewMethod === ContentPreviewMethod.Buffer ? nodeData : largeThumbnail?.data,
+            data: previewMethod === ContentPreviewMethod.Buffer ? nodeData?.contents : largeThumbnail?.data,
             videoStreaming: previewMethod === ContentPreviewMethod.Streaming ? videoStreaming : undefined,
             previewMethod,
         },
