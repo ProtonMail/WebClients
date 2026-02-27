@@ -17,6 +17,7 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api';
+import { DRIVE_CONTENT_VERSION } from './constants';
 import { createLinkGenerator } from './indexing/createLinkGenerator';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import type { FetchShareMap } from './indexing/useFetchShareMap';
@@ -165,5 +166,6 @@ export const useESCallbacks = ({
         getSearchParams,
         getPreviousEventID,
         getEventFromIDB,
+        getContentVersion: () => DRIVE_CONTENT_VERSION,
     };
 };
