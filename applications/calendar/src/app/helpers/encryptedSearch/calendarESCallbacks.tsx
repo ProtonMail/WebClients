@@ -2,7 +2,7 @@ import type { History } from 'history';
 
 import { ES_MAX_CONCURRENT, ES_MAX_ITEMS_PER_BATCH } from '@proton/encrypted-search/constants';
 import { esSentryReport, normalizeKeyword, storeItemsMetadata, testKeywords } from '@proton/encrypted-search/esHelpers';
-import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
+import { hasESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
 import type {
     CachedItem,
     ESCalendarSearchParams,
@@ -77,7 +77,7 @@ export const getESCallbacks = ({
         // Note that indexing, and therefore an instance of this function,
         // can exist even without an IDB, because we can index in memory only.
         // Therefore, we have to check if an IDB exists before querying it
-        const esdbExists = await checkVersionedESDB(userID);
+        const esdbExists = await hasESDB(userID);
         if (esdbExists) {
             const localRecoveryPoint: MetadataRecoveryPoint = await metadataIndexingProgress.readRecoveryPoint(userID);
             if (localRecoveryPoint) {

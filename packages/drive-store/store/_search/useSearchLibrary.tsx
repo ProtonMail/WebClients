@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import { INDEXING_STATUS } from '@proton/encrypted-search/constants';
-import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
+import { hasESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
@@ -76,7 +76,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         }
 
         // In case of a downgrade from paid to free, remove everything
-        if ((await checkVersionedESDB(user.ID)) && !isPaid(user)) {
+        if ((await hasESDB(user.ID)) && !isPaid(user)) {
             return esFunctions.esDelete();
         }
 
