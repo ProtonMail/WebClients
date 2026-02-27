@@ -3,6 +3,7 @@ import type { KeyStatus } from './interface';
 interface Arguments extends KeyStatus {
     canModify: boolean;
     canEncryptAndSign: boolean;
+    isUserKey: boolean;
     isAddressKey: boolean;
     hasUserPermission: boolean;
     canDeleteForwarding: boolean;
@@ -15,6 +16,7 @@ const getPermissions = ({
     isCompromised,
     isObsolete,
     canEncryptAndSign,
+    isUserKey,
     isAddressKey,
     isPrimary,
     hasUserPermission,
@@ -41,7 +43,15 @@ const getPermissions = ({
         canSetNotObsolete: canModify && isObsolete && !isCompromised,
         canSetCompromised: canModify && !isCompromised,
         canSetNotCompromised: canModify && isCompromised,
-        canDelete: isAddressKey && hasUserPermission && !isPrimary,
+        canDelete: (() => {
+            if (isAddressKey) {
+                return hasUserPermission && !isPrimary;
+            }
+            if (isUserKey) {
+                return !isDecrypted;
+            }
+            return false;
+        })(),
     };
 };
 

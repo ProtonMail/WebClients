@@ -9,6 +9,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { DeleteInactiveUserKeyModal } from '@proton/components/containers/keys/deleteKey/DeleteInactiveUserKeyModal';
 
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
@@ -29,9 +30,11 @@ const UserKeysSections = () => {
 
     const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
     const [exportKeyProps, setExportKeyOpen, renderExportKey] = useModalState();
+    const [deleteKeyProps, setDeleteKeyOpen, renderDeleteKey] = useModalState();
     const [tmpId, setTmpId] = useState('');
 
     const userKey = userKeys && tmpId ? getKeyByID(userKeys, tmpId) : null;
+    const tmpUserKey = getKeyByID(User?.Keys || [], tmpId);
 
     const { Name: userName } = User;
 
@@ -76,6 +79,10 @@ const UserKeysSections = () => {
                         setExportKeyOpen(true);
                         setTmpId(ID);
                     }}
+                    onDeleteKey={(ID) => {
+                        setDeleteKeyOpen(true);
+                        setTmpId(ID);
+                    }}
                 />
             </SettingsSectionWide>
         );
@@ -94,6 +101,16 @@ const UserKeysSections = () => {
                     onExit={() => {
                         setTmpId('');
                         exportKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderDeleteKey && tmpUserKey && (
+                <DeleteInactiveUserKeyModal
+                    userKey={tmpUserKey}
+                    {...deleteKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        deleteKeyProps.onExit();
                     }}
                 />
             )}
