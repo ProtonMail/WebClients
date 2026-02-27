@@ -39,6 +39,7 @@ export class UploadEventHandler {
             'file:queued': (event: Extract<UploadEvent, { type: 'file:queued' }>) => this.handleFileQueued(event),
             'file:preparing': (event: Extract<UploadEvent, { type: 'file:preparing' }>) =>
                 this.handleFilePreparing(event),
+            'file:prepared': (event: Extract<UploadEvent, { type: 'file:prepared' }>) => this.handleFilePrepared(event),
             'file:started': (event: Extract<UploadEvent, { type: 'file:started' }>) => this.handleFileStarted(event),
             'file:progress': (event: Extract<UploadEvent, { type: 'file:progress' }>) => this.handleFileProgress(event),
             'file:complete': (event: Extract<UploadEvent, { type: 'file:complete' }>) => this.handleFileComplete(event),
@@ -94,9 +95,27 @@ export class UploadEventHandler {
         });
     }
 
+    private handleFilePrepared(event: FileUploadEvent & { type: 'file:prepared' }): void {
+        const queueStore = useUploadQueueStore.getState();
+        const item = queueStore.getItem(event.uploadId);
+
+        this.capacityManager.releasePreparing(event.uploadId);
+
+        if (!item || item.status === UploadStatus.Cancelled) {
+            return;
+        }
+
+        if ('clearTextExpectedSize' in item) {
+            this.capacityManager.reserveUploading(event.uploadId, item.clearTextExpectedSize);
+        }
+        queueStore.updateQueueItems(event.uploadId, { status: UploadStatus.Waiting });
+    }
+
     private handleFileStarted(event: FileUploadEvent & { type: 'file:started' }): void {
         const controllerStore = useUploadControllerStore.getState();
+        const queueStore = useUploadQueueStore.getState();
         controllerStore.setUploadController(event.uploadId, event.controller);
+        queueStore.updateQueueItems(event.uploadId, { status: UploadStatus.InProgress });
         this.uploadSpeedMetrics.onFileStarted(event.uploadId);
     }
 

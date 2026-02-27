@@ -11,6 +11,7 @@ import type { UploadEvent, UploadTask } from '../types';
 import { type UploadConflictStrategy, type UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
+import { uploadLogDebug } from '../utils/uploadLogger';
 import { ConflictManager } from './ConflictManager';
 import { SDKTransferActivity } from './SDKTransferActivity';
 import { UploadEventHandler } from './UploadEventHandler';
@@ -123,6 +124,7 @@ export class UploadOrchestrator {
                         item.status === UploadStatus.Pending ||
                         item.status === UploadStatus.InProgress ||
                         item.status === UploadStatus.Preparing ||
+                        item.status === UploadStatus.Waiting ||
                         item.status === UploadStatus.ConflictFound
                 );
 
@@ -135,6 +137,12 @@ export class UploadOrchestrator {
                     break;
                 }
             }
+
+            uploadLogDebug('Picked tasks', {
+                count: tasks.length,
+                ids: tasks.map((t) => t.uploadId),
+                activePreparingFiles: this.capacityManager.getCurrentLoad().activePreparingFiles,
+            });
 
             void this.executeTasksBatch(tasks);
 
@@ -159,27 +167,35 @@ export class UploadOrchestrator {
         if (task.type === NodeType.Folder) {
             this.capacityManager.reserveFolder();
         } else {
-            this.capacityManager.reserveFile(task.uploadId, task.sizeEstimate);
+            this.capacityManager.reservePreparing(task.uploadId);
         }
 
-        await this.eventHandler.handleEvent({
-            type: 'file:preparing',
+        uploadLogDebug('executeTask start', {
             uploadId: task.uploadId,
-            isForPhotos: task.type === NodeType.Photo,
+            name: task.name,
+            activePreparingFilesAfterReserve: this.capacityManager.getCurrentLoad().activePreparingFiles,
         });
 
-        if (task.type === NodeType.Folder) {
-            await this.folderExecutor.execute(task);
-        } else if (task.isForPhotos) {
-            await this.photosExecutor.execute(task);
-        } else {
-            await this.fileExecutor.execute(task);
-        }
+        try {
+            await this.eventHandler.handleEvent({
+                type: 'file:preparing',
+                uploadId: task.uploadId,
+                isForPhotos: task.type === NodeType.Photo,
+            });
 
-        if (task.type === NodeType.Folder) {
-            this.capacityManager.releaseFolder();
-        } else {
-            this.capacityManager.releaseFile(task.uploadId);
+            if (task.type === NodeType.Folder) {
+                await this.folderExecutor.execute(task);
+            } else if (task.isForPhotos) {
+                await this.photosExecutor.execute(task);
+            } else {
+                await this.fileExecutor.execute(task);
+            }
+        } finally {
+            if (task.type === NodeType.Folder) {
+                this.capacityManager.releaseFolder();
+            } else {
+                this.capacityManager.releaseFile(task.uploadId);
+            }
         }
     }
 
@@ -204,7 +220,7 @@ export class UploadOrchestrator {
      */
     private hasActiveUploads(): boolean {
         const load = this.capacityManager.getCurrentLoad();
-        return load.activeFiles > 0 || load.activeFolders > 0;
+        return load.activePreparingFiles > 0 || load.activeUploadingFiles > 0 || load.activeFolders > 0;
     }
 
     /**
