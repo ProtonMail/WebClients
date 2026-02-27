@@ -8,7 +8,12 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers } from '../helper';
-import type { SignupActionResponse, SignupCacheResult, SignupHVMode, SignupInviteParameters } from '../interfaces';
+import type {
+    SignupActionResponse,
+    SignupCacheResult,
+    SignupHumanVerification,
+    SignupInviteParameters,
+} from '../interfaces';
 import { SignupType } from '../interfaces';
 
 const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
@@ -33,12 +38,12 @@ const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
 export const handleCreateUser = async ({
     cache,
     api,
-    mode,
+    hvMode,
     invite,
 }: {
     cache: SignupCacheResult;
     api: Api;
-    mode?: SignupHVMode;
+    hvMode?: SignupHumanVerification;
     invite?: SignupInviteParameters;
 }): Promise<SignupActionResponse> => {
     const {
@@ -123,7 +128,7 @@ export const handleCreateUser = async ({
                         inviteData: undefined,
                     },
                     api,
-                    mode,
+                    hvMode,
                 });
             }
             throw error;
@@ -158,12 +163,12 @@ export const handleCreateUser = async ({
                                     };
                                 }
                             })(),
-                            ...getPaymentTokenForExternalUsers(mode, paymentToken),
+                            ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
                         },
                         productParam
                     )
                 ),
-                getHVHeadersBasedOnSignupMode(mode, paymentToken)
+                getHVHeadersBasedOnSignupMode(hvMode, paymentToken)
             ),
         });
         return {

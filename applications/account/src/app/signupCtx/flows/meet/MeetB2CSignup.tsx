@@ -9,7 +9,7 @@ import { redirectTo } from '@proton/shared/lib/helpers/browser';
 import { useFlag, useFlagsStatus } from '@proton/unleash';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
-import { SignupHVMode, SignupType } from '../../../signup/interfaces';
+import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import DisplayNameStep from './steps/DisplayNameStep';
 import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
@@ -88,7 +88,7 @@ const MeetB2CSignup = (props: BaseSignupContextProps) => {
             {...props}
             app={APPS.PROTONMEET}
             flowId="meet-b2c"
-            hvMode={SignupHVMode.CRO}
+            hvMode={SignupHumanVerification.DEFERRED}
             onLogin={async (session) => {
                 await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMEET } });
             }}

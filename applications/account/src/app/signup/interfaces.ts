@@ -70,9 +70,9 @@ export enum SignupType {
     BringYourOwnEmail = 3,
 }
 
-export enum SignupHVMode {
-    CRO = 'cro',
-    OV = 'OV',
+export enum SignupHumanVerification {
+    DEFERRED = 'DEFERRED',
+    IMMEDIATE = 'IMMEDIATE',
 }
 
 export type SignupInviteParameters =
