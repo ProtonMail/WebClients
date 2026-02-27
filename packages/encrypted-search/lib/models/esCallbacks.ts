@@ -97,6 +97,13 @@ interface RequiredESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
         shouldRefresh: boolean;
         eventsToStore: EventsObject;
     }>;
+
+    /**
+     * Get the current content version for this app/product.
+     * This callback is optional: if not provided, a default version of 1 will be used
+     * @returns The content version number for encrypted search data
+     */
+    getContentVersion: () => number;
 }
 
 /**

@@ -21,7 +21,7 @@ import chunk from '@proton/utils/chunk';
 
 import type { ESCalendarContent, ESCalendarMetadata, MetadataRecoveryPoint } from '../../interfaces/encryptedSearch';
 import { generateEventUniqueId } from '../event';
-import { CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
+import { CALENDAR_CONTENT_VERSION, CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
 import {
     extractAttendees,
     extractOrganizer,
@@ -289,5 +289,6 @@ export const getESCallbacks = ({
         getEventFromIDB,
         applyFilters,
         correctDecryptionErrors,
+        getContentVersion: () => CALENDAR_CONTENT_VERSION,
     };
 };
