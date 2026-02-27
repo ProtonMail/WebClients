@@ -5,8 +5,16 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SignatureIcon } from '../../components/SignatureIcon';
 
-export function getContentSignatureIssue(node?: MaybeNode): string | undefined {
-    if (!node) {
+export function getContentSignatureIssue(
+    verifyMetadataSignatures: boolean,
+    node?: MaybeNode,
+    hasContentSignatureIssues?: boolean
+): string | undefined {
+    if (hasContentSignatureIssues) {
+        return c('Error').t`Data integrity check failed`;
+    }
+
+    if (!verifyMetadataSignatures || !node) {
         return undefined;
     }
 

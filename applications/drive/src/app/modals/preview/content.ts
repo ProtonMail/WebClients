@@ -77,6 +77,11 @@ export async function downloadContent(drive: GetFileDownloader, nodeUid: string,
         await controller.completion();
         await writer.close();
     } catch (error) {
+        if (controller.isDownloadCompleteWithSignatureIssues()) {
+            await writer.close();
+            return { contents: await bufferPromise, hasSignatureIssues: true };
+        }
+
         await writer.abort(error).catch(() => {});
         throw error;
     } finally {
@@ -88,5 +93,5 @@ export async function downloadContent(drive: GetFileDownloader, nodeUid: string,
         }
     }
 
-    return bufferPromise;
+    return { contents: await bufferPromise, hasSignatureIssues: false };
 }
