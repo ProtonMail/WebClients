@@ -13,8 +13,8 @@ import {
     testKeywords,
 } from '@proton/encrypted-search/esHelpers';
 import {
-    hasESDB,
     executeContentOperations,
+    hasESDB,
     metadataIndexingProgress,
     readLastEvent,
     readMetadataItem,
@@ -48,7 +48,7 @@ import type { Event } from '../../models/event';
 import { decryptMessage } from '../message/messageDecrypt';
 import ESdeletedConversationIdsCache from './ESDeletedConversationsCache';
 import { queryConversation, queryEvents, queryMessage } from './esAPI';
-import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getExternalID } from './esBuild';
+import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getContentVersion, getExternalID } from './esBuild';
 import { shouldOnlySortResults, testMetadata, transformRecipients } from './esSearch';
 import { convertEventType, findRecoveryPoint, getTotal } from './esSync';
 import { parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
@@ -434,5 +434,6 @@ export const getESCallbacks = ({
         getSearchInterval,
         onContentDeletion,
         correctDecryptionErrors,
+        getContentVersion: getContentVersion,
     };
 };
