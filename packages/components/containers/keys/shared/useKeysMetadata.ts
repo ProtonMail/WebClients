@@ -85,6 +85,7 @@ export const useKeysMetadata = ({ user, userKeys, address, addressKeys, loadingK
                 ...state.user,
                 displayKeys: state.user.userKeyMetadataList.map((data) => {
                     return getDisplayKey({
+                        type: 'user',
                         user,
                         address,
                         isLoading: loadingKeyID === data.Key.ID,
@@ -98,6 +99,7 @@ export const useKeysMetadata = ({ user, userKeys, address, addressKeys, loadingK
                 ...state.address,
                 displayKeys: state.address.addressKeyMetadataList.map((data) => {
                     return getDisplayKey({
+                        type: 'address',
                         user,
                         address,
                         isLoading: loadingKeyID === data.Key.ID,

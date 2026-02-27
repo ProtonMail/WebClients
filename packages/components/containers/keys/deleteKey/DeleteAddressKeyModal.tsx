@@ -30,7 +30,7 @@ interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     name: string;
 }
 
-const DeleteKeyModal = ({ name, address, addressKey, fingerprint, privateKey, ...rest }: Props) => {
+export const DeleteAddressKeyModal = ({ name, address, addressKey, fingerprint, privateKey, ...rest }: Props) => {
     const [step, setStep] = useState(privateKey ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -152,4 +152,3 @@ const DeleteKeyModal = ({ name, address, addressKey, fingerprint, privateKey, ..
     );
 };
 
-export default DeleteKeyModal;
