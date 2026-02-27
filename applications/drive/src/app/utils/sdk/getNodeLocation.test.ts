@@ -262,10 +262,22 @@ describe('formatNodeLocation', () => {
         ).toBe('/My files/folder1/folder2');
     });
 
-    it('should render leading slash for one folder deep path e.g. "/My files"', async () => {
-        const rootNode = createMockNode('uid1', NO_PARENT_UID);
-        rootNode.name = 'volume1Root';
-        expect(formatNodeLocation(NodeLocation.MY_FILES, [createMaybeNode(rootNode)])).toBe('/My files');
+    describe('It hould render leading slash for one folder deep path', () => {
+        it('should render leading slash for "/My files"', async () => {
+            const rootNode = createMockNode('uid1', NO_PARENT_UID);
+            rootNode.name = 'volume1Root';
+            expect(formatNodeLocation(NodeLocation.MY_FILES, [createMaybeNode(rootNode)])).toBe('/My files');
+        });
+
+        it('should render leading slash for "/Shared with me"', async () => {
+            const rootNode = createMockNode('uid1', NO_PARENT_UID);
+            rootNode.name = 'volume1Root';
+            expect(formatNodeLocation(NodeLocation.SHARED_WITH_ME, [])).toBe('/Shared with me');
+        });
+
+        it('should render leading slash for "/Photos"', async () => {
+            expect(formatNodeLocation(NodeLocation.PHOTOS, [])).toBe('/Photos');
+        });
     });
 
     it('should format Shared With Me location', async () => {
@@ -307,8 +319,9 @@ describe('formatNodeLocation', () => {
         photoNode.name = 'photo';
         photoNode.type = NodeType.Photo;
 
+        // We never show the sub path for Photos assets only /Photos
         expect(formatNodeLocation(NodeLocation.PHOTOS, [createMaybeNode(albumNode), createMaybeNode(photoNode)])).toBe(
-            'Photos'
+            '/Photos'
         );
     });
 
