@@ -82,7 +82,7 @@ import type {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
-import { SignupHVMode } from '../signup/interfaces';
+import { SignupHumanVerification } from '../signup/interfaces';
 import { getPlanIDsFromParamsWithForcedAddons } from '../signup/searchParams';
 import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
@@ -1463,7 +1463,7 @@ const SingleSignupContainerV2 = ({
                                         invite: signupParameters.invite,
                                         cache: tmpCache,
                                         api: silentApi,
-                                        mode: SignupHVMode.CRO,
+                                        hvMode: SignupHumanVerification.DEFERRED,
                                     });
                                     const setupCache = await handleSetupNewUser(userCreationResult.cache);
                                     const cacheWithOriginalSubscription = {
@@ -1485,13 +1485,13 @@ const SingleSignupContainerV2 = ({
                                         invite: signupParameters.invite,
                                         cache,
                                         api: silentApi,
-                                        mode:
+                                        hvMode:
                                             // Forcing email address ownership verification for Pass, Drive, and Lumo
                                             product === APPS.PROTONPASS ||
                                             product === APPS.PROTONDRIVE ||
                                             product === APPS.PROTONLUMO
-                                                ? SignupHVMode.OV
-                                                : SignupHVMode.CRO,
+                                                ? SignupHumanVerification.IMMEDIATE
+                                                : SignupHumanVerification.DEFERRED,
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,

@@ -56,7 +56,7 @@ import unique from '@proton/utils/unique';
 
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains } from '../signup/helper';
-import { type SignupCacheResult, SignupHVMode, SignupType } from '../signup/interfaces';
+import { type SignupCacheResult, SignupHumanVerification, SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
@@ -693,7 +693,7 @@ const SingleSignupContainer = ({
                                 const result = await handleCreateUser({
                                     cache,
                                     api: silentApi,
-                                    mode: SignupHVMode.CRO,
+                                    hvMode: SignupHumanVerification.DEFERRED,
                                 });
                                 setModelDiff({
                                     subscriptionData: result.cache.subscriptionData,
