@@ -1,9 +1,9 @@
 import type { MaybeNode } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
-import { getContentSignatureIssue } from './signatures';
+import { getContentSignatureIssueLabel } from './signatures';
 
-describe('getContentSignatureIssue', () => {
+describe('getContentSignatureIssueLabel', () => {
     const baseDate = new Date();
     const baseNodeProps = {
         uid: 'test-uid',
@@ -46,9 +46,35 @@ describe('getContentSignatureIssue', () => {
         name: { ok: true as const, value: 'test-name' },
     };
 
+    describe('when verifyMetadataSignatures is false', () => {
+        it('should return undefined even if there are signature issues', () => {
+            const errorMessage = 'Content signature verification failed';
+            const node: MaybeNode = {
+                ok: true,
+                value: {
+                    ...baseValidNodeProps,
+                    activeRevision: {
+                        ...baseRevision,
+                        contentAuthor: {
+                            ok: false,
+                            error: {
+                                error: errorMessage,
+                                claimedAuthor: 'claimed@proton.me',
+                            },
+                        },
+                    },
+                },
+            };
+
+            const result = getContentSignatureIssueLabel(false, node, true);
+
+            expect(result).toBeUndefined();
+        });
+    });
+
     describe('when node is undefined', () => {
         it('should return undefined', () => {
-            const result = getContentSignatureIssue(true, undefined);
+            const result = getContentSignatureIssueLabel(true, undefined);
 
             expect(result).toBeUndefined();
         });
@@ -64,7 +90,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -83,7 +109,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -109,7 +135,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBe(errorMessage);
         });
@@ -133,7 +159,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -164,7 +190,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBe(errorMessage);
         });
@@ -185,7 +211,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -203,9 +229,22 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(true, node);
+            const result = getContentSignatureIssueLabel(true, node);
 
             expect(result).toBeUndefined();
+        });
+    });
+
+    describe('when hasContentSignatureIssues is true', () => {
+        it('should return the data integrity check failed message', () => {
+            const node: MaybeNode = {
+                ok: true,
+                value: baseValidNodeProps,
+            };
+
+            const result = getContentSignatureIssueLabel(true, node, true);
+
+            expect(result).toBe('Data integrity check failed');
         });
     });
 });
