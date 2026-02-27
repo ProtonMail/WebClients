@@ -19,7 +19,7 @@ import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { getTokenPayment } from '../signupCtx/context/helpers/handleCreateUser';
-import { SignupHVMode } from './interfaces';
+import { SignupHumanVerification } from './interfaces';
 
 export async function getSubscriptionPrices({
     paymentsApi,
@@ -93,21 +93,27 @@ export const getOptimisticDomains = () => {
     return [secondLevelDomain, 'protonmail.com'];
 };
 
-export const getPaymentTokenForExternalUsers = (mode: SignupHVMode | undefined, paymentToken: string | undefined) => {
-    if (mode === SignupHVMode.CRO && paymentToken) {
+export const getPaymentTokenForExternalUsers = (
+    hvMode: SignupHumanVerification | undefined,
+    paymentToken: string | undefined
+) => {
+    if (hvMode === SignupHumanVerification.DEFERRED && paymentToken) {
         return {
             Token: paymentToken,
             TokenType: 'payment' as HumanVerificationMethodType,
         };
     }
-    if (mode === SignupHVMode.OV) {
+    if (hvMode === SignupHumanVerification.IMMEDIATE) {
         return undefined;
     }
     return getTokenPayment(paymentToken);
 };
 
-export const getHVHeadersBasedOnSignupMode = (mode: SignupHVMode | undefined, paymentToken: string | undefined) => {
-    if (mode === SignupHVMode.CRO) {
+export const getHVHeadersBasedOnSignupMode = (
+    hvMode: SignupHumanVerification | undefined,
+    paymentToken: string | undefined
+) => {
+    if (hvMode === SignupHumanVerification.DEFERRED) {
         return paymentToken ? getCroHeaders(paymentToken) : getOwnershipVerificationHeaders('lax');
     }
     return {};
