@@ -38,6 +38,11 @@ export const createToken = (
     data,
 });
 
+export const deleteToken = (tokenId: string) => ({
+    url: `oauth-token/v1/tokens/${tokenId}`,
+    method: 'DELETE',
+});
+
 export const createSync = (importerID: string, source: EASY_SWITCH_SOURCES) => ({
     url: 'importer/v1/sync',
     method: 'POST',
