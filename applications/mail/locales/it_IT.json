@@ -1753,6 +1753,30 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licenza AI di ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licenze ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "Domains": [
+        "Domini"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "Writing assistant": [
+        "Assistente per la scrittura"
+      ],
+      "Writing assistant seats": [
+        "Posti dell'assistente alla scrittura"
       ]
     },
     "Alert": {
@@ -2093,6 +2117,23 @@
       ],
       "Two-year": [
         "Due anni"
+      ],
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
+      "${ n } year": [
+        "${ n } anno",
+        "${ n } anni"
+      ],
+      "Billed monthly": [
+        "Addebito mensile"
+      ],
+      "Lifetime access": [
+        "Accesso a vita"
+      ],
+      "Yearly": [
+        "Annuale"
       ]
     },
     "Browser": {
@@ -7394,8 +7435,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8835,6 +8875,16 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "La tua prossima data di fatturazione è il ${ renewalTime }. Puoi annullare in qualsiasi momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "La tua prossima data di fatturazione è ${ renewalTime }. Puoi annullare in qualsiasi momento. Contatta il supporto se hai bisogno di un cambio di piano immediato."
       ]
     },
     "info": {
@@ -12286,6 +12336,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (IVA esclusa)"
       ]
     },
     "Payments.Error": {
@@ -16250,6 +16303,12 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mese",
+        "${ cycle } mesi"
       ]
     }
   }

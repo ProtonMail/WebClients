@@ -2051,6 +2051,9 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ],
+      "Yearly": [
+        "Rocznie"
       ]
     },
     "Browser": {
@@ -7327,10 +7330,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -16018,6 +16018,14 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } miesiąc",
+        "${ cycle } miesiące",
+        "${ cycle } miesięcy",
+        "${ cycle } miesięca"
       ]
     }
   }

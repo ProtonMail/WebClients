@@ -1484,7 +1484,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } bruger",
         "${ users } brugere"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikeret VPN-server",
+        "${ ips } dedikerede VPN-servere"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI-licens"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } pladser"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI licens",
+        "${ seats } ${ LUMO_APP_NAME } AI licenser"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
+      ],
+      "Domains": [
+        "Domæner"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
+      "Writing assistant seats": [
+        "Skriveassistentpladser"
       ]
     },
     "Alert": {
@@ -2030,28 +2063,28 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB datalagerplads"
+        "2 TB lagerplads"
       ],
       "3 TB data storage": [
-        "3 TB datalagerplads"
+        "3 TB lagerplads"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Adgang til 15.000+ servere i mere end 120 lande"
+        "Få adgang til 15.000+ servere i 120+ lande"
       ],
       "Access advanced AI models": [
-        "Adgang til avancerede AI-modeller"
+        "Få adgang til avancerede AI-modeller"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+        "Alle premium-funktioner fra ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloker annoncer, trackere og malware"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-authenticator"
+        "Indbygget tofaktorgodkendelse"
       ],
       "Connect 10 devices at once": [
-        "Tilslut 10 enheder på én gang"
+        "Forbind 10 enheder på én gang"
       ],
       "Full chat history with easy search and favorites": [
         "Fuld chathistorik med nem søgning og favoritter"
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "To-År"
+      ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } year": [
+        "${ n } år",
+        "${ n } år"
+      ],
+      "Billed monthly": [
+        "Faktureres månedligt"
+      ],
+      "Lifetime access": [
+        "Livstidsadgang"
+      ],
+      "Yearly": [
+        "Årligt"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "Subtotal": [
+        "I alt"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Deltotal for ${ cycle } måned",
+        "Deltotal for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -7399,8 +7456,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8846,6 +8902,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Denne samtale indeholder en planlagt besked. Flytning af den vil annullere den planlagte afsendelse."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
+        "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan til enhver tid annullere."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
       ]
     },
     "info": {
@@ -12297,6 +12363,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (ekskl. moms)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Inkluderer ${ rate }% moms"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Inkluderer ${ rate }% moms"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Inkluderer ${ rate }% moms: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Moms ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Moms ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13240,6 +13333,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Åbn i ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Åbn i ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -16267,6 +16363,12 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måned",
+        "${ cycle } måneder"
       ]
     }
   }

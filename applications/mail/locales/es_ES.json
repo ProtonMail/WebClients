@@ -1753,6 +1753,38 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA de ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Plazas de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME } AI",
+        "${ seats } licencias de ${ LUMO_APP_NAME } AI"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -2040,7 +2072,7 @@
         "Accede a más de 15.000 servidores en más de 120 países"
       ],
       "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
+        "Accede a modelos avanzados de IA"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
@@ -2064,7 +2096,7 @@
         "Cuentas individuales para ti y un socio"
       ],
       "Stronger protection against cyber threats": [
-        "Mayor protección contra las ciberamenazas"
+        "Protección más sólida contra amenazas cibernéticas"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -2093,6 +2125,23 @@
       ],
       "Two-year": [
         "Bienal"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
+      "Billed monthly": [
+        "Facturado mensualmente"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -2571,6 +2620,13 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total para ${ n } meses"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -2639,7 +2695,7 @@
         "Añadir ${ LUMO_APP_NAME }"
       ],
       "Advanced account and network security in one plan": [
-        "Seguridad avanzada de cuenta y red en un solo plan"
+        "Seguridad avanzada para cuentas y redes en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
@@ -7400,8 +7456,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8847,6 +8902,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Esta conversación contiene un mensaje programado. Si la mueves, se cancelará el envío programado."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } mes. Puedes cancelar en cualquier momento.",
+        "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puedes cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Puedes cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }. Puedes cancelar en cualquier momento. Ponte en contacto con el servicio de asistencia si necesitas cambiar de plan de inmediato."
       ]
     },
     "info": {
@@ -9278,7 +9343,7 @@
         "Efectivo"
       ],
       "Categories badge": [
-        "Distintivo de las categorías"
+        "Insignias de las categorías"
       ],
       "Category": [
         "Categoría"
@@ -12298,6 +12363,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incluidos)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Impuesto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impuestos ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -14436,7 +14528,7 @@
         "Confirmación de lectura enviada"
       ],
       "Recategorized ${ elementsCount } message.": [
-        "Recategorizado ${ elementsCount } mensaje.",
+        "Reclasificado ${ elementsCount } mensaje.",
         "Recategorizados ${ elementsCount } mensajes."
       ],
       "Secret passphrase updated": [
@@ -16271,6 +16363,26 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y del ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y del EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } meses"
       ]
     }
   }

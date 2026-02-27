@@ -1484,7 +1484,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } servidor VPN dedicado",
+        "${ ips } servidores VPN dedicados"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "Licencia de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "Licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "Domains": [
+        "Dominios"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
+      ],
+      "Writing assistant seats": [
+        "Licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -2036,13 +2069,13 @@
         "3 TB de almacenamiento de datos"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
+        "Acceda a más de 15 000 servidores en más de 120 países"
       ],
       "Access advanced AI models": [
-        "Acceso a modelos de IA avanzados"
+        "Acceda a modelos avanzados de IA"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloquee anuncios, rastreadores y malware"
@@ -2054,16 +2087,16 @@
         "Conecte 10 dispositivos a la vez"
       ],
       "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda fácil y favoritos"
+        "Historial de chat completo con búsqueda sencilla y favoritos"
       ],
       "Individual accounts for 6 users": [
         "Cuentas individuales para 6 usuarios"
       ],
       "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y otra persona"
+        "Cuentas individuales para usted y un socio"
       ],
       "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
+        "Protección más sólida contra amenazas cibernéticas"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "Dos años"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } año",
+        "${ n } años"
+      ],
+      "Billed monthly": [
+        "Facturación mensual"
+      ],
+      "Lifetime access": [
+        "Acceso de por vida"
+      ],
+      "Yearly": [
+        "Anual"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total por ${ n } meses"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotal por ${ cycle } mes",
+        "Subtotal por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -7399,8 +7456,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8846,6 +8902,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Esta conversación contiene un mensaje programado. Si la mueve, se cancelará el envío programado."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
+        "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
       ]
     },
     "info": {
@@ -12297,6 +12363,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (impuestos no incl.)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuesto: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Incluye un ${ rate }% de impuestos"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluyendo ${ rate }% de impuestos: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Impuesto ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Impuestos ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13100,15 +13193,15 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Tiene ${ timeRemaining.inHours } hora para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inHours } horas para restablecer la contraseña."
+        "Tiene ${ timeRemaining.inHours } horas para restablecer la contraseña."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tiene ${ timeRemaining.inMinutes } minuto para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer la contraseña."
+        "Tiene ${ timeRemaining.inMinutes } minutos para restablecer la contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tiene ${ timeRemaining.inSeconds } segundo para restablecer la contraseña.",
-        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer la contraseña."
+        "Tiene ${ timeRemaining.inSeconds } segundos para restablecer la contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -13240,6 +13333,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Abrir en ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Abrir en ${ appName } (Beta)"
       ]
     },
     "Signature verification warning": {
@@ -16267,6 +16363,26 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "El precio de renovación depende de la región de facturación y ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "El precio de renovación depende de la región de facturación y del número de registro de la empresa."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "El precio de renovación depende de la región de facturación y EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } meses"
       ]
     }
   }

@@ -1484,7 +1484,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1752,6 +1753,38 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } αποκλειστικός διακομιστής VPN",
+        "${ ips } αποκλειστικοί διακομιστές VPN"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } άδεια χρήσης AI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } άδεια χρήσης AI",
+        "${ seats } ${ LUMO_APP_NAME } άδειες χρήσης AI"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Domains": [
+        "Τομείς"
+      ],
+      "Servers": [
+        "Διακομιστές"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ],
+      "Writing assistant seats": [
+        "Άδειες βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -2092,6 +2125,23 @@
       ],
       "Two-year": [
         "Δύο έτη"
+      ],
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
+      "Billed monthly": [
+        "Με μηνιαία χρέωση"
+      ],
+      "Lifetime access": [
+        "Ισόβια πρόσβαση"
+      ],
+      "Yearly": [
+        "Ετησίως"
       ]
     },
     "Browser": {
@@ -2570,6 +2620,13 @@
       "Total for ${ n } month": [
         "Σύνολο για ${ n } μήνα",
         "Σύνολο για ${ n } μήνες"
+      ],
+      "Subtotal": [
+        "Υποσύνολο"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Υποσύνολο για ${ cycle } μήνα",
+        "Υποσύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -3552,7 +3609,7 @@
         "Βόρεια Κορέα"
       ],
       "North Macedonia": [
-        "Σκόπια"
+        "Βόρεια Μακεδονία"
       ],
       "Northern Mariana Islands": [
         "Βόρειες Μαριάνες"
@@ -7112,7 +7169,7 @@
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
       "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
@@ -7399,8 +7456,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8846,6 +8902,16 @@
       ],
       "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
         "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η μετακίνησή της θα ακυρώσει την προγραμματισμένη αποστολή."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι η ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
       ]
     },
     "info": {
@@ -12297,6 +12363,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (χωρίς φόρους)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% φόρος: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% φόροι: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Συμπεριλαμβανόμενος ${ rate }% φόρος ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Συμπεριλαμβανομένων ${ rate }% φόρων ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Φόρος ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Φόροι ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -13100,11 +13193,11 @@
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+        "Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
@@ -16270,6 +16363,36 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον Αριθμό Επιχείρησης."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και το ΑΦΜ."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } μήνας",
+        "${ cycle } μήνες"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     }
   }
