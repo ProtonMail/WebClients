@@ -101,10 +101,10 @@ export function Preview({
                         />
                     )
                 }
-                signatureStatus={<SignatureStatus contentSignatureIssue={preview.node.contentSignatureIssue} />}
+                signatureStatus={<SignatureStatus contentSignatureIssue={preview.node.contentSignatureIssueLabel} />}
                 signatureConfirmation={
-                    preview.node.contentSignatureIssue && (
-                        <SignatureInformation contentSignatureIssue={preview.node.contentSignatureIssue} />
+                    preview.node.contentSignatureIssueLabel && (
+                        <SignatureInformation contentSignatureIssue={preview.node.contentSignatureIssueLabel} />
                     )
                 }
                 sheetsEnabled={sheetsEnabled}
