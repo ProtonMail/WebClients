@@ -1,8 +1,9 @@
-import React from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Form,
     InputFieldTwo,
@@ -24,9 +25,20 @@ export const RenameDeviceModalView = ({
     handleSubmit,
     deviceNameValidation,
     deviceName,
+    isReady,
     onClose,
     ...modalProps
 }: RenameDeviceModalViewProps) => {
+    const isSubmitDisabled = deviceName === inputName || !isReady;
+
+    const submitDisabledReason = useMemo(() => {
+        if (deviceName === inputName && isReady) {
+            return c('Info').t`Can't rename to same name`;
+        }
+        // Still loading or not disabled: no need for a tooltip.
+        return '';
+    }, [deviceName, inputName, isReady]);
+
     return (
         <ModalTwo
             as={Form}
@@ -56,9 +68,13 @@ export const RenameDeviceModalView = ({
                 <Button type="button" onClick={onClose} disabled={submitting}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" loading={submitting} disabled={deviceName === inputName} color="norm">
-                    {c('Action').t`Rename`}
-                </Button>
+                <Tooltip title={submitDisabledReason}>
+                    <span>
+                        <Button type="submit" loading={submitting} disabled={isSubmitDisabled} color="norm">
+                            {c('Action').t`Rename`}
+                        </Button>
+                    </span>
+                </Tooltip>
             </ModalTwoFooter>
         </ModalTwo>
     );
