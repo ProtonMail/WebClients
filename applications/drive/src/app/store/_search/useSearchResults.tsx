@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
+import metrics from '@proton/metrics';
+
 import type { ESLink } from './types';
 import useSearchLibrary from './useSearchLibrary';
 
@@ -24,10 +26,20 @@ function useSearchResultsProvider() {
 
     const runSearch = async (query: string) => {
         searchStarted(query);
+
+        const startTime = performance.now();
         await encryptedSearch((results: ESLink[]) => {
             setResults(results);
         }).finally(() => {
             setIsSearching(false);
+
+            const durationInSeconds = (performance.now() - startTime) / 1000;
+            metrics.drive_search_query_time_histogram.observe({
+                Labels: {
+                    searchVersion: 'legacy',
+                },
+                Value: durationInSeconds,
+            });
         });
     };
 
