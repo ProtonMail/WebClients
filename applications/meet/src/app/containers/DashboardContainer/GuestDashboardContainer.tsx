@@ -66,9 +66,7 @@ export const GuestDashboardContainer = () => {
                     ctaModalType={upsellModalType}
                     onClose={() => dispatch(setUpsellModalType(null))}
                     rejoin={previousMeetingLink ? handleRejoin : undefined}
-                    action={
-                        upsellModalType === UpsellModalTypes.StartMeeting ? handleStartMeeting : handleCreateAccount
-                    }
+                    action={handleCreateAccount}
                 />
             )}
             <JoinWithLinkModal
