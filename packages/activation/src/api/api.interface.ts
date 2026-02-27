@@ -297,3 +297,7 @@ export interface ApiCreateImporterOrganizationMigration {
     ImporterOrganizationId: string;
     AddressIds: string[];
 }
+
+export interface ApiImporterConnectionStatus {
+    IsConnected: boolean;
+}
