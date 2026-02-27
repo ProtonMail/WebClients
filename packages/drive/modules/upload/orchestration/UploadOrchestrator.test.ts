@@ -28,7 +28,7 @@ describe('UploadOrchestrator', () => {
     let mockUpdateQueueItems: jest.Mock;
     let mockGetNextTasks: jest.Mock;
     let mockGetCurrentLoad: jest.Mock;
-    let mockReserveFile: jest.Mock;
+    let mockReservePreparing: jest.Mock;
     let mockReserveFolder: jest.Mock;
     let mockReleaseFile: jest.Mock;
     let mockReleaseFolder: jest.Mock;
@@ -64,12 +64,13 @@ describe('UploadOrchestrator', () => {
         jest.mocked(getNextTasks).mockImplementation(mockGetNextTasks);
 
         mockGetCurrentLoad = jest.fn().mockReturnValue({
-            activeFiles: 0,
+            activePreparingFiles: 0,
+            activeUploadingFiles: 0,
             activeFolders: 0,
             activeBytesTotal: 0,
             taskLoads: new Map(),
         });
-        mockReserveFile = jest.fn();
+        mockReservePreparing = jest.fn();
         mockReserveFolder = jest.fn();
         mockReleaseFile = jest.fn();
         mockReleaseFolder = jest.fn();
@@ -79,7 +80,7 @@ describe('UploadOrchestrator', () => {
             () =>
                 ({
                     getCurrentLoad: mockGetCurrentLoad,
-                    reserveFile: mockReserveFile,
+                    reservePreparing: mockReservePreparing,
                     reserveFolder: mockReserveFolder,
                     releaseFile: mockReleaseFile,
                     releaseFolder: mockReleaseFolder,
@@ -164,7 +165,8 @@ describe('UploadOrchestrator', () => {
     });
 
     const mockEmptyLoad = () => ({
-        activeFiles: 0,
+        activePreparingFiles: 0,
+        activeUploadingFiles: 0,
         activeFolders: 0,
         activeBytesTotal: 0,
         taskLoads: new Map(),
@@ -248,7 +250,7 @@ describe('UploadOrchestrator', () => {
             await jest.runAllTimersAsync();
             await startPromise;
 
-            expect(mockReserveFile).toHaveBeenCalledWith('file1', 1000);
+            expect(mockReservePreparing).toHaveBeenCalledWith('file1');
             expect(mockReleaseFile).toHaveBeenCalledWith('file1');
         });
 
@@ -269,7 +271,7 @@ describe('UploadOrchestrator', () => {
         });
 
         it('should wait when no tasks available but uploads active', async () => {
-            mockGetCurrentLoad.mockReturnValue({ activeFiles: 1, activeFolders: 0 });
+            mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 1, activeFolders: 0 });
             mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);
             mockGetNextTasks.mockReturnValue([]);
 
@@ -278,7 +280,7 @@ describe('UploadOrchestrator', () => {
             jest.advanceTimersByTime(100);
             expect(mockGetNextTasks).toHaveBeenCalled();
 
-            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+            mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 0, activeFolders: 0 });
             mockGetQueue.mockReturnValue([]);
 
             jest.advanceTimersByTime(100);
@@ -382,7 +384,7 @@ describe('UploadOrchestrator', () => {
                 return [{ uploadId: 'file1', status: UploadStatus.ConflictFound, type: NodeType.File }];
             });
             mockGetNextTasks.mockReturnValue([]);
-            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+            mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 0, activeFolders: 0 });
 
             const startPromise = orchestrator.start();
 
@@ -398,7 +400,7 @@ describe('UploadOrchestrator', () => {
                 .mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.ConflictFound, type: NodeType.File }])
                 .mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Finished, type: NodeType.File }]);
             mockGetNextTasks.mockReturnValue([]);
-            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+            mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 0, activeFolders: 0 });
 
             await orchestrator.start();
 

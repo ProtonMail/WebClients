@@ -202,6 +202,28 @@ describe('useTransferManagerActions', () => {
             expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-1');
             expect(mockDownloadManager.cancel).not.toHaveBeenCalledWith(['download-2']);
         });
+
+        it('should cancel uploads in Preparing, Waiting, and ConflictFound states', async () => {
+            const { result } = renderHook(() => useTransferManagerActions());
+
+            const { UploadStatus } = jest.requireActual('@proton/drive/modules/upload');
+            const entries = [
+                createMockEntry('upload', UploadStatus.Preparing, 'upload-preparing'),
+                createMockEntry('upload', UploadStatus.Waiting, 'upload-waiting'),
+                createMockEntry('upload', UploadStatus.ConflictFound, 'upload-conflict'),
+                createMockEntry('upload', BaseTransferStatus.Finished, 'upload-finished'),
+            ];
+
+            result.current.cancelAll(entries);
+
+            const onSubmit = mockShowConfirmModal.mock.calls[0][0].onSubmit;
+            await onSubmit();
+
+            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-preparing');
+            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-waiting');
+            expect(uploadManager.cancelUpload).toHaveBeenCalledWith('upload-conflict');
+            expect(uploadManager.cancelUpload).not.toHaveBeenCalledWith('upload-finished');
+        });
     });
 
     describe('cancelTransfer', () => {

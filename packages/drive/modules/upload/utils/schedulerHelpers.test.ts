@@ -8,7 +8,13 @@ describe('schedulerHelpers', () => {
         it('should return empty array when no pending items', () => {
             const result = getNextTasks(
                 [],
-                { activeFiles: 0, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );
@@ -30,7 +36,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 0, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );
@@ -56,7 +68,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 0, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );
@@ -90,7 +108,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 0, activeFolders: 1, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 1,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 2
             );
@@ -126,7 +150,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 4, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 4,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );
@@ -162,7 +192,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 0, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );
@@ -197,7 +233,13 @@ describe('schedulerHelpers', () => {
             ] as any;
             const result = getNextTasks(
                 queueItems,
-                { activeFiles: 0, activeFolders: 0, activeBytesTotal: 0, taskLoads: new Map() },
+                {
+                    activePreparingFiles: 0,
+                    activeUploadingFiles: 0,
+                    activeFolders: 0,
+                    activeBytesTotal: 0,
+                    taskLoads: new Map(),
+                },
                 5,
                 3
             );

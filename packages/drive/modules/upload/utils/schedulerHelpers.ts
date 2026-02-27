@@ -86,7 +86,7 @@ export function getNextTasks(
         tasks.push(...folderTasks);
     }
 
-    const availableFileSlots = maxConcurrentFiles - currentLoad.activeFiles;
+    const availableFileSlots = maxConcurrentFiles - currentLoad.activePreparingFiles;
     if (availableFileSlots > 0) {
         const fileTasks = getReadyFileTasks(queueItems, availableFileSlots);
         tasks.push(...fileTasks);

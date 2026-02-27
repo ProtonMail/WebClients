@@ -48,6 +48,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [BaseTransferStatus.PausedServer]: c('Info').t`Paused`,
         [UploadStatus.Preparing]: c('Info').t`Preparing`,
         [UploadStatus.ConflictFound]: c('Info').t`Waiting`,
+        [UploadStatus.Waiting]: c('Info').t`Waiting`,
         [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
@@ -60,7 +61,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) {
         return <IcCheckmarkCircleFilled size={5} className="color-success" />;
     }
-    if (entry.status === BaseTransferStatus.Pending) {
+    if (entry.status === BaseTransferStatus.Pending || entry.status === UploadStatus.Waiting) {
         return <IcClock size={5} />;
     }
     if (entry.status === BaseTransferStatus.InProgress || entry.status === UploadStatus.Preparing) {

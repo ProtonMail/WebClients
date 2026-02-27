@@ -10,12 +10,24 @@
         "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/crypto": "workspace:^",
         "@proton/metrics": "workspace:^",
+        "@proton/raw-images": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/srp": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@protontech/drive-sdk": "^0.11.0",
-        "@types/node": "^24.10.13"
+        "@types/node": "^24.10.13",
+        "@xmldom/xmldom": "^0.9.8",
+        "core-js": "^3.48.0",
+        "exifreader": "^4.36.1",
+        "heic-to": "^1.4.2",
+        "mime-types": "^2.1.35",
+        "react": "^18.3.1",
+        "ttag": "^1.8.12",
+        "zustand": "^4.5.7"
     },
     "devDependencies": {
         "@proton/jest-env": "workspace:^",
