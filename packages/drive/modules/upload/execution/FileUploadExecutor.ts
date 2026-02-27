@@ -14,6 +14,7 @@ import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import type { FileUploadTask } from '../types';
 import { createFileStream } from '../utils/createFileStream';
+import { uploadLogDebug, uploadLogError } from '../utils/uploadLogger';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
@@ -36,7 +37,9 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
         }
 
         try {
+            uploadLogDebug('generateThumbnails start', { uploadId: task.uploadId, name: task.name });
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
+            uploadLogDebug('generateThumbnails done', { uploadId: task.uploadId });
 
             if (abortController.signal.aborted) {
                 return;
@@ -53,12 +56,24 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 return;
             }
 
+            await this.eventCallback?.({
+                type: 'file:prepared',
+                uploadId: task.uploadId,
+                isForPhotos: false,
+            });
+
+            if (abortController.signal.aborted) {
+                return;
+            }
+
+            uploadLogDebug('getUploader start', { uploadId: task.uploadId });
             const drive = UploadDriveClientRegistry.getDriveClient();
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
+            uploadLogDebug('getUploader done', { uploadId: task.uploadId });
 
             const stream = createFileStream(task.file);
             const controller = await uploader.uploadFromStream(stream, thumbnails, (uploadedBytes: number) => {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:progress',
                     uploadId: task.uploadId,
                     uploadedBytes,
@@ -66,7 +81,9 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 });
             });
 
-            this.eventCallback?.({
+            uploadLogDebug('uploadFromStream done', { uploadId: task.uploadId });
+
+            void this.eventCallback?.({
                 type: 'file:started',
                 uploadId: task.uploadId,
                 controller,
@@ -75,7 +92,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
 
             const { nodeUid } = await controller.completion();
 
-            this.eventCallback?.({
+            void this.eventCallback?.({
                 type: 'file:complete',
                 uploadId: task.uploadId,
                 nodeUid,
@@ -89,14 +106,14 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
             }
 
             if (error instanceof NodeWithSameNameExistsValidationError) {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:conflict',
                     uploadId: task.uploadId,
                     error,
                     isForPhotos: false,
                 });
             } else {
-                this.eventCallback?.({
+                void this.eventCallback?.({
                     type: 'file:error',
                     uploadId: task.uploadId,
                     error: error instanceof Error ? error : new Error(c('Error').t`Upload failed`),
@@ -152,7 +169,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 additionalMetadata: metadata,
             };
         } catch (error) {
-            // TODO: Implement upload logging
+            uploadLogError('Failed to generate extended attributes', error, { uploadId: file.name });
             traceError(error, {
                 level: 'debug', // Debug as we need it only when we investigate issues.
                 tags: {
