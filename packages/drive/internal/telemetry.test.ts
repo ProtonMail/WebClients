@@ -54,6 +54,9 @@ jest.mock('@proton/metrics', () => ({
     drive_sdk_volume_events_subscriptions_histogram: {
         observe: jest.fn(),
     },
+    drive_crypto_speed_histogram: {
+        observe: jest.fn(),
+    },
 }));
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
@@ -763,6 +766,176 @@ describe('MetricHandler', () => {
                 Labels: {
                     userPlan: 'free',
                 },
+            });
+        });
+    });
+
+    describe('performance', () => {
+        it('should start interval and report crypto speed after 30 seconds', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 1024 * 1024, // 1 MB
+                    milliseconds: 1000, // 1 second
+                },
+            });
+
+            expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
+
+            jest.advanceTimersByTime(30 * 1000);
+
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
+                Value: 1, // 1 MB / 1 s = 1 MB/s
+                Labels: {
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                },
+            });
+        });
+
+        it('should aggregate multiple performance events with same type and cryptoModel', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_decryption',
+                    cryptoModel: 'v1.5',
+                    bytesProcessed: 1024 * 1024, // 1 MB
+                    milliseconds: 500,
+                },
+            });
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_decryption',
+                    cryptoModel: 'v1.5',
+                    bytesProcessed: 2 * 1024 * 1024, // 2 MB
+                    milliseconds: 500,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+
+            // 3 MB in 1 second = 3 MB/s
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
+                Value: 3,
+                Labels: {
+                    type: 'content_decryption',
+                    cryptoModel: 'v1.5',
+                },
+            });
+        });
+
+        it('should report separate metrics for different type and cryptoModel combinations', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 1024 * 1024,
+                    milliseconds: 1000,
+                },
+            });
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_decryption',
+                    cryptoModel: 'v1.5',
+                    bytesProcessed: 2 * 1024 * 1024,
+                    milliseconds: 1000,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(2);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
+                Value: 1,
+                Labels: { type: 'content_encryption', cryptoModel: 'v1' },
+            });
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
+                Value: 2,
+                Labels: { type: 'content_decryption', cryptoModel: 'v1.5' },
+            });
+        });
+
+        it('should not report metrics when bytesProcessed is zero', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 0,
+                    milliseconds: 1000,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+
+            expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
+        });
+
+        it('should not report metrics when milliseconds is zero', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 1024 * 1024,
+                    milliseconds: 0,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+
+            expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
+        });
+
+        it('should clear aggregated metrics after sending and report only new data in next interval', () => {
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 1024 * 1024,
+                    milliseconds: 1000,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenLastCalledWith({
+                Value: 1,
+                Labels: { type: 'content_encryption', cryptoModel: 'v1' },
+            });
+
+            metricHandler.onEvent({
+                time: new Date(),
+                event: {
+                    eventName: 'performance',
+                    type: 'content_encryption',
+                    cryptoModel: 'v1',
+                    bytesProcessed: 2 * 1024 * 1024,
+                    milliseconds: 1000,
+                },
+            });
+
+            jest.advanceTimersByTime(30 * 1000);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(2);
+            expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenLastCalledWith({
+                Value: 2,
+                Labels: { type: 'content_encryption', cryptoModel: 'v1' },
             });
         });
     });
