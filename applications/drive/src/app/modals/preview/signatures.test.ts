@@ -48,7 +48,7 @@ describe('getContentSignatureIssue', () => {
 
     describe('when node is undefined', () => {
         it('should return undefined', () => {
-            const result = getContentSignatureIssue(undefined);
+            const result = getContentSignatureIssue(true, undefined);
 
             expect(result).toBeUndefined();
         });
@@ -64,7 +64,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -83,7 +83,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -109,7 +109,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBe(errorMessage);
         });
@@ -133,7 +133,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -164,7 +164,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBe(errorMessage);
         });
@@ -185,7 +185,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBeUndefined();
         });
@@ -203,7 +203,7 @@ describe('getContentSignatureIssue', () => {
                 },
             };
 
-            const result = getContentSignatureIssue(node);
+            const result = getContentSignatureIssue(true, node);
 
             expect(result).toBeUndefined();
         });

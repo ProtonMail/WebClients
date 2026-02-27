@@ -25,7 +25,7 @@ const SignatureIssue = ({
                     <div className="text-center">
                         <Icon name="lock-exclamation-filled" size={15} className="color-danger" />
                     </div>
-                    <div className="mt-4 mb-8">{signatureConfirmation}</div>
+                    <div className="mt-4 mb-8 text-center">{signatureConfirmation}</div>
                 </div>
                 <div className="text-center">
                     <Button
