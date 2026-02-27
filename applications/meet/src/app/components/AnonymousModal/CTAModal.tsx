@@ -49,7 +49,6 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         [UpsellModalTypes.Schedule]: c('Info').t`You are almost there`,
         [UpsellModalTypes.Room]: c('Info').t`You are almost there`,
         [UpsellModalTypes.PersonalMeeting]: c('Info').t`You are almost there`,
-        [UpsellModalTypes.StartMeeting]: c('Info').t`Host your own secure meeting`,
         [UpsellModalTypes.HostFreeAccount]: c('Info').t`You left your meeting`,
         [UpsellModalTypes.HostPaidAccount]: c('Info').t`You left your meeting`,
         [UpsellModalTypes.GuestAccount]: c('Info').t`You left your meeting`,
@@ -84,8 +83,6 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         [UpsellModalTypes.HostFreeAccount]: c('Info')
             .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`,
         [UpsellModalTypes.HostPaidAccount]: c('Info').t`Thank you for hosting a premium meeting.`,
-        [UpsellModalTypes.StartMeeting]: c('Info')
-            .t`Start a call in ${MEET_APP_NAME} and share the link to invite anyone to join. Simple, secure, and free.`,
         [UpsellModalTypes.GuestAccount]: guestAccountSubtitle,
         [UpsellModalTypes.FreeAccount]: c('Info')
             .t`Host your own secure meeting. Start a call in ${MEET_APP_NAME} and share the link to invite anyone to join. Simple, secure, and free.`,
@@ -96,7 +93,6 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         [UpsellModalTypes.Schedule]: c('Action').t`Continue`,
         [UpsellModalTypes.Room]: c('Action').t`Continue`,
         [UpsellModalTypes.PersonalMeeting]: c('Action').t`Continue`,
-        [UpsellModalTypes.StartMeeting]: c('Action').t`Start a meeting`,
         [UpsellModalTypes.HostFreeAccount]: c('Action').t`Get Meet Professional`,
         [UpsellModalTypes.HostPaidAccount]: undefined,
         [UpsellModalTypes.GuestAccount]: c('Action').t`Create a free account`,
@@ -108,7 +104,6 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         [UpsellModalTypes.Schedule]: undefined,
         [UpsellModalTypes.Room]: undefined,
         [UpsellModalTypes.PersonalMeeting]: undefined,
-        [UpsellModalTypes.StartMeeting]: undefined,
         [UpsellModalTypes.HostFreeAccount]: undefined,
         [UpsellModalTypes.HostPaidAccount]: undefined,
         [UpsellModalTypes.GuestAccount]: c('Action').t`Get Meet Professional`,
@@ -197,8 +192,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
         return (
             ctaModalType === UpsellModalTypes.Schedule ||
             ctaModalType === UpsellModalTypes.Room ||
-            ctaModalType === UpsellModalTypes.PersonalMeeting ||
-            ctaModalType === UpsellModalTypes.StartMeeting
+            ctaModalType === UpsellModalTypes.PersonalMeeting
         );
     };
 
@@ -302,7 +296,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                 {ctaModalType === UpsellModalTypes.HostFreeAccount && <>{actionButton}</>}
                                 {ctaModalType === UpsellModalTypes.FreeAccount && <>{lowPressureActionButton}</>}
                             </div>
-                            {rejoin && (
+                            {isEndCallUpsell() && rejoin && (
                                 <div className="w-full flex justify-center gap-2 pt-10 pb-5 text-semibold max-w-custom">
                                     <span className="color-weak">{c('Info').t`Left by mistake?`}</span>
                                     <InlineLinkButton
@@ -320,7 +314,7 @@ export const CTAModal = ({ open, onClose, ctaModalType, rejoin, action }: CTAMod
                                 {c('Go to sign in').jt`Already have an account? ${signIn}`}
                             </div>
                         )}
-                        {meetFeedbackEnabled && rejoin && (
+                        {meetFeedbackEnabled && isEndCallUpsell() && rejoin && (
                             <FeedbackForm onClose={onClose} setIsFinished={setIsFinished} />
                         )}
                     </>
