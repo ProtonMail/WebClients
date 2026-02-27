@@ -223,3 +223,8 @@ export const createOrganizationImporterMigration = (data: ApiCreateImporterOrgan
     method: 'POST',
     data,
 });
+
+export const getConnectionStatus = () => ({
+    url: 'importer/v1/provider/googleworkspace/connection/status',
+    method: 'GET',
+});
