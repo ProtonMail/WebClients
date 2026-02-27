@@ -25,6 +25,7 @@ describe("settingsStore", () => {
                 spellChecker: false,
                 releaseCategory: RELEASE_CATEGORIES.STABLE,
                 rolloutProportion: -1,
+                mailtoBannerDismissedPermanently: false,
             });
 
             updateSettings({

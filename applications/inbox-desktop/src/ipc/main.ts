@@ -29,6 +29,7 @@ import {
     setShouldCheckDefaultMailtoApp,
     setDefaultMailtoBannerDismissed,
     getDefaultMailtoBannerDismissed,
+    setDefaultMailtoBannerDismissedPermanently,
 } from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
@@ -222,6 +223,9 @@ export const handleIPCCalls = () => {
                 break;
             case "setDefaultMailtoBannerDismissed":
                 setDefaultMailtoBannerDismissed(payload);
+                break;
+            case "setDefaultMailtoBannerDismissedPermanently":
+                setDefaultMailtoBannerDismissedPermanently();
                 break;
             case "toggleAppCache":
                 toggleAppCache({ enabled: payload });
