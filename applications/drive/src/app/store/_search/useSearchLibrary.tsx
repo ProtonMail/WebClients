@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import { INDEXING_STATUS } from '@proton/encrypted-search/constants';
-import { hasESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
+import { hasESDB, metadataIndexingProgress, readSize } from '@proton/encrypted-search/esIDB';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import metrics from '@proton/metrics';
