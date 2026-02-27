@@ -7,7 +7,7 @@ import { useApi } from '@proton/components/index';
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
 import useProviderTokens from './useProviderTokens';
 
-const useProviderUsers = (): [ApiImporterOrganizationUser[], boolean] => {
+const useProviderUsers = (importerOrganizationId: string): [ApiImporterOrganizationUser[], boolean] => {
     const api = useApi();
     const [providerTokens, providerTokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const [usersState, setUsersState] = useState<{ users: ApiImporterOrganizationUser[]; loading: boolean }>({
@@ -24,7 +24,7 @@ const useProviderUsers = (): [ApiImporterOrganizationUser[], boolean] => {
 
             const users: ApiImporterOrganizationUser[] = !providerTokens.length
                 ? []
-                : await api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers())
+                : await api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers(importerOrganizationId))
                       .then((r) => r.Users)
                       .catch((_) => []);
 
