@@ -15,8 +15,7 @@ import useListTelemetry, {
     SELECTED_RANGE,
     SOURCE_ACTION,
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
+import { type MoveAllToFolderArgs, MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface ActionProps {
     onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
@@ -110,9 +109,13 @@ export const DeleteAction = ({ onDelete }: DeleteActionProps) => {
     );
 };
 
-export const MoveAllToTrashAction = ({ labelID }: { labelID: string }) => {
-    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
-
+export const MoveAllToTrashAction = ({
+    labelID,
+    moveAllToFolder,
+}: {
+    labelID: string;
+    moveAllToFolder: (args: MoveAllToFolderArgs) => void;
+}) => {
     const handleMoveAllToTrash = () => {
         void moveAllToFolder({
             type: MoveAllType.moveAll,
@@ -140,14 +143,17 @@ export const MoveAllToTrashAction = ({ labelID }: { labelID: string }) => {
                     }
                 </span>
             </DropdownMenuButton>
-            {moveAllModal}
         </>
     );
 };
 
-export const MoveAllToArchiveAction = ({ labelID }: { labelID: string }) => {
-    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
-
+export const MoveAllToArchiveAction = ({
+    labelID,
+    moveAllToFolder,
+}: {
+    labelID: string;
+    moveAllToFolder: (args: MoveAllToFolderArgs) => void;
+}) => {
     const handleMoveAllToArchive = () => {
         void moveAllToFolder({
             type: MoveAllType.moveAll,
@@ -168,14 +174,18 @@ export const MoveAllToArchiveAction = ({ labelID }: { labelID: string }) => {
                 <IcArchiveBox className="mr-2 shrink-0 mt-0.5" />
                 <span className="flex-1">{c('Action').t`Move all to archive`}</span>
             </DropdownMenuButton>
-            {moveAllModal}
         </>
     );
 };
 
-export const DeleteAllAction = ({ labelID }: { labelID: string }) => {
+export const DeleteAllAction = ({
+    labelID,
+    emptyLabel,
+}: {
+    labelID: string;
+    emptyLabel: (labelID: string) => void;
+}) => {
     const { sendSimpleActionReport } = useListTelemetry();
-    const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
 
     const handleEmptyLabel = () => {
         sendSimpleActionReport({
@@ -201,7 +211,6 @@ export const DeleteAllAction = ({ labelID }: { labelID: string }) => {
                     c('Action').t`Delete all`
                 }</span>
             </DropdownMenuButton>
-            {deleteAllModal}
         </>
     );
 };
