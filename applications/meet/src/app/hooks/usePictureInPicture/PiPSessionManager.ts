@@ -102,6 +102,7 @@ export class PiPSessionManager {
             pipVideo.style.position = 'absolute';
             pipVideo.style.top = '0';
             pipVideo.style.left = '0';
+            pipVideo.style.zIndex = '-1';
         } else {
             pipVideo.style.display = 'none';
         }
