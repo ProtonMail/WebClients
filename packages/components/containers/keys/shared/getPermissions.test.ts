@@ -18,6 +18,7 @@ describe('getPermissions', () => {
                 canDeleteForwarding: true,
                 isLoading: false,
                 isWeak: false,
+                isUserKey: false,
             });
 
             expect(permissions).toEqual({
@@ -50,6 +51,7 @@ describe('getPermissions', () => {
                 canDeleteForwarding: true,
                 isLoading: false,
                 isWeak: false,
+                isUserKey: false,
             });
 
             expect(permissions).toEqual({
