@@ -21,7 +21,7 @@ import ProviderUsersTable from './ProviderUsersTable';
 const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
     const { createNotification } = useNotifications();
     const [customDomains, customDomainsLoading] = useCustomDomains();
-    const [providerUsers, providerUsersLoading] = useProviderUsers();
+    const [providerUsers, providerUsersLoading] = useProviderUsers(model.importerOrganizationId!);
     const [tokens, tokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const dispatch = useDispatch();
 

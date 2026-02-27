@@ -38,6 +38,11 @@ export const createToken = (
     data,
 });
 
+export const deleteToken = (tokenId: string) => ({
+    url: `oauth-token/v1/tokens/${tokenId}`,
+    method: 'DELETE',
+});
+
 export const createSync = (importerID: string, source: EASY_SWITCH_SOURCES) => ({
     url: 'importer/v1/sync',
     method: 'POST',
@@ -197,8 +202,8 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     data: { Email, OrganizationId },
 });
 
-export const getOrganizationUsers = () => ({
-    url: 'importer/v1/organizations/users',
+export const getOrganizationUsers = (importerOrganizationId: string) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}/users`,
     method: 'GET',
 });
 
@@ -217,4 +222,9 @@ export const createOrganizationImporterMigration = (data: ApiCreateImporterOrgan
     url: 'importer/v1/organizations/migrations',
     method: 'POST',
     data,
+});
+
+export const getConnectionStatus = () => ({
+    url: 'importer/v1/provider/googleworkspace/connection/status',
+    method: 'GET',
 });
