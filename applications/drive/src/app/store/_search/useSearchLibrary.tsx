@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,9 +7,10 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import { INDEXING_STATUS } from '@proton/encrypted-search/constants';
-import { checkVersionedESDB, metadataIndexingProgress } from '@proton/encrypted-search/esIDB';
+import { checkVersionedESDB, metadataIndexingProgress, readSize } from '@proton/encrypted-search/esIDB';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
+import metrics from '@proton/metrics';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -69,6 +70,36 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         esCallbacks,
         onMetadataIndexed: handleMetadataIndexed,
     });
+
+    const { enableEncryptedSearch } = esFunctions;
+
+    const enableSearchWithMetrics = useCallback(async () => {
+        const startTime = performance.now();
+        const succeeded = await enableEncryptedSearch();
+        if (succeeded) {
+            // Log time to compute the index
+            const durationInSeconds = (performance.now() - startTime) / 1000;
+            metrics.drive_search_index_build_time_histogram.observe({
+                Labels: {
+                    searchVersion: 'legacy',
+                },
+                Value: durationInSeconds,
+            });
+
+            // Log index size
+            const indexSizeBytes = (await readSize(user.ID)) || 0;
+            const indexSizeMB = indexSizeBytes / (1024 * 1024);
+            metrics.drive_search_index_size_histogram.observe({
+                Labels: {
+                    searchVersion: 'legacy',
+                },
+                Value: indexSizeMB,
+            });
+        }
+        return succeeded;
+    }, [enableEncryptedSearch, user.ID]);
+
+    esFunctions.enableEncryptedSearch = enableSearchWithMetrics;
 
     const initializeESDrive = async () => {
         // Migrate old IDBs
