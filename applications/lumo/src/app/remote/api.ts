@@ -78,6 +78,28 @@ export type ListSpacesParams = {
     createTimeSince?: number; // unix timestamp (seconds)
 };
 
+export enum AssetType {
+    Generic = 0,
+    GeneratedImage = 1,
+    GeneratedVideo = 2,
+    GeneratedDoc = 3,
+}
+
+export type ListGeneratedAssetsParams = {
+    assetType?: AssetType;
+    createTimeSince?: number; // unix timestamp (seconds)
+    createTimeUntil?: number; // unix timestamp (seconds)
+};
+
+export type GeneratedAssetFromApi = {
+    ID: string;
+    SpaceID: string;
+    AssetTag: string;
+    CreateTime: string;
+    Encrypted?: string | null;
+    DeleteTime?: string | null;
+};
+
 const idExtractorMap: Record<ResourceName, (json: object) => RemoteId | undefined> = {
     messages: (json) => (json as any)?.Message?.ID,
     conversations: (json) => (json as any)?.Conversation?.ID,
@@ -597,5 +619,36 @@ export class LumoApi {
         spaceId: LocalId
     ): Promise<RemoteFilledAttachment | RemoteDeletedAttachment | null> {
         return this.getAsset(attachmentId, spaceId);
+    }
+
+    public async listGeneratedAssets(params?: ListGeneratedAssetsParams): Promise<GeneratedAssetFromApi[]> {
+        const queryParams: Record<string, string> = {};
+        if (params?.assetType !== undefined) {
+            queryParams['AssetType'] = String(params.assetType);
+        }
+        if (params?.createTimeSince !== undefined) {
+            queryParams['CreateTimeSince'] = String(params.createTimeSince);
+        }
+        if (params?.createTimeUntil !== undefined) {
+            queryParams['CreateTimeUntil'] = String(params.createTimeUntil);
+        }
+
+        let url = '/api/lumo/v1/assets/generated';
+        if (Object.keys(queryParams).length > 0) {
+            url += `?${new URLSearchParams(queryParams)}`;
+        }
+
+        console.log(`lumo api: http get ${url}`);
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: this.protonHeaders(),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error fetching generated assets: got ${response.status}`);
+        }
+
+        const json = await response.json();
+        return (json?.Assets ?? []) as GeneratedAssetFromApi[];
     }
 }

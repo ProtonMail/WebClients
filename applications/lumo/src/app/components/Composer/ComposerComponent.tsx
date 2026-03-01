@@ -66,9 +66,8 @@ export type ComposerComponentProps = {
     initialQuery?: string; // Initial query to populate and auto-execute
     prefillQuery?: string; // Query to prefill without auto-executing
     spaceId?: string; // Optional space ID to include space-level attachments
-
-    // From legacy composer component - can delete
-    // canShowLumoUpsellToggle?: boolean;
+    autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
+    autoOpenUpload?: boolean; // Auto-open the file upload dialog on mount
 };
 
 /**
@@ -92,6 +91,8 @@ const ComposerComponentInner = ({
     initialQuery,
     prefillQuery,
     spaceId,
+    autoOpenSketch,
+    autoOpenUpload,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -109,6 +110,58 @@ const ComposerComponentInner = ({
 
     const { handleFileProcessing, handleFilesSelected, handleBrowseDrive, handleDeleteAttachment, fileUploadMode } =
         useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
+
+    // const sendGenerateMessage = useCallback(
+    //     async (editor: any) => {
+    //         if (isProcessingAttachment) {
+    //             console.log('Submission blocked: files are still being processed');
+    //             return;
+    //         }
+
+    //         if (!editor?.isEmpty) {
+    //             const markdown = editor?.storage.markdown.getMarkdown();
+    //             if (!markdown) return;
+    //             editor?.commands.clearContent();
+    //             await handleSendMessage(markdown, isWebSearchButtonToggled);
+    //         }
+    //     },
+    //     [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
+    // );
+
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    // const handleDrawSketch = useCallback(() => {
+    //     setShowDrawingModal(true);
+    // }, []);
+
+    // Auto-open sketch canvas when navigated from gallery with ?sketch=1
+    useEffect(() => {
+        if (autoOpenSketch) {
+            setShowDrawingModal(true);
+        }
+    }, [autoOpenSketch]);
+
+    // Auto-open file upload dialog when navigated from gallery with ?upload=1
+    useEffect(() => {
+        if (autoOpenUpload) {
+            const timer = setTimeout(() => {
+                fileInputRef.current?.click();
+            }, 150);
+            return () => clearTimeout(timer);
+        }
+    }, [autoOpenUpload]);
+
+    // const handleDrawingExport = useCallback(
+    //     async (imageData: string) => {
+    //         const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
+    //         await handleFileProcessing(file);
+    //         createNotification({
+    //             text: c('collider_2025: Info').t`Sketch added as attachment`,
+    //             type: 'success',
+    //         });
+    //     },
+    //     [handleFileProcessing, createNotification]
+    // );
 
     const isAutocompleteActiveRef = useRef(false);
 
@@ -220,6 +273,20 @@ const ComposerComponentInner = ({
 
     return (
         <>
+            {/* Hidden file input used by autoOpenUpload */}
+            <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                multiple
+                onChange={(e) => {
+                    if (e.target.files?.length) {
+                        handleFilesSelected(Array.from(e.target.files));
+                        e.target.value = '';
+                    }
+                }}
+            />
             <div className="w-full" ref={inputContainerRef}>
                 <section
                     ref={composerContainerRef}
