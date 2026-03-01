@@ -1,0 +1,22 @@
+// ── Bottom panel ──────────────────────────────────────────────────────────────
+// Sits below the canvas in a flex-column layout — not overlaid on top of it.
+
+.sketch-canvas__panel {
+    flex-shrink: 0;
+}
+
+.sketch-canvas__description {
+    padding: 10px 16px 12px;
+    width: min(480px, 88vw);
+    border-radius: 1rem;
+}
+
+.sketch-canvas__textarea {
+    font-family: inherit;
+    line-height: 1.5;
+
+    &,
+    &:focus {
+        outline: none;
+    }
+}

@@ -1,4 +1,5 @@
 import { attachmentLoadingStateReducer } from './attachmentLoadingState';
+import composerActionsReducer from './composerActions';
 import contextFiltersReducer from './contextFilters';
 import attachmentsReducer from './core/attachments';
 import conversationsReducer from './core/conversations';
@@ -16,6 +17,7 @@ import { remainingInvitesReducer } from './meta/remainingInvites';
 import personalizationReducer from './personalization';
 
 export const lumoReducers = {
+    composerActions: composerActionsReducer,
     spaces: spacesReducer,
     conversations: conversationsReducer,
     messages: messagesReducer,

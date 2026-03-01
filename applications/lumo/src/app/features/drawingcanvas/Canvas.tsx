@@ -124,12 +124,42 @@ export const Canvas = ({
     }
 
     return (
-        <div ref={containerRef} className="w-full h-full flex items-center justify-center" style={{ padding: '3rem' }}>
+        <div
+            ref={containerRef}
+            style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '3rem',
+                boxSizing: 'border-box',
+            }}
+        >
             {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 10 }}>
-                    <div className="text-center">
-                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
-                        <p className="mt-2 color-norm">Loading image...</p>
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: 0, right: 0, bottom: 0, left: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        zIndex: 10,
+                    }}
+                >
+                    <div style={{ textAlign: 'center' }}>
+                        <div
+                            style={{
+                                display: 'inline-block',
+                                width: '2rem',
+                                height: '2rem',
+                                borderRadius: '50%',
+                                borderBottom: '2px solid var(--primary)',
+                                animation: 'spin 1s linear infinite',
+                            }}
+                        />
+                        <p style={{ marginTop: '0.5rem', color: 'var(--text-norm)' }}>Loading image...</p>
                     </div>
                 </div>
             )}
@@ -137,8 +167,9 @@ export const Canvas = ({
                 ref={canvasRef}
                 width={width}
                 height={height}
-                className="block touch-none"
                 style={{
+                    display: 'block',
+                    touchAction: 'none',
                     cursor: 'crosshair',
                     maxWidth: '100%',
                     maxHeight: '100%',

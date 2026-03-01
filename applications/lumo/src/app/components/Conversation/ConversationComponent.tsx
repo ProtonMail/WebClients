@@ -122,6 +122,7 @@ export interface ConversationComponentProps {
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleRetryGeneration: (error: ConversationError) => void;
     initialQuery?: string;
+    prefillQuery?: string;
 }
 
 const ConversationComponent = ({
@@ -137,6 +138,7 @@ const ConversationComponent = ({
     isProcessingAttachment,
     handleRetryGeneration,
     initialQuery,
+    prefillQuery,
 }: ConversationComponentProps) => {
     const sourcesContainerRef = useRef<HTMLDivElement>(null);
     const filesContainerRef = useRef<HTMLDivElement>(null);
@@ -282,6 +284,7 @@ const ConversationComponent = ({
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}
                             initialQuery={initialQuery}
+                            prefillQuery={prefillQuery}
                             spaceId={conversation?.spaceId}
                         />
                     </div>
