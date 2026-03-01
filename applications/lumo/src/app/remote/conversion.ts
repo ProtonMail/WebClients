@@ -431,13 +431,18 @@ export function convertSpaceToApi(space: SerializedSpace): SpaceToApi {
     };
 }
 
-export function convertNewAttachmentToApi(attachment: SerializedAttachment, remoteSpaceId: RemoteId): NewAssetToApi {
+export function convertNewAttachmentToApi(
+    attachment: SerializedAttachment,
+    remoteSpaceId: RemoteId,
+    assetType?: number
+): NewAssetToApi {
     const { id, encrypted } = attachment;
     const encryptedConcat = ensureConcat(encrypted);
     return {
         SpaceID: remoteSpaceId,
         Encrypted: encryptedConcat,
         AssetTag: id,
+        ...(assetType !== undefined && { AssetType: assetType }),
     };
 }
 
