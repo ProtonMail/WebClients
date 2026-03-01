@@ -15,7 +15,29 @@ export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanv
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Load base image if in overlay mode
+    // Render canvas whenever strokes or base image changes
+    const render = useCallback(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        clearCanvas(ctx, width, height);
+
+        if (backgroundImageRef.current) {
+            drawImage(ctx, backgroundImageRef.current, width, height);
+        }
+
+        strokes.forEach((stroke) => {
+            drawStroke(ctx, stroke);
+        });
+    }, [width, height, strokes]);
+
+    // Load base image if in overlay mode.
+    // Must come after `render` is defined so the .then() can call it directly —
+    // the render effect only fires when `render` changes (i.e. when strokes/size
+    // change), so we need to trigger a redraw manually after the async load.
     useEffect(() => {
         if (!baseImage) {
             backgroundImageRef.current = null;
@@ -29,37 +51,16 @@ export const useCanvasRenderer = ({ width, height, baseImage, strokes }: UseCanv
             .then((img) => {
                 backgroundImageRef.current = img;
                 setIsLoading(false);
+                render();
             })
             .catch((err) => {
                 console.error('Failed to load base image:', err);
                 setError('Failed to load image');
                 setIsLoading(false);
             });
-    }, [baseImage]);
+    }, [baseImage, render]);
 
-    // Render canvas whenever strokes or base image changes
-    const render = useCallback(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        // Clear canvas
-        clearCanvas(ctx, width, height);
-
-        // Draw base image if exists
-        if (backgroundImageRef.current) {
-            drawImage(ctx, backgroundImageRef.current, width, height);
-        }
-
-        // Draw all strokes
-        strokes.forEach((stroke) => {
-            drawStroke(ctx, stroke);
-        });
-    }, [width, height, strokes]);
-
-    // Render on changes
+    // Render on stroke/size changes
     useEffect(() => {
         render();
     }, [render]);
