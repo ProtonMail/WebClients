@@ -1,17 +1,22 @@
 import { useRef, useState } from 'react';
-import clsx from 'clsx';
+
+import { c } from 'ttag';
+
+import { Icon } from '@proton/components';
+
 import type { CanvasConfig, DrawingMode, ExportOptions } from './types';
 import { Canvas } from './Canvas';
 import { Toolbar } from './Toolbar';
 import { useHistory } from './hooks/useHistory';
 import { exportCanvasAsDataURL } from './utils/export';
+import './SketchCanvas.scss';
 
 interface SketchCanvasProps {
     mode?: DrawingMode;
     baseImage?: string;
     width?: number;
     height?: number;
-    onExport?: (imageData: string, mode: DrawingMode) => void;
+    onExport?: (imageData: string, mode: DrawingMode, description: string) => void;
     onClose: () => void;
     className?: string;
 }
@@ -30,41 +35,28 @@ export const SketchCanvas = ({
 }: SketchCanvasProps) => {
     const [currentColor, setCurrentColor] = useState(DEFAULT_COLOR);
     const [strokeWidth] = useState(DEFAULT_STROKE_WIDTH);
+    const [description, setDescription] = useState('');
     const containerRef = useRef<HTMLDivElement>(null);
 
     const { strokes, addStroke, undo, redo, clear, canUndo, canRedo } = useHistory();
 
-    const config: CanvasConfig = {
-        mode,
-        baseImage,
-        width,
-        height,
-    };
+    const config: CanvasConfig = { mode, baseImage, width, height };
 
     const handleExport = () => {
-        // Get the canvas element from the container
         const canvas = containerRef.current?.querySelector('canvas');
         if (!canvas) {
             console.error('Canvas not found');
             return;
         }
-
-        const exportOptions: ExportOptions = {
-            format: 'png',
-            quality: 1,
-        };
-
+        const exportOptions: ExportOptions = { format: 'png', quality: 1 };
         const imageData = exportCanvasAsDataURL(canvas, exportOptions);
-
-        if (onExport) {
-            onExport(imageData, mode);
-        }
+        onExport?.(imageData, mode, description.trim());
     };
 
     return (
-        <div ref={containerRef} className={clsx('relative', className)} style={{ width: '100%', height: '100%' }}>
-            {/* Canvas fills the entire space */}
-            <div className="absolute inset-0">
+        <div ref={containerRef} className={`w-full h-full flex flex-column ${className ?? ''}`}>
+            {/* Canvas area — takes all remaining height above the panel */}
+            <div className="flex-1 min-h-0 relative">
                 <Canvas
                     config={config}
                     strokes={strokes}
@@ -74,25 +66,38 @@ export const SketchCanvas = ({
                 />
             </div>
 
-            {/* Floating toolbar at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 pb-8 flex justify-center" style={{ pointerEvents: 'none' }}>
-                <div style={{ pointerEvents: 'auto' }}>
-                    <Toolbar
-                        config={{
-                            color: currentColor,
-                            strokeWidth,
-                            tool: 'pen',
+            <div className="sketch-canvas__panel pb-8 flex flex-column items-center gap-2">
+                <div className="sketch-canvas__description bg-norm border border-weak shadow-lifted flex flex-column gap-1.5">
+                    <div className="flex items-center gap-1 text-xs color-weak font-medium">
+                        <Icon name="pen" size={3} />
+                        {c('collider_2025:Hint').t`Draw on the image to annotate, and/or describe what to change`}
+                    </div>
+
+                    <div className="h-px bg-weak" />
+
+                    <textarea
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder={c('collider_2025:Placeholder').t`e.g. "Make the sky purple", "Remove the items circled in red"`}
+                        rows={1}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) e.preventDefault();
                         }}
-                        onColorChange={setCurrentColor}
-                        onUndo={undo}
-                        onRedo={redo}
-                        onClear={clear}
-                        onExport={handleExport}
-                        onClose={onClose}
-                        canUndo={canUndo}
-                        canRedo={canRedo}
+                        className="sketch-canvas__textarea w-full color-norm text-sm resize-none bg-transparent border-none p-2"
                     />
                 </div>
+
+                <Toolbar
+                    config={{ color: currentColor, strokeWidth, tool: 'pen' }}
+                    onColorChange={setCurrentColor}
+                    onUndo={undo}
+                    onRedo={redo}
+                    onClear={clear}
+                    onExport={handleExport}
+                    onClose={onClose}
+                    canUndo={canUndo}
+                    canRedo={canRedo}
+                />
             </div>
         </div>
     );
