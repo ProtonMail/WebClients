@@ -29,6 +29,7 @@ export function InnerApp() {
                         <Switch>
                             <Route exact path="/projects" component={ProjectsView}/>
                             <Route path="/projects/:projectId" component={ProjectDetailView}/>
+                            <Route exact path="/gallery" component={ConversationPage}/>
                             { apiKeyManagement &&
                                 <Route exact path="/docs/api" component={ApiDocsPage}/>
                             }
