@@ -1,18 +1,23 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useCallback, useMemo, useState } from 'react';
+
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { Icon } from '@proton/components';
 
-import { useLazyAttachment } from '../../hooks';
 import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
 import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
+import type { DrawingMode } from '../../features/drawingcanvas/types';
+import { base64ToFile } from '../../util/imageHelpers';
+import { useFileHandling } from '../Composer/hooks/useFileHandling';
+import { useLazyAttachment } from '../../hooks';
+import { useLumoNavigate } from '../../hooks/useLumoNavigate';
+import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
+import '../../features/imageActions/imageActions.scss';
 
 interface InlineImageComponentProps {
     attachmentId: AttachmentId;
@@ -21,244 +26,136 @@ interface InlineImageComponentProps {
 
 export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachmentId, alt }) => {
     const dispatch = useLumoDispatch();
+    const navigate = useLumoNavigate();
     const { data: attachment, isLoading, error } = useLazyAttachment(attachmentId);
     const spaceId = attachment?.spaceId;
-    const [showModal, setShowModal] = useState(false);
-    const [showDownload, setShowDownload] = useState(false);
-    const [showModalButtons, setShowModalButtons] = useState(false);
+    const [overlayOpen, setOverlayOpen] = useState(false);
+    const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
+
+    const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
     const imageDataUrl = useMemo(() => {
-        if (!attachment) {
-            return null;
-        }
-
-        // Try to get data from attachment first, then from cache
+        if (!attachment) return null;
         const imageData = attachment.data || attachmentDataCache.getData(attachment.id);
-        if (!imageData) {
-            return null;
-        }
-
+        if (!imageData) return null;
         const mimeType = attachment.mimeType || 'image/png';
         const blob = new Blob([imageData], { type: mimeType });
         return URL.createObjectURL(blob);
     }, [attachmentId, attachment, attachment?.data, attachment?.mimeType, attachment?.id]);
 
-    // Handle retry on error
     const handleRetry = () => {
         dispatch(clearAttachmentLoading(attachmentId));
         if (spaceId) dispatch(pullAttachmentRequest({ id: attachmentId, spaceId }));
     };
 
-    const handleDownload = () => {
-        if (!attachment) return;
-        if (!imageDataUrl) return;
-        const link = document.createElement('a');
-        link.href = imageDataUrl;
-        link.download = attachment.filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    const handleDownload = useCallback(
+        (e?: React.MouseEvent) => {
+            e?.stopPropagation();
+            if (!attachment || !imageDataUrl) return;
+            const link = document.createElement('a');
+            link.href = imageDataUrl;
+            link.download = attachment.filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        },
+        [attachment, imageDataUrl]
+    );
 
-    // Handle ESC key to close modal
-    useEffect(() => {
-        if (!showModal) return;
+    const handleSketchExport = useCallback(
+        async (imageData: string, _mode: DrawingMode, description: string) => {
+            const file = base64ToFile(imageData, `edited-image-${Date.now()}.png`);
+            handleFilesSelected([file]);
+            const prefill = description || c('collider_2025:Prefill').t`Edit this image:`;
+            navigate(`/?prefill=${encodeURIComponent(prefill)}`);
+        },
+        [handleFilesSelected, navigate]
+    );
 
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                setShowModal(false);
+    const handleChangeStyle = useCallback(
+        async (prompt: string) => {
+            if (imageDataUrl) {
+                try {
+                    const resp = await fetch(imageDataUrl);
+                    const blob = await resp.blob();
+                    const file = new File([blob], attachment?.filename || 'image.png', { type: blob.type });
+                    handleFilesSelected([file]);
+                } catch {
+                    // proceed without attachment
+                }
             }
-        };
+            navigate(`/?prefill=${encodeURIComponent(prompt)}`);
+        },
+        [imageDataUrl, attachment, handleFilesSelected, navigate]
+    );
 
-        window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [showModal]);
+    // ── Error / loading states ─────────────────────────────────────────────────
 
-    // Show error UI with retry button
     if (error || !attachment) {
         return (
-            <span
-                style={{
-                    display: 'inline-block',
-                    padding: '1rem',
-                    backgroundColor: '#f8d7da',
-                    border: '1px solid #f5c6cb',
-                    borderRadius: '8px',
-                    color: '#721c24',
-                    maxWidth: '300px',
-                }}
-            >
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                    <IcExclamationCircle size={4} />
-                    <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Failed to load image</span>
+            <span className="inline-block p-4 rounded-lg border" style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}>
+                <span className="flex items-center gap-2 mb-2">
+                    <Icon name="exclamation-circle" size={4} />
+                    <span className="text-sm font-bold">{c('collider_2025:Error').t`Failed to load image`}</span>
                 </span>
-                {error && <span style={{ display: 'block', margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</span>}
+                {error && <span className="block mb-2 text-xs">{error}</span>}
                 <Button size="small" shape="solid" onClick={handleRetry}>
-                    Retry
+                    {c('collider_2025:Action').t`Retry`}
                 </Button>
             </span>
         );
     }
 
-    // Show loading UI
     if (isLoading || !imageDataUrl) {
         return (
             <span
-                style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '2rem',
-                    backgroundColor: '#f5f5f5',
-                    borderRadius: '8px',
-                    minWidth: '200px',
-                    minHeight: '150px',
-                }}
+                className="inline-flex items-center justify-center p-8 bg-strong rounded-xl"
+                style={{ minWidth: '200px', minHeight: '150px' }}
             >
                 <CircleLoader size="medium" />
             </span>
         );
     }
 
+    // ── Main render ────────────────────────────────────────────────────────────
+
     return (
         <>
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
-            <span
-                className="inline-image-preview relative cursor-pointer"
-                onClick={() => setShowModal(true)}
-                onMouseEnter={() => setShowDownload(true)}
-                onMouseLeave={() => setShowDownload(false)}
-                style={{ display: 'inline-block', position: 'relative' }}
-            >
-                <img
-                    src={imageDataUrl}
-                    alt={alt || attachment.filename}
-                    style={{
-                        maxWidth: '300px',
-                        display: 'block',
-                        borderRadius: '8px',
-                    }}
-                />
-                {showDownload && (
-                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-                    <span
-                        style={{
-                            position: 'absolute',
-                            bottom: '0.5rem',
-                            right: '0.5rem',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            borderRadius: '8px',
-                            padding: '2px',
-                        }}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            handleDownload();
-                        }}
+            {/* Inline thumbnail + action row */}
+            <span style={{ display: 'inline-block', verticalAlign: 'top' }}>
+                <span
+                    className="block cursor-pointer rounded-xl overflow-hidden leading-none"
+                    onClick={() => { setOverlayDefaultMode('preview'); setOverlayOpen(true); }}
+                >
+                    <img
+                        src={imageDataUrl}
+                        alt={alt || attachment.filename}
+                        className="block rounded-xl w-full"
+                        style={{ maxWidth: '300px' }}
+                    />
+                </span>
+                <span className="flex items-center gap-2 mt-2 flex-wrap">
+                    <button
+                        className="image-action-btn"
+                        onClick={() => { setOverlayDefaultMode('edit'); setOverlayOpen(true); }}
                     >
-                        <Button
-                            shape="ghost"
-                            size="small"
-                            icon
-                            style={{
-                                backgroundColor: 'transparent',
-                                color: 'white',
-                            }}
-                        >
-                            <IcArrowDownLine size={4} style={{ color: 'white' }} />
-                        </Button>
-                    </span>
-                )}
+                        <Icon name="pen" size={3.5} />
+                        {c('collider_2025:Action').t`Modify...`}
+                    </button>
+                </span>
+
             </span>
 
-            {showModal &&
-                createPortal(
-                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
-                    <div
-                        className="fixed inset-0 flex items-center justify-center"
-                        style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', zIndex: 9999 }}
-                        onClick={() => setShowModal(false)}
-                    >
-                        <div
-                            className="relative"
-                            style={{ maxWidth: '90vw', maxHeight: '90vh' }}
-                            onMouseEnter={() => setShowModalButtons(true)}
-                            onMouseLeave={() => setShowModalButtons(false)}
-                        >
-                            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
-                            <img
-                                src={imageDataUrl}
-                                alt={alt || attachment.filename}
-                                style={{
-                                    maxWidth: '90vw',
-                                    maxHeight: '90vh',
-                                    objectFit: 'contain',
-                                    display: 'block',
-                                }}
-                                onClick={(e) => e.stopPropagation()}
-                            />
-                            {showModalButtons && (
-                                <>
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            top: '1rem',
-                                            right: '1rem',
-                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                            borderRadius: '8px',
-                                            padding: '2px',
-                                        }}
-                                    >
-                                        <Button
-                                            shape="ghost"
-                                            size="small"
-                                            icon
-                                            style={{
-                                                backgroundColor: 'transparent',
-                                                color: 'white',
-                                            }}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setShowModal(false);
-                                            }}
-                                        >
-                                            <IcCross size={4} style={{ color: 'white' }} />
-                                        </Button>
-                                    </div>
-                                    {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '1rem',
-                                            right: '1rem',
-                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                            borderRadius: '8px',
-                                            padding: '2px',
-                                        }}
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handleDownload();
-                                        }}
-                                    >
-                                        <Button
-                                            shape="ghost"
-                                            size="small"
-                                            icon
-                                            style={{
-                                                backgroundColor: 'transparent',
-                                                color: 'white',
-                                            }}
-                                        >
-                                            <IcArrowDownLine size={4} style={{ color: 'white' }} />
-                                        </Button>
-                                    </div>
-                                </>
-                            )}
-                        </div>
-                    </div>,
-                    document.body
-                )}
+            <ImagePreviewOverlay
+                isOpen={overlayOpen}
+                defaultMode={overlayDefaultMode}
+                imageDataUrl={imageDataUrl}
+                filename={attachment.filename}
+                onClose={() => setOverlayOpen(false)}
+                onDownload={handleDownload}
+                onExport={handleSketchExport}
+                onChangeStyle={handleChangeStyle}
+            />
         </>
     );
 };
