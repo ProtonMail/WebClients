@@ -1,14 +1,23 @@
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+import { c } from 'ttag';
+
+import { Icon } from '@proton/components';
 
 import type { DrawingMode } from './types';
 import { SketchCanvas } from './SketchCanvas';
+import '../imageActions/imageActions.scss';
+import './SketchCanvas.scss';
 
 interface SketchOverlayProps {
     isOpen: boolean;
     onClose: () => void;
-    onExport: (imageData: string, mode: DrawingMode) => void;
+    onExport: (imageData: string, mode: DrawingMode, description: string) => void;
     mode?: DrawingMode;
     baseImage?: string;
+    canvasWidth?: number;
+    canvasHeight?: number;
 }
 
 export const SketchOverlay = ({
@@ -17,17 +26,18 @@ export const SketchOverlay = ({
     onExport,
     mode = 'blank',
     baseImage,
+    canvasWidth,
+    canvasHeight,
 }: SketchOverlayProps) => {
-    const handleExport = (imageData: string, drawingMode: DrawingMode) => {
+    const handleExport = (imageData: string, drawingMode: DrawingMode, description: string) => {
         try {
-            onExport(imageData, drawingMode);
+            onExport(imageData, drawingMode, description);
             onClose();
         } catch (error) {
             console.error('Error exporting drawing:', error);
         }
     };
 
-    // Prevent body scroll when overlay is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -37,46 +47,44 @@ export const SketchOverlay = ({
         }
     }, [isOpen]);
 
-    // Handle escape key
     useEffect(() => {
         if (!isOpen) return;
-
         const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                onClose();
-            }
+            if (e.key === 'Escape') onClose();
         };
-
         document.addEventListener('keydown', handleEscape);
         return () => document.removeEventListener('keydown', handleEscape);
     }, [isOpen, onClose]);
 
     if (!isOpen) return null;
 
-    return (
+    return createPortal(
         <div
-            className="fixed inset-0 flex flex-col"
-            style={{
-                zIndex: 9999,
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                backdropFilter: 'blur(4px)',
-            }}
+            className="image-lightbox fixed inset-0 flex flex-column"
             role="dialog"
             aria-modal="true"
             aria-labelledby="drawing-canvas-title"
         >
+            <button
+                className="image-icon-btn"
+                style={{ position: 'absolute', top: '1rem', right: '1rem', zIndex: 1 }}
+                onClick={onClose}
+                title={c('collider_2025:Action').t`Close`}
+            >
+                <Icon name="cross" size={4} />
+            </button>
 
-            {/* Canvas Area */}
-            <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
+            <div className="flex-1 min-h-0 relative">
                 <SketchCanvas
                     mode={mode}
                     baseImage={baseImage}
-                    width={1200}
-                    height={800}
+                    width={canvasWidth ?? 1200}
+                    height={canvasHeight ?? 800}
                     onExport={handleExport}
                     onClose={onClose}
                 />
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };

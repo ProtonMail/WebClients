@@ -29,10 +29,16 @@ const MainContainer = ({
     handleSendMessage,
     isProcessingAttachment,
     initialQuery,
+    prefillQuery,
+    autoOpenSketch,
+    autoOpenUpload,
 }: {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
     initialQuery?: string;
+    prefillQuery?: string;
+    autoOpenSketch?: boolean;
+    autoOpenUpload?: boolean;
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
@@ -136,6 +142,9 @@ const MainContainer = ({
                         canShowLegalDisclaimer={isGuest && isSmallScreen}
                         canShowLumoUpsellToggle={true}
                         initialQuery={promptSuggestion || initialQuery}
+                        prefillQuery={prefillQuery}
+                        autoOpenSketch={autoOpenSketch}
+                        autoOpenUpload={autoOpenUpload}
                     />
                 </div>
                 <WhatsNew />
