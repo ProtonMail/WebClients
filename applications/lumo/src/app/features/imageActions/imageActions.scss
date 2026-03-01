@@ -1,0 +1,88 @@
+// Shared styles for inline image action buttons and menus.
+// Used by InlineImageComponent and GalleryImageCard.
+
+.image-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid var(--border-norm);
+    background: var(--background-norm);
+    color: var(--text-norm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.12s;
+
+    &:hover {
+        background: var(--background-weak);
+    }
+}
+
+.image-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.12s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+}
+
+.image-style-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.image-style-menu__popup {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    min-width: 180px;
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: var(--shadow-lifted-lg, 0 8px 32px rgba(0, 0, 0, 0.14));
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.image-style-menu__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-norm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s;
+
+    &:hover {
+        background: var(--background-strong);
+    }
+}
+
+.image-lightbox {
+    position: relative;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}

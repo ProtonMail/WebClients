@@ -1,5 +1,5 @@
-import {useCallback, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useCallback, useEffect, lazy, Suspense} from 'react';
+import {useParams, useRouteMatch} from 'react-router-dom';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 
@@ -22,6 +22,7 @@ import {
     selectProvisionalAttachments,
     selectSpaceByConversationId,
 } from '../../redux/selectors';
+import {clearPendingPrefill} from '../../redux/slices/composerActions';
 import {resetAllContextFilters} from '../../redux/slices/contextFilters';
 import {clearProvisionalAttachments} from '../../redux/slices/core/attachments';
 import {EMPTY_CONVERSATION_MAP, pullConversationRequest} from '../../redux/slices/core/conversations';
@@ -30,6 +31,10 @@ import ConversationSkeleton from '../ConversationSkeleton';
 import ConversationComponent from './ConversationComponent';
 import MainContainer from './MainContainer';
 
+const GalleryView = lazy(() =>
+    import('../../features/gallery/GalleryView').then((m) => ({default: m.GalleryView}))
+);
+
 import './Conversation.scss';
 
 const ConversationPageComponentInner = () => {
@@ -37,6 +42,7 @@ const ConversationPageComponentInner = () => {
     const user = useSafeUser(); // Get user from context (undefined for guests)
     const navigate = useNavigate();
     const dispatch = useLumoDispatch();
+    const isGalleryRoute = !!useRouteMatch({ path: '/gallery', exact: true });
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
@@ -44,8 +50,18 @@ const ConversationPageComponentInner = () => {
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
 
-    // Extract 'q' query parameter from URL (will be cleared after reading)
+    // Extract query parameters from URL (will be cleared after reading)
     const initialQuery = useQueryParam('q');
+    const prefillQuery = useQueryParam('prefill');
+    const autoOpenSketch = useQueryParam('sketch');
+    const autoOpenUpload = useQueryParam('upload');
+
+    // Prefill text injected from within the conversation (e.g. style change on an inline image).
+    // Consumed once then cleared.
+    const pendingPrefill = useLumoSelector((state) => state.composerActions.pendingPrefill);
+    useEffect(() => {
+        if (pendingPrefill) dispatch(clearPendingPrefill());
+    }, [pendingPrefill, dispatch]);
 
     // ** Selectors **
     const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [curConversationId]);
@@ -165,11 +181,25 @@ const ConversationPageComponentInner = () => {
             onDragEnter={onDragEnter}
             onDragOver={onDragOver}
         >
-            {!curConversationId && (
+            {!curConversationId && isGalleryRoute && (
+                <Suspense fallback={<ConversationSkeleton />}>
+                    <GalleryView
+                        handleSendMessage={handleSendMessage}
+                        isProcessingAttachment={isProcessingAttachment}
+                        prefillQuery={prefillQuery || undefined}
+                        autoOpenSketch={!!autoOpenSketch}
+                        autoOpenUpload={!!autoOpenUpload}
+                    />
+                </Suspense>
+            )}
+            {!curConversationId && !isGalleryRoute && (
                 <MainContainer
                     isProcessingAttachment={isProcessingAttachment}
                     handleSendMessage={handleSendMessage}
                     initialQuery={initialQuery || undefined}
+                    prefillQuery={prefillQuery || undefined}
+                    autoOpenSketch={!!autoOpenSketch}
+                    autoOpenUpload={!!autoOpenUpload}
                 />
             )}
             {curConversationId && isLoading && <ConversationSkeleton />}
@@ -188,6 +218,7 @@ const ConversationPageComponentInner = () => {
                     getSiblingInfo={getSiblingInfo}
                     handleRetryGeneration={handleRetryGeneration}
                     initialQuery={initialQuery || undefined}
+                    prefillQuery={pendingPrefill || undefined}
                 />
             )}
         </div>

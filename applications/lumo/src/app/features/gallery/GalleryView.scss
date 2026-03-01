@@ -1,0 +1,437 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// ── Outer shell ───────────────────────────────────────────────────────────────
+
+.gallery-view {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    overflow: hidden;
+    background-color: var(--background-norm);
+}
+
+// ── Imagine section (static — never scrolls) ──────────────────────────────────
+
+.gallery-imagine {
+    flex-shrink: 0;
+}
+
+// ── Created section (scrolls independently) ───────────────────────────────────
+
+.gallery-created-scroll {
+    flex: 1;
+    overflow-y: auto;
+    min-block-size: 0;
+}
+
+// ── Shared inner width/centering ──────────────────────────────────────────────
+
+.gallery-inner {
+    max-inline-size: 680px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    @include im.media('<=small') {
+        padding-inline: 16px;
+        gap: 20px;
+    }
+}
+
+.gallery-imagine .gallery-inner {
+    padding-block-start: 48px;
+    padding-block-end: 28px;
+
+    @include im.media('<=small') {
+        padding-block-start: 24px;
+        padding-block-end: 20px;
+    }
+}
+
+.gallery-created-scroll .gallery-inner {
+    padding-block-start: 8px;
+    padding-block-end: 48px;
+
+    @include im.media('<=small') {
+        padding-block-end: 32px;
+    }
+}
+
+// ── Hero ──────────────────────────────────────────────────────────────────────
+
+.gallery-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.gallery-hero__image {
+    block-size: 72px;
+    inline-size: auto;
+
+    @include im.media('<=small') {
+        block-size: 56px;
+    }
+}
+
+.gallery-hero__title {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--text-norm);
+    margin: 0;
+    letter-spacing: -0.01em;
+
+    @include im.media('<=small') {
+        font-size: 22px;
+    }
+}
+
+// ── Composer wrapper ──────────────────────────────────────────────────────────
+
+.gallery-composer-wrapper {
+    inline-size: 100%;
+}
+
+// ── Discover panel ────────────────────────────────────────────────────────────
+
+.gallery-discover {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &--bottom {
+        margin-block-start: 8px;
+        padding-block-start: 24px;
+        border-block-start: 1px solid var(--border-weak);
+    }
+}
+
+.gallery-discover__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gallery-discover__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-norm);
+}
+
+.gallery-discover__shuffle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 28px;
+    block-size: 28px;
+    border-radius: 8px;
+    border: 1px solid var(--border-weak);
+    background: var(--background-strong);
+    color: var(--text-weak);
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+
+    &:hover {
+        background: var(--interaction-default-hover);
+        color: var(--text-norm);
+        border-color: var(--border-norm);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
+}
+
+.gallery-discover__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    @include im.media('<=xsmall') {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ── Suggestion card (compact row) ─────────────────────────────────────────────
+
+.gallery-suggestion-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: var(--background-weak);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+    min-inline-size: 0;
+
+    &:hover {
+        background: var(--interaction-default-hover);
+        border-color: var(--border-norm);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
+}
+
+.gallery-suggestion-card__thumb {
+    flex-shrink: 0;
+    inline-size: 52px;
+    block-size: 52px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gallery-suggestion-card__emoji {
+    font-size: 24px;
+    line-height: 1;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-suggestion-card__label {
+    flex: 1;
+    min-inline-size: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-norm);
+    line-height: 1.35;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+
+    // Truncate long labels to one line
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.gallery-suggestion-card__action-icon {
+    flex-shrink: 0;
+    color: var(--text-weak);
+}
+
+// ── Generated images section ──────────────────────────────────────────────────
+
+.gallery-created {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gallery-created__title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--background-norm);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-norm);
+    margin: 0;
+    padding-block: 14px;
+}
+
+// ── Loading / Error ───────────────────────────────────────────────────────────
+
+.gallery-loading,
+.gallery-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 32px;
+    gap: 12px;
+    color: var(--text-weak);
+}
+
+.gallery-error__icon {
+    color: var(--signal-warning);
+}
+
+// ── Image grid ────────────────────────────────────────────────────────────────
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+
+    @include im.media('<=small') {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+}
+
+// ── Suppress hover overlays while the created section is scrolling ────────────
+
+.gallery-created-scroll.is-scrolling .gallery-card {
+    pointer-events: none;
+}
+
+// ── Image card ────────────────────────────────────────────────────────────────
+
+.gallery-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--background-strong);
+    border: 1px solid var(--border-weak);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        border-color: var(--border-norm);
+        // z-index: 1;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
+
+    &--loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
+
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.gallery-card__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.65) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px;
+    opacity: 0;
+    animation: gallery-fade-in 0.15s ease forwards;
+}
+
+@keyframes gallery-fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+.gallery-card__date {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.gallery-card__actions {
+    display: flex;
+    gap: 6px;
+}
+
+.gallery-card__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 28px;
+    block-size: 28px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background 0.12s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.35);
+    }
+}
+
+// ── Load more ─────────────────────────────────────────────────────────────────
+
+.gallery-load-more {
+    display: flex;
+    justify-content: center;
+    padding-block: 4px 8px;
+}
+
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: gallery-fade-in 0.15s ease;
+}
+
+.gallery-lightbox__content {
+    position: relative;
+    max-inline-size: 90vw;
+    max-block-size: 90vh;
+}
+
+.gallery-lightbox__image {
+    display: block;
+    max-inline-size: 90vw;
+    max-block-size: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-lightbox__actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.gallery-lightbox__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 36px;
+    block-size: 36px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.12s;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.75);
+    }
+}
