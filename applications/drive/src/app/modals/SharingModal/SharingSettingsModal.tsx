@@ -4,17 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import {
-    Checkbox,
-    ModalTwo,
-    ModalTwoContent,
-    useConfirmActionModal,
-    useModalTwoStatic,
-    useNotifications,
-} from '@proton/components';
+import { Checkbox, ModalTwo, ModalTwoContent, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import useFlag from '@proton/unleash/useFlag';
+
+import { useFlagsDriveSharingAdminPermissions } from '../../flags/useFlagsDriveSharingAdminPermissions';
+import { useEditorsManageAccessContext } from './useEditorsManageAccess';
 
 export interface SharingSettingsModalProps {
     sharedFileName: string;
@@ -28,19 +23,18 @@ const SharingSettingsModal = ({
     onExit,
     open,
 }: SharingSettingsModalProps & ModalProps) => {
-    const { createNotification } = useNotifications();
-
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
-    const adminRoleEnabled = useFlag('DriveSharingAdminPermissions');
 
-    const [editorsAsAdmins, setEditorsAsAdmins] = useState(false);
-    const toggleCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
-        setEditorsAsAdmins(event.target.checked);
-        if (event.target.checked) {
-            createNotification({
-                text: c('Notification').t`Setting updated. Editors can change permission and share.`,
-                showCloseButton: false,
-            });
+    const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
+    const [isLoading, setIsLoading] = useState(false);
+    const { editorsManageAccess, changeManageAccess } = useEditorsManageAccessContext();
+    const toggleCheckbox = async (event: ChangeEvent<HTMLInputElement>) => {
+        setIsLoading(true);
+        try {
+            await changeManageAccess(event.target.checked);
+        } finally {
+            // Error already caught in changeManageAccess
+            setIsLoading(false);
         }
     };
 
@@ -81,7 +75,7 @@ const SharingSettingsModal = ({
                                     <span className="color-weak">{c('Label')
                                         .t`Allow editors to change permissions and share`}</span>
                                 </div>
-                                <Checkbox checked={editorsAsAdmins} onChange={toggleCheckbox} />
+                                <Checkbox checked={editorsManageAccess} onChange={toggleCheckbox} loading={isLoading} />
                             </div>
                             <hr className="my-5 bg-weak" />
                         </>

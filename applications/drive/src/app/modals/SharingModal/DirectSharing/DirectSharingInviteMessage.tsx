@@ -21,7 +21,6 @@ export const DirectSharingInviteMessage = ({
     onChangeInviteMessage,
     onToggleIncludeInviteMessage,
 }: Props) => (
-    // Wrapped in a div do we return a single element - important for flexbox layout
     <>
         {includeInviteMessage && (
             <div className="relative">

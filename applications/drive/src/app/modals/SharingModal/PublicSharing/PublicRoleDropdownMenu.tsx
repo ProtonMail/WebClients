@@ -46,14 +46,14 @@ export const PublicRoleDropdownMenu = ({ disabled, selectedRole, onChangeRole }:
                         isSelected={selectedRole === MemberRole.Viewer}
                         iconName="eye"
                         label={c('Label').t`Viewer`}
-                        description={c('Into').t`Can view only`}
+                        description={c('Info').t`Can view only`}
                         onClick={() => withLoading(onChangeRole(MemberRole.Viewer))}
                     />
                     <DropdownMenuItem
                         isSelected={selectedRole === MemberRole.Editor}
                         iconName="pencil"
                         label={c('Label').t`Editor`}
-                        description={c('Into').t`Can view and edit`}
+                        description={c('Info').t`Can view and edit`}
                         onClick={() => withLoading(onChangeRole(MemberRole.Editor))}
                     />
                 </DropdownMenu>
