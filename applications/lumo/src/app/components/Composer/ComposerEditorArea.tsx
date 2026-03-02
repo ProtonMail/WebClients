@@ -157,7 +157,7 @@ export const ComposerEditorArea = ({
 
     return (
         <div
-            className="lumo-input flex-grow w-full z-30 flex flex-row flex-nowrap items-center gap-3 p-2 pl-3 min-h-custom my-auto border border-weak bg-norm relative"
+            className="lumo-input flex-grow w-full z-30 flex flex-row flex-nowrap items-center gap-3 p-2 pl-3 min-h-custom my-auto bg-norm relative"
             style={{ '--min-h-custom': '3.5rem' /*56px*/ }}
         >
             {/* main text area where user types */}
