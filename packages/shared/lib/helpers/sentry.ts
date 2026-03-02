@@ -351,6 +351,7 @@ export enum SentryMailInitiatives {
     UPSELL_MODALS = 'upsell-modals',
     MOVE_ACTIONS = 'move-actions',
     MAIL_REDUX_ERRORS = 'mail-redux-errors',
+    MIGRATION_TOOL = 'migration-tool',
 }
 
 export enum SentryMailPerformanceInitiatives {

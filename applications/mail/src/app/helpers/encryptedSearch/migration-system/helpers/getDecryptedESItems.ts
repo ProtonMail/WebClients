@@ -1,3 +1,5 @@
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+
 import type { DBType, EncryptedSearchData } from '../interface';
 import { decryptESItem } from './decryptESItem';
 
@@ -21,7 +23,7 @@ export const getDecryptedESItems = async ({ contentIDs, esDB, indexKey }: GetDec
                     results.push(item);
                 }
             } catch (error) {
-                console.warn(`Failed to decrypt item ${itemID}:`, error);
+                traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
             }
         })
     );

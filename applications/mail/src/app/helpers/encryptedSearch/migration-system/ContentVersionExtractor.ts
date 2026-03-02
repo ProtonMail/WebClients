@@ -1,6 +1,7 @@
 import { isTimepointSmaller } from '@proton/encrypted-search/esHelpers';
 import { readSortedIDs } from '@proton/encrypted-search/esIDB';
 import type { ESTimepoint } from '@proton/encrypted-search/models';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { allContentHasVersion } from './helpers/allContentHasVersion';
 import { encryptAndWriteESItem } from './helpers/encryptAndWriteESItem';
@@ -24,7 +25,7 @@ export class ContentVersionExtractor {
         try {
             await this.esDB.put('config', timepoint, 'contentVersionMigrationCheckpoint');
         } catch (error) {
-            console.warn('Failed to save migration checkpoint:', error);
+            traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
         }
     }
 
@@ -32,7 +33,7 @@ export class ContentVersionExtractor {
         try {
             await this.esDB.delete('config', 'contentVersionMigrationCheckpoint');
         } catch (error) {
-            console.warn('Failed to clear migration checkpoint:', error);
+            traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
         }
     }
 
@@ -52,6 +53,7 @@ export class ContentVersionExtractor {
             const checkpoint = await this.esDB.get('config', 'contentVersionMigrationCheckpoint');
             return checkpoint || undefined;
         } catch (error) {
+            traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
             return undefined;
         }
     }
@@ -118,7 +120,7 @@ export class ContentVersionExtractor {
                     }
                 }
             } catch (error) {
-                console.warn('Batch processing failed, will resume from last checkpoint on next run:', error);
+                traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
                 completedSuccessfully = false;
                 break;
             }
