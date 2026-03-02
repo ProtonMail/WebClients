@@ -6,22 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
 import { DriveEmptyView } from '../../components/layout/DriveEmptyView';
-import { useFileSharingModal } from '../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 
-type Props = {
-    shareId?: string;
-};
-
-export const EmptySharedByMe: FC<Props> = ({ shareId }) => {
+export const EmptySharedByMe: FC = () => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const { sharingModal, showSharingModal } = useSharingModal();
-
-    const onShareFile = () => {
-        if (shareId) {
-            void showFileSharingModal({ shareId, showSharingModal });
-        }
-    };
 
     return (
         <DriveEmptyView
@@ -42,7 +32,7 @@ export const EmptySharedByMe: FC<Props> = ({ shareId }) => {
                     size="large"
                     className="text-bold w-custom"
                     style={{ '--w-custom': '13em' }}
-                    onClick={onShareFile}
+                    onClick={() => showFileSharingModal({ showSharingModal })}
                 >
                     {c('Action').t`Share file`}
                 </Button>

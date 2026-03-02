@@ -3,14 +3,10 @@ import { c } from 'ttag';
 import { ToolbarButton } from '@proton/components';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
+import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 
-interface Props {
-    shareId: string;
-}
-
-const ShareButton = ({ shareId }: Props) => {
+const ShareButton = () => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const { sharingModal, showSharingModal } = useSharingModal();
 
@@ -20,7 +16,7 @@ const ShareButton = ({ shareId }: Props) => {
                 title={c('Action').t`Share`}
                 icon={<IcUserPlus alt={c('Action').t`Share`} />}
                 onClick={() => {
-                    void showFileSharingModal({ shareId, showSharingModal });
+                    void showFileSharingModal({ showSharingModal });
                 }}
                 data-testid="toolbar-share-via-link"
             />
