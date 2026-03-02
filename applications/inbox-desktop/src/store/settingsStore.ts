@@ -15,6 +15,7 @@ export interface SettingsStore {
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
     appCacheEnabled?: boolean;
+    mailtoBannerDismissedPermanently?: boolean;
 }
 
 const defaultSettings = {
@@ -23,6 +24,7 @@ const defaultSettings = {
     releaseCategory: RELEASE_CATEGORIES.STABLE,
     rolloutProportion: 1 - Math.random(),
     appCacheEnabled: true,
+    mailtoBannerDismissedPermanently: false,
 } as const satisfies SettingsStore;
 
 export const updateSettings = (settings: Partial<SettingsStore>) => {
@@ -52,6 +54,11 @@ export const getSettings = (): SettingsStore => {
 
         if (!settings.rolloutProportion) {
             settings.rolloutProportion = defaultSettings.rolloutProportion;
+            saveDefaults = true;
+        }
+
+        if (settings.mailtoBannerDismissedPermanently === undefined) {
+            settings.mailtoBannerDismissedPermanently = false;
             saveDefaults = true;
         }
 

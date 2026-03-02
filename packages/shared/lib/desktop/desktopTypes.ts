@@ -41,7 +41,8 @@ export type IPCInboxDesktopFeature =
     | 'SnapSupport'
     | 'BugReportLogAttachments'
     | 'PrintDialog'
-    | 'UserLogoutV2';
+    | 'UserLogoutV2'
+    | 'MailtoBannerPermanentDismiss';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -83,7 +84,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'toggleAppCache'; payload: boolean }
     | { type: 'togglePrintDialog'; payload: string }
     | { type: 'userLogoutV2'; payload: string }
-    | { type: 'logoutAllUsers'; payload?: undefined };
+    | { type: 'logoutAllUsers'; payload?: undefined }
+    | { type: 'setDefaultMailtoBannerDismissedPermanently'; payload?: undefined };
 export type IPCInboxClientGetAsyncDataMessage = {
     type: 'getElectronLogs';
     args: [maxSize?: number];

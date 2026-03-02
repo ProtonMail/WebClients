@@ -24,6 +24,7 @@ export const DESKTOP_FEATURES = {
     BugReportLogAttachments: true,
     PrintDialog: true,
     UserLogoutV2: true,
+    MailtoBannerPermanentDismiss: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
