@@ -107,7 +107,7 @@ const DriveToolbar = ({
                         </>
                     ) : null}
 
-                    {shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {shouldShowShareButton && <ShareButton />}
                     {shouldShowShareLinkButton && <ShareLinkButton volumeId={volumeId} linkId={linkId} />}
                 </>
             );

@@ -23,9 +23,9 @@ import clsx from '@proton/utils/clsx';
 
 import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useFileUploadInput } from '../../store';
-import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import useChecklist from './useChecklist';
 
 import './GiftFloatingButton.scss';
@@ -248,7 +248,7 @@ function WelcomeActions({
                 title={c('Label').t`Share a file, folder, or album`}
                 text={c('Info').t`It’s easy and secure`}
                 action={() => {
-                    void showFileSharingModal({ shareId: activeFolder.shareId, showSharingModal });
+                    void showFileSharingModal({ showSharingModal });
                     onActionDone();
                 }}
             />

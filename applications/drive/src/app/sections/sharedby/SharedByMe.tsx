@@ -55,11 +55,7 @@ const SORT_FIELDS: SharedByMeSortFields[] = [
     SortField.numAccesses,
 ];
 
-interface SharedByMeProps {
-    shareId: string;
-}
-
-export const SharedByMe = ({ shareId }: SharedByMeProps) => {
+export const SharedByMe = () => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const browserItemContextMenu = useItemContextMenu();
     const { viewportWidth } = useActiveBreakpoint();
@@ -99,7 +95,7 @@ export const SharedByMe = ({ shareId }: SharedByMeProps) => {
     );
 
     if (isEmpty) {
-        return <EmptySharedByMe shareId={shareId} />;
+        return <EmptySharedByMe />;
     }
 
     const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;

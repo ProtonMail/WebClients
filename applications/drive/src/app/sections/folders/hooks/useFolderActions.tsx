@@ -1,16 +1,16 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
 
-import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
-import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import useOpenPreview from '../../../components/useOpenPreview';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useCopyItemsModal } from '../../../modals/CopyItemsModal';
+import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
+import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
@@ -132,7 +132,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         }
     };
 
-    const createShare = () => showFileSharingModal({ shareId, showSharingModal: showSharingModal });
+    const createShare = () => showFileSharingModal({ showSharingModal: showSharingModal });
 
     const getPublicLinkInfo = async () => {
         if (selectedItems.length === 1) {
