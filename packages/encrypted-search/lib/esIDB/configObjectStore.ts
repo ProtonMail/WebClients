@@ -33,6 +33,7 @@ export const initializeConfig = async (userID: string, encryptedIndexKey: string
             tx.store.put(0, 'size'),
             tx.store.put(false, 'enabled'),
             tx.store.put(false, 'limited'),
+            tx.store.put(true, 'contentVersionMigrationCompleted'),
         ]);
         await tx.done;
         esDB.close();
