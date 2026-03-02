@@ -105,7 +105,6 @@ export function FolderContextMenu({
                         {permissions.canCreateNode && <ContextSeparator />}
                         <ShareFileButton
                             close={close}
-                            shareId={shareId}
                             showFileSharingModal={showFileSharingModal}
                             showSharingModal={showSharingModal}
                         />
