@@ -3,7 +3,11 @@ import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import type { SortConfig } from '../../modules/sorting';
+import { SortField, sortItems } from '../../modules/sorting';
+import { getSharedByMeSortValue } from './sharedByMe.sorting';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 
 export type SharedByMeItem = {
@@ -23,29 +27,23 @@ export type SharedByMeItem = {
         numberOfInitializedDownloads: number | undefined;
         url: string;
     };
-    // Help us knowing if the item is loaded from legacy loader
-    isFromLegacy?: boolean;
-    /** @deprecated belongs to legacy, prefer using nodeUid */
-    shareId: string;
-    /** @deprecated belongs to legacy, prefer using parentUid */
-    rootShareId: string;
-    /** @deprecated belongs to legacy, related to link state from store */
-    isLocked?: boolean;
 };
 
 interface SharedByMeStore {
     sharedByMeItems: Map<string, SharedByMeItem>;
-    itemUids: Set<string>;
+    sortedItemUids: Set<string>;
 
-    isLoadingNodes: boolean;
-    isLoadingLegacyNodes: boolean;
+    sortField: SortField;
+    direction: SORT_DIRECTION;
+    sortConfig: SortConfig | undefined;
+
+    isLoading: boolean;
     hasEverLoaded: boolean;
 
     eventSubscription: (() => void) | null;
     activeContexts: Set<string>;
 
-    setLoadingNodes: (loading: boolean) => void;
-    setLoadingLegacyNodes: (loading: boolean) => void;
+    setLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
     checkAndSetHasEverLoaded: () => void;
 
@@ -53,13 +51,10 @@ interface SharedByMeStore {
     updateSharedByMeItem: (uid: string, updates: Partial<SharedByMeItem>) => void;
     removeSharedByMeItem: (uid: string) => void;
     clearAll: () => void;
-    cleanupStaleItems: (loadedUids: Set<string>, options?: { legacyCleanup?: boolean }) => void;
-
-    isLoading: () => boolean;
 
     getSharedByMeItem: (uid: string) => SharedByMeItem | undefined;
-    getAllSharedByMeItems: () => SharedByMeItem[];
-    getItemUids: () => string[];
+
+    setSorting: (params: { sortField: SortField; direction: SORT_DIRECTION; sortConfig: SortConfig }) => void;
 
     subscribeToEvents: (context: string) => Promise<void>;
     unsubscribeToEvents: (context: string) => Promise<void>;
@@ -69,10 +64,13 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
     devtools(
         (set, get) => ({
             sharedByMeItems: new Map(),
-            itemUids: new Set(),
+            sortedItemUids: new Set(),
 
-            isLoadingNodes: false,
-            isLoadingLegacyNodes: false,
+            sortField: SortField.name,
+            direction: SORT_DIRECTION.ASC,
+            sortConfig: undefined,
+
+            isLoading: false,
             hasEverLoaded: false,
 
             eventSubscription: null,
@@ -81,14 +79,14 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
 
             setSharedByMeItem: (item: SharedByMeItem) => {
                 set((state) => {
-                    const newItemUids = new Set(state.itemUids);
-                    newItemUids.add(item.nodeUid);
+                    const newSortedItemUids = new Set(state.sortedItemUids);
+                    newSortedItemUids.add(item.nodeUid);
 
                     const newSharedByMeItems = new Map(state.sharedByMeItems);
                     newSharedByMeItems.set(item.nodeUid, item);
                     return {
                         sharedByMeItems: newSharedByMeItems,
-                        itemUids: newItemUids,
+                        sortedItemUids: newSortedItemUids,
                     };
                 });
             },
@@ -115,11 +113,15 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                 set((state) => {
                     const newSharedByMeItems = new Map(state.sharedByMeItems);
                     newSharedByMeItems.delete(uid);
-                    const newItemUids = new Set(state.itemUids);
-                    newItemUids.delete(uid);
+                    const newSortedItemUids = new Set<string>();
+                    for (const id of state.sortedItemUids) {
+                        if (id !== uid) {
+                            newSortedItemUids.add(id);
+                        }
+                    }
                     return {
                         sharedByMeItems: newSharedByMeItems,
-                        itemUids: newItemUids,
+                        sortedItemUids: newSortedItemUids,
                     };
                 });
             },
@@ -127,71 +129,44 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
             clearAll: () => {
                 set({
                     sharedByMeItems: new Map(),
-                    itemUids: new Set(),
+                    sortedItemUids: new Set(),
+                    sortConfig: undefined,
                 });
             },
-
-            cleanupStaleItems: (loadedUids: Set<string>, options?: { legacyCleanup?: boolean }) => {
-                set((state) => {
-                    const newSharedByMeItems = new Map(state.sharedByMeItems);
-                    const newItemUids = new Set(state.itemUids);
-
-                    // Find items of the specified type that weren't in the loaded set
-                    for (const [uid, item] of state.sharedByMeItems) {
-                        const shouldCleanup =
-                            !loadedUids.has(item.nodeUid) &&
-                            (options?.legacyCleanup ? !!item.isFromLegacy : !item.isFromLegacy);
-
-                        if (shouldCleanup) {
-                            newSharedByMeItems.delete(uid);
-                            newItemUids.delete(uid);
-                        }
-                    }
-
-                    return {
-                        sharedByMeItems: newSharedByMeItems,
-                        itemUids: newItemUids,
-                    };
-                });
-            },
-
-            getItemUids: () => Array.from(get().itemUids),
 
             getSharedByMeItem: (uid: string) => get().sharedByMeItems.get(uid),
-            getAllSharedByMeItems: () => Array.from(get().sharedByMeItems.values()),
 
-            setLoadingNodes: (loading: boolean) => {
-                set({ isLoadingNodes: loading });
-                get().checkAndSetHasEverLoaded();
+            setSorting: ({ sortField, direction, sortConfig }) => {
+                const allItems = Array.from(get().sharedByMeItems.values());
+                const sortedUids = sortItems(
+                    allItems,
+                    sortConfig,
+                    direction,
+                    getSharedByMeSortValue,
+                    (item) => item.nodeUid
+                );
+                set({ sortField, direction, sortConfig, sortedItemUids: new Set(sortedUids) });
             },
-            setLoadingLegacyNodes: (loading: boolean) => {
-                set({ isLoadingLegacyNodes: loading });
+
+            setLoading: (loading: boolean) => {
+                set({ isLoading: loading });
                 get().checkAndSetHasEverLoaded();
             },
 
             setHasEverLoaded: () => set({ hasEverLoaded: true }),
             checkAndSetHasEverLoaded: () => {
                 const state = get();
-                if (!state.isLoading() && !state.hasEverLoaded) {
+                if (!state.isLoading && !state.hasEverLoaded) {
                     state.setHasEverLoaded();
                 }
             },
 
-            isLoading: () => {
-                const state = get();
-                return state.isLoadingNodes || state.isLoadingLegacyNodes;
-            },
-
             subscribeToEvents: async (context: string) => {
-                const { activeContexts, eventSubscription } = get();
+                const { activeContexts } = get();
 
                 const newActiveContexts = new Set(activeContexts);
                 newActiveContexts.add(context);
                 set({ activeContexts: newActiveContexts });
-
-                if (eventSubscription) {
-                    return;
-                }
 
                 const eventManager = getBusDriver();
                 await Promise.all([
@@ -221,7 +196,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
             },
         }),
         {
-            name: 'shared-by-me-listing-store',
+            name: 'shared-by-me-store',
         }
     )
 );
