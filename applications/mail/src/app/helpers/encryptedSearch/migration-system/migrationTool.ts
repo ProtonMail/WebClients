@@ -4,6 +4,7 @@ import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
+import { ContentVersionExtractor } from './ContentVersionExtractor';
 import type { MigrationToolParams } from './interface';
 import { setupCryptoProxy } from './setupCryptoProxy';
 
@@ -28,18 +29,42 @@ export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) 
         throw new Error('No encrypted search database found');
     }
 
-    const runMigrations = async () => {
-        console.log('Starting content version migration...');
+    const contentVersionExtractor = new ContentVersionExtractor(user.ID, esDB, indexKey);
+
+    const extractVersion = async () => {
+        console.log('Starting content version extraction');
+        const didReachMaxRetries = await contentVersionExtractor.didReachMaxRetries();
+        if (didReachMaxRetries) {
+            return;
+        }
+
+        const isComplete = await contentVersionExtractor.validateAllContentMigrated();
+        if (isComplete) {
+            console.log('Content version already extracted');
+            return;
+        }
+
+        const checkpoint = await contentVersionExtractor.getLatestCheckpoint();
+        await contentVersionExtractor.extractVersionsAndSaveUpdatedESItem(checkpoint);
+        const isCompleteAfterExtract = await contentVersionExtractor.validateAllContentMigrated();
+        if (!isCompleteAfterExtract) {
+            await contentVersionExtractor.incrementRetryCount();
+            await extractVersion();
+            return;
+        }
+
+        console.log('Content version migration extraction complete');
     };
 
     const upgradeContent = async () => {
-        console.log('Starting content upgrade...');
+        console.log('Starting content version upgrade');
     };
 
-    // Check if content version migration is complete using config flag
     const migrationComplete = await esDB.get('config', 'contentVersionMigrationCompleted');
-    if (!migrationComplete) {
-        await runMigrations();
+    const migrationAbandoned = await esDB.get('config', 'contentVersionMigrationAbandoned');
+
+    if (!migrationComplete && !migrationAbandoned) {
+        await extractVersion();
     } else {
         await upgradeContent();
     }
