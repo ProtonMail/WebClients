@@ -91,14 +91,14 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const createFolder = () => showCreateFolderModal({ parentFolderUid: uid });
 
     const createNewDocument = () => {
-        void createDocument({ type: 'doc', shareId: shareId, parentLinkId: linkId });
+        void createDocument({ type: 'doc', shareId, parentLinkId: linkId });
     };
 
     const createNewSheet = () => {
-        void createDocument({ type: 'sheet', shareId: shareId, parentLinkId: linkId });
+        void createDocument({ type: 'sheet', shareId, parentLinkId: linkId });
     };
 
-    const moveAction = (shareId: string) => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedItems) });
+    const moveAction = () => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedItems) });
 
     const copyAction = () => showCopyItemsModal(selectedItems);
 

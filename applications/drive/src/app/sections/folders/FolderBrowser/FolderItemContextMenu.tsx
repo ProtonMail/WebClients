@@ -103,12 +103,7 @@ export function FolderItemContextMenu({
                 )}
                 <ContextSeparator />
                 {permissions.canMove ? (
-                    <MoveButton
-                        type="context"
-                        selectedItems={selectedItems}
-                        close={close}
-                        onClick={() => showMoveModal(shareId)}
-                    />
+                    <MoveButton type="context" selectedItems={selectedItems} close={close} onClick={showMoveModal} />
                 ) : null}
                 {permissions.canCopy && <CopyButton type="context" close={close} onClick={showCopyModal} />}
                 {permissions.canRename && isOnlyOneItem && (

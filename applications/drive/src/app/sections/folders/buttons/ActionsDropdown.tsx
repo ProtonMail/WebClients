@@ -30,12 +30,11 @@ type Item = {
 };
 interface Props {
     volumeId: string;
-    shareId: string;
     selectedItems: Item[];
     role: MemberRole;
 }
 
-export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Props) => {
+export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -69,7 +68,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedItems) }),
+            action: () => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedItems) }),
         },
         {
             hidden: isMultiSelect || !isEditor,

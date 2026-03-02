@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ProtonDriveClient } from '@proton/drive/index';
+import { MemberRole, type ProtonDriveClient } from '@proton/drive/index';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 type SelectedItemsConfig = {
@@ -19,7 +20,7 @@ export const useMoveEligibility = (
     targetFolderUid: string | undefined,
     drive: ProtonDriveClient
 ) => {
-    const [isInvalidMove, setIsInvalidMove] = useState(false);
+    const [isInvalidMove, setIsInvalidMove] = useState(true);
     const [invalidMoveMessage, setInvalidMoveMessage] = useState<string | undefined>();
 
     useEffect(() => {
@@ -53,6 +54,22 @@ export const useMoveEligibility = (
             if (isMovingIntoDescendant) {
                 setIsInvalidMove(true);
                 setInvalidMoveMessage(c('Info').t`Can't move a folder into itself`);
+                return;
+            }
+
+            try {
+                const targetNode = await drive.getNode(targetFolderUid);
+                const targetNodeEntity = getNodeEntity(targetNode).node;
+                const targetEffectiveRole = await getNodeEffectiveRole(targetNodeEntity, drive);
+                const isReadOnly = targetEffectiveRole === MemberRole.Viewer;
+
+                if (isReadOnly) {
+                    setIsInvalidMove(true);
+                    setInvalidMoveMessage(c('Info').t`Can't write into folder`);
+                    return;
+                }
+            } catch (e) {
+                handleSdkError(e);
                 return;
             }
 
