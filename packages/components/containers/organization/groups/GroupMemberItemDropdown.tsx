@@ -3,7 +3,11 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
+import {
+    deleteGroupMember,
+    resumeGroupMember as resumeGroupMemberAction,
+    updateOverridePermissions,
+} from '@proton/account';
 import { addGroupOwnerThunk } from '@proton/account/groups/addGroupOwner';
 import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -14,7 +18,6 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -88,7 +91,6 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
     const handleError = useErrorHandler();
-    const { call } = useEventManager();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const { getMemberPublicKeys } = useGroupKeys();
@@ -105,8 +107,12 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
     ];
 
     const handleRevokeInvitation = async () => {
-        await api(revokeGroupInvitation(groupMember.ID));
-        await call();
+        try {
+            await api(revokeGroupInvitation(groupMember.ID));
+            dispatch(deleteGroupMember({ groupID: group.ID, memberID: groupMember.ID }));
+        } catch (error) {
+            handleError(error);
+        }
     };
 
     const handleResumeInvitation = async () => {
