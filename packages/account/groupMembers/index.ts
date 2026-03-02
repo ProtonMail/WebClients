@@ -119,6 +119,15 @@ const slice = createSlice({
                 group[memberID].State = GROUP_MEMBER_STATE.ACTIVE;
             }
         },
+        deleteGroupMember: (state, action: PayloadAction<{ groupID: string; memberID: string }>) => {
+            const { groupID, memberID } = action.payload;
+
+            const group = state[groupID]?.value;
+
+            if (group && group[memberID]) {
+                delete group[memberID];
+            }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
@@ -158,7 +167,7 @@ const slice = createSlice({
         });
     },
 });
-export const { updateOverridePermissions, resumeGroupMember } = slice.actions;
+export const { updateOverridePermissions, resumeGroupMember, deleteGroupMember } = slice.actions;
 const promiseStore = createPromiseMapStore<GroupMembers>();
 
 const canFetch = (user: User, groups: Group[], memberships: GroupMembershipReturn[]): boolean => {
