@@ -24,17 +24,21 @@ import { useShareInvitees } from './DirectSharing/useShareInvitees';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';
+import { EditorsManageAccessContextProvider } from './useEditorsManageAccess';
 
 import './SharingModalView.scss';
 
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
 
+    nodeUid: string;
     name: string;
     mediaType?: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
     directMembers: DirectMember[];
+    existingEmails: string[];
+    sharingInfo: any;
 
     errorMessage?: string;
     loadingMessage?: string;
@@ -71,11 +75,14 @@ export const SharingModalView = ({
     onExit,
     open,
     isLoading,
+    nodeUid,
     name,
     mediaType,
     ownerEmail,
     ownerDisplayName,
     directMembers,
+    existingEmails,
+    sharingInfo,
     isPublicLinkEnabled,
     publicLink,
     errorMessage,
@@ -99,8 +106,6 @@ export const SharingModalView = ({
         set: setIncludeInviteMessage,
     } = useToggle(true);
     const [isAdding, withAdding] = useLoading();
-
-    const existingEmails = useMemo(() => directMembers.map((member) => member.inviteeEmail), [directMembers]);
 
     const { invitees, add: addInvitee, remove: removeInvitee, clean: cleanInvitees } = useShareInvitees(existingEmails);
 
@@ -254,7 +259,7 @@ export const SharingModalView = ({
     };
 
     return (
-        <>
+        <EditorsManageAccessContextProvider nodeUid={nodeUid} sharingInfo={sharingInfo}>
             <ModalTwo
                 className="double-modal"
                 size="large"
@@ -291,6 +296,6 @@ export const SharingModalView = ({
             </ModalTwo>
 
             {settingsModal}
-        </>
+        </EditorsManageAccessContextProvider>
     );
 };

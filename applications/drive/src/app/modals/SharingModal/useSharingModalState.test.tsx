@@ -135,7 +135,7 @@ const expectedDirectMembers: DirectMember[] = [
         uid: 'non-proton-uid',
         inviteeEmail: 'external@example.com',
         role: MemberRole.Viewer,
-        type: MemberType.ProtonInvitation,
+        type: MemberType.NonProtonInvitation,
     },
 ];
 
@@ -196,7 +196,7 @@ describe('useSharingModalState', () => {
                     uid: 'non-proton-uid',
                     inviteeEmail: 'external@example.com',
                     role: MemberRole.Viewer,
-                    type: MemberType.ProtonInvitation,
+                    type: MemberType.NonProtonInvitation,
                 },
             ]);
             expect(result.current.ownerEmail).toBe('owner@proton.me');
@@ -237,7 +237,7 @@ describe('useSharingModalState', () => {
                     uid: 'non-proton-uid',
                     inviteeEmail: 'external@example.com',
                     role: MemberRole.Viewer,
-                    type: MemberType.ProtonInvitation,
+                    type: MemberType.NonProtonInvitation,
                 },
             ]);
         });
@@ -614,7 +614,7 @@ describe('useSharingModalState', () => {
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
         await waitFor(() => {
-            expect(result.current.ownerEmail).toBeUndefined();
+            expect(result.current.ownerEmail).toBe('');
         });
     });
 
@@ -743,7 +743,7 @@ describe('useSharingModalState', () => {
                         uid: 'non-proton-uid',
                         inviteeEmail: 'external@example.com',
                         role: MemberRole.Viewer,
-                        type: MemberType.ProtonInvitation,
+                        type: MemberType.NonProtonInvitation,
                     },
                 ]);
             });

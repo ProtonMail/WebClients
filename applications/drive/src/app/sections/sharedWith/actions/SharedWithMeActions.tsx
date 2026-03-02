@@ -16,6 +16,7 @@ interface BaseSharedWithMeActionsProps {
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showCopyModal: (items: DirectShareItem[]) => void;
+    showSharingModal?: () => void;
 }
 
 interface ContextMenuSharedWithMeActionsProps extends BaseSharedWithMeActionsProps {
@@ -37,6 +38,7 @@ export const SharedWithMeActions = ({
     showDetailsModal,
     showFilesDetailsModal,
     showCopyModal,
+    showSharingModal,
     close,
     buttonType,
 }: SharedWithMeActionsProps) => {
@@ -79,6 +81,7 @@ export const SharedWithMeActions = ({
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
                 showCopyModal={showCopyModal}
+                showSharingModal={showSharingModal}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );

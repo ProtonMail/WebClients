@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { type NodeType, getDrive } from '@proton/drive';
+import { type MemberRole, type NodeType, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -45,6 +45,7 @@ export type DirectShareItem = BaseSharedWithMeItem & {
         sharedOn: Date;
         sharedBy: string;
     };
+    role: MemberRole;
     /** @deprecated belongs to legacy, prefer using nodeUid */
     shareId: string;
     /** @deprecated belongs to legacy, related to link state from store */
@@ -453,6 +454,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                                             ? node.membership.sharedBy.value
                                             : node.membership.sharedBy.error.claimedAuthor) || '',
                                 },
+                                role: node.directRole,
                                 haveSignatureIssues: !signatureResult.ok,
                                 shareId: node.deprecatedShareId,
                             });
