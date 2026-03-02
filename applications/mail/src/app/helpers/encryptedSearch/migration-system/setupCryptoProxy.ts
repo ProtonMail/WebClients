@@ -8,7 +8,6 @@ export const setupCryptoProxy = async () => {
             '@proton/crypto/lib/worker/api'
         );
     } catch (e: any) {
-        console.warn(e);
         return;
     }
 
