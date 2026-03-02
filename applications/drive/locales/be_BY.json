@@ -3982,6 +3982,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Can't retrieve device name": [
+        "Немагчыма атрымаць назву прылады"
+      ],
+      "Data integrity check failed": [
+        "Збой праверкі цэласнасці звестак"
       ]
     },
     "error": {
@@ -6837,7 +6843,7 @@
         "Усе папкі, якія дададзены ў папку \"Мае камп'ютары\" з гэтай прылады, будуць незваротна выдалены з ${ DRIVE_APP_NAME } пры выдаленні прылады ${ deviceName } у якасці сінхранізаванай."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ],
       "who": [
         "хто"
@@ -7105,6 +7111,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Can't rename to same name": [
+        "Немагчыма перайменаваць у тую ж самую назву"
       ]
     },
     "info": {
@@ -13819,6 +13828,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ВЯСЕННІ РАСПРОДАЖ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ВЯСЕННІ РАСПРОДАЖ"
       ]
     }
   }

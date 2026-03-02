@@ -3982,6 +3982,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "Can't retrieve device name": [
+        "Nelze načíst název zařízení"
+      ],
+      "Data integrity check failed": [
+        "Kontrola integrity dat selhala"
       ]
     },
     "error": {
@@ -7105,6 +7111,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "Can't rename to same name": [
+        "Nelze přejmenovat na stejný název"
       ]
     },
     "info": {
@@ -8987,6 +8996,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
       ]
     },
     "new_plans: feature highlight": {
@@ -10392,10 +10407,10 @@
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -10546,6 +10561,9 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13759,6 +13777,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     }
   }

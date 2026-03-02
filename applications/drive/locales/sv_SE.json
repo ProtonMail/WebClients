@@ -3906,6 +3906,15 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Can't retrieve device name": [
+        "Kan inte hämta enhetsnamn"
+      ],
+      "Cannot find move target": [
+        "Kan inte hitta mål för flytt"
+      ],
+      "Data integrity check failed": [
+        "Kontroll av dataintegritet misslyckades"
       ]
     },
     "error": {
@@ -6873,6 +6882,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Can't rename to same name": [
+        "Kan inte byta namn till samma namn"
+      ],
+      "Can't write into folder": [
+        "Kan inte skriva till mapp"
       ]
     },
     "info": {
@@ -9487,6 +9502,10 @@
       ],
       "Your settings have been changed successfully": [
         "Dina inställningar har ändrats"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Valt objekt togs bort från din lista",
+        "Valda objekt togs bort från din lista"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13275,6 +13294,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRREA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     }
   }
