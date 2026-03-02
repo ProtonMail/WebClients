@@ -1,5 +1,7 @@
 import { wrap } from 'comlink';
 
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+
 import type { MigrationToolAPI, MigrationToolParams } from './interface';
 
 export const migrationToolWorker = async ({ user, keyPassword }: MigrationToolParams) => {
@@ -12,7 +14,7 @@ export const migrationToolWorker = async ({ user, keyPassword }: MigrationToolPa
         const workerProxy = wrap<MigrationToolAPI>(worker);
         await workerProxy.migration({ user, keyPassword });
     } catch (error) {
-        console.error('Encrypted search migration failed:', error);
+        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
     } finally {
         worker.terminate();
     }

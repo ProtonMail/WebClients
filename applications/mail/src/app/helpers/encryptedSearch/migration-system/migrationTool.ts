@@ -2,6 +2,7 @@ import { expose } from 'comlink';
 
 import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
 import { ContentVersionExtractor } from './ContentVersionExtractor';
@@ -51,6 +52,8 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
         if (!isCompleteAfterExtract) {
             await contentVersionExtractor.incrementRetryCount();
             await extractVersion();
+
+            traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, "Migration didn't extract all versions");
             return;
         }
 

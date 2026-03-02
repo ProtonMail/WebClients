@@ -1,3 +1,5 @@
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+
 import type { DBType } from '../interface';
 
 interface AllContentHasVersionProps {
@@ -23,6 +25,7 @@ export const allContentHasVersion = async ({ esDB }: AllContentHasVersionProps):
 
         return true;
     } catch (error) {
+        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
         return false;
     } finally {
         await tx.done;
