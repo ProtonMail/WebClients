@@ -3924,6 +3924,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Can't retrieve device name": [
+        "Não foi possível recuperar o nome do dispositivo"
+      ],
+      "Data integrity check failed": [
+        "Falha na verificação de integridade dos dados"
       ]
     },
     "error": {
@@ -4332,7 +4338,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -5435,7 +5441,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -6653,7 +6659,7 @@
         "Quando você remover ${ deviceName } como um dispositivo sincronizado, todas as pastas adicionadas aos Meus Computadores a partir deste dispositivo serão permanentemente excluídas do ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "who": [
         "quem"
@@ -6904,6 +6910,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Can't rename to same name": [
+        "Não é possível renomear para o mesmo nome"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
       ]
     },
     "info": {
@@ -8768,6 +8780,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
       ]
     },
     "new_plans: feature highlight": {
@@ -13327,6 +13343,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "PROMOÇÃO DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     }
   }

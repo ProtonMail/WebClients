@@ -3924,6 +3924,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Can't retrieve device name": [
+        "Aygıt adı alınamıyor"
+      ],
+      "Data integrity check failed": [
+        "Veri bütünlüğü kontrolü başarısız oldu"
       ]
     },
     "error": {
@@ -4332,7 +4338,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -5486,7 +5492,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -6653,7 +6659,7 @@
         "${ deviceName } uygulamasını eşitlenmiş aygıtlardan kaldırdığınızda, ${ DRIVE_APP_NAME } uygulaması ile bu aygıttan Bilgisayarlarım klasörüne eklenen tüm klasörler kalıcı olarak silinir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "who": [
         "kim"
@@ -6907,6 +6913,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Can't rename to same name": [
+        "Aynı isimle yeniden adlandırılamaz"
       ]
     },
     "info": {
@@ -13274,6 +13283,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 BAHAR İNDİRİMİ"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
       ]
     }
   }
