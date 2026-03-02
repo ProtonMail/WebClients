@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { MigrationConfiguration, MigrationSetupModel } from '../../types';
-import useProviderTokens from '../../useProviderTokens';
+import { useProviderTokens } from '../../useProviderTokens';
 import StepConfigureMigration from './StepConfigureMigration';
 import StepInstallApp from './StepInstallApp';
 
@@ -44,7 +44,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                     id: 'install-app',
                     text: c('BOSS').t`Authenticate`,
                     component: StepInstallApp,
-                    isInvalid: () => !tokens.length,
+                    isInvalid: () => !tokens?.length,
                 },
                 {
                     id: 'configure-migration',
