@@ -11,6 +11,7 @@ im.$media-expressions: $media-expressions;
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
 	transition: all 0.3s ease-out;
+	border-width: 0.5px !important;
 
 	// Mobile styles
 	@include im.media('<=small') {
@@ -125,4 +126,3 @@ im.$media-expressions: $media-expressions;
 	background-color: rgb(186 186 247 / 0.3) !important;
 	color: var(--text-strong) !important;
 }
-
