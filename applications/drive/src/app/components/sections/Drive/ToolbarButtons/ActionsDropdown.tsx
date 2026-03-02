@@ -21,7 +21,6 @@ import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 
 interface Props {
     volumeId: string;
-    shareId: string;
     selectedLinks: DecryptedLink[];
     permissions: SHARE_MEMBER_PERMISSIONS;
     trashLinks: ReturnType<typeof useActions>['trashLinks'];
@@ -31,7 +30,7 @@ interface Props {
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
-const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
+const ActionsDropdown = ({ volumeId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -65,7 +64,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedLinks) }),
+            action: () => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedLinks) }),
         },
         {
             hidden: isMultiSelect || !isEditor,

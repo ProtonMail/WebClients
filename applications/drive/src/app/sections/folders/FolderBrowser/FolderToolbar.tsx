@@ -131,7 +131,7 @@ export const FolderToolbar = ({
                 <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
                 {viewportWidth['<=small'] ? (
-                    <ActionsDropdown volumeId={volumeId} shareId={shareId} selectedItems={selectedItems} role={role} />
+                    <ActionsDropdown volumeId={volumeId} selectedItems={selectedItems} role={role} />
                 ) : (
                     <>
                         {shouldShowShareLinkButton && selectedItem && (
@@ -142,11 +142,7 @@ export const FolderToolbar = ({
                         )}
 
                         {permissions.canMove && (
-                            <MoveButton
-                                type="toolbar"
-                                selectedItems={selectedItems}
-                                onClick={() => showMoveModal(shareId)}
-                            />
+                            <MoveButton type="toolbar" selectedItems={selectedItems} onClick={showMoveModal} />
                         )}
                         {permissions.canCopy && <CopyButton type="toolbar" onClick={showCopyModal} />}
                         {permissions.canRename && !noSelection(selectedItems) && !isMultiSelect(selectedItems) && (

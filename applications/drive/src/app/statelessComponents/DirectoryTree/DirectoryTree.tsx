@@ -41,7 +41,7 @@ export function DirectoryTreeRoot({
 
     return (
         <div className="border rounded" style={{ position: 'relative' }}>
-            <ul className="unstyled mt-0">
+            <ul data-testid="directorytree-root" className="unstyled mt-0">
                 {roots.map((root) => (
                     <DirectoryTreeBranch
                         key={root.treeItemId}
@@ -106,8 +106,9 @@ function DirectoryTreeBranch({
     const isSelected = selectedTreeId === item.treeItemId;
     const handleSelect = () => onSelect(item.treeItemId, item);
 
+    const isCollapsed = item.children === null;
     return (
-        <li className="pl-4">
+        <li data-testid="directorytree-item" className="pl-4">
             {/* Keyboard accessibility is provided by the Radio component inside, so no need for onKeyDown here */}
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="directory-tree-node flex items-center p-2 cursor-pointer" onClick={handleSelect}>
@@ -118,7 +119,7 @@ function DirectoryTreeBranch({
                     aria-selected={isSelected}
                     checked={isSelected}
                     className={clsx('absolute left-0 ml-2', !isSelected && 'opacity-0')}
-                    data-testid={isSelected ? 'copy-destination-selected' : 'copy-destination-not-selected'}
+                    data-testid={isSelected ? 'directorytree-item-selected' : 'directorytree-item-not-selected'}
                 />
 
                 <div className="flex items-center gap-4 pl-6">
@@ -126,16 +127,16 @@ function DirectoryTreeBranch({
 
                     {item.expandable && (
                         <button
-                            // Null children means collapsed
-                            className={item.children === null ? 'rotateX-180' : ''}
+                            className={isCollapsed ? 'rotateX-180' : ''}
                             onClick={handleExpand}
                             disabled={isLoading}
+                            type="button"
+                            aria-expanded={isCollapsed ? 'false' : 'true'}
                         >
                             <IcChevronUp className="border border-norm rounded-50" />
                         </button>
                     )}
-
-                    {item.name}
+                    <span data-testid="directorytree-item-name">{item.name}</span>
                 </div>
             </div>
 

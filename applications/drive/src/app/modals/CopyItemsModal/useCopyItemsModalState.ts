@@ -55,6 +55,8 @@ export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: 
         : undefined;
 
     const handleSelect = useCallback((treeItemId: string, targetItem: DirectoryTreeItem) => {
+        // Make sure we always move files to a real folder (e.g. My files, any subfolder, a device folder) and not a
+        // synthetic folder (e.g. "Shared with me" or "Devices"):
         if ([NodeType.Folder, 'files-root'].includes(targetItem.type)) {
             setCopyTargetTreeId(treeItemId);
         }
