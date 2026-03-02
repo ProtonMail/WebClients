@@ -1,5 +1,5 @@
-import type { ChangeEvent, FocusEvent } from 'react';
 import type React from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -17,7 +17,17 @@ type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 export type CreateFolderModalInnerProps = {
     drive?: Drive;
     parentFolderUid?: string;
-    onSuccess?: ({ uid, nodeId, name }: { uid?: string; nodeId: string; name: string }) => void;
+    onSuccess?: ({
+        uid,
+        nodeId,
+        name,
+        parentUid,
+    }: {
+        uid?: string;
+        parentUid?: string;
+        nodeId: string;
+        name: string;
+    }) => void;
 };
 
 export type UseCreateFolderModalStateProps = ModalStateProps & CreateFolderModalInnerProps;
@@ -71,7 +81,7 @@ export const useCreateFolderModalState = ({
                 type: BusDriverEventName.CREATED_NODES,
                 items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
             });
-            onSuccess?.({ uid: node.uid, nodeId, name });
+            onSuccess?.({ uid: node.uid, parentUid: node.parentUid, nodeId, name });
             createNotification({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,

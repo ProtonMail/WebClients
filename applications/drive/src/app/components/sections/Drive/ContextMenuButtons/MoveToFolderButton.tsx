@@ -7,7 +7,6 @@ import type { DecryptedLink } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
     showMoveItemsModal: ReturnType<typeof useMoveItemsModal>['showMoveItemsModal'];
     close: () => void;
@@ -16,13 +15,13 @@ interface Props {
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
-const MoveToFolderButton = ({ shareId, selectedLinks, showMoveItemsModal, close }: Props) => {
+const MoveToFolderButton = ({ selectedLinks, showMoveItemsModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Move to folder`}
             icon="arrows-cross"
             testId="context-menu-move"
-            action={() => showMoveItemsModal({ shareId, nodeUids: toNodeUidsHelper(selectedLinks) })}
+            action={() => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedLinks) })}
             close={close}
         />
     );

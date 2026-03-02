@@ -120,7 +120,6 @@ const DriveToolbar = ({
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown
                         volumeId={volumeId}
-                        shareId={shareId}
                         selectedLinks={selectedItems}
                         permissions={permissions}
                         renameLink={renameLink}
@@ -136,7 +135,7 @@ const DriveToolbar = ({
                         )}
                         {isEditor && !isLinkReadOnly ? (
                             <>
-                                <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
+                                <MoveToFolderButton selectedLinks={selectedItems} />
                                 <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
                             </>
                         ) : null}

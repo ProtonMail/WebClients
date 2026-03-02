@@ -1,21 +1,24 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { ModalStateProps } from '@proton/components';
-import type { MaybeNode } from '@proton/drive';
-import { NodeType, generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
+import { c } from 'ttag';
+
+import { type ModalStateProps, useNotifications } from '@proton/components';
+import type { MaybeNode, ProtonDriveClient, Result } from '@proton/drive';
+import { NodeType, getDrive } from '@proton/drive';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { type MoveNodesItemMap, useMoveNodes } from '../../hooks/sdk/useMoveNodes';
-import { useTreeForModals } from '../../store';
+import { directoryTreeFactory } from '../../modules/directoryTree';
+import { getNodeUidFromTreeItemId, makeTreeItemId } from '../../modules/directoryTree/helpers';
+import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getMissingUid, isMissingNode } from '../../utils/sdk/node';
 import { useCreateFolderModal } from '../CreateFolderModal';
 
 export type MoveItemsModalInnerProps = {
-    shareId: string;
     nodeUids: string[];
 };
 
@@ -36,21 +39,112 @@ export type NodeTarget = {
     type: NodeType;
 };
 
-export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalProps }: UseMoveItemsModalStateProps) => {
-    const {
-        rootItems,
-        expand,
-        toggleExpand,
-        isLoaded: isTreeLoaded,
-    } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
+/**
+ * Creates isolated directory tree state for this modal.
+ * Each modal instance maintains its own tree state independent of other sections.
+ */
+const useMoveItemsModalDirectoryTree = directoryTreeFactory();
 
-    const drive = getDrive();
+// Resolves the shared top-level root for all provided node UIDs by walking their ancestry.
+// All nodes must belong to the same root (same share/volume); returns an error if they don't.
+// The resulting UID is used as the scope root for the move modal's directory tree.
+const resolveTreeScopeRootUid = async (
+    nodeUids: string[],
+    drive: ProtonDriveClient
+): Promise<Result<string, Error>> => {
+    let commonRootUid: string | undefined;
+
+    for (const nodeUid of nodeUids) {
+        const ancestryResult = await getNodeAncestry(nodeUid, drive);
+        if (!ancestryResult.ok) {
+            return ancestryResult;
+        }
+        const topRoot = ancestryResult.value[0];
+        if (!topRoot) {
+            return { ok: false, error: new Error(`No ancestry found for node ${nodeUid}`) };
+        }
+        const { node } = getNodeEntity(topRoot);
+        if (commonRootUid === undefined) {
+            commonRootUid = node.uid;
+        } else if (commonRootUid !== node.uid) {
+            return { ok: false, error: new Error('Nodes do not share a common root') };
+        }
+    }
+
+    if (commonRootUid === undefined) {
+        return { ok: false, error: new Error('No nodes provided') };
+    }
+
+    return { ok: true, value: commonRootUid };
+};
+
+export const useMoveItemsModalState = ({ onClose, nodeUids, ...modalProps }: UseMoveItemsModalStateProps) => {
+    const [directoryTreeLoading, setDirectoryTreeLoading] = useState(true);
+    const [scopeMoveNodeUid, setScopeMoveNodeUid] = useState<string | null>(null);
+
+    const rootStrategy = useMemo(() => {
+        return { type: 'FROM_NODE' as const, rootNodeUid: scopeMoveNodeUid || '' };
+    }, [scopeMoveNodeUid]);
+
+    const { initializeTree, toggleExpand, treeRoots, addNode, clear } = useMoveItemsModalDirectoryTree({
+        onlyFolders: true,
+        loadPermissions: true,
+        treeRootsStrategy: rootStrategy,
+    });
+
+    const customOnClose = useCallback(() => {
+        onClose();
+
+        // Make sure the zustand store associated with this modal is cleared each time we close
+        // the modal to avoid any accumulation artifacts between several openings of the
+        // move modal.
+        clear();
+    }, [onClose, clear]);
+
     const { onExit } = modalProps;
     const { createFolderModal, showCreateFolderModal } = useCreateFolderModal();
-    const [targetFolderUid, setTargetFolderUid] = useState<string>();
-    const { activeFolder } = useActiveShare();
+
     const { moveNodes } = useMoveNodes();
     const [nodes, setNodes] = useState<NodeTarget[] | null>(null);
+
+    const { createNotification } = useNotifications();
+
+    useEffect(() => {
+        const controller = new AbortController();
+        const fn = async () => {
+            const rootNodeResult = await resolveTreeScopeRootUid(nodeUids, getDrive());
+            if (controller.signal.aborted) {
+                return;
+            }
+            if (rootNodeResult.ok) {
+                setScopeMoveNodeUid(rootNodeResult.value);
+            } else {
+                sendErrorReport(rootNodeResult.error);
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Cannot find move target`,
+                });
+                customOnClose();
+            }
+        };
+        void fn();
+        return () => controller.abort();
+    }, [createNotification, customOnClose, nodeUids]);
+
+    useEffect(() => {
+        if (!scopeMoveNodeUid) {
+            // We need to wait for the scope node uid to be computed before
+            // initializing the tree.
+            return;
+        }
+        setDirectoryTreeLoading(true);
+        initializeTree()
+            .then(() => setDirectoryTreeLoading(false))
+            .catch(handleSdkError);
+    }, [scopeMoveNodeUid, initializeTree]);
+
+    const [moveTargetTreeId, setMoveTargetTreeId] = useState<string>();
+    const moveTargetUid = moveTargetTreeId ? getNodeUidFromTreeItemId(moveTargetTreeId) : undefined;
 
     // Generate stable uid array even if external items are unstable.
     const uids = useShallowStableArray(nodeUids);
@@ -58,6 +152,7 @@ export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalPro
     useEffect(() => {
         const fetchNodes = async () => {
             try {
+                const drive = getDrive();
                 const fetchedNodes: NodeTarget[] = [];
                 for await (const maybeMissingNode of drive.iterateNodes(uids)) {
                     if (isMissingNode(maybeMissingNode)) {
@@ -89,9 +184,17 @@ export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalPro
         };
 
         void fetchNodes();
-    }, [uids, drive, onExit]);
+    }, [uids, onExit]);
 
-    if (!nodes) {
+    const handleSelect = useCallback((treeItemId: string, targetItem: DirectoryTreeItem) => {
+        // Make sure we always move files to a real folder (e.g. My files, any subfolder, a device folder) and not a
+        // synthetic folder (e.g. "Shared with me" or "Devices"):
+        if ([NodeType.Folder, 'files-root'].includes(targetItem.type)) {
+            setMoveTargetTreeId(treeItemId);
+        }
+    }, []);
+
+    if (!nodes || directoryTreeLoading || !scopeMoveNodeUid) {
         return {
             loaded: false as const,
         };
@@ -103,76 +206,55 @@ export const useMoveItemsModalState = ({ onClose, shareId, nodeUids, ...modalPro
         return { ...acc, [uid]: { name: item.name, parentUid } };
     }, {});
 
-    let treeSelectedFolder;
-    if (targetFolderUid) {
-        treeSelectedFolder = splitNodeUid(targetFolderUid).nodeId;
-    }
-
     const moveItemsToFolder = async () => {
-        if (!targetFolderUid) {
+        if (!moveTargetUid) {
             return;
         }
 
-        await moveNodes(itemMap, targetFolderUid);
-    };
-
-    const onTreeSelect = async (link: { volumeId: string; linkId: string }) => {
-        // TODO:FOLDERTREE change on FolderTree sdk migration
-        const folderNodeUid = generateNodeUid(link.volumeId, link.linkId);
-        setTargetFolderUid(folderNodeUid);
+        await moveNodes(itemMap, moveTargetUid);
     };
 
     const handleSubmit = async () => {
         await moveItemsToFolder();
-        onClose?.();
+        customOnClose();
     };
 
     const createNewFolder = async () => {
-        if (rootItems.length > 1 && targetFolderUid === undefined) {
-            return;
-        }
-
-        let targetUid;
-        if (!targetFolderUid) {
-            const firstNode = nodes[0];
-            const firstNodeParentLinkId =
-                firstNode && firstNode.parentUid ? splitNodeUid(firstNode.parentUid).nodeId : undefined;
-            const firstNodeVolumeId = firstNode ? splitNodeUid(firstNode.uid).volumeId : undefined;
-            const targetLinkId = activeFolder.linkId || rootItems[0]?.link.linkId || firstNodeParentLinkId;
-            const targetVolumeId = activeFolder.volumeId || rootItems[0]?.link.volumeId || firstNodeVolumeId;
-            if (!targetLinkId || !targetVolumeId) {
-                return;
-            }
-            targetUid = generateNodeUid(targetVolumeId, targetLinkId) as string;
-        } else {
-            targetUid = targetFolderUid;
-        }
+        // Use current selection as parent, or fall back to scope root.
+        const targetUid = moveTargetUid ? moveTargetUid : scopeMoveNodeUid;
 
         void showCreateFolderModal({
             parentFolderUid: targetUid,
-            onSuccess: async ({ uid }) => {
-                // After creating the folder we want to expand its parent so it shows in the tree
-                const { nodeId } = splitNodeUid(targetUid);
-                expand(nodeId);
+            onSuccess: async ({ uid, parentUid, name }) => {
+                if (uid && parentUid) {
+                    // Add new folder to the store:
+                    await addNode(uid, parentUid, name);
 
-                setTargetFolderUid(uid);
+                    if (moveTargetTreeId) {
+                        // Expand currently selected to show the newly created node (from the store),
+                        await toggleExpand(moveTargetTreeId);
+                        // And select it:
+                        const targetTreeItemId = makeTreeItemId(parentUid, uid);
+                        setMoveTargetTreeId(targetTreeItemId);
+                    }
+                }
             },
         });
     };
 
     return {
         loaded: true as const,
-        isTreeLoaded,
-        rootItems,
-        treeSelectedFolder,
-        onTreeSelect,
         handleSubmit,
-        toggleExpand,
         createFolderModal,
-        targetFolderUid,
         nodes,
-        onClose,
+        onClose: customOnClose,
         createFolder: createNewFolder,
+        treeRoots,
+        moveTargetTreeId,
+        moveTargetUid,
+        handleSelect,
+        toggleExpand,
+
         ...modalProps,
     };
 };
