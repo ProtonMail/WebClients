@@ -11,6 +11,7 @@ im.$media-expressions: $media-expressions;
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
 	transition: all 0.3s ease-out;
+	border-width: 0.5px !important;
 
 	// Mobile styles
 	@include im.media('<=small') {
@@ -24,14 +25,6 @@ im.$media-expressions: $media-expressions;
 		.lumo-input {
 			border: none !important;
 			background-color: var(--background-composer-mobile), var(--background-norm);
-		}
-	}
-
-	&.shadow-lifted-composer {
-		box-shadow: var(--optional-shadow-lifted-offset, 0 calc(var(--1px) * 5) calc(var(--1px) * 12)) rgb(var(--shadow-color,var(--shadow-default-color))/var(--shadow-lifted-opacity));
-		@include im.media('<=small') {
-			// Theme overrides
-			box-shadow: none !important;
 		}
 	}
 
@@ -102,4 +95,3 @@ im.$media-expressions: $media-expressions;
 	background-color: rgb(186 186 247 / 0.3) !important;
 	color: var(--text-strong) !important;
 }
-
