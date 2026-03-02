@@ -25,12 +25,9 @@ const StepPrepare = () => {
         handleSubmit,
         hasErrors,
         emailTitle,
-        enabledFeatures,
         products,
         allCheckboxUnselected,
     } = useStepPrepare();
-
-    const { isEmailsEnabled, isCalendarsEnabled, isContactsEnabled } = enabledFeatures;
 
     return (
         <ModalTwo size="xlarge" onClose={handleCancel} open>
@@ -48,9 +45,8 @@ const StepPrepare = () => {
                             value={emailChecked}
                             setValue={setEmailChecked}
                             error={importerData?.emails?.error}
-                            disabled={!isEmailsEnabled}
                         >
-                            {isEmailsEnabled && <StepPrepareEmailsSummary isSelected={emailChecked} />}
+                            <StepPrepareEmailsSummary isSelected={emailChecked} />
                         </StepProductsRowItem>
                     )}
 
@@ -61,9 +57,8 @@ const StepPrepare = () => {
                             value={contactChecked}
                             setValue={setContactChecked}
                             error={importerData?.contacts?.error}
-                            disabled={!isContactsEnabled}
                         >
-                            {isContactsEnabled && <StepPrepareContactsSummary isSelected={contactChecked} />}
+                            <StepPrepareContactsSummary isSelected={contactChecked} />
                         </StepProductsRowItem>
                     )}
 
@@ -74,9 +69,8 @@ const StepPrepare = () => {
                             value={calendarChecked}
                             setValue={setCalendarChecked}
                             error={importerData?.calendars?.error}
-                            disabled={!isCalendarsEnabled}
                         >
-                            {isCalendarsEnabled && <StepPrepareCalendarSummary isSelected={calendarChecked} />}
+                            <StepPrepareCalendarSummary isSelected={calendarChecked} />
                         </StepProductsRowItem>
                     )}
                 </div>

@@ -46,7 +46,6 @@ export enum FeatureCode {
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     EarlyAccessScope = 'EarlyAccess',
-    EasySwitch = 'EasySwitch',
     ElectronESInboxThreshold = 'ElectronESInboxThreshold',
     ElectronConvPreloadAmount = 'ElectronConvPreloadAmount',
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',

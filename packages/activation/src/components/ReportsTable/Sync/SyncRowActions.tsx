@@ -3,14 +3,13 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import type { EasySwitchFeatureFlag, ImportToken, OAuthProps } from '@proton/activation/src/interface';
+import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
 import { Alert, DropdownActions, Prompt, useApi, useModalState } from '@proton/components';
-import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 
@@ -39,8 +38,6 @@ const SyncRowActions = ({ syncId }: Props) => {
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('Error').t`Your forward will not be processed.`,
     });
-
-    const { feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     const handleReconnectClick = async () => {
         const features = [isBYOE ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL];
@@ -103,19 +100,14 @@ const SyncRowActions = ({ syncId }: Props) => {
             onClick: () => handleClickDelete(),
         };
 
-        if (feature?.Value?.GoogleMailSync) {
-            return [
-                {
-                    text: c('account').t`Reconnect`,
-                    onClick: handleReconnectClick,
-                    disabled: loadingConfig,
-                },
-                deleteSyncButton,
-            ];
-        }
-
-        // If gmail sync isn't available users can only delete sync
-        return [deleteSyncButton];
+        return [
+            {
+                text: c('account').t`Reconnect`,
+                onClick: handleReconnectClick,
+                disabled: loadingConfig,
+            },
+            deleteSyncButton,
+        ];
     };
 
     const activeAction = [
