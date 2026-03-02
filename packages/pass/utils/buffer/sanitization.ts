@@ -34,11 +34,36 @@ export const sanitizeBuffers = <T>(value: T): SanitizedBuffers<T, number[]> => {
     return value as SanitizedBuffers<T, number[]>;
 };
 
-export const sanitizeBuffersB64 = <T>(value: T): SanitizedBuffers<T, string> => {
-    if (isArrayBuffer(value)) return new SafeUint8Array(value).toBase64() as SanitizedBuffers<T, string>;
-    if (isUint8Array(value)) return value.toBase64() as SanitizedBuffers<T, string>;
-    if (isInt8Array(value)) return new SafeUint8Array(value).toBase64() as SanitizedBuffers<T, string>;
-    if (Array.isArray(value)) return value.map(sanitizeBuffersB64) as SanitizedBuffers<T, string>;
-    if (isObject(value)) return objectMap(value, (_, val) => sanitizeBuffersB64(val)) as SanitizedBuffers<T, string>;
-    return value as SanitizedBuffers<T, string>;
+/** `Uint8Array.toBase64` may not be polyfilled in certain extension contexts
+ * (eg content-scripts where the polyfill runs in an isolated world). These
+ * manual btoa-based helpers serve as the fallback when the API is unavailable. */
+export const uint8ArrayToB64 = (buffer: Uint8Array<ArrayBuffer>): string => {
+    let binary = '';
+    for (const byte of buffer) binary += String.fromCharCode(byte);
+    return btoa(binary);
 };
+
+export const uint8ArrayToB64URL = (buffer: Uint8Array<ArrayBuffer>): string =>
+    uint8ArrayToB64(buffer).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+const sanitizeBuffersB64Factory = (alphabet: 'base64' | 'base64url') => {
+    const b64 = (buffer: Uint8Array<ArrayBuffer>): string => {
+        const omitPadding = alphabet === 'base64url';
+        if ('toBase64' in Uint8Array.prototype) return buffer.toBase64({ alphabet, omitPadding });
+        return (alphabet === 'base64url' ? uint8ArrayToB64URL : uint8ArrayToB64)(buffer);
+    };
+
+    const sanitizer = <T>(val: T): SanitizedBuffers<T, string> => {
+        if (isArrayBuffer(val)) return b64(new SafeUint8Array(val)) as SanitizedBuffers<T, string>;
+        if (isUint8Array(val)) return b64(val) as SanitizedBuffers<T, string>;
+        if (isInt8Array(val)) return b64(new SafeUint8Array(val)) as SanitizedBuffers<T, string>;
+        if (Array.isArray(val)) return val.map(sanitizer) as SanitizedBuffers<T, string>;
+        if (isObject(val)) return objectMap(val, (_, v) => sanitizer(v)) as SanitizedBuffers<T, string>;
+        return val as SanitizedBuffers<T, string>;
+    };
+
+    return sanitizer;
+};
+
+export const sanitizeBuffersB64 = sanitizeBuffersB64Factory('base64');
+export const sanitizeBuffersB64URL = sanitizeBuffersB64Factory('base64url');
