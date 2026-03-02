@@ -1761,6 +1761,15 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
       ]
     },
     "Alert": {
@@ -2098,6 +2107,20 @@
       ],
       "Yearly": [
         "წლიურად"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ]
     },
     "Browser": {
@@ -2573,6 +2596,9 @@
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
         "ჯამში ${ n } თვის"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ]
     },
     "Collapsible tooltip": {
@@ -3552,7 +3578,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -12115,6 +12141,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -16034,6 +16063,11 @@
       "${ cycle } month": [
         "${ cycle } თვე",
         "${ cycle } თვე"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     }
   }

@@ -12784,10 +12784,10 @@
         "Včetně ${ rate }% daně: ${ taxAmountElement }"
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ]
     },
     "Payments.Error": {
@@ -17038,6 +17038,9 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ]
     },
     "Plans": {
@@ -17046,6 +17049,16 @@
         "${ cycle } měsíce",
         "${ cycle } měsíců",
         "${ cycle } měsíců"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     }
   }

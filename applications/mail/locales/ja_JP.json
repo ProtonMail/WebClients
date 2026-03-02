@@ -2599,6 +2599,12 @@
       ],
       "Total for ${ n } month": [
         "合計 ${ n } か月"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } か月分の小計"
       ]
     },
     "Collapsible tooltip": {
@@ -12152,6 +12158,30 @@
       ],
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "税金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税金 ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -15993,6 +16023,11 @@
     "Plans": {
       "${ cycle } month": [
         "${ cycle }ヶ月"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026年新春セール"
       ]
     }
   }

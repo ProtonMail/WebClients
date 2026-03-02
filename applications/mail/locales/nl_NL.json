@@ -661,7 +661,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Verberg ${ BRAND_NAME } Scribe schrijfassistent"
@@ -7166,7 +7166,7 @@
         "Dubbele sleutel bijgewerkt"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
@@ -8599,7 +8599,7 @@
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
@@ -16365,6 +16365,16 @@
       "${ cycle } month": [
         "${ cycle } maand",
         "${ cycle } maanden"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
       ]
     }
   }
