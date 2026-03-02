@@ -3,7 +3,7 @@ import type {
     WasmPublicKeyCredentialAttestation,
 } from '@protontech/pass-rust-core/worker';
 
-import { SafeUint8Array } from '@proton/pass/utils/buffer/sanitization';
+import { SafeUint8Array, sanitizeBuffersB64URL } from '@proton/pass/utils/buffer/sanitization';
 
 export const intoAuthenticatorAttestationResponse = ({
     response,
@@ -35,6 +35,13 @@ export const intoAuthenticatorAssertionResponse = (
         AuthenticatorAssertionResponse.prototype
     );
 
+/** Per the WebAuthn spec, `PublicKeyCredential.toJSON()` serializes all
+ * ArrayBuffer fields as base64url-encoded strings (without padding).
+ * @see https://w3c.github.io/webauthn/#dom-publickeycredential-tojson
+ *
+ * For attestation responses the spec also includes the outputs of the
+ * `getTransports`, `getAuthenticatorData`, `getPublicKey` and `getPublicKeyAlgorithm`
+ * getters in the serialized response */
 export const intoPublicKeyCredential = (
     result: WasmPublicKeyCredentialAttestation | WasmPublicKeyCredentialAssertion,
     response: AuthenticatorAttestationResponse | AuthenticatorAssertionResponse,
@@ -75,7 +82,23 @@ export const intoPublicKeyCredential = (
             ...publicKeyCredential,
             toJSON: () => {
                 const { getClientExtensionResults, ...data } = publicKeyCredential;
-                return clone({ ...data, clientExtensionResults: getClientExtensionResults() });
+
+                const response =
+                    data.response instanceof AuthenticatorAttestationResponse
+                        ? {
+                              attestationObject: data.response.attestationObject,
+                              clientDataJSON: data.response.clientDataJSON,
+                              transports: data.response.getTransports(),
+                              authenticatorData: data.response.getAuthenticatorData(),
+                              publicKey: data.response.getPublicKey(),
+                              publicKeyAlgorithm: data.response.getPublicKeyAlgorithm(),
+                          }
+                        : data.response;
+
+                const clientExtensionResults = getClientExtensionResults();
+                const json = { ...data, response, clientExtensionResults };
+
+                return clone(sanitizeBuffersB64URL(json));
             },
         },
         PublicKeyCredential.prototype

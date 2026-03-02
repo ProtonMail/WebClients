@@ -3,6 +3,8 @@ import type {
     WasmPublicKeyCredentialAttestation,
 } from '@protontech/pass-rust-core/worker';
 
+import { uint8ArrayToB64URL } from '@proton/pass/utils/buffer/sanitization';
+
 import {
     intoAuthenticatorAssertionResponse,
     intoAuthenticatorAttestationResponse,
@@ -136,35 +138,56 @@ describe('intoPublicKeyCredential', () => {
     });
 
     describe('toJSON', () => {
-        test('resolves `clientExtensionResults` data', () => {
-            const res = intoAuthenticatorAttestationResponse(mockAttestation);
-            const json = (intoPublicKeyCredential(mockAttestation, res, identity) as any).toJSON();
-            expect(typeof json.getClientExtensionResults).not.toBe('function');
-            expect(json.clientExtensionResults).toEqual({ credProps: { rk: true } });
-        });
+        const b64url = (bytes: number[]) => uint8ArrayToB64URL(new Uint8Array(bytes));
 
-        test('resolves prf results', () => {
+        const attestationJSON = () => {
+            const res = intoAuthenticatorAttestationResponse(mockAttestation);
+            return (intoPublicKeyCredential(mockAttestation, res, identity) as any).toJSON();
+        };
+
+        const assertionJSON = () => {
             const res = intoAuthenticatorAssertionResponse(mockAssertion);
-            const json = (intoPublicKeyCredential(mockAssertion, res, identity) as any).toJSON();
-            expect(json.clientExtensionResults.prf?.enabled).toBe(true);
-        });
+            return (intoPublicKeyCredential(mockAssertion, res, identity) as any).toJSON();
+        };
 
-        test('retains all other credential properties', () => {
-            const res = intoAuthenticatorAttestationResponse(mockAttestation);
-            const json = (intoPublicKeyCredential(mockAttestation, res, identity) as any).toJSON();
+        test('base64url-encodes credential fields', () => {
+            const json = attestationJSON();
+            expect(json.rawId).toBe(b64url(mockAttestation.raw_id));
             expect(json.id).toBe('credential-id');
             expect(json.type).toBe('public-key');
             expect(json.authenticatorAttachment).toBe('platform');
-            expect(json.rawId).toBeDefined();
-            expect(json.response).toBeDefined();
         });
 
-        /** Assertion response has no function own-properties so the toJSON output is
-         * structuredClone-safe — i.e. page scripts can safely postMessage it to a worker. */
+        test('resolves clientExtensionResults with base64url prf values', () => {
+            expect(attestationJSON().clientExtensionResults).toEqual({ credProps: { rk: true } });
+
+            const json = assertionJSON();
+            expect(json.clientExtensionResults.prf?.enabled).toBe(true);
+            expect(json.clientExtensionResults.prf?.results?.first).toBe(b64url([7, 8, 9]));
+            expect(json.clientExtensionResults.prf?.results?.second).toBe(b64url([10, 11, 12]));
+        });
+
+        test('attestation response includes base64url buffers and getter outputs', () => {
+            const { response } = attestationJSON();
+            expect(response.attestationObject).toBe(b64url(mockAttestation.response.attestation_object));
+            expect(response.clientDataJSON).toBe(b64url(mockAttestation.response.client_data_json));
+            expect(response.authenticatorData).toBe(b64url(mockAttestation.response.authenticator_data));
+            expect(response.publicKey).toBe(b64url(mockAttestation.response.public_key!));
+            expect(response.publicKeyAlgorithm).toBe(-7);
+            expect(response.transports).toEqual(['internal']);
+        });
+
+        test('assertion response base64url-encodes all buffer fields', () => {
+            const { response } = assertionJSON();
+            expect(response.clientDataJSON).toBe(b64url(mockAssertion.response.client_data_json));
+            expect(response.authenticatorData).toBe(b64url(mockAssertion.response.authenticator_data));
+            expect(response.signature).toBe(b64url(mockAssertion.response.signature));
+            expect(response.userHandle).toBe(b64url(mockAssertion.response.user_handle!));
+        });
+
         test('output is structuredClone-safe', () => {
-            const res = intoAuthenticatorAssertionResponse(mockAssertion);
-            const json = (intoPublicKeyCredential(mockAssertion, res, identity) as any).toJSON();
-            expect(() => structuredClone(json)).not.toThrow();
+            expect(() => structuredClone(attestationJSON())).not.toThrow();
+            expect(() => structuredClone(assertionJSON())).not.toThrow();
         });
     });
 });
