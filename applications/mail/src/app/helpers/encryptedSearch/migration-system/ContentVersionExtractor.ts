@@ -37,7 +37,7 @@ export class ContentVersionExtractor {
         }
     }
 
-    private async markMigrationCompleted() {
+    async markMigrationCompleted() {
         await this.clearCheckpoint();
         await this.esDB.put('config', true, 'contentVersionMigrationCompleted');
         await this.esDB.put('config', 0, 'contentVersionMigrationRetries');
