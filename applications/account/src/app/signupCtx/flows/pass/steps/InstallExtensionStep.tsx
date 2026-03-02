@@ -12,9 +12,9 @@ import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
 import { getTelemetryClientType } from '../../../../single-signup-v2/measure';
-import { measureSignupCtx } from '../../../measure';
 import browserImage from '../assets/images/browser.svg';
 import { Layout } from '../components/Layout/Layout';
+import { measureSignupCtx } from '../measure';
 
 type Props = {
     onContinue: () => Promise<void>;
@@ -52,7 +52,6 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
     useEffect(() => {
         void measureSignupCtx(api, {
             event: TelemetryAccountSignupEvents.onboardFinish,
-            dimensions: { flow: 'pass_ctx_signup' },
         });
     }, []);
 
@@ -61,7 +60,7 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
 
         void measureSignupCtx(api, {
             event: TelemetryAccountSignupEvents.interactDownload,
-            dimensions: { flow: 'pass_ctx_signup', click: `download_${telemetryClientType}` },
+            dimensions: { click: `download_${telemetryClientType}` },
         });
     };
 
