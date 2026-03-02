@@ -24,12 +24,15 @@ import { DirectoryTreeRootType } from './types';
 interface DirectoryTreeOptions {
     onlyFolders?: boolean;
     loadPermissions?: boolean;
+    treeRootsStrategy?: TreeRootsStrategy;
 }
 
-/**
- * Each time the node is expanded we iterate over its again - there is no caching.
- * You might want to modify that behaviour when using this hook outside copy modal.
- */
+type TreeRootsStrategy =
+    // Show all root sections: My Files, Computers, and Shared with me
+    | { type: 'ALL_ROOTS' }
+    // Start the tree from a specific node (e.g. a subfolder)
+    | { type: 'FROM_NODE'; rootNodeUid: string };
+
 function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: DirectoryTreeOptions) {
     const { drive } = useDrive();
 
@@ -65,45 +68,6 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         },
         [addItem, drive, options?.loadPermissions]
     );
-
-    // It has to be called before any other call - loads all the top-level elements
-    const initializeTree = useCallback(async () => {
-        // My files
-        const myFilesRoot = await drive.getMyFilesRootFolder();
-        const { uid } = getNodeEntity(myFilesRoot).node;
-        addItem({
-            nodeUid: uid,
-            treeItemId: makeTreeItemId(null, uid),
-            parentUid: null,
-            name: c('Title').t`My files`,
-            type: DirectoryTreeRootType.FilesRoot,
-            expandable: true,
-            isSharedWithMe: false,
-            highestEffectiveRole: MemberRole.Admin,
-        });
-
-        // Devices
-        addItem({
-            nodeUid: DEVICES_ROOT_ID,
-            treeItemId: makeTreeItemId(null, DEVICES_ROOT_ID),
-            parentUid: null,
-            name: c('Title').t`Computers`,
-            type: DirectoryTreeRootType.DevicesRoot,
-            expandable: true,
-            isSharedWithMe: false,
-        });
-
-        // Shared with me
-        addItem({
-            nodeUid: SHARED_WITH_ME_ROOT_ID,
-            treeItemId: makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID),
-            parentUid: null,
-            name: c('Title').t`Shared with me`,
-            type: DirectoryTreeRootType.SharesRoot,
-            expandable: true,
-            isSharedWithMe: false,
-        });
-    }, [drive, addItem]);
 
     const loadDevices = useCallback(
         async (abortSignal: AbortSignal) => {
@@ -161,7 +125,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
 
     const loadChildren = useCallback(
         async (parentUid: string, abortSignal: AbortSignal) => {
-            const maybeItem = items.get(parentUid);
+            const maybeItem = useDirectoryTreeStore.getState().items.get(parentUid);
             if (!maybeItem) {
                 const error = new Error(c('Error').t`Failed to expand folder`);
                 sendErrorReport(error, { extra: { message: 'Loading children of non-existent directory tree item' } });
@@ -190,7 +154,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
                     const highestEffectiveRole = options?.loadPermissions
                         ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
                         : undefined;
-                    const existingItem = items.get(uid);
+                    const existingItem = useDirectoryTreeStore.getState().items.get(uid);
                     addItem({
                         nodeUid: uid,
                         parentUid,
@@ -211,7 +175,15 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
                 throw error;
             }
         },
-        [items, loadDevices, loadSharedWithMe, options?.onlyFolders, options?.loadPermissions, drive, addItem]
+        [
+            useDirectoryTreeStore,
+            loadDevices,
+            loadSharedWithMe,
+            options?.onlyFolders,
+            options?.loadPermissions,
+            drive,
+            addItem,
+        ]
     );
 
     const expandAbortControllers = useRef(new Map<string, AbortController>());
@@ -248,6 +220,90 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         };
     }, []);
 
+    const initializeFromNode = useCallback(
+        async (rootNodeUid: string, myFilesRootUid: string) => {
+            try {
+                const maybeNode = await drive.getNode(rootNodeUid);
+                const { uid, name, type } = getNodeEntity(maybeNode).node;
+                const nodeRootTreeItemId = makeTreeItemId(null, uid);
+                addItem({
+                    nodeUid: uid,
+                    treeItemId: nodeRootTreeItemId,
+                    parentUid: null,
+                    name: uid === myFilesRootUid ? c('Title').t`My files` : name,
+                    type,
+                    expandable: type === NodeType.Folder,
+                    isSharedWithMe: false,
+                });
+
+                // Expand the first level of the root node.
+                // Note that we can't use the toggleExpand without creating infinite
+                // rendering loops.
+                const controller = new AbortController();
+                expandAbortControllers.current.set(nodeRootTreeItemId, controller);
+                changeExpanded(nodeRootTreeItemId, true);
+                void loadChildren(uid, controller.signal);
+            } catch (error) {
+                handleSdkError(error);
+                throw error;
+            }
+        },
+        [drive, addItem, loadChildren, changeExpanded]
+    );
+
+    const initializeAllRoots = useCallback(
+        (myFilesRootUid: string) => {
+            const myFilesRootTreeItemId = makeTreeItemId(null, myFilesRootUid);
+            addItem({
+                nodeUid: myFilesRootUid,
+                treeItemId: myFilesRootTreeItemId,
+                parentUid: null,
+                name: c('Title').t`My files`,
+                type: DirectoryTreeRootType.FilesRoot,
+                expandable: true,
+                isSharedWithMe: false,
+                highestEffectiveRole: MemberRole.Admin,
+            });
+
+            // Devices
+            addItem({
+                nodeUid: DEVICES_ROOT_ID,
+                treeItemId: makeTreeItemId(null, DEVICES_ROOT_ID),
+                parentUid: null,
+                name: c('Title').t`Computers`,
+                type: DirectoryTreeRootType.DevicesRoot,
+                expandable: true,
+                isSharedWithMe: false,
+            });
+
+            // Shared with me
+            addItem({
+                nodeUid: SHARED_WITH_ME_ROOT_ID,
+                treeItemId: makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID),
+                parentUid: null,
+                name: c('Title').t`Shared with me`,
+                type: DirectoryTreeRootType.SharesRoot,
+                expandable: true,
+                isSharedWithMe: false,
+            });
+        },
+        [addItem]
+    );
+
+    // It has to be called before any other call - loads all the top-level elements
+    const initializeTree = useCallback(async () => {
+        const strategy = options?.treeRootsStrategy ?? { type: 'ALL_ROOTS' };
+        const myFilesRoot = await drive.getMyFilesRootFolder();
+        const { uid: myFilesRootUid } = getNodeEntity(myFilesRoot).node;
+
+        if (strategy.type === 'FROM_NODE') {
+            await initializeFromNode(strategy.rootNodeUid, myFilesRootUid);
+            return;
+        }
+
+        initializeAllRoots(myFilesRootUid);
+    }, [options?.treeRootsStrategy, drive, initializeFromNode, initializeAllRoots]);
+
     const get = useCallback((uid: string) => items.get(uid), [items]);
 
     return {
@@ -256,6 +312,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         toggleExpand,
         treeRoots: toTree([...items.values()], expandedTreeIds),
         addNode,
+        clear: () => useDirectoryTreeStore.getState().clearStore(),
     };
 }
 

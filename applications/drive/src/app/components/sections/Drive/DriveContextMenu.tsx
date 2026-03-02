@@ -29,7 +29,6 @@ import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 
 export function DriveItemContextMenu({
     permissions,
-    shareId,
     selectedLinks,
     anchorRef,
     isOpen,
@@ -40,7 +39,6 @@ export function DriveItemContextMenu({
     isActiveLinkReadOnly,
 }: ContextMenuProps & {
     permissions: SHARE_MEMBER_PERMISSIONS;
-    shareId: string;
     selectedLinks: DecryptedLink[];
     isActiveLinkReadOnly?: boolean;
 }) {
@@ -87,7 +85,6 @@ export function DriveItemContextMenu({
                 <ContextSeparator />
                 {isEditor && !isActiveLinkReadOnly ? (
                     <MoveToFolderButton
-                        shareId={shareId}
                         selectedLinks={selectedLinks}
                         showMoveItemsModal={showMoveItemsModal}
                         close={close}

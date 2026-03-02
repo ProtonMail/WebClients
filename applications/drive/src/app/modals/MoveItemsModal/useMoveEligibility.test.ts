@@ -1,10 +1,11 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import type { ProtonDriveClient } from '@proton/drive/index';
-import { generateNodeUid } from '@proton/drive/index';
+import { MemberRole, generateNodeUid } from '@proton/drive/index';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { useMoveEligibility } from './useMoveEligibility';
 
@@ -16,11 +17,16 @@ jest.mock('../../utils/sdk/getNodeAncestry', () => ({
     getNodeAncestry: jest.fn(),
 }));
 
-// const mockUseDrive = require('@proton/drive/index').useDrive;
+jest.mock('../../utils/sdk/getNodeEffectiveRole', () => ({
+    getNodeEffectiveRole: jest.fn(),
+}));
+
 const mockGetNodeAncestry = getNodeAncestry as jest.MockedFunction<typeof getNodeAncestry>;
+const mockGetNodeEffectiveRole = getNodeEffectiveRole as jest.MockedFunction<typeof getNodeEffectiveRole>;
 const mockHandleSdkError = handleSdkError as jest.MockedFunction<typeof handleSdkError>;
 
-const drive: ProtonDriveClient = {} as any;
+const mockGetNode = jest.fn();
+const drive: ProtonDriveClient = { getNode: mockGetNode } as any;
 
 /*
     Tests folder hierarchy setup:
@@ -64,10 +70,10 @@ const mockAncestryForTarget = ({ target, targetAncestors }: { target: string; ta
 };
 
 describe('useMoveEligibility', () => {
-    const mockDrive = {};
-
     beforeEach(() => {
         jest.clearAllMocks();
+        mockGetNode.mockResolvedValue({ ok: true, value: createMockNodeEntity() });
+        mockGetNodeEffectiveRole.mockResolvedValue(MemberRole.Editor);
     });
 
     describe('when no target folder is selected', () => {
@@ -136,7 +142,7 @@ describe('useMoveEligibility', () => {
                 expect(result.current.invalidMoveMessage).toBe("Can't move a folder into itself");
             });
 
-            expect(mockGetNodeAncestry).toHaveBeenCalledWith(targetFolderUid, mockDrive);
+            expect(mockGetNodeAncestry).toHaveBeenCalledWith(targetFolderUid, drive);
         });
 
         it('should mark move as invalid when any selected item is in target ancestry', async () => {
@@ -173,6 +179,26 @@ describe('useMoveEligibility', () => {
 
             await waitFor(() => {
                 expect(mockHandleSdkError).toHaveBeenCalledWith(mockError, { showNotification: false });
+            });
+        });
+    });
+
+    describe('when target folder is read-only', () => {
+        it('should mark move as invalid when target has Viewer role', async () => {
+            const selectedItemConfigs = [ITEM_CONFIG_FOLDER1];
+            const targetFolderUid = FOLDER2_UID;
+
+            mockAncestryForTarget({
+                target: targetFolderUid,
+                targetAncestors: [VOLUME_ROOT_NODE, PARENT2_UID],
+            });
+            mockGetNodeEffectiveRole.mockResolvedValue(MemberRole.Viewer);
+
+            const { result } = renderHook(() => useMoveEligibility(selectedItemConfigs, targetFolderUid, drive));
+
+            await waitFor(() => {
+                expect(result.current.isInvalidMove).toBe(true);
+                expect(result.current.invalidMoveMessage).toBe("Can't write into folder");
             });
         });
     });
