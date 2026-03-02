@@ -27,15 +27,12 @@ const StepProducts = ({ triggerOAuth }: Props) => {
         handleCancel,
         handleSubmit,
         nextDisabled,
-        enabledFeatures,
         isBYOEOnlyAccount,
     } = useStepProducts({ triggerOAuth });
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalProps, renderClaimProtonAddressModal] =
         useModalState();
-
-    const { isEmailsEnabled, isCalendarsEnabled, isContactsEnabled } = enabledFeatures;
 
     const claimAddressButton = (
         <InlineLinkButton onClick={() => setClaimProtonAddressModalProps(true)} key="free-address-cta">
@@ -56,21 +53,19 @@ const StepProducts = ({ triggerOAuth }: Props) => {
                             label={c('Label').t`Emails`}
                             value={mailChecked}
                             setValue={setMailChecked}
-                            disabled={!isEmailsEnabled}
                         />
                         <StepProductsRowItem
                             id="contact"
                             label={c('Label').t`Contacts`}
                             value={contactChecked}
                             setValue={setContactChecked}
-                            disabled={!isContactsEnabled}
                         />
                         <StepProductsRowItem
                             id="calendar"
                             label={c('Label').t`Calendar`}
                             value={calendarChecked}
                             setValue={setCalendarChecked}
-                            disabled={!isCalendarsEnabled || isBYOEOnlyAccount}
+                            disabled={isBYOEOnlyAccount}
                             disabledText={
                                 isBYOEOnlyAccount
                                     ? /*translator: full sentence is "Proton calendar requires a Proton address for secure event sync and encryption. Create a free Proton address."*/

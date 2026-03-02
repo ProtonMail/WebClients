@@ -251,21 +251,6 @@ export enum EASY_SWITCH_SEARCH_SOURCES {
     CONTACT_IMPORT = 'contact-import',
 }
 
-export interface EasySwitchFeatureFlag {
-    GoogleMail: boolean;
-    GoogleMailSync: boolean;
-    GoogleCalendar: boolean;
-    GoogleContacts: boolean;
-    GoogleDrive: boolean;
-    OutlookMail: boolean;
-    OutlookCalendar: boolean;
-    OutlookContacts: boolean;
-    OtherMail: boolean;
-    OtherCalendar: boolean;
-    OtherContacts: boolean;
-    OtherDrive: boolean;
-}
-
 export enum EASY_SWITCH_FEATURES {
     IMPORT_MAIL = 'import_mail',
     IMPORT_CALENDAR = 'import_calendar',

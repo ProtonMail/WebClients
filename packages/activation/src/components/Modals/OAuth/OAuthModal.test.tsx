@@ -57,41 +57,6 @@ jest.mock('@proton/account/user/hooks', () => ({
     ]),
 }));
 
-jest.mock('@proton/features/useFeature', () => () => {
-    return {
-        feature: {
-            Code: 'EasySwitch',
-            Type: 'boolean',
-            Global: true,
-            DefaultValue: {
-                GoogleMail: true,
-                GoogleMailSync: true,
-                GoogleCalendar: true,
-                GoogleContacts: true,
-                OutlookMail: true,
-                OutlookCalendar: true,
-                OutlookContacts: true,
-                OtherMail: true,
-                OtherCalendar: true,
-                OtherContacts: true,
-            },
-            Value: {
-                GoogleMail: true,
-                GoogleMailSync: true,
-                GoogleCalendar: true,
-                GoogleContacts: true,
-                OutlookMail: true,
-                OutlookCalendar: true,
-                OutlookContacts: true,
-                OtherMail: true,
-                OtherCalendar: true,
-                OtherContacts: true,
-            },
-            Writable: false,
-        },
-    };
-});
-
 beforeAll(() => {
     server.listen();
     server.use(
