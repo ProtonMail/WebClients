@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 
-const EmptyFileTreePlaceholder = () => {
+export const EmptyFileTreePlaceholder = () => {
     const title = c('Title').t`You have no files to share`;
 
     return (
@@ -13,5 +13,3 @@ const EmptyFileTreePlaceholder = () => {
         </div>
     );
 };
-
-export default EmptyFileTreePlaceholder;

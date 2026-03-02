@@ -9,11 +9,11 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
-import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { ShareFileButton, ShareLinkButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
@@ -21,7 +21,6 @@ import CreateNewDocumentButton from './ContextMenuButtons/CreateNewDocumentButto
 import CreateNewSheetButton from './ContextMenuButtons/CreateNewSheetButton';
 
 export function FolderContextMenu({
-    shareId,
     anchorRef,
     isOpen,
     position,
@@ -32,7 +31,6 @@ export function FolderContextMenu({
     isActiveLinkRoot,
     isActiveLinkInDeviceShare,
 }: ContextMenuProps & {
-    shareId: string;
     permissions: SHARE_MEMBER_PERMISSIONS;
     isActiveLinkReadOnly?: boolean;
     isActiveLinkRoot?: boolean;
@@ -134,7 +132,6 @@ export function FolderContextMenu({
                         {!isActiveLinkReadOnly && <ContextSeparator />}
                         <ShareFileButton
                             close={close}
-                            shareId={shareId}
                             showFileSharingModal={showFileSharingModal}
                             showSharingModal={showSharingModal}
                         />

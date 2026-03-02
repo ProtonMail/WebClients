@@ -207,9 +207,7 @@ function Drive({ activeFolder, folderView }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return (
-            <EmptyFolder shareId={shareId} permissions={permissions} isRoot={folderView.isActiveLinkRoot ?? false} />
-        );
+        return <EmptyFolder permissions={permissions} isRoot={folderView.isActiveLinkRoot ?? false} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -222,7 +220,6 @@ function Drive({ activeFolder, folderView }: Props) {
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 isActiveLinkRoot={folderView.isActiveLinkRoot}
                 isActiveLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
-                shareId={shareId}
                 anchorRef={contextMenuAnchorRef}
                 close={browserContextMenu.close}
                 isOpen={browserContextMenu.isOpen}
