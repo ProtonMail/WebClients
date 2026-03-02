@@ -289,6 +289,7 @@ enum MeetFeatureFlag {
     MeetSinglePeerConnection = 'MeetSinglePeerConnection',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetAllowLiveKitDebugReporting = 'MeetAllowLiveKitDebugReporting',
+    MeetAudioContextKeepalive = 'MeetAudioContextKeepalive',
     MeetDashboardV2 = 'MeetDashboardV2',
     MeetDownloadDesktopAppEnabled = 'MeetDownloadDesktopAppEnabled',
     MeetDesktopAppBannerEnabled = 'MeetDesktopAppBannerEnabled',
