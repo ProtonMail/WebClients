@@ -1,4 +1,4 @@
-import type { DBType } from '../interface';
+import type { DBType, EncryptedSearchData } from '../interface';
 import { decryptESItem } from './decryptESItem';
 
 interface GetDecryptedESItemsProps {
@@ -11,7 +11,7 @@ interface GetDecryptedESItemsProps {
  * Decrypt the content and metadata of a list of items (contentIDs)
  */
 export const getDecryptedESItems = async ({ contentIDs, esDB, indexKey }: GetDecryptedESItemsProps) => {
-    const results: any[] = [];
+    const results: EncryptedSearchData[] = [];
 
     await Promise.all(
         contentIDs.map(async (itemID) => {

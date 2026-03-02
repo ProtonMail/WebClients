@@ -5,10 +5,10 @@ import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
 import { ContentVersionExtractor } from './ContentVersionExtractor';
-import type { MigrationToolParams } from './interface';
+import type { MigrationToolAPI, MigrationToolParams } from './interface';
 import { setupCryptoProxy } from './setupCryptoProxy';
 
-export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) => {
+export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
     console.log('Welcome from the migration tool');
 
     const databaseExist = await hasESDB(user.ID);
@@ -35,6 +35,7 @@ export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) 
         console.log('Starting content version extraction');
         const didReachMaxRetries = await contentVersionExtractor.didReachMaxRetries();
         if (didReachMaxRetries) {
+            await contentVersionExtractor.markMigrationAbandoned();
             return;
         }
 
@@ -45,7 +46,7 @@ export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) 
         }
 
         const checkpoint = await contentVersionExtractor.getLatestCheckpoint();
-        await contentVersionExtractor.extractVersionsAndSaveUpdatedESItem(checkpoint);
+        await contentVersionExtractor.runMigrationPass(checkpoint);
         const isCompleteAfterExtract = await contentVersionExtractor.validateAllContentMigrated();
         if (!isCompleteAfterExtract) {
             await contentVersionExtractor.incrementRetryCount();
@@ -70,4 +71,4 @@ export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) 
     }
 };
 
-expose(migrationTool);
+expose({ migration } satisfies MigrationToolAPI);

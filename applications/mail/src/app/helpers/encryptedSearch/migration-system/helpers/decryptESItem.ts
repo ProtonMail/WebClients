@@ -18,16 +18,19 @@ export const decryptESItem = async ({
     indexKey,
     itemID,
 }: DecryptESItemProps): Promise<EncryptedSearchData | undefined> => {
-    const [metadata, content] = await Promise.all([
-        esDB.get('metadata', itemID).then((encryptedMetadata) =>
-            encryptedMetadata
-                ? decryptFromDB<ESBaseMessage>({
-                      aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
-                      indexKey,
-                      source: 'readMetadataItem',
-                  })
-                : undefined
-        ),
+    const [metadataResult, content] = await Promise.all([
+        esDB.get('metadata', itemID).then(async (encryptedMetadata) => {
+            if (!encryptedMetadata) {
+                return undefined;
+            }
+
+            const decrypted = await decryptFromDB<ESBaseMessage>({
+                aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
+                indexKey,
+                source: 'readMetadataItem',
+            });
+            return { decrypted, timepoint: encryptedMetadata.timepoint };
+        }),
         esDB.get('content', itemID).then((encryptedContent) =>
             encryptedContent
                 ? decryptFromDB<ESMessageContent>({
@@ -39,9 +42,11 @@ export const decryptESItem = async ({
         ),
     ]);
 
+    const metadata = metadataResult?.decrypted;
+
     if (!metadata && !content) {
         return undefined;
     }
 
-    return { metadata, content };
+    return { metadata, content, timepoint: metadataResult?.timepoint };
 };
