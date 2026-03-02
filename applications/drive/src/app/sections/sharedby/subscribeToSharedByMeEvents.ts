@@ -6,7 +6,6 @@ import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
-import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { SharedByMeItem } from './useSharedByMe.store';
 import { useSharedByMeStore } from './useSharedByMe.store';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
@@ -32,7 +31,6 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
         const location = await getFormattedNodeLocation(drive, sharedByMeMaybeNode);
         const shareResult = await drive.getSharingInfo(node.uid);
         const oldestCreationTime = shareResult ? getOldestShareCreationTime(shareResult) : undefined;
-        const rootNode = await getRootNode(node, drive);
 
         return {
             nodeUid: node.uid,
@@ -51,8 +49,6 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
                       expirationTime: shareResult.publicLink.expirationTime,
                   }
                 : undefined,
-            shareId: node.deprecatedShareId,
-            rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
             haveSignatureIssues: !signatureResult.ok,
         };
     } catch (error) {

@@ -31,19 +31,20 @@ const getSelectedItemsId = (items: { id: string }[], selectedItemIds: string[]) 
 
 export const useSharedByMeItemsWithSelection = () => {
     const { layout } = useUserSettings();
-    const { navigateToAlbum, navigateToLink } = useDriveNavigation();
+    const { navigateToAlbum, navigateToNodeUid } = useDriveNavigation();
     // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
     const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
     const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
     const selectionControls = useSelection();
-    const { sharedByMeItems, isLoading, getSharedByMeItem, hasEverLoaded } = useSharedByMeStore(
+    const { sharedByMeItemsMap, isLoading, getSharedByMeItem, hasEverLoaded } = useSharedByMeStore(
         useShallow((state) => ({
             getSharedByMeItem: state.getSharedByMeItem,
-            sharedByMeItems: state.getAllSharedByMeItems(),
-            isLoading: state.isLoading(),
+            sharedByMeItemsMap: state.sharedByMeItems,
+            isLoading: state.isLoading,
             hasEverLoaded: state.hasEverLoaded,
         }))
     );
+    const sharedByMeItems = Array.from(sharedByMeItemsMap.values());
 
     const { skipSharingInfoLoading } = useSharingInfoStore(
         useShallow((state) => ({
@@ -65,7 +66,7 @@ export const useSharedByMeItemsWithSelection = () => {
                 trashed: null,
                 volumeId,
                 parentLinkId: item.parentUid ? splitNodeUid(item.parentUid).nodeId : '',
-                rootShareId: item.rootShareId,
+                rootShareId: splitNodeUid(item.nodeUid).volumeId,
                 mimeType: item.mediaType || '',
                 linkId: nodeId,
                 isFile: item.type === 'file',
@@ -119,26 +120,23 @@ export const useSharedByMeItemsWithSelection = () => {
             }
 
             if (storeItem.mediaType === 'Album') {
-                navigateToAlbum(storeItem.rootShareId, nodeId);
+                const { volumeId } = splitNodeUid(storeItem.nodeUid);
+                navigateToAlbum(volumeId, nodeId);
                 return;
             }
 
             if (storeItem.type === NodeType.File && isSDKPreviewEnabled) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(storeItem.type),
-                    deprecatedContextShareId: storeItem.rootShareId,
+                    deprecatedContextShareId: '',
                     nodeUid: storeItem.nodeUid,
                 });
                 return;
             }
 
-            navigateToLink(
-                storeItem.rootShareId,
-                nodeId,
-                storeItem.type === NodeType.File || storeItem.type === NodeType.Photo
-            );
+            void navigateToNodeUid(storeItem.nodeUid);
         },
-        [getSharedByMeItem, navigateToAlbum, navigateToLink, isSDKPreviewEnabled, showPreviewModal]
+        [getSharedByMeItem, navigateToAlbum, navigateToNodeUid, isSDKPreviewEnabled, showPreviewModal]
     );
 
     const handleRenderItem = useCallback(
