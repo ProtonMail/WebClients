@@ -10,11 +10,8 @@ import type { MigrationToolAPI, MigrationToolParams } from './interface';
 import { setupCryptoProxy } from './setupCryptoProxy';
 
 export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
-    console.log('Welcome from the migration tool');
-
     const databaseExist = await hasESDB(user.ID);
     if (!databaseExist) {
-        console.log('No ESDB');
         return;
     }
 
@@ -22,18 +19,17 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
     const indexKey = await getIndexKey(userKeys, user.ID);
     if (!indexKey) {
-        throw new Error('No index key found');
+        return;
     }
 
     const esDB = await openESDB(user.ID);
     if (!esDB) {
-        throw new Error('No encrypted search database found');
+        return;
     }
 
     const contentVersionExtractor = new ContentVersionExtractor(user.ID, esDB, indexKey);
 
     const extractVersion = async () => {
-        console.log('Starting content version extraction');
         const didReachMaxRetries = await contentVersionExtractor.didReachMaxRetries();
         if (didReachMaxRetries) {
             await contentVersionExtractor.markMigrationAbandoned();
@@ -42,7 +38,6 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
 
         const isComplete = await contentVersionExtractor.validateAllContentMigrated();
         if (isComplete) {
-            console.log('Content version already extracted');
             return;
         }
 
@@ -56,13 +51,9 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
             traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, "Migration didn't extract all versions");
             return;
         }
-
-        console.log('Content version migration extraction complete');
     };
 
-    const upgradeContent = async () => {
-        console.log('Starting content version upgrade');
-    };
+    const upgradeContent = async () => {};
 
     const migrationComplete = await esDB.get('config', 'contentVersionMigrationCompleted');
     const migrationAbandoned = await esDB.get('config', 'contentVersionMigrationAbandoned');
