@@ -5554,7 +5554,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+        "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -7162,7 +7162,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
+        "Jeder Code kann nur ein Mal verwendet werden"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Verwalte Newsletter und Verteilerlisten und kündige Abonnements ganz einfach."
@@ -7232,7 +7232,7 @@
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
@@ -8601,7 +8601,7 @@
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wenn du dich für einen Newsletter anmeldest, verwende einen Alias anstelle deiner E-Mail-Adresse. Deine Identität bleibt verborgen, und du kannst den Alias jederzeit deaktivieren."
@@ -11189,6 +11189,10 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-Tag-Dateiversionsverlauf",
+        "${ options }-Tage-Dateiversionsverlauf"
       ]
     },
     "new_plans: feature highlight": {
@@ -13157,6 +13161,14 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunde, um dein Passwort zurückzusetzen.",
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunden, um dein Passwort zurückzusetzen."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inMinutes } Minute, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inMinutes } Minuten, um dein Passwort zurückzusetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -16296,6 +16308,16 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "Frühjahrsangebote 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "Frühjahrsangebote"
       ]
     }
   }

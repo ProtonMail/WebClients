@@ -1721,6 +1721,12 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Domains": [
+        "網域"
+      ],
+      "Users": [
+        "使用者"
       ]
     },
     "Alert": {
@@ -2009,6 +2015,15 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
+      "Billed monthly": [
+        "按月付款"
       ]
     },
     "Browser": {
@@ -8465,6 +8480,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "郵件丟進垃圾桶時，會一併取消相關的已傳送排程。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ]
     },
     "info": {
@@ -11751,6 +11772,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金：${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "稅金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "稅金 ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -15411,6 +15444,22 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "於 ${ appName } 開啟"
       ]
     }
   }
