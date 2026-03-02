@@ -21,6 +21,7 @@ import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { CopyButton } from '../../folders/buttons/CopyButton';
+import { ShareLinkButton } from '../../folders/buttons/ShareLinkButton';
 import { RemoveMeButton } from '../buttons/RemoveMeButton';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
@@ -31,6 +32,7 @@ interface BaseDirectShareActionsProps {
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showCopyModal: (items: DirectShareItem[]) => void;
+    showSharingModal?: () => void;
 }
 
 interface ContextMenuDirectShareActionsProps extends BaseDirectShareActionsProps {
@@ -52,6 +54,7 @@ export const DirectShareActions = ({
     showDetailsModal,
     showFilesDetailsModal,
     showCopyModal,
+    showSharingModal,
     close,
     buttonType,
 }: DirectShareActionsProps) => {
@@ -85,6 +88,9 @@ export const DirectShareActions = ({
                 <ToolbarOpenInDocsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
                 {itemChecker.canCopy && <CopyButton type="toolbar" close={close} onClick={copyAction} />}
+                {itemChecker.isOnlyOneItem && showSharingModal && (
+                    <ShareLinkButton type="toolbar" onClick={showSharingModal} close={close} />
+                )}
                 <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.isOnlyOneItem && (
                     <>
@@ -128,6 +134,10 @@ export const DirectShareActions = ({
                 showFilesDetailsModal={showFilesDetailsModal}
                 close={close}
             />
+
+            {itemChecker.isOnlyOneItem && showSharingModal && (
+                <ShareLinkButton type="context" onClick={showSharingModal} close={close} />
+            )}
 
             {itemChecker.isOnlyOneItem && (
                 <>

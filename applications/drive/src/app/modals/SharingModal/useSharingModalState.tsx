@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -35,6 +35,7 @@ import { type DirectMember, MemberType } from './interfaces';
 export type SharingModalInnerProps = {
     nodeUid: string;
     drive?: ProtonDriveClient;
+    isResharing?: boolean; // Sharing from "shared with me" section
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -59,6 +60,7 @@ const getIsShared = (shareResult: ShareResult) => {
 export const useSharingModalState = ({
     nodeUid,
     drive = getDrive(),
+    isResharing,
     onClose,
     open,
     onExit,
@@ -75,7 +77,7 @@ export const useSharingModalState = ({
 
     const [sharingInfo, setSharingInfo] = useState<ShareResult>(defaultSharingInfo);
 
-    const [ownerEmail, setOwnerEmail] = useState<string | undefined>();
+    const [ownerEmail, setOwnerEmail] = useState('');
     const [ownerDisplayName, setOwnerDisplayName] = useState<string | undefined>();
 
     const [name, setName] = useState('');
@@ -86,9 +88,14 @@ export const useSharingModalState = ({
     const [isAlbum, setIsAlbum] = useState<boolean | undefined>();
 
     const getIsPublicLinkEnabled = () => {
+        if (isResharing) {
+            return false;
+        }
+
         if (mediaType && isProtonDocsDocument(mediaType)) {
             return isDocsPublicSharingEnabled;
         }
+
         return !isAlbum;
     };
     const isPublicLinkEnabled = getIsPublicLinkEnabled();
@@ -283,7 +290,7 @@ export const useSharingModalState = ({
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, nodeUid, user.DisplayName, withLoading]);
+    }, [contactEmails, drive, nodeUid, user.DisplayName, user.Email, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
@@ -294,36 +301,47 @@ export const useSharingModalState = ({
         createNotification({ text: c('Info').t`Invite link copied` });
     };
 
-    const directMembers = sharingInfo.members
-        .map((member) => ({
-            uid: member.uid,
-            inviteeEmail: member.inviteeEmail,
-            role: member.role,
-            type: MemberType.Member,
-        }))
-        .concat(
-            sharingInfo.protonInvitations.map((protonInvitation) => ({
-                uid: protonInvitation.uid,
-                inviteeEmail: protonInvitation.inviteeEmail,
-                role: protonInvitation.role,
-                type: MemberType.ProtonInvitation,
-            }))
-        )
-        .concat(
-            sharingInfo.nonProtonInvitations.map((nonProtonInvitation) => ({
-                uid: nonProtonInvitation.uid,
-                inviteeEmail: nonProtonInvitation.inviteeEmail,
-                role: nonProtonInvitation.role,
-                state: nonProtonInvitation.state,
-                type: MemberType.ProtonInvitation,
-            }))
-        ) as DirectMember[]; // FIXME "Feel free to just throw if that happens on client side with comment it is not expected and that SDK will improve typing and then it can be deleted."
-    // TODO ^^ (up)
+    const directMembers = useMemo(
+        () =>
+            sharingInfo.members
+                .map((member) => ({
+                    uid: member.uid,
+                    inviteeEmail: member.inviteeEmail,
+                    role: member.role,
+                    type: MemberType.Member,
+                }))
+                .concat(
+                    sharingInfo.protonInvitations.map((protonInvitation) => ({
+                        uid: protonInvitation.uid,
+                        inviteeEmail: protonInvitation.inviteeEmail,
+                        role: protonInvitation.role,
+                        type: MemberType.ProtonInvitation,
+                    }))
+                )
+                .concat(
+                    sharingInfo.nonProtonInvitations.map((nonProtonInvitation) => ({
+                        uid: nonProtonInvitation.uid,
+                        inviteeEmail: nonProtonInvitation.inviteeEmail,
+                        role: nonProtonInvitation.role,
+                        state: nonProtonInvitation.state,
+                        type: MemberType.NonProtonInvitation,
+                    }))
+                )
+                .filter((member) => member.inviteeEmail !== ownerEmail) as DirectMember[],
+        [sharingInfo, ownerEmail]
+    );
+
+    const existingEmails = useMemo(
+        () => [ownerEmail, ...directMembers.map((member) => member.inviteeEmail)],
+        [ownerEmail, directMembers]
+    );
 
     return {
         open,
         onExit,
         onClose,
+        sharingInfo,
+        nodeUid,
         name,
         mediaType,
         ownerDisplayName,
@@ -340,6 +358,7 @@ export const useSharingModalState = ({
               }
             : undefined,
         directMembers,
+        existingEmails,
         actions: {
             unshareNode,
             unsharePublic,
