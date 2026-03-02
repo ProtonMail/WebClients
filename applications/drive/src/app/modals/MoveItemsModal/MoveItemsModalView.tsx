@@ -13,15 +13,14 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { NodeType, splitNodeUid, useDrive } from '@proton/drive/index';
+import { NodeType, getDrive } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 
-import FolderTree from '../../components/FolderTree/FolderTree';
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { selectMessageForItemList } from '../../components/sections/helpers';
-import type { DecryptedLink, TreeItem } from '../../store';
+import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
+import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { getMovedFiles } from '../../utils/moveTexts';
-import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
 import { useMoveEligibility } from './useMoveEligibility';
 import type { NodeTarget } from './useMoveItemsModalState';
 
@@ -34,43 +33,37 @@ export type MoveItemsModalViewProps =
 export type LoadedMoveItemsModalViewProps = {
     nodes: NodeTarget[];
     handleSubmit: () => Promise<void>;
-    rootItems: TreeItem[];
     createFolder: () => void;
-    onTreeSelect: (link: DecryptedLink) => void;
-    toggleExpand: (linkId: string) => void;
     createFolderModal: React.ReactNode;
-    isTreeLoaded?: boolean;
-    treeSelectedFolder?: string;
-    targetFolderUid?: string;
-    onClose?: () => void;
+    onClose: () => void;
+    treeRoots: React.ComponentProps<typeof DirectoryTreeRoot>['roots'];
+    toggleExpand: React.ComponentProps<typeof DirectoryTreeRoot>['toggleExpand'];
+    moveTargetUid: string | undefined;
+    moveTargetTreeId: string | undefined;
+    handleSelect: (treeItemId: string, targetItem: DirectoryTreeItem) => void;
 };
 
 export const MoveItemsModalContent = ({
     nodes,
     handleSubmit,
-    rootItems,
     createFolder,
-    onTreeSelect,
-    toggleExpand,
     createFolderModal,
-    isTreeLoaded,
-    treeSelectedFolder,
-    targetFolderUid,
     onClose,
+    treeRoots,
+    toggleExpand,
+    moveTargetUid,
+    moveTargetTreeId,
+    handleSelect,
     ...modalProps
-}: LoadedMoveItemsModalViewProps) => {
+}: LoadedMoveItemsModalViewProps & ModalProps) => {
     const [loading, withLoading] = useLoading();
-
-    const itemsToMove = nodes.map((node) => splitNodeUid(node.uid).nodeId);
-    const itemsToMoveCount = itemsToMove.length;
-    const messages = getMovedFiles(itemsToMoveCount);
-
+    const messages = getMovedFiles(nodes.length);
     const selectedItemConfigs = nodes.map((node) => ({
         nodeUid: node.uid,
         parentNodeUid: node.parentUid,
     }));
-    const { drive } = useDrive();
-    const { isInvalidMove, invalidMoveMessage } = useMoveEligibility(selectedItemConfigs, targetFolderUid, drive);
+    const drive = getDrive();
+    const { isInvalidMove, invalidMoveMessage } = useMoveEligibility(selectedItemConfigs, moveTargetUid, drive);
 
     const title = selectMessageForItemList(
         nodes.map((node) => node.type === NodeType.File),
@@ -88,74 +81,56 @@ export const MoveItemsModalContent = ({
                     withLoading(handleSubmit()).catch(console.error);
                 }}
                 onReset={() => {
-                    onClose?.();
+                    onClose();
                 }}
                 {...modalProps}
             >
-                {isTreeLoaded ? (
-                    <>
-                        {rootItems.length === 0 && (
-                            <>
-                                <ModalTwoHeader closeButtonProps={{ disabled: loading }} />
-                                <EmptyFileTreePlaceholder onCreate={createFolder} />
-                            </>
-                        )}
-                        {rootItems.length > 0 && (
-                            <>
-                                <ModalTwoHeader title={title} closeButtonProps={{ disabled: loading }} />
-                                <ModalTwoContent>
-                                    <Alert className="mb-4">{c('Info').t`Select a folder to move to.`}</Alert>
-                                    {/* TODO: migrate FolderTree to SDK */}
-                                    <FolderTree
-                                        treeItems={rootItems}
-                                        isLoaded={true}
-                                        selectedItemId={treeSelectedFolder}
-                                        onSelect={onTreeSelect}
-                                        toggleExpand={toggleExpand}
-                                    />
-                                </ModalTwoContent>
-                                <ModalTwoFooter>
-                                    <div className="flex justify-space-between w-full flex-nowrap">
-                                        <ButtonWithTextAndIcon
-                                            onClick={createFolder}
-                                            disabled={loading || !targetFolderUid}
-                                            iconName="folder-plus"
-                                            buttonText={c('Action').t`New folder`}
-                                        />
-                                        <div className="flex justify-space-between flex-nowrap">
-                                            <Button type="reset" disabled={loading} autoFocus>
-                                                {c('Action').t`Close`}
-                                            </Button>
-                                            <Tooltip title={invalidMoveMessage}>
-                                                <span>
-                                                    <Button
-                                                        color="norm"
-                                                        className="ml-4"
-                                                        loading={loading}
-                                                        type="submit"
-                                                        disabled={loading || isInvalidMove}
-                                                    >
-                                                        {c('Action').t`Move`}
-                                                    </Button>
-                                                </span>
-                                            </Tooltip>
-                                        </div>
-                                    </div>
-                                </ModalTwoFooter>
-                            </>
-                        )}
-                    </>
-                ) : (
-                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
-                )}
+                <ModalTwoHeader title={title} closeButtonProps={{ disabled: loading }} />
+                <ModalTwoContent>
+                    <Alert className="mb-4">{c('Info').t`Select a folder to move to.`}</Alert>
+                    <DirectoryTreeRoot
+                        roots={treeRoots}
+                        toggleExpand={toggleExpand}
+                        selectedTreeId={moveTargetTreeId}
+                        onSelect={handleSelect}
+                    />
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <div className="flex justify-space-between w-full flex-nowrap">
+                        <ButtonWithTextAndIcon
+                            onClick={createFolder}
+                            disabled={loading || !moveTargetUid}
+                            iconName="folder-plus"
+                            buttonText={c('Action').t`New folder`}
+                        />
+                        <div className="flex justify-space-between flex-nowrap">
+                            <Button type="reset" disabled={loading} autoFocus>
+                                {c('Action').t`Close`}
+                            </Button>
+                            <Tooltip title={invalidMoveMessage}>
+                                <span>
+                                    <Button
+                                        color="norm"
+                                        className="ml-4"
+                                        loading={loading}
+                                        type="submit"
+                                        disabled={loading || isInvalidMove}
+                                    >
+                                        {c('Action').t`Move`}
+                                    </Button>
+                                </span>
+                            </Tooltip>
+                        </div>
+                    </div>
+                </ModalTwoFooter>
             </ModalTwo>
             {createFolderModal}
         </>
     );
 };
 
-export const MoveItemsModalView: React.FC<MoveItemsModalViewProps & ModalProps> = (props) => {
-    if (!props.loaded) {
+export const MoveItemsModalView: React.FC<MoveItemsModalViewProps & ModalProps> = ({ loaded, ...rest }) => {
+    if (!loaded) {
         return (
             <ModalTwo as="form" open={true} size="large">
                 <ModalTwoContent>
@@ -164,5 +139,5 @@ export const MoveItemsModalView: React.FC<MoveItemsModalViewProps & ModalProps> 
             </ModalTwo>
         );
     }
-    return <MoveItemsModalContent {...props} />;
+    return <MoveItemsModalContent {...(rest as LoadedMoveItemsModalViewProps & ModalProps)} />;
 };

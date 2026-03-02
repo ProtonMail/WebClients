@@ -7,6 +7,7 @@ interface DirectoryTreeState {
     expandedTreeIds: Map<string, boolean>;
     addItem: (newItem: TreeStoreItem) => void;
     setExpanded: (treeItemId: string, newValue: boolean) => void;
+    clearStore: () => void;
 }
 
 export const directoryTreeStoreFactory = () => {
@@ -22,6 +23,12 @@ export const directoryTreeStoreFactory = () => {
         setExpanded: (treeItemId, newValue) =>
             set((state) => ({
                 expandedTreeIds: new Map(state.expandedTreeIds).set(treeItemId, newValue),
+            })),
+
+        clearStore: () =>
+            set(() => ({
+                items: new Map(),
+                expandedTreeIds: new Map(),
             })),
     }));
 };
