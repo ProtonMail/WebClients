@@ -232,7 +232,6 @@ function Drive({ activeFolder, folderView }: Props) {
             <DriveItemContextMenu
                 permissions={permissions}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
-                shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}
