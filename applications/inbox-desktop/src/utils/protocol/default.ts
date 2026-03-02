@@ -8,6 +8,7 @@ import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./defa
 import { getAccountView, getMailView } from "../view/viewManagement";
 import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
 import { checkDeepLinks } from "./deep_links";
+import { getSettings, updateSettings } from "../../store/settingsStore";
 
 export function checkDefaultProtocols() {
     checkDeepLinks();
@@ -15,6 +16,10 @@ export function checkDefaultProtocols() {
 }
 
 let defaultBannerDismissed = false;
+
+let mailtoBannerDismissedPermanentlyInit = false;
+let defaultMailtoDismissedPermanently = false;
+
 let defaultMailto: DefaultProtocol = {
     isDefault: false,
     wasChecked: false,
@@ -101,12 +106,32 @@ export function setDefaultMailtoApp() {
     storeDefaultProtocol("mailto", defaultMailto);
 }
 
+const getDefaultMailtoBannerDismissedPermanently = () => {
+    if (!mailtoBannerDismissedPermanentlyInit) {
+        defaultMailtoDismissedPermanently = getSettings().mailtoBannerDismissedPermanently!;
+        mailtoBannerDismissedPermanentlyInit = true;
+    }
+
+    return defaultMailtoDismissedPermanently;
+};
+
 export const getDefaultMailtoBannerDismissed = () => {
-    return defaultBannerDismissed;
+    return defaultBannerDismissed || getDefaultMailtoBannerDismissedPermanently();
 };
 
 export const setDefaultMailtoBannerDismissed = (dismissed: boolean) => {
     defaultBannerDismissed = dismissed;
+};
+
+// V2 - adds support for permanent dismissal of the mailto banner.
+// If user clears application settings the banner will pop-up again.
+export const setDefaultMailtoBannerDismissedPermanently = () => {
+    defaultBannerDismissed = true;
+
+    mailtoBannerDismissedPermanentlyInit = true;
+    defaultMailtoDismissedPermanently = true;
+
+    updateSettings({ mailtoBannerDismissedPermanently: true });
 };
 
 export const getDefaultMailto = () => defaultMailto;
