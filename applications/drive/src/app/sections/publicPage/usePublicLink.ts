@@ -15,9 +15,10 @@ import {
 } from '../../utils/docs/openInDocs';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { getPublicLinkClient, setPublicLinkClient } from './publicLinkClient';
+import { setPublicLinkClient } from './publicLinkClient';
 import { usePublicAuthStore } from './usePublicAuth.store';
 import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
+import { shouldRedirectToPrivateApp } from './utils/shouldRedirectToPrivateApp';
 
 interface UsePublicLinkResult {
     rootNode: NodeEntity | undefined;
@@ -103,15 +104,14 @@ export const usePublicLink = (): UsePublicLinkResult => {
 
                 const { node } = getNodeEntity(maybeNode);
                 usePublicAuthStore.getState().setPublicRole(node.directRole);
-                if (node.parentUid) {
-                    const maybeParentNode = await getPublicLinkClient().getNode(node.parentUid);
-                    const { node: parentNode } = getNodeEntity(maybeParentNode);
-                    if (parentNode.deprecatedShareId) {
-                        isRedirecting = true;
-                        await redirectToPrivateApp(parentNode.deprecatedShareId, node.uid, node.type, node.mediaType);
-                        return;
-                    }
-                } else if (node.membership !== undefined && node.deprecatedShareId) {
+
+                if (
+                    shouldRedirectToPrivateApp(
+                        publicLinkInfo.directAccess?.directRole,
+                        publicLinkInfo.directAccess?.publicRole
+                    ) &&
+                    node.deprecatedShareId
+                ) {
                     const returnPath =
                         node.type === NodeType.File || node.type === NodeType.Photo ? '/shared-with-me' : '';
                     isRedirecting = true;
