@@ -1,13 +1,8 @@
-import { useConfirmActionModal } from '@proton/components';
-
 import type { ContextMenuProps } from '../../components/FileBrowser';
-import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
-import { useDetailsModal } from '../../modals/DetailsModal';
-import { useRenameModal } from '../../modals/RenameModal';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
+import { createItemChecker } from './actions/actionsItemsChecker';
+import { useSharedByMeActions } from './actions/useSharedByMeActions';
 import type { SharedByMeItem } from './useSharedByMe.store';
 
 export function SharedByMeItemContextMenu({
@@ -20,35 +15,42 @@ export function SharedByMeItemContextMenu({
 }: ContextMenuProps & {
     selectedBrowserItems: SharedByMeItem[];
 }) {
-    const { previewModal, showPreviewModal } = useDrivePreviewModal();
-    const { renameModal, showRenameModal } = useRenameModal();
-    const { detailsModal, showDetailsModal } = useDetailsModal();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const { sharingModal, showSharingModal } = useSharingModal();
+    const {
+        modals,
+        handlePreview,
+        handleDownload,
+        handleDetails,
+        handleRename,
+        handleShare,
+        handleStopSharing,
+        handleOpenDocsOrSheets,
+    } = useSharedByMeActions();
 
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const itemChecker = createItemChecker(selectedBrowserItems);
+    const selectedUids = selectedBrowserItems.map((item) => item.nodeUid);
 
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
                 <SharedByMeActions
-                    selectedItems={selectedBrowserItems}
-                    close={close}
+                    itemChecker={itemChecker}
+                    selectedUids={selectedUids}
                     buttonType="contextMenu"
-                    showPreviewModal={showPreviewModal}
-                    showDetailsModal={showDetailsModal}
-                    showSharingModal={showSharingModal}
-                    showFilesDetailsModal={showFilesDetailsModal}
-                    showRenameModal={showRenameModal}
-                    showConfirmModal={showConfirmModal}
+                    close={close}
+                    onPreview={handlePreview}
+                    onDownload={handleDownload}
+                    onDetails={handleDetails}
+                    onRename={handleRename}
+                    onShare={handleShare}
+                    onStopSharing={handleStopSharing}
+                    onOpenDocsOrSheets={handleOpenDocsOrSheets}
                 />
             </ItemContextMenu>
-            {previewModal}
-            {renameModal}
-            {detailsModal}
-            {filesDetailsModal}
-            {sharingModal}
-            {confirmModal}
+            {modals.previewModal}
+            {modals.renameModal}
+            {modals.detailsModal}
+            {modals.sharingModal}
+            {modals.confirmModal}
         </>
     );
 }

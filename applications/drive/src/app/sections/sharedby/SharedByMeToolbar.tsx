@@ -1,34 +1,32 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar, useConfirmActionModal } from '@proton/components';
+import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
-import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
-import { useDetailsModal } from '../../modals/DetailsModal';
-import { useRenameModal } from '../../modals/RenameModal';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
+import { createItemChecker } from './actions/actionsItemsChecker';
+import { useSharedByMeActions } from './actions/useSharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
 interface SharedByMeToolbarProps {
     uids: string[];
 }
 
-const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
-    selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
-
 const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
-    const { previewModal, showPreviewModal } = useDrivePreviewModal();
-    const { renameModal, showRenameModal } = useRenameModal();
-    const { detailsModal, showDetailsModal } = useDetailsModal();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const { sharingModal, showSharingModal } = useSharingModal();
+    const {
+        modals,
+        handlePreview,
+        handleDownload,
+        handleDetails,
+        handleRename,
+        handleShare,
+        handleStopSharing,
+        handleOpenDocsOrSheets,
+    } = useSharedByMeActions();
 
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const selectionControls = useSelection();
     const { getSharedByMeItem } = useSharedByMeStore(
         useShallow((state) => ({
@@ -36,8 +34,15 @@ const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
         }))
     );
 
-    const selectedItemsIds = selectionControls ? getSelectedItemsId(uids, selectionControls.selectedItemIds) : [];
-    const selectedItems = selectedItemsIds.map((uid) => getSharedByMeItem(uid)).filter(isTruthy);
+    const selectedItemIds = selectionControls ? selectionControls.selectedItemIds : [];
+    const selectedItems = selectedItemIds
+        .map((selectedItemId) => uids.find((uid) => selectedItemId === uid))
+        .filter(isTruthy)
+        .map((uid) => getSharedByMeItem(uid))
+        .filter(isTruthy);
+
+    const itemChecker = createItemChecker(selectedItems);
+    const selectedUids = selectedItems.map((item) => item.nodeUid);
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -46,14 +51,16 @@ const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
 
         return (
             <SharedByMeActions
-                selectedItems={selectedItems}
-                showPreviewModal={showPreviewModal}
-                showDetailsModal={showDetailsModal}
-                showSharingModal={showSharingModal}
-                showFilesDetailsModal={showFilesDetailsModal}
-                showRenameModal={showRenameModal}
-                showConfirmModal={showConfirmModal}
+                itemChecker={itemChecker}
+                selectedUids={selectedUids}
                 buttonType="toolbar"
+                onPreview={handlePreview}
+                onDownload={handleDownload}
+                onDetails={handleDetails}
+                onRename={handleRename}
+                onShare={handleShare}
+                onStopSharing={handleStopSharing}
+                onOpenDocsOrSheets={handleOpenDocsOrSheets}
             />
         );
     };
@@ -65,12 +72,11 @@ const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
                 <Vr className="hidden lg:flex mx-2" />
                 <LayoutButton />
             </span>
-            {previewModal}
-            {renameModal}
-            {detailsModal}
-            {filesDetailsModal}
-            {sharingModal}
-            {confirmModal}
+            {modals.previewModal}
+            {modals.renameModal}
+            {modals.detailsModal}
+            {modals.sharingModal}
+            {modals.confirmModal}
         </Toolbar>
     );
 };
