@@ -410,7 +410,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                     indexKey,
                     esCallbacks,
                     abortIndexingRef,
-                    version: getContentVersion(),
                 });
             }
             await refreshESCache<ESItemMetadata, ESItemContent>({
@@ -420,11 +419,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 getItemInfo: esCallbacks.getItemInfo,
             });
 
-            await retryAPICalls<ESItemContent>({
+            await retryAPICalls<ESItemMetadata, ESSearchParameters, ESItemContent>({
                 userID,
                 indexKey,
-                fetchESItemContent: esCallbacks.fetchESItemContent,
-                version: getContentVersion(),
+                esCallbacks,
             });
 
             // Check if DB became limited or not after the update
@@ -648,18 +646,16 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         let success = false;
         let isInitialIndexing = true;
         while (!success) {
-            success = await buildMetadataDB<ESItemMetadata>({
+            success = await buildMetadataDB<ESItemMetadata, ESSearchParameters, ESItemContent>({
                 userID,
                 esSupported,
                 indexKey,
                 esCacheRef,
-                queryItemsMetadata: esCallbacks.queryItemsMetadata,
-                getItemInfo: esCallbacks.getItemInfo,
                 abortIndexingRef,
                 recordProgress: recordMetadataProgress,
                 isInitialIndexing,
                 isBackgroundIndexing,
-                version: getContentVersion(),
+                esCallbacks,
             });
 
             // Kill switch in case user logs out or deletes data

@@ -4,10 +4,12 @@ import type { EncryptedSearchDB } from '../models';
 
 type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
-export const upgrade: UpgradeCallback = (database, oldVersion: number, _newVersion: number, transaction) => {
+export const upgrade: UpgradeCallback = (database, oldVersion: number, newVersion: number, transaction) => {
+    const shouldRunMigration = (versionNumber: number) => oldVersion < versionNumber && newVersion >= versionNumber;
+
     // Database created before version 3 wasn't consistently opened with an upgrade callback.
     // Resulting in potentially non-complete schema.
-    if (oldVersion < 3) {
+    if (shouldRunMigration(3)) {
         if (!database.objectStoreNames.contains('content')) {
             database.createObjectStore('content');
         }
@@ -30,9 +32,10 @@ export const upgrade: UpgradeCallback = (database, oldVersion: number, _newVersi
         }
     }
 
-    if (oldVersion < 4) {
+    if (shouldRunMigration(4)) {
         // We know the content store exists, it was created in version 3
         const contentStore = transaction.objectStore('content');
+        // TODO check the default values of the options and remove if they match
         contentStore.createIndex('version', 'version', { unique: false, multiEntry: false });
     }
 };
