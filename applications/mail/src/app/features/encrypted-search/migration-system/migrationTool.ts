@@ -28,7 +28,21 @@ export const migrationTool = async ({ user, keyPassword }: MigrationToolParams) 
         throw new Error('No encrypted search database found');
     }
 
-    console.log({ esDB });
+    const runMigrations = async () => {
+        console.log('Starting content version migration...');
+    };
+
+    const upgradeContent = async () => {
+        console.log('Starting content upgrade...');
+    };
+
+    // Check if content version migration is complete using config flag
+    const migrationComplete = await esDB.get('config', 'contentVersionMigrationCompleted');
+    if (!migrationComplete) {
+        await runMigrations();
+    } else {
+        await upgradeContent();
+    }
 };
 
 expose(migrationTool);

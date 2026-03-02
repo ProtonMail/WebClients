@@ -97,7 +97,11 @@ export interface ConfigValues {
     limited: boolean;
     retries?: string;
     migrated?: any;
+    contentVersionMigrationCompleted?: boolean;
+    contentVersionMigrationCheckpoint?: any;
+    contentVersionMigrationRetries?: number;
 }
+
 export type ConfigKeys = keyof ConfigValues;
 
 /**
