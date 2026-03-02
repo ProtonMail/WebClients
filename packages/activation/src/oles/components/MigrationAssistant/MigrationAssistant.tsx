@@ -13,21 +13,21 @@ import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import { createMigrationBatch } from '../../thunk';
 import type { MigrationSetupModel } from '../../types';
-import useProviderTokens from '../../useProviderTokens';
-import useProviderUsers from '../../useProviderUsers';
+import { useProviderTokens } from '../../useProviderTokens';
+import { useProviderUsers } from '../../useProviderUsers';
 import DomainSetup from './DomainSetup';
 import ProviderUsersTable from './ProviderUsersTable';
 
 const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
     const { createNotification } = useNotifications();
-    const [customDomains, customDomainsLoading] = useCustomDomains();
-    const [providerUsers, providerUsersLoading] = useProviderUsers(model.importerOrganizationId!);
-    const [tokens, tokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
+    const [customDomains] = useCustomDomains();
+    const [providerUsers] = useProviderUsers(model.importerOrganizationId!);
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const dispatch = useDispatch();
 
     const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
 
-    const loading = providerUsersLoading || tokensLoading || customDomainsLoading;
+    const loading = !providerUsers || !tokens || !customDomains;
 
     const domain = customDomains?.find((d) => d.DomainName === model.domainName);
 
