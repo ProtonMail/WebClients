@@ -15,15 +15,7 @@ import { FolderContextMenu } from './FolderContextMenu';
 /**
  * @deprecated prefer SDK-powered EmptyFolder
  */
-const EmptyFolder = ({
-    shareId,
-    permissions,
-    isRoot = false,
-}: {
-    shareId: string;
-    permissions: SHARE_MEMBER_PERMISSIONS;
-    isRoot: boolean;
-}) => {
+const EmptyFolder = ({ permissions, isRoot = false }: { permissions: SHARE_MEMBER_PERMISSIONS; isRoot: boolean }) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
@@ -82,7 +74,6 @@ const EmptyFolder = ({
             )}
             <FolderContextMenu
                 permissions={permissions}
-                shareId={shareId}
                 isOpen={isOpen}
                 open={open}
                 close={close}
