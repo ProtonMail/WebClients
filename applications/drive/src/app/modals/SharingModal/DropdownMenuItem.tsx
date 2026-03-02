@@ -22,7 +22,7 @@ export const DropdownMenuItem = ({
             {iconName && <Icon name={iconName} className="mr-2" />}
             <div>
                 {label}
-                <p className="text-left color-weak">{description}</p>
+                <p className="text-left color-weak text-sm">{description}</p>
             </div>
         </span>
         {isSelected ? <IcCheckmark /> : null}
