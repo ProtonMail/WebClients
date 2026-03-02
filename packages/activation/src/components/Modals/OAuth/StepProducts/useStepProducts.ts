@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import {
     changeOAuthStep,
@@ -14,10 +13,8 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { FeatureCode, useFeature } from '@proton/features';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
-import { getEnabledFeature } from '../OAuthModal.helpers';
 import { getScopeFromProvider } from './useStepProducts.helpers';
 
 interface Props {
@@ -34,9 +31,6 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
     if (!products || !provider) {
         throw new Error('products and provider must be defined');
     }
-
-    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const featureMap = easySwitchFeature.feature!.Value;
 
     const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL) ?? false);
     const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS) ?? false);
@@ -83,7 +77,6 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
         handleCancel,
         handleSubmit,
         nextDisabled,
-        enabledFeatures: getEnabledFeature(provider, featureMap),
         isBYOEOnlyAccount: isBYOEAccount,
     };
 };

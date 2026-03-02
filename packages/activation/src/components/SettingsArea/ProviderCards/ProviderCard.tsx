@@ -12,7 +12,6 @@ import {
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { FeatureCode, useFeature } from '@proton/features';
 import { APPS, type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ProviderButton from './ProviderButton';
@@ -36,7 +35,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
     const location = useLocation();
     const dispatch = useEasySwitchDispatch();
 
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const source = getEasySwitchSource(app, location);
 
     const handleGoogleClick = () => {
@@ -56,7 +54,6 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                 .t`Bring your messages, contacts and calendars to ${BRAND_NAME}.`}</div>
             <div className="mt-2 flex flex-column flex-nowrap">
                 <ProviderButton
-                    loading={easySwitchFeature.loading}
                     provider={ImportProvider.GOOGLE}
                     onClick={handleGoogleClick}
                     className="mb-2 inline-flex items-center justify-center"

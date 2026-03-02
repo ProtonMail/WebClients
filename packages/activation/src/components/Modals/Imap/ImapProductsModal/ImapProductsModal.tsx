@@ -8,7 +8,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
-import { FeatureCode, useFeature } from '@proton/features';
 import {
     getProbablyActiveCalendars,
     getVisualCalendars,
@@ -18,7 +17,6 @@ import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constant
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../../constants';
-import type { EasySwitchFeatureFlag } from '../../../../interface';
 import { ImportType } from '../../../../interface';
 import BYOEClaimProtonAddressModal from '../../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ImportTypeButton from './ImapProductsModalButtons';
@@ -29,11 +27,9 @@ interface Props {
 }
 
 const ImapProductsModal = ({ onClick, onClose }: Props) => {
-    const { feature, loading: FFLoading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const [addresses] = useAddresses();
     const [calendars = [], calendarLoading] = useCalendars();
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(getVisualCalendars(calendars)));
-    const loading = FFLoading || calendarLoading;
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
@@ -52,12 +48,8 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                 .jt`${CALENDAR_APP_NAME} requires a ${BRAND_NAME} address for secure event sync and encryption. ${claimAddressButton}.`;
         }
 
-        if (feature?.Value?.OtherCalendar) {
-            return c('Info')
-                .t`To import events, first create a calendar in ${CALENDAR_APP_NAME}. This is where the events will appear after the import.`;
-        }
-
-        return c('Info').t`Temporarily unavailable. Please check back later.`;
+        return c('Info')
+            .t`To import events, first create a calendar in ${CALENDAR_APP_NAME}. This is where the events will appear after the import.`;
     };
 
     return (
@@ -72,7 +64,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
             >
                 <ModalTwoHeader title={c('Title').t`What would you like to import?`} />
                 <ModalTwoContent className="mb-8">
-                    {loading ? (
+                    {calendarLoading ? (
                         <Loader />
                     ) : (
                         <div>
@@ -82,21 +74,19 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                                 <ImportTypeButton
                                     importType={ImportType.MAIL}
                                     onClick={() => onClick(ImportType.MAIL)}
-                                    disabled={!feature?.Value?.OtherMail}
                                     disabledText={c('Info').t`Temporarily unavailable. Please check back later.`}
                                 />
                                 <hr className="m-0" />
                                 <ImportTypeButton
                                     importType={ImportType.CONTACTS}
                                     onClick={() => onClick(ImportType.CONTACTS)}
-                                    disabled={!feature?.Value?.OtherContacts}
                                     disabledText={c('Info').t`Temporarily unavailable. Please check back later.`}
                                 />
                                 <hr className="m-0" />
                                 <ImportTypeButton
                                     importType={ImportType.CALENDAR}
                                     onClick={() => onClick(ImportType.CALENDAR)}
-                                    disabled={!feature?.Value?.OtherCalendar || activeWritableCalendars.length === 0}
+                                    disabled={activeWritableCalendars.length === 0}
                                     disabledText={getCalendarDisabledText()}
                                 />
                             </div>

@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 interface ImportTypeButtonProps {
     importType: ImportType;
     onClick: () => void;
-    disabled: boolean;
+    disabled?: boolean;
     disabledText?: ReactNode;
 }
 

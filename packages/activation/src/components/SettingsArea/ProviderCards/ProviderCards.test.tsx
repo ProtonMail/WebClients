@@ -29,43 +29,6 @@ const defaultUseUser = [
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/features/useFeature', () => () => {
-    return {
-        feature: {
-            Code: 'EasySwitch',
-            Type: 'mixed',
-            Global: true,
-            DefaultValue: {
-                GoogleMail: true,
-                GoogleCalendar: true,
-                GoogleContacts: true,
-                GoogleDrive: false,
-                OutlookMail: true,
-                OutlookCalendar: true,
-                OutlookContacts: true,
-                OtherMail: true,
-                OtherCalendar: true,
-                OtherContacts: true,
-                OtherDrive: false,
-            },
-            Value: {
-                GoogleMail: true,
-                GoogleCalendar: true,
-                GoogleContacts: true,
-                GoogleDrive: false,
-                OutlookMail: true,
-                OutlookCalendar: true,
-                OutlookContacts: true,
-                OtherMail: true,
-                OtherCalendar: true,
-                OtherContacts: true,
-                OtherDrive: false,
-            },
-            Writable: false,
-        },
-    };
-});
-
 jest.mock('@proton/calendar/calendars/hooks', () => {});
 jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],
