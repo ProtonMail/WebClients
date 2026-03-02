@@ -34,7 +34,7 @@ import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
-import { migrationToolWorker } from './features/encrypted-search/migration-system/migrationToolWorker';
+import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
 
