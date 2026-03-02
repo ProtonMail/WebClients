@@ -5,7 +5,6 @@ import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
-import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
 import { useSharedByMeStore } from './useSharedByMe.store';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
@@ -19,7 +18,6 @@ jest.mock('../../utils/errorHandling/handleSdkError');
 jest.mock('../../utils/sdk/getNodeEntity');
 jest.mock('../../utils/sdk/getNodeLocation');
 jest.mock('../../utils/sdk/getSignatureIssues');
-jest.mock('../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('./useSharedByMe.store');
 jest.mock('./utils/getOldestShareCreationTime');
 
@@ -29,7 +27,6 @@ const mockHandleSdkError = jest.mocked(handleSdkError);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 const mockGetNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockGetSignatureIssues = jest.mocked(getSignatureIssues);
-const mockGetRootNode = jest.mocked(getRootNode);
 const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);
 const mockGetOldestShareCreationTime = jest.mocked(getOldestShareCreationTime);
 
@@ -64,12 +61,6 @@ const createMockNode = (overrides = {}) =>
         ...overrides,
     }) as NodeEntity;
 
-const createMockRootNode = () =>
-    ({
-        uid: 'root-uid',
-        deprecatedShareId: 'root-share-123',
-    }) as NodeEntity;
-
 const createMockSharedByMeItem = (overrides = {}) => ({
     nodeUid: 'node-uid-123',
     name: 'Test File.pdf',
@@ -81,8 +72,6 @@ const createMockSharedByMeItem = (overrides = {}) => ({
     location: '/Documents',
     creationTime: new Date('2023-01-15T10:00:00Z'),
     publicLink: undefined,
-    shareId: 'share-123',
-    rootShareId: 'root-share-123',
     haveSignatureIssues: false,
     ...overrides,
 });
@@ -111,7 +100,6 @@ describe('subscribeToSharedByMeEvents', () => {
         mockGetNodeEntity.mockReturnValue({ node: createMockNode(), errors: new Map() });
         mockGetSignatureIssues.mockReturnValue({ ok: true });
         mockGetNodeLocation.mockResolvedValue('/My files');
-        mockGetRootNode.mockResolvedValue(createMockRootNode());
         mockGetOldestShareCreationTime.mockReturnValue(new Date('2023-01-15T10:00:00Z'));
         mockDrive.getNode.mockResolvedValue({ ok: true, value: createMockNode() });
         mockDrive.getSharingInfo.mockResolvedValue({
@@ -164,7 +152,6 @@ describe('subscribeToSharedByMeEvents', () => {
                 expect.objectContaining({
                     nodeUid: 'node-uid-123',
                     name: 'Test File.pdf',
-                    shareId: 'share-123',
                 })
             );
         });
@@ -244,7 +231,6 @@ describe('subscribeToSharedByMeEvents', () => {
                 expect.objectContaining({
                     nodeUid: 'node-uid-123',
                     name: 'Test File.pdf',
-                    shareId: 'share-123',
                 })
             );
         });

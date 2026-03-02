@@ -1,42 +1,26 @@
-import { Vr } from '@proton/atoms/Vr/Vr';
-import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { ContextSeparator } from '@proton/components';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import {
-    DetailsButton as ContextDetailsButton,
-    DownloadButton as ContextDownloadButton,
-    PreviewButton as ContextPreviewButton,
-    ShareLinkButton as ContextShareLinkButton,
-} from '../../../components/sections/ContextMenu/buttons';
-import {
-    DetailsButton as ToolbarDetailsButton,
-    DownloadButton as ToolbarDownloadButton,
-    PreviewButton as ToolbarPreviewButton,
-    RenameButton as ToolbarRenameButton,
-    ShareLinkButton as ToolbarShareLinkButton,
-} from '../../../components/sections/ToolbarButtons';
-import type { useDetailsModal } from '../../../modals/DetailsModal';
-import type { useRenameModal } from '../../../modals/RenameModal';
-import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import type { useDrivePreviewModal } from '../../../modals/preview';
-import { useActions } from '../../../store';
-import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
-import { RenameActionButton } from '../../buttons/RenameActionButton';
+import { DetailsButton } from '../../commonButtons/DetailsButton';
+import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
+import { PreviewButton } from '../../commonButtons/PreviewButton';
+import { RenameButton } from '../../commonButtons/RenameButton';
+import { ShareLinkButton } from '../../commonButtons/ShareLinkButton';
 import { StopSharingButton } from '../buttons/StopSharingButton';
-import type { SharedByMeItem } from '../useSharedByMe.store';
-import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
+import type { ItemTypeChecker } from './actionsItemsChecker';
 
 interface BaseSharedByMeActionsProps {
-    selectedItems: SharedByMeItem[];
-    showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
-    showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
-    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
-    showRenameModal: ReturnType<typeof useRenameModal>['showRenameModal'];
-    showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
-    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
+    itemChecker: ItemTypeChecker;
+    selectedUids: string[];
+    onPreview: (uid: string) => void;
+    onDownload: (uids: string[]) => void;
+    onDetails: (uid: string) => void;
+    onRename: (uid: string) => void;
+    onShare: (uid: string) => void;
+    onStopSharing: (uid: string) => void;
+    onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
 interface ContextMenuSharedByMeActionsProps extends BaseSharedByMeActionsProps {
@@ -52,131 +36,81 @@ interface ToolbarSharedByMeActionsProps extends BaseSharedByMeActionsProps {
 type SharedByMeActionsProps = ContextMenuSharedByMeActionsProps | ToolbarSharedByMeActionsProps;
 
 export const SharedByMeActions = ({
-    selectedItems,
+    itemChecker,
+    selectedUids,
+    onPreview,
+    onDownload,
+    onDetails,
+    onRename,
+    onShare,
+    onStopSharing,
+    onOpenDocsOrSheets,
     close,
     buttonType,
-    showPreviewModal,
-    showDetailsModal,
-    showRenameModal,
-    showFilesDetailsModal,
-    showSharingModal,
-    showConfirmModal,
 }: SharedByMeActionsProps) => {
-    const itemChecker = createItemChecker(selectedItems);
-    const singleItem = selectedItems.at(0);
-
-    const { renameLink } = useActions();
-
-    const hasPreviewAvailable = itemChecker.hasPreviewAvailable(isPreviewAvailable);
-    const legacyItems = mapToLegacyFormat(selectedItems);
-
-    const splitedSingleItemUid = singleItem ? splitNodeUid(singleItem?.nodeUid) : undefined;
-    if (selectedItems.length === 0) {
-        return null;
-    }
-
+    const firstUid = selectedUids.at(0);
     const openInDocsInfo = itemChecker.openInDocsInfo;
+    const hasPreviewAvailable = itemChecker.hasPreviewAvailable(isPreviewAvailable);
 
-    const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType) => {
-        void openDocsOrSheetsDocument({
-            uid,
-            type: openInDocs.type,
-            isNative: openInDocs.isNative,
-            openBehavior: 'tab',
-        });
-    };
-
-    if (buttonType === 'toolbar') {
-        return (
-            <>
-                <ToolbarPreviewButton selectedBrowserItems={legacyItems} />
-                {singleItem && openInDocsInfo && (
-                    <OpenInDocsOrSheetsButton
-                        isNative={openInDocsInfo.isNative}
-                        type={openInDocsInfo.type}
-                        onClick={() => handleOpenDocsOrSheets(singleItem.nodeUid, openInDocsInfo)}
-                        buttonType="toolbar"
-                    />
-                )}
-                {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
-                {itemChecker.canRename && <ToolbarRenameButton selectedLinks={legacyItems} renameLink={renameLink} />}
-                <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
-                {itemChecker.canShare && splitedSingleItemUid && singleItem && (
-                    <>
-                        <Vr />
-                        <ToolbarShareLinkButton
-                            volumeId={splitedSingleItemUid.volumeId}
-                            linkId={splitedSingleItemUid.nodeId}
-                        />
-                    </>
-                )}
-                {itemChecker.canStopSharing && singleItem && (
-                    <StopSharingButton
-                        showConfirmModal={showConfirmModal}
-                        uid={singleItem.nodeUid}
-                        parentUid={singleItem.parentUid}
-                        buttonType="toolbar"
-                    />
-                )}
-            </>
-        );
+    if (selectedUids.length === 0) {
+        return null;
     }
 
     return (
         <>
-            {hasPreviewAvailable && splitedSingleItemUid && singleItem && (
-                <ContextPreviewButton
-                    shareId={singleItem.rootShareId}
-                    linkId={splitedSingleItemUid.nodeId}
-                    nodeUid={singleItem.nodeUid}
-                    showPreviewModal={showPreviewModal}
-                    close={close}
-                />
+            {hasPreviewAvailable && firstUid && (
+                <>
+                    <PreviewButton
+                        onClick={() => onPreview(firstUid)}
+                        {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                    />
+                    <ContextSeparator />
+                </>
             )}
-            {openInDocsInfo && singleItem && (
+            {itemChecker.isOnlyOneItem && openInDocsInfo && firstUid && (
                 <OpenInDocsOrSheetsButton
                     isNative={openInDocsInfo.isNative}
                     type={openInDocsInfo.type}
-                    onClick={() => handleOpenDocsOrSheets(singleItem.nodeUid, openInDocsInfo)}
+                    onClick={() => onOpenDocsOrSheets(firstUid, openInDocsInfo)}
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
             )}
-            {itemChecker.canDownload && <ContextDownloadButton selectedBrowserItems={legacyItems} close={close} />}
-            {itemChecker.canRename && splitedSingleItemUid && singleItem && (
-                <RenameActionButton
-                    type={'context'}
-                    onClick={() =>
-                        showRenameModal({
-                            nodeUid: singleItem.nodeUid,
-                        })
-                    }
-                    close={close}
+            {itemChecker.canDownload && (
+                <DownloadButton
+                    onClick={() => onDownload(selectedUids)}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
             )}
-            <ContextDetailsButton
-                selectedBrowserItems={legacyItems}
-                showDetailsModal={showDetailsModal}
-                showFilesDetailsModal={showFilesDetailsModal}
-                close={close}
-            />
-            {itemChecker.canShare && splitedSingleItemUid && singleItem && (
-                <ContextShareLinkButton
-                    volumeId={splitedSingleItemUid.volumeId}
-                    linkId={splitedSingleItemUid.nodeId}
-                    showSharingModal={showSharingModal}
-                    isAlbum={singleItem.type === NodeType.Album}
-                    close={close}
+            {itemChecker.canRename && firstUid && (
+                <>
+                    <ContextSeparator />
+                    <RenameButton
+                        onClick={() => onRename(firstUid)}
+                        {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                    />
+                </>
+            )}
+            {firstUid && (
+                <DetailsButton
+                    onClick={() => onDetails(firstUid)}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
             )}
-            {itemChecker.canStopSharing && singleItem && (
+            {itemChecker.canShare && firstUid && (
+                <>
+                    <ContextSeparator />
+                    <ShareLinkButton
+                        onClick={() => onShare(firstUid)}
+                        {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                    />
+                </>
+            )}
+            {itemChecker.canStopSharing && firstUid && (
                 <>
                     <ContextSeparator />
                     <StopSharingButton
-                        showConfirmModal={showConfirmModal}
-                        uid={singleItem.nodeUid}
-                        parentUid={singleItem.parentUid}
-                        buttonType="contextMenu"
-                        close={close}
+                        onClick={() => onStopSharing(firstUid)}
+                        {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                     />
                 </>
             )}
