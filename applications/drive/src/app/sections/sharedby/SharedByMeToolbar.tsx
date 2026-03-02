@@ -16,13 +16,12 @@ import { useSharedByMeStore } from './useSharedByMe.store';
 
 interface SharedByMeToolbarProps {
     uids: string[];
-    shareId: string;
 }
 
 const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
-const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
+const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
@@ -42,7 +41,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
-            return <ShareButton shareId={shareId} />;
+            return <ShareButton />;
         }
 
         return (

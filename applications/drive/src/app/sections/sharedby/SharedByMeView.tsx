@@ -14,7 +14,7 @@ import { useSharedByMeStore } from './useSharedByMe.store';
 
 export const SharedByMeView = () => {
     useAppTitle(c('Title').t`Shared`);
-    const { setDefaultRoot, activeShareId } = useActiveShare();
+    const { setDefaultRoot } = useActiveShare();
 
     const { loadSharedByMeNodes } = useSharedByMeNodesLoader();
     const itemUidsSet = useSharedByMeStore((state) => state.itemUids);
@@ -36,9 +36,9 @@ export const SharedByMeView = () => {
         <FileBrowserStateProvider itemIds={itemUids}>
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`My Links`}</span>}
-                toolbar={<SharedByMeToolbar uids={itemUids} shareId={activeShareId} />}
+                toolbar={<SharedByMeToolbar uids={itemUids} />}
             />
-            <SharedByMe shareId={activeShareId} />
+            <SharedByMe />
         </FileBrowserStateProvider>
     );
 };
