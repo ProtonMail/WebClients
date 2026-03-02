@@ -1,7 +1,8 @@
+import { isTimepointSmaller } from '@proton/encrypted-search/esHelpers';
 import { readSortedIDs } from '@proton/encrypted-search/esIDB';
 import type { ESTimepoint } from '@proton/encrypted-search/models';
 
-import { allContentHasVersion } from './helpers/allContentHasVesion';
+import { allContentHasVersion } from './helpers/allContentHasVersion';
 import { encryptAndWriteESItem } from './helpers/encryptAndWriteESItem';
 import { getDecryptedESItems } from './helpers/getDecryptedESItems';
 import { CONTENT_EXTRACTION_MAX_RETRIES, type DBType } from './interface';
@@ -35,15 +36,15 @@ export class ContentVersionExtractor {
         }
     }
 
-    private async markMigrationAbandoned() {
-        await this.clearCheckpoint();
-        await this.esDB.put('config', true, 'contentVersionMigrationAbandoned');
-    }
-
     private async markMigrationCompleted() {
         await this.clearCheckpoint();
         await this.esDB.put('config', true, 'contentVersionMigrationCompleted');
         await this.esDB.put('config', 0, 'contentVersionMigrationRetries');
+    }
+
+    async markMigrationAbandoned() {
+        await this.clearCheckpoint();
+        await this.esDB.put('config', true, 'contentVersionMigrationAbandoned');
     }
 
     async getLatestCheckpoint() {
@@ -58,7 +59,6 @@ export class ContentVersionExtractor {
     async didReachMaxRetries() {
         const retryCount = (await this.esDB.get('config', 'contentVersionMigrationRetries')) || 0;
         if (retryCount >= CONTENT_EXTRACTION_MAX_RETRIES) {
-            await this.markMigrationAbandoned();
             return true;
         }
 
@@ -80,7 +80,7 @@ export class ContentVersionExtractor {
         await this.esDB.put('config', retryCount + 1, 'contentVersionMigrationRetries');
     }
 
-    async extractVersionsAndSaveUpdatedESItem(lastCheckpoint?: ESTimepoint) {
+    async runMigrationPass(lastCheckpoint?: ESTimepoint) {
         const allMetadataIDs = await readSortedIDs(this.userID, false, lastCheckpoint);
         if (!allMetadataIDs || allMetadataIDs.length === 0) {
             await this.markMigrationCompleted();
@@ -107,14 +107,14 @@ export class ContentVersionExtractor {
                     }
 
                     const lastSuccessfulItem = batchData
-                        .filter((item) => item?.metadata?.timepoint)
+                        .filter((item) => item?.timepoint)
                         .sort((a, b) => {
-                            return b.metadata.timepoint[0] - a.metadata.timepoint[0];
+                            return isTimepointSmaller(a.timepoint!, b.timepoint!) ? 1 : -1;
                         })
                         .at(0);
 
                     if (lastSuccessfulItem) {
-                        await this.saveCheckpoint(lastSuccessfulItem.metadata.timepoint);
+                        await this.saveCheckpoint(lastSuccessfulItem.timepoint!);
                     }
                 }
             } catch (error) {
