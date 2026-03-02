@@ -98,6 +98,7 @@ export interface ConfigValues {
     retries?: string;
     migrated?: any;
     contentVersionMigrationCompleted?: boolean;
+    contentVersionMigrationAbandoned?: boolean;
     contentVersionMigrationCheckpoint?: any;
     contentVersionMigrationRetries?: number;
 }

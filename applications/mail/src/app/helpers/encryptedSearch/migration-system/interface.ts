@@ -8,3 +8,5 @@ export type MigrationToolParams = { user: UserModel; keyPassword: string };
 export type EncryptedSearchData = { metadata: ESBaseMessage | undefined; content: ESMessageContent | undefined };
 
 export type DBType = NonNullable<Awaited<ReturnType<typeof openESDB>>>;
+
+export const CONTENT_EXTRACTION_MAX_RETRIES = 5;
