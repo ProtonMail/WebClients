@@ -1811,6 +1811,13 @@
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
         "Totalt for ${ n } måneder"
+      ],
+      "Subtotal": [
+        "Delsum"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsum for ${ cycle } måned",
+        "Delsum for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -3917,6 +3924,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Can't retrieve device name": [
+        "Kan ikke hente enhetsnavn"
+      ],
+      "Data integrity check failed": [
+        "Kontroll av dataintegritet mislyktes"
       ]
     },
     "error": {
@@ -4320,7 +4333,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ]
     },
     "fido2: Info": {
@@ -5428,7 +5441,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -6646,7 +6659,7 @@
         "Når du fjerner ${ deviceName } som en synkronisert enhet, vil alle mapper lagt til Mine Datamaskiner fra denne enheten bli permanent slettet fra ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "who": [
         "hvem"
@@ -6900,6 +6913,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Can't rename to same name": [
+        "Kan ikke gi nytt navn til samme navn"
       ]
     },
     "info": {
@@ -13324,6 +13340,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRSALG"
       ]
     }
   }

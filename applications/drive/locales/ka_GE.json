@@ -1314,6 +1314,15 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
       ]
     },
     "Alert": {
@@ -1520,6 +1529,20 @@
       ],
       "Yearly": [
         "წლიურად"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ]
     },
     "Browser": {
@@ -1718,6 +1741,9 @@
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
         "ჯამში ${ n } თვის"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ]
     },
     "Collapsible tooltip": {
@@ -2485,7 +2511,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -9801,6 +9827,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12838,6 +12867,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "ახალი ელცხრილი"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     }
   }

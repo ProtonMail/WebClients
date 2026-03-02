@@ -567,7 +567,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
@@ -3924,6 +3924,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "Can't retrieve device name": [
+        "Kan apparaatnaam niet ophalen"
+      ],
+      "Data integrity check failed": [
+        "Gegevensintegriteitscontrole mislukt"
       ]
     },
     "error": {
@@ -5435,7 +5441,7 @@
         "Dubbele sleutel bijgewerkt"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -6653,7 +6659,7 @@
         "Wanneer u ${ deviceName } verwijdert als een gesynchroniseerd apparaat, worden alle mappen die zijn toegevoegd aan Mijn Computers van dit apparaat permanent verwijderd uit ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "who": [
         "wie"
@@ -6907,6 +6913,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Can't rename to same name": [
+        "Kan niet hernoemen naar dezelfde naam"
       ]
     },
     "info": {
@@ -13274,6 +13283,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
       ]
     }
   }

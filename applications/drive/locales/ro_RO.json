@@ -3953,6 +3953,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Can't retrieve device name": [
+        "Nu se poate prelua numele dispozitivului."
+      ],
+      "Data integrity check failed": [
+        "Verificarea integrității datelor a eșuat."
       ]
     },
     "error": {
@@ -4359,12 +4365,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
       ],
       "Security key": [
         "Cheie de securitate"
@@ -5521,7 +5527,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6745,7 +6751,7 @@
         "Când eliminați ${ deviceName } ca dispozitiv sincronizat, toate folderele adăugate la Calculatoarele mele de pe acest dispozitiv vor fi șterse permanent din ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "who": [
         "cine"
@@ -7006,6 +7012,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Can't rename to same name": [
+        "Nu se poate redenumi cu același nume."
       ]
     },
     "info": {
@@ -13521,6 +13530,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REDUCERE DE PRIMĂVARĂ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REDUCERE DE PRIMĂVARĂ"
       ]
     }
   }
