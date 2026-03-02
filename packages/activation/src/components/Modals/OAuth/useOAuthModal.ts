@@ -17,7 +17,6 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 const useOAuthModal = () => {
@@ -35,13 +34,11 @@ const useOAuthModal = () => {
     });
 
     // Initial loading of all required data at later stage, ensure everything is loaded ahead of time
-    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
     const [, loadingAddresses] = useAddresses();
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingCalendars] = useCalendars();
-    const initialLoading =
-        loadingAddresses || loadingCalendars || loadingFolders || loadingLabels || easySwitchFeature.loading;
+    const initialLoading = loadingAddresses || loadingCalendars || loadingFolders || loadingLabels;
 
     const triggerOAuth = (tempScopes?: string[]) => {
         const finalScopes = scopes?.join(' ') ?? tempScopes?.join(' ');
