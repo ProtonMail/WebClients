@@ -185,31 +185,29 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>({
  * Start metadata indexing
  * @returns true when process is gracefully stopped (or paused)
  */
-export const buildMetadataDB = async <ESItemMetadata extends Object>({
+export const buildMetadataDB = async <ESItemMetadata extends Object, ESSearchParameters, ESItemContent>({
     userID,
     esSupported,
     indexKey,
     esCacheRef,
-    queryItemsMetadata,
-    getItemInfo,
     abortIndexingRef,
+    esCallbacks,
     recordProgress,
     isInitialIndexing = true,
     isBackgroundIndexing,
-    version,
 }: {
     userID: string;
     esSupported: boolean;
     indexKey: IndexKey | undefined;
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
-    queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'];
-    getItemInfo: GetItemInfo<ESItemMetadata>;
     abortIndexingRef: React.MutableRefObject<AbortController>;
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     recordProgress: () => Promise<void>;
     isInitialIndexing?: boolean;
     isBackgroundIndexing?: boolean;
-    version: number;
 }) => {
+    const { getContentVersion, getItemInfo, queryItemsMetadata } = esCallbacks;
+
     if (isInitialIndexing) {
         await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.START);
     }
@@ -231,7 +229,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>({
             indexKey,
             getItemInfo,
             esCacheRef,
-            version,
+            version: getContentVersion(),
         }).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&
@@ -493,13 +491,11 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
     indexKey,
     esCallbacks,
     abortIndexingRef,
-    version,
 }: {
     userID: string;
     indexKey: IndexKey;
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     abortIndexingRef: React.MutableRefObject<AbortController>;
-    version: number;
 }) => {
     const isDBLimited = await readLimited(userID);
     if (!isDBLimited) {
@@ -524,7 +520,7 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
         fetchESItemContent,
         inputrecoveryPoint: itemInfo.timepoint,
         isInitialIndexing: false,
-        version,
+        version: esCallbacks.getContentVersion(),
     });
 
     // In case we have recovered, we set the flag accordingly
