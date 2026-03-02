@@ -1,15 +1,13 @@
 import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation/index';
-import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { FeatureCode, useFeature } from '@proton/features/index';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { useFlag } from '@proton/unleash';
 
 interface Props {
@@ -18,7 +16,6 @@ interface Props {
 
 const ContactsTabImportDropdown = ({ onImport }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     return (
@@ -28,7 +25,6 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                 onClick={toggle}
                 ref={anchorRef}
                 hasCaret
-                loading={easySwitchFeature.loading}
                 data-testid="contacts:import-dropdown"
                 aria-expanded={isOpen}
             >
@@ -41,7 +37,6 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                             <EasySwitchOauthImportButton
                                 className="w-full sm:justify-start"
                                 defaultCheckedTypes={[ImportType.CONTACTS]}
-                                displayOn="GoogleContacts"
                                 source={EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
                                 provider={ImportProvider.GOOGLE}
                                 isDropdownButton
@@ -50,7 +45,6 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                             <EasySwitchOauthImportButton
                                 className="w-full sm:justify-start"
                                 defaultCheckedTypes={[ImportType.CONTACTS]}
-                                displayOn="OutlookContacts"
                                 source={EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
                                 provider={ImportProvider.OUTLOOK}
                                 isDropdownButton

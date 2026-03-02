@@ -52,7 +52,6 @@ import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import { FeatureCode, useFeatures } from '@proton/features';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -165,8 +164,6 @@ const MainContainer = () => {
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
-
-    useFeatures([FeatureCode.EasySwitch]);
 
     const showThemeSelection = useShowThemeSelection();
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');

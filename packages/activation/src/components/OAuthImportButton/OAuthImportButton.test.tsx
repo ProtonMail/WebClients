@@ -11,7 +11,6 @@ describe('Test correct rendering of loading importer', () => {
             <OAuthImportButton
                 source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
                 defaultCheckedTypes={[ImportType.MAIL]}
-                displayOn="GoogleCalendar"
                 provider={ImportProvider.GOOGLE}
             />
         );

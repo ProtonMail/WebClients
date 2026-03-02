@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import {
     changeOAuthStep,
@@ -15,12 +14,10 @@ import {
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getEnabledFeature } from '../../OAuthModal.helpers';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
 const useStepPrepare = () => {
@@ -67,9 +64,6 @@ const useStepPrepare = () => {
         !user.hasPaidMail
     );
 
-    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const featureMap = easySwitchFeature.feature!.Value;
-
     const handleSubmit = () => {
         const products = [
             emailChecked && ImportType.MAIL,
@@ -98,7 +92,6 @@ const useStepPrepare = () => {
         handleSubmit,
         emailTitle,
         hasErrors,
-        enabledFeatures: getEnabledFeature(provider, featureMap),
         allCheckboxUnselected: !emailChecked && !contactChecked && !calendarChecked,
     };
 };
