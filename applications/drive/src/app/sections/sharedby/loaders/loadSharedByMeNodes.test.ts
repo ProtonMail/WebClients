@@ -1,6 +1,3 @@
-import { renderHook } from '@testing-library/react';
-
-import { useNotifications } from '@proton/components';
 import { MemberRole, NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
@@ -8,9 +5,8 @@ import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
-import { useSharedByMeNodesLoader } from './useSharedByMeNodesLoader';
+import { loadSharedByMeNodes } from './loadSharedByMeNodes';
 
-jest.mock('@proton/components');
 jest.mock('@proton/drive');
 jest.mock('../../../utils/errorHandling/handleSdkError');
 jest.mock('../../../utils/sdk/getNodeEntity');
@@ -18,8 +14,7 @@ jest.mock('../../../utils/sdk/getSignatureIssues');
 jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../useSharedByMe.store');
 
-const mockUseNotifications = jest.mocked(useNotifications);
-const mockHandleError = jest.mocked(handleSdkError);
+const mockHandleSdkErrorHandler = jest.mocked(handleSdkError);
 const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
@@ -34,11 +29,9 @@ const mockDrive = {
     iterateNodes: jest.fn(),
 };
 
-const mockCreateNotification = jest.fn();
-const mockSetLoadingNodes = jest.fn();
+const mockSetLoading = jest.fn();
 const mockSetSharedByMeItem = jest.fn();
 const mockUpdateSharedByMeItem = jest.fn();
-const mockCleanupStaleItems = jest.fn();
 
 const createMockNode = (overrides = {}) =>
     ({
@@ -83,16 +76,14 @@ describe('useSharedByMeNodesLoader', () => {
     beforeEach(() => {
         jest.clearAllMocks();
 
-        mockUseNotifications.mockReturnValue({ createNotification: mockCreateNotification } as any);
         mockGetDrive.mockReturnValue(mockDrive as any);
         mockGetDriveForPhotos.mockReturnValue(mockDrive as any);
 
         mockUseSharedByMeStore.getState = jest.fn().mockReturnValue({
-            isLoadingNodes: false,
-            setLoadingNodes: mockSetLoadingNodes,
+            isLoading: false,
+            setLoading: mockSetLoading,
             setSharedByMeItem: mockSetSharedByMeItem,
             updateSharedByMeItem: mockUpdateSharedByMeItem,
-            cleanupStaleItems: mockCleanupStaleItems,
         });
 
         mockGetNodeEntity.mockReturnValue({ node: createMockNode(), errors: new Map() });
@@ -100,30 +91,19 @@ describe('useSharedByMeNodesLoader', () => {
         mockGetRootNode.mockResolvedValue(createMockRootNode());
     });
 
-    it('should return loadSharedByMeNodes function', () => {
-        const { result } = renderHook(() => useSharedByMeNodesLoader());
-
-        expect(result.current).toEqual({
-            loadSharedByMeNodes: expect.any(Function),
-        });
-    });
-
     describe('loadSharedByMeNodes', () => {
         it('should not execute if already loading', async () => {
             mockUseSharedByMeStore.getState = jest.fn().mockReturnValue({
-                isLoadingNodes: true,
-                setLoadingNodes: mockSetLoadingNodes,
+                isLoading: true,
+                setLoading: mockSetLoading,
                 setSharedByMeItem: mockSetSharedByMeItem,
                 updateSharedByMeItem: mockUpdateSharedByMeItem,
-                cleanupStaleItems: mockCleanupStaleItems,
             });
 
-            const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
+            await loadSharedByMeNodes(abortSignal);
 
-            await result.current.loadSharedByMeNodes(abortSignal);
-
-            expect(mockSetLoadingNodes).not.toHaveBeenCalled();
+            expect(mockSetLoading).not.toHaveBeenCalled();
             expect(mockDrive.iterateSharedNodes).not.toHaveBeenCalled();
         });
 
@@ -132,14 +112,12 @@ describe('useSharedByMeNodesLoader', () => {
                 // Empty generator for basic state testing
             });
 
-            const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
+            await loadSharedByMeNodes(abortSignal);
 
-            await result.current.loadSharedByMeNodes(abortSignal);
-
-            expect(mockSetLoadingNodes).toHaveBeenCalledWith(true);
+            expect(mockSetLoading).toHaveBeenCalledWith(true);
             expect(mockDrive.iterateSharedNodes).toHaveBeenCalledWith(abortSignal);
-            expect(mockSetLoadingNodes).toHaveBeenCalledWith(false);
+            expect(mockSetLoading).toHaveBeenCalledWith(false);
         });
 
         it('should handle errors and ensure loading state is reset', async () => {
@@ -148,36 +126,15 @@ describe('useSharedByMeNodesLoader', () => {
                 throw error;
             });
 
-            const { result } = renderHook(() => useSharedByMeNodesLoader());
             const abortSignal = new AbortController().signal;
+            await loadSharedByMeNodes(abortSignal);
 
-            await result.current.loadSharedByMeNodes(abortSignal);
-
-            expect(mockHandleError).toHaveBeenCalledWith(error, {
+            expect(mockHandleSdkErrorHandler).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'We were not able to load some of your shared items',
+                showNotification: true,
             });
-            expect(mockSetLoadingNodes).toHaveBeenCalledWith(true);
-            expect(mockSetLoadingNodes).toHaveBeenCalledWith(false);
-        });
-
-        it('should call cleanupStaleItems with empty set when no nodes processed', async () => {
-            mockDrive.iterateSharedNodes.mockImplementation(async function* () {
-                // Empty generator
-            });
-
-            const { result } = renderHook(() => useSharedByMeNodesLoader());
-            const abortSignal = new AbortController().signal;
-
-            await result.current.loadSharedByMeNodes(abortSignal);
-
-            expect(mockCleanupStaleItems).toHaveBeenCalledWith(new Set());
-        });
-
-        it('should validate dependencies are injected correctly', () => {
-            const { result } = renderHook(() => useSharedByMeNodesLoader());
-
-            expect(result.current.loadSharedByMeNodes).toBeDefined();
-            expect(mockUseNotifications).toHaveBeenCalled();
+            expect(mockSetLoading).toHaveBeenCalledWith(true);
+            expect(mockSetLoading).toHaveBeenCalledWith(false);
         });
     });
 });

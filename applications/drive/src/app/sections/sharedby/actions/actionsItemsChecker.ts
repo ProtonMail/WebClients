@@ -1,4 +1,4 @@
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { NodeType } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { getOpenInDocsInfo } from '../../../utils/docs/openInDocs';
@@ -67,26 +67,8 @@ export const createItemChecker = (items: SharedByMeItem[]): ItemTypeChecker => {
         canOpenInDocs: isOnlyOneItem && singleItem.type === NodeType.File,
         canRename: isOnlyOneItem,
         canShare: isOnlyOneItem,
-        canStopSharing: isOnlyOneItem && !!singleItem?.shareId,
+        canStopSharing: isOnlyOneItem,
         openInDocsInfo,
         items,
     };
-};
-
-export const mapToLegacyFormat = (items: SharedByMeItem[]) => {
-    return items.map((item) => {
-        const { volumeId, nodeId } = splitNodeUid(item.nodeUid);
-        const parentNodeId = item.parentUid ? splitNodeUid(item.parentUid).nodeId : '';
-        return {
-            rootShareId: item.rootShareId,
-            mimeType: item.mediaType || '',
-            linkId: nodeId,
-            isFile: item.type === NodeType.File || item.type === NodeType.Photo,
-            name: item.name,
-            size: item.size || 0,
-            parentLinkId: parentNodeId,
-            volumeId,
-            nodeUid: item.nodeUid,
-        };
-    });
 };
