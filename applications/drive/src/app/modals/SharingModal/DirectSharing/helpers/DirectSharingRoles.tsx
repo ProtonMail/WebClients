@@ -4,6 +4,7 @@ import { MemberRole, type NonProtonInvitationState } from '@proton/drive';
 
 import { DropdownMenuItem } from '../../DropdownMenuItem';
 import type { DirectSharingRole } from '../../interfaces';
+import { useEditorsManageAccessContext } from '../../useEditorsManageAccess';
 import { InvitationStateTranslations } from './DirectSharingTranslations';
 
 export function DirectSharingRoles({
@@ -15,6 +16,8 @@ export function DirectSharingRoles({
     selectedRole: DirectSharingRole;
     externalInvitationState?: NonProtonInvitationState;
 }) {
+    const { editorsManageAccess } = useEditorsManageAccessContext();
+
     const getRoleLabel = (role: DirectSharingRole, baseLabel: string) => {
         if (role === selectedRole && externalInvitationState) {
             return `${baseLabel} (${InvitationStateTranslations[externalInvitationState]})`;
@@ -26,14 +29,14 @@ export function DirectSharingRoles({
         <>
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Viewer, c('Label').t`Viewer`)}
-                description={c('Into').t`Can view only`}
+                description={c('Info').t`Can view only`}
                 iconName="eye"
                 onClick={() => onChangeRole(MemberRole.Viewer)}
                 isSelected={selectedRole === MemberRole.Viewer}
             />
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Editor, c('Label').t`Editor`)}
-                description={c('Into').t`Can view and edit`}
+                description={editorsManageAccess ? c('Info').t`Can edit and manage access` : c('Info').t`Can edit`}
                 iconName="pencil"
                 onClick={() => onChangeRole(MemberRole.Editor)}
                 isSelected={selectedRole === MemberRole.Editor}

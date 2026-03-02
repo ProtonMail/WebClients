@@ -85,6 +85,7 @@ export const useSharedWithMeNodesLoader = () => {
                                         ? node.membership.sharedBy.value
                                         : node.membership.sharedBy.error.claimedAuthor) || '',
                             },
+                            role: node.directRole,
                             haveSignatureIssues: !signatureResult.ok,
                             shareId: node.deprecatedShareId,
                         });
@@ -152,6 +153,7 @@ export const useSharedWithMeNodesLoader = () => {
                                         ? node.membership.sharedBy.value
                                         : node.membership.sharedBy.error.claimedAuthor) || '',
                             },
+                            role: node.directRole,
                             haveSignatureIssues: !signatureResult.ok,
                             shareId: node.deprecatedShareId,
                         });
