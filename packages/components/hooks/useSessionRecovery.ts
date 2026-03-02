@@ -12,18 +12,16 @@ import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interf
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useAuthentication from './useAuthentication';
 import { useSessionRecoveryState } from './useSessionRecoveryState';
 
 export const useIsSessionRecoveryInitiatedByCurrentSession = () => {
     const [user] = useUser();
-    const authentication = useAuthentication();
 
     if (!user?.AccountRecovery) {
         return null;
     }
 
-    return user.AccountRecovery.UID === authentication.getUID();
+    return user.AccountRecovery.IsCurrentSession;
 };
 
 export const useIsSessionRecoveryEnabled = () => {
