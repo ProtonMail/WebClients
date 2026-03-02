@@ -7,6 +7,8 @@ import {
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
+import { transformBodyClasses } from './transforms/transformBodyClasses';
+
 type Options = {
     emailContent: string;
     messageDocument: Required<MessageState>['messageDocument']['document'];
@@ -28,7 +30,9 @@ const getIframeHtml = ({
 }: Options) => {
     const messageHead = locateHead(messageDocument) || '';
     const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
-    const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
+
+    const bodyClassesRaw = messageDocument?.querySelector('body')?.getAttribute('class');
+    const transformedBodyClasses = bodyClassesRaw ? transformBodyClasses(bodyClassesRaw) : null;
 
     /**
      * About this line:
@@ -74,9 +78,9 @@ const getIframeHtml = ({
               isPrint ? 'class="proton-print-content reset4print"' : ''
           } style="display: block !important; width: 100% !important;">
           <div style="width: 100% !important;padding-bottom:10px;!important">
-            ${bodyStyles || bodyClasses ? `<div class="${bodyClasses}" style="${bodyStyles}">` : ''}
+            ${bodyStyles || transformedBodyClasses ? `<div class="${transformedBodyClasses}" style="${bodyStyles}">` : ''}
             ${emailContent}
-            ${bodyStyles || bodyClasses ? '</div>' : ''}
+            ${bodyStyles || transformedBodyClasses ? '</div>' : ''}
           </div>
           </div>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''}
