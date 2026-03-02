@@ -29,6 +29,18 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
 
     const contentVersionExtractor = new ContentVersionExtractor(user.ID, esDB, indexKey);
 
+    // Range query with the index
+    // From value undefined to value 2 (version before current version)
+    // Will let me know if I need to do something or not (the array is empty)
+    // This could be done in the main thread, no crypto needed it's only IDB calls
+    //
+    // If crypto error, reindex the item or move them to latest version.
+    // When re-indexing is available, go over the items and re-index them.
+    // Make it clear in the code that this is precoucious more than experience.
+    //
+    // Check if any work needs key cursor on version index, check if anything is not currentVersion.
+    // Get items with specific version use the value cursor, iterate over them and re-index.
+
     const extractVersion = async () => {
         const didReachMaxRetries = await contentVersionExtractor.didReachMaxRetries();
         if (didReachMaxRetries) {
@@ -38,6 +50,7 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
 
         const isComplete = await contentVersionExtractor.validateAllContentMigrated();
         if (isComplete) {
+            await contentVersionExtractor.markMigrationCompleted();
             return;
         }
 
