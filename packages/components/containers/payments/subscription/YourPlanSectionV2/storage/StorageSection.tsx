@@ -130,7 +130,7 @@ function StorageSplitOrganizationTooltip({ organization, user }: StorageSplitOrg
         maxSpace: organization.MaxSpace ?? userSpace.maxSpace,
         usedSpace: organization.UsedSpace ?? userSpace.usedSpace,
     });
-    const userStorageText = getStorageText(userSpace.maxBaseSpace, userSpace.usedBaseSpace);
+    const userStorageText = getStorageText(userSpace.maxSpace, userSpace.usedSpace);
     const orgStorageText = getStorageText(organization.MaxSpace, organization.UsedSpace);
     const { userText } = getSubscriptionPanelText(user, organization, addresses);
     const { MaxMembers } = organization;
