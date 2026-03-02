@@ -8,7 +8,7 @@ export const MemberRoleTranslations = {
         return c('Label').t`can edit`;
     },
     get admin() {
-        return c('Label').t`admin`;
+        return c('Label').t`can edit`;
     },
 };
 
