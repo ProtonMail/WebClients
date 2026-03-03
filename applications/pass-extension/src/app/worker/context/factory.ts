@@ -45,15 +45,15 @@ import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
-import type { AppState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
+import { coalesce } from '@proton/pass/utils/fp/control';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { WorkerContext } from './inject';
+import { WorkerContext, withContext } from './inject';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
@@ -71,14 +71,16 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     exposePassCrypto(createPassCrypto(core, store));
 
-    const onStateUpdate = (state: AppState) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.WORKER_STATE_CHANGE,
-                payload: { state },
-            })
-        );
-    };
+    const onStateUpdate = coalesce(
+        withContext((ctx) => {
+            WorkerMessageBroker.ports.broadcast(
+                backgroundMessage({
+                    type: WorkerMessageType.WORKER_STATE_CHANGE,
+                    payload: { state: ctx.getState() },
+                })
+            );
+        })
+    );
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
@@ -139,14 +141,14 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
                 context.status = status;
                 setPopupIcon(status);
-                onStateUpdate(context.getState());
+                onStateUpdate();
             }
         },
 
         setBooted(booted) {
             if (context.booted !== booted) {
                 context.booted = booted;
-                onStateUpdate(context.getState());
+                onStateUpdate();
             }
         },
     });
@@ -159,9 +161,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     /* Watch for `lockSetup` state changes. Notify all extension
      * components on update in order for clients' states to sync. */
     registerStoreEffect(store, selectLockSetupRequired, (lockSetup) => {
-        if (lockSetup !== context.getState().lockSetup) {
-            onStateUpdate(context.getState());
-        }
+        if (lockSetup !== context.getState().lockSetup) onStateUpdate();
     });
 
     if (ENV === 'development') {
