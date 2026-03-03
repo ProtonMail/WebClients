@@ -19,7 +19,7 @@ export function AccessCountCell({ count, className }: AccessCountCellProps) {
 
 export const defaultAccessCountCellConfig: CellDefinitionConfig = {
     id: 'accessCount',
-    headerText: c('Label').t`# Accesses`,
+    headerText: c('Label').t`# of downloads`,
     className: 'w-1/6',
     sortField: SortField.numberOfInitializedDownloads,
     sortConfig: [

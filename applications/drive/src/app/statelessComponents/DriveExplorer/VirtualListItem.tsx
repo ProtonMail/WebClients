@@ -18,7 +18,7 @@ interface VirtualListItemProps {
     cells: CellDefinition[];
     loading?: boolean;
     totalItemCount: number;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
     onObserve: (element: HTMLElement | null, uid: string) => void;

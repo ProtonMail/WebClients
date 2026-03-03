@@ -132,8 +132,8 @@ export interface DriveExplorerEvents {
  * Item-specific behavior conditions
  */
 export interface DriveExplorerConditions {
-    isDraggable?: (uid: string) => boolean;
-    isDoubleClickable?: (uid: string) => boolean;
+    isDraggable: (uid: string) => boolean;
+    isDoubleClickable: (uid: string) => boolean;
 }
 
 /**

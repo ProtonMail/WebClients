@@ -132,6 +132,7 @@ export const DriveExplorerHeader = ({
                                         checked={headerCheckboxState.checked}
                                         indeterminate={headerCheckboxState.indeterminate}
                                         onChange={handleHeaderCheckboxClick}
+                                        data-testid="checkbox-select-all"
                                     >
                                         {selectedCount && selectedCount > 0 ? (
                                             <span className=" ml-2">
