@@ -10,7 +10,7 @@ import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/req
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
-import { OrganizationItemShareMode, ShareRole } from '@proton/pass/types';
+import { OrganizationItemShareMode, OrganizationPublicLinkMode, ShareRole } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
@@ -61,6 +61,7 @@ export const useItemState: UseItemState = (item, share) => {
         const trashed = isTrashed(item);
         const pinned = isPinned(item);
         const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
+        const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
         const monitored = isMonitored(item);
 
         const canManage = isShareManageable(share);
@@ -68,7 +69,7 @@ export const useItemState: UseItemState = (item, share) => {
         const canHistory = isPaidPlan(plan);
         const canMove = (!shared || !readOnly) && hasMultipleVaults;
         const canShare = canManage && item.data.type !== 'alias';
-        const canLinkShare = canShare;
+        const canLinkShare = canShare && !orgPublicLinkingDisabled;
         const canItemShare = canShare && !orgItemSharingDisabled;
         const canManageAccess = shared && !readOnly;
         const canLeave = !isVault && !owner;
