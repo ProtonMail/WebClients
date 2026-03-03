@@ -22,7 +22,7 @@ interface DriveExplorerBodyProps {
     containerRef: RefObject<HTMLDivElement>;
     config?: DriveExplorerConfig;
     events?: DriveExplorerEvents;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     loading?: boolean;
     selection: DriveExplorerSelection;
     dragMoveControls?: DragMoveControls;

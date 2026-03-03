@@ -24,7 +24,7 @@ interface DriveExplorerGridBoxProps {
     selection: DriveExplorerSelection;
     grid: GridDefinition;
     events?: DriveExplorerEvents;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
@@ -99,7 +99,7 @@ export const DriveExplorerGridBox = ({
         [dragMove]
     );
 
-    const isDraggable = !!dragMoveControls && !isMultiSelectionDisabled && conditions?.isDraggable?.(itemId);
+    const isDraggable = !!dragMoveControls && !isMultiSelectionDisabled && conditions.isDraggable(itemId);
     const { dragging, DragMoveContent } = dragMove;
 
     return (

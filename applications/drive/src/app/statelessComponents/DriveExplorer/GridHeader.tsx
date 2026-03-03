@@ -86,6 +86,7 @@ export function GridHeader({
                         checked={headerCheckboxState.checked}
                         indeterminate={headerCheckboxState.indeterminate}
                         onChange={onHeaderCheckboxClick}
+                        data-testid="checkbox-select-all"
                     >
                         {selectedCount && selectedCount > 0 ? (
                             <span className="ml-2">

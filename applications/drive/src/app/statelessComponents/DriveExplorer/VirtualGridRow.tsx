@@ -22,7 +22,7 @@ interface VirtualGridRowProps {
     selection: DriveExplorerSelection;
     grid: GridDefinition;
     events?: DriveExplorerEvents;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
