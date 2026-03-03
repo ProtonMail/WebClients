@@ -1,12 +1,3 @@
-/* ⚠️ ⚠️ ⚠️
- * This is the only part of the extension codebase
- * still referencing the chrome.runtime API and that
- * is not yet "runtime agnostic" :
- * The storage.session API is only available in
- * chromium - still not supported for Firefox/Safari
- * extensions. Once FF has full MV3 support we can
- * safely port it to webextension-polyfill
- * ⚠️ ⚠️ ⚠️ */
 import browser from '@proton/pass/lib/globals/browser';
 import type {
     GetItem,
@@ -38,4 +29,9 @@ const browserSessionStorage: StorageInterface = {
     clear,
 };
 
+/** `browser.storage.session` may be unavailable in Firefox extension iframes.
+ * Firefox handles extension frames in a content process instead of a privileged
+ * extension process, so iframes only get content-script-level API access. This
+ * is blocked on Firefox shipping out-of-process iframes for extensions.
+ * See https://bugzilla.mozilla.org/show_bug.cgi?id=1443253 */
 export default browser?.storage?.session === undefined ? createMemoryStorage() : browserSessionStorage;
