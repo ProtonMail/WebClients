@@ -1,4 +1,4 @@
-import { CYCLE, type Currency, PLANS, type Subscription } from '@proton/payments';
+import type { Currency, Subscription } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -22,7 +22,7 @@ export function getIsEligible({
     offerConfig: OfferConfig;
     preferredCurrency: Currency;
 }) {
-    if (user.isDelinquent || !user.canPay || user.isFree || subscription?.UpcomingSubscription) {
+    if (user.isDelinquent || !user.canPay || user.isPaid || subscription?.UpcomingSubscription) {
         return false;
     }
 
@@ -42,10 +42,5 @@ export function getIsEligible({
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const vpnSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN2024);
-    if (isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp) && vpnSubscription?.Cycle === CYCLE.MONTHLY) {
-        return true;
-    }
-
-    return false;
+    return isInApp(protonConfig, APPS.PROTONLUMO, parentApp);
 }

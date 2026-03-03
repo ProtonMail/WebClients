@@ -5,7 +5,7 @@ import type { OfferConfig } from '../../interface';
 import { getModalTitle, topButton } from '../springSale2026constants';
 import { offers } from '../springSale2026offers';
 
-const OFFER_NAME = 'vpn-plus';
+const OFFER_NAME = 'lumo-plus-retention';
 
 const { ID, featureCode, ref, dealName, couponCode, features } = offers[OFFER_NAME];
 
@@ -21,7 +21,7 @@ export const configuration: OfferConfig = {
             dealName,
             couponCode,
             planIDs: {
-                [PLANS.VPN2024]: 1,
+                [PLANS.LUMO]: 1,
             },
             popular: 1,
             cycle: CYCLE.YEARLY,
