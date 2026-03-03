@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
-      "Collapse": [
-        "Pienennä"
-      ],
       "Collapse folder": [
         "Pienennä kansio"
       ],
@@ -458,9 +455,6 @@
       "Encrypted": [
         "Salattu"
       ],
-      "Expand": [
-        "Laajenna"
-      ],
       "Expand folder": [
         "Laajenna kansio"
       ],
@@ -565,9 +559,6 @@
       ],
       "Help and resources": [
         "Tuki ja resurssit"
-      ],
-      "Hide": [
-        "Piilota"
       ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
@@ -2492,9 +2483,6 @@
       "North Korea": [
         "Pohjois-Korea"
       ],
-      "North Macedonia": [
-        "Pohjois-Makedonia"
-      ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
       ],
@@ -3312,6 +3300,9 @@
       ],
       "Failed loading group members": [
         "Ryhmän jäsenten lataaminen epäonnistui"
+      ],
+      "Failed to change permissions settings": [
+        "Käyttöoikeuksien muuttaminen epäonnistui"
       ],
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
@@ -4166,15 +4157,7 @@
         "Salamannopea"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
-      ],
       "Security key": [
         "Suojausavain"
       ]
@@ -5053,6 +5036,18 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
+      "Can edit": [
+        "Voi muokata"
+      ],
+      "Can edit and manage access": [
+        "Voi muokata ja hallita käyttöoikeutta"
+      ],
+      "Can view and edit": [
+        "Voi tarkastella ja muokata"
+      ],
+      "Can view only": [
+        "Vain katseluoikeus"
+      ],
       "Can't move a folder into itself": [
         "Kansiota ei voi siirtää itseensä"
       ],
@@ -5160,9 +5155,6 @@
       "Create links and share your files with others.": [
         "Luo linkkejä ja jaa tiedostojasi muille."
       ],
-      "Create your first folder and start moving your files.": [
-        "Luo ensimmäinen kansiosi ja aloita tiedostojen siirto."
-      ],
       "Creating": [
         "Luodaan"
       ],
@@ -5266,9 +5258,6 @@
       "Duplicate key updated": [
         "Avaimen kaksoiskappale päivitettiin"
       ],
-      "Each code can only be used once": [
-        "Koodit ovat kertakäyttöisiä"
-      ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
@@ -5316,9 +5305,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
@@ -6430,9 +6416,6 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Kun poistat laitteen ${ deviceName } synkronoinnista, kaikki tältä laitteelta Omiin tietokoneisiini lisätyt kansiot poistetaan pysyvästi ${ DRIVE_APP_NAME } -palvelusta."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
-      ],
       "who": [
         "kuka"
       ],
@@ -6701,14 +6684,6 @@
         "Vain tarkastelu"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Voi tarkastella ja muokata"
-      ],
-      "Can view only": [
-        "Voi vain tarkastella"
-      ]
-    },
     "Item": {
       "file attributes": [
         "tiedoston attribuutit"
@@ -6812,9 +6787,6 @@
       ],
       "Address": [
         "Osoite"
-      ],
-      "admin": [
-        "ylläpitäjä"
       ],
       "Alias title": [
         "Aliaksen otsikko"
@@ -9096,8 +9068,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valitut kuvat ovat jo albumissa \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
+      "Setting updated. Editors can change permissions and share.": [
         "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Asetus päivitetty. Muokkaajat eivät voi muuttaa käyttöoikeuksia tai jakaa sisältöä."
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"
@@ -12392,9 +12367,6 @@
       ],
       "You have no files to share": [
         "Jaettavia tiedostoja ei ole"
-      ],
-      "You have no folders yet": [
-        "Kansioita ei vielä ole"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"

@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
-      "Collapse": [
-        "Recolher"
-      ],
       "Collapse folder": [
         "Recolher pasta"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Criptografado"
-      ],
-      "Expand": [
-        "Expandir"
       ],
       "Expand folder": [
         "Expandir pasta"
@@ -3353,6 +3347,9 @@
       "Can't find any secure link": [
         "Não consigo encontrar nenhum link seguro"
       ],
+      "Can't retrieve device name": [
+        "Não foi possível recuperar o nome do dispositivo"
+      ],
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
@@ -3385,6 +3382,9 @@
       ],
       "Could not remove from favorites": [
         "Não foi possível remover dos favoritos."
+      ],
+      "Data integrity check failed": [
+        "Falha na verificação de integridade dos dados"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -4332,7 +4332,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -5221,8 +5221,23 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can edit and manage access": [
+        "Pode editar e gerenciar acesso"
+      ],
+      "Can view and edit": [
+        "Pode ver e editar"
+      ],
+      "Can view only": [
+        "Pode somente visualização"
+      ],
       "Can't move a folder into itself": [
         "Não é possível mover uma pasta para si mesma"
+      ],
+      "Can't rename to same name": [
+        "Não é possível renomear para o mesmo nome"
       ],
       "Canceled": [
         "Cancelado"
@@ -5328,9 +5343,6 @@
       "Create links and share your files with others.": [
         "Crie links e compartilhe seus arquivos com outros."
       ],
-      "Create your first folder and start moving your files.": [
-        "Crie sua primeira pasta e comece a mover seus arquivos."
-      ],
       "Creating": [
         "Criando"
       ],
@@ -5435,7 +5447,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -6653,7 +6665,7 @@
         "Quando você remover ${ deviceName } como um dispositivo sincronizado, todas as pastas adicionadas aos Meus Computadores a partir deste dispositivo serão permanentemente excluídas do ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "who": [
         "quem"
@@ -6859,6 +6871,9 @@
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
+      ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
@@ -6940,14 +6955,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Somente leitura"
-      ]
-    },
-    "Into": {
-      "Can view and edit": [
-        "Pode ver e editar"
-      ],
-      "Can view only": [
-        "Pode somente visualização"
       ]
     },
     "Item": {
@@ -7053,9 +7060,6 @@
       ],
       "Address": [
         "Endereço"
-      ],
-      "admin": [
-        "administrador"
       ],
       "Album": [
         "Álbum"
@@ -8387,6 +8391,10 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
       ],
@@ -9475,9 +9483,6 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "As fotos selecionadas já estão em «${ albumName }»."
-      ],
-      "Setting updated. Editors can change permission and share.": [
-        "Configuração atualizada. Editores podem alterar permissão e compartilhar."
       ],
       "Share invitation accepted successfully": [
         "Convite para compartilhamento aceito com sucesso"
@@ -11160,6 +11165,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Agora você pode facilmente pesquisar os arquivos do Drive enquanto mantém seus dados seguros."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "PROMOÇÃO DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -12981,9 +12996,6 @@
       ],
       "You have no files to share": [
         "Você não possui arquivos para compartilhar"
-      ],
-      "You have no folders yet": [
-        "Você ainda não tem pastas"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"

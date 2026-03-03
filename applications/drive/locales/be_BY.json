@@ -216,9 +216,6 @@
       "Collaborate on documents": [
         "Сумесна працуйце над дакументамі"
       ],
-      "Collapse": [
-        "Згарнуць"
-      ],
       "Collapse folder": [
         "Згарнуць папку"
       ],
@@ -467,9 +464,6 @@
       ],
       "Encrypted": [
         "Зашыфравана"
-      ],
-      "Expand": [
-        "Разгарнуць"
       ],
       "Expand folder": [
         "Разгарнуць папку"
@@ -3395,8 +3389,14 @@
       "Can't find any secure link": [
         "Немагчыма знайсці бяспечную спасылку"
       ],
+      "Can't retrieve device name": [
+        "Немагчыма атрымаць назву прылады"
+      ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
+      ],
+      "Cannot find move target": [
+        "Немагчыма знайсці мэтавую папку для перамяшчэння"
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
@@ -3427,6 +3427,9 @@
       ],
       "Could not remove from favorites": [
         "Не ўдалося выдаліць з абранага"
+      ],
+      "Data integrity check failed": [
+        "Збой праверкі цэласнасці звестак"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -3487,6 +3490,9 @@
       ],
       "Failed loading group members": [
         "Збой загрузкі членаў групы"
+      ],
+      "Failed to change permissions settings": [
+        "Не ўдалося змяніць налады дазволаў"
       ],
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
@@ -5387,8 +5393,26 @@
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
+      "Can edit": [
+        "Можа рэдагаваць"
+      ],
+      "Can edit and manage access": [
+        "Можа рэдагаваць і кіраваць доступам"
+      ],
+      "Can view and edit": [
+        "Можа праглядаць і рэдагаваць"
+      ],
+      "Can view only": [
+        "Можа толькі праглядаць"
+      ],
       "Can't move a folder into itself": [
         "Немагчыма перамясціць папку ў саму сябе"
+      ],
+      "Can't rename to same name": [
+        "Немагчыма перайменаваць у тую ж самую назву"
+      ],
+      "Can't write into folder": [
+        "Немагчыма запісаць у папку"
       ],
       "Canceled": [
         "Скасавана"
@@ -5497,9 +5521,6 @@
       ],
       "Create links and share your files with others.": [
         "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Стварыце сваю першую папку і пачніце перамяшчаць туды свае файлы."
       ],
       "Creating": [
         "Стварэнне"
@@ -6837,7 +6858,7 @@
         "Усе папкі, якія дададзены ў папку \"Мае камп'ютары\" з гэтай прылады, будуць незваротна выдалены з ${ DRIVE_APP_NAME } пры выдаленні прылады ${ deviceName } у якасці сінхранізаванай."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ],
       "who": [
         "хто"
@@ -7147,14 +7168,6 @@
         "Толькі прагляд"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Можа праглядаць і рэдагаваць"
-      ],
-      "Can view only": [
-        "Можа толькі праглядаць"
-      ]
-    },
     "Item": {
       "file attributes": [
         "атрыбуты файла"
@@ -7264,9 +7277,6 @@
       ],
       "Address": [
         "Адрас"
-      ],
-      "admin": [
-        "адміністратар"
       ],
       "Alias title": [
         "Загаловак псеўданіма"
@@ -9816,8 +9826,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Выбраныя фатаграфіі ўжо знаходзяцца ў \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
+      "Setting updated. Editors can change permissions and share.": [
         "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Налады абноўлены. Рэдактары не могуць змяняць дазволы і абагульваць."
       ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
@@ -11556,6 +11569,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ВЯСЕННІ РАСПРОДАЖ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ВЯСЕННІ РАСПРОДАЖ"
       ]
     },
     "sso": {
@@ -13443,9 +13466,6 @@
       ],
       "You have no files to share": [
         "У вас няма файлаў для абагулення"
-      ],
-      "You have no folders yet": [
-        "У вас пакуль няма папак"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
