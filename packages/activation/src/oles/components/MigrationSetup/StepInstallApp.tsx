@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
@@ -11,11 +9,9 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { GSUITE_MARKETPLACE_URL } from '@proton/shared/lib/api/activation';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import protonGoogleIcon from '@proton/styles/assets/img/migration-assistant/proton-google.svg';
-
-import type { MigrationSetupModel } from '../../types';
 import { useConnectionState } from '../../useConnectionState';
 
-const StepInstallApp: FC<{ model: MigrationSetupModel }> = () => {
+const StepInstallApp = () => {
     const [connection, loading, verify] = useConnectionState();
 
     return (
