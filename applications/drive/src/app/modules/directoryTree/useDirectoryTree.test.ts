@@ -117,6 +117,22 @@ describe('useDirectoryTree', () => {
             });
         });
 
+        it('should hide Shared with me root when hideSharedWithMe is true', async () => {
+            createMyFilesRoot();
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ hideSharedWithMe: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            expect(result.current.treeRoots).toHaveLength(2);
+            expect(findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID)).toBeDefined();
+            expect(findTreeItem(result.current.treeRoots, DEVICES_ROOT_ID)).toBeDefined();
+            expect(findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID)).toBeUndefined();
+        });
+
         it('should handle degraded My files root node', async () => {
             mockGetMyFilesRootFolder.mockResolvedValue({
                 ok: false,
