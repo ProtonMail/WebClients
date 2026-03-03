@@ -5126,39 +5126,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/components-core@npm:0.12.12":
-  version: 0.12.12
-  resolution: "@livekit/components-core@npm:0.12.12"
+"@livekit/components-core@npm:0.12.13":
+  version: 0.12.13
+  resolution: "@livekit/components-core@npm:0.12.13"
   dependencies:
     "@floating-ui/dom": "npm:1.7.4"
     loglevel: "npm:1.9.1"
     rxjs: "npm:7.8.2"
   peerDependencies:
-    livekit-client: ^2.15.14
+    livekit-client: ^2.17.2
     tslib: ^2.6.2
-  checksum: 10/d6b89330cb97a37f85768ecaf0883ae61b071755d7930196fa71f3ec244e788eb7b15b071bb6337f1478a687cd95039d9591a979065ff5210848f23b33b7c550
+  checksum: 10/84397bd298b01d9f5f004f7d6dadad62a5ea0ec9ec700adff916f4bb628ad6311a42cc406005f9a02a3439057b44847ffbb20ab822c7d08f7156dcd83f6e7454
   languageName: node
   linkType: hard
 
-"@livekit/components-react@npm:^2.9.19":
-  version: 2.9.19
-  resolution: "@livekit/components-react@npm:2.9.19"
+"@livekit/components-react@npm:^2.9.20":
+  version: 2.9.20
+  resolution: "@livekit/components-react@npm:2.9.20"
   dependencies:
-    "@livekit/components-core": "npm:0.12.12"
+    "@livekit/components-core": "npm:0.12.13"
     clsx: "npm:2.1.1"
     events: "npm:^3.3.0"
     jose: "npm:^6.0.12"
     usehooks-ts: "npm:3.1.1"
   peerDependencies:
     "@livekit/krisp-noise-filter": ^0.2.12 || ^0.3.0
-    livekit-client: ^2.16.0
+    livekit-client: ^2.17.2
     react: ">=18"
     react-dom: ">=18"
     tslib: ^2.6.2
   peerDependenciesMeta:
     "@livekit/krisp-noise-filter":
       optional: true
-  checksum: 10/5f06e82e975d2998dd445f15758aec767041e9e57e427697c9a4a6589f87c7a7e9751b368000ef6140d0e525557aab6b5912409390addafa03d09d1d34cdd5aa
+  checksum: 10/274f71e15df71a8aeaea913063a8c3f9c40366e1c134eb997b819fbf08701b0e975d862d222604b9df1b67057624c325962a7fcadb2526334ce6705517be78ce
   languageName: node
   linkType: hard
 
@@ -5189,15 +5189,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/track-processors@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@livekit/track-processors@npm:0.7.0"
+"@livekit/track-processors@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "@livekit/track-processors@npm:0.7.2"
   dependencies:
     "@mediapipe/tasks-vision": "npm:0.10.14"
   peerDependencies:
     "@types/dom-mediacapture-transform": ^0.1.9
     livekit-client: ^1.12.0 || ^2.1.0
-  checksum: 10/5359060c09e71799f087285ef07da391c7d34ebcdd48bec1915e73887f378f3300567d8f4626f61e12201e9a9a07debc68c9636823ce20d7df11fc79d10c6edc
+  checksum: 10/18627b7ed53d35a51fe884c96fd9a3433f775e86603ac29d03818e14548659a51bf440196c53e899e42d4a5205cce1d05c24f270760ffc4d89f955a55e9eec6c
   languageName: node
   linkType: hard
 
@@ -30916,6 +30916,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"livekit-client@npm:2.17.2":
+  version: 2.17.2
+  resolution: "livekit-client@npm:2.17.2"
+  dependencies:
+    "@livekit/mutex": "npm:1.1.1"
+    "@livekit/protocol": "npm:1.44.0"
+    events: "npm:^3.3.0"
+    jose: "npm:^6.1.0"
+    loglevel: "npm:^1.9.2"
+    sdp-transform: "npm:^2.15.0"
+    ts-debounce: "npm:^4.0.0"
+    tslib: "npm:2.8.1"
+    typed-emitter: "npm:^2.1.0"
+    webrtc-adapter: "npm:^9.0.1"
+  peerDependencies:
+    "@types/dom-mediacapture-record": ^1
+  checksum: 10/0cb87da067930da2d74074db10a1adf16abb2a5a245c081efd50ad18098ea7d65040b5a9fbc119e952d0b1728dc7e9bcc1843f9e1787d4a4c2d88d6e7b8bcd8c
+  languageName: node
+  linkType: hard
+
 "load-json-file@npm:^2.0.0":
   version: 2.0.0
   resolution: "load-json-file@npm:2.0.0"
@@ -37519,9 +37539,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
-    "@livekit/components-react": "npm:^2.9.19"
+    "@livekit/components-react": "npm:^2.9.20"
     "@livekit/krisp-noise-filter": "npm:^0.4.1"
-    "@livekit/track-processors": "npm:^0.7.0"
+    "@livekit/track-processors": "npm:^0.7.2"
     "@proton-meet/proton-meet-core": "npm:1.1.1-4"
     "@proton/atoms": "workspace:packages/atoms"
     "@proton/components": "workspace:packages/components"
@@ -37548,7 +37568,7 @@ __metadata:
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.2"
     happy-dom: "npm:^20.6.1"
-    livekit-client: "npm:2.17.1"
+    livekit-client: "npm:2.17.2"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
