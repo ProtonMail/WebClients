@@ -242,8 +242,7 @@ const AccountStepPaymentSummary = ({
                 bold: false,
             },
             !showAmountDue &&
-                tax?.inclusive === TaxInclusive.INCLUSIVE &&
-                tax.amount > 0 && {
+                tax?.inclusive === TaxInclusive.INCLUSIVE && {
                     id: 'vat',
                     left: taxInclusiveText,
                 },
