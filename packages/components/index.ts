@@ -49,6 +49,7 @@ export {
 } from './components/confirmActionModal/ConfirmActionModal';
 export { default as ConfirmSignOutModal } from './components/confirmSignOutModal/ConfirmSignOutModal';
 export { default as Bordered } from './components/container/Bordered';
+export { BorderedContainer, BorderedContainerItem } from './components/BorderedStackedGroup/BorderedContainer';
 export { default as Details } from './components/container/Details';
 export { default as EditableSection } from './components/container/EditableSection';
 export { default as Field } from './components/container/Field';

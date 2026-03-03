@@ -2,7 +2,7 @@
 
 This project is a storybook instance documenting Proton's design system in the scope of Web. It serves as both an isolated development environment for React Components as well as a source of centralized documentation all things design philosophy & technical documentation.
 
-Storybook live can be accesed at: https://design-system.protontech.ch/
+Storybook live can be accessed at: https://design-system.protontech.ch/
 
 ## Installation & Running
 
