@@ -1,20 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
-import {c} from 'ttag';
+import { c } from 'ttag';
 
-import {Banner} from '@proton/atoms/Banner/Banner';
-import {Button} from '@proton/atoms/Button/Button';
-import {ButtonLike} from '@proton/atoms/Button/ButtonLike';
-import {Tooltip} from '@proton/atoms/Tooltip/Tooltip';
-import {Icon, InputFieldTwo, SettingsLink, TextAreaTwo} from '@proton/components/index';
-import {LUMO_SHORT_APP_NAME} from '@proton/shared/lib/constants';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { InputFieldTwo, SettingsLink, TextAreaTwo } from '@proton/components/index';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcSliders } from '@proton/icons/icons/IcSliders';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import {useLumoUserSettings} from '../../../hooks';
-import {useIsGuest} from '../../../providers/IsGuestProvider';
-import {useLumoDispatch, useLumoSelector} from '../../../redux/hooks';
-import {initialFeatureFlags} from '../../../redux/slices/featureFlags';
-import type {LumoUserSettings} from '../../../redux/slices/lumoUserSettings';
-import {saveLumoUserSettingsToRemote} from '../../../redux/slices/lumoUserSettingsThunks';
+import { useLumoUserSettings } from '../../../hooks';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { initialFeatureFlags } from '../../../redux/slices/featureFlags';
+import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
+import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
 import {
     AVAILABLE_TRAITS,
     type PersonalizationSettings,
@@ -23,7 +27,7 @@ import {
     toggleTrait,
     updatePersonalizationSettings,
 } from '../../../redux/slices/personalization';
-import {safeLogger} from '../../../util/safeLogger';
+import { safeLogger } from '../../../util/safeLogger';
 
 import './PersonalizationPanel.scss';
 
@@ -238,12 +242,14 @@ const PersonalizationPanel = () => {
             return hasChanges;
         }
 
-        return personalization.nickname ||
+        return (
+            personalization.nickname ||
             personalization.jobRole ||
             personalization.personality !== 'default' ||
             personalization.traits.length > 0 ||
             personalization.lumoTraits ||
-            personalization.additionalContext;
+            personalization.additionalContext
+        );
     })();
 
     const handleSave = async () => {
@@ -280,7 +286,7 @@ const PersonalizationPanel = () => {
                 {isGuest ? (
                     // Guest user: Show sign-in prompt
                     <div className="text-center py-6">
-                        <Icon name="sliders" className="mb-4" size={6} />
+                        <IcSliders className="mb-4" size={6} />
 
                         <h3 className="text-bold mb-2">
                             {c('collider_2025: Personalization').t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
@@ -305,7 +311,7 @@ const PersonalizationPanel = () => {
                         </div>
 
                         <p className="text-sm color-weak mt-4">
-                            <Icon name="lock" size={3} className="mr-1" />
+                            <IcLock size={3} className="mr-1" />
                             {c('collider_2025: Info').t`Your information is zero-access encrypted`}
                         </p>
                     </div>
@@ -380,7 +386,7 @@ const PersonalizationPanel = () => {
                                                     className="trait-pill"
                                                     onClick={() => handleTraitToggle(trait.id)}
                                                 >
-                                                    <Icon name="plus" size={3} className="mr-1" />
+                                                    <IcPlus size={3} className="mr-1" />
                                                     {trait.label}
                                                 </Button>
                                             </Tooltip>
@@ -412,7 +418,7 @@ const PersonalizationPanel = () => {
                                                     );
                                                 }}
                                             >
-                                                <Icon name="arrow-rotate-right" size={3} />
+                                                <IcArrowRotateRight size={3} />
                                             </Button>
                                         </Tooltip>
                                     )}

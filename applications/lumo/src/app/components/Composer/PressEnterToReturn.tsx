@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/index';
+import { IcArrowLeftAndDown } from '@proton/icons/icons/IcArrowLeftAndDown';
 
 const PressEnterToReturn = () => {
     const shiftEnterBoldText = (
@@ -12,7 +12,7 @@ const PressEnterToReturn = () => {
     );
     return (
         <div className="hidden md:flex flex-row flex-nowrap gap-2 color-hint prompt-entry-hint">
-            <Icon name="arrow-left-and-down" />
+            <IcArrowLeftAndDown />
             <span className="text-xs">{c('collider_2025: Info').jt`Press ${shiftEnterBoldText} to ask`}</span>
         </div>
     );
