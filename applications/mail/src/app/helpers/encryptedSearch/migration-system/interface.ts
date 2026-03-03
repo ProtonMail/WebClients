@@ -5,8 +5,10 @@ import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encrypt
 
 export type MigrationToolParams = { user: UserModel; keyPassword: string };
 
+export type CleanTextFn = (text: string, includeQuote: boolean) => string;
+
 export type MigrationToolAPI = {
-    migration: (params: MigrationToolParams) => Promise<void>;
+    migration: (params: MigrationToolParams, cleanText: CleanTextFn) => Promise<void>;
 };
 
 export type EncryptedSearchData = {
