@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Colaborar en documentos"
       ],
-      "Collapse": [
-        "Minimizar"
-      ],
       "Collapse folder": [
         "Contraer carpeta"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Cifrado"
-      ],
-      "Expand": [
-        "Expandir"
       ],
       "Expand folder": [
         "Expandir carpeta"
@@ -3353,8 +3347,14 @@
       "Can't find any secure link": [
         "No se encuentra ningún enlace seguro"
       ],
+      "Can't retrieve device name": [
+        "No se puede obtener el nombre del dispositivo"
+      ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
+      ],
+      "Cannot find move target": [
+        "No se puede encontrar el destino"
       ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
@@ -3385,6 +3385,9 @@
       ],
       "Could not remove from favorites": [
         "No se pudo borrar de favoritos"
+      ],
+      "Data integrity check failed": [
+        "Error en la comprobación de integridad de los datos"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleccione al menos ${ calendarsToFixCount } calendario",
@@ -4327,7 +4330,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -5224,6 +5227,12 @@
       "Can't move a folder into itself": [
         "No puede mover una carpeta dentro de sí misma"
       ],
+      "Can't rename to same name": [
+        "No se puede usar el mismo nombre"
+      ],
+      "Can't write into folder": [
+        "No se puede escribir en la carpeta"
+      ],
       "Canceled": [
         "Cancelada"
       ],
@@ -5327,9 +5336,6 @@
       ],
       "Create links and share your files with others.": [
         "Cree enlaces y comparta los archivos con otros."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Cree la primera carpeta y comience a mover los archivos."
       ],
       "Creating": [
         "Creando"
@@ -6653,7 +6659,7 @@
         "Cuando elimine ${ deviceName } como dispositivo sincronizado, todas las carpetas añadidas a Mis computadoras desde este dispositivo se eliminarán permanentemente de ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "who": [
         "quién"
@@ -6945,14 +6951,6 @@
         "Solo lectura"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Puede ver y editar"
-      ],
-      "Can view only": [
-        "Solo lectura"
-      ]
-    },
     "Item": {
       "file attributes": [
         "atributos del archivo"
@@ -7056,9 +7054,6 @@
       ],
       "Address": [
         "Dirección"
-      ],
-      "admin": [
-        "admin"
       ],
       "Album": [
         "Álbum"
@@ -9489,9 +9484,6 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Las fotos seleccionadas ya están en «${ albumName }»."
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Configuración actualizada. Los editores pueden cambiar permisos y compartir."
-      ],
       "Share invitation accepted successfully": [
         "La invitación compartida fue aceptada."
       ],
@@ -11167,6 +11159,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puede buscar fácilmente archivos de Drive mientras mantiene los datos seguros."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -12988,9 +12990,6 @@
       ],
       "You have no files to share": [
         "No tiene archivos para compartir"
-      ],
-      "You have no folders yet": [
-        "Aún no tiene carpetas"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La prueba gratuita de ${ planName } termina el ${ textDate }."

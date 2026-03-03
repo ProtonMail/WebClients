@@ -935,6 +935,18 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ]
     },
     "Alert": {
@@ -1088,6 +1100,14 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
       ]
     },
     "Browser": {
@@ -2011,7 +2031,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -3484,15 +3504,7 @@
         "ჩქაროსნული კავშირი"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
-      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
       ]
@@ -4304,9 +4316,6 @@
       "Duplicate key updated": [
         "დუბლირებული გასაღები განახლებულია"
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
@@ -4336,9 +4345,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
@@ -4718,6 +4724,9 @@
       "Public documents are not yet enabled for your organization.": [
         "საჯარო დოკუმენტები თქვენი ორგანიზაციისთვის, ჯერ, ჩართული არაა."
       ],
+      "Read-only": [
+        "მხოლოდ წაკითხვადი"
+      ],
       "Recent documents": [
         "უახლესი დოკუმენტები"
       ],
@@ -5027,9 +5036,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "words": [
         "სიტყვა"
@@ -8231,6 +8237,27 @@
         "გაზიარებულია ${ ownerName }-ის მიერ"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "ახალი ელცხრილი"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Destination": [
+        "დანიშნულება"
+      ],
+      "Format": [
+        "ფორმატი"
+      ],
+      "Separator type": [
+        "გამყოფის ტიპი"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "მონაცემების შემოტანა"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "ხელმოწერის გარეშე"
@@ -8480,6 +8507,16 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "ამ დოკუმენტის ჩასასწორებლად, შექმენით ასლი, რომლის შეცვლაც შეგიძლიათ."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "sso": {
@@ -9320,6 +9357,9 @@
       ],
       "Re-signing contacts": [
         "კონტაქტის თავიდან ხელმოწერა"
+      ],
+      "Read-only": [
+        "მხოლოდ წაკითხვადი"
       ],
       "Recommended actions": [
         "რეკომენდებული ქმედებები"

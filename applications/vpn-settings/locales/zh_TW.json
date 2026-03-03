@@ -116,9 +116,6 @@
       "Back": [
         "返回"
       ],
-      "Back to sign in": [
-        "返回登錄"
-      ],
       "Block": [
         "封鎖"
       ],
@@ -512,9 +509,6 @@
       "Help and resources": [
         "尋求協助與資源"
       ],
-      "Hide": [
-        "隱藏"
-      ],
       "Hide more benefits": [
         "隱藏更多好處"
       ],
@@ -891,7 +885,7 @@
         "顯示預覽"
       ],
       "Sign in": [
-        "登錄"
+        "登入"
       ],
       "Sign in with password": [
         "使用密碼登入"
@@ -1029,7 +1023,7 @@
         "使用群組傳送權限"
       ],
       "Use recovery code": [
-        "使用復原代碼"
+        "使用復原碼"
       ],
       "Use your current email instead": [
         "沿用您目前的電郵位址"
@@ -1136,6 +1130,12 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Domains": [
+        "網域"
+      ],
+      "Users": [
+        "使用者"
       ]
     },
     "Address action": {
@@ -1450,12 +1450,29 @@
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "自動續期在${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 個月"
       ],
@@ -1464,6 +1481,9 @@
       ],
       "Annually": [
         "每年"
+      ],
+      "Billed monthly": [
+        "按月付款"
       ],
       "Lifetime": [
         "終身"
@@ -2445,9 +2465,6 @@
       ],
       "North Korea": [
         "北韓"
-      ],
-      "North Macedonia": [
-        "北馬其頓"
       ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
@@ -4322,9 +4339,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "註冊您的安全金鑰時出現問題。請再試一次。"
       ]
@@ -4345,14 +4359,11 @@
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
       ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
-      ],
       "Insert your security key into your device's USB port.": [
         "將安全金鑰插入您的 USB 連接孔。"
       ],
       "Security key": [
-        "安全性金鑰"
+        "安全金鑰"
       ],
       "Security key removed": [
         "安全金鑰已移除"
@@ -4378,7 +4389,7 @@
         "金鑰名稱"
       ],
       "Security key": [
-        "安全性金鑰"
+        "安全金鑰"
       ]
     },
     "fido2: Title": {
@@ -4589,9 +4600,6 @@
       ],
       "Password ends with": [
         "密碼結尾是"
-      ],
-      "Payment details": [
-        "繳款詳細資訊"
       ],
       "Protection": [
         "安全"
@@ -5597,9 +5605,6 @@
       "Drop to import": [
         "拖放以匯入"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每個網域僅能有一項SPF (TXT)紀錄。若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
@@ -5683,9 +5688,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"
@@ -6452,9 +6454,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
       ],
-      "Step ${ step }": [
-        "步驟 ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
       ],
@@ -6661,9 +6660,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
-      ],
-      "To continue to ${ product }": [
-        "繼續使用 ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
@@ -6914,9 +6910,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "當您從閘道器移除伺服器，將進入10天整的停用期。此伺服器可被新增至其他閘道器，但無法變更國家。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
       ],
@@ -7081,6 +7074,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
@@ -7423,7 +7419,7 @@
         "瀏覽器版本"
       ],
       "BTC address": [
-        "比特幣位址"
+        "比特幣位址 (數位錢包)"
       ],
       "BTC amount": [
         "比特幣金額"
@@ -7441,7 +7437,7 @@
         "持卡人"
       ],
       "Card number": [
-        "信用卡號"
+        "卡號"
       ],
       "Cash": [
         "現金"
@@ -7768,7 +7764,7 @@
         "新的組織密碼"
       ],
       "New password": [
-        "新增密碼"
+        "新密碼"
       ],
       "New second password": [
         "新的第二密碼"
@@ -8173,9 +8169,6 @@
       "Create an alias": [
         "建立一個別名"
       ],
-      "Don't have access to your 2FA?": [
-        "沒有存取您的雙重驗證？"
-      ],
       "Encryption and keys": [
         "加密與金鑰"
       ],
@@ -8561,29 +8554,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }：登入"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }：註冊"
-      ],
-      "Create a new ${ appName } account": [
-        "創建新的 ${ appName } 帳號"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "尋找您的 ${ BRAND_NAME } 帳號使用者名稱"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘記您的 ${ BRAND_NAME } 帳號密碼？使用您的備用碼、電子郵件或簡訊找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的復原電子郵件或手機號碼找到它，並恢復存取 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } ，以及其它相應處。"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "重設您的 ${ BRAND_NAME } 帳號密碼"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "登入以存取您的 ${ appName } 帳號"
       ]
     },
     "Modal title": {
@@ -8656,7 +8628,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "最高 VPN 速度"
+        "頂尖 VPN 速度"
       ],
       "Keep your inbox organized with folders": [
         "用資料夾讓信箱井然有序"
@@ -8749,7 +8721,7 @@
         "${ n } 個保險櫃"
       ],
       "${ n } VPN connection": [
-        "${ n } 個VPN 連線"
+        "${ n } 個 VPN 連線"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 終身"
@@ -8770,7 +8742,7 @@
         "每位使用者${ size }安全空間"
       ],
       "${ size } storage": [
-        "${ size }儲存"
+        "${ size } 儲存空間"
       ],
       "${ size } storage per user": [
         "${ size } 可用空間 / 每位使用者"
@@ -8845,7 +8817,7 @@
         "所有平台皆可使用"
       ],
       "Calendar sharing": [
-        "行事曆共享"
+        "行事曆分享"
       ],
       "Catch-all": [
         "全部擷取"
@@ -8929,7 +8901,7 @@
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME } 的免費功能"
       ],
       "Free VPN on a single device": [
-        "單一裝置上的免費 VPN"
+        "單一裝置的免費 VPN"
       ],
       "Fully refundable for 30 days": [
         "30 天體驗不滿意退款服務"
@@ -8942,9 +8914,6 @@
       ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "高速的瑞士 VPN 可保護您的隱私"
       ],
       "High-speed VPN on ${ n } device": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
@@ -9025,7 +8994,7 @@
         "隨時計畫和延後電子郵件"
       ],
       "Secure Core servers": [
-        "Secure Core伺服器"
+        "Secure Core 伺服器"
       ],
       "Secure file storage and sharing": [
         "安全地儲存和共享檔案"
@@ -9063,9 +9032,6 @@
       "Start protecting your organization": [
         "開始保護您的組織"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 個簡單步驟即可啟動您專屬的線上防護"
-      ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
       ],
@@ -9082,7 +9048,7 @@
         "兩步驟驗證"
       ],
       "Unlimited devices": [
-        "無限裝置數"
+        "無限裝置數量"
       ],
       "Unlimited devices and aliases": [
         "無限裝置和別名"
@@ -9127,7 +9093,7 @@
         "至多${ n }位使用者(${ adminsText }, ${ usersText })"
       ],
       "Up to ${ totalStorageSize } storage": [
-        "多至 ${ totalStorageSize } 儲存空間"
+        "最多至 ${ totalStorageSize } 儲存空間"
       ],
       "Use on up to ${ n } device at once": [
         "最多同一時間於 ${ n } 裝置"
@@ -9210,7 +9176,7 @@
         "為團隊增強安全及頂級功能"
       ],
       "For next-level password management and identity protection.": [
-        "使用密碼管理器及身分保護以增加安全性。"
+        "用於下一個層級的密碼管理與身份保護。"
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新創建帳號，也不能再次選擇該方案。"
@@ -9246,7 +9212,7 @@
         "專屬的 VPN 解決方案，提供安全、不設限、高速的網際網路存取。"
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "免費版帳號提供所有人以隱私權為宗旨的服務。"
+        "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "無限隱私與更多儲存空間，最多提供給至多 2 人使用。"
@@ -9563,7 +9529,7 @@
         "繞過審查制度"
       ],
       "Central control panel": [
-        "中央控制面板"
+        "中控面板"
       ],
       "Create up to ${ n } calendar": [
         "創建多達 ${ n } 個行事曆"
@@ -10213,7 +10179,7 @@
         "以下管理員將可以存取組織機構金鑰"
       ],
       "The organization key must be activated first.": [
-        "必須先啟用組織機構的金鑰."
+        "必須先啟用組織金鑰。"
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "若要替您的帳號啟用管理員權限，需要啟用組織金鑰。"
@@ -10247,9 +10213,6 @@
       "Bank transfer": [
         "銀行轉帳"
       ],
-      "Bitcoin": [
-        "比特幣"
-      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
@@ -10276,7 +10239,7 @@
         "計費國家"
       ],
       "Card number": [
-        "信用卡號"
+        "卡號"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
@@ -10290,8 +10253,14 @@
       "Got it": [
         "瞭解"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "MM/YY": [
-        "月份/年分"
+        "MM/YY"
       ],
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
@@ -10310,6 +10279,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Tax ${ rate }%": [
+        "稅金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "稅金 ${ rate }%"
       ],
       "terms and conditions": [
         "合約條款"
@@ -11330,6 +11305,11 @@
         "由 ${ ownerName } 分享"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "於 ${ appName } 開啟"
+      ]
+    },
     "Signup": {
       "1 month": [
         "1 個月"
@@ -11785,10 +11765,10 @@
     },
     "sso: auth device state": {
       "Active": [
-        "啟用的"
+        "啟用"
       ],
       "Inactive": [
-        "未啟用"
+        "未使用"
       ],
       "Pending activation": [
         "待啟動"
@@ -13272,9 +13252,6 @@
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
       ],
-      "OpenVPN username": [
-        "OpenVPN 使用者名稱"
-      ],
       "Organization filters": [
         "機構過濾系統"
       ],
@@ -14061,7 +14038,7 @@
         "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
-        "${ n } 個VPN 連線"
+        "${ n } 條VPN連線"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } 個國家"

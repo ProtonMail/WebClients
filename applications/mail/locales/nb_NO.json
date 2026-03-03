@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Kopier adresser"
       ],
-      "Copy alias “${ name }”": [
-        "Kopier alias \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
       ],
@@ -2609,6 +2606,13 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Subtotal": [
+        "Delsum"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsum for ${ cycle } måned",
+        "Delsum for ${ cycle } måneder"
       ],
       "Total": [
         "Totalt"
@@ -5299,9 +5303,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ingen kontakter enda. Start ved å opprette en ny kontakt"
       ]
@@ -5542,7 +5543,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ]
     },
     "fido2: Info": {
@@ -7155,7 +7156,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administrer og enkelt meld deg av nyhetsbrev og e-postlister."
@@ -8594,7 +8595,7 @@
         "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktdetaljene."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
@@ -12933,46 +12934,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Alle aliaser"
-      ],
       "Create alias": [
         "Opprett alias"
-      ],
-      "Create an alias": [
-        "Opprett et alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generer aliaser på farten, og administrer enkelt aliaser og passord."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliaser"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email aliaser tillater å registrere deg for ting på nettet uten å dele e-postadressen din. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nytt alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Åpne ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Beskytt din identitet på nettet"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Prøv ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Brukt på Amazon for shopping, og så videre."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(vil åpne ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13623,6 +13592,16 @@
       ],
       "Your pm.me email is active": [
         "Din pm.me-e-post er aktiv"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRSALG"
       ]
     },
     "sso": {
@@ -14284,9 +14263,6 @@
       "Address verification disabled": [
         "Adresseverifisering deaktivert"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopiert til utklippstavlen"
-      ],
       "Alias saved and copied": [
         "Alias lagret og kopiert"
       ],
@@ -14378,9 +14354,6 @@
       ],
       "Labels applied.": [
         "Etiketter anvendt"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Sist endrede aliaser lagret i ditt eldste hvelv"
       ],
       "Mail list unsubscribed": [
         "E-postliste avmeldt"

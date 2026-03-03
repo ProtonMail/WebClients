@@ -2741,6 +2741,9 @@
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
       ],
+      "Finish setting up your business account": [
+        "Dokončite nastavenie vášho firemného účtu"
+      ],
       "Install migration app": [
         "Inštalovať migračnú aplikáciu"
       ],
@@ -4237,7 +4240,7 @@
         "Severná Kórea"
       ],
       "North Macedonia": [
-        "Severná Macedónia"
+        "Severné Macedónsko"
       ],
       "Northern Mariana Islands": [
         "Severné Mariány"
@@ -6344,8 +6347,8 @@
       "You will be notified when someone requests emergency access.": [
         "Dostanete upozornenie, keď niekto požiada o núdzový prístup."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "V prípade resetovania hesla už nebudete môcť pomôcť s obnovením prístupu k účtu používateľa ${ user }."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Po resetovaní hesla už nebudete môcť pomôcť používateľovi ${ user } obnoviť jeho údaje."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Už nebudete môcť požiadať o prístup k účtu používateľa ${ user } v prípade núdze."
@@ -6566,9 +6569,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a skúste to znova."
       ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
@@ -6878,6 +6878,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Pri pripájaní televízora došlo k chybe. Znovu naskenujte QR kód na televízore."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
@@ -7866,7 +7869,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím, skúste to znova."
@@ -7889,7 +7892,7 @@
         "Naozaj chcete zrušiť bezpečnostný kľúč ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Insert your security key into your device's USB port.": [
         "Vložte bezpečnostný kľúč do USB portu zariadenia."
@@ -8360,9 +8363,6 @@
       ],
       "Password ends with": [
         "Heslo končí znakmi"
-      ],
-      "Payment details": [
-        "Detaily platby"
       ],
       "Permissions": [
         "Oprávnenia"
@@ -9973,7 +9973,7 @@
         "Presuňte na import"
       ],
       "Each code can only be used once": [
-        "Každý kód je možné použiť iba raz"
+        "Každý kód môže byť použitý len jeden krát"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Každá doména môže mať iba jeden SPF (TXT) záznam. Ak chcete zachovať existujúci SPF (TXT) záznam, môžete k existujúcemu záznamu pridať ${ spf } (vložte ho za ${ spfValue })."
@@ -11956,7 +11956,7 @@
         "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Keď sa vaše predplatné obnoví, použijeme všetky dostupné kredity predtým, ako zaúčtujeme platbu vyššie uvedeným spôsobom."
@@ -15928,9 +15928,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorýchlostná švajčiarska VPN, ktorá chráni vaše súkromie"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
         "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
@@ -16059,9 +16056,6 @@
       ],
       "Start protecting your organization": [
         "Začnite chrániť vašu organizáciu"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začnite sa chrániť online v 2 jednoduchých krokoch"
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
@@ -16805,6 +16799,9 @@
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
+      ],
+      "The key has been deleted.": [
+        "Kľúč bol vymazaný."
       ],
       "Too many recent API requests": [
         "Príliš veľa nedávnych API požiadaviek"
@@ -17579,6 +17576,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Kúpiť teraz"
+      ],
       "Contact us": [
         "Kontaktujte nás"
       ],
@@ -17673,6 +17673,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } je k dispozícii ako rozšírenie prehliadača v internetovom obchode Chrome."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } mesačne"
@@ -21098,6 +21101,16 @@
         "Získajte kredity, keď si pozvaná osoba predplatí ${ BRAND_NAME } plán."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÝ VÝPREDAJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÝ VÝPREDAJ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
@@ -23408,9 +23421,6 @@
       ],
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
-      ],
-      "Finish setting up your business account": [
-        "Dokončite nastavenie vášho firemného účtu"
       ],
       "Folders": [
         "Priečinky"

@@ -120,7 +120,7 @@
         "Terug"
       ],
       "Back to sign in": [
-        "Terug naar aanmelden"
+        "Terug naar inloggen"
       ],
       "Block": [
         "Blokkeer"
@@ -537,7 +537,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide more benefits": [
         "Verberg meer voordelen"
@@ -933,7 +933,7 @@
         "Voorbeeld tonen"
       ],
       "Sign in": [
-        "Aanmelden"
+        "Inloggen"
       ],
       "Sign in with password": [
         "Aanmelden met wachtwoord"
@@ -1077,7 +1077,7 @@
         "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
-        "Verificatiecode gebruiken"
+        "Authenticatiecode gebruiken"
       ],
       "Use group sending permissions": [
         "Groepsverzend machtigingen gebruiken"
@@ -2040,7 +2040,7 @@
         "Nodig uw team uit"
       ],
       "Manage global VPN permissions": [
-        "Globale VPN-rechten beheren"
+        "Globale VPN-machtigingen beheren"
       ],
       "Maybe later": [
         "Misschien later"
@@ -2058,7 +2058,7 @@
         "Andere functies instellen"
       ],
       "Set up SSO": [
-        "SSO configureren"
+        "SSO instellen"
       ],
       "Take a tour": [
         "Volg een rondleiding"
@@ -2919,9 +2919,6 @@
       "North Korea": [
         "Noord-Korea"
       ],
-      "North Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
       ],
@@ -3368,7 +3365,7 @@
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bepaal welke gebruikers kunnen verbinden met elk van onze 120+ gedeelde serverlocaties."
+        "Bepaal welke gebruikers verbinding kunnen maken met elk van onze 120+ gedeelde serverlocaties."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
@@ -3416,7 +3413,7 @@
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Als u dit nog niet heeft gedaan, schakel dan enkele herstelmethoden in om ervoor te zorgen dat u nooit de toegang verliest tot ${ VPN_APP_NAME }."
+        "Schakel, indien nog niet gedaan, enkele herstelmethoden in om ervoor te zorgen dat u nooit de toegang tot ${ VPN_APP_NAME } verliest."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
@@ -4081,9 +4078,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Als de tijd op uw TV is verlopen, klik dan op Vernieuwen op uw TV en probeer het opnieuw."
-      ],
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
@@ -4337,6 +4331,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Er is iets misgegaan bij het verbinden van uw tv. Scan de QR-code op uw tv nogmaals."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -5126,9 +5123,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
       ]
@@ -5148,9 +5142,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Insert your security key into your device's USB port.": [
         "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
@@ -5401,9 +5392,6 @@
       ],
       "Password ends with": [
         "Wachtwoord eindigt met"
-      ],
-      "Payment details": [
-        "Betalingsgegevens"
       ],
       "Protection": [
         "Bescherming"
@@ -6571,7 +6559,7 @@
         "Neerzetten om te importeren"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
@@ -6652,7 +6640,7 @@
         "Voer een nieuw wachtwoord in voor gebruiker ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Voer de code van uw authenticatie app in"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Voer de code in die naar uw telefoonnummer ${ phone } is gestuurd."
@@ -7480,7 +7468,7 @@
         "Stel uw organisatie in"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configureer uw organisatie en begin met de bescherming van uw gegevens in een paar eenvoudige stappen."
+        "Stel uw organisatie in en begin in een paar eenvoudige stappen met het beschermen van uw gegevens."
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
@@ -7539,10 +7527,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Start op ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "Stap ${ step }",
-        "Stap ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -8071,7 +8055,7 @@
         "Wanneer u een server uit een Gateway verwijdert, voert deze een deactivatieperiode van 10 dagen in. Deze server kan worden toegevoegd aan een nieuwe gateway, maar zijn land kan niet worden veranderd."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -8665,7 +8649,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Authenticator app": [
-        "Authenticator-app"
+        "Authenticatie app"
       ],
       "Awarded": [
         "Toegekend"
@@ -9506,7 +9490,7 @@
         "Alias aanmaken"
       ],
       "Don't have access to your 2FA?": [
-        "Heeft u geen tot uw 2FA?"
+        "Heeft u geen toegang tot uw 2FA?"
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
@@ -9675,10 +9659,10 @@
         "Ondersteuningsformulier openen"
       ],
       "Upgrade subscription": [
-        "Abonnement opwaarderen"
+        "Abonnement upgraden"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Waardeer op om chatondersteuning en andere premiumfunctionaliteiten te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
+        "Upgrade om chatondersteuning en andere premiumfuncties te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
       ]
     },
     "Loading info": {
@@ -9984,28 +9968,28 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Log in"
+        "${ appName }: Inloggen"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Inschrijven"
+        "${ appName }: Aanmelden"
       ],
       "Create a new ${ appName } account": [
-        "Maak een nieuwe ${ appName }-account aan"
+        "Maak een nieuw ${ appName } account aan"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Vind uw ${ BRAND_NAME }-account gebruikersnaam"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } wachtwoord vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+        "Bent u uw ${ BRAND_NAME } account wachtwoord vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME }-account gebruikersnaam vergeten? Reset het door uw recovery code, e-mail of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+        "Bent u uw ${ BRAND_NAME } account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Reset uw ${ BRAND_NAME }-account wachtwoord"
+        "Reset uw ${ BRAND_NAME } accountwachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
-        "Log in om toegang te krijgen tot uw ${ appName }-account"
+        "Log in om toegang te krijgen tot uw ${ appName } account"
       ]
     },
     "Modal title": {
@@ -10146,6 +10130,10 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",
         "${ n } agenda's per gebruiker"
@@ -10174,6 +10162,14 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
       "${ n } message per day": [
         "${ n } bericht per dag",
         "${ n } berichten per dag"
@@ -10196,6 +10192,10 @@
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
@@ -10291,7 +10291,7 @@
         "Beschikbaar op alle platformen"
       ],
       "Calendar sharing": [
-        "Agenda's delen"
+        "Agenda-delen"
       ],
       "Catch-all": [
         "Catch-all"
@@ -10306,7 +10306,7 @@
         "Samenwerken en grote bestanden delen"
       ],
       "Contact groups": [
-        "Contactpersonen groep"
+        "Contactgroepen"
       ],
       "Contact groups management": [
         "Beheer van contactgroepen"
@@ -10321,7 +10321,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Custom fields": [
-        "Zelf gedefinieerde velden"
+        "Aangepaste velden"
       ],
       "Custom workspace branding": [
         "Aangepaste workspace branding"
@@ -10388,9 +10388,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Snelle Zwitserse VPN die uw privacy beschermt"
       ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
@@ -10517,9 +10514,6 @@
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Bescherm uzelf online in 2 eenvoudige stappen"
-      ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
       ],
@@ -10600,6 +10594,10 @@
       ],
       "User storage management": [
         "Beheer gebruikersopslag"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
       ],
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
@@ -10809,7 +10807,7 @@
         "Krijg toegang tot ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } via het gemak van uw desktop"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Adressen beschikken over alle functies voor verzenden en ontvangen. Aan één gebruiker kunnen meerdere adressen worden toegewezen; een adres kan echter niet aan meerdere gebruikers worden toegewezen."
@@ -11869,9 +11867,6 @@
       "Bank transfer": [
         "Bankoverschrijving"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
@@ -12047,7 +12042,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "Ongeldig creditcardnummer"
+        "Ongeldig kaartnummer"
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
@@ -13660,6 +13655,16 @@
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
@@ -13933,7 +13938,7 @@
         "Afgewezen"
       ],
       "Signed out": [
-        "Afgemeld"
+        "Uitgelogd"
       ],
       "Unknown": [
         "Onbekend"
@@ -14067,6 +14072,14 @@
       "${ n } high-speed VPN connection": [
         "${ n } supersnelle VPN-verbinding",
         "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
@@ -14768,7 +14781,7 @@
     },
     "Suffix": {
       "/month": [
-        "/maandelijks"
+        "/maand"
       ],
       "/user per month": [
         "/gebruiker per maand"
@@ -15338,7 +15351,7 @@
         "Wijzigingen annuleren?"
       ],
       "Dismiss setup checklist": [
-        "Configuratiecontrolelijst verwerpen"
+        "Setup-checklist negeren"
       ],
       "Domain names": [
         "Domeinnamen"
@@ -15410,7 +15423,7 @@
         "E-mailcategorieën"
       ],
       "Email subscriptions": [
-        "Nieuwsbrieven"
+        "E-mailabonnementen"
       ],
       "Enable advanced account protection": [
         "Schakel geavanceerde accountbeveiliging in"
@@ -15661,7 +15674,7 @@
         "Privacy en gegevensverzameling"
       ],
       "Processing...": [
-        "Verwerken..."
+        "Wordt verwerkt..."
       ],
       "QR Code": [
         "QR-code"
@@ -15929,7 +15942,7 @@
         "Upgraden om uw premium voordelen te behouden."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Waardeer uw netwerkbescherming op met toegewijde servers"
+        "Upgrade uw netwerkbescherming met toegewijde servers"
       ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
@@ -16681,6 +16694,10 @@
       "${ n } server": [
         "${ n } server",
         "${ n }+ servers"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } land",

@@ -211,7 +211,7 @@
         "Zpět"
       ],
       "Back to sign in": [
-        "Zpět k přihlášení"
+        "Zpět k přihlášení se"
       ],
       "Block": [
         "Blokovat"
@@ -2735,6 +2735,9 @@
       "Failed to load OAuth": [
         "Nepodařilo se načíst OAuth"
       ],
+      "Finish setting up your business account": [
+        "Dokončete nastavení svého firemního účtu"
+      ],
       "Install migration app": [
         "Nainstalujte migrační aplikaci"
       ],
@@ -2802,7 +2805,7 @@
         "Spustit migraci"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Pro migraci dat vaší organizace musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po instalaci se sem vraťte a pokračujte. Více informací"
+        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte. Více informací"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -6338,8 +6341,8 @@
       "You will be notified when someone requests emergency access.": [
         "Budete upozorněni, až si někdo vyžádá nouzový přístup."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "V případě resetu hesla již nebudete moci pomoci obnovit přístup k účtu uživatele ${ user }."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Nebudete již moci pomoci ${ user } obnovit jejich data po resetování hesla."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "V případě nouze již nebudete moci požádat o přístup k účtu uživatele ${ user }."
@@ -6444,6 +6447,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Kód je nesprávný nebo již není platný"
+      ],
       "Condition incomplete": [
         "Neúplná podmínka"
       ],
@@ -6539,6 +6545,9 @@
       ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
+      ],
+      "Failed to update billing address": [
+        "Fakturační adresu se nepodařilo aktualizovat"
       ],
       "Failed to update detailed monitoring.": [
         "Aktualizace podrobného sledování selhala."
@@ -6863,6 +6872,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Nastala chyba při připojování vaší TV. Zkuste prosím znovu naskenovat QR kód na vaší TV."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
@@ -8345,9 +8357,6 @@
       ],
       "Password ends with": [
         "Heslo končí na"
-      ],
-      "Payment details": [
-        "Platební údaje"
       ],
       "Permissions": [
         "Oprávnění"
@@ -10698,6 +10707,9 @@
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
+      "No card required": [
+        "Není vyžadována karta"
+      ],
       "No countries enabled": [
         "Žádné povolené země"
       ],
@@ -11780,9 +11792,6 @@
       ],
       "Version ${ version }": [
         "Verze ${ version }"
-      ],
-      "Version history": [
-        "Historie verzí"
       ],
       "Version number successfully copied to clipboard": [
         "Číslo verze úspěšně zkopírováno do schránky"
@@ -15679,6 +15688,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
       ],
@@ -15886,9 +15901,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
         "Vysokorychlostní VPN na ${ n } zařízeních",
@@ -16017,9 +16029,6 @@
       ],
       "Start protecting your organization": [
         "Začněte chránit svou organizaci"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
@@ -16763,6 +16772,9 @@
       ],
       "Reminder has been sent": [
         "Připomenutí bylo odesláno"
+      ],
+      "The key has been deleted.": [
+        "Klíč byl smazán."
       ],
       "Too many recent API requests": [
         "Příliš mnoho API požadavků v poslední době"
@@ -17635,6 +17647,9 @@
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } je k dispozici jako rozšíření prohlížeče ve webovém obchodě Chrome."
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } za měsíc"
       ],
@@ -18137,10 +18152,10 @@
         "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -18304,6 +18319,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -18588,6 +18606,9 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, high-speed access to the internet.": [
+        "VPN řešení, které poskytuje bezpečný, vysokorychlostní přístup k internetu."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Všechny prémiové produkty ${ BRAND_NAME } jsou součástí tarifu Duo."
       ],
@@ -18602,6 +18623,12 @@
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Cloudové úložiště a sdílení souborů zabezpečené koncovým šifrováním."
+      ],
+      "Comprehensive privacy and security suite.": [
+        "Komplexní sada pro ochranu soukromí a zabezpečení."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "Zlikvidujte spam, sledování a reklamy pomocí šifrovaného e-mailu a zabezpečeného kalendáře."
       ],
       "For next-level password management and identity protection.": [
         "Pro pokročilou správu hesel a ochranu identity."
@@ -20324,6 +20351,9 @@
         "${ PASS_PLUS_VAULTS } trezorů pro vaše hesla",
         "${ PASS_PLUS_VAULTS } trezorů pro vaše hesla"
       ],
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } vás zve, abyste se připojili k více než 100 milionům lidí, kteří se rozhodli mít svá data pod kontrolou díky šifrovanému ekosystému ${ BRAND_NAME }."
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } cloudového úložiště pro soubory a fotky"
       ],
@@ -20332,6 +20362,9 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } bezpečného úložiště na uživatele"
+      ],
+      "${ value } total encrypted storage": [
+        "Celkem ${ value } šifrovaného úložiště"
       ],
       "${ value } total storage": [
         "${ value } úložiště celkem"
@@ -20484,13 +20517,16 @@
         "Správce hesel pro všechna vaše zařízení"
       ],
       "Pick a service to get started.": [
-        "Vyberte službu pro začátek."
+        "Vyberte si službu a začněte."
       ],
       "Pick your perfect plan": [
         "Vyberte si ideální tarif"
       ],
       "Private AI assistant with encrypted chat history": [
         "Soukromý AI asistent se šifrovanou historií chatu"
+      ],
+      "Promo applied – ${ discountItem.discountPercent }% off": [
+        "Slevový kód použit – sleva ${ discountItem.discountPercent } %"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -20512,6 +20548,9 @@
       ],
       "Secure vault sharing and link sharing": [
         "Bezpečné sdílení trezoru a sdílení odkazu"
+      ],
+      "Securely share files and photos": [
+        "Bezpečně sdílejte soubory a fotky"
       ],
       "Select ${ title }": [
         "Vybrat ${ title }"
@@ -20549,6 +20588,9 @@
       "The organization name will be visible to your users while they are signed in.": [
         "Název organizace bude viditelný pro přihlášené uživatele."
       ],
+      "Then ${ priceElement }": [
+        "Poté ${ priceElement }"
+      ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Poté ${ priceWithDiscountPerMonth } měsíčně, pokud se přihlásíte k odběru."
       ],
@@ -20566,6 +20608,9 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Vyzkoušejte zdarma ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dnů"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Vyzkoušejte ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dní zdarma ${ br } a získejte ${ referralInfo.uiData.refereeRewardAmount } kreditů"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Vyzkoušejte ${ BRAND_NAME } na 14 dní zdarma"
@@ -20626,6 +20671,9 @@
       ],
       "Your trial": [
         "Vaše zkušební verze"
+      ],
+      "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Jste zváni, abyste se připojili k více než 100 milionům lidí, kteří se rozhodli mít svá data pod kontrolou díky šifrovanému ekosystému ${ BRAND_NAME }."
       ]
     },
     "Signup label": {
@@ -21021,6 +21069,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získejte kredity, pokud si osoba, kterou pozvete, předplatí ${ BRAND_NAME } tarif."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {
@@ -21482,7 +21540,7 @@
         "${ discountItem.discountPercent }% sleva použita"
       ],
       "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent } % sleva"
+        "${ discountItem.discountPercent }% sleva"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } zdarma"
@@ -23331,9 +23389,6 @@
       "Find email or username": [
         "Najít e-mail nebo uživatelské jméno"
       ],
-      "Finish setting up your business account": [
-        "Dokončete nastavení svého firemního účtu"
-      ],
       "Folders": [
         "Složky"
       ],
@@ -24936,6 +24991,9 @@
       ],
       "Recommended": [
         "Doporučeno"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ušetřete ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {
@@ -25097,6 +25155,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Získejte více ze svého předplatného ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Udržujte své soubory, fotky a dokumenty v bezpečí s ${ maxDriveSpace } cloudovým úložištěm."
       ],
       "Set secure passwords without the hassle.": [
         "Nastavte bezpečná hesla bez potíží."

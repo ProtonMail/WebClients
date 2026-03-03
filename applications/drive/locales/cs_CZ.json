@@ -216,9 +216,6 @@
       "Collaborate on documents": [
         "Spolupracovat na dokumentech"
       ],
-      "Collapse": [
-        "Sbalit"
-      ],
       "Collapse folder": [
         "Sbalit složku"
       ],
@@ -467,9 +464,6 @@
       ],
       "Encrypted": [
         "Šifrováno"
-      ],
-      "Expand": [
-        "Rozbalit"
       ],
       "Expand folder": [
         "Rozbalit složku"
@@ -3395,6 +3389,9 @@
       "Can't find any secure link": [
         "Nelze nalézt žádný bezpečný odkaz"
       ],
+      "Can't retrieve device name": [
+        "Nelze načíst název zařízení"
+      ],
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
       ],
@@ -3427,6 +3424,9 @@
       ],
       "Could not remove from favorites": [
         "Nelze odebrat z oblíbených"
+      ],
+      "Data integrity check failed": [
+        "Kontrola integrity dat selhala"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
@@ -5390,6 +5390,9 @@
       "Can't move a folder into itself": [
         "Složku nelze přesunout do sebe"
       ],
+      "Can't rename to same name": [
+        "Nelze přejmenovat na stejný název"
+      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -5497,9 +5500,6 @@
       ],
       "Create links and share your files with others.": [
         "Vytvořte odkazy a sdílejte své soubory s ostatními."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Vytvořte první složku a přesuňte soubory."
       ],
       "Creating": [
         "Vytváření"
@@ -7147,14 +7147,6 @@
         "Pouze zobrazení"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Může zobrazovat a upravovat"
-      ],
-      "Can view only": [
-        "Může pouze zobrazovat"
-      ]
-    },
     "Item": {
       "file attributes": [
         "vlastnosti souboru"
@@ -7264,9 +7256,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "admin": [
-        "správce"
       ],
       "Alias title": [
         "Název aliasu"
@@ -8592,6 +8581,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
       ],
@@ -9759,9 +9754,6 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotky jsou již v albu \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."
-      ],
       "Share invitation accepted successfully": [
         "Pozvánka ke sdílení úspěšně přijata"
       ],
@@ -10392,10 +10384,10 @@
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -10540,6 +10532,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -11496,6 +11491,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyní můžete jednoduše vyhledávat soubory na Disku, zatímco jsou vaše data zabezpečena."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {
@@ -13383,9 +13388,6 @@
       ],
       "You have no files to share": [
         "Nemáte žádné soubory ke sdílení"
-      ],
-      "You have no folders yet": [
-        "Zatím nemáte žádné složky"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"

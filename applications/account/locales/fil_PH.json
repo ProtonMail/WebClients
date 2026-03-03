@@ -210,9 +210,6 @@
       "Back": [
         "Bumalik"
       ],
-      "Back to sign in": [
-        "Bumalik sa sign in"
-      ],
       "Block": [
         "I-block"
       ],
@@ -833,9 +830,6 @@
       ],
       "Help and resources": [
         "Tulong at mga mapagkukunan"
-      ],
-      "Hide": [
-        "Itago"
       ],
       "Hide more benefits": [
         "Itago ang iba pang benepisyo"
@@ -4036,9 +4030,6 @@
       ],
       "North Korea": [
         "North Korea"
-      ],
-      "North Macedonia": [
-        "Hilagang Macedonia"
       ],
       "Northern Mariana Islands": [
         "Northern Mariana Islands"
@@ -7342,9 +7333,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nagkaproblema sa pag-authenticate gamit ang security key. Pakisubukang muli."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Nagkaproblema sa pagpaparehistro ng security key. Pakisubukang muli."
       ]
@@ -7364,9 +7352,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigurado ka bang gusto mong i-delete ang security key na ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Ipasok ang isang security key na naka-link sa ${ BRAND_NAME } Account."
       ],
       "Insert your security key into your device's USB port.": [
         "Ipasok ang iyong security key sa USB port ng iyong device."
@@ -7821,9 +7806,6 @@
       ],
       "Password ends with": [
         "Nagtatapos ang password sa"
-      ],
-      "Payment details": [
-        "Mga detalye ng pagbabayad"
       ],
       "Permissions": [
         "Mga pahintulot"
@@ -9318,9 +9300,6 @@
       "Drop to import": [
         "I-drop upang i-import"
       ],
-      "Each code can only be used once": [
-        "Ang bawat code ay magagamit lang nang isang beses"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Ang bawat domain ay maaari lamang magkaroon ng isang SPF (TXT) record. Kung nais panatilihin ang umiiral na SPF (TXT) record, maaaring idagdag ang ${ spf } sa kasalukuyang record (ilagay ito pagkatapos ng ${ spfValue })."
       ],
@@ -9449,9 +9428,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ilagay ang verification code na ipinadala sa ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Ilagay ang verification code. Digit ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Ilagay ang mga detalye ng iyong ${ BRAND_NAME } Account."
@@ -10886,9 +10862,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Upang kumpirmahin, mangyaring ilagay ang pangalan ng user na nais i-delete."
       ],
-      "To continue to ${ product }": [
-        "Upang magpatuloy sa ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Upang patuloy na mapabuti ang aming mga serbisyo, minsan ay nangongolekta kami ng data upang subaybayan ang wastong paggana ng aming mga application. Ang impormasyong ito ay hindi isine-share sa anumang 3rd-party na serbisyo."
       ],
@@ -11227,9 +11200,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kapag inalis mo ang isang server mula sa Gateway, papasok ito sa 10 araw na panahon ng deactivation. Maaaring idagdag ang server na ito sa bagong Gateway, ngunit hindi mapapalitan ang bansa nito."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Kapag nag-set up ka ng two-factor authentication, nagbibigay kami ng mga recovery code na magagamit mo para mag-sign in kung mawalan ka ng access sa iyong authenticator app."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kapag nag-renew ang subscription, ilalapat namin ang anumang available na credit bago singilin ang paraan ng pagbabayad sa itaas."
@@ -13746,9 +13716,6 @@
       "Create an alias": [
         "Gumawa ng alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Walang access sa 2FA?"
-      ],
       "Downloads": [
         "Mga download"
       ],
@@ -14363,12 +14330,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Mag-sign in"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Mag-sign up"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account"
       ],
@@ -14378,9 +14339,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Gumawa ng ${ BRAND_NAME } Account | Bawiin ang iyong privacy"
       ],
-      "Create a new ${ appName } account": [
-        "Gumawa ng bagong ${ appName } account"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "I-enjoy ang dalawang linggo ng ${ BRAND_NAME } nang libre"
       ],
@@ -14389,18 +14347,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Hanapin ang iyong username ng ${ BRAND_NAME } Account"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nakalimutan ang password ng iyong ${ BRAND_NAME } Account? I-reset ito dito gamit ang iyong recovery code, email o SMS at bawiin ang access sa iyong ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } at higit pa."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nakalimutan ang username ng iyong ${ BRAND_NAME } Account? Hanapin ito gamit ang iyong recovery email o phone number at bawiin ang access sa iyong ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at higit pa."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "I-reset ang password ng ${ BRAND_NAME } Account"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Mag-sign in para ma-access ang ${ appName } account"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Mag-sign in sa iyong ${ BRAND_NAME } Account upang ma-access ang lahat ng naka-encrypt na serbisyo ng ${ BRAND_NAME } tulad ng ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at marami pa. Walang account? Gumawa ng isa nang LIBRE."
@@ -14981,9 +14927,6 @@
       "Group management (coming soon)": [
         "Pamamahala ng pangkat (paparating na)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "High-speed na Swiss VPN na pumoprotekta sa privacy"
-      ],
       "High-speed VPN on ${ n } device": [
         "High-speed na VPN sa ${ n } device",
         "High-speed na VPN sa ${ n } na device"
@@ -15105,9 +15048,6 @@
       ],
       "Start protecting your organization": [
         "Simulang protektahan ang iyong organisasyon"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Simulan ang pagprotekta sa sarili online sa 2 madaling hakbang"
       ],
       "Strict no-logs policy": [
         "Mahigpit na patakaran ng walang pagtatala"
@@ -21978,9 +21918,6 @@
       ],
       "Find email or username": [
         "Hanapin ang email o username"
-      ],
-      "Finish setting up your business account": [
-        "Tapusin ang pag-set up ng iyong business account"
       ],
       "Folders": [
         "Mga Folder"

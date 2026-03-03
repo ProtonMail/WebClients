@@ -121,9 +121,6 @@
       "Back": [
         "Natrag"
       ],
-      "Back to sign in": [
-        "Natrag na prijavu"
-      ],
       "Block": [
         "Blokiraj"
       ],
@@ -513,9 +510,6 @@
       ],
       "Got it": [
         "Shvaćam"
-      ],
-      "Hide": [
-        "Sakrij"
       ],
       "Import": [
         "Uvoz"
@@ -2445,9 +2439,6 @@
       "North Korea": [
         "Sjeverna Koreja"
       ],
-      "North Macedonia": [
-        "Sjeverna Makedonija"
-      ],
       "Northern Mariana Islands": [
         "Sjeverni Marijanski Otoci"
       ],
@@ -4168,9 +4159,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nešto je pošlo po zlu prilikom provjere autentičnosti Vašeg sigurnosnog ključa. Pokušajte ponovno."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Nešto je pošlo po zlu prilikom registracije Vašeg sigurnosnog ključa. Pokušajte ponovno."
       ]
@@ -4178,9 +4166,6 @@
     "fido2: Info": {
       "Add a name to identify your security key with.": [
         "Dodajte naziv za identifikaciju Vašeg sigurnosnog ključa."
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Unesite sigurnosni ključ povezan s Vašim ${ BRAND_NAME } korisničkim računom."
       ],
       "Insert your security key into your device's USB port.": [
         "Umetnite svoj sigurnosni ključ u USB port svojeg uređaja."
@@ -4550,9 +4535,6 @@
       ],
       "Password ends with": [
         "Lozinka završava sa"
-      ],
-      "Payment details": [
-        "Detalji o plaćanju"
       ],
       "Protection": [
         "Zaštita"
@@ -6061,9 +6043,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
-      ],
-      "To continue to ${ product }": [
-        "Za nastavak na ${ product }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -7716,9 +7695,6 @@
       "Create an alias": [
         "Stvori pseudonim"
       ],
-      "Don't have access to your 2FA?": [
-        "Nemate pristup svojoj 2FA metodi?"
-      ],
       "Encryption and keys": [
         "Šifriranje i ključevi"
       ],
@@ -7995,35 +7971,14 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: prijava"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: registracija"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } račun"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Stvorite ${ BRAND_NAME } korisnički račun za korištenje svih šifriranih ${ BRAND_NAME } usluga kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge, sa samo jednom prijavom. Nabavite besplatan ${ BRAND_NAME } korisnički račun."
       ],
-      "Create a new ${ appName } account": [
-        "Stvori novi račun za ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Pronađite svoje korisničko ime ${ BRAND_NAME } računa"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Zaboravili ste lozinku za svoj ${ BRAND_NAME } račun? Ponovno ju postavi pomoću kodova za oporavak, e-pošte ili SMS-a i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Zaboravili ste korisničko ime za svoj ${ BRAND_NAME } račun? Pronađite ga pomoću e-pošte ili broja mobilnog telefona za oporavak i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Ponovno postavite lozinku za svoj ${ BRAND_NAME } račun"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Prijavite se za pristup svom računu za ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se na svoj ${ BRAND_NAME } račun kako biste pristupili svim šifriranim ${ BRAND_NAME } uslugama kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge. Nemate račun? Izradite ga BESPLATNO."

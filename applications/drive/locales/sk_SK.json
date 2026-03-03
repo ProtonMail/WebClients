@@ -216,9 +216,6 @@
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
       ],
-      "Collapse": [
-        "Zbaliť"
-      ],
       "Collapse folder": [
         "Zbaliť priečinok"
       ],
@@ -467,9 +464,6 @@
       ],
       "Encrypted": [
         "Šifrované"
-      ],
-      "Expand": [
-        "Rozbaliť"
       ],
       "Expand folder": [
         "Rozbaliť priečinok"
@@ -2630,7 +2624,7 @@
         "Severná Kórea"
       ],
       "North Macedonia": [
-        "Severná Macedónia"
+        "Severné Macedónsko"
       ],
       "Northern Mariana Islands": [
         "Severné Mariány"
@@ -3395,8 +3389,14 @@
       "Can't find any secure link": [
         "Nemožno nájsť žiadny bezpečný odkaz"
       ],
+      "Can't retrieve device name": [
+        "Nemožno získať názov zariadenia"
+      ],
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
+      ],
+      "Cannot find move target": [
+        "Cieľ presunu nebol nájdený"
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
@@ -3427,6 +3427,9 @@
       ],
       "Could not remove from favorites": [
         "Nepodarilo sa odstrániť z obľúbených"
+      ],
+      "Data integrity check failed": [
+        "Kontrola integrity údajov zlyhala"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -4391,12 +4394,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -5390,6 +5393,12 @@
       "Can't move a folder into itself": [
         "Priečinok nie je možné presunúť sám do seba"
       ],
+      "Can't rename to same name": [
+        "Nie je možné premenovať na rovnaký názov"
+      ],
+      "Can't write into folder": [
+        "Do priečinka nie je možné zapisovať"
+      ],
       "Canceled": [
         "Zrušené"
       ],
@@ -5498,9 +5507,6 @@
       "Create links and share your files with others.": [
         "Vytvárajte odkazy a zdieľajte vaše súbory s ostatnými."
       ],
-      "Create your first folder and start moving your files.": [
-        "Vytvorte svoj prvý priečinok a začnite presúvať svoje súbory."
-      ],
       "Creating": [
         "Vytváranie"
       ],
@@ -5607,7 +5613,7 @@
         "Duplicitný kľúč bol aktualizovaný"
       ],
       "Each code can only be used once": [
-        "Každý kód je možné použiť iba raz"
+        "Každý kód môže byť použitý len jeden krát"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -6837,7 +6843,7 @@
         "Keď odstránite ${ deviceName } ako synchronizované zariadenie, všetky priečinky pridané do Moje počítače z tohto zariadenia sa natrvalo odstránia z ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "who": [
         "kto"
@@ -7147,14 +7153,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Môže zobraziť a upraviť"
-      ],
-      "Can view only": [
-        "Môže len zobraziť"
-      ]
-    },
     "Item": {
       "file attributes": [
         "atribúty súboru"
@@ -7264,9 +7262,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "admin": [
-        "správca"
       ],
       "Alias title": [
         "Názov aliasu"
@@ -9765,9 +9760,6 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotografie sa už nachádzajú v \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Nastavenie aktualizované. Editori môžu zmeniť povolenia a zdieľať."
-      ],
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"
       ],
@@ -11505,6 +11497,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Teraz môžete jednoducho vyhľadávať v Drive súboroch a zároveň udržiavať vaše dáta zabezpečené."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÝ VÝPREDAJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÝ VÝPREDAJ"
       ]
     },
     "sso": {
@@ -13392,9 +13394,6 @@
       ],
       "You have no files to share": [
         "Nemáte žiadne súbory na zdieľanie"
-      ],
-      "You have no folders yet": [
-        "Zatiaľ nemáte žiadne priečinky"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"

@@ -293,9 +293,6 @@
       "Skip": [
         "Omitir"
       ],
-      "Start a meeting": [
-        "Iniciar una reunión"
-      ],
       "Start an instant meeting": [
         "Iniciar una reunión instantánea"
       ],
@@ -1133,9 +1130,6 @@
       "North Korea": [
         "Corea del Norte"
       ],
-      "North Macedonia": [
-        "Macedonia del Norte"
-      ],
       "Northern Mariana Islands": [
         "Islas Marianas del Norte"
       ],
@@ -1581,15 +1575,7 @@
         "Ninguna imagen seleccionada"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Clave de seguridad"
       ]
@@ -1741,6 +1727,9 @@
       "Coming soon": [
         "Próximamente"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Conexión interrumpida. Reconectando..."
+      ],
       "Connection lost": [
         "Conexión perdida"
       ],
@@ -1786,9 +1775,6 @@
       "Download current logs": [
         "Descargar los registros actuales"
       ],
-      "Each code can only be used once": [
-        "Cada código puede utilizarse solo una vez."
-      ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
       ],
@@ -1809,9 +1795,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
@@ -1842,9 +1825,6 @@
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Disfruta de la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
-      ],
-      "Host your own secure meeting": [
-        "Inicia tu propia reunión en un entorno seguro."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organiza tus propias reuniones seguras. Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para invitar a quien quieras. Fácil, seguro y gratuito."
@@ -2008,6 +1988,12 @@
       "Premium meeting": [
         "Reunión prémium"
       ],
+      "Reconnected successfully": [
+        "Reconectado con éxito"
+      ],
+      "Reconnecting to meeting...": [
+        "Reconectando a la reunión..."
+      ],
       "Recording saved": [
         "Grabación guardada"
       ],
@@ -2052,9 +2038,6 @@
       ],
       "Sort by": [
         "Ordenar por"
-      ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para que se una quien tú quieras. Simple, seguro y gratuito."
       ],
       "Stop sharing your screen": [
         "Dejar de compartir tu pantalla"
@@ -2133,9 +2116,6 @@
       ],
       "Week": [
         "Semana"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Would you like to delete this event?": [
         "¿Quieres eliminar este evento?"

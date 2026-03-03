@@ -207,9 +207,6 @@
       "Collaborate on documents": [
         "문서에서 협업하기"
       ],
-      "Collapse": [
-        "접기"
-      ],
       "Collapse folder": [
         "폴더 닫기"
       ],
@@ -453,9 +450,6 @@
       "Encrypted": [
         "암호화됨"
       ],
-      "Expand": [
-        "펼치기"
-      ],
       "Expand folder": [
         "폴더 확장"
       ],
@@ -560,9 +554,6 @@
       ],
       "Help and resources": [
         "지원 및 도움말"
-      ],
-      "Hide": [
-        "숨기기"
       ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
@@ -3329,6 +3320,9 @@
       "Can't find any secure link": [
         "보안 링크를 찾을 수 없습니다."
       ],
+      "Can't retrieve device name": [
+        "기기 이름을 가져올 수 없습니다."
+      ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
@@ -3361,6 +3355,9 @@
       ],
       "Could not remove from favorites": [
         "즐겨찾기에서 제거할 수 없습니다"
+      ],
+      "Data integrity check failed": [
+        "데이터 무결성 검사 실패"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
@@ -4290,15 +4287,7 @@
         "초고속 속도"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
-      ],
       "Security key": [
         "보안 키"
       ]
@@ -5138,6 +5127,9 @@
       "Can't move a folder into itself": [
         "폴더를 자기자신 안으로 옮길 수 없습니다."
       ],
+      "Can't rename to same name": [
+        "동일한 이름으로 변경할 수 없습니다."
+      ],
       "Canceled": [
         "취소됨"
       ],
@@ -5239,9 +5231,6 @@
       ],
       "Create links and share your files with others.": [
         "링크를 생성하여 내 파일을 다른 사람에게 공유해보세요."
-      ],
-      "Create your first folder and start moving your files.": [
-        "첫 폴더를 생성하고 파일을 이동시켜 보세요."
       ],
       "Creating": [
         "만들기"
@@ -5345,9 +5334,6 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
-      "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
-      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -5395,9 +5381,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
       ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
@@ -6557,9 +6540,6 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "동기화된 기기인 ${ deviceName }을(를) 제거시 이 기기에서 내 컴퓨터에 추가된 모든 폴더는 ${ DRIVE_APP_NAME }에서 영구적으로 삭제됩니다."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
-      ],
       "who": [
         "누가"
       ],
@@ -6841,14 +6821,6 @@
         "보기 전용"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "보거나 편집할 수 있습니다"
-      ],
-      "Can view only": [
-        "보기만 가능합니다"
-      ]
-    },
     "Item": {
       "file attributes": [
         "파일 속성"
@@ -6949,9 +6921,6 @@
       ],
       "Address": [
         "주소"
-      ],
-      "admin": [
-        "관리자"
       ],
       "Alias title": [
         "별칭 제목"
@@ -9254,9 +9223,6 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "선택한 사진이 이미 “${ albumName }”에 존재합니다."
-      ],
-      "Setting updated. Editors can change permission and share.": [
-        "설정이 업데이트되었습니다. 편집자가 권한을 변경하거나 공유할 수 있습니다."
       ],
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
@@ -12690,9 +12656,6 @@
       ],
       "You have no files to share": [
         "공유할 파일이 없습니다"
-      ],
-      "You have no folders yet": [
-        "아직 폴더가 없습니다"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."

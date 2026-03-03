@@ -375,9 +375,6 @@
       "Help and resources": [
         "尋求協助與資源"
       ],
-      "Hide": [
-        "隱藏"
-      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -846,6 +843,12 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Domains": [
+        "網域"
+      ],
+      "Users": [
+        "使用者"
       ]
     },
     "Alert": {
@@ -998,6 +1001,17 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
       ]
     },
     "Browser": {
@@ -1908,9 +1922,6 @@
       ],
       "North Korea": [
         "北韓"
-      ],
-      "North Macedonia": [
-        "北馬其頓"
       ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
@@ -3335,15 +3346,7 @@
         "無限制的 hide-my-email 別名"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
-      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -4100,9 +4103,6 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -4132,9 +4132,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
@@ -4751,9 +4748,6 @@
       "When working remotely": [
         "當遠端工作時"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
-      ],
       "words": [
         "文字"
       ],
@@ -4825,6 +4819,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："

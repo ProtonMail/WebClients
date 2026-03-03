@@ -327,9 +327,6 @@
       "Copy addresses": [
         "Kopírovat adresy"
       ],
-      "Copy alias “${ name }”": [
-        "Kopírovat alias \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
@@ -5387,9 +5384,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Pokud je povoleno dodatečné heslo, lze správu aliasů provádět pouze v ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Zatím nemáte žádný kontakt. Začněte vytvořením nového kontaktu"
@@ -11168,6 +11162,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
       ],
@@ -12658,10 +12658,10 @@
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -12806,6 +12806,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -13347,46 +13350,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Všechny aliasy"
-      ],
       "Create alias": [
         "Vytvořit alias"
-      ],
-      "Create an alias": [
-        "Vytvořit alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Vygenerujte aliasy za běhu a jednoduše spravujte svoje aliasy a hesla."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nový alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otevřít ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Chraňte svou digitální identitu"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Vyzkoušejte ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otevře ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14079,6 +14050,16 @@
       ],
       "Your pm.me email is active": [
         "Váš e-mail pm.me je aktivní"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {
@@ -14814,9 +14795,6 @@
       "Address verification disabled": [
         "Ověření adresy deaktivováno"
       ],
-      "Alias copied to clipboard": [
-        "Alias byl zkopírován do schránky"
-      ],
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
@@ -14913,9 +14891,6 @@
       "Labels applied.": [
         "Štítky použity."
       ],
-      "Last modified aliases stored in your oldest vault": [
-        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
-      ],
       "Mail list unsubscribed": [
         "Odhlášeno z e-mailového seznamu"
       ],
@@ -15001,7 +14976,7 @@
         "Problém nahlášen"
       ],
       "Public key trusted": [
-        "Veřejný klíč nastavený jako důvěryhodný"
+        "Veřejný klíč nastaven jako důvěryhodný"
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení odesláno"

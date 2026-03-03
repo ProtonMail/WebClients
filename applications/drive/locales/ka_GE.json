@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "იმუშავეთ ერთად დოკუმენტებზე"
       ],
-      "Collapse": [
-        "ჩაკეცვა"
-      ],
       "Collapse folder": [
         "საქაღალდის ჩაკეცვა"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "დაშიფრული"
-      ],
-      "Expand": [
-        "ამოკეცვა"
       ],
       "Expand folder": [
         "საქაღალდის ჩამოშლა"
@@ -1314,6 +1308,18 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ]
     },
     "Alert": {
@@ -1499,7 +1505,23 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
+      ]
+    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
       "1 month": [
         "1 თვე"
       ],
@@ -1509,8 +1531,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
       "Lifetime": [
         "სამუდამოდ"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -1711,6 +1739,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ],
       "Total": [
         "ჯამი"
@@ -2485,7 +2516,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -4196,15 +4227,7 @@
         "ჩქაროსნული კავშირი"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
-      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
       ]
@@ -5062,6 +5085,15 @@
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
       ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can view and edit": [
+        "შეუძლია ნახვა და ჩასწორება"
+      ],
+      "Can view only": [
+        "მხოლოდ ნახვა"
+      ],
       "Can't move a folder into itself": [
         "საქაღალდეს თავის თავში ვერ გადაიტანთ"
       ],
@@ -5166,9 +5198,6 @@
       "Create links and share your files with others.": [
         "შექმენით ბმულები და გააზიარეთ თქვენი ფაილები."
       ],
-      "Create your first folder and start moving your files.": [
-        "შექმენით თქვენი პირველი საქაღალდე და დაიწყეთ ფაილების გადმოტანა."
-      ],
       "Creating": [
         "შექმნა"
       ],
@@ -5272,9 +5301,6 @@
       "Duplicate key updated": [
         "დუბლირებული გასაღები განახლებულია"
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
@@ -5322,9 +5348,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
@@ -6435,9 +6458,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
-      ],
       "who": [
         "ვინ"
       ],
@@ -6691,14 +6711,6 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "შეუძლია ნახვა და ჩასწორება"
-      ],
-      "Can view only": [
-        "მხოლოდ ნახვა"
-      ]
-    },
     "Item": {
       "file attributes": [
         "ფაილის ატრიბუტები"
@@ -6799,9 +6811,6 @@
       ],
       "Address": [
         "მისამართი"
-      ],
-      "admin": [
-        "ადმინი"
       ],
       "Alias title": [
         "ფსევდონიმის სათაური"
@@ -9567,6 +9576,9 @@
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
       ],
+      "Expected structure": [
+        "მოსალოდნელი სტრუქტურა"
+      ],
       "Ignore group": [
         "ჯგუფის იგნორი"
       ],
@@ -9749,6 +9761,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -10460,6 +10478,11 @@
         "გაზიარებულია ${ ownerName }-ის მიერ"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "ახალი ელცხრილი"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "ხელმოწერის გარეშე"
@@ -10704,6 +10727,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "შეგიძლიათ იოლად და უსაფრთხოდ მოძებნოთ ფაილები დრაივზე."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "sso": {
@@ -12498,9 +12531,6 @@
       ],
       "You have no files to share": [
         "არ გაქვთ გასაზიარებელი ფაილები"
-      ],
-      "You have no folders yet": [
-        "საქაღალდეები ჯერ არ გაქვთ"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"

@@ -111,7 +111,7 @@
         "مطلوب الانتباه"
       ],
       "Authenticate": [
-        "المصادقة"
+        "مصادقة"
       ],
       "Authenticating": [
         "جارٍ المصادقة"
@@ -120,7 +120,7 @@
         "السابق"
       ],
       "Back to sign in": [
-        "العودة إلى تسجيل الدخول"
+        "العودة لتسجيل الدخول"
       ],
       "Block": [
         "حظر"
@@ -532,9 +532,6 @@
       ],
       "Help and resources": [
         "المساعدة والمصادر"
-      ],
-      "Hide": [
-        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -1229,9 +1226,9 @@
         "${ seats } مقعد لمساعد الكتابة"
       ],
       "${ users } users": [
-        "${ users } مستخدمين",
         "${ users } مستخدم",
-        "${ users } مستخدمين",
+        "${ users } مستخدم",
+        "${ users } مستخدم",
         "${ users } مستخدمين",
         "${ users } مستخدمين",
         "${ users } مستخدمين"
@@ -1844,13 +1841,13 @@
     },
     "Button": {
       "Add users manually": [
-        "إضافة مستخدمين يدوياً"
+        "إضافة المستخدمين يدوياً"
       ],
       "Close": [
         "إغلاق"
       ],
       "Configure your network": [
-        "تكوين شبكتك"
+        "قم بتكوين شبكتك"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "الاستمرار في استخدام ${ MAIL_APP_NAME }."
@@ -1871,7 +1868,7 @@
         "اكتشف الميزات وقم بإعدادها"
       ],
       "Invite your team": [
-        "ادعُ فريقك"
+        "قم بدعوة فريقك"
       ],
       "Manage global VPN permissions": [
         "إدارة أذونات VPN العالمية"
@@ -1883,7 +1880,7 @@
         "ذكِّرني لاحقًا"
       ],
       "Secure your organization": [
-        "قم بتأمين مؤسستك"
+        "أمّن مؤسستك"
       ],
       "Send": [
         "أرسل"
@@ -1955,9 +1952,9 @@
     },
     "Checkout row": {
       "${ users } users": [
-        "${ users } مستخدمين",
         "${ users } مستخدم",
-        "${ users } مستخدمين",
+        "${ users } مستخدم",
+        "${ users } مستخدم",
         "${ users } مستخدمين",
         "${ users } مستخدمين",
         "${ users } مستخدمين"
@@ -1970,8 +1967,8 @@
         "الإجمالي لـ ${ n } شهر",
         "الإجمالي لـ ${ n } شهر",
         "الإجمالي لـ ${ n } أشهر",
-        "الإجمالي لـ ${ n } شهر",
-        "الإجمالي لـ ${ n } شهر"
+        "الإجمالي لـ ${ n } أشهر",
+        "الإجمالي لـ ${ n } أشهر"
       ]
     },
     "Checkout summary": {
@@ -2748,9 +2745,6 @@
       "North Korea": [
         "كوريا الشمالية"
       ],
-      "North Macedonia": [
-        "شمال مقدونيا"
-      ],
       "Northern Mariana Islands": [
         "جزر ماريانا الشمالية"
       ],
@@ -3177,7 +3171,7 @@
         "اربط نظام إدارة علاقات العملاء (CRM) والموقع الإلكتروني والطابعات والمزيد."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "أنشئ بوابة تتيح للمستخدمين الوصول إلى موارد تكنولوجيا المعلومات الخاصة بك من خلال خوادم مخصصة."
+        "قم بإنشاء بوابة لمنح المستخدمين إمكانية الوصول إلى موارد تكنولوجيا المعلومات الخاصة بك من خلال خوادم مخصصة."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "أنشئ اجتماع Zoom وأضف تفاصيل الانضمام لحدثك بنقرة واحدة."
@@ -3186,13 +3180,13 @@
         "أنشئ مجموعات يمكنك مراسلتها عبر البريد الإلكتروني باستخدام عنوان واحد."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "إنشاء حسابات مستخدمين جديدة أو استيراد مستخدمين باستخدام تزويد SCIM (تسجيل الدخول الأحادي)."
+        "أنشئ حسابات مستخدمين جديدة أو استورد المستخدمين باستخدام SSO (تسجيل الدخول الموحّد) عبر تزويد SCIM."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "أنشئ سياسات تُحدد من يمكنه الاتصال بالخوادم المشتركة في كل بلد."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "حدد المستخدمين الذين يمكنهم الاتصال بكل موقع من مواقع الخوادم المشتركة التي يزيد عددها عن 120 موقعًا."
+        "حدد المستخدمين الذين يمكنهم الاتصال بكل موقع من مواقع الخوادم المشتركة التي يزيد عددها عن 120 موقعا."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "الوصول بسهولة إلى بريدك الإلكتروني وتقويمك على سطح المكتب والجوال."
@@ -3240,7 +3234,7 @@
         "ساعد فريقك على تخزين كلمات المرور بشكل آمن لمعلومات العمل والعملاء الحساسة."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "إذا لم تكن قد قمت بذلك بالفعل، فقم بتمكين بعض طرق الاسترداد للتأكد من أنك لن تفقد الوصول إلى ${ VPN_APP_NAME }."
+        "إذا لم تكن قد فعلت ذلك بعد، فقم بتمكين بعض طرق الاسترداد لضمان عدم فقدان الوصول إلى ${ VPN_APP_NAME } مطلقًا."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "يبدو أن قائمة جهات الاتصال التي تستوردها تحتوي على بعض المجموعات. يرجى مراجعة كيفية استيراد هذه المجموعات."
@@ -3956,7 +3950,7 @@
         "عنوان بريد غير صالح"
       ],
       "Invalid expiration date": [
-        "تاريخ انتهاء الصلاحية غير صالح"
+        "تاريخ انتهاء صلاحية غير صالح"
       ],
       "Invalid IBAN": [
         "رقم IBAN غير صالح"
@@ -4168,6 +4162,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "حدث خطأ أثناء توصيل التلفاز. امسح رمز QR المعروض على التلفاز مرة أخرى."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "حدث خطأ ما، قم بـ ${ refresh } للمتابعة. إذا كنت لا تزال ترى رسالة الخطأ يرجى الاتصال بـ ${ supportTeam } الخاص بنا."
@@ -4959,9 +4956,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
       ]
@@ -4982,14 +4976,11 @@
       "Are you sure you want to delete security key ${ name }?": [
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
-      ],
       "Insert your security key into your device's USB port.": [
         "أدرج مفتاح الأمان في منفذ USB بجهازك."
       ],
       "Security key": [
-        "رمز أمان"
+        "مفتاح الأمان"
       ],
       "Security key removed": [
         "تمت إزالة مفتاح الأمان"
@@ -5020,7 +5011,7 @@
         "اسم المفتاح"
       ],
       "Security key": [
-        "رمز أمان"
+        "مفتاح الأمان"
       ]
     },
     "fido2: Title": {
@@ -5266,9 +5257,6 @@
       ],
       "Password ends with": [
         "تنتهي كلمة المرور بـ"
-      ],
-      "Payment details": [
-        "تفاصيل الدفع"
       ],
       "Protection": [
         "الحماية"
@@ -6594,9 +6582,6 @@
       "Drop to import": [
         "أفلت للاستيراد"
       ],
-      "Each code can only be used once": [
-        "يمكن استخدام كل رمز مرة واحدة فقط"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "يمكن أن يحتوي كل نطاق على سجل SPF (TXT) واحد فقط. إذا كنت تريد الاحتفاظ بسجل SPF (TXT) الحالي، فيمكنك إضافة ${ spf } إلى سجلك الحالي (ضعه بعد ${ spfValue })."
       ],
@@ -6696,9 +6681,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. الرقم ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
       ],
@@ -6727,7 +6709,7 @@
         "مثال: ${ spfExample }"
       ],
       "Expired": [
-        "منتهية الصلاحية"
+        "منتهي الصلاحية"
       ],
       "expires ${ expirationDate }": [
         "تنتهي صلاحية في ${ expirationDate }"
@@ -6766,7 +6748,7 @@
         "احصل على إشعار إذا تم تسريب كلمة مرورك أو بياناتك الشخصية الأخرى. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "ابدأ الآن"
+        "ابدأ"
       ],
       "Get started with the referral link above.": [
         "ابدأ باستخدام رابط الإحالة أعلاه."
@@ -7586,14 +7568,6 @@
       "Starts on ${ startsOnTime }": [
         "يبدأ في ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "الخطوة ${ step }",
-        "الخطوة ${ step }",
-        "الخطوة ${ step }",
-        "الخطوة ${ step }",
-        "الخطوة ${ step }",
-        "الخطوة ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "مساحة التخزين المخصصة للمستخدمين الآخرين في هذه المؤسسة"
       ],
@@ -8127,9 +8101,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
       ],
@@ -8260,7 +8231,7 @@
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "لا يمكنك فتح أكثر من محادثة في نفس الوقت. يرجى إغلاق المحادثات السابقة قبل بدء محادثة جديدة."
+        "يمكنك فتح مثيل دردشة واحد فقط في كل مرة. يُرجى إغلاق المحادثات السابقة قبل بدء محادثة جديدة."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "يمكنك تشغيل الإشعارات للحصول على التنبيهات عند وصول رسائل البريد الإلكتروني الجديدة في هذا المجلد."
@@ -8672,9 +8643,9 @@
         "${ MAIL_APP_NAME } العنوان"
       ],
       "${ n } months": [
-        "${ n } أشهر",
         "${ n } شهر",
-        "${ n } أشهر",
+        "${ n } شهر",
+        "${ n } شهر",
         "${ n } أشهر",
         "${ n } أشهر",
         "${ n } أشهر"
@@ -8769,7 +8740,7 @@
         "أرفق صور للشاشة"
       ],
       "Authenticator app": [
-        "تطبيق الاستيثاق"
+        "تطبيق المصادقة"
       ],
       "Awarded": [
         "ممنوح"
@@ -8985,7 +8956,7 @@
         "أدخل كلمة المرور للمفتاح مع بصمة الإصبع: ${ fingerprintCode }"
       ],
       "Enter your password": [
-        "أدخل كلمة مرورك"
+        "أدخِل كلمة مرورك"
       ],
       "Entity ID": [
         "معرّف الكيان"
@@ -9612,7 +9583,7 @@
         "إنشاء اسم مستعار"
       ],
       "Don't have access to your 2FA?": [
-        "لا يمكنك الوصول إلى 2FA؟"
+        "لا يمكنك الوصول إلى 2FA الخاص بك؟"
       ],
       "Encryption and keys": [
         "التشفير والمفاتيح"
@@ -9770,16 +9741,16 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "المحادثة المباشرة متاحة مع ${ planName }"
+        "الدردشة المباشرة متاحة مع ${ planName }"
       ],
       "Open support form": [
-        "فتح نموذج الدعم"
+        "افتح نموذج الدعم"
       ],
       "Upgrade subscription": [
         "ترقية الاشتراك"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "قم بالترقية لفتح الدعم عبر الدردشة والميزات المتقدمة الأخرى، أو استخدم نموذج الدعم المجاني للإبلاغ عن مشكلتك."
+        "قم بالترقية لفتح دعم الدردشة المباشرة وميزات مميزة أخرى، أو استخدم نموذج الدعم المجاني للإبلاغ عن مشكلتك."
       ]
     },
     "Loading info": {
@@ -10075,22 +10046,22 @@
         "${ appName }: التسجيل"
       ],
       "Create a new ${ appName } account": [
-        "إنشاء حساب ${ appName } جديد"
+        "أنشئ حساب ${ appName } جديدًا"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت كلمة مرور حساب ${ BRAND_NAME }؟ أعد تعيينها هنا باستخدام رمز الاسترداد أو البريد الإلكتروني أو الرسالة القصيرة واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
+        "هل نسيت كلمة مرور حساب ${ BRAND_NAME } الخاص بك؟ أعد تعيينها هنا باستخدام رمز استرداد أو البريد الإلكتروني أو رسالة نصية (SMS)، واستعد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت اسم المستخدم لحساب ${ BRAND_NAME }؟ ابحث عنه باستخدام بريد الاسترداد أو رقم هاتفك واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
+        "هل نسيت اسم مستخدم حساب ${ BRAND_NAME } الخاص بك؟ اعثر عليه باستخدام بريد الاسترداد الإلكتروني أو رقم هاتفك واستعد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
+        "أعد تعيين كلمة مرور حسابك ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "قم بتسجيل الدخول للوصول إلى حساب ${ appName } الخاص بك"
+        "سجّل الدخول للوصول إلى حساب ${ appName } الخاص بك"
       ]
     },
     "Modal title": {
@@ -10217,17 +10188,17 @@
         "${ DARK_WEB_MONITORING_NAME } و ${ PROTON_SENTINEL_NAME }"
       ],
       "${ n } calendars": [
-        "${ n } تقويمات",
         "${ n } تقويم",
-        "${ n } تقويمات",
+        "${ n } تقويم",
+        "${ n } تقويم",
         "${ n } تقويمات",
         "${ n } تقويمات",
         "${ n } تقويمات"
       ],
       "${ n } calendars per user": [
-        "${ n } تقويمات لكل مستخدم",
         "${ n } تقويم لكل مستخدم",
-        "${ n } تقويمات لكل مستخدم",
+        "${ n } تقويم لكل مستخدم",
+        "${ n } تقويم لكل مستخدم",
         "${ n } تقويمات لكل مستخدم",
         "${ n } تقويمات لكل مستخدم",
         "${ n } تقويمات لكل مستخدم"
@@ -10248,6 +10219,14 @@
         "${ n } عناوين بريد إلكترونيّ لمستخدم",
         "${ n } عناوين بريد إلكترونيّ لمستخدم"
       ],
+      "${ n } email addresses/aliases": [
+        "${ n } من عناوين البريد الإلكتروني/الأسماء المستعارة",
+        "${ n } عنوان البريد الإلكتروني",
+        "عنوانا بريد إلكتروني/اسمان مستعاران (${ n })",
+        "${ n } عناوين بريد إلكتروني/أسماء مستعارة",
+        "${ n } عنوان بريد إلكتروني/اسمًا مستعارًا",
+        "${ n } عنوان بريد إلكتروني/اسم مستعار"
+      ],
       "${ n } filters": [
         "${ n } مرشحات",
         "${ n } مرشح",
@@ -10265,9 +10244,9 @@
         "${ n } مجلّداً"
       ],
       "${ n } folders and labels": [
-        "${ n } مجلدات وتسميات",
         "${ n } مجلد وتسمية",
-        "${ n } مجلدات وتسميات",
+        "${ n } مجلد وتسمية",
+        "${ n } مجلد وتسمية",
         "${ n } مجلدات وتسميات",
         "${ n } مجلدات وتسميات",
         "${ n } مجلدات وتسميات"
@@ -10305,17 +10284,17 @@
         "${ n } خزنة ${ PASS_SHORT_APP_NAME } مشتركة لكل مستخدم"
       ],
       "${ n } vaults": [
-        "${ n } خزائن",
         "${ n } مخزن",
-        "${ n } خزائن",
+        "${ n } مخزن",
+        "${ n } مخزن",
         "${ n } خزائن",
         "${ n } خزائن",
         "${ n } خزائن"
       ],
       "${ n } VPN connections": [
-        "${ n } اتصالات VPN",
         "${ n } اتصال VPN",
-        "${ n } اتصالات VPN",
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
@@ -10520,13 +10499,10 @@
       "Group management (coming soon)": [
         "إدارة المجموعات (قريبًا)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN سويسري عالي السرعة يحمي خصوصيتك"
-      ],
       "High-speed VPN on ${ n } devices": [
-        "شبكة VPN عالية السرعة على ${ n } أجهزة",
         "شبكة VPN عالية السرعة على ${ n } جهاز",
-        "شبكة VPN عالية السرعة على ${ n } أجهزة",
+        "شبكة VPN عالية السرعة على ${ n } جهاز",
+        "شبكة VPN عالية السرعة على ${ n } جهاز",
         "شبكة VPN عالية السرعة على ${ n } أجهزة",
         "شبكة VPN عالية السرعة على ${ n } أجهزة",
         "شبكة VPN عالية السرعة على ${ n } أجهزة"
@@ -10650,9 +10626,6 @@
       "Start protecting your organization": [
         "ابدأ بحماية مؤسستك"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "ابدأ بحماية نفسك على الإنترنت في خطوتين سهلتين"
-      ],
       "Strict no-logs policy": [
         "سياسة صارمة لعدم الاحتفاظ بالسجلات"
       ],
@@ -10666,7 +10639,7 @@
         "اتصال Tor عبر VPN"
       ],
       "Two-factor authentication": [
-        "التحقق بخطوتين"
+        "المصادقة الثنائية"
       ],
       "Unlimited devices": [
         "أجهزة غير محدودة"
@@ -11989,7 +11962,7 @@
         "سيتمكن المسؤولون التالي ذكرهم من الوصول إلى مفتاح المؤسسة."
       ],
       "The organization key must be activated first.": [
-        "يجب تفعيل مفتاح المنظمة اولا."
+        "يجب تنشيط مفتاح المؤسسة أولاً."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "سيؤدي هذا إلى إرسال أحدث مفتاح للمؤسسة إلى المسؤولين الذين لا يستطيعون الوصول إليه حاليًا."
@@ -12037,9 +12010,6 @@
       ],
       "Bank transfer": [
         "حوالة مصرفية"
-      ],
-      "Bitcoin": [
-        "البيتكوين"
       ],
       "Credit/debit card": [
         "بطاقة الائتمان / الخصم"
@@ -12103,7 +12073,7 @@
         "شامل ضرائب بنسبة ${ rate }٪: ${ taxAmountElement }"
       ],
       "MM/YY": [
-        "شهر / سنة"
+        "ش/س"
       ],
       "More plans are available in other currencies": [
         "تتوفر خطط أخرى بعملات أخرى"
@@ -14367,9 +14337,9 @@
         "${ n } اتصال VPN مجاني لكل مستخدم"
       ],
       "${ n } high-speed VPN connections": [
-        "${ n } اتصالات VPN عالية السرعة",
         "${ n } اتصال VPN عالي السرعة",
-        "${ n } اتصالات VPN عالية السرعة",
+        "${ n } اتصال VPN عالي السرعة",
+        "${ n } اتصال VPN عالي السرعة",
         "${ n } اتصالات VPN عالية السرعة",
         "${ n } اتصالات VPN عالية السرعة",
         "${ n } اتصالات VPN عالية السرعة"
@@ -14377,23 +14347,23 @@
       "${ n } high-speed VPN connections per user": [
         "${ n } اتصالات VPN عالية السرعة لكل مستخدم",
         "${ n } اتصال VPN عالي السرعة لكل مستخدم",
+        "${ n } اتصالي VPN عاليي السرعة لكل مستخدم",
         "${ n } اتصالات VPN عالية السرعة لكل مستخدم",
-        "${ n } اتصالات VPN عالية السرعة لكل مستخدم",
-        "${ n } اتصالات VPN عالية السرعة لكل مستخدم",
+        "${ n } اتصال VPN عالي السرعة لكل مستخدم",
         "${ n } اتصالات VPN عالية السرعة لكل مستخدم"
       ],
       "${ n } VPN connections": [
-        "${ n } اتصالات VPN",
         "${ n } اتصال VPN",
-        "${ n } اتصالات VPN",
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
       ],
       "${ n } VPN connections per user": [
-        "${ n } اتصالات VPN لكل مستخدم",
         "${ n } اتصال VPN لكل مستخدم",
-        "${ n } اتصالات VPN لكل مستخدم",
+        "${ n } اتصال VPN لكل مستخدم",
+        "${ n } اتصال VPN لكل مستخدم",
         "${ n } اتصالات VPN لكل مستخدم",
         "${ n } اتصالات VPN لكل مستخدم",
         "${ n } اتصالات VPN لكل مستخدم"
@@ -15259,7 +15229,7 @@
     },
     "Themes": {
       "Themes": [
-        "المظهر"
+        "السمات"
       ]
     },
     "Time unit": {
@@ -15356,7 +15326,7 @@
         "التحكم في الوصول"
       ],
       "Account": [
-        "الحساب"
+        "حساب"
       ],
       "Account recovery": [
         "استرداد الحساب"
@@ -15728,7 +15698,7 @@
         "تجاهل التغييرات؟"
       ],
       "Dismiss setup checklist": [
-        "إغلاق قائمة التحقق من الإعداد"
+        "تجاهل قائمة الإعداد"
       ],
       "Domain names": [
         "أسماء النطاق"
@@ -15877,7 +15847,7 @@
         "احصل على المزيد من VPN الخاص بك"
       ],
       "Get started": [
-        "ابدأ الآن"
+        "ابدأ"
       ],
       "Get the apps": [
         "احصل على التطبيقات"
@@ -16044,7 +16014,7 @@
         "الهاتف"
       ],
       "Plans": [
-        "الباقة"
+        "خطط"
       ],
       "Preview": [
         "معاينة"
@@ -16412,7 +16382,7 @@
         "لم تتم مزامنة تغييراتك بعد"
       ],
       "Your current plan": [
-        "اشتراكك الحالي"
+        "خطتك الحالية"
       ],
       "Your exposed information": [
         "معلوماتك المكشوفة"
@@ -17059,17 +17029,17 @@
         "${ n } أجهزة"
       ],
       "${ n } VPN connections": [
-        "${ n } اتصالات VPN",
         "${ n } اتصال VPN",
-        "${ n } اتصالات VPN",
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
       ],
       "${ n }+ servers": [
-        "${ n } خوادم",
         "${ n } خادم",
-        "${ n } خوادم",
+        "${ n } خادم",
+        "${ n } خادم",
         "${ n } خوادم",
         "${ n } خوادم",
         "${ n } خوادم"

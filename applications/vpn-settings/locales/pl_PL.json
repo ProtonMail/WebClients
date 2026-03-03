@@ -111,9 +111,6 @@
       "Back": [
         "Wstecz"
       ],
-      "Back to sign in": [
-        "Powrót do logowania"
-      ],
       "Block": [
         "Zablokuj"
       ],
@@ -516,9 +513,6 @@
       "Help and resources": [
         "Pomoc i zasoby"
       ],
-      "Hide": [
-        "Ukryj"
-      ],
       "Hide more benefits": [
         "Ukryj więcej bonusów"
       ],
@@ -907,7 +901,7 @@
         "Pokaż podgląd"
       ],
       "Sign in": [
-        "Logowanie"
+        "Zaloguj się"
       ],
       "Sign in with password": [
         "Zaloguj się za pomocą hasła"
@@ -1809,7 +1803,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } użytkownika",
+        "${ users } użytkownik",
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
@@ -2560,9 +2554,6 @@
       ],
       "North Korea": [
         "Korea Północna"
-      ],
-      "North Macedonia": [
-        "Macedonia Północna"
       ],
       "Northern Mariana Islands": [
         "Mariany Północne"
@@ -3644,7 +3635,7 @@
         "Adres e-mail jest nieprawidłowy"
       ],
       "Invalid expiration date": [
-        "Data wygaśnięcia jest nieprawidłowa"
+        "Termin ważności jest nieprawidłowy"
       ],
       "Invalid IBAN": [
         "Numer IBAN jest nieprawidłowy"
@@ -4591,9 +4582,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Coś poszło nie tak z rejestracją klucza bezpieczeństwa. Spróbuj ponownie później."
       ]
@@ -4613,9 +4601,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Włóż klucz bezpieczeństwa do portu USB."
@@ -4879,9 +4864,6 @@
       ],
       "Organization key fingerprint": [
         "Odcisk klucza organizacji"
-      ],
-      "Payment details": [
-        "Szczegóły płatności"
       ],
       "Protection": [
         "Ochrona"
@@ -6076,9 +6058,6 @@
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
-      "Each code can only be used once": [
-        "Każdy kod może zostać użyty tylko jeden raz"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Każda domena może posiadać tylko 1 rekord SPF (TXT). Jeśli chcesz zachować obecny rekord SPF (TXT), możesz dodać ${ spf } do obecnego rekordu (wpisz po ${ spfValue })."
       ],
@@ -6172,9 +6151,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Wpisz szczegóły konta ${ BRAND_NAME }."
       ],
@@ -6203,7 +6179,7 @@
         "Przykład: ${ spfExample }"
       ],
       "Expired": [
-        "Wygasł"
+        "Wygasła"
       ],
       "expires ${ expirationDate }": [
         "wygasa ${ expirationDate }"
@@ -6994,12 +6970,6 @@
       "Starts on ${ startsOnTime }": [
         "Rozpocznie się ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
       ],
@@ -7242,9 +7212,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Wpisz nazwę użytkownika, którego chcesz usunąć."
-      ],
-      "To continue to ${ product }": [
-        "i przejdź do ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Aby stale ulepszać nasze usługi, czasami zbieramy dane, które monitorują poprawne działanie naszych aplikacji. Te informacje nie są udostępniane innym stronom trzecim."
@@ -7509,9 +7476,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Usunięcie serwera z bramy spowoduje rozpoczęcie 10-dniowego okresu dezaktywacji. Serwer można dodać do nowej bramy, ale nie można zmienić jego kraju."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -8878,9 +8842,6 @@
       "Create an alias": [
         "Utwórz alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Nie masz dostępu do uwierzytelniania dwustopniowego?"
-      ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
       ],
@@ -9269,29 +9230,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Zaloguj się"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Zarejestruj się"
-      ],
-      "Create a new ${ appName } account": [
-        "Utwórz nowe konto ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Znajdź konto ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Zresetuj konto za pomocą kodu odzyskiwania, adresu e-mail lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Znajdź je za pomocą adresu pomocniczego lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Resetowanie hasła ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Zaloguj się do konta ${ appName }"
       ]
     },
     "Modal title": {
@@ -9432,6 +9372,18 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } kalendarz",
+        "${ n } kalendarze",
+        "${ n } kalendarzy",
+        "${ n } kalendarzy"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendarz na użytkownika",
+        "${ n } kalendarze na użytkownika",
+        "${ n } kalendarzy na użytkownika",
+        "${ n } kalendarzy na użytkownika"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -9450,11 +9402,35 @@
         "${ n } adresów e-mail na użytkownika",
         "${ n } adresów e-mail na użytkownika"
       ],
+      "${ n } filter": [
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrów",
+        "${ n } filtrów"
+      ],
       "${ n } folder": [
         "${ n } folder",
         "${ n } foldery",
         "${ n } folderów",
         "${ n } folderów"
+      ],
+      "${ n } folder and label": [
+        "${ n } folder i etykieta",
+        "${ n } foldery i etykiety",
+        "${ n } folderów i etykiet",
+        "${ n } folderów i etykiet"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias hide-my-email",
+        "${ n } aliasy hide-my-email",
+        "${ n } aliasów hide-my-email",
+        "${ n } aliasów hide-my-email"
+      ],
+      "${ n } label": [
+        "${ n } etykieta",
+        "${ n } etykiety",
+        "${ n } etykiet",
+        "${ n } etykiety"
       ],
       "${ n } message per day": [
         "${ n } wiadomość dziennie",
@@ -9675,8 +9651,11 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Szybki szwajcarski VPN, który chroni prywatność użytkowników"
+      "High-speed VPN on ${ n } device": [
+        "Szybki VPN na ${ n } urządzenie",
+        "Szybki VPN na ${ n } urządzenia",
+        "Szybki VPN na ${ n } urządzeń",
+        "Szybki VPN na ${ n } urządzeń"
       ],
       "HTML signatures": [
         "Podpisy HTML"
@@ -9791,9 +9770,6 @@
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Chroń się online w 2 prostych krokach"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -9981,7 +9957,7 @@
         "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
       "Popular": [
-        "Popularne"
+        "Popularny"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
@@ -11116,9 +11092,6 @@
       ],
       "Bank transfer": [
         "Przelew bankowy"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ],
       "Credit/debit card": [
         "Karta płatnicza"
@@ -12957,7 +12930,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Włączony"
+        "Aktywne"
       ],
       "Inactive": [
         "Nieaktywne"
@@ -12975,7 +12948,7 @@
         "Wylogowano"
       ],
       "Unknown": [
-        "Nieznana"
+        "Nieznane"
       ]
     },
     "State": {
@@ -14605,9 +14578,6 @@
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
       ],
-      "OpenVPN username": [
-        "Nazwa użytkownika OpenVPN"
-      ],
       "Org setup": [
         "Konfiguracja organizacji"
       ],
@@ -15591,7 +15561,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } połączenie VPN",
-        "${ n } połączeń VPN",
+        "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
       ],

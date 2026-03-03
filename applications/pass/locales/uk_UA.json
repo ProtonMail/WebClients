@@ -310,9 +310,6 @@
       "Get Started": [
         "Розпочнімо"
       ],
-      "Hide": [
-        "Сховати"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Як експортувати дані з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1558,9 +1555,6 @@
       ],
       "Enter the address you want to email.": [
         "Введіть адресу, на яку ви хочете надіслати листа."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your extra password": [
         "Уведіть ваш додатковий пароль"

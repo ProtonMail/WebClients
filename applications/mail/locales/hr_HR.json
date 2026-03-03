@@ -492,9 +492,6 @@
       "Got it": [
         "Shvaćam"
       ],
-      "Hide": [
-        "Sakrij"
-      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
       ],
@@ -2600,9 +2597,6 @@
       "North Korea": [
         "Sjeverna Koreja"
       ],
-      "North Macedonia": [
-        "Sjeverna Makedonija"
-      ],
       "Northern Mariana Islands": [
         "Sjeverni Marijanski Otoci"
       ],
@@ -3748,15 +3742,7 @@
         "Neograničen broj hide-my-email pseudonima"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nešto je pošlo po zlu prilikom provjere autentičnosti Vašeg sigurnosnog ključa. Pokušajte ponovno."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Unesite sigurnosni ključ povezan s Vašim ${ BRAND_NAME } korisničkim računom."
-      ],
       "Security key": [
         "Sigurnosni ključ"
       ]
@@ -8155,37 +8141,8 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Svi pseudonimi"
-      ],
       "Create alias": [
         "Stvori pseudonim"
-      ],
-      "Create an alias": [
-        "Stvori pseudonim"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email pseudonimi"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email pseudonimi omogućuju Vam registraciju na mrežnim servisima bez dijeljenja Vaše adrese e-pošte. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Novi pseudonim"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otvori ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Zaštitite svoj mrežni identitet"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Isprobajte ${ PASS_APP_NAME }"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otvorit će ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -8921,9 +8878,6 @@
       ],
       "Address verification disabled": [
         "Onemogućena provjera valjanosti adrese"
-      ],
-      "Alias copied to clipboard": [
-        "Pseudonim kopiran u međuspremnik"
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"

@@ -275,9 +275,6 @@
       "Got it": [
         "متوجه شدم"
       ],
-      "Hide": [
-        "پنهان کردن"
-      ],
       "Import": [
         "درون‌برد"
       ],
@@ -510,7 +507,7 @@
         "نمایش پیش‌نمایش"
       ],
       "Sign in": [
-        "ورود به حساب"
+        "ورود"
       ],
       "Sign in with password": [
         "ورود با گذرواژه"
@@ -927,6 +924,10 @@
       "${ users } user": [
         "${ users } کاربر",
         "${ users } کاربر"
+      ],
+      "Total for ${ n } month": [
+        "جمعا برای ${ n } ماه",
+        "جمعا برای ${ n } ماه‌"
       ]
     },
     "Checkout summary": {
@@ -1608,9 +1609,6 @@
       ],
       "North Korea": [
         "کره شمالی"
-      ],
-      "North Macedonia": [
-        "مقدونیه شمالی"
       ],
       "Northern Mariana Islands": [
         "جزایر ماریانای شمالی"
@@ -2638,15 +2636,7 @@
         "حذف کلید"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "کلید امنیتی مرتبط با اکانت ${ BRAND_NAME } خودتان را وارد کنید."
-      ],
       "Security key": [
         "کلید امنیتی"
       ]
@@ -2782,9 +2772,6 @@
       ],
       "Organization key fingerprint": [
         "اثر انگشت کلید سازمان"
-      ],
-      "Payment details": [
-        "جزئیات پرداخت"
       ],
       "Protection": [
         "حفاظت"
@@ -3356,9 +3343,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "برنامه مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که می‌روید ببرید."
       ],
-      "Each code can only be used once": [
-        "هر کد تنها یک بار می‌تواند استفاده شود"
-      ],
       "Edit email address": [
         "ویرایش رایانشانی"
       ],
@@ -3723,10 +3707,6 @@
       "Some keys successfully reactivated": [
         "بعضی کلیدها با موفقیت بازفعال شدند"
       ],
-      "Step ${ step }": [
-        "قدم ${ step }",
-        "مرحله ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "فضای ذخیره سازی اختصاص داده شده به کابران دیگر این سازمان"
       ],
@@ -3932,9 +3912,6 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "برای بازیابی حسابتان، ما یک کد بازنشانی به شماره تلفن بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "زمانی که شما اصالت‌سنجی دو-عاملی را فعال کنید، ما به شما کد بازیابی میدهیم که در صورت عدم دسترسی به برنامه اصالت‌سنجی خود، میتوانید از این کدها برای ورود به حساب استفاده کنید."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "هنگامی که اشتراک شما تمدید می‌شود، قبل از اینکه روش پرداخت فوق را شارژ کنیم، اعتبارات موجود را اعمال خواهیم کرد."
@@ -4205,10 +4182,10 @@
         "نسخه مرورگر"
       ],
       "BTC address": [
-        "نشانی بیت‌کوین"
+        "ادرس ولت بیت‌کوین"
       ],
       "BTC amount": [
-        "مبلغ بیت‌کوین"
+        "مقدار بیت‌کوین"
       ],
       "Calendar": [
         "تقویم"
@@ -4223,7 +4200,7 @@
         "صاحب کارت"
       ],
       "Card number": [
-        "شماره كارت"
+        "شماره کارت"
       ],
       "Cash": [
         "نقدی"
@@ -5060,6 +5037,10 @@
         "${ n } پوشه و برچسب",
         "${ n } پوشه و برچسب"
       ],
+      "${ n } label": [
+        "${ n } برچسب",
+        "${ n } برچسب"
+      ],
       "${ n } message per day": [
         "${ n } پیام در روز",
         "${ n } پیام در روز"
@@ -5144,7 +5125,7 @@
         "رمزگذاری سرتاسر"
       ],
       "Free VPN on a single device": [
-        "VPN رایگان روی یک دستگاه"
+        "VPN رایگان در یک دستگاه"
       ],
       "Fully refundable for 30 days": [
         "قابل بازگشت طی ۳۰ روز"
@@ -5181,13 +5162,13 @@
         "اولویت پشتیبانی"
       ],
       "Priority support & live chat": [
-        "پشتیبانی با الویت بالا و گفتگوی آنلاین"
+        "پشتیبانی ویژه و گفت ‌و ‌گوی زنده"
       ],
       "Router support": [
         "پشتیبانی روتر"
       ],
       "Secure Core servers": [
-        "سرورهای Secure Core"
+        "سرورهای هسته امن"
       ],
       "Sign in as user": [
         "ورود بعنوان کاربر"
@@ -5272,13 +5253,13 @@
         "محبوب"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "ایمیل امن با قابلیت‌های پیشرفته برای ارتباطات روزانهٔ شما."
+        "ایمیل امن با امکانات پیشرفته برای ارتباطات روزمره شما."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "راه حل VPN اختصاصی که دسترسی امن، بدون محدودیت و با سرعت بالا به اینترنت را ارائه میکند."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "حساب بی‌هزینهٔ آغازگر طراحی شده است حریم‌خصوصی را به هرکسی به‌صورت پیش‌فرض اعطا می‌کند."
+        "حساب آغازین بدون هزینه طراحی شده تا به هر کسی با حریم خصوصی بصورت پیش فرض قدرت بدهد."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "شما در حال لذت بردن از قیمتی تبلیغاتی بر روی طرح فعلی خود هستید. اگر حساب خود را حذف کنید، قیمت تبلیغاتی خود را از دست خواهید داد و اگر حساب جدیدی بسازید دیگر در دسترس نخواهد بود."

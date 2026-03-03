@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
       ],
-      "Collapse": [
-        "Einklappen"
-      ],
       "Collapse folder": [
         "Ordner einklappen"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Verschlüsselt"
-      ],
-      "Expand": [
-        "Erweitern"
       ],
       "Expand folder": [
         "Ordner ausklappen"
@@ -3347,8 +3341,14 @@
       "Can't find any secure link": [
         "Kann keinen sicheren Link finden"
       ],
+      "Can't retrieve device name": [
+        "Gerätename kann nicht abgerufen werden"
+      ],
       "Cannot export this contact": [
         "Dieser Kontakt kann nicht exportiert werden."
+      ],
+      "Cannot find move target": [
+        "Ziel konnte nicht gefunden werden"
       ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
@@ -3379,6 +3379,9 @@
       ],
       "Could not remove from favorites": [
         "Konnte nicht aus Favoriten entfernt werden"
+      ],
+      "Data integrity check failed": [
+        "Prüfung der Datenintegrität fehlgeschlagen"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen",
@@ -3435,6 +3438,9 @@
       ],
       "Failed loading group members": [
         "Gruppenmitglieder konnten nicht geladen werden"
+      ],
+      "Failed to change permissions settings": [
+        "Fehler beim Ändern der Berechtigungseinstellungen"
       ],
       "Failed to copy photo to album": [
         "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
@@ -4326,7 +4332,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+        "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -5215,8 +5221,26 @@
       "Calendar side panel": [
         "Kalender-Seitenleiste"
       ],
+      "Can edit": [
+        "Darf bearbeiten"
+      ],
+      "Can edit and manage access": [
+        "Darf bearbeiten und Zugriff verwalten"
+      ],
+      "Can view and edit": [
+        "Anzeigen und Bearbeiten möglich"
+      ],
+      "Can view only": [
+        "Nur anzeigen möglich"
+      ],
       "Can't move a folder into itself": [
         "Ein Ordner kann nicht in sich selbst verschoben werden."
+      ],
+      "Can't rename to same name": [
+        "Kann nicht in denselben Namen umbenennen"
+      ],
+      "Can't write into folder": [
+        "Darf nicht in Ordner schreiben"
       ],
       "Canceled": [
         "Abgebrochen"
@@ -5322,9 +5346,6 @@
       "Create links and share your files with others.": [
         "Links erstellen und deine Dateien mit anderen teilen."
       ],
-      "Create your first folder and start moving your files.": [
-        "Erstelle deinen ersten Ordner und beginne mit dem Verschieben deiner Dateien."
-      ],
       "Creating": [
         "Wird erstellt"
       ],
@@ -5429,7 +5450,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
+        "Jeder Code kann nur ein Mal verwendet werden"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -5480,7 +5501,7 @@
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
@@ -6647,7 +6668,7 @@
         "Wenn du ${ deviceName } als synchronisiertes Gerät entfernst, werden alle Ordner, die zu „Meine Computer“ von diesem Gerät hinzugefügt wurden, dauerhaft aus ${ DRIVE_APP_NAME } gelöscht."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "who": [
         "Wer"
@@ -6939,14 +6960,6 @@
         "Nur anzeigen"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Kann anzeigen und bearbeiten"
-      ],
-      "Can view only": [
-        "Kann nur anzeigen"
-      ]
-    },
     "Item": {
       "file attributes": [
         "Dateiattribute"
@@ -7050,9 +7063,6 @@
       ],
       "Address": [
         "Anschrift"
-      ],
-      "admin": [
-        "Administrator"
       ],
       "Alias title": [
         "Aliasbezeichnung"
@@ -8387,6 +8397,10 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
+      "${ options }-day file version history": [
+        "${ options }-Tag-Dateiversionsverlauf",
+        "${ options }-Tage-Dateiversionsverlauf"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
@@ -9476,8 +9490,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Die ausgewählten Fotos befinden sich bereits in „${ albumName }“"
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Einstellung aktualisiert. Bearbeiter können Berechtigungen ändern und teilen."
+      "Setting updated. Editors can change permissions and share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen Berechtigungen ändern und Inhalte freigeben."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen keine Berechtigungen ändern oder Inhalte freigeben."
       ],
       "Share invitation accepted successfully": [
         "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"
@@ -10757,6 +10774,14 @@
         "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
         "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
       ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inMinutes } Minute, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inMinutes } Minuten, um dein Passwort zurückzusetzen."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunde, um dein Passwort zurückzusetzen.",
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunden, um dein Passwort zurückzusetzen."
@@ -11146,6 +11171,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "Frühjahrsangebote 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "Frühjahrsangebote"
       ]
     },
     "sso": {
@@ -12967,9 +13002,6 @@
       ],
       "You have no files to share": [
         "Du hast noch keine Dateien zum Teilen"
-      ],
-      "You have no folders yet": [
-        "Du hast noch keine Ordner"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."

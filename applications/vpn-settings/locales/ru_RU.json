@@ -100,16 +100,13 @@
         "Требуется внимание"
       ],
       "Authenticate": [
-        "Аутентифицировать"
+        "Аутентификация"
       ],
       "Authenticating": [
         "Аутентификация"
       ],
       "Back": [
         "Назад"
-      ],
-      "Back to sign in": [
-        "Вернуться ко входу"
       ],
       "Block": [
         "Заблокировать"
@@ -488,9 +485,6 @@
       ],
       "Help and resources": [
         "Помощь и информация"
-      ],
-      "Hide": [
-        "Скрыть"
       ],
       "Hide plan features": [
         "Скрыть возможности тарифа"
@@ -1003,13 +997,13 @@
         "Использовать другой способ оплаты"
       ],
       "Use authentication code": [
-        "Используйте код аутентификации"
+        "Использовать код аутентификации"
       ],
       "Use group sending permissions": [
         "Использовать групповые разрешения на отправку"
       ],
       "Use recovery code": [
-        "Использовать код восстановления"
+        "Использовать код восстановлени"
       ],
       "Use your current email instead": [
         "Вместо этого используйте свой текущий адрес электронной почты"
@@ -1115,7 +1109,7 @@
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
-        "${ users } пользователя",
+        "${ users } пользователей",
         "${ users } пользователей"
       ]
     },
@@ -2431,9 +2425,6 @@
       ],
       "North Korea": [
         "Северная Корея"
-      ],
-      "North Macedonia": [
-        "Северная Македония"
       ],
       "Northern Mariana Islands": [
         "Северные Марианские Острова"
@@ -4394,9 +4385,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Что-то пошло не так при регистрации вашего ключа безопасности. Попробуйте снова."
       ]
@@ -4416,9 +4404,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Вставьте свой ключ безопасности в порт USB вашего устройства."
@@ -4679,9 +4664,6 @@
       ],
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
-      ],
-      "Payment details": [
-        "Информация платежа"
       ],
       "Protection": [
         "Защита"
@@ -5816,9 +5798,6 @@
       "Drop to import": [
         "Импортировать"
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Каждый домен может иметь только одну запись SPF (TXT). Если вы хотите сохранить существующую запись SPF (TXT), вы можете добавить ${ spf } к текущей записи (поместите ее после ${ spfValue })."
       ],
@@ -5889,7 +5868,7 @@
         "Введите новый пароль для пользователя ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Введите код из приложения-аутентификатора"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Введите код, отправленный на ваш номер телефона ${ phone }."
@@ -5908,9 +5887,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Введите подробности своей учетной записи ${ BRAND_NAME }."
@@ -5937,7 +5913,7 @@
         "Пример: ${ spfExample }"
       ],
       "Expired": [
-        "Срок действия истёк"
+        "Истёкший"
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
@@ -6695,12 +6671,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
-      "Step ${ step }": [
-        "Шаг ${ step }",
-        "Шага ${ step }",
-        "Шагов ${ step }",
-        "Шагов ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
       ],
@@ -6931,9 +6901,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
-      ],
-      "To continue to ${ product }": [
-        "Чтобы продолжить в ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
@@ -7198,9 +7165,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Когда вы удаляете сервер из шлюза, он входит в 10-дневный период деактивации. Этот сервер может быть добавлен в новый шлюз, но его страна не может быть изменена."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
@@ -7758,7 +7722,7 @@
         "Версия браузера"
       ],
       "BTC address": [
-        "BTC-адрес"
+        "Адрес BTC"
       ],
       "BTC amount": [
         "Сумма BTC"
@@ -8451,7 +8415,7 @@
         "Почтовый индекс"
       ],
       "ZIP code": [
-        "Почтовый индекс"
+        "Индекс"
       ]
     },
     "Label/folder modal": {
@@ -8521,9 +8485,6 @@
       ],
       "Create an alias": [
         "Создать псевдоним"
-      ],
-      "Don't have access to your 2FA?": [
-        "У вас нет доступа к двухфакторной аутентификации?"
       ],
       "Encryption and keys": [
         "Шифрование и ключи"
@@ -8890,29 +8851,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Войти"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Зарегистрироваться"
-      ],
-      "Create a new ${ appName } account": [
-        "Создать новый аккаунт ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Find your ${ BRAND_NAME } Account username"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Забыли пароль от аккаунта ${ BRAND_NAME }? Восстановите его здесь с помощью кода восстановления, электронной почты или СМС и верните доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Сбросить пароль от аккаунта ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Войти, чтобы получить доступ к аккаунту ${ appName }"
       ]
     },
     "Modal title": {
@@ -8985,7 +8925,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Высочайшая скорость VPN"
+        "Максимальная скорость VPN"
       ],
       "Keep your inbox organized with folders": [
         "Поддерживайте порядок в почтовом ящике с помощью папок"
@@ -9005,7 +8945,7 @@
         "Получить ${ BRAND_NAME } бесплатно"
       ],
       "Get ${ planName }": [
-        "Перейти на тариф ${ planName }"
+        "Получить ${ planName }"
       ],
       "Keep ${ plan }": [
         "Сохранить ${ plan }"
@@ -9047,7 +8987,7 @@
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
-        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя",
         "${ n } календарей на пользователя"
       ],
       "${ n } custom email domain": [
@@ -9068,6 +9008,12 @@
         "${ n } адресов электронной почты на пользователя",
         "Адресов электронной почты на пользователя: ${ n }"
       ],
+      "${ n } filter": [
+        "${ n } фильтр",
+        "${ n } фильтра",
+        "${ n } фильтров",
+        "${ n } фильтра"
+      ],
       "${ n } folder": [
         "${ n } папка",
         "${ n } папки",
@@ -9086,6 +9032,12 @@
         "${ n } псевдонимов hide-my-email",
         "${ n } псевдонимов hide-my-email"
       ],
+      "${ n } label": [
+        "${ n } ярлык",
+        "${ n } ярлыка",
+        "${ n } ярлыков",
+        "${ n } ярлыка"
+      ],
       "${ n } message per day": [
         "${ n } сообщение в день",
         "${ n } сообщения в день",
@@ -9101,7 +9053,7 @@
       "${ n } vault": [
         "${ n } хранилище",
         "${ n } хранилища",
-        "${ n } хранилища",
+        "${ n } хранилищ",
         "${ n } хранилищ"
       ],
       "${ n } VPN connection": [
@@ -9138,7 +9090,7 @@
         "${ size } хранилища на пользователя"
       ],
       "1 user": [
-        "1 пользователь"
+        "1 пользователь"
       ],
       "10 email addresses/aliases": [
         "10 адресов электронной почты или псевдонимов"
@@ -9204,7 +9156,7 @@
         "Доступно на всех платформах"
       ],
       "Calendar sharing": [
-        "Общий доступ к календарю"
+        "Совместное использование календаря"
       ],
       "Catch-all": [
         "Прием всей почты домена"
@@ -9249,7 +9201,7 @@
         "Выделенные серверы, оптимизированные для трансляций"
       ],
       "Desktop app": [
-        "Приложение для настольных компьютеров"
+        "Приложение для настольного компьютера"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -9285,7 +9237,7 @@
         "Бесплатные функции из ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, и ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "Бесплатный VPN на одном устройстве"
+        "Бесплатная VPN на одном устройстве"
       ],
       "Fully refundable for 30 days": [
         "Полный возврат средств в течение 30 дней"
@@ -9296,11 +9248,8 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Высокоскоростная Швейцарская VPN, защищающая вашу конфиденциальность"
-      ],
       "High-speed VPN on ${ n } device": [
-        "Высокоскоростной VPN на ${ n } устройстве",
+        "Высокоскоростная VPN на ${ n } устройстве",
         "Высокоскоростная VPN на ${ n } устройствах",
         "Высокоскоростная VPN на ${ n } устройствах",
         "Высокоскоростная VPN на ${ n } устройствах"
@@ -9413,9 +9362,6 @@
       "Start protecting your organization": [
         "Начните защищать свою организацию"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Начните защищать себя в Интернете в два простых шага"
-      ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
@@ -9429,7 +9375,7 @@
         "Двухфакторная аутентификация"
       ],
       "Unlimited devices": [
-        "Неограниченное количество устройств"
+        "Неограниченное число устройств"
       ],
       "Unlimited devices and aliases": [
         "Неограниченное количество устройств и псевдонимов"
@@ -9540,7 +9486,7 @@
         "Поддержка"
       ],
       "Team management": [
-        "Управление командой"
+        "Управление командами"
       ]
     },
     "new_plans: info": {
@@ -9575,7 +9521,7 @@
         "Основательная защита и безопасная совместная работа для неограниченного числа пользователей."
       ],
       "For next-level password management and identity protection.": [
-        "Для управления паролями и защиты личных данных на новом уровне."
+        "Для нового уровня управления паролями и защиты личных данных."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary } и он не будет доступен, если вы создадите новый аккаунт."
@@ -9593,7 +9539,7 @@
         "Заплатите один раз и навсегда защитите свои пароли и личные данные."
       ],
       "Popular": [
-        "Популярные"
+        "Популярный"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
@@ -9608,7 +9554,7 @@
         "Получите безопасный доступ в Интернет из любой точки мира, проводя необходимый мониторинг сети"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Защищенная электронная почта с дополнительными функциями для вашего повседневного общения."
+        "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ в Интернет без ограничений."
@@ -9747,7 +9693,7 @@
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Защищает от угроз конфиденциальности VPN, пропуская трафик через несколько серверов"
+        "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Защищает от угроз конфиденциальности VPN, пропуская трафик через несколько серверов."
@@ -9846,7 +9792,7 @@
         "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Возможности включают автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Защищенно делитесь отдельными элементами со всеми (даже если они не используют ${ PASS_APP_NAME })."
@@ -9888,7 +9834,7 @@
         "Загрузите логотип вашей компании, чтобы настроить работу команды в веб-приложениях ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте собственные пользовательские доменные адреса электронной почты, например, ty@tvoeimya.com"
+        "Используйте собственные пользовательские доменные адреса электронной почты, например, sebe@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Мы не ведем журналы использования сеансов, в которых отображаются ваши действия в Интернете и мы не регистрируем метаданные, которые могут поставить под угрозу вашу конфиденциальность"
@@ -9943,7 +9889,7 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календаря",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей"
@@ -10660,9 +10606,6 @@
       "Bank transfer": [
         "Банковский перевод"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
@@ -10698,7 +10641,7 @@
         "Понятно"
       ],
       "MM/YY": [
-        "MM/YY"
+        "ММ/ГГ"
       ],
       "More plans are available in other currencies": [
         "Другие тарифы доступны в других валютах"
@@ -10745,10 +10688,10 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "Недействительный номер карты"
+        "Неверный номер карты"
       ],
       "Invalid expiration date": [
-        "Недействительный срок действия"
+        "Неверный срок годности"
       ],
       "Invalid security code": [
         "Недействительный код безопасности"
@@ -12314,7 +12257,7 @@
         "свяжитесь с администратором"
       ],
       "For all ${ BRAND_NAME } services": [
-        "За все службы ${ BRAND_NAME }"
+        "Для всех служб ${ BRAND_NAME }"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Чтобы продолжить использование продуктов ${ BRAND_NAME }, освободите место или ${ upgrade }"
@@ -12391,16 +12334,22 @@
         "${ n } календарей на пользователя"
       ],
       "${ n } free VPN connection per user": [
-        "${ n } бесплатное подключение к VPN для одного пользователя",
-        "${ n } бесплатных подключения к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя"
+        "${ n } бесплатное подключение к VPN на пользователя",
+        "${ n } бесплатных подключения к VPN на пользователя",
+        "${ n } бесплатных подключений к VPN на пользователя",
+        "${ n } бесплатных подключений к VPN на пользователя"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } высокоскоростное подключение к VPN",
         "${ n } высокоскоростных подключения к VPN",
         "${ n } высокоскоростных подключений к VPN",
         "${ n } высокоскоростных подключений к VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } высокоскоростное подключение к VPN на пользователя",
+        "${ n } высокоскоростных подключения к VPN на пользователя",
+        "${ n } высокоскоростных подключений к VPN на пользователя",
+        "${ n } высокоскоростных подключений к VPN на пользователя"
       ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
@@ -13112,7 +13061,7 @@
     },
     "Suffix": {
       "/month": [
-        "в месяц"
+        "/месяц"
       ],
       "/user per month": [
         "/за пользователя в месяц"
@@ -14783,17 +14732,29 @@
         "${ n } устройств",
         "${ n } устройств"
       ],
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n }+ сервера",
+        "${ n }+ серверов",
+        "${ n }+ серверов"
+      ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
-        "${ n } подключения к VPN",
-        "${ n } подключения к VPN"
+        "${ n } подключений к VPN",
+        "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } стране",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах",
+        "${ numberOfServers } в более чем ${ numberOfCountries } странах"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",
