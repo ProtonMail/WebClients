@@ -22,6 +22,10 @@
 	&--shifted {
 		inset-block-end: calc(var(--shift-custom-y) + env(safe-area-inset-bottom));
 	}
+
+	&:empty {
+		display: none;
+	}
 }
 
 .notifications-container {
