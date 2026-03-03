@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
-      "Collapse": [
-        "Skjul"
-      ],
       "Collapse folder": [
         "Skjul mappe"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Kryptert"
-      ],
-      "Expand": [
-        "Utvid"
       ],
       "Expand folder": [
         "Utvid mappe"
@@ -1804,6 +1798,13 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Subtotal": [
+        "Delsum"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsum for ${ cycle } måned",
+        "Delsum for ${ cycle } måneder"
       ],
       "Total": [
         "Totalt"
@@ -3346,6 +3347,9 @@
       "Can't find any secure link": [
         "Kan ikke finne noen sikker kobling"
       ],
+      "Can't retrieve device name": [
+        "Kan ikke hente enhetsnavn"
+      ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
@@ -3378,6 +3382,9 @@
       ],
       "Could not remove from favorites": [
         "Kunne ikke fjerne fra favoritter"
+      ],
+      "Data integrity check failed": [
+        "Kontroll av dataintegritet mislyktes"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender",
@@ -4320,7 +4327,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ]
     },
     "fido2: Info": {
@@ -5217,6 +5224,9 @@
       "Can't move a folder into itself": [
         "Kan ikke flytte en mappe inn i seg selv"
       ],
+      "Can't rename to same name": [
+        "Kan ikke gi nytt navn til samme navn"
+      ],
       "Canceled": [
         "Avbrutt"
       ],
@@ -5320,9 +5330,6 @@
       ],
       "Create links and share your files with others.": [
         "Opprett koblinger og del filene dine med andre."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Opprett din første mappe og begynn å flytte filene dine."
       ],
       "Creating": [
         "Oppretter"
@@ -5428,7 +5435,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -6646,7 +6653,7 @@
         "Når du fjerner ${ deviceName } som en synkronisert enhet, vil alle mapper lagt til Mine Datamaskiner fra denne enheten bli permanent slettet fra ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "who": [
         "hvem"
@@ -6938,14 +6945,6 @@
         "Vis bare"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Kan se og redigere"
-      ],
-      "Can view only": [
-        "Kan bare se"
-      ]
-    },
     "Item": {
       "file attributes": [
         "filattributter"
@@ -7049,9 +7048,6 @@
       ],
       "Address": [
         "Adresse"
-      ],
-      "admin": [
-        "administrator"
       ],
       "Alias title": [
         "Aliastittel"
@@ -9479,9 +9475,6 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valgte bilder allerede i \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
-      ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
       ],
@@ -11157,6 +11150,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene dine sikre."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRSALG"
       ]
     },
     "sso": {
@@ -12978,9 +12981,6 @@
       ],
       "You have no files to share": [
         "Du har ingen filer å dele"
-      ],
-      "You have no folders yet": [
-        "Du har ingen mapper enda"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."

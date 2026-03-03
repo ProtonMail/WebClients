@@ -213,9 +213,6 @@
       "Collaborate on documents": [
         "Colaborați la documente"
       ],
-      "Collapse": [
-        "Restrângere"
-      ],
       "Collapse folder": [
         "Restrângere folder"
       ],
@@ -462,9 +459,6 @@
       ],
       "Encrypted": [
         "Criptat"
-      ],
-      "Expand": [
-        "Extindere"
       ],
       "Expand folder": [
         "Extindere folder"
@@ -3374,8 +3368,14 @@
       "Can't find any secure link": [
         "Nu se poate găsi nicio legătură web securizată."
       ],
+      "Can't retrieve device name": [
+        "Nu se poate prelua numele dispozitivului."
+      ],
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
+      ],
+      "Cannot find move target": [
+        "Nu s-a putut găsi ținta mutării"
       ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
@@ -3406,6 +3406,9 @@
       ],
       "Could not remove from favorites": [
         "Nu s-a putut elimina din favorite."
+      ],
+      "Data integrity check failed": [
+        "Verificarea integrității datelor a eșuat."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
@@ -3464,6 +3467,9 @@
       ],
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
+      ],
+      "Failed to change permissions settings": [
+        "Nu s-au putut modifica setările de permisiuni."
       ],
       "Failed to copy photo to album": [
         "Fotografia nu s-a putut copia în album."
@@ -4359,12 +4365,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
       ],
       "Security key": [
         "Cheie de securitate"
@@ -5304,8 +5310,26 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
+      "Can edit": [
+        "Poate edita"
+      ],
+      "Can edit and manage access": [
+        "Puteți edita și gestiona accesul"
+      ],
+      "Can view and edit": [
+        "Poate vedea și edita"
+      ],
+      "Can view only": [
+        "Poate doar vedea"
+      ],
       "Can't move a folder into itself": [
         "Nu se poate muta un folder în el însuși."
+      ],
+      "Can't rename to same name": [
+        "Nu se poate redenumi cu același nume."
+      ],
+      "Can't write into folder": [
+        "Nu se poate scrie în folder."
       ],
       "Canceled": [
         "Anulat"
@@ -5413,9 +5437,6 @@
       "Create links and share your files with others.": [
         "Creați legături web şi partajați fişierele cu alții."
       ],
-      "Create your first folder and start moving your files.": [
-        "Creați primul folder și începeți să vă mutați fișierele."
-      ],
       "Creating": [
         "Se crează"
       ],
@@ -5521,7 +5542,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6745,7 +6766,7 @@
         "Când eliminați ${ deviceName } ca dispozitiv sincronizat, toate folderele adăugate la Calculatoarele mele de pe acest dispozitiv vor fi șterse permanent din ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "who": [
         "cine"
@@ -7046,14 +7067,6 @@
         "Numai vizualizare"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Poate vedea și edita"
-      ],
-      "Can view only": [
-        "Poate doar vedea"
-      ]
-    },
     "Item": {
       "file attributes": [
         "atribute fișier"
@@ -7160,9 +7173,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "admin": [
-        "administrator"
       ],
       "Alias title": [
         "Titlu alias"
@@ -9597,8 +9607,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Pozele selectate sunt deja salvate în „${ albumName }”."
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Setare actualizată. Editorii pot schimba permisiunea și partaja."
+      "Setting updated. Editors can change permissions and share.": [
+        "Setare actualizată. Editorii pot schimba permisiunile și partaja."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Setare actualizată. Editorii nu pot schimba permisiunile sau partaja."
       ],
       "Share invitation accepted successfully": [
         "Invitația partajată a fost acceptată"
@@ -11306,6 +11319,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REDUCERE DE PRIMĂVARĂ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
@@ -13160,9 +13183,6 @@
       ],
       "You have no files to share": [
         "Nu aveți fișiere de partajat"
-      ],
-      "You have no folders yet": [
-        "Încă nu aveți foldere"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"

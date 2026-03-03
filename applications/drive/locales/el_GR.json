@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
-      "Collapse": [
-        "Σύμπτυξη"
-      ],
       "Collapse folder": [
         "Σύμπτυξη φακέλου"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Κρυπτογραφημένο"
-      ],
-      "Expand": [
-        "Ανάπτυξη"
       ],
       "Expand folder": [
         "Ανάπτυξη φακέλου"
@@ -2588,7 +2582,7 @@
         "Βόρεια Κορέα"
       ],
       "North Macedonia": [
-        "Σκόπια"
+        "Βόρεια Μακεδονία"
       ],
       "Northern Mariana Islands": [
         "Βόρειες Μαριάνες"
@@ -3353,8 +3347,14 @@
       "Can't find any secure link": [
         "Δε βρέθηκε κανένας ασφαλής σύνδεσμος"
       ],
+      "Can't retrieve device name": [
+        "Δεν είναι δυνατή η ανάκτηση του ονόματος της συσκευής"
+      ],
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
+      ],
+      "Cannot find move target": [
+        "Δεν είναι δυνατή η εύρεση προορισμού μετακίνησης"
       ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
@@ -3385,6 +3385,9 @@
       ],
       "Could not remove from favorites": [
         "Αδυναμία κατάργησης από τα αγαπημένα"
+      ],
+      "Data integrity check failed": [
+        "Ο έλεγχος ακεραιότητας δεδομένων απέτυχε"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
@@ -3441,6 +3444,9 @@
       ],
       "Failed loading group members": [
         "Αποτυχία φόρτωσης μελών ομάδας"
+      ],
+      "Failed to change permissions settings": [
+        "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
       ],
       "Failed to copy photo to album": [
         "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
@@ -5221,8 +5227,26 @@
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
+      "Can edit": [
+        "Δυνατότητα επεξεργασίας"
+      ],
+      "Can edit and manage access": [
+        "Δυνατότητα επεξεργασίας και να διαχείρισης πρόσβασης"
+      ],
+      "Can view and edit": [
+        "Δυνατότητα προβολής και επεξεργασίας"
+      ],
+      "Can view only": [
+        "Δυνατότητα προβολής μόνο"
+      ],
       "Can't move a folder into itself": [
         "Δεν είναι δυνατή η μετακίνηση ενός φακέλου μέσα στον ίδιο τον φάκελο"
+      ],
+      "Can't rename to same name": [
+        "Δεν είναι δυνατή η μετονομασία με το ίδιο όνομα"
+      ],
+      "Can't write into folder": [
+        "Δεν είναι δυνατή η εγγραφή στον φάκελο"
       ],
       "Canceled": [
         "Ακυρωμένες"
@@ -5328,9 +5352,6 @@
       "Create links and share your files with others.": [
         "Δημιουργήστε συνδέσμους και μοιραστείτε τα αρχεία σας με άλλους."
       ],
-      "Create your first folder and start moving your files.": [
-        "Δημιουργήστε τον πρώτο σας φάκελο και αρχίστε να μετακινείτε τα αρχεία σας."
-      ],
       "Creating": [
         "Δημιουργία"
       ],
@@ -5435,7 +5456,7 @@
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
       "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
@@ -6945,14 +6966,6 @@
         "Μόνο για ανάγνωση"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Μπορεί να δει και να επεξεργαστεί"
-      ],
-      "Can view only": [
-        "Μπορεί να δει μόνο"
-      ]
-    },
     "Item": {
       "file attributes": [
         "ιδιότητες αρχείου"
@@ -7056,9 +7069,6 @@
       ],
       "Address": [
         "Διεύθυνση"
-      ],
-      "admin": [
-        "διαχειριστής"
       ],
       "Alias title": [
         "Τίτλος ψευδωνύμου"
@@ -8336,6 +8346,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
       ],
@@ -9425,8 +9439,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Οι επιλεγμένες φωτογραφίες υπάρχουν ήδη στο \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
+      "Setting updated. Editors can change permissions and share.": [
         "Η ρύθμιση ενημερώθηκε. Οι συντάκτες μπορούν να αλλάξουν τα δικαιώματα και να κοινοποιήσουν."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες δε μπορούν να αλλάξουν τα δικαιώματα ή να κοινοποιήσουν."
       ],
       "Share invitation accepted successfully": [
         "Η πρόσκληση κοινής χρήσης έγινε αποδεκτή"
@@ -11103,6 +11120,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Τώρα είναι δυνατή η αναζήτηση στο δίσκο εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
     "sso": {
@@ -12924,9 +12951,6 @@
       ],
       "You have no files to share": [
         "Δεν έχετε αρχεία για να κοινοποιήσετε"
-      ],
-      "You have no folders yet": [
-        "Δεν έχετε ακόμη φακέλους"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"

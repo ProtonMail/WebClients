@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
-      "Collapse": [
-        "Inklappen"
-      ],
       "Collapse folder": [
         "Map samenvouwen"
       ],
@@ -458,9 +455,6 @@
       "Encrypted": [
         "Versleuteld"
       ],
-      "Expand": [
-        "Uitklappen"
-      ],
       "Expand folder": [
         "Map uitklappen"
       ],
@@ -567,7 +561,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
@@ -2587,9 +2581,6 @@
       "North Korea": [
         "Noord-Korea"
       ],
-      "North Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
       ],
@@ -3353,8 +3344,14 @@
       "Can't find any secure link": [
         "Kan geen beveiligde koppeling vinden"
       ],
+      "Can't retrieve device name": [
+        "Kan apparaatnaam niet ophalen"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
+      ],
+      "Cannot find move target": [
+        "Kan geen doel voor verplaatsings vinden"
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -3385,6 +3382,9 @@
       ],
       "Could not remove from favorites": [
         "Kon niet verwijderen uit favorieten"
+      ],
+      "Data integrity check failed": [
+        "Gegevensintegriteitscontrole mislukt"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda",
@@ -3441,6 +3441,9 @@
       ],
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
+      ],
+      "Failed to change permissions settings": [
+        "Het wijzigen van instellingen voor toelatingen is mislukt"
       ],
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
@@ -4325,15 +4328,7 @@
         "Hoge snelheden"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -5221,8 +5216,26 @@
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
+      "Can edit": [
+        "Kan bewerken"
+      ],
+      "Can edit and manage access": [
+        "Kan bewerken en toegang beheren"
+      ],
+      "Can view and edit": [
+        "Kan bekijken en bewerken"
+      ],
+      "Can view only": [
+        "Kan alleen bekijken"
+      ],
       "Can't move a folder into itself": [
         "Een map kan niet naar zichzelf worden verplaatst"
+      ],
+      "Can't rename to same name": [
+        "Kan niet hernoemen naar dezelfde naam"
+      ],
+      "Can't write into folder": [
+        "Kan niet naar map schrijven"
       ],
       "Canceled": [
         "Geannuleerd"
@@ -5328,9 +5341,6 @@
       "Create links and share your files with others.": [
         "Maak links en deel uw bestanden met anderen."
       ],
-      "Create your first folder and start moving your files.": [
-        "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
-      ],
       "Creating": [
         "Aanmaken"
       ],
@@ -5435,7 +5445,7 @@
         "Dubbele sleutel bijgewerkt"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -6653,7 +6663,7 @@
         "Wanneer u ${ deviceName } verwijdert als een gesynchroniseerd apparaat, worden alle mappen die zijn toegevoegd aan Mijn Computers van dit apparaat permanent verwijderd uit ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "who": [
         "wie"
@@ -6945,14 +6955,6 @@
         "Alleen bekijken"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Kan bekijken en bewerken"
-      ],
-      "Can view only": [
-        "Kan alleen bekijken"
-      ]
-    },
     "Item": {
       "file attributes": [
         "bestandsattributen"
@@ -7056,9 +7058,6 @@
       ],
       "Address": [
         "Adres"
-      ],
-      "admin": [
-        "beheerder"
       ],
       "Alias title": [
         "Alias titel"
@@ -9429,8 +9428,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Geselecteerde foto('s) al in \"${ albumName }\""
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Instelling bijgewerkt. Bewerkers kunnen toestemming wijzigen en delen."
+      "Setting updated. Editors can change permissions and share.": [
+        "Instelling bijgewerkt. Bewerkers kunnen machtigingen wijzigen en delen."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Instelling bijgewerkt. Bewerkers kunnen geen machtigingen wijzigen of delen."
       ],
       "Share invitation accepted successfully": [
         "Uitnodiging met succes geaccepteerd"
@@ -11107,6 +11109,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
       ]
     },
     "sso": {
@@ -12928,9 +12940,6 @@
       ],
       "You have no files to share": [
         "U heeft geen bestanden om te delen"
-      ],
-      "You have no folders yet": [
-        "U hebt nog geen mappen"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
