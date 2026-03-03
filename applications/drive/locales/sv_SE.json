@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
-      "Collapse": [
-        "Mimimera"
-      ],
       "Collapse folder": [
         "Minimera mapp"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Krypterad"
-      ],
-      "Expand": [
-        "Expandera"
       ],
       "Expand folder": [
         "Expandera mapp"
@@ -3344,8 +3338,14 @@
       "Can't find any secure link": [
         "Kan inte hitta någon säker länk"
       ],
+      "Can't retrieve device name": [
+        "Kan inte hämta enhetsnamn"
+      ],
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
+      ],
+      "Cannot find move target": [
+        "Kan inte hitta mål för flytt"
       ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
@@ -3376,6 +3376,9 @@
       ],
       "Could not remove from favorites": [
         "Kunde inte ta bort från favoriter"
+      ],
+      "Data integrity check failed": [
+        "Kontroll av dataintegritet misslyckades"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -3432,6 +3435,9 @@
       ],
       "Failed loading group members": [
         "Misslyckades att ladda gruppmedlemmar"
+      ],
+      "Failed to change permissions settings": [
+        "Misslyckades att ändra behörighetsinställningar"
       ],
       "Failed to copy photo to album": [
         "Misslyckades att kopiera foto till album"
@@ -5203,8 +5209,26 @@
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can edit and manage access": [
+        "Kan redigera och hantera åtkomst"
+      ],
+      "Can view and edit": [
+        "Kan visa och redigera"
+      ],
+      "Can view only": [
+        "Kan endast visa"
+      ],
       "Can't move a folder into itself": [
         "Kan inte flytta en mapp in i sig själv"
+      ],
+      "Can't rename to same name": [
+        "Kan inte byta namn till samma namn"
+      ],
+      "Can't write into folder": [
+        "Kan inte skriva till mapp"
       ],
       "Canceled": [
         "Avbruten"
@@ -5306,9 +5330,6 @@
       ],
       "Create links and share your files with others.": [
         "Skapa länkar och dela dina filer med andra."
-      ],
-      "Create your first folder and start moving your files.": [
-        "Skapa din första mapp och börja flytta dina filer."
       ],
       "Creating": [
         "Skapar"
@@ -6911,14 +6932,6 @@
         "Endast visa"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Kan visa och redigera"
-      ],
-      "Can view only": [
-        "Kan endast visa"
-      ]
-    },
     "Item": {
       "file attributes": [
         "filattribut"
@@ -7022,9 +7035,6 @@
       ],
       "Address": [
         "Adress"
-      ],
-      "admin": [
-        "admin"
       ],
       "Alias title": [
         "Alias-rubrik"
@@ -9435,6 +9445,10 @@
         "Valt objekt togs inte bort från din lista",
         "Valda objekt misslyckades att tas bort från din lista"
       ],
+      "Selected item was successfully removed from your list": [
+        "Valt objekt togs bort från din lista",
+        "Valda objekt togs bort från din lista"
+      ],
       "Selected items were successfully removed from your list": [
         "Valda objekt togs bort från din lista",
         "Valda objekt togs bort från din lista"
@@ -11111,6 +11125,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRREA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     },
     "sso": {
@@ -12932,9 +12956,6 @@
       ],
       "You have no files to share": [
         "Du har inga filer att dela"
-      ],
-      "You have no folders yet": [
-        "Du har inga mappar ännu"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"

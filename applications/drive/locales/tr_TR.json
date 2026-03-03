@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Belgeler üzerinde iş birliği yapın"
       ],
-      "Collapse": [
-        "Daralt"
-      ],
       "Collapse folder": [
         "Klasörü daralt"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Şifrelenmiş"
-      ],
-      "Expand": [
-        "Genişlet"
       ],
       "Expand folder": [
         "Klasörü genişlet"
@@ -3353,8 +3347,14 @@
       "Can't find any secure link": [
         "Herhangi bir güvenli bağlantı bulunamadı"
       ],
+      "Can't retrieve device name": [
+        "Aygıt adı alınamıyor"
+      ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
+      ],
+      "Cannot find move target": [
+        "Taşıma hedefi bulunamıyor"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -3385,6 +3385,9 @@
       ],
       "Could not remove from favorites": [
         "Beğenilenlerden kaldırılamadı"
+      ],
+      "Data integrity check failed": [
+        "Veri bütünlüğü kontrolü başarısız oldu"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -3441,6 +3444,9 @@
       ],
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
+      ],
+      "Failed to change permissions settings": [
+        "İzin ayarları değiştirilemedi"
       ],
       "Failed to copy photo to album": [
         "Fotoğraf albüme kopyalanamadı"
@@ -4332,7 +4338,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -5221,8 +5227,26 @@
       "Calendar side panel": [
         "Takvim yan panosu"
       ],
+      "Can edit": [
+        "Düzenleyebilir"
+      ],
+      "Can edit and manage access": [
+        "Erişimi düzenleyebilir ve yönetebilir"
+      ],
+      "Can view and edit": [
+        "Görüntüleyebilir ve düzenleyebilir"
+      ],
+      "Can view only": [
+        "Yalnızca görüntüleyebilir"
+      ],
       "Can't move a folder into itself": [
         "Klasör kendi içine taşınamaz"
+      ],
+      "Can't rename to same name": [
+        "Aynı isimle yeniden adlandırılamaz"
+      ],
+      "Can't write into folder": [
+        "Klasöre yazılamıyor"
       ],
       "Canceled": [
         "İptal edildi"
@@ -5327,9 +5351,6 @@
       ],
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
-      ],
-      "Create your first folder and start moving your files.": [
-        "İlk klasörünüzü ekleyin ve dosyalarınızı taşımaya başlayın."
       ],
       "Creating": [
         "Oluşturuluyor"
@@ -5486,7 +5507,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -6653,7 +6674,7 @@
         "${ deviceName } uygulamasını eşitlenmiş aygıtlardan kaldırdığınızda, ${ DRIVE_APP_NAME } uygulaması ile bu aygıttan Bilgisayarlarım klasörüne eklenen tüm klasörler kalıcı olarak silinir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "who": [
         "kim"
@@ -6945,14 +6966,6 @@
         "Yalnızca görüntüleme"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Görüntülenebilir ve düzenlenebilir"
-      ],
-      "Can view only": [
-        "Yalnızca görüntülenebilir"
-      ]
-    },
     "Item": {
       "file attributes": [
         "dosya öznitelikleri"
@@ -7056,9 +7069,6 @@
       ],
       "Address": [
         "Adres"
-      ],
-      "admin": [
-        "yönetici"
       ],
       "Alias title": [
         "Takma ad başlığı"
@@ -9429,8 +9439,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Seçilmiş fotoğraflar “${ albumName }” albümünde zaten var."
       ],
-      "Setting updated. Editors can change permission and share.": [
+      "Setting updated. Editors can change permissions and share.": [
         "Ayarlar güncellendi. Düzenleyiciler izinleri değiştirebilir ve paylaşabilir."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Ayarlar güncellendi. Düzenleyiciler izinleri değiştiremez veya paylaşamaz."
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"
@@ -11107,6 +11120,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 BAHAR İNDİRİMİ"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -12928,9 +12951,6 @@
       ],
       "You have no files to share": [
         "Paylaşacak bir dosyanız yok"
-      ],
-      "You have no folders yet": [
-        "Henüz bir klasörünüz yok"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"

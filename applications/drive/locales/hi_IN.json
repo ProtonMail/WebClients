@@ -174,9 +174,6 @@
       "Close transfers": [
         "स्थानांतरण बंद करें"
       ],
-      "Collapse": [
-        "संक्षिप्त करें"
-      ],
       "Collapse folder": [
         "कम"
       ],
@@ -365,9 +362,6 @@
       "Enable drive search": [
         "ड्राइव खोज चालू करें"
       ],
-      "Expand": [
-        "विस्तृत करें"
-      ],
       "Expand folder": [
         "ज़्यादा"
       ],
@@ -430,9 +424,6 @@
       ],
       "Grid layout": [
         "ग्रिड खाका"
-      ],
-      "Hide": [
-        "छिपाएं"
       ],
       "Hide advanced PGP settings": [
         "एडवांस PGP सेटिंग छुपाएं"
@@ -1891,9 +1882,6 @@
       "North Korea": [
         "उत्तर कोरिया"
       ],
-      "North Macedonia": [
-        "उत्तर मैसिडोनिया"
-      ],
       "Northern Mariana Islands": [
         "उत्तरी मैरियाना आइलैंड्स"
       ],
@@ -3065,15 +3053,7 @@
         "बहुत तेज गति"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "अपने ${ BRAND_NAME } खाते से जुड़ा एक सुरक्षा चाबी डालें।"
-      ],
       "Security key": [
         "सुरक्षा चाबी"
       ]
@@ -3869,9 +3849,6 @@
       "Create links and share your files with others.": [
         "लिंक बनाएं और अपनी फाइलों को दूसरों के साथ साझा करें।"
       ],
-      "Create your first folder and start moving your files.": [
-        "अपना पहला फ़ोल्डर बनाएं और अपनी फ़ाइलों को स्थानांतरित करना शुरू करें।"
-      ],
       "Creating": [
         "बन रहा है"
       ],
@@ -3957,9 +3934,6 @@
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
       ],
-      "Each code can only be used once": [
-        "हर कूटक का उपयोग केवल एक बार हो सकता है"
-      ],
       "Edit email address": [
         "ईमेल एड्रेस संपादित करें"
       ],
@@ -4004,9 +3978,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड डालें। ${ digit } अंक का।"
       ],
       "Enter your own password (as organization admin).": [
         "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
@@ -4873,9 +4844,6 @@
       ],
       "What would you like to do?": [
         "आप क्या करना चाहेंगे?"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } संस्करण से पुनः स्थापित किया जाएगा। अन्य सभी संस्करण अब भी सुरक्षित रहेंगे।"
@@ -9057,9 +9025,6 @@
       ],
       "You have no files to share": [
         "आपके पास शेयर करने को फाइल नहीं"
-      ],
-      "You have no folders yet": [
-        "आपके पास अभी तक कोई फोल्डर नहीं"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "आपका ${ planName } ट्रायल ${ textDate } को खत्म होगा"
