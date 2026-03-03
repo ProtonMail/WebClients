@@ -170,9 +170,6 @@
       "Back": [
         "Vissza"
       ],
-      "Back to sign in": [
-        "Vissza a bejelentkezéshez"
-      ],
       "Block": [
         "Tiltás"
       ],
@@ -670,9 +667,6 @@
       ],
       "Help and resources": [
         "Súgó és források"
-      ],
-      "Hide": [
-        "Elrejtés"
       ],
       "Hide more benefits": [
         "Több előny elrejtése"
@@ -3115,9 +3109,6 @@
       ],
       "North Korea": [
         "Észak-Korea"
-      ],
-      "North Macedonia": [
-        "Észak-Macedónia"
       ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
@@ -5621,9 +5612,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Hiba történt a hitelesítési kulcs regisztrálásakor. Próbálja meg újra."
       ]
@@ -5643,9 +5631,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
       ],
       "Insert your security key into your device's USB port.": [
         "Csatlakoztassa a hitelesítési kulcsát az eszköz USB portjához."
@@ -6075,9 +6060,6 @@
       ],
       "Password ends with": [
         "Jelszó ezzel végződik:"
-      ],
-      "Payment details": [
-        "Fizetés részletei"
       ],
       "Protection": [
         "Védelem"
@@ -7346,9 +7328,6 @@
       "Drop to import": [
         "Húzza ide az importáláshoz"
       ],
-      "Each code can only be used once": [
-        "Minden kódot csak egyszer lehet felhasználni"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Minden domain név csak egy SPF (TXT) rekorddal rendelkezhet. Ha meg akarja tartani a meglévő SPF (TXT) rekordot, akkor a jelenlegi rekordhoz hozzáadhatja a ${ spf } értéket (a ${ spfValue } után)."
       ],
@@ -7459,9 +7438,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait."
@@ -8705,9 +8681,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
-      "To continue to ${ product }": [
-        "Folytatás itt ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "A szolgáltatásaink javítása érdekében, néha adatokat gyűjtünk, hogy az alkalmazásaink megfelelő működését ellenőrizhessük. Ez az információ nem kerül megosztásra harmadik féllel."
       ],
@@ -9010,9 +8983,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Amikor eltávolít egy szervert az átjáróból, az egy 10 napos deaktiválási időszakba lép. Ez a szerver hozzáadható egy új átjáróhoz, de az országa nem változtatható meg."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -10956,9 +10926,6 @@
       "Create an alias": [
         "E-mail álnév létrehozása"
       ],
-      "Don't have access to your 2FA?": [
-        "Nem fér hozzá a kétlépcsős hitelesítéshez?"
-      ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
@@ -11410,12 +11377,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Belépés"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Belépés"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók"
       ],
@@ -11425,23 +11386,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Regisztráljon egy ${ BRAND_NAME } fiókot | Szerezze vissza az irányítást a magánszférája felett"
       ],
-      "Create a new ${ appName } account": [
-        "${ appName } új fiók létrehozása"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "A ${ BRAND_NAME } fiók felhasználónevének megkeresése"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Elfelejtette a ${ BRAND_NAME } fiók jelszavát? Állítsa vissza helyreállítási kód, e-mail vagy SMS segítségével, és szerezze vissza a hozzáférést a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } alkalmazásokhoz, és minden máshoz."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Elfelejtette a ${ BRAND_NAME } fiókja felhasználónevét? Keresse meg a helyreállítási e-mail címe vagy telefonszáma segítségével, és szerezze vissza a hozzáférést a(z) ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és más alkalmazásaihoz."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Állítsa vissza a ${ BRAND_NAME } fiók jelszavát"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Belépés a ${ appName } fiókhoz"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Jelentkezzen be a ${ BRAND_NAME } , hogy hozzáférjen minden titkosított ${ BRAND_NAME } szolgáltatáshoz, mint például ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }. Nincsen fiókja? Készítsen egyet INGYEN."
@@ -12009,9 +11955,6 @@
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nagy sebességű, svájci VPN, amely védi az adatait"
-      ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
         "Nagysebességű VPN ${ n } eszközön"
@@ -12130,9 +12073,6 @@
       ],
       "Start protecting your organization": [
         "Kezdje meg a szervezet védelmét"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Két egyszerű lépéssel kezdje meg az online védelmet"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"

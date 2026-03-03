@@ -210,9 +210,6 @@
       "Back": [
         "Précédent"
       ],
-      "Back to sign in": [
-        "Retour à la connexion"
-      ],
       "Block": [
         "Bloquer"
       ],
@@ -842,9 +839,6 @@
       ],
       "Help and resources": [
         "Aide et ressources"
-      ],
-      "Hide": [
-        "Masquer"
       ],
       "Hide more benefits": [
         "Masquer plus d'avantages"
@@ -2703,6 +2697,9 @@
       "Failed to load OAuth": [
         "Echec du chargement du OAuth"
       ],
+      "Finish setting up your business account": [
+        "Terminer la configuration de votre compte entreprise"
+      ],
       "Install migration app": [
         "Installer l'application de migration"
       ],
@@ -4177,9 +4174,6 @@
       ],
       "North Korea": [
         "Corée du Nord"
-      ],
-      "North Macedonia": [
-        "Macédoine du Nord"
       ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
@@ -6099,7 +6093,7 @@
         "Contact de récupération pour ${ user } retiré"
       ],
       "Recovery contact removed": [
-        "Contact de récupération retiré"
+        "Le contact de récupération a été retiré"
       ],
       "Recovery contacts": [
         "Contacts de récupération"
@@ -6260,8 +6254,8 @@
       "You will be notified when someone requests emergency access.": [
         "Vous recevrez une notification lorsque quelqu'un demandera un accès d'urgence."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Vous ne pourrez plus aider à récupérer l'accès au compte de ${ user } en cas de réinitialisation du mot de passe."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Vous ne pourrez plus aider ${ user } à récupérer ses données après qu'il ait réinitialisé son mot de passe."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Vous ne pourrez plus demander l'accès au compte de ${ user } en cas d'urgence."
@@ -6476,9 +6470,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et saisissez à nouveau votre code."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et essayez à nouveau."
       ],
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
@@ -6782,6 +6773,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Une erreur est survenue lors de la connexion de votre téléviseur. Veuillez scanner à nouveau le QR code affiché sur votre téléviseur."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
@@ -7752,9 +7746,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
       ]
@@ -7774,9 +7765,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insérez votre clé de sécurité dans le port USB de votre appareil."
@@ -8231,9 +8219,6 @@
       ],
       "Password ends with": [
         "Le mot de passe se termine par"
-      ],
-      "Payment details": [
-        "Informations de paiement"
       ],
       "Permissions": [
         "Autorisations"
@@ -9749,9 +9734,6 @@
       "Drop to import": [
         "Déposez ici pour importer"
       ],
-      "Each code can only be used once": [
-        "Chaque code ne peut être utilisé qu'une seule fois."
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Chaque domaine ne peut avoir qu'un seul enregistrement SPF (TXT). Si vous souhaitez conserver l'enregistrement SPF (TXT) existant, vous pouvez ajouter ${ spf } à votre enregistrement actuel (ajoutez-le après ${ spfValue })."
       ],
@@ -9880,9 +9862,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Saisissez les identifiants de votre compte ${ BRAND_NAME }."
@@ -11351,9 +11330,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pour confirmer, saisissez le nom de l'utilisateur que vous voulez supprimer."
       ],
-      "To continue to ${ product }": [
-        "Pour continuer vers ${ product },"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour contrôler le bon fonctionnement de nos applications. Ces informations ne sont pas partagées avec des services tiers."
       ],
@@ -11469,7 +11445,7 @@
         "Passez à la version supérieure pour conserver vos avantages de ${ planTitle }."
       ],
       "Upgrade to unlock": [
-        "Changez d'abonnement pour débloquer cette fonctionnalité"
+        "Changez d'abonnement pour débloquer"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Passez à la version supérieure pour débloquer ${ monitorLink }."
@@ -11707,9 +11683,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Lorsque vous retirez un serveur d'une passerelle, il entre dans une période de désactivation de 10 jours. Ce serveur peut être ajouté comme nouvelle passerelle mais son pays ne peut pas être changé."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, nous utiliserons tous vos crédits disponibles avant de débiter vos moyens de paiement ci-dessus."
@@ -14302,9 +14275,6 @@
       "Create an alias": [
         "Créer un alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Vous n'avez pas accès à votre A2F ?"
-      ],
       "Downloads": [
         "Téléchargements"
       ],
@@ -14947,12 +14917,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName } : connexion"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName } : inscription"
-      ],
       "${ BRAND_NAME } Account": [
         "Compte ${ BRAND_NAME }"
       ],
@@ -14962,9 +14926,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Créez un compte ${ BRAND_NAME } | Reprenez le contrôle de votre vie privée"
       ],
-      "Create a new ${ appName } account": [
-        "Créer un nouveau compte ${ appName }"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Profitez de deux semaines de ${ BRAND_NAME } gratuitement"
       ],
@@ -14973,18 +14934,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Trouvez le nom d'utilisateur de votre compte ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Vous avez oublié le mot de passe de votre compte ${ BRAND_NAME } ? Réinitialisez-le ici à l'aide d'un code de récupération, d'un e-mail ou d'un SMS et accédez à nouveau à vos comptes ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }…"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Vous avez oublié votre nom d'utilisateur pour votre compte ${ BRAND_NAME } ? Retrouvez-le en utilisant votre e-mail ou votre numéro de téléphone de récupération et accédez de nouveau à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et aux autres services Proton."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Connectez-vous pour accéder à votre compte ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Connectez-vous à votre compte ${ BRAND_NAME } pour accéder à tous les services chiffrés de ${ BRAND_NAME } comme ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres encore. Vous n'avez pas de compte ? Créez un compte GRATUITEMENT."
@@ -15573,9 +15522,6 @@
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suisse haut débit qui protège votre vie privée."
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN haut débit sur ${ n } appareil",
         "VPN haut débit sur ${ n } appareils"
@@ -15700,9 +15646,6 @@
       ],
       "Start protecting your organization": [
         "Commencez à protéger votre organisation"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Commencez à vous protéger en ligne en 2 étapes simples"
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
@@ -16426,6 +16369,9 @@
       ],
       "Reminder has been sent": [
         "Le rappel a été envoyé."
+      ],
+      "The key has been deleted.": [
+        "La clé a été supprimée."
       ],
       "Too many recent API requests": [
         "Trop de requêtes récentes avec l'API"
@@ -22816,9 +22762,6 @@
       ],
       "Find email or username": [
         "Trouver une adresse e-mail ou un nom d'utilisateur"
-      ],
-      "Finish setting up your business account": [
-        "Terminer la configuration de votre compte entreprise"
       ],
       "Folders": [
         "Dossiers"

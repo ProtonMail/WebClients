@@ -2693,6 +2693,9 @@
       "Failed to load OAuth": [
         "加载 OAuth 失败"
       ],
+      "Finish setting up your business account": [
+        "完成您的商业账户设置"
+      ],
       "Install migration app": [
         "安装迁移应用"
       ],
@@ -6227,8 +6230,8 @@
       "You will be notified when someone requests emergency access.": [
         "当有人请求紧急访问时，您将收到通知。"
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "若执行密码重置，您将无法再帮助恢复对 ${ user } 账户的访问权限。"
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "在用户重置密码后，您将无法再帮助 ${ user } 恢复其数据。"
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "您将无法再在紧急情况下请求访问 ${ user } 的账户"
@@ -6440,9 +6443,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "如果电视上的时间过期了，点击电视上的“刷新”，重新输入一次代码。"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "如果您的电视时间已过期，请点击电视上的刷新并重试。"
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
@@ -6743,6 +6743,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "连接电视时出现问题，请再次扫描电视上的二维码。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -7701,7 +7704,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错。请重试。"
+        "使用安全密钥认证时出现问题，请重试。"
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
@@ -7724,7 +7727,7 @@
         "确定要删除安全密钥 ${ name } 吗？"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Insert your security key into your device's USB port.": [
         "将您的安全密钥插入设备 USB 接口中。"
@@ -8171,9 +8174,6 @@
       ],
       "Password ends with": [
         "密码结尾是"
-      ],
-      "Payment details": [
-        "付款详情"
       ],
       "Permissions": [
         "权限"
@@ -9643,7 +9643,7 @@
         "拖至此处即可导入"
       ],
       "Each code can only be used once": [
-        "每条恢复码只能使用一次"
+        "每个恢复码只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
@@ -9775,7 +9775,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "请输入您的 ${ BRAND_NAME } 账户信息。"
@@ -11233,7 +11233,7 @@
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
       "To continue to ${ product }": [
-        "即可使用 ${ product }"
+        "以继续使用 ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
@@ -11590,7 +11590,7 @@
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -14162,7 +14162,7 @@
         "创建别名"
       ],
       "Don't have access to your 2FA?": [
-        "暂时不想用 2FA？"
+        "无法使用 2FA？"
       ],
       "Downloads": [
         "下载"
@@ -14811,7 +14811,7 @@
         "创建 ${ BRAND_NAME } 账户 | 重获您的隐私掌控权"
       ],
       "Create a new ${ appName } account": [
-        "创建 ${ appName } 账户"
+        "创建新的 ${ appName } 账户"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "免费试用 ${ BRAND_NAME } 两周"
@@ -14823,16 +14823,16 @@
         "查找您的 ${ BRAND_NAME } 账户用户名"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘了 ${ BRAND_NAME } 账户的密码？凭代码、电子邮件或短信重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+        "忘记了您的 ${ BRAND_NAME } 账户密码？在此使用恢复码、邮箱或短信重置，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘了 ${ BRAND_NAME } 账户的用户名？凭账户恢复所用的电子邮件或手机号重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+        "忘记了您的 ${ BRAND_NAME } 账户用户名？通过您的密保邮箱或密保手机找回，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "重置 ${ BRAND_NAME } 账户的密码"
+        "重置您的 ${ BRAND_NAME } 账户密码"
       ],
       "Sign in to access your ${ appName } account": [
-        "登录 ${ appName } 账户"
+        "登录以访问您的 ${ appName } 账户"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登录您的 ${ BRAND_NAME } 账户，以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等。还没有账户？免费创建一个。"
@@ -15406,9 +15406,6 @@
       "Group management (coming soon)": [
         "群组管理（即将推出）"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "使用瑞士的高速 VPN 捍卫您的隐私"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台设备可同时接入高速 VPN"
       ],
@@ -15531,9 +15528,6 @@
       ],
       "Start protecting your organization": [
         "开始保护您的组织"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "只需 2 个简单步骤就能开始保护自己的网络安全"
       ],
       "Strict no-logs policy": [
         "严格的零日志原则"
@@ -16247,6 +16241,9 @@
       ],
       "Reminder has been sent": [
         "提醒已发送"
+      ],
+      "The key has been deleted.": [
+        "安全密钥已被删除。"
       ],
       "Too many recent API requests": [
         "API 请求过于频繁"
@@ -20372,6 +20369,16 @@
         "当您邀请的人订阅 ${ BRAND_NAME } 套餐时，您将获得积分奖励。"
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 春季特惠"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "春季特惠"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } 请求您帮助以单点登录方式登录他们的 ${ BRAND_NAME } 账户。"
@@ -22321,7 +22328,7 @@
         "删除用户?"
       ],
       "Delete version history?": [
-        "删除版本历史？"
+        "是否删除版本历史记录？"
       ],
       "Deny access to user?": [
         "拒绝用户访问？"
@@ -22541,9 +22548,6 @@
       ],
       "Find email or username": [
         "查找邮箱或用户名"
-      ],
-      "Finish setting up your business account": [
-        "完成您的商业账户设置"
       ],
       "Folders": [
         "文件夹"
