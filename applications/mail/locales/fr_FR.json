@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Copier les adresses"
       ],
-      "Copy alias “${ name }”": [
-        "Copier l'alias « ${ name } »"
-      ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
       ],
@@ -659,9 +656,6 @@
       ],
       "Help and resources": [
         "Aide et ressources"
-      ],
-      "Hide": [
-        "Masquer"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Masquer l'assistant d'écriture ${ BRAND_NAME } Scribe"
@@ -3598,9 +3592,6 @@
       "North Korea": [
         "Corée du Nord"
       ],
-      "North Macedonia": [
-        "Macédoine du Nord"
-      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -5300,9 +5291,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
       ]
@@ -5541,15 +5529,7 @@
         "Vitesses extrêmement élevées"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -7155,9 +7135,6 @@
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
-      "Each code can only be used once": [
-        "Chaque code ne peut être utilisé qu'une seule fois."
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gérez et désabonnez-vous facilement des newsletters et des listes de diffusion."
       ],
@@ -7224,9 +7201,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -8593,9 +8567,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quand vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quand vous vous inscrivez à une newsletter, utilisez un alias plutôt que votre adresse e-mail. Votre identité est ainsi cachée et vous pouvez désactiver cet alias n'importe quand."
@@ -12067,6 +12038,12 @@
       ],
       "No parent folder": [
         "Aucun dossier parent"
+      ],
+      "Remind me later": [
+        "Me rappeler plus tard"
+      ],
+      "Yes, don't show again": [
+        "Oui, ne plus afficher"
       ]
     },
     "Option group": {
@@ -12930,46 +12907,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Tous les alias"
-      ],
       "Create alias": [
         "Créer un alias"
-      ],
-      "Create an alias": [
-        "Créer un alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Créez des alias à la demande et gérez facilement vos alias et vos mots de passe."
-      ],
-      "Hide-my-email aliases": [
-        "Alias « hide-my-email »"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Les alias « hide-my-email » vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nouvel alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Ouvrir ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protégez votre identité en ligne"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Essayer ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Utilisé par exemple sur Amazon pour vos achats."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(ceci ouvrira ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14269,9 +14214,6 @@
       "Address verification disabled": [
         "L'adresse de vérification a été désactivée."
       ],
-      "Alias copied to clipboard": [
-        "L'alias a été copié dans le presse-papiers."
-      ],
       "Alias saved and copied": [
         "L'alias a été enregistré et copié."
       ],
@@ -14363,9 +14305,6 @@
       ],
       "Labels applied.": [
         "Les labels ont été appliqués."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
       ],
       "Mail list unsubscribed": [
         "Le désabonnement de la liste de diffusion a été effectué."
@@ -15158,6 +15097,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Keep this banner hidden?": [
+        "Masquer cette bannière ?"
       ],
       "Label as": [
         "Labelliser"

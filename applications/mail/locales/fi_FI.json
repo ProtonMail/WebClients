@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Kopioi osoitteet"
       ],
-      "Copy alias “${ name }”": [
-        "Kopioi alias \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
@@ -659,9 +656,6 @@
       ],
       "Help and resources": [
         "Tuki ja resurssit"
-      ],
-      "Hide": [
-        "Piilota"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Piilota ${ BRAND_NAME } Scribe kirjoitusavustaja"
@@ -3512,9 +3506,6 @@
       "North Korea": [
         "Pohjois-Korea"
       ],
-      "North Macedonia": [
-        "Pohjois-Makedonia"
-      ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
       ],
@@ -5180,9 +5171,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Sinulla ei vielä ole yhteystietoja. Aloita luomalla uusi yhteystieto"
       ]
@@ -5421,15 +5409,7 @@
         "Salamannopea"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
-      ],
       "Security key": [
         "Suojausavain"
       ]
@@ -7032,9 +7012,6 @@
       "Duplicate key updated": [
         "Avaimen kaksoiskappale päivitettiin"
       ],
-      "Each code can only be used once": [
-        "Koodit ovat kertakäyttöisiä"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Hallitse ja peru uutiskirjeitä ja postituslistoja helposti."
       ],
@@ -7101,9 +7078,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
@@ -8452,9 +8426,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Kun otit luotetut avaimet käyttöön lähettäjälle ${ senderName }, lisättiin julkiset avaimet yhteystiedon tietoihin."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."
@@ -11808,6 +11779,12 @@
       ],
       "No parent folder": [
         "Ei yläkansiota"
+      ],
+      "Remind me later": [
+        "Muistuta myöhemmin"
+      ],
+      "Yes, don't show again": [
+        "Älä näytä uudelleen"
       ]
     },
     "Option group": {
@@ -12624,46 +12601,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Kaikki aliakset"
-      ],
       "Create alias": [
         "Luo alias"
-      ],
-      "Create an alias": [
-        "Luo alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Uusi alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Suojaa verkkoidentiteettisi"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Kokeile ${ PASS_APP_NAME }ia"
       ],
       "Used on Amazon for shopping, etc.": [
         "Käytetään Amazonissa ostoksiin jne."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -13931,9 +13876,6 @@
       "Address verification disabled": [
         "Osoitevahvistus ei ole käytössä"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopioitiin leikepöydälle"
-      ],
       "Alias saved and copied": [
         "Alias tallennettiin ja kopioitiin"
       ],
@@ -14025,9 +13967,6 @@
       ],
       "Labels applied.": [
         "Tunnisteet määritettiin."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"
       ],
       "Mail list unsubscribed": [
         "Sähköpostitilaus on lopetettu"
@@ -14817,6 +14756,9 @@
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
+      ],
+      "Keep this banner hidden?": [
+        "Pidä tämä ilmoitus piilossa?"
       ],
       "Label as": [
         "Lisää tunniste"
