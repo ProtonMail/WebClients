@@ -164,6 +164,7 @@ class OfferSubscription {
         return hasFamily(this.subscription);
     }
 
+    // a.k.a. Proton Unlimited
     hasBundle() {
         if (this.upcomingSubscription) {
             return hasBundle(this.upcomingSubscription);
