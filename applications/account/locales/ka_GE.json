@@ -1796,6 +1796,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
       ]
     },
     "Address action": {
@@ -2300,6 +2303,9 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle": {
@@ -14401,6 +14407,9 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: რეგისტრაცია"
       ]
     },
     "Modal title": {
@@ -24245,6 +24254,11 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
       ]
     }
   }
