@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { SharedMenuItem } from '@proton/pass/components/Menu/Shared/SharedMenuItem';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
@@ -15,6 +16,7 @@ import {
     selectSharedWithMeCount,
     selectVisibleSecureLinksCount,
 } from '@proton/pass/store/selectors';
+import { OrganizationPublicLinkMode } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
@@ -25,10 +27,12 @@ type Props = {
 
 export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const scope = useItemScope();
+    const org = useOrganization();
 
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
     const sharedByMeCount = useSelector(selectSharedByMeCount);
     const secureLinksCount = useSelector(selectVisibleSecureLinksCount);
+    const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
 
     const elements = [
         sharedWithMeCount > 0 && (
@@ -54,7 +58,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                 onAction={onAction}
             />
         ),
-        secureLinksCount > 0 && (
+        secureLinksCount > 0 && !orgPublicLinkingDisabled && (
             <SharedMenuItem
                 key="secure-links"
                 label={c('Action').t`Secure links`}
