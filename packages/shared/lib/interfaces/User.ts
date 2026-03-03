@@ -104,6 +104,7 @@ export interface User {
         EndTime: number;
         Reason: SessionRecoveryReason | null;
         UID: string;
+        IsCurrentSession: boolean;
     } | null;
     LockedFlags?: number;
     Billed?: boolean;
