@@ -62,6 +62,8 @@ export const decodeUserData = (userData: string): { PrimaryEmail?: string; Displ
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
+        subscribe: store.subscribe,
+
         clear: () => {
             store.reset();
             store.flush?.();
