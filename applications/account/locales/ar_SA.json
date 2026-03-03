@@ -181,9 +181,6 @@
       "Back": [
         "السابق"
       ],
-      "Back to sign in": [
-        "العودة إلى تسجيل الدخول"
-      ],
       "Block": [
         "حظر"
       ],
@@ -292,9 +289,6 @@
       "Connected": [
         "مُتصل"
       ],
-      "Contact sales": [
-        "اتصل بالمبيعات"
-      ],
       "Contact support": [
         "التواصل مع الدعم الفني"
       ],
@@ -399,9 +393,6 @@
       ],
       "Delete account": [
         "حذف الحساب"
-      ],
-      "Delete and confirm": [
-        "حذف وتأكيد"
       ],
       "Delete Gateway": [
         "حذف البوابة"
@@ -723,9 +714,6 @@
       ],
       "Help and resources": [
         "المساعدة والمصادر"
-      ],
-      "Hide": [
-        "إخفاء"
       ],
       "Hide more benefits": [
         "إخفاء المزيد من المزايا"
@@ -2359,6 +2347,9 @@
       ]
     },
     "BOSS": {
+      "Finish setting up your business account": [
+        "أكمل إعداد حساب نشاطك التجاري"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "لنقل بيانات مؤسستك، تحتاج إلى تثبيت تطبيق ${ BRAND_NAME } Migration Assistant من Google Workspace Marketplace. سيمنح هذا الإذن لـ ${ BRAND_NAME } بنسخ بياناتك. بعد تثبيته، عُد إلى هنا للمتابعة. تعرّف على المزيد"
       ]
@@ -3636,9 +3627,6 @@
       ],
       "North Korea": [
         "كوريا الشمالية"
-      ],
-      "North Macedonia": [
-        "شمال مقدونيا"
       ],
       "Northern Mariana Islands": [
         "جزر ماريانا الشمالية"
@@ -5403,8 +5391,8 @@
       "You will be notified when someone requests emergency access.": [
         "سيتم إشعارك عندما يطلب شخص ما وصول الطوارئ."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "لن تتمكن بعد الآن من المساعدة في استعادة الوصول إلى حساب ${ user } في حالة إعادة تعيين كلمة المرور."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "لن تتمكن بعد الآن من مساعدة ${ user } على استعادة بياناتهم بعد إعادة تعيين كلمة المرور الخاصة بهم."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "لن تتمكن بعد الآن من طلب الوصول إلى حساب ${ user } في حالة الطوارئ."
@@ -5919,6 +5907,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "تتجاوز بعض أسماء التسميات الخاصة بك الحد الأقصى لعدد الأحرف في ${ MAIL_APP_NAME }. يرجى تخصيص الاستيراد لتعديل هذه الأسماء."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "حدث خطأ أثناء توصيل التلفاز. امسح رمز QR المعروض على التلفاز مرة أخرى."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "حدث خطأ ما، قم بـ ${ refresh } للمتابعة. إذا كنت لا تزال ترى رسالة الخطأ يرجى الاتصال بـ ${ supportTeam } الخاص بنا."
@@ -6817,9 +6808,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
       ]
@@ -6839,9 +6827,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "أدرج مفتاح الأمان في منفذ USB بجهازك."
@@ -7303,9 +7288,6 @@
       ],
       "Password ends with": [
         "تنتهي كلمة المرور بـ"
-      ],
-      "Payment details": [
-        "تفاصيل الدفع"
       ],
       "Protection": [
         "الحماية"
@@ -7895,9 +7877,6 @@
       ],
       "${ discountPercent }% discount": [
         "خصم ${ discountPercent }%"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "لن يحتفظ ${ DRIVE_APP_NAME } بعد الآن بالإصدارات السابقة من ملفاتك."
       ],
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
@@ -8858,9 +8837,6 @@
       "Drop to import": [
         "أفلت للاستيراد"
       ],
-      "Each code can only be used once": [
-        "يمكن استخدام كل رمز مرة واحدة فقط"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "يمكن أن يحتوي كل نطاق على سجل SPF (TXT) واحد فقط. إذا كنت تريد الاحتفاظ بسجل SPF (TXT) الحالي، فيمكنك إضافة ${ spf } إلى سجلك الحالي (ضعه بعد ${ spfValue })."
       ],
@@ -8978,9 +8954,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. الرقم ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } الخاص بك."
       ],
@@ -9043,9 +9016,6 @@
       ],
       "finance": [
         "مالية"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "للحصول على تاريخ إصدار لمدة 10 سنوات، يرجى الاتصال بفريق المبيعات لدينا."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "للوصول إلى البريد الإلكتروني في أي وقت ولتجربة محسّنة على الجوال، نزّل ${ androidAppLink } أو ${ iosAppLink }."
@@ -10286,12 +10256,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "قد يستغرق هذا التحقق ما يصل إلى ساعة واحدة. بعد التحقق بنجاح، لا تقم بإزالة سجل TXT لأنه ضروري لتأكيد استمرار امتلاكك للنطاق."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "سيؤدي هذا إلى حذف جميع الإصدارات السابقة من ملفاتك الأقدم من ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "سيؤدي ذلك إلى حذف جميع الإصدارات السابقة من ملفاتك."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "سيؤدي هذا إلى رفض الوصول إلى **${ email }**. هل تريد بالتأكيد المتابعة؟"
       ],
@@ -10357,9 +10321,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "للتأكيد على ذلك، قم بإدخال اسم المستخدم الذي ترغب في حذف حسابه."
-      ],
-      "To continue to ${ product }": [
-        "للمتابعة إلى ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "لتحسين خدماتنا باستمرار، نقوم أحيانًا بجمع البيانات لمراقبة الأداء السليم لتطبيقاتنا. لا تتم مشاركة هذه المعلومات مع أي خدمات تابعة لجهات خارجية."
@@ -10463,9 +10424,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
       ],
-      "Upgrade to unlock": [
-        "قم بالترقية لفتح القفل"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "قم بالترقية لفتح ${ monitorLink }."
       ],
@@ -10555,9 +10513,6 @@
       ],
       "Version ${ version }": [
         "الإصدار ${ version }"
-      ],
-      "Version history": [
-        "تاريخ الإصدار"
       ],
       "Version number successfully copied to clipboard": [
         "تم نسخ رقم الإصدار إلى الحافظة بنجاح"
@@ -10684,9 +10639,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -11963,9 +11915,6 @@
       "Don't ask again": [
         "لا تسأل ثانيا"
       ],
-      "Don't keep versions": [
-        "لا تحتفظ بالإصدارات"
-      ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
       ],
@@ -12878,9 +12827,6 @@
       "Create an alias": [
         "إنشاء اسم مستعار"
       ],
-      "Don't have access to your 2FA?": [
-        "لا يمكنك الوصول إلى 2FA؟"
-      ],
       "Downloads": [
         "التنزيلات"
       ],
@@ -13412,12 +13358,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: تسجيل الدخول"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: التسجيل"
-      ],
       "${ BRAND_NAME } Account": [
         "حساب ${ BRAND_NAME }"
       ],
@@ -13427,23 +13367,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "إنشاء حساب ${ BRAND_NAME } | استعد خصوصيتك"
       ],
-      "Create a new ${ appName } account": [
-        "إنشاء حساب ${ appName } جديد"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "العثور على اسم مستخدم حساب ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت كلمة مرور حساب ${ BRAND_NAME }؟ أعد تعيينها هنا باستخدام رمز الاسترداد أو البريد الإلكتروني أو الرسالة القصيرة واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "هل نسيت اسم المستخدم لحساب ${ BRAND_NAME }؟ ابحث عنه باستخدام بريد الاسترداد أو رقم هاتفك واستعيد الوصول إلى ${ MAIL_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } والمزيد."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "قم بتسجيل الدخول للوصول إلى حساب ${ appName } الخاص بك"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "سجل الدخول إلى حساب ${ BRAND_NAME } الخاص بك للوصول إلى جميع خدمات ${ BRAND_NAME } المشفرة مثل ${ MAIL_APP_NAME }، و${ DRIVE_SHORT_APP_NAME }، و${ CALENDAR_SHORT_APP_NAME }، وغيرها. ليس لديك حساب؟ أنشئ واحدًا مجانًا."
@@ -14078,9 +14003,6 @@
       "Group management (coming soon)": [
         "إدارة المجموعات (قريبًا)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN سويسري عالي السرعة يحمي خصوصيتك"
-      ],
       "High-speed VPN on ${ n } devices": [
         "شبكة VPN عالية السرعة على ${ n } جهاز",
         "شبكة VPN عالية السرعة على ${ n } جهاز",
@@ -14207,9 +14129,6 @@
       ],
       "Start protecting your organization": [
         "ابدأ بحماية مؤسستك"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "ابدأ بحماية نفسك على الإنترنت في خطوتين سهلتين"
       ],
       "Strict no-logs policy": [
         "سياسة صارمة لعدم الاحتفاظ بالسجلات"
@@ -18062,11 +17981,6 @@
         "طلب إعادة تعيين كلمة المرور"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "تمكين قسم الصور"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "حافظ على تنظيم صندوق الوارد باستخدام المجلدات والتسميات. ${ learnMoreLink }"
@@ -20939,9 +20853,6 @@
       ],
       "Delete user?": [
         "حذف المستخدم؟"
-      ],
-      "Delete version history?": [
-        "هل تريد حذف سجل الإصدارات؟"
       ],
       "Deny access to user?": [
         "هل تريد رفض وصول المستخدم؟"

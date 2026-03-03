@@ -211,7 +211,7 @@
         "Geri"
       ],
       "Back to sign in": [
-        "Oturum açmaya dön"
+        "Oturum açmaya geri dön"
       ],
       "Block": [
         "Engelle"
@@ -322,7 +322,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış ekibiyle görüşün"
+        "Satış departmanıyla iletişime geçin"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -2708,6 +2708,9 @@
       ],
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
+      ],
+      "Finish setting up your business account": [
+        "İşletme hesabınızın kurulumunu tamamlayın"
       ],
       "Install migration app": [
         "Aktarım uygulamasını kurun"
@@ -6266,8 +6269,8 @@
       "You will be notified when someone requests emergency access.": [
         "Birisi acil durumda erişme izni isteğinde bulunduğunda bilgilendirileceksiniz."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Artık ${ user } hesabı parolasını sıfırlarsa erişimini geri kazanmasına yardımcı olamayacaksınız."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "${ user } parolasını sıfırladıktan sonra artık verilerini kurtarmasına yardımcı olamazsınız."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Acil bir durumda, ${ user } hesabına erişme izni isteğinde bulunamayacaksınız."
@@ -6482,9 +6485,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "TV'nizin süresi dolmuşsa, TV'nizde Yenile'ye tıklayın ve tekrar deneyin."
       ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
@@ -6788,6 +6788,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Televizyonunuz bağlanırken bir sorun oluştu. Televizyonunuzdaki karekodu tekrar taratın."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -7779,7 +7782,7 @@
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Insert your security key into your device's USB port.": [
         "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
@@ -8234,9 +8237,6 @@
       ],
       "Password ends with": [
         "Parola şununla bitiyor"
-      ],
-      "Payment details": [
-        "Ödeme ayrıntıları"
       ],
       "Permissions": [
         "İzinler"
@@ -8842,7 +8842,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9885,7 +9885,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -9963,7 +9963,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Sürüm geçmişini 10 yıl geriye dönük olarak tutmak için lütfen satış ekibimizle görüşün."
+        "10 yıllık sürüm geçmişi için lütfen satış ekibimizle iletişime geçin."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11277,10 +11277,10 @@
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden önceki sürümlerini silecek."
+        "Bu işlem dosyalarınızın ${ rententionLabel } süresinden eski olan önceki tüm sürümlerini silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini silecek."
+        "Bu işlem dosyalarınızın önceki tüm sürümlerini silecektir."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -11355,7 +11355,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "To continue to ${ product }": [
-        "${ product } ile ilerlemek için"
+        "${ product } ürününe devam etmek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
@@ -11472,7 +11472,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Erişmek için tarifenizi yükseltin"
+        "Kilidi açmak için yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -11712,7 +11712,7 @@
         "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -14306,7 +14306,7 @@
         "Takma ad oluştur"
       ],
       "Don't have access to your 2FA?": [
-        "İki adımlı doğrulamayı kullanamıyor musunuz?"
+        "İki adımlı doğrulamanıza erişiminiz yok mu?"
       ],
       "Downloads": [
         "İndirmeler"
@@ -14954,7 +14954,7 @@
         "${ appName }: Oturum aç"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Hesap aç"
+        "${ appName }: Kaydol"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı"
@@ -14966,7 +14966,7 @@
         "Bir ${ BRAND_NAME } hesabı açın | Gizliliğinizi geri alın"
       ],
       "Create a new ${ appName } account": [
-        "Yeni bir ${ appName } hesabı açın"
+        "Yeni bir ${ appName } hesabı oluştur"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "İki haftalık ücretsiz ${ BRAND_NAME } tadını çıkarın"
@@ -15580,9 +15580,6 @@
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
         "${ n } aygıt için yüksek hızlı VPN"
@@ -15707,9 +15704,6 @@
       ],
       "Start protecting your organization": [
         "Kuruluşunuzu korumaya başlayın"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 kolay adımda kendiniz çevrim içi ortamda korumaya başlayın"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -16433,6 +16427,9 @@
       ],
       "Reminder has been sent": [
         "Hatırlatıcı gönderildi"
+      ],
+      "The key has been deleted.": [
+        "Anahtar silindi."
       ],
       "Too many recent API requests": [
         "Çok fazla sayıda API isteği yapıldı"
@@ -20616,6 +20613,16 @@
         "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda kredi kazanın."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 BAHAR İNDİRİMİ"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
@@ -22832,9 +22839,6 @@
       ],
       "Find email or username": [
         "E-posta adresi veya kullanıcı adı bulun"
-      ],
-      "Finish setting up your business account": [
-        "Kuruluş hesabınızın kurulumunu tamamlayın"
       ],
       "Folders": [
         "Klasörler"

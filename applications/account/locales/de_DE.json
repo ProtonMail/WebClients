@@ -448,7 +448,7 @@
         "Konto löschen"
       ],
       "Delete and confirm": [
-        "Löschen und bestätigen"
+        "Löschen und Bestätigen"
       ],
       "Delete filter “${ Name }”": [
         "Filter “${ Name }” löschen"
@@ -2708,6 +2708,9 @@
       ],
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
+      ],
+      "Finish setting up your business account": [
+        "Da Einrichten deines Geschäftskontos abschließen"
       ],
       "Install migration app": [
         "Übernahme-App installieren"
@@ -6266,8 +6269,8 @@
       "You will be notified when someone requests emergency access.": [
         "Du wirst benachrichtigt, wenn jemand Notfallzugriff anfordert."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Du wirst nicht mehr in der Lage sein zu helfen, die Wiederherstellung des Zugriffs auf das Konto von ${ user } im Falle eines Passwort-Resets durchzuführen."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Du wirst ${ user } nicht mehr helfen können, deren Daten wiederherzustellen, nachdem sie ihr Passwort zurückgesetzt haben."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Du kannst im Notfall keinen Zugriff mehr auf das Konto von ${ user } anfordern."
@@ -6482,9 +6485,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Wenn die Zeit auf deinem Fernseher abgelaufen ist, klicke auf „Aktualisieren“ auf deinem Fernseher und versuche es erneut."
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
@@ -6788,6 +6788,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Es gab ein Problem beim Verbinden deines Fernsehers. Scanne den QR-Code auf deinem Fernseher noch einmal."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
@@ -7779,7 +7782,7 @@
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+        "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Insert your security key into your device's USB port.": [
         "Stecke deinen Sicherheitsschlüssel in den USB-Anschluss deines Geräts."
@@ -8234,9 +8237,6 @@
       ],
       "Password ends with": [
         "Passwort endet mit"
-      ],
-      "Payment details": [
-        "Zahlungsdetails"
       ],
       "Permissions": [
         "Berechtigungen"
@@ -8842,7 +8842,7 @@
         "${ discountPercent }% Rabatt"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } wird keine früheren Versionen deiner Dateien mehr behalten."
+        "Frühere Versionen Ihrer Dateien werden durch ${ DRIVE_APP_NAME } nicht mehr gespeichert."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
@@ -9753,7 +9753,7 @@
         "Ablegen zum Importieren"
       ],
       "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
+        "Jeder Code kann nur ein Mal verwendet werden"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Jede Domain kann nur einen SPF (TXT)-Eintrag haben. Wenn du den bestehenden SPF (TXT)-Eintrag behalten möchtest, kannst du ${ spf } zu deinem aktuellen Eintrag hinzufügen (platziere es nach ${ spfValue })."
@@ -9885,7 +9885,7 @@
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Gib deine ${ BRAND_NAME }-Details zum Konto ein."
@@ -11277,7 +11277,7 @@
         "Diese Verifizierung kann bis zu einer Stunde dauern. Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Dadurch werden alle früheren Versionen deiner Dateien, die älter als ${ rententionLabel } sind, gelöscht."
+        "Dadurch werden alle früheren Versionen der Dateien gelöscht, die älter als ${ rententionLabel } sind."
       ],
       "This will delete all previous versions of your files.": [
         "Dadurch werden alle früheren Versionen deiner Dateien gelöscht."
@@ -11472,7 +11472,7 @@
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
       ],
       "Upgrade to unlock": [
-        "Zum Freischalten upgraden"
+        "Zum Freischalten ein Upgrade durchführen"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Upgrade um ${ monitorLink } freizuschalten."
@@ -11712,7 +11712,7 @@
         "Wenn du einen Server von einem Gateway entfernst, wird er für 10 Tage deaktiviert. Dieser Server kann zu einem neuen Gateway hinzugefügt werden, aber sein Land kann nicht geändert werden."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wenn dein Abonnement verlängert wird, werden wir das verfügbare Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
@@ -13204,7 +13204,7 @@
         "Nicht erneut fragen"
       ],
       "Don't keep versions": [
-        "Versionen nicht behalten"
+        "Versionen nicht aufbewahren"
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
@@ -14954,7 +14954,7 @@
         "${ appName }: Anmeldung"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Registrierung"
+        "${ appName }: Registrieren"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto"
@@ -14966,7 +14966,7 @@
         "Erstelle ein ${ BRAND_NAME }-Konto | Hol dir deine Privatsphäre zurück"
       ],
       "Create a new ${ appName } account": [
-        "Erstelle ein neues ${ appName }-Konto"
+        "Neues ${ appName }-Konto erstellen"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Genieße zwei Wochen ${ BRAND_NAME } kostenlos"
@@ -14978,16 +14978,16 @@
         "Finde deinen ${ BRAND_NAME } Konto-Benutzernamen"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Du hast dein ${ BRAND_NAME }-Passwort vergessen? Setze es mit mithilfe eines Wiederherstellungscodes, einer E-Mail oder einer SMS zurück und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+        "Du hast das Passwort für dein ${ BRAND_NAME }-Konto vergessen? Setze es hier mithilfe eines Wiederherstellungscodes, einer E-Mail oder einer SMS zurück und erhalte wieder Zugriff auf deine ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+        "Du hast deinen Benutzernamen für dein ${ BRAND_NAME }-Konto vergessen? Finde ihn mithilfe deiner Wiederherstellungs-E-Mail-Adresse oder Telefonnummer und erhalte wieder Zugriff auf deine ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME }-Kontopasswort zurücksetzen"
+        "Passwort für dein ${ BRAND_NAME } Konto zurücksetzen"
       ],
       "Sign in to access your ${ appName } account": [
-        "Melde dich an, um auf dein ${ appName }-Konto zuzugreifen."
+        "Melden dich an, um auf dein ${ appName }-Konto zugreifen zu können."
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Melde dich bei deinem ${ BRAND_NAME }-Konto an, um auf alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr zuzugreifen. Du hast kein Konto? Erstelle KOSTENLOS eines."
@@ -15371,6 +15371,10 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
+      "${ options }-day file version history": [
+        "${ options }-Tag-Dateiversionsverlauf",
+        "${ options }-Tage-Dateiversionsverlauf"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
       ],
@@ -15576,9 +15580,6 @@
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Schweizer Hochgeschwindigkeits-VPN, das deine Privatsphäre schützt."
-      ],
       "High-speed VPN on ${ n } device": [
         "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
@@ -15703,9 +15704,6 @@
       ],
       "Start protecting your organization": [
         "Schütze deine Organisation"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Schütze dich online in 2 einfachen Schritten"
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
@@ -16429,6 +16427,9 @@
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
+      ],
+      "The key has been deleted.": [
+        "Der Schlüssel wurde gelöscht."
       ],
       "Too many recent API requests": [
         "Zu viele aktuelle API-Anfragen"
@@ -19517,6 +19518,14 @@
         "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
         "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
       ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Es verbleibt noch ${ timeRemaining.inMinutes } Minute, um dein Passwort zurückzusetzen.",
+        "Es verbleiben noch ${ timeRemaining.inMinutes } Minuten, um dein Passwort zurückzusetzen."
+      ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunde, um dein Passwort zurückzusetzen.",
         "Es verbleiben noch ${ timeRemaining.inSeconds } Sekunden, um dein Passwort zurückzusetzen."
@@ -19752,7 +19761,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Fotos-Bereich aktivieren"
+        "Bereich „Fotos“ aktivieren"
       ],
       "Get updates about comments via email": [
         "Erhalte Benachrichtigungen über Kommentare via E-Mail."
@@ -20602,6 +20611,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Du erhältst Guthaben, wenn die von dir eingeladene Person ein ${ BRAND_NAME } Abonnement abschließt."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "Frühjahrsangebote 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "Frühjahrsangebote"
       ]
     },
     "sso": {
@@ -22820,9 +22839,6 @@
       ],
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername suchen"
-      ],
-      "Finish setting up your business account": [
-        "Schließe das Einrichten deines Geschäftskontos ab."
       ],
       "Folders": [
         "Ordner"
