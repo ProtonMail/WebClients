@@ -223,46 +223,65 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    const initializeDevices = async () => {
-        await cleanupCameraPreview();
+    const initializeDevices = async (timeoutMs?: number) => {
+        const initializeDevicesInternal = async () => {
+            await cleanupCameraPreview();
 
-        await wait(200);
+            await wait(200);
 
-        await cleanupMicrophoneVolumeAnalysis();
+            await cleanupMicrophoneVolumeAnalysis();
 
-        const results = await Promise.allSettled([
-            initializeCamera(initialCameraState),
-            initializeMicrophone(initialAudioState),
-            initializeAudioOutput(true),
-        ]);
+            const results = await Promise.allSettled([
+                initializeCamera(initialCameraState),
+                initializeMicrophone(initialAudioState),
+                initializeAudioOutput(true),
+            ]);
 
-        const cameraError = results[0].status === 'rejected' ? results[0].reason : null;
-        const microphoneError = results[1].status === 'rejected' ? results[1].reason : null;
+            const cameraError = results[0].status === 'rejected' ? results[0].reason : null;
+            const microphoneError = results[1].status === 'rejected' ? results[1].reason : null;
 
-        if (cameraError || microphoneError) {
-            if (cameraError) {
-                reportMeetError('Failed to initialize camera', cameraError);
+            if (cameraError || microphoneError) {
+                if (cameraError) {
+                    reportMeetError('Failed to initialize camera', cameraError);
+                }
+                if (microphoneError) {
+                    reportMeetError('Failed to initialize microphone', microphoneError);
+                }
+
+                let errorMessage: string;
+                if (cameraError && microphoneError) {
+                    errorMessage = c('Warning')
+                        .t`Could not access camera or microphone. You can try enabling them again from the meeting controls.`;
+                } else if (cameraError) {
+                    errorMessage = c('Warning')
+                        .t`Could not access camera. You can try enabling it again from the meeting controls.`;
+                } else {
+                    errorMessage = c('Warning')
+                        .t`Could not access microphone. You can try enabling it again from the meeting controls.`;
+                }
+
+                createNotification({
+                    type: 'warning',
+                    text: errorMessage,
+                });
             }
-            if (microphoneError) {
-                reportMeetError('Failed to initialize microphone', microphoneError);
-            }
+        };
 
-            let errorMessage: string;
-            if (cameraError && microphoneError) {
-                errorMessage = c('Warning')
-                    .t`Could not access camera or microphone. You can try enabling them again from the meeting controls.`;
-            } else if (cameraError) {
-                errorMessage = c('Warning')
-                    .t`Could not access camera. You can try enabling it again from the meeting controls.`;
-            } else {
-                errorMessage = c('Warning')
-                    .t`Could not access microphone. You can try enabling it again from the meeting controls.`;
-            }
+        if (timeoutMs !== undefined) {
+            try {
+                const initializeDevicesPromise = initializeDevicesInternal();
+                const timeoutPromise = new Promise<void>((resolve) => {
+                    setTimeout(() => {
+                        resolve();
+                    }, timeoutMs);
+                });
 
-            createNotification({
-                type: 'warning',
-                text: errorMessage,
-            });
+                await Promise.race([initializeDevicesPromise, timeoutPromise]);
+            } catch (error) {
+                reportMeetError('Failed to initialize devices, continuing anyway', error);
+            }
+        } else {
+            await initializeDevicesInternal();
         }
     };
 
