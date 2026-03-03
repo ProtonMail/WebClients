@@ -5,6 +5,7 @@ import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     DARK_WEB_MONITORING_NAME,
     DRIVE_SHORT_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
@@ -152,6 +153,45 @@ const passPlusRetention: SpringOffer = {
     ],
 };
 
+const lumoPlus: SpringOffer = {
+    ID: `${SPRING_SALE_2026_PREFIX}-lumo-plus`,
+    featureCode: FeatureCode.OfferMar26LumoPlus,
+    ref: 'proton_mar_26_lumo_free_web',
+    dealName: `${LUMO_SHORT_APP_NAME} Plus`,
+    couponCode: COUPON_CODES.MAR26SALE,
+    features: () => [
+        { name: c('q1campaign: Info').t`Unlimited daily chats` },
+        { name: c('q1campaign: Info').t`Access advanced AI models` },
+        { name: c('q1campaign: Info').t`Full chat history with easy search and favorites` },
+    ],
+};
+
+const lumoPlusToYearly: SpringOffer = {
+    ID: `${SPRING_SALE_2026_PREFIX}-lumo-plus-to-yearly`,
+    featureCode: FeatureCode.OfferMar26LumoPlusToYearly,
+    ref: 'proton_mar_26_lumo_plus_web',
+    dealName: `${LUMO_SHORT_APP_NAME} Plus`,
+    couponCode: COUPON_CODES.MAR26SALE,
+    features: () => [
+        { name: c('q1campaign: Info').t`Unlimited daily chats` },
+        { name: c('q1campaign: Info').t`Access advanced AI models` },
+        { name: c('q1campaign: Info').t`Full chat history with easy search and favorites` },
+    ],
+};
+
+const lumoPlusRetention: SpringOffer = {
+    ID: `${SPRING_SALE_2026_PREFIX}-lumo-plus-retention`,
+    featureCode: FeatureCode.OfferMar26LumoPlusRetention,
+    ref: 'proton_mar_26_lumo_plus_retention_web',
+    dealName: `${LUMO_SHORT_APP_NAME} Plus`,
+    couponCode: COUPON_CODES.MAR26SALE,
+    features: () => [
+        { name: c('q1campaign: Info').t`Unlimited daily chats` },
+        { name: c('q1campaign: Info').t`Access advanced AI models` },
+        { name: c('q1campaign: Info').t`Full chat history with easy search and favorites` },
+    ],
+};
+
 const unlimitedFromVpnPlus: SpringOffer = {
     ID: `${SPRING_SALE_2026_PREFIX}-unlimited-from-vpn-plus`,
     featureCode: FeatureCode.OfferMar26UnlimitedFromVpnPlus,
@@ -258,6 +298,10 @@ export const offers = {
 
     'pass-plus': passPlus,
     'pass-plus-retention': passPlusRetention,
+
+    'lumo-plus': lumoPlus,
+    'lumo-plus-to-yearly': lumoPlusToYearly,
+    'lumo-plus-retention': lumoPlusRetention,
 
     'unlimited-from-vpn-plus': unlimitedFromVpnPlus,
     'unlimited-from-mail-plus': unlimitedFromMailPlus,

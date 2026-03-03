@@ -21,7 +21,7 @@ export const configuration: OfferConfig = {
             dealName,
             couponCode,
             planIDs: {
-                [PLANS.VPN]: 1,
+                [PLANS.VPN2024]: 1,
             },
             popular: 1,
             cycle: CYCLE.YEARLY,
