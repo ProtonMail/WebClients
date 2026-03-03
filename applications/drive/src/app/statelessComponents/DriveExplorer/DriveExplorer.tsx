@@ -156,7 +156,7 @@ export interface DriveExplorerProps {
      * }
      * ```
      */
-    conditions?: DriveExplorerConditions;
+    conditions?: Partial<DriveExplorerConditions>;
 
     /**
      * Shows loading indicator at bottom of list.
@@ -253,6 +253,12 @@ const DriveExplorer = ({
     showCheckboxColumn = true,
     contextMenuControls,
 }: DriveExplorerProps) => {
+    const resolvedConditions: DriveExplorerConditions = {
+        isDraggable: () => true,
+        isDoubleClickable: () => true,
+        ...conditions,
+    };
+
     const containerRef = useRef<HTMLDivElement>(null);
     const driveExplorerRef = useRef<HTMLDivElement>(null);
 
@@ -313,7 +319,7 @@ const DriveExplorer = ({
                     containerRef={containerRef}
                     selection={selection}
                     events={events}
-                    conditions={conditions}
+                    conditions={resolvedConditions}
                     loading={loading}
                     config={config}
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
@@ -328,7 +334,7 @@ const DriveExplorer = ({
                     containerRef={containerRef}
                     config={config}
                     events={events}
-                    conditions={conditions}
+                    conditions={resolvedConditions}
                     loading={loading}
                     selection={selection}
                     dragMoveControls={dragMoveControls}
