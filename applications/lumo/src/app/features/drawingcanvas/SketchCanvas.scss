@@ -1,8 +1,28 @@
+// ── SketchCanvas layout ────────────────────────────────────────────────────────
+// Flex-column layout: canvas grows to fill available height, panel stays fixed.
+
+.sketch-canvas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.sketch-canvas__canvas-area {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+}
+
 // ── Bottom panel ──────────────────────────────────────────────────────────────
-// Sits below the canvas in a flex-column layout — not overlaid on top of it.
 
 .sketch-canvas__panel {
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 2rem;
 }
 
 .sketch-canvas__description {
@@ -11,9 +31,28 @@
     border-radius: 1rem;
 }
 
+.sketch-canvas__description-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.sketch-canvas__separator {
+    height: 1px;
+    background: var(--border-weak);
+}
+
 .sketch-canvas__textarea {
     font-family: inherit;
     line-height: 1.5;
+    width: 100%;
+    font-size: 0.875rem;
+    resize: none;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
 
     &,
     &:focus {
