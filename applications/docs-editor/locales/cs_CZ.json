@@ -683,6 +683,1411 @@
         "Text"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Všechny listy"
+      ],
+      "New sheet": [
+        "Nový list"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Posledně použité barvy"
+      ],
+      "Reset": [
+        "Resetovat"
+      ],
+      "Standard colors": [
+        "Standardní barvy"
+      ],
+      "Theme colors": [
+        "Barvy motivu"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Přidat nový"
+      ],
+      "Named ranges": [
+        "Pojmenované rozsahy"
+      ],
+      "Sheets": [
+        "Listy"
+      ],
+      "Tables": [
+        "Tabulky"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Změnit barvu"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Duplicate": [
+        "Duplikovat"
+      ],
+      "Hide sheet": [
+        "Skrýt list"
+      ],
+      "Move left": [
+        "Posunout doleva"
+      ],
+      "Move right": [
+        "Posunout vpravo"
+      ],
+      "Rename": [
+        "Přejmenovat"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Všechna ohraničení"
+      ],
+      "Bottom border": [
+        "Dolní okraj"
+      ],
+      "Dashed": [
+        "Přerušovaná"
+      ],
+      "Dotted": [
+        "Tečkovaně"
+      ],
+      "Double": [
+        "Dvojitý"
+      ],
+      "Horizontal borders": [
+        "Vodorovné ohraničení"
+      ],
+      "Inner borders": [
+        "Vnitřní ohraničení"
+      ],
+      "Left border": [
+        "Levý okraj"
+      ],
+      "No borders": [
+        "Žádné ohraničení"
+      ],
+      "Outer borders": [
+        "Vnější ohraničení"
+      ],
+      "Right border": [
+        "Pravý okraj"
+      ],
+      "Solid": [
+        "Plná"
+      ],
+      "Solid medium": [
+        "Plná střední"
+      ],
+      "Solid thick": [
+        "Plná a silná"
+      ],
+      "Top border": [
+        "Horní okraj"
+      ],
+      "Vertical borders": [
+        "Svislé ohraničení"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Chyba"
+      ],
+      "Invalid": [
+        "Neplatný"
+      ],
+      "Note": [
+        "Poznámka"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Rychlé úpravy AI"
+      ],
+      "Auto fit to data": [
+        "Automatické přizpůsobení podle dat"
+      ],
+      "Cell value": [
+        "Hodnota buňky"
+      ],
+      "Clear": [
+        "Smazat"
+      ],
+      "Clear content": [
+        "Vymazat obsah"
+      ],
+      "Clear formatting": [
+        "Zrušit formátování"
+      ],
+      "Comma": [
+        "Čárka"
+      ],
+      "Conditional format": [
+        "Podmíněné formátování"
+      ],
+      "Convert to range": [
+        "Převést na rozsah"
+      ],
+      "Convert to table": [
+        "Převést na tabulku"
+      ],
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Create a filter": [
+        "Vytvořit filtr"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Data validation": [
+        "Ověření dat"
+      ],
+      "Define named range": [
+        "Definovat pojmenovaný rozsah"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete cells and shift cells left": [
+        "Smazat buňky a posunout buňky vlevo"
+      ],
+      "Delete cells and shift cells up": [
+        "Smazat buňky a posunout buňky nahoru"
+      ],
+      "Delete column": [
+        "Smazat sloupec"
+      ],
+      "Delete row": [
+        "Smazat řádek"
+      ],
+      "Delete table column": [
+        "Smazat sloupec tabulky"
+      ],
+      "Delete table row": [
+        "Smazat řádek tabulky"
+      ],
+      "Edit table": [
+        "Upravit tabulku"
+      ],
+      "Filter": [
+        "Filtrovat"
+      ],
+      "Formatting only": [
+        "Pouze formátování"
+      ],
+      "Formula only": [
+        "Pouze vzorec"
+      ],
+      "Freeze up to column": [
+        "Zmrazit až do sloupce"
+      ],
+      "Freeze up to row": [
+        "Zmrazit až po řádek"
+      ],
+      "Hide column": [
+        "Skrýt sloupec"
+      ],
+      "Hide row": [
+        "Skrýt řádek"
+      ],
+      "Insert cells and shift cells down": [
+        "Vložit buňky a posunout buňky dolů"
+      ],
+      "Insert cells and shift cells right": [
+        "Vložit buňky a posunout buňky doprava"
+      ],
+      "Insert link": [
+        "Vložit odkaz"
+      ],
+      "Insert note": [
+        "Vložit poznámku"
+      ],
+      "Insert table column to the left": [
+        "Vložit sloupec tabulky vlevo"
+      ],
+      "Insert table column to the right": [
+        "Vložit sloupec tabulky vpravo"
+      ],
+      "Insert table row": [
+        "Vložit řádek tabulky"
+      ],
+      "Link only": [
+        "Pouze odkaz"
+      ],
+      "More cell actions": [
+        "Další akce buňky"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Paste special": [
+        "Vložit jinak"
+      ],
+      "Period": [
+        "Tečka"
+      ],
+      "Pipe": [
+        "Roura"
+      ],
+      "Remove filter": [
+        "Odebrat filtr"
+      ],
+      "Resize column": [
+        "Změnit velikost sloupce"
+      ],
+      "Resize row": [
+        "Změnit velikost řádku"
+      ],
+      "Semicolon": [
+        "Středník"
+      ],
+      "Sort": [
+        "Seřadit"
+      ],
+      "Sort range A → Z": [
+        "Seřadit rozsah A → Z"
+      ],
+      "Sort range Z → A": [
+        "Seřadit rozsah Z → A"
+      ],
+      "Sort sheet A to Z": [
+        "Seřadit list od A do Z"
+      ],
+      "Sort sheet Z to A": [
+        "Seřadit list od Z do A"
+      ],
+      "Space": [
+        "Mezera"
+      ],
+      "Table": [
+        "Tabulka"
+      ],
+      "Transposed": [
+        "Převedeno"
+      ],
+      "Unfreeze columns": [
+        "Uvolnit sloupce"
+      ],
+      "Unfreeze rows": [
+        "Uvolnit řádky"
+      ],
+      "Values only": [
+        "Pouze hodnoty"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sloupec",
+        "${ numberOfColumns } sloupce",
+        "${ numberOfColumns } sloupců",
+        "${ numberOfColumns } sloupců"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } řádek",
+        "${ numberOfRows } řádky",
+        "${ numberOfRows } řádků",
+        "${ numberOfRows } řádků"
+      ],
+      "above": [
+        "nad"
+      ],
+      "below": [
+        "dolů"
+      ],
+      "Insert": [
+        "Vložit"
+      ],
+      "left": [
+        "vlevo"
+      ],
+      "right": [
+        "vpravo"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Opravdu chcete smazat \"${ sheetName }\"?"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete sheet": [
+        "Smazat list"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Úpravy v mobilní aplikaci již brzy"
+      ],
+      "Screen too small for editing": [
+        "Obrazovka je příliš malá pro úpravy"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Pracujeme na tom, abychom vám tuto funkci brzy mohli nabídnout. Prozatím lze listy upravovat pouze na počítači."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Vaše obrazovka je příliš malá na úpravu této tabulky. Jste v režimu pouze pro zobrazení. Chcete-li provést změny, otevřete tuto tabulku na větší obrazovce nebo rozbalte okno prohlížeče."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Nelze smazat všechny sloupce"
+      ],
+      "Cannot delete all rows": [
+        "Nelze odstranit všechny řádky"
+      ],
+      "Find in sheet": [
+        "Najít v listu"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Sloučit vše"
+      ],
+      "Merge cells": [
+        "Sloučit buňky"
+      ],
+      "Merge horizontally": [
+        "Sloučit vodorovně"
+      ],
+      "Merge vertically": [
+        "Sloučit svisle"
+      ],
+      "Unmerge": [
+        "Rozdělit"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Vytvořit filtr"
+      ],
+      "Data validation": [
+        "Ověření dat"
+      ],
+      "Protect range": [
+        "Chránit oblast"
+      ],
+      "Remove filter": [
+        "Odebrat filtr"
+      ],
+      "Sort sheet": [
+        "Seřadit list"
+      ],
+      "Unlock range": [
+        "Odemknout rozsah"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(Od A do Z)"
+      ],
+      "(Z to A)": [
+        "(Od Z do A)"
+      ],
+      "column ${ columnLetter }": [
+        "sloupec ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Seřadit list podle"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Cut": [
+        "Vyjmout"
+      ],
+      "Find": [
+        "Najít"
+      ],
+      "Formatting only": [
+        "Pouze formátování"
+      ],
+      "Formula only": [
+        "Pouze vzorec"
+      ],
+      "Link only": [
+        "Pouze odkaz"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Paste special": [
+        "Vložit jinak"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
+      "Transposed": [
+        "Převedeno"
+      ],
+      "Undo": [
+        "Zpět"
+      ],
+      "Values only": [
+        "Pouze hodnoty"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Hodnoty oddělené čárkou (.csv)"
+      ],
+      "Download": [
+        "Stáhnout"
+      ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
+      "Help": [
+        "Nápověda"
+      ],
+      "Import": [
+        "Importovat"
+      ],
+      "Make a copy": [
+        "Udělat kopii"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Přesunout do složky"
+      ],
+      "Move to trash": [
+        "Přesunout do koše"
+      ],
+      "New document": [
+        "Nový dokument"
+      ],
+      "New spreadsheet": [
+        "Nová tabulka"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Otevřít ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Tabulka OpenDocument (.ods) (Beta)"
+      ],
+      "Print": [
+        "Tisk"
+      ],
+      "See version history": [
+        "Zobrazit historii verzí"
+      ],
+      "Settings": [
+        "Settings"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Hodnoty oddělené tabulátorem (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Přepnout režim ladění"
+      ],
+      "View recent spreadsheets": [
+        "Zobrazit nedávné tabulky"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Zarovnání"
+      ],
+      "Bold": [
+        "Tučné"
+      ],
+      "Cell styles": [
+        "Styly buněk"
+      ],
+      "Clear": [
+        "Smazat"
+      ],
+      "Clear content": [
+        "Vyčistit obsah"
+      ],
+      "Clear formatting": [
+        "Zrušit formátování"
+      ],
+      "Conditional formatting": [
+        "Podmíněné formátování"
+      ],
+      "Font size": [
+        "Velikost písma"
+      ],
+      "Italic": [
+        "Kurzíva"
+      ],
+      "Number": [
+        "Číslo"
+      ],
+      "Strikethrough": [
+        "Přeškrtnuté"
+      ],
+      "Table formatting": [
+        "Formátování tabulky"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Theme": [
+        "Motiv"
+      ],
+      "Underline": [
+        "Podtržení"
+      ],
+      "Wrapping": [
+        "Zalamování"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Dolní"
+      ],
+      "Center": [
+        "Na střed"
+      ],
+      "Left": [
+        "Vlevo"
+      ],
+      "Middle": [
+        "Uprostřed"
+      ],
+      "Right": [
+        "Vpravo"
+      ],
+      "Top": [
+        "Horní"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Oříznout"
+      ],
+      "Overflow": [
+        "Přetečení"
+      ],
+      "Wrap": [
+        "Zalomit"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Buňky"
+      ],
+      "Chart": [
+        "Graf"
+      ],
+      "Checkbox": [
+        "Zaškrtávací políčko"
+      ],
+      "Columns": [
+        "Sloupce"
+      ],
+      "Dropdown": [
+        "Rozbalovací nabídka"
+      ],
+      "Function": [
+        "Funkce"
+      ],
+      "Image": [
+        "Obrázek"
+      ],
+      "Insert cells and shift down": [
+        "Vložit buňky a posunout dolů"
+      ],
+      "Insert cells and shift right": [
+        "Vložit buňky a posunout doprava"
+      ],
+      "Link": [
+        "Odkaz"
+      ],
+      "Note": [
+        "Poznámka"
+      ],
+      "Rows": [
+        "Řádky"
+      ],
+      "Sheet": [
+        "List"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } sloupec",
+        "${ numberOfColumns } sloupce",
+        "${ numberOfColumns } sloupců",
+        "${ numberOfColumns } sloupců"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } řádek",
+        "${ numberOfRows } řádky",
+        "${ numberOfRows } řádků",
+        "${ numberOfRows } řádků"
+      ],
+      "above": [
+        "nahoře"
+      ],
+      "below": [
+        "dolů"
+      ],
+      "Insert": [
+        "Vložit"
+      ],
+      "left": [
+        "vlevo"
+      ],
+      "right": [
+        "vpravo"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Data"
+      ],
+      "Edit": [
+        "Upravit"
+      ],
+      "File": [
+        "Soubor"
+      ],
+      "Format": [
+        "Formát"
+      ],
+      "Insert": [
+        "Vložit"
+      ],
+      "View": [
+        "Zobrazit"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Řádek vzorců"
+      ],
+      "Freeze": [
+        "Zmrazit"
+      ],
+      "Gridlines": [
+        "Mřížka"
+      ],
+      "Show": [
+        "Zobrazit"
+      ],
+      "Zoom": [
+        "Lupa"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "sloupec ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "řádek ${ rowNumber }"
+      ],
+      "Up to": [
+        "Až do"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Skryté listy"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Americký dolar"
+      ],
+      "Accounting": [
+        "Účetnictví"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ čínský jüan"
+      ],
+      "Currency": [
+        "Měna"
+      ],
+      "Currency rounded": [
+        "Zaokrouhlená měna"
+      ],
+      "Custom currency": [
+        "Vlastní měna"
+      ],
+      "Custom number format": [
+        "Vlastní formát čísla"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum a čas"
+      ],
+      "Duration": [
+        "Doba trvání"
+      ],
+      "Financial": [
+        "Finance"
+      ],
+      "General": [
+        "Obecné"
+      ],
+      "Long date": [
+        "Dlouhé datum"
+      ],
+      "More currency": [
+        "Další měna"
+      ],
+      "Number": [
+        "Číslo"
+      ],
+      "Percent": [
+        "Procento"
+      ],
+      "Plain text": [
+        "Prostý text"
+      ],
+      "Scientific": [
+        "Vědecký"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "£ Pound": [
+        "£ Libra"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Go to next": [
+        "Přejít na další"
+      ],
+      "Go to previous": [
+        "Přejít na předchozí"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Automaticky"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Locale": [
+        "Místní prostředí"
+      ],
+      "Save and reload": [
+        "Uložit a znovu načíst"
+      ],
+      "Settings for this spreadsheet": [
+        "Nastavení této tabulky"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Toto ovlivňuje detaily formátování, jako jsou funkce, data a měna"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Tučné"
+      ],
+      "Border": [
+        "Rámeček"
+      ],
+      "Clear formatting": [
+        "Zrušit formátování"
+      ],
+      "Create a filter": [
+        "Vytvořit filtr"
+      ],
+      "Decrease decimal places": [
+        "Snížit počet desetinných míst"
+      ],
+      "Decrease font size": [
+        "Zmenšit velikost písma"
+      ],
+      "Default (${ defaultFont })": [
+        "Výchozí (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Barva výplně"
+      ],
+      "Find": [
+        "Najít"
+      ],
+      "Font": [
+        "Písmo"
+      ],
+      "Font size": [
+        "Velikost písma"
+      ],
+      "Format as currency": [
+        "Formátovat jako měnu"
+      ],
+      "Format as percent": [
+        "Formátovat jako procento"
+      ],
+      "Horizontal align": [
+        "Vodorovné zarovnání"
+      ],
+      "Increase decimal places": [
+        "Zvýšit počet desetinných míst"
+      ],
+      "Increase font size": [
+        "Zvětšit velikost písma"
+      ],
+      "Insert chart": [
+        "Vložit graf"
+      ],
+      "Insert function": [
+        "Vložit funkci"
+      ],
+      "Insert link": [
+        "Vložit odkaz"
+      ],
+      "Insert note": [
+        "Vložit poznámku"
+      ],
+      "Italic": [
+        "Kurzíva"
+      ],
+      "Merge cells": [
+        "Sloučit buňky"
+      ],
+      "More": [
+        "Více"
+      ],
+      "More formats": [
+        "Další formáty"
+      ],
+      "Paint format": [
+        "Formát malování"
+      ],
+      "Redo": [
+        "Znovu"
+      ],
+      "Remove filter": [
+        "Odstranit filtr"
+      ],
+      "Select merge type": [
+        "Vyberte typ sloučení"
+      ],
+      "Strikethrough": [
+        "Přeškrtnutí"
+      ],
+      "Text color": [
+        "Barva textu"
+      ],
+      "Text wrapping": [
+        "Zalamování textu"
+      ],
+      "Underline": [
+        "Podtržení"
+      ],
+      "Undo": [
+        "Zpět"
+      ],
+      "Unmerge cells": [
+        "Rozdělit buňky"
+      ],
+      "Vertical align": [
+        "Svislé zarovnání"
+      ],
+      "Zoom": [
+        "Lupa"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Použít"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Clear": [
+        "Smazat"
+      ],
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Delete table column": [
+        "Smazat sloupec tabulky"
+      ],
+      "Enter value": [
+        "Zadejte hodnotu"
+      ],
+      "Filter by condition": [
+        "Filtrovat podle podmínky"
+      ],
+      "Filter by value": [
+        "Filtrovat podle hodnoty"
+      ],
+      "Insert 1 table column left": [
+        "Vložit 1 sloupec tabulky vlevo"
+      ],
+      "Insert 1 table column right": [
+        "Vložit 1 sloupec tabulky vpravo"
+      ],
+      "Paste": [
+        "Vložit"
+      ],
+      "Select all": [
+        "Vybrat vše"
+      ],
+      "Sort A → Z": [
+        "Seřadit A → Z"
+      ],
+      "Sort Z → A": [
+        "Seřadit Z → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Použít"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Insert link": [
+        "Vložit odkaz"
+      ],
+      "Paste link": [
+        "Vložit odkaz"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopírovat odkaz"
+      ],
+      "Edit link": [
+        "Upravit odkaz"
+      ],
+      "Link copied to clipboard": [
+        "Odkaz zkopírován do schránky"
+      ],
+      "Link removed": [
+        "Odkaz odebrán"
+      ],
+      "Remove link": [
+        "Odebrat odkaz"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "column": [
+        "sloupec"
+      ],
+      "column width": [
+        "šířka sloupce"
+      ],
+      "Default": [
+        "Výchozí"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "řádek"
+      ],
+      "row height": [
+        "výška řádku"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Zarovnání"
+      ],
+      "Bold": [
+        "Tučně"
+      ],
+      "Border": [
+        "Rámeček"
+      ],
+      "Border style": [
+        "Styl ohraničení"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Choose Category": [
+        "Vybrat kategorii"
+      ],
+      "Color": [
+        "Barva"
+      ],
+      "Currency Symbol": [
+        "Symbol měny"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Decimal places": [
+        "Desetinná místa"
+      ],
+      "Effects": [
+        "Efekty"
+      ],
+      "Font": [
+        "Písmo"
+      ],
+      "Font size": [
+        "Velikost písma"
+      ],
+      "Format cells": [
+        "Formátovat buňky"
+      ],
+      "General": [
+        "Obecné"
+      ],
+      "Horizontal Alignment": [
+        "Vodorovné zarovnání"
+      ],
+      "Indent": [
+        "Odsazení"
+      ],
+      "Italic": [
+        "Kurzíva"
+      ],
+      "Merge": [
+        "Sloučit"
+      ],
+      "Merge all": [
+        "Sloučit vše"
+      ],
+      "Merge horizontally": [
+        "Sloučit vodorovně"
+      ],
+      "Merge vertically": [
+        "Sloučit svisle"
+      ],
+      "Number": [
+        "Číslo"
+      ],
+      "Overflow": [
+        "Přetečení"
+      ],
+      "Preview": [
+        "Náhled"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Strikethrough": [
+        "Přeškrtnutí"
+      ],
+      "Text control": [
+        "Ovládání textu"
+      ],
+      "Thousands separator": [
+        "Oddělovač tisíců"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Underline": [
+        "Podtržení"
+      ],
+      "Unmerge": [
+        "Rozdělit"
+      ],
+      "Use 1000 Separator (,)": [
+        "Použít oddělovač tisíců (,)"
+      ],
+      "Vertical Alignment": [
+        "Svislé zarovnání"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Přidat"
+      ],
+      "Aggregate": [
+        "Seskupit"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Chart data range": [
+        "Rozsah dat grafu"
+      ],
+      "Chart editor": [
+        "Editor grafu"
+      ],
+      "Chart title": [
+        "Název grafu"
+      ],
+      "Chart type": [
+        "Typ grafu"
+      ],
+      "Enter title": [
+        "Zadejte název"
+      ],
+      "Horizontal (category) axis labels": [
+        "Popisy (kategorie) osy"
+      ],
+      "Horizontal axis title": [
+        "Název vodorovné osy"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "Range": [
+        "Rozsah"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Select a range": [
+        "Vyberte rozsah"
+      ],
+      "Series": [
+        "Řady"
+      ],
+      "Show data in hidden rows and columns": [
+        "Zobrazit data ve skrytých řádcích a sloupcích"
+      ],
+      "Value": [
+        "Hodnota"
+      ],
+      "Vertical axis title": [
+        "Název svislé osy"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Přidat další rozsah"
+      ],
+      "Add another rule": [
+        "Přidat další pravidlo"
+      ],
+      "Add rule": [
+        "Přidat pravidlo"
+      ],
+      "Apply to range": [
+        "Použít na rozsah"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Color scale": [
+        "Barevná škála"
+      ],
+      "Conditional formatting": [
+        "Podmíněné formátování"
+      ],
+      "Delete range": [
+        "Odstranit rozsah"
+      ],
+      "Delete rule": [
+        "Smazat pravidlo"
+      ],
+      "Enter a formula": [
+        "Zadejte vzorec"
+      ],
+      "Enter value": [
+        "Zadejte hodnotu"
+      ],
+      "Format rules": [
+        "Pravidla formátování"
+      ],
+      "Format style": [
+        "Styl formátu"
+      ],
+      "Max point": [
+        "Max bod"
+      ],
+      "Max value": [
+        "Max hodnota"
+      ],
+      "Mid point": [
+        "Střední bod"
+      ],
+      "Min point": [
+        "Min bod"
+      ],
+      "Min value": [
+        "Min hodnota"
+      ],
+      "None": [
+        "Žádné"
+      ],
+      "Number": [
+        "Číslo"
+      ],
+      "Preview": [
+        "Náhled"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Select a range": [
+        "Vyberte rozsah"
+      ],
+      "Single color": [
+        "Jedna barva"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Použít"
+      ],
+      "Apply to create a custom currency": [
+        "Použít pro vytvoření vlastní měny"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Currency symbol": [
+        "Symbol měny"
+      ],
+      "Custom currencies": [
+        "Vlastní měny"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Přidat další pojmenovaný rozsah"
+      ],
+      "Add another range": [
+        "Přidat další rozsah"
+      ],
+      "Add named range": [
+        "Přidat pojmenovaný rozsah"
+      ],
+      "Allow blanks": [
+        "Povolit prázdné"
+      ],
+      "Apply to range": [
+        "Použít na rozsah"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Data validation": [
+        "Ověření dat"
+      ],
+      "Delete data validation rule": [
+        "Smazat pravidlo ověření dat"
+      ],
+      "Enter a formula": [
+        "Zadejte vzorec"
+      ],
+      "Enter value": [
+        "Zadejte hodnotu"
+      ],
+      "Formula": [
+        "Vzorec"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Select a range": [
+        "Vyberte rozsah"
+      ],
+      "Validation rules": [
+        "Validační pravidla"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Zavřít"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Přidat další pojmenovaný rozsah"
+      ],
+      "Add named range": [
+        "Přidat pojmenovaný rozsah"
+      ],
+      "Apply to range": [
+        "Použít na rozsah"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Delete named range": [
+        "Smazat pojmenovaný rozsah"
+      ],
+      "Enter a formula": [
+        "Zadejte vzorec"
+      ],
+      "Enter text or formula": [
+        "Zadejte text nebo vzorec"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "Name should not contain spaces": [
+        "Název nesmí obsahovat mezery"
+      ],
+      "Named Ranges": [
+        "Pojmenované rozsahy"
+      ],
+      "Range": [
+        "Rozsah"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Text or formula": [
+        "Text nebo vzorec"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Pruhované sloupce"
+      ],
+      "Banded rows": [
+        "Spojené řádky"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Edit table": [
+        "Upravit tabulku"
+      ],
+      "More settings": [
+        "Další nastavení"
+      ],
+      "Save": [
+        "Uložit"
+      ],
+      "Select a range": [
+        "Vyberte rozsah"
+      ],
+      "Show filter button": [
+        "Zobrazit tlačítko filtru"
+      ],
+      "Table data range": [
+        "Rozsah dat tabulky"
+      ],
+      "Table title": [
+        "Název tabulky"
+      ]
+    },
     "Title": {
       "Delete comment": [
         "Smazat komentář"
