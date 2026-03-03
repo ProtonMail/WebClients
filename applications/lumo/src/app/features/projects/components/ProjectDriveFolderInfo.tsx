@@ -3,10 +3,14 @@ import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import type {BreadcrumbItem} from "../../../components/Files/DriveBrowser/DriveBreadcrumbs";
 
+import type { BreadcrumbItem } from '../../../components/Files/DriveBrowser/DriveBreadcrumbs';
 
 interface ProjectDriveFolderInfoProps {
     breadcrumbs: BreadcrumbItem[];
@@ -30,7 +34,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
         <div className="flex items-start justify-between gap-3 items-center">
             <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2  mb-1 flex-nowrap">
-                    <Icon name="brand-proton-drive" size={5} className="color-norm flex-shrink-0" />
+                    <IcBrandProtonDrive size={5} className="color-norm flex-shrink-0" />
                     {breadcrumbs.length > 0 && (
                         <div className="flex flex-column flex-nowrap flex-1">
                             <div className="flex items-center gap-1 color-weak flex-nowrap">
@@ -51,7 +55,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                                 {breadcrumb.node.name}
                                             </button>
                                             {index < breadcrumbs.length - 1 && (
-                                                <Icon name="chevron-right" size={3} className="color-weak" />
+                                                <IcChevronRight size={3} className="color-weak" />
                                             )}
                                         </div>
                                     ))
@@ -67,7 +71,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             >
                                                 {breadcrumbs[0].node.name}
                                             </button>
-                                            <Icon name="chevron-right" size={3} className="color-weak" />
+                                            <IcChevronRight size={3} className="color-weak" />
                                         </div>
 
                                         {/* Dropdown button for middle breadcrumbs */}
@@ -81,7 +85,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             >
                                                 ...
                                             </button>
-                                            <Icon name="chevron-right" size={3} className="color-weak" />
+                                            <IcChevronRight size={3} className="color-weak" />
                                         </div>
 
                                         {/* Last breadcrumb */}
@@ -138,7 +142,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                         onClick={onCreateFolder}
                         title={c('collider_2025:Action').t`Create folder`}
                     >
-                        <Icon name="folder-plus" size={4} />
+                        <IcFolderPlus size={4} />
                     </Button>
                     <Button
                         icon
@@ -147,7 +151,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                         onClick={onUpload}
                         title={c('collider_2025:Action').t`Upload file`}
                     >
-                        <Icon name="arrow-up-line" size={4} />
+                        <IcArrowUpLine size={4} />
                     </Button>
                 </div>
             )}

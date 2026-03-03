@@ -11,13 +11,14 @@ import {
     SidebarListItemSettingsLink,
 } from '@proton/components';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import CustomPlusIcon from '../../components/CustomPlusIcon';
 import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
+import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 
 import './SidebarUpsellButton.scss';
 
@@ -89,7 +90,7 @@ const LumoPlusSidebarContent = ({ collapsed, customText, customIcon }: LumoPlusS
         <SidebarListItemContent
             className="flex items-center w-full group-hover-opacity-container"
             collapsed={collapsed}
-            right={<Icon name="chevron-right" className="shrink-0 group-hover:opacity-100" />}
+            right={<IcChevronRight className="shrink-0 group-hover:opacity-100" />}
         >
             <span className="flex items-center gap-2">
                 <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>

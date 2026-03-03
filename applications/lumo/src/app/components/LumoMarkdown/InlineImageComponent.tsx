@@ -3,7 +3,9 @@ import { createPortal } from 'react-dom';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { useLazyAttachment } from '../../hooks';
 import { useLumoDispatch } from '../../redux/hooks';
@@ -89,7 +91,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 }}
             >
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                    <Icon name="exclamation-circle" size={4} />
+                    <IcExclamationCircle size={4} />
                     <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Failed to load image</span>
                 </span>
                 {error && <span style={{ display: 'block', margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</span>}
@@ -122,6 +124,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
     return (
         <>
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
             <span
                 className="inline-image-preview relative cursor-pointer"
                 onClick={() => setShowModal(true)}
@@ -139,6 +142,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     }}
                 />
                 {showDownload && (
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
                     <span
                         style={{
                             position: 'absolute',
@@ -162,7 +166,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                                 color: 'white',
                             }}
                         >
-                            <Icon name="arrow-down-line" size={4} style={{ color: 'white' }} />
+                            <IcArrowDownLine size={4} style={{ color: 'white' }} />
                         </Button>
                     </span>
                 )}
@@ -170,6 +174,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
             {showModal &&
                 createPortal(
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
                     <div
                         className="fixed inset-0 flex items-center justify-center"
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', zIndex: 9999 }}
@@ -181,6 +186,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                             onMouseEnter={() => setShowModalButtons(true)}
                             onMouseLeave={() => setShowModalButtons(false)}
                         >
+                            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
                             <img
                                 src={imageDataUrl}
                                 alt={alt || attachment.filename}
@@ -217,9 +223,10 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                                                 setShowModal(false);
                                             }}
                                         >
-                                            <Icon name="cross" size={4} style={{ color: 'white' }} />
+                                            <IcCross size={4} style={{ color: 'white' }} />
                                         </Button>
                                     </div>
+                                    {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
                                     <div
                                         style={{
                                             position: 'absolute',
@@ -243,7 +250,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                                                 color: 'white',
                                             }}
                                         >
-                                            <Icon name="arrow-down-line" size={4} style={{ color: 'white' }} />
+                                            <IcArrowDownLine size={4} style={{ color: 'white' }} />
                                         </Button>
                                     </div>
                                 </>

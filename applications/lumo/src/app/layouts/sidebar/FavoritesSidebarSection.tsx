@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
+
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcStar } from '@proton/icons/icons/IcStar';
 
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -60,14 +62,13 @@ export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSide
                     aria-expanded={isExpanded}
                 >
                     <div className="sidebar-item-icon">
-                        <Icon name="star" size={4} />
+                        <IcStar size={4} />
                     </div>
                     <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
                         {c('collider_2025:Title').t`Favorites`}
                     </span>
                     {showText && (
-                        <Icon
-                            name="chevron-down"
+                        <IcChevronDown
                             size={3}
                             className={clsx('ml-auto transition-transform', !isExpanded && 'rotateZ-270')}
                         />

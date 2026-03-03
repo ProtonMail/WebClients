@@ -5,8 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { CircularProgress, FileIcon, Icon } from '@proton/components';
+import { CircularProgress, FileIcon } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
@@ -125,7 +127,7 @@ const FileInfo = ({ filename, prettyType, processing, autoRetrieved }: FileInfoP
         </p>
         {autoRetrieved && (
             <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
-                <Icon name="magic-wand" size={3} />
+                <IcMagicWand size={3} />
                 {c('collider_2025:Info').t`Auto-retrieved`}
             </span>
         )}
@@ -138,7 +140,7 @@ interface ErrorDisplayProps {
 
 const ErrorDisplay = ({ errorMessage }: ErrorDisplayProps) => (
     <span className="flex flex-row flex-nowrap gap-2 mt-1 items-start">
-        <Icon size={4} name="exclamation-triangle-filled" className="mt-0.5 shrink-0 color-danger" />
+        <IcExclamationTriangleFilled size={4} className="mt-0.5 shrink-0 color-danger" />
         <p className="text-sm m-0 color-danger">
             {errorMessage || c('collider_2025: Info').t`Error processing attachment`}
         </p>

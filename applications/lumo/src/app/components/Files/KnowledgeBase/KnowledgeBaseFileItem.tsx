@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FileIcon, Icon } from '@proton/components';
+import { FileIcon } from '@proton/components';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
@@ -110,11 +112,11 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
             {!readonly && (
                 <div className="flex flex-row flex-nowrap items-center gap-2 ml-2">
                     {/* Status indicators - always visible */}
-                    {file.processing && <Icon name="arrows-rotate" className="color-primary animate-spin" size={4} />}
-                    {file.error && <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />}
+                    {file.processing && <IcArrowsRotate className="color-primary animate-spin" size={4} />}
+                    {file.error && <IcExclamationTriangleFilled className="color-danger" size={4} />}
                     {isTooLargeForPreview && (
                         <Tooltip title={c('collider_2025: Info').t`File too large for preview (>150k tokens)`}>
-                            <Icon name="exclamation-triangle-filled" className="color-warning" size={4} />
+                            <IcExclamationTriangleFilled className="color-warning" size={4} />
                         </Tooltip>
                     )}
 
