@@ -8,7 +8,7 @@ import type { ESItemCursorResult } from '../interface';
 export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>): Promise<boolean> => {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
-    const versionIndex = contentStore.index('version');
+    const versionIndex = contentStore.index('versioning');
 
     // Check if any content has version less than current (includes -1, 1, 2)
     const range = IDBKeyRange.upperBound(getContentVersion() - 1, false);
@@ -22,7 +22,7 @@ export async function* getOutdatedContentIterator(
 ): AsyncIterableIterator<ESItemCursorResult> {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
-    const versionIndex = contentStore.index('version');
+    const versionIndex = contentStore.index('versioning');
 
     // Range to find all content with version less than current
     const range = IDBKeyRange.upperBound(getContentVersion() - 1, false);

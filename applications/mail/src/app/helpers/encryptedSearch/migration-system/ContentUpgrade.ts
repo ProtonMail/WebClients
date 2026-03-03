@@ -9,6 +9,8 @@ import { decryptESItem } from './helpers/decryptESItem';
 import { encryptAndWriteESItem } from './helpers/encryptAndWriteESItem';
 import type { EncryptedSearchData } from './interface';
 
+type MigrateFn = (data: EncryptedSearchData) => EncryptedSearchData;
+
 export class ContentUpgrade {
     private esDB: IDBPDatabase<EncryptedSearchDB>;
     private indexKeys: CryptoKey;
@@ -18,34 +20,32 @@ export class ContentUpgrade {
         this.indexKeys = indexKeys;
     }
 
-    async isAllContentUpdated(): Promise<boolean> {
-        const isAllMigrated = await isAllContentUpToDate(this.esDB);
-        return isAllMigrated;
-    }
+    private static readonly migrations = new Map<number, MigrateFn>([
+        [
+            CONTENT_VERSION.DOM_INDEXING,
+            (data) => ({
+                ...data,
+                content: data.content
+                    ? { ...data.content, decryptedBody: cleanText(data.content.decryptedBody || '', false) }
+                    : undefined,
+            }),
+        ],
+    ]);
+
+    private defaultMigrate: MigrateFn = (data) => data;
 
     private async upgradeContent(version: number, data: EncryptedSearchData): Promise<void> {
-        // Content version 2 (DOM_INDEXING) can have inline HTML tags
-        if (version === CONTENT_VERSION.DOM_INDEXING) {
-            const newBody = cleanText(data.content?.decryptedBody || '', false);
-            const updatedData = {
-                ...data,
-                content: { ...data.content, decryptedBody: newBody, version: getContentVersion() },
-            };
-            await encryptAndWriteESItem({
-                esDB: this.esDB,
-                indexKey: this.indexKeys,
-                item: updatedData,
-                version: getContentVersion(),
-            });
+        const migrate = ContentUpgrade.migrations.get(version) ?? this.defaultMigrate;
+        const migratedData = migrate(data);
+        const updatedData = {
+            ...migratedData,
+            content: migratedData.content ? { ...migratedData.content, version: getContentVersion() } : undefined,
+        };
 
-            return;
-        }
-
-        // We don't need to change anything for content of version -1, 0, 1, or 3
         await encryptAndWriteESItem({
             esDB: this.esDB,
             indexKey: this.indexKeys,
-            item: data,
+            item: updatedData,
             version: getContentVersion(),
         });
     }
@@ -64,11 +64,15 @@ export class ContentUpgrade {
                         ? new Error('Failed to decrypt content with version')
                         : new Error('Failed to decrypt content without version')
                 );
-                return;
+                continue;
             }
 
             const version = hasVersion ? value.version : decrypted.content?.version || CONTENT_VERSION.DOM_INDEXING;
             await this.upgradeContent(version, decrypted);
         }
+    }
+
+    async isAllContentUpdated(): Promise<boolean> {
+        return isAllContentUpToDate(this.esDB);
     }
 }
