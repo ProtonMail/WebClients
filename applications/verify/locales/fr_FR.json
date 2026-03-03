@@ -584,9 +584,6 @@
       "North Korea": [
         "Corée du Nord"
       ],
-      "North Macedonia": [
-        "Macédoine du Nord"
-      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -921,15 +918,7 @@
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -1037,9 +1026,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "La création de plusieurs comptes gratuits n'est pas autorisée par nos ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Chaque code ne peut être utilisé qu'une seule fois."
-      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -1048,9 +1034,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -1099,9 +1082,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -1213,10 +1193,6 @@
       "${ n } message per day": [
         "${ n } message par jour",
         "${ n } messages par jour"
-      ],
-      "${ options }-day file version history": [
-        "Historique des versions de fichiers datant de ${ options } jours",
-        "Historique des versions de fichiers datant de ${ options } jours"
       ],
       "${ size } attachment size": [
         "${ size } de pièces jointes"

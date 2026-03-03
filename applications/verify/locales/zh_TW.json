@@ -584,9 +584,6 @@
       "North Korea": [
         "北韓"
       ],
-      "North Macedonia": [
-        "北馬其頓"
-      ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
       ],
@@ -921,15 +918,7 @@
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
-      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -1031,9 +1020,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "根據我們的${ termsLink }不允許創建多重免費帳號。"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -1042,9 +1028,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
@@ -1090,9 +1073,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -1196,9 +1176,6 @@
       ],
       "${ n } message per day": [
         "${ n } 封郵件 / 每天"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-天的檔案版本紀錄"
       ],
       "${ size } attachment size": [
         "${ size } 的附件大小"

@@ -584,9 +584,6 @@
       "North Korea": [
         "Північна Корея"
       ],
-      "North Macedonia": [
-        "Північна Македонія"
-      ],
       "Northern Mariana Islands": [
         "Північні Маріанські острови"
       ],
@@ -921,15 +918,7 @@
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Ключ безпеки"
       ]
@@ -1049,9 +1038,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Створення кількох безплатних облікових записів заборонено нашими ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Кожен код можна використати лише один раз"
-      ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
@@ -1060,9 +1046,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
@@ -1108,9 +1091,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -1235,12 +1215,6 @@
         "${ n } повідомлення на добу",
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів"
       ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
