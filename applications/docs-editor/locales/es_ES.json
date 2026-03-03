@@ -710,6 +710,9 @@
       "Named ranges": [
         "Rangos con nombre"
       ],
+      "Sheets": [
+        "Hojas"
+      ],
       "Tables": [
         "Tablas"
       ]
@@ -750,6 +753,9 @@
       "Dotted": [
         "Punteado"
       ],
+      "Double": [
+        "Doble"
+      ],
       "Horizontal borders": [
         "Bordes horizontales"
       ],
@@ -762,11 +768,17 @@
       "No borders": [
         "Sin bordes"
       ],
+      "Outer borders": [
+        "Bordes exteriores"
+      ],
       "Right border": [
         "Borde derecho"
       ],
       "Solid": [
         "Sólido"
+      ],
+      "Solid medium": [
+        "Sólido medio"
       ],
       "Solid thick": [
         "Sólido grueso"
@@ -793,14 +805,23 @@
       "AI Quick Edit": [
         "Edición rápida con IA"
       ],
+      "Auto fit to data": [
+        "Ajustar a los datos"
+      ],
       "Cell value": [
         "Valor de celda"
       ],
       "Clear": [
         "Borrar"
       ],
+      "Clear content": [
+        "Borrar contenido"
+      ],
       "Clear formatting": [
         "Borrar formato"
+      ],
+      "Comma": [
+        "Coma"
       ],
       "Conditional format": [
         "Formato condicional"
@@ -820,11 +841,17 @@
       "Custom": [
         "Personalizado"
       ],
+      "Data validation": [
+        "Validación de datos"
+      ],
       "Define named range": [
         "Definir intervalo con nombre"
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete cells and shift cells left": [
+        "Eliminar celdas y desplazar a la izquierda"
       ],
       "Delete cells and shift cells up": [
         "Eliminar celdas y desplazar celdas hacia arriba"
@@ -843,6 +870,9 @@
       ],
       "Edit table": [
         "Editar tabla"
+      ],
+      "Filter": [
+        "Filtrar"
       ],
       "Formatting only": [
         "Solo formato"
@@ -871,8 +901,14 @@
       "Insert link": [
         "Insertar enlace"
       ],
+      "Insert note": [
+        "Insertar nota"
+      ],
       "Insert table column to the left": [
         "Insertar columna a la izquierda"
+      ],
+      "Insert table column to the right": [
+        "Insertar columna a la derecha"
       ],
       "Insert table row": [
         "Insertar fila de la tabla"
@@ -898,6 +934,9 @@
       "Remove filter": [
         "Eliminar filtro"
       ],
+      "Resize column": [
+        "Redimensionar columna"
+      ],
       "Resize row": [
         "Cambiar tamaño de fila"
       ],
@@ -910,14 +949,29 @@
       "Sort range A → Z": [
         "Ordenar A → Z"
       ],
+      "Sort range Z → A": [
+        "Ordenar rango de Z → A"
+      ],
       "Sort sheet A to Z": [
         "Ordenar hoja de la A a la Z"
+      ],
+      "Sort sheet Z to A": [
+        "Ordenar hoja de la Z a la A"
+      ],
+      "Space": [
+        "Espacio"
       ],
       "Table": [
         "Tabla"
       ],
       "Transposed": [
         "Transpuesto"
+      ],
+      "Unfreeze columns": [
+        "Movilizar columnas"
+      ],
+      "Unfreeze rows": [
+        "Movilizar filas"
       ],
       "Values only": [
         "Solo valores"
@@ -935,6 +989,9 @@
       "above": [
         "encima"
       ],
+      "below": [
+        "Debajo"
+      ],
       "Insert": [
         "Insertar"
       ],
@@ -949,6 +1006,9 @@
       "Are you sure you want to delete ${ sheetName }?": [
         "¿Seguro que quieres eliminar ${ sheetName }?"
       ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -960,6 +1020,9 @@
       "Mobile Editing Coming Soon": [
         "Edición móvil Próximamente"
       ],
+      "Screen too small for editing": [
+        "Pantalla demasiado pequeña para editar"
+      ],
       "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
         "Estamos trabajando para ofrecerte esta función próximamente. Por ahora, las hojas de cálculo solo se pueden editar en la versión de escritorio."
       ],
@@ -968,6 +1031,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "No se pueden eliminar todas las columnas"
+      ],
       "Cannot delete all rows": [
         "No se pueden eliminar todas las filas"
       ],
@@ -1048,6 +1114,9 @@
       "Paste": [
         "Pegar"
       ],
+      "Paste special": [
+        "Pegado especial"
+      ],
       "Redo": [
         "Rehacer"
       ],
@@ -1089,6 +1158,9 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "New document": [
+        "Documento nuevo"
+      ],
       "New spreadsheet": [
         "Nueva hoja de cálculo"
       ],
@@ -1101,8 +1173,14 @@
       "Print": [
         "Imprimir"
       ],
+      "See version history": [
+        "Ver historial de versiones"
+      ],
       "Settings": [
         "Configuración"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valores separados por tabulaciones (.tsv)"
       ],
       "Toggle debug mode": [
         "Alternar modo de depuración"
@@ -1176,9 +1254,15 @@
       ],
       "Right": [
         "Derecha"
+      ],
+      "Top": [
+        "Superior"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Recortar"
+      ],
       "Overflow": [
         "Desbordamiento"
       ],
@@ -1189,6 +1273,9 @@
     "sheets_2025:Spreadsheet editor menubar insert menu": {
       "Cells": [
         "Celdas"
+      ],
+      "Chart": [
+        "Gráfico"
       ],
       "Checkbox": [
         "Casilla de verificación"
@@ -1233,6 +1320,9 @@
         "${ numberOfRows } fila",
         "${ numberOfRows } filas"
       ],
+      "above": [
+        "Encima"
+      ],
       "below": [
         "debajo"
       ],
@@ -1273,6 +1363,9 @@
       "Freeze": [
         "Inmovilizar"
       ],
+      "Gridlines": [
+        "Líneas de cuadrícula"
+      ],
       "Show": [
         "Mostrar"
       ],
@@ -1283,6 +1376,9 @@
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
       "column ${ columnLetter }": [
         "la columna ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "fila ${ rowNumber }"
       ],
       "Up to": [
         "Hasta"
@@ -1315,6 +1411,9 @@
       "Custom number format": [
         "Formato de número personalizado"
       ],
+      "Date": [
+        "Fecha"
+      ],
       "Date time": [
         "Fecha y hora"
       ],
@@ -1332,6 +1431,12 @@
       ],
       "More currency": [
         "Más monedas"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Percent": [
+        "Porcentaje"
       ],
       "Plain text": [
         "Texto plano"
@@ -1402,6 +1507,9 @@
       "Decrease decimal places": [
         "Reducir decimales"
       ],
+      "Decrease font size": [
+        "Reducir tamaño de fuente"
+      ],
       "Default (${ defaultFont })": [
         "Predeterminada (${ defaultFont })"
       ],
@@ -1432,6 +1540,9 @@
       "Increase font size": [
         "Aumentar tamaño de fuente"
       ],
+      "Insert chart": [
+        "Insertar gráfico"
+      ],
       "Insert function": [
         "Insertar función"
       ],
@@ -1455,6 +1566,12 @@
       ],
       "Paint format": [
         "Copiar formato"
+      ],
+      "Redo": [
+        "Rehacer"
+      ],
+      "Remove filter": [
+        "Eliminar filtro"
       ],
       "Select merge type": [
         "Seleccionar tipo de combinación"
@@ -1572,6 +1689,9 @@
       "Default": [
         "Por defecto"
       ],
+      "OK": [
+        "Aceptar"
+      ],
       "row": [
         "fila"
       ],
@@ -1687,6 +1807,9 @@
       "Add": [
         "Añadir"
       ],
+      "Aggregate": [
+        "Agregar"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -1749,6 +1872,9 @@
       "Apply to range": [
         "Aplicar al rango"
       ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -1757,6 +1883,9 @@
       ],
       "Conditional formatting": [
         "Formato condicional"
+      ],
+      "Delete range": [
+        "Eliminar rango"
       ],
       "Delete rule": [
         "Eliminar regla"
@@ -1788,11 +1917,17 @@
       "Min value": [
         "Valor mínimo"
       ],
+      "None": [
+        "Ninguno"
+      ],
       "Number": [
         "Número"
       ],
       "Preview": [
         "Vista previa"
+      ],
+      "Save": [
+        "Guardar"
       ],
       "Select a range": [
         "Seleccionar un rango"
@@ -1819,6 +1954,9 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Añadir rango con nombre"
+      ],
       "Add another range": [
         "Agregar otro rango"
       ],
@@ -1831,8 +1969,14 @@
       "Apply to range": [
         "Aplicar al rango"
       ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Data validation": [
         "Validación de datos"
+      ],
+      "Delete data validation rule": [
+        "Eliminar regla de validación de datos"
       ],
       "Enter a formula": [
         "Introduce una fórmula"
@@ -1880,8 +2024,17 @@
       "Enter text or formula": [
         "Introducir texto o fórmula"
       ],
+      "Name": [
+        "Nombre"
+      ],
+      "Name should not contain spaces": [
+        "El nombre no debe contener espacios"
+      ],
       "Named Ranges": [
         "Rangos con nombre"
+      ],
+      "Range": [
+        "Rango"
       ],
       "Save": [
         "Guardar"
@@ -1900,8 +2053,14 @@
       "Banded rows": [
         "Filas alternas"
       ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Edit table": [
         "Editar tabla"
+      ],
+      "More settings": [
+        "Más ajustes"
       ],
       "Save": [
         "Guardar"
