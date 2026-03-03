@@ -1,10 +1,10 @@
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 import { handleSelect } from './VaultActionsProvider';
 
 describe('VaultActionsProvider', () => {
-    exposeAuthStore(createAuthStore(createStore()));
+    exposeAuthStore(createAuthStore(createMemoryStore()));
 
     test('navigate to all should go to /', () => {
         const navigate = jest.fn();

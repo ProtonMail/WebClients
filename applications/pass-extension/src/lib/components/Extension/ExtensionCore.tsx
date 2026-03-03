@@ -41,7 +41,7 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { LocalStoreData } from '@proton/pass/types/worker/state';
 import { prop } from '@proton/pass/utils/fp/lens';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 import noop from '@proton/utils/noop';
 
 export type ExtensionCoreProps = {
@@ -232,7 +232,7 @@ const getPassCoreProviderProps = (
 export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
     const extensionClientState = useRef<MaybeNull<ExtensionClientState>>(null);
     const coreProps = useInstance(() => getPassCoreProviderProps(endpoint, config, theme));
-    const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
+    const authStore = useInstance(() => exposeAuthStore(createAuthStore(createMemoryStore())));
     const message = resolveMessageFactory(endpoint);
 
     const unlock = useCallback(

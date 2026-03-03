@@ -16,7 +16,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 export const sagaMiddleware = createSagaMiddleware();
 
@@ -31,7 +31,7 @@ export const store = configureStore({
     devTools: ENV !== 'production',
 });
 
-exposeAuthStore(createAuthStore(createStore()));
+exposeAuthStore(createAuthStore(createMemoryStore()));
 
 export const TestStoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const config = usePassConfig();
