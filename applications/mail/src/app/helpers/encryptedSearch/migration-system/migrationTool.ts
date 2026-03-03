@@ -6,10 +6,10 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecrypted
 
 import { isAllContentUpToDate } from './helpers/contentVersionHelpers';
 import { migrateContent } from './helpers/migrationHelpers';
-import type { MigrationToolAPI, MigrationToolParams } from './interface';
+import type { CleanTextFn, MigrationToolAPI, MigrationToolParams } from './interface';
 import { setupCryptoProxy } from './setupCryptoProxy';
 
-export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
+export const migration = async ({ user, keyPassword }: MigrationToolParams, cleanText: CleanTextFn) => {
     const databaseExist = await hasESDB(user.ID);
     if (!databaseExist) {
         return;
@@ -32,7 +32,7 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
         return;
     }
 
-    await migrateContent({ esDB, indexKey });
+    await migrateContent({ esDB, indexKey, cleanText });
 };
 
 expose({ migration } satisfies MigrationToolAPI);
