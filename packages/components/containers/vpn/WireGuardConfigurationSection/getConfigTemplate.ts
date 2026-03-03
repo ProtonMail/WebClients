@@ -10,10 +10,9 @@ export const getConfigTemplate = (
     interfacePrivateKey: string,
     name: string | undefined,
     features: Partial<FeaturesValues & ExtraCertificateFeatures> | undefined,
-    peer: Peer,
-    isIpv6ForWgConfig = false
+    peer: Peer
 ): string => {
-    const featureIPv6 = isIpv6ForWgConfig && peer.ipv6;
+    const featureIPv6 = peer.ipv6;
 
     return `[Interface]${name ? `\n# Key for ${name}` : ''}${getObjectKeys(features)
         .map((key) =>

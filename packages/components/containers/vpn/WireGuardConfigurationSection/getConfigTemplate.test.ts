@@ -56,28 +56,9 @@ describe('getConfigTemplate', () => {
     });
 
     describe('IPv6 support', () => {
-        it('should include IPv6 address when isIpv6ForWgConfig is true and peer has ipv6', () => {
-            const result = getConfigTemplate(mockInterfacePrivateKey, undefined, undefined, mockPeer, true);
-
-            expect(result).toContain(`Address = 10.2.0.2/32, 2a07:b944::2:2/128`);
-            expect(result).toContain(`DNS = 10.2.0.1, 2a07:b944::2:1`);
-            expect(result).toContain(
-                `# Uncomment the following line (delete the # symbol) to connect to Proton VPN using IPv6.`
-            );
-            expect(result).toContain(`# Endpoint = [${mockPeer.ipv6}]:51820`);
-        });
-
-        it('should not include IPv6 address when isIpv6ForWgConfig is false', () => {
-            const result = getConfigTemplate(mockInterfacePrivateKey, undefined, undefined, mockPeer, false);
-
-            expect(result).toContain('Address = 10.2.0.2/32');
-            expect(result).not.toContain('/128');
-            expect(result).toContain('DNS = 10.2.0.1');
-        });
-
         it('should not include IPv6 address when peer has no ipv6', () => {
             const peerWithoutIpv6 = { ...mockPeer, ipv6: undefined };
-            const result = getConfigTemplate(mockInterfacePrivateKey, undefined, undefined, peerWithoutIpv6, true);
+            const result = getConfigTemplate(mockInterfacePrivateKey, undefined, undefined, peerWithoutIpv6);
 
             expect(result).toContain('Address = 10.2.0.2/32');
             expect(result).not.toContain('/128');
