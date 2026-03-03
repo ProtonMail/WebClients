@@ -6,17 +6,18 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, useModalStateObject } from '@proton/components';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 
+import { DismissedFeaturePill } from '../../components/DismissedFeaturePill';
 import { LumoLink } from '../../components/Links/LumoLink';
+import { NewProjectModal, useProjects } from '../../features/projects';
+import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
+import { getProjectCategory } from '../../features/projects/constants';
+import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
-import { DismissedFeaturePill } from '../../components/DismissedFeaturePill';
-import { useProjects } from '../../features/projects';
-import { getProjectCategory } from '../../features/projects/constants';
-import { NewProjectModal } from '../../features/projects';
-import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
-import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
 
 interface ProjectsSidebarSectionProps {
     showText: boolean;
@@ -88,8 +89,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     };
 
     const handleCreateProject = () => {
-
-        console.log('handleCreateProject')
+        console.log('handleCreateProject');
         if (isGuest) {
             if (onItemClick) {
                 onItemClick();
@@ -116,7 +116,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                         aria-label={c('collider_2025:Button').t`Projects`}
                     >
                         <div className="sidebar-item-icon">
-                            <Icon name="folder" size={4} className="rtl:mirror" />
+                            <IcFolder size={4} className="rtl:mirror" />
                         </div>
                     </button>
                 </Tooltip>
@@ -136,7 +136,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                 aria-label={c('collider_2025:Button').t`Projects`}
                             >
                                 <div className="sidebar-item-icon">
-                                    <Icon name="folder" size={4} />
+                                    <IcFolder size={4} />
                                 </div>
                                 <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
                                     {c('collider_2025:Button').t`Projects`}
@@ -176,8 +176,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                     >
                                         <div className="sidebar-item-icon projects-folder-icon">
                                             {!isHovered && showText && (
-                                                <Icon
-                                                    name="folder"
+                                                <IcFolder
                                                     size={4}
                                                     className="rtl:mirror projects-folder-icon-default"
                                                 />
@@ -206,7 +205,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                             aria-label={c('collider_2025:Button').t`Create project`}
                                             title={c('collider_2025:Button').t`Create project`}
                                         >
-                                            <Icon name="plus" size={3} />
+                                            <IcPlus size={3} />
                                         </button>
                                     )}
                                 </div>
@@ -222,36 +221,36 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                     {projects.length > 0 && (
                         <div className="flex flex-column flex-nowrap gap-0 shrink-0">
                             {projects.slice(0, 5).map((project) => {
-                            const category = getProjectCategory(project.icon);
-                            const isSelected = currentProjectId === project.id;
+                                const category = getProjectCategory(project.icon);
+                                const isSelected = currentProjectId === project.id;
 
-                            return (
-                                <li
-                                    key={project.id}
-                                    className={clsx(
-                                        'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0 navigation-link w-full',
-                                        'hover:bg-weak rounded-md transition-colors',
-                                        isSelected && 'is-active bg-norm-weak'
-                                    )}
-                                >
-                                    <LumoLink
-                                        to={`/projects/${project.id}`}
-                                        className="flex items-center flex-1 px-3 py-2 text-sm text-ellipsis hover:text-primary"
-                                        onClick={onItemClick}
+                                return (
+                                    <li
+                                        key={project.id}
+                                        className={clsx(
+                                            'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0 navigation-link w-full',
+                                            'hover:bg-weak rounded-md transition-colors',
+                                            isSelected && 'is-active bg-norm-weak'
+                                        )}
                                     >
-                                        <div className="project-icon-small color-norm mr-2 flex-shrink-0">
-                                            <Icon name={category.icon as any} size={4} className="color-white" />
+                                        <LumoLink
+                                            to={`/projects/${project.id}`}
+                                            className="flex items-center flex-1 px-3 py-2 text-sm text-ellipsis hover:text-primary"
+                                            onClick={onItemClick}
+                                        >
+                                            <div className="project-icon-small color-norm mr-2 flex-shrink-0">
+                                                <Icon name={category.icon as any} size={4} className="color-white" />
+                                            </div>
+                                            <span className="text-ellipsis flex-1" title={project.name}>
+                                                {project.name}
+                                            </span>
+                                        </LumoLink>
+                                        <div className="flex-shrink-0">
+                                            <ProjectActionsDropdown project={project} />
                                         </div>
-                                        <span className="text-ellipsis flex-1" title={project.name}>
-                                            {project.name}
-                                        </span>
-                                    </LumoLink>
-                                    <div className="flex-shrink-0">
-                                        <ProjectActionsDropdown project={project} />
-                                    </div>
-                                </li>
-                            );
-                        })}
+                                    </li>
+                                );
+                            })}
                         </div>
                     )}
                     {projects.length > 5 && (

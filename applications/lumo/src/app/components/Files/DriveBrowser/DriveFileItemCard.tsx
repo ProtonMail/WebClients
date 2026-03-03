@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FileIcon, Icon } from '@proton/components';
+import { FileIcon } from '@proton/components';
 import { NodeType } from '@proton/drive';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';
@@ -135,9 +138,9 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
             {/* Actions on the right */}
             <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === NodeType.Folder ? 'mr-1' : ''}`}>
-                {isProcessing && <Icon name="arrows-rotate" className="color-primary animate-spin" size={4} />}
+                {isProcessing && <IcArrowsRotate className="color-primary animate-spin" size={4} />}
 
-                {hasError && <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />}
+                {hasError && <IcExclamationTriangleFilled className="color-danger" size={4} />}
 
                 {actions.map((action, index) => {
                     const isDisabled = action.disabled || action.loading;
@@ -171,9 +174,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                 })}
 
                 {/* Chevron for folders */}
-                {file.type === NodeType.Folder && isClickable && (
-                    <Icon name="chevron-right" className="color-weak" size={4} />
-                )}
+                {file.type === NodeType.Folder && isClickable && <IcChevronRight className="color-weak" size={4} />}
             </div>
         </div>
     );

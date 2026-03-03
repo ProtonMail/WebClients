@@ -5,13 +5,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
+import { SettingsLink, useModalStateObject } from '@proton/components';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
+import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { ProjectCard } from './ProjectCard';
 import { EXAMPLE_PROJECTS } from './exampleProjects';
 import { useProjects } from './hooks/useProjects';
@@ -82,7 +84,7 @@ export const ProjectsView = () => {
                         </ButtonLike>
                     </div>
                     <p className="text-sm color-weak mt-4">
-                        <Icon name="lock" size={3} className="mr-1" />
+                        <IcLock size={3} className="mr-1" />
                         {c('collider_2025:Info').t`Your information is zero-access encrypted`}
                     </p>
                 </div>
@@ -159,7 +161,7 @@ export const ProjectsView = () => {
                     <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
                     <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
                         <span className="flex items-center flex-nowrap">
-                            <Icon name="plus" className="mr-2" />
+                            <IcPlus className="mr-2" />
                             {c('collider_2025:Button').t`New project`}
                         </span>
                     </Button>

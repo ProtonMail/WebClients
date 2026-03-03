@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Icon } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import lumoShield from '@proton/styles/assets/img/lumo/discussion-locks.svg';
 import locks from '@proton/styles/assets/img/lumo/lock-closed.svg';
@@ -42,7 +42,7 @@ const OnboardingSection = ({ onClick, onClose }: OnboardingSectionProps) => {
                         'collider_2025: Button'
                     ).t`Learn more`}</InlineLinkButton>
                     <Button size="small" icon shape="ghost" onClick={onClose}>
-                        <Icon name="cross" size={5} alt={c('collider_2025: Action').t`Dismiss`} />
+                        <IcCross size={5} alt={c('collider_2025: Action').t`Dismiss`} />
                     </Button>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 
 import type { SearchItem } from '../../../../../lib/toolCall/types';
 import { getDomain } from './helpers';
@@ -23,7 +23,7 @@ export const SourceFavIcon = ({ domain }: { domain: string }) => {
         if (domain) {
             return <ColoredDisk domain={domain} />;
         } else {
-            return <Icon name="globe" className="color-norm" size={4} />;
+            return <IcGlobe className="color-norm" size={4} />;
         }
     }
 

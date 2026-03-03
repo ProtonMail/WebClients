@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface DriveHiddenFilesNoticeProps {
@@ -21,7 +21,7 @@ export const DriveHiddenFilesNotice: React.FC<DriveHiddenFilesNoticeProps> = ({
     return (
         <div className="mb-3 p-3 bg-weak rounded border border-weak">
             <div className="flex items-center gap-2 text-sm color-weak">
-                <Icon name="info-circle" size={4} />
+                <IcInfoCircle size={4} />
                 <div className="flex flex-col">
                     {hiddenProtonDocsCount > 0 && (
                         <span>

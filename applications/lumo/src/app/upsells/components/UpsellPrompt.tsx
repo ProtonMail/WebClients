@@ -4,13 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, SettingsLink } from '@proton/components';
+import { SettingsLink } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import lumoFavoritesTeaser from '@proton/styles/assets/img/lumo/lumo-favorites-teaser.svg';
 
+import { SignInLink } from '../../components/Links/SignInLink';
+import type { ActivePanel } from '../../layouts/MainLayout';
+
 import './UpsellPrompt.scss';
-import {SignInLink} from "../../components/Links/SignInLink";
-import type {ActivePanel} from "../../layouts/MainLayout";
 
 interface Props {
     position: { top: number; left: number };
@@ -55,7 +57,7 @@ export const UpsellPrompt = ({ position, onClose, type }: Props) => {
         };
     }, []);
 
-    const linkSignup = <SignInLink key="eslint-autofix-217F23" />;
+    const linkSignup = <SignInLink key="signin-link" />;
 
     return (
         <div
@@ -64,7 +66,7 @@ export const UpsellPrompt = ({ position, onClose, type }: Props) => {
             style={{ top: position.top, left: position.left }}
         >
             <Button icon shape="ghost" className="self-end" onClick={onClose}>
-                <Icon name="cross"></Icon>
+                <IcCross alt={c('Action').t`Close`} />
             </Button>
             <div className="w-custom h-custom shrink-0" style={{ '--w-custom': '350px', '--h-custom': '280px' }}>
                 <img

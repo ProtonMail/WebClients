@@ -5,17 +5,21 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Icon } from '@proton/components/index';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Icon } from '@proton/components/index';
+import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
+import { getProjectCategory } from '../../../features/projects/constants';
+import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { SearchService } from '../../../services/search/searchService';
 import type { SearchResult } from '../../../services/search/types';
-import { useIsGuest } from '../../../providers/IsGuestProvider';
-import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import type { Attachment } from '../../../types';
 import { FileContentModal } from '../../Files';
-import {getProjectCategory} from "../../../features/projects/constants";
 
 import './SearchModal.scss';
 
@@ -76,12 +80,11 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
         return getProjectCategory(categoryId);
     };
 
-    const projectCategory = (result.type === 'conversation' || result.type === 'message') && result.projectIcon
-        ? getProjectCategoryInfo(result.projectIcon)
-        : null;
-    const ProjectIcon = projectCategory ? (
-        <Icon name={projectCategory.icon as any} size={3} className="mr-1" />
-    ) : null;
+    const projectCategory =
+        (result.type === 'conversation' || result.type === 'message') && result.projectIcon
+            ? getProjectCategoryInfo(result.projectIcon)
+            : null;
+    const ProjectIcon = projectCategory ? <Icon name={projectCategory.icon as any} size={3} className="mr-1" /> : null;
 
     // Highlight search terms in text
     const highlightText = (text: string, searchQuery: string) => {
@@ -111,9 +114,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                 title={c('Action').t`Open file preview`}
             >
                 <div className="search-result-content">
-                    <div className="search-result-title">
-                        {highlightText(result.documentName || '', query)}
-                    </div>
+                    <div className="search-result-title">{highlightText(result.documentName || '', query)}</div>
                     {result.matchContext && (
                         <div className="search-result-preview search-result-context">
                             {highlightText(result.matchContext, query)}
@@ -121,13 +122,13 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                     )}
                     {result.documentPreview && (
                         <div className="search-result-preview search-result-folder-path">
-                            <Icon name="folder" size={3} className="mr-1" color="var(--text-norm)" />
+                            <IcFolder size={3} className="mr-1" color="var(--text-norm)" />
                             {result.documentPreview}
                         </div>
                     )}
                 </div>
                 <div className="search-result-meta">
-                    <Icon name="brand-proton-drive-filled" size={3} className="color-weak mr-1" />
+                    <IcBrandProtonDriveFilled size={3} className="color-weak mr-1" />
                     <span className="search-result-date">{formatDate(result.timestamp, query)}</span>
                 </div>
             </button>
@@ -145,32 +146,21 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                 title={c('Action').t`Open project`}
             >
                 <div className="search-result-icon">
-                    <Icon name={projectIconName as any} size={4} className={"color-norm"} />
+                    <Icon name={projectIconName as any} size={4} className={'color-norm'} />
                 </div>
                 <div className="search-result-content">
-                    <div className="search-result-title">
-                        {highlightText(result.projectName || '', query)}
-                    </div>
+                    <div className="search-result-title">{highlightText(result.projectName || '', query)}</div>
                     {result.projectDescription && (
-                        <div className="search-result-preview">
-                            {highlightText(result.projectDescription, query)}
-                        </div>
+                        <div className="search-result-preview">{highlightText(result.projectDescription, query)}</div>
                     )}
                 </div>
-                <div className="search-result-date">
-                    {formatDate(result.timestamp, query)}
-                </div>
+                <div className="search-result-date">{formatDate(result.timestamp, query)}</div>
             </button>
         );
     }
 
     return (
-        <button
-            className="search-result-item"
-            onClick={handleClick}
-            title={c('Action').t`Open conversation`}
-        >
-
+        <button className="search-result-item" onClick={handleClick} title={c('Action').t`Open conversation`}>
             <div className="search-result-content">
                 {result.projectName && (
                     <div className="search-result-preview search-result-folder-path">
@@ -178,18 +168,12 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                         {result.projectName}
                     </div>
                 )}
-                <div className="search-result-title">
-                    {highlightText(result.conversationTitle || '', query)}
-                </div>
+                <div className="search-result-title">{highlightText(result.conversationTitle || '', query)}</div>
                 {result.type === 'message' && result.messagePreview && (
-                    <div className="search-result-preview">
-                        {highlightText(result.messagePreview, query)}
-                    </div>
+                    <div className="search-result-preview">{highlightText(result.messagePreview, query)}</div>
                 )}
             </div>
-            <div className="search-result-date">
-                {formatDate(result.timestamp, query)}
-            </div>
+            <div className="search-result-date">{formatDate(result.timestamp, query)}</div>
         </button>
     );
 };
@@ -206,10 +190,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     const conversations = useLumoSelector((state) => state.conversations);
     const messages = useLumoSelector((state) => state.messages);
     const spaces = useLumoSelector((state) => state.spaces);
-    const searchState = React.useMemo(
-        () => ({ conversations, messages, spaces }),
-        [conversations, messages, spaces]
-    );
+    const searchState = React.useMemo(() => ({ conversations, messages, spaces }), [conversations, messages, spaces]);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>([]);
     const [isSearching, setIsSearching] = useState(false);
@@ -248,7 +229,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     useEffect(() => {
         if (hasLoadedOnceRef.current) return;
         hasLoadedOnceRef.current = true;
-        loadAllConversations();
+        void loadAllConversations();
         // loadAllConversations depends on memoized searchState slices; only reruns when they change
     }, [loadAllConversations]);
 
@@ -261,30 +242,33 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     }, []);
 
     // Perform search with debouncing
-    const performSearch = useCallback(async (searchQuery: string) => {
-        if (!searchQuery.trim()) {
-            // When query is cleared, show all conversations again
-            await loadAllConversations();
-            return;
-        }
+    const performSearch = useCallback(
+        async (searchQuery: string) => {
+            if (!searchQuery.trim()) {
+                // When query is cleared, show all conversations again
+                await loadAllConversations();
+                return;
+            }
 
-        setIsSearching(true);
-        setError(null);
+            setIsSearching(true);
+            setError(null);
 
-        try {
-            const searchService = SearchService.get(user?.ID);
-            const searchResults = await searchService.searchAsync(searchQuery, searchState, {
-                hasLumoPlus,
-            });
-            setResults(searchResults);
-        } catch (err) {
-            console.error('[SearchModal] Search failed:', err);
-            setError(err instanceof Error ? err.message : 'Search failed');
-            setResults([]);
-        } finally {
-            setIsSearching(false);
-        }
-    }, [searchState, loadAllConversations, user?.ID, hasLumoPlus]);
+            try {
+                const searchService = SearchService.get(user?.ID);
+                const searchResults = await searchService.searchAsync(searchQuery, searchState, {
+                    hasLumoPlus,
+                });
+                setResults(searchResults);
+            } catch (err) {
+                console.error('[SearchModal] Search failed:', err);
+                setError(err instanceof Error ? err.message : 'Search failed');
+                setResults([]);
+            } finally {
+                setIsSearching(false);
+            }
+        },
+        [searchState, loadAllConversations, user?.ID, hasLumoPlus]
+    );
 
     // Handle search input changes with debouncing
     const handleSearchChange = (value: string) => {
@@ -297,28 +281,31 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         // Debounce search
         searchTimeoutRef.current = setTimeout(() => {
-            performSearch(value);
+            void performSearch(value);
         }, 300);
     };
 
     // Handle result selection
-    const handleSelectResult = useCallback(async (conversationId?: string, messageId?: string, documentId?: string, projectId?: string) => {
-        if (projectId) {
-            // Navigate to project
-            history.push(`/projects/${projectId}`);
-            onClose();
-        } else if (conversationId) {
-            // Navigate to conversation
-            const searchParams = new URLSearchParams();
-            if (messageId) {
-                searchParams.set('messageId', messageId);
-            }
-            const queryString = searchParams.toString();
-            history.push(`/c/${conversationId}${queryString ? `?${queryString}` : ''}`);
+    const handleSelectResult = useCallback(
+        async (conversationId?: string, messageId?: string, documentId?: string, projectId?: string) => {
+            if (projectId) {
+                // Navigate to project
+                history.push(`/projects/${projectId}`);
+                onClose();
+            } else if (conversationId) {
+                // Navigate to conversation
+                const searchParams = new URLSearchParams();
+                if (messageId) {
+                    searchParams.set('messageId', messageId);
+                }
+                const queryString = searchParams.toString();
+                history.push(`/c/${conversationId}${queryString ? `?${queryString}` : ''}`);
 
-            onClose();
-        }
-    }, [history, onClose]);
+                onClose();
+            }
+        },
+        [history, onClose]
+    );
 
     // Keyboard navigation
     const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -333,9 +320,9 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         if (results.length === 0) return {};
 
         // First separate by type
-        const conversations = results.filter(r => r.type === 'conversation' || r.type === 'message');
-        const projects = results.filter(r => r.type === 'project');
-        const documents = results.filter(r => r.type === 'document');
+        const conversations = results.filter((r) => r.type === 'conversation' || r.type === 'message');
+        const projects = results.filter((r) => r.type === 'project');
+        const documents = results.filter((r) => r.type === 'document');
 
         const groups: Record<string, SearchResult[]> = {};
 
@@ -357,7 +344,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             const oneWeek = oneDay * 7;
             const oneYear = oneDay * 365;
 
-            conversations.forEach(result => {
+            conversations.forEach((result) => {
                 const age = now - result.timestamp;
                 let group = 'Older';
 
@@ -374,21 +361,14 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         return groups;
     }, [results, isDebugMode]);
 
-    const groupOrder = [
-        'Projects',
-        'Today',
-        'Yesterday',
-        'Last 7 Days',
-        'This Year',
-        'Older',
-        'Files in Drive'
-    ];
+    const groupOrder = ['Projects', 'Today', 'Yesterday', 'Last 7 Days', 'This Year', 'Older', 'Files in Drive'];
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div className="search-modal-container" onKeyDown={handleKeyDown}>
             {/* Search Input */}
             <div className="search-modal-input-wrapper">
-                <Icon name="magnifier" size={4.5} className="search-modal-input-icon" />
+                <IcMagnifier size={4.5} className="search-modal-input-icon" />
                 <input
                     ref={searchInputRef}
                     type="text"
@@ -407,7 +387,6 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
             {/* Search Results */}
             <div className="search-modal-results">
-
                 {/* Empty state hint - only show when no results and no query */}
                 {!query.trim() && results.length === 0 && !isSearching && (
                     <div className="search-modal-empty-hint">
@@ -417,48 +396,50 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
                 {error && (
                     <div className="search-modal-error">
-                        <Icon name="exclamation-circle" className="search-modal-error-icon" />
+                        <IcExclamationCircle className="search-modal-error-icon" />
                         <p className="search-modal-error-text">{error}</p>
                     </div>
                 )}
 
                 {!error && query.trim() && !isSearching && results.length === 0 && (
                     <div className="search-modal-empty">
-                        <p className="search-modal-empty-text">
-                            {c('Info').t`No results found for "${query}"`}
-                        </p>
+                        <p className="search-modal-empty-text">{c('Info').t`No results found for "${query}"`}</p>
                     </div>
                 )}
 
-                {results.length > 0 && groupOrder.map(groupName => {
-                    const groupResults = groupedResults[groupName];
-                    if (!groupResults || groupResults.length === 0) return null;
+                {results.length > 0 &&
+                    groupOrder.map((groupName) => {
+                        const groupResults = groupedResults[groupName];
+                        if (!groupResults || groupResults.length === 0) return null;
 
-                    return (
-                        <div key={groupName} className="search-modal-section">
-                            <div className="search-modal-section-header">
-                                <span className="search-modal-section-title">{groupName}</span>
+                        return (
+                            <div key={groupName} className="search-modal-section">
+                                <div className="search-modal-section-header">
+                                    <span className="search-modal-section-title">{groupName}</span>
+                                </div>
+                                {groupResults.map((result, index) => {
+                                    // eslint-disable-next-line no-nested-ternary
+                                    const key =
+                                        result.type === 'document'
+                                            ? `doc-${result.documentId}-${index}`
+                                            : // eslint-disable-next-line no-nested-ternary
+                                              result.type === 'message'
+                                              ? `msg-${result.conversationId}-${result.messageId}-${index}`
+                                              : result.type === 'project'
+                                                ? `proj-${result.projectId}-${index}`
+                                                : `conv-${result.conversationId}-${index}`;
+                                    return (
+                                        <SearchResultItem
+                                            key={key}
+                                            result={result}
+                                            query={query}
+                                            onSelect={handleSelectResult}
+                                        />
+                                    );
+                                })}
                             </div>
-                            {groupResults.map((result, index) => {
-                                const key = result.type === 'document'
-                                    ? `doc-${result.documentId}-${index}`
-                                    : result.type === 'message'
-                                    ? `msg-${result.conversationId}-${result.messageId}-${index}`
-                                    : result.type === 'project'
-                                    ? `proj-${result.projectId}-${index}`
-                                    : `conv-${result.conversationId}-${index}`;
-                                return (
-                                    <SearchResultItem
-                                        key={key}
-                                        result={result}
-                                        query={query}
-                                        onSelect={handleSelectResult}
-                                    />
-                                );
-                            })}
-                        </div>
-                    );
-                })}
+                        );
+                    })}
             </div>
 
             {/* Document Preview Modal */}
@@ -510,7 +491,9 @@ export const SearchModal = ({ open, onClose }: SearchModalProps) => {
 
     // Render in a portal at the document root to escape sidebar container
     return createPortal(
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
         <div className="search-modal-overlay" onClick={onClose}>
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
             <div className="search-modal-spotlight" onClick={(e) => e.stopPropagation()}>
                 <SearchModalInner onClose={onClose} />
             </div>

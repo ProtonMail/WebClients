@@ -9,6 +9,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components/index';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components/index';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
@@ -21,19 +23,19 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
-import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
-import { getInitials } from '../../../util/username';
 import { LumoSettingsPanelUpsell } from '../../../upsells';
+import { getInitials } from '../../../util/username';
+import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import CreateFreeAccountLink from '../../CreateFreeAccountLink/CreateFreeAccountLink';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
-import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import { SignInLinkButton } from '../../Links/SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
@@ -404,7 +406,7 @@ const AccountSettingsPanel = () => {
                         </div>
                         <span className="color-weak text-sm text-left">{user.Email}</span>
                     </div>
-                    <Icon name="chevron-right" className="color-weak shrink-0 mt-2" size={4} />
+                    <IcChevronRight className="color-weak shrink-0 mt-2" size={4} />
                 </ButtonLike>
             </div>
             {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
@@ -452,7 +454,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                     title={c('Action').t`Close`}
                     className="modal-close-button"
                 >
-                    <Icon name="cross" size={6} />
+                    <IcCross size={6} />
                 </Button>
 
                 <div className="modal-main-container">
