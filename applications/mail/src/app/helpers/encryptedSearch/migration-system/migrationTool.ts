@@ -4,7 +4,8 @@ import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
-import { ContentUpgrade } from './ContentUpgrade';
+import { isAllContentUpToDate } from './helpers/contentVersionHelpers';
+import { migrateContent } from './helpers/migrationHelpers';
 import type { MigrationToolAPI, MigrationToolParams } from './interface';
 import { setupCryptoProxy } from './setupCryptoProxy';
 
@@ -26,13 +27,12 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams) => {
         return;
     }
 
-    const contentUpgrade = new ContentUpgrade(esDB, indexKey);
-    const isAllMigrated = await contentUpgrade.isAllContentUpdated();
+    const isAllMigrated = await isAllContentUpToDate(esDB);
     if (isAllMigrated) {
         return;
     }
 
-    await contentUpgrade.migrateContent();
+    await migrateContent({ esDB, indexKey });
 };
 
 expose({ migration } satisfies MigrationToolAPI);
