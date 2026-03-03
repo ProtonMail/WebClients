@@ -119,9 +119,6 @@
       "Back": [
         "กลับ"
       ],
-      "Back to sign in": [
-        "กลับไปเข้าสู่ระบบ"
-      ],
       "Block": [
         "บล็อก"
       ],
@@ -312,7 +309,7 @@
         "รายละเอียด"
       ],
       "Didn't receive a code?": [
-        "ยังไม่ได้รับรหัสใช่ไหม?"
+        "ยังไม่ได้รับรหัสใช่หรือไม่?"
       ],
       "Disable": [
         "ปิด​ใช้​งาน"
@@ -535,9 +532,6 @@
       ],
       "Help and resources": [
         "ความช่วยเหลือและทรัพยากร"
-      ],
-      "Hide": [
-        "ซ่อน"
       ],
       "Hide more benefits": [
         "ซ่อนสิทธิประโยชน์เพิ่มเติม"
@@ -1891,14 +1885,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "เพิ่มผู้ใช้ด้วยตนเอง"
-      ],
       "Close": [
         "ปิด"
-      ],
-      "Configure your network": [
-        "กำหนดค่าเครือข่าย"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "ใช้ ${ MAIL_APP_NAME } ต่อไป"
@@ -1918,29 +1906,17 @@
       "Discover and set up features": [
         "ค้นพบและตั้งค่าคุณสมบัติ"
       ],
-      "Invite your team": [
-        "เชิญทีม"
-      ],
-      "Manage global VPN permissions": [
-        "จัดการสิทธิ์ VPN ส่วนกลาง"
-      ],
       "Maybe later": [
         "ไว้ก่อน"
       ],
       "Remind me later": [
         "เตือนฉันภายหลัง"
       ],
-      "Secure your organization": [
-        "รักษาความปลอดภัยให้องค์กร"
-      ],
       "Send": [
         "ส่ง"
       ],
       "Set up other features": [
         "ตั้งค่าคุณสมบัติอื่นๆ"
-      ],
-      "Set up SSO": [
-        "ตั้งค่า SSO"
       ],
       "Take a tour": [
         "ชมแนะนำการใช้งาน"
@@ -2004,7 +1980,7 @@
         "รวม"
       ],
       "Total for ${ n } month": [
-        "รวมเป็นเวลา ${ n } เดือน"
+        "ยอดรวมทั้งสิ้นสำหรับ ${ n } เดือน"
       ]
     },
     "Checkout summary": {
@@ -2789,9 +2765,6 @@
       "North Korea": [
         "เกาหลีเหนือ"
       ],
-      "North Macedonia": [
-        "มาซิโดเนียเหนือ"
-      ],
       "Northern Mariana Islands": [
         "หมู่เกาะนอร์เทิร์นมาเรียนา"
       ],
@@ -3222,23 +3195,14 @@
       "Connect your CRM, website, printers, and more.": [
         "เชื่อมต่อ CRM, เว็บไซต์, เครื่องพิมพ์ และอื่นๆ"
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "สร้างเกตเวย์เพื่อให้สิทธิ์เข้าถึงทรัพยากรไอทีแก่ผู้ใช้ผ่านเซิร์ฟเวอร์เฉพาะ"
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "สร้างการประชุม Zoom และเพิ่มรายละเอียดการเข้าร่วมในกิจกรรมด้วยคลิกเดียว"
       ],
       "Create groups you can email with a single address.": [
         "สร้างกลุ่มที่สามารถส่งอีเมลหาได้ด้วยที่อยู่เดียว"
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "สร้างบัญชีผู้ใช้ใหม่หรือนำเข้าผู้ใช้ด้วยการจัดเตรียม SCIM ของ SSO (การลงชื่อเข้าใช้เพียงครั้งเดียว)"
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "สร้างนโยบายเพื่อกำหนดว่าใครสามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ในแต่ละประเทศได้บ้าง"
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "กำหนดผู้ใช้ที่สามารถเชื่อมต่อกับตำแหน่งเซิร์ฟเวอร์ที่แชร์กว่า 120 แห่ง"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "เข้าถึงอีเมลและปฏิทินบนเดสก์ท็อปและมือถือได้อย่างง่ายดาย"
@@ -3284,9 +3248,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "ช่วยทีมจัดเก็บรหัสผ่านสำหรับข้อมูลธุรกิจและลูกค้าที่ละเอียดอ่อนอย่างปลอดภัย"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "หากยังไม่ได้ดำเนินการ ให้เปิดใช้งานวิธีการกู้คืนเพื่อให้แน่ใจว่าจะไม่สูญเสียการเข้าถึง ${ VPN_APP_NAME }"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ดูเหมือนว่ารายชื่อติดต่อที่กำลังนำเข้ามามีบางกลุ่มรวมอยู่ด้วย โปรดดูว่าจะสามารถจะนำกลุ่มติดต่อนี้เข้ามาอย่างไร"
@@ -4027,7 +3988,7 @@
         "โปรดเปลี่ยนค่า custom domain ก่อนที่จะเพิ่มชื่อผู้ใช้อื่นๆ ในองค์กรของคุณ"
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "โปรดเปิดบริการที่รองรับผู้ใช้หลายคนก่อนจะเพิ่มผู้ใช้อื่นๆในองค์กรของคุณ"
+        "โปรดเปิดบริการที่รองรับผู้ใช้หลายคนก่อนจะเพิ่มผู้ใช้อื่นๆ ในองค์กรของคุณ"
       ],
       "Please enter a valid Entity ID URL": [
         "โปรดป้อน URL ของ Entity ID ที่ถูกต้อง"
@@ -4895,9 +4856,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "เกิดข้อผิดพลาดในการลงทะเบียนคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
       ]
@@ -4917,9 +4875,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "คุณแน่ใจหรือไม่ว่าต้องการลบคีย์ความปลอดภัย ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME } ของคุณ"
       ],
       "Insert your security key into your device's USB port.": [
         "แทรกคีย์ความปลอดภัยของคุณลงในพอร์ต USB ของอุปกรณ์"
@@ -5162,9 +5117,6 @@
       ],
       "Password ends with": [
         "รหัสผ่านลงท้ายด้วย"
-      ],
-      "Payment details": [
-        "รายละเอียดการชำระเงิน"
       ],
       "Protection": [
         "การปกป้อง"
@@ -6275,9 +6227,6 @@
       "Drop to import": [
         "วางเพื่อนำเข้า"
       ],
-      "Each code can only be used once": [
-        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "แต่ละโดเมนสามารถมีระเบียน SPF (TXT) ได้เพียงรายการเดียว หากคุณต้องการเก็บระเบียน SPF (TXT) ที่มีอยู่ไว้ คุณสามารถเพิ่ม ${ spf } ลงในระเบียนปัจจุบันของคุณ (วางไว้หลัง ${ spfValue })"
       ],
@@ -6377,9 +6326,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "ป้อนรหัสยืนยัน ตัวเลข ${ digit }"
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "ป้อนรายละเอียดบัญชี ${ BRAND_NAME } ของคุณ"
       ],
@@ -6408,7 +6354,7 @@
         "ตัวอย่าง: ${ spfExample }"
       ],
       "Expired": [
-        "หน้าชำระค่าบริการหมดอายุแล้ว"
+        "หมดอายุแล้ว"
       ],
       "expires ${ expirationDate }": [
         "หมดอายุ ${ expirationDate }"
@@ -6445,9 +6391,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "รับการแจ้งเตือนหากรหัสผ่านหรือข้อมูลส่วนบุคคลอื่นๆ รั่วไหล ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "เริ่มต้นใช้งาน"
       ],
       "Get started with the referral link above.": [
         "เริ่มต้นด้วยลิงก์แนะนำด้านบน"
@@ -7172,9 +7115,6 @@
       "Set up your organization": [
         "ตั้งค่าองค์กรของคุณ"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "ตั้งค่าองค์กรและเริ่มปกป้องข้อมูลในไม่กี่ขั้นตอนง่ายๆ"
-      ],
       "Setting up ${ feature }…": [
         "กำลังตั้งค่า ${ feature }…"
       ],
@@ -7231,9 +7171,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "เริ่มเมื่อ ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "ขั้นตอนที่ ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "พื้นที่จัดเก็บที่จัดสรรให้กับผู้ใช้อื่นในองค์กรนี้"
@@ -7466,9 +7403,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "ถ้าต้องการยืนยัน โปรดใส่ชื่อของผู้ใช้งานที่คุณต้องการลบออกไป"
       ],
-      "To continue to ${ product }": [
-        "เพื่อดำเนินการ ${ product } ต่อ"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "เพื่อปรับปรุงบริการของเราอย่างต่อเนื่อง บางครั้งเราจะเก็บรวบรวมข้อมูลเพื่อติดตามการทำงานที่เหมาะสมของแอปพลิเคชั่นของเรา ข้อมูลนี้จะไม่ถูกแชร์กับบริการของบุคคลที่สามใดๆ"
       ],
@@ -7629,7 +7563,7 @@
         "การยืนยันอาจใช้เวลาสักครู่"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "การยืนยันการชำระเงินจะถูกเปิดบนแท็บใหม่ โปรดหยุดการใช้ระบบบล็อกป๊อปอัป ทั้งนี้จะไม่มีการคิดค่าบริการใดๆเพราะจำนวนเงินที่ใช้ในการตรวจสอบบัตรจะถูกคืนโดยทันที"
+        "การยืนยันการชำระเงินจะถูกเปิดบนแท็บใหม่ โปรดหยุดการใช้ระบบบล็อกป๊อปอัป ทั้งนี้จะไม่มีการคิดค่าบริการใดๆ เพราะจำนวนเงินที่ใช้ในการตรวจสอบบัตรจะถูกคืนโดยทันที"
       ],
       "Verify domain": [
         "ยืนยันโดเมน"
@@ -7751,9 +7685,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "เมื่อลบเซิร์ฟเวอร์ออกจากเกตเวย์ เซิร์ฟเวอร์จะเข้าสู่ช่วงปิดใช้งาน 10 วัน เซิร์ฟเวอร์นี้สามารถเพิ่มไปยังเกตเวย์ใหม่ได้ แต่ไม่สามารถเปลี่ยนประเทศได้"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "เมื่อคุณตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน เราจะให้รหัสกู้คืนซึ่งคุณสามารถใช้เพื่อเข้าสู่ระบบหากคุณสูญเสียการเข้าถึงแอปยืนยันตัวตนของคุณ"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "เมื่อมีการสมัครต่อบัญชี เราจะชำระค่าบริการจากเครดิตของคุณที่ยังมีอยู่ก่อนผ่านการชำระเงินด้านบน"
       ],
@@ -7852,9 +7783,6 @@
       ],
       "You can now return to the application to continue": [
         "สามารถกลับไปที่แอปพลิเคชั่นเพื่อดำเนินการต่อได้"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "คุณสามารถเปิดช่องแชตได้หนึ่งรายการต่อครั้งเท่านั้น โปรดปิดบทสนทนาก่อนหน้าก่อนที่จะเริ่มบทสนทนาใหม่"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "สามารถเปิดใช้การแจ้งเตือน จะได้รับการแจ้งเตือนเมื่อมีข้อความใหม่ส่งมาที่แฟ้มนี้"
@@ -9145,9 +9073,6 @@
       "Create an alias": [
         "สร้างนามแฝง"
       ],
-      "Don't have access to your 2FA?": [
-        "เข้าถึง 2FA ไม่ได้ใช่หรือไม่?"
-      ],
       "Encryption and keys": [
         "คีย์ต่างๆ และการเข้ารหัส"
       ],
@@ -9161,7 +9086,7 @@
         "ลืมรหัสผ่าน?"
       ],
       "Forgot username?": [
-        "ลืมชื่อผู้ใช้หรือไม่"
+        "ลืมชื่อผู้ใช้หรือไม่?"
       ],
       "Get ${ BRAND_NAME } Pass": [
         "รับ ${ BRAND_NAME } Pass"
@@ -9305,20 +9230,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "ผู้ใช้และที่อยู่"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "ไลฟ์แชตพร้อมใช้งานกับ ${ planName }"
-      ],
-      "Open support form": [
-        "เปิดแบบฟอร์มฝ่ายสนับสนุน"
-      ],
-      "Upgrade subscription": [
-        "อัปเกรดการสมัครสมาชิก"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "อัปเกรดเพื่อปลดล็อกฝ่ายสนับสนุนทางแชตและคุณสมบัติพรีเมียมอื่นๆ หรือใช้แบบฟอร์มฝ่ายสนับสนุนฟรีเพื่อรายงานปัญหา"
       ]
     },
     "Loading info": {
@@ -9602,29 +9513,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: เข้าสู่ระบบ"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: ลงทะเบียน"
-      ],
-      "Create a new ${ appName } account": [
-        "สร้างบัญชี ${ appName } ใหม่"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "ค้นหาชื่อผู้ใช้บัญชี ${ BRAND_NAME } ของคุณ"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "ลืมรหัสผ่านบัญชี ${ BRAND_NAME } ใช่หรือไม่ รีเซ็ตรหัสผ่านที่นี่โดยใช้รหัสกู้คืน อีเมล หรือ SMS เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "ลืมชื่อผู้ใช้บัญชี ${ BRAND_NAME } ใช่หรือไม่ ค้นหาชื่อผู้ใช้โดยใช้อีเมลการกู้คืนหรือหมายเลขโทรศัพท์เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "รีเซ็ตรหัสผ่านบัญชี ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "เข้าสู่ระบบเพื่อเข้าถึงบัญชี ${ appName }"
       ]
     },
     "Modal title": {
@@ -10005,9 +9895,6 @@
       "Group management (coming soon)": [
         "การจัดการกลุ่ม (เร็วๆ นี้)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN ความเร็วสูงจากสวิสที่ปกป้องความเป็นส่วนตัวของคุณ"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN ความเร็วสูง ${ n } เครื่อง"
       ],
@@ -10127,9 +10014,6 @@
       ],
       "Start protecting your organization": [
         "เริ่มปกป้ององค์กรของคุณ"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "เริ่มปกป้องตัวเองออนไลน์ได้ง่ายๆ ใน 2 ขั้นตอน"
       ],
       "Strict no-logs policy": [
         "นโยบายไม่บันทึกข้อมูลการใช้งานที่เข้มงวด"
@@ -11418,7 +11302,7 @@
         "ผู้ดูแลระบบต่อไปนี้จะได้รับสิทธิ์เข้าถึงคีย์ขององค์กร"
       ],
       "The organization key must be activated first.": [
-        "ต้องเปิดการใช้งานคีย์ขององค์กรก่อนอื่น."
+        "ต้องเปิดการใช้งานคีย์ขององค์กรก่อนอื่น"
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "สิ่งนี้จะส่งคีย์ขององค์กรล่าสุดไปยังผู้ดูแลระบบที่ไม่มีสิทธิ์เข้าถึงในขณะนี้"
@@ -14349,11 +14233,6 @@
         "สว่าง"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "ธีม"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } วัน"
@@ -14387,9 +14266,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } สำหรับองค์กร"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "ไคลเอ็นต์ ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(เปิดใช้งาน)"
       ],
@@ -14416,9 +14292,6 @@
       ],
       "Access control": [
         "การควบคุมการเข้าถึง"
-      ],
-      "Account": [
-        "บัญชี"
       ],
       "Account recovery": [
         "กู้บัญชี"
@@ -14777,9 +14650,6 @@
       "Discard changes?": [
         "ยกเลิกการเปลี่ยนแปลง?"
       ],
-      "Dismiss setup checklist": [
-        "ปิดรายการตรวจสอบการตั้งค่า"
-      ],
       "Domain names": [
         "ชื่อโดเมน"
       ],
@@ -14849,9 +14719,6 @@
       "Email categories": [
         "หมวดหมู่อีเมล"
       ],
-      "Email subscriptions": [
-        "การสมัครสมาชิกอีเมล"
-      ],
       "Enable advanced account protection": [
         "เปิดใช้งานการปกป้องบัญชีขั้นสูง"
       ],
@@ -14920,9 +14787,6 @@
       ],
       "Get more from your VPN": [
         "รับประโยชน์มากขึ้นจาก VPN ของคุณ"
-      ],
-      "Get started": [
-        "เริ่มต้นใช้งาน"
       ],
       "Get the apps": [
         "รับแอป"
@@ -15038,9 +14902,6 @@
       "OpenVPN configuration files": [
         "ไฟล์การกำหนดค่า OpenVPN"
       ],
-      "OpenVPN username": [
-        "ชื่อผู้ใช้ OpenVPN"
-      ],
       "Org setup": [
         "การตั้งค่าองค์กร"
       ],
@@ -15085,9 +14946,6 @@
       ],
       "Phone": [
         "โทรศัพท์"
-      ],
-      "Plans": [
-        "แผน"
       ],
       "Preview": [
         "ดูตัวอย่าง"
@@ -15362,9 +15220,6 @@
       "Upgrade to keep your premium benefits.": [
         "อัปเกรดเพื่อรักษาสิทธิประโยชน์พรีเมียม"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "อัปเกรดการป้องกันเครือข่ายด้วยเซิร์ฟเวอร์เฉพาะ"
-      ],
       "Upgrade your privacy": [
         "อัปเกรดความเป็นส่วนตัวของคุณ"
       ],
@@ -15454,9 +15309,6 @@
       ],
       "Your changes are not synced yet": [
         "การเปลี่ยนแปลงของคุณยังไม่ได้ซิงค์"
-      ],
-      "Your current plan": [
-        "แผนปัจจุบัน"
       ],
       "Your exposed information": [
         "ข้อมูลที่ถูกเปิดเผยของคุณ"

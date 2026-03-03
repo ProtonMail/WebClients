@@ -100,16 +100,13 @@
         "Figyelem szükséges"
       ],
       "Authenticate": [
-        "Azonosítás"
+        "Hitelesítés"
       ],
       "Authenticating": [
         "Hitelesítés"
       ],
       "Back": [
         "Vissza"
-      ],
-      "Back to sign in": [
-        "Vissza a bejelentkezéshez"
       ],
       "Block": [
         "Tiltás"
@@ -506,9 +503,6 @@
       ],
       "Help and resources": [
         "Súgó és források"
-      ],
-      "Hide": [
-        "Elrejtés"
       ],
       "Hide more benefits": [
         "Több előny elrejtése"
@@ -2476,9 +2470,6 @@
       ],
       "North Korea": [
         "Észak-Korea"
-      ],
-      "North Macedonia": [
-        "Észak-Macedónia"
       ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
@@ -4486,9 +4477,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Hiba történt a hitelesítési kulcs regisztrálásakor. Próbálja meg újra."
       ]
@@ -4509,14 +4497,11 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
       ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
-      ],
       "Insert your security key into your device's USB port.": [
         "Csatlakoztassa a hitelesítési kulcsát az eszköz USB portjához."
       ],
       "Security key": [
-        "Hitelesítési kulcsok"
+        "Hitelesítési kulcs"
       ],
       "Security key removed": [
         "Hitelesítési kulcs eltávolítva"
@@ -4761,9 +4746,6 @@
       ],
       "Password ends with": [
         "Jelszó ezzel végződik:"
-      ],
-      "Payment details": [
-        "Fizetés részletei"
       ],
       "Protection": [
         "Védelem"
@@ -5841,9 +5823,6 @@
       "Drop to import": [
         "Húzza ide az importáláshoz"
       ],
-      "Each code can only be used once": [
-        "Minden kódot csak egyszer lehet felhasználni"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Minden domain név csak egy SPF (TXT) rekorddal rendelkezhet. Ha meg akarja tartani a meglévő SPF (TXT) rekordot, akkor a jelenlegi rekordhoz hozzáadhatja a ${ spf } értéket (a ${ spfValue } után)."
       ],
@@ -5917,7 +5896,7 @@
         "Adja meg az új jelszót a következő felhasználónak: ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Adja meg a hitelesítő alkalmazása által generált kódot"
+        "Írja be a kódot a hitelesítő alkalmazásból"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Adja meg a telefonszámára (${ phone }) küldött kódot."
@@ -5936,9 +5915,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait."
@@ -6724,10 +6700,6 @@
       "Starts on ${ startsOnTime }": [
         "Kezdés: ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "${ step }. lépés",
-        "${ step }. lépés"
-      ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
       ],
@@ -6959,9 +6931,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
-      ],
-      "To continue to ${ product }": [
-        "Folytatás itt ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "A szolgáltatásaink javítása érdekében, néha adatokat gyűjtünk, hogy az alkalmazásaink megfelelő működését ellenőrizhessük. Ez az információ nem kerül megosztásra harmadik féllel."
@@ -7229,9 +7198,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Amikor eltávolít egy szervert az átjáróból, az egy 10 napos deaktiválási időszakba lép. Ez a szerver hozzáadható egy új átjáróhoz, de az országa nem változtatható meg."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -7778,7 +7744,7 @@
         "Böngésző verziója"
       ],
       "BTC address": [
-        "Bitcoin cím"
+        "BTC cím"
       ],
       "BTC amount": [
         "BTC összeg"
@@ -8240,7 +8206,7 @@
         "Cél"
       ],
       "Recovery email address": [
-        "Helyreállítási e-mail cím"
+        "Helyreállító e-mail cím"
       ],
       "Recovery file": [
         "Helyreállító fájl"
@@ -8545,9 +8511,6 @@
       ],
       "Create an alias": [
         "E-mail álnév létrehozása"
-      ],
-      "Don't have access to your 2FA?": [
-        "Nem fér hozzá a kétlépcsős hitelesítéshez?"
       ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
@@ -8925,29 +8888,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Belépés"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Belépés"
-      ],
-      "Create a new ${ appName } account": [
-        "${ appName } új fiók létrehozása"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "A ${ BRAND_NAME } fiók felhasználónevének megkeresése"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Elfelejtette a ${ BRAND_NAME } fiók jelszavát? Állítsa vissza helyreállítási kód, e-mail vagy SMS segítségével, és szerezze vissza a hozzáférést a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } alkalmazásokhoz, és minden máshoz."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Elfelejtette a ${ BRAND_NAME } fiókja felhasználónevét? Keresse meg a helyreállítási e-mail címe vagy telefonszáma segítségével, és szerezze vissza a hozzáférést a(z) ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és más alkalmazásaihoz."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Állítsa vissza a ${ BRAND_NAME } fiók jelszavát"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Belépés a ${ appName } fiókhoz"
       ]
     },
     "Modal title": {
@@ -9040,7 +8982,7 @@
         "Legyen ${ BRAND_NAME }os ingyen"
       ],
       "Get ${ planName }": [
-        "${ planName } beszerzése"
+        "${ planName } megszerzése"
       ],
       "Keep ${ plan }": [
         "Maradjon ${ plan }"
@@ -9073,6 +9015,14 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
+      ],
       "${ n } custom email domain": [
         "${ n } saját e-mail domain név",
         "${ n } saját e-mail domain név"
@@ -9097,6 +9047,10 @@
         "${ n } mappa és címke",
         "${ n } mappa és címke"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
       "${ n } label": [
         "${ n } címke",
         "${ n } címke"
@@ -9115,7 +9069,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
-        "${ n } VPN kapcsolódás"
+        "${ n } VPN kapcsolat"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin élettartam"
@@ -9173,7 +9127,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+        "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"
@@ -9200,7 +9154,7 @@
         "Alkalmazások ehhez:"
       ],
       "Auto-delete Spam and Trash": [
-        "Levélszemét és Lomtár automatikus törlése"
+        "Levélszemét és lomtár automatikus törlése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
@@ -9230,7 +9184,7 @@
         "Együttműködés és nagyméretű fájlok megosztása"
       ],
       "Contact groups": [
-        "Névjegycsoportok"
+        "Névjegy csoportok"
       ],
       "Contact groups management": [
         "Névjegy csoportok kezelése"
@@ -9299,10 +9253,10 @@
         "A ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME } ingyenes funkciói"
       ],
       "Free VPN on a single device": [
-        "Ingyenes VPN, egy eszközön"
+        "Ingyenes VPN egy eszközön"
       ],
       "Fully refundable for 30 days": [
-        "30 napig teljesen visszaigényelhető"
+        "Teljes visszatérítés 30 napon belül"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
@@ -9312,9 +9266,6 @@
       ],
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nagy sebességű, svájci VPN, amely védi az adatait"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -9435,9 +9386,6 @@
       "Start protecting your organization": [
         "Kezdje meg a szervezet védelmét"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Két egyszerű lépéssel kezdje meg az online védelmet"
-      ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
       ],
@@ -9494,7 +9442,7 @@
       ],
       "Up to ${ n } user": [
         "Akár ${ n } felhasználó",
-        "${ n } felhasználóig"
+        "Akár ${ n } felhasználó"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
         "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
@@ -9586,7 +9534,7 @@
         "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi."
       ],
       "Early access to new apps and features": [
-        "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
+        "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
       ],
       "Encrypted email and calendar to get you started.": [
         "Kezdésként titkosított e-mail és naptár"
@@ -9864,7 +9812,7 @@
         "Egyetlen kattintással irányítsa a teljes internetforgalmát a Tor hálózaton keresztül"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Tartsa biztonságban fájljait titkosított felhőalapú tárolással. Tartalmazza az automatikus szinkronizálást, a titkosított fájlmegosztást és egyebeket."
+        "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Egyes elemek biztonságos megosztása bárkivel (akkor is, ha nem használják a ${ PASS_APP_NAME } szolgáltatást)"
@@ -10644,7 +10592,7 @@
         "A szervezeti kulcs nem létezik."
       ],
       "Organization key must be activated to give admin privileges": [
-        "A szervezeti kulcsot aktiválni kell, az adminisztrátorok hozzáadásához."
+        "A szervezeti kulcsot aktiválni kell, adminisztrátor jogosultságok adása előtt"
       ],
       "Organization key restored": [
         "Szervezeti kulcs helyreállítva"
@@ -10717,9 +10665,6 @@
       "Bank transfer": [
         "Banki átutalás"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Bankkártya/hitelkártya"
       ],
@@ -10752,7 +10697,7 @@
         "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét életbe lép."
       ],
       "CVC": [
-        "Biztonsági kód"
+        "CVC"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
@@ -10761,7 +10706,7 @@
         "Értem."
       ],
       "MM/YY": [
-        "MM/YY"
+        "HH/ÉÉ"
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
@@ -14919,7 +14864,7 @@
         "${ n }+ kiszolgáló"
       ],
       "${ n } VPN connection": [
-        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolódás",
         "${ n } VPN kapcsolódás"
       ],
       "${ numberOfCountries } country": [
@@ -14974,7 +14919,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Speciális VPN beállítások"
+        "Fejlett VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"

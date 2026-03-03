@@ -450,9 +450,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Hide": [
-        "छिपाएं"
-      ],
       "Hide plan features": [
         "योजना की विशेषताओं को छुपाएं"
       ],
@@ -787,7 +784,7 @@
         "प्रिव्यू दिखाएं"
       ],
       "Sign in": [
-        "साइनइन करें"
+        "साइन इन"
       ],
       "Sign in with password": [
         "पासवर्ड से साइन इन"
@@ -2094,9 +2091,6 @@
       "North Korea": [
         "उत्तर कोरिया"
       ],
-      "North Macedonia": [
-        "उत्तर मैसिडोनिया"
-      ],
       "Northern Mariana Islands": [
         "उत्तरी मैरियाना आइलैंड्स"
       ],
@@ -2907,7 +2901,7 @@
         "अमान्य ${ name } कोड"
       ],
       "Invalid card number": [
-        "अमान्य कार्ड नंबर"
+        "अवैध कार्ड संख्या"
       ],
       "Invalid code": [
         "अवैध कोड"
@@ -2919,7 +2913,7 @@
         "अमान्य ईमेल पता"
       ],
       "Invalid expiration date": [
-        "अमान्य एक्सपायर तारीख"
+        "अमान्य समाप्ति तिथि"
       ],
       "Invalid invitation link": [
         "अमान्य आमंत्रण लिंक"
@@ -3697,9 +3691,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "आपका सुरक्षा चाबी रजिस्टर करते वक्त कुछ गलती हो गई। कृपया वापस कोशिश करें।"
       ]
@@ -3719,9 +3710,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "क्या आप पक्का ${ name } सुरक्षा चाबी मिटाना चाहते हैं?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "अपने ${ BRAND_NAME } खाते से जुड़ा एक सुरक्षा चाबी डालें।"
       ],
       "Insert your security key into your device's USB port.": [
         "अपने डिवाइस के यूएसबी पोर्ट में अपना सुरक्षा चाबी डालें।"
@@ -3966,9 +3954,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Payment details": [
-        "भुगतान जानकारी"
       ],
       "Protection": [
         "सुरक्षा"
@@ -4948,9 +4933,6 @@
       "Drop file here to upload": [
         "अपलोड करने के लिए फ़ाइल को यहाँ छोड़ें."
       ],
-      "Each code can only be used once": [
-        "हर कूटक का उपयोग केवल एक बार हो सकता है"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "प्रत्येक डोमेन के पास केवल एक SPF (TXT) रिकॉर्ड हो सकता है। यदि आप वर्तमान SPF (TXT) रिकॉर्ड को रखना चाहते हैं, तो आप अपने वर्तमान रिकॉर्ड में ${ spf } जोड़ सकते हैं (इसे ${ spfValue } के बाद डालें)।"
       ],
@@ -5035,9 +5017,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड डालें। ${ digit } अंक का।"
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "अपने ${ BRAND_NAME } खाते की जानकारी डालें।"
       ],
@@ -5063,7 +5042,7 @@
         "उदाहरण: ${ spfExample }"
       ],
       "Expired": [
-        "एक्सपायर हो गया"
+        "समय सीमा समाप्त"
       ],
       "expires ${ expirationDate }": [
         "एक्सपायर होगा ${ expirationDate }"
@@ -5747,10 +5726,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
       ],
-      "Step ${ step }": [
-        "कदम ${ step }",
-        "कदम ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
       ],
@@ -6197,9 +6172,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "जब आप एक सर्वर को गेटवे से हटाते हैं, तो वह 10 दिनों की निष्क्रियता अवधि में चला जाता है। इस सर्वर को नए गेटवे में जोड़ा जा सकता है, लेकिन इसका देश परिवर्तित नहीं किया जा सकता।"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "जब आपकी सदस्यता नवीनीकृत हो जाती है, तो हम उपरोक्त भुगतान विधि से शुल्क लेने से पहले कोई भी उपलब्ध क्रेडिट लागू करेंगे।"
@@ -7399,9 +7371,6 @@
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
-      "Don't have access to your 2FA?": [
-        "क्या 2-एफए तक एक्सेस नहीं है?"
-      ],
       "Encryption and keys": [
         "एन्क्रिप्शन और कुंजियाँ"
       ],
@@ -7667,29 +7636,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: साइन-इन करें"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: साइन-अप करें"
-      ],
-      "Create a new ${ appName } account": [
-        "नया ${ appName } खाता बनाएं"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "अपने ${ BRAND_NAME } खाते का यूज़रनेम खोजें"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "अपना ${ BRAND_NAME } खाता पासवर्ड भूल गए? पुनर्प्राप्ति कोड, ईमेल या एसएमएस का उपयोग करके इसे यहां रीसेट करें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक तक पहुंच पुनः प्राप्त करें।"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "अपना ${ BRAND_NAME } खाता उपयोगकर्ता नाम भूल गए? अपने पुनर्प्राप्ति ईमेल या फ़ोन नंबर का उपयोग करके इसे ढूंढें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अन्य तक पहुंच पुनः प्राप्त करें।"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } खाता पासवर्ड रीसेट करें"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "${ appName } खाते तक पहुंचने के लिए साइन इन करें"
       ]
     },
     "Modal title": {
@@ -7765,7 +7713,7 @@
         "बढ़िया वीपीएन रफ्तार"
       ],
       "Keep your inbox organized with folders": [
-        "अपने इनबॉक्स को फ़ोल्डरों के साथ व्यवस्थित रखें"
+        "फोल्डर के साथ इनबॉक्स व्यवस्थित रखें"
       ],
       "Medium VPN speed": [
         "मध्यम वीपीएन रफ्तार"
@@ -7817,8 +7765,8 @@
         "${ n } कैलेंडर"
       ],
       "${ n } calendar per user": [
-        "प्रति उपयोगकर्ता ${ n } कैलेंडर",
-        "प्रति उपयोगकर्ता ${ n } कैलेंडर"
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
       ],
       "${ n } custom email domain": [
         "${ n } कस्टम ईमेल डोमेन",
@@ -8009,12 +7957,9 @@
       "Group management (coming soon)": [
         "समूह प्रबंधन (शीघ्र ही आ रहा है)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "उच्च गति स्विस VPN जो आपकी निजता की रक्षा करता है"
-      ],
       "High-speed VPN on ${ n } device": [
-        "${ n } उपकरण पर उच्च गति वाला VPN",
-        "${ n } उपकरणों पर उच्च गति वाला VPN"
+        "तेज़ वीपीएन ${ n } डिवाइस पे",
+        "तेज़ वीपीएन ${ n } डिवाइस पे"
       ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
@@ -8044,7 +7989,7 @@
         "प्राथमिक ईमेल मदद"
       ],
       "Priority support": [
-        "प्राथमिक सहायता"
+        "प्राथमिकता समर्थन"
       ],
       "Priority support & live chat": [
         "प्राथमिक सहायता और लाइव बातचीत"
@@ -8059,7 +8004,7 @@
         "किसी भी समय के लिए ईमेल शेड्यूल करें और स्नूज़ करें"
       ],
       "Secure Core servers": [
-        "Secure Core सर्वर"
+        "सुरक्षित कोर सर्वर"
       ],
       "Send & receive invitations": [
         "न्योते भेजें और लें"
@@ -8080,9 +8025,6 @@
       "Start protecting your organization": [
         "अपने संगठन की सुरक्षा करना शुरू करें"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 आसान चरणों में खुद को ऑनलाइन सुरक्षित करना शुरू करें"
-      ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
@@ -8090,7 +8032,7 @@
         "VPN पर Tor"
       ],
       "Two-factor authentication": [
-        "दो-फैक्टर सत्यापन"
+        "दो तरीकों से प्रमाणीकरण"
       ],
       "Unlimited devices": [
         "असीम डिवाइस"
@@ -8162,7 +8104,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "सहायता"
+        "मदद"
       ],
       "Team management": [
         "टीम संभालना"
@@ -8215,7 +8157,7 @@
         "आवश्यक नेटवर्क मॉनिटरिंग के साथ कहीं से भी सुरक्षित रूप से इंटरनेट एक्सेस करें"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "अपने रोजमर्रा के कामों के लिए सुरक्षित ईमेल, जिसमें कई आधुनिक सुविधाएँ हैं।"
+        "आपके रोज़मर्रा के बातचीत के लिए एडवांस सुविधाओं के साथ सुरक्षित ईमेल।"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "वफादार वीपीएन जो इंटरनेट तक दे सुरक्षित, बिन-रोकटोक, और तेज़ एक्सेस।"
@@ -10823,7 +10765,7 @@
         "${ methodTo } को कोड भेजा गया"
       ],
       "Copied to clipboard": [
-        "क्लिपबोर्ड पर कॉपी किया गया"
+        "क्लिपबोर्ड पे कॉपी किया"
       ],
       "Credits added": [
         "क्रेडिट जोड़े गए"
@@ -11000,7 +10942,7 @@
     },
     "Suffix": {
       "/month": [
-        "/महीना"
+        "/महीने"
       ],
       "/user per month": [
         "/यूज़र हर महीने"

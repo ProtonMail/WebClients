@@ -2156,7 +2156,7 @@
         "${ users } používateľ",
         "${ users } používatelia",
         "${ users } používateľov",
-        "${ users } užívateľov"
+        "${ users } používateľov"
       ],
       "Subtotal": [
         "Medzisúčet"
@@ -2966,7 +2966,7 @@
         "Severná Kórea"
       ],
       "North Macedonia": [
-        "Severná Macedónia"
+        "Severné Macedónsko"
       ],
       "Northern Mariana Islands": [
         "Severné Mariány"
@@ -4137,9 +4137,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a skúste to znova."
-      ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
@@ -4397,6 +4394,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Pri pripájaní televízora došlo k chybe. Znovu naskenujte QR kód na televízore."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
@@ -5205,7 +5205,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím, skúste to znova."
@@ -5228,7 +5228,7 @@
         "Naozaj chcete zrušiť bezpečnostný kľúč ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Insert your security key into your device's USB port.": [
         "Vložte bezpečnostný kľúč do USB portu zariadenia."
@@ -5495,9 +5495,6 @@
       ],
       "Password ends with": [
         "Heslo končí znakmi"
-      ],
-      "Payment details": [
-        "Detaily platby"
       ],
       "Protection": [
         "Ochrana"
@@ -6759,7 +6756,7 @@
         "Presuňte na import"
       ],
       "Each code can only be used once": [
-        "Každý kód je možné použiť iba raz"
+        "Každý kód môže byť použitý len jeden krát"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Každá doména môže mať iba jeden SPF (TXT) záznam. Ak chcete zachovať existujúci SPF (TXT) záznam, môžete k existujúcemu záznamu pridať ${ spf } (vložte ho za ${ spfValue })."
@@ -6891,7 +6888,7 @@
         "Príklad: ${ spfExample }"
       ],
       "Expired": [
-        "Exspirované"
+        "Platnosť vypršala"
       ],
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
@@ -7742,12 +7739,6 @@
       "Starts on ${ startsOnTime }": [
         "Začína ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
       ],
@@ -8283,7 +8274,7 @@
         "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Keď sa vaše predplatné obnoví, použijeme všetky dostupné kredity predtým, ako zaúčtujeme platbu vyššie uvedeným spôsobom."
@@ -8913,7 +8904,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Aplikácia 2FA"
+        "Overovacia aplikácia"
       ],
       "Awarded": [
         "Ocenený"
@@ -9423,7 +9414,7 @@
         "Dôvod"
       ],
       "Recovery email address": [
-        "Emailová adresa na obnovu"
+        "Emailová adresa pre obnovenie"
       ],
       "Recovery file": [
         "Súbor pre obnovenie"
@@ -10438,13 +10429,19 @@
         "${ n } emailová adresa",
         "${ n } emailové adresy/aliasy",
         "${ n } emailových adries/aliasov",
-        "${ n } e-mailových adries/aliasov"
+        "${ n } emailových adries/aliasov"
       ],
       "${ n } email address per user": [
         "${ n } emailová adresa na používateľa",
         "${ n } emailové adresy na používateľa",
         "${ n } emailových adries na používateľa",
         "${ n } emailových adries na používateľa"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre",
+        "${ n } filtrov",
+        "${ n } filtrov"
       ],
       "${ n } folder": [
         "${ n } priečinok",
@@ -10454,7 +10451,7 @@
       ],
       "${ n } folder and label": [
         "${ n } priečinok a štítok",
-        "${ n } priečinkov a štítkov",
+        "${ n } priečinky a štítky",
         "${ n } priečinkov a štítkov",
         "${ n } priečinkov a štítkov"
       ],
@@ -10470,6 +10467,12 @@
         "${ n } štítkov",
         "${ n } štítkov"
       ],
+      "${ n } message per day": [
+        "${ n } správa za deň",
+        "${ n } správy za deň",
+        "${ n } správ za deň",
+        "${ n } správ za deň"
+      ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
         "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
@@ -10484,7 +10487,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojení",
+        "${ n } VPN pripojenia",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
@@ -10555,7 +10558,7 @@
         "Záznamy aktivít a pravidlá"
       ],
       "Ad-blocker and malware protection": [
-        "Blokovač reklám a ochrana pred malvérom"
+        "Blokovanie reklám a ochrana pred škodlivým softvérom"
       ],
       "Admin console": [
         "Admin konzola"
@@ -10582,7 +10585,7 @@
         "Aplikácie pre"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické mazanie spamu a koša"
+        "Automatické mazanie nevyžiadanej pošty a koša"
       ],
       "Auto-reply": [
         "Automatická odpoveď"
@@ -10669,7 +10672,7 @@
         "Šifrované VPN servery"
       ],
       "End-to-end encryption": [
-        "Šifrovanie end-to-end"
+        "End-to-end šifrovanie"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -10681,7 +10684,7 @@
         "Bezplatné funkcie od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "Bezplatná VPN na jednom zariadení"
+        "VPN zdarma na jednom zariadení"
       ],
       "Fully refundable for 30 days": [
         "Možnosť vrátenia peňazí do 30 dní"
@@ -10695,9 +10698,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorýchlostná švajčiarska VPN, ktorá chráni vaše súkromie"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
         "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
@@ -10708,7 +10708,7 @@
         "HTML podpisy"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch/Trvalá sieť VPN"
+        "Kill switch/vždy zapnutá VPN"
       ],
       "Limited support": [
         "Obmedzená podpora"
@@ -10827,11 +10827,8 @@
       "Start protecting your organization": [
         "Začnite chrániť vašu organizáciu"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začnite sa chrániť online v 2 jednoduchých krokoch"
-      ],
       "Strict no-logs policy": [
-        "Prísna zásada neuchovávania záznamov"
+        "Prísna politika neuchovávania záznamov"
       ],
       "Support for up to 2 users": [
         "Podpora až pre 2 používateľov"
@@ -10917,6 +10914,12 @@
       "User storage management": [
         "Správa používateľského úložiska"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Zdieľanie trezora (s ${ n } osobou)",
+        "Zdieľanie trezora (s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
       "Vault sharing with up to ${ n } person": [
         "Zdieľanie trezora s ${ n } osobou",
         "Zdieľanie trezora až s ${ n } osobami",
@@ -10995,10 +10998,10 @@
         "Vylepšená bezpečnosť a prémiové funkcie pre tímy."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Nevyhnutná ochrana a bezpečná spolupráca neobmedzeného počtu užívateľov."
+        "Základná ochrana a bezpečná spolupráca pre neobmedzený počet používateľov."
       ],
       "For next-level password management and identity protection.": [
-        "Na novú úroveň správy hesiel a ochrany identity."
+        "Pre správu hesiel a ochranu identity ďalšej úrovne."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Ak svoj účet odstránite, stratíte všetky výhody plánu ${ visionary } a tie už nebudú k dispozícii po opätovnom vytvorení nového účtu."
@@ -11157,6 +11160,12 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
@@ -11269,7 +11278,7 @@
         "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
+        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Bezpečne zdieľajte jednotlivé položky s kýmkoľvek (aj keď nepoužívajú ${ PASS_APP_NAME })"
@@ -11311,7 +11320,7 @@
         "Nahrajte logo svojej firmy a prispôsobte tak tímové prostredie na webových aplikáciách ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Použite emailové adresy z vašej vlastnej domény, napr. vy@vasemeno.sk"
+        "Použite svoje vlastné emailové adresy domény, napr. vy@vasemeno.sk"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Neuchovávame žiadne záznamy používania relácie o tom, čo robíte online, a nezaznamenávame metadáta, ktoré by mohli ohroziť vaše súkromie"
@@ -11357,7 +11366,7 @@
         "Zvýšte úložný priestor na ${ bundleStorage } celkom"
       ],
       "Browser extension": [
-        "Doplnok prehliadača"
+        "Rozšírenie prehliadača"
       ],
       "Censorship circumvention": [
         "Obchádzanie cenzúry"
@@ -12132,7 +12141,7 @@
         "Aktualizovaný kľúč organizácie"
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "Prístup zamietnutý, boli obmedzené oprávnenia správcu."
+        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
         "Uistite sa, že majú povolenú adresu, a neskôr ich pozvite samostatne."
@@ -12199,9 +12208,6 @@
       "Bank transfer": [
         "Bankový prevod"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Platobná karta"
       ],
@@ -12267,7 +12273,7 @@
         "Vrátane ${ rate }% daní: ${ taxAmountElement }"
       ],
       "MM/YY": [
-        "MM/YY"
+        "MM/RR"
       ],
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
@@ -14054,6 +14060,16 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÝ VÝPREDAJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÝ VÝPREDAJ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
@@ -14343,7 +14359,7 @@
         "Odmietnuté"
       ],
       "Signed out": [
-        "Odhlásený"
+        "Odhlásené"
       ],
       "Unknown": [
         "Neznáme"
@@ -14395,7 +14411,7 @@
         "spojte sa s vaším administrátorom"
       ],
       "For all ${ BRAND_NAME } services": [
-        "Za všetky ${ BRAND_NAME } služby"
+        "Pre všetky ${ BRAND_NAME } služby"
       ],
       "Storage used": [
         "Využité úložisko"
@@ -14500,7 +14516,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojení",
+        "${ n } VPN pripojenia",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
@@ -15166,10 +15182,10 @@
         "Predplatné bolo úspešne zrušené"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
-        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje užívateľské meno do jednej minúty emailom."
+        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje používateľské meno do jednej minúty emailom."
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
-        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje užívateľské meno prostredníctvom SMS."
+        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje používateľské meno prostredníctvom SMS."
       ]
     },
     "Success message": {
@@ -15366,7 +15382,7 @@
     },
     "Themes": {
       "Themes": [
-        "Motív"
+        "Motívy"
       ]
     },
     "Time unit": {
@@ -16405,7 +16421,7 @@
         "Typ"
       ],
       "Unlock your data": [
-        "Odomknite svoje údaje"
+        "Odomknite svoje dáta"
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
@@ -16510,7 +16526,7 @@
         "Vaše zmeny zatiaľ nie sú synchronizované"
       ],
       "Your current plan": [
-        "Váš aktuálny plán"
+        "Aktuálny plán"
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
@@ -17174,9 +17190,15 @@
         "${ n } zariadení",
         "${ n } zariadení"
       ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n } servery",
+        "${ n } serverov",
+        "${ n } serverov"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN pripojenie",
-        "${ n } VPN pripojení",
+        "${ n } VPN pripojenia",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
