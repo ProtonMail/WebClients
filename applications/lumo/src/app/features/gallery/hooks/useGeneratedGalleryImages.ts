@@ -52,6 +52,7 @@ function groupIntoSections(items: GalleryImageItem[]): GallerySection[] {
 export function useGeneratedGalleryImages() {
     const dispatch = useLumoDispatch();
     const idmap = useLumoSelector((state) => state.idmap);
+    const spaces = useLumoSelector((state) => state.spaces);
     const [sections, setSections] = useState<GallerySection[]>([]);
     const [status, setStatus] = useState<FetchStatus>('idle');
     const [hasMore, setHasMore] = useState(false);
@@ -68,6 +69,12 @@ export function useGeneratedGalleryImages() {
                 const localSpaceId = idmap.remote2local.space[asset.SpaceID];
                 if (!localSpaceId) {
                     console.warn(`Gallery: no local space ID for remote space ${asset.SpaceID}, skipping asset`);
+                    continue;
+                }
+
+                // Skip assets whose space has been deleted — the space key is gone so
+                // the attachment can never be decrypted and would spin indefinitely.
+                if (!spaces[localSpaceId]) {
                     continue;
                 }
 
@@ -99,7 +106,7 @@ export function useGeneratedGalleryImages() {
 
             return items;
         },
-        [dispatch, idmap]
+        [dispatch, idmap, spaces]
     );
 
     const fetchSection = useCallback(
