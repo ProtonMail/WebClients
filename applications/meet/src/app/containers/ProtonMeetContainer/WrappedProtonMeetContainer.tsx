@@ -44,7 +44,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 adaptiveStream: isMeetHigherBitrate,
                 publishDefaults: {
                     simulcast: true,
-                    backupCodec: isMeetVp9Allowed,
+                    backupCodec: true,
                     degradationPreference: 'maintain-framerate',
                     videoEncoding: {
                         ...(isMeetHigherBitrate
@@ -63,7 +63,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                     audioPreset: { maxBitrate: audioQuality, priority: 'high' },
                     screenShareEncoding: screenShareQuality.encoding,
                     screenShareSimulcastLayers: [],
-                    videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
+                    videoCodec: isMeetVp9Allowed ? 'vp9' : 'h264',
                     dtx: false,
                 },
                 disconnectOnPageLeave: false,
