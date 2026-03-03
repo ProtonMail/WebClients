@@ -162,12 +162,13 @@ export const getOrganizationAppRoutes = ({
         isOrgConfigured &&
         (hasBundleBiz2025(subscription) || hasVisionary(subscription) || hasBundlePro2024(subscription));
 
-    const canShowRolesAndPermissionsSection =
+    const canShowRolesAndPermissionsSection = !!(
         isRolesAndPermissionsEnabled &&
         canHaveOrganization &&
         isOrgActive &&
         isOrgConfigured &&
-        (hasBundleBiz2025(subscription) || hasVisionary(subscription));
+        (hasBundleBiz2025(subscription) || hasVisionary(subscription))
+    );
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -332,9 +333,10 @@ export const getOrganizationAppRoutes = ({
                 text: subMenuTitle,
                 to: '/multi-user-support',
                 icon: 'users',
-                available:
+                available: !!(
                     canHaveOrganization &&
-                    (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization),
+                    (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey && canHaveOrganization)
+                ),
                 subsections: [
                     {
                         id: 'schedule-call',
