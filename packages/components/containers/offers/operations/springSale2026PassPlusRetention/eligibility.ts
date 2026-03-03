@@ -1,13 +1,62 @@
-import type { Subscription } from '@proton/payments';
+import { CYCLE, type Currency, PLANS, type Subscription } from '@proton/payments';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
+import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
+import { isInApp } from '../../helpers/isInApp';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
+import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
-export function getIsEligible(_props: {
+export function getIsEligible({
+    user,
+    subscription,
+    protonConfig,
+    offerConfig,
+    userInExperiment = 0,
+    preferredCurrency,
+}: {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;
     offerConfig: OfferConfig;
+    userInExperiment: number;
+    preferredCurrency: Currency;
 }) {
-    return false;
+    if (userInExperiment !== 1) {
+        return false;
+    }
+
+    if (user.isDelinquent || !user.canPay || subscription?.UpcomingSubscription) {
+        return false;
+    }
+
+    if (!isEligibleCurrency(preferredCurrency)) {
+        return false;
+    }
+
+    if (subscription) {
+        const offerSubscription = new OfferSubscription(subscription);
+        if (
+            offerSubscription.usedSpringSale2026() ||
+            !isSubscriptionCheckAllowed(subscription, offerConfig) ||
+            offerSubscription.isManagedExternally()
+        ) {
+            return false;
+        }
+    }
+
+    const passPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.PASS);
+    if (!passPlan || passPlan.Cycle !== CYCLE.YEARLY) {
+        return false;
+    }
+
+    if (hasPassLifetime(user) || hasPassViaSimpleLogin(user)) {
+        return false;
+    }
+
+    const parentApp = getAppFromPathnameSafe(window.location.pathname);
+    return isInApp(protonConfig, APPS.PROTONPASS, parentApp);
 }
