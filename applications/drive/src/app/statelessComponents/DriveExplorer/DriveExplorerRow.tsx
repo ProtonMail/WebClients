@@ -23,7 +23,7 @@ interface DriveExplorerRowProps {
     itemId: string;
     cells: CellDefinition[];
     style: React.CSSProperties;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
     onObserve?: (element: HTMLElement | null, uid: string) => void;
@@ -103,7 +103,7 @@ export const DriveExplorerRow = ({
         [dragMove]
     );
 
-    const isDraggable = !!dragMoveControls && !isMultiSelectionDisabled && conditions?.isDraggable?.(itemId);
+    const isDraggable = !!dragMoveControls && !isMultiSelectionDisabled && conditions.isDraggable(itemId);
     const { dragging, DragMoveContent } = dragMove;
 
     return (

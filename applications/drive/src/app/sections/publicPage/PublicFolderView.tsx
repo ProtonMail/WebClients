@@ -294,9 +294,8 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         return handleDownload(Array.from(itemUids.values()), shouldScan);
     };
 
-    const conditions: DriveExplorerConditions = {
+    const conditions: Partial<DriveExplorerConditions> = {
         isDraggable: () => false,
-        isDoubleClickable: () => true,
     };
 
     const isViewer = publicRole === MemberRole.Viewer;

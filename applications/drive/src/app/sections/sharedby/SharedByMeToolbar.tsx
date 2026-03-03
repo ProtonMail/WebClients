@@ -4,18 +4,14 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSelection } from '../../components/FileBrowser';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
+import { useSelectionStore } from '../../modules/selection';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { createItemChecker } from './actions/actionsItemsChecker';
 import { useSharedByMeActions } from './actions/useSharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
-interface SharedByMeToolbarProps {
-    uids: string[];
-}
-
-const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
+const SharedByMeToolbar = () => {
     const {
         modals,
         handlePreview,
@@ -27,20 +23,16 @@ const SharedByMeToolbar = ({ uids }: SharedByMeToolbarProps) => {
         handleOpenDocsOrSheets,
     } = useSharedByMeActions();
 
-    const selectionControls = useSelection();
+    const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
     const { getSharedByMeItem } = useSharedByMeStore(
         useShallow((state) => ({
             getSharedByMeItem: state.getSharedByMeItem,
         }))
     );
 
-    const selectedItemIds = selectionControls ? selectionControls.selectedItemIds : [];
-    const selectedItems = selectedItemIds
-        .map((selectedItemId) => uids.find((uid) => selectedItemId === uid))
-        .filter(isTruthy)
+    const selectedItems = Array.from(selectedItemIds)
         .map((uid) => getSharedByMeItem(uid))
         .filter(isTruthy);
-
     const itemChecker = createItemChecker(selectedItems);
     const selectedUids = selectedItems.map((item) => item.nodeUid);
 
