@@ -39,14 +39,14 @@ export const upgrade: UpgradeCallback = async (database, oldVersion: number, new
         contentStore.createIndex('version', 'version', { unique: false, multiEntry: false });
 
         // Set default version -1 for all existing content without version, this is helping index queries
-        const cursor = await contentStore.openCursor();
+        let cursor = await contentStore.openCursor();
         while (cursor) {
             const value = cursor.value;
             if (value.version === undefined) {
                 value.version = -1;
                 await cursor.update(value);
             }
-            await cursor.continue();
+            cursor = await cursor.continue();
         }
     }
 };
