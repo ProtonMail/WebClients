@@ -58,11 +58,15 @@ export const ThemeToggleDropdown = () => {
                                     }}
                                     aria-pressed={isSelected}
                                 >
-                                    <span className="flex items-center gap-2">
-                                        {config.icon}
-                                        <span className="flex flex-nowrap justify-space-between items-baseline gap-2">
+                                    <span className="flex flex-nowrap flex-row gap-2">
+                                        {config.icon && (
+                                            <span className="flex items-top mt-0.5 shrink-0">{config.icon}</span>
+                                        )}
+                                        <span className="flex-1 flex flex-column flex-nowrap gap-1">
                                             <span>{config.label()}</span>
-                                            <span className="text-normal color-hint">{config.description?.()}</span>
+                                            {config.description && (
+                                                <span className="text-normal color-hint">{config.description?.()}</span>
+                                            )}
                                         </span>
                                     </span>
                                 </DropdownMenuButton>
