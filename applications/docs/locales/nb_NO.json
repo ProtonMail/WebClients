@@ -3591,7 +3591,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ]
     },
     "fido2: Info": {
@@ -4437,7 +4437,7 @@
         "Duplisert nøkkel oppdatert"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -4859,6 +4859,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Offentlige dokumenter er ikke aktivert for organisasjonen enda."
       ],
+      "Read-only": [
+        "Skrivebeskyttet"
+      ],
       "Recent documents": [
         "Nylige dokumenter"
       ],
@@ -5203,7 +5206,7 @@
         "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "words": [
         "ord"
@@ -8869,6 +8872,16 @@
         "For å redigere dette dokumentet, lag en kopi som du kan endre."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRSALG"
+      ]
+    },
     "sso": {
       "Sign in": [
         "Logg på"
@@ -9707,6 +9720,9 @@
       ],
       "Re-signing contacts": [
         "Signerer kontakter på nytt"
+      ],
+      "Read-only": [
+        "Skrivebeskyttet"
       ],
       "Recommended actions": [
         "Anbefalte tiltak"
