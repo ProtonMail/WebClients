@@ -1930,7 +1930,7 @@
         "Přihlaste se do Google Workspace"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Pro migraci dat vaší organizace musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po instalaci se sem vraťte a pokračujte. Více informací"
+        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte. Více informací"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -3399,7 +3399,7 @@
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Vytvořte bránu, abyste vašim uživatelům umožnili přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
+        "Vytvořte bránu, která vašim uživatelům umožní přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
@@ -3408,13 +3408,13 @@
         "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a protokolu SCIM."
+        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a zajištění SCIM."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 sdílených serverových lokací."
+        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 umístění sdílených serverů."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
@@ -4059,6 +4059,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
+      "Code is incorrect or not valid anymore": [
+        "Kód je nesprávný nebo již není platný"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Nelze načíst faktury. Zkuste to prosím později."
       ],
@@ -4119,6 +4122,9 @@
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
       ],
+      "Failed to update billing address": [
+        "Fakturační adresu se nepodařilo aktualizovat"
+      ],
       "Failed to update detailed monitoring.": [
         "Aktualizace podrobného sledování selhala."
       ],
@@ -4177,7 +4183,7 @@
         "Neplatná e-mailová adresa"
       ],
       "Invalid expiration date": [
-        "Neplatné datum vypršení platnosti"
+        "Neplatné datum expirace"
       ],
       "Invalid IBAN": [
         "Neplatný IBAN"
@@ -4388,6 +4394,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Nastala chyba při připojování vaší TV. Zkuste prosím znovu naskenovat QR kód na vaší TV."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
@@ -5225,7 +5234,7 @@
         "Vložte bezpečnostní klíč do USB portu v zařízení."
       ],
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ],
       "Security key removed": [
         "Bezpečnostní klíč odebrán"
@@ -5254,7 +5263,7 @@
         "Název klíče"
       ],
       "Security key": [
-        "Klíč zabezpečení"
+        "Bezpečnostní klíč"
       ]
     },
     "fido2: Title": {
@@ -5486,9 +5495,6 @@
       ],
       "Password ends with": [
         "Heslo končí na"
-      ],
-      "Payment details": [
-        "Platební údaje"
       ],
       "Protection": [
         "Ochrana"
@@ -6921,7 +6927,7 @@
         "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Začněte"
+        "Začněme"
       ],
       "Get started with the referral link above.": [
         "Začněte s doporučujícím odkazem výše."
@@ -7732,12 +7738,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Začíná ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
@@ -8931,7 +8931,7 @@
         "Verze prohlížeče"
       ],
       "BTC address": [
-        "BTC adresa"
+        "Adresa BTC"
       ],
       "BTC amount": [
         "Částka BTC"
@@ -10374,7 +10374,7 @@
         "Získat ${ BRAND_NAME } zdarma"
       ],
       "Get ${ planName }": [
-        "Získat ${ planName }"
+        "Získejte ${ planName }"
       ],
       "Keep ${ plan }": [
         "Ponechat ${ plan }"
@@ -10409,9 +10409,15 @@
       ],
       "${ n } calendar": [
         "${ n } kalendář",
-        "${ n } kalendářů",
+        "${ n } kalendáře",
         "${ n } kalendářů",
         "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
       ],
       "${ n } custom email domain": [
         "${ n } vlastní e-mailová doména",
@@ -10431,11 +10437,29 @@
         "${ n } e-mailových adres na uživatele",
         "${ n } e-mailových adres na uživatele"
       ],
+      "${ n } filter": [
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrů",
+        "${ n } filtrů"
+      ],
       "${ n } folder": [
         "${ n } složka",
         "${ n } složky",
         "${ n } složek",
         "${ n } složek"
+      ],
+      "${ n } folder and label": [
+        "${ n } složka a štítek",
+        "${ n } složky a štítky",
+        "${ n } složek a štítků",
+        "${ n } složek a štítků"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email alias",
+        "${ n } hide-my-email aliasy",
+        "${ n } hide-my-email aliasů",
+        "${ n } hide-my-email aliasů"
       ],
       "${ n } label": [
         "${ n } štítek",
@@ -10466,6 +10490,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -10555,7 +10585,7 @@
         "Aplikace pro"
       ],
       "Auto-delete Spam and Trash": [
-        "Automatické smazání spamu a koše"
+        "Automatické smazání obsahu složek spam a koš"
       ],
       "Auto-reply": [
         "Automatická odpověď"
@@ -10668,9 +10698,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
-      ],
       "High-speed VPN on ${ n } device": [
         "Vysokorychlostní VPN na ${ n } zařízení",
         "Vysokorychlostní VPN na ${ n } zařízeních",
@@ -10744,7 +10771,7 @@
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
       "Require 2FA for organization": [
-        "Vyžadujte u vaší organizace 2FA"
+        "Vyžaduje 2FA pro organizaci"
       ],
       "Router support": [
         "Podpora routeru"
@@ -10789,7 +10816,7 @@
         "Přihlasit se jako uživatel"
       ],
       "SMTP submission": [
-        "Odeslání SMTP"
+        "SMTP odesílání"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
@@ -10799,9 +10826,6 @@
       ],
       "Start protecting your organization": [
         "Začněte chránit svou organizaci"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
@@ -10816,7 +10840,7 @@
         "TOR skrze VPN"
       ],
       "Two-factor authentication": [
-        "Dvoufaktorové ověření"
+        "Dvoufázové ověření"
       ],
       "Unlimited devices": [
         "Neomezený počet zařízení"
@@ -11136,6 +11160,12 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
@@ -11146,7 +11176,7 @@
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů"
+        "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů."
@@ -12178,9 +12208,6 @@
       "Bank transfer": [
         "Bankovní převod"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
@@ -12189,9 +12216,6 @@
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12249,7 +12273,7 @@
         "Včetně ${ rate }% daně: ${ taxAmountElement }"
       ],
       "MM/YY": [
-        "00/00"
+        "MM/RR"
       ],
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
@@ -12273,10 +12297,10 @@
         "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -12440,6 +12464,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -14033,6 +14060,16 @@
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
@@ -14325,7 +14362,7 @@
         "Odhlášeno"
       ],
       "Unknown": [
-        "Neznámá"
+        "Neznámý"
       ]
     },
     "State": {
@@ -14482,6 +14519,12 @@
         "${ n } VPN připojení",
         "${ n } VPN připojení",
         "${ n } VPN připojení"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresa",
@@ -15205,7 +15248,7 @@
     },
     "Suffix": {
       "/month": [
-        "/měsíčně"
+        "/měsíc"
       ],
       "/user per month": [
         "/uživatel měsíčně"
@@ -15793,7 +15836,7 @@
         "Zahodit změny?"
       ],
       "Dismiss setup checklist": [
-        "Zavřít kontrolní seznam nastavení"
+        "Odmítnout kontrolní seznam nastavení"
       ],
       "Domain names": [
         "Názvy domén"
@@ -15940,7 +15983,7 @@
         "Získejte více ze své VPN"
       ],
       "Get started": [
-        "Začněte"
+        "Začněme"
       ],
       "Get the apps": [
         "Získat aplikace"
@@ -16483,7 +16526,7 @@
         "Vaše změny zatím nejsou synchronizovány"
       ],
       "Your current plan": [
-        "Váš současný tarif"
+        "Váš aktuální tarif"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
@@ -16952,6 +16995,9 @@
       ],
       "Recommended": [
         "Doporučeno"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "Ušetřete ${ price.checkoutUi.discountPercent } %"
       ]
     },
     "User role": {
@@ -17114,6 +17160,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "Získejte více ze svého předplatného ${ planTitle }."
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Udržujte své soubory, fotky a dokumenty v bezpečí s ${ maxDriveSpace } cloudovým úložištěm."
+      ],
       "Set secure passwords without the hassle.": [
         "Nastavte bezpečná hesla bez potíží."
       ],
@@ -17158,6 +17207,12 @@
         "${ numberOfCountries } země",
         "${ numberOfCountries } zemí",
         "${ numberOfCountries } zemí"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } ve ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } zemi",

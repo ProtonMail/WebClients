@@ -2120,6 +2120,13 @@
         "${ users } bruker",
         "${ users } brukere"
       ],
+      "Subtotal": [
+        "Delsum"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Delsum for ${ cycle } måned",
+        "Delsum for ${ cycle } måneder"
+      ],
       "Total": [
         "Totalt"
       ],
@@ -4000,6 +4007,9 @@
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
+      "Code is incorrect or not valid anymore": [
+        "Koden er feil eller ikke gyldig lenger"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Kunne ikke laste inn fakturaer. Prøv igjen senere."
       ],
@@ -4324,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Noe gikk galt da vi koblet til TV-en din. Skann QR-koden på TV-en en gang til."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
@@ -5114,7 +5127,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Forsøk igjen."
@@ -5388,9 +5401,6 @@
       ],
       "Password ends with": [
         "Passordet slutter med"
-      ],
-      "Payment details": [
-        "Betalingsinformasjon"
       ],
       "Protection": [
         "Beskyttelse"
@@ -6558,7 +6568,7 @@
         "Slipp for å importere"
       ],
       "Each code can only be used once": [
-        "Hver kode kan kun bli brukt en gang"
+        "Hver kode kan bare brukes én gang"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Hvert domene kan bare ha én SPF-post (TXT). Hvis du vil beholde den eksisterende SPF-posten (TXT), kan du legge til ${ spf } i gjeldende post (plasser den etter ${ spfValue })."
@@ -7527,10 +7537,6 @@
       "Starts on ${ startsOnTime }": [
         "Starter den ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Trinn ${ step }",
-        "Trinn ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
       ],
@@ -7767,7 +7773,7 @@
         "For å bekrefte, angi navnet på brukeren du ønsker å slette."
       ],
       "To continue to ${ product }": [
-        "for å fortsette til ${ product }"
+        "For å fortsette til ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "For å kontinuerlig forbedre våre tjenester, samler vi inn noen ganger data for å overvåke at applikasjonene våre fungerer som de skal. Denne informasjonen er ikke delt med tredjepart-tjenester."
@@ -8058,7 +8064,7 @@
         "Når du fjerner en tjener fra en porttjener, går den inn i en 10-dagers deaktiveringsperiode. Denne tjeneren kan legges til en ny porttjener, men landet kan ikke endres."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når abonnementet ditt fornyes, vil vi legge til alle tilgjengelige kreditter før vi belaster betalingsmåten ovenfor."
@@ -9659,7 +9665,7 @@
         "Live-chat er tilgjengelig med ${ planName }"
       ],
       "Open support form": [
-        "Åpne støtteskjemaet"
+        "Åpne skjema for kundestøtte"
       ],
       "Upgrade subscription": [
         "Oppgrader abonnement"
@@ -9983,13 +9989,13 @@
         "Finn ditt ${ BRAND_NAME }-konto brukernavn"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Glemt passordet for ${ BRAND_NAME }-kontoen? Tilbakestill det her ved hjelp av en gjenopprettingskode, e-post eller SMS og få tilgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
+        "Glemt passordet for ${ BRAND_NAME }-kontoen? Tilbakestill det her ved hjelp av en gjenopprettingskode, e-post eller SMS og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn den ved hjelp av gjenopprettings-e-postadressen eller telefonnummeret ditt, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
+        "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn det ved hjelp av e-postadressen eller telefonnummeret for gjenoppretting, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Tilbakestill ditt ${ BRAND_NAME }-kontopassord"
+        "Tilbakestill passordet for ${ BRAND_NAME }-kontoen din"
       ],
       "Sign in to access your ${ appName } account": [
         "Logg på for å få tilgang til ${ appName }-kontoen din"
@@ -10153,6 +10159,10 @@
         "${ n } e-postadresse per bruker",
         "${ n } e-postadresser per bruker"
       ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre"
+      ],
       "${ n } folder": [
         "${ n } mappe",
         "${ n } mapper"
@@ -10191,6 +10201,10 @@
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med ubegrensede hide-my-email-aliaser"
@@ -10358,7 +10372,7 @@
         "Krypterte VPN-tjenere"
       ],
       "End-to-end encryption": [
-        "Ende-til-ende kryptering"
+        "Ende-til-ende-kryptering"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -10384,8 +10398,9 @@
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Høyhastighets Sveitsisk VPN som beskytter personvernet ditt"
+      "High-speed VPN on ${ n } device": [
+        "Høyhastighets VPN på ${ n } enhet",
+        "Høyhastighets VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -10433,7 +10448,7 @@
         "Prioritert e-poststøtte"
       ],
       "Priority support": [
-        "Prioritert brukerstøtte"
+        "Prioritert støtte"
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
@@ -10508,9 +10523,6 @@
       "Start protecting your organization": [
         "Begynn å beskytte organisasjonen"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Begynn å beskytte deg selv på nettet i 2 enkle trinn"
-      ],
       "Strict no-logs policy": [
         "Streng politikk om ingen logger"
       ],
@@ -10548,7 +10560,7 @@
         "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
-        "Ubegrensede meldinger per dag"
+        "Ubegrenset antall meldinger per dag"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
@@ -10671,7 +10683,7 @@
         "Essensiell beskyttelse og sikkert samarbeid for ubegrensede brukere."
       ],
       "For next-level password management and identity protection.": [
-        "For passordadministrasjon og identitetsbeskyttelse på neste nivå."
+        "For neste-nivå passordbehandlig og identitetbeskyttelse."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hvis du sletter kontoen din, mister du alle ${ visionary }-plan fordeler og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
@@ -11864,9 +11876,6 @@
       "Bank transfer": [
         "Bankoverføring"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
@@ -11932,7 +11941,7 @@
         "Inkludert ${ rate }% MVA: ${ taxAmountElement }"
       ],
       "MM/YY": [
-        "MM / ÅÅ"
+        "MM/ÅÅ"
       ],
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
@@ -13655,6 +13664,16 @@
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRSALG"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging."
@@ -14066,6 +14085,10 @@
       "${ n } high-speed VPN connection per user": [
         "${ n } høyhastighets VPN-tilkobling per bruker",
         "${ n } høyhastighets VPN-tilkoblinger per bruker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-tilkobling",
+        "${ n } VPN-tilkoblinger"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-tilkobling per bruker",
@@ -14767,7 +14790,7 @@
     },
     "Suffix": {
       "/month": [
-        "/måneders"
+        "/måned"
       ],
       "/user per month": [
         "/bruker per måned"
@@ -15409,7 +15432,7 @@
         "E-postkategorier"
       ],
       "Email subscriptions": [
-        "E-post-abonnementer"
+        "E-postabonnementer"
       ],
       "Enable advanced account protection": [
         "Aktiver avansert kontobeskyttelse"
@@ -16649,6 +16672,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "Dra full nytte av ditt ${ planTitle }-abonnement."
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Hold filene, bildene og dokumentene dine trygge med ${ maxDriveSpace } skylagring."
+      ],
       "Set secure passwords without the hassle.": [
         "Lag sikre passord på en enkel måte."
       ],
@@ -16673,6 +16699,14 @@
       "${ n } device": [
         "${ n } enhet",
         "${ n } enheter"
+      ],
+      "${ n } server": [
+        "${ n } tjener",
+        "${ n }+ tjenere"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-tilkobling",
+        "${ n } VPN-tilkoblinger"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } land",

@@ -74,9 +74,6 @@
       "Back": [
         "Natrag"
       ],
-      "Back to sign in": [
-        "Natrag na prijavu"
-      ],
       "Block": [
         "Blokiraj"
       ],
@@ -386,9 +383,6 @@
       "Got it": [
         "Shvaćam"
       ],
-      "Hide": [
-        "Sakrij"
-      ],
       "Import": [
         "Uvoz"
       ],
@@ -693,7 +687,7 @@
         "Prikaži pregled"
       ],
       "Sign in": [
-        "Prijavi se"
+        "Prijavite se"
       ],
       "Sign out": [
         "Odjava"
@@ -789,7 +783,7 @@
         "Koristi dopuštenja za grupno slanje"
       ],
       "Use recovery code": [
-        "Koristi kôd za oporavak"
+        "Koristi kȏd za oporavak"
       ],
       "User": [
         "Korisnik"
@@ -1210,14 +1204,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Ručno dodaj korisnike"
-      ],
       "Close": [
         "Zatvori"
-      ],
-      "Configure your network": [
-        "Konfiguriraj svoju mrežu"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Nastavi koristiti ${ MAIL_APP_NAME }."
@@ -1234,23 +1222,11 @@
       "Create label": [
         "Stvori oznaku"
       ],
-      "Invite your team": [
-        "Pozovi svoj tim"
-      ],
-      "Manage global VPN permissions": [
-        "Upravljaj globalnim dozvolama VPN-a"
-      ],
       "Maybe later": [
         "Možda kasnije"
       ],
-      "Secure your organization": [
-        "Osiguraj svoju organizaciju"
-      ],
       "Send": [
         "Pošalji"
-      ],
-      "Set up SSO": [
-        "Postavi SSO"
       ],
       "Take a tour": [
         "Započnite obilazak"
@@ -1976,9 +1952,6 @@
       "North Korea": [
         "Sjeverna Koreja"
       ],
-      "North Macedonia": [
-        "Sjeverna Makedonija"
-      ],
       "Northern Mariana Islands": [
         "Sjeverni Marijanski Otoci"
       ],
@@ -2356,17 +2329,8 @@
       ]
     },
     "Description": {
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Stvorite pristupnik kako biste svojim korisnicima omogućili pristup Vašim IT resursima kroz dedicirane poslužitelje."
-      ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Stvorite račune za nove korisnike ili uvezite korisnike pomoću SSO (jedinstvena prijava) SCIM provizioniranjem."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Izradite pravila za odlučivanje tko se može povezati na dijeljene poslužitelje u svakoj zemlji."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Odlučite koji korisnici se mogu povezati s nekom od naših 120+ lokacija dijeljenih poslužitelja."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Omogućite ${ PROTON_SENTINEL_NAME } za pristup ovim značajkama"
@@ -2379,9 +2343,6 @@
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "Svi u Vašoj organizaciji mogu se povezati na dijeljene poslužitelje u svim državama."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Ako već niste, omogućite neke od načina oporavka kako biste bili sigurni da nikad nećete izgubiti pristup usluzi ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
@@ -3289,9 +3250,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nešto je pošlo po zlu prilikom provjere autentičnosti Vašeg sigurnosnog ključa. Pokušajte ponovno."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Nešto je pošlo po zlu prilikom registracije Vašeg sigurnosnog ključa. Pokušajte ponovno."
       ]
@@ -3299,9 +3257,6 @@
     "fido2: Info": {
       "Add a name to identify your security key with.": [
         "Dodajte naziv za identifikaciju Vašeg sigurnosnog ključa."
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Unesite sigurnosni ključ povezan s Vašim ${ BRAND_NAME } korisničkim računom."
       ],
       "Insert your security key into your device's USB port.": [
         "Umetnite svoj sigurnosni ključ u USB port svojeg uređaja."
@@ -3523,9 +3478,6 @@
       ],
       "Password ends with": [
         "Lozinka završava sa"
-      ],
-      "Payment details": [
-        "Detalji o plaćanju"
       ],
       "Protection": [
         "Zaštita"
@@ -4224,9 +4176,6 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
       ],
-      "Get started": [
-        "Započnite"
-      ],
       "Get started with the referral link above.": [
         "Započnite s poveznicom za preporuku iznad."
       ],
@@ -4613,9 +4562,6 @@
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Postavite svoju organizaciju i počnite štititi svoje podatke u nekoliko jednostavnih koraka."
-      ],
       "Shared ${ vaultLink } deleted": [
         "Podijeljeni ${ vaultLink } izbrisan"
       ],
@@ -4630,11 +4576,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Počinje u ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "Korak ${ step }",
-        "Korak ${ step }",
-        "Korak ${ step }"
       ],
       "Storage for users": [
         "Pohrana za korisnike"
@@ -4749,9 +4690,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
-      ],
-      "To continue to ${ product }": [
-        "Za nastavak na ${ product }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -4922,9 +4860,6 @@
       ],
       "You can now return to the application to continue": [
         "Sada se možete vratiti u aplikaciju i nastaviti"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Istovremeno možete imati otvorenu samo jednu instancu čavrljanja. Zatvorite prethodne razgovore prije nego pokrenete novi."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
@@ -5247,13 +5182,13 @@
         "Kalendari"
       ],
       "Card details": [
-        "Pojedinosti o kartici"
+        "Detalji kartice"
       ],
       "Card holder": [
         "Vlasnik kartice"
       ],
       "Card number": [
-        "Broj kartice"
+        "Broj kreditne kartice"
       ],
       "Cash": [
         "Gotovina"
@@ -5841,9 +5776,6 @@
       "Create an alias": [
         "Stvori pseudonim"
       ],
-      "Don't have access to your 2FA?": [
-        "Nemate pristup svojoj 2FA metodi?"
-      ],
       "Encryption and keys": [
         "Šifriranje i ključevi"
       ],
@@ -5921,20 +5853,6 @@
       ],
       "What’s this?": [
         "Što je ovo?"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Čavrljanje uživo dostupno je uz pretplatu ${ planName }"
-      ],
-      "Open support form": [
-        "Otvori obrazac za podršku"
-      ],
-      "Upgrade subscription": [
-        "Nadogradi pretplatu"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Nadogradite pretplatu da biste otključali podršku kroz čavrljanje i druge premium značajke ili koristite naš besplatni obrazac za podršku kako biste prijavili svoj problem."
       ]
     },
     "Loading info": {
@@ -6083,29 +6001,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: prijava"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: registracija"
-      ],
-      "Create a new ${ appName } account": [
-        "Stvori novi račun za ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Pronađite svoje korisničko ime ${ BRAND_NAME } računa"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Zaboravili ste lozinku za svoj ${ BRAND_NAME } račun? Ponovno ju postavi pomoću kodova za oporavak, e-pošte ili SMS-a i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Zaboravili ste korisničko ime za svoj ${ BRAND_NAME } račun? Pronađite ga pomoću e-pošte ili broja mobilnog telefona za oporavak i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Ponovno postavite lozinku za svoj ${ BRAND_NAME } račun"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Prijavite se za pristup svom računu za ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -6195,6 +6092,11 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
       ],
       "${ n } calendar per user": [
         "${ n } kalendar po korisniku",
@@ -6330,7 +6232,7 @@
         "Šifrirani podaci o kontaktu"
       ],
       "End-to-end encryption": [
-        "Krajnje do krajnje šifriranje"
+        "Krajnje šifriranje"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Brza P2P/BitTorrent preuzimanja"
@@ -7028,9 +6930,6 @@
       ],
       "Bank transfer": [
         "Bankovni prijenos"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ],
       "Credit/debit card": [
         "Kreditna/debitna kartica"
@@ -8667,11 +8566,6 @@
         "Svijetlo"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Teme"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dan",
@@ -8698,9 +8592,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe pomoćnik za pisanje"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } klijenti"
-      ],
       "(active)": [
         "(aktivno)"
       ],
@@ -8718,9 +8609,6 @@
       ],
       "Access control": [
         "Kontrola pristupa"
-      ],
-      "Account": [
-        "Račun"
       ],
       "Account recovery": [
         "Oporavak računa"
@@ -8956,9 +8844,6 @@
       "Discard changes?": [
         "Odbaci promjene?"
       ],
-      "Dismiss setup checklist": [
-        "Odbaci popis za postavljanje"
-      ],
       "Domain names": [
         "Nazivi domena"
       ],
@@ -9007,9 +8892,6 @@
       "Email": [
         "E-pošta"
       ],
-      "Email subscriptions": [
-        "Pretplate na e-poštu"
-      ],
       "Enter your password": [
         "Unesite lozinku"
       ],
@@ -9039,9 +8921,6 @@
       ],
       "Get complete privacy coverage": [
         "Ostvarite potpunu zaštitu privatnosti"
-      ],
-      "Get started": [
-        "Započnite"
       ],
       "Get the apps": [
         "Preuzmite aplikacije"
@@ -9162,9 +9041,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plans": [
-        "Pretplate"
       ],
       "Preview": [
         "Pregled"
@@ -9339,9 +9215,6 @@
       "Upgrade to ${ planName }": [
         "Nadogradite na ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Nadogradite zaštitu svoje mreže s dediciranim poslužiteljima"
-      ],
       "Upgrade your privacy": [
         "Nadogradite svoju privatnost"
       ],
@@ -9383,9 +9256,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše promjene još nisu sinkronizirane"
-      ],
-      "Your current plan": [
-        "Vaša trenutna pretplata"
       ],
       "Your plan": [
         "Vaša pretplata"
@@ -9777,6 +9647,11 @@
         "${ n } uređaj",
         "${ n } uređaja",
         "${ n } uređaja"
+      ],
+      "${ n } server": [
+        "${ n } poslužitelj",
+        "${ n }+ poslužitelja",
+        "${ n }+ poslužitelja"
       ],
       "${ n } VPN connection": [
         "${ n } VPN veza",
