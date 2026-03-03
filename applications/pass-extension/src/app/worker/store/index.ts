@@ -122,7 +122,7 @@ export const options: RootSagaOptions = {
 
     /* Sets the worker status according to the boot
      * sequence's result. On boot failure, clear. */
-    onBoot: withContext(async (ctx, res) => {
+    onBoot: withContext((ctx, res) => {
         if (res.ok) {
             const state = store.getState();
             ctx.setBooted(true);
@@ -148,7 +148,7 @@ export const options: RootSagaOptions = {
             }
         } else {
             ctx.setBooted(false);
-            if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+            if (res.clearCache) void ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
         }
     }),
 
