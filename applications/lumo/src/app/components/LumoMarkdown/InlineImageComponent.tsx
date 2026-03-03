@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,14 +9,15 @@ import { Icon } from '@proton/components';
 import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
 import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
+import { setPendingPrefill } from '../../redux/slices/composerActions';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { useFileHandling } from '../Composer/hooks/useFileHandling';
 import { useLazyAttachment } from '../../hooks';
-import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
+import { IMAGE_STYLE_OPTIONS } from '../../features/imageActions/styleOptions';
 import '../../features/imageActions/imageActions.scss';
 
 interface InlineImageComponentProps {
@@ -26,11 +27,23 @@ interface InlineImageComponentProps {
 
 export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachmentId, alt }) => {
     const dispatch = useLumoDispatch();
-    const navigate = useLumoNavigate();
     const { data: attachment, isLoading, error } = useLazyAttachment(attachmentId);
     const spaceId = attachment?.spaceId;
     const [overlayOpen, setOverlayOpen] = useState(false);
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
+    const [showStyleMenu, setShowStyleMenu] = useState(false);
+    const styleMenuRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        if (!showStyleMenu) return;
+        const handler = (e: MouseEvent) => {
+            if (styleMenuRef.current && !styleMenuRef.current.contains(e.target as Node)) {
+                setShowStyleMenu(false);
+            }
+        };
+        document.addEventListener('mousedown', handler);
+        return () => document.removeEventListener('mousedown', handler);
+    }, [showStyleMenu]);
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
@@ -66,10 +79,11 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         async (imageData: string, _mode: DrawingMode, description: string) => {
             const file = base64ToFile(imageData, `edited-image-${Date.now()}.png`);
             handleFilesSelected([file]);
+            // Prefill the current conversation's composer — do not navigate away.
             const prefill = description || c('collider_2025:Prefill').t`Edit this image:`;
-            navigate(`/?prefill=${encodeURIComponent(prefill)}`);
+            dispatch(setPendingPrefill(prefill));
         },
-        [handleFilesSelected, navigate]
+        [handleFilesSelected, dispatch]
     );
 
     const handleChangeStyle = useCallback(
@@ -84,9 +98,10 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     // proceed without attachment
                 }
             }
-            navigate(`/?prefill=${encodeURIComponent(prompt)}`);
+            // Prefill the current conversation's composer — do not navigate away.
+            dispatch(setPendingPrefill(prompt));
         },
-        [imageDataUrl, attachment, handleFilesSelected, navigate]
+        [imageDataUrl, attachment, handleFilesSelected, dispatch]
     );
 
     // ── Error / loading states ─────────────────────────────────────────────────
@@ -121,20 +136,16 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
     return (
         <>
-            {/* Inline thumbnail + action row */}
-            <span style={{ display: 'inline-block', verticalAlign: 'top' }}>
+            {/* Image left, action panel right */}
+            <span className="inline-image-card">
                 <span
-                    className="block cursor-pointer rounded-xl overflow-hidden leading-none"
+                    className="inline-image-card__img"
                     onClick={() => { setOverlayDefaultMode('preview'); setOverlayOpen(true); }}
                 >
-                    <img
-                        src={imageDataUrl}
-                        alt={alt || attachment.filename}
-                        className="block rounded-xl w-full"
-                        style={{ maxWidth: '300px' }}
-                    />
+                    <img src={imageDataUrl} alt={alt || attachment.filename} />
                 </span>
-                <span className="flex items-center gap-2 mt-2 flex-wrap">
+
+                <span className="inline-image-card__actions">
                     <button
                         className="image-action-btn"
                         onClick={() => { setOverlayDefaultMode('edit'); setOverlayOpen(true); }}
@@ -142,8 +153,38 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         <Icon name="pen" size={3.5} />
                         {c('collider_2025:Action').t`Modify...`}
                     </button>
-                </span>
 
+                    <span ref={styleMenuRef} className="image-style-menu image-style-menu--side">
+                        <button
+                            className="image-action-btn"
+                            onClick={() => setShowStyleMenu((v) => !v)}
+                        >
+                            <Icon name="squares" size={3.5} />
+                            {c('collider_2025:Action').t`Change style`}
+                            <Icon
+                                name="chevron-down-filled"
+                                size={3}
+                                style={{
+                                    transition: 'transform 0.15s',
+                                    transform: showStyleMenu ? 'rotate(180deg)' : 'rotate(0deg)',
+                                }}
+                            />
+                        </button>
+                        {showStyleMenu && (
+                            <span className="image-style-menu__popup">
+                                {IMAGE_STYLE_OPTIONS.map((style) => (
+                                    <button
+                                        key={style.id}
+                                        className="image-style-menu__item"
+                                        onClick={() => { handleChangeStyle(style.prompt); setShowStyleMenu(false); }}
+                                    >
+                                        {style.label}
+                                    </button>
+                                ))}
+                            </span>
+                        )}
+                    </span>
+                </span>
             </span>
 
             <ImagePreviewOverlay
