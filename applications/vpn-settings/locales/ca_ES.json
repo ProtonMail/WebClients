@@ -948,7 +948,7 @@
         "creeu un compte gratuïtament"
       ],
       "Signing in": [
-        "Iniciant sessió"
+        "S'està iniciant la sessió"
       ],
       "Skip": [
         "Omet"
@@ -1077,7 +1077,7 @@
         "Utilitzeu un mètode de pagament diferent"
       ],
       "Use authentication code": [
-        "Utilitzar el codi d'autenticació"
+        "Utilitza el codi d'autenticació"
       ],
       "Use group sending permissions": [
         "Utilitza els permisos d'enviament del grup"
@@ -2010,7 +2010,7 @@
     },
     "Button": {
       "Add users manually": [
-        "Afegeix usuaris manualment"
+        "Afegir usuaris manualment"
       ],
       "Close": [
         "Tanca"
@@ -2049,7 +2049,7 @@
         "Recorda-m'ho més tard"
       ],
       "Secure your organization": [
-        "Protegeix la vostra organització"
+        "Protegiu la vostra organització"
       ],
       "Send": [
         "Enviar"
@@ -2058,7 +2058,7 @@
         "Configureu altres característiques"
       ],
       "Set up SSO": [
-        "Configureu l'SSO"
+        "Configurar l'SSO"
       ],
       "Take a tour": [
         "Feu una visita guiada"
@@ -3353,7 +3353,7 @@
         "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Creeu una passarel·la per donar accés als vostres usuaris als vostres recursos de TI mitjançant servidors dedicats."
+        "Creeu una passarel·la per donar accés als vostres usuaris als recursos de TI mitjançant servidors dedicats."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -3362,7 +3362,7 @@
         "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Creeu comptes d'usuari nous o importeu usuaris amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
+        "Creeu nous comptes d'usuari o importeu usuaris amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
@@ -3416,7 +3416,7 @@
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si encara no ho heu fet, habiliteu mètodes de recuperació per assegurar-vos que no perdeu mai l'accés a ${ VPN_APP_NAME }."
+        "Si encara no ho heu fet, habiliteu alguns mètodes de recuperació per assegurar-vos que mai no perdreu l'accés a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -4081,9 +4081,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el temps a la vostra televisió s'ha exhaurit, premeu-hi a Refresca i escriviu-hi el codi un altre cop."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Si el temps del vostre televisor ha vençut, feu clic a Actualitzar al televisor i torneu-ho a provar."
-      ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
       ],
@@ -4118,7 +4115,7 @@
         "Codi ${ name } no vàlid"
       ],
       "Invalid card number": [
-        "El número de la targeta no es vàlid."
+        "Número de targeta no vàlid"
       ],
       "Invalid code": [
         "Codi invàlid"
@@ -4130,7 +4127,7 @@
         "L'adreça de correu electrònic no és vàlida."
       ],
       "Invalid expiration date": [
-        "La data de caducitat no és vàlida"
+        "Data de caducitat invàlida"
       ],
       "Invalid IBAN": [
         "L'IBAN no és vàlid."
@@ -4337,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Alguna cosa ha anat malament en connectar el vostre televisor. Torneu-ne a escanejar el codi QR."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -5127,7 +5127,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Alguna cosa ha anat malament en registrar la vostra clau de seguretat. Torneu a provar."
@@ -5150,7 +5150,7 @@
         "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inseriu la clau de seguretat al port USB del vostre dispositiu."
@@ -5401,9 +5401,6 @@
       ],
       "Password ends with": [
         "La contrasenya acaba amb"
-      ],
-      "Payment details": [
-        "Detalls del pagament"
       ],
       "Protection": [
         "Protecció"
@@ -6571,7 +6568,7 @@
         "Arrossegueu aquí per a importar"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domini només pot tenir un registre SPF (TXT). Si voleu mantenir el registre SPF (TXT) existent, podeu afegir ${ spf } al registre actual (poseu-ho després de ${ spfValue })."
@@ -6652,7 +6649,7 @@
         "Introduïu una nova contrasenya per a l'usuari ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra aplicació d'autenticació"
+        "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Introduïu el codi enviat al vostre número de telefon ${ phone }."
@@ -7480,7 +7477,7 @@
         "Configuració de la vostra organització"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configureu la vostra organització i comenceu a protegir les vostres dades en uns quants passos senzills."
+        "Configureu la vostra organització i comenceu a protegir les vostres dades en pocs passos senzills."
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -7539,10 +7536,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Comença el ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "Pas ${ step }",
-        "Passes ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
@@ -8071,7 +8064,7 @@
         "Quan elimineu un servidor d'una passarel·la, entra en un període de desactivació de 10 dies. Aquest servidor es pot afegir a una nova passarel·la, però no es pot canviar el seu país."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quan la vostra subscripció es renovi, utilitzarem els crèdits disponibles abans de fer un càrrec al mètode de pagament anterior."
@@ -8692,7 +8685,7 @@
         "Versió del navegador"
       ],
       "BTC address": [
-        "Adreça de BTC"
+        "Adreça BTC"
       ],
       "BTC amount": [
         "Import de BTC"
@@ -8710,7 +8703,7 @@
         "Titular de la targeta"
       ],
       "Card number": [
-        "Número de targeta"
+        "Número de la targeta"
       ],
       "Cash": [
         "Efectiu"
@@ -9485,7 +9478,7 @@
         "Afegeix un codi de regal"
       ],
       "Add gift code": [
-        "Afegeix un codi regal"
+        "Afegeix un codi de regal"
       ],
       "Add to your subscription": [
         "Afegiu a la vostra subscripció"
@@ -9506,7 +9499,7 @@
         "Crea un àlies"
       ],
       "Don't have access to your 2FA?": [
-        "No teniu accés a l'A2F?"
+        "No teniu accés al vostre 2FA?"
       ],
       "Encryption and keys": [
         "Xifratge i claus"
@@ -9672,13 +9665,13 @@
         "El xat en directe està disponible amb ${ planName }"
       ],
       "Open support form": [
-        "Obriu el formulari de suport"
+        "Obre el formulari de suport"
       ],
       "Upgrade subscription": [
         "Milloreu la subscripció"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Milloreu de pla per desbloquejar el suport per xat i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per informar del vostre problema."
+        "Milloreu el pla per desbloquejar el suport per xat i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per informar del vostre problema."
       ]
     },
     "Loading info": {
@@ -9984,28 +9977,28 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Inicia la sessió"
+        "${ appName }: Inicieu la sessió"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Registre"
       ],
       "Create a new ${ appName } account": [
-        "Crea un compte de ${ appName }"
+        "Crear un nou compte de ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Trobeu el vostre nom d'usuari del compte de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc."
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la aquí mitjançant un codi de recuperació, correu electrònic o SMS i recupereu l'accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
+        "Heu oblidat el nom d'usuari del vostre compte de ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu de recuperació o número de telèfon i recupereu l'accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
+        "Restabliu la contrasenya del vostre compte de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicieu la sessió per a accedir al vostre compte de ${ appName }"
+        "Inicieu la sessió per accedir al vostre compte de ${ appName }"
       ]
     },
     "Modal title": {
@@ -10301,13 +10294,13 @@
         "Emplenament automàtic de targetes de crèdit (disponible pròximament)"
       ],
       "Automatic email forwarding": [
-        "Reenviament automàtic de correu electrònic"
+        "Reenviament automàtic de correu"
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
       ],
       "Calendar sharing": [
-        "Compartició de calendaris"
+        "Compartició de calendari"
       ],
       "Catch-all": [
         "Adreça d'arreplega"
@@ -10405,9 +10398,6 @@
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN d'alta velocitat en ${ n } dispositiu",
         "VPN d'alta velocitat en ${ n } dispositius"
@@ -10416,7 +10406,7 @@
         "Signatures HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Kill switch / sempre en VPN"
+        "Kill switch /VPN sempre activa"
       ],
       "Limited support": [
         "Suport limitat"
@@ -10533,9 +10523,6 @@
       "Start protecting your organization": [
         "Comenceu a protegir la vostra organització"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comenceu a protegir-vos en línia en 2 passos senzills"
-      ],
       "Strict no-logs policy": [
         "Política estricta de no conservació de registres"
       ],
@@ -10618,7 +10605,7 @@
         "Gestió de l'emmagatzematge de l'usuari"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Compartició de la caixa forta (fins a ${ n } persona)",
+        "Compartició de la caixa forta (fins a ${ n } persona)",
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
       "Vault sharing with up to ${ n } person": [
@@ -10652,7 +10639,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "Suport"
+        "Assistència"
       ],
       "Team management": [
         "Gestió d'equips"
@@ -10696,7 +10683,7 @@
         "Protecció essencial i col·laboració segura per a usuaris il·limitats."
       ],
       "For next-level password management and identity protection.": [
-        "Per a una gestió de contrasenyes i una protecció de la identitat del més alt nivell."
+        "Per a una gestió de contrasenyes i protecció de la identitat de nivell superior."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si elimineu el vostre compte, perdeu tots els avantatges del pla ${ visionary } i no estarà disponible si creeu un compte nou."
@@ -10729,7 +10716,7 @@
         "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge essencial de la xarxa"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Correu electrònic segur amb característiques avançades per a les vostres comunicacions diàries."
+        "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
@@ -11889,9 +11876,6 @@
       "Bank transfer": [
         "Transferència bancària"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
@@ -11900,9 +11884,6 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11930,7 +11911,7 @@
         "País de facturació"
       ],
       "Card number": [
-        "Número de targeta"
+        "Número de la targeta"
       ],
       "Credits and discounts are reflected in your invoice": [
         "Els crèdits i descomptes es reflecteixen a la factura"
@@ -12217,7 +12198,7 @@
         "Una manera de contactar amb tu"
       ],
       "Add gift code": [
-        "Afegir codi regal"
+        "Afegiu un codi de regal"
       ],
       "Address": [
         "Adreça"
@@ -13686,6 +13667,16 @@
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REBAIXES DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REBAIXES DE PRIMAVERA"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } demana la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic."
@@ -13947,7 +13938,7 @@
         "Actiu"
       ],
       "Inactive": [
-        "Inactiva"
+        "Inactiu"
       ],
       "Pending activation": [
         "Activació pendent"
@@ -13959,10 +13950,10 @@
         "Rebutjat"
       ],
       "Signed out": [
-        "S'ha tancat la sessió"
+        "Desconnectat"
       ],
       "Unknown": [
-        "Desconeguda"
+        "Desconegut"
       ]
     },
     "State": {
@@ -14802,7 +14793,7 @@
     },
     "Suffix": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "/user per month": [
         "/usuari per mes"
@@ -15372,7 +15363,7 @@
         "Voleu descartar els canvis?"
       ],
       "Dismiss setup checklist": [
-        "Descarteu la llista de verificació de configuració"
+        "Descartar la llista de verificació de configuració"
       ],
       "Domain names": [
         "Noms de domini"
@@ -16714,7 +16705,7 @@
       ],
       "${ n } server": [
         "${ n } servidor",
-        "Més de ${ n } servidors"
+        "${ n }+ servidors"
       ],
       "${ n } VPN connection": [
         "${ n } connexió VPN",

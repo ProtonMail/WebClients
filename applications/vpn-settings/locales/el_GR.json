@@ -933,7 +933,7 @@
         "Εμφάνιση προεπισκόπησης"
       ],
       "Sign in": [
-        "Σύνδεση"
+        "Είσοδος"
       ],
       "Sign in with password": [
         "Σύνδεση με κωδικό"
@@ -1083,7 +1083,7 @@
         "Χρήση δικαιωμάτων αποστολής σε ομάδα"
       ],
       "Use recovery code": [
-        "Χρησιμοποιήστε κωδικό ανάκτησης"
+        "Χρήση κωδικού ανάκτησης"
       ],
       "Use this Gmail address": [
         "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
@@ -2920,7 +2920,7 @@
         "Βόρεια Κορέα"
       ],
       "North Macedonia": [
-        "Σκόπια"
+        "Βόρεια Μακεδονία"
       ],
       "Northern Mariana Islands": [
         "Βόρειες Μαριάνες"
@@ -3353,7 +3353,7 @@
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Δημιουργήστε μια πύλη για να παρέχετε στους χρήστες σας πρόσβαση στους πόρους τεχνολογίας πληροφοριών μέσω αποκλειστικών διακομιστών."
+        "Δημιουργήστε μια Πύλη για να παρέχετε στους χρήστες σας πρόσβαση στους πόρους τεχνολογίας πληροφοριών μέσω αποκλειστικών διακομιστών."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Δημιουργήστε μια σύσκεψη Zoom και προσθέστε λεπτομέρειες συμμετοχής στην εκδήλωσή σας με ένα κλικ."
@@ -4081,9 +4081,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στην επιλογή Ανανέωση στην τηλεόρασή σας και δοκιμάστε ξανά."
-      ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
       ],
@@ -4337,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Κάτι πήγε στραβά κατά τη σύνδεση της τηλεόρασής σας. Σαρώστε ξανά τον κωδικό QR στην τηλεόρασή σας."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -5401,9 +5401,6 @@
       ],
       "Password ends with": [
         "Ο κωδικός πρόσβασης τελειώνει με"
-      ],
-      "Payment details": [
-        "Στοιχεία Πληρωμής"
       ],
       "Protection": [
         "Προστασία"
@@ -6571,7 +6568,7 @@
         "Απόθεση για εισαγωγή"
       ],
       "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Κάθε τομέας μπορεί να έχει μόνο μία εγγραφή SPF (TXT). Εάν θέλετε να διατηρήσετε την υπάρχουσα εγγραφή SPF (TXT), μπορείτε να προσθέσετε ${ spf } στην τρέχουσα εγγραφή σας (τοποθετήστε τη μετά το ${ spfValue })."
@@ -7540,10 +7537,6 @@
       "Starts on ${ startsOnTime }": [
         "Ξεκινάει στις ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Βήμα ${ step }",
-        "Βήματα ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -8182,7 +8175,7 @@
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
+        "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Παρακαλούμε κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
@@ -9175,7 +9168,7 @@
         "Σκοπός"
       ],
       "Recovery email address": [
-        "Διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
+        "Email Ανάκτησης"
       ],
       "Recovery file": [
         "Αρχείο ανάκτησης"
@@ -10159,8 +10152,8 @@
         "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
       ],
       "${ n } email address": [
-        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου",
-        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα"
+        "${ n } διεύθυνση email",
+        "${ n } διεύθυνσεις email/ψευδώνυμα"
       ],
       "${ n } email address per user": [
         "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
@@ -10201,6 +10194,10 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
@@ -10348,7 +10345,7 @@
         "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
       ],
       "Desktop app": [
-        "Εφαρμογή υπολογιστή"
+        "Εφαρμογή σταθερού υπολογιστή"
       ],
       "DNS leak prevention": [
         "Αποτροπή διαρροής DNS"
@@ -10375,7 +10372,7 @@
         "Κρυπτογραφημένοι διακομιστές VPN"
       ],
       "End-to-end encryption": [
-        "Διατερματική Κρυπτογράφηση"
+        "Διατερματική κρυπτογράφηση"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "Υφιστάμενα οφέλη ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
@@ -10400,9 +10397,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Ελβετικό VPN υψηλής ταχύτητας που προστατεύει την ιδιωτικότητά σας."
       ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
@@ -10529,9 +10523,6 @@
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Αρχίστε να προστατεύετε τον εαυτό σας online σε 2 εύκολα βήματα"
-      ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
@@ -10612,6 +10603,10 @@
       ],
       "User storage management": [
         "Διαχείριση χώρου αποθήκευσης χρηστών"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
       "Vault sharing with up to ${ n } person": [
         "Κοινή χρήση κρύπτης έως ${ n } άτομο",
@@ -10727,7 +10722,7 @@
         "Η αποκλειστική λύση VPN που παρέχει ασφαλή, απεριόριστη, υψηλής ταχύτητας πρόσβαση στο διαδίκτυο."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Ο αρχικός λογαριασμός χωρίς κόστος έχει σχεδιαστεί για να παρέχει σε όλους απόρρητο από προεπιλογή."
+        "Ο λογαριασμός εκκίνησης χωρίς κόστος έχει σχεδιαστεί για να παρέχει σε όλους το απόρρητο από προεπιλογή."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
@@ -10861,7 +10856,7 @@
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας τα δεδομένα σας μέσω πολλών διακομιστών"
+        "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας τα δεδομένα σας μέσω πολλών διακομιστών."
@@ -11832,7 +11827,7 @@
         "Οι ακόλουθοι διαχειριστές θα έχουν πρόσβαση στο κλειδί οργανισμού."
       ],
       "The organization key must be activated first.": [
-        "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού."
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "Αυτό θα στείλει το πιο πρόσφατο κλειδί οργανισμού στους διαχειριστές που αυτήν τη στιγμή δεν έχουν πρόσβαση σε αυτό."
@@ -11880,9 +11875,6 @@
       ],
       "Bank transfer": [
         "Τραπεζική μεταφορά"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ],
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
@@ -13672,6 +13664,16 @@
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "Ο ${ boldedMemberAddress } ζητά τη βοήθειά σας για να συνδεθεί στον Λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση."
@@ -14077,12 +14079,12 @@
         "${ n } δωρεάν συνδέσεις VPN ανά χρήστη"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } σύνδεση υψηλής ταχύτητας",
-        "${ n } συνδέσεις υψηλής ταχύτητας"
+        "${ n } σύνδεση VPN υψηλής ταχύτητας",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } σύνδεση υψηλής ταχύτητας ανά χρήστη",
-        "${ n } συνδέσεις υψηλής ταχύτητας ανά χρήστη"
+        "${ n } σύνδεση VPN υψηλής ταχύτητας ανά χρήστη",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας ανά χρήστη"
       ],
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",

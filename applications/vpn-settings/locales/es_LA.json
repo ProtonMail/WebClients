@@ -120,7 +120,7 @@
         "Atrás"
       ],
       "Back to sign in": [
-        "Volver al inicio de sesión"
+        "Volver a iniciar sesión"
       ],
       "Block": [
         "Bloquear"
@@ -1083,7 +1083,7 @@
         "Usar permisos de envío del grupo"
       ],
       "Use recovery code": [
-        "Usar código de recuperación"
+        "Usar un código de recuperación"
       ],
       "Use this Gmail address": [
         "Usar esta dirección de Gmail"
@@ -3353,7 +3353,7 @@
         "Conecte su CRM, sitio web, impresoras y mucho más."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Cree una puerta de enlace para dar a sus usuarios acceso a los recursos de TI a través de servidores dedicados."
+        "Cree una puerta de enlace para brindar a sus usuarios acceso a los recursos de TI a través de servidores dedicados."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Cree una reunión de Zoom y agregue detalles de ingreso a su evento con un solo clic."
@@ -3368,7 +3368,7 @@
         "Cree políticas para decidir quién puede conectarse a servidores compartidos en cada país."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decida cuáles usuarios pueden conectar a cada una de nuestras más de 120 ubicaciones de servidor compartidas."
+        "Decida cuáles usuarios se pueden conectar a cada una de nuestras más de 120 ubicaciones de servidor compartidas."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Acceda fácilmente a su correo electrónico y calendario en computadoras de escritorio y dispositivos móviles."
@@ -4081,9 +4081,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si la hora en el televisor ha expirado, haga clic en Actualizar en el televisor e ingrese el código de nuevo."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Si el tiempo en su TV ha caducado, haga clic en Actualizar en su TV e inténtelo de nuevo."
-      ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
       ],
@@ -4337,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Hubo un problema al conectar su TV. Escanee el código QR de su TV una vez más."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
@@ -5127,7 +5127,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Hubo un problema al registrar la llave de seguridad. Intente nuevamente."
@@ -5401,9 +5401,6 @@
       ],
       "Password ends with": [
         "La contraseña termina con"
-      ],
-      "Payment details": [
-        "Detalles del pago"
       ],
       "Protection": [
         "Protección"
@@ -6652,7 +6649,7 @@
         "Ingrese una contraseña nueva para ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Ingrese el código de la aplicación de autenticación"
+        "Ingrese el código de la aplicación de autenticación."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Ingrese el código enviado al número de teléfono ${ phone }."
@@ -6703,7 +6700,7 @@
         "Ejemplo: ${ spfExample }"
       ],
       "Expired": [
-        "Expirada"
+        "Expirado"
       ],
       "expires ${ expirationDate }": [
         "expira el ${ expirationDate }"
@@ -7540,10 +7537,6 @@
       "Starts on ${ startsOnTime }": [
         "Comienza el ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Paso ${ step }",
-        "Paso ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios en esta organización"
       ],
@@ -8005,7 +7998,7 @@
         "Recomendamos añadir servidores en diferentes ubicaciones (uno por ciudad) para maximizar la redundancia."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Recomendamos tener al menos 2 servidores para ofrecer redundancia."
+        "Recomendamos tener al menos 2 servidores para garantizar redundancia."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar a los miembros de la familia y pedirles que configuren 2FA para sus cuentas antes de requerir el uso de 2FA."
@@ -8071,7 +8064,7 @@
         "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Estos servidores se pueden agregar a una nueva puerta de enlace, pero no se puede cambiar su país."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando la suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar al método de pago anterior."
@@ -8665,7 +8658,7 @@
         "Adjuntar captura(s)"
       ],
       "Authenticator app": [
-        "App autenticadora"
+        "Aplicación de autenticación"
       ],
       "Awarded": [
         "Otorgado"
@@ -8692,7 +8685,7 @@
         "Versión del navegador"
       ],
       "BTC address": [
-        "Dirección de BTC"
+        "Dirección BTC"
       ],
       "BTC amount": [
         "Importe en BTC"
@@ -9175,7 +9168,7 @@
         "Propósito"
       ],
       "Recovery email address": [
-        "Correo electrónico de recuperación"
+        "Dirección de correo de recuperación"
       ],
       "Recovery file": [
         "Archivo de recuperación"
@@ -9678,7 +9671,7 @@
         "Actualizar suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Mejore su plan para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar el problema."
+        "Actualice su plan para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar el problema."
       ]
     },
     "Loading info": {
@@ -9990,22 +9983,22 @@
         "${ appName }: Registrarse"
       ],
       "Create a new ${ appName } account": [
-        "Cree una cuenta de ${ appName }"
+        "Crear una nueva cuenta de ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Encontrar el nombre de usuario de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Olvidó la contraseña de la cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+        "¿Olvidó la contraseña de su cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Olvidó el nombre de usuario de ${ BRAND_NAME }? Encuéntrelo usando el correo de recuperación o número de teléfono y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+        "¿Olvidó el nombre de usuario de su cuenta de ${ BRAND_NAME }? Encuéntrelo usando su correo electrónico de recuperación o número de teléfono y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Restablezca la contraseña de la cuenta de ${ BRAND_NAME }"
+        "Restablezca la contraseña de su cuenta de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Inicie sesión para acceder a la cuenta de ${ appName }"
+        "Iniciar sesión para acceder a la cuenta de ${ appName }"
       ]
     },
     "Modal title": {
@@ -10093,7 +10086,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Máxima velocidad de VPN"
+        "Velocidad VPN máxima"
       ],
       "Keep your inbox organized with folders": [
         "Mantenga el buzón organizado con carpetas"
@@ -10307,7 +10300,7 @@
         "Disponible en todas las plataformas"
       ],
       "Calendar sharing": [
-        "Uso compartido de calendarios"
+        "Calendarios compartidos"
       ],
       "Catch-all": [
         "Catch-all"
@@ -10325,7 +10318,7 @@
         "Grupos de contactos"
       ],
       "Contact groups management": [
-        "Gestión de grupo de contactos"
+        "Gestión de grupos de contactos"
       ],
       "Custom and secure business email": [
         "Correo electrónico empresarial personalizado y seguro"
@@ -10337,7 +10330,7 @@
         "Dominios de correo electrónico personalizados"
       ],
       "Custom fields": [
-        "Campos perzonalizados"
+        "Campos personalizados"
       ],
       "Custom workspace branding": [
         "Marca personalizada del espacio de trabajo"
@@ -10391,7 +10384,7 @@
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "VPN gratuita en un solo dispositivo"
+        "VPN gratis en un dispositivo"
       ],
       "Fully refundable for 30 days": [
         "Completamente reembolsable durante 30 días"
@@ -10404,9 +10397,6 @@
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suiza de gran velocidad que protege su privacidad"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
@@ -10434,7 +10424,7 @@
         "Editor de documentos en línea"
       ],
       "Organize items with multiple vaults": [
-        "Organizar elementos con varias bóvedas"
+        "Organizar elementos en bóvedas múltiples"
       ],
       "Passkeys supported": [
         "Se admiten las claves de acceso."
@@ -10479,7 +10469,7 @@
         "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
       ],
       "Require 2FA for organization": [
-        "Autenticación 2FA necesaria para la organización"
+        "Requerir 2FA para organización"
       ],
       "Router support": [
         "Soporte para enrutadores"
@@ -10533,11 +10523,8 @@
       "Start protecting your organization": [
         "Comience a proteger la organización"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comience a protegerse en línea en 2 sencillos pasos"
-      ],
       "Strict no-logs policy": [
-        "Política estricta de cero registros"
+        "Política estricta de no registros"
       ],
       "Support for up to 2 users": [
         "Soporte para hasta 2 usuarios"
@@ -10552,7 +10539,7 @@
         "Autenticación de dos factores"
       ],
       "Unlimited devices": [
-        "Número ilimitado de dispositivos"
+        "Dispositivos ilimitados"
       ],
       "Unlimited devices and aliases": [
         "Alias y dispositivos ilimitados"
@@ -10693,10 +10680,10 @@
         "Seguridad mejorada y funciones premium para equipos."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Protección esencial y colaboración segura para un número ilimitado de usuarios."
+        "Protección esencial y colaboración segura para usuarios ilimitados."
       ],
       "For next-level password management and identity protection.": [
-        "Para una gestión de contraseñas e identidad del más alto nivel."
+        "Para la gestión de contraseñas y protección de la identidad a otro nivel."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si elimina la cuenta, perderá todas las ventajas que tiene ser ${ visionary } y no podrá volver al mismo plan creando otra cuenta."
@@ -10735,7 +10722,7 @@
         "La solución VPN dedicada que ofrece acceso seguro, sin restricciones y de alta velocidad a Internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "La cuenta inicial gratuita ofrece privacidad por defecto para todos."
+        "La cuenta inicial gratuita diseñada para potenciar a todos con la privacidad por defecto."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
@@ -10971,7 +10958,7 @@
         "Asigne el tráfico de internet a la red Tor con un solo clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
+        "Asegure los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Comparta elementos aislados de forma segura con cualquiera (aunque no use ${ PASS_APP_NAME })"
@@ -11889,9 +11876,6 @@
       "Bank transfer": [
         "Transferencia bancaria"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
       ],
@@ -11900,9 +11884,6 @@
       ],
       "New credit/debit card": [
         "Tarjeta de crédito/débito nueva"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -13683,6 +13664,16 @@
         "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -13941,7 +13932,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Activa"
+        "Activo"
       ],
       "Inactive": [
         "Inactivo"
@@ -13956,10 +13947,10 @@
         "Rechazado"
       ],
       "Signed out": [
-        "Sesión terminada"
+        "Desconectado"
       ],
       "Unknown": [
-        "Desconocida"
+        "Desconocido"
       ]
     },
     "State": {
@@ -15665,7 +15656,7 @@
         "Pagar factura"
       ],
       "Payment failed": [
-        "Error en el pago"
+        "Error con el pago"
       ],
       "Payment methods": [
         "Métodos de pago"
