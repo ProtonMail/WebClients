@@ -584,9 +584,6 @@
       "North Korea": [
         "Triều Tiên"
       ],
-      "North Macedonia": [
-        "Bắc Macedonia"
-      ],
       "Northern Mariana Islands": [
         "Quần đảo Bắc Mariana"
       ],
@@ -921,15 +918,7 @@
         "Không thể tải trang này. Vui lòng làm mới trang hoặc kiểm tra kết nối internet."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Có lỗi xảy ra khi xác thực với khóa bảo mật. Vui lòng thử lại."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Chèn khóa bảo mật liên kết với Tài khoản ${ BRAND_NAME }"
-      ],
       "Security key": [
         "Khóa bảo mật"
       ]
@@ -1031,9 +1020,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Việc tạo nhiều tài khoản miễn phí không được phép theo ${ termsLink } của chúng tôi."
       ],
-      "Each code can only be used once": [
-        "Mỗi mã chỉ có thể được sử dụng một lần"
-      ],
       "Edit email address": [
         "Chỉnh sửa địa chỉ email"
       ],
@@ -1042,9 +1028,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Nhập mật khẩu của chính bạn (với tư cách là quản trị viên tổ chức)."
@@ -1093,9 +1076,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Chúng tôi sẽ gửi mã xác minh mới đến ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Khi bạn thiết lập xác thực hai yếu tố, chúng tôi sẽ cung cấp mã khôi phục bạn có thể sử dụng để đăng nhập nếu bạn mất quyền truy cập vào ứng dụng xác thực của mình."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Bạn có muốn nhận một mã xác thực mới hoặc sử dụng một cách xác thực khác không?"
@@ -1199,9 +1179,6 @@
       ],
       "${ n } message per day": [
         "${ n } thư mỗi ngày"
-      ],
-      "${ options }-day file version history": [
-        "Lịch sử phiên bản tệp trong ${ options } ngày"
       ],
       "${ size } attachment size": [
         "Kích thước tập tin đính kèm ${ size }"

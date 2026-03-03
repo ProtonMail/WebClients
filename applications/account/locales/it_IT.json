@@ -210,9 +210,6 @@
       "Back": [
         "Indietro"
       ],
-      "Back to sign in": [
-        "Torna alla pagina di accesso"
-      ],
       "Block": [
         "Blocca"
       ],
@@ -320,9 +317,6 @@
       ],
       "Connected": [
         "Connesso"
-      ],
-      "Contact sales": [
-        "Contatta il reparto vendite"
       ],
       "Contact support": [
         "Contatta l'assistenza"
@@ -446,9 +440,6 @@
       ],
       "Delete account": [
         "Elimina account"
-      ],
-      "Delete and confirm": [
-        "Elimina e conferma"
       ],
       "Delete filter “${ Name }”": [
         "Elimina filtro “${ Name }”"
@@ -842,9 +833,6 @@
       ],
       "Help and resources": [
         "Aiuto e risorse utili"
-      ],
-      "Hide": [
-        "Nascondi"
       ],
       "Hide more benefits": [
         "Nascondi maggiori benefici"
@@ -4094,9 +4082,6 @@
       ],
       "North Korea": [
         "Corea del Nord"
-      ],
-      "North Macedonia": [
-        "Macedonia del Nord"
       ],
       "Northern Mariana Islands": [
         "Isole Marianne Settentrionali"
@@ -7439,9 +7424,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Qualcosa è andato storto durante la registrazione della tua chiave di sicurezza. Per favore riprova."
       ]
@@ -7461,9 +7443,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inserisci la tua chiave di sicurezza nella porta USB del tuo dispositivo."
@@ -7918,9 +7897,6 @@
       ],
       "Password ends with": [
         "La password termina con"
-      ],
-      "Payment details": [
-        "Dettagli di pagamento"
       ],
       "Permissions": [
         "Permessi"
@@ -8524,9 +8500,6 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% di sconto"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } non conserverà più le versioni precedenti dei tuoi file."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
@@ -9433,9 +9406,6 @@
       "Drop to import": [
         "Trascina per importare"
       ],
-      "Each code can only be used once": [
-        "Ogni codice può essere usato una sola volta"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Ogni dominio può avere un solo record SPF (TXT). Se desideri mantenere il record SPF (TXT) esistente, puoi aggiungere ${ spf } al record attuale (inseriscilo dopo ${ spfValue })."
       ],
@@ -9565,9 +9535,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Inserisci il codice di verifica. Digita ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME }."
       ],
@@ -9639,9 +9606,6 @@
       ],
       "finance": [
         "dati finanziari"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Per una cronologia delle versioni di 10 anni, contatta il nostro team commerciale."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
@@ -10942,12 +10906,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Si elimineranno tutte le versioni dei tuoi file precedenti a ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Si elimineranno tutte le versioni precedenti dei tuoi file."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
       ],
@@ -11019,9 +10977,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confermare, inserisci il nome dell'utente che desideri eliminare."
-      ],
-      "To continue to ${ product }": [
-        "Per continuare su ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per migliorare continuamente i nostri servizi, a volte raccogliamo dati per monitorare il corretto funzionamento delle nostre applicazioni. Queste informazioni non sono condivise con servizi di terze parti."
@@ -11134,9 +11089,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
       ],
-      "Upgrade to unlock": [
-        "Aggiorna per sbloccare"
-      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ],
@@ -11229,9 +11181,6 @@
       ],
       "Version ${ version }": [
         "Versione ${ version }"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
       ],
       "Version number successfully copied to clipboard": [
         "Numero di versione copiato con successo negli appunti"
@@ -11370,9 +11319,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando rimuovi un server da un Gateway, entra in un periodo di disattivazione di 10 giorni. Questo server può essere aggiunto a un nuovo Gateway, ma il suo paese non può essere modificato."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento indicato qui sopra."
@@ -12845,9 +12791,6 @@
       "Don't ask again": [
         "Non chiederlo più"
       ],
-      "Don't keep versions": [
-        "Non conservare le versioni"
-      ],
       "Don't show this again": [
         "Non mostrare più"
       ],
@@ -13932,9 +13875,6 @@
       "Create an alias": [
         "Crea un alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Non hai accesso alla tua 2FA?"
-      ],
       "Downloads": [
         "Download"
       ],
@@ -14571,12 +14511,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Accedi"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Iscriviti"
-      ],
       "${ BRAND_NAME } Account": [
         "Account ${ BRAND_NAME }"
       ],
@@ -14586,9 +14520,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Crea un account ${ BRAND_NAME } | Riprenditi la tua privacy"
       ],
-      "Create a new ${ appName } account": [
-        "Crea un nuovo account ${ appName }"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Goditi due settimane di ${ BRAND_NAME } gratis"
       ],
@@ -14597,18 +14528,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Hai dimenticato la password del tuo account ${ BRAND_NAME }? Reimpostala qui usando un codice, email o SMS di recupero, e ottieni nuovamente l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Hai dimenticato il tuo nome utente ${ BRAND_NAME }? Trovalo utilizzando l'email di recupero o il numero di telefono e recupera l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Reimposta la password del tuo account ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Accedi al tuo account ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Accedi al tuo account ${ BRAND_NAME } per poter usufruire di tutti i servizi ${ BRAND_NAME } crittografati come ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro. Non hai un account? Creane uno GRATUITAMENTE."
@@ -15197,9 +15116,6 @@
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN Svizzera ad alta velocità che protegge la tua privacy"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN ad alta velocità su ${ n } dispositivo",
         "VPN ad alta velocità su ${ n } dispositivi"
@@ -15324,9 +15240,6 @@
       ],
       "Start protecting your organization": [
         "Inizia a proteggere la tua organizzazione"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Inizia a proteggerti online in 2 semplici passaggi"
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
@@ -19312,9 +19225,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Abilita la sezione Foto"
-      ],
       "Get updates about comments via email": [
         "Ricevi aggiornamenti riguardo i commenti via email"
       ],
@@ -22092,9 +22002,6 @@
       "Delete user?": [
         "Vuoi eliminare l'utente?"
       ],
-      "Delete version history?": [
-        "Vuoi eliminare la cronologia delle versioni?"
-      ],
       "Deny access to user?": [
         "Negare l'accesso all'utente?"
       ],
@@ -22314,9 +22221,6 @@
       ],
       "Find email or username": [
         "Trova email o nome utente"
-      ],
-      "Finish setting up your business account": [
-        "Completa la configurazione del tuo account business"
       ],
       "Folders": [
         "Cartelle"

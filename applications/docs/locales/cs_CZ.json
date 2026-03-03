@@ -4991,6 +4991,9 @@
       "Public documents are not yet enabled for your organization.": [
         "Veřejné dokumenty zatím nejsou pro vaši organizaci povoleny."
       ],
+      "Read-only": [
+        "Pouze pro čtení"
+      ],
       "Recent documents": [
         "Nedávné dokumenty"
       ],
@@ -5164,6 +5167,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument vykazuje velkou aktivitu. Některé funkce mohou být dočasně nedostupné."
+      ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "Tento dokument má mnoho aktivních spolupracovníků. Úpravy v reálném čase jsou dočasně nedostupné. Obnovte stránku pro zobrazení posledních aktualizací."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Tento dokument možná neexistuje, nebo se nám nedaří jej načíst. Znovu načtěte stránku a zkuste to znovu."
@@ -6720,6 +6726,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -8789,8 +8801,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Hodnoty oddělené čárkou (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "Nová tabulka"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Hodnoty oddělené tabulátorem (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Vytváření nové tabulky..."
+      ],
+      "Detect automatically": [
+        "Automaticky rozpoznat"
+      ],
+      "Insert as new sheet": [
+        "Vložit jako nový list"
+      ],
+      "Replace current sheet": [
+        "Nahradit aktuální list"
+      ],
+      "Replace data at selected cell": [
+        "Nahradit data ve vybrané buňce"
+      ],
+      "Replace spreadsheet": [
+        "Nahradit tabulku"
+      ],
+      "Select a file to import": [
+        "Vyberte soubor, který chcete importovat"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "Vaše aktuální tabulka, včetně všech jejích listů, bude nahrazena touto verzí."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "Převést text na čísla, data a vzorce"
+      ],
+      "Destination": [
+        "Cíl"
+      ],
+      "Format": [
+        "Formát"
+      ],
+      "Separator type": [
+        "Typ oddělovače"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Importovat data"
       ]
     },
     "Signing preference for emails": {
@@ -9055,6 +9121,16 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Chcete-li tento dokument upravit, vytvořte si kopii, kterou můžete upravit."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {
@@ -9949,6 +10025,9 @@
       ],
       "Re-signing contacts": [
         "Znovu podepsat kontakty"
+      ],
+      "Read-only": [
+        "Pouze pro čtení"
       ],
       "Recommended actions": [
         "Doporučené akce"

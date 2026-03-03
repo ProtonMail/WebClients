@@ -198,9 +198,6 @@
       "Collaborate on documents": [
         "Совместно работайте над документами"
       ],
-      "Collapse": [
-        "Свернуть"
-      ],
       "Collapse folder": [
         "Свернуть папку"
       ],
@@ -414,9 +411,6 @@
       "Enable drive search": [
         "Включить поиск по хранилищу"
       ],
-      "Expand": [
-        "Развернуть"
-      ],
       "Expand folder": [
         "Развернуть папку"
       ],
@@ -497,9 +491,6 @@
       ],
       "Help and resources": [
         "Помощь и информация"
-      ],
-      "Hide": [
-        "Скрыть"
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -2261,9 +2252,6 @@
       "North Korea": [
         "Северная Корея"
       ],
-      "North Macedonia": [
-        "Северная Македония"
-      ],
       "Northern Mariana Islands": [
         "Северные Марианские Острова"
       ],
@@ -3793,15 +3781,7 @@
         "Молниеносная скорость"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Ключ безопасности"
       ]
@@ -4815,9 +4795,6 @@
       "Create links and share your files with others.": [
         "Создавайте ссылки и делитесь файлами с другими."
       ],
-      "Create your first folder and start moving your files.": [
-        "Создайте свою первую папку и начните перемещать файлы."
-      ],
       "Creating": [
         "Создание"
       ],
@@ -4914,9 +4891,6 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
-      "Each code can only be used once": [
-        "Каждый код может быть использован только один раз"
-      ],
       "Edit email address": [
         "Изменить адрес электронной почты"
       ],
@@ -4961,9 +4935,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введите свой пароль как администратора организации."
@@ -6014,9 +5985,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будет восстановлена версия от ${ formattedRevisionDate }. Все другие версии также будут сохранены."
@@ -11562,9 +11530,6 @@
       ],
       "You have no files to share": [
         "У вас нет файлов, которыми можно поделиться"
-      ],
-      "You have no folders yet": [
-        "У вас пока что нет папок"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"

@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Col·labora en documents"
       ],
-      "Collapse": [
-        "Replega"
-      ],
       "Collapse folder": [
         "Replega la carpeta"
       ],
@@ -457,9 +454,6 @@
       ],
       "Encrypted": [
         "Xifrat"
-      ],
-      "Expand": [
-        "Amplia"
       ],
       "Expand folder": [
         "Amplia la carpeta"
@@ -3353,8 +3347,14 @@
       "Can't find any secure link": [
         "No s'ha trobat cap enllaç segur"
       ],
+      "Can't retrieve device name": [
+        "No s'ha pogut obtenir el nom del dispositiu"
+      ],
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
+      ],
+      "Cannot find move target": [
+        "No s'ha trobat la destinació del moviment"
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -3385,6 +3385,9 @@
       ],
       "Could not remove from favorites": [
         "No s'ha pogut esborrar dels favorits."
+      ],
+      "Data integrity check failed": [
+        "Ha fallat la comprovació de la integritat de les dades"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
@@ -3441,6 +3444,9 @@
       ],
       "Failed loading group members": [
         "No s'han pogut carregar els membres del grup"
+      ],
+      "Failed to change permissions settings": [
+        "No s'han pogut canviar les preferències de permisos"
       ],
       "Failed to copy photo to album": [
         "No s'ha pogut copiar la foto a l'àlbum."
@@ -4327,12 +4333,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -5221,8 +5227,26 @@
       "Calendar side panel": [
         "Panell lateral del calendari"
       ],
+      "Can edit": [
+        "Es pot editar"
+      ],
+      "Can edit and manage access": [
+        "Es pot editar i gestionar-ne l'accés"
+      ],
+      "Can view and edit": [
+        "Es pot visualitzar i editar"
+      ],
+      "Can view only": [
+        "Només es pot visualitzar"
+      ],
       "Can't move a folder into itself": [
         "No es pot moure una carpeta dins d'ella mateixa"
+      ],
+      "Can't rename to same name": [
+        "No es pot canviar el nom pel mateix nom"
+      ],
+      "Can't write into folder": [
+        "No es pot escriure a la carpeta"
       ],
       "Canceled": [
         "Cancel·lat"
@@ -5328,9 +5352,6 @@
       "Create links and share your files with others.": [
         "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
       ],
-      "Create your first folder and start moving your files.": [
-        "Creeu la vostra primera carpeta i comenceu a moure fitxers."
-      ],
       "Creating": [
         "S'està creant"
       ],
@@ -5435,7 +5456,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -6653,7 +6674,7 @@
         "Quan elimineu ${ deviceName } com a dispositiu sincronitzat, totes les carpetes afegides a Els Meus Ordinadors des d'aquest dispositiu s'eliminaran permanentment de ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ],
       "who": [
         "qui"
@@ -6945,14 +6966,6 @@
         "Només lectura"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Podeu visualitzar-ho i editar-ho"
-      ],
-      "Can view only": [
-        "Només ho podeu visualitzar"
-      ]
-    },
     "Item": {
       "file attributes": [
         "atributs del fitxer"
@@ -7056,9 +7069,6 @@
       ],
       "Address": [
         "Adreça"
-      ],
-      "admin": [
-        "administrador/a"
       ],
       "Album": [
         "Àlbum"
@@ -9489,8 +9499,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les fotos seleccionades ja són a «${ albumName }»."
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "S'ha actualitzat la configuració. Els editors poden canviar els permisos i compartir-los."
+      "Setting updated. Editors can change permissions and share.": [
+        "S'han actualitzat les referències. Els editors poden canviar els permisos i compartir-los."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "S'ha actualitzat les preferències. Els editors no poden canviar els permisos ni compartir-los."
       ],
       "Share invitation accepted successfully": [
         "S'ha acceptat la invitació per a compartir."
@@ -11167,6 +11180,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ara podeu cercar fàcilment fitxers de Drive mentre manteniu les dades segures."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REBAIXES DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REBAIXES DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -12988,9 +13011,6 @@
       ],
       "You have no files to share": [
         "No teniu fitxers per a compartir"
-      ],
-      "You have no folders yet": [
-        "Encara no tens cap carpeta"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"

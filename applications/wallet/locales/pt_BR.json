@@ -2529,7 +2529,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -2813,7 +2813,7 @@
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -3069,7 +3069,7 @@
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -3139,6 +3139,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
@@ -3706,6 +3709,10 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"

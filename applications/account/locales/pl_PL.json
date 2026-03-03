@@ -173,9 +173,6 @@
       "Back": [
         "Wstecz"
       ],
-      "Back to sign in": [
-        "Powrót do logowania"
-      ],
       "Block": [
         "Zablokuj"
       ],
@@ -688,9 +685,6 @@
       ],
       "Help and resources": [
         "Pomoc i zasoby"
-      ],
-      "Hide": [
-        "Ukryj"
       ],
       "Hide more benefits": [
         "Ukryj więcej bonusów"
@@ -3287,9 +3281,6 @@
       ],
       "North Korea": [
         "Korea Północna"
-      ],
-      "North Macedonia": [
-        "Macedonia Północna"
       ],
       "Northern Mariana Islands": [
         "Mariany Północne"
@@ -6013,9 +6004,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Coś poszło nie tak z rejestracją klucza bezpieczeństwa. Spróbuj ponownie później."
       ]
@@ -6035,9 +6023,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Włóż klucz bezpieczeństwa do portu USB."
@@ -6483,9 +6468,6 @@
       ],
       "Organization key fingerprint": [
         "Odcisk klucza organizacji"
-      ],
-      "Payment details": [
-        "Szczegóły płatności"
       ],
       "Protection": [
         "Ochrona"
@@ -7886,9 +7868,6 @@
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
-      "Each code can only be used once": [
-        "Każdy kod może zostać użyty tylko jeden raz"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Każda domena może posiadać tylko 1 rekord SPF (TXT). Jeśli chcesz zachować obecny rekord SPF (TXT), możesz dodać ${ spf } do obecnego rekordu (wpisz po ${ spfValue })."
       ],
@@ -8002,9 +7981,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Wpisz szczegóły konta ${ BRAND_NAME }."
@@ -9305,9 +9281,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Wpisz nazwę użytkownika, którego chcesz usunąć."
       ],
-      "To continue to ${ product }": [
-        "i przejdź do ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Aby stale ulepszać nasze usługi, czasami zbieramy dane, które monitorują poprawne działanie naszych aplikacji. Te informacje nie są udostępniane innym stronom trzecim."
       ],
@@ -9610,9 +9583,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Usunięcie serwera z bramy spowoduje rozpoczęcie 10-dniowego okresu dezaktywacji. Serwer można dodać do nowej bramy, ale nie można zmienić jego kraju."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -11597,9 +11567,6 @@
       "Create an alias": [
         "Utwórz alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Nie masz dostępu do uwierzytelniania dwustopniowego?"
-      ],
       "Encryption and keys": [
         "Szyfrowanie i klucze"
       ],
@@ -12063,12 +12030,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Zaloguj się"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Zarejestruj się"
-      ],
       "${ BRAND_NAME } Account": [
         "Konto ${ BRAND_NAME }"
       ],
@@ -12078,23 +12039,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Utwórz konto ${ BRAND_NAME } | Odzyskaj swoją prywatność"
       ],
-      "Create a new ${ appName } account": [
-        "Utwórz nowe konto ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Znajdź konto ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Zresetuj konto za pomocą kodu odzyskiwania, adresu e-mail lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Znajdź je za pomocą adresu pomocniczego lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Resetowanie hasła ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Zaloguj się do konta ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Zaloguj się do konta ${ BRAND_NAME }, aby uzyskać dostęp do szyfrowanych usług ${ BRAND_NAME }, takich jak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej. Nie masz konta? Załóż DARMOWE konto."
@@ -12710,9 +12656,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Szybki szwajcarski VPN, który chroni prywatność użytkowników"
-      ],
       "High-speed VPN on ${ n } device": [
         "Szybki VPN na ${ n } urządzenie",
         "Szybki VPN na ${ n } urządzenia",
@@ -12832,9 +12775,6 @@
       ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Chroń się online w 2 prostych krokach"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"

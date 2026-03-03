@@ -210,9 +210,6 @@
       "Collaborate on documents": [
         "Collaborer sur des documents"
       ],
-      "Collapse": [
-        "Réduire"
-      ],
       "Collapse folder": [
         "Réduire le dossier"
       ],
@@ -458,9 +455,6 @@
       "Encrypted": [
         "Chiffré"
       ],
-      "Expand": [
-        "Développer"
-      ],
       "Expand folder": [
         "Agrandir le dossier"
       ],
@@ -565,9 +559,6 @@
       ],
       "Help and resources": [
         "Aide et ressources"
-      ],
-      "Hide": [
-        "Masquer"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -2581,9 +2572,6 @@
       "North Korea": [
         "Corée du Nord"
       ],
-      "North Macedonia": [
-        "Macédoine du Nord"
-      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -3347,8 +3335,14 @@
       "Can't find any secure link": [
         "Impossible de trouver un lien sécurisé."
       ],
+      "Can't retrieve device name": [
+        "Impossible de récupérer le nom de l'appareil"
+      ],
       "Cannot export this contact": [
         "Impossible d'exporter ce contact"
+      ],
+      "Cannot find move target": [
+        "Impossible de trouver la cible du déplacement"
       ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
@@ -3379,6 +3373,9 @@
       ],
       "Could not remove from favorites": [
         "Le retrait des favoris n'a pas abouti."
+      ],
+      "Data integrity check failed": [
+        "La vérification de l'intégrité des données n'a pas abouti."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -3435,6 +3432,9 @@
       ],
       "Failed loading group members": [
         "Le chargement des membres du groupe n'a pas abouti."
+      ],
+      "Failed to change permissions settings": [
+        "Impossible de modifier les paramètres des autorisations"
       ],
       "Failed to copy photo to album": [
         "La copie de la photo dans l’album n'a pas abouti."
@@ -4319,15 +4319,7 @@
         "Vitesses extrêmement élevées"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -5215,8 +5207,26 @@
       "Calendar side panel": [
         "Panneau latéral du calendrier"
       ],
+      "Can edit": [
+        "Peut modifier"
+      ],
+      "Can edit and manage access": [
+        "Peut modifier et gérer l'accès"
+      ],
+      "Can view and edit": [
+        "Peut voir et modifier"
+      ],
+      "Can view only": [
+        "Peut voir seulement"
+      ],
       "Can't move a folder into itself": [
         "Impossible de déplacer un dossier dans lui-même"
+      ],
+      "Can't rename to same name": [
+        "Impossible de modifier le nom avec le même nom"
+      ],
+      "Can't write into folder": [
+        "Impossible d'écrire dans le dossier"
       ],
       "Canceled": [
         "Annulé"
@@ -5322,9 +5332,6 @@
       "Create links and share your files with others.": [
         "Créez des liens et partagez vos fichiers avec d'autres personnes."
       ],
-      "Create your first folder and start moving your files.": [
-        "Créez votre premier dossier et commencez à importer vos fichiers."
-      ],
       "Creating": [
         "Création"
       ],
@@ -5428,9 +5435,6 @@
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
-      "Each code can only be used once": [
-        "Chaque code ne peut être utilisé qu'une seule fois."
-      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -5478,9 +5482,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -6646,9 +6647,6 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Lorsque vous retirez ${ deviceName } en tant qu'appareil synchronisé, tous les dossiers ajoutés à Mes ordinateurs depuis cet appareil seront définitivement supprimés de ${ DRIVE_APP_NAME }."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
-      ],
       "who": [
         "qui"
       ],
@@ -6939,14 +6937,6 @@
         "Lecture seule"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "Peut voir et modifier"
-      ],
-      "Can view only": [
-        "Peut voir seulement"
-      ]
-    },
     "Item": {
       "file attributes": [
         "attributs du fichier"
@@ -7050,9 +7040,6 @@
       ],
       "Address": [
         "Adresse"
-      ],
-      "admin": [
-        "admin"
       ],
       "Album": [
         "Album"
@@ -9479,8 +9466,11 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Les photos sélectionnées sont déjà dans « ${ albumName } »."
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "Paramètre mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
+      "Setting updated. Editors can change permissions and share.": [
+        "Les paramètres ont été mis à jour. Les éditeurs peuvent modifier les autorisations et partager."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Les paramètres ont été mis à jour. Les éditeurs ne peuvent pas modifier les autorisations ni partager."
       ],
       "Share invitation accepted successfully": [
         "L'invitation partagée a été acceptée."
@@ -12966,9 +12956,6 @@
       ],
       "You have no files to share": [
         "Vous n'avez aucun fichier à partager."
-      ],
-      "You have no folders yet": [
-        "Vous n'avez aucun dossier pour le moment."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."

@@ -178,9 +178,6 @@
       "Back": [
         "返回"
       ],
-      "Back to sign in": [
-        "返回登錄"
-      ],
       "Block": [
         "封鎖"
       ],
@@ -672,9 +669,6 @@
       ],
       "Help and resources": [
         "尋求協助與資源"
-      ],
-      "Hide": [
-        "隱藏"
       ],
       "Hide more benefits": [
         "隱藏更多好處"
@@ -1458,6 +1452,12 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Domains": [
+        "網域"
+      ],
+      "Users": [
+        "使用者"
       ]
     },
     "Address action": {
@@ -1817,12 +1817,29 @@
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "自動續期在${ subscriptionManagerName }"
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 個月"
       ],
@@ -1831,6 +1848,9 @@
       ],
       "Annually": [
         "每年"
+      ],
+      "Billed monthly": [
+        "按月付款"
       ],
       "Lifetime": [
         "終身"
@@ -3140,9 +3160,6 @@
       ],
       "North Korea": [
         "北韓"
-      ],
-      "North Macedonia": [
-        "北馬其頓"
       ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
@@ -5448,9 +5465,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "註冊您的安全金鑰時出現問題。請再試一次。"
       ]
@@ -5470,9 +5484,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ],
       "Insert your security key into your device's USB port.": [
         "將安全金鑰插入您的 USB 連接孔。"
@@ -5877,9 +5888,6 @@
       ],
       "Password ends with": [
         "密碼結尾是"
-      ],
-      "Payment details": [
-        "繳款詳細資訊"
       ],
       "Protection": [
         "安全"
@@ -7067,9 +7075,6 @@
       "Drop to import": [
         "拖放以匯入"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每個網域僅能有一項SPF (TXT)紀錄。若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
@@ -7168,9 +7173,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"
@@ -8351,9 +8353,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
       ],
-      "To continue to ${ product }": [
-        "繼續使用 ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
       ],
@@ -8639,9 +8638,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "當您從閘道器移除伺服器，將進入10天整的停用期。此伺服器可被新增至其他閘道器，但無法變更國家。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
       ],
@@ -8839,6 +8835,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
@@ -10537,9 +10536,6 @@
       "Create an alias": [
         "建立一個別名"
       ],
-      "Don't have access to your 2FA?": [
-        "沒有存取您的雙重驗證？"
-      ],
       "Encryption and keys": [
         "加密與金鑰"
       ],
@@ -10985,12 +10981,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }：登入"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }：註冊"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 帳號"
       ],
@@ -11000,23 +10990,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "創建 ${ BRAND_NAME } 帳號，奪回您的隱私"
       ],
-      "Create a new ${ appName } account": [
-        "創建新的 ${ appName } 帳號"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "尋找您的 ${ BRAND_NAME } 帳號使用者名稱"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘記您的 ${ BRAND_NAME } 帳號密碼？使用您的備用碼、電子郵件或簡訊找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的復原電子郵件或手機號碼找到它，並恢復存取 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } ，以及其它相應處。"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "重設您的 ${ BRAND_NAME } 帳號密碼"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "登入以存取您的 ${ appName } 帳號"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登入您的 ${ BRAND_NAME } 帳號以存取所有加密的 ${ BRAND_NAME } 服務，如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與更多。還沒有帳號？免費創建一個吧。"
@@ -11563,9 +11538,6 @@
       "Group management (coming soon)": [
         "群組管理(即將推出)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "高速的瑞士 VPN 可保護您的隱私"
-      ],
       "High-speed VPN on ${ n } device": [
         "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
@@ -11682,9 +11654,6 @@
       ],
       "Start protecting your organization": [
         "開始保護您的組織"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 個簡單步驟即可啟動您專屬的線上防護"
       ],
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
@@ -13266,6 +13235,12 @@
       "Got it": [
         "瞭解"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/YY"
       ],
@@ -13289,6 +13264,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Tax ${ rate }%": [
+        "稅金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "稅金 ${ rate }%"
       ],
       "terms and conditions": [
         "合約條款"
@@ -14541,6 +14522,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "於 ${ appName } 開啟"
       ]
     },
     "Signature verification error when joining calendar": {

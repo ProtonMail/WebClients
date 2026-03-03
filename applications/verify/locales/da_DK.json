@@ -584,9 +584,6 @@
       "North Korea": [
         "Nordkorea"
       ],
-      "North Macedonia": [
-        "Nordmakedonien"
-      ],
       "Northern Mariana Islands": [
         "Nordmarianerne"
       ],
@@ -921,15 +918,7 @@
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
-      ],
       "Security key": [
         "Sikkerhedsnøgle"
       ]
@@ -1037,9 +1026,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Det er ikke tilladt at oprette flere gratis konti i henhold til vores ${ termsLink }."
       ],
-      "Each code can only be used once": [
-        "Hver kode kan kun bruges én gang"
-      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -1048,9 +1034,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
@@ -1099,9 +1082,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -1213,10 +1193,6 @@
       "${ n } message per day": [
         "${ n } daglig besked",
         "${ n } daglige beskeder"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dags filversionshistorik",
-        "${ options }-dags filversionshistorik"
       ],
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"

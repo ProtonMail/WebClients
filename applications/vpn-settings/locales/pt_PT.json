@@ -111,9 +111,6 @@
       "Back": [
         "Recuar"
       ],
-      "Back to sign in": [
-        "Voltar para o início de sessão"
-      ],
       "Block": [
         "Bloquear"
       ],
@@ -500,9 +497,6 @@
       ],
       "Help and resources": [
         "Ajuda e recursos"
-      ],
-      "Hide": [
-        "Ocultar"
       ],
       "Hide more benefits": [
         "Ocultar mais benefícios"
@@ -1592,14 +1586,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Adicionar utilizadores manualmente"
-      ],
       "Close": [
         "Fechar"
-      ],
-      "Configure your network": [
-        "Configure a sua rede"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
@@ -1619,29 +1607,17 @@
       "Discover and set up features": [
         "Descubra e configure as funcionalidades"
       ],
-      "Invite your team": [
-        "Convide a sua equipa"
-      ],
-      "Manage global VPN permissions": [
-        "Gerir permissões globais da VPN"
-      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembrar mais tarde"
       ],
-      "Secure your organization": [
-        "Proteja a sua organização"
-      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure outras funcionalidades"
-      ],
-      "Set up SSO": [
-        "Configurar SSO"
       ],
       "Take a tour": [
         "Visita guiada"
@@ -2421,9 +2397,6 @@
       "North Korea": [
         "Coreia do Norte"
       ],
-      "North Macedonia": [
-        "Macedónia do Norte"
-      ],
       "Northern Mariana Islands": [
         "Ilhas Marianas do Norte"
       ],
@@ -2849,23 +2822,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Ligue o seu CRM, sítio web, impressoras e muito mais."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Crie um Gateway para dar aos seus utilizadores acesso aos seus recursos de TI através de servidores dedicados."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
       "Create groups you can email with a single address.": [
         "Crie grupos aos quais pode enviar e-mails com um único endereço."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Crie novas contas de utilizador ou importe utilizadores com provisionamento SCIM (single sign-on)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decida quais utilizadores podem se conectar a cada um dos nossos mais de 120 locais de servidores partilhados."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Aceda facilmente ao seu e-mail e calendário no computador e no telemóvel."
@@ -2911,9 +2875,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajude a sua equipa a armazenar de forma segura as palavras-passe para informações confidenciais de negócios e clientes."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Se ainda não o fez, ative alguns métodos de recuperação para garantir que nunca perderá o acesso ao ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
@@ -3494,7 +3455,7 @@
         "Endereço de email inválido"
       ],
       "Invalid expiration date": [
-        "A data de expiração não é válida."
+        "A data de expiração é inválida."
       ],
       "Invalid IBAN": [
         "IBAN inválido"
@@ -4403,9 +4364,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo correu mal ao autenticar com a sua chave de segurança. Tente novamente."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
       ]
@@ -4425,9 +4383,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Tem a certeza que deseja eliminar a chave de segurança ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira a sua chave de segurança na porta USB do seu dispositivo."
@@ -4672,9 +4627,6 @@
       ],
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
-      ],
-      "Payment details": [
-        "Detalhes do pagamento"
       ],
       "Protection": [
         "Protecção"
@@ -5737,9 +5689,6 @@
       "Drop to import": [
         "Solte para importar"
       ],
-      "Each code can only be used once": [
-        "Cada código só pode ser utilizado uma vez"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domínio pode ter apenas um registo SPF (TXT). Se deseja manter o registo SPF (TXT) existente, pode adicionar ${ spf } ao seu registo atual (colocando-o após ${ spfValue })."
       ],
@@ -5830,9 +5779,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Introduza os detalhes da sua conta ${ BRAND_NAME }."
       ],
@@ -5886,9 +5832,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Seja notificado se a sua palavra-passe ou outros dados pessoais foram divulgados. ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "Comece agora"
       ],
       "Get started with the referral link above.": [
         "Comece a utilizar a ligação de referência acima."
@@ -6583,9 +6526,6 @@
       "Set up your organization": [
         "Defina a sua organização"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configure a sua organização e comece a proteger os seus dados em algumas etapas simples."
-      ],
       "Setting up ${ feature }…": [
         "A configurar ${ feature }…"
       ],
@@ -6634,10 +6574,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Começa em ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "Passo ${ step }",
-        "Passos ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros utilizadores desta organização"
@@ -6864,9 +6800,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
-      ],
-      "To continue to ${ product }": [
-        "Para continuar para ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para melhorar continuamente os nossos serviços, por vezes recolhemos dados para monitorizar o bom funcionamento das nossas aplicações. Esta informação não é partilhada com quaisquer serviços de terceiros."
@@ -7132,9 +7065,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando remove um servidor de uma porta de entrada ela entra num período de desativação de 10 dias. Este servidor pode ser adicionado a uma nova porta de entrada, mas o seu país não pode ser alterado."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de utilizarmos o método de pagamento acima."
       ],
@@ -7224,9 +7154,6 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Só é possível ter uma instância de chat aberta de cada vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -8454,9 +8381,6 @@
       "Create an alias": [
         "Criar um alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Não tem acesso à sua autenticação A2F?"
-      ],
       "Encryption and keys": [
         "Encriptação e chaves"
       ],
@@ -8603,20 +8527,6 @@
       ],
       "What’s this?": [
         "O que é isto?"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "O chat ao vivo está disponível com o ${ planName }"
-      ],
-      "Open support form": [
-        "Abrir o formulário de suporte"
-      ],
-      "Upgrade subscription": [
-        "Atualizar subscrição"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Atualize para desbloquear o suporte por chat e outros recursos premium ou use o nosso formulário de suporte gratuito para relatar o seu problema."
       ]
     },
     "Loading info": {
@@ -8838,29 +8748,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Iniciar sessão"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Inscrever-se"
-      ],
-      "Create a new ${ appName } account": [
-        "Criar uma conta do ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Encontre o seu nome de utilizador da conta ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Redefina-o aqui utilizando um código de recuperação, e-mail ou SMS e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Encontre-o utilizando o seu e-mail ou número de telefone de recuperação e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Redefina a palavra-passe da sua conta ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Inicie sessão para aceder à sua conta ${ appName }"
       ]
     },
     "Modal title": {
@@ -8933,7 +8822,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Velocidade VPN mais alta"
+        "Velocidade VPN máxima"
       ],
       "Keep your inbox organized with folders": [
         "Mantenha a sua caixa de entrada organizada com pastas"
@@ -8999,7 +8888,7 @@
         "${ n } domínios de e-mail personalizados"
       ],
       "${ n } email address": [
-        "${ n } endereço de e-mail ",
+        "${ n } endereço de e-mail",
         "${ n } endereços de e-mail/aliases"
       ],
       "${ n } email address per user": [
@@ -9176,7 +9065,7 @@
         "Personalização do espaço de trabalho com a sua marca"
       ],
       "Data breach monitoring": [
-        "Monitoramento das violações de dados"
+        "Monitoramento dos incidentes de dados"
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
@@ -9221,7 +9110,7 @@
         "Recursos gratuitos de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Free VPN on a single device": [
-        "VPN gratuito num único dispositivo"
+        "VPN gratuita num único dispositivo"
       ],
       "Fully refundable for 30 days": [
         "Totalmente reembolsável por 30 dias"
@@ -9234,9 +9123,6 @@
       ],
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suíça de alta velocidade que protege a sua privacidade"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
@@ -9354,11 +9240,8 @@
       "Start protecting your organization": [
         "Comece a proteger a sua organização"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comece a proteger-se online em 2 passos simples"
-      ],
       "Strict no-logs policy": [
-        "Política estrita sem registos"
+        "Política rigorosa de não registo"
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 utilizadores"
@@ -9373,7 +9256,7 @@
         "Autenticação de dois fatores"
       ],
       "Unlimited devices": [
-        "Dispositivos ilimitados"
+        "Número ilimitado de dispositivos"
       ],
       "Unlimited devices and aliases": [
         "Dispositivos e aliases ilimitados"
@@ -9469,7 +9352,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "Suporte"
+        "Apoio ao cliente"
       ],
       "Team management": [
         "Gestão de equipa"
@@ -9513,7 +9396,7 @@
         "Proteção essencial e colaboração segura para um número ilimitado de utilizadores."
       ],
       "For next-level password management and identity protection.": [
-        "Para gestão de palavras-passe de nível superior e proteção de identidade."
+        "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Se eliminar a sua conta, perde todos os benefícios do plano ${ visionary } e este não estará disponível se criar uma nova conta."
@@ -9546,13 +9429,13 @@
         "Aceder à internet com segurança a partir de qualquer sítio com monitorização essencial de rede"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "E-mail seguro com funcionalidades avançadas para as suas comunicações diárias."
+        "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "A conta de iniciação sem custo concebida para empoderar todas as pessoas com privacidade por defeito."
+        "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacidade ilimitada e mais armazenamento para até 2 pessoas."
@@ -9827,7 +9710,7 @@
         "Envie o logo da sua empresa para personalizar a experiência das suas equipas nas aplicações Web da ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Utilize o seus próprios endereços de domínio de e-mail personalizado, e.g., voce@oseunome.com"
+        "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Não mantemos registos de utilização de sessões do que faz online e não registamos metadados que possam comprometer a sua privacidade."
@@ -9895,7 +9778,7 @@
         "Localizações de servidor dedicado em América do Norte e Europa"
       ],
       "Multi-platform support": [
-        "Suporte multi-plataforma"
+        "Apoio ao cliente multiplataforma"
       ],
       "Private gateways": [
         "Portas de entrada privadas"
@@ -10592,7 +10475,7 @@
         "Os seguintes administradores terão acesso à chave da organização."
       ],
       "The organization key must be activated first.": [
-        "Tem de activar a chave da organização primeiro."
+        "Tem de ativar a chave da organização primeiro."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "Isto irá enviar a chave da organização mais recente para os administradores que atualmente não têm acesso a ela."
@@ -10641,17 +10524,11 @@
       "Bank transfer": [
         "Transferência bancária"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -13274,11 +13151,6 @@
         "Claro"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Temas"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -13315,9 +13187,6 @@
         "${ friendsSubscribed } Amigo inscrito",
         "${ friendsSubscribed } Amigos inscritos"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } clientes"
-      ],
       "(active)": [
         "(ativo)"
       ],
@@ -13344,9 +13213,6 @@
       ],
       "Access control": [
         "Controlo de acesso"
-      ],
-      "Account": [
-        "Conta"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -13684,9 +13550,6 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
-      "Dismiss setup checklist": [
-        "Ignorar lista de verificação de configuração"
-      ],
       "Domain names": [
         "Nomes de domínio"
       ],
@@ -13749,9 +13612,6 @@
       ],
       "Email": [
         "E-mail"
-      ],
-      "Email subscriptions": [
-        "Subscrições de email"
       ],
       "Enable advanced account protection": [
         "Ativar a proteção avançada da conta"
@@ -13816,9 +13676,6 @@
       ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
-      ],
-      "Get started": [
-        "Comece agora"
       ],
       "Get the apps": [
         "Obter as aplicações"
@@ -13970,9 +13827,6 @@
       ],
       "Phone": [
         "Telefone"
-      ],
-      "Plans": [
-        "Planos"
       ],
       "Preview": [
         "Pré-visualização"
@@ -14215,9 +14069,6 @@
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Atualize a proteção da sua rede com servidores dedicados"
-      ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
@@ -14252,7 +14103,7 @@
         "Verificação do seu cartão..."
       ],
       "Verifying your payment...": [
-        "A verificar o seu pagamento..."
+        "Verificação do seu pagamento..."
       ],
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao atualizar para Professional."
@@ -14295,9 +14146,6 @@
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
-      ],
-      "Your current plan": [
-        "O teu plano atual"
       ],
       "Your exposed information": [
         "As suas informações expostas"

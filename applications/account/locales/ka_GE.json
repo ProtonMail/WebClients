@@ -1784,6 +1784,18 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ]
     },
     "Address action": {
@@ -2282,6 +2294,14 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
@@ -2292,6 +2312,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
       "1 month": [
         "1 თვე"
       ],
@@ -2301,8 +2329,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
       "Lifetime": [
         "სამუდამოდ"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -3041,6 +3075,9 @@
       ],
       "Starting today": [
         "დღეიდან"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ],
       "Total": [
         "ჯამი"
@@ -4005,7 +4042,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -7425,9 +7462,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღების რეგისტრაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
@@ -7447,9 +7481,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ უსაფრთხოების გასაღები ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
       ],
       "Insert your security key into your device's USB port.": [
         "მიაერთეთ თქვენი უსაფრთხოების გასაღები თქვენი მოწყობილობის USB პორტს."
@@ -7904,9 +7935,6 @@
       ],
       "Password ends with": [
         "პაროლი მთავრდება"
-      ],
-      "Payment details": [
-        "გადახდის დეტალები"
       ],
       "Permissions": [
         "წვდომები"
@@ -9373,9 +9401,6 @@
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
       ],
@@ -9504,9 +9529,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები."
@@ -10082,6 +10104,9 @@
       ],
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
+      ],
+      "No card required": [
+        "ბარათი საჭირო არ არის"
       ],
       "No countries enabled": [
         "ჩართული ქვეყნების გარეშე"
@@ -10903,9 +10928,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "დასადასტურებლად შეიყვანეთ წასაშლელი მომხმარებლის სახელი."
       ],
-      "To continue to ${ product }": [
-        "${ product }-ზე გასაგრძელებლად"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "ჩვენი სერვისების მუდმივად გასაუმჯობესებლად ჩვენ ხანდახან ვაგროვებთ მონაცემებს ჩვენი აპლიკაციების ნორმალურად ფუნქციონირების შესახებ. ეს ინფორმაცია მესამე პირებთან არასოდეს ზიარდება."
       ],
@@ -11229,9 +11251,6 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "როცა ბმულზე დააწკაპუნებთ, ფიშინგის საწინააღმდეგო ეს ფუნქცია გკითხავთ, მართლა გნებავთ თუ არა ამ ბმულის გახსნა."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "როცა თქვენი გამოწერის განახლების დრო მოვა, ანგარიშიდან თანხის ჩამოჭრამდე ჩვენ ყველა არსებულ კრედიტს გამოვიყენებთ."
@@ -13743,9 +13762,6 @@
       "Create an alias": [
         "ფსევდონიმის შექმნა"
       ],
-      "Don't have access to your 2FA?": [
-        "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
-      ],
       "Downloads": [
         "გადმოწერები"
       ],
@@ -14365,12 +14381,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: შესვლა"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: რეგისტრაცია"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -14380,9 +14390,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში | დაიბრუნეთ კონფიდენციალობა"
       ],
-      "Create a new ${ appName } account": [
-        "შექმენით ახალი ${ appName }-ის ანგარიში"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "ისიამოვნეთ ${ BRAND_NAME }-ით ორი კვირის განმავლობაში უფასოდ"
       ],
@@ -14391,18 +14398,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი? შეცვალეთ ის თქვენი აღდგენის კოდის, ელფოსტის ან SMS-ის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "თქვენი ${ appName }-ის ანგარიშთან წვდომისთვის საჭიროა, შეხვიდეთ"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
@@ -14991,9 +14986,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
-      ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
@@ -15118,9 +15110,6 @@
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "დაიწყეთ თავის დაცვა ინტერნეტში 2 იოლი ნაბიჯით"
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
@@ -16589,6 +16578,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "ახლავე შეძენა"
+      ],
       "Contact us": [
         "დაგვიკავშირდით"
       ],
@@ -17152,6 +17144,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -19001,9 +18999,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "ფოტოების სექციის ჩართვა"
-      ],
       "Get updates about comments via email": [
         "კომენტარის განახლებების ელფოსტით მიღება"
       ],
@@ -19227,6 +19222,9 @@
       ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიშის შექმნა"
+      ],
+      "Custom email domain": [
+        "თქვენი ელფოსტის დომენი"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "დაშიფრული ელფოსტა ${ totalMailStorageSize } საცავით"
@@ -19800,6 +19798,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "მიიღეთ კრედიტები, როცა პიროვნება, რომელიც მოიწვიეთ, შეიძენს ${ BRAND_NAME }-ის სატარიფო გეგმას."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "sso": {
@@ -21766,9 +21774,6 @@
       "Delete user?": [
         "წავშალო მომხმარებელი?"
       ],
-      "Delete version history?": [
-        "წავშალო ვერსიის ისტორია?"
-      ],
       "Deny access to user?": [
         "ავუკრძალო წვდომა მომხმარებელს?"
       ],
@@ -21988,9 +21993,6 @@
       ],
       "Find email or username": [
         "ელფოსტის ან მომხმარებლის მოძებნა"
-      ],
-      "Finish setting up your business account": [
-        "დაასრულეთ თქვენი ბიზნეს ანგარიშის მორგება"
       ],
       "Folders": [
         "საქაღალდეები"

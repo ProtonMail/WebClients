@@ -293,9 +293,6 @@
       "Skip": [
         "Überspringen"
       ],
-      "Start a meeting": [
-        "Meeting starten"
-      ],
       "Start an instant meeting": [
         "Sofortiges Meeting beginnen"
       ],
@@ -1588,7 +1585,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+        "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
       "Security key": [
         "Sicherheitsschlüssel"
@@ -1744,6 +1741,9 @@
       "Coming soon": [
         "Demnächst verfügbar"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Verbindung unterbrochen. Erneuter Verbindungsaufbau..."
+      ],
       "Connection lost": [
         "Verbindung verloren"
       ],
@@ -1790,7 +1790,7 @@
         "Aktuelle Protokolle herunterladen"
       ],
       "Each code can only be used once": [
-        "Jeder Code kann nur einmal verwendet werden"
+        "Jeder Code kann nur ein Mal verwendet werden"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -1814,7 +1814,7 @@
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
@@ -1848,9 +1848,6 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gehe zu about:config, suche nach media.peerconnection.enabled, und setze es auf \"true\"."
-      ],
-      "Host your own secure meeting": [
-        "Dein eigenes sicheres Meeting veranstalten"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Halte deine eigene sichere Besprechung ab. Starte einen Anruf in ${ MEET_APP_NAME } und teile den Link, um jeden einzuladen, beizutreten. Einfach, sicher und kostenlos."
@@ -2017,6 +2014,12 @@
       "Premium meeting": [
         "Premium-Meeting"
       ],
+      "Reconnected successfully": [
+        "Verbindung wiederhergestellt"
+      ],
+      "Reconnecting to meeting...": [
+        "Verbindung zum Meeting wird wiederhergestellt..."
+      ],
       "Recording saved": [
         "Aufzeichnung gespeichert"
       ],
@@ -2061,9 +2064,6 @@
       ],
       "Sort by": [
         "Sortieren nach"
-      ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Einen Anruf in ${ MEET_APP_NAME } starten und den Link teilen, um jeden zum Mitmachen einzuladen. Einfach, sicher und kostenlos."
       ],
       "Stop sharing your screen": [
         "Bildschirmfreigabe beenden"
@@ -2147,7 +2147,7 @@
         "Woche"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "Would you like to delete this event?": [
         "Möchtest du diesen Termin löschen?"

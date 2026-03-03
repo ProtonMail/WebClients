@@ -933,7 +933,7 @@
         "プレビューを表示"
       ],
       "Sign in": [
-        "ログイン"
+        "サインイン"
       ],
       "Sign in with password": [
         "パスワードを使用してサインインする"
@@ -1987,14 +1987,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "ユーザーを手動で追加"
-      ],
       "Close": [
         "閉じる"
-      ],
-      "Configure your network": [
-        "ネットワークを設定"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
@@ -2014,29 +2008,17 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
-      "Invite your team": [
-        "チームを招待"
-      ],
-      "Manage global VPN permissions": [
-        "グローバルVPNの権限を管理する"
-      ],
       "Maybe later": [
         "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
       ],
-      "Secure your organization": [
-        "組織の安全を確保"
-      ],
       "Send": [
         "送信"
       ],
       "Set up other features": [
         "他の機能を設定"
-      ],
-      "Set up SSO": [
-        "SSOを設定"
       ],
       "Take a tour": [
         "ツアーを開始"
@@ -2095,6 +2077,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } か月分の小計"
       ],
       "Total": [
         "合計"
@@ -3318,23 +3306,14 @@
       "Connect your CRM, website, printers, and more.": [
         "CRM、ウェブサイト、プリンターなどを接続。"
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "専用サーバーを通じてユーザーが ITリソースを使用できるようにするゲートウェイを作成しましょう。"
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "ワンクリックでZoomミーティングを作成し、参加詳細をイベントに追加します。"
       ],
       "Create groups you can email with a single address.": [
         "単一の アドレス でメールを送信できるグループ を作成します。"
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "新しいユーザーアカウントを作成するか、SSO（シングルサインオン）SCIMプロビジョニングでユーザーをインポートします。"
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "120以上の共有サーバーの位置にそれぞれに接続できるユーザーを決定できます。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
@@ -3380,9 +3359,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "まだ設定していない場合は、復旧方法を設定して、${ VPN_APP_NAME }へのアクセスを絶対に失わないようにしましょう。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
@@ -3446,6 +3422,11 @@
       ],
       "Disable address?": [
         "アドレスを無効にしますか？"
+      ]
+    },
+    "dollar_offer": {
+      "Special offer: Save 90% off our premium plan": [
+        "特別オファー：プレミアムプランを90%割引"
       ]
     },
     "dollar_offer: Action": {
@@ -3873,6 +3854,9 @@
       ],
       "Added on ${ formattedDate }": [
         "${ formattedDate } に追加されました"
+      ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "復旧連絡先に協力を依頼してください。相手にはリクエストを確認し、データをロック解除するためのメールが届きます。"
       ],
       "Immediate": [
         "すぐに"
@@ -5026,9 +5010,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
       ]
@@ -5048,9 +5029,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "セキュリティキー ${ name } を削除してよろしいですか？"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
       ],
       "Insert your security key into your device's USB port.": [
         "セキュリティキーをデバイスの USB ポートに挿入してください。"
@@ -5293,9 +5271,6 @@
       ],
       "Password ends with": [
         "パスワードの末尾"
-      ],
-      "Payment details": [
-        "支払い詳細"
       ],
       "Protection": [
         "保護"
@@ -6412,9 +6387,6 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
-      "Each code can only be used once": [
-        "各コードは 1 回のみ使用可能です"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "各ドメインは SPF (TXT) レコードを 1 つだけ持つことができます。 既存の SPF (TXT) レコードを保持したい場合は、現在のレコードに ${ spf } を追加します (${ spfValue } の後に置きます)。"
       ],
@@ -6494,7 +6466,7 @@
         "ユーザー ${ userName } の新しいパスワードを入力してください。"
       ],
       "Enter the code from your authenticator app": [
-        "認証アプリのコードを入力してください"
+        "認証アプリからのコードを入力してください"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "お客様の電話番号（${ phone }）に届く番号を入力してください。"
@@ -6513,9 +6485,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } アカウントの詳細を入力してください。"
@@ -6582,9 +6551,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "パスワードやその他の個人データが漏洩した場合に通知を受け取ります。 ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "始めましょう"
       ],
       "Get started with the referral link above.": [
         "上記の紹介リンクから始めてください。"
@@ -6919,6 +6885,9 @@
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "お客様の ${ BRAND_NAME } 認証情報を使用するすべての ${ BRAND_NAME } サービスに対する認証の試行を監視および監査します。"
       ],
+      "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
+        "ログインアクティビティを監視し、不正アクセスを検出し、セキュリティおよびコンプライアンスのギャップを解消します。 "
+      ],
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
       ],
@@ -7028,7 +6997,7 @@
         "組織モニター"
       ],
       "Organization size": [
-        "組織規模"
+        "組織の規模"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "専用サーバーをゲートウェイに編成し、どのメンバーがアクセスできるかを決定します。"
@@ -7312,9 +7281,6 @@
       "Set up your organization": [
         "組織を設定"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "組織の設定を終え、簡単な手順でデータの保護を開始しましょう。"
-      ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
       ],
@@ -7371,9 +7337,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "${ startsOnTime }に開始します"
-      ],
-      "Step ${ step }": [
-        "ステップ ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
@@ -7705,6 +7668,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle }の特典を維持するには、アップグレードしてください。"
       ],
+      "Upgrade to unlock the ${ monitorLink }.": [
+        "${ monitorLink }をアンロックするには、アップグレードしてください。"
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "組織向けの${ PROTON_SENTINEL_NAME }にアクセスするには、${ firstPlanNames }または${ lastPlanName }にアップグレードしてください。"
       ],
@@ -7894,9 +7860,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
       ],
@@ -7998,9 +7961,6 @@
       ],
       "You can now return to the application to continue": [
         "アプリケーションに戻って続けましょう"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "同時に開けるチャット数は1つのみです。新しい会話を開始するには以前の会話を閉じてください。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -8287,6 +8247,9 @@
       "Declined": [
         "拒否"
       ],
+      "Owner": [
+        "所有者"
+      ],
       "Paused": [
         "一時停止"
       ],
@@ -8492,7 +8455,7 @@
         "ブラウザのバージョン"
       ],
       "BTC address": [
-        "Bitcoinアドレス"
+        "Bitcoin アドレス"
       ],
       "BTC amount": [
         "Bitcoin 金額"
@@ -9465,20 +9428,6 @@
         "ユーザー名とアドレス"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "ライブチャットは${ planName }で利用可能です"
-      ],
-      "Open support form": [
-        "サポートフォームを開く"
-      ],
-      "Upgrade subscription": [
-        "サブスクリプションをアップグレード"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "チャットサポートやその他のプレミアム機能を利用するにはアップグレードしてください。または、無料のサポートフォームを使って問題を報告してください。"
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "もう少しです"
@@ -9772,9 +9721,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: サインイン"
-      ],
       "${ appName }: Sign-up": [
         "${ appName }: アカウント作成"
       ],
@@ -9783,15 +9729,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } アカウントのユーザー名を見つける"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } アカウントのパスワードをお忘れですか? ここで回復コード、メール、または SMS を使用してリセットすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などに再びアクセスできるようになります。"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } アカウントのユーザー名をお忘れですか? 予備のメールアドレスまたは電話番号を使用して検索し、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などへのアクセスを取り戻します。"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } アカウントのパスワードをリセット"
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } アカウントにアクセスするには、サインインしてください"
@@ -9882,10 +9819,10 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "最高速 VPN"
+        "最高の VPN 速度"
       ],
       "Keep your inbox organized with folders": [
-        "受信トレイをフォルダーで整理する"
+        "受信トレイをフォルダーで整理"
       ],
       "Medium VPN speed": [
         "中程度の VPN 速度"
@@ -9981,7 +9918,7 @@
         "${ PASS_APP_NAME } + SimpleLogin 一生涯"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
+        "${ n } hide-my-email エイリアス付きの${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス付きの ${ PASS_APP_NAME }"
@@ -10005,7 +9942,7 @@
         "1 TBの安全なストレージ"
       ],
       "1 user": [
-        "1 ユーザー"
+        "1ユーザー"
       ],
       "10 email addresses/aliases": [
         "10 件のメールアドレス / エイリアス"
@@ -10035,7 +9972,7 @@
         "アクティビティログとポリシー"
       ],
       "Ad-blocker and malware protection": [
-        "広告ブロックとマルウェア保護"
+        "広告ブロッカーとマルウェア防止"
       ],
       "Admin console": [
         "管理者コンソール"
@@ -10077,7 +10014,7 @@
         "すべてのプラットフォームで利用可能"
       ],
       "Calendar sharing": [
-        "カレンダーの共有"
+        "カレンダー共有"
       ],
       "Catch-all": [
         "Catch-All"
@@ -10161,7 +10098,7 @@
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } の無料機能"
       ],
       "Free VPN on a single device": [
-        "一つのデバイスで無料のVPN"
+        "1 台のデバイスで無料 VPN"
       ],
       "Fully refundable for 30 days": [
         "30日間全額返金"
@@ -10175,11 +10112,8 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "プライバシーを保護する高速スイス製VPN"
-      ],
       "High-speed VPN on ${ n } device": [
-        "${ n } 台のデバイス上の高速 VPN"
+        "${ n } 台のデバイスで高速 VPN"
       ],
       "HTML signatures": [
         "HTML 署名"
@@ -10227,7 +10161,7 @@
         "優先的なメールサポート"
       ],
       "Priority support": [
-        "優先サポート"
+        "優先的なサポート"
       ],
       "Priority support & live chat": [
         "優先サポートとライブチャット"
@@ -10260,7 +10194,7 @@
         "いつでもメールをスケジュールしてスヌーズする"
       ],
       "Secure Core servers": [
-        "Secure Coreサーバー"
+        "Secure Core サーバー"
       ],
       "Secure file storage and sharing": [
         "安全なファイルストレージと共有"
@@ -10301,9 +10235,6 @@
       "Start protecting your organization": [
         "組織の保護を開始する"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 つの簡単なステップでオンラインで自分を保護"
-      ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
       ],
@@ -10317,7 +10248,7 @@
         "VPN 経由の TOR"
       ],
       "Two-factor authentication": [
-        "2要素認証"
+        "2 要素認証"
       ],
       "Unlimited devices": [
         "無制限のデバイス"
@@ -10416,7 +10347,7 @@
         "サポート"
       ],
       "Team management": [
-        "チーム管理"
+        "チームマネジメント"
       ]
     },
     "new_plans: info": {
@@ -10490,13 +10421,13 @@
         "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "毎日の会話のための、高度な機能を備えた安全なメール"
+        "毎日の会話のための、高度な機能を備えた安全なメールのプランです。"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "インターネットへの安全かつ無制限の高速アクセスを提供する VPN のプランです。"
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "すべての人にプライバシーをデフォルトで提供するように設計された無料のスターターアカウント。"
+        "すべての人にプライバシーを提供するための、無料のスタータープランです。"
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "2 人までの無制限のプライバシーとより大きなストレージ"
@@ -10773,7 +10704,7 @@
         "ビジネスのロゴをアップロードして、${ BRAND_NAME }のウェブアプリでのチーム体験をカスタマイズします"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "独自のカスタムドメインアドレスを使用します 例: you@yourname.com"
+        "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "私たちは、オンラインでの行動に関するセッション使用ログを保持せず、プライバシーを侵害する可能性のあるメタデータも記録しません"
@@ -10819,13 +10750,13 @@
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
       ],
       "Browser extension": [
-        "ブラウザの拡張機能"
+        "ブラウザ拡張機能"
       ],
       "Censorship circumvention": [
         "検閲回避"
       ],
       "Central control panel": [
-        "中央制御パネル"
+        "中央制御盤"
       ],
       "Create up to ${ n } calendar": [
         "最大 ${ n } 個までのカレンダーを作成"
@@ -11643,9 +11574,6 @@
       "Bank transfer": [
         "銀行振込"
       ],
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
@@ -11667,6 +11595,12 @@
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
@@ -11692,6 +11626,18 @@
       "Got it": [
         "分かりました"
       ],
+      "Including ${ rate }% tax": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -11715,6 +11661,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Tax ${ rate }%": [
+        "税金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税金 ${ rate }%"
       ],
       "terms and conditions": [
         "利用規約"
@@ -11794,7 +11746,7 @@
         "無効なカード番号です"
       ],
       "Invalid expiration date": [
-        "無効な有効期限"
+        "無効な有効期限です"
       ],
       "Invalid security code": [
         "無効なセキュリティコードです"
@@ -13378,6 +13330,11 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026年新春セール"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }は${ BRAND_NAME }アカウントにシングルサインオンでサインインするためにあなたの支援を要請しています。"
@@ -13628,7 +13585,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "転送中"
+        "アクティブ"
       ],
       "Inactive": [
         "非アクティブ"
@@ -13769,7 +13726,7 @@
         "1 ユーザーあたり ${ n } 個の無料 VPN 接続"
       ],
       "${ n } high-speed VPN connection": [
-        "${ n } 件の高速VPN接続"
+        "${ n } 件の高速 VPN 接続"
       ],
       "${ n } high-speed VPN connection per user": [
         "1 ユーザーあたり ${ n } 件の高速 VPN 接続"
@@ -14463,10 +14420,10 @@
     },
     "Suffix": {
       "/month": [
-        "/ 月"
+        "/月"
       ],
       "/user per month": [
-        "/ 毎月 (1 ユーザーあたり)"
+        "毎月 (1 ユーザーあたり)"
       ]
     },
     "Suffix for price": {
@@ -14586,11 +14543,6 @@
         "${ BRAND_NAME } の設定を使用"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "テーマ"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }日"
@@ -14624,9 +14576,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "組織向け ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } クライアント"
-      ],
       "(active)": [
         "(転送中)"
       ],
@@ -14653,9 +14602,6 @@
       ],
       "Access control": [
         "アクセス管理"
-      ],
-      "Account": [
-        "アカウント"
       ],
       "Account recovery": [
         "アカウントの回復"
@@ -15014,9 +14960,6 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
-      "Dismiss setup checklist": [
-        "セットアップチェックリストを閉じる"
-      ],
       "Domain names": [
         "ドメイン名"
       ],
@@ -15086,9 +15029,6 @@
       "Email categories": [
         "メールカテゴリ"
       ],
-      "Email subscriptions": [
-        "メール購読"
-      ],
       "Enable advanced account protection": [
         "高度なアカウント保護を有効にする"
       ],
@@ -15157,9 +15097,6 @@
       ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
-      ],
-      "Get started": [
-        "始めましょう"
       ],
       "Get the apps": [
         "アプリを入手"
@@ -15275,9 +15212,6 @@
       "OpenVPN configuration files": [
         "OpenVPN 設定ファイル"
       ],
-      "OpenVPN username": [
-        "OpenVPNユーザー名"
-      ],
       "Org setup": [
         "組織設定"
       ],
@@ -15322,9 +15256,6 @@
       ],
       "Phone": [
         "電話番号"
-      ],
-      "Plans": [
-        "プラン"
       ],
       "Preview": [
         "プレビュー"
@@ -15599,9 +15530,6 @@
       "Upgrade to keep your premium benefits.": [
         "プレミアム特典を維持するには、アップグレードしてください。"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "専用サーバーでネットワークの保護を強化"
-      ],
       "Upgrade your privacy": [
         "あなたのプライバシーをアップグレード"
       ],
@@ -15642,7 +15570,7 @@
         "カードを検証中..."
       ],
       "Verifying your payment...": [
-        "お支払いの確認..."
+        "支払いを検証中..."
       ],
       "Video conferencing with Zoom": [
         "Zoomでのビデオ会議"
@@ -15691,9 +15619,6 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ],
-      "Your current plan": [
-        "現在のプラン"
       ],
       "Your exposed information": [
         "あなたの公開情報"
@@ -16156,6 +16081,9 @@
       ],
       "Recommended": [
         "おすすめ"
+      ],
+      "Save ${ price.checkoutUi.discountPercent }%": [
+        "${ price.checkoutUi.discountPercent }%節約"
       ]
     },
     "User role": {

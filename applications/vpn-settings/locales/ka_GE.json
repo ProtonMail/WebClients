@@ -933,7 +933,7 @@
         "გადახედვის ჩვენება"
       ],
       "Sign in": [
-        "Შესვლა"
+        "შესვლა"
       ],
       "Sign in with password": [
         "პაროლით შესვლა"
@@ -1228,6 +1228,18 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ]
     },
     "Address action": {
@@ -1614,6 +1626,14 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
         "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
@@ -1624,6 +1644,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
       "1 month": [
         "1 თვე"
       ],
@@ -1633,8 +1661,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
       "Lifetime": [
         "სამუდამოდ"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -1902,9 +1936,6 @@
       "Close": [
         "დახურვა"
       ],
-      "Configure your network": [
-        "მოირგეთ თქვენი ქსელი"
-      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -1926,17 +1957,11 @@
       "Invite your team": [
         "მოიწვიეთ თქვენი გუნდი"
       ],
-      "Manage global VPN permissions": [
-        "გლობალური VPN-ის წვდომების მართვა"
-      ],
       "Maybe later": [
         "მოგვიანებით"
       ],
       "Remind me later": [
         "შემახსენე მოგვიანებით"
-      ],
-      "Secure your organization": [
-        "დაიცავით თქვენი ორგანიზაცია"
       ],
       "Send": [
         "გაგზავნა"
@@ -2003,6 +2028,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ],
       "Total": [
         "ჯამი"
@@ -2794,7 +2822,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -3223,23 +3251,14 @@
       "Connect your CRM, website, printers, and more.": [
         "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "შექმენით რაუტერი, რომ მისცეთ თქვენს მომხმარებლებს წვდომა თქვენი IT-ის რესურსებთან გამოყოფილი სერვერების გავლით."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "შექმენით Zoom-ის შეხვედრა და დაამატეთ შესვლის დეტალები თქვენს მოვლენას ერთი წკაპით."
       ],
       "Create groups you can email with a single address.": [
         "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "შექმენით ახალი მომხმარებლის ანგარისები, ან შემოიტანეთ მომხმარებლები SSO (Single Sign-on) SCIM-ის სამუშაოდ მომზადებით."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "გადაწყვიტეთ, რომელ მომხმარებლებს სეუძლიათ დაკავშირება ჩვენს 120+ გაზიარებული სერვერის მდებარეობასთან."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "იოლი წვდომა თქვენს ელფოსტასთან და კალენდართან კომპიუტერიდან და მობილურიდან."
@@ -3936,7 +3955,7 @@
         "არასწორი კოდი ${ name }"
       ],
       "Invalid card number": [
-        "არასწორი ბარათის ნომერი"
+        "ბარათის არასწორი ნომერი"
       ],
       "Invalid code": [
         "არასწორი კოდი"
@@ -4932,9 +4951,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "თქვენი უსაფრთხოების გასაღების რეგისტრაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ]
@@ -4954,9 +4970,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ უსაფრთხოების გასაღები ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
       ],
       "Insert your security key into your device's USB port.": [
         "მიაერთეთ თქვენი უსაფრთხოების გასაღები თქვენი მოწყობილობის USB პორტს."
@@ -5207,9 +5220,6 @@
       ],
       "Password ends with": [
         "პაროლი მთავრდება"
-      ],
-      "Payment details": [
-        "გადახდის დეტალები"
       ],
       "Protection": [
         "დაცვა"
@@ -6357,9 +6367,6 @@
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
       ],
@@ -6459,9 +6466,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები."
       ],
@@ -6529,7 +6533,7 @@
         "მიიღეთ გაფრთხილება, თუ თქვენმა პაროლმა ან სხვა პირადმა მონაცემებმა გაჟონა. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "დაიწყეთ"
+        "დავიწყოთ"
       ],
       "Get started with the referral link above.": [
         "დაიწყეთ რეფერალი ბმულით ზემოთ მხარეს."
@@ -7254,9 +7258,6 @@
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "მოირგეთ თქვენი ორგანიზაცია და დაიწყეთ თქვენი მონაცემების დაცვა რამდენიმე იოლი ნაბიჯით."
-      ],
       "Setting up ${ feature }…": [
         "${ feature }-ის მორგება…"
       ],
@@ -7311,10 +7312,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "დაწყების დროა ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "ნაბიჯი ${ step }",
-        "ნაბიჯი ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
@@ -7541,9 +7538,6 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "დასადასტურებლად შეიყვანეთ წასაშლელი მომხმარებლის სახელი."
-      ],
-      "To continue to ${ product }": [
-        "${ product }-ზე გასაგრძელებლად"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "ჩვენი სერვისების მუდმივად გასაუმჯობესებლად ჩვენ ხანდახან ვაგროვებთ მონაცემებს ჩვენი აპლიკაციების ნორმალურად ფუნქციონირების შესახებ. ეს ინფორმაცია მესამე პირებთან არასოდეს ზიარდება."
@@ -7814,9 +7808,6 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "როცა გააუქმებთ, თქვენი გამოწერა აღარ განახლდება, მაგრამ სატარიფო გეგმით გამოწერის პერიოდის ბოლომდე შეგეძლებათ, ისარგებლოთ. ამის შემდეგ, ის ${ BRAND_NAME } Free სატარიფო გეგმაზე ჩამოიწევა."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "როცა თქვენი გამოწერის განახლების დრო მოვა, ანგარიშიდან თანხის ჩამოჭრამდე ჩვენ ყველა არსებულ კრედიტს გამოვიყენებთ."
@@ -9196,9 +9187,6 @@
       "Create an alias": [
         "ფსევდონიმის შექმნა"
       ],
-      "Don't have access to your 2FA?": [
-        "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
-      ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
       ],
@@ -9359,14 +9347,8 @@
       ]
     },
     "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "${ planName }-სთვის ხელმისაწვდომია ცოცხალი ჩატი"
-      ],
       "Open support form": [
         "მხარდაჭერის ფორმის გახსნა"
-      ],
-      "Upgrade subscription": [
-        "სატარიფო გეგმის აწევა"
       ]
     },
     "Loading info": {
@@ -9657,29 +9639,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: შესვლა"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: რეგისტრაცია"
-      ],
-      "Create a new ${ appName } account": [
-        "შექმენით ახალი ${ appName }-ის ანგარიში"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი? შეცვალეთ ის თქვენი აღდგენის კოდის, ელფოსტის ან SMS-ის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "თქვენი ${ appName }-ის ანგარიშთან წვდომისთვის საჭიროა, შეხვიდეთ"
       ]
     },
     "Modal title": {
@@ -9852,9 +9813,17 @@
         "${ n } საქაღალდე და ჭდე",
         "${ n } საქაღალდე და ჭდე"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } მეტსახელი Hide-my-email-სთვის",
+        "${ n } მეტსახელი Hide-my-email-სთვის"
+      ],
       "${ n } label": [
         "${ n } ჭდე",
         "${ n } ჭდე"
+      ],
+      "${ n } message per day": [
+        "${ n }-მდე შეტყობინება დღეში",
+        "${ n }-მდე შეტყობინება დღეში"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
         "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
@@ -9927,7 +9896,7 @@
         "აქტივობის ჟურნალი და პოლიტიკა"
       ],
       "Ad-blocker and malware protection": [
-        "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
+        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
       ],
       "Admin console": [
         "ადმინისტრირების კონსოლი"
@@ -9999,7 +9968,7 @@
         "თქვენი ელფოსტის დომენები"
       ],
       "Custom fields": [
-        "მომხმარებლის ველები"
+        "მორგებადი ველები"
       ],
       "Custom workspace branding": [
         "მორგებული სამუშაო სივრცის ბრენდინგი"
@@ -10041,7 +10010,7 @@
         "დაშიფრული VPN სერვერები"
       ],
       "End-to-end encryption": [
-        "გამჭოლი დაშიფვრა"
+        "გამჭოლი შიფრაცია"
       ],
       "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
         "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
@@ -10066,9 +10035,6 @@
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
       ],
       "High-speed VPN on ${ n } device": [
         "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
@@ -10195,9 +10161,6 @@
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "დაიწყეთ თავის დაცვა ინტერნეტში 2 იოლი ნაბიჯით"
-      ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
       ],
@@ -10214,7 +10177,7 @@
         "2FA"
       ],
       "Unlimited devices": [
-        "მოწყობილობების უსაზღვრო რაოდენობა"
+        "მოწყობილობების ულიმიტო რაოდენობა"
       ],
       "Unlimited devices and aliases": [
         "შეუზღუდავი მოწყობილობები და ფსევდონიმები"
@@ -10278,6 +10241,10 @@
       ],
       "User storage management": [
         "მომხმარებლის საცავის მართვა"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
       ],
       "Vault sharing with up to ${ n } person": [
         "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
@@ -11492,7 +11459,7 @@
         "შემდეგი ადმინისტრატორები მიიღებენ წვდომას ორგანიზაციის გასაღებზე."
       ],
       "The organization key must be activated first.": [
-        "ჯერ ორგანიზაცია უნდა გაააქტიუროთ."
+        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "ეს გააგზავნის უახლეს ორგანიზაციის გასაღებს ადმინისტრატორებთან, რომლებსაც ამჟამადდ მასზე წვდომა არ გააჩნიათ."
@@ -11541,9 +11508,6 @@
       "Bank transfer": [
         "საბანკო გადარიცხვა"
       ],
-      "Bitcoin": [
-        "ბიტკოინი"
-      ],
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
@@ -11552,9 +11516,6 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11610,6 +11571,12 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -11672,7 +11639,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "არასწორი ბარათის ნომერი"
+        "ბარათის არასწორი ნომერი"
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
@@ -13203,6 +13170,16 @@
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -14480,9 +14457,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } ორგანიზაციებისთვის"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME }-ის კლიენტები"
-      ],
       "(active)": [
         "(აქტიური)"
       ],
@@ -14873,9 +14847,6 @@
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
       ],
-      "Dismiss setup checklist": [
-        "მორგების საკონტროლო სიის მოცილება"
-      ],
       "Domain names": [
         "დომენის სახელი"
       ],
@@ -14944,9 +14915,6 @@
       ],
       "Email categories": [
         "ელფოსტის კატეგორიები"
-      ],
-      "Email subscriptions": [
-        "ელფოსტის გამოწერები"
       ],
       "Enable advanced account protection": [
         "ანგარიშის დამატებითი დაცვის ჩართვა"
@@ -15019,7 +14987,7 @@
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
       "Get started": [
-        "დაიწყეთ"
+        "დავიწყოთ"
       ],
       "Get the apps": [
         "აპების გადმოწერა"
@@ -15463,9 +15431,6 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "ასწიეთ სატარიფო გეგმა ფასიანი ფუნქციების შესანარჩუნებლად."
-      ],
-      "Upgrade your network protection with dedicated servers": [
-        "ასწიეთ თქვენი ქსელის დაცვის დონე გამოყოფილი სერვერებით"
       ],
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
@@ -16186,7 +16151,7 @@
       ],
       "${ n } server": [
         "${ n } სერვერი",
-        "${ n }+ სერვერი"
+        "${ n } სერვერი"
       ],
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",

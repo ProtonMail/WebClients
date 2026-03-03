@@ -211,7 +211,7 @@
         "Atrás"
       ],
       "Back to sign in": [
-        "Volver al inicio de sesión"
+        "Volver a iniciar sesión"
       ],
       "Block": [
         "Bloquear"
@@ -2708,6 +2708,9 @@
       ],
       "Failed to load OAuth": [
         "Error al cargar OAuth"
+      ],
+      "Finish setting up your business account": [
+        "Termine de configurar su cuenta de empresa"
       ],
       "Install migration app": [
         "Instalar aplicación de migración"
@@ -6266,8 +6269,8 @@
       "You will be notified when someone requests emergency access.": [
         "Se le notificará cuando alguien solicite acceso de emergencia."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Ya no podrá solicitar acceso a la cuenta de ${ user } en caso de restablecimiento de la contraseña."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Ya no podrá ayudar a ${ user } a recuperar sus datos si restablece su contraseña."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Ya no podrá solicitar acceso a la cuenta de ${ user } en caso de emergencia."
@@ -6482,9 +6485,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si la hora en el televisor ha expirado, haga clic en Actualizar en el televisor e ingrese el código de nuevo."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Si el tiempo en su TV ha caducado, haga clic en Actualizar en su TV e inténtelo de nuevo."
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
@@ -6788,6 +6788,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Hubo un problema al conectar su TV. Escanee el código QR de su TV una vez más."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
@@ -7759,7 +7762,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Hubo un problema al registrar la llave de seguridad. Intente nuevamente."
@@ -8237,9 +8240,6 @@
       ],
       "Password ends with": [
         "La contraseña termina con"
-      ],
-      "Payment details": [
-        "Detalles del pago"
       ],
       "Permissions": [
         "Permisos"
@@ -11715,7 +11715,7 @@
         "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Estos servidores se pueden agregar a una nueva puerta de enlace, pero no se puede cambiar su país."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando la suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar al método de pago anterior."
@@ -14981,13 +14981,13 @@
         "Encontrar el nombre de usuario de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Olvidó la contraseña de la cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+        "¿Olvidó la contraseña de su cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Olvidó el nombre de usuario de ${ BRAND_NAME }? Encuéntrelo usando el correo de recuperación o número de teléfono y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+        "¿Olvidó el nombre de usuario de su cuenta de ${ BRAND_NAME }? Encuéntrelo usando su correo electrónico de recuperación o número de teléfono y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Restablezca la contraseña de la cuenta de ${ BRAND_NAME }"
+        "Restablezca la contraseña de su cuenta de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sesión para acceder a la cuenta de ${ appName }"
@@ -15583,9 +15583,6 @@
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suiza de gran velocidad que protege su privacidad"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
         "VPN de alta velocidad en ${ n } dispositivos"
@@ -15710,9 +15707,6 @@
       ],
       "Start protecting your organization": [
         "Comience a proteger la organización"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comience a protegerse en línea en 2 sencillos pasos"
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
@@ -16436,6 +16430,9 @@
       ],
       "Reminder has been sent": [
         "El recordatorio ha sido enviado"
+      ],
+      "The key has been deleted.": [
+        "La clave ha sido eliminada."
       ],
       "Too many recent API requests": [
         "Demasiadas solicitudes de API recientes"
@@ -20619,6 +20616,16 @@
         "Obtenga créditos cuando la persona que invite se suscriba a un plan de ${ BRAND_NAME }."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -22835,9 +22842,6 @@
       ],
       "Find email or username": [
         "Buscar correo o nombre de usuario"
-      ],
-      "Finish setting up your business account": [
-        "Termine de configurar su cuenta de empresa"
       ],
       "Folders": [
         "Carpetas"

@@ -530,9 +530,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Hide": [
-        "छिपाएं"
-      ],
       "Hide advanced PGP settings": [
         "एडवांस PGP सेटिंग छुपाएं"
       ],
@@ -2811,9 +2808,6 @@
       "North Korea": [
         "उत्तर कोरिया"
       ],
-      "North Macedonia": [
-        "उत्तर मैसिडोनिया"
-      ],
       "Northern Mariana Islands": [
         "उत्तरी मैरियाना आइलैंड्स"
       ],
@@ -4007,9 +4001,6 @@
       "Something went wrong": [
         "कुछ गलत हो गया"
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "जब अतिरिक्त पासवर्ड सक्षम हो, तो नकली-नाम प्रबंधन केवल ${ PASS_APP_NAME } में किया जा सकता है।"
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "आपका अभी तक कोई संपर्क नहीं है। एक नया संपर्क बनाकर प्रारंभ करें।"
       ]
@@ -4171,15 +4162,7 @@
         "बहुत तेज गति"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "अपने ${ BRAND_NAME } खाते से जुड़ा एक सुरक्षा चाबी डालें।"
-      ],
       "Security key": [
         "सुरक्षा चाबी"
       ]
@@ -5346,9 +5329,6 @@
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
       ],
-      "Each code can only be used once": [
-        "हर कूटक का उपयोग केवल एक बार हो सकता है"
-      ],
       "Edit email address": [
         "ईमेल एड्रेस संपादित करें"
       ],
@@ -5400,9 +5380,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड डालें। ${ digit } अंक का।"
       ],
       "Enter your own password (as organization admin).": [
         "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
@@ -6298,9 +6275,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "जब आपने ${ senderName } के लिए विश्वसनीय कुंजियाँ सक्षम कीं, तो सार्वजनिक कुंजी संपर्क विवरणों में जोड़ दी गई।"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे या वैकल्पिक सत्यापन विधि का उपयोग करना चाहेंगे?"
@@ -9137,46 +9111,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "सभी नकली-नाम"
-      ],
       "Create alias": [
         "नकली-नाम बनाएं"
-      ],
-      "Create an alias": [
-        "नकली-नाम बनाएं"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "तुरंत नकली-नाम उत्पन्न करें, और आसानी से नकली-नामों और पासवर्डों को संभाले।"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email नकलीनाम"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email नकली-नाम ईमेल पता शेयर किए बिना ऑनलाइन चीजों के लिए साइनअप करने की सुविधा देता है। ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "नया नकली-नाम"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } खोलें"
-      ],
-      "Protect your online identity": [
-        "अपनी ऑनलाइन पहचान सुरक्षित रखें"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } आज़माएँ"
       ],
       "Used on Amazon for shopping, etc.": [
         "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
     "Security Center - Action": {
@@ -9997,9 +9939,6 @@
       "Address verification disabled": [
         "पता सत्यापन अक्षम"
       ],
-      "Alias copied to clipboard": [
-        "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
-      ],
       "Billing details updated": [
         "बिलिंग विवरण अपडेट हुआ"
       ],
@@ -10076,9 +10015,6 @@
       ],
       "Labels applied.": [
         "लेबल लागू किए गए।"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "आपके सबसे पुराने तिजोरी में स्टोर किया अंतिम संशोधित प्रकारांतर"
       ],
       "Mail list unsubscribed": [
         "मेल सूची सदस्यता समाप्त"

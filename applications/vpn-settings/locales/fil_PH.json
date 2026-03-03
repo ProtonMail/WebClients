@@ -119,9 +119,6 @@
       "Back": [
         "Bumalik"
       ],
-      "Back to sign in": [
-        "Bumalik sa sign in"
-      ],
       "Block": [
         "I-block"
       ],
@@ -535,9 +532,6 @@
       ],
       "Help and resources": [
         "Tulong at mga mapagkukunan"
-      ],
-      "Hide": [
-        "Itago"
       ],
       "Hide more benefits": [
         "Itago ang iba pang benepisyo"
@@ -1904,14 +1898,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Magdagdag ng mga user nang manu-mano"
-      ],
       "Close": [
         "Isara"
-      ],
-      "Configure your network": [
-        "I-configure ang network"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Ipagpatuloy ang paggamit ng ${ MAIL_APP_NAME }."
@@ -1931,29 +1919,17 @@
       "Discover and set up features": [
         "Tumuklas at mag-set up ng mga feature"
       ],
-      "Invite your team": [
-        "Mag-imbita ng team"
-      ],
-      "Manage global VPN permissions": [
-        "Pamahalaan ang mga pahintulot sa global VPN"
-      ],
       "Maybe later": [
         "Saka na lang"
       ],
       "Remind me later": [
         "Paalalahanan ako mamaya"
       ],
-      "Secure your organization": [
-        "I-secure ang organisasyon"
-      ],
       "Send": [
         "Ipadala"
       ],
       "Set up other features": [
         "I-set up ang iba pang mga feature"
-      ],
-      "Set up SSO": [
-        "I-set up ang SSO"
       ],
       "Take a tour": [
         "Mag-tour"
@@ -2807,9 +2783,6 @@
       "North Korea": [
         "North Korea"
       ],
-      "North Macedonia": [
-        "Hilagang Macedonia"
-      ],
       "Northern Mariana Islands": [
         "Northern Mariana Islands"
       ],
@@ -3240,23 +3213,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Ikonekta ang CRM, website, mga printer, at iba pa."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Gumawa ng Gateway upang bigyan ang mga user ng access sa mga IT resource sa pamamagitan ng mga dedicated server."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Gumawa ng Zoom meeting at magdagdag ng mga detalye ng pag-join sa kaganapan sa isang click."
       ],
       "Create groups you can email with a single address.": [
         "Gumawa ng mga pangkat na ma-i-email gamit ang iisang address."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Gumawa ng mga bagong user account o i-import ang mga user gamit ang SSO (single sign-on) SCIM provisioning."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Gumawa ng mga patakaran upang magpasya kung sino ang makakakonekta sa mga shared server sa bawat bansa."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Magpasya kung sinong mga user ang makakakonekta sa bawat isa sa 120+ lokasyon ng shared server."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Madaling i-access ang email at kalendaryo sa desktop at mobile."
@@ -3302,9 +3266,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Tulungan ang team na ligtas na mag-store ng mga password para sa sensitibong impormasyon ng negosyo at kliyente."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Kung hindi pa nagagawa, paganahin ang ilang paraan ng pag-recover upang matiyak na hindi mawawalan ng access sa ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Mukhang may mga pangkat ang listahan ng contact na ini-import mo. Pakisuri kung paano dapat i-import ang mga pangkat na ito."
@@ -4925,9 +4886,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nagkaproblema sa pag-authenticate gamit ang security key. Pakisubukang muli."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Nagkaproblema sa pagpaparehistro ng security key. Pakisubukang muli."
       ]
@@ -4947,9 +4905,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigurado ka bang gusto mong i-delete ang security key na ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Ipasok ang isang security key na naka-link sa ${ BRAND_NAME } Account."
       ],
       "Insert your security key into your device's USB port.": [
         "Ipasok ang iyong security key sa USB port ng iyong device."
@@ -5200,9 +5155,6 @@
       ],
       "Password ends with": [
         "Nagtatapos ang password sa"
-      ],
-      "Payment details": [
-        "Mga detalye ng pagbabayad"
       ],
       "Protection": [
         "Proteksyon"
@@ -6354,9 +6306,6 @@
       "Drop to import": [
         "I-drop upang i-import"
       ],
-      "Each code can only be used once": [
-        "Ang bawat code ay magagamit lang nang isang beses"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Ang bawat domain ay maaari lamang magkaroon ng isang SPF (TXT) record. Kung nais panatilihin ang umiiral na SPF (TXT) record, maaaring idagdag ang ${ spf } sa kasalukuyang record (ilagay ito pagkatapos ng ${ spfValue })."
       ],
@@ -6456,9 +6405,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ilagay ang verification code na ipinadala sa ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Ilagay ang verification code. Digit ${ digit }."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Ilagay ang mga detalye ng iyong ${ BRAND_NAME } Account."
       ],
@@ -6524,9 +6470,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Maabisuhan kung na-leak ang iyong password o iba pang personal na data. ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "Magsimula"
       ],
       "Get started with the referral link above.": [
         "Magsimula gamit ang referral link sa itaas."
@@ -7257,9 +7200,6 @@
       "Set up your organization": [
         "I-set up ang organisasyon"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "I-set up ang organisasyon at simulan ang pagprotekta sa data sa ilang madaling hakbang."
-      ],
       "Setting up ${ feature }…": [
         "Sine-set up ang ${ feature }…"
       ],
@@ -7553,9 +7493,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Upang kumpirmahin, mangyaring ilagay ang pangalan ng user na nais i-delete."
       ],
-      "To continue to ${ product }": [
-        "Upang magpatuloy sa ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Upang patuloy na mapabuti ang aming mga serbisyo, minsan ay nangongolekta kami ng data upang subaybayan ang wastong paggana ng aming mga application. Ang impormasyong ito ay hindi isine-share sa anumang 3rd-party na serbisyo."
       ],
@@ -7838,9 +7775,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kapag inalis mo ang isang server mula sa Gateway, papasok ito sa 10 araw na panahon ng deactivation. Maaaring idagdag ang server na ito sa bagong Gateway, ngunit hindi mapapalitan ang bansa nito."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Kapag nag-set up ka ng two-factor authentication, nagbibigay kami ng mga recovery code na magagamit mo para mag-sign in kung mawalan ka ng access sa iyong authenticator app."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kapag nag-renew ang subscription, ilalapat namin ang anumang available na credit bago singilin ang paraan ng pagbabayad sa itaas."
       ],
@@ -7945,9 +7879,6 @@
       ],
       "You can now return to the application to continue": [
         "Maaari nang bumalik sa application upang magpatuloy"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Maaari ka lamang magkaroon ng isang bukas na chat instance sa isang pagkakataon. Pakisara ang mga nakaraang pakikipag-usap bago magsimula ng bago."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Maaaring i-on ang mga abiso upang makakuha ng mga alerto kapag dumating ang mga bagong mensahe sa email sa folder na ito."
@@ -9251,9 +9182,6 @@
       "Create an alias": [
         "Gumawa ng alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Walang access sa 2FA?"
-      ],
       "Encryption and keys": [
         "Encryption at mga key"
       ],
@@ -9411,20 +9339,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Mga user at address"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Available ang live chat sa ${ planName }"
-      ],
-      "Open support form": [
-        "Buksan ang form ng suporta"
-      ],
-      "Upgrade subscription": [
-        "I-upgrade ang subscription"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "I-upgrade para ma-unlock ang suporta sa chat at iba pang premium feature, o gamitin ang libreng form ng suporta upang i-report ang isyu."
       ]
     },
     "Loading info": {
@@ -9716,29 +9630,8 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Mag-sign in"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Mag-sign up"
-      ],
-      "Create a new ${ appName } account": [
-        "Gumawa ng bagong ${ appName } account"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Hanapin ang iyong username ng ${ BRAND_NAME } Account"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nakalimutan ang password ng iyong ${ BRAND_NAME } Account? I-reset ito dito gamit ang iyong recovery code, email o SMS at bawiin ang access sa iyong ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } at higit pa."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Nakalimutan ang username ng iyong ${ BRAND_NAME } Account? Hanapin ito gamit ang iyong recovery email o phone number at bawiin ang access sa iyong ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at higit pa."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "I-reset ang password ng ${ BRAND_NAME } Account"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Mag-sign in para ma-access ang ${ appName } account"
       ]
     },
     "Modal title": {
@@ -10126,9 +10019,6 @@
       "Group management (coming soon)": [
         "Pamamahala ng pangkat (paparating na)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "High-speed na Swiss VPN na pumoprotekta sa privacy"
-      ],
       "High-speed VPN on ${ n } device": [
         "High-speed na VPN sa ${ n } device",
         "High-speed na VPN sa ${ n } na device"
@@ -10250,9 +10140,6 @@
       ],
       "Start protecting your organization": [
         "Simulang protektahan ang iyong organisasyon"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Simulan ang pagprotekta sa sarili online sa 2 madaling hakbang"
       ],
       "Strict no-logs policy": [
         "Mahigpit na patakaran ng walang pagtatala"
@@ -14491,11 +14378,6 @@
         "Maliwanag"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Mga Tema"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } araw",
@@ -14535,9 +14417,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para sa mga organisasyon"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Mga client ng ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(aktibo)"
       ],
@@ -14564,9 +14443,6 @@
       ],
       "Access control": [
         "Access control"
-      ],
-      "Account": [
-        "Account"
       ],
       "Account recovery": [
         "Pag-recover ng account"
@@ -14928,9 +14804,6 @@
       "Discard changes?": [
         "Itapon ang mga pagbabago?"
       ],
-      "Dismiss setup checklist": [
-        "I-dismiss ang checklist ng pag-set up"
-      ],
       "Domain names": [
         "Mga domain name"
       ],
@@ -14999,9 +14872,6 @@
       ],
       "Email categories": [
         "Mga kategorya ng email"
-      ],
-      "Email subscriptions": [
-        "Mga email subscription"
       ],
       "Enable advanced account protection": [
         "Paganahin ang advanced na proteksyon ng account"
@@ -15072,9 +14942,6 @@
       ],
       "Get more from your VPN": [
         "Sulitin ang iyong VPN"
-      ],
-      "Get started": [
-        "Magsimula"
       ],
       "Get the apps": [
         "Kunin ang mga app"
@@ -15191,9 +15058,6 @@
       "OpenVPN configuration files": [
         "Mga file ng configuration ng OpenVPN"
       ],
-      "OpenVPN username": [
-        "Username sa OpenVPN"
-      ],
       "Org setup": [
         "Pag-setup ng org"
       ],
@@ -15238,9 +15102,6 @@
       ],
       "Phone": [
         "Telepono"
-      ],
-      "Plans": [
-        "Mga Plano"
       ],
       "Preview": [
         "Preview"
@@ -15516,9 +15377,6 @@
       "Upgrade to keep your premium benefits.": [
         "I-upgrade upang mapanatili ang mga premium benefit."
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "I-upgrade ang proteksyon ng network gamit ang mga dedicated server"
-      ],
       "Upgrade your privacy": [
         "I-upgrade ang iyong privacy"
       ],
@@ -15608,9 +15466,6 @@
       ],
       "Your changes are not synced yet": [
         "Hindi pa na-sync ang mga pagbabago"
-      ],
-      "Your current plan": [
-        "Kasalukuyang plano"
       ],
       "Your exposed information": [
         "Ang iyong na-expose na impormasyon"

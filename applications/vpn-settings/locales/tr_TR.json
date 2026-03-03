@@ -120,7 +120,7 @@
         "Geri"
       ],
       "Back to sign in": [
-        "Oturum açmaya dön"
+        "Oturum açmaya geri dön"
       ],
       "Block": [
         "Engelle"
@@ -1077,13 +1077,13 @@
         "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
-        "Kimlik doğrulama kodu kullan"
+        "Kimlik doğrulama kodunu kullanın"
       ],
       "Use group sending permissions": [
         "Grup gönderim izinleri kullanılsın"
       ],
       "Use recovery code": [
-        "Kurtarma kodunu kullan"
+        "Kurtarma kodunu kullanın"
       ],
       "Use this Gmail address": [
         "Bu Gmail adresini kullan"
@@ -2010,7 +2010,7 @@
     },
     "Button": {
       "Add users manually": [
-        "Kullanıcıları el ile ekle"
+        "Kullanıcıları manuel olarak ekle"
       ],
       "Close": [
         "Kapat"
@@ -2040,7 +2040,7 @@
         "Ekibinizi davet edin"
       ],
       "Manage global VPN permissions": [
-        "Genel VPN izinleri yönetimi"
+        "Genel VPN izinlerini yönet"
       ],
       "Maybe later": [
         "Belki sonra"
@@ -2049,7 +2049,7 @@
         "Daha sonra hatırlat"
       ],
       "Secure your organization": [
-        "Kuruluşunuzun güvenliğini sağlayın"
+        "Kuruluşunuzu güvence altına alın"
       ],
       "Send": [
         "Gönder"
@@ -2058,7 +2058,7 @@
         "Diğer özellikleri ayarlayın"
       ],
       "Set up SSO": [
-        "Tek oturum açmayı ayarlayın"
+        "SSO'yu ayarla"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -3353,7 +3353,7 @@
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Kullanıcılarınızın BT kaynaklarınıza size ayrılmış sunucular üzerinden erişebilmesi için bir ağ geçidi oluşturun."
+        "Kullanıcılarınızın özel sunucular aracılığıyla BT kaynaklarınıza erişebilmeleri için bir Ağ Geçidi oluşturun."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Tek tıklamayla Zoom görüşmesi oluşturun ve etkinliğinize katılım bilgilerini ekleyin."
@@ -3362,13 +3362,13 @@
         "Tek bir adresle e-posta gönderebileceğiniz gruplar oluşturun."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Yeni kullanıcı hesapları açın veya kullanıcıları SSO (tek oturum açma) SCIM ile içe aktarın."
+        "Yeni kullanıcı hesapları oluşturun veya SSO (tek oturum açma) SCIM provizyonu ile kullanıcıları içe aktarın."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Hangi kullanıcıların 120 üzerinde paylaşılan sunucu konumumuzdan hangilerine bağlanabileceğine karar verin."
+        "120'den fazla paylaşımlı sunucu konumumuzun her birine hangi kullanıcıların bağlanabileceğine karar verin."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
@@ -3416,7 +3416,7 @@
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Henüz yapmadıysanız, ${ VPN_APP_NAME } erişiminizi asla kaybetmemek için bazı kurtarma yöntemlerini açın."
+        "Henüz yapmadıysanız ${ VPN_APP_NAME } erişiminizi asla kaybetmemek için bazı kurtarma yöntemlerini açın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -3748,10 +3748,10 @@
     },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
-        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
       ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Metin alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
+        "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca seçtiğiniz faturayı değiştirir. Gelecekteki fatura bilgilerinizi değiştirmez."
       ]
     },
     "edm": {
@@ -4081,9 +4081,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "TV'nizin süresi dolmuşsa, TV'nizde Yenile'ye tıklayın ve tekrar deneyin."
-      ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
@@ -4337,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Televizyonunuz bağlanırken bir sorun oluştu. Televizyonunuzdaki karekodu tekrar taratın."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -5150,7 +5150,7 @@
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Insert your security key into your device's USB port.": [
         "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
@@ -5401,9 +5401,6 @@
       ],
       "Password ends with": [
         "Parola şununla bitiyor"
-      ],
-      "Payment details": [
-        "Ödeme ayrıntıları"
       ],
       "Protection": [
         "Koruma"
@@ -6673,7 +6670,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -6742,7 +6739,7 @@
         "Parolanız veya diğer kişisel verileriniz sızdırılmışsa bildirim alın. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Başlayalım"
+        "Başlayın"
       ],
       "Get started with the referral link above.": [
         "Yukarıdaki öneri bağlantısı ile başlayın."
@@ -7250,7 +7247,7 @@
         "aylık"
       ],
       "per month, billed at ${ price }": [
-        "aylık ${ price } olarak faturalanır"
+        "aylık, toplamda ${ price } olarak faturalanır"
       ],
       "Please add a password for the user on row": [
         "Lütfen satırdaki kullanıcının parolasını yazın",
@@ -7351,7 +7348,7 @@
         "Son kullanılan sunucular:"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Güvenilir aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
+        "Güvenilen aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
@@ -7539,10 +7536,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Başlangıç tarihi: ${ startsOnTime }"
-      ],
-      "Step ${ step }": [
-        "${ step }. adım",
-        "${ step }. adım"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -7780,7 +7773,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "To continue to ${ product }": [
-        "${ product } ile ilerlemek için"
+        "${ product } ile devam etmek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
@@ -7828,7 +7821,7 @@
         "Toplam VPN bağlantısı"
       ],
       "trusted device": [
-        "güvenilir aygıt"
+        "güvenilen aygıt"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
@@ -8071,7 +8064,7 @@
         "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -8182,7 +8175,7 @@
         "İlerlemek için uygulamaya dönebilirsiniz"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
+        "Aynı anda yalnızca bir sohbet penceresi açabilirsiniz. Yeni bir sohbet başlatmadan önce önceki sohbetleri kapatın."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -9506,7 +9499,7 @@
         "Takma ad oluştur"
       ],
       "Don't have access to your 2FA?": [
-        "İki adımlı doğrulamayı kullanamıyor musunuz?"
+        "İki adımlı doğrulamaya erişiminiz yok mu?"
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
@@ -9669,7 +9662,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "${ planName } tarifesi ile canlı sohbet edin"
+        "Canlı sohbet ${ planName } ile kullanılabilir"
       ],
       "Open support form": [
         "Destek formunu aç"
@@ -9678,7 +9671,7 @@
         "Aboneliği yükselt"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Destek ekibi ile sohbete ve diğer ücretli özelliklere erişmek için abonelik tarifenizi yükseltin ya da sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
+        "Sohbet desteği ve diğer ücretli özelliklerin kilidini açmak için yükseltme yapın veya sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
       ]
     },
     "Loading info": {
@@ -9987,19 +9980,19 @@
         "${ appName }: Oturum aç"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Hesap aç"
+        "${ appName }: Kaydol"
       ],
       "Create a new ${ appName } account": [
-        "Yeni bir ${ appName } hesabı açın"
+        "Yeni bir ${ appName } hesabı oluşturun"
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } hesabınızın kullanıcı adını bulun"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } hesabınızın parolasını unuttunuz mu? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+        "${ BRAND_NAME } hesabınızın parolasını mı unuttunuz? Kurtarma kodu, e-posta veya kısa mesaj kullanarak şifrenizi buradan sıfırlayın ve ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve daha fazlasına yeniden erişim sağlayın."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+        "${ BRAND_NAME } hesabınızın kullanıcı adını mı unuttunuz? Kurtarma e-postanızı veya telefon numaranızı kullanarak bulun ve ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve daha fazlasına yeniden erişim sağlayın."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -10146,6 +10139,10 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
         "Her kullanıcı için ${ n } takvim"
@@ -10162,6 +10159,10 @@
         "Her kullanıcı için ${ n } e-posta adresi",
         "Her kullanıcı için ${ n } e-posta adresi"
       ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
       "${ n } folder": [
         "${ n } klasör",
         "${ n } klasör"
@@ -10173,6 +10174,10 @@
       "${ n } hide-my-email alias": [
         "${ n } hide-my-email takma adı",
         "${ n } hide-my-email takma adı"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
       ],
       "${ n } message per day": [
         "Her gün ${ n } ileti",
@@ -10379,7 +10384,7 @@
         "Ücretsiz ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME } özellikleri"
       ],
       "Free VPN on a single device": [
-        "Free VPN ile tek aygıt bağlantısı"
+        "Tek bir aygıt için ücretsiz VPN"
       ],
       "Fully refundable for 30 days": [
         "30 gün içinde tamamı geri ödenebilir"
@@ -10393,9 +10398,6 @@
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } aygıt için yüksek hızlı VPN",
         "${ n } aygıt için yüksek hızlı VPN"
@@ -10404,7 +10406,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -10470,7 +10472,7 @@
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
       "Router support": [
-        "Yöneltici desteği"
+        "Yönlendirici desteği"
       ],
       "Save time emailing": [
         "E-posta yazma süresini azaltın"
@@ -10520,9 +10522,6 @@
       ],
       "Start protecting your organization": [
         "Kuruluşunuzu korumaya başlayın"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 kolay adımda kendiniz çevrim içi ortamda korumaya başlayın"
       ],
       "Strict no-logs policy": [
         "Katı kayıt tutmama ilkesi"
@@ -10604,6 +10603,10 @@
       ],
       "User storage management": [
         "Kullanıcı depolama alanı yönetimi"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kasa paylaşma (${ n } kişiye kadar)",
+        "Kasa paylaşma (${ n } kişiye kadar)"
       ],
       "Vault sharing with up to ${ n } person": [
         "${ n } kişiye kadar kasa paylaşımı",
@@ -11872,9 +11875,6 @@
       ],
       "Bank transfer": [
         "Banka havalesi"
-      ],
-      "Bitcoin": [
-        "Bitcoin"
       ],
       "Credit/debit card": [
         "Kredi ya da banka kartı"
@@ -13664,6 +13664,16 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 BAHAR İNDİRİMİ"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
@@ -13922,10 +13932,10 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Aktif"
+        "Etkin"
       ],
       "Inactive": [
-        "Kapalı"
+        "Etkin değil"
       ],
       "Pending activation": [
         "Etkinleştirilmesi bekleniyor"
@@ -14071,6 +14081,14 @@
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
         "${ n } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı",
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
@@ -14772,7 +14790,7 @@
     },
     "Suffix": {
       "/month": [
-        "/aylık"
+        "/ay"
       ],
       "/user per month": [
         "/kullanıcı aylık"
@@ -15342,7 +15360,7 @@
         "Değişiklikler silinsin mi?"
       ],
       "Dismiss setup checklist": [
-        "Kurulum kontrol listesini atla"
+        "Kurulum kontrol listesini kapat"
       ],
       "Domain names": [
         "Etki alanları"
@@ -15414,7 +15432,7 @@
         "E-posta kategorileri"
       ],
       "Email subscriptions": [
-        "E-posta abonelikleri"
+        "E-posta aboneliği"
       ],
       "Enable advanced account protection": [
         "Gelişmiş hesap korumasını açın"
@@ -15487,7 +15505,7 @@
         "VPN hizmetinizden fazlasını alın"
       ],
       "Get started": [
-        "Başlayalım"
+        "Başlayın"
       ],
       "Get the apps": [
         "Uygulamaları indirme"
@@ -15921,7 +15939,7 @@
         "Tür"
       ],
       "Unlock your data": [
-        "Verilerinizin kilidini açın"
+        "Verilerinizin şifresini çözün"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
@@ -15933,7 +15951,7 @@
         "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
+        "Özel sunucularla ağ korumanızı yükseltin"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
@@ -16026,7 +16044,7 @@
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your current plan": [
-        "Geçerli tarifeniz"
+        "Mevcut tarifeniz"
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
@@ -16685,6 +16703,10 @@
       "${ n } server": [
         "${ n } sunucu",
         "${ n } sunucu"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
       ],
       "${ numberOfCountries } country": [
         "${ numberOfCountries } ülke",

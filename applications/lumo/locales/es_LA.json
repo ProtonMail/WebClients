@@ -4197,7 +4197,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -4775,7 +4775,7 @@
         "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -7003,6 +7003,16 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
       ]
     },
     "sso": {

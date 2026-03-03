@@ -1848,7 +1848,7 @@
         "Gib die Adresse ein, an die du eine E-Mail senden möchtest."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your extra password": [
         "Gib dein zusätzliches Passwort ein."
@@ -2051,6 +2051,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"

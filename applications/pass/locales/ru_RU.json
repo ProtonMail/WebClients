@@ -325,9 +325,6 @@
       "Get Started": [
         "Начать"
       ],
-      "Hide": [
-        "Скрыть"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1654,9 +1651,6 @@
       ],
       "Enter the address you want to email.": [
         "Введите адрес, на который вы хотите отправить электронное письмо."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your extra password": [
         "Введите дополнительный пароль"

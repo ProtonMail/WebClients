@@ -385,9 +385,6 @@
       "Get Started": [
         "Comenzar"
       ],
-      "Hide": [
-        "Ocultar"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1847,9 +1844,6 @@
       "Enter the address you want to email.": [
         "Ingresa la dirección a la que deseas enviar un correo electrónico."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Dígito ${ digit }."
-      ],
       "Enter your extra password": [
         "Ingresa tu contraseña adicional."
       ],
@@ -2053,7 +2047,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"

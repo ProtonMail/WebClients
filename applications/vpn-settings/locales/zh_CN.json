@@ -111,7 +111,7 @@
         "需要关注"
       ],
       "Authenticate": [
-        "认证"
+        "身份验证"
       ],
       "Authenticating": [
         "认证中"
@@ -2032,7 +2032,7 @@
         "稍后提醒我"
       ],
       "Secure your organization": [
-        "保护您的组织"
+        "保护您的组织安全"
       ],
       "Send": [
         "发送"
@@ -2041,7 +2041,7 @@
         "设置其他功能"
       ],
       "Set up SSO": [
-        "设置SSO"
+        "设置 SSO"
       ],
       "Take a tour": [
         "开始导览"
@@ -2099,7 +2099,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "用户 ${ users }"
+        "${ users } 位用户"
       ],
       "Subtotal": [
         "小计"
@@ -3330,7 +3330,7 @@
         "连接您的 CRM、网站、打印机等。"
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "创建网关，让用户能够通过专用服务器访问您的 IT 资源。"
+        "创建网关，让您的用户通过专属服务器访问您的 IT 资源。"
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "创建 Zoom 会议并一键添加加入事件的详细信息。"
@@ -3339,13 +3339,13 @@
         "创建可通过单一地址发送电子邮件的群组。"
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "创建新用户账户，或通过 SSO（单点登录）SCIM 配置导入用户。"
+        "创建新账户或通过 SSO（单点登录）SCIM 配置导入用户。"
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "决定哪些用户可以连接到我们 120 多个共享服务器位置中的任意服务器。"
+        "决定哪些用户可以连接到我们 120 多个共享服务器的位置。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在电脑和手机上轻松访问电子邮件和日历。"
@@ -3393,7 +3393,7 @@
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "若尚未启用，请设置恢复方式，确保您永远不会失去对 ${ VPN_APP_NAME } 的访问权限。"
+        "如果尚未设置，请启用一些恢复方法，以确保您永远不会无法访问 ${ VPN_APP_NAME }。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -4053,9 +4053,6 @@
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "如果电视上的时间过期了，点击电视上的“刷新”，重新输入一次代码。"
       ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "如果您的电视时间已过期，请点击电视上的刷新并重试。"
-      ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
       ],
@@ -4081,7 +4078,7 @@
         "密码错误"
       ],
       "Incorrect second password. Please try again.": [
-        "二级密码不正确，请重试。"
+        "二级密码错误，请重试。"
       ],
       "Incorrect username": [
         "用户名不正确"
@@ -4307,6 +4304,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "连接电视时出现问题，请再次扫描电视上的二维码。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -5088,7 +5088,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错。请重试。"
+        "使用安全密钥认证时出现问题，请重试。"
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
@@ -5111,7 +5111,7 @@
         "确定要删除安全密钥 ${ name } 吗？"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Insert your security key into your device's USB port.": [
         "将您的安全密钥插入设备 USB 接口中。"
@@ -5320,7 +5320,7 @@
         "支付"
       ],
       "Create your account": [
-        "创建您的帐户"
+        "创建您的账户"
       ],
       "Device": [
         "设备"
@@ -5354,9 +5354,6 @@
       ],
       "Password ends with": [
         "密码结尾是"
-      ],
-      "Payment details": [
-        "付款详情"
       ],
       "Protection": [
         "保护"
@@ -6477,7 +6474,7 @@
         "拖至此处即可导入"
       ],
       "Each code can only be used once": [
-        "每条恢复码只能使用一次"
+        "每个恢复码只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
@@ -6558,7 +6555,7 @@
         "输入用户 ${ userName } 的新密码。"
       ],
       "Enter the code from your authenticator app": [
-        "请输入您的双重验证应用中显示的验证码"
+        "请输入身份验证应用中的验证码"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "请输入发送至您手机号码 ${ phone } 的验证码。"
@@ -6579,7 +6576,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "请输入您的 ${ BRAND_NAME } 账户信息。"
@@ -6609,7 +6606,7 @@
         "示例：${ spfExample }"
       ],
       "Expired": [
-        "已失效"
+        "已过期"
       ],
       "expires ${ expirationDate }": [
         "于 ${ expirationDate } 过期"
@@ -6648,7 +6645,7 @@
         "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "开始吧"
+        "开始使用"
       ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
@@ -7095,7 +7092,7 @@
         "组织监控器"
       ],
       "Organization size": [
-        "组织规模"
+        "组织的规模"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "以专用服务器组成网关，设置能访问它们的成员。"
@@ -7380,7 +7377,7 @@
         "设置您的组织"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "只需几个简单步骤，即可设置您的组织并开始保护您的数据。"
+        "只需几个简单步骤即可设置您的组织并开始保护您的数据。"
       ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
@@ -7438,9 +7435,6 @@
       ],
       "Starts on ${ startsOnTime }": [
         "将在 ${ startsOnTime } 开始"
-      ],
-      "Step ${ step }": [
-        "步骤 ${ step }"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -7674,7 +7668,7 @@
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
       "To continue to ${ product }": [
-        "即可使用 ${ product }"
+        "以继续使用 ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
@@ -7965,7 +7959,7 @@
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -8070,7 +8064,7 @@
         "您现在可以返回到应用程序以继续"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "一次只能打开一个聊天实例。开始新对话之前，请关闭前一个对话。"
+        "您一次只能打开一个在线聊天实例，请在开始新对话前关闭之前的对话。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -8580,7 +8574,7 @@
         "日历"
       ],
       "Card details": [
-        "银行卡详情"
+        "支付卡详情"
       ],
       "Card holder": [
         "持卡人"
@@ -9093,7 +9087,7 @@
         "搜索名称或邮箱地址"
       ],
       "Second password": [
-        "副密码"
+        "二级密码"
       ],
       "Send crash reports": [
         "发送崩溃报告"
@@ -9305,7 +9299,7 @@
         "邮政编码"
       ],
       "ZIP code": [
-        "邮政编码"
+        "邮编"
       ]
     },
     "Label/folder modal": {
@@ -9380,7 +9374,7 @@
         "创建别名"
       ],
       "Don't have access to your 2FA?": [
-        "暂时不想用 2FA？"
+        "无法使用 2FA？"
       ],
       "Encryption and keys": [
         "加密与密钥"
@@ -9389,7 +9383,7 @@
         "强制组织启用 2FA"
       ],
       "Forgot email?": [
-        "忘记电子邮箱？"
+        "忘记邮箱？"
       ],
       "Forgot password?": [
         "忘记密码?"
@@ -9543,7 +9537,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "${ planName } 用户可享实时客服服务"
+        "${ planName } 套餐支持在线聊天"
       ],
       "Open support form": [
         "打开支持表单"
@@ -9552,7 +9546,7 @@
         "升级订阅"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "升级账户即可与客服实时交流，同时解锁其他高级功能。您也可以通过客服表单免费反馈遇到的问题。"
+        "升级以解锁在线聊天支持和其它高级功能，或使用我们的免费支持表单报告您的问题。"
       ]
     },
     "Loading info": {
@@ -9722,7 +9716,7 @@
         "总计 ${ price }"
       ],
       "Set up your account with your Porkbun domain.": [
-        "使用您的 Pokbun 域设置您的帐户。"
+        "使用您的 Porkbun 域名来设置账户。"
       ]
     },
     "meet_2025: Feature": {
@@ -9855,22 +9849,22 @@
         "${ appName }：注册"
       ],
       "Create a new ${ appName } account": [
-        "创建 ${ appName } 账户"
+        "创建新的 ${ appName } 账户"
       ],
       "Find your ${ BRAND_NAME } Account username": [
-        "查找您的 ${ BRAND_NAME } 帐户用户名"
+        "查找您的 ${ BRAND_NAME } 账户用户名"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘了 ${ BRAND_NAME } 账户的密码？凭代码、电子邮件或短信重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+        "忘记了您的 ${ BRAND_NAME } 账户密码？在此使用恢复码、邮箱或短信重置，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘了 ${ BRAND_NAME } 账户的用户名？凭账户恢复所用的电子邮件或手机号重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+        "忘记了您的 ${ BRAND_NAME } 账户用户名？通过您的密保邮箱或密保手机找回，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "重置 ${ BRAND_NAME } 账户的密码"
+        "重置您的 ${ BRAND_NAME } 账户密码"
       ],
       "Sign in to access your ${ appName } account": [
-        "登录 ${ appName } 账户"
+        "登录以访问您的 ${ appName } 账户"
       ]
     },
     "Modal title": {
@@ -9958,7 +9952,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "最快的VPN速度"
+        "VPN 速度最快"
       ],
       "Keep your inbox organized with folders": [
         "使用文件夹整理邮件，让邮箱井然有序"
@@ -10114,7 +10108,7 @@
         "活动日志与策略"
       ],
       "Ad-blocker and malware protection": [
-        "广告拦截及恶意软件防护"
+        "广告拦截与恶意软件防护"
       ],
       "Admin console": [
         "管理员控制台"
@@ -10156,7 +10150,7 @@
         "适用于所有平台"
       ],
       "Calendar sharing": [
-        "日历共享"
+        "共享日历"
       ],
       "Catch-all": [
         "通配邮箱"
@@ -10240,7 +10234,7 @@
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、 ${ CALENDAR_SHORT_APP_NAME }和 ${ DRIVE_SHORT_APP_NAME } 的免费功能"
       ],
       "Free VPN on a single device": [
-        "单一设备上的免费VPN"
+        "单台设备免费 VPN"
       ],
       "Fully refundable for 30 days": [
         "30 天内无理由全额退款"
@@ -10253,9 +10247,6 @@
       ],
       "Group management (coming soon)": [
         "群组管理（即将推出）"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "使用瑞士的高速 VPN 捍卫您的隐私"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } 台设备可同时接入高速 VPN"
@@ -10306,7 +10297,7 @@
         "优先享受邮件客服"
       ],
       "Priority support": [
-        "优先支持"
+        "优先享受客服"
       ],
       "Priority support & live chat": [
         "优先与客服实时沟通"
@@ -10339,7 +10330,7 @@
         "自由选择邮件收发时间"
       ],
       "Secure Core servers": [
-        "安全的核心服务器"
+        "Secure Core 服务器"
       ],
       "Secure file storage and sharing": [
         "安全文件存储与共享"
@@ -10380,11 +10371,8 @@
       "Start protecting your organization": [
         "开始保护您的组织"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "只需 2 个简单步骤就能开始保护自己的网络安全"
-      ],
       "Strict no-logs policy": [
-        "严格的无日志策略"
+        "严格的零日志原则"
       ],
       "Support for up to 2 users": [
         "最多支持 2 位用户"
@@ -10396,10 +10384,10 @@
         "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
-        "双因素身份验证"
+        "双重验证"
       ],
       "Unlimited devices": [
-        "设备数不限"
+        "无设备数量限制"
       ],
       "Unlimited devices and aliases": [
         "无限设备和别名"
@@ -10444,7 +10432,7 @@
         "最多 ${ n } 位用户（${ adminsText }，${ usersText }）"
       ],
       "Up to ${ totalStorageSize } storage": [
-        "最大容量达到${ totalStorageSize }"
+        "最高 ${ totalStorageSize } 存储空间"
       ],
       "Up to 10 Gbps": [
         "高达 10 Gbps"
@@ -10492,7 +10480,7 @@
     },
     "new_plans: heading": {
       "Support": [
-        "支持"
+        "帮助"
       ],
       "Team management": [
         "团队管理"
@@ -10554,7 +10542,7 @@
         "仅需一次支付，即可永久保护您的密码和身份。"
       ],
       "Popular": [
-        "受欢迎的"
+        "流行的"
       ],
       "Protect sensitive business information and collaborate securely.": [
         "保护敏感的商业信息并进行安全合作。"
@@ -10852,7 +10840,7 @@
         "上传企业徽标，定制团队在 ${ BRAND_NAME } 网页端上的体验"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "在邮箱地址中使用您自己的域名，例如：you@yourname.com"
+        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "我们不记录您的网络活动，也不记录任何可能侵害您隐私的信息"
@@ -11623,7 +11611,7 @@
         "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **恢复短语** 或您的 **旧密码** 解锁。"
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "您帐户上的任何 **双因素身份验证 (2FA)** 方法都将被禁用。"
+        "您账户上的任何 **双因素身份验证 (2FA)** 方法将被禁用。"
       ]
     },
     "passwordless": {
@@ -11673,7 +11661,7 @@
         "以下管理员可访问组织密钥。"
       ],
       "The organization key must be activated first.": [
-        "必须先激活机构密钥."
+        "必须先激活机构密钥。"
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "这将把最新的组织密钥发送给目前没有访问权限的管理员。"
@@ -11721,9 +11709,6 @@
       ],
       "Bank transfer": [
         "银行转款"
-      ],
-      "Bitcoin": [
-        "比特币"
       ],
       "Credit/debit card": [
         "信用卡/借记卡"
@@ -13481,6 +13466,16 @@
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 春季特惠"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "春季特惠"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } 请求您帮助以单点登录方式登录他们的 ${ BRAND_NAME } 账户。"
@@ -13615,7 +13610,7 @@
         "这是完全恢复账户的唯一方法，因此请务必将其妥善保管。"
       ],
       "Join ${ organizationName }": [
-        "加入 ${ organizationName } "
+        "加入 ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "确保将其保存在安全的地方，以便在身份提供商凭据丢失时可以重新进入您的账户。"
@@ -13731,7 +13726,7 @@
     },
     "sso: auth device state": {
       "Active": [
-        "订阅中"
+        "已激活"
       ],
       "Inactive": [
         "未激活"
@@ -13798,7 +13793,7 @@
         "联系您的机构管理员"
       ],
       "For all ${ BRAND_NAME } services": [
-        "适用于所有 ${ BRAND_NAME } 服务"
+        "用于所有 ${ BRAND_NAME } 服务"
       ],
       "Storage used": [
         "已用存储空间"
@@ -14566,7 +14561,7 @@
     },
     "Suffix": {
       "/month": [
-        "/个月"
+        "/月"
       ],
       "/user per month": [
         "/用户每月"
@@ -15127,7 +15122,7 @@
         "放弃更改？"
       ],
       "Dismiss setup checklist": [
-        "忽略设置检查清单"
+        "关闭设置清单"
       ],
       "Domain names": [
         "域名"
@@ -15271,7 +15266,7 @@
         "从您的 VPN 获取更多信息"
       ],
       "Get started": [
-        "开始吧"
+        "开始使用"
       ],
       "Get the apps": [
         "下载应用"
@@ -15715,7 +15710,7 @@
         "升级以保留您的高级权益。"
       ],
       "Upgrade your network protection with dedicated servers": [
-        "使用专用服务器进一步提升您的网络防护等级"
+        "通过专属服务器升级您的网络防护"
       ],
       "Upgrade your privacy": [
         "提升隐私保护"
@@ -15757,7 +15752,7 @@
         "正在验证您的银行卡..."
       ],
       "Verifying your payment...": [
-        "确认支付..."
+        "正在确认支付..."
       ],
       "Video conferencing with Zoom": [
         "Zoom 视频会议"
@@ -15808,7 +15803,7 @@
         "您的改动尚未同步"
       ],
       "Your current plan": [
-        "您的当前套餐"
+        "您当前的套餐"
       ],
       "Your exposed information": [
         "您的泄露信息"

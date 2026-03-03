@@ -201,9 +201,6 @@
       "Collaborate on documents": [
         "Kolaborasikan dokumen"
       ],
-      "Collapse": [
-        "Ciutkan"
-      ],
       "Collapse folder": [
         "Ciutkan folder"
       ],
@@ -441,9 +438,6 @@
       "Enable drive search": [
         "Aktifkan pencarian drive"
       ],
-      "Expand": [
-        "Lebarkan"
-      ],
       "Expand folder": [
         "Lebarkan folder"
       ],
@@ -548,9 +542,6 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
-      ],
-      "Hide": [
-        "Sembunyikan"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -2435,9 +2426,6 @@
       "North Korea": [
         "Korea Utara"
       ],
-      "North Macedonia": [
-        "Makedonia Utara"
-      ],
       "Northern Mariana Islands": [
         "Kepulauan Mariana Utara"
       ],
@@ -4138,15 +4126,7 @@
         "Kecepatan secepat kilat"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Terjadi kesalahan saat melakukan autentikasi dengan kunci keamanan Anda. Silakan coba lagi."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
-      ],
       "Security key": [
         "Kunci keamanan"
       ]
@@ -5076,9 +5056,6 @@
       "Create links and share your files with others.": [
         "Buat tautan dan bagikan file Anda dengan yang lain."
       ],
-      "Create your first folder and start moving your files.": [
-        "Buat folder pertama Anda dan pindahkan file Anda."
-      ],
       "Creating": [
         "Membuat"
       ],
@@ -5181,9 +5158,6 @@
       "Duplicate key updated": [
         "Kunci duplikat diperbarui"
       ],
-      "Each code can only be used once": [
-        "Setiap kode hanya dapat digunakan satu kali"
-      ],
       "Edit email address": [
         "Sunting alamat email"
       ],
@@ -5231,9 +5205,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Masukkan kode verifikasi. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
@@ -6360,9 +6331,6 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Pada saat Anda menghapus ${ deviceName } dari daftar perangkat yang tersinkron, seluruh folder yang ditambahkan ke Komputer Saya dari perangkat ini akan dihapus dari ${ DRIVE_APP_NAME } secara permanen."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
-      ],
       "who": [
         "siapa"
       ],
@@ -6627,14 +6595,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Hanya melihat"
-      ]
-    },
-    "Into": {
-      "Can view and edit": [
-        "Dapat melihat dan mengedit"
-      ],
-      "Can view only": [
-        "Hanya dapat melihat"
       ]
     },
     "Item": {
@@ -12361,9 +12321,6 @@
       ],
       "You have no files to share": [
         "Anda tidak memiliki file untuk dibagikan"
-      ],
-      "You have no folders yet": [
-        "Anda belum memiliki folder"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
