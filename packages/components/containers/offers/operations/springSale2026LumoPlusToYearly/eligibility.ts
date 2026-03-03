@@ -42,8 +42,8 @@ export function getIsEligible({
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const vpnSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN2024);
-    if (isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp) && vpnSubscription?.Cycle === CYCLE.MONTHLY) {
+    const lumoSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.LUMO);
+    if (isInApp(protonConfig, APPS.PROTONLUMO, parentApp) && lumoSubscription?.Cycle === CYCLE.MONTHLY) {
         return true;
     }
 

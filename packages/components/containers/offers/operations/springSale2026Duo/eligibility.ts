@@ -1,13 +1,41 @@
-import type { Subscription } from '@proton/payments';
-import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { Currency, Subscription } from '@proton/payments';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
+import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
+import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
-export function getIsEligible(_props: {
+export function getIsEligible({
+    user,
+    subscription,
+    offerConfig,
+    preferredCurrency,
+}: {
     user: UserModel;
     subscription?: Subscription;
-    protonConfig: ProtonConfig;
     offerConfig: OfferConfig;
+    preferredCurrency: Currency;
 }) {
+    if (user.isDelinquent || !user.canPay || !subscription || !isSubscriptionCheckAllowed(subscription, offerConfig)) {
+        return false;
+    }
+
+    if (!isEligibleCurrency(preferredCurrency)) {
+        return false;
+    }
+
+    const offerSubscription = new OfferSubscription(subscription);
+    if (offerSubscription.isManagedExternally()) {
+        // Exclude mobile
+        return false;
+    }
+    const isBundle = offerSubscription.hasBundle();
+    const notUsedCurrentPromo = !offerSubscription.usedSpringSale2026();
+
+    if (user.isPaid && isBundle && notUsedCurrentPromo && !offerSubscription.isManagedExternally()) {
+        return true;
+    }
+
     return false;
 }

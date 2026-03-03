@@ -14,15 +14,21 @@ export function getIsEligible({
     subscription,
     protonConfig,
     offerConfig,
+    userInExperiment = 0,
     preferredCurrency,
 }: {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;
     offerConfig: OfferConfig;
+    userInExperiment: number;
     preferredCurrency: Currency;
 }) {
-    if (user.isDelinquent || !user.canPay || user.isFree || subscription?.UpcomingSubscription) {
+    if (userInExperiment !== 1) {
+        return false;
+    }
+
+    if (user.isDelinquent || !user.canPay || subscription?.UpcomingSubscription) {
         return false;
     }
 
@@ -41,11 +47,11 @@ export function getIsEligible({
         }
     }
 
-    const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const vpnSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN2024);
-    if (isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp) && vpnSubscription?.Cycle === CYCLE.MONTHLY) {
-        return true;
+    const lumoPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.LUMO);
+    if (!lumoPlan || lumoPlan.Cycle !== CYCLE.YEARLY) {
+        return false;
     }
 
-    return false;
+    const parentApp = getAppFromPathnameSafe(window.location.pathname);
+    return isInApp(protonConfig, APPS.PROTONLUMO, parentApp);
 }
