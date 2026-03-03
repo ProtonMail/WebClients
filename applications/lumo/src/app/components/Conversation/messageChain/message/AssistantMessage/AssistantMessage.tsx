@@ -5,7 +5,8 @@ import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from 'applicat
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Icon, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
@@ -14,7 +15,11 @@ import { getMessageBlocks, messagesEqualForRendering } from '../../../../../mess
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
-
+import LumoButton from '../../../../Buttons/LumoButton';
+import { ReferenceFilesButton } from '../../../../Files';
+import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
+import LinkWarningModal from '../../../../Modals/LinkWarningModal';
+import SiblingSelector from '../../../../SiblingSelector';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -22,11 +27,6 @@ import { AvatarAndNotice } from './AvatarAndNotice';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
-import SiblingSelector from "../../../../SiblingSelector";
-import {ReferenceFilesButton} from "../../../../Files";
-import LumoButton from "../../../../Buttons/LumoButton";
-import LinkWarningModal from "../../../../Modals/LinkWarningModal";
-import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 
 const ENABLE_DEBUG_INFO = false;
 
@@ -238,9 +238,7 @@ const AssistantMessage = ({
                 {shouldShow && (
                     <div
                         // ref={markdownContainerRef}
-                        className={clsx(
-                            'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm'
-                        )}
+                        className="assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm"
                         style={{
                             '--min-h-custom': '62px',
                         }}
@@ -318,7 +316,7 @@ const AssistantMessage = ({
 const EmptyMessage = () => (
     <>
         <div className="flex flex-row items-center gap-2 color-hint px-1 py-2">
-            <Icon size={4} name="info-circle" className={clsx('')} />
+            <IcInfoCircle size={4} />
             <p className="text-sm">{c('collider_2025:Info').t`This message is empty. Sorry about that.`}</p>
         </div>
     </>

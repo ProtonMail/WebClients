@@ -4,13 +4,14 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import type { IconName } from '@proton/icons/types';
 
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
 
 import './ThinkingPath.scss';
-import type { IconName } from '@proton/icons/types';
 
 /**
  * Get icon name for tool call type.
@@ -43,44 +44,33 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
     switch (toolCall.name) {
         case 'web_search':
             const query = toolCall.arguments.query;
-            return [
-                `Searching the web for "${query}"...`,
-                `Searched the web for "${query}"`
-            ];
+            return [`Searching the web for "${query}"...`, `Searched the web for "${query}"`];
         case 'weather':
-            const location = 'city' in toolCall.arguments.location
-                ? toolCall.arguments.location.city
-                : `${toolCall.arguments.location.lat}, ${toolCall.arguments.location.lon}`;
-            return [
-                `Checking the weather in ${location}...`,
-                `Checked the weather in ${location}`
-            ];
+            const location =
+                'city' in toolCall.arguments.location
+                    ? toolCall.arguments.location.city
+                    : `${toolCall.arguments.location.lat}, ${toolCall.arguments.location.lon}`;
+            return [`Checking the weather in ${location}...`, `Checked the weather in ${location}`];
         case 'stock':
             return [
                 `Looking up ${toolCall.arguments.symbol} stock prices...`,
-                `Looked up ${toolCall.arguments.symbol} stock prices`
+                `Looked up ${toolCall.arguments.symbol} stock prices`,
             ];
         case 'cryptocurrency':
             return [
                 `Checking ${toolCall.arguments.symbol} cryptocurrency prices...`,
-                `Checked ${toolCall.arguments.symbol} cryptocurrency prices`
+                `Checked ${toolCall.arguments.symbol} cryptocurrency prices`,
             ];
         case 'describe_image':
             return ['Looking at your image...', 'Looked at your image'];
         case 'generate_image':
             const prompt = toolCall.arguments.prompt;
             const shortPrompt = prompt.length > 50 ? prompt.substring(0, 50) + '...' : prompt;
-            return [
-                `Generating image: "${shortPrompt}"...`,
-                `Generated image: "${shortPrompt}"`
-            ];
+            return [`Generating image: "${shortPrompt}"...`, `Generated image: "${shortPrompt}"`];
         case 'edit_image':
             const editPrompt = toolCall.arguments.prompt;
             const shortEditPrompt = editPrompt.length > 50 ? editPrompt.substring(0, 50) + '...' : editPrompt;
-            return [
-                `Editing image: "${shortEditPrompt}"...`,
-                `Edited image: "${shortEditPrompt}"`
-            ];
+            return [`Editing image: "${shortEditPrompt}"...`, `Edited image: "${shortEditPrompt}"`];
         case 'proton_info':
             return ['Checking Proton knowledge...', 'Checked Proton knowledge'];
         default:
@@ -187,7 +177,7 @@ const parseWebSearchResults = (result: string): WebSearchResults | null => {
         if (parsed.results && Array.isArray(parsed.results)) {
             return parsed as WebSearchResults;
         }
-    } catch (e) {
+    } catch {
         // Not valid JSON or not web search format
     }
     return null;
@@ -199,7 +189,7 @@ const parseImageToolResult = (result: string): ImageToolResult | null => {
         if (parsed.status && parsed.tool) {
             return parsed as ImageToolResult;
         }
-    } catch (e) {
+    } catch {
         // Not valid JSON or not image tool format
     }
     return null;
@@ -228,12 +218,12 @@ const ToolCallStep = ({
     const iconName = getToolCallIcon(toolCall);
 
     const hasDetails = result && result.trim().length > 0;
-    const webSearchResults = hasDetails && toolCall.name === 'web_search'
-        ? parseWebSearchResults(result)
-        : null;
-    const imageToolResult = hasDetails && (toolCall.name === 'describe_image' || toolCall.name === 'generate_image' || toolCall.name === 'edit_image')
-        ? parseImageToolResult(result)
-        : null;
+    const webSearchResults = hasDetails && toolCall.name === 'web_search' ? parseWebSearchResults(result) : null;
+    const imageToolResult =
+        hasDetails &&
+        (toolCall.name === 'describe_image' || toolCall.name === 'generate_image' || toolCall.name === 'edit_image')
+            ? parseImageToolResult(result)
+            : null;
 
     // Check if the tool call failed
     const hasError = imageToolResult?.error === true;
@@ -261,35 +251,49 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span className={clsx('thinking-step-label', isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak')}>
+                            {/* eslint-disable-next-line no-nested-ternary */}
+                            <span
+                                className={clsx(
+                                    'thinking-step-label',
+                                    isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'
+                                )}
+                            >
                                 {label}
                             </span>
                             <div className="flex items-center gap-2 shrink-0">
                                 {hasError && (
                                     <span className="flex items-center gap-1 text-sm color-danger">
-                                        <Icon name="exclamation-circle-filled" size={3} />
+                                        <IcExclamationCircleFilled size={3} />
                                         Failed
                                     </span>
                                 )}
                                 {webSearchResults && webSearchResults.results.length > 0 && (
                                     <span className="text-sm color-weak">
-                                        {webSearchResults.results.length} {webSearchResults.results.length === 1 ? 'result' : 'results'}
+                                        {webSearchResults.results.length}{' '}
+                                        {webSearchResults.results.length === 1 ? 'result' : 'results'}
                                     </span>
                                 )}
                                 <Icon
                                     name="chevron-down"
                                     size={3}
-                                    className={clsx('thinking-step-chevron', isExpanded && 'thinking-step-chevron--expanded')}
+                                    className={clsx(
+                                        'thinking-step-chevron',
+                                        isExpanded && 'thinking-step-chevron--expanded'
+                                    )}
                                 />
                             </div>
                         </button>
 
                         {isExpanded && (
                             <div className="thinking-step-details">
+                                {/* eslint-disable-next-line no-nested-ternary */}
                                 {webSearchResults ? (
                                     <div className="flex flex-column gap-2">
                                         {webSearchResults.results.map((result, idx) => (
-                                            <div key={idx} className="pb-2 border-bottom border-weak last:border-0 last:pb-0">
+                                            <div
+                                                key={idx}
+                                                className="pb-2 border-bottom border-weak last:border-0 last:pb-0"
+                                            >
                                                 <a
                                                     href={result.url}
                                                     target="_blank"
@@ -298,15 +302,26 @@ const ToolCallStep = ({
                                                 >
                                                     {result.title}
                                                 </a>
-                                                <p className="text-sm color-weak m-0 line-clamp-2">{result.description}</p>
-                                                <p className="text-xs color-weak m-0 mt-1">{new URL(result.url).hostname}</p>
+                                                <p className="text-sm color-weak m-0 line-clamp-2">
+                                                    {result.description}
+                                                </p>
+                                                <p className="text-xs color-weak m-0 mt-1">
+                                                    {new URL(result.url).hostname}
+                                                </p>
                                             </div>
                                         ))}
                                     </div>
                                 ) : imageToolResult?.info ? (
                                     <div>
                                         <div className="mb-2 text-sm">
-                                            <span className={clsx('text-semibold', imageToolResult.status === 'success' ? 'color-success' : 'color-danger')}>
+                                            <span
+                                                className={clsx(
+                                                    'text-semibold',
+                                                    imageToolResult.status === 'success'
+                                                        ? 'color-success'
+                                                        : 'color-danger'
+                                                )}
+                                            >
                                                 {imageToolResult.status === 'success' ? 'Success' : 'Failed'}
                                             </span>
                                             {imageToolResult.elapsed_ms && (
@@ -329,9 +344,7 @@ const ToolCallStep = ({
                         )}
                     </>
                 ) : (
-                    <p className={clsx('thinking-step-label m-0', isActive ? 'color-norm' : 'color-weak')}>
-                        {label}
-                    </p>
+                    <p className={clsx('thinking-step-label m-0', isActive ? 'color-norm' : 'color-weak')}>{label}</p>
                 )}
             </div>
         </div>

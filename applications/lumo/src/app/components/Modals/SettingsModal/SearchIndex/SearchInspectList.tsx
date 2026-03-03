@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
-
-import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components/index';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import type { FunctionComponent } from 'react';
 
 import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { DriveDocument } from '../../../../types/documents';
 
@@ -27,7 +28,13 @@ interface Props {
     onSelect: (grouped: GroupedDocument) => void;
 }
 
-export const SearchInspectList: FunctionComponent<Props> = ({ displayDriveDocs, docs, formatBytes, onBack, onSelect }) => {
+export const SearchInspectList: FunctionComponent<Props> = ({
+    displayDriveDocs,
+    docs,
+    formatBytes,
+    onBack,
+    onSelect,
+}) => {
     // Group documents by parent ID (chunks) or by their own ID (non-chunks)
     const groupedDocs = useMemo(() => {
         const groups = new Map<string, GroupedDocument>();
@@ -51,7 +58,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({ displayDriveDocs, 
             }
 
             // Add to total size
-            const docSize = doc.content ? new TextEncoder().encode(doc.content).byteLength : (doc.size || 0);
+            const docSize = doc.content ? new TextEncoder().encode(doc.content).byteLength : doc.size || 0;
             group.totalSize += docSize;
         }
 
@@ -62,17 +69,19 @@ export const SearchInspectList: FunctionComponent<Props> = ({ displayDriveDocs, 
         <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
             <div className="flex items-center gap-2 mb-2">
                 <Button shape="ghost" size="small" onClick={onBack}>
-                    <Icon name="arrow-left" size={4} className="mr-1" />
+                    <IcArrowLeft size={4} className="mr-1" />
                     {c('Action').t`Back to search settings`}
                 </Button>
                 <span className="text-semibold">{c('Title').t`Indexed Drive documents`}</span>
             </div>
             {groupedDocs.length === 0 ? (
                 <div className="p-4 color-weak bg-weak rounded">
-                    <div className="mb-2">{c('Info').t`No Drive documents are loaded for inspection in this session.`}</div>
+                    <div className="mb-2">{c('Info')
+                        .t`No Drive documents are loaded for inspection in this session.`}</div>
                     {displayDriveDocs > 0 ? (
                         <div className="text-sm">
-                            {c('Info').t`The index reports ${displayDriveDocs} Drive documents. Re-index or keep the session open after indexing to view details here.`}
+                            {c('Info')
+                                .t`The index reports ${displayDriveDocs} Drive documents. Re-index or keep the session open after indexing to view details here.`}
                         </div>
                     ) : null}
                 </div>
@@ -103,15 +112,11 @@ export const SearchInspectList: FunctionComponent<Props> = ({ displayDriveDocs, 
                                             )}
                                         </div>
                                         {doc.folderPath && (
-                                            <div className="text-sm color-weak truncate">
-                                                {doc.folderPath}
-                                            </div>
+                                            <div className="text-sm color-weak truncate">{doc.folderPath}</div>
                                         )}
-                                        <div className="text-sm color-weak">
-                                            {sizeText}
-                                        </div>
+                                        <div className="text-sm color-weak">{sizeText}</div>
                                     </div>
-                                    <Icon name="chevron-right" size={4} className="color-weak shrink-0 my-auto" />
+                                    <IcChevronRight size={4} className="color-weak shrink-0 my-auto" />
                                 </div>
                             </button>
                         );
@@ -121,5 +126,3 @@ export const SearchInspectList: FunctionComponent<Props> = ({ displayDriveDocs, 
         </div>
     );
 };
-
-

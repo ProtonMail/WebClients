@@ -3,10 +3,14 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
+import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { DriveBrowser } from '../../../components/Files';
 import { MAX_INDEXABLE_FILES, useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
@@ -16,7 +20,6 @@ import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../../types';
 import { sendProjectDriveFolderLinkEvent, sendProjectDriveFolderUnlinkEvent } from '../../../util/telemetry';
-import { DriveBrowser } from '../../../components/Files';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
     projectId: string;
@@ -191,14 +194,14 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 {/* eslint-disable no-nested-ternary */}
                 {!isInitialized ? (
                     <div className="flex items-center justify-center p-8">
-                        <Icon name="brand-proton-drive-filled" className="mr-2" />
+                        <IcBrandProtonDriveFilled className="mr-2" />
                         <span>{c('collider_2025:Info').t`Initializing Drive...`}</span>
                     </div>
                 ) : isLinkedToDrive ? (
                     <div className="p-4">
                         <div className="mb-4 p-4 bg-weak rounded border border-weak">
                             <div className="flex items-center gap-2 mb-2">
-                                <Icon name="folder" size={5} className="color-primary" />
+                                <IcFolder size={5} className="color-primary" />
                                 <span className="text-bold">{linkedDriveFolder.folderName}</span>
                             </div>
                             <div className="text-sm color-weak">{linkedDriveFolder.folderPath}</div>
@@ -216,7 +219,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                         {hasExistingFiles ? (
                             <div className="p-4 bg-warning-weak rounded border border-warning">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <Icon name="exclamation-triangle-filled" className="color-warning" />
+                                    <IcExclamationTriangleFilled className="color-warning" />
                                     <span className="text-bold">{c('collider_2025:Warning')
                                         .t`Cannot Link Drive Folder`}</span>
                                 </div>
@@ -243,7 +246,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                 {currentBrowsedFolder && !isAtRoot && (
                                     <div className="mt-4 p-4 bg-weak rounded border border-weak">
                                         <div className="flex items-center gap-2">
-                                            <Icon name="folder" className="color-norm" />
+                                            <IcFolder className="color-norm" />
                                             <span className="text-sm">
                                                 {c('collider_2025:Label').t`Current folder:`}{' '}
                                                 <span className="text-bold">{currentBrowsedFolder.name}</span>

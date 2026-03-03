@@ -1,11 +1,12 @@
 import { useState } from 'react';
-
-import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components/index';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import type { FunctionComponent } from 'react';
 
 import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { Icon } from '@proton/components/index';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import type { GroupedDocument } from './SearchInspectList';
 
@@ -26,7 +27,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
         <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
             <div className="flex items-center gap-2 mb-2">
                 <Button shape="ghost" size="small" onClick={onBack}>
-                    <Icon name="arrow-left" size={4} className="mr-1" />
+                    <IcArrowLeft size={4} className="mr-1" />
                     {c('Action').t`Back`}
                 </Button>
                 <span className="text-semibold truncate">{doc.name}</span>
@@ -51,7 +52,8 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                         </div>
                         {hasChunks && (
                             <div className="text-sm color-info">
-                                <strong>{c('Info').t`Chunks:`}</strong> {chunks.length} {c('Info').t`searchable sections`}
+                                <strong>{c('Info').t`Chunks:`}</strong> {chunks.length}{' '}
+                                {c('Info').t`searchable sections`}
                             </div>
                         )}
                     </div>
@@ -61,9 +63,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
             {/* Chunks list (if chunked) */}
             {hasChunks ? (
                 <div className="flex flex-column gap-2">
-                    <div className="text-sm text-semibold color-weak">
-                        {c('Info').t`Searchable chunks`}
-                    </div>
+                    <div className="text-sm text-semibold color-weak">{c('Info').t`Searchable chunks`}</div>
                     {chunks.map((chunk, index) => {
                         const isExpanded = expandedChunk === index;
                         const chunkSize = chunk.content ? new TextEncoder().encode(chunk.content).byteLength : 0;
@@ -89,14 +89,10 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                             <span className="text-sm text-semibold">
                                                 {c('Info').t`Chunk`} {index + 1}/{chunks.length}
                                             </span>
-                                            <span className="text-xs color-weak">
-                                                {formatBytes(chunkSize)}
-                                            </span>
+                                            <span className="text-xs color-weak">{formatBytes(chunkSize)}</span>
                                         </div>
                                         {chunk.chunkTitle && (
-                                            <div className="text-sm color-weak truncate">
-                                                {chunk.chunkTitle}
-                                            </div>
+                                            <div className="text-sm color-weak truncate">{chunk.chunkTitle}</div>
                                         )}
                                     </div>
                                 </button>
@@ -107,10 +103,13 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                         style={{
                                             borderColor: 'var(--border-weak)',
                                             maxHeight: 300,
-                                            overflowY: 'auto'
+                                            overflowY: 'auto',
                                         }}
                                     >
-                                        <pre className="text-sm whitespace-pre-wrap break-words m-0" style={{ lineHeight: 1.4 }}>
+                                        <pre
+                                            className="text-sm whitespace-pre-wrap break-words m-0"
+                                            style={{ lineHeight: 1.4 }}
+                                        >
                                             {chunk.content.slice(0, 1500)}
                                             {chunk.content.length > 1500 ? '…' : ''}
                                         </pre>
@@ -127,7 +126,8 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                         className="p-3 border rounded bg-weak"
                         style={{ borderColor: 'var(--border-weak)', maxHeight: 400, overflowY: 'auto' }}
                     >
-                        <div className="text-xs color-weak mb-2">{c('Info').t`Indexed content (first 2000 chars):`}</div>
+                        <div className="text-xs color-weak mb-2">{c('Info')
+                            .t`Indexed content (first 2000 chars):`}</div>
                         <pre className="text-sm whitespace-pre-wrap break-words m-0" style={{ lineHeight: 1.4 }}>
                             {doc.content.slice(0, 2000)}
                             {doc.content.length > 2000 ? '…' : ''}
@@ -138,5 +138,3 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
         </div>
     );
 };
-
-

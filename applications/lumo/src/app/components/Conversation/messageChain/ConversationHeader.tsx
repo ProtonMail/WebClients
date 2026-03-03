@@ -4,10 +4,14 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, InputFieldTwo } from '@proton/components';
+import { InputFieldTwo } from '@proton/components';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
+import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
+import { NewChatButtonHeader } from '../../../layouts/sidebar/NewChatButton';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
@@ -17,8 +21,6 @@ import { type Conversation, type Message, getProjectInfo } from '../../../types'
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import FavoritesUpsellPrompt from '../../Buttons/FavoritesUpsellPrompt';
 import LumoButton from '../../Buttons/LumoButton';
-import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
-import { NewChatButtonHeader } from '../../../layouts/sidebar/NewChatButton';
 
 import './ConversationHeader.scss';
 
@@ -106,7 +108,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
     const startEditing = useCallback(() => setIsEditing(true), []);
 
-    const handleTitleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleTitleChange = useCallback(() => {
         // Don't update React state during editing to prevent re-renders
         // The input value is managed by the DOM directly
     }, []);
@@ -201,8 +203,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                                 size="medium"
                                 shape="ghost"
                                 icon
-                                title={c('collider_2025:Button').t`Manage chat knowledge files(${totalFiles})`}
+                                title={c('collider_2025:Button').t`Manage chat knowledge files (${totalFiles})`}
                                 onClick={handleOpenFilesClick}
+                                aria-label={c('collider_2025:Button').t`Manage chat knowledge files (${totalFiles})`}
                                 className="no-print"
                             >
                                 <IcMonitor size={5} />
@@ -220,7 +223,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                             className="flex text-md color-weak"
                             title={c('collider_2025:Action').t`Back to project`}
                         >
-                            <Icon name="folder" className="mr-1" />
+                            <IcFolder className="mr-1" />
                             <span className="text-md color-weak">{projectName}</span>
                         </Button>
                     </div>
@@ -259,10 +262,10 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                             className="py-1 px-2 flex flex-row items-center gap-1 shrink-0 project-breadcrumb"
                             title={c('collider_2025:Action').t`Go to project`}
                         >
-                            <Icon name="folder" size={4} />
+                            <IcFolder size={4} />
                             <span className="text-sm color-weak">{projectName}</span>
                         </Button>
-                        <Icon name="chevron-right" size={3} className="color-weak shrink-0 hide-on-small-screens" />
+                        <IcChevronRight size={3} className="color-weak shrink-0 hide-on-small-screens" />
                     </>
                 )}
                 {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}

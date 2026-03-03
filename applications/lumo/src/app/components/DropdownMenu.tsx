@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import type { IconName } from '@proton/icons/types';
 
 import { useSidebar } from '../providers/SidebarProvider';
@@ -42,7 +43,7 @@ const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
                 hasCaret={false}
                 shape="ghost"
                 size="small"
-                content={<Icon name="three-dots-horizontal" alt={c('collider_2025:Title').t`More options`} />}
+                content={<IcThreeDotsHorizontal alt={c('collider_2025:Title').t`More options`} />}
                 onToggle={onToggle}
                 dropdownClassName="chat-dropdown-menu"
             >
