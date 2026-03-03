@@ -7,6 +7,12 @@ import { configuration as duo } from '../operations/springSale2026Duo/configurat
 import { useOffer as useDuo } from '../operations/springSale2026Duo/useOffer';
 import { configuration as family } from '../operations/springSale2026Family/configuration';
 import { useOffer as useFamily } from '../operations/springSale2026Family/useOffer';
+import { configuration as lumoPlus } from '../operations/springSale2026LumoPlus/configuration';
+import { useOffer as useLumoPlus } from '../operations/springSale2026LumoPlus/useOffer';
+import { configuration as lumoPlusRetention } from '../operations/springSale2026LumoPlusRetention/configuration';
+import { useOffer as useLumoPlusRetention } from '../operations/springSale2026LumoPlusRetention/useOffer';
+import { configuration as lumoPlusToYearly } from '../operations/springSale2026LumoPlusToYearly/configuration';
+import { useOffer as useLumoPlusToYearly } from '../operations/springSale2026LumoPlusToYearly/useOffer';
 import { configuration as mailPlus } from '../operations/springSale2026MailPlus/configuration';
 import { useOffer as useMailPlus } from '../operations/springSale2026MailPlus/useOffer';
 import { configuration as mailPlusRetention } from '../operations/springSale2026MailPlusRetention/configuration';
@@ -50,6 +56,10 @@ export const springSale2026Configs: Record<SpringSale2026OfferId, OfferConfig> =
     'spring-sale-2026-pass-plus': passPlus,
     'spring-sale-2026-pass-plus-retention': passPlusRetention,
 
+    'spring-sale-2026-lumo-plus': lumoPlus,
+    'spring-sale-2026-lumo-plus-to-yearly': lumoPlusToYearly,
+    'spring-sale-2026-lumo-plus-retention': lumoPlusRetention,
+
     'spring-sale-2026-unlimited-from-vpn-plus': unlimitedFromVpnPlus,
     'spring-sale-2026-unlimited-from-mail-plus': unlimitedFromMailPlus,
     'spring-sale-2026-unlimited-from-drive-plus': unlimitedFromDrivePlus,
@@ -75,6 +85,10 @@ export function useSpringSale2026(): Operation[] {
     const passPlus = usePassPlus();
     const passPlusRetention = usePassPlusRetention();
 
+    const lumoPlus = useLumoPlus();
+    const lumoPlusToYearly = useLumoPlusToYearly();
+    const lumoPlusRetention = useLumoPlusRetention();
+
     const unlimitedFromVpnPlus = useUnlimitedFromVpnPlus();
     const unlimitedFromMailPlus = useUnlimitedFromMailPlus();
     const unlimitedFromDrivePlus = useUnlimitedFromDrivePlus();
@@ -98,6 +112,10 @@ export function useSpringSale2026(): Operation[] {
 
         passPlus,
         passPlusRetention,
+
+        lumoPlus,
+        lumoPlusToYearly,
+        lumoPlusRetention,
 
         unlimitedFromVpnPlus,
         unlimitedFromMailPlus,
