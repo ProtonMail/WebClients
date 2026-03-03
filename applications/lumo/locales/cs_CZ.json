@@ -59,6 +59,9 @@
       "Clean up orphaned documents": [
         "Vyčistit opuštěné dokumenty"
       ],
+      "Clear canvas": [
+        "Vymazat plátno"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -133,6 +136,9 @@
       ],
       "Forgot password?": [
         "Zapomenuté heslo?"
+      ],
+      "Generate image": [
+        "Generovat obrázek"
       ],
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
@@ -610,6 +616,11 @@
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB úložiště dat"
@@ -942,6 +953,9 @@
       ],
       "Dismiss": [
         "Zavřít"
+      ],
+      "Draw a sketch": [
+        "Nakreslit skicu"
       ],
       "Enable ghost mode": [
         "Povolit neviditelný režim"
@@ -1553,6 +1567,9 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Stisknutím ${ shiftEnterBoldText } odešlete dotaz"
       ],
+      "Preview quality - full resolution not loaded": [
+        "Náhled kvality – plné rozlišení nebylo načteno"
+      ],
       "Private video calls for the conversations that matter.": [
         "Soukromé videohovory pro důležité konverzace."
       ],
@@ -1612,6 +1629,9 @@
       ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Přihlaste se nebo si vytvořte účet, abyste mohli procházet a přidávat soubory ze svého ${ DRIVE_APP_NAME } (koncově šifrovaného cloudového úložiště) do svých znalostí chatu."
+      ],
+      "Sketch added as attachment": [
+        "Náčrt přidán jako příloha"
       ],
       "Space usage: ": [
         "Využité úložiště: "
@@ -2017,6 +2037,9 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } je zaneprázdněná kočka"
       ],
+      "Failed to index file for search: ${ processingResult.message }": [
+        "Nepodařilo se indexovat soubor pro vyhledávání: ${ processingResult.message }"
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Podezřelé: ${ urlParts.subdomainCount } subdoména",
         "Podezřelé: ${ urlParts.subdomainCount } subdomény",
@@ -2200,6 +2223,9 @@
       "Close sidebar": [
         "Zavřít postranní panel"
       ],
+      "Collapse projects": [
+        "Sbalit projekty"
+      ],
       "Create a free account": [
         "Vytvořit bezplatný účet"
       ],
@@ -2214,6 +2240,9 @@
       ],
       "Expand": [
         "Rozbalit"
+      ],
+      "Expand projects": [
+        "Rozbalit projekty"
       ],
       "Favorite": [
         "Oblíbené"
@@ -2245,11 +2274,17 @@
       "New project": [
         "Nový projekt"
       ],
+      "Projects": [
+        "Projekty"
+      ],
       "Save": [
         "Uložit"
       ],
       "Search": [
         "Hledat"
+      ],
+      "See all": [
+        "Zobrazit vše"
       ],
       "Send": [
         "Odeslat"
@@ -2411,6 +2446,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Připojte soubory z ${ DRIVE_APP_NAME } nebo je nahrajte ze svého počítače."
       ],
+      "No projects yet": [
+        "Zatím žádné projekty"
+      ],
       "Processing file...": [
         "Zpracovávám soubor..."
       ],
@@ -2428,6 +2466,9 @@
       ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Tento projekt již obsahuje soubory. Před propojením složky Drive odeberte všechny soubory."
+      ],
+      "This will remove all ${ fileCount } files from this project. This action cannot be undone.": [
+        "Toto odebere všech ${ fileCount } souborů z tohoto projektu. Tuto akci nelze vzít zpět."
       ],
       "Tips on how to write useful instructions": [
         "Tipy, jak psát užitečné instrukce"
@@ -2603,6 +2644,9 @@
       "Help me understand what this code does": [
         "Pomoz mi pochopit, co dělá tento kód"
       ],
+      "How does the world celebrate Lunar New Year?": [
+        "Jak svět slaví lunární Nový rok?"
+      ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identifikuj podmínky, které jsou neobvyklé nebo potenciálně nevýhodné"
       ],
@@ -2650,6 +2694,14 @@
       ],
       "What should I know about emergency funds and where to keep them?": [
         "Co bych měl vědět o nouzových finančních prostředcích a jejich uchovávání?"
+      ]
+    },
+    "collider_2025:Reasoning": {
+      "Thinking...": [
+        "Přemýšlím..."
+      ],
+      "Thought about this": [
+        "Přemýšlí se o tom"
       ]
     },
     "collider_2025:Status": {
@@ -2842,6 +2894,26 @@
       ],
       "This will also permanently delete:": [
         "Toto také trvale smaže:"
+      ]
+    },
+    "Color": {
+      "Black": [
+        "Černá"
+      ],
+      "Blue": [
+        "Modrá"
+      ],
+      "Green": [
+        "Zelená"
+      ],
+      "Orange": [
+        "Oranžová"
+      ],
+      "Purple": [
+        "Fialová"
+      ],
+      "Red": [
+        "Červená"
       ]
     },
     "color": {
@@ -5276,6 +5348,9 @@
       "Streaming": [
         "Streamování"
       ],
+      "Test Renderer": [
+        "Testovací renderer"
+      ],
       "to toggle": [
         "přepnout"
       ],
@@ -5284,6 +5359,32 @@
       ],
       "Tokens/sec": [
         "Tokenů/s"
+      ]
+    },
+    "lumo: Test Renderer": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Deselect All": [
+        "Zrušit výběr všeho"
+      ],
+      "Inject Test Content": [
+        "Vložit testovací obsah"
+      ],
+      "Select All": [
+        "Vybrat vše"
+      ],
+      "Select test cases to inject into the current conversation. This will help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Vyberte testovací případy, které chcete vložit do aktuální konverzace. To pomůže otestovat různé scénáře vykreslování, včetně konverze HTML, LaTeX, bloků kódu a okrajových případů."
+      ],
+      "Select test cases to inject. A new test conversation will be created with the selected test cases to help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Vyberte testovací případy k vložení. Vytvoří se nová testovací konverzace s vybranými testovacími případy, která pomůže otestovat různá vykreslovací schémata včetně převodu HTML, LaTeXu, bloků kódu a okrajových případů."
+      ],
+      "Selected:": [
+        "Vybráno:"
+      ],
+      "Test Renderer": [
+        "Testovací renderer"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5502,6 +5603,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
@@ -6489,10 +6596,10 @@
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
       ],
       "Tax ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "Taxes ${ rate }%": [
-        "Daň ${ rate }%"
+        "Daň ${ rate } %"
       ],
       "terms and conditions": [
         "smluvní podmínky užívání"
@@ -6637,6 +6744,9 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
         "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena obnovení závisí na zemi platby a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -7043,6 +7153,16 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {
