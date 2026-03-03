@@ -15,7 +15,7 @@ im.$media-expressions: $media-expressions;
 
 	// Mobile styles
 	@include im.media('<=small') {
-		border-block-end: none !important;
+		// border-block-end: none !important;
 		inline-size: 98% !important;
 		margin-block-end: 10px;
 
