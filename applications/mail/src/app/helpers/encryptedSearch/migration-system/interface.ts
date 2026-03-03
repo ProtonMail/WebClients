@@ -1,4 +1,3 @@
-import type { openESDB } from '@proton/encrypted-search/esIDB';
 import type { ESCiphertext, ESTimepoint } from '@proton/encrypted-search/models';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -15,8 +14,6 @@ export type EncryptedSearchData = {
     content: ESMessageContent | undefined;
     timepoint: ESTimepoint | undefined;
 };
-
-export type DBType = NonNullable<Awaited<ReturnType<typeof openESDB>>>;
 
 export type ESItemCursorResult = { key: string; value: ESCiphertext };
 

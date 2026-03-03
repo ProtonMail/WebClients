@@ -1,9 +1,12 @@
-import { serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers';
+import type { IDBPDatabase } from 'idb';
 
-import type { DBType, EncryptedSearchData } from '../interface';
+import { serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers';
+import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
+
+import type { EncryptedSearchData } from '../interface';
 
 interface EncryptAndWriteProps {
-    esDB: DBType;
+    esDB: IDBPDatabase<EncryptedSearchDB>;
     indexKey: CryptoKey;
     item: EncryptedSearchData;
     version: number;

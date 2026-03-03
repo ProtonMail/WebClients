@@ -1,11 +1,14 @@
+import type { IDBPDatabase } from 'idb';
+
 import { decryptFromDB } from '@proton/encrypted-search/esHelpers';
+import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
-import type { DBType, EncryptedSearchData } from '../interface';
+import type { EncryptedSearchData } from '../interface';
 
 interface DecryptESItemProps {
-    esDB: DBType;
+    esDB: IDBPDatabase<EncryptedSearchDB>;
     indexKey: CryptoKey;
     itemID: string;
 }
