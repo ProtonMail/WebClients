@@ -1848,7 +1848,7 @@
         "Gib die Adresse ein, an die du eine E-Mail senden möchtest."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Bestätigungscode eingeben. Ziffer ${ digit }."
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your extra password": [
         "Gib dein zusätzliches Passwort ein."
@@ -2732,6 +2732,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Möglicherweise musst du ${ PASS_APP_NAME } die Berechtigung für Bedienungshilfen erteilen."
       ]
     },
     "Keyboard key": {

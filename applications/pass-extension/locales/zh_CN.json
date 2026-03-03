@@ -1825,7 +1825,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2026,7 +2026,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2702,6 +2702,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予 ${ PASS_APP_NAME } 辅助功能权限。"
       ]
     },
     "Keyboard key": {

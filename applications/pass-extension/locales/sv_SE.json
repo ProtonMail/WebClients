@@ -2708,6 +2708,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Du kan behöva bevilja åtkomstbehörighet till ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {
