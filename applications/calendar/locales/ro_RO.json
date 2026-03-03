@@ -4547,12 +4547,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
       ],
       "Security key": [
         "Cheie de securitate"
@@ -5559,7 +5559,7 @@
         "Cheie duplicat actualizată"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6352,7 +6352,7 @@
         "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "Where will the appointment take place?": [
         "Unde va avea loc întâlnirea?"
@@ -10753,6 +10753,16 @@
       ],
       "Video conferencing is here!": [
         "Au sosit conferințele video!"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REDUCERE DE PRIMĂVARĂ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
