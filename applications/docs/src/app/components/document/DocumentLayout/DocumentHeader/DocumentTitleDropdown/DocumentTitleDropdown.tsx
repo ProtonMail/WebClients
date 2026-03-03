@@ -231,6 +231,7 @@ export function DocumentTitleDropdown({
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
     if (input) {
       input.focus()
+      input.select()
     }
   }, [])
 
