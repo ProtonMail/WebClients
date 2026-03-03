@@ -346,9 +346,6 @@
       "Get Started": [
         "Começar"
       ],
-      "Hide": [
-        "Ocultar"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como exporto os meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1740,9 +1737,6 @@
       "Enter the address you want to email.": [
         "Introduza o endereço para o qual deseja enviar um e-mail."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
-      ],
       "Enter your extra password": [
         "Introduza a sua palavra-passe adicional"
       ],
@@ -1940,7 +1934,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
