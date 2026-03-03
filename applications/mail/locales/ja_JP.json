@@ -324,9 +324,6 @@
       "Copy addresses": [
         "アドレスをコピー"
       ],
-      "Copy alias “${ name }”": [
-        "エイリアス「${ name }」をコピー"
-      ],
       "Copy email to clipboard": [
         "メールをコピー"
       ],
@@ -2590,6 +2587,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } か月分の小計"
       ],
       "Total": [
         "合計"
@@ -5259,9 +5262,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
       ]
@@ -5499,15 +5499,7 @@
         "最高速の速度"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
-      ],
       "Security key": [
         "セキュリティキー"
       ]
@@ -7040,9 +7032,6 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
-      "Each code can only be used once": [
-        "各コードは 1 回のみ使用可能です"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
       ],
@@ -7108,9 +7097,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -8464,9 +8450,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
@@ -12015,6 +11998,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
@@ -12036,6 +12025,18 @@
       "Got it": [
         "分かりました"
       ],
+      "Including ${ rate }% tax": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -12053,6 +12054,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Tax ${ rate }%": [
+        "税金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税金 ${ rate }%"
       ],
       "terms and conditions": [
         "利用規約"
@@ -12699,46 +12706,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "すべてのエイリアス"
-      ],
       "Create alias": [
         "エイリアスを作成"
-      ],
-      "Create an alias": [
-        "エイリアスを作成"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email エイリアス"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新しいエイリアス"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を開く"
-      ],
-      "Protect your online identity": [
-        "あなたをオンラインで守る"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } をお試しください"
       ],
       "Used on Amazon for shopping, etc.": [
         "「Amazonでの買い物用」など"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } を開きます)"
       ]
     },
     "Security Center - Action": {
@@ -13370,6 +13345,11 @@
         "pm.me メールが有効です"
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026年新春セール"
+      ]
+    },
     "sso": {
       "Sign in": [
         "サインイン"
@@ -13992,9 +13972,6 @@
       "Address verification disabled": [
         "アドレス検証を無効にしました"
       ],
-      "Alias copied to clipboard": [
-        "エイリアスがクリップボードにコピーされました"
-      ],
       "Alias saved and copied": [
         "エイリアスを保存してコピーしました"
       ],
@@ -14084,9 +14061,6 @@
       ],
       "Labels applied.": [
         "ラベルが適用されました。"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最も古い保管庫に保存されている、最後に変更されたエイリアス"
       ],
       "Mail list unsubscribed": [
         "メールリストの購読を解除しました"

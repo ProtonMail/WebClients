@@ -346,9 +346,6 @@
       "Get Started": [
         "Kezdés"
       ],
-      "Hide": [
-        "Elrejtés"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hogy exportálhatom az adataimat a(z) ${ PROVIDER_INFO_MAP[form.values.provider].title } jelszókezelőből?"
       ],
@@ -1751,9 +1748,6 @@
       "Enter the address you want to email.": [
         "Adja meg a címzett e-mail címét."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
-      ],
       "Enter your extra password": [
         "Írja be az extra jelszót"
       ],
@@ -1949,6 +1943,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"

@@ -211,7 +211,7 @@
         "Terug"
       ],
       "Back to sign in": [
-        "Terug naar aanmelden"
+        "Terug naar inloggen"
       ],
       "Block": [
         "Blokkeer"
@@ -844,7 +844,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide more benefits": [
         "Verberg meer voordelen"
@@ -2709,6 +2709,9 @@
       "Failed to load OAuth": [
         "Laden van OAuth mislukt"
       ],
+      "Finish setting up your business account": [
+        "Voltooi het instellen van uw zakelijke account"
+      ],
       "Install migration app": [
         "Installeer migratie app"
       ],
@@ -4183,9 +4186,6 @@
       ],
       "North Korea": [
         "Noord-Korea"
-      ],
-      "North Macedonia": [
-        "Noord-Macedonië"
       ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
@@ -6266,8 +6266,8 @@
       "You will be notified when someone requests emergency access.": [
         "U wordt op de hoogte gesteld wanneer iemand noodtoegang aanvraagt."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "U kunt niet langer helpen bij het herstellen van de toegang tot het account van ${ user } in geval van een wachtwoord reset."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "U kunt de gegevens van ${ user } niet meer herstellen nadat deze hun wachtwoord opnieuw hebben ingesteld."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "U kunt niet langer toegang aanvragen tot het account van ${ user } in geval van een noodgeval."
@@ -6482,9 +6482,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Als de tijd op uw TV is verlopen, klik dan op Vernieuwen op uw TV en probeer het opnieuw."
       ],
       "IMAP server is required": [
         "IMAP-server is vereist"
@@ -6788,6 +6785,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Er is iets misgegaan bij het verbinden van uw tv. Scan de QR-code op uw tv nogmaals."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
@@ -7755,9 +7755,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
       ]
@@ -7777,9 +7774,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
       ],
       "Insert your security key into your device's USB port.": [
         "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
@@ -8234,9 +8228,6 @@
       ],
       "Password ends with": [
         "Wachtwoord eindigt met"
-      ],
-      "Payment details": [
-        "Betalingsgegevens"
       ],
       "Permissions": [
         "Machtigingen"
@@ -9753,7 +9744,7 @@
         "Neerzetten om te importeren"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
@@ -11472,7 +11463,7 @@
         "Upgraden om uw ${ planTitle } voordelen te behouden."
       ],
       "Upgrade to unlock": [
-        "Upgrade om te ontgrendelen"
+        "Upgraden om te ontgrendelen"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Upgrade om de ${ monitorLink } te ontgrendelen."
@@ -11712,7 +11703,7 @@
         "Wanneer u een server uit een Gateway verwijdert, voert deze een deactivatieperiode van 10 dagen in. Deze server kan worden toegevoegd aan een nieuwe gateway, maar zijn land kan niet worden veranderd."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -14306,7 +14297,7 @@
         "Alias aanmaken"
       ],
       "Don't have access to your 2FA?": [
-        "Heeft u geen tot uw 2FA?"
+        "Heeft u geen toegang tot uw 2FA?"
       ],
       "Downloads": [
         "Downloads"
@@ -14951,10 +14942,10 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Log in"
+        "${ appName }: Inloggen"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Inschrijven"
+        "${ appName }: Aanmelden"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account"
@@ -14966,7 +14957,7 @@
         "Maak een ${ BRAND_NAME }-account | Neem uw privacy in eigen handen."
       ],
       "Create a new ${ appName } account": [
-        "Maak een nieuwe ${ appName }-account aan"
+        "Maak een nieuw ${ appName } account aan"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Geniet gratis van twee weken ${ BRAND_NAME }"
@@ -14978,16 +14969,16 @@
         "Vind uw ${ BRAND_NAME }-account gebruikersnaam"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } wachtwoord vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+        "Bent u uw ${ BRAND_NAME } account wachtwoord vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME }-account gebruikersnaam vergeten? Reset het door uw recovery code, e-mail of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+        "Bent u uw ${ BRAND_NAME } account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Reset uw ${ BRAND_NAME }-account wachtwoord"
+        "Reset uw ${ BRAND_NAME } accountwachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
-        "Log in om toegang te krijgen tot uw ${ appName }-account"
+        "Log in om toegang te krijgen tot uw ${ appName } account"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
@@ -15580,9 +15571,6 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Snelle Zwitserse VPN die uw privacy beschermt"
-      ],
       "High-speed VPN on ${ n } device": [
         "High-speed VPN op ${ n } apparaat",
         "High-speed VPN op ${ n } apparaten"
@@ -15707,9 +15695,6 @@
       ],
       "Start protecting your organization": [
         "Begin met het beschermen van uw organisatie"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Bescherm uzelf online in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -16433,6 +16418,9 @@
       ],
       "Reminder has been sent": [
         "Herinnering is verstuurd"
+      ],
+      "The key has been deleted.": [
+        "De sleutel is verwijderd."
       ],
       "Too many recent API requests": [
         "Te veel recente API-verzoeken"
@@ -19764,7 +19752,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Foto's sectie inschakelen"
+        "Sectie voor foto's inschakelen"
       ],
       "Get updates about comments via email": [
         "Ontvang updates over reacties via e-mail."
@@ -20614,6 +20602,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ontvang tegoed wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME }-abonnement."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
       ]
     },
     "sso": {
@@ -22832,9 +22830,6 @@
       ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
-      ],
-      "Finish setting up your business account": [
-        "Het instellen van uw zakelijke account voltooien"
       ],
       "Folders": [
         "Mappen"

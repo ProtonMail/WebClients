@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Copia les adreces"
       ],
-      "Copy alias “${ name }”": [
-        "Copia l'àlies «${ name }»"
-      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -5306,9 +5303,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Encara no teniu cap contacte. Comenceu creant-ne un de nou."
       ]
@@ -5549,12 +5543,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -7162,7 +7156,7 @@
         "Clau duplicada actualitzada"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada."
+        "Cada codi només es pot utilitzar una vegada"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestioneu i doneu-vos de baixa fàcilment de butlletins i llistes de correu."
@@ -8601,7 +8595,7 @@
         "Quan vau activar les claus de confiança per a ${ senderName }, es van afegir les claus públiques a les dades del contacte."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat quedarà amagada i podreu desactivar l'àlies en qualsevol moment."
@@ -12077,6 +12071,12 @@
       ],
       "No parent folder": [
         "No hi ha la carpeta pare"
+      ],
+      "Remind me later": [
+        "Recordeu-m'ho més tard"
+      ],
+      "Yes, don't show again": [
+        "Sí, no m'ho tornis a mostrar"
       ]
     },
     "Option group": {
@@ -12940,46 +12940,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Tots els àlies"
-      ],
       "Create alias": [
         "Crea un àlies"
-      ],
-      "Create an alias": [
-        "Crea un àlies"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
-      ],
-      "Hide-my-email aliases": [
-        "Àlies hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nou àlies"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Obri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protegiu la vostra identitat en línia"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Proveu ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(obrirà ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13630,6 +13598,16 @@
       ],
       "Your pm.me email is active": [
         "El vostre correu electrònic de pm.me està actiu."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REBAIXES DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REBAIXES DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -14291,9 +14269,6 @@
       "Address verification disabled": [
         "S'ha desactivat la verificació de l'adreça"
       ],
-      "Alias copied to clipboard": [
-        "L'àlies s'ha copiat al porta-retalls."
-      ],
       "Alias saved and copied": [
         "S'ha desat i copiat l'àlies."
       ],
@@ -14385,9 +14360,6 @@
       ],
       "Labels applied.": [
         "S'han posat les etiquetes."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Mail list unsubscribed": [
         "S'ha cancel·lat la subscripció a la llista de correu"
@@ -15180,6 +15152,9 @@
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
+      ],
+      "Keep this banner hidden?": [
+        "Voleu mantenir aquest bàner amagat?"
       ],
       "Label as": [
         "Etiqueta com a"

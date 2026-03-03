@@ -325,9 +325,6 @@
       "Get Started": [
         "Kezdés"
       ],
-      "Hide": [
-        "Elrejtés"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hogy exportálhatom az adataimat a(z) ${ PROVIDER_INFO_MAP[form.values.provider].title } jelszókezelőből?"
       ],
@@ -1692,9 +1689,6 @@
       ],
       "Enter the address you want to email.": [
         "Adja meg a címzett e-mail címét."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your extra password": [
         "Írja be az extra jelszót"

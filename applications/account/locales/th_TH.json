@@ -210,9 +210,6 @@
       "Back": [
         "กลับ"
       ],
-      "Back to sign in": [
-        "กลับไปเข้าสู่ระบบ"
-      ],
       "Block": [
         "บล็อก"
       ],
@@ -833,9 +830,6 @@
       ],
       "Help and resources": [
         "ความช่วยเหลือและทรัพยากร"
-      ],
-      "Hide": [
-        "ซ่อน"
       ],
       "Hide more benefits": [
         "ซ่อนสิทธิประโยชน์เพิ่มเติม"
@@ -4017,9 +4011,6 @@
       ],
       "North Korea": [
         "เกาหลีเหนือ"
-      ],
-      "North Macedonia": [
-        "มาซิโดเนียเหนือ"
       ],
       "Northern Mariana Islands": [
         "หมู่เกาะนอร์เทิร์นมาเรียนา"
@@ -7307,9 +7298,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "เกิดข้อผิดพลาดในการลงทะเบียนคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
       ]
@@ -7329,9 +7317,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "คุณแน่ใจหรือไม่ว่าต้องการลบคีย์ความปลอดภัย ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME } ของคุณ"
       ],
       "Insert your security key into your device's USB port.": [
         "แทรกคีย์ความปลอดภัยของคุณลงในพอร์ต USB ของอุปกรณ์"
@@ -7778,9 +7763,6 @@
       ],
       "Password ends with": [
         "รหัสผ่านลงท้ายด้วย"
-      ],
-      "Payment details": [
-        "รายละเอียดการชำระเงิน"
       ],
       "Permissions": [
         "การอนุญาต"
@@ -9234,9 +9216,6 @@
       "Drop to import": [
         "วางเพื่อนำเข้า"
       ],
-      "Each code can only be used once": [
-        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "แต่ละโดเมนสามารถมีระเบียน SPF (TXT) ได้เพียงรายการเดียว หากคุณต้องการเก็บระเบียน SPF (TXT) ที่มีอยู่ไว้ คุณสามารถเพิ่ม ${ spf } ลงในระเบียนปัจจุบันของคุณ (วางไว้หลัง ${ spfValue })"
       ],
@@ -9365,9 +9344,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "ป้อนรหัสยืนยัน ตัวเลข ${ digit }"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "ป้อนรายละเอียดบัญชี ${ BRAND_NAME } ของคุณ"
@@ -10794,9 +10770,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "ถ้าต้องการยืนยัน โปรดใส่ชื่อของผู้ใช้งานที่คุณต้องการลบออกไป"
       ],
-      "To continue to ${ product }": [
-        "เพื่อดำเนินการ ${ product } ต่อ"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "เพื่อปรับปรุงบริการของเราอย่างต่อเนื่อง บางครั้งเราจะเก็บรวบรวมข้อมูลเพื่อติดตามการทำงานที่เหมาะสมของแอปพลิเคชั่นของเรา ข้อมูลนี้จะไม่ถูกแชร์กับบริการของบุคคลที่สามใดๆ"
       ],
@@ -11135,9 +11108,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "เมื่อลบเซิร์ฟเวอร์ออกจากเกตเวย์ เซิร์ฟเวอร์จะเข้าสู่ช่วงปิดใช้งาน 10 วัน เซิร์ฟเวอร์นี้สามารถเพิ่มไปยังเกตเวย์ใหม่ได้ แต่ไม่สามารถเปลี่ยนประเทศได้"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "เมื่อคุณตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน เราจะให้รหัสกู้คืนซึ่งคุณสามารถใช้เพื่อเข้าสู่ระบบหากคุณสูญเสียการเข้าถึงแอปยืนยันตัวตนของคุณ"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "เมื่อมีการสมัครต่อบัญชี เราจะชำระค่าบริการจากเครดิตของคุณที่ยังมีอยู่ก่อนผ่านการชำระเงินด้านบน"
@@ -13633,9 +13603,6 @@
       "Create an alias": [
         "สร้างนามแฝง"
       ],
-      "Don't have access to your 2FA?": [
-        "เข้าถึง 2FA ไม่ได้ใช่หรือไม่?"
-      ],
       "Downloads": [
         "ดาวน์โหลด"
       ],
@@ -14252,12 +14219,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: เข้าสู่ระบบ"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: ลงทะเบียน"
-      ],
       "${ BRAND_NAME } Account": [
         "บัญชี ${ BRAND_NAME }"
       ],
@@ -14267,9 +14228,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "สร้างบัญชี ${ BRAND_NAME } | ทวงคืนความเป็นส่วนตัวของคุณ"
       ],
-      "Create a new ${ appName } account": [
-        "สร้างบัญชี ${ appName } ใหม่"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "เพลิดเพลินกับ ${ BRAND_NAME } ฟรีเป็นเวลาสองสัปดาห์"
       ],
@@ -14278,18 +14236,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "ค้นหาชื่อผู้ใช้บัญชี ${ BRAND_NAME } ของคุณ"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "ลืมรหัสผ่านบัญชี ${ BRAND_NAME } ใช่หรือไม่ รีเซ็ตรหัสผ่านที่นี่โดยใช้รหัสกู้คืน อีเมล หรือ SMS เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "ลืมชื่อผู้ใช้บัญชี ${ BRAND_NAME } ใช่หรือไม่ ค้นหาชื่อผู้ใช้โดยใช้อีเมลการกู้คืนหรือหมายเลขโทรศัพท์เพื่อกู้คืนการเข้าถึง ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "รีเซ็ตรหัสผ่านบัญชี ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "เข้าสู่ระบบเพื่อเข้าถึงบัญชี ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "เข้าสู่ระบบบัญชี ${ BRAND_NAME } ของคุณเพื่อเข้าถึงบริการ ${ BRAND_NAME } ที่เข้ารหัสทั้งหมด เช่น ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } และอื่นๆ ยังไม่มีบัญชีใช่หรือไม่? สร้างบัญชีฟรี"
@@ -14860,9 +14806,6 @@
       "Group management (coming soon)": [
         "การจัดการกลุ่ม (เร็วๆ นี้)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN ความเร็วสูงจากสวิสที่ปกป้องความเป็นส่วนตัวของคุณ"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN ความเร็วสูง ${ n } เครื่อง"
       ],
@@ -14982,9 +14925,6 @@
       ],
       "Start protecting your organization": [
         "เริ่มปกป้ององค์กรของคุณ"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "เริ่มปกป้องตัวเองออนไลน์ได้ง่ายๆ ใน 2 ขั้นตอน"
       ],
       "Strict no-logs policy": [
         "นโยบายไม่บันทึกข้อมูลการใช้งานที่เข้มงวด"
@@ -21800,9 +21740,6 @@
       ],
       "Find email or username": [
         "ค้นหาอีเมลหรือชื่อผู้ใช้"
-      ],
-      "Finish setting up your business account": [
-        "ตั้งค่าบัญชีธุรกิจของคุณให้เสร็จสมบูรณ์"
       ],
       "Folders": [
         "แฟ้ม"

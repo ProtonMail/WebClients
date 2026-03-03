@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Αντιγραφή διευθύνσεων"
       ],
-      "Copy alias “${ name }”": [
-        "Αντιγραφή ψευδώνυμου “${ name }”"
-      ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
@@ -3605,7 +3602,7 @@
         "Βόρεια Κορέα"
       ],
       "North Macedonia": [
-        "Σκόπια"
+        "Βόρεια Μακεδονία"
       ],
       "Northern Mariana Islands": [
         "Βόρειες Μαριάνες"
@@ -5305,9 +5302,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Όταν είναι ενεργοποιημένος ο επιπλέον κωδικός πρόσβασης, η διαχείριση ψευδωνύμων μπορεί να γίνει μόνο στο ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Δεν έχετε καμία επαφή ακόμα. Ξεκινήστε δημιουργώντας μια νέα επαφή"
@@ -7162,7 +7156,7 @@
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
       "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
@@ -10808,6 +10802,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
       ],
@@ -12073,6 +12071,12 @@
       ],
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
+      ],
+      "Remind me later": [
+        "Υπενθύμιση αργότερα"
+      ],
+      "Yes, don't show again": [
+        "Ναι, να μην εμφανιστεί ξανά"
       ]
     },
     "Option group": {
@@ -12936,46 +12940,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Όλα τα ψευδώνυμα"
-      ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
-      ],
-      "Create an alias": [
-        "Δημιουργία ψευδωνύμου"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Δημιουργήστε ψευδώνυμα εν κινήσει και διαχειριστείτε εύκολα τα ψευδώνυμα και τους κωδικούς πρόσβασής σας."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email ψευδώνυμα"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Τα ψευδώνυμα Hide-my-email σάς επιτρέπουν να εγγράφεστε για πράγματα στο διαδίκτυο χωρίς να μοιράζεστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Νέο ψευδώνυμο"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Άνοιγμα ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Προστατέψτε την ηλεκτρονική σας ταυτότητα"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Δοκιμάστε το ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(θα ανοίξει ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13626,6 +13598,16 @@
       ],
       "Your pm.me email is active": [
         "Το email pm.me σας είναι ενεργό"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
     "sso": {
@@ -14287,9 +14269,6 @@
       "Address verification disabled": [
         "Η επαλήθευση διεύθυνσης είναι απενεργοποιημένη"
       ],
-      "Alias copied to clipboard": [
-        "Το ψευδώνυμο αντιγράφηκε στο πρόχειρο"
-      ],
       "Alias saved and copied": [
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
       ],
@@ -14381,9 +14360,6 @@
       ],
       "Labels applied.": [
         "Οι ετικέτες εφαρμόστηκαν."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
       "Mail list unsubscribed": [
         "΄Εγινε απεγγραφή από λίστα αλληλογραφίας"
@@ -15176,6 +15152,9 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Keep this banner hidden?": [
+        "Απόκρυψη αυτού του πανό;"
       ],
       "Label as": [
         "Απόδοση ετικετών"

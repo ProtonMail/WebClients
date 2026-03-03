@@ -176,9 +176,6 @@
       "Back": [
         "Nazaj"
       ],
-      "Back to sign in": [
-        "Nazaj na prijavo"
-      ],
       "Block": [
         "Blokiraj"
       ],
@@ -700,9 +697,6 @@
       ],
       "Help and resources": [
         "Pomoč in viri"
-      ],
-      "Hide": [
-        "Skrij"
       ],
       "Hide more benefits": [
         "Skrij več prednosti"
@@ -3179,9 +3173,6 @@
       ],
       "North Korea": [
         "Severna Koreja"
-      ],
-      "North Macedonia": [
-        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
         "Severni Marijanski otoki"
@@ -5709,9 +5700,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registraciji vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
@@ -5731,9 +5719,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ste prepričani, da želite izbrisati varnostni ključ ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Vstavite vaš varnostni ključ v USB vrata vaše naprave."
@@ -6171,9 +6156,6 @@
       ],
       "Password ends with": [
         "Geslo se konča z"
-      ],
-      "Payment details": [
-        "Podrobnosti plačila"
       ],
       "Protection": [
         "Zaščita"
@@ -7429,9 +7411,6 @@
       "Drop to import": [
         "Spusti za uvoz."
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Vsaka domena ima lahko le en zapis SPF (TXT). Če želite obdržati obstoječi zapis SPF (TXT), lahko trenutnemu zapisu dodate ${ spf } (postavite ga za ${ spfValue })."
       ],
@@ -7524,9 +7503,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Vnesite podrobnosti za svoj račun ${ BRAND_NAME }."
@@ -8623,9 +8599,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potrditev vnesite ime uporabnika, katerega želite izbrisati."
       ],
-      "To continue to ${ product }": [
-        "Za nadaljevanje v ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Z namenom nenehnega izboljševanja naših storitev včasih zbiramo podatke za spremljanje pravilnega delovanja naših aplikacij. Te informacije ne delimo s tretjimi osebami."
       ],
@@ -8910,9 +8883,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ko odstranite strežnik iz prehoda, ta vstopi v 10-dnevno obdobje deaktivacije. Ta strežnik je mogoče dodati novemu prehodu, vendar njegove države ni mogoče spremeniti."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Ko se vaša naročnina obnovi, bomo uporabili vso razpoložljivo dobroimetje, preden bomo zaračunali zgornji način plačila."
@@ -10859,9 +10829,6 @@
       "Create an alias": [
         "Ustvari vzdevek"
       ],
-      "Don't have access to your 2FA?": [
-        "Nimate dostopa do svojega 2FA?"
-      ],
       "Encryption and keys": [
         "Šifriranje in ključi."
       ],
@@ -11327,12 +11294,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Prijava"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Registracija"
-      ],
       "${ BRAND_NAME } Account": [
         "Račun ${ BRAND_NAME }"
       ],
@@ -11342,23 +11303,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Ustvari račun ${ BRAND_NAME } | Povrnite si svojo zasebnost"
       ],
-      "Create a new ${ appName } account": [
-        "Ustvarite nov račun ${ appName }."
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Poiščite uporabniško ime za svoj račun ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Ste pozabili uporabniško ime za račun ${ BRAND_NAME }? Poiščite ga z obnovitvenim e-poštnim naslovom ali telefonsko številko in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Ponastavite geslo za račun ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Prijavite se za dostop do svojega računa ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se v svoj račun ${ BRAND_NAME } in dostopajte do vseh šifriranih storitev ${ BRAND_NAME }, kot so ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in še več. Nimate računa? Brezplačno ga ustvarite."
@@ -11953,9 +11899,6 @@
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Hitri švicarski VPN, ki varuje vašo zasebnost."
-      ],
       "High-speed VPN on ${ n } device": [
         "Hitri VPN v ${ n } napravi",
         "Hitri VPN v ${ n } napravah",
@@ -12078,9 +12021,6 @@
       ],
       "Start protecting your organization": [
         "Začnite ščititi svojo organizacijo"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Začnite se varovati na spletu v dveh enostavnih korakih"
       ],
       "Strict no-logs policy": [
         "Strikten pravilnik brez dnevniških datotek"

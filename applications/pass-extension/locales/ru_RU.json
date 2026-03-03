@@ -346,9 +346,6 @@
       "Get Started": [
         "Начать"
       ],
-      "Hide": [
-        "Скрыть"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1769,9 +1766,6 @@
       "Enter the address you want to email.": [
         "Введите адрес, на который вы хотите отправить электронное письмо."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введите код подтверждения. Цифра ${ digit }."
-      ],
       "Enter your extra password": [
         "Введите дополнительный пароль"
       ],
@@ -1975,6 +1969,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"

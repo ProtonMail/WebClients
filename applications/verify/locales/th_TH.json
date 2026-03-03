@@ -584,9 +584,6 @@
       "North Korea": [
         "เกาหลีเหนือ"
       ],
-      "North Macedonia": [
-        "มาซิโดเนียเหนือ"
-      ],
       "Northern Mariana Islands": [
         "หมู่เกาะนอร์เทิร์นมาเรียนา"
       ],
@@ -921,15 +918,7 @@
         "ไม่สามารถโหลดหน้านี้ได้ โปรดรีเฟรชหน้าหรือตรวจสอบการเชื่อมต่ออินเทอร์เน็ต"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "เกิดข้อผิดพลาดในการยืนยันตัวตนด้วยคีย์ความปลอดภัยของคุณ โปรดลองอีกครั้ง"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "แทรกคีย์ความปลอดภัยที่เชื่อมโยงกับบัญชี ${ BRAND_NAME } ของคุณ"
-      ],
       "Security key": [
         "คีย์ความปลอดภัย"
       ]
@@ -1031,9 +1020,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "การสร้างบัญชีฟรีหลายบัญชีไม่ได้รับอนุญาตตาม ${ termsLink }"
       ],
-      "Each code can only be used once": [
-        "แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
-      ],
       "Edit email address": [
         "แก้ไขที่อยู่อีเมล"
       ],
@@ -1042,9 +1028,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "ป้อนรหัสยืนยัน ตัวเลข ${ digit }"
       ],
       "Enter your own password (as organization admin).": [
         "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ดูแลระบบองค์กร)"
@@ -1093,9 +1076,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "เราจะส่งรหัสยืนยันใหม่ไปยัง ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "เมื่อคุณตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน เราจะให้รหัสกู้คืนซึ่งคุณสามารถใช้เพื่อเข้าสู่ระบบหากคุณสูญเสียการเข้าถึงแอปยืนยันตัวตนของคุณ"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "คุณต้องการรับรหัสยืนยันตัวตนใหม่หรือใช้วิธีการยืนยันตัวตนอื่น หรือไม่?"
@@ -1199,9 +1179,6 @@
       ],
       "${ n } message per day": [
         "${ n }ข้อความต่อวัน"
-      ],
-      "${ options }-day file version history": [
-        "ประวัติเวอร์ชันไฟล์ ${ options } วัน"
       ],
       "${ size } attachment size": [
         "ขนาดไฟล์แนบ ${ size }"

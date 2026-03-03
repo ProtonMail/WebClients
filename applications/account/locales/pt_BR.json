@@ -1921,6 +1921,11 @@
         "administrador"
       ]
     },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Uma função é um grupo de permissões que você pode atribuir aos membros da sua organização."
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ao sair agora, alguns contatos podem não ser importados"
@@ -2704,6 +2709,9 @@
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
       ],
+      "Finish setting up your business account": [
+        "Conclua a configuração da sua conta empresarial"
+      ],
       "Install migration app": [
         "Instalar aplicativo de migração"
       ],
@@ -3197,6 +3205,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Started ${ formattedStartDate }": [
+        "Iniciado em ${ formattedStartDate }"
       ],
       "Starting ${ formattedStartDate }": [
         "Começando ${ formattedStartDate }"
@@ -4894,6 +4905,9 @@
       ]
     },
     "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } pelo primeiro mês. Renova por ${ regularPrice }/mês, cancele a qualquer momento."
+      ],
       "Get VPN Plus for only ${ offerPrice }": [
         "Obtenha o VPN Plus por apenas ${ offerPrice }"
       ],
@@ -5880,6 +5894,9 @@
       "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
         "${ user } perderá acesso à sua conta, e não poderá acessá-la até o próximo acesso de emergência."
       ],
+      "${ user } will no longer be able to help you recover your data after a password reset.": [
+        "${ user } não poderá mais ajudar você a recuperar seus dados após a redefinição de senha."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "${ user } não poderá mais solicitar acesso à sua conta em caso de emergência."
       ],
@@ -5888,6 +5905,9 @@
       ],
       "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
         "**${ contact }** agora é seu contato de recuperação e pode ajudar você a recuperar seus dados após a redefinição de senha."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**Se a confirmação for realizada**, clique em **Aprovar recuperação**. Isso desbloqueará os dados criptografados da conta."
       ],
       "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
         "**Se eles não solicitaram sua ajuda**, é possível que outra pessoa esteja tentando acessar a conta dela. Nesse caso, ignore esta solicitação."
@@ -5934,6 +5954,9 @@
       "Asking for help": [
         "Pedir ajuda"
       ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "Ao adicionar pessoas de confiança como contatos de recuperação, poderemos enviar um e-mail a elas para ajudar você se estiver com dificuldades para recuperar seus dados após uma redefinição de senha. Você também pode ser um contato de recuperação para outras pessoas."
+      ],
       "Cancel request": [
         "Cancelar solicitação"
       ],
@@ -5949,8 +5972,14 @@
       "Change wait time": [
         "Mudar o tempo de espera"
       ],
+      "Choose someone you trust to help you recover your data in case of password reset. Recovery contacts must already have a ${ BRAND_NAME } Account.": [
+        "Escolha alguém de confiança para ajudar a recuperar sua conta em caso de redefinição de senha. Contatos de recuperação precisam já ter uma conta ${ BRAND_NAME }."
+      ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "Escolha alguém de confiança com os seus dados. Essa pessoa já precisa ter uma conta ${ BRAND_NAME }."
+      ],
+      "Connect with them to confirm they need help to recover their data.": [
+        "Faça contato para confirmar que precisam de ajuda para recuperar os seus dados."
       ],
       "Contacts": [
         "Contatos"
@@ -6003,6 +6032,9 @@
       "For ${ email }": [
         "Para ${ email }"
       ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Entre em contato agora para ver se podem ajudar, e para informá-los pessoalmente que é você tentando desbloquear seus dados."
+      ],
       "Give access now": [
         "Permitir acesso"
       ],
@@ -6011,6 +6043,9 @@
       ],
       "Got it": [
         "Consegui"
+      ],
+      "Have them check their inbox for an email asking for their help to recover your data. The email contains a link they need to click to verify your request.": [
+        "Peça para verificarem a caixa de entrada em busca de um e-mail solicitando ajuda para recuperar seus dados. O e-mail contém um link que deve ser acessado para verificar sua solicitação."
       ],
       "Immediate": [
         "Imediato"
@@ -6172,6 +6207,9 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desativar este método de recuperação, remova todos os seus contatos de recuperação."
       ],
+      "To use trusted contact recovery, you must have an account recovery method set.": [
+        "Para usar a recuperação por contato de confiança, você precisa ter um método de recuperação de conta configurado."
+      ],
       "Trusted contact": [
         "Contato confiável"
       ],
@@ -6195,6 +6233,12 @@
       ],
       "Wait time saved": [
         "Tempo de espera salvo"
+      ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Recebemos uma solicitação para desbloquear os dados criptografados do seu contato **${ user }**."
+      ],
+      "We were not able to verify the recovery data. Proceed anyway?": [
+        "Não foi possível verificar os dados de recuperação. Continuar mesmo assim?"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Notificaremos **${ user }** que você solicitou acesso de emergência."
@@ -6225,8 +6269,8 @@
       "You will be notified when someone requests emergency access.": [
         "Você será notificado quando alguém solicitar acesso de emergência."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Você não poderá mais ajudar a recuperar o acesso à conta de ${ user } em caso de redefinição de senha."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Você não poderá mais ajudar ${ user } a recuperar os próprios dados após a redefinição da senha."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Você não poderá mais solicitar acesso à conta de${ user } em caso de emergência."
@@ -6244,11 +6288,20 @@
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Seu contato de emergência ${ name } está solicitando acesso a sua conta."
       ],
+      "Your recovery contact ${ name } approved your request to unlock your encrypted data.": [
+        "Seu contato de recuperação ${ name } aprovou sua solicitação para desbloquear seus dados criptografados."
+      ],
       "Your recovery contact ${ name } is asking for help to recover their data.": [
         "Seu contato de recuperação ${ name } está pedindo ajuda para recuperar os próprios dados."
       ],
+      "Your recovery contact has helped you recover data.": [
+        "Seu contato de recuperação ajudou você a recuperar dados."
+      ],
       "Your recovery contacts": [
         "Seus contatos de recuperação"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "Seus contatos de recuperação devem ser pessoas que você conhece e com quem pode entrar em contato facilmente."
       ]
     },
     "Empty group name": {
@@ -6735,6 +6788,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Ocorreu um erro ao conectar sua TV. Tente escanear o código QR na sua TV mais uma vez."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -7729,7 +7785,7 @@
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
@@ -8184,9 +8240,6 @@
       ],
       "Password ends with": [
         "Senha termina com"
-      ],
-      "Payment details": [
-        "Detalhes de pagamento"
       ],
       "Permissions": [
         "Permissões"
@@ -9703,7 +9756,7 @@
         "Solte para importar"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domínio só pode ter um registro SPF (TXT). Se quiser manter o registro SPF (TXT) existente, você pode adicionar ${ spf } ao seu registro atual (coloque-o depois de ${ spfValue })."
@@ -11662,7 +11715,7 @@
         "Quando você remove um servidor de um Gateway, ele entra em um período de desativação de 10 dias. Esse servidor pode ser adicionado a um novo Gateway, mas seu país não pode ser alterado."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
@@ -11993,6 +12046,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
@@ -12608,6 +12664,9 @@
       "${ addressesAvailable } of ${ maxAddresses } email address available": [
         "${ addressesAvailable } de ${ maxAddresses } endereço de e-mail disponível",
         "${ addressesAvailable } de ${ maxAddresses } endereços de e-mail disponíveis"
+      ],
+      "${ Brand } ending with ${ Last4 }": [
+        "${ Brand } que termina em ${ Last4 }"
       ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
@@ -14922,13 +14981,13 @@
         "Encontrar seu nome de usuário da ${ BRAND_NAME }."
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+        "Esqueceu a senha da sua conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere o acesso ao ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+        "Esqueceu o nome de usuário da sua conta ${ BRAND_NAME }? Encontre-o usando seu e-mail ou telefone de recuperação e recupere o acesso ao seu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Redefina a senha da sua conta da ${ BRAND_NAME }"
+        "Redefina a senha da sua conta ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sessão para acessar sua conta ${ appName }"
@@ -15318,6 +15377,10 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
       ],
@@ -15523,9 +15586,6 @@
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suíça de alta velocidade que protege a sua privacidade"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
         "VPN de alta velocidade em ${ n } dispositivos"
@@ -15650,9 +15710,6 @@
       ],
       "Start protecting your organization": [
         "Comece a proteger sua organização"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comece a se proteger on-line em 2 passos fáceis"
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
@@ -16376,6 +16433,9 @@
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
+      ],
+      "The key has been deleted.": [
+        "A chave foi excluída."
       ],
       "Too many recent API requests": [
         "Muitas solicitações de API recentes"
@@ -17229,6 +17289,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } está disponível como uma extensão do navegador na Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
@@ -18198,6 +18261,9 @@
       ],
       "Comprehensive privacy and security suite.": [
         "Suíte completa de privacidade e segurança."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "Derrote spam, rastreamento e anúncios com e-mail criptografado e um calendário seguro."
       ],
       "For next-level password management and identity protection.": [
         "Para um gerenciamento de senhas e proteção de identidade de nível superior."
@@ -19861,6 +19927,9 @@
         "${ PASS_PLUS_VAULTS } cofre para suas senhas",
         "${ PASS_PLUS_VAULTS } cofres para suas senhas"
       ],
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } está te convidando para se juntar a mais de 100 milhões de pessoas que escolheram manter o controle de seus dados com o ecossistema criptografado da ${ BRAND_NAME }."
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } de armazenamento em nuvem para arquivos e fotos"
       ],
@@ -20106,6 +20175,9 @@
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Grátis ${ BRAND_NAME } por ${ TRIAL_DURATION_DAYS } dias"
       ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Experimente a ${ BRAND_NAME } por ${ TRIAL_DURATION_DAYS } dias grátis e ganhe ${ br }${ referralInfo.uiData.refereeRewardAmount } em créditos"
+      ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Experimente a ${ BRAND_NAME } por 14 dias grátis"
       ],
@@ -20163,6 +20235,9 @@
       ],
       "Your trial": [
         "Sua avaliação"
+      ],
+      "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Junte-se a mais de 100 milhões de pessoas que escolheram manter o controle sobre seus dados com o ecossistema criptografado da ${ BRAND_NAME }."
       ]
     },
     "Signup label": {
@@ -20548,6 +20623,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe créditos quando a pessoa que você convida se inscreve em um plano ${ BRAND_NAME }."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "PROMOÇÃO DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -20999,8 +21084,14 @@
       "Bound to **${ nameToDisplay }**": [
         "Vinculado a **${ nameToDisplay }**"
       ],
+      "Bound to organization **${ nameToDisplay }**": [
+        "Vinculado à organização **${ nameToDisplay }**"
+      ],
       "Next billing date": [
         "Próxima data de faturamento"
+      ],
+      "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
+        "Para continuar sua assinatura após o fim do período de avaliação gratuita, adicione um método de pagamento antes de ${ props.periodEnd }."
       ],
       "Total due": [
         "Total devido"
@@ -22764,9 +22855,6 @@
       "Find email or username": [
         "Encontrar e-mail ou nome de usuário"
       ],
-      "Finish setting up your business account": [
-        "Conclua a configuração da sua conta empresarial"
-      ],
       "Folders": [
         "Pastas"
       ],
@@ -24527,6 +24615,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Aproveite ao máximo sua assinatura do ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantenha seus arquivos, fotos e documentos seguros com o armazenamento em nuvem de ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "Defina senhas seguras sem complicações"

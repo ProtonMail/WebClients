@@ -593,9 +593,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Hide": [
-        "छिपाएं"
-      ],
       "Hide plan features": [
         "योजना की विशेषताओं को छुपाएं"
       ],
@@ -2705,9 +2702,6 @@
       "North Korea": [
         "उत्तर कोरिया"
       ],
-      "North Macedonia": [
-        "उत्तर मैसिडोनिया"
-      ],
       "Northern Mariana Islands": [
         "उत्तरी मैरियाना आइलैंड्स"
       ],
@@ -4713,9 +4707,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "आपका सुरक्षा चाबी रजिस्टर करते वक्त कुछ गलती हो गई। कृपया वापस कोशिश करें।"
       ]
@@ -4735,9 +4726,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "क्या आप पक्का ${ name } सुरक्षा चाबी मिटाना चाहते हैं?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "अपने ${ BRAND_NAME } खाते से जुड़ा एक सुरक्षा चाबी डालें।"
       ],
       "Insert your security key into your device's USB port.": [
         "अपने डिवाइस के यूएसबी पोर्ट में अपना सुरक्षा चाबी डालें।"
@@ -5158,9 +5146,6 @@
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
-      ],
-      "Payment details": [
-        "भुगतान जानकारी"
       ],
       "Protection": [
         "सुरक्षा"
@@ -6298,9 +6283,6 @@
       "Drop file here to upload": [
         "अपलोड करने के लिए फ़ाइल को यहाँ छोड़ें."
       ],
-      "Each code can only be used once": [
-        "हर कूटक का उपयोग केवल एक बार हो सकता है"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "प्रत्येक डोमेन के पास केवल एक SPF (TXT) रिकॉर्ड हो सकता है। यदि आप वर्तमान SPF (TXT) रिकॉर्ड को रखना चाहते हैं, तो आप अपने वर्तमान रिकॉर्ड में ${ spf } जोड़ सकते हैं (इसे ${ spfValue } के बाद डालें)।"
       ],
@@ -6393,9 +6375,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "सत्यापन कोड डालें। ${ digit } अंक का।"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "अपने ${ BRAND_NAME } खाते की जानकारी डालें।"
@@ -7757,9 +7736,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "जब आप एक सर्वर को गेटवे से हटाते हैं, तो वह 10 दिनों की निष्क्रियता अवधि में चला जाता है। इस सर्वर को नए गेटवे में जोड़ा जा सकता है, लेकिन इसका देश परिवर्तित नहीं किया जा सकता।"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "जब आपकी सदस्यता नवीनीकृत हो जाती है, तो हम उपरोक्त भुगतान विधि से शुल्क लेने से पहले कोई भी उपलब्ध क्रेडिट लागू करेंगे।"
@@ -9507,9 +9483,6 @@
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
-      "Don't have access to your 2FA?": [
-        "क्या 2-एफए तक एक्सेस नहीं है?"
-      ],
       "Encryption and keys": [
         "एन्क्रिप्शन और कुंजियाँ"
       ],
@@ -9850,12 +9823,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: साइन-इन करें"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: साइन-अप करें"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } खाता"
       ],
@@ -9865,23 +9832,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "एक ${ BRAND_NAME } खाता बनाएँ | अपनी निजता वापस पाएं"
       ],
-      "Create a new ${ appName } account": [
-        "नया ${ appName } खाता बनाएं"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "अपने ${ BRAND_NAME } खाते का यूज़रनेम खोजें"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "अपना ${ BRAND_NAME } खाता पासवर्ड भूल गए? पुनर्प्राप्ति कोड, ईमेल या एसएमएस का उपयोग करके इसे यहां रीसेट करें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक तक पहुंच पुनः प्राप्त करें।"
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "अपना ${ BRAND_NAME } खाता उपयोगकर्ता नाम भूल गए? अपने पुनर्प्राप्ति ईमेल या फ़ोन नंबर का उपयोग करके इसे ढूंढें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अन्य तक पहुंच पुनः प्राप्त करें।"
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } खाता पासवर्ड रीसेट करें"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "${ appName } खाते तक पहुंचने के लिए साइन इन करें"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "सभी एन्क्रिप्टेड ${ BRAND_NAME } सेवाओं जैसे कि ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, आदि तक पहुंचने के लिए अपने ${ BRAND_NAME } खाते में साइन इन करें। कोई खाता नहीं है? मुफ़्त में एक बनाएं।"
@@ -10391,9 +10343,6 @@
       "Group management (coming soon)": [
         "समूह प्रबंधन (शीघ्र ही आ रहा है)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "उच्च गति स्विस VPN जो आपकी निजता की रक्षा करता है"
-      ],
       "High-speed VPN on ${ n } device": [
         "तेज़ वीपीएन ${ n } डिवाइस पे",
         "तेज़ वीपीएन ${ n } डिवाइस पे"
@@ -10461,9 +10410,6 @@
       ],
       "Start protecting your organization": [
         "अपने संगठन की सुरक्षा करना शुरू करें"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2 आसान चरणों में खुद को ऑनलाइन सुरक्षित करना शुरू करें"
       ],
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"

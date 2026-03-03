@@ -346,9 +346,6 @@
       "Get Started": [
         "시작하기"
       ],
-      "Hide": [
-        "숨기기"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
       ],
@@ -1724,9 +1721,6 @@
       ],
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
       ],
       "Enter your extra password": [
         "추가 비밀번호 입력"

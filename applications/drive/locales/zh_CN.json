@@ -207,9 +207,6 @@
       "Collaborate on documents": [
         "协作处理文件"
       ],
-      "Collapse": [
-        "收起"
-      ],
       "Collapse folder": [
         "收起文件夹"
       ],
@@ -452,9 +449,6 @@
       ],
       "Encrypted": [
         "已加密"
-      ],
-      "Expand": [
-        "展开"
       ],
       "Expand folder": [
         "展开文件夹"
@@ -3332,8 +3326,14 @@
       "Can't find any secure link": [
         "找不到任何安全链接"
       ],
+      "Can't retrieve device name": [
+        "无法获取设备名称"
+      ],
       "Cannot export this contact": [
         "无法导出此联系人"
+      ],
+      "Cannot find move target": [
+        "找不到移动目标"
       ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
@@ -3364,6 +3364,9 @@
       ],
       "Could not remove from favorites": [
         "无法从收藏中移除"
+      ],
+      "Data integrity check failed": [
+        "数据完整性检查失败"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "至少取消选择 ${ calendarsToFixCount } 份日历"
@@ -4295,12 +4298,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥进行身份验证时出错。请重试。"
+        "使用安全密钥认证时出现问题，请重试。"
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
       ],
       "Security key": [
         "安全密钥"
@@ -5141,6 +5144,12 @@
       "Can't move a folder into itself": [
         "无法将文件夹移动到其自身内部"
       ],
+      "Can't rename to same name": [
+        "无法重命名为相同名称"
+      ],
+      "Can't write into folder": [
+        "无法写入文件夹"
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -5242,9 +5251,6 @@
       ],
       "Create links and share your files with others.": [
         "创建共享链接即可将您的文件与他人分享。"
-      ],
-      "Create your first folder and start moving your files.": [
-        "创建您的第一个文件夹并开始移动文件。"
       ],
       "Creating": [
         "正在创建"
@@ -5349,7 +5355,7 @@
         "重复的密钥已更新"
       ],
       "Each code can only be used once": [
-        "每条恢复码只能使用一次"
+        "每个恢复码只能使用一次"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -5400,7 +5406,7 @@
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
@@ -6561,7 +6567,7 @@
         "当您将 ${ deviceName } 从同步设备中移除时，从该设备添加到“我的电脑”中的所有文件夹都将从 ${ DRIVE_APP_NAME } 中永久删除。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ],
       "who": [
         "谁"
@@ -6844,14 +6850,6 @@
         "仅查看"
       ]
     },
-    "Into": {
-      "Can view and edit": [
-        "可以查看和编辑"
-      ],
-      "Can view only": [
-        "仅可查看"
-      ]
-    },
     "Item": {
       "file attributes": [
         "文件属性"
@@ -6952,9 +6950,6 @@
       ],
       "Address": [
         "地址"
-      ],
-      "admin": [
-        "管理员"
       ],
       "Alias title": [
         "别名标题"
@@ -9261,9 +9256,6 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "所选照片已在“${ albumName }”中"
       ],
-      "Setting updated. Editors can change permission and share.": [
-        "设置已更新，编辑者可更改权限及分享。"
-      ],
       "Share invitation accepted successfully": [
         "已成功接受共享邀请"
       ],
@@ -10908,6 +10900,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 春季特惠"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "春季特惠"
       ]
     },
     "sso": {
@@ -12696,9 +12698,6 @@
       ],
       "You have no files to share": [
         "您没有可共享的文件"
-      ],
-      "You have no folders yet": [
-        "您尚未添加文件夹"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"

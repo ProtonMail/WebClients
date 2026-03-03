@@ -198,9 +198,6 @@
       "Collaborate on documents": [
         "Együttműködés dokumentumokon"
       ],
-      "Collapse": [
-        "Összecsukás"
-      ],
       "Collapse folder": [
         "Mappa összecsukása"
       ],
@@ -428,9 +425,6 @@
       "Enable drive search": [
         "A felhőtárhelyen való keresés engedélyezése"
       ],
-      "Expand": [
-        "Kibontás"
-      ],
       "Expand folder": [
         "Mappa kinyitása"
       ],
@@ -526,9 +520,6 @@
       ],
       "Help and resources": [
         "Súgó és források"
-      ],
-      "Hide": [
-        "Elrejtés"
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -2332,9 +2323,6 @@
       "North Korea": [
         "Észak-Korea"
       ],
-      "North Macedonia": [
-        "Észak-Macedónia"
-      ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
       ],
@@ -3971,15 +3959,7 @@
         "Villámgyors sebesség"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
-      ],
       "Security key": [
         "Hitelesítési kulcs"
       ]
@@ -4931,9 +4911,6 @@
       "Create links and share your files with others.": [
         "Ossza meg a fájljait másokkal, hivatkozások létrehozásával."
       ],
-      "Create your first folder and start moving your files.": [
-        "Hozza létre első mappáját és helyezze el benne a fájljait."
-      ],
       "Creating": [
         "Létrehozás"
       ],
@@ -5025,9 +5002,6 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
-      "Each code can only be used once": [
-        "Minden kódot csak egyszer lehet felhasználni"
-      ],
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
@@ -5075,9 +5049,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
@@ -6164,9 +6135,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Ha eltávolítja a ${ deviceName } eszközt a szinkronizált eszközök közül, akkor az eszközről a Saját számítógépekhez hozzáadott összes mappa véglegesen törlődik a ${ DRIVE_APP_NAME } alkalmazásból."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "visszaállításra kerül, a(z) ${ formattedRevisionDate } dátumú változatból. Minden további változat továbbra is elérhető marad."
@@ -11953,9 +11921,6 @@
       ],
       "You have no files to share": [
         "Még nincs fájl amit megoszthatna"
-      ],
-      "You have no folders yet": [
-        "Még nincsenek mappái"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"

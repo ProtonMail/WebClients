@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Kopya adresleri"
       ],
-      "Copy alias “${ name }”": [
-        "“${ name }” takma adını kopyala"
-      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -5306,9 +5303,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyerek başlayın"
       ]
@@ -5554,7 +5548,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -7232,7 +7226,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -8601,7 +8595,7 @@
         "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Bir duyuruya abone olurken e-posta adresiniz yerine bir takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanımdan kaldırabilirsiniz."
@@ -12077,6 +12071,12 @@
       ],
       "No parent folder": [
         "Üst klasör yok"
+      ],
+      "Remind me later": [
+        "Daha sonra hatırlat"
+      ],
+      "Yes, don't show again": [
+        "Evet, bir daha gösterme"
       ]
     },
     "Option group": {
@@ -12940,46 +12940,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Tüm takma adlar"
-      ],
       "Create alias": [
         "Takma ad oluştur"
-      ],
-      "Create an alias": [
-        "Takma ad oluştur"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email takma adları"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email takma adları, e-posta adresinizi paylaşmadan çevrim içi hesaplar açmanızı sağlar. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Yeni takma ad"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını aç"
-      ],
-      "Protect your online identity": [
-        "Çevrim içi kimliğinizi koruyun"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını deneyin"
       ],
       "Used on Amazon for shopping, etc.": [
         "Amazon alışverişleri için kullanıldı gibi."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } açılacak)"
       ]
     },
     "Security Center - Action": {
@@ -13630,6 +13598,16 @@
       ],
       "Your pm.me email is active": [
         "pm.me e-posta adresiniz kullanımda"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026 BAHAR İNDİRİMİ"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -14291,9 +14269,6 @@
       "Address verification disabled": [
         "Adres doğrulama özelliği kapalı"
       ],
-      "Alias copied to clipboard": [
-        "Takma ad panoya kopyalandı"
-      ],
       "Alias saved and copied": [
         "Takma ad kaydedildi ve kopyalandı"
       ],
@@ -14385,9 +14360,6 @@
       ],
       "Labels applied.": [
         "Etiketler uygulandı."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
       "Mail list unsubscribed": [
         "E-posta listesi aboneliğini sonlandırdınız"
@@ -15180,6 +15152,9 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Keep this banner hidden?": [
+        "Bu büyük başlık gizli tutulsun mu?"
       ],
       "Label as": [
         "Etiketle"

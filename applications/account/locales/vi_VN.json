@@ -210,9 +210,6 @@
       "Back": [
         "Quay lại"
       ],
-      "Back to sign in": [
-        "Quay lại đăng nhập"
-      ],
       "Block": [
         "Chặn"
       ],
@@ -833,9 +830,6 @@
       ],
       "Help and resources": [
         "Trợ giúp và tài nguyên"
-      ],
-      "Hide": [
-        "Ẩn"
       ],
       "Hide more benefits": [
         "Ẩn thêm lợi ích"
@@ -4042,9 +4036,6 @@
       "North Korea": [
         "Triều Tiên"
       ],
-      "North Macedonia": [
-        "Bắc Macedonia"
-      ],
       "Northern Mariana Islands": [
         "Quần đảo Bắc Mariana"
       ],
@@ -6042,9 +6033,6 @@
       "You will be notified when someone requests emergency access.": [
         "Sẽ được thông báo khi có người yêu cầu quyền truy cập khẩn cấp."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Bạn sẽ không còn có thể giúp khôi phục quyền truy cập vào tài khoản của ${ user } trong trường hợp đặt lại mật khẩu."
-      ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Sẽ không còn có thể yêu cầu quyền truy cập vào tài khoản của ${ user } trong trường hợp khẩn cấp."
       ],
@@ -7485,9 +7473,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Có lỗi xảy ra khi xác thực với khóa bảo mật. Vui lòng thử lại."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Có lỗi xảy ra khi đăng ký khóa bảo mật. Vui lòng thử lại."
       ]
@@ -7507,9 +7492,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Chắc chắn muốn xóa khóa bảo mật ${ name } không?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Chèn khóa bảo mật liên kết với Tài khoản ${ BRAND_NAME }"
       ],
       "Insert your security key into your device's USB port.": [
         "Chèn khóa bảo mật vào cổng USB của thiết bị."
@@ -7956,9 +7938,6 @@
       ],
       "Password ends with": [
         "Mật khẩu kết thúc bằng"
-      ],
-      "Payment details": [
-        "Chi tiết thanh toán"
       ],
       "Permissions": [
         "Quyền"
@@ -9418,9 +9397,6 @@
       "Drop to import": [
         "Thả để nhập"
       ],
-      "Each code can only be used once": [
-        "Mỗi mã chỉ có thể được sử dụng một lần"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Mỗi miền chỉ có thể có một bản ghi SPF (TXT). Nếu muốn giữ bản ghi SPF (TXT) hiện có, có thể thêm ${ spf } vào bản ghi hiện tại (đặt sau ${ spfValue })."
       ],
@@ -9549,9 +9525,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Nhập chi tiết Tài khoản ${ BRAND_NAME }."
@@ -10993,9 +10966,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Để xác nhận, vui lòng nhập tên của người dùng bạn muốn xóa."
       ],
-      "To continue to ${ product }": [
-        "Để tiếp tục đến ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Để liên tục cải thiện dịch vụ, chúng tôi đôi khi thu thập dữ liệu để giám sát hoạt động của các ứng dụng. Thông tin này không được chia sẻ với bất kỳ dịch vụ bên thứ 3 nào."
       ],
@@ -11343,9 +11313,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Khi xóa máy chủ khỏi cổng, máy chủ sẽ chuyển sang giai đoạn hủy kích hoạt trong 10 ngày. Máy chủ này có thể được thêm vào cổng mới, nhưng không thể thay đổi quốc gia."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Khi bạn thiết lập xác thực hai yếu tố, chúng tôi sẽ cung cấp mã khôi phục bạn có thể sử dụng để đăng nhập nếu bạn mất quyền truy cập vào ứng dụng xác thực của mình."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Khi đăng ký làm mới, chúng tôi sẽ áp dụng mọi tín dụng hiện có trước khi chúng tôi tính phí phương pháp thanh toán ở trên."
@@ -13880,9 +13847,6 @@
       "Create an alias": [
         "Tạo biệt danh"
       ],
-      "Don't have access to your 2FA?": [
-        "Không thể truy cập 2FA?"
-      ],
       "Downloads": [
         "Tải xuống"
       ],
@@ -14505,12 +14469,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Đăng nhập"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Đăng ký"
-      ],
       "${ BRAND_NAME } Account": [
         "Tài khoản ${ BRAND_NAME }"
       ],
@@ -14520,9 +14478,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Tạo Tài khoản ${ BRAND_NAME } | Lấy lại quyền riêng tư"
       ],
-      "Create a new ${ appName } account": [
-        "Tạo tài khoản ${ appName } mới"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Tận hưởng hai tuần sử dụng ${ BRAND_NAME } miễn phí"
       ],
@@ -14531,18 +14486,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Tìm tên người dùng Tài khoản ${ BRAND_NAME } của bạn"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Quên mật khẩu Tài khoản ${ BRAND_NAME }? Đặt lại tại đây bằng mã khôi phục, email hoặc SMS để lấy lại quyền truy cập vào ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } và nhiều dịch vụ khác."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Quên tên người dùng Tài khoản ${ BRAND_NAME }? Tìm lại bằng email khôi phục hoặc số điện thoại để lấy lại quyền truy cập vào ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } và nhiều dịch vụ khác."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Đặt lại mật khẩu Tài khoản ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Đăng nhập để truy cập tài khoản ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Đăng nhập vào Tài khoản ${ BRAND_NAME } để truy cập tất cả các dịch vụ ${ BRAND_NAME } đã mã hóa như ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } và nhiều hơn nữa. Chưa có tài khoản? Tạo tài khoản MIỄN PHÍ."
@@ -15113,9 +15056,6 @@
       "Group management (coming soon)": [
         "Quản lý nhóm (sắp ra mắt)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN Thụy Sĩ tốc độ cao bảo vệ quyền riêng tư của bạn"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN tốc độ cao trên ${ n } thiết bị"
       ],
@@ -15235,9 +15175,6 @@
       ],
       "Start protecting your organization": [
         "Bắt đầu bảo vệ tổ chức của bạn"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Bắt đầu tự bảo vệ trực tuyến chỉ với 2 bước đơn giản"
       ],
       "Strict no-logs policy": [
         "Chính sách không ghi nhật ký nghiêm ngặt"
@@ -22088,9 +22025,6 @@
       ],
       "Find email or username": [
         "Tìm email hoặc tên người dùng"
-      ],
-      "Finish setting up your business account": [
-        "Hoàn tất thiết lập tài khoản doanh nghiệp"
       ],
       "Folders": [
         "Thư mục"

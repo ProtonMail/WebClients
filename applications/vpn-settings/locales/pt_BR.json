@@ -933,7 +933,7 @@
         "Mostrar pré-visualização"
       ],
       "Sign in": [
-        "Login"
+        "Iniciar sessão"
       ],
       "Sign in with password": [
         "Iniciar sessão com sua senha"
@@ -1077,13 +1077,13 @@
         "Usar um método de pagamento diferente"
       ],
       "Use authentication code": [
-        "Usar código de autenticação"
+        "Usar um código de autenticação"
       ],
       "Use group sending permissions": [
         "Usar permissões de envio de grupo"
       ],
       "Use recovery code": [
-        "Usar código de recuperação"
+        "Usar um código de recuperação"
       ],
       "Use this Gmail address": [
         "Usar este endereço de Gmail"
@@ -1363,6 +1363,11 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "AdminRole_Info": {
+      "A role is a group of permissions that you can assign to the members of your organization.": [
+        "Uma função é um grupo de permissões que você pode atribuir aos membros da sua organização."
       ]
     },
     "Alert": {
@@ -3357,7 +3362,7 @@
         "Crie grupos que podem ser contatados por meio de um único endereço de e-mail."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Criar novas contas de usuário ou importar usuários com provisionamento SCIM de SSO (autenticação única)."
+        "Crie novas contas de usuário ou importe usuários com provisionamento SCIM de SSO (logon único)."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
@@ -3478,6 +3483,9 @@
       ]
     },
     "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } pelo primeiro mês. Renova por ${ regularPrice }/mês, cancele a qualquer momento."
+      ],
       "Get VPN Plus for only ${ offerPrice }": [
         "Obtenha o VPN Plus por apenas ${ offerPrice }"
       ],
@@ -3926,6 +3934,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
+        "Entre em contato agora para ver se podem ajudar, e para informá-los pessoalmente que é você tentando desbloquear seus dados."
+      ],
       "Immediate": [
         "Imediato"
       ],
@@ -3949,6 +3960,9 @@
       ],
       "Trusted contact": [
         "Contato confiável"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "Seu contato de recuperação ajudou você a recuperar dados."
       ]
     },
     "Empty group name": {
@@ -4320,6 +4334,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Ocorreu um erro ao conectar sua TV. Tente escanear o código QR na sua TV mais uma vez."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -5133,7 +5150,7 @@
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Insira sua chave de segurança na porta USB do seu dispositivo."
@@ -5384,9 +5401,6 @@
       ],
       "Password ends with": [
         "Senha termina com"
-      ],
-      "Payment details": [
-        "Detalhes de pagamento"
       ],
       "Protection": [
         "Protecção"
@@ -6554,7 +6568,7 @@
         "Solte para importar"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domínio só pode ter um registro SPF (TXT). Se quiser manter o registro SPF (TXT) existente, você pode adicionar ${ spf } ao seu registro atual (coloque-o depois de ${ spfValue })."
@@ -6635,7 +6649,7 @@
         "Digite a nova senha para o usuário ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Insira o código do seu aplicativo autenticador"
+        "Insira o código do seu aplicativo de autenticação."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Digite o código enviado para o seu número de telefone ${ phone }."
@@ -7523,10 +7537,6 @@
       "Starts on ${ startsOnTime }": [
         "Começa em ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Etapa ${ step }",
-        "Etapas ${ step }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros usuários desta organização"
       ],
@@ -8054,7 +8064,7 @@
         "Quando você remove um servidor de um Gateway, ele entra em um período de desativação de 10 dias. Esse servidor pode ser adicionado a um novo Gateway, mas seu país não pode ser alterado."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
@@ -8306,6 +8316,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
@@ -8645,7 +8658,7 @@
         "Anexar captura(s) de tela"
       ],
       "Authenticator app": [
-        "Aplicativo autenticador"
+        "Aplicativo de autenticação"
       ],
       "Awarded": [
         "Premiado"
@@ -10073,7 +10086,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "VPN de altíssima velocidade"
+        "Velocidade máxima de VPN"
       ],
       "Keep your inbox organized with folders": [
         "Mantenha sua caixa de entrada organizada com pastas"
@@ -10093,7 +10106,7 @@
         "Obter ${ BRAND_NAME } gratuitamente"
       ],
       "Get ${ planName }": [
-        "Obter ${ planName }"
+        "Obter o ${ planName }"
       ],
       "Keep ${ plan }": [
         "Manter o ${ plan }"
@@ -10159,8 +10172,8 @@
         "${ n } pastas e marcadores"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias do hide-my-email",
-        "${ n } aliases do hide-my-email"
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
       ],
       "${ n } label": [
         "${ n } marcador",
@@ -10181,6 +10194,10 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
@@ -10241,7 +10258,7 @@
         "Registros de atividade e política"
       ],
       "Ad-blocker and malware protection": [
-        "Bloqueador de anúncios e proteção contra malware"
+        "Bloqueio de anuncios e proteção contra malware"
       ],
       "Admin console": [
         "Console de administração"
@@ -10283,7 +10300,7 @@
         "Disponível em todas plataformas"
       ],
       "Calendar sharing": [
-        "Calendários compartilhados"
+        "Compartilhar o calendário"
       ],
       "Catch-all": [
         "Catch-all"
@@ -10380,9 +10397,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suíça de alta velocidade que protege a sua privacidade"
       ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidade em ${ n } dispositivo",
@@ -10498,7 +10512,7 @@
         "Início de sessão como usuário"
       ],
       "SMTP submission": [
-        "Envio SMTP"
+        "Submissão SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -10509,11 +10523,8 @@
       "Start protecting your organization": [
         "Comece a proteger sua organização"
       ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comece a se proteger on-line em 2 passos fáceis"
-      ],
       "Strict no-logs policy": [
-        "Política rigorosa de inexistência de registros"
+        "Rigorosa política de inexistência de registros"
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
@@ -10594,8 +10605,8 @@
         "Gerenciamento de armazenamento de usuário"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Compartilhar cofres (até ${ n } pessoa)",
-        "Compartilhar cofres (até ${ n } pessoas)"
+        "Compartilhar do cofre (até ${ n } pessoa)",
+        "Compartilhar cofre (até ${ n } pessoa)"
       ],
       "Vault sharing with up to ${ n } person": [
         "Compartilhar cofres com até ${ n } pessoa",
@@ -10947,7 +10958,7 @@
         "Roteie seu tráfego de internet pela rede Tor com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+        "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
         "Compartilhe itens individuais com segurança com qualquer pessoa (mesmo que ela não use ${ PASS_APP_NAME })"
@@ -10989,7 +11000,7 @@
         "Envie o logotipo da sua empresa para personalizar a experiência da sua equipe nos aplicativos web da ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Use seu próprio domínio de e-mail personalizado, por exemplo: voce@seunome.com"
+        "Use seu próprio domínio de e-mail personalizado (por exemplo, voce@seunome.com)"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Não armazenamos registros de uso de sessão com aquilo que você faz on-line e não registramos metadados que possam comprometer sua privacidade"
@@ -12049,7 +12060,7 @@
         "O número do cartão não é válido."
       ],
       "Invalid expiration date": [
-        "A data de validade não é válida."
+        "Data de validade inválida"
       ],
       "Invalid security code": [
         "Código de segurança inválido"
@@ -13659,6 +13670,16 @@
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "PROMOÇÃO DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando sua ajuda para iniciar sessão na sua conta ${ BRAND_NAME } com login único."
@@ -13935,7 +13956,7 @@
         "Encerrar sessão"
       ],
       "Unknown": [
-        "Desconhecida"
+        "Desconhecido"
       ]
     },
     "State": {
@@ -15641,7 +15662,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -16656,6 +16677,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Aproveite ao máximo sua assinatura do ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Mantenha seus arquivos, fotos e documentos seguros com o armazenamento em nuvem de ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "Defina senhas seguras sem complicações"

@@ -2679,6 +2679,9 @@
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
       ],
+      "Finish setting up your business account": [
+        "Slutför inställningen av ditt företagskonto"
+      ],
       "Install migration app": [
         "Installera migreringsappen"
       ],
@@ -6728,6 +6731,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
       ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Något gick fel vid anslutning till din TV. Skanna QR-koden på din TV en gång till."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
       ],
@@ -8173,9 +8179,6 @@
       ],
       "Password ends with": [
         "Lösenord slutar med"
-      ],
-      "Payment details": [
-        "Betalningsdetaljer"
       ],
       "Permissions": [
         "Behörigheter"
@@ -9894,9 +9897,6 @@
       ],
       "finance": [
         "finans"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "För en 10-årig versionshistorik, kontakta vårt säljteam."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
@@ -14841,7 +14841,7 @@
         "${ appName }: Inloggning"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Registrering"
+        "${ appName }: Registrera"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
@@ -14865,7 +14865,7 @@
         "Hitta användarnamnet för ditt ${ BRAND_NAME }-konto"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Har du glömt lösenordet till ditt ${ BRAND_NAME }-konto? Återställ det här med en återställningskod, e-post eller sms och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
+        "Har du glömt lösenordet till ditt ${ BRAND_NAME }-konto? Återställ det här med en återställningskod, e-post eller SMS och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glömt ditt användarnamn för ditt ${ BRAND_NAME }-konto? Hitta den med din e-postadress eller ditt telefonnummer för återställning och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
@@ -15470,9 +15470,6 @@
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Schweizisk höghastighets-VPN som skyddar din integritet"
-      ],
       "High-speed VPN on ${ n } device": [
         "Höghastighets-VPN på ${ n } enhet",
         "Höghastighets-VPN på ${ n } enheter"
@@ -15597,9 +15594,6 @@
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Börja skydda dig själv online med 2 enkla steg"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -16323,6 +16317,9 @@
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
+      ],
+      "The key has been deleted.": [
+        "Nyckeln har tagits bort."
       ],
       "Too many recent API requests": [
         "För många nyliga API-förfrågningar"
@@ -17079,6 +17076,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Köp nu"
+      ],
       "Contact us": [
         "Kontakta oss"
       ],
@@ -17173,6 +17173,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Chrome Web Store."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } till ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per månad"
@@ -18130,6 +18133,9 @@
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Molnlagringsutrymme och fildelning, skyddat med end-to-end-kryptering."
+      ],
+      "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
+        "Besegra skräppost, spårning och annonser med krypterad e-post och en säker kalender."
       ],
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
@@ -19766,6 +19772,9 @@
         "${ PASS_PLUS_VAULTS } valv för dina lösenord",
         "${ PASS_PLUS_VAULTS } valv för dina lösenord"
       ],
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ referrerName } bjuder in dig att gå med i över 100 miljoner personer som valde att behålla kontrollen över sina data med ${ BRAND_NAME }s krypterade ekosystem."
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } molnlagringsutrymme för filer och foton"
       ],
@@ -20010,6 +20019,9 @@
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prova ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dagar gratis"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free,${ br } and get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Prova ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dagar gratis${ br } och få ${ referralInfo.uiData.refereeRewardAmount } in krediter"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Prova ${ BRAND_NAME } gratis i 14 dagar"
@@ -20450,6 +20462,16 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Få krediter när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "VÅRREA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     },
     "sso": {
@@ -22665,9 +22687,6 @@
       ],
       "Find email or username": [
         "Hitta e-post eller användarnamn"
-      ],
-      "Finish setting up your business account": [
-        "Slutför inställningen av ditt företagskonto"
       ],
       "Folders": [
         "Mappar"

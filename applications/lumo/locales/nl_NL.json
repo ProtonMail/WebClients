@@ -59,6 +59,9 @@
       "Clean up orphaned documents": [
         "Verwijder verweesde documenten"
       ],
+      "Clear canvas": [
+        "Wis canvas"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -134,6 +137,9 @@
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
+      "Generate image": [
+        "Afbeelding genereren"
+      ],
       "Get ${ planOrAppName }": [
         "Neem ${ planOrAppName }"
       ],
@@ -156,7 +162,7 @@
         "Hulp en bronnen"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "Hide more benefits": [
         "Verberg meer voordelen"
@@ -594,6 +600,11 @@
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
       ]
     },
+    "BF2025: Action (top button in header)": {
+      "Black Friday": [
+        "Zwarte Vrijdag"
+      ]
+    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB opslagruimte"
@@ -914,6 +925,9 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Draw a sketch": [
+        "Maak een schets"
       ],
       "Enable ghost mode": [
         "Spookmodus inschakelen"
@@ -1525,6 +1539,9 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Druk op ${ shiftEnterBoldText } om te vragen"
       ],
+      "Preview quality - full resolution not loaded": [
+        "Voorbeeld kwaliteit - volledige resolutie niet geladen"
+      ],
       "Private video calls for the conversations that matter.": [
         "Privé-videogesprekken voor de gesprekken die ertoe doen."
       ],
@@ -1584,6 +1601,9 @@
       ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Meld u aan of maak een account aan om bestanden van uw ${ DRIVE_APP_NAME } (end-to-end versleutelde cloudopslag) te bekijken en toe te voegen aan uw chatkennis."
+      ],
+      "Sketch added as attachment": [
+        "Schets toegevoegd als bijlage"
       ],
       "Space usage: ": [
         "Opslaggebruik: "
@@ -1988,6 +2008,9 @@
     "collider_2025: Warning": {
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } heeft het er maar druk mee"
+      ],
+      "Failed to index file for search: ${ processingResult.message }": [
+        "Kon bestand niet indexeren voor zoeken: ${ processingResult.message }"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdacht: ${ urlParts.subdomainCount } subdomein",
@@ -2641,6 +2664,14 @@
         "Wat moet ik weten over noodfondsen en waar kan ik ze het beste bewaren?"
       ]
     },
+    "collider_2025:Reasoning": {
+      "Thinking...": [
+        "Denken..."
+      ],
+      "Thought about this": [
+        "Dacht hierover na"
+      ]
+    },
     "collider_2025:Status": {
       "Complete": [
         "Voltooid"
@@ -2831,6 +2862,26 @@
       ],
       "This will also permanently delete:": [
         "Dit verwijdert ook permanent:"
+      ]
+    },
+    "Color": {
+      "Black": [
+        "Zwart"
+      ],
+      "Blue": [
+        "Blauw"
+      ],
+      "Green": [
+        "Groen"
+      ],
+      "Orange": [
+        "Oranje"
+      ],
+      "Purple": [
+        "Paars"
+      ],
+      "Red": [
+        "Rood"
       ]
     },
     "color": {
@@ -3420,9 +3471,6 @@
       ],
       "North Korea": [
         "Noord-Korea"
-      ],
-      "North Macedonia": [
-        "Noord-Macedonië"
       ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
@@ -4144,15 +4192,7 @@
         "Hoge snelheden"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -4414,7 +4454,7 @@
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -4724,7 +4764,7 @@
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -5237,6 +5277,9 @@
       "Streaming": [
         "Streaming"
       ],
+      "Test Renderer": [
+        "Test Renderer"
+      ],
       "to toggle": [
         "om te wisselen"
       ],
@@ -5245,6 +5288,32 @@
       ],
       "Tokens/sec": [
         "Tokens/sec"
+      ]
+    },
+    "lumo: Test Renderer": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Deselect All": [
+        "Deselecteer alles"
+      ],
+      "Inject Test Content": [
+        "Testinhoud injecteren"
+      ],
+      "Select All": [
+        "Alles selecteren"
+      ],
+      "Select test cases to inject into the current conversation. This will help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Selecteer testgevallen om te injecteren in het huidige gesprek. Dit helpt bij het testen van verschillende weergave scenario's, waaronder HTML-conversie, LaTeX, codeblokken en special gevallen."
+      ],
+      "Select test cases to inject. A new test conversation will be created with the selected test cases to help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.": [
+        "Selecteer testgevallen om te injecteren. Er wordt een nieuw testgesprek aangemaakt met de geselecteerde testgevallen om verschillende weergave scenario's te testen, waaronder HTML-conversie, LaTeX, codeblokken en speciale gevallen."
+      ],
+      "Selected:": [
+        "Geselecteerd:"
+      ],
+      "Test Renderer": [
+        "Test Renderer"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6923,6 +6992,16 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "LENTEVERKOOP 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "LENTEVERKOOP"
       ]
     },
     "sso": {

@@ -584,9 +584,6 @@
       "North Korea": [
         "North Korea"
       ],
-      "North Macedonia": [
-        "Hilagang Macedonia"
-      ],
       "Northern Mariana Islands": [
         "Northern Mariana Islands"
       ],
@@ -921,15 +918,7 @@
         "Hindi ma-load ang page na ito. Paki-refresh ang page o suriin ang koneksyon sa internet."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Nagkaproblema sa pag-authenticate gamit ang security key. Pakisubukang muli."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Ipasok ang isang security key na naka-link sa ${ BRAND_NAME } Account."
-      ],
       "Security key": [
         "Security key"
       ]
@@ -1037,9 +1026,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Hindi pinahihintulutan ng ${ termsLink } ang paggawa ng maraming libreng account."
       ],
-      "Each code can only be used once": [
-        "Ang bawat code ay magagamit lang nang isang beses"
-      ],
       "Edit email address": [
         "I-edit ang email address"
       ],
@@ -1048,9 +1034,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ilagay ang verification code na ipinadala sa ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Ilagay ang verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ilagay ang sariling password (bilang admin ng organisasyon)."
@@ -1099,9 +1082,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Magpapadala ng bagong verification code sa ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Kapag nag-set up ka ng two-factor authentication, nagbibigay kami ng mga recovery code na magagamit mo para mag-sign in kung mawalan ka ng access sa iyong authenticator app."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Gustong makatanggap ng bagong verification code o gumamit ng alternatibong paraan ng pag-verify?"
@@ -1213,10 +1193,6 @@
       "${ n } message per day": [
         "${ n } mensahe bawat araw",
         "${ n } na mensahe bawat araw"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-araw na history ng bersyon ng file",
-        "${ options }-araw na history ng bersyon ng file"
       ],
       "${ size } attachment size": [
         "${ size } na laki ng attachment"

@@ -324,9 +324,6 @@
       "Copy addresses": [
         "複製電郵位址"
       ],
-      "Copy alias “${ name }”": [
-        "複製別名 \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
@@ -650,9 +647,6 @@
       ],
       "Help and resources": [
         "尋求協助與資源"
-      ],
-      "Hide": [
-        "隱藏"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "隱藏 ${ BRAND_NAME } Scribe 撰文助理"
@@ -1721,6 +1715,12 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Domains": [
+        "網域"
+      ],
+      "Users": [
+        "使用者"
       ]
     },
     "Alert": {
@@ -1988,7 +1988,24 @@
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB 的總儲存空間"
+      ],
+      "Block ads, trackers, and malware": [
+        "攔截廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ]
+    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "1 month": [
         "1 個月"
       ],
@@ -1997,6 +2014,9 @@
       ],
       "Annually": [
         "每年"
+      ],
+      "Billed monthly": [
+        "按月付款"
       ],
       "Lifetime": [
         "終身"
@@ -3452,9 +3472,6 @@
       ],
       "North Korea": [
         "北韓"
-      ],
-      "North Macedonia": [
-        "北馬其頓"
       ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
@@ -5085,9 +5102,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "啟用額外密碼時，別名管理只能在 ${ PASS_APP_NAME } 中進行。"
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始創建一個新的聯絡人"
       ]
@@ -5320,15 +5334,7 @@
         "無限制的 hide-my-email 別名"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
-      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -6825,9 +6831,6 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
-      "Each code can only be used once": [
-        "每組驗證代碼只能使用一次"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "輕鬆管理及取消訂閱的電子報和郵寄清單。"
       ],
@@ -6893,9 +6896,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
@@ -7274,6 +7274,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "郵件丟進垃圾桶時，會一併取消相關的已傳送排程。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
@@ -8199,9 +8202,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "當您註冊電子報時，請使用別名來代替您的電子郵件地址。您的身份會保持隱藏，而且您可以隨時停用別名。"
       ],
@@ -8363,6 +8363,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
@@ -11677,6 +11680,12 @@
       "Got it": [
         "瞭解"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "包含 ${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/YY"
       ],
@@ -11691,6 +11700,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Tax ${ rate }%": [
+        "稅金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "稅金 ${ rate }%"
       ],
       "terms and conditions": [
         "合約條款"
@@ -12267,46 +12282,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "全部別名"
-      ],
       "Create alias": [
         "創建別名"
-      ],
-      "Create an alias": [
-        "建立一個別名"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "隨時生成信箱別名，輕鬆管理別名與密碼。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 別名"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新增别名"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "開啟 ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "保護你的線上身分"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "嘗試${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(轉開 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12597,6 +12580,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "於 ${ appName } 開啟"
       ]
     },
     "Signature verification warning": {
@@ -13504,9 +13492,6 @@
       "Address verification disabled": [
         "位址驗證已停用"
       ],
-      "Alias copied to clipboard": [
-        "已複製別名到剪貼簿"
-      ],
       "Alias saved and copied": [
         "已成功儲存及複製別名"
       ],
@@ -13593,9 +13578,6 @@
       ],
       "Labels applied.": [
         "標籤已套用。"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Mail list unsubscribed": [
         "已從郵寄清單取消訂閱"
