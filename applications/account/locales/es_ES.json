@@ -190,9 +190,6 @@
       "Back": [
         "Atrás"
       ],
-      "Back to sign in": [
-        "Volver al inicio de sesión"
-      ],
       "Block": [
         "Bloquear"
       ],
@@ -771,9 +768,6 @@
       ],
       "Help and resources": [
         "Ayuda y recursos"
-      ],
-      "Hide": [
-        "Ocultar"
       ],
       "Hide more benefits": [
         "Ocultar más ventajas"
@@ -2567,6 +2561,9 @@
       "Failed to load OAuth": [
         "Error al cargar OAuth"
       ],
+      "Finish setting up your business account": [
+        "Termina de configurar tu cuenta de empresa"
+      ],
       "Install migration app": [
         "Instalar aplicación de migración"
       ],
@@ -3091,7 +3088,7 @@
         "Añadir ${ LUMO_APP_NAME }"
       ],
       "Advanced account and network security in one plan": [
-        "Seguridad avanzada de cuenta y red en un solo plan"
+        "Seguridad avanzada para cuentas y redes en un solo plan"
       ],
       "AI assistant that respects business confidentiality": [
         "Asistente de IA que respeta la confidencialidad empresarial"
@@ -3971,9 +3968,6 @@
       ],
       "North Korea": [
         "Corea del Norte"
-      ],
-      "North Macedonia": [
-        "Macedonia del Norte"
       ],
       "Northern Mariana Islands": [
         "Islas Marianas del Norte"
@@ -5866,8 +5860,8 @@
       "You will be notified when someone requests emergency access.": [
         "Se te notificará cuando alguien solicite acceso de emergencia."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Ya no podrás ayudar a recuperar el acceso a la cuenta de ${ user } si restablece su contraseña."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Ya no podrás ayudar a ${ user } a recuperar sus datos si restablece su contraseña."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Ya no podrás solicitar acceso a la cuenta de ${ user } en caso de emergencia."
@@ -6073,9 +6067,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si el tiempo se ha acabado en tu televisor, haz clic en Actualizar en tu televisor e introduce tu código de nuevo."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Si el tiempo en tu TV ha caducado, haz clic en Actualizar en tu TV e inténtalo de nuevo."
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
@@ -6373,6 +6364,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Se ha producido un error al conectar tu televisor. Escanea el código QR de nuevo."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
@@ -7308,9 +7302,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Error al registrar tu llave de seguridad. Inténtalo de nuevo."
       ]
@@ -7330,9 +7321,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿Está seguro de que quieres eliminar la clave de seguridad ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inserta tu llave de seguridad en el puerto USB."
@@ -7770,9 +7758,6 @@
       ],
       "Password ends with": [
         "La contraseña termina con"
-      ],
-      "Payment details": [
-        "Detalles del pago"
       ],
       "Protection": [
         "Protección"
@@ -9198,9 +9183,6 @@
       "Drop to import": [
         "Suelta aquí para importar"
       ],
-      "Each code can only be used once": [
-        "Cada código puede utilizarse solo una vez."
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes añadir ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
       ],
@@ -9326,9 +9308,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduce el código de verificación. Dígito ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME }."
@@ -10704,9 +10683,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduce el nombre del usuario que quieres eliminar."
       ],
-      "To continue to ${ product }": [
-        "Para continuar a ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el buen funcionamiento de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
       ],
@@ -11045,9 +11021,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Este servidor se puede añadir a una nueva puerta de enlace, pero no se puede cambiar su país."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
@@ -13389,9 +13362,6 @@
       "Create an alias": [
         "Crear un alias"
       ],
-      "Don't have access to your 2FA?": [
-        "¿No tienes acceso a tu 2FA?"
-      ],
       "Downloads": [
         "Descargas"
       ],
@@ -14028,12 +13998,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Iniciar sesión"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Registrarte"
-      ],
       "${ BRAND_NAME } Account": [
         "Cuenta de ${ BRAND_NAME }"
       ],
@@ -14043,9 +14007,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Crea una cuenta de ${ BRAND_NAME } | Recupera Tu privacidad."
       ],
-      "Create a new ${ appName } account": [
-        "Cree una cuenta de ${ appName }"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Disfruta de dos semanas de ${ BRAND_NAME } gratis"
       ],
@@ -14054,18 +14015,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Encontrar tu nombre de usuario de ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Has olvidado la contraseña de tu cuenta de ${ BRAND_NAME }? Restablécela aquí con un código de recuperación, un correo o SMS y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "¿Has olvidado tu nombre de usuario de ${ BRAND_NAME }? Encuéntralo con tu correo de recuperación o número de teléfono y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Inicia sesión para acceder a tu cuenta de ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicia sesión en tu cuenta de ${ BRAND_NAME } para acceder a todos los servicios cifrados de ${ BRAND_NAME } como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más. ¿No tienes una cuenta? Crea una GRATIS."
@@ -14651,9 +14600,6 @@
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN suiza de gran velocidad que protege tu privacidad"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de alta velocidad en ${ n } dispositivo",
         "VPN de alta velocidad en ${ n } dispositivos"
@@ -14778,9 +14724,6 @@
       ],
       "Start protecting your organization": [
         "Comienza a proteger tu organización"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Comienza a protegerte cuando estés online en 2 sencillos pasos."
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -15495,6 +15438,9 @@
       ],
       "Reminder has been sent": [
         "Se ha enviado un recordatorio"
+      ],
+      "The key has been deleted.": [
+        "Se ha eliminado la clave."
       ],
       "Too many recent API requests": [
         "Demasiadas solicitudes de API recientes"
@@ -21635,9 +21581,6 @@
       ],
       "Find email or username": [
         "Buscar correo electrónico o nombre de usuario"
-      ],
-      "Finish setting up your business account": [
-        "Termina de configurar tu cuenta de empresa"
       ],
       "Folders": [
         "Carpetas"

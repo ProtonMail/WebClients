@@ -2741,6 +2741,9 @@
       "Failed to load OAuth": [
         "Не ўдалося загрузіць OAuth"
       ],
+      "Finish setting up your business account": [
+        "Завяршэнне наладкі вашага ўліковага запісу для бізнесу"
+      ],
       "Install migration app": [
         "Усталяваць праграму пераносу"
       ],
@@ -6344,8 +6347,8 @@
       "You will be notified when someone requests emergency access.": [
         "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстранны доступ."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "У вас больш не будзе магчымасці дапамагаць аднавіць доступ для ўліковага запісу карыстальніка ${ user } у выпадку, калі ім будзе скінуты пароль."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "У вас больш няма магчымасці дапамагаць карыстальніку ${ user } аднаўляць яго даныя пасля таго, як ён скіне свой пароль."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Вы больш не зможаце запытваць доступ да ўліковага запісу ${ user } у выпадку экстраннай сітуацыі."
@@ -6566,9 +6569,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Калі час на вашым тэлевізары мінуў, націсніце на ім кнопку \"Абнавіць\" і паспрабуйце яшчэ раз."
       ],
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
@@ -6878,6 +6878,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Нешта пашйло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -8360,9 +8363,6 @@
       ],
       "Password ends with": [
         "Пароль заканчваецца на"
-      ],
-      "Payment details": [
-        "Падрабязнасці плацяжу"
       ],
       "Permissions": [
         "Дазволы"
@@ -11599,7 +11599,7 @@
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
       ],
       "To continue to ${ product }": [
-        "для працягу ў ${ product }"
+        "Для працягу ў ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Мы час ад часу збіраем даныя для назірання за належным функцыянаваннем нашых праграм, каб пастаянна ўдасканальваць нашы сэрвісы. Гэтыя звесткі ніколі не абагульваецца з іншымі сэрвісамі."
@@ -11956,7 +11956,7 @@
         "Сервер уступае ў 10-дзённы перыяд дэактывацыі, калі ён выдаляецца са шлюза. Гэты сервер можа быць дадзены ў новы шлюз, але яго краіна не можа быць зменена."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Калі ваша падпіска будзе падаўжацца, першапачаткова будуць выкарыстаны любыя даступныя крэдыты перад выкарыстаннем азначанага вышэй спосабу аплаты."
@@ -14594,7 +14594,7 @@
         "Стварыць псеўданім"
       ],
       "Don't have access to your 2FA?": [
-        "Адсутнічае доступ да вашых 2ФА?"
+        "Адсутнічае доступ да 2ФА?"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -15928,9 +15928,6 @@
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць"
-      ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
         "Высакахуткасны VPN на ${ n } прыладах",
@@ -16059,9 +16056,6 @@
       ],
       "Start protecting your organization": [
         "Пачніце абараняць сваю арганізацыю"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
@@ -16805,6 +16799,9 @@
       ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
+      ],
+      "The key has been deleted.": [
+        "Ключ быў выдалены."
       ],
       "Too many recent API requests": [
         "Занадта шмат запытаў API за апошні час"
@@ -21104,6 +21101,16 @@
         "Атрымлівайце крэдыты, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "ВЯСЕННІ РАСПРОДАЖ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "ВЯСЕННІ РАСПРОДАЖ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } запытвае вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
@@ -23414,9 +23421,6 @@
       ],
       "Find email or username": [
         "Знайсці электронную пошту або імя карыстальніка"
-      ],
-      "Finish setting up your business account": [
-        "Завяршэнне наладкі вашага ўліковага запісу для бізнесу"
       ],
       "Folders": [
         "Папкі"

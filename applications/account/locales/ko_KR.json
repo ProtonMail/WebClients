@@ -211,7 +211,7 @@
         "이전"
       ],
       "Back to sign in": [
-        "로그인으로 이동"
+        "로그인으로 돌아가기"
       ],
       "Block": [
         "차단"
@@ -739,7 +739,7 @@
         "무료 ${ BRAND_NAME } 주소 받기"
       ],
       "Get a new encrypted email address": [
-        "새로운 암호화된 이메일 주소를 얻으세요"
+        "새로운 암호화된 이메일 주소 받기"
       ],
       "Get Deal": [
         "혜택 받기"
@@ -833,9 +833,6 @@
       ],
       "Help and resources": [
         "지원 및 도움말"
-      ],
-      "Hide": [
-        "숨기기"
       ],
       "Hide more benefits": [
         "더 많은 혜택 숨기기"
@@ -2727,6 +2724,9 @@
       ],
       "Start migration": [
         "이전 시작"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "조직의 데이터를 이전하기 위해, Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 작업 도우미를 설치해야 합니다. 데이터 복사를 위해 ${ BRAND_NAME }에 권한 부여가 필요합니다. 설치 완료 후, 작업을 계속하기 위해 다시 이 탭으로 전환하세요. 더 알아보기"
       ],
       "Transfer errors": [
         "전송 오류"
@@ -4836,6 +4836,11 @@
         "특별 할인: 프리미엄 플랜 90% 절약된 가격으로 구매"
       ]
     },
+    "dollar_offer: Action": {
+      "Continue with free": [
+        "무료 플랜으로 계속하기"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "인증됨"
@@ -5916,6 +5921,9 @@
       "Less than a minute left": [
         "1분 미만 남음"
       ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "${ user }님에게 복구 시도를 하는 사람이 본인임을 알려주세요."
+      ],
       "None": [
         "없음"
       ],
@@ -5924,6 +5932,9 @@
       ],
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
+      ],
+      "Pending request": [
+        "요청 대기 중"
       ],
       "People I trust": [
         "내가 신뢰하는 사용자"
@@ -5955,8 +5966,14 @@
       "Remove trusted contact": [
         "신뢰된 연락처 제거"
       ],
+      "Remove your recovery contacts to continue": [
+        "계속하려면 복구 연락처를 제거하세요"
+      ],
       "Renew to get emergency access again.": [
         "다시 긴급 접근을 얻으려면 갱신하십시오."
+      ],
+      "Request access": [
+        "접근 요청"
       ],
       "Request access?": [
         "접근 권한을 요청합니까?"
@@ -5969,6 +5986,9 @@
       ],
       "Revoke access?": [
         "접근 권한을 회수합니까?"
+      ],
+      "See request": [
+        "요청 보기"
       ],
       "Stop being recovery contact?": [
         "복구 연락처를 그만 두시겠습니까?"
@@ -6062,6 +6082,9 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "비상 연락처 ${ name }이(가) 사용자의 계정으로 접근을 요청하고 있습니다."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "회원님의 복구 연락처인 ${ name }님이 데이터 복구를 위해 도움을 요청하고 있습니다."
       ],
       "Your recovery contacts": [
         "복구 연락처"
@@ -6324,6 +6347,9 @@
       ],
       "Label name cannot be empty.": [
         "라벨 이름은 비워둘 수 없습니다."
+      ],
+      "Maximum ${ displayMaxValue } allowed": [
+        "최대 ${ displayMaxValue }까지 허용됨"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
@@ -7494,9 +7520,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "사용자의 보안 키 추가에 문제가 발생했습니다. 나중에 다시 시도하세요."
       ]
@@ -7516,9 +7539,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "정말 ${ name } 보안 키를 지우시겠어요?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
       ],
       "Insert your security key into your device's USB port.": [
         "기기의 USB 포트에 보안 키를 삽입하세요."
@@ -7965,9 +7985,6 @@
       ],
       "Password ends with": [
         "비밀번호 마지막 글자"
-      ],
-      "Payment details": [
-        "결제 수단 상세 정보"
       ],
       "Permissions": [
         "권한"
@@ -9430,9 +9447,6 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
-      "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "각 도메인은 하나의 SPF (TXT) 레코드만 저장할 수 있습니다. 만약 SPF (TXT) 레코드를 계속 저장하고자 한다면, 현재 레코드에 ${ spf }을(를) 추가하실 수 있습니다. (나중에 ${ spfValue } 저장하세요.)"
       ],
@@ -9562,9 +9576,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
-      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } 계정 상세 정보를 입력하세요."
       ],
@@ -9685,6 +9696,9 @@
       "Get started with the referral link above.": [
         "위의 추천 링크를 통해 시작하세요."
       ],
+      "Get visibility into account access": [
+        "계정 접근에 대한 가시성을 확보하세요"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "토큰에 사용하려는 서비스와 같은 설명적인 이름을 지정하고 활성 사용자 지정 도메인 주소 중 하나를 선택하십시오. 이 주소만 이 토큰으로 이메일을 보낼 수 있습니다."
       ],
@@ -9717,6 +9731,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "IBAN: ${ formattedIBAN }": [
+        "IBAN: ${ formattedIBAN }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
@@ -10993,11 +11010,8 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
-      "To continue to ${ product }": [
-        "${ product }(으)로 계속하기"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "서비스를 지속적으로 개선하기 위해, 애플리케이션의 적절한 기능을 모니터링하기 위해 데이터를 수집할 수 있습니다. 이 정보는 제3자 서비스와 공유되지 않습니다."
+        "서비스의 지속적인 개선과 애플리케이션의 적절한 기능을 모니터링하기 위해 당사에서 동의하에 데이터를 수집할 수 있습니다. 해당 정보는 제3자 서비스와 공유되지 않습니다."
       ],
       "To create your first user group, go to": [
         "첫 사용자 그룹을 생성하려면,"
@@ -11049,6 +11063,9 @@
       ],
       "Total VPN connections": [
         "총 VPN 연결"
+      ],
+      "Total: ${ totalPrice }": [
+        "합계: ${ totalPrice }"
       ],
       "trusted device": [
         "신뢰할 수 있는 장치"
@@ -11267,7 +11284,7 @@
         "복구 방법을 사용하는 것을 권장합니다."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "저희는 고객님이 데이터를 잃어버리지 않도록 신뢰할 수 있는 기기에 복구 정보를 안전하게 저장합니다."
+        "Proton이 사용자가 데이터를 상실하지 않도록 신뢰할 수 있는 기기에 복구 정보를 안전하게 저장합니다."
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "사용자가 이 기기 ${ deviceLink }(에)서 데이터 복구를 허용하여 이 브라우저에 백업 파일이 저장되었습니다. 백업 파일이 유효한 경우 암호화된 데이터에 대한 전체 또는 부분적인 접근 권한을 즉시 다시 회수할 수 있게 됩니다."
@@ -11340,9 +11357,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "게이트웨이에서 서버를 제거하면 10일의 비활성화 기간에 돌입합니다. 서버들이 새 게이트웨이에 적용되지만 국가는 변경되지 않습니다."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "구독이 갱신될 경우, 비용 청구 전에 가능한 크레딧이 적용됩니다."
@@ -12593,6 +12607,9 @@
       ],
       "Choose a name for the generated certificate file": [
         "인증서 파일을 생성하려면 이름을 선택하세요"
+      ],
+      "Choose your billing": [
+        "결제 수단 선택"
       ],
       "City": [
         "시/군/구"
@@ -13877,9 +13894,6 @@
       "Create an alias": [
         "별칭 만들기"
       ],
-      "Don't have access to your 2FA?": [
-        "회원님의 2단계 인증에 접근할 수 없으신가요?"
-      ],
       "Downloads": [
         "다운로드"
       ],
@@ -14204,7 +14218,7 @@
     },
     "lumo_signup_2025: Info": {
       "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
-        "당신의 비즈니스를 보호하세요. 모든 ${ BRAND_NAME } for Business 앱과 premium 기능을 갖춘 ${ LUMO_SHORT_APP_NAME } Professional을(를) 이용하세요."
+        "당신의 비즈니스를 보호하세요. 모든 ${ BRAND_NAME } for Business 앱과 프리미엄 기능을 갖춘 ${ LUMO_SHORT_APP_NAME } Professional을 이용하세요."
       ]
     },
     "lumo_signup_2025: title": {
@@ -14508,9 +14522,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: 로그인"
-      ],
       "${ appName }: Sign-up": [
         "${ appName }: 회원 가입"
       ],
@@ -14524,7 +14535,7 @@
         "${ BRAND_NAME } 계정 생성하기 | 개인정보 보호의 주도권을 잡으세요"
       ],
       "Create a new ${ appName } account": [
-        "새 ${ appName } 계정 생성"
+        "신규 ${ appName } 계정 생성"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } 2주 무료 체험을 즐겨보세요."
@@ -14534,18 +14545,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } 사용자 이름 찾기"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } 계정 비밀번호를 잊어버리셨나요? 여기서 복구 코드, 이메일 및 SMS를 사용하여 재설정하신 뒤 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등에 접근해 보세요."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } 사용자 이름을 잊어버리셨나요? 복구 이메일 및 전화 번호를 사용하여 찾아보신 뒤 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등에 접근해 보세요."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } 계정 비밀번호를 재설정하세요."
-      ],
-      "Sign in to access your ${ appName } account": [
-        "${ appName } 계정에 접근하려면 로그인"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
@@ -15116,9 +15115,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "나의 프라이버시를 보호하는 빠른 속도의 스위스 기반 VPN"
-      ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
       ],
@@ -15241,9 +15237,6 @@
       ],
       "Start protecting your organization": [
         "조직 보호를 시작하세요"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "2단계로 온라인에서 나 자신을 보호해보세요."
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
@@ -19241,9 +19234,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "사진 보호 활성화"
-      ],
       "Get updates about comments via email": [
         "이메일로 댓글에 대한 업데이트를 받아보세요"
       ],
@@ -19355,6 +19345,9 @@
     "Signup": {
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias": [
+        "${ FREE_PASS_ALIASES } hide-my-email 별칭"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "스팸 방지를 위한 ${ FREE_PASS_ALIASES }개 hide-my-email 별칭"
@@ -19469,6 +19462,9 @@
       ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
+      ],
+      "Custom email domain": [
+        "사용자 지정 이메일 도메인"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "${ totalMailStorageSize } 스토리지가 포함된 암호화된 이메일"
@@ -20477,8 +20473,20 @@
       ]
     },
     "Subscription": {
+      "${ discountItem.discountPercent }% discount applied": [
+        "${ discountItem.discountPercent }% 할인 적용됨"
+      ],
+      "${ discountItem.discountPercent }% off": [
+        "${ discountItem.discountPercent }% 할인"
+      ],
+      "${ trialCycleText } free": [
+        "${ trialCycleText } 무료"
+      ],
       "Next billing date": [
         "다음 청구일"
+      ],
+      "Total due": [
+        "총 합계"
       ]
     },
     "Subscription attribute": {
@@ -21965,9 +21973,6 @@
       "Delete user?": [
         "사용자를 삭제합니까?"
       ],
-      "Delete version history?": [
-        "버전 기록을 삭제하시겠어요?"
-      ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"
       ],
@@ -22186,9 +22191,6 @@
       ],
       "Find email or username": [
         "이메일 주소 또는 사용자 이름 찾기"
-      ],
-      "Finish setting up your business account": [
-        "내 비즈니스 계정 설정 마무리"
       ],
       "Folders": [
         "폴더"

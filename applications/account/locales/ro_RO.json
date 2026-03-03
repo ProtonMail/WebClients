@@ -211,7 +211,7 @@
         "Înapoi"
       ],
       "Back to sign in": [
-        "Înapoi la autentificare"
+        "Înapoi la conectare"
       ],
       "Block": [
         "Blocate"
@@ -322,7 +322,7 @@
         "Conectat"
       ],
       "Contact sales": [
-        "Contactare serviciu comercial"
+        "Contactare echipă vânzări"
       ],
       "Contact support": [
         "Contactați asistența"
@@ -2724,6 +2724,9 @@
       ],
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat"
+      ],
+      "Finish setting up your business account": [
+        "Finalizați configurarea contului de afaceri"
       ],
       "Install migration app": [
         "Instalare aplicație de migrare"
@@ -6305,8 +6308,8 @@
       "You will be notified when someone requests emergency access.": [
         "Veți primi o notificare când cineva vă solicită acces de urgență."
       ],
-      "You will no longer be able to help recover access to the account of ${ user } in case of a password reset.": [
-        "Nu veți mai putea ajuta la recuperarea accesului pentru contul lui ${ user } în cazul unei resetări de parolă."
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "După ce utilizatorul ${ user } își resetează parola nu-l veți mai putea ajuta să-și recupereze datele."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Nu veți mai putea solicita acces la contul lui ${ user } în caz de urgență."
@@ -6524,9 +6527,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and try again.": [
-        "Dacă timpul de pe TV a expirat, apăsa'i pe «Împrospătare» pe TV și introduceți din nou codul."
       ],
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
@@ -6833,6 +6833,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "A apărut o eroare la conectarea televizorului. Scanați din nou codul QR de pe televizor."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -7811,7 +7814,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Ceva a funcționat greșit la înregistrarea cheii de securitate. Reîncercați."
@@ -7834,7 +7837,7 @@
         "Ștergeți cheia de securitate ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Introduceți cheia de securitate în portul USB al dispozitivului."
@@ -8297,9 +8300,6 @@
       ],
       "Password ends with": [
         "Parola se termină cu"
-      ],
-      "Payment details": [
-        "Detalii plată"
       ],
       "Permissions": [
         "Permisiuni"
@@ -9863,7 +9863,7 @@
         "Plasare pentru importare"
       ],
       "Each code can only be used once": [
-        "Fiecare cod poate fi folosit doar odată."
+        "Fiecare cod poate fi folosit doar o dată."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Fiecare domeniu poate avea o singură înregistrare SPF (TXT). Dacă doriți să păstrați înregistrarea SPF (TXT) existentă, puteți adăuga ${ spf } la înregistrarea curentă (puneți-o după ${ spfValue })."
@@ -11834,7 +11834,7 @@
         "Când un server este eliminat dintr-o poartă de acces, acesta intră într-o perioadă de dezactivare de 10 zile. Acest server poate fi adăugat la o poartă de acces nouă, dar țara acestuia nu poate fi modificată."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
@@ -15754,9 +15754,6 @@
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "VPN elvețian de mare viteză care vă protejează confidențialitatea"
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN de mare viteză pe un dispozitiv",
         "VPN de mare viteză pe ${ n } dispozitive",
@@ -15883,9 +15880,6 @@
       ],
       "Start protecting your organization": [
         "Începeți să vă protejați organizația"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Începeți să vă protejați online în doi pași simpli"
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
@@ -16619,6 +16613,9 @@
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
+      ],
+      "The key has been deleted.": [
+        "Cheia a fost ștearsă."
       ],
       "Too many recent API requests": [
         "Prea multe solicitări recente ale API-ului."
@@ -17384,6 +17381,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Cumpărare"
+      ],
       "Contact us": [
         "Contactați-ne"
       ],
@@ -17478,6 +17478,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } este disponibil ca o extensie de navigator pe magazinul Chrome Web."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } cu ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pe lună"
@@ -20854,6 +20857,16 @@
         "Obțineți credite când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
       ]
     },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "REDUCERE DE PRIMĂVARĂ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "REDUCERE DE PRIMĂVARĂ"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO)."
@@ -23117,9 +23130,6 @@
       ],
       "Find email or username": [
         "Căutare e-mail sau utilizator"
-      ],
-      "Finish setting up your business account": [
-        "Finalizați configurarea contului de afaceri"
       ],
       "Folders": [
         "Foldere"

@@ -167,9 +167,6 @@
       "Back": [
         "Назад"
       ],
-      "Back to sign in": [
-        "Повернутись до входу"
-      ],
       "Block": [
         "Блокувати"
       ],
@@ -595,9 +592,6 @@
       ],
       "Got it": [
         "Зрозуміло"
-      ],
-      "Hide": [
-        "Сховати"
       ],
       "Hide plan features": [
         "Приховати функції плану"
@@ -2817,9 +2811,6 @@
       ],
       "North Korea": [
         "Північна Корея"
-      ],
-      "North Macedonia": [
-        "Північна Македонія"
       ],
       "Northern Mariana Islands": [
         "Північні Маріанські острови"
@@ -5066,9 +5057,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Під час реєстрації вашого ключа безпеки щось пішло не так. Будь ласка, спробуйте знову."
       ]
@@ -5088,9 +5076,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Вставте ключ безпеки у роз'єм USB свого пристрою."
@@ -5530,9 +5515,6 @@
       ],
       "Organization key fingerprint": [
         "Відбиток ключа організації"
-      ],
-      "Payment details": [
-        "Подробиці платежу"
       ],
       "Protection": [
         "захист"
@@ -6774,9 +6756,6 @@
       "Drop to import": [
         "Перетягніть, щоб імпортувати"
       ],
-      "Each code can only be used once": [
-        "Кожен код можна використати лише один раз"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Кожен домен може мати лише один запис SPF (TXT). Якщо ви хочете зберегти наявний запис SPF (TXT), додайте ${ spf } до свого поточного запису (розмістіть його після ${ spfValue })."
       ],
@@ -6866,9 +6845,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Введіть подробиці вашого облікового запису ${ BRAND_NAME }."
@@ -7986,9 +7962,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
       ],
-      "To continue to ${ product }": [
-        "Щоб продовжити в ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших програм. Ці дані не передаються жодним стороннім службам."
       ],
@@ -8267,9 +8240,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Коли ви вилучаєте сервер зі шлюзу, він вступає в 10-денний період деактивації. Цей сервер можна додати до нового шлюзу, але його країну не можна змінити."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Під час продовження вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
@@ -10049,9 +10019,6 @@
       "Create an alias": [
         "Створити псевдонім"
       ],
-      "Don't have access to your 2FA?": [
-        "Не маєте доступу до 2FA?"
-      ],
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
@@ -10435,12 +10402,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Увійти"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Зареєструватися"
-      ],
       "${ BRAND_NAME } Account": [
         "Обліковий запис ${ BRAND_NAME }"
       ],
@@ -10450,23 +10411,8 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Створіть обліковий запис ${ BRAND_NAME } | Поверніть свою приватність"
       ],
-      "Create a new ${ appName } account": [
-        "Створити новий обліковий запис ${ appName }"
-      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Знайдіть ваше ім'я користувача облікового запису ${ BRAND_NAME }"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Забули свій пароль від облікового запису ${ BRAND_NAME }? Відновіть його тут за допомогою коду відновлення, пошти або SMS і отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } тощо."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Забули своє ім'я користувача ${ BRAND_NAME }? Отримайте його за допомогою резервної електронної пошти або номера телефону й отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та інших даних."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Скинути пароль облікового запису ${ BRAND_NAME }"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Увійдіть, щоб отримати доступ до свого облікового запису ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увійдіть у свій обліковий запис ${ BRAND_NAME }, щоб отримати доступ до всіх зашифрованих сервісів ${ BRAND_NAME }, як-от ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та інших. Не маєте облікового запису? Створіть його БЕЗПЛАТНО."
@@ -11058,9 +11004,6 @@
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Високошвидкісна швейцарська VPN, що захищає вашу приватність"
-      ],
       "High-speed VPN on ${ n } device": [
         "Високошвидкісна VPN на ${ n } пристрої",
         "Високошвидкісна VPN на ${ n } пристроях",
@@ -11168,9 +11111,6 @@
       ],
       "Start protecting your organization": [
         "Почніть захищати свою організацію"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Захистіть себе в мережі, виконавши 2 прості кроки"
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"

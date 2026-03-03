@@ -196,9 +196,6 @@
       "Back": [
         "Takaisin"
       ],
-      "Back to sign in": [
-        "Palaa kirjautumiseen"
-      ],
       "Block": [
         "Estä"
       ],
@@ -426,9 +423,6 @@
       ],
       "Delete account": [
         "Poista tili"
-      ],
-      "Delete and confirm": [
-        "Poista ja vahvista"
       ],
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
@@ -795,9 +789,6 @@
       ],
       "Help and resources": [
         "Tuki ja resurssit"
-      ],
-      "Hide": [
-        "Piilota"
       ],
       "Hide more benefits": [
         "Piilota enemmän etuja"
@@ -2301,6 +2292,9 @@
       "Failed to load OAuth": [
         "OAuthin lataaminen epäonnistui"
       ],
+      "Finish setting up your business account": [
+        "Viimeistele yritystilisi asetukset"
+      ],
       "Install migration app": [
         "Asenna migraatio-sovellus"
       ],
@@ -3711,9 +3705,6 @@
       ],
       "North Korea": [
         "Pohjois-Korea"
-      ],
-      "North Macedonia": [
-        "Pohjois-Makedonia"
       ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
@@ -5786,6 +5777,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "Yhteyden muodostaminen televisioosi epäonnistui. Skannaa QR-koodi televisiostasi uudelleen."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ],
@@ -6698,9 +6692,6 @@
       ]
     },
     "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
-      ],
       "Something went wrong registering your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimesi rekisteröinnissä. Yritä uudelleen."
       ]
@@ -6720,9 +6711,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
-      ],
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Insert your security key into your device's USB port.": [
         "Kytke suojausavaimesi laitteen USB-porttiin."
@@ -7168,9 +7156,6 @@
       ],
       "Password ends with": [
         "Salasana päättyy"
-      ],
-      "Payment details": [
-        "Maksutiedot"
       ],
       "Protection": [
         "Suojaus"
@@ -8544,9 +8529,6 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
-      "Each code can only be used once": [
-        "Koodit ovat kertakäyttöisiä"
-      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
       ],
@@ -8660,9 +8642,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Syötä ${ BRAND_NAME }-tilisi tiedot."
@@ -9969,9 +9948,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Vahvistaaksesi, syötä sen käyttäjän nimi, jonka haluat poistaa."
       ],
-      "To continue to ${ product }": [
-        "jatkaaksesi palveluun ${ product }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Kehittääksemme palveluitamme edelleen keräämme ajoittain tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
       ],
@@ -10164,9 +10140,6 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
-      "Version history": [
-        "Versiohistoria"
-      ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
       ],
@@ -10295,9 +10268,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kun poistat palvelimen yhdyskäytävästä, se deaktivoidaan 10 päivän ajaksi. Tämä palvelin voidaan lisätä uuteen yhdyskäytävään, mutta sen maata ei voi muuttaa."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kun tilauksesi uudistuu, kulutetaan ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
@@ -12619,9 +12589,6 @@
       "Create an alias": [
         "Luo alias"
       ],
-      "Don't have access to your 2FA?": [
-        "Etkö voi käyttää kaksivaiheista tunnitautumistasi?"
-      ],
       "Downloads": [
         "Lataukset"
       ],
@@ -13160,12 +13127,6 @@
       ]
     },
     "Metadata title": {
-      "${ appName }: Sign-in": [
-        "${ appName }: Kirjaudu"
-      ],
-      "${ appName }: Sign-up": [
-        "${ appName }: Rekisteröidy"
-      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-tili"
       ],
@@ -13175,9 +13136,6 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Luo ${ BRAND_NAME } -tili | Ota yksityisyytesi haltuusi"
       ],
-      "Create a new ${ appName } account": [
-        "Luo uusi ${ appName } -tili"
-      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Nauti kahden viikon ajan ilmaiseksi ${ BRAND_NAME } -palvelusta"
       ],
@@ -13186,18 +13144,6 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
-      ],
-      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
-      ],
-      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Löydä se palautussähköpostisi tai -puhelimesi avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
-      ],
-      "Reset your ${ BRAND_NAME } Account password": [
-        "Nollaa ${ BRAND_NAME }-tilisi salasana"
-      ],
-      "Sign in to access your ${ appName } account": [
-        "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
@@ -13777,9 +13723,6 @@
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
       ],
-      "High-speed Swiss VPN that protects your privacy": [
-        "Nopea sveitsiläinen VPN, joka suojaa yksityisyyttäsi"
-      ],
       "High-speed VPN on ${ n } device": [
         "Nopea VPN ${ n } laitteelle",
         "Nopea VPN ${ n } laitteelle"
@@ -13904,9 +13847,6 @@
       ],
       "Start protecting your organization": [
         "Aloita organisaatiosi suojaaminen"
-      ],
-      "Start protecting yourself online in 2 easy steps": [
-        "Aloita itsesi suojaaminen verkkossa kahdella helpolla askeleella"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
@@ -15371,6 +15311,9 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } on saatavilla selainlaajennuksena Chrome Web Storesta."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } hintaan ${ priceString }."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } kuukaudessa"
@@ -20286,9 +20229,6 @@
       ],
       "Find email or username": [
         "Etsi osoite tai tunnus"
-      ],
-      "Finish setting up your business account": [
-        "Viimeistele yritystilisi asetukset"
       ],
       "Folders": [
         "Kansiot"
