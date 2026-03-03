@@ -1,7 +1,8 @@
-import { wrap } from 'comlink';
+import { proxy, wrap } from 'comlink';
 
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
+import { cleanText } from '../esBuild';
 import type { MigrationToolAPI, MigrationToolParams } from './interface';
 
 export const migrationToolWorker = async ({ user, keyPassword }: MigrationToolParams) => {
@@ -12,7 +13,7 @@ export const migrationToolWorker = async ({ user, keyPassword }: MigrationToolPa
 
     try {
         const workerProxy = wrap<MigrationToolAPI>(worker);
-        await workerProxy.migration({ user, keyPassword });
+        await workerProxy.migration({ user, keyPassword }, proxy(cleanText));
     } catch (error) {
         traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
     } finally {
