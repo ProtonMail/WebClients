@@ -160,13 +160,10 @@ export const SearchView = () => {
         },
     };
 
-    const conditions: DriveExplorerConditions = {
+    const conditions: Partial<DriveExplorerConditions> = {
         isDraggable: () => {
             // TODO: Add DnD
             return false;
-        },
-        isDoubleClickable: () => {
-            return true;
         },
     };
 

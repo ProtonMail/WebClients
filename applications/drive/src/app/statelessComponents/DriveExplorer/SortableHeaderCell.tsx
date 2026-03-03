@@ -36,6 +36,7 @@ export function SortableHeaderCell({
             direction={isCurrentSort ? currentSortDirection : undefined}
             onSort={isSortable ? onSort : undefined}
             isLoading={loading}
+            data-testid="sort-by"
         >
             <HeaderCellContent
                 headerText={cell.headerText}

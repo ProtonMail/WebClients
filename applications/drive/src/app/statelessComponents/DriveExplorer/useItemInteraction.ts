@@ -7,7 +7,7 @@ interface UseItemInteractionParams {
     isSelected: boolean;
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
-    conditions?: DriveExplorerConditions;
+    conditions: DriveExplorerConditions;
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
 }
@@ -88,7 +88,7 @@ export const useItemInteraction = ({
         [performSelection, events, itemId]
     );
 
-    const isDoubleClickable = conditions?.isDoubleClickable?.(itemId);
+    const isDoubleClickable = conditions.isDoubleClickable(itemId);
 
     const handleDoubleClick = useCallback(
         (event: React.MouseEvent) => {
