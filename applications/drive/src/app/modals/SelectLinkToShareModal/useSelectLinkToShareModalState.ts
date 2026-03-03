@@ -29,7 +29,7 @@ export const useSelectLinkToShareModalState = ({
 }: UseSelectLinkToShareModalStateProps) => {
     const [directoryTreeLoading, setDirectoryTreeLoading] = useState(true);
 
-    const { initializeTree, toggleExpand, treeRoots } = useSelectLinkToShareDirectoryTree();
+    const { initializeTree, toggleExpand, treeRoots } = useSelectLinkToShareDirectoryTree({ hideSharedWithMe: true });
 
     useEffect(() => {
         setDirectoryTreeLoading(true);
