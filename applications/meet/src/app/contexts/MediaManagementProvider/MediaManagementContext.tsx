@@ -63,7 +63,7 @@ export interface MediaManagementContextType {
     setInitialCameraState: (initialCameraState: boolean) => void;
     setInitialAudioState: (initialAudioState: boolean) => void;
     switchActiveDevice: SwitchActiveDevice;
-    initializeDevices: () => Promise<void>;
+    initializeDevices: (timeoutMs?: number) => Promise<void>;
     facingMode: 'environment' | 'user';
     getMicrophoneVolumeAnalysis: () => {
         analyser: AnalyserNode | null;
