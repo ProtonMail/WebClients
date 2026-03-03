@@ -188,8 +188,7 @@ export const ImagePreviewOverlay = ({
 
                     {/* Action bar */}
                     <div
-                        className="flex items-center justify-center gap-2 flex-wrap"
-                        style={{ padding: '1rem 2rem' }}
+                        className="flex items-center justify-center gap-2 flex-wrap pb-20"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {onExport && (
