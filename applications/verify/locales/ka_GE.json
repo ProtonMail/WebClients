@@ -585,7 +585,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -921,15 +921,7 @@
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
-      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
       ]
@@ -1037,9 +1029,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "ერთზე მეტი უფასო ანგარიშის შექმნა თქვენი ${ termsLink }-სთვის მხარდაჭერილი არაა."
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
@@ -1048,9 +1037,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
@@ -1099,9 +1085,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება, თუ შემოწმების ალტერნატიულ მეთოდს გამოიყენებთ?"
@@ -1213,10 +1196,6 @@
       "${ n } message per day": [
         "${ n }-მდე შეტყობინება დღეში",
         "${ n }-მდე შეტყობინება დღეში"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-დღიანი ფაილის ვერსიის ისტორია",
-        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
       "${ size } attachment size": [
         "${ size } მიმაგრებული ფაილი"

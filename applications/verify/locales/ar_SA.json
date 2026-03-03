@@ -584,9 +584,6 @@
       "North Korea": [
         "كوريا الشمالية"
       ],
-      "North Macedonia": [
-        "شمال مقدونيا"
-      ],
       "Northern Mariana Islands": [
         "جزر ماريانا الشمالية"
       ],
@@ -921,15 +918,7 @@
         "لم نتمكن من تحميل هذه الصفحة. يرجى تحديث الصفحة أو التحقق من اتصالك بالإنترنت."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يرجى المحاولة مرة أخرى."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "أدخل مفتاح الأمان المرتبط بحسابك في ${ BRAND_NAME }."
-      ],
       "Security key": [
         "مفتاح الأمان"
       ]
@@ -1061,9 +1050,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "إنشاء عدة حسابات مجانية غير مسموح به وفقًا لـ ‎${ termsLink }"
       ],
-      "Each code can only be used once": [
-        "يمكن استخدام كل رمز مرة واحدة فقط"
-      ],
       "Edit email address": [
         "تعديل عنوان البريد الإلكتروني"
       ],
@@ -1072,9 +1058,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "أدخل رمز التحقق. الرقم ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
@@ -1123,9 +1106,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "سنرسل رمز تحقق جديدًا إلى ${strong}"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "عند إعداد المصادقة الثنائية، نوفر لك رموز استرداد يمكنك استخدامها لتسجيل الدخول في حالة فقدان الوصول إلى تطبيق المصادقة."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "هل ترغب في تلقي رمز تحقق جديد أو استخدام طريقة تحقق بديلة؟"
@@ -1269,14 +1249,6 @@
         "${ n } رسائل في اليوم",
         "${ n } رسالة/رسائل في اليوم",
         "${ n } رسالة/رسائل في اليوم"
-      ],
-      "${ options }-day file version history": [
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يوم",
-        "سجل إصدارات الملف لمدة ${ options } يومين",
-        "سجل إصدارات الملف لمدة ${ options } أيام",
-        "سجل إصدارات الملف لمدة ${ options } يومًا",
-        "سجل إصدارات الملف لمدة ${ options } يوم"
       ],
       "${ size } attachment size": [
         "حجم المرفقات ${ size }"

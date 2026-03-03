@@ -584,9 +584,6 @@
       "North Korea": [
         "Észak-Korea"
       ],
-      "North Macedonia": [
-        "Észak-Macedónia"
-      ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
       ],
@@ -921,15 +918,7 @@
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
-      ],
       "Security key": [
         "Hitelesítési kulcs"
       ]
@@ -1037,9 +1026,6 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Több ingyenes fiók létrehozása nem megengedett a ${ termsLink } oldalunkon."
       ],
-      "Each code can only be used once": [
-        "Minden kódot csak egyszer lehet felhasználni"
-      ],
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
@@ -1048,9 +1034,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
@@ -1096,9 +1079,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
@@ -1207,10 +1187,6 @@
       "${ n } message per day": [
         "${ n } üzenet naponta",
         "${ n } üzenet naponta"
-      ],
-      "${ options }-day file version history": [
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ size } attachment size": [
         "${ size } melléklet méret"
