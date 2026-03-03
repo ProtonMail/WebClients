@@ -35,7 +35,7 @@ export const upgrade: UpgradeCallback = async (database, oldVersion: number, new
     if (shouldRunMigration(4)) {
         // We know the content store exists, it was created in version 3
         const contentStore = transaction.objectStore('content');
-        contentStore.createIndex('versioning', 'version');
+        contentStore.createIndex('byVersion', 'version');
 
         // Set default version -1 for all existing content without version, this is helping index queries
         let cursor = await contentStore.openCursor();
@@ -43,7 +43,7 @@ export const upgrade: UpgradeCallback = async (database, oldVersion: number, new
             const value = cursor.value;
             if (value.version === undefined) {
                 value.version = -1;
-                await cursor.update(value);
+                void cursor.update(value);
             }
             cursor = await cursor.continue();
         }
