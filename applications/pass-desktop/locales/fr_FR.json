@@ -376,9 +376,6 @@
       "Get Started": [
         "Commencer"
       ],
-      "Hide": [
-        "Masquer"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Comment exporter mes données depuis ${ PROVIDER_INFO_MAP[form.values.provider].title } ?"
       ],
@@ -1797,9 +1794,6 @@
       ],
       "Enter the address you want to email.": [
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."

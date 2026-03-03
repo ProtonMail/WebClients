@@ -2600,6 +2600,15 @@
       "You need a vault with edit permission before you can import items.": [
         "Você precisa de um cofre com permissão de edição antes de importar itens."
       ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Você não tem mais acesso a alguns cofres ou itens porque o acesso do seu grupo ${ groupName } foi removido."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Você agora tem acesso ao \"Item ${ itemName }\" porque o seu grupo ${ groupName } recebeu acesso."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Você agora tem acesso ao \"Cofre ${ vaultName }\" porque seu grupo ${ groupName } recebeu acesso."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Você poderá personalizar as configurações do seu domínio (aliases de e-mail, nome de exibição padrão para aliases etc.) após verificar seu domínio."
       ],
