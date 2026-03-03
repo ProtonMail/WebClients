@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -24,15 +23,17 @@ export type MigrationSetupProps = {
 type MigrationSetupState = {
     currentStep: number;
     completedSteps: number[];
+    loading: boolean;
 };
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
-    const [tokens, tokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const [connectionState, , , resetConnectionState] = useConnectionState();
 
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: 0,
         completedSteps: [],
+        loading: false,
     });
 
     useEffect(() => {
@@ -42,111 +43,122 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const steps: {
         id: string;
         text: string;
-        isInvalid: () => boolean;
-        component: React.FC<{ model: MigrationSetupModel }>;
+        isCompleted: () => boolean;
+        isDisabled: boolean;
+        component: React.JSX.Element;
     }[] = useMemo(
         () =>
             [
                 {
                     id: 'authenticate',
                     text: c('BOSS').t`Authenticate`,
-                    component: StepAuthenticate,
-                    isInvalid: () => !tokens?.length,
+                    component: <StepAuthenticate token={tokens?.[0]} />,
+                    isCompleted: () => Boolean(tokens?.length),
+                    isDisabled: false,
                 },
                 {
                     id: 'install-app',
                     text: c('BOSS').t`Install migration app`,
-                    component: StepInstallApp,
-                    isInvalid: () => connectionState !== 'connected',
+                    component: <StepInstallApp />,
+                    isCompleted: () => connectionState === 'connected',
+                    isDisabled: !tokens?.length,
                 },
                 {
                     id: 'configure-migration',
                     text: c('BOSS').t`Configure migration`,
-                    component: StepConfigureMigration,
-                    isInvalid: () => !model.selectedProducts.length,
+                    component: <StepConfigureMigration model={model} />,
+                    isCompleted: () => Boolean(model.selectedProducts.length),
+                    isDisabled: !tokens?.length || connectionState !== 'connected',
                 },
             ].filter(isTruthy),
-        [model.selectedProducts, tokens]
+        [model, tokens, connectionState]
     );
 
-    const { component: StepComponent, isInvalid: check } = steps[state.currentStep];
+    const { component, isCompleted } = steps[state.currentStep];
 
     const isLastStep = state.currentStep === steps.length - 1;
 
-    const loading = tokensLoading;
+    const isStepTicked = (ix: number): boolean => {
+        const step = steps[ix];
 
-    const getNextStep = () => {
-        const nextStep = steps.findIndex((s) => s.isInvalid());
-        if (nextStep === -1) {
-            return steps.length - 1;
+        if (!step) {
+            return false;
         }
-        return nextStep;
+
+        // Last step is never ticked as completed because
+        // it may be prefilled validly
+        if (ix >= steps.length - 1) {
+            return false;
+        }
+
+        // Disabled step is missing prerequisites, so cannot
+        // be validly completed
+        if (step.isDisabled) {
+            return false;
+        }
+
+        // Ensure the step validation logic passes
+        if (!step.isCompleted()) {
+            return false;
+        }
+
+        return state.completedSteps.includes(ix);
     };
 
-    useEffect(() => {
-        if (loading) {
+    const changeStep = (nextIx: number) => {
+        if (!steps[nextIx]) {
             return;
         }
 
-        const completedSteps = steps
-            .map((step, ix) => (!step.isInvalid() ? ix : undefined))
-            .filter((e) => e !== undefined);
-        const nextStep = getNextStep();
-        setState((state) => ({ ...state, currentStep: nextStep, completedSteps }));
-    }, [loading]);
+        setState((state) => ({
+            ...state,
+            completedSteps: isCompleted() ? [...state.completedSteps, state.currentStep] : state.completedSteps,
+            currentStep: nextIx,
+        }));
+    };
 
-    const onNext = check()
+    const onNext = !isCompleted()
         ? undefined
         : () => {
               if (isLastStep) {
+                  setState((state) => ({ ...state, loading: true }));
                   return onSubmit(model);
               }
 
-              const nextStep = getNextStep();
-              if (!nextStep) {
-                  return;
-              }
-              setState((state) => ({
-                  ...state,
-                  completedSteps: [...state.completedSteps, state.currentStep],
-                  currentStep: nextStep,
-              }));
+              changeStep(state.currentStep + 1);
           };
-
-    if (loading) {
-        return <SkeletonLoader />;
-    }
 
     return (
         <>
             <div className="flex flex-1 flex-nowrap relative">
                 <ol className="unstyled px-16 shrink-0">
                     {steps.map((step, ix) => (
-                        <li
-                            className={clsx(
-                                state.currentStep === ix ? 'bg-weak opacity-1' : 'opacity-50 border-transparent',
-                                'flex items-center text-semibold rounded p-2 m-2 border'
-                            )}
-                            key={step.id}
-                        >
-                            <span
-                                className="bg-norm flex-noshrink border rounded-full mr-2 ratio-square w-custom text-xs flex items-center justify-center"
-                                style={{ '--w-custom': '1rem' }}
+                        <li key={step.id}>
+                            <Button
+                                className={clsx(
+                                    state.currentStep === ix ? 'bg-weak opacity-1' : 'opacity-50 border-transparent',
+                                    'flex items-center text-semibold p-2 m-2 w-full'
+                                )}
+                                disabled={step.isDisabled}
+                                onClick={() => changeStep(ix)}
                             >
-                                {ix < steps.length - 1 && state.completedSteps.includes(ix) ? <IcCheckmark /> : ix + 1}
-                            </span>
-                            <span>{step.text}</span>
+                                <span
+                                    className="bg-norm flex-noshrink border rounded-full mr-2 ratio-square w-custom text-xs flex items-center justify-center"
+                                    style={{ '--w-custom': '1rem' }}
+                                >
+                                    {isStepTicked(ix) ? <IcCheckmark /> : ix + 1}
+                                </span>
+                                <span>{step.text}</span>
+                            </Button>
                         </li>
                     ))}
                 </ol>
 
-                <div className="w-full px-16 overflow-auto">
-                    <StepComponent model={model} />
-                </div>
+                <div className="w-full px-16 overflow-auto">{component}</div>
             </div>
 
             <div className="w-full flex gap-2 justify-end border-top p-4">
-                <Button disabled={!onNext} onClick={onNext} color={isLastStep ? 'norm' : undefined}>
+                <Button disabled={!onNext || state.loading} onClick={onNext} color={isLastStep ? 'norm' : undefined}>
                     {isLastStep ? c('Action').t`Save` : c('Action').t`Next`}
                 </Button>
             </div>

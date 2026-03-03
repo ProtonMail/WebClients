@@ -1,11 +1,11 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { getTokens } from '../../api';
+import { deleteToken, getTokens } from '../../api';
 
 export interface OAuthToken {
     Account: string;
@@ -33,6 +33,14 @@ const initialState: ModelState<Model> = {
 
 export const selectOAuthToken = (state: OAuthTokenState) => state.oauthToken;
 
+export const deleteOAuthTokenThunk = createAsyncThunk<string, string, { extra: ProtonThunkArguments }>(
+    `${name}/delete`,
+    async (tokenId, { extra }) => {
+        await extra.api(deleteToken(tokenId));
+        return tokenId;
+    }
+);
+
 const modelThunk = createAsyncModelThunk<Model, OAuthTokenState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.api<{ Tokens: OAuthToken[] }>(getTokens()).then(({ Tokens }) => Tokens);
@@ -50,6 +58,9 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
+        builder.addCase(deleteOAuthTokenThunk.fulfilled, (state, action) => {
+            state.value = state.value?.filter((t) => t.ID !== action.payload);
+        });
     },
 });
 
