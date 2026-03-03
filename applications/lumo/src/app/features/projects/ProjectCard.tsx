@@ -3,12 +3,13 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Icon, useModalStateObject } from '@proton/components';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { ProjectActionsDropdown } from './ProjectActionsDropdown';
 import { getProjectCategory } from './constants';
 import { useProjects } from './hooks/useProjects';
-import { ProjectActionsDropdown } from './ProjectActionsDropdown';
 import { ProjectLimitModal } from './modals/ProjectLimitModal';
 import type { Project } from './types';
 
@@ -69,6 +70,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                     <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
+                    // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
                     <div onClick={(e) => e.stopPropagation()}>
                         <ProjectActionsDropdown project={project} />
                     </div>
@@ -86,7 +88,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                     <div className="project-card-stats">
                         {project.conversationCount !== undefined && (
                             <span className="project-card-stat">
-                                <Icon name="speech-bubble" size={3.5} className="mr-1" />
+                                <IcSpeechBubble size={3.5} className="mr-1" />
                                 {project.conversationCount}{' '}
                                 {project.conversationCount === 1
                                     ? c('collider_2025:Label').t`chat`

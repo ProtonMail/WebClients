@@ -3,8 +3,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 interface DriveEmptyStateProps {
     onUpload: () => void;
@@ -46,7 +46,7 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
                         disabled={isDisabled}
                         title={c('collider_2025: Action').t`Create folder`}
                     >
-                        <Icon name="folder-plus" className="mr-1" />
+                        <IcFolderPlus className="mr-1" />
                         {c('collider_2025: Action').t`Create folder`}
                     </Button>
                 )}

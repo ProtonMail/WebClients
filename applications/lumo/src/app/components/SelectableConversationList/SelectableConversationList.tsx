@@ -3,7 +3,8 @@ import { useCallback, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, Icon } from '@proton/components';
+import { Checkbox } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import type { Conversation, ConversationId } from '../../types';
 
@@ -154,7 +155,7 @@ export const SelectableConversationList = ({
                             disabled={isDeleting}
                             className="text-sm"
                         >
-                            <Icon name="trash" className="mr-1" size={3} />
+                            <IcTrash className="mr-1" size={3} />
                             {c('collider_2025:Action').t`Delete`} ({selectedCount})
                         </Button>
                     )}

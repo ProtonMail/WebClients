@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 export interface UploadProgress {
     fileName: string;
@@ -14,16 +14,14 @@ interface UploadProgressOverlayProps {
     uploadProgress: UploadProgress;
 }
 
-export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({
-    uploadProgress,
-}) => {
+export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({ uploadProgress }) => {
     const progressPercent = Math.round(uploadProgress.progress);
-    
+
     return (
         <div className="px-3 py-2 bg-weak rounded mb-2">
             <div className="flex items-center gap-2">
                 {uploadProgress.isProcessing ? (
-                    <Icon name="checkmark" className="color-success flex-shrink-0" />
+                    <IcCheckmark className="color-success flex-shrink-0" />
                 ) : (
                     <div className="animate-spin rounded-full w-4 h-4 border-2 border-primary border-t-transparent flex-shrink-0"></div>
                 )}
@@ -31,8 +29,7 @@ export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({
                     <p className="text-sm m-0 text-ellipsis overflow-hidden whitespace-nowrap">
                         {uploadProgress.isProcessing
                             ? c('collider_2025: Info').t`Processing ${uploadProgress.fileName}`
-                            : c('collider_2025: Info').t`Uploading ${uploadProgress.fileName}`
-                        }
+                            : c('collider_2025: Info').t`Uploading ${uploadProgress.fileName}`}
                     </p>
                 </div>
                 {!uploadProgress.isProcessing && (
@@ -40,7 +37,7 @@ export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({
                 )}
             </div>
             {!uploadProgress.isProcessing && (
-                <div 
+                <div
                     className="mt-2 rounded-full overflow-hidden"
                     style={{ height: '4px', backgroundColor: 'var(--border-norm)' }}
                 >
@@ -52,4 +49,4 @@ export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({
             )}
         </div>
     );
-}; 
+};

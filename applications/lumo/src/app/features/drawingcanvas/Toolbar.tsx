@@ -1,6 +1,10 @@
+import { clsx } from 'clsx';
 import { c } from 'ttag';
-import { Icon } from '@proton/components';
-import clsx from 'clsx';
+
+import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+
 import type { ToolbarConfig } from './types';
 
 interface ToolbarProps {
@@ -49,12 +53,14 @@ export const Toolbar = ({
                         )}
                         style={{
                             backgroundColor: color.value,
-                            border: config.color === color.value
-                                ? '10px solid ' + color.value
-                                : '10px solid rgba(255, 255, 255, 0.8)',
-                            boxShadow: config.color === color.value
-                                ? '0 0 0 2px rgba(255, 255, 255, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1)'
-                                : '0 2px 4px rgba(0, 0, 0, 0.1)',
+                            border:
+                                config.color === color.value
+                                    ? '10px solid ' + color.value
+                                    : '10px solid rgba(255, 255, 255, 0.8)',
+                            boxShadow:
+                                config.color === color.value
+                                    ? '0 0 0 2px rgba(255, 255, 255, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1)'
+                                    : '0 2px 4px rgba(0, 0, 0, 0.1)',
                         }}
                         onClick={() => onColorChange(color.value)}
                         title={color.label}
@@ -72,32 +78,28 @@ export const Toolbar = ({
                     type="button"
                     className={clsx(
                         'w-9 h-9 rounded-full flex items-center justify-center transition-colors',
-                        canUndo
-                            ? 'hover:bg-weak cursor-pointer'
-                            : 'opacity-30 cursor-not-allowed'
+                        canUndo ? 'hover:bg-weak cursor-pointer' : 'opacity-30 cursor-not-allowed'
                     )}
                     onClick={onUndo}
                     disabled={!canUndo}
                     title={c('Action').t`Undo`}
                     aria-label={c('Action').t`Undo`}
                 >
-                    <Icon name="arrow-up-and-left-big" size={5} />
+                    <IcArrowUpAndLeftBig size={5} />
                 </button>
 
                 <button
                     type="button"
                     className={clsx(
                         'w-9 h-9 rounded-full flex items-center justify-center transition-colors',
-                        canRedo
-                            ? 'hover:bg-weak cursor-pointer'
-                            : 'opacity-30 cursor-not-allowed'
+                        canRedo ? 'hover:bg-weak cursor-pointer' : 'opacity-30 cursor-not-allowed'
                     )}
                     onClick={onRedo}
                     disabled={!canRedo}
                     title={c('Action').t`Redo`}
                     aria-label={c('Action').t`Redo`}
                 >
-                    <Icon name="arrow-up-and-right-big" size={5} />
+                    <IcArrowUpAndRightBig size={5} />
                 </button>
 
                 <button
@@ -107,7 +109,7 @@ export const Toolbar = ({
                     title={c('Action').t`Clear canvas`}
                     aria-label={c('Action').t`Clear canvas`}
                 >
-                    <Icon name="trash" size={5} />
+                    <IcTrash size={5} />
                 </button>
             </div>
 

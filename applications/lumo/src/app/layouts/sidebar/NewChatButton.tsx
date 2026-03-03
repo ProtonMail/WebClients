@@ -7,13 +7,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, type PopperPlacement } from '@proton/components';
+import type { PopperPlacement } from '@proton/components';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import type { IconSize } from '@proton/icons/types';
 
+import { GuestChatDisclaimerModal } from '../../components/Modals/GuestChatDisclaimerModal';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { GuestChatDisclaimerModal } from '../../components/Modals/GuestChatDisclaimerModal';
 
 // Hook to manage delayed text rendering for smooth animations
 const useDelayedTextVisibility = (isCollapsed: boolean) => {
@@ -131,8 +132,7 @@ const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
                 toolTipPlacement="right"
             >
                 <div className="flex items-center gap-2">
-                    <Icon
-                        name="pen-square"
+                    <IcPenSquare
                         className={clsx('shrink-0', isCollapsed && 'mx-auto')}
                         alt={c('collider_2025:Button').t`New chat`}
                     />
@@ -156,7 +156,7 @@ export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) =
             }}
             toolTipPlacement="left"
         >
-            <Icon name="pen-square" size={iconSize} alt={c('collider_2025: Link').t`New chat`} />
+            <IcPenSquare size={iconSize} alt={c('collider_2025: Link').t`New chat`} />
         </NewChatButton>
     );
 };

@@ -3,7 +3,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
+import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
+import { ChatHistoryGuestUserUpsell } from '../../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
 import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
@@ -12,13 +15,10 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
 import type { Space } from '../../types';
-import { sortByDate } from '../../util/date';
-import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
-import { ChatHistoryGuestUserUpsell } from '../../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
 import { LumoChatHistoryUpsell } from '../../upsells';
+import { sortByDate } from '../../util/date';
 import RecentChatsList from './RecentChatsList';
 import { categorizeConversations, searchConversations } from './helpers';
-import { Icon } from '@proton/components';
 
 interface Props {
     refInputSearch: React.RefObject<HTMLInputElement>;
@@ -95,7 +95,16 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             noConversationAtAll: sortedConversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && nonFavorites.length > 0,
         };
-    }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory, hasLumoPlus]);
+    }, [
+        conversationMap,
+        spaceMap,
+        searchInput,
+        isGuest,
+        conversationId,
+        isGhostChatMode,
+        showProjectConversationsInHistory,
+        hasLumoPlus,
+    ]);
 
     const { today, lastWeek, expiringSoon, lastMonth, earlier } = categorizedConversations;
 
@@ -137,7 +146,9 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                     {lastWeek.length > 0 && (
                         <>
                             <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
-                                {!hasLumoPlus ? c('collider_2025:Title').t`Last 5 days` : c('collider_2025:Title').t`Last 7 days`}
+                                {!hasLumoPlus
+                                    ? c('collider_2025:Title').t`Last 5 days`
+                                    : c('collider_2025:Title').t`Last 7 days`}
                             </h4>
                             <RecentChatsList
                                 conversations={lastWeek}
@@ -151,7 +162,11 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         <>
                             <div className="flex items-center justify-space-between mt-3 mb-2 ml-3 mr-3">
                                 <h4 className="flex items-center gap-1 color-weak text-sm mb-0">
-                                    <Icon name="hourglass" size={3} className="color-weak shrink-0" alt={c('collider_2025:Icon').t`Expiring soon`} />
+                                    <IcHourglass
+                                        size={3}
+                                        className="color-weak shrink-0"
+                                        alt={c('collider_2025:Icon').t`Expiring soon`}
+                                    />
                                     <span>{c('collider_2025:Title').t`Expiring Soon`}</span>
                                 </h4>
                             </div>

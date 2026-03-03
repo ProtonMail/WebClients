@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, SettingsLink } from '@proton/components';
+import { SettingsLink } from '@proton/components';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 
 import './ChatHistoryUpsell.scss';
 
@@ -12,7 +13,7 @@ export const ChatHistoryGuestUserUpsell = () => {
             <div className="p-4 rounded-sm text-center">
                 {/* Header with icon */}
                 <div className="mb-3">
-                    <Icon name="clock-rotate-left" className="chat-history-signin-icon" />
+                    <IcClockRotateLeft className="chat-history-signin-icon" />
                     <h4 className="chat-history-signin-title">{c('collider_2025: Guest Signin').t`Save your chats`}</h4>
                 </div>
 

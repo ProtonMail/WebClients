@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components/index';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -100,7 +100,7 @@ const HighLoadWarning = () => {
                     color="weak"
                     shape="ghost"
                 >
-                    <Icon name="cross" size={4}></Icon>
+                    <IcCross size={4} alt={c('Action').t`Dismiss`} />
                 </Button>
             </div>
         </div>
