@@ -4,7 +4,7 @@ import type { EncryptedSearchDB } from '../models';
 
 type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
-export const upgrade: UpgradeCallback = (database, oldVersion: number, newVersion: number, transaction) => {
+export const upgrade: UpgradeCallback = async (database, oldVersion: number, newVersion: number, transaction) => {
     const shouldRunMigration = (versionNumber: number) => oldVersion < versionNumber && newVersion >= versionNumber;
 
     // Database created before version 3 wasn't consistently opened with an upgrade callback.
@@ -37,5 +37,16 @@ export const upgrade: UpgradeCallback = (database, oldVersion: number, newVersio
         const contentStore = transaction.objectStore('content');
         // TODO check the default values of the options and remove if they match
         contentStore.createIndex('version', 'version', { unique: false, multiEntry: false });
+
+        // Set default version -1 for all existing content without version, this is helping index queries
+        const cursor = await contentStore.openCursor();
+        while (cursor) {
+            const value = cursor.value;
+            if (value.version === undefined) {
+                value.version = -1;
+                await cursor.update(value);
+            }
+            await cursor.continue();
+        }
     }
 };
