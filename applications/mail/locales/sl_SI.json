@@ -645,9 +645,6 @@
       "Help and resources": [
         "Pomoč in viri"
       ],
-      "Hide": [
-        "Skrij"
-      ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Skrij pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
@@ -3389,9 +3386,6 @@
       "North Korea": [
         "Severna Koreja"
       ],
-      "North Macedonia": [
-        "Severna Makedonija"
-      ],
       "Northern Mariana Islands": [
         "Severni Marijanski otoki"
       ],
@@ -5037,9 +5031,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nimate še nobenega stika. Začnite z ustvarjanjem novega stika."
       ]
@@ -5280,15 +5271,7 @@
         "Bliskovite hitrosti"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Varnostni ključ"
       ]
@@ -6986,9 +6969,6 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Enostavno upravljajte in se odjavite od glasil in poštnih seznamov."
       ],
@@ -7054,9 +7034,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
@@ -8380,9 +8357,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ko ste omogočili zaupanja vredne ključe za ${ senderName }, so bili javni ključi dodani kontaktnim podrobnostim."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ko se prijavite na glasilo, uporabite vzdevek namesto svojega e-poštnega naslova. Vaša identiteta ostane skrita, vzdevek pa lahko kadar koli onemogočite."
@@ -12428,46 +12402,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Vsi vzdevki"
-      ],
       "Create alias": [
         "Ustvari vzdevek"
-      ],
-      "Create an alias": [
-        "Ustvari vzdevek"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Ustvarite vzdevke sproti in preprosto upravljajte svoje vzdevke in gesla."
-      ],
-      "Hide-my-email aliases": [
-        "Vzdevki hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email vzdevki vam omogočajo, da se prijavite na straneh v spletu, ne da bi razkrili svoj e-poštni naslov. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nov vzdevek"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Odpri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Zaščitite svojo spletno identiteto"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Poizkusite ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(bo odprlo ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13800,9 +13742,6 @@
       "Address verification disabled": [
         "Preverjanje naslova onemogočeno"
       ],
-      "Alias copied to clipboard": [
-        "Vzdevek kopiran v odložišče"
-      ],
       "Alias saved and copied": [
         "Vzdevek shranjen in kopiran"
       ],
@@ -13892,9 +13831,6 @@
       ],
       "Labels applied.": [
         "Označeno."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
       ],
       "Mail list unsubscribed": [
         "Poštna lista je bila odjavljena."

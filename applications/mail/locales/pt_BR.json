@@ -325,9 +325,6 @@
       "Copy addresses": [
         "Copiar endereços"
       ],
-      "Copy alias “${ name }”": [
-        "Copiar o alias \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
@@ -5306,9 +5303,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quando a senha extra está ativada, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
       ]
@@ -5554,7 +5548,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -7162,7 +7156,7 @@
         "Chave duplicada atualizada"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gerencie e cancele a assinatura de newsletters e listas de e-mails facilmente."
@@ -8208,6 +8202,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Baixe o arquivo."
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Esta conversa contém uma mensagem agendada. Movê-la cancelará o envio agendado."
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Esta conversa contém uma mensagem programada. O envio desta mensagem será cancelado."
       ],
@@ -8598,7 +8595,7 @@
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
@@ -8846,6 +8843,9 @@
       ],
       "Your message will expire tomorrow.": [
         "Sua mensagem vai expirar amanhã."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Sua próxima data de faturamento é ${ renewalTime }. Você pode cancelar a qualquer momento."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
@@ -10802,6 +10802,10 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dia",
+        "Histórico de versões de arquivo de ${ options } dias"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin vitalícios"
       ],
@@ -12067,6 +12071,12 @@
       ],
       "No parent folder": [
         "Nenhuma pasta acima"
+      ],
+      "Remind me later": [
+        "Lembre-me mais tarde"
+      ],
+      "Yes, don't show again": [
+        "Sim, não mostrar novamente"
       ]
     },
     "Option group": {
@@ -12936,46 +12946,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Todos os aliases"
-      ],
       "Create alias": [
         "Criar alias"
-      ],
-      "Create an alias": [
-        "Criar um alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Gere aliases na hora, e gerencie seus aliases e senhas facilmente."
-      ],
-      "Hide-my-email aliases": [
-        "Aliases do hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliases Hide-my-email deixam você criar contas on-line sem compartilhar seu endereço de e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Novo alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Abrir ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Proteja sua identidade on-line"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Experimente o ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(abrirá ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13626,6 +13604,16 @@
       ],
       "Your pm.me email is active": [
         "Seu e-mail pm.me está ativo"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "PROMOÇÃO DE PRIMAVERA 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -14287,9 +14275,6 @@
       "Address verification disabled": [
         "Verificação de endereço desativada"
       ],
-      "Alias copied to clipboard": [
-        "Alias copiado para a área de transferência"
-      ],
       "Alias saved and copied": [
         "Alias salvo e copiado"
       ],
@@ -14381,9 +14366,6 @@
       ],
       "Labels applied.": [
         "Marcadores aplicados."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Últimos pseudônimos modificados armazenados em seu cofre mais antigo"
       ],
       "Mail list unsubscribed": [
         "Lista de e-mails cancelada"
@@ -15176,6 +15158,9 @@
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Keep this banner hidden?": [
+        "Manter este painel oculto?"
       ],
       "Label as": [
         "Rotular como"

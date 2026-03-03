@@ -322,9 +322,6 @@
       "Copy addresses": [
         "Címek másolása"
       ],
-      "Copy alias “${ name }”": [
-        "„${ name }” e-mail álnév másolása"
-      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -650,9 +647,6 @@
       ],
       "Help and resources": [
         "Súgó és források"
-      ],
-      "Hide": [
-        "Elrejtés"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írósegéd elrejtése"
@@ -3405,9 +3399,6 @@
       "North Korea": [
         "Észak-Korea"
       ],
-      "North Macedonia": [
-        "Észak-Macedónia"
-      ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
       ],
@@ -5051,9 +5042,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ha az extra jelszó engedélyezve van, az e-mail álnév kezelése csak a ${ PASS_APP_NAME } alkalmazásban végezhető el."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Még nincs névjegy. Hozzon létre egyet"
       ]
@@ -5288,15 +5276,7 @@
         "Villámgyors sebesség"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Hiba történt a hitelesítési kulccsal való azonosítás közben. Próbálja meg újra."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Csatlakoztassa a ${ BRAND_NAME } fiókjához rendelt hitelesítési kulcsot."
-      ],
       "Security key": [
         "Hitelesítési kulcs"
       ]
@@ -6883,9 +6863,6 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
-      "Each code can only be used once": [
-        "Minden kódot csak egyszer lehet felhasználni"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Könnyedén kezelheti és leiratkozhat hírlevelekről és levelezőlistákról."
       ],
@@ -6952,9 +6929,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
@@ -8282,9 +8256,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Amikor feliratkozik egy hírlevélre, használjon e-mail álnevet, így az adatai rejtve maradnak. Az álnév bármikor kikapcsolható."
@@ -12362,46 +12333,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Minden e-mail álnév"
-      ],
       "Create alias": [
         "E-mail álnév létrehozása"
-      ],
-      "Create an alias": [
-        "E-mail álnév létrehozása"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Készítsen álneveket menet közben, és könnyen kezelje álneveit és jelszavait."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email álnevek"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email álnevek lehetővé teszik, hogy online feliratkozzon dolgokra anélkül, hogy megosztaná az e-mail címét. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Új e-mail álnév"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } megnyitása"
-      ],
-      "Protect your online identity": [
-        "Védje meg az online személyazonosságát"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Próbálja ki ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Amazonon vásárláshoz használatos, stb."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ha megkérdezik az e-mail címét, adja meg helyette ezt az álnevet. Az álneveket a ${ passLink } biztosítja."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(meg fogja nyitni ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13681,9 +13620,6 @@
       "Address verification disabled": [
         "Cím ellenőrzés kikapcsolva"
       ],
-      "Alias copied to clipboard": [
-        "Az e-mail álnév a vágólapra lett másolva"
-      ],
       "Alias saved and copied": [
         "Az e-mail álnév mentve és másolva"
       ],
@@ -13772,9 +13708,6 @@
       ],
       "Labels applied.": [
         "Címkék alkalmazva."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Az utoljára módosított e-mail álnevek a legrégebbi tárolóban találhatók."
       ],
       "Mail list unsubscribed": [
         "Leiratkozva a levelezési listáról"
