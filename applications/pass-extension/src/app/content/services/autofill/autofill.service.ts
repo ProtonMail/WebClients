@@ -227,13 +227,15 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
     /** Checks for OTP fields in tracked forms and prompts for autofill if eligible.
      * Queries the service worker for matching items and opens an `AutofillOTP`
-     * notification if appropriate. Returns true if a prompt was shown, false otherwise. */
+     * notification if appropriate. Returns true if a prompt was shown, false otherwise.
+     * Doesn't show prompt if `twofaCopy` setting is enabled as the code is already copied after login autofill. */
     const evaluateOTP = withContext<(forms: FormHandle[]) => Promise<boolean>>(async (ctx, forms) => {
         const enabled = Boolean(ctx?.getFeatures().Autofill2FA);
-        const hasOTP = enabled && forms.some((form) => form.otp);
+        const autoCopyOTP = Boolean(ctx?.getSettings().autofill.twofaCopy);
+        const showOTP = enabled && !autoCopyOTP && forms.some((form) => form.otp);
 
         return (
-            hasOTP &&
+            showOTP &&
             sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     ctx?.service.inline.notification.open({
