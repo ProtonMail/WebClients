@@ -6,7 +6,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { AppStatus } from '@proton/pass/types';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 import * as auth from './auth';
 import * as sessions from './sessions';
@@ -31,7 +31,7 @@ const MOCK_PERSISTED_SESSION = {
     sso: false,
     blob: '',
 };
-exposeAuthStore(createAuthStore(createStore()));
+exposeAuthStore(createAuthStore(createMemoryStore()));
 exposeApi({ subscribe: jest.fn() } as any);
 
 const config = { SSO_URL: 'test://' } as PassConfig;

@@ -3,8 +3,8 @@ import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { parseGroup } from '@proton/pass/lib/groups/groups.parsers';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
+import { createMemoryStore } from '@proton/pass/utils/store';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import createStore from '@proton/shared/lib/helpers/store';
 import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
 import { PassCrypto, exposePassCrypto } from './index';
@@ -83,7 +83,7 @@ describe('PassCrypto', () => {
 
         exposePassCrypto(createPassCrypto());
 
-        const authStore = createAuthStore(createStore());
+        const authStore = createAuthStore(createMemoryStore());
         authStore.setPassword(TEST_KEY_PASSWORD);
         exposeAuthStore(authStore);
     });

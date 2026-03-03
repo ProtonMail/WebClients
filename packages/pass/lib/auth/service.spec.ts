@@ -1,7 +1,7 @@
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
 import type { Api } from '@proton/pass/types';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 import type { AuthService } from './service';
 import { createAuthService } from './service';
@@ -14,7 +14,7 @@ describe('Core AuthService', () => {
         jest.clearAllMocks();
         api = jest.fn() as unknown as Api;
         api.subscribe = jest.fn();
-        authStore = createAuthStore(createStore());
+        authStore = createAuthStore(createMemoryStore());
     });
 
     describe('AuthService::resumeSession', () => {

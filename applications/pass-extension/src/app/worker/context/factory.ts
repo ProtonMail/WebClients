@@ -49,7 +49,7 @@ import type { AppState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -57,7 +57,7 @@ import { WorkerContext } from './inject';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
-    const authStore = exposeAuthStore(createAuthStore(createStore()));
+    const authStore = exposeAuthStore(createAuthStore(createMemoryStore()));
     const storage = createStorageService();
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);

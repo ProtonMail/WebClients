@@ -15,7 +15,7 @@ import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 import type { ExtensionAuthService } from './auth.service';
 import { createAuthService } from './auth.service';
@@ -38,7 +38,7 @@ describe('Extension AuthService', () => {
 
         api = jest.fn() as unknown as Api;
         api.subscribe = jest.fn();
-        authStore = createAuthStore(createStore());
+        authStore = createAuthStore(createMemoryStore());
         connectivity = {
             check: jest.fn().mockResolvedValue(undefined),
             getStatus: jest.fn().mockReturnValue(ConnectivityStatus.ONLINE),
