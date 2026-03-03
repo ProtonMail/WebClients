@@ -293,9 +293,6 @@
       "Skip": [
         "Omitir"
       ],
-      "Start a meeting": [
-        "Iniciar una reunión"
-      ],
       "Start an instant meeting": [
         "Iniciar una reunión al instante"
       ],
@@ -1583,7 +1580,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Hubo un problema al autenticar con la clave de seguridad. Intente de nuevo."
+        "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -1744,6 +1741,9 @@
       "Coming soon": [
         "Próximamente"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Conexión interrumpida. Reconectando..."
+      ],
       "Connection lost": [
         "Conexión perdida"
       ],
@@ -1848,9 +1848,6 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vaya a about:config, busque media.peerconnection.enabled y actívelo."
-      ],
-      "Host your own secure meeting": [
-        "Inicie su propia reunión en un entorno seguro."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organice sus propias reuniones seguras. Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para invitar a quien quiera. Fácil, seguro y gratuito."
@@ -2017,6 +2014,12 @@
       "Premium meeting": [
         "Reunión premium"
       ],
+      "Reconnected successfully": [
+        "Reconectada con éxito"
+      ],
+      "Reconnecting to meeting...": [
+        "Reconectando la reunión..."
+      ],
       "Recording saved": [
         "Grabación guardada"
       ],
@@ -2061,9 +2064,6 @@
       ],
       "Sort by": [
         "Ordenar por"
-      ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para que se una quien usted desee. Simple, seguro y gratuito."
       ],
       "Stop sharing your screen": [
         "Dejar de compartir la pantalla"
@@ -2147,7 +2147,7 @@
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Would you like to delete this event?": [
         "¿Quiere eliminar este evento?"

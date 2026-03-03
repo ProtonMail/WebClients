@@ -293,9 +293,6 @@
       "Skip": [
         "Atla"
       ],
-      "Start a meeting": [
-        "Görüşme başlat"
-      ],
       "Start an instant meeting": [
         "Anında görüşme başlat"
       ],
@@ -1588,7 +1585,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -1744,6 +1741,9 @@
       "Coming soon": [
         "Çok yakında"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Bağlantı kesildi. Yeniden bağlanıyor..."
+      ],
       "Connection lost": [
         "Bağlantı kesildi"
       ],
@@ -1814,7 +1814,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Doğrulama kodunu girin. ${ digit } rakamı."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -1848,9 +1848,6 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
-      ],
-      "Host your own secure meeting": [
-        "Kendi güvenli görüşmenizi düzenleyin"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Kendi güvenli toplantınızı düzenleyin. ${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
@@ -2017,6 +2014,12 @@
       "Premium meeting": [
         "Ücretli görüşme"
       ],
+      "Reconnected successfully": [
+        "Başarıyla yeniden bağlantı kuruldu"
+      ],
+      "Reconnecting to meeting...": [
+        "Toplantıya yeniden bağlanıyor..."
+      ],
       "Recording saved": [
         "Görüşme kaydedildi"
       ],
@@ -2061,9 +2064,6 @@
       ],
       "Sort by": [
         "Sıralama"
-      ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
       "Stop sharing your screen": [
         "Ekran paylaşımını durdur"
@@ -2147,7 +2147,7 @@
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
       ],
       "Would you like to delete this event?": [
         "Bu etkinliği silmek ister misiniz?"
