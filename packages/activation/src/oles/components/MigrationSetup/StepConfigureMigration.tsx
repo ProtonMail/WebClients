@@ -30,7 +30,7 @@ const StepConfigureMigration: FC<{ model: MigrationSetupModel }> = ({ model }) =
     };
 
     return (
-        <div className="max-w-custom" style={{ '--max-w-custom': '38rem' }}>
+        <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
             <p className="text-xl text-bold mb-2">{c('BOSS').t`Configure migration`}</p>
             <p className="color-weak mt-0">
                 {c('BOSS')
