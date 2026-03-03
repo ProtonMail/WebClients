@@ -601,7 +601,8 @@ export const ProtonMeetContainer = ({
                 await wait(50);
             }
 
-            await initializeDevices();
+            // Initialize devices with timeout protection to prevent blocking UI when permissions are denied
+            await initializeDevices(5_000);
 
             const originalOnTokenRefresh = room.engine.client.onTokenRefresh;
 
