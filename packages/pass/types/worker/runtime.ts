@@ -1,3 +1,4 @@
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { FeatureFlagState } from '@proton/pass/store/reducers/user';
@@ -43,4 +44,5 @@ export type ClientInitResult = {
     settings: ProxiedSettings;
     features: FeatureFlagState;
     connectivity: ConnectivityStatus;
+    session: Partial<AuthSession>;
 };

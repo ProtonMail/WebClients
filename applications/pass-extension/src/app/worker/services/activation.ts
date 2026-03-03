@@ -15,6 +15,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { requestFork } from '@proton/pass/lib/auth/fork';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import { clientCanBoot, clientErrored, clientPasswordLocked, clientStale } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
@@ -202,6 +203,7 @@ export const createActivationService = () => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
             const { status } = ctx.getState();
+            const clientApp = message.sender === 'popup' || message.sender === 'page';
 
             /* Resume the session immediately if the worker is stale/idle or if the wakeup request
              * originated from the popup. For wake-up calls from other extension endpoints (e.g.,
@@ -248,18 +250,10 @@ export const createActivationService = () => {
 
             if (shouldResume) void ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: false });
 
-            /* dispatch a wakeup action for this specific receiver.
-             * tracking the wakeup's request metadata can be consumed
-             * in the UI to infer wakeup result - see `wakeup.saga.ts`
-             * no need for any redux operations on content-script wakeup
-             * as it doesn't hold any state. */
-            if (message.sender === 'popup' || message.sender === 'page') {
-                await ctx.service.store.dispatchAsyncRequest(clientInit, {
-                    status,
-                    endpoint,
-                    tabId,
-                });
-            }
+            /** Dispatch a wakeup action for client app receivers. Tracking the wakeup's request metadata
+             * can be consumed in the UI to infer wakeup result - see `wakeup.saga.ts` no need for any redux
+             * operations on content-script wakeup as it doesn't hold any state. */
+            if (clientApp) await ctx.service.store.dispatchAsyncRequest(clientInit, { status, endpoint, tabId });
 
             if (message.sender === 'popup') {
                 WorkerMessageBroker.buffer.flush().forEach((notification) => {
@@ -274,8 +268,9 @@ export const createActivationService = () => {
             // Note: in the future we can modify this to add featureFlags variants in the extension content script
             const { features } = await ctx.service.featureFlags.resolve();
             const connectivity = ctx.service.connectivity.getStatus();
+            const session: Partial<AuthSession> = clientApp ? ctx.service.auth.config.authStore.getSession() : {};
 
-            return { state: ctx.getState(), features, settings, connectivity };
+            return { state: ctx.getState(), features, settings, connectivity, session };
         }
     );
 

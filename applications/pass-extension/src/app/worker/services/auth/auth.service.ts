@@ -2,7 +2,9 @@ import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getMinimalHostPermissions, hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { isPagePort, isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -290,6 +292,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const offline = !ctx.service.connectivity.online;
             const offlineBooted = clientOffline(ctx.getState().status);
 
+            /** When already OFFLINE-booted, a failed online resume attempt (e.g. from
+             * `offlineResume` dispatched on connectivity restore) must not alter app state.
+             * The user stays booted offline and the next connectivity restore will retry. */
             if (!offlineBooted) {
                 const status = (() => {
                     if (offline && authStore.hasOfflineComponents()) return AppStatus.PASSWORD_LOCKED;
@@ -443,6 +448,16 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_OFFLINE_SWITCH, handleOfflineSwitch);
         WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
+
+        authStore.subscribe?.(() => {
+            WorkerMessageBroker.ports.broadcast(
+                backgroundMessage({
+                    type: WorkerMessageType.AUTH_CHANGED,
+                    payload: authStore.getSession(),
+                }),
+                or(isPopupPort, isPagePort)
+            );
+        });
 
         /** Auth alarms may be triggered while the service worker is idle,
          * as such, we should check for the app status before triggering any

@@ -34,8 +34,6 @@ export const useExtensionClientInit = (options: {
 
     const onChange = useCallback((state: AppState) => {
         AppStateManager.setState(state);
-        authStore?.setLocalID(state.localID);
-        authStore?.setUID(state.UID);
         options.onStateChange(state);
     }, []);
 
@@ -66,6 +64,11 @@ export const useExtensionClientInit = (options: {
                 void MemoryStorage.deleteFile(fileRef);
                 return;
             }
+
+            if (matchExtensionMessage(message, { type: WorkerMessageType.AUTH_CHANGED })) {
+                authStore?.clear();
+                return authStore?.setSession(message.payload);
+            }
         };
 
         port.onMessage.addListener(onMessage);
@@ -86,8 +89,9 @@ export const useExtensionClientInit = (options: {
             );
 
         wakeup()
-            .then(({ state, connectivity }) => {
+            .then(({ state, connectivity, session }) => {
                 onChange(state);
+                authStore?.setSession(session);
                 options.onConnectivity(connectivity);
             })
             .catch((err) =>
