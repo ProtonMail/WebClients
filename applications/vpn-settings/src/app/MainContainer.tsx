@@ -123,6 +123,7 @@ const MainContainer: FunctionComponent = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -164,6 +165,7 @@ const MainContainer: FunctionComponent = () => {
         isProtonMeetIntegrationEnabled,
         isUserGroupsNoCustomDomainEnabled,
         isGroupOwner,
+        isRolesAndPermissionsEnabled,
     });
 
     const canEnableChat = useCanEnableChat(user);
