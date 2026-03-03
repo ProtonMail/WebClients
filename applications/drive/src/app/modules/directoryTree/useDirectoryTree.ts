@@ -25,6 +25,7 @@ interface DirectoryTreeOptions {
     onlyFolders?: boolean;
     loadPermissions?: boolean;
     treeRootsStrategy?: TreeRootsStrategy;
+    hideSharedWithMe?: boolean;
 }
 
 type TreeRootsStrategy =
@@ -277,15 +278,17 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             });
 
             // Shared with me
-            addItem({
-                nodeUid: SHARED_WITH_ME_ROOT_ID,
-                treeItemId: makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID),
-                parentUid: null,
-                name: c('Title').t`Shared with me`,
-                type: DirectoryTreeRootType.SharesRoot,
-                expandable: true,
-                isSharedWithMe: false,
-            });
+            if (!options?.hideSharedWithMe) {
+                addItem({
+                    nodeUid: SHARED_WITH_ME_ROOT_ID,
+                    treeItemId: makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID),
+                    parentUid: null,
+                    name: c('Title').t`Shared with me`,
+                    type: DirectoryTreeRootType.SharesRoot,
+                    expandable: true,
+                    isSharedWithMe: false,
+                });
+            }
         },
         [addItem]
     );
