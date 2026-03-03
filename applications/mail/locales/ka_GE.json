@@ -325,9 +325,6 @@
       "Copy addresses": [
         "მისამართების კოპირება"
       ],
-      "Copy alias “${ name }”": [
-        "ფსევდონიმის \"${ name }\" კოპირება"
-      ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
@@ -1757,6 +1754,18 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ]
     },
     "Alert": {
@@ -2027,7 +2036,23 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
+      ]
+    },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
       "1 month": [
         "1 თვე"
       ],
@@ -2037,8 +2062,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
       "Lifetime": [
         "სამუდამოდ"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -2516,6 +2547,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ],
       "Total": [
         "ჯამი"
@@ -3502,7 +3536,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -5171,9 +5205,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "კონტაქტები ჯერ არ გაქვთ. დაიწყეთ მათი შექმნა"
       ]
@@ -5409,15 +5440,7 @@
         "ჩქაროსნული კავშირი"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "თქვენი უსაფრთხოების გასაღების ავთენტიკაციისას რაღაც არასწორად წავიდა. კიდევ სცადეთ."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "ჩასვით თქვენს ${ BRAND_NAME }-ის ანგარიშზე მიბმული უსაფრთხოების გასაღები."
-      ],
       "Security key": [
         "უსაფრთხოების გასაღები"
       ]
@@ -6987,9 +7010,6 @@
       "Duplicate key updated": [
         "დუბლირებული გასაღები განახლებულია"
       ],
-      "Each code can only be used once": [
-        "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ადვილად მართეთ და გააუქმეთ გამოწერები ახალი ამბებიდან და დაგზავნის სიებიდან."
       ],
@@ -7056,9 +7076,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
@@ -8377,9 +8394,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "როცა ჩართეთ სანდო გასაღებები ${ senderName }-სთვის, საჯარო გასაღებები კონტაქტის დეტალებში იქნა ჩამატებული."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2FA-ის მორგებისას ჩვენ მოგაწოდებთ აღდგენის კოდებს, რომელიც შეგიძლიათ, გამოიყენოთ ანგარიშში შესასვლელად იმ შემთხვევაშიც კი, თუ თქვენს ავთენტიკატორ აპთან წვდომას დაკარგავთ."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "როცა გაზეთს გამოიწერთ, გამოიყენეთ ფსევდონიმი თქვენი ელფოსტის მისამართის მაგიერ. თქვენი იდენტიფიკატორი ასევე დარჩება დამალულად და ამ ფსევდონიმის გათიშვა ნებისმიერ დროს შეგიძლიათ."
@@ -11808,6 +11822,9 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "შემახსენე მოგვიანებით"
       ]
     },
     "Option group": {
@@ -11981,6 +11998,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -12577,46 +12600,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "ყველა ფსევდონიმი"
-      ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
-      ],
-      "Create an alias": [
-        "ფსევდონიმის შექმნა"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-ის ფსევდონიმები"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "ახალი ფსევდონიმი"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }-ის გახსნა"
-      ],
-      "Protect your online identity": [
-        "დაცავით თქვენი იდენტობა ინტერნეტში"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "სცადეთ ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(გახსნის ${ PASS_APP_NAME }-ს)"
       ]
     },
     "Security Center - Action": {
@@ -13244,6 +13235,16 @@
       ],
       "Your pm.me email is active": [
         "თქვენი pm.me ელფოსტა აქტიურია"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "sso": {
@@ -13899,9 +13900,6 @@
       "Address verification disabled": [
         "მისამართის შემოწმება გამორთულია"
       ],
-      "Alias copied to clipboard": [
-        "ფსევდონიმი კოპირებულია ბუფერში"
-      ],
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
@@ -13993,9 +13991,6 @@
       ],
       "Labels applied.": [
         "ჭდეები გადატარებულია."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
       ],
       "Mail list unsubscribed": [
         "საფოსტო სიის გამოწერა გაუქმდა"

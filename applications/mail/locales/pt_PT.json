@@ -307,9 +307,6 @@
       "Copy addresses": [
         "Copiar endereços"
       ],
-      "Copy alias “${ name }”": [
-        "Copiar o alias «${ name }»"
-      ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
@@ -638,9 +635,6 @@
       ],
       "Help and resources": [
         "Ajuda e recursos"
-      ],
-      "Hide": [
-        "Ocultar"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Ocultar assistente de escrita ${ BRAND_NAME } Scribe"
@@ -3292,9 +3286,6 @@
       "North Korea": [
         "Coreia do Norte"
       ],
-      "North Macedonia": [
-        "Macedónia do Norte"
-      ],
       "Northern Mariana Islands": [
         "Ilhas Marianas do Norte"
       ],
@@ -4877,9 +4868,6 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Atualize a página ou verifique a sua ligação à internet."
       ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quando a palavra-passe extra está ativada, a gestão de alias só pode ser feita no ${ PASS_APP_NAME }."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ainda não tem contactos. Comece por criar um contacto"
       ]
@@ -5105,15 +5093,7 @@
         "Velocidades ultrarrápidas"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo correu mal ao autenticar com a sua chave de segurança. Tente novamente."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança associada à sua conta ${ BRAND_NAME }."
-      ],
       "Security key": [
         "Chave de segurança"
       ]
@@ -6661,9 +6641,6 @@
       "Duplicate key updated": [
         "Chave duplicada actualizada"
       ],
-      "Each code can only be used once": [
-        "Cada código só pode ser utilizado uma vez"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gira e cancela facilmente a subscrição de boletins e listas de correio."
       ],
@@ -6727,9 +6704,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -8015,9 +7989,6 @@
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando ativou as chaves confiadas para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá utilizar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quando se inscrever para receber uma newsletter, utilize um alias em vez do seu endereço de e-mail. A sua identidade permanece oculta e pode desativar o alias em qualquer altura."
@@ -11868,46 +11839,14 @@
       ]
     },
     "Security Center": {
-      "All aliases": [
-        "Todos os aliases"
-      ],
       "Create alias": [
         "Criar um alias"
-      ],
-      "Create an alias": [
-        "Criar um alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Crie aliases rapidamente e gira facilmente os seus aliases e palavras-passe."
-      ],
-      "Hide-my-email aliases": [
-        "Pseudónimos hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Os aliases Hide-my-email permitem-lhe registar-se em coisas online sem partilhar o seu endereço de e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Novo alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Abrir ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Proteja a sua identidade digital"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Experimente o ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Usado na Amazon para compras, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando lhe for pedido o seu endereço de e-mail, forneça este alias. Os aliases são fornecidos pelo ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(abrirá ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13187,9 +13126,6 @@
       "Address verification disabled": [
         "Verificação de endereço desativada"
       ],
-      "Alias copied to clipboard": [
-        "Alias copiado para a área de transferência"
-      ],
       "Alias saved and copied": [
         "Alias guardado e copiado"
       ],
@@ -13275,9 +13211,6 @@
       ],
       "Labels applied.": [
         "Etiquetas aplicadas."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Os últimos aliases modificados armazenados no seu cofre mais antigo"
       ],
       "Mail list unsubscribed": [
         "Lista de correio não subscrita"
