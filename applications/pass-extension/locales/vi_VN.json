@@ -385,9 +385,6 @@
       "Get Started": [
         "Bắt Đầu"
       ],
-      "Hide": [
-        "Ẩn"
-      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Làm sao để tôi xuất dữ liệu của mình từ ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1809,9 +1806,6 @@
       "Enter the address you want to email.": [
         "Nhập địa chỉ bạn muốn gửi email."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Nhập mã xác minh. Số ${ digit }."
-      ],
       "Enter your extra password": [
         "Nhập mật khẩu bổ sung"
       ],
@@ -2008,7 +2002,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
