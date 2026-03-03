@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -8,17 +6,20 @@ import { Icon } from '@proton/components';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { GalleryImageCard } from './GalleryImageCard';
-import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
+import type { GallerySection } from './hooks/useGeneratedGalleryImages';
 
 import './GalleryView.scss';
 
 interface CreatedGridProps {
+    sections: GallerySection[];
+    status: 'idle' | 'loading' | 'loaded' | 'error';
+    hasMore: boolean;
+    loadMore: () => void;
     onExport: (imageData: string, mode: DrawingMode, description: string) => void;
 }
 
-export const CreatedGrid = ({ onExport }: CreatedGridProps) => {
-    const { sections, status, hasMore, loadMore } = useGeneratedGalleryImages();
-    const allItems = useMemo(() => sections.flatMap((s) => s.items), [sections]);
+export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: CreatedGridProps) => {
+    const allItems = sections.flatMap((s) => s.items);
 
     if (status === 'loading' && allItems.length === 0) {
         return (

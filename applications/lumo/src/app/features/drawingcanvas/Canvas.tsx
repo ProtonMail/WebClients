@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { CanvasConfig, Stroke } from './types';
 import { useCanvasRenderer } from './hooks/useCanvasRenderer';
 import { useDrawing } from './hooks/useDrawing';
+import './Canvas.scss';
 
 interface CanvasProps {
     config: CanvasConfig;
