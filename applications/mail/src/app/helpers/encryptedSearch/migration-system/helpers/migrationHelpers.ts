@@ -46,6 +46,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
     const migrations = createMigrations(cleanText);
     const iterator = getOutdatedContentIterator(esDB);
 
+    const versionsRecord: Record<number, number> = {};
     for await (const { key, value } of iterator) {
         try {
             const decrypted = await decryptESItem({ esDB, indexKey, itemID: key });
@@ -61,10 +62,14 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 continue;
             }
 
+            const contentVersion = hasVersion ? value.version : decrypted.content?.version || -1;
+            versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
+
             const version = hasVersion ? value.version : decrypted.content?.version || CONTENT_VERSION.DOM_INDEXING;
             await upgradeContent({ version, data: decrypted, esDB, indexKey, migrations });
         } catch (error) {
             traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
         }
     }
+    console.log(`versionsRecord: ${JSON.stringify(versionsRecord)}`);
 };
