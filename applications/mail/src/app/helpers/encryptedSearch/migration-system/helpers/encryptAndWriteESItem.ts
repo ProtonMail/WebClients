@@ -23,19 +23,17 @@ export const encryptAndWriteESItem = async ({ esDB, indexKey, item, version }: E
 
     // Encryption is done before opening the transaction to avoid auto-commit
     const encryptedContent = item.content ? await serializeAndEncryptItem(indexKey, item.content, version) : undefined;
-
-    // IDB transactions are serialized by the browser, no locking checks needed
-    const tx = esDB.transaction(['metadata', 'content'], 'readwrite');
-
     if (!encryptedContent) {
         return;
     }
+
+    // IDB transactions are serialized by the browser, no locking checks needed
+    const tx = esDB.transaction(['content'], 'readwrite');
 
     try {
         await tx.objectStore('content').put({ ...encryptedContent, version }, itemID);
         await tx.done;
     } catch (error) {
-        tx.abort();
         throw error;
     }
 };
