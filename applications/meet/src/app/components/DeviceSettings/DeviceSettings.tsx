@@ -179,7 +179,7 @@ export const DeviceSettings = ({
                 {displayName && (
                     <div
                         className="absolute left-custom bottom-custom z-up text-ellipsis max-w-custom hidden md:block"
-                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '2rem', '--max-w-custom': '12rem' }}
+                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '1.5rem', '--max-w-custom': '12rem' }}
                         title={displayName}
                     >
                         {displayName}
