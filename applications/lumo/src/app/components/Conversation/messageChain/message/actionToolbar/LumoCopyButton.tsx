@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { copyDomToClipboard, isFirefox } from '@proton/shared/lib/helpers/browser';
 
 interface Props extends Omit<ButtonProps, 'value'> {
@@ -122,7 +122,7 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, ...rest }: Props) =
                 {...rest}
                 onClick={handleClick}
             >
-                <Icon name="squares" />
+                <IcSquares />
             </Button>
         </Tooltip>
     );

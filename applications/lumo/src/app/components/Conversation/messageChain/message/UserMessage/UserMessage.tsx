@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
@@ -33,7 +34,7 @@ const UserActionToolbar = ({ onEdit, onToggleCollapse, isCollapsed, canBeCollaps
         <div className="flex flex-row flex-nowrap gap-px p-0.5" style={{ inlineSize: 'max-content' }}>
             <Tooltip title={c('collider_2025:Button').t`Edit`} originalPlacement="top">
                 <Button icon shape="ghost" className="shrink-0" onClick={onEdit} size="small">
-                    <Icon name="pencil" alt={c('collider_2025:Button').t`Edit`} />
+                    <IcPencil alt={c('collider_2025:Button').t`Edit`} />
                 </Button>
             </Tooltip>
             {canBeCollapsed && (

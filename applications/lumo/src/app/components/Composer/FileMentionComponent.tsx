@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Icon } from '@proton/components';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 
 import { getMimeTypeFromExtension } from '../../util/filetypes';
 import type { FileItem, FileMentionState } from './hooks/useFileMentionAutocomplete';
@@ -79,7 +79,8 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
             }}
         >
             {files.map((file, index) => {
-                const mimeType = file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
+                const mimeType =
+                    file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
                 const query = mentionState.query.toLowerCase();
                 const fullPath = file.name;
 
@@ -103,7 +104,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                         {mimeType ? (
                             <FileIcon mimeType={mimeType} className="shrink-0" size={3.5} />
                         ) : (
-                            <Icon name="file-lines" size={3.5} className="color-weak shrink-0" />
+                            <IcFileLines size={3.5} className="color-weak shrink-0" />
                         )}
                         <div className="flex-1 min-w-0 overflow-hidden">
                             {folderPath && (
@@ -120,10 +121,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                             )}
                             <div className="text-sm whitespace-nowrap overflow-hidden text-ellipsis">
                                 {highlightedFileNameParts.map((part, partIndex) => (
-                                    <span
-                                        key={partIndex}
-                                        className={part.isMatch ? 'font-semibold color-primary' : ''}
-                                    >
+                                    <span key={partIndex} className={part.isMatch ? 'font-semibold color-primary' : ''}>
                                         {part.text}
                                     </span>
                                 ))}

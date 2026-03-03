@@ -7,7 +7,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon, useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcFile } from '@proton/icons/icons/IcFile';
+import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAutoRetrievedAttachments, useFileProcessing, useFilteredFiles } from '../../../hooks';
@@ -89,7 +93,7 @@ const FilteredFilesContent = ({
             {autoRetrievedFiles.length > 0 && (
                 <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
                     <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                        <Icon name="folder-open" size={4} className="color-norm" />
+                        <IcFolderOpen size={4} className="color-norm" />
                         {c('collider_2025: Info').t`Retrieved Project Knowledge`}
                     </h3>
                     <p className="text-xs color-weak mb-3">
@@ -128,7 +132,7 @@ const FilteredFilesContent = ({
             {manualFiles.length > 0 && (
                 <div className="mb-6 w-full">
                     <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                        <Icon name="file" size={4} />
+                        <IcFile size={4} />
                         {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
                     </h3>
                     {manualFiles.map((file) => (
@@ -155,7 +159,7 @@ interface RetrievedKnowledgeSectionProps {
 const RetrievedKnowledgeSection = ({ activeAutoRetrieved, onView, onExclude }: RetrievedKnowledgeSectionProps) => (
     <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
         <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-            <Icon name="folder-open" size={4} className="color-norm" />
+            <IcFolderOpen size={4} className="color-norm" />
             {c('collider_2025: Info').t`Retrieved Project Knowledge`}
         </h3>
 
@@ -207,7 +211,7 @@ const ManualAttachmentsSection = ({
     return (
         <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
             <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                <Icon name="paper-clip" size={4} className="color-norm" />
+                <IcPaperClip size={4} className="color-norm" />
                 {c('collider_2025: Info').t`Attached Files`}
                 <span className="text-normal color-weak">{totalManual}</span>
             </h3>
@@ -258,7 +262,7 @@ const ExcludedFilesSection = ({
     return (
         <div className="mb-4 w-full p-4 bg-weak rounded border border-weak opacity-70">
             <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                <Icon name="eye-slash" size={4} className="color-weak" />
+                <IcEyeSlash size={4} className="color-weak" />
                 {c('collider_2025: Info').t`Excluded`}
                 <span className="text-normal color-weak">{totalExcluded}</span>
             </h3>
@@ -533,7 +537,7 @@ export const KnowledgeBasePanel = ({
                             className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
                             title={c('collider_2025: Info').t`Show all files`}
                         >
-                            <Icon name="cross" size={3} />
+                            <IcCross size={3} />
                             <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
                         </Button>
                     </div>
@@ -579,7 +583,7 @@ export const KnowledgeBasePanel = ({
 
                     {isEmpty && (
                         <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
-                            <Icon name="file" size={8} className="color-weak mb-2" />
+                            <IcFile size={8} className="color-weak mb-2" />
                             <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No files available`}</p>
                         </div>
                     )}

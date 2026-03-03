@@ -2,9 +2,9 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
 import { NodeType } from '@proton/drive';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -71,10 +71,8 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const CheckmarkIcon = () => <IcCheckmarkCircle />;
-                const ErrorIcon = () => <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />;
-                const WarningIcon = () => (
-                    <Icon name="exclamation-triangle-filled" className="color-warning" size={4} />
-                );
+                const ErrorIcon = () => <IcExclamationTriangleFilled className="color-danger" size={4} />;
+                const WarningIcon = () => <IcExclamationTriangleFilled className="color-warning" size={4} />;
                 const ProgressIcon = () => (
                     <CircularProgress progress={fileData.downloadProgress || 0} size={16} className="text-primary" />
                 );

@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { ENABLE_FOUNDATION_SEARCH } from '../../../../config/search';
-import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import { useLumoUserSettings } from '../../../../hooks';
+import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import { useLumoSelector } from '../../../../redux/hooks';
 import { selectSpaceMap } from '../../../../redux/slices/core/spaces';
 import { SearchService } from '../../../../services/search/searchService';
@@ -17,7 +19,7 @@ import type { SpaceId } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
 import { SearchIndexStats } from './SearchIndexStats';
 import { SearchInspectDetail } from './SearchInspectDetail';
-import { SearchInspectList, type GroupedDocument } from './SearchInspectList';
+import { type GroupedDocument, SearchInspectList } from './SearchInspectList';
 
 interface SearchIndexDebugModalProps {
     open: boolean;
@@ -214,8 +216,6 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                     displayDriveDocs={displayDriveDocs}
                     progressColor={progressColor}
                     formatBytes={formatBytes}
-                    onInspect={handleInspect}
-                    userId={userId}
                     enableFoundationSearch={ENABLE_FOUNDATION_SEARCH}
                 />
 
@@ -227,10 +227,12 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                         </h4>
                         <div className="text-sm" style={{ color: 'var(--text-invert)' }}>
                             <p className="mb-2">
-                                {c('Warning').t`Found ${orphanedDocCount} documents (${orphanedChunkCount} chunks) referencing ${orphanedSpaceIds.length} missing space(s).`}
+                                {c('Warning')
+                                    .t`Found ${orphanedDocCount} documents (${orphanedChunkCount} chunks) referencing ${orphanedSpaceIds.length} missing space(s).`}
                             </p>
                             <p className="mb-2">
-                                {c('Info').t`This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.`}
+                                {c('Info')
+                                    .t`This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.`}
                             </p>
                             <details className="mb-3">
                                 <summary className="cursor-pointer">{c('Action').t`Show orphaned space IDs`}</summary>
@@ -247,7 +249,7 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                                 shape="solid"
                                 size="small"
                             >
-                                <Icon name="trash" size={3.5} className="mr-1" />
+                                <IcTrash size={3.5} className="mr-1" />
                                 {c('Action').t`Clean up orphaned documents`}
                             </Button>
                         </div>
@@ -255,7 +257,7 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                 )}
 
                 <Button onClick={handleInspect} shape="outline" className="self-start">
-                    <Icon name="eye" size={4} className="mr-2" />
+                    <IcEye size={4} className="mr-2" />
                     {c('Action').t`Inspect indexed documents`}
                 </Button>
             </div>
@@ -265,10 +267,7 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
     return (
         <ModalTwo open={open} onClose={handleClose} size="large">
             <ModalTwoHeader title={c('Title').t`Search Index Debug`} />
-            <ModalTwoContent className="p-4">
-                {renderContent()}
-            </ModalTwoContent>
+            <ModalTwoContent className="p-4">{renderContent()}</ModalTwoContent>
         </ModalTwo>
     );
 };
-

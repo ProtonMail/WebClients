@@ -5,6 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import ProjectSettingsButton from '../ProjectSettingsButton';
 
@@ -79,7 +82,7 @@ export const ProjectDetailHeader = ({
                         className="project-detail-back-button flex items-center px-0"
                         title={c('collider_2025:Action').t`Back to projects`}
                     >
-                        <Icon name="arrow-left" className="mr-1" />
+                        <IcArrowLeft className="mr-1" />
                         <span className="project-detail-back-text">
                             {c('collider_2025:Navigation').t`All projects`}
                         </span>
@@ -126,7 +129,7 @@ export const ProjectDetailHeader = ({
                         onClick={toggle}
                         title={c('collider_2025:Action').t`More options`}
                     >
-                        <Icon name="three-dots-horizontal" />
+                        <IcThreeDotsHorizontal />
                     </Button>
                     <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                         <DropdownMenu>
@@ -137,7 +140,7 @@ export const ProjectDetailHeader = ({
                                     onDeleteProject();
                                 }}
                             >
-                                <Icon name="trash" className="mr-2" />
+                                <IcTrash className="mr-2" />
                                 {c('collider_2025:Action').t`Delete project`}
                             </DropdownMenuButton>
                         </DropdownMenu>

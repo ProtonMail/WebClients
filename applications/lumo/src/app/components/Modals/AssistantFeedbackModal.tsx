@@ -7,7 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Checkbox,
-    Icon,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -20,6 +19,8 @@ import {
     useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcThumbDown } from '@proton/icons/icons/IcThumbDown';
+import { IcThumbUp } from '@proton/icons/icons/IcThumbUp';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 
@@ -115,7 +116,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
 
             createNotification({ text: c('collider_2025: Success').t`Thanks for the feedback!` });
             setFeedbackSubmitted(true);
-        } catch (e) {
+        } catch {
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Failure').t`There was an issue saving your feedback. Try again later.`,
@@ -170,7 +171,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     loading={loading}
                     onClick={() => withLoading(handlePositiveSubmit())}
                 >
-                    <Icon name="thumb-up" size={4} alt={c('collider_2025: Action').t`I like this response`} />
+                    <IcThumbUp size={4} alt={c('collider_2025: Action').t`I like this response`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('collider_2025: Action').t`Report an issue`}>
@@ -183,7 +184,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     disabled={disableButtons}
                     onClick={() => feedbackModal.openModal(true)}
                 >
-                    <Icon name="thumb-down" size={4} alt={c('collider_2025: Action').t`Report an issue`} />
+                    <IcThumbDown size={4} alt={c('collider_2025: Action').t`Report an issue`} />
                 </Button>
             </Tooltip>
             <ModalTwo as="form" onSubmit={(e) => withLoading(handleSubmit(e))} {...feedbackModal.modalProps}>

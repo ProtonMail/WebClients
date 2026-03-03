@@ -5,8 +5,11 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
-import { Icon, Prompt } from '@proton/components';
+import { Prompt } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcShield } from '@proton/icons/icons/IcShield';
 
 interface Props extends ModalProps {
     url: string;
@@ -73,15 +76,15 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                 {/* URL Display with Security Emphasis */}
                 <div className="border rounded p-3 bg-weak">
                     {/* Protocol Display */}
-                    <div className="flex flex-row flex-align-items-center gap-1 mb-1">
+                    <div className="flex flex-row items-center gap-1 mb-1">
                         {urlParts.isSecure ? (
                             <>
-                                <Icon name="shield" className="color-success" size={4} />
+                                <IcShield className="color-success" size={4} />
                                 <span className="text-sm color-success text-bold">https://</span>
                             </>
                         ) : (
                             <>
-                                <Icon name="shield" className="warning" size={4} />
+                                <IcShield className="warning" size={4} />
                                 <span className="text-sm color-danger text-bold">http://</span>
                             </>
                         )}
@@ -103,8 +106,8 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                             )}
                         </div>
                         {urlParts.hasExcessiveSubdomains && (
-                            <div className="flex flex-row flex-align-items-center gap-1 color-warning text-sm mt-1">
-                                <Icon name="exclamation-filled" size={3} />
+                            <div className="flex flex-row items-center gap-1 color-warning text-sm mt-1">
+                                <IcExclamationFilled size={3} />
                                 <span>
                                     {c('collider_2025: Warning').ngettext(
                                         msgid`Suspicious: ${urlParts.subdomainCount} subdomain`,
@@ -127,17 +130,13 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                     className="text-left"
                     onClick={() => setShowSafetyInfo(!showSafetyInfo)}
                 >
-                    <div className="flex flex-row flex-align-items-center gap-1">
+                    <div className="flex flex-row items-center gap-1">
                         <span className="color-primary">
                             {showSafetyInfo
                                 ? c('collider_2025: Action').t`Hide safety information`
                                 : c('collider_2025: Action').t`Show safety information`}
                         </span>
-                        <Icon
-                            name="chevron-down"
-                            size={3}
-                            className={`color-primary ${showSafetyInfo ? 'rotate-180' : ''}`}
-                        />
+                        <IcChevronDown size={3} className={`color-primary ${showSafetyInfo ? 'rotate-180' : ''}`} />
                     </div>
                 </Button>
 
@@ -147,7 +146,7 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                         <h4 className="text-bold mb-2">{c('collider_2025: Info').t`How to identify safe links:`}</h4>
                         <div className="flex flex-column gap-2 text-sm">
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <Icon name="shield" className="color-success mt-0.5 flex-item-noshrink" size={4} />
+                                <IcShield className="color-success mt-0.5 shrink-0" size={4} />
                                 <span>
                                     <span className="text-bold">https://</span> -{' '}
                                     {c('collider_2025: Info').t`Secure connection (encrypted)`}

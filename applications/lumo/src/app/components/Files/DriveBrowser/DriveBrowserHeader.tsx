@@ -3,8 +3,9 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -45,7 +46,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                         {onBack && !initialShowDriveBrowser && (
                             <>
                                 <Button onClick={onBack} size="small" shape="ghost">
-                                    <IcArrowLeft name="arrow" size={4} />
+                                    <IcArrowLeft size={4} />
                                 </Button>
                             </>
                         )}
@@ -61,11 +62,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                                     disabled={loading || isRefreshing}
                                     title={c('collider_2025: Action').t`Refresh folder contents`}
                                 >
-                                    <Icon
-                                        name="arrow-rotate-right"
-                                        size={4}
-                                        className={isRefreshing ? 'animate-spin' : ''}
-                                    />
+                                    <IcArrowRotateRight size={4} className={isRefreshing ? 'animate-spin' : ''} />
                                 </Button>
 
                                 <Button
@@ -75,7 +72,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                                     disabled={loading || isRefreshing || !hasCurrentFolder}
                                     title={c('collider_2025: Action').t`Upload file and add to knowledge base`}
                                 >
-                                    <Icon name="arrow-up-line" size={4} />
+                                    <IcArrowUpLine size={4} />
                                 </Button>
                             </>
                         )}

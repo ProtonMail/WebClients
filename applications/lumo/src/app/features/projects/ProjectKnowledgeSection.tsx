@@ -7,7 +7,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
+import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -161,7 +165,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                             shape="ghost"
                             size="small"
                         >
-                            <Icon name="info-circle" size={4} />
+                            <IcInfoCircle size={4} />
                         </ButtonLike>
                     </Tooltip>
                 </h3>
@@ -176,7 +180,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                                 onClick={onAddFiles}
                                 title={c('collider_2025:Action').t`Upload files`}
                             >
-                                <Icon name="arrow-up-line" size={4} />
+                                <IcArrowUpLine size={4} />
                             </Button>
                             <Button
                                 icon
@@ -186,7 +190,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                                 className="project-files-remove-all-button"
                                 title={c('collider_2025:Action').t`Remove all files`}
                             >
-                                <Icon name="trash" size={4} />
+                                <IcTrash size={4} />
                             </Button>
                         </>
                     )}
@@ -199,7 +203,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                             onClick={onLinkDriveFolder}
                             title={c('collider_2025:Action').t`Manage Drive folder link`}
                         >
-                            <Icon name="meet-settings" size={4} />
+                            <IcMeetSettings size={4} />
                         </Button>
                     )}
                 </div>
@@ -211,7 +215,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                     <Banner
                         className="mb-1 color-weak border-none"
                         variant="norm-outline"
-                        icon={<Icon name="light-lightbulb" size={3.5} />}
+                        icon={<IcLightLightbulb size={3.5} />}
                     >
                         {c('collider_2025:Info').t`Type @filename to ask questions about a specific file`}
                     </Banner>
