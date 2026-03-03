@@ -147,7 +147,10 @@ export const createInlineApp = <T extends InlineRequest>({
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src: `${src}#iframe=${iframeID}` },
+        attributes: {
+            src: `${src}#iframe=${iframeID}`,
+            ...(BUILD_TARGET === 'chrome' ? { allow: 'clipboard-write' } : {}),
+        },
         parent: popover.root.shadowRoot,
     });
 

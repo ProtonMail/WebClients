@@ -3,6 +3,7 @@ export type AutoFillSettings = {
     login?: boolean;
     identity: boolean;
     twofa: boolean;
+    twofaCopy?: boolean;
     basicAuth?: boolean;
     cc?: boolean;
     /** @deprecated Kept for >=1.24.0 migrations */

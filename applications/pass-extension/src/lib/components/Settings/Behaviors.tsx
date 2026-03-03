@@ -80,6 +80,12 @@ const getSettingsSections = ({
                     onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
                 },
                 {
+                    label: c('Label').t`Auto-copy 2FA code`,
+                    description: c('Info').t`After autofilling a login, its 2FA code is copied to the clipboard.`,
+                    checked: settings.autofill.twofaCopy ?? false,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { twofaCopy: checked } }),
+                },
+                {
                     label: c('Label').t`Credit-card autofill`,
                     description: c('Info').t`Automatically fill in your saved payment information.`,
                     checked: settings.autofill.cc ?? false,
