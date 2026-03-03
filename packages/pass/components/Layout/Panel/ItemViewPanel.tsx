@@ -73,8 +73,10 @@ export const ItemViewPanel: FC<Props> = ({
 
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
-    const disabledSharing = !(itemState.canItemShare || itemState.canLinkShare || itemState.canManageAccess);
-    const showSharing = (owner || itemState.isShared) && !itemState.isReadOnly;
+    const showSharing =
+        (owner || itemState.isShared) &&
+        !itemState.isReadOnly &&
+        (itemState.canItemShare || itemState.canLinkShare || itemState.canManageAccess);
 
     const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
@@ -199,7 +201,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     icon="users-plus"
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || actionsDisabled || disabledSharing}
+                                    disabled={!online || actionsDisabled}
                                     badge={accessCount > 1 ? accessCount : undefined}
                                     dropdownSize={{
                                         height: DropdownSizeUnit.Dynamic,
