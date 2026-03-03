@@ -1,14 +1,14 @@
-import { useCallback, useState } from 'react';
+import {useCallback, useState} from 'react';
 
-import { c } from 'ttag';
+import {c} from 'ttag';
 
-import { Icon } from '@proton/components';
+import {Icon} from '@proton/components';
 
-import { GALLERY_PROMPT_SUGGESTIONS, type GalleryPromptSuggestion } from './promptSuggestions';
+import {getGalleryPromptSuggestions, type GalleryPromptSuggestion} from './promptSuggestions';
 
 import './GalleryView.scss';
 
-const SUGGESTIONS_PER_PAGE = 4;
+const SUGGESTIONS_PER_PAGE = 3;
 
 function pickSuggestions(pool: GalleryPromptSuggestion[], exclude: GalleryPromptSuggestion[]): GalleryPromptSuggestion[] {
     const excludeIds = new Set(exclude.map((s) => s.id));
@@ -18,58 +18,79 @@ function pickSuggestions(pool: GalleryPromptSuggestion[], exclude: GalleryPrompt
     return shuffled.slice(0, SUGGESTIONS_PER_PAGE);
 }
 
+const ACTION_BADGE: Record<GalleryPromptSuggestion['action'], string> = {
+    edit_image: 'Upload',
+    sketch: 'Sketch',
+    prompt: 'Create',
+};
+
 const SuggestionCard = ({
-    suggestion,
-    onClick,
-}: {
+                            suggestion,
+                            onClick,
+                        }: {
     suggestion: GalleryPromptSuggestion;
     onClick: (s: GalleryPromptSuggestion) => void;
 }) => (
     <button className="gallery-suggestion-card" onClick={() => onClick(suggestion)} type="button">
-        <span className="gallery-suggestion-card__thumb" aria-hidden>
-            <span className="gallery-suggestion-card__emoji">{suggestion.icon}</span>
+        <span className="gallery-suggestion-card__img-wrap">
+            <img src={suggestion.img} alt="" className="gallery-suggestion-card__img"/>
         </span>
-        <span className="gallery-suggestion-card__label">
-            {suggestion.title}
-            {suggestion.action === 'sketch' && (
-                <Icon name="pen" size={3} className="gallery-suggestion-card__action-icon" />
-            )}
-            {suggestion.action === 'edit_image' && (
-                <Icon name="arrow-up-line" size={3} className="gallery-suggestion-card__action-icon" />
-            )}
+        <span className="gallery-suggestion-card__body">
+            <span className="gallery-suggestion-card__badge">
+                {ACTION_BADGE[suggestion.action]}
+            </span>
+            <span className="gallery-suggestion-card__title">{suggestion.title}</span>
         </span>
     </button>
 );
 
-export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
+export const DiscoverPanel = ({onSuggestionClick}: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
     const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() =>
-        pickSuggestions(GALLERY_PROMPT_SUGGESTIONS, [])
+        pickSuggestions(getGalleryPromptSuggestions(), [])
     );
+    const [expanded, setExpanded] = useState(true);
 
     const handleShuffle = useCallback(() => {
-        setVisible((prev) => pickSuggestions(GALLERY_PROMPT_SUGGESTIONS, prev));
+        setVisible((prev) => pickSuggestions(getGalleryPromptSuggestions(), prev));
     }, []);
 
     return (
         <div className="gallery-discover">
             <div className="gallery-discover__header">
                 <span className="gallery-discover__title">
-                    {c('collider_2025:Label').t`Discover what Lumo can create`}
+                    {expanded && (
+                        c('collider_2025:Label').t`Discover what Lumo can create`
+                    )}
                 </span>
-                <button
-                    className="gallery-discover__shuffle"
-                    onClick={handleShuffle}
-                    type="button"
-                    title={c('collider_2025:Action').t`Shuffle suggestions`}
-                >
-                    <Icon name="arrows-rotate" size={4} />
-                </button>
+                <span className="gallery-discover__header-actions">
+                    {expanded && (
+                        <button
+                            className="gallery-discover__shuffle"
+                            onClick={handleShuffle}
+                            type="button"
+                            title={c('collider_2025:Action').t`Shuffle suggestions`}
+                        >
+                            <Icon name="arrows-rotate" size={4}/>
+                        </button>
+                    )}
+                    <button
+                        className="gallery-discover__toggle"
+                        onClick={() => setExpanded((v) => !v)}
+                        type="button"
+                    >
+                        {expanded
+                            ? c('collider_2025:Action').t`Hide suggestions`
+                            : c('collider_2025:Action').t`Show suggestions`}
+                    </button>
+                </span>
             </div>
-            <div className="gallery-discover__grid">
-                {visible.map((s) => (
-                    <SuggestionCard key={s.id} suggestion={s} onClick={onSuggestionClick} />
-                ))}
-            </div>
+            {expanded && (
+                <div className="gallery-discover__grid">
+                    {visible.map((s) => (
+                        <SuggestionCard key={s.id} suggestion={s} onClick={onSuggestionClick}/>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

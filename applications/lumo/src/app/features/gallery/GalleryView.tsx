@@ -1,9 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
-
-import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
-import lumoImageDark from '@proton/styles/assets/img/lumo/lumo-image-dark.svg';
 
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -12,11 +9,12 @@ import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { base64ToFile } from '../../util/imageHelpers';
-import { useLumoTheme } from '../../providers/LumoThemeProvider';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import type { GalleryPromptSuggestion } from './promptSuggestions';
 import { DiscoverPanel } from './DiscoverPanel';
 import { CreatedGrid } from './CreatedGrid';
+import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
+import { LazyLottie } from '../../components/LazyLottie';
 
 import './GalleryView.scss';
 
@@ -36,7 +34,6 @@ export const GalleryView = ({
     autoOpenUpload,
 }: GalleryViewProps) => {
     const { isSmallScreen } = useSidebar();
-    const { isDarkLumoTheme } = useLumoTheme();
     const navigate = useNavigate();
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
@@ -45,6 +42,11 @@ export const GalleryView = ({
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger, setGallerySketchTrigger] = useState(externalAutoOpenSketch ?? false);
+
+    // Hoisted gallery data — used to decide top-pane content and passed to CreatedGrid
+    const galleryImages = useGeneratedGalleryImages();
+    const allItems = useMemo(() => galleryImages.sections.flatMap((s) => s.items), [galleryImages.sections]);
+    const showGallery = allItems.length > 0 || galleryImages.status === 'loading' || galleryImages.status === 'error';
 
     const handleSketchEditExport = useCallback(
         async (imageData: string, _mode: DrawingMode, description: string) => {
@@ -71,8 +73,7 @@ export const GalleryView = ({
         [navigate]
     );
 
-    // Suppress hover overlays while the created section is scrolling so cards
-    // don't flash as they pass under the cursor.
+    // Suppress hover overlays while the created section is scrolling
     useEffect(() => {
         const el = createdScrollRef.current;
         if (!el) return;
@@ -117,20 +118,37 @@ export const GalleryView = ({
                 </HeaderWrapper>
             )}
 
-            {/* Imagine section — never scrolls, always visible */}
-            <div className="gallery-imagine">
-                <div className="gallery-inner">
-                    <div className="gallery-hero">
-                        <img
-                            src={isDarkLumoTheme ? lumoImageDark : lumoImageLight}
-                            alt=""
-                            className="gallery-hero__image"
-                            aria-hidden
+            {/* Top pane — image gallery or Lottie empty state */}
+            {showGallery ? (
+                <div ref={createdScrollRef} className="gallery-created-scroll">
+                    <div className="gallery-inner">
+                        <CreatedGrid
+                            sections={galleryImages.sections}
+                            status={galleryImages.status}
+                            hasMore={galleryImages.hasMore}
+                            loadMore={galleryImages.loadMore}
+                            onExport={handleSketchEditExport}
                         />
-                        <h1 className="gallery-hero__title">
-                            {c('collider_2025:Title').t`Imagine`}
-                        </h1>
                     </div>
+                </div>
+            ) : (
+                <div className="gallery-empty">
+                    <LazyLottie
+                        getAnimationData={() => import('../../components/Animations/lumo-image.json')}
+                        loop
+                        autoplay
+                        className="gallery-empty__lottie"
+                    />
+                    <h1 className="gallery-empty__title">
+                        {c('collider_2025:Title').t`What do you want to create today?`}
+                    </h1>
+                </div>
+            )}
+
+            {/* Bottom panel — suggestions + composer, always visible */}
+            <div className="gallery-bottom">
+                <div className="gallery-inner">
+                    <DiscoverPanel onSuggestionClick={handleSuggestionClick} />
 
                     <div className="gallery-composer-wrapper">
                         <ComposerComponent
@@ -142,15 +160,6 @@ export const GalleryView = ({
                             canShowLumoUpsellToggle={true}
                         />
                     </div>
-
-                    <DiscoverPanel onSuggestionClick={handleSuggestionClick} />
-                </div>
-            </div>
-
-            {/* Created section — scrolls independently, title stays sticky */}
-            <div ref={createdScrollRef} className="gallery-created-scroll">
-                <div className="gallery-inner">
-                    <CreatedGrid onExport={handleSketchEditExport} />
                 </div>
             </div>
         </div>

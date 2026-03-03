@@ -29,8 +29,8 @@
     height: 2rem;
     border-radius: 0.5rem;
     border: none;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    background: var(--background-weak);
+    color: var(--text-norm);
     cursor: pointer;
     transition: background 0.12s;
 
@@ -80,9 +80,50 @@
     }
 }
 
+// ── Inline image card (image left, actions right) ─────────────────────────────
+
+.inline-image-card {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    vertical-align: top;
+}
+
+.inline-image-card__img {
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 0;
+
+    img {
+        display: block;
+        max-width: 280px;
+        width: 100%;
+        border-radius: 12px;
+    }
+}
+
+.inline-image-card__actions {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 118px;
+    padding-block-start: 2px;
+}
+
+.image-style-menu--side {
+    .image-style-menu__popup {
+        bottom: auto;
+        top: 0;
+        left: calc(100% + 6px);
+        right: auto;
+    }
+}
+
 .image-lightbox {
     position: relative;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
 }

@@ -54,9 +54,8 @@ export const SketchCanvas = ({
     };
 
     return (
-        <div ref={containerRef} className={`w-full h-full flex flex-column ${className ?? ''}`}>
-            {/* Canvas area — takes all remaining height above the panel */}
-            <div className="flex-1 min-h-0 relative">
+        <div ref={containerRef} className={`sketch-canvas${className ? ` ${className}` : ''}`}>
+            <div className="sketch-canvas__canvas-area">
                 <Canvas
                     config={config}
                     strokes={strokes}
@@ -66,26 +65,28 @@ export const SketchCanvas = ({
                 />
             </div>
 
-            <div className="sketch-canvas__panel pb-8 flex flex-column items-center gap-2">
-                <div className="sketch-canvas__description bg-norm border border-weak shadow-lifted flex flex-column gap-1.5">
-                    <div className="flex items-center gap-1 text-xs color-weak font-medium">
-                        <Icon name="pen" size={3} />
-                        {c('collider_2025:Hint').t`Draw on the image to annotate, and/or describe what to change`}
+            <div className="sketch-canvas__panel">
+                {mode !== 'blank' && (
+                    <div className="sketch-canvas__description bg-norm border border-weak shadow-lifted">
+                        <p className="sketch-canvas__description-hint color-weak">
+                            <Icon name="pen" size={3} />
+                            {c('collider_2025:Hint').t`Draw on the image to annotate, and/or describe what to change`}
+                        </p>
+
+                        <div className="sketch-canvas__separator" />
+
+                        <textarea
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            placeholder={c('collider_2025:Placeholder').t`e.g. "Make the sky purple", "Remove the items circled in red"`}
+                            rows={1}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' && !e.shiftKey) e.preventDefault();
+                            }}
+                            className="sketch-canvas__textarea color-norm"
+                        />
                     </div>
-
-                    <div className="h-px bg-weak" />
-
-                    <textarea
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        placeholder={c('collider_2025:Placeholder').t`e.g. "Make the sky purple", "Remove the items circled in red"`}
-                        rows={1}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' && !e.shiftKey) e.preventDefault();
-                        }}
-                        className="sketch-canvas__textarea w-full color-norm text-sm resize-none bg-transparent border-none p-2"
-                    />
-                </div>
+                )}
 
                 <Toolbar
                     config={{ color: currentColor, strokeWidth, tool: 'pen' }}
