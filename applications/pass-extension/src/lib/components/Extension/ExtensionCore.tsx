@@ -5,7 +5,6 @@ import config from 'proton-pass-extension/app/config';
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
-import { useAuthStoreLink } from 'proton-pass-extension/lib/hooks/useAuthStoreLink';
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
@@ -243,8 +242,6 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
             }),
         []
     );
-
-    useAuthStoreLink(authStore);
 
     return (
         <PassCoreProvider

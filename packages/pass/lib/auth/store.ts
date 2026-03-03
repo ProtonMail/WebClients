@@ -142,6 +142,7 @@ export const createAuthStore = (store: Store) => {
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
             if (session.cookies) authStore.setCookieAuth(session.cookies);
+            if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
             if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
@@ -154,16 +155,15 @@ export const createAuthStore = (store: Store) => {
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
             if (session.persistent) authStore.setPersistent(session.persistent);
-            if (session.userData !== undefined) authStore.setUserData(session.userData);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
-            if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
+            if (session.sso) authStore.setSSO(session.sso);
             if (session.twoPasswordMode) authStore.setTwoPasswordMode(session.twoPasswordMode);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
+            if (session.userData !== undefined) authStore.setUserData(session.userData);
             if (session.UserID) authStore.setUserID(session.UserID);
-            if (session.sso) authStore.setSSO(session.sso);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
