@@ -32,6 +32,7 @@ import './PassPolicies.scss';
 
 type GetPoliciesProps = {
     showItemSharing: boolean;
+    showSecureLink: boolean;
 };
 type PolicyItem = {
     setting: keyof OrganizationSettings;
@@ -57,7 +58,7 @@ const getVaultCreateOptions = (showAllOptions = false) => [
     },
 ];
 
-const getPolicies = ({ showItemSharing = false }: GetPoliciesProps): PolicyItem[] => [
+const getPolicies = ({ showItemSharing = false, showSecureLink = false }: GetPoliciesProps): PolicyItem[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Allow sharing outside the organization`,
@@ -72,6 +73,15 @@ const getPolicies = ({ showItemSharing = false }: GetPoliciesProps): PolicyItem[
                   label: c('Label').t`Allow individual item sharing`,
                   description: c('Info')
                       .t`If enabled, organization members will be able to share individual items in addition to vaults.`,
+              } as const,
+          ]
+        : []),
+    ...(showSecureLink
+        ? [
+              {
+                  setting: 'PublicLinkMode',
+                  label: c('Label').t`Allow secure link sharing`,
+                  description: c('Info').t`If disabled, organization members won't be able to create secure links.`,
               } as const,
           ]
         : []),
@@ -93,10 +103,11 @@ const PassPolicies = () => {
     const showVaultCreation = useFlag('PassB2BVaultCreation');
     const showVaultCreationV2 = useFlag('PassB2BVaultCreationV2');
     const showItemSharing = useFlag('PassB2BItemSharing');
+    const showSecureLink = useFlag('PassB2BSecureLink');
     const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
-    const policies = getPolicies({ showItemSharing });
+    const policies = getPolicies({ showItemSharing, showSecureLink });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
