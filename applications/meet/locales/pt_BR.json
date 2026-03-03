@@ -293,9 +293,6 @@
       "Skip": [
         "Ignorar"
       ],
-      "Start a meeting": [
-        "Iniciar uma reunião"
-      ],
       "Start an instant meeting": [
         "Iniciar uma reunião instantânea"
       ],
@@ -1588,7 +1585,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Security key": [
         "Chave de segurança"
@@ -1644,6 +1641,11 @@
       ],
       "Services": [
         "Serviços"
+      ]
+    },
+    "Header": {
+      "Speak freely again - every call is end-to-end encrypted": [
+        "Fale livremente de novo - cada chamada é criptografada de ponta a ponta"
       ]
     },
     "Headline": {
@@ -1739,6 +1741,9 @@
       "Coming soon": [
         "Em breve"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Conexão interrompida. Reconectando..."
+      ],
       "Connection lost": [
         "Conexão perdida"
       ],
@@ -1753,6 +1758,9 @@
       ],
       "Create an account": [
         "Criar uma conta"
+      ],
+      "Create an account to host meetings with up to 50 participants.": [
+        "Crie uma conta para organizar reuniões com até 50 participantes."
       ],
       "Created on ${ formattedDate }": [
         "Criado em ${ formattedDate }"
@@ -1782,7 +1790,7 @@
         "Baixar os registros atuais"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez"
+        "Cada código só pode ser usado uma única vez."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -1841,8 +1849,8 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
       ],
-      "Host your own secure meeting": [
-        "Inicie sua própria reunião segura"
+      "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Hospede sua própria reunião segura. Inicie uma chamada no ${ MEET_APP_NAME } e compartilhe o link para convidar qualquer pessoa para participar. Simples, seguro e gratuito."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -2006,6 +2014,12 @@
       "Premium meeting": [
         "Reunião premium"
       ],
+      "Reconnected successfully": [
+        "Reconectado com sucesso"
+      ],
+      "Reconnecting to meeting...": [
+        "Reconectando-se à reunião..."
+      ],
       "Recording saved": [
         "A gravação foi salva"
       ],
@@ -2014,6 +2028,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
+      ],
+      "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
+        "Agende sua próxima reunião. Crie uma conta para agendar reuniões com seu calendário."
       ],
       "Select a camera": [
         "Selecionar uma câmera"
@@ -2048,14 +2065,14 @@
       "Sort by": [
         "Ordenar por"
       ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Inicie uma chamada no ${ MEET_APP_NAME } e compartilhe o link para convidar qualquer pessoa para participar. Simples, seguro e gratuito."
-      ],
       "Stop sharing your screen": [
         "Parar de compartilhar sua tela"
       ],
       "Successfully deleted meeting": [
         "Reunião excluída com sucesso"
+      ],
+      "Thank you for hosting a premium meeting.": [
+        "Obrigado por organizar uma reunião premium."
       ],
       "Thank you for joining.": [
         "Obrigado por se juntar!"
@@ -2087,8 +2104,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para criar uma sala, **crie uma conta gratuita da ${ BRAND_NAME }**. Você retornará ao ${ MEET_APP_NAME } automaticamente."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para agendar uma reunião, **crie uma conta ${ BRAND_NAME } gratuita**. Você retornará ao ${ MEET_APP_NAME } automaticamente."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Para usar sua sala de reunião pessoal, **crie uma conta ${ BRAND_NAME } gratuita**. Você retornará ao ${ MEET_APP_NAME } automaticamente."
       ],
       "Turn off camera": [
         "Desativar câmera"
@@ -2121,7 +2147,7 @@
         "Semana"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "Would you like to delete this event?": [
         "Gostaria de excluir este evento?"
@@ -2439,6 +2465,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Sua reunião pessoal foi atualizada com sucesso."
+      ],
+      "You can't send a feedback for a meeting you haven't been to": [
+        "Você não pode enviar feedback sobre uma reunião da qual não participou"
       ],
       "Your personal meeting link has been copied to the clipboard": [
         "Seu link de reunião pessoal foi copiado para a área de transferência"

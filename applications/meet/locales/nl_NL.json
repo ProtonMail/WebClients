@@ -293,9 +293,6 @@
       "Skip": [
         "Overslaan"
       ],
-      "Start a meeting": [
-        "Start een vergadering"
-      ],
       "Start an instant meeting": [
         "Start een directe vergadering"
       ],
@@ -1133,9 +1130,6 @@
       "North Korea": [
         "Noord-Korea"
       ],
-      "North Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
       ],
@@ -1581,15 +1575,7 @@
         "Geen afbeelding geselecteerd"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
-      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -1744,6 +1730,9 @@
       "Coming soon": [
         "Binnenkort beschikbaar"
       ],
+      "Connection interrupted. Reconnecting...": [
+        "Verbinding onderbroken. Opnieuw verbinding maken..."
+      ],
       "Connection lost": [
         "Verbinding verloren"
       ],
@@ -1790,7 +1779,7 @@
         "Huidige logboeken downloaden"
       ],
       "Each code can only be used once": [
-        "Elke code kan maar één keer gebruikt worden"
+        "Elke code kan slechts één keer worden gebruikt"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -1848,9 +1837,6 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
-      ],
-      "Host your own secure meeting": [
-        "Organiseer uw eigen veilige vergadering"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Host uw eigen veilige vergadering. Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen. Eenvoudig, veilig en gratis."
@@ -2017,6 +2003,12 @@
       "Premium meeting": [
         "Premium vergadering"
       ],
+      "Reconnected successfully": [
+        "Succesvol opnieuw verbonden"
+      ],
+      "Reconnecting to meeting...": [
+        "Opnieuw verbinden met de vergadering..."
+      ],
       "Recording saved": [
         "Opname opgeslagen"
       ],
@@ -2062,9 +2054,6 @@
       "Sort by": [
         "Sorteren op"
       ],
-      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
-        "Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen deel te nemen. Eenvoudig, veilig en gratis."
-      ],
       "Stop sharing your screen": [
         "Stop met het delen van uw scherm"
       ],
@@ -2104,8 +2093,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
+      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Om een ruimte te maken, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Om een vergadering te plannen, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+      ],
+      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
+        "Om uw persoonlijke vergaderruimte te gebruiken, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
       ],
       "Turn off camera": [
         "Camera uitschakelen"
@@ -2138,7 +2136,7 @@
         "Week"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "Would you like to delete this event?": [
         "Wilt u deze afspraak verwijderen?"
@@ -2151,6 +2149,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
+      ],
+      "You are almost there": [
+        "U bent er bijna"
       ],
       "You can close this tab.": [
         "U kunt dit tabblad sluiten."
@@ -2399,6 +2400,9 @@
       ]
     },
     "meet": {
+      "Create and copy link": [
+        "Maak en kopieer link"
+      ],
       "Create new room": [
         "Maak nieuwe kamer"
       ],
