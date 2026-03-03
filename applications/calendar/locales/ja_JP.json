@@ -1799,6 +1799,12 @@
       "${ users } user": [
         "${ users } 人のユーザー"
       ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } か月分の小計"
+      ],
       "Total": [
         "合計"
       ],
@@ -4453,15 +4459,7 @@
         "最高速の速度"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
-      ]
-    },
     "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
-      ],
       "Security key": [
         "セキュリティキー"
       ]
@@ -5390,9 +5388,6 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
-      "Each code can only be used once": [
-        "各コードは 1 回のみ使用可能です"
-      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -5422,9 +5417,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "(組織管理者としての)パスワードを入力してください。"
@@ -6169,9 +6161,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続することで、暗号化技術により、お客様のIPアドレス(デバイス毎に割り振られる一意のコード)は秘匿されます。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
       ],
       "Where will the appointment take place?": [
         "ご予定はどこで行われますか？"
@@ -9182,6 +9171,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
@@ -9203,6 +9198,18 @@
       "Got it": [
         "分かりました"
       ],
+      "Including ${ rate }% tax": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -9220,6 +9227,12 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Tax ${ rate }%": [
+        "税金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税金 ${ rate }%"
       ],
       "terms and conditions": [
         "利用規約"
@@ -10335,6 +10348,11 @@
       ],
       "Video conferencing is here!": [
         "ビデオ会議はここ！"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026年新春セール"
       ]
     },
     "sso": {
