@@ -1,20 +1,23 @@
-import type { ContextMenuProps } from '../../components/FileBrowser';
+import type React from 'react';
+
+import { useShallow } from 'zustand/react/shallow';
+
+import isTruthy from '@proton/utils/isTruthy';
+
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import { useContextMenuStore } from '../../modules/contextMenu';
+import { useSelectionStore } from '../../modules/selection';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { createItemChecker } from './actions/actionsItemsChecker';
 import { useSharedByMeActions } from './actions/useSharedByMeActions';
-import type { SharedByMeItem } from './useSharedByMe.store';
+import { useSharedByMeStore } from './useSharedByMe.store';
 
-export function SharedByMeItemContextMenu({
-    selectedBrowserItems,
-    anchorRef,
-    isOpen,
-    position,
-    open,
-    close,
-}: ContextMenuProps & {
-    selectedBrowserItems: SharedByMeItem[];
-}) {
+interface SharedByMeItemContextMenuProps {
+    anchorRef: React.RefObject<HTMLElement>;
+}
+
+export function SharedByMeItemContextMenu({ anchorRef }: SharedByMeItemContextMenuProps) {
+    const { isOpen, open, close, position } = useContextMenuStore();
     const {
         modals,
         handlePreview,
@@ -26,8 +29,17 @@ export function SharedByMeItemContextMenu({
         handleOpenDocsOrSheets,
     } = useSharedByMeActions();
 
-    const itemChecker = createItemChecker(selectedBrowserItems);
-    const selectedUids = selectedBrowserItems.map((item) => item.nodeUid);
+    const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
+    const selectedItems = useSharedByMeStore(
+        useShallow((state) =>
+            Array.from(selectedItemIds)
+                .map((id) => state.sharedByMeItems.get(id))
+                .filter(isTruthy)
+        )
+    );
+
+    const itemChecker = createItemChecker(selectedItems);
+    const selectedUids = selectedItems.map((item) => item.nodeUid);
 
     return (
         <>

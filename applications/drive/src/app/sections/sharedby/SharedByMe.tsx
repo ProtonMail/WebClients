@@ -1,132 +1,219 @@
-import { useMemo, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import isTruthy from '@proton/utils/isTruthy';
+import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import type { ListViewHeaderItem } from '../../components/FileBrowser';
-import FileBrowser, { GridHeader, useItemContextMenu } from '../../components/FileBrowser';
-import { GridViewItemWithThumbnail } from '../../components/GridViewItemWithThumbnail';
-import headerItems from '../../components/sections/FileBrowser/headerCells';
-import { translateSortField } from '../../components/sections/SortDropdown';
-import { SortField } from '../../hooks/util/useSorting';
-import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
+import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
+import { useDrivePreviewModal } from '../../modals/preview';
+import { useContextMenuStore } from '../../modules/contextMenu';
+import { useSelectionStore } from '../../modules/selection';
+import type { SortConfig, SortField } from '../../modules/sorting/types';
+import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
+import type {
+    DriveExplorerEvents,
+    DriveExplorerSelection,
+    DriveExplorerSort,
+} from '../../statelessComponents/DriveExplorer/types';
+import { useUserSettings } from '../../store';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../utils/docs/openInDocs';
 import { EmptySharedByMe } from './EmptySharedByMe';
-import { largeScreenCells, smallScreenCells } from './SharedByMeCells';
+import { getSharedByMeCells, getSharedByMeGrid } from './SharedByMeDriveExplorerCells';
 import { SharedByMeItemContextMenu } from './SharedByMeItemContextMenu';
-import { useSharedByMeItemsWithSelection } from './hooks/useSharedByMeItemsWithSelection';
-
-export const getSelectedItems = (items: LegacyItem[], selectedItemIds: string[]): LegacyItem[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.id))
-            .filter(isTruthy);
-    }
-
-    return [];
-};
-
-const headerItemsLargeScreen: ListViewHeaderItem[] = [
-    headerItems.checkbox,
-    headerItems.name,
-    headerItems.location,
-    headerItems.creationDate,
-    headerItems.accessCount,
-    headerItems.expirationDate,
-    headerItems.placeholder,
-];
-
-const headerItemsSmallScreen: ListViewHeaderItem[] = [
-    headerItems.checkbox,
-    headerItems.name,
-    headerItems.location,
-    headerItems.expirationDate,
-    headerItems.placeholder,
-];
-type SharedByMeSortFields = Extract<
-    SortField,
-    SortField.name | SortField.linkCreateTime | SortField.linkExpireTime | SortField.numAccesses
->;
-const SORT_FIELDS: SharedByMeSortFields[] = [
-    SortField.name,
-    SortField.linkCreateTime,
-    SortField.linkExpireTime,
-    SortField.numAccesses,
-];
+import { useSharedByMeStore } from './useSharedByMe.store';
 
 export const SharedByMe = () => {
-    const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
-    const browserItemContextMenu = useItemContextMenu();
     const { viewportWidth } = useActiveBreakpoint();
+    const contextMenu = useContextMenuStore();
+    const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const {
-        items,
-        selectedItems,
-        isLoading,
-        layout,
-        sortParams,
-        handleOpenItem,
-        handleRenderItem,
-        handleSorting,
-        isEmpty,
-        previewModal,
-    } = useSharedByMeItemsWithSelection();
+    const { layout } = useUserSettings();
+    const { navigateToAlbum, navigateToNodeUid } = useDriveNavigation();
+    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
+    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
-    /* eslint-disable react/display-name */
-    const GridHeaderComponent = useMemo(
-        () =>
-            ({ scrollAreaRef }: { scrollAreaRef: React.RefObject<HTMLDivElement> }) => {
-                const activeSortingText = translateSortField(sortParams.sortField);
-                return (
-                    <GridHeader
-                        isLoading={isLoading}
-                        sortFields={SORT_FIELDS}
-                        onSort={handleSorting}
-                        sortField={sortParams.sortField}
-                        sortOrder={sortParams.sortOrder}
-                        itemCount={items.length}
-                        scrollAreaRef={scrollAreaRef}
-                        activeSortingText={activeSortingText}
-                    />
-                );
-            },
-        [sortParams.sortField, sortParams.sortOrder, isLoading, handleSorting, items.length]
+    const { sortedItemUids, isLoading, hasEverLoaded, sortField, direction } = useSharedByMeStore(
+        useShallow((state) => ({
+            sortedItemUids: state.sortedItemUids,
+            isLoading: state.isLoading,
+            hasEverLoaded: state.hasEverLoaded,
+            sortField: state.sortField,
+            direction: state.direction,
+        }))
     );
+
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
+
+    const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
+
+    useEffect(() => {
+        useSelectionStore.getState().setAllItemIds(sortedItemUids);
+    }, [sortedItemUids]);
+
+    const handleRenderItem = useCallback(
+        (uid: string) => {
+            incrementItemRenderedCounter();
+            const storeItem = useSharedByMeStore.getState().getSharedByMeItem(uid);
+            if (!storeItem) {
+                return;
+            }
+
+            if (storeItem.thumbnailId) {
+                if (storeItem.type === NodeType.Photo) {
+                    loadPhotosThumbnail({
+                        uid: storeItem.nodeUid,
+                        thumbnailId: storeItem.thumbnailId,
+                        hasThumbnail: true,
+                        cachedThumbnailUrl: '',
+                    });
+                } else {
+                    loadThumbnail({
+                        uid: storeItem.nodeUid,
+                        thumbnailId: storeItem.thumbnailId,
+                        hasThumbnail: true,
+                        cachedThumbnailUrl: '',
+                    });
+                }
+            }
+        },
+        [incrementItemRenderedCounter, loadThumbnail, loadPhotosThumbnail]
+    );
+
+    const handleSorting = useCallback(
+        ({
+            sortField,
+            direction,
+            sortConfig,
+        }: {
+            sortField: SortField;
+            direction: SORT_DIRECTION;
+            sortConfig: SortConfig;
+        }) => {
+            useSharedByMeStore.getState().setSorting({ sortField, direction, sortConfig });
+        },
+        []
+    );
+
+    const handleOpenItem = async (uid: string) => {
+        const storeItem = useSharedByMeStore.getState().getSharedByMeItem(uid);
+        if (!storeItem) {
+            return;
+        }
+
+        document.getSelection()?.removeAllRanges();
+
+        if (storeItem.mediaType && isNativeProtonDocsAppFile(storeItem.mediaType)) {
+            const openInDocsInfo = getOpenInDocsInfo(storeItem.mediaType);
+            if (openInDocsInfo) {
+                await openDocsOrSheetsDocument({
+                    uid: storeItem.nodeUid,
+                    isNative: openInDocsInfo?.isNative,
+                    type: openInDocsInfo?.type,
+                    openBehavior: 'tab',
+                });
+            }
+        }
+
+        if (storeItem.type === NodeType.Album) {
+            const photosDeprecatedShareId = await getDriveForPhotos()
+                .getMyPhotosRootFolder()
+                .then((rootNode) => (rootNode.ok ? rootNode.value.deprecatedShareId : undefined));
+            const { nodeId } = splitNodeUid(storeItem.nodeUid);
+            if (!photosDeprecatedShareId) {
+                return;
+            }
+            navigateToAlbum(photosDeprecatedShareId, nodeId);
+            return;
+        }
+
+        if ((storeItem.type === NodeType.File || storeItem.type === NodeType.Photo) && isSDKPreviewEnabled) {
+            showPreviewModal({
+                drive: getDrivePerNodeType(storeItem.type),
+                deprecatedContextShareId: '',
+                nodeUid: storeItem.nodeUid,
+            });
+            return;
+        }
+
+        await navigateToNodeUid(storeItem.nodeUid);
+    };
+
+    const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.size === 0;
 
     if (isEmpty) {
         return <EmptySharedByMe />;
     }
 
-    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
-    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
+    const selectionStore = useSelectionStore.getState();
+    const selection: DriveExplorerSelection = {
+        selectedItems: selectedItemIds,
+        selectionMethods: {
+            selectionState: selectionStore.getSelectionState(),
+            selectItem: selectionStore.selectItem,
+            toggleSelectItem: selectionStore.toggleSelectItem,
+            toggleRange: selectionStore.toggleRange,
+            toggleAllSelected: selectionStore.toggleAllSelected,
+            clearSelections: selectionStore.clearSelections,
+            isSelected: selectionStore.isSelected,
+        },
+    };
+
+    const events: DriveExplorerEvents = {
+        onItemClick: () => {
+            if (contextMenu.isOpen) {
+                contextMenu.close();
+            }
+        },
+        onItemDoubleClick: (uid) => {
+            void handleOpenItem(uid);
+        },
+        onItemContextMenu: (_uid, event) => {
+            contextMenu.handleContextMenu(event);
+        },
+        onItemRender: (uid) => {
+            handleRenderItem(uid);
+        },
+    };
+
+    const sort: DriveExplorerSort = {
+        sortBy: sortField,
+        sortDirection: direction,
+        onSort: handleSorting,
+    };
+
+    const cells = getSharedByMeCells({ viewportWidth });
+    const grid = getSharedByMeGrid();
+
     return (
         <>
-            <SharedByMeItemContextMenu
-                selectedBrowserItems={selectedItems}
-                anchorRef={contextMenuAnchorRef}
-                close={browserItemContextMenu.close}
-                isOpen={browserItemContextMenu.isOpen}
-                open={browserItemContextMenu.open}
-                position={browserItemContextMenu.position}
-            />
-            <FileBrowser
-                caption={c('Title').t`Shared`}
-                items={items}
-                headerItems={headerItems}
-                layout={layout}
-                loading={isLoading}
-                sortParams={sortParams}
-                Cells={Cells}
-                GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItemWithThumbnail}
-                contextMenuAnchorRef={contextMenuAnchorRef}
-                onItemContextMenu={browserItemContextMenu.handleContextMenu}
-                onItemOpen={handleOpenItem}
-                onItemRender={handleRenderItem}
-                onSort={handleSorting}
-                onScroll={browserItemContextMenu.close}
-            />
+            <SharedByMeItemContextMenu anchorRef={contextMenuAnchorRef} />
+            <div ref={contextMenuAnchorRef} className="flex flex-1">
+                <DriveExplorer
+                    itemIds={Array.from(sortedItemUids)}
+                    layout={layout}
+                    cells={cells}
+                    grid={grid}
+                    selection={selection}
+                    events={events}
+                    sort={sort}
+                    loading={isLoading}
+                    caption={c('Title').t`Shared`}
+                    contextMenuControls={{
+                        isOpen: contextMenu.isOpen,
+                        showContextMenu: contextMenu.handleContextMenu,
+                        close: contextMenu.close,
+                    }}
+                />
+            </div>
             {previewModal}
         </>
     );
