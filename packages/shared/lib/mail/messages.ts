@@ -171,17 +171,22 @@ export const requireReadReceipt = (message?: Partial<Message>) => {
 export const getListUnsubscribe = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe');
 export const getListUnsubscribePost = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe-Post');
 export const getAttachments = (message?: Partial<Message>) => message?.Attachments || [];
-export const numAttachments = (message?: Partial<Message>) => {
+export const numAttachments = (message?: Partial<Message>, includeInlineCount  = true) => {
     if (message?.NumAttachments) {
         return message.NumAttachments;
     } else if (message?.AttachmentInfo) {
-        return Object.values(message?.AttachmentInfo).reduce((total, { attachment }) => total + attachment, 0);
+        return Object.values(message?.AttachmentInfo).reduce((total, { inline = 0, attachment = 0 }) => {
+            if (includeInlineCount) {
+                return total + inline + attachment;
+            }
+            return total + attachment;
+        }, 0);
     } else {
         return 0;
     }
 };
-export const hasAttachments = (message?: Partial<Message>) => {
-    return numAttachments(message) > 0;
+export const hasAttachments = (message?: Partial<Message>, includeInlineCount  = true) => {
+    return numAttachments(message, includeInlineCount) > 0;
 };
 export const attachmentsSize = (message?: Partial<Message>) =>
     getAttachments(message).reduce((acc, { Size = 0 } = {}) => acc + +Size, 0);
