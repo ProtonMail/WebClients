@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -47,20 +47,24 @@ type Props = { token: string };
 
 export const VaultInviteRespond: FC<Props> = ({ token }) => {
     const { onInviteResponse } = useInviteActions();
-    const invite = useSelector(selectInviteByToken(token));
+
+    /** Select once at mount: accepting removes the invite from Redux before
+     * `onSuccess` fires — `useState` pins the value, `() => true` suppresses
+     * store-triggered re-renders so the response flow can complete. */
+    const [invite] = useState(useSelector(selectInviteByToken(token), () => true));
+    const vaultInvite = invite?.targetType === ShareType.Vault ? invite : undefined;
     const { name, isGroup } = useMaybeGroup(invite?.invitedEmail);
     const { vaultLimitReached } = useSelector(selectVaultLimits);
-    const invalid = !invite || invite.targetType !== ShareType.Vault;
 
     useEffect(() => {
-        if (invalid) onInviteResponse({ ok: false });
-    }, [invalid]);
+        if (!vaultInvite) onInviteResponse({ ok: false });
+    }, []);
 
-    if (invalid) return null;
+    if (!vaultInvite) return null;
 
-    const { vault } = invite;
+    const { vault } = vaultInvite;
     const { itemCount, memberCount } = vault;
-    const { acceptText, ...modalTexts } = getTexts(invite, name, isGroup);
+    const { acceptText, ...modalTexts } = getTexts(vaultInvite, name, isGroup);
 
     return (
         <PassModal size="small" open onClose={() => onInviteResponse({ ok: false })} enableCloseWhenClickOutside>
@@ -90,7 +94,7 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
                     </Card>
                 )}
 
-                <InviteStepResponse invite={invite} acceptText={acceptText} disabled={vaultLimitReached} />
+                <InviteStepResponse invite={vaultInvite} acceptText={acceptText} disabled={vaultLimitReached} />
             </ModalTwoFooter>
         </PassModal>
     );
