@@ -90,7 +90,7 @@ enum AccountFlag {
     PassB2BVaultCreation = 'PassB2BVaultCreation',
     PassB2BVaultCreationV2 = 'PassB2BVaultCreationV2',
     PassB2BItemSharing = 'PassB2BItemSharing',
-    PassB2BSecureLink = 'PassB2BSecureLink',
+    PassB2BSecureLinkSharing = 'PassB2BSecureLinkSharing',
     CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
     PassB2BReports = 'PassB2BReports',
     PassB2BPauseList = 'PassB2BPauseList',
