@@ -16,13 +16,6 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams, clea
         return;
     }
 
-    await setupCryptoProxy();
-    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
-    const indexKey = await getIndexKey(userKeys, user.ID);
-    if (!indexKey) {
-        return;
-    }
-
     const esDB = await openESDB(user.ID);
     if (!esDB) {
         return;
@@ -31,6 +24,13 @@ export const migration = async ({ user, keyPassword }: MigrationToolParams, clea
     const isAllMigrated = await isAllContentUpToDate(esDB);
     console.log(`isAllMigrated: ${isAllMigrated}`);
     if (isAllMigrated) {
+        return;
+    }
+
+    await setupCryptoProxy();
+    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
+    const indexKey = await getIndexKey(userKeys, user.ID);
+    if (!indexKey) {
         return;
     }
 
