@@ -19,6 +19,8 @@ interface CameraTrackSubscriptionManagerApi {
     register: RegisterCameraTrackFn;
     unregister(publication: TrackPublication | undefined): void;
     removeForcePin(publication: TrackPublication): void;
+    unsubscribeAllVideos(): Promise<void>;
+    resubscribeAllVideos(): Promise<void>;
 }
 
 const CameraTrackSubscriptionManagerContext = createContext<CameraTrackSubscriptionManagerApi | null>(null);
@@ -99,9 +101,17 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         [manager]
     );
 
+    const unsubscribeAllVideos = useCallback(async () => {
+        await manager.unsubscribeAllVideos();
+    }, [manager]);
+
+    const resubscribeAllVideos = useCallback(async () => {
+        await manager.resubscribeAllVideos();
+    }, [manager]);
+
     const value = useMemo<CameraTrackSubscriptionManagerApi>(
-        () => ({ register, unregister, removeForcePin }),
-        [register, unregister, removeForcePin]
+        () => ({ register, unregister, removeForcePin, unsubscribeAllVideos, resubscribeAllVideos }),
+        [register, unregister, removeForcePin, unsubscribeAllVideos, resubscribeAllVideos]
     );
 
     return (

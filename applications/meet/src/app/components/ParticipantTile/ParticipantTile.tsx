@@ -1,14 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
-import type { Participant } from 'livekit-client';
+import type { Participant, RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
@@ -54,6 +57,8 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
     const { participantNameMap, displayName } = useMeetContext();
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const { register, unregister } = useCameraTrackSubscriptionManager();
+    const [isRefreshing, setIsRefreshing] = useState(false);
+    const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
 
     const { localParticipant } = useLocalParticipant();
 
@@ -113,6 +118,64 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
         // Intentionally track sid so we cleanup/re-register on publication changes.
     }, [cameraVideoPublication?.trackSid, participant.identity, register, unregister]);
 
+    const handleRefreshTracks = async () => {
+        if (isRefreshing) {
+            return;
+        }
+
+        setIsRefreshing(true);
+        try {
+            // Resubscribe video track
+            if (cameraVideoPublication) {
+                const videoPub = cameraVideoPublication as RemoteTrackPublication;
+                const wasSubscribed = videoPub.isSubscribed;
+                const wasEnabled = videoPub.isEnabled;
+
+                if (wasSubscribed) {
+                    videoPub.setSubscribed(false);
+                    await wait(isSafari() ? 500 : 200);
+                }
+
+                if (wasSubscribed) {
+                    videoPub.setSubscribed(true);
+                    await wait(isSafari() ? 500 : 200);
+                }
+
+                if (wasEnabled !== undefined) {
+                    videoPub.setEnabled(wasEnabled);
+                    await wait(isSafari() ? 200 : 50);
+                }
+            }
+
+            // Resubscribe audio track
+            if (audioPublication) {
+                const audioPub = audioPublication as RemoteTrackPublication;
+                const wasSubscribed = audioPub.isSubscribed;
+                const wasEnabled = audioPub.isEnabled;
+
+                if (wasSubscribed) {
+                    audioPub.setSubscribed(false);
+                    await wait(isSafari() ? 500 : 200);
+                }
+
+                if (wasSubscribed) {
+                    audioPub.setSubscribed(true);
+                    await wait(isSafari() ? 500 : 200);
+                }
+
+                if (wasEnabled !== undefined) {
+                    audioPub.setEnabled(wasEnabled);
+                    await wait(isSafari() ? 200 : 50);
+                }
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Failed to refresh tracks', error);
+        } finally {
+            setIsRefreshing(false);
+        }
+    };
+
     return (
         <div
             className={clsx(
@@ -128,6 +191,27 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                     '--right-custom': `${positionBySize[viewSize]}rem`,
                 }}
             >
+                {!isLocalParticipant && showReloadTrackButton && (
+                    <button
+                        className={clsx(
+                            'user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
+                            isRefreshing ? 'opacity-50 cursor-not-allowed' : 'opacity-80 hover:opacity-100'
+                        )}
+                        style={{
+                            '--w-custom': audioIconSize[viewSize],
+                            '--h-custom': audioIconSize[viewSize],
+                        }}
+                        onClick={handleRefreshTracks}
+                        disabled={isRefreshing}
+                        aria-label={c('Action').t`Refresh audio and video tracks`}
+                        title={c('Info').t`Refresh audio and video tracks`}
+                    >
+                        <IcArrowsRotate
+                            size={viewSize === 'large' ? 4 : 3}
+                            className={clsx(isRefreshing && 'animate-spin')}
+                        />
+                    </button>
+                )}
                 <NetworkQualityIndicator
                     size={indicatorSizeBySize[viewSize]}
                     participant={participant}
