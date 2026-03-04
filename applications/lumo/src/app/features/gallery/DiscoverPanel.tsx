@@ -51,7 +51,7 @@ const SuggestionCard = ({
 
 export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const expanded = lumoUserSettings.showGallerySuggestions ?? true;
+    const expanded = lumoUserSettings.showGallerySuggestions;
 
     const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() =>
         pickSuggestions(getGalleryPromptSuggestions(), [])
