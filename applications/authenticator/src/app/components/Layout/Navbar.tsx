@@ -7,7 +7,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 type NavbarProps = {
     search: string;
@@ -33,7 +35,7 @@ export const Navbar: FC<NavbarProps> = ({ search, handleNewClick, setSearch, set
                 title={c('authenticator-2025:Action').t`Create a new vault`}
                 className="flex items-center p-2 sm:py-1.5 sm:px-4 cta-button shrink-0"
             >
-                <Icon name="plus" alt="" className="shrink-0 mr-0 sm:mr-2" size={4} />
+                <IcPlus className="shrink-0 mr-0 sm:mr-2" size={4} />
                 <span className="hidden sm:block text-ellipsis">{c('authenticator-2025:Label').t`Add`}</span>
             </Button>
 
@@ -44,7 +46,7 @@ export const Navbar: FC<NavbarProps> = ({ search, handleNewClick, setSearch, set
                     inputClassName="text-rg"
                     onValue={setSearch}
                     placeholder={c('authenticator-2025:Action').t`Search`}
-                    prefix={<Icon name="magnifier" />}
+                    prefix={<IcMagnifier />}
                     suffix={
                         search !== '' && (
                             <Button
@@ -56,7 +58,7 @@ export const Navbar: FC<NavbarProps> = ({ search, handleNewClick, setSearch, set
                                 onClick={handleClear}
                                 title={c('authenticator-2025:Action').t`Clear search`}
                             >
-                                <Icon name="cross" />
+                                <IcCross alt={c('authenticator-2025:Action').t`Clear search`} />
                             </Button>
                         )
                     }
@@ -76,7 +78,7 @@ export const Navbar: FC<NavbarProps> = ({ search, handleNewClick, setSearch, set
                 title={c('authenticator-2025:Action').t`Open settings`}
                 className="shrink-0"
             >
-                <img src={cogIcon} alt="" className="light-invert" />
+                <img src={cogIcon} alt={c('authenticator-2025:Action').t`Open settings`} className="light-invert" />
             </Button>
         </nav>
     );
