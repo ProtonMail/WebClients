@@ -2,10 +2,13 @@ import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
+import { selectShareState } from '@proton/pass/store/selectors/shares';
 import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull, Share } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
@@ -63,20 +66,26 @@ export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<n
 export const selectUserTier = ({ user: { user, plan } }: State): string | undefined =>
     user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
-export const selectAllAddresses = createUncachedSelector(selectAddresses, (addresses): Address[] =>
-    Object.values(addresses)
-);
+export const selectAllAddresses = createUncachedSelector(selectAddresses, (addresses): Address[] => Object.values(addresses));
 
 export const selectFeatureFlag =
     (feature: PassFeature) =>
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
 
-/* User default vault shareId, currently used for SimpleLogin aliases sync.
- * If the user data has not been synced yet - fallback to the default share. */
+/** Resolves the user's default vault share, ensuring it exists
+ * and is writable to guard against BE discrepancies. */
+export const selectDefaultShare = createSelector([selectUserData, selectShareState], (userData, shares): Maybe<VaultShareItem> => {
+    if (!userData.defaultShareId) return;
+    const share: Maybe<Share> = shares[userData.defaultShareId];
+    if (share && isWritableVault(share)) return share;
+});
+
+/** Resolves the default vault share ID. Falls back to the default
+ * vault if the user's default share is missing or read-only. */
 export const selectUserDefaultShareID = createSelector(
-    [selectUserData, selectDefaultVault],
-    (userData, defaultShare): Maybe<string> => userData?.defaultShareId ?? defaultShare?.shareId
+    [selectDefaultShare, selectDefaultVault],
+    (defaultShare, defaultVault): Maybe<string> => defaultShare?.shareId ?? defaultVault?.shareId
 );
 
 export const selectPendingAuthDevices = createSelector([selectAuthDevices, selectAddresses], (authDevices, addresses) =>
@@ -84,8 +93,8 @@ export const selectPendingAuthDevices = createSelector([selectAuthDevices, selec
         .filter(({ State, ActivationAddressID }) =>
             Boolean(
                 oneOf(AuthDeviceState.PendingActivation, AuthDeviceState.PendingAdminActivation)(State) &&
-                    ActivationAddressID &&
-                    addresses[ActivationAddressID]
+                ActivationAddressID &&
+                addresses[ActivationAddressID]
             )
         )
         .sort(sortOn('CreateTime'))
@@ -100,5 +109,4 @@ export const selectIsPassEssentials = createSelector(
     (plan): boolean => plan?.Type === 'business' && plan.DisplayName === 'Pass Essentials'
 );
 
-export const selectHasTwoPasswordMode = ({ user }: State) =>
-    user.userSettings?.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+export const selectHasTwoPasswordMode = ({ user }: State) => user.userSettings?.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
