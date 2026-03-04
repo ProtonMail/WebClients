@@ -8,10 +8,10 @@ import type { ESItemCursorResult } from '../interface';
 export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>): Promise<boolean> => {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
-    const versionIndex = contentStore.index('versioning');
+    const versionIndex = contentStore.index('byVersion');
 
     // Check if any content has version less than current (includes -1, 1, 2)
-    const range = IDBKeyRange.upperBound(getContentVersion() - 1, false);
+    const range = IDBKeyRange.upperBound(getContentVersion(), true);
     const cursor = await versionIndex.openKeyCursor(range);
 
     return cursor === null;
@@ -22,10 +22,10 @@ export async function* getOutdatedContentIterator(
 ): AsyncIterableIterator<ESItemCursorResult> {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
-    const versionIndex = contentStore.index('versioning');
+    const versionIndex = contentStore.index('byVersion');
 
     // Range to find all content with version less than current
-    const range = IDBKeyRange.upperBound(getContentVersion() - 1, false);
+    const range = IDBKeyRange.upperBound(getContentVersion(), true);
     let cursor = await versionIndex.openCursor(range);
 
     // Collect all entries while the transaction is still active.
