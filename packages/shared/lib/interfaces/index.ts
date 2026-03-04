@@ -7,6 +7,7 @@ export * from './ApiEnvironmentConfig';
 export * from './Category';
 export * from './Checklist';
 export * from './Domain';
+export * from './either';
 export * from './EncryptionPreferences';
 export * from './Environment';
 export * from './Group';
