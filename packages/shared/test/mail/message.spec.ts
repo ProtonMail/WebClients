@@ -36,21 +36,21 @@ describe('numAttachments', () => {
         const message = {
             NumAttachments: 0,
             AttachmentInfo: {
-                'application/pdf': { attachment: 2 },
+                'application/pdf': { attachment: 3, inline: 2 },
             } as Partial<Record<string, AttachmentInfo>>,
         } as Partial<Message>;
-        expect(numAttachments(message)).toBe(2);
+        expect(numAttachments(message)).toBe(5);
     });
 
     it('should sum attachment counts across multiple mime types', () => {
         const message = {
             NumAttachments: 0,
             AttachmentInfo: {
-                'image/png': { attachment: 1 },
+                'image/png': { attachment: 1, inline: 1 },
                 'application/pdf': { attachment: 2 },
             } as Partial<Record<string, AttachmentInfo>>,
         } as Partial<Message>;
-        expect(numAttachments(message)).toBe(3);
+        expect(numAttachments(message)).toBe(4);
     });
 
     it('should return 0 when both NumAttachments and AttachmentInfo are missing', () => {
@@ -70,6 +70,16 @@ describe('numAttachments', () => {
             } as Partial<Record<string, AttachmentInfo>>,
         } as Partial<Message>;
         expect(numAttachments(message)).toBe(0);
+    });
+
+    it('should exclude inline count', () => {
+        const message = {
+            NumAttachments: 0,
+            AttachmentInfo: {
+                'image/png': { attachment: 2, inline: 2 },
+            } as Partial<Record<string, AttachmentInfo>>,
+        } as Partial<Message>;
+        expect(numAttachments(message, false)).toBe(2);
     });
 });
 
@@ -102,5 +112,15 @@ describe('hasAttachments', () => {
             } as Partial<Record<string, AttachmentInfo>>,
         } as Partial<Message>;
         expect(hasAttachments(message)).toBe(false);
+    });
+
+    it('should exclude inline content', () => {
+        const message = {
+            NumAttachments: 0,
+            AttachmentInfo: {
+                'image/png': { attachment: 0, inline: 1 },
+            } as Partial<Record<string, AttachmentInfo>>,
+        } as Partial<Message>;
+        expect(hasAttachments(message, false)).toBe(false);
     });
 });
