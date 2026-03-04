@@ -32,6 +32,8 @@ import { getMonitoringSetting, updateMonitoringSetting } from './api';
 import type { Event as EventObject } from './helpers';
 import { downloadEvents, getConnectionEvents } from './helpers';
 import type { VPNEvent } from './interface';
+import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
+import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -357,8 +359,13 @@ export const VPNEvents = () => {
                     />
                     <div className="flex flex-column gap-1">
                         <span className="text-bold">{getMonitoringInfoText()}</span>
-                        <span className="color-weak">{c('Info')
-                            .t`View VPN session details for your organization.`}</span>
+                        <span className="color-weak">
+                            {c('Info').t`View VPN session details for your organization.`}
+                            {' '}
+                            <Href href={getKnowledgeBaseUrl('/gateway-monitor')}>
+                                {c('Link').t`Learn more`}
+                            </Href>
+                        </span>
                     </div>
                 </div>
                 <span
