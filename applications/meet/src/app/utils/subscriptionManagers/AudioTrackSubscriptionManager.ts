@@ -56,6 +56,7 @@ export class AudioTrackSubscriptionManager {
         { concealedSamples: number; silentConcealedSamples: number; totalSamplesReceived: number; timestamp: number }
     >();
     private isRoomReconnecting = false;
+    private readonly disableAutoHealing: boolean;
     private MAX_RECOVERY_ATTEMPTS = 3;
     private RECOVERY_COOLDOWN = 3_000;
     private HEALTH_CHECK_INTERVAL = 2_000;
@@ -63,10 +64,16 @@ export class AudioTrackSubscriptionManager {
     private CONCEALMENT_RATIO_THRESHOLD = 0.15;
     private RECENT_CONCEALMENT_THRESHOLD = 0.25;
 
-    constructor(capacity: number, room: Room, reportError?: (label: string, options?: unknown) => void) {
+    constructor(
+        capacity: number,
+        room: Room,
+        reportError?: (label: string, options?: unknown) => void,
+        disableAutoHealing: boolean = false
+    ) {
         this.microphoneCapacity = capacity;
         this.room = room;
         this.reportError = reportError;
+        this.disableAutoHealing = disableAutoHealing;
     }
 
     addToCache(publication: RemoteTrackPublication, participant: RemoteParticipant) {
@@ -165,6 +172,15 @@ export class AudioTrackSubscriptionManager {
         }
 
         if (pub.source === Track.Source.Microphone && !pub.isSubscribed) {
+            const trackKey = `${participant.sid}-${pub.trackSid}`;
+
+            // Skip if recovery is in progress for this track
+            if (this.activeRecoveries.has(trackKey)) {
+                // eslint-disable-next-line no-console
+                console.log('Skipping handleAudioTrackPublished, recovery in progress for trackKey:', trackKey);
+                return;
+            }
+
             // If the cache if already full, we prevent adding a new track that would be unsubscribed immediately
             if (this.subscribedMicrophoneTrackPublications.size >= this.microphoneCapacity) {
                 const lastItemOfSortedResult = this.lastSortingResult.at(-1);
@@ -195,6 +211,15 @@ export class AudioTrackSubscriptionManager {
 
         if (publication.source === Track.Source.Microphone && !publication.isSubscribed) {
             const pub = publication as RemoteTrackPublication;
+            const trackKey = `${participant.sid}-${pub.trackSid}`;
+
+            // Skip if recovery is in progress for this track
+            if (this.activeRecoveries.has(trackKey)) {
+                // eslint-disable-next-line no-console
+                console.log('Skipping handleTrackUnmuted, recovery in progress for trackKey:', trackKey);
+                return;
+            }
+
             pub.setSubscribed(true);
             pub.setEnabled(true);
 
@@ -231,6 +256,15 @@ export class AudioTrackSubscriptionManager {
             ) as RemoteTrackPublication;
 
             if (microphoneAudioPublication && !microphoneAudioPublication.isSubscribed) {
+                const trackKey = `${participant.sid}-${microphoneAudioPublication.trackSid}`;
+
+                // Skip if recovery is in progress for this track
+                if (this.activeRecoveries.has(trackKey)) {
+                    // eslint-disable-next-line no-console
+                    console.log('Skipping handleActiveSpeakerChanged, recovery in progress for trackKey:', trackKey);
+                    return;
+                }
+
                 microphoneAudioPublication.setSubscribed(true);
                 microphoneAudioPublication.setEnabled(true);
                 this.handleCacheUpdate(microphoneAudioPublication, participant as RemoteParticipant);
@@ -344,17 +378,32 @@ export class AudioTrackSubscriptionManager {
 
         try {
             // eslint-disable-next-line no-console
-            console.log(`Recovery attempt ${attempts + 1}/${this.MAX_RECOVERY_ATTEMPTS}`);
-            // Make sure we detach old audio element before unsubscribing, helps to avoid a random echo
-            publication.setEnabled(false);
-            await wait(isSafari() ? 300 : 100);
-            publication.setSubscribed(false);
-            await wait(isSafari() ? 1500 : 500);
+            console.log(`Recovery attempt ${attempts + 1}/${this.MAX_RECOVERY_ATTEMPTS} for trackKey: ${trackKey}`);
 
-            // Check if recovery is still active and publication is still valid after the wait
+            // Step 1: Disable track to detach audio element
+            // This helps avoid audio artifacts/echo during recovery
+            if (publication.isEnabled) {
+                publication.setEnabled(false);
+                await wait(isSafari() ? 300 : 100);
+            }
+
+            // Verify recovery is still active before proceeding
             if (!this.activeRecoveries.has(trackKey)) {
                 // eslint-disable-next-line no-console
-                console.log('Recovery was cleaned up during wait, aborting');
+                console.log('Recovery was cleaned up during disable wait, aborting');
+                return;
+            }
+
+            // Step 2: Unsubscribe to reset the transceiver
+            if (publication.isSubscribed) {
+                publication.setSubscribed(false);
+                await wait(isSafari() ? 1500 : 500);
+            }
+
+            // Verify recovery is still active and publication is still valid after the wait
+            if (!this.activeRecoveries.has(trackKey)) {
+                // eslint-disable-next-line no-console
+                console.log('Recovery was cleaned up during unsubscribe wait, aborting');
                 return;
             }
 
@@ -366,15 +415,43 @@ export class AudioTrackSubscriptionManager {
                 return;
             }
 
+            // Verify publication is actually unsubscribed before resubscribing
+            if (publication.isSubscribed) {
+                // eslint-disable-next-line no-console
+                console.warn('Publication is still subscribed after unsubscribe attempt, forcing unsubscribe');
+                publication.setSubscribed(false);
+                await wait(isSafari() ? 500 : 200);
+            }
+
             // Clear stale concealment baseline — the new transceiver starts with fresh counters
             // so any delta calculated against the old values would be meaningless and cause
             // a false-positive "concealment resolved" on the very next health check tick.
             this.lastConcealmentStats.delete(trackKey);
+            this.lastPacketCounts.delete(trackKey);
 
-            publication.setSubscribed(true);
-            await wait(isSafari() ? 500 : 100);
-            // Attach new audio element cleanly
-            publication.setEnabled(true);
+            // Step 3: Resubscribe to create new transceiver
+            if (!publication.isSubscribed) {
+                publication.setSubscribed(true);
+                await wait(isSafari() ? 500 : 100);
+            }
+
+            // Verify subscription succeeded before enabling
+            if (!publication.isSubscribed) {
+                // eslint-disable-next-line no-console
+                console.error('Failed to resubscribe track during recovery');
+                this.cleanupRecovery(trackKey);
+                return;
+            }
+
+            // Step 4: Re-enable track to attach new audio element
+            if (!publication.isEnabled) {
+                publication.setEnabled(true);
+                // Small wait to ensure audio element is properly attached
+                await wait(isSafari() ? 200 : 50);
+            }
+
+            // eslint-disable-next-line no-console
+            console.log(`Recovery completed for trackKey: ${trackKey}, will verify in ${this.RECOVERY_COOLDOWN}ms`);
 
             // Check if successful in the next recovery attempt
             const timeout = setTimeout(() => {
@@ -385,12 +462,17 @@ export class AudioTrackSubscriptionManager {
             this.recoveryTimeouts.set(trackKey, timeout);
         } catch (error) {
             // eslint-disable-next-line no-console
-            console.error('Recovery attempt failed', error);
+            console.error('Recovery attempt failed', error, {
+                trackKey,
+                participant: participant.identity,
+                trackSid: publication.trackSid,
+            });
             this.reportError?.('AudioTrackSubscriptionManager: Recovery attempt failed', {
                 level: 'error',
                 context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid },
             });
-            this.activeRecoveries.delete(trackKey);
+            // Clean up recovery state on error
+            this.cleanupRecovery(trackKey);
         }
     }
 
@@ -431,7 +513,8 @@ export class AudioTrackSubscriptionManager {
         }
 
         this.isHealthCheckRunning = true;
-
+        // eslint-disable-next-line no-console
+        console.log('Running audio track state health check v3');
         try {
             const stats = await subscriberPC.getStats();
             const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
@@ -780,9 +863,12 @@ export class AudioTrackSubscriptionManager {
 
             // Skip if recovery already in progress for this track
             if (this.activeRecoveries.has(trackKey)) {
+                // eslint-disable-next-line no-console
+                console.log('Skipping reconcile for track in recovery:', trackKey);
                 return;
             }
 
+            // Only modify subscription/enabled state if not in recovery
             if (!item.publication.isSubscribed) {
                 item.publication.setSubscribed(true);
             }
@@ -806,6 +892,11 @@ export class AudioTrackSubscriptionManager {
     };
 
     setupHealthCheckLoop = () => {
+        if (this.disableAutoHealing) {
+            // eslint-disable-next-line no-console
+            console.log('AudioTrackSubscriptionManager: Auto-healing is disabled, skipping health check setup');
+            return;
+        }
         this.healthCheckInterval = setInterval(() => {
             void this.runHealthCheck(); // the health check will be skip if previous health check is not finished
         }, this.HEALTH_CHECK_INTERVAL);

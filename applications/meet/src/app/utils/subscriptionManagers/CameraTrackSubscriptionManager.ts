@@ -349,6 +349,51 @@ export class CameraTrackSubscriptionManager {
         }
     };
 
+    /**
+     * Unsubscribes all currently subscribed video tracks.
+     * Used when Safari is in background to save resources and bandwidth.
+     */
+    async unsubscribeAllVideos() {
+        await this.runSerialized(async () => {
+            const subscribedPublications = Array.from(this.entriesByTrackSid.values()).filter(
+                (entry) => entry.publication.isSubscribed
+            );
+
+            for (const entry of subscribedPublications) {
+                try {
+                    entry.publication.setEnabled(false);
+                    entry.publication.setSubscribed(false);
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error('Error unsubscribing video', entry.publication.trackSid, error);
+                }
+            }
+        });
+    }
+
+    /**
+     * Resubscribes all video tracks that should be subscribed (pinned tracks).
+     * Used when Safari returns to foreground to restore video display.
+     */
+    async resubscribeAllVideos() {
+        // Use the existing reconcileCameraTracks logic to resubscribe all pinned tracks
+        if (this.room.state !== ConnectionState.Connected) {
+            return;
+        }
+
+        const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
+            (entry) => entry.pinned
+        );
+
+        if (pinnedCameraTrackPublications.length > 0) {
+            for (const publication of pinnedCameraTrackPublications) {
+                this.enqueueSubscriptionWork(publication.publication.trackSid);
+            }
+
+            await this.runSerialized(() => this.processSubscriptionQueue());
+        }
+    }
+
     destroy() {
         this.cleanupReconcileLoop();
 
