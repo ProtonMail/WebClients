@@ -157,11 +157,11 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     return [...elements].sort((e1, e2) => compare(e1, e2));
 };
 
-export const hasAttachments = (element: Element) =>
-    isElementMessage(element) ? messageHasAttachments(element) : conversationHasAttachments(element);
+export const hasAttachments = (element: Element, includeInlineCount?: boolean) =>
+    isElementMessage(element) ? messageHasAttachments(element, includeInlineCount) : conversationHasAttachments(element, includeInlineCount);
 
-export const getNumAttachments = (element: Element) =>
-    isElementMessage(element) ? messageNumAttachments(element) : conversationNumAttachments(element);
+export const getNumAttachments = (element: Element, includeInlineCount?: boolean) =>
+    isElementMessage(element) ? messageNumAttachments(element, includeInlineCount) : conversationNumAttachments(element, includeInlineCount);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
@@ -380,7 +380,9 @@ export const filterElementsInState = ({
         }
 
         // Check simple filters
-        if (filter.Attachments === 1 && !hasAttachments(element)) {
+        // Include inline content in the result because messages containing only embedded content
+        // are returned by the api with the attachment filter
+        if (filter.Attachments === 1 && !hasAttachments(element, true)) {
             return false;
         }
 
