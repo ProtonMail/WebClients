@@ -64,6 +64,11 @@ jest.mock('./hooks/useOfferFlags', function () {
     };
 });
 
+jest.mock('@proton/components/payments/client-extensions', () => ({
+    __esModule: true,
+    useAutomaticCurrency: jest.fn().mockReturnValue(['EUR', false]),
+}));
+
 const TopNavbarComponent = () => (
     <OffersTestProvider>
         <TopNavbarUpsell app={APPS.PROTONMAIL} />
