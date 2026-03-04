@@ -295,6 +295,7 @@ enum MeetFeatureFlag {
     MeetFeedback = 'MeetFeedback',
     MeetFeedbackOnSkip = 'MeetFeedbackOnSkip',
     MeetPastMeetings = 'MeetPastMeetings',
+    MeetH264 = 'MeetH264',
 }
 
 enum LumoFeatureFlag {
