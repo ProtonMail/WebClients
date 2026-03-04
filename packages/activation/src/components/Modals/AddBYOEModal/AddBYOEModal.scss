@@ -1,0 +1,56 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.modal-two-addbyoe {
+	--size: #{rem(800)};
+	--byoe-background: linear-gradient(var(--highlight-background-norm) 0%, var(--promotion-background-end) 100%);
+
+	overflow: auto;
+
+	.modal-two-header {
+		position: relative;
+		z-index: 1;
+	}
+
+	&-aside {
+		inline-size: 55%; // 440px on large screens;
+		margin-inline-end: calc(var(--margin) * -1);
+		margin-block: #{rem(-66)} #{rem(-32)};
+		padding-block: #{rem(66)} #{rem(32)};
+
+		// design wants a gradient - the one in --byoe-background with an opacity
+		// tried color-mix but it didn't work
+		// so we're using a before pseudo-element with a gradient and opacity, with different values to reach as much as possible what design expects
+		&::before {
+			content: '';
+			opacity: 0.4;
+			background: var(--byoe-background);
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+		}
+
+		@include im.media('<=small') {
+			margin: 0;
+			inline-size: calc(100% + var(--space-8) * 2);
+			padding-block: 0 2em;
+		}
+	}
+
+	&-feature {
+		z-index: 1;
+		border-color: color-mix(in srgb, var(--primary) 10%, transparent);
+
+		&::before {
+			content: '';
+			opacity: 0.3;
+			background: var(--byoe-background);
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+		}
+	}
+}
