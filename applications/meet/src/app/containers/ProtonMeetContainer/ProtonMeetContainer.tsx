@@ -49,6 +49,7 @@ import { MeetingListStatus } from '../../hooks/useMeetingList';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
+import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { KeyRotationLog, MLSGroupState } from '../../types';
 import { LoadingState } from '../../types';
@@ -222,6 +223,11 @@ export const ProtonMeetContainer = ({
         wasmApp,
         mlsGroupStateRef,
         setConnectionLost,
+    });
+
+    useSafariWebsocketVisibilityHandler({
+        wasmApp,
+        joinedRoom,
     });
 
     const {
