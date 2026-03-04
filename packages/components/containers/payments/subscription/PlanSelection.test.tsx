@@ -232,10 +232,24 @@ describe('useAccessiblePlans', () => {
         const { result } = renderHook(() => useAccessiblePlans(props));
 
         expect(result.current).toMatchObject({
-            enabledProductB2CPlans: [getPlanByName(plans, PLANS.VPN2024, 'BRL', undefined, false)],
-            IndividualPlans: [getPlanByName(plans, PLANS.VPN2024, 'BRL', undefined, false)],
-            FamilyPlans: [],
-            B2BPlans: [],
+            enabledProductB2CPlans: [
+                getPlanByName(plans, PLANS.MAIL, 'BRL'),
+                getPlanByName(plans, PLANS.VPN2024, 'BRL'),
+                getPlanByName(plans, PLANS.DRIVE, 'BRL'),
+                getPlanByName(plans, PLANS.PASS, 'BRL'),
+                getPlanByName(plans, PLANS.LUMO, 'BRL'),
+            ],
+            IndividualPlans: [
+                getPlanByName(plans, PLANS.MAIL, 'BRL'),
+                getPlanByName(plans, PLANS.BUNDLE, 'BRL'),
+                getPlanByName(plans, PLANS.DUO, 'BRL'),
+            ],
+            FamilyPlans: [getPlanByName(plans, PLANS.DUO, 'BRL'), getPlanByName(plans, PLANS.FAMILY, 'BRL')],
+            B2BPlans: [
+                getPlanByName(plans, PLANS.MAIL_PRO, 'USD'),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD'),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD'),
+            ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,

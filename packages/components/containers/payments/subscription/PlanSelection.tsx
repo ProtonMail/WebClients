@@ -38,6 +38,7 @@ import {
     getBundleProPlanToUse,
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
+    getFallbackCurrency,
     getIpPricePerMonth,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
@@ -54,6 +55,7 @@ import {
     hasVisionary,
     isAnyManagedExternally,
     isFreeSubscription,
+    isPlan,
     isRegionalCurrency,
     isSubscriptionCheckForbidden,
     isTrial,
@@ -96,6 +98,7 @@ interface Tab {
     title: string;
     content: ReactElement;
     audience: Audience;
+    plans: (Plan | ShortPlanLike)[];
 }
 
 interface Props {
@@ -248,7 +251,7 @@ export function useAccessiblePlans({
     const isMeetPlansEnabled = useFlag('MeetPlans');
     const isPassSimpleLoginLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
 
-    const plansMap = getPlansMap(plans, currency, false);
+    const plansMap = getPlansMap(plans, currency, true);
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { getAvailableCurrencies } = useCurrencies();
@@ -421,11 +424,20 @@ export function useAccessiblePlans({
         )
     );
 
-    const availableCurrencies = getAvailableCurrencies({
+    const accessiblePlansB2c = accessiblePlansWithAllCurrencies.filter((it) => !getIsB2BAudienceFromPlan(it.Name));
+    const availableCurrenciesB2c = getAvailableCurrencies({
         paymentStatus,
         user,
         subscription,
-        plans: accessiblePlansWithAllCurrencies,
+        plans: accessiblePlansB2c,
+    });
+
+    const accessiblePlansB2b = accessiblePlansWithAllCurrencies.filter((it) => getIsB2BAudienceFromPlan(it.Name));
+    const availableCurrenciesB2b = getAvailableCurrencies({
+        paymentStatus,
+        user,
+        subscription,
+        plans: accessiblePlansB2b,
     });
 
     const result = {
@@ -438,7 +450,11 @@ export function useAccessiblePlans({
         isVpnSettingsApp,
         isPassSettingsApp,
         isVpnB2bPlans,
-        availableCurrencies,
+        availableCurrenciesByAudience: {
+            [Audience.B2C]: availableCurrenciesB2c,
+            [Audience.FAMILY]: availableCurrenciesB2c,
+            [Audience.B2B]: availableCurrenciesB2b,
+        },
         isPassLifetimeEligible,
     };
 
@@ -502,12 +518,14 @@ const PlanSelection = (props: Props) => {
         isVpnSettingsApp,
         isPassSettingsApp,
         isVpnB2bPlans,
-        availableCurrencies,
+        availableCurrenciesByAudience,
         isPassLifetimeEligible,
     } = useAccessiblePlans({
         ...props,
         user,
     });
+
+    const availableCurrencies = availableCurrenciesByAudience[audience];
 
     const trial = isTrial(subscription);
 
@@ -801,6 +819,7 @@ const PlanSelection = (props: Props) => {
                 </>
             ),
             audience: Audience.B2C,
+            plans: IndividualPlans,
         },
         FamilyPlans.length > 0 && {
             title: c('Tab subscription modal').t`For families`,
@@ -818,6 +837,7 @@ const PlanSelection = (props: Props) => {
                 </div>
             ),
             audience: Audience.FAMILY,
+            plans: FamilyPlans,
         },
         B2BPlans.length > 0 && {
             title: c('Tab subscription modal').t`For businesses`,
@@ -845,6 +865,7 @@ const PlanSelection = (props: Props) => {
                 </div>
             ),
             audience: Audience.B2B,
+            plans: B2BPlans,
         },
     ].filter((tab): tab is Tab => {
         if (!tab) {
@@ -953,7 +974,19 @@ const PlanSelection = (props: Props) => {
             <div className="mb-6">
                 <Tabs
                     value={audienceToTabNumber(audience)}
-                    onChange={(tabNumber) => onChangeAudience(tabNumberToAudience(tabNumber))}
+                    onChange={(tabNumber) => {
+                        const newAudience = tabNumberToAudience(tabNumber);
+                        onChangeAudience(newAudience);
+
+                        const audienceTab = tabs[tabNumber];
+
+                        const hasPlansWithSelectedCurrency =
+                            audienceTab.plans.some((it) => isPlan(it) && it.Currency === currency);
+
+                        if (!hasPlansWithSelectedCurrency && isRegionalCurrency(currency)) {
+                            onChangeCurrency(getFallbackCurrency(currency));
+                        }
+                    }}
                     tabs={tabs}
                     fullWidth={true}
                     containerClassName="inline-block"
