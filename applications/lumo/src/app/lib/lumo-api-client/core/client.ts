@@ -224,7 +224,7 @@ export class LumoApiClient {
     }
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
-        return requestTitle ? ['title', 'message'] : ['message'];
+        return requestTitle ? ['message', 'title'] : ['message'];
     }
 
     /******* Interceptor internal methods *******/
