@@ -25,7 +25,7 @@ export interface LumoUserSettings {
     indexedDriveFolders?: IndexedDriveFolder[];
     showProjectConversationsInHistory?: boolean;
     automaticWebSearch?: boolean;
-    showGallerySuggestions?: boolean;
+    showGallerySuggestions: boolean;
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -81,11 +81,15 @@ const lumoUserSettingsReducer = createReducer(initialLumoUserSettings, (builder)
             return initialLumoUserSettings;
         })
         .addCase(setLumoUserSettings, (state, action) => {
-            return action.payload;
+            // Merge on top of defaults so any new fields introduced after the
+            // settings were last saved still get their initial values.
+            return { ...initialLumoUserSettings, ...action.payload };
         })
         .addCase(loadLumoUserSettingsFromRemote.fulfilled, (state, action) => {
             if (action.payload) {
-                return action.payload;
+                // Same merge strategy — remote settings win, but new fields
+                // fall back to their defaults rather than becoming undefined.
+                return { ...initialLumoUserSettings, ...action.payload };
             }
             return state;
         });
