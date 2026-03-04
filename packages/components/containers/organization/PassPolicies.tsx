@@ -103,7 +103,7 @@ const PassPolicies = () => {
     const showVaultCreation = useFlag('PassB2BVaultCreation');
     const showVaultCreationV2 = useFlag('PassB2BVaultCreationV2');
     const showItemSharing = useFlag('PassB2BItemSharing');
-    const showSecureLink = useFlag('PassB2BSecureLink');
+    const showSecureLink = useFlag('PassB2BSecureLinkSharing');
     const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
