@@ -98,7 +98,7 @@ export const LeaveMeetingPopup = () => {
 
                     <Button
                         className="end-meeting-for-all-button border-none rounded-full w-full py-4"
-                        onClick={() => togglePopupState(PopUpControls.EndMeeting)}
+                        onClick={() => dispatch(togglePopupState(PopUpControls.EndMeeting))}
                         disabled={loadingEndMeeting}
                         loading={loadingEndMeeting}
                         size="large"
@@ -107,7 +107,7 @@ export const LeaveMeetingPopup = () => {
                     </Button>
                     <Button
                         className="leave-meeting-button border-none rounded-full w-full py-4"
-                        onClick={() => togglePopupState(PopUpControls.LeaveMeetingParticipant)}
+                        onClick={() => dispatch(togglePopupState(PopUpControls.LeaveMeetingParticipant))}
                         size="large"
                     >
                         {c('Action').t`Leave meeting`}
