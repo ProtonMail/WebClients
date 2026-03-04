@@ -212,7 +212,8 @@ body::before {
 	}
 }
 
-.user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *) {
+// TODO: check that this cna be deleted, was from old designs jade/ v1
+.user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *, .desktop-sidebar-user-dropdown *) {
 	display: none;
 }
 
