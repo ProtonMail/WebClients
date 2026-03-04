@@ -157,11 +157,10 @@ const NewChatButton = ({ showText, isSmallScreen }: { showText: boolean; isSmall
 
 // Chat History Section - structured like Projects section for consistency
 const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; showText: boolean }) => {
-    const { shouldShowContent, closeOnItemClick, isCollapsed, toggle } = useSidebar();
+    const { closeOnItemClick, isCollapsed, toggle } = useSidebar();
 
     return (
         <div className="chat-history-sidebar-section">
-            {/* History header button - same structure as other sidebar items */}
             <Tooltip title={c('collider_2025:Title').t`History`} originalPlacement="right">
                 <button
                     className={clsx('sidebar-item', !showText && 'collapsed')}
@@ -178,14 +177,8 @@ const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; sh
                 </button>
             </Tooltip>
 
-            {/* History content - only show when expanded */}
             {!isCollapsed && (
-                <div
-                    className={clsx('chat-history-content', {
-                        'content-visible': shouldShowContent,
-                        'text-visible': showText,
-                    })}
-                >
+                <div className="chat-history-content">
                     <ChatHistory
                         refInputSearch={{ current: null }}
                         onItemClick={closeOnItemClick}
