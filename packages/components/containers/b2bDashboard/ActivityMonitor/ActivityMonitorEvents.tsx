@@ -17,6 +17,8 @@ import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
+import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
+import { Href } from "@proton/atoms/Href/Href";
 
 const ActivityMonitorEvents = () => {
     const api = useApi();
@@ -91,8 +93,13 @@ const ActivityMonitorEvents = () => {
                             />
                             <div className="flex flex-column">
                                 <span className="text-bold">{c('Info').t`Account monitor`}</span>
-                                <span className="color-weak">{c('Message')
-                                    .t`View user sign-in, recovery and security events.`}</span>
+                                <span className="color-weak">
+                                    {c('Message').t`View user sign-in, recovery and security events.`}
+                                    {' '}
+                                    <Href href={getKnowledgeBaseUrl('/account-monitor')}>
+                                        {c('Link').t`Learn more`}
+                                    </Href>
+                                </span>
                             </div>
                         </div>
                     </div>

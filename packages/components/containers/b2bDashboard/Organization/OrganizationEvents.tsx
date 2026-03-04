@@ -33,6 +33,8 @@ import {
 import { downloadEvents, getConnectionEvents } from '../VPN/helpers';
 import OrganizationEventsTable from './OrganizationEventsTable';
 import type { OrganizationEvent } from './interface';
+import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
+import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -229,8 +231,13 @@ export const OrganizationEvents = () => {
                 <div className="flex *:min-size-auto flex-column gap-2 w-full">
                     <div className="flex flex-column flex-nowrap gap-1 px-4 py-4 rounded-lg border border-solid border-weak">
                         <span className="text-bold">{c('Info').t`Organization monitor`}</span>
-                        <span className="color-weak">{c('Message')
-                            .t`View changes to your organization and other administrator activities.`}</span>
+                        <span className="color-weak">
+                            {c('Message').t`View changes to your organization and other administrator activities.`}
+                            {' '}
+                            <Href href={getKnowledgeBaseUrl('/organization-monitor')}>
+                                {c('Link').t`Learn more`}
+                            </Href>
+                        </span>
                     </div>
                 </div>
             </div>
