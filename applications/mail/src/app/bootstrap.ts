@@ -34,6 +34,7 @@ import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
+import { shouldLoadMigrationWorker } from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
 import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
@@ -173,7 +174,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const [, mailSettings, organization] = await preloadPromise;
 
         if (unleashClient.isEnabled('EncryptedSearchMigrationSystem')) {
-            void migrationToolWorker({ user: userData.user, keyPassword: authentication.getPassword() });
+            const shouldLoad = await shouldLoadMigrationWorker(userData.user);
+
+            if (shouldLoad) {
+                void migrationToolWorker({ user: userData.user, keyPassword: authentication.getPassword() });
+            }
         }
 
         const OnlyInInboxForCategoriesCounts =
