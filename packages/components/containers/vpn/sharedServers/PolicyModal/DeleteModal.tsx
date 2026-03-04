@@ -17,7 +17,7 @@ interface DeleteModalProps extends ModalProps {
 }
 
 const DeleteModal = ({ policy, onSuccess, ...rest }: DeleteModalProps) => {
-    const policyName = policy.Name;
+    const name = policy.Name;
 
     const handleDeletion = useCallback(async () => {
         onSuccess(policy);
@@ -26,7 +26,7 @@ const DeleteModal = ({ policy, onSuccess, ...rest }: DeleteModalProps) => {
 
     return (
         <ModalTwo size="small" as={Form} {...rest}>
-            <ModalTwoHeader title={c('Title').t`Delete ${policyName}?`} />
+            <ModalTwoHeader title={c('Title').t`Delete ${name}?`} />
 
             <ModalTwoContent>
                 <span>{c('Info').t`This cannot be undone.`}</span>

@@ -34,7 +34,7 @@ interface Props {
     renameGateway: (id: string, name: string) => () => any;
     editGatewayServers: (gateway: Gateway, logical: GatewayLogical) => () => any;
     editGatewayUsers: (gateway: Gateway, logical: GatewayLogical) => () => any;
-    deleteGateway: (gateway: Gateway) => () => any;
+    deleteGateway: () => void;
 }
 
 export const GatewayRow = ({

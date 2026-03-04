@@ -21,7 +21,7 @@ interface Props extends ModalStateProps {
     onSubmitDone: () => void;
 }
 
-const RemoveServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitDone, ...rest }: Props) => {
+const AddServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitDone, ...rest }: Props) => {
     const handleSubmit = async () => {
         onSubmitDone();
         rest.onClose?.();
@@ -83,4 +83,4 @@ const RemoveServerConfirmationModal = ({ totalQuantities, countryOptions, onSubm
     );
 };
 
-export default RemoveServerConfirmationModal;
+export default AddServerConfirmationModal;
