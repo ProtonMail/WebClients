@@ -19,6 +19,8 @@ export const getMailCustomLabel = (period?: TIME_PERIOD) => {
             return c('Label').t`Emails (all messages)`;
         case TIME_PERIOD.LAST_YEAR:
             return c('Label').t`Emails (last 12 months)`;
+        case TIME_PERIOD.LAST_6_MONTHS:
+            return c('Label').t`Emails (last 6 months)`;
         case TIME_PERIOD.LAST_3_MONTHS:
             return c('Label').t`Emails (last 3 months)`;
         case TIME_PERIOD.LAST_MONTH:
