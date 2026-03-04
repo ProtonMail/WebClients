@@ -116,7 +116,6 @@ const MainContainer: FunctionComponent = () => {
     const [showChat, setShowChat] = useState({ autoLaunch: false, render: false });
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
-    const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
@@ -156,7 +155,6 @@ const MainContainer: FunctionComponent = () => {
         subscription,
         isUserGroupsFeatureEnabled,
         canDisplayB2BLogsVPN,
-        isB2BAuthLogsEnabled,
         groups,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,

@@ -174,16 +174,16 @@ const LogsSection = () => {
                     <Prompt
                         {...rest}
                         onClose={() => onReject()}
-                        title={c('Action').t`Disable security events`}
+                        title={c('Action').t`Disable account monitor`}
                         buttons={[
                             <Button color="norm" onClick={() => onResolve()}>
-                                {c('Action').t`Disable security events`}
+                                {c('Action').t`Disable account monitor`}
                             </Button>,
                             <Button onClick={() => rest.onClose()}>{c('Action').t`Cancel`}</Button>,
                         ]}
                     >
                         {c('Info')
-                            .t`By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?`}
+                            .t`By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?`}
                     </Prompt>
                 );
             })}
@@ -197,7 +197,7 @@ const LogsSection = () => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label className="text-semibold" htmlFor="logs-toggle">
-                                {c('Log preference').t`Activity monitor`}
+                                {c('Log preference').t`Account monitor`}
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight isToggleContainer>

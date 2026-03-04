@@ -632,7 +632,7 @@ export const getAccountAppRoutes = ({
                         available: !isSSOUser,
                     },
                     {
-                        text: c('Title').t`Activity monitor`,
+                        text: c('Title').t`Account monitor`,
                         id: 'logs',
                         available: !isSSOUser,
                     },
