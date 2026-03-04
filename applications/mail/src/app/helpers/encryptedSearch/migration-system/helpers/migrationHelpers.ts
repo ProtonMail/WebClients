@@ -3,7 +3,7 @@ import type { IDBPDatabase } from 'idb';
 import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { CONTENT_VERSION, getContentVersion } from '../../esBuild';
+import { getContentVersion } from '../../esBuild';
 import type { CleanTextFn, EncryptedSearchData, MigrateFn } from '../interface';
 import { createMigrations } from './contentMigrations';
 import { getOutdatedContentIterator } from './contentVersionHelpers';
@@ -44,32 +44,39 @@ interface MigrateContentProps {
 
 export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateContentProps) => {
     const migrations = createMigrations(cleanText);
-    const iterator = getOutdatedContentIterator(esDB);
-
     const versionsRecord: Record<number, number> = {};
-    for await (const { key, value } of iterator) {
-        try {
-            const decrypted = await decryptESItem({ esDB, indexKey, itemID: key });
-            const hasVersion = value.version !== -1;
 
-            if (!decrypted) {
-                traceInitiativeError(
-                    SentryMailInitiatives.MIGRATION_TOOL,
-                    hasVersion
-                        ? new Error('Failed to decrypt content with version')
-                        : new Error('Failed to decrypt content without version')
-                );
-                continue;
+    while (true) {
+        const array = await getOutdatedContentIterator(esDB);
+        if (array.length === 0) {
+            break;
+        }
+
+        for (const data of array) {
+            try {
+                const decrypted = await decryptESItem({ esDB, indexKey, itemID: data.key });
+                const hasVersion = data.value.version !== -1;
+
+                if (!decrypted) {
+                    traceInitiativeError(
+                        SentryMailInitiatives.MIGRATION_TOOL,
+                        hasVersion
+                            ? new Error('Failed to decrypt content with version')
+                            : new Error('Failed to decrypt content without version')
+                    );
+                    continue;
+                }
+
+                const contentVersion = hasVersion ? data.value.version : decrypted.content?.version || -1;
+                versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
+
+                const version = hasVersion ? data.value.version : decrypted.content?.version || -1;
+                await upgradeContent({ version, data: decrypted, esDB, indexKey, migrations });
+            } catch (error) {
+                traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
             }
-
-            const contentVersion = hasVersion ? value.version : decrypted.content?.version || -1;
-            versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
-
-            const version = hasVersion ? value.version : decrypted.content?.version || CONTENT_VERSION.DOM_INDEXING;
-            await upgradeContent({ version, data: decrypted, esDB, indexKey, migrations });
-        } catch (error) {
-            traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
         }
     }
+
     console.log(`versionsRecord: ${JSON.stringify(versionsRecord)}`);
 };
