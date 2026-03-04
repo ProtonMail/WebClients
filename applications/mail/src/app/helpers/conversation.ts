@@ -31,17 +31,22 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation | undefined) => {
+export const getNumAttachments = (conversation: Conversation | undefined, includeInlineCount  = true) => {
     if (conversation?.NumAttachments) {
         return conversation.NumAttachments;
     } else if (conversation?.AttachmentInfo) {
-        return Object.values(conversation?.AttachmentInfo).reduce((total, { attachment }) => total + attachment, 0);
+        return Object.values(conversation?.AttachmentInfo).reduce((total, { inline = 0, attachment = 0 }) => {
+            if(includeInlineCount) {
+                return total + inline + attachment;
+            }
+            return total + attachment;
+        }, 0);
     } else {
         return 0;
     }
 };
 
-export const hasAttachments = (conversation: Conversation | undefined) => getNumAttachments(conversation) > 0;
+export const hasAttachments = (conversation: Conversation | undefined, includeInlineCount  = true) => getNumAttachments(conversation, includeInlineCount) > 0;
 
 export const getNumUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumUnread', labelID);

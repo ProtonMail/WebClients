@@ -5,7 +5,7 @@ import type { Recipient } from '../Address';
 
 export interface AttachmentInfo {
     inline?: number;
-    attachment: number;
+    attachment?: number;
 }
 
 // Attachment metadata that we get in the element list
