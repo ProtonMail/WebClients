@@ -9,6 +9,7 @@ im.$media-expressions: $media-expressions;
 	block-size: 100%;
 	padding: 12px;
 	gap: 8px;
+	box-sizing: border-box;
 
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
@@ -172,24 +173,22 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.search-label {
-	flex: 1;
-	font-size: 14px;
-	color: var(--text-norm);
-	opacity: 1;
-	transition: opacity 0.3s ease;
-
-	&.hidden {
-		// Smoothly fade out label during sidebar expansion
+// Shared fade-in animation for all expandable sidebar content sections
+@keyframes sidebar-fade-in {
+	from {
 		opacity: 0;
-		pointer-events: none;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
 
-// Favorites content - only specific styling needed
+// Favorites content
 .favorites-content {
 	max-block-size: 30vh;
 	overflow: hidden hidden;
+	animation: sidebar-fade-in 0.25s ease-in-out;
 }
 
 // Chat history sidebar section - structured like projects
@@ -205,31 +204,9 @@ im.$media-expressions: $media-expressions;
 .chat-history-content {
 	flex: 1;
 	min-block-size: 0;
-	margin-block: 0;
-	margin-inline: 0;
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
 	position: relative;
-	overflow: hidden; // Prevent content from expanding beyond boundaries
-
-	// Ensure smooth transitions without affecting layout
-	pointer-events: auto;
-
-	// When content should be visible (shouldShowContent is true)
-	&.content-visible {
-		opacity: 1;
-	}
-
-	// When content should be hidden (shouldShowContent is false)
-	&:not(.content-visible) {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	// Additional opacity control for text visibility during sidebar transitions
-	&.content-visible:not(.text-visible) {
-		opacity: 0.3; // Partially visible during sidebar collapse/expand
-	}
+	overflow: hidden;
+	animation: sidebar-fade-in 0.25s ease-in-out;
 }
 
 // Prevent text reflow during sidebar transitions by maintaining fixed layout
@@ -298,29 +275,9 @@ im.$media-expressions: $media-expressions;
 	opacity: 1;
 	transition: opacity 0.3s ease;
 	gap: 8px;
-	min-inline-size: 0; // Allow flex item to shrink below content size
-
-	// Note: not sure what this is for, commenting out for now
-	// // Text content that can truncate
-	// > :first-child {
-	// 	overflow: hidden;
-	// 	text-overflow: ellipsis;
-	// 	white-space: nowrap;
-	// 	flex: 1;
-	// 	min-inline-size: 0;
-	// }
+	min-inline-size: 0;
 
 	&.hidden {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	&--visible {
-		opacity: 1;
-		pointer-events: auto;
-	}
-
-	&--hidden {
 		opacity: 0;
 		pointer-events: none;
 	}
