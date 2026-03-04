@@ -189,7 +189,7 @@ im.$media-expressions: $media-expressions;
 // Favorites content - only specific styling needed
 .favorites-content {
 	max-block-size: 30vh;
-	overflow-y: auto;
+	overflow: hidden hidden;
 }
 
 // Chat history sidebar section - structured like projects
@@ -311,6 +311,16 @@ im.$media-expressions: $media-expressions;
 	// }
 
 	&.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&--visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&--hidden {
 		opacity: 0;
 		pointer-events: none;
 	}
@@ -451,6 +461,28 @@ im.$media-expressions: $media-expressions;
 	&:hover {
 		opacity: 0.6;
 		background-color: #e7e7e7;
+	}
+}
+
+// .user-dropdown-button {
+
+// 	flex-direction: row-reverse;
+// 	.user-dropdown-email {
+// 		display: none;
+// 	}
+// }
+
+.user-dropdown-button {
+	padding: 4px;
+	flex-direction: row-reverse;
+
+	.user-dropdown-text {
+		// display: revert;
+		text-align: start;
+	}
+
+	.user-initials {
+		background-color: var(--background-norm);
 	}
 }
 
