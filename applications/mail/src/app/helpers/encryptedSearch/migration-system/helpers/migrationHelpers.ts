@@ -1,38 +1,43 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
+import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { getContentVersion } from '../../esBuild';
 import type { CleanTextFn, EncryptedSearchData, MigrateFn } from '../interface';
 import { createMigrations } from './contentMigrations';
 import { getOutdatedContentIterator } from './contentVersionHelpers';
 import { decryptESItem } from './decryptESItem';
 import { encryptAndWriteESItem } from './encryptAndWriteESItem';
 
-const defaultMigrate: MigrateFn = (data) => data;
-
 interface UpgradeContentProps {
     version: number;
     data: EncryptedSearchData;
+    originalEncryptedData: ESCiphertext;
     esDB: IDBPDatabase<EncryptedSearchDB>;
     indexKey: CryptoKey;
     migrations: Map<number, MigrateFn>;
 }
 
-const upgradeContent = async ({ version, data, esDB, indexKey, migrations }: UpgradeContentProps): Promise<void> => {
-    const migrate = migrations.get(version) ?? defaultMigrate;
-    const migratedData = migrate(data);
-    const updatedData = {
-        ...migratedData,
-        content: migratedData.content ? { ...migratedData.content, version: getContentVersion() } : undefined,
-    };
+const upgradeContent = async ({
+    version,
+    data,
+    originalEncryptedData,
+    esDB,
+    indexKey,
+    migrations,
+}: UpgradeContentProps): Promise<void> => {
+    const migrate = migrations.get(version);
+
+    let migratedData = data;
+    if (migrate) {
+        migratedData = migrate(data);
+    }
 
     await encryptAndWriteESItem({
         esDB,
         indexKey,
-        item: updatedData,
-        version: getContentVersion(),
+        item: migratedData,
+        originalEncryptedData,
     });
 };
 
@@ -57,6 +62,8 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 const decrypted = await decryptESItem({ esDB, indexKey, itemID: data.key });
                 const hasVersion = data.value.version !== -1;
 
+                console.count('updating');
+
                 if (!decrypted) {
                     traceInitiativeError(
                         SentryMailInitiatives.MIGRATION_TOOL,
@@ -71,9 +78,17 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
                 const version = hasVersion ? data.value.version : decrypted.content?.version || -1;
-                await upgradeContent({ version, data: decrypted, esDB, indexKey, migrations });
+                await upgradeContent({
+                    version,
+                    esDB,
+                    indexKey,
+                    migrations,
+                    data: decrypted,
+                    originalEncryptedData: data.value,
+                });
             } catch (error) {
                 traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
+                console.error(error);
             }
         }
     }
