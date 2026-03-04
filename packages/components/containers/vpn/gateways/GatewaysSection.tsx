@@ -19,7 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { PLANS, getCountryOptions } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import { type Either, type Organization, left, right } from '@proton/shared/lib/interfaces';
 import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
@@ -35,6 +35,7 @@ import GatewayRenameModal from './GatewayRenameModal';
 import { GatewayRow } from './GatewayRow';
 import GatewayServersModal from './GatewayServersModal';
 import GatewayUsersModal from './GatewayUsersModal';
+import { RemoveGatewayConfirmationModal } from './RemoveGatewayConfirmationModal';
 import { addIpInVPNGateway, createVPNGateway, deleteVPNGateway, renameVPNGateway, updateVPNGatewayUsers } from './api';
 import { getLocationFromId } from './helpers';
 import { useGateways } from './useGateways';
@@ -63,6 +64,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
     const [usersModal, showUsersModal] = useModalTwoStatic(GatewayUsersModal);
     const [serversModal, showServersModal] = useModalTwoStatic(GatewayServersModal);
+    const [removeConfirmationModal, showRemoveConfirmationModal] = useModalTwoStatic(RemoveGatewayConfirmationModal);
     const [user] = useUser();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
@@ -485,11 +487,11 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         });
     };
 
-    const deleteGateway = (gateway: Gateway) => async () => {
+    const deleteGateway = async (gateway: Gateway): Promise<Either<'ok', 'error'>> => {
         const ids = gateway.Logicals.map(({ ID }) => ID);
 
         if (deletingLogicals.some((id) => ids.indexOf(id) !== -1)) {
-            return;
+            return right('error');
         }
 
         setDeletingLogicals([...deletingLogicals, ...ids]);
@@ -517,11 +519,22 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
                 setDeletedLogicals(removed);
             }
+
+            return left('ok');
+        } catch {
+            return right('error');
         } finally {
             setDeletingLogicals(deletingLogicals.filter((deletingId) => ids.indexOf(deletingId) === -1));
         }
     };
 
+    const showRemoveGatewayConfirmationModal = (gateway: Gateway) => {
+        showRemoveConfirmationModal({
+            gateway,
+            countryOptions,
+            onSubmit: () => deleteGateway(gateway),
+        });
+    };
     return (
         <>
             {isAdmin && (
@@ -529,6 +542,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     {createModal}
                     {renameModal}
                     {serversModal}
+                    {removeConfirmationModal}
                     {usersModal}
                     <div className="mb-4 flex items-center gap-2">
                         <span className="color-weak">
@@ -603,7 +617,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                     renameGateway={renameGateway}
                                     editGatewayServers={editGatewayServers}
                                     editGatewayUsers={editGatewayUsers}
-                                    deleteGateway={deleteGateway}
+                                    deleteGateway={() => showRemoveGatewayConfirmationModal(gateway)}
                                     deletingLogicals={deletingLogicals}
                                     deletedLogicals={deletedLogicals}
                                 />
