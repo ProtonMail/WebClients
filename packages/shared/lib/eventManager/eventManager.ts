@@ -1,4 +1,3 @@
-import { getDefaultIntervalType } from '@proton/shared/lib/eventManager/getDefaultIntervalType';
 import noop from '@proton/utils/noop';
 
 import { getApiError } from '../api/helpers/apiErrorHelper';
@@ -7,26 +6,33 @@ import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
 import { eventLoopTimingTracker } from '../metrics/eventLoopMetrics';
-import { getDefaultIntervals } from './getDefaultIntervals';
+import { type TimeoutIntervalsState, getTimeoutIntervalsStateSingleton } from './TimeoutIntervalsState';
+import { type VisibilityState, getVisibilityStateSingleton } from './VisibilityState';
+import { type EventLoopParams, getEventLoopParams } from './eventLoopParams';
+import { getIntervalTypeFromVisibility } from './getIntervalTypeFromVisibility';
 
 interface DefaultEventResult {
     More: 0 | 1;
     EventID: string;
 }
 
-type GetEvents<EventResult> = (options: {
-    eventID: string;
-    signal: AbortSignal;
+interface FetchConfig {
     silence: boolean;
-}) => Promise<EventResult>;
-type GetLatestEventID = (options: { signal: AbortSignal; silence: boolean }) => Promise<string>;
+    signal: AbortSignal;
+}
 
-type EventManagerIntervals = { foreground: number; background: number };
+type GetEventsFetchConfig = FetchConfig & { params: EventLoopParams };
+
+type GetEvents<EventResult> = (
+    options: GetEventsFetchConfig & {
+        eventID: string;
+    }
+) => Promise<EventResult>;
+type GetLatestEventID = (options: FetchConfig) => Promise<string>;
 
 type EventManagerConfigBase<EventResult> = {
-    /** Maximum interval time to wait between each call */
-    intervals?: EventManagerIntervals;
-    getIntervalType?: () => keyof EventManagerIntervals;
+    timeoutIntervalsState?: TimeoutIntervalsState;
+    visibilityState?: VisibilityState;
     parseResults?: (value: EventResult) => { nextEventID: string; more: 0 | 1 };
     getEvents: GetEvents<EventResult>;
 };
@@ -57,14 +63,60 @@ const defaultParseResults: EventManagerConfigBase<any>['parseResults'] = (result
     more: result.More,
 });
 
+interface EventManagerState {
+    retryIndex: number;
+    lastEventID?: string;
+    timeoutHandle?: ReturnType<typeof setTimeout>;
+    timeoutStartTime?: number;
+    timeoutStartDelay?: number;
+    abortController?: AbortController;
+}
+
+function handleVisibilityChange(
+    isVisible: boolean,
+    state: EventManagerState,
+    timeoutIntervalsState: TimeoutIntervalsState
+) {
+    // No need to do anything if it became hidden.
+    if (!isVisible) {
+        return;
+    }
+    const { timeoutStartTime, timeoutStartDelay, timeoutHandle, retryIndex } = state;
+    // No need to do anything if the event loop is not running.
+    if (timeoutStartTime === undefined || timeoutStartDelay === undefined || timeoutHandle === undefined) {
+        return;
+    }
+    // No need to do anything if the foreground and background intervals are equal
+    if (timeoutIntervalsState.isForegroundEqualToBackground()) {
+        return;
+    }
+    // Compute the next expected call time.
+    const nextCallTime = timeoutStartTime + timeoutStartDelay;
+    // Compute at what time the next call time would have been if the event loop had been running in foreground.
+    const nextForegroundCallTime =
+        timeoutStartTime + timeoutIntervalsState.getInterval('foreground') * FIBONACCI_LIST[retryIndex];
+    // If the next call is scheduled inside a min delay, either:
+    // because it's already been rescheduled to foreground, or
+    // it was soon enough for background, then ignore.
+    const minDelay = 50;
+    if (nextCallTime - nextForegroundCallTime < minDelay) {
+        return;
+    }
+    const now = Date.now();
+    // Compute the difference between the next foreground call time and now.
+    // Take a max with min delay, instead of doing it immediately, to avoid slowing down the UI on becoming visible.
+    const diff = Math.max(minDelay, nextForegroundCallTime - now);
+    return { now, delay: diff };
+}
+
 /**
  * Create the event manager process.
  */
 const createEventManager = <EventResult = DefaultEventResult>({
     eventID: initialEventID,
     getLatestEventID,
-    intervals = getDefaultIntervals(),
-    getIntervalType = getDefaultIntervalType, // Allow to pass a different interval type getter in case the event loop is running in a different context, like a WebWorker
+    timeoutIntervalsState = getTimeoutIntervalsStateSingleton(),
+    visibilityState = getVisibilityStateSingleton(),
     parseResults = defaultParseResults,
     getEvents,
 }: EventManagerConfig<EventResult>): EventManager<EventResult> => {
@@ -74,17 +126,32 @@ const createEventManager = <EventResult = DefaultEventResult>({
         throw new Error('eventID must be provided.');
     }
 
-    let STATE: {
-        retryIndex: number;
-        lastEventID?: string;
-        timeoutHandle?: ReturnType<typeof setTimeout>;
-        abortController?: AbortController;
-    } = {
+    let STATE: EventManagerState = {
         retryIndex: 0,
         lastEventID: initialEventID,
         timeoutHandle: undefined,
+        timeoutStartTime: undefined,
+        timeoutStartDelay: undefined,
         abortController: undefined,
     };
+
+    const scheduleCall = (now: number, delay: number) => {
+        // Clear the current timeout.
+        clearTimeout(STATE.timeoutHandle);
+        STATE.timeoutStartTime = now;
+        STATE.timeoutStartDelay = delay;
+        // eslint-disable-next-line
+        STATE.timeoutHandle = setTimeout(call, delay);
+    };
+
+    const unsubscribeVisibilityState = visibilityState.subscribe((isVisible) => {
+        const reschedule = handleVisibilityChange(isVisible, STATE, timeoutIntervalsState);
+        if (reschedule) {
+            scheduleCall(reschedule.now, reschedule.delay);
+        }
+    });
+
+    const unsubscribeTimeoutIntervals = timeoutIntervalsState.subscribe();
 
     const setEventID = (eventID: string) => {
         STATE.lastEventID = eventID;
@@ -116,14 +183,13 @@ const createEventManager = <EventResult = DefaultEventResult>({
     const start = () => {
         const { timeoutHandle, retryIndex } = STATE;
 
-        if (timeoutHandle) {
+        if (timeoutHandle !== undefined) {
             return;
         }
 
-        const intervalType = getIntervalType();
-        const ms = intervals[intervalType] * FIBONACCI_LIST[retryIndex];
-        // eslint-disable-next-line
-        STATE.timeoutHandle = setTimeout(call, ms);
+        const intervalType = getIntervalTypeFromVisibility(visibilityState.visible);
+        const ms = timeoutIntervalsState.getInterval(intervalType) * FIBONACCI_LIST[retryIndex];
+        scheduleCall(Date.now(), ms);
     };
 
     /**
@@ -137,9 +203,11 @@ const createEventManager = <EventResult = DefaultEventResult>({
             delete STATE.abortController;
         }
 
-        if (timeoutHandle) {
+        if (timeoutHandle !== undefined) {
             clearTimeout(timeoutHandle);
             delete STATE.timeoutHandle;
+            delete STATE.timeoutStartTime;
+            delete STATE.timeoutStartDelay;
         }
     };
 
@@ -150,6 +218,8 @@ const createEventManager = <EventResult = DefaultEventResult>({
         stop();
         STATE = { retryIndex: 0 };
         listeners.clear();
+        unsubscribeVisibilityState();
+        unsubscribeTimeoutIntervals();
     };
 
     const getInitialEventIDPromise = async () => {
@@ -222,6 +292,9 @@ const createEventManager = <EventResult = DefaultEventResult>({
                         eventID,
                         signal: abortController.signal,
                         silence: true,
+                        params: getEventLoopParams({
+                            intervalType: getIntervalTypeFromVisibility(visibilityState.visible),
+                        }),
                     });
                 } catch (error: any) {
                     if (error.name === 'AbortError') {
