@@ -15,8 +15,8 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
-import { categoriesThunk } from '@proton/mail/store/labels';
 import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
+import { categoriesThunk } from '@proton/mail/store/labels';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getEvents } from '@proton/shared/lib/api/events';
@@ -176,7 +176,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const eventManager = bootstrap.eventManager({
             api: silentApi,
-            query: (eventID: string) =>
+            query: (eventID) =>
                 getEvents(eventID, {
                     ConversationCounts: 1,
                     MessageCounts: 1,
