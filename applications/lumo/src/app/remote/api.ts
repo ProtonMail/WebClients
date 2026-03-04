@@ -624,13 +624,13 @@ export class LumoApi {
     public async listGeneratedAssets(params?: ListGeneratedAssetsParams): Promise<GeneratedAssetFromApi[]> {
         const queryParams: Record<string, string> = {};
         if (params?.assetType !== undefined) {
-            queryParams['AssetType'] = String(params.assetType);
+            queryParams.AssetType = String(params.assetType);
         }
         if (params?.createTimeSince !== undefined) {
-            queryParams['CreateTimeSince'] = String(params.createTimeSince);
+            queryParams.CreateTimeSince = String(params.createTimeSince);
         }
         if (params?.createTimeUntil !== undefined) {
-            queryParams['CreateTimeUntil'] = String(params.createTimeUntil);
+            queryParams.CreateTimeUntil = String(params.createTimeUntil);
         }
 
         let url = '/api/lumo/v1/assets/generated';
