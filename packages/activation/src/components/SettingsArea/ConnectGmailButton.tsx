@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { BYOESetupSuccessModal } from '@proton/activation/src/components/Modals/BYOESetupSuccessModal/BYOESetupSuccessModal';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
@@ -34,7 +35,11 @@ const ConnectGmailButton = ({
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
-    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback } = useSetupGmailBYOEAddress();
+    const [byoeSetupSuccessModal, setBYOESetupSuccessModal, renderBYOESetupSuccessModal] = useModalState();
+
+    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback } = useSetupGmailBYOEAddress({
+        showSuccessModal: () => setBYOESetupSuccessModal(true),
+    });
     const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
@@ -47,8 +52,7 @@ const ConnectGmailButton = ({
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
 
-    const disabled =
-        loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
+    const disabled = loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
 
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {
@@ -122,6 +126,7 @@ const ConnectGmailButton = ({
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
             )}
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
+            {renderBYOESetupSuccessModal && <BYOESetupSuccessModal {...byoeSetupSuccessModal} />}
         </>
     );
 };

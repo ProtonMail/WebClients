@@ -16,7 +16,11 @@ import noop from '@proton/utils/noop';
 
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
-const useSetupGmailBYOEAddress = () => {
+interface Props {
+    showSuccessModal: () => void;
+}
+
+const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
     const [addresses] = useAddresses();
     const hasAccessToBYOE = useBYOEFeatureStatus();
     const isInMaintenance = useFlag('MaintenanceImporter');
@@ -53,7 +57,7 @@ const useSetupGmailBYOEAddress = () => {
                     const address = await dispatch(createBYOEAddress({ emailAddressParts }));
 
                     if (address) {
-                        createNotification({ text: c('Success').t`Address successfully added` });
+                        showSuccessModal();
                     }
                 } catch (e) {
                     handleError(e);
