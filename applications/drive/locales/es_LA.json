@@ -3927,6 +3927,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Failed to change permissions settings": [
+        "Error al cambiar los ajustes de permisos"
       ]
     },
     "error": {
@@ -6913,6 +6916,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Can edit": [
+        "Puede editar"
+      ],
+      "Can edit and manage access": [
+        "Puede editar y gestionar el acceso"
+      ],
+      "Can view and edit": [
+        "Puede ver y editar"
+      ],
+      "Can view only": [
+        "Solo lectura"
       ]
     },
     "info": {
@@ -9529,6 +9544,12 @@
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado."
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuración actualizada. Los editores pueden compartir y cambiar permisos."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuración actualizada. Los editores no pueden compartir ni cambiar los permisos."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
