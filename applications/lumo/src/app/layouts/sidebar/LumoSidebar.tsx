@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, memo, useCallback, useEffect, useState } from 'react';
+import React, { Suspense, lazy, memo, useCallback, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -28,6 +28,7 @@ import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 import { NewGhostChatButton } from './components/NewChatGhostButton';
 import { SidebarItem } from './components/SidebarItem';
+import { useTextVisibility } from './hooks/useTextVisibility';
 
 import './LumoSidebar.scss';
 import {useLumoFlags} from "../../hooks/useLumoFlags";
@@ -37,21 +38,23 @@ const ProjectsSidebarSection = lazy(() =>
 );
 
 // Hook for text visibility - show immediately as sidebar expands, delay hide during collapse
-const useTextVisibility = (isCollapsed: boolean) => {
-    const [showText, setShowText] = useState(!isCollapsed);
+// TODO: delete, moved to useTextVisibility.tsx
+// const useTextVisibility = (isCollapsed: boolean) => {
+//     const [showText, setShowText] = useState(!isCollapsed);
 
-    useEffect(() => {
-        if (isCollapsed) {
-            const timer = setTimeout(() => setShowText(false), 200);
-            return () => clearTimeout(timer);
-        } else {
-            setShowText(true);
-        }
-    }, [isCollapsed]);
+//     useEffect(() => {
+//         if (isCollapsed) {
+//             const timer = setTimeout(() => setShowText(false), 200);
+//             return () => clearTimeout(timer);
+//         } else {
+//             setShowText(true);
+//         }
+//     }, [isCollapsed]);
 
-    return showText;
-};
+//     return showText;
+// };
 
+// TODO: delete, moved to SidebarItem.tsx
 // // Simple sidebar item component
 // interface SidebarItemProps {
 //     icon: string;
@@ -372,7 +375,8 @@ const LumoSidebarContent = () => {
                     />
 
                     <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
-                    {/* Desktop-only toggle button */}
+
+                    {/* Desktop-only toggle button
                     {!isSmallScreen && (
                         <SidebarItem
                             icon={isCollapsed ? 'chevron-right' : 'chevron-left'}
@@ -384,10 +388,31 @@ const LumoSidebarContent = () => {
                             onClick={toggle}
                             showText={showText}
                         />
-                    )}
+                    )} */}
                     {isSmallScreen && !isGuest && (
                         <div className="sidebar-bottom-user-dropdown mobile-user-dropdown shrink-0">
                             <UserDropdown app={APP_NAME} dropdownIcon={undefined} className="border-none" />
+                        </div>
+                    )}
+
+                    {!isSmallScreen && !isGuest && (
+                        <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between">
+                            <div className={clsx('w-3/4', showText ? 'block' : 'hidden')}>
+                                <div className="sidebar-item-text">
+                                    <UserDropdown app={APP_NAME} dropdownIcon={undefined} />
+                                </div>
+                            </div>
+                            <SidebarItem
+                                icon={isCollapsed ? 'chevron-right' : 'chevron-left'}
+                                label={
+                                    isCollapsed
+                                        ? c('collider_2025:Button').t`Show sidebar`
+                                        : c('collider_2025:Button').t`Hide sidebar`
+                                }
+                                onClick={toggle}
+                                showText={false}
+                                className="mr-0 w-auto"
+                            />
                         </div>
                     )}
                 </div>
@@ -414,7 +439,7 @@ const LumoSidebar = () => {
                 )}
             >
                 <div
-                    className={clsx('flex flex-row flex-nowrap items-center justify-space-between', {
+                    className={clsx('flex flex-row flex-nowrap items-center justify-space-between hidden md:flex', {
                         'px-5 py-2': !isCollapsed,
                         'px-0 pt-2 pb-0': isCollapsed,
                     })}
