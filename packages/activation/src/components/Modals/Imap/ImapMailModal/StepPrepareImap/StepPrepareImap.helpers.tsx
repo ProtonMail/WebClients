@@ -40,6 +40,9 @@ const getStartTimeFromTimePeriod = (importPeriod: TIME_PERIOD): number | undefin
         case TIME_PERIOD.LAST_YEAR:
             result = subYears(now, 1);
             break;
+        case TIME_PERIOD.LAST_6_MONTHS:
+            result = subMonths(now, 6);
+            break;
         case TIME_PERIOD.LAST_3_MONTHS:
             result = subMonths(now, 3);
             break;

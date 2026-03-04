@@ -23,6 +23,7 @@ export const GMAIL_CATEGORIES = Object.values(MailImportGmailCategories);
 export const getTimeUnitLabels = () => ({
     [TIME_PERIOD.BIG_BANG]: c('Label').t`Import all messages`,
     [TIME_PERIOD.LAST_YEAR]: c('Label').t`Last 12 months only`,
+    [TIME_PERIOD.LAST_6_MONTHS]: c('Label').t`Last 6 months only`,
     [TIME_PERIOD.LAST_3_MONTHS]: c('Label').t`Last 3 months only`,
     [TIME_PERIOD.LAST_MONTH]: c('Label').t`Last month only`,
 });

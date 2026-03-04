@@ -111,6 +111,7 @@ export enum MailImportDestinationFolder {
 export enum TIME_PERIOD {
     BIG_BANG = 'big_bang',
     LAST_YEAR = 'last_year',
+    LAST_6_MONTHS = 'last_6_months',
     LAST_3_MONTHS = 'last_3_months',
     LAST_MONTH = 'last_month',
 }
