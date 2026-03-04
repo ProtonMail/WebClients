@@ -9,12 +9,15 @@ import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { base64ToFile } from '../../util/imageHelpers';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import type { GalleryPromptSuggestion } from './promptSuggestions';
 import { DiscoverPanel } from './DiscoverPanel';
 import { CreatedGrid } from './CreatedGrid';
 import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
 import { LazyLottie } from '../../components/LazyLottie';
+import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
+import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 
 import './GalleryView.scss';
 
@@ -34,6 +37,7 @@ export const GalleryView = ({
     autoOpenUpload,
 }: GalleryViewProps) => {
     const { isSmallScreen } = useSidebar();
+    const isGuest = useIsGuest();
     const navigate = useNavigate();
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
@@ -101,6 +105,25 @@ export const GalleryView = ({
         [handleFilesSelected]
     );
 
+    if (isGuest) {
+        return (
+            <div className="gallery-view">
+                {isSmallScreen && (
+                    <HeaderWrapper>
+                        <div />
+                    </HeaderWrapper>
+                )}
+                <GuestSignInState
+                    image={lumoImageLight}
+                    imageAlt=""
+                    title={c('collider_2025:Title').t`Sign in to build your gallery`}
+                    description={c('collider_2025:Info')
+                        .t`Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.`}
+                />
+            </div>
+        );
+    }
+
     return (
         <div className="gallery-view">
             <input
@@ -118,7 +141,7 @@ export const GalleryView = ({
                 </HeaderWrapper>
             )}
 
-            {/* Top pane — image gallery or Lottie empty state */}
+            {/* Top pane — gallery grid or Lottie empty state */}
             {showGallery ? (
                 <div ref={createdScrollRef} className="gallery-created-scroll">
                     <div className="gallery-inner">
@@ -140,7 +163,7 @@ export const GalleryView = ({
                         className="gallery-empty__lottie"
                     />
                     <h1 className="gallery-empty__title">
-                        {c('collider_2025:Title').t`What do you want to create today?`}
+                        {c('collider_2025:Title').t`What would you like to create today?`}
                     </h1>
                 </div>
             )}
