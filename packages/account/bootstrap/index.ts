@@ -384,8 +384,10 @@ export const eventManager = ({
             api<{
                 EventID: string;
             }>({ ...getLatestID(), ...options }).then(({ EventID }) => EventID),
-        getEvents: ({ eventID, ...rest }) => {
-            return api<EventLoop>({ ...query(eventID), ...rest });
+        getEvents: ({ eventID, params: eventLoopParams, ...rest }) => {
+            const { params: queryParams, ...queryResult } = query(eventID);
+            // Merge query parameters and generic event manager parameters
+            return api<EventLoop>({ ...queryResult, params: { ...queryParams, ...eventLoopParams }, ...rest });
         },
     });
 };
