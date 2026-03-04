@@ -29,47 +29,52 @@ $media-expressions;
 // ── Top pane: empty state (Lottie + title) ────────────────────────────────────
 
 .gallery-empty {
-	flex: 1;
-	min-block-size: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	padding: 24px;
+    flex: 1;
+    min-block-size: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 24px;
 }
 
 .gallery-empty__lottie {
-	inline-size: 420px;
-	block-size: 420px;
+    inline-size: 400px;
+    block-size: 400px;
 
-	@include im.media('<=small') {
-		inline-size: 320px;
-		block-size: 320px;
-	}
+    @include im.media('<=small') {
+        inline-size: 320px;
+        block-size: 320px;
+    }
 }
 
 .gallery-empty__title {
-	font-size: 2em;
-	font-weight: 700;
-	font-family: 'Syne', sans-serif;
-	color: var(--text-norm);
-	text-align: center;
-	margin: 0;
-	margin-top: -60px;
+    margin-top: -80px;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    // Gradient text using brand colours
+    background: linear-gradient(125deg, var(--primary) 10%, #9b72f7 90%);
+    // stylelint-disable-next-line
+    -webkit-background-clip: text;
+    background-clip: text;
+    // stylelint-disable-next-line
+    -webkit-text-fill-color: transparent;
 }
+
+// ── Bottom panel (suggestions + composer, always visible) ─────────────────────
 
 .gallery-bottom {
-	flex-shrink: 0;
+    flex-shrink: 0;
+    position: relative;
 
-	.gallery-inner {
-		padding-block-start: 16px;
-		padding-block-end: 16px;
-		gap: 14px;
-	}
+    .gallery-inner {
+        padding-block-start: 14px;
+        padding-block-end: 16px;
+        gap: 12px;
+    }
 }
-
-// ── Shared inner width/centering ──────────────────────────────────────────────
 
 .gallery-inner {
 	max-inline-size: 680px;
@@ -103,149 +108,163 @@ $media-expressions;
 // ── Discover panel ────────────────────────────────────────────────────────────
 
 .gallery-discover {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .gallery-discover__header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .gallery-discover__header-actions {
-	display: flex;
-	align-items: center;
-	gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .gallery-discover__title {
-	font-size: 13px;
-	font-weight: 600;
-	color: var(--text-weak);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-hint);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
 }
 
 .gallery-discover__shuffle {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	inline-size: 28px;
-	block-size: 28px;
-	border-radius: 8px;
-	border: 1px solid var(--border-weak);
-	background: var(--background-strong);
-	color: var(--text-weak);
-	cursor: pointer;
-	transition: background 0.12s, color 0.12s, border-color 0.12s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 22px;
+    block-size: 22px;
+    border-radius: 6px;
+    border: none;
+    background: none;
+    color: var(--text-hint);
+    cursor: pointer;
+    transition: color 0.12s, background 0.12s;
 
-	&:hover {
-		background: var(--interaction-default-hover);
-		color: var(--text-norm);
-		border-color: var(--border-norm);
-	}
+    &:hover {
+        color: var(--text-norm);
+        background: var(--interaction-default-hover);
+    }
 
-	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
-		outline-offset: 2px;
-	}
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 }
 
 .gallery-discover__toggle {
-	font-size: 12px;
-	font-weight: 500;
-	color: var(--text-weak);
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 2px 4px;
-	border-radius: 4px;
-	transition: color 0.12s;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-hint);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.12s;
 
-	&:hover {
-		color: var(--text-norm);
-	}
+    &:hover {
+        color: var(--text-norm);
+    }
 
-	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
-		outline-offset: 2px;
-	}
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 }
 
 .gallery-discover__grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 
-	@include im.media('<=xsmall') {
-		grid-template-columns: repeat(2, 1fr);
-	}
+    @include im.media('<=xsmall') {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-// ── Suggestion card (image + badge + title) ───────────────────────────────────
+// ── Suggestion card ───────────────────────────────────────────────────────────
 
 .gallery-suggestion-card {
-	display: flex;
-	flex-direction: column;
-	border-radius: 12px;
-	border: 1px solid var(--border-weak);
-	overflow: hidden;
-	background: var(--background-norm);
-	cursor: pointer;
-	text-align: left;
-	transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid var(--border-weak);
+    overflow: hidden;
+    background: var(--background-norm);
+    cursor: pointer;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
 
-	&:hover {
-		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-		transform: translateY(-2px);
-		border-color: var(--border-norm);
-	}
+    &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        transform: translateY(-3px);
+        border-color: var(--border-norm);
+    }
 
-	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
-		outline-offset: 2px;
-	}
+    &:focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+    }
 }
 
 .gallery-suggestion-card__img-wrap {
-	display: block;
-	aspect-ratio: 4 / 5;
-	overflow: hidden;
-	flex-shrink: 0;
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .gallery-suggestion-card__img {
-	inline-size: 100%;
-	block-size: 100%;
-	object-fit: cover;
-	display: block;
-	transition: transform 0.2s;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    display: block;
+	  filter: grayscale(100%);
+	  transition: all 0.25s ease;
 
 	.gallery-suggestion-card:hover & {
-		transform: scale(1.03);
-	}
+        transform: scale(1.05);
+			  filter: grayscale(0%);
+    }
+}
+
+// Pill badge overlaid on the bottom-left of the image
+.gallery-suggestion-card__badge {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px 3px 6px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-norm);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    pointer-events: none;
 }
 
 .gallery-suggestion-card__body {
-	display: flex;
-	flex-direction: column;
-	gap: 3px;
-	padding: 8px 10px 10px;
-}
-
-.gallery-suggestion-card__badge {
-	font-size: 10px;
-	font-weight: 700;
-	color: var(--text-weak);
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
+    padding: 8px 10px 10px;
 }
 
 .gallery-suggestion-card__title {
-	font-size: 13px;
-	font-weight: 600;
-	color: var(--text-norm);
-	line-height: 1.35;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-norm);
+    line-height: 1.35;
 }
 
 // ── Generated images section ──────────────────────────────────────────────────
