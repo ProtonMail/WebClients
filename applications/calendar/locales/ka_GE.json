@@ -1105,6 +1105,27 @@
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Domains": [
+        "დომენები"
+      ],
+      "Servers": [
+        "სერვერები"
+      ],
+      "Users": [
+        "მომხმარებლები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alarm notification": {
@@ -1341,16 +1362,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 ტბ მონაცემთა საცავი"
+        "2 ტბ მეხსიერება"
       ],
       "3 TB data storage": [
-        "3 ტბ მონაცემთა საცავი"
+        "3 ტბ მეხსიერება"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
       ],
       "Access advanced AI models": [
-        "წვდომა განვითარებულ AI მოდელებთან"
+        "წვდომა განვითარებულ ხი მოდელებთან"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "ყველა ფასიანი ფუნქცია ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }"
@@ -1406,6 +1427,20 @@
       ],
       "Yearly": [
         "წლიურად"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
+      "Billed monthly": [
+        "თვიური გადახდა"
+      ],
+      "Lifetime access": [
+        "უვადო წვდომა"
       ]
     },
     "Browser": {
@@ -1782,6 +1817,9 @@
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
         "ჯამში ${ n } თვის"
+      ],
+      "Subtotal": [
+        "ქვეჯამი"
       ]
     },
     "Collapsible tooltip": {
@@ -2580,7 +2618,7 @@
         "ჩრდილო კორეა"
       ],
       "North Macedonia": [
-        "ჩრდილო მაკედონია"
+        "ჩრდილოეთი მაკედონია"
       ],
       "Northern Mariana Islands": [
         "ჩრდილოეთ მარიანას კუნძულები"
@@ -9291,6 +9329,18 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "გადასახადი ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12530,6 +12580,16 @@
       "${ cycle } month": [
         "${ cycle } თვე",
         "${ cycle } თვე"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     }
   }

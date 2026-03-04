@@ -2683,7 +2683,7 @@
         "Severná Kórea"
       ],
       "North Macedonia": [
-        "Severná Macedónia"
+        "Severné Macedónsko"
       ],
       "Northern Mariana Islands": [
         "Severné Mariány"
@@ -4596,12 +4596,12 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
       ],
       "Security key": [
         "Bezpečnostný kľúč"
@@ -5646,7 +5646,7 @@
         "Duplicitný kľúč bol aktualizovaný"
       ],
       "Each code can only be used once": [
-        "Každý kód je možné použiť iba raz"
+        "Každý kód môže byť použitý len jeden krát"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -6444,7 +6444,7 @@
         "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ],
       "Where will the appointment take place?": [
         "Kde sa bude konať stretnutie?"
@@ -13355,6 +13355,16 @@
         "${ cycle } mesiace",
         "${ cycle } mesiacov",
         "${ cycle } mesiacov"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "JARNÝ VÝPREDAJ 2026"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "JARNÝ VÝPREDAJ"
       ]
     }
   }
