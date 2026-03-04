@@ -34,5 +34,5 @@ export default defineConfig({
     use: {
         baseURL: 'http://localhost:3000',
     },
-    workers: availableParallelism() - 1,
+    workers: Math.floor(availableParallelism() / 2),
 });
