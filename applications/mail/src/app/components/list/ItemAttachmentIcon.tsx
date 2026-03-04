@@ -11,6 +11,8 @@ import clsx from '@proton/utils/clsx';
 
 import { getNumAttachments } from '../../helpers/elements';
 import type { Element } from '../../models/element';
+import { useFeature } from '@proton/features/index';
+import { FeatureCode } from '@proton/features/interface';
 
 interface Props {
     element?: Element;
@@ -20,7 +22,9 @@ interface Props {
 }
 
 const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }: Props) => {
-    const numAttachments = element ? getNumAttachments(element) : 0;
+    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+
+    const numAttachments = element ? getNumAttachments(element, !isNumAttachmentsWithoutEmbedded) : 0;
     const numAttachmentsSize = element ? humanSize({ bytes: element.Size }) : 0;
     const isButton = onClick !== undefined;
 
