@@ -8,8 +8,8 @@ import { updateLock } from 'proton-authenticator/store/settings';
 import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -37,7 +37,7 @@ export const useLockSettings = () => {
                     .t`You will need this password to unlock ${AUTHENTICATOR_APP_NAME} every time it restarts.`}
             </div>
             <div className="flex flex-nowrap gap-2 items-center">
-                <Icon name="exclamation-circle" className="color-danger shrink-0" />
+                <IcExclamationCircle className="color-danger shrink-0" />
                 <div>
                     <span>{c('authenticator-2025:Warning').t`Your data will be erased after 10 failed attempts.`}</span>
                     {Boolean(backupDirectory) && (

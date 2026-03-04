@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
@@ -140,7 +140,7 @@ export const UnlockScreen: FC<Props> = ({ lockMode }) => {
                                     className="w-full cta-button mt-2"
                                     onClick={() => dispatch(unlock({ mode: 'biometrics' }))}
                                 >
-                                    <Icon className="mr-2" name="fingerprint" />
+                                    <IcFingerprint className="mr-2" />
                                     <span>{c('authenticator-2025:Action').t`Unlock with biometrics`}</span>
                                 </Button>
                             );

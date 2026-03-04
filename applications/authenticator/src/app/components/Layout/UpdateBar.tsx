@@ -10,7 +10,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -46,7 +47,7 @@ export const UpdateBar: FC = () => {
         >
             <div className="flex flex-1 justify-space-between items-center">
                 <div>
-                    <Icon name="arrows-rotate" size={6} />
+                    <IcArrowsRotate size={6} />
                     <InlineLinkButton
                         className="text-semibold ml-2"
                         onClick={() => app.openUrl(AUTHENTICATOR_DESKTOP_CHANGELOG_URL)}
@@ -90,7 +91,7 @@ export const UpdateBar: FC = () => {
                 onClick={() => setShow(!show)}
                 disabled={updating}
             >
-                <Icon name="cross" />
+                <IcCross alt={c('authenticator-2025:Action').t`Close`} />
             </Button>
         </div>
     );

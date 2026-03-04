@@ -6,9 +6,9 @@ import type { EntryAlgorithm, EntryDTO, EntryType } from 'proton-authenticator/l
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import Option from '@proton/components/components/option/Option';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
@@ -134,7 +134,7 @@ export const ItemForm: FC<Props> = ({ form }) => {
                     onClick={() => setShowExtra(!showExtra)}
                 >
                     {c('authenticator-2025:Label').t`Advanced options`}
-                    <Icon name="plus" className="ml-2" />
+                    <IcPlus className="ml-2" />
                 </Button>
             )}
         </>
