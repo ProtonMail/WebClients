@@ -83,8 +83,9 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal }: OfferLay
             )}
 
             {/* CTA */}
-            <Button size="large" onClick={acceptDeal} color="norm" fullWidth>{c('q1campaign: Action')
-                .t`Get the deal`}</Button>
+            <Button className="springSaleCTA" size="large" onClick={acceptDeal} color="norm" fullWidth>{c(
+                'q1campaign: Action'
+            ).t`Get the deal`}</Button>
             {/* Features */}
             <ul className="springSaleFeatures mb-4">
                 {features.map((feature) => (
