@@ -39,20 +39,20 @@ describe('ConversationHelper', () => {
         it('should fall back to AttachmentInfo when NumAttachments is missing', () => {
             const conversation = {
                 AttachmentInfo: {
-                    'application/pdf': { attachment: 3 },
+                    'application/pdf': { attachment: 3, inline: 2 },
                 } as Partial<Record<string, AttachmentInfo>>,
             } as Conversation;
-            expect(getNumAttachments(conversation)).toBe(3);
+            expect(getNumAttachments(conversation)).toBe(5);
         });
 
         it('should sum attachment counts across multiple mime types', () => {
             const conversation = {
                 AttachmentInfo: {
-                    'image/png': { attachment: 1 },
+                    'image/png': { attachment: 1, inline: 1 },
                     'application/pdf': { attachment: 2 },
                 } as Partial<Record<string, AttachmentInfo>>,
             } as Conversation;
-            expect(getNumAttachments(conversation)).toBe(3);
+            expect(getNumAttachments(conversation)).toBe(4);
         });
 
         it('should return 0 when both NumAttachments and AttachmentInfo are missing', () => {
@@ -71,6 +71,15 @@ describe('ConversationHelper', () => {
                 } as Partial<Record<string, AttachmentInfo>>,
             } as Conversation;
             expect(getNumAttachments(conversation)).toBe(0);
+        });
+
+        it('should exclude inline count', () => {
+            const conversation = {
+                AttachmentInfo: {
+                    'image/png': { attachment: 2, inline: 2 },
+                } as Partial<Record<string, AttachmentInfo>>,
+            } as Conversation;
+            expect(getNumAttachments(conversation, false)).toBe(2);
         });
     });
 
@@ -101,6 +110,15 @@ describe('ConversationHelper', () => {
                 } as Partial<Record<string, AttachmentInfo>>,
             } as Conversation;
             expect(hasAttachments(conversation)).toBe(false);
+        });
+
+        it('should return false when AttachmentInfo has zero attachments', () => {
+            const conversation = {
+                AttachmentInfo: {
+                    'image/png': { attachment: 0, inline: 1 },
+                } as Partial<Record<string, AttachmentInfo>>,
+            } as Conversation;
+            expect(hasAttachments(conversation, false)).toBe(false);
         });
     });
 });
