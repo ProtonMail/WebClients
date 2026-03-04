@@ -1770,6 +1770,18 @@
       ],
       "Users": [
         "მომხმარებლები"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -2042,16 +2054,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 ტბ მონაცემთა საცავი"
+        "2 ტბ მეხსიერება"
       ],
       "3 TB data storage": [
-        "3 ტბ მონაცემთა საცავი"
+        "3 ტბ მეხსიერება"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
       ],
       "Access advanced AI models": [
-        "წვდომა განვითარებულ AI მოდელებთან"
+        "წვდომა განვითარებულ ხი მოდელებთან"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "ყველა ფასიანი ფუნქცია ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }"
@@ -11898,6 +11910,12 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "შემახსენე მოგვიანებით"
+      ],
+      "Yes, don't show again": [
+        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -12143,6 +12161,15 @@
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ],
       "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Taxes ${ rate }%": [
         "გადასახადი ${ rate }%"
       ]
     },
@@ -13045,6 +13072,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
       ]
     },
     "Signature verification warning": {
@@ -15486,6 +15516,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Keep this banner hidden?": [
+        "იყოს ეს ბანერი დამალული?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16068,6 +16101,11 @@
     "springSale2026: Title": {
       "SPRING SALE": [
         "საგაზაფხულო ფასდაკლება"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
       ]
     }
   }

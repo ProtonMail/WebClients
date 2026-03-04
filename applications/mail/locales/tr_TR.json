@@ -5558,7 +5558,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -7236,7 +7236,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. ${ digit } rakamı."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -8599,7 +8599,7 @@
         "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Bir duyuruya abone olurken e-posta adresiniz yerine bir takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanımdan kaldırabilirsiniz."
@@ -12091,6 +12091,12 @@
       ],
       "No parent folder": [
         "Üst klasör yok"
+      ],
+      "Remind me later": [
+        "Daha sonra hatırlat"
+      ],
+      "Yes, don't show again": [
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -15768,6 +15774,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Keep this banner hidden?": [
+        "Bu uyarı gizli tutulsun mu?"
       ]
     },
     "Today icon tooltip in mini calendar": {
