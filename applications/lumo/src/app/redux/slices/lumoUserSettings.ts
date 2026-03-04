@@ -25,6 +25,7 @@ export interface LumoUserSettings {
     indexedDriveFolders?: IndexedDriveFolder[];
     showProjectConversationsInHistory?: boolean;
     automaticWebSearch?: boolean;
+    showGallerySuggestions?: boolean;
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -54,6 +55,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
     featureFlags: [],
     indexedDriveFolders: [],
     automaticWebSearch: true, // Default to enabled (automatic)
+    showGallerySuggestions: true,
 };
 
 // Actions

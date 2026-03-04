@@ -4,12 +4,11 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink, useModalStateObject } from '@proton/components';
-import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
+import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -66,28 +65,13 @@ export const ProjectsView = () => {
     const renderContent = () => {
         if (isGuest) {
             return (
-                <div className="projects-empty-state">
-                    <div className="projects-empty-icon">
-                        <img src={lumoProjects} alt="Projects" width={300} />
-                    </div>
-                    <h2 className="projects-empty-title">{c('collider_2025:Title').t`Sign in to create projects`}</h2>
-                    <p className="projects-empty-description">
-                        {c('collider_2025:Info')
-                            .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
-                    </p>
-                    <div className="flex flex-column gap-2 items-center mt-4" style={{ maxWidth: '20rem' }}>
-                        <ButtonLike as={SettingsLink} color="norm" shape="solid" path="/signup" className="w-full">
-                            {c('collider_2025:Button').t`Create a free account`}
-                        </ButtonLike>
-                        <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
-                            {c('collider_2025:Button').t`Sign in`}
-                        </ButtonLike>
-                    </div>
-                    <p className="text-sm color-weak mt-4">
-                        <IcLock size={3} className="mr-1" />
-                        {c('collider_2025:Info').t`Your information is zero-access encrypted`}
-                    </p>
-                </div>
+                <GuestSignInState
+                    image={lumoProjects}
+                    imageAlt="Projects"
+                    title={c('collider_2025:Title').t`Sign in to create projects`}
+                    description={c('collider_2025:Info')
+                        .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
+                />
             );
         }
 
