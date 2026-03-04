@@ -267,8 +267,6 @@ $media-expressions;
     line-height: 1.35;
 }
 
-// ── Generated images section ──────────────────────────────────────────────────
-
 .gallery-created {
 	display: flex;
 	flex-direction: column;
@@ -287,8 +285,6 @@ $media-expressions;
 	padding-block: 14px;
 }
 
-// ── Loading / Error ───────────────────────────────────────────────────────────
-
 .gallery-loading,
 .gallery-error {
 	display: flex;
@@ -304,11 +300,9 @@ $media-expressions;
 	color: var(--signal-warning);
 }
 
-// ── Image grid ────────────────────────────────────────────────────────────────
-
 .gallery-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 8px;
 
 	@include im.media('<=small') {
