@@ -21,7 +21,7 @@ const TogglingMonitoringModal = ({ onChange, ...rest }: Props) => {
     ];
 
     return (
-        <Prompt title={c('Title').t`Disable activity monitor?`} buttons={disableButtons} {...rest}>
+        <Prompt title={c('Title').t`Disable account monitor?`} buttons={disableButtons} {...rest}>
             <span>{c('Info').t`New activity data will stop being collected and shown.`}</span>
         </Prompt>
     );

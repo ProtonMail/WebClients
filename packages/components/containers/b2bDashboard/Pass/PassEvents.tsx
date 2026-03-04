@@ -29,6 +29,8 @@ import {
     getSearchType,
 } from './helpers';
 import type { PassEvent } from './interface';
+import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
+import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -205,8 +207,13 @@ export const PassEvents = () => {
                 <div className="flex *:min-size-auto flex-column gap-2 w-full">
                     <div className="flex flex-column gap-2 p-4 rounded-lg border border-solid border-weak">
                         <span className="text-bold">{c('Info').t`Pass usage logs`}</span>
-                        <span className="color-weak">{c('Message')
-                            .t`View ${PASS_APP_NAME} activity across your organization.`}</span>
+                        <span className="color-weak">
+                            {c('Message').t`View ${PASS_APP_NAME} activity across your organization.`}
+                            {' '}
+                            <Href href={getKnowledgeBaseUrl('/pass-business-usage-logs')}>
+                                {c('Link').t`Learn more`}
+                            </Href>
+                        </span>
                     </div>
                 </div>
             </div>
