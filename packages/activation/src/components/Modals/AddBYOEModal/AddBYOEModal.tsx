@@ -1,89 +1,68 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import SignInWithGoogle from '@proton/activation/src/components/Modals/GmailSyncModal/SignInWithGoogle';
+import { type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
+import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
+import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
+import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
+import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
 
-const getModalItems = (): { icon: IconName; getTitle: () => string; getText: () => string }[] => {
-    return [
-        {
-            icon: 'brand-google',
-            getTitle: () => c('loc_nightly: BYOE').t`Allow ${BRAND_NAME} to connect to your Gmail`,
-            getText: () =>
-                c('loc_nightly: BYOE')
-                    .t`We only ask permission to access data that's strictly necessary. Nothing more.`,
-        },
-        {
-            icon: 'arrow-down-to-square',
-            getTitle: () => c('loc_nightly: BYOE').t`Pick up where you left off`,
-            getText: () =>
-                c('loc_nightly: BYOE')
-                    .t`We’ll bring in your most recent emails, ensuring your ${MAIL_APP_NAME} inbox is up-to-date and ready for action.`,
-        },
-        {
-            icon: 'inbox',
-            getTitle: () => c('loc_nightly: BYOE').t`Receive new emails`,
-            getText: () =>
-                c('loc_nightly: BYOE')
-                    .t`Emails sent to your Gmail address will automatically be forwarded to your ${MAIL_APP_NAME} inbox.`,
-        },
-        {
-            icon: 'envelope-arrow-up-and-right',
-            getTitle: () => c('loc_nightly: BYOE').t`Send messages from ${BRAND_NAME}`,
-            getText: () =>
-                c('loc_nightly: BYOE')
-                    .t`Send and manage your Gmail messages within ${MAIL_APP_NAME} apps — and leave Gmail behind.`,
-        },
-    ];
-};
+import './AddBYOEModal.scss';
 
 interface Props extends ModalProps {
-    onSubmit?: () => void;
+    onSubmit: () => void;
     submitDisabled?: boolean;
-    isLoading?: boolean;
+    isLoading: boolean;
 }
 
 const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) => {
     const { onClose } = rest;
 
     return (
-        <ModalTwo size="small" {...rest}>
-            <ModalTwoHeader
-                title={c('loc_nightly: BYOE').t`Connecting your Gmail address`}
-                subline={c('loc_nightly: BYOE')
-                    .t`Connecting your Gmail address to ${MAIL_APP_NAME} is simple — and far more private: no ads, protection from trackers and encrypted sending.`}
-            />
-            <ModalTwoContent>
-                {getModalItems().map((item) => {
-                    return (
-                        <div key={item.getTitle()} className="flex flex-row flex-nowrap gap-2 items-start mb-2">
-                            <div className="bg-weak rounded-full flex p-2">
-                                <Icon name={item.icon} className="shrink-0" />
-                            </div>
-                            <div className="flex-1">
-                                <p className="text-bold mt-0 mb-1">{item.getTitle()}</p>
-                                <p className="my-1 color-weak">{item.getText()}</p>
-                            </div>
-                        </div>
-                    );
-                })}
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button className="w-full" onClick={onClose} disabled={isLoading} shape="ghost">{c('Action')
-                    .t`Cancel`}</Button>
-                <Button
-                    className="w-full inline-flex items-center justify-center gap-2"
-                    onClick={onSubmit}
-                    disabled={submitDisabled}
-                    loading={isLoading}
-                >
-                    <img src={googleLogo} alt="" />
-                    {c('loc_nightly: BYOE').t`Connect to Gmail`}
-                </Button>
-            </ModalTwoFooter>
+        <ModalTwo size="large" fullscreenOnMobile {...rest} onClose={onClose} className="modal-two-addbyoe">
+            <ModalTwoHeader />
+            <div className="m-8 mt-0 flex flex-column *:min-size-auto md:flex-row items-center flex-nowrap gap-7">
+                <div className="flex flex-column flex-nowrap w-full lg:w-auto flex-1 gap-4">
+                    <h1 className="text-break text-4xl text-wrap-balance">
+                        <strong>{c('loc_nightly: BYOE').t`Connect to Gmail, stay in ${BRAND_NAME}`}</strong>
+                    </h1>
+                    <div className="color-weak text-lg text-wrap-balance">{c('loc_nightly: BYOE')
+                        .t`Send and receive Gmail messages through ${MAIL_APP_NAME}`}</div>
+                    <div className="flex flex-column items-center gap-4">
+                        <SignInWithGoogle
+                            onClick={onSubmit}
+                            loading={isLoading}
+                            disabled={submitDisabled}
+                            fullWidth
+                            buttonText={c('loc_nightly: BYOE').t`Connect to Gmail`}
+                        />
+                    </div>
+                    <div className="color-weak text-sm text-center text-wrap-balance">
+                        {c('loc_nightly: BYOE')
+                            .t`We will never use your data for profiling, advertising, or share it with third parties.`}
+                    </div>
+                </div>
+                <div className="lg:block modal-two-addbyoe-aside px-8 md:px-10 relative">
+                    <p className="text-center">
+                        <img src={byoeConnectGmail} alt="" className="mx-auto relative z-up" />
+                    </p>
+                    <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
+                        <img src={byoeForwarding} alt="" className="shrink-0" />
+                        <div>{c('loc_nightly: BYOE')
+                            .t`We'll bring in your latest emails and forward all incoming messages`}</div>
+                    </div>
+                    <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
+                        <img src={stopHandSign} alt="" className="shrink-0" />
+                        <div>{c('loc_nightly: BYOE').t`No ads, no trackers, just privacy`}</div>
+                    </div>
+                    <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
+                        <img src={byoeProfiling} alt="" className="shrink-0" />
+                        <div>{c('loc_nightly: BYOE')
+                            .t`Your activity is not sent back to Gmail. This limits Google's ability to profile you`}</div>
+                    </div>
+                </div>
+            </div>
         </ModalTwo>
     );
 };
