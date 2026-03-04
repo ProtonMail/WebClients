@@ -39,7 +39,6 @@ import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
@@ -214,14 +213,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         }
 
         if (step === STEPS.STORAGE) {
-            const formattedStorage = humanSize({ bytes: storageValue });
             return {
                 title: c('Title').t`Allocate storage`,
                 section: (
                     <>
                         <div className="mb-7">
                             {c('familyOffer_2023:Info')
-                                .t`By default we assign ${formattedStorage} of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.`}
+                                .t`Assign storage to the administrator account. You can distribute storage for additional users later on.`}
                         </div>
                         <MemberStorageSelector
                             orgInitialization
