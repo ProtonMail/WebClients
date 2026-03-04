@@ -17,29 +17,26 @@ export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>
     return cursor === null;
 };
 
-export async function* getOutdatedContentIterator(
-    esDB: IDBPDatabase<EncryptedSearchDB>
-): AsyncIterableIterator<ESItemCursorResult> {
+export async function getOutdatedContentIterator(
+    esDB: IDBPDatabase<EncryptedSearchDB>,
+    batchSize: number = 50
+): Promise<ESItemCursorResult[]> {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
     const versionIndex = contentStore.index('byVersion');
 
-    // Range to find all content with version less than current
     const range = IDBKeyRange.upperBound(getContentVersion(), true);
     let cursor = await versionIndex.openCursor(range);
 
-    // Collect all entries while the transaction is still active.
-    const entries: ESItemCursorResult[] = [];
+    const batch: ESItemCursorResult[] = [];
 
-    while (cursor) {
-        entries.push({
+    while (cursor && batch.length < batchSize) {
+        batch.push({
             key: cursor.primaryKey,
             value: cursor.value,
         });
         cursor = await cursor.continue();
     }
 
-    for (const entry of entries) {
-        yield entry;
-    }
+    return batch;
 }
