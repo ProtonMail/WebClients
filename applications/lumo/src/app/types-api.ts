@@ -1,7 +1,7 @@
 /* Types that have an equivalent on the backend.
  *
  * See definitions in:
- * https://gitlab.protontech.ch/msa/machine-learning/lumo-infra/-/blob/main/src/types.rs
+ * https://gitlab.protontech.ch/msa/machine-learning/lumo-infra/-/blob/main/crates/lumo-types/src/chat.rs
  *
  * Note:
  * Please only add to this file the types that have an equivalent on the backend lumo-infra.
