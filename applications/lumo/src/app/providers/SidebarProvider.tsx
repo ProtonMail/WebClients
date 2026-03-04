@@ -28,7 +28,6 @@ interface SidebarState {
     isCollapsed: boolean;
     isExpanded: boolean;
     isOverlay: boolean;
-    shouldShowContent: boolean;
 }
 
 const SidebarContext = createContext<SidebarState | null>(null);
@@ -74,14 +73,12 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
         const isCollapsed = mode === 'collapsed';
         const isExpanded = mode === 'expanded';
         const isOverlay = mode === 'overlay';
-        const shouldShowContent = isVisible && !isCollapsed;
 
         return {
             isVisible,
             isCollapsed,
             isExpanded,
             isOverlay,
-            shouldShowContent,
         };
     }, [mode]);
 
