@@ -19,7 +19,7 @@ interface Props {
     renameGateway: (id: string, name: string) => () => any;
     editGatewayServers: (gateway: Gateway, logical: GatewayLogical) => () => any;
     editGatewayUsers: (gateway: Gateway, logical: GatewayLogical) => () => any;
-    deleteGateway: (gateway: Gateway) => () => any;
+    deleteGateway: () => void;
 }
 
 export const GatewayManageButton = ({
@@ -28,7 +28,7 @@ export const GatewayManageButton = ({
     renameGateway = () => () => {},
     editGatewayServers = () => () => {},
     editGatewayUsers = () => () => {},
-    deleteGateway = () => () => {},
+    deleteGateway,
     deletingLogicals,
     deletedLogicals,
     deleted = false,
@@ -97,7 +97,7 @@ export const GatewayManageButton = ({
                             <DropdownMenuButton
                                 className="text-left color-danger"
                                 loading={loading}
-                                onClick={deleteGateway(gateway)}
+                                onClick={deleteGateway}
                                 title={deleteServerTitle}
                             >
                                 <Icon name="trash" className="mr-2" />
