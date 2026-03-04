@@ -170,7 +170,6 @@ const MainContainer = () => {
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
@@ -266,7 +265,6 @@ const MainContainer = () => {
         isUserGroupsNoCustomDomainEnabled,
         canB2BHidePhotos,
         isB2BDrive,
-        isB2BAuthLogsEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
         isProtonMeetIntegrationEnabled,
