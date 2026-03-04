@@ -92,9 +92,9 @@ export function LegacyGrid() {
       scale={useUI((ui) => ui.legacy.scale)}
       conditionalFormats={useUI((ui) => ui.legacy.conditionalFormats)}
       sheetId={useUI((ui) => ui.legacy.activeSheetId)}
-      rowCount={useUI((ui) => ui.legacy.rowCount)}
+      rowCount={useUI((ui) => Math.abs(ui.legacy.rowCount))}
       getDataRowCount={useUI((ui) => ui.legacy.getDataRowCount)}
-      columnCount={useUI((ui) => ui.legacy.columnCount)}
+      columnCount={useUI((ui) => Math.abs(ui.legacy.columnCount))}
       frozenColumnCount={useUI((ui) => ui.legacy.frozenColumnCount)}
       frozenRowCount={useUI((ui) => ui.legacy.frozenRowCount)}
       rowMetadata={useUI((ui) => ui.legacy.rowMetadata)}
