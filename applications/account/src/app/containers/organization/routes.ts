@@ -117,8 +117,9 @@ export const getOrganizationAppRoutes = ({
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
         !!organization &&
-        (hasActiveOrganizationKey || hasGroups) &&
-        canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled, hasGroups });
+        (hasGroups ||
+            (hasActiveOrganizationKey &&
+                canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled, hasGroups })));
 
     const canShowUsersAndAddressesSection =
         // The user must have a plan that supports multi-user
