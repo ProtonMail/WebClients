@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll/Scroll';
+// import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
 import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
@@ -114,101 +114,100 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
 
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
-            <Scroll className="flex-1">
-                {/* Enhanced sign-in section for all guest users */}
-                {isGuest && <ChatHistoryGuestUserUpsell />}
+            {/* <Scroll className="flex-1"> */}
+            {/* Enhanced sign-in section for all guest users */}
+            {isGuest && <ChatHistoryGuestUserUpsell />}
 
-                {!isGuest && noConversationAtAll && (
+            {!isGuest && noConversationAtAll && (
+                <>
+                    <div className="color-weak text-sm my-2 ml-3 pl-6">
+                        {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
+                    </div>
+                </>
+            )}
+            {noSearchMatch && !noConversationAtAll && (
+                <>
+                    <p className="block color-weak text-sm mt-3 mb-2 mx-4">{c('collider_2025:Title').t`No result.`}</p>
+                </>
+            )}
+            <div className="chat-history-list ml-5">
+                {today.length > 0 && (
                     <>
-                        <div className="color-weak text-sm my-2 ml-3 pl-6">
-                            {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
+                        <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
+                        <RecentChatsList
+                            conversations={today}
+                            selectedConversationId={conversationId}
+                            disabled={isGuest}
+                            onItemClick={onItemClick}
+                        />
+                    </>
+                )}
+                {lastWeek.length > 0 && (
+                    <>
+                        <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
+                            {!hasLumoPlus
+                                ? c('collider_2025:Title').t`Last 5 days`
+                                : c('collider_2025:Title').t`Last 7 days`}
+                        </h4>
+                        <RecentChatsList
+                            conversations={lastWeek}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
+                    </>
+                )}
+                {/* Expiring Soon section for free users - chats that will be deleted in 0-2 days */}
+                {!hasLumoPlus && expiringSoon.length > 0 && (
+                    <>
+                        <div className="flex items-center justify-space-between mt-3 mb-2 ml-3 mr-3">
+                            <h4 className="flex items-center gap-1 color-weak text-sm mb-0">
+                                <IcHourglass
+                                    size={3}
+                                    className="color-weak shrink-0"
+                                    alt={c('collider_2025:Icon').t`Expiring soon`}
+                                />
+                                <span>{c('collider_2025:Title').t`Expiring Soon`}</span>
+                            </h4>
                         </div>
+
+                        <LumoChatHistoryUpsell />
+
+                        <RecentChatsList
+                            conversations={expiringSoon}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
                     </>
                 )}
-                {noSearchMatch && !noConversationAtAll && (
+                {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
+                {hasLumoPlus && lastMonth.length > 0 && (
                     <>
-                        <p className="block color-weak text-sm mt-3 mb-2 mx-4">{c('collider_2025:Title')
-                            .t`No result.`}</p>
+                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
+                            {c('collider_2025:Title').t`Last 30 days`}
+                        </h4>
+                        <RecentChatsList
+                            conversations={lastMonth}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
                     </>
                 )}
-                <div className="chat-history-list ml-5">
-                    {today.length > 0 && (
-                        <>
-                            <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
-                            <RecentChatsList
-                                conversations={today}
-                                selectedConversationId={conversationId}
-                                disabled={isGuest}
-                                onItemClick={onItemClick}
-                            />
-                        </>
-                    )}
-                    {lastWeek.length > 0 && (
-                        <>
-                            <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
-                                {!hasLumoPlus
-                                    ? c('collider_2025:Title').t`Last 5 days`
-                                    : c('collider_2025:Title').t`Last 7 days`}
-                            </h4>
-                            <RecentChatsList
-                                conversations={lastWeek}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </>
-                    )}
-                    {/* Expiring Soon section for free users - chats that will be deleted in 0-2 days */}
-                    {!hasLumoPlus && expiringSoon.length > 0 && (
-                        <>
-                            <div className="flex items-center justify-space-between mt-3 mb-2 ml-3 mr-3">
-                                <h4 className="flex items-center gap-1 color-weak text-sm mb-0">
-                                    <IcHourglass
-                                        size={3}
-                                        className="color-weak shrink-0"
-                                        alt={c('collider_2025:Icon').t`Expiring soon`}
-                                    />
-                                    <span>{c('collider_2025:Title').t`Expiring Soon`}</span>
-                                </h4>
-                            </div>
 
-                            <LumoChatHistoryUpsell />
+                {/* Only show earlier chats for paid users */}
+                {hasLumoPlus && earlier.length > 0 && (
+                    <>
+                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
+                            .t`Earlier`}</h4>
 
-                            <RecentChatsList
-                                conversations={expiringSoon}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </>
-                    )}
-                    {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
-                    {hasLumoPlus && lastMonth.length > 0 && (
-                        <>
-                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
-                                {c('collider_2025:Title').t`Last 30 days`}
-                            </h4>
-                            <RecentChatsList
-                                conversations={lastMonth}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </>
-                    )}
-
-                    {/* Only show earlier chats for paid users */}
-                    {hasLumoPlus && earlier.length > 0 && (
-                        <>
-                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
-                                .t`Earlier`}</h4>
-
-                            <RecentChatsList
-                                conversations={earlier}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </>
-                    )}
-                </div>
-            </Scroll>
+                        <RecentChatsList
+                            conversations={earlier}
+                            selectedConversationId={conversationId}
+                            onItemClick={onItemClick}
+                        />
+                    </>
+                )}
+            </div>
+            {/* </Scroll> */}
         </div>
     );
 };
