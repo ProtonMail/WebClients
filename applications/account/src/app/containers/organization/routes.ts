@@ -44,7 +44,6 @@ interface Props {
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isUserGroupsNoCustomDomainEnabled: boolean;
-    isB2BAuthLogsEnabled: boolean;
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
@@ -68,7 +67,6 @@ export const getOrganizationAppRoutes = ({
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
     isUserGroupsNoCustomDomainEnabled,
-    isB2BAuthLogsEnabled,
     groups,
     isScribeEnabled,
     isZoomIntegrationEnabled,
@@ -402,11 +400,6 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Two-factor authentication enforcement`,
                         id: 'two-factor-authentication-enforcement',
-                    },
-                    {
-                        text: c('Title').t`Security events`,
-                        id: 'security-events',
-                        available: isB2BAuthLogsEnabled && !isPartOfFamily,
                     },
                 ],
             },
