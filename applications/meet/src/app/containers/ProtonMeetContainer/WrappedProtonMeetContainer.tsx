@@ -25,6 +25,9 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
     const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
+    const isMeetH264 = useFlag('MeetH264');
+
+    const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
@@ -63,7 +66,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                     audioPreset: { maxBitrate: audioQuality, priority: 'high' },
                     screenShareEncoding: screenShareQuality.encoding,
                     screenShareSimulcastLayers: [],
-                    videoCodec: isMeetVp9Allowed ? 'vp9' : 'h264',
+                    videoCodec: isMeetVp9Allowed ? 'vp9' : primaryCodec,
                     dtx: false,
                 },
                 disconnectOnPageLeave: false,
