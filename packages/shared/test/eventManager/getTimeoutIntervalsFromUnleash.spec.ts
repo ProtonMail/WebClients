@@ -1,41 +1,40 @@
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
-import { getDefaultIntervals } from '@proton/shared/lib/eventManager/getDefaultIntervals';
+import { getTimeoutIntervalsFromUnleash } from '@proton/shared/lib/eventManager/getTimeoutIntervalsFromUnleash';
 import type UnleashClient from '@proton/unleash/UnleashClient';
 import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
 const MIN = INTERVAL_EVENT_TIMER;
 const MAX = INTERVAL_EVENT_TIMER * 10;
 
-const createClient = ({ enabled = true, payload }: { enabled?: boolean; payload?: unknown }) => {
-    return (): UnleashClient =>
-        ({
-            isEnabled: (flag: unknown) => {
-                expect(flag).toBe(CommonFeatureFlag.EventLoopInterval);
-                return enabled;
-            },
-            getVariant: () => ({
-                name: '',
-                enabled: true,
-                payload: payload !== undefined ? { type: '', value: JSON.stringify(payload) } : undefined,
-            }),
-        }) as unknown as UnleashClient;
+const createClient = ({ enabled = true, payload }: { enabled?: boolean; payload?: unknown }): UnleashClient => {
+    return {
+        isEnabled: (flag: unknown) => {
+            expect(flag).toBe(CommonFeatureFlag.EventLoopInterval);
+            return enabled;
+        },
+        getVariant: () => ({
+            name: '',
+            enabled: true,
+            payload: payload !== undefined ? { type: '', value: JSON.stringify(payload) } : undefined,
+        }),
+    } as unknown as UnleashClient;
 };
 
-describe('getDefaultIntervals', () => {
+describe('getTimeoutIntervalsFromUnleash', () => {
     it('returns default values when client is undefined', () => {
-        const result = getDefaultIntervals(() => undefined as any);
+        const result = getTimeoutIntervalsFromUnleash(undefined as any);
 
         expect(result).toEqual({ foreground: MIN, background: MIN });
     });
 
     it('returns default values when flag is disabled', () => {
-        const result = getDefaultIntervals(createClient({ enabled: false }));
+        const result = getTimeoutIntervalsFromUnleash(createClient({ enabled: false }));
 
         expect(result).toEqual({ foreground: MIN, background: MIN });
     });
 
     it('returns clamped values when payload is valid', () => {
-        const result = getDefaultIntervals(
+        const result = getTimeoutIntervalsFromUnleash(
             createClient({
                 payload: { foreground: MIN + 10, background: MIN + 20 },
             })
@@ -45,7 +44,7 @@ describe('getDefaultIntervals', () => {
     });
 
     it('clamps values below minimum', () => {
-        const result = getDefaultIntervals(
+        const result = getTimeoutIntervalsFromUnleash(
             createClient({
                 payload: { foreground: 1, background: 5 },
             })
@@ -55,7 +54,7 @@ describe('getDefaultIntervals', () => {
     });
 
     it('clamps values above maximum', () => {
-        const result = getDefaultIntervals(
+        const result = getTimeoutIntervalsFromUnleash(
             createClient({
                 payload: { foreground: MAX + 1000, background: MAX + 5000 },
             })
@@ -65,7 +64,7 @@ describe('getDefaultIntervals', () => {
     });
 
     it('returns default values when payload contains invalid numbers', () => {
-        const result = getDefaultIntervals(
+        const result = getTimeoutIntervalsFromUnleash(
             createClient({
                 payload: { foreground: 'not-a-number', background: null },
             })
@@ -82,7 +81,7 @@ describe('getDefaultIntervals', () => {
             }),
         });
 
-        const result = getDefaultIntervals(brokenClient as any);
+        const result = getTimeoutIntervalsFromUnleash(brokenClient as any);
 
         expect(result).toEqual({ foreground: MIN, background: MIN });
     });
