@@ -1804,6 +1804,12 @@
       ],
       "Total for ${ n } month": [
         "合計 ${ n } か月"
+      ],
+      "Subtotal": [
+        "小計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } か月分の小計"
       ]
     },
     "Collapsible tooltip": {
@@ -9286,6 +9292,30 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "あなたのサブスクリプションは現在、割引が適用されています。この新しいプロモーションに移行すると、既存の割引は適用されなくなります。"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% の税金込み"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% の税金込み: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "税金 ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "税金 ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12468,6 +12498,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026年新春セール"
       ]
     }
   }
