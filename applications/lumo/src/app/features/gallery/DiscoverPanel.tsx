@@ -1,10 +1,11 @@
-import {useCallback, useState} from 'react';
+import { useCallback, useState } from 'react';
 
-import {c} from 'ttag';
+import { c } from 'ttag';
 
-import {Icon} from '@proton/components';
+import { Icon } from '@proton/components';
 
-import {getGalleryPromptSuggestions, type GalleryPromptSuggestion} from './promptSuggestions';
+import { useLumoUserSettings } from '../../hooks/useLumoUserSettings';
+import { getGalleryPromptSuggestions, type GalleryPromptSuggestion } from './promptSuggestions';
 
 import './GalleryView.scss';
 
@@ -18,37 +19,47 @@ function pickSuggestions(pool: GalleryPromptSuggestion[], exclude: GalleryPrompt
     return shuffled.slice(0, SUGGESTIONS_PER_PAGE);
 }
 
-const ACTION_BADGE: Record<GalleryPromptSuggestion['action'], string> = {
-    edit_image: 'Upload',
-    sketch: 'Sketch',
-    prompt: 'Create',
+const ACTION_META: Record<GalleryPromptSuggestion['action'], { label: string; icon: string }> = {
+    edit_image: { label: 'Upload', icon: 'arrow-up-line' },
+    sketch: { label: 'Sketch', icon: 'pen' },
+    prompt: { label: 'Create', icon: 'magic-wand' },
 };
 
 const SuggestionCard = ({
-                            suggestion,
-                            onClick,
-                        }: {
+    suggestion,
+    onClick,
+}: {
     suggestion: GalleryPromptSuggestion;
     onClick: (s: GalleryPromptSuggestion) => void;
-}) => (
-    <button className="gallery-suggestion-card" onClick={() => onClick(suggestion)} type="button">
-        <span className="gallery-suggestion-card__img-wrap">
-            <img src={suggestion.img} alt="" className="gallery-suggestion-card__img"/>
-        </span>
-        <span className="gallery-suggestion-card__body">
-            <span className="gallery-suggestion-card__badge">
-                {ACTION_BADGE[suggestion.action]}
+}) => {
+    const meta = ACTION_META[suggestion.action];
+    return (
+        <button className="gallery-suggestion-card" onClick={() => onClick(suggestion)} type="button">
+            <span className="gallery-suggestion-card__img-wrap">
+                <img src={suggestion.img} alt="" className="gallery-suggestion-card__img" />
+                <span className="gallery-suggestion-card__badge">
+                    <Icon name={meta.icon as any} size={3} />
+                    {meta.label}
+                </span>
             </span>
-            <span className="gallery-suggestion-card__title">{suggestion.title}</span>
-        </span>
-    </button>
-);
+            <span className="gallery-suggestion-card__body">
+                <span className="gallery-suggestion-card__title">{suggestion.title}</span>
+            </span>
+        </button>
+    );
+};
 
-export const DiscoverPanel = ({onSuggestionClick}: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
+export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPromptSuggestion) => void }) => {
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const expanded = lumoUserSettings.showGallerySuggestions ?? true;
+
     const [visible, setVisible] = useState<GalleryPromptSuggestion[]>(() =>
         pickSuggestions(getGalleryPromptSuggestions(), [])
     );
-    const [expanded, setExpanded] = useState(true);
+
+    const handleToggle = useCallback(() => {
+        updateSettings({ showGallerySuggestions: !expanded, _autoSave: true });
+    }, [expanded, updateSettings]);
 
     const handleShuffle = useCallback(() => {
         setVisible((prev) => pickSuggestions(getGalleryPromptSuggestions(), prev));
@@ -58,9 +69,7 @@ export const DiscoverPanel = ({onSuggestionClick}: { onSuggestionClick: (s: Gall
         <div className="gallery-discover">
             <div className="gallery-discover__header">
                 <span className="gallery-discover__title">
-                    {expanded && (
-                        c('collider_2025:Label').t`Discover what Lumo can create`
-                    )}
+                    {c('collider_2025:Label').t`Discover what Lumo can create`}
                 </span>
                 <span className="gallery-discover__header-actions">
                     {expanded && (
@@ -70,24 +79,24 @@ export const DiscoverPanel = ({onSuggestionClick}: { onSuggestionClick: (s: Gall
                             type="button"
                             title={c('collider_2025:Action').t`Shuffle suggestions`}
                         >
-                            <Icon name="arrows-rotate" size={4}/>
+                            <Icon name="arrows-rotate" size={3.5} />
                         </button>
                     )}
                     <button
                         className="gallery-discover__toggle"
-                        onClick={() => setExpanded((v) => !v)}
+                        onClick={handleToggle}
                         type="button"
                     >
                         {expanded
-                            ? c('collider_2025:Action').t`Hide suggestions`
-                            : c('collider_2025:Action').t`Show suggestions`}
+                            ? c('collider_2025:Action').t`Hide`
+                            : c('collider_2025:Action').t`Show`}
                     </button>
                 </span>
             </div>
             {expanded && (
                 <div className="gallery-discover__grid">
                     {visible.map((s) => (
-                        <SuggestionCard key={s.id} suggestion={s} onClick={onSuggestionClick}/>
+                        <SuggestionCard key={s.id} suggestion={s} onClick={onSuggestionClick} />
                     ))}
                 </div>
             )}
