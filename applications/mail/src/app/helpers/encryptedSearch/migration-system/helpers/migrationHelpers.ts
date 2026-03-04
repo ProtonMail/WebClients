@@ -3,40 +3,41 @@ import type { IDBPDatabase } from 'idb';
 import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
+import type { CONTENT_VERSION } from '../../esBuild';
 import type { CleanTextFn, EncryptedSearchData, MigrateFn } from '../interface';
-import { createMigrations } from './contentMigrations';
+import { getMigrationMap } from './contentMigrations';
 import { getOutdatedContentIterator } from './contentVersionHelpers';
 import { decryptESItem } from './decryptESItem';
 import { encryptAndWriteESItem } from './encryptAndWriteESItem';
 
 interface UpgradeContentProps {
-    version: number;
+    contentVersion: number;
     data: EncryptedSearchData;
     originalEncryptedData: ESCiphertext;
     esDB: IDBPDatabase<EncryptedSearchDB>;
     indexKey: CryptoKey;
-    migrations: Map<number, MigrateFn>;
+    migrationMap: Map<CONTENT_VERSION, MigrateFn>;
 }
 
 const upgradeContent = async ({
-    version,
+    contentVersion,
     data,
     originalEncryptedData,
     esDB,
     indexKey,
-    migrations,
+    migrationMap,
 }: UpgradeContentProps): Promise<void> => {
-    const migrate = migrations.get(version);
-
-    let migratedData = data;
-    if (migrate) {
-        migratedData = migrate(data);
+    let result = data;
+    for (const [targetVersion, migrate] of migrationMap) {
+        if (targetVersion > contentVersion) {
+            result = migrate(result);
+        }
     }
 
     await encryptAndWriteESItem({
         esDB,
         indexKey,
-        item: migratedData,
+        item: result,
         originalEncryptedData,
     });
 };
@@ -48,7 +49,7 @@ interface MigrateContentProps {
 }
 
 export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateContentProps) => {
-    const migrations = createMigrations(cleanText);
+    const migrationMap = getMigrationMap(cleanText);
     const versionsRecord: Record<number, number> = {};
 
     while (true) {
@@ -77,12 +78,11 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 const contentVersion = hasVersion ? data.value.version : decrypted.content?.version || -1;
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
-                const version = hasVersion ? data.value.version : decrypted.content?.version || -1;
                 await upgradeContent({
-                    version,
+                    contentVersion,
                     esDB,
                     indexKey,
-                    migrations,
+                    migrationMap,
                     data: decrypted,
                     originalEncryptedData: data.value,
                 });
