@@ -1766,6 +1766,18 @@
       ],
       "Users": [
         "მომხმარებლები"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -11834,6 +11846,12 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "შემახსენე მოგვიანებით"
+      ],
+      "Yes, don't show again": [
+        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -12061,6 +12079,15 @@
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ],
       "Tax ${ rate }%": [
+        "გადასახადი ${ rate }%"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Taxes ${ rate }%": [
         "გადასახადი ${ rate }%"
       ]
     },
@@ -15368,6 +15395,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Keep this banner hidden?": [
+        "იყოს ეს ბანერი დამალული?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15944,6 +15974,39 @@
     "springSale2026: Title": {
       "SPRING SALE": [
         "საგაზაფხულო ფასდაკლება"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 ტბ მეხსიერება"
+      ],
+      "3 TB data storage": [
+        "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "საგაზაფხულო აქცია 2026"
       ]
     }
   }
