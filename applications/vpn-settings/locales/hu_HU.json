@@ -303,9 +303,6 @@
       "Disable recovery phrase?": [
         "Helyreállító jelmondat kikapcsolása?"
       ],
-      "Disable security events": [
-        "Biztonsági események letiltása"
-      ],
       "Discard": [
         "Elvetés"
       ],
@@ -566,6 +563,9 @@
       ],
       "Make admin": [
         "Átállítás adminisztrátornak"
+      ],
+      "Manage addresses": [
+        "Címek kezelése"
       ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
@@ -4279,9 +4279,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Miután Ön elhagyja a csomagot, ez a felhasználó egy ${ BRAND_NAME } Unlimited csomagba kerül, 30 napos ingyenes próbaidőszakkal.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Alapértelmezés szerint egy adminisztrátor fióknak ${ formattedStorage } tárhelye van. Ön tudja kezelni a tárhely elosztást."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Hozza létre és kezelje családtagjai fiókját, osszon ki tárhelyet, amelyen osztozik a ${ DRIVE_APP_NAME } és a ${ MAIL_APP_NAME }."
       ],
@@ -5595,9 +5592,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Hozza át üzeneteit, névjegyeit és naptárait ide: ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "A biztonsági események figyelésének tiltásával törli az előzményeket is. Biztos, hogy letiltja?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
@@ -8788,9 +8782,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Tevékenység figyelő"
-      ],
       "Enable ${ reason }": [
         "Engedélyezi: ${ reason }"
       ],
@@ -13639,8 +13630,8 @@
       "Delete": [
         "Törlés"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName } törlése?"
+      "Delete ${ name }?": [
+        "${ name } törlése?"
       ],
       "Delete account": [
         "Fiók törlése"
@@ -13672,9 +13663,6 @@
       ],
       "Device name": [
         "Eszköz neve"
-      ],
-      "Disable activity monitor?": [
-        "Letiltja a tevékenységfigyelőt?"
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
@@ -14049,9 +14037,6 @@
       ],
       "Security and privacy": [
         "Biztonság és adatvédelem"
-      ],
-      "Security events": [
-        "Biztonsági események"
       ],
       "Select a plan": [
         "Csomag kiválasztása"

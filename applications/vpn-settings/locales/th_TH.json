@@ -320,9 +320,6 @@
       "Disable recovery phrase?": [
         "คุณจะปิดการใช้งานวลีกู้คืนหรือไม่?"
       ],
-      "Disable security events": [
-        "ปิดใช้งานกิจกรรมความปลอดภัย"
-      ],
       "Discard": [
         "ละทิ้ง"
       ],
@@ -595,6 +592,9 @@
       ],
       "Make admin": [
         "กำหนดเป็นผู้ดูแลระบบ"
+      ],
+      "Manage addresses": [
+        "จัดการที่อยู่"
       ],
       "Manage advanced account protections": [
         "จัดการการปกป้องบัญชีขั้นสูง"
@@ -4631,9 +4631,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "หลังจากออกจากแผน ผู้ใช้นี้จะถูกย้ายไปยังแผน ${ BRAND_NAME } Unlimited พร้อมทดลองใช้ฟรี 30 วัน*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "ตามค่าเริ่มต้น เรากำหนดพื้นที่จัดเก็บ ${ formattedStorage } ให้กับบัญชีผู้ดูแลระบบ สามารถจัดการพื้นที่จัดเก็บที่กำหนดเพื่อแจกจ่ายให้กับผู้ใช้เพิ่มเติมในภายหลังได้"
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "สร้างและจัดการสมาชิกในครอบครัวและกำหนดพื้นที่จัดเก็บที่แชร์ระหว่าง ${ DRIVE_APP_NAME } และ ${ MAIL_APP_NAME }"
       ],
@@ -5983,9 +5980,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "ย้ายข้อความ รายชื่อติดต่อ และปฏิทินของคุณมาที่ ${ BRAND_NAME }"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "การปิดใช้งานการตรวจสอบกิจกรรมความปลอดภัย คุณจะล้างประวัติทั้งหมดของคุณด้วย คุณแน่ใจหรือไม่ว่าต้องการปิดใช้งานสิ่งนี้?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "หากดำเนินการดาวน์เกรดบัญชีไปแบบบัญชีฟรี คุณจะไม่สามารถเข้าถึงสิทธิพิเศษอื่นๆ แม้ว่าคุณจะกลับมาอัปเกรดบัญชีอีกในอนาคต"
@@ -9356,9 +9350,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "การตรวจสอบกิจกรรม"
-      ],
       "Enable ${ reason }": [
         "เปิดใช้งาน ${ reason }"
       ],
@@ -13893,9 +13884,6 @@
       "Address added": [
         "เพิ่มที่อยู่แล้ว"
       ],
-      "Address successfully added": [
-        "เพิ่มที่อยู่สำเร็จแล้ว"
-      ],
       "Administrator privileges restored": [
         "กู้คืนสิทธิ์ของผู้ดูแลระบบแล้ว"
       ],
@@ -14599,8 +14587,8 @@
       "Delete": [
         "ลบ"
       ],
-      "Delete ${ policyName }?": [
-        "ลบ ${ policyName }?"
+      "Delete ${ name }?": [
+        "ลบ ${ name }?"
       ],
       "Delete account": [
         "ลบบัญชี"
@@ -14634,9 +14622,6 @@
       ],
       "Device name": [
         "ชื่ออุปกรณ์"
-      ],
-      "Disable activity monitor?": [
-        "ปิดใช้งานการตรวจสอบกิจกรรมหรือไม่?"
       ],
       "Disable two-factor authentication": [
         "เลิกใช้งานการยืนยันตัวตนผ่าน 2 ขั้นตอน"
@@ -15048,9 +15033,6 @@
       ],
       "Security and privacy": [
         "ความปลอดภัยและความเป็นส่วนตัว"
-      ],
-      "Security events": [
-        "กิจกรรมความปลอดภัย"
       ],
       "Select a plan": [
         "เลือกแพกเก็จ"

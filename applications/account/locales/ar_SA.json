@@ -445,14 +445,14 @@
       "Disable": [
         "تعطيل"
       ],
+      "Disable account monitor": [
+        "تعطيل مراقبة الحساب"
+      ],
       "Disable recovery phrase": [
         "تعطيل عبارة الاسترداد"
       ],
       "Disable recovery phrase?": [
         "تعطيل عبارة الاسترداد؟"
-      ],
-      "Disable security events": [
-        "تعطيل الأحداث الأمنية"
       ],
       "Discard": [
         "تجاهل"
@@ -816,6 +816,9 @@
       ],
       "Make admin": [
         "تعيين كمسؤول"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ],
       "Manage advanced account protections": [
         "إدارة الحماية المتقدمة للحساب"
@@ -2349,9 +2352,6 @@
     "BOSS": {
       "Finish setting up your business account": [
         "أكمل إعداد حساب نشاطك التجاري"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "لنقل بيانات مؤسستك، تحتاج إلى تثبيت تطبيق ${ BRAND_NAME } Migration Assistant من Google Workspace Marketplace. سيمنح هذا الإذن لـ ${ BRAND_NAME } بنسخ بياناتك. بعد تثبيته، عُد إلى هنا للمتابعة. تعرّف على المزيد"
       ]
     },
     "Browser": {
@@ -6568,8 +6568,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "بعد مغادرة خطتك، سيُنقل هذا المستخدم إلى خطة ${ BRAND_NAME } Unlimited مع فترة تجريبية مجانية لمدة 30 يومًا.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "بشكل افتراضي نقوم بتعيين ${ formattedStorage } من التخزين لحساب المسؤول. يمكنك إدارة التخزين المخصص ليتم توزيعه على مستخدمين إضافيين لاحقًا."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "قم بتخصيص مساحة تخزين لحساب المسؤول. يمكنك توزيع مساحة التخزين على مستخدمين إضافيين لاحقًا."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "أنشئ وأدِر أفراد العائلة وخصص لهم مساحة تخزين مشتركة بين ${ DRIVE_APP_NAME } و ${ MAIL_APP_NAME }."
@@ -8527,8 +8527,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "من خلال إنشاء حساب ${ PASS_APP_NAME } باستخدام بريدك الإلكتروني في SimpleLogin، يمكنك إدارة أسماءك المستعارة مباشرة من ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "من خلال تعطيل مراقبة أحداث الأمان، سوف يتم مسح السجل بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "من خلال تعطيل مراقب الحساب، ستقوم أيضا بمسح سجلك بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "اذا قمت بتخفيض الباقة إلى الباقة المجانية، ستفقد هذه المزايا بشكل دائم، حتى إذا قمت بالترقية مرة أخرى في المستقبل"
@@ -11942,6 +11942,9 @@
       "Emails (last 3 months)": [
         "رسائل البريد الإلكتروني (آخر 3 أشهر)"
       ],
+      "Emails (last 6 months)": [
+        "رسائل البريد الإلكتروني (آخر 6 أشهر)"
+      ],
       "Emails (last month)": [
         "رسائل البريد الإلكتروني (الشهر الماضي)"
       ],
@@ -12145,6 +12148,9 @@
       ],
       "Last 3 months only": [
         "آخر 3 أشهر فقط"
+      ],
+      "Last 6 months only": [
+        "آخر 6 أشهر فقط"
       ],
       "Last month only": [
         "الشهر الماضي فقط"
@@ -13130,8 +13136,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "مراقب النشاط"
+      "Account monitor": [
+        "مراقب الحساب"
       ],
       "Enable ${ reason }": [
         "تفعيل ${ reason }"
@@ -19895,9 +19901,6 @@
       "Address added": [
         "تم إضافة العنوان"
       ],
-      "Address successfully added": [
-        "تمت إضافة العنوان بنجاح"
-      ],
       "Administrator privileges restored": [
         "تمت استعادة امتيازات المسؤول"
       ],
@@ -20446,6 +20449,9 @@
       "Account keys": [
         "مفاتيح الحساب"
       ],
+      "Account monitor": [
+        "مراقب الحساب"
+      ],
       "Account recovery": [
         "استرداد الحساب"
       ],
@@ -20822,9 +20828,6 @@
       "Deep dive into VPN blog posts": [
         "الغوص العميق في منشورات مدونة VPN"
       ],
-      "Delete ${ policyName }?": [
-        "حذف ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "حذف ${ value }"
       ],
@@ -20875,8 +20878,8 @@
       "Device name": [
         "اسم الجهاز"
       ],
-      "Disable activity monitor?": [
-        "هل تريد تعطيل مراقب النشاط؟"
+      "Disable account monitor?": [
+        "تعطيل مراقبة الحساب؟"
       ],
       "Disable two-factor authentication": [
         "تعطيل المصادقة الثنائية"
@@ -21520,9 +21523,6 @@
       ],
       "Security and privacy": [
         "الخصوصية والأمن"
-      ],
-      "Security events": [
-        "الأحداث الأمنية"
       ],
       "Security logs": [
         "سجلات الأمن"

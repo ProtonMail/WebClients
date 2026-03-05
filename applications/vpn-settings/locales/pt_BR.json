@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Excluir gateway"
       ],
+      "Delete gateway": [
+        "Excluir gateway"
+      ],
       "Delete group": [
         "Excluir grupo"
       ],
@@ -298,6 +301,9 @@
       ],
       "Delete policy": [
         "Excluir política"
+      ],
+      "Delete token ${ token.Account }": [
+        "Excluir token ${ token.Account }"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -317,14 +323,14 @@
       "Disable": [
         "Desativar"
       ],
+      "Disable account monitor": [
+        "Desativar monitor da conta"
+      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
       "Disable recovery phrase?": [
         "Desativar a frase de recuperação?"
-      ],
-      "Disable security events": [
-        "Desativar eventos de segurança"
       ],
       "Discard": [
         "Descartar"
@@ -601,6 +607,9 @@
       ],
       "Make admin": [
         "Tornar administrador"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
       ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
@@ -1816,6 +1825,12 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Assistente de Migração da ${ BRAND_NAME }"
+      ],
+      "App installed": [
+        "Apps instalado"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -1839,6 +1854,9 @@
       ],
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
+      ],
+      "Install app": [
+        "Instalar aplicativo"
       ],
       "Install migration app": [
         "Instalar aplicativo de migração"
@@ -1895,14 +1913,14 @@
       "Sign in to Google Workspace": [
         "Iniciar sessão do Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar. Saiba mais"
-      ],
       "Transfer errors": [
         "Erros de transferência"
       ],
       "User": [
         "Usuário"
+      ],
+      "Verify installation": [
+        "Verificar instalação"
       ],
       "Verify your domain": [
         "Verifique seu domínio"
@@ -4898,9 +4916,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Por padrão, atribuímos o armazenamento ${ formattedStorage } à conta do administrador. Você pode gerenciar o armazenamento atribuído a ser distribuído entre usuários adicionais posteriormente."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Crie e gerencie os membros da família e atribuí-los o espaço de armazenamento compartilhado entre ${ DRIVE_APP_NAME } e ${ MAIL_APP_NAME }."
       ],
@@ -6319,9 +6334,6 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Traga suas mensagens, seus contatos e seus calendários para a ${ BRAND_NAME }"
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ao desativar o monitoramento de eventos de segurança, você também limpará todo o seu histórico. Tem certeza de que deseja desativar isso?"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
@@ -6722,6 +6734,9 @@
       ],
       "Free trial": [
         "Avaliação gratuita"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "O gateway não pôde ser excluído. Tente novamente."
       ],
       "Gateway monitor": [
         "Monitoramento de gateway"
@@ -8858,6 +8873,9 @@
       "Emails (last 3 months)": [
         "E-mails (últimos 3 messes)"
       ],
+      "Emails (last 6 months)": [
+        "E-mails (últimos 6 messes)"
+      ],
       "Emails (last month)": [
         "E-mails (último mês)"
       ],
@@ -8980,6 +8998,9 @@
       ],
       "Last 3 months only": [
         "Somente os últimos 3 meses"
+      ],
+      "Last 6 months only": [
+        "Somente os últimos 6 meses"
       ],
       "Last month only": [
         "Apenas no mês passado"
@@ -9799,8 +9820,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor de atividade"
+      "Account monitor": [
+        "Monitor da conta"
       ],
       "Enable ${ reason }": [
         "Ativar ${ reason }"
@@ -14567,9 +14588,6 @@
       "Address added": [
         "Endereço adicionado"
       ],
-      "Address successfully added": [
-        "Endereço adicionado com sucesso"
-      ],
       "Administrator privileges restored": [
         "Privilégios de administrador restaurados"
       ],
@@ -15005,6 +15023,9 @@
       "Account": [
         "Conta"
       ],
+      "Account monitor": [
+        "Monitor da conta"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -15313,8 +15334,8 @@
       "Delete": [
         "Excluir"
       ],
-      "Delete ${ policyName }?": [
-        "Excluir ${ policyName }?"
+      "Delete ${ name }?": [
+        "Excluir ${ name }?"
       ],
       "Delete account": [
         "Excluir conta"
@@ -15350,8 +15371,8 @@
       "Device name": [
         "Nome do dispositivo"
       ],
-      "Disable activity monitor?": [
-        "Desativar o monitor de atividade?"
+      "Disable account monitor?": [
+        "Desativar monitor da conta?"
       ],
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
@@ -15783,9 +15804,6 @@
       ],
       "Security and privacy": [
         "Segurança e privacidade"
-      ],
-      "Security events": [
-        "Eventos de segurança"
       ],
       "Select a plan": [
         "Selecione um plano"

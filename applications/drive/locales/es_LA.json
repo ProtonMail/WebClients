@@ -3445,6 +3445,9 @@
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
       ],
+      "Failed to change permissions settings": [
+        "Error al cambiar los ajustes de permisos"
+      ],
       "Failed to copy photo to album": [
         "Error al copiar la foto al álbum"
       ],
@@ -5223,6 +5226,18 @@
       ],
       "Calendar side panel": [
         "Panel lateral de calendario"
+      ],
+      "Can edit": [
+        "Puede editar"
+      ],
+      "Can edit and manage access": [
+        "Puede editar y gestionar el acceso"
+      ],
+      "Can view and edit": [
+        "Puede ver y editar"
+      ],
+      "Can view only": [
+        "Solo lectura"
       ],
       "Can't move a folder into itself": [
         "No puede mover una carpeta dentro de sí misma"
@@ -7269,6 +7284,9 @@
       "Emails (last 3 months)": [
         "Correos (últimos 3 meses)"
       ],
+      "Emails (last 6 months)": [
+        "Correos electrónicos (últimos 6 meses)"
+      ],
       "Emails (last month)": [
         "Correos (último mes)"
       ],
@@ -7367,6 +7385,9 @@
       ],
       "Last 3 months only": [
         "Solo los últimos 3 meses"
+      ],
+      "Last 6 months only": [
+        "Solo los últimos 6 meses"
       ],
       "Last month only": [
         "Solo el último mes"
@@ -9483,6 +9504,12 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Las fotos seleccionadas ya están en «${ albumName }»."
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuración actualizada. Los editores pueden compartir y cambiar permisos."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuración actualizada. Los editores no pueden compartir ni cambiar los permisos."
       ],
       "Share invitation accepted successfully": [
         "La invitación compartida fue aceptada."

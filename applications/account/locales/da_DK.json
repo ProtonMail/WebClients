@@ -510,6 +510,9 @@
       "Disable": [
         "Deaktivér"
       ],
+      "Disable account monitor": [
+        "Deaktivér kontoovervågning"
+      ],
       "Disable categories": [
         "Deaktiver kategorier"
       ],
@@ -518,9 +521,6 @@
       ],
       "Disable recovery phrase?": [
         "Deaktiver gendannelsessætning?"
-      ],
-      "Disable security events": [
-        "Deaktivér sikkerhedsbegivenheder"
       ],
       "Discard": [
         "Kassér"
@@ -953,6 +953,9 @@
       ],
       "Make key primary": [
         "Gør nøglen til primær"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage advanced account protections": [
         "Administrer avancerede kontobeskyttelser"
@@ -2670,11 +2673,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migreringsassistent"
+      ],
       "Add a custom domain": [
         "Tilføj et brugerdomæne"
       ],
+      "App installed": [
+        "Appen er installeret."
+      ],
       "Authenticate": [
         "Godkend"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Godkend din Google Workspace-konto"
       ],
       "Calendar": [
         "Kalender"
@@ -2705,6 +2717,12 @@
       ],
       "Finish setting up your business account": [
         "Færdiggør konfigurationen af din virksomhedskonto"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app til at kopiere data til ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Installér app"
       ],
       "Install migration app": [
         "Installer migrations app."
@@ -2770,14 +2788,17 @@
       "Start migration": [
         "Start migrering"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, skal du vende tilbage hertil for at fortsætte. Få mere at vide"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
       ],
       "Transfer errors": [
         "Overførselsfejl"
       ],
       "User": [
         "Bruger"
+      ],
+      "Verify installation": [
+        "Bekræft installationen"
       ],
       "Verify your domain": [
         "Bekræft dit domæne"
@@ -2788,8 +2809,14 @@
       "Verify your domain to start a migration": [
         "Bekræft dit domæne for at starte en migrering"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din Google Workspace-konto, og prøv igen."
+      ],
       "What are you migrating?": [
         "Hvad migrerer du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du skal give tilladelse til, at ${ BRAND_NAME } kan kopiere dine data. Når du har accepteret tilladelserne, så vend tilbage hertil for at fortsætte."
       ]
     },
     "breadcrumb": {
@@ -7515,9 +7542,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Efter at have forladt dit abonnement, vil denne bruger blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement med en 30-dages gratis prøveperiode.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opret og administrer familiemedlemmer, og tildel dem lagerplads, der deles mellem ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
       ],
@@ -9435,8 +9459,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved at oprette en ${ PASS_APP_NAME }-konto med din SimpleLogin e-mail, kan du administrere dine aliasser direkte fra ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved at slå overvågning af sikkerhedsbegivenheder fra, slettes også hele din historik. Er du sikker på, at du vil deaktivere dette?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved at deaktivere kontoovervågning sletter du også hele din historik. Er du sikker på, at du vil deaktivere den?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -10042,6 +10066,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktiveret, vil organisationsmedlemmer kun kunne dele bokse eller elementer internt i organisationen."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Hvis deaktiveret kan organisationens medlemmer ikke oprette sikre links."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Hvis aktiveret, vil organisationsmedlemmer være i stand til at dele individuelle elementer ud over hele bokse."
@@ -12804,6 +12831,9 @@
       "Allow recovery using a trusted device": [
         "Tillad gendannelse ved hjælp af en betroet enhed"
       ],
+      "Allow secure link sharing": [
+        "Tillad sikker deling af links"
+      ],
       "Allow sharing outside the organization": [
         "Tillad deling uden for organisationen"
       ],
@@ -14594,8 +14624,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Aktivitetsovervågning"
+      "Account monitor": [
+        "Kontoovervågning"
       ],
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
@@ -21510,9 +21540,6 @@
       "Address added": [
         "Adresse tilføjet"
       ],
-      "Address successfully added": [
-        "Adressen blev tilføjet"
-      ],
       "Address updated": [
         "Adresse opdateret"
       ],
@@ -22094,6 +22121,9 @@
       "Account keys": [
         "Kontonøgler"
       ],
+      "Account monitor": [
+        "Kontoovervågning"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -22489,9 +22519,6 @@
       "Deep dive into VPN blog posts": [
         "Dyk ned i VPN-blogindlæg"
       ],
-      "Delete ${ policyName }?": [
-        "Slet ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Slet ${ value }"
       ],
@@ -22550,8 +22577,8 @@
       "Device name": [
         "Enhedsnavn"
       ],
-      "Disable activity monitor?": [
-        "Deaktivér aktivitetsovervågning?"
+      "Disable account monitor?": [
+        "Deaktivér kontoovervågning?"
       ],
       "Disable categories?": [
         "Deaktiver kategorier?"
@@ -23253,9 +23280,6 @@
       ],
       "Security and privacy": [
         "Sikkerhed og privatliv"
-      ],
-      "Security events": [
-        "Sikkerhedsbegivenheder"
       ],
       "Security logs": [
         "Sikkerhedslogge"

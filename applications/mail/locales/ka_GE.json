@@ -325,6 +325,9 @@
       "Copy addresses": [
         "მისამართების კოპირება"
       ],
+      "Copy alias “${ name }”": [
+        "ფსევდონიმის \"${ name }\" კოპირება"
+      ],
       "Copy email to clipboard": [
         "ელფოსტის მისამართის ბაფერში კოპირება"
       ],
@@ -1727,6 +1730,9 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -1755,6 +1761,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -1766,6 +1775,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -2042,6 +2054,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle option": {
@@ -5204,6 +5228,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "კონტაქტები ჯერ არ გაქვთ. დაიწყეთ მათი შექმნა"
@@ -9218,6 +9245,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -9358,6 +9388,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -11825,6 +11858,9 @@
       ],
       "Remind me later": [
         "შემახსენე მოგვიანებით"
+      ],
+      "Yes, don't show again": [
+        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -11980,6 +12016,12 @@
       ],
       "Got it": [
         "გავიგე"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -12600,14 +12642,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "ყველა ფსევდონიმი"
+      ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
+      ],
+      "Create an alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "ახალი ფსევდონიმი"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გახსნა"
+      ],
+      "Protect your online identity": [
+        "დაცავით თქვენი იდენტობა ინტერნეტში"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "სცადეთ ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(გახსნის ${ PASS_APP_NAME }-ს)"
       ]
     },
     "Security Center - Action": {
@@ -12911,6 +12985,14 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "გაზიარებულია ${ ownerName }-ის მიერ"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
       ]
     },
     "Signature verification warning": {
@@ -13900,6 +13982,9 @@
       "Address verification disabled": [
         "მისამართის შემოწმება გამორთულია"
       ],
+      "Alias copied to clipboard": [
+        "ფსევდონიმი კოპირებულია ბუფერში"
+      ],
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
@@ -13991,6 +14076,9 @@
       ],
       "Labels applied.": [
         "ჭდეები გადატარებულია."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
       ],
       "Mail list unsubscribed": [
         "საფოსტო სიის გამოწერა გაუქმდა"
@@ -14783,6 +14871,9 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
+      ],
+      "Keep this banner hidden?": [
+        "იყოს ეს ბანერი დამალული?"
       ],
       "Label as": [
         "დანიშვნა, როგორც"

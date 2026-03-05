@@ -572,6 +572,9 @@
       "Make admin": [
         "設為管理員"
       ],
+      "Manage addresses": [
+        "管理電郵位址"
+      ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
       ],
@@ -4158,9 +4161,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "我們預設分配 ${ formattedStorage } 的儲存空間予管理員帳號。您可稍後管理如何分配儲存空間予額外的使用者。"
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "創建並管理家庭成員，並為各人分配儲存空間以一併用於 ${ DRIVE_APP_NAME } 和 ${ MAIL_APP_NAME }"
       ],
@@ -12976,8 +12976,8 @@
       "Delete": [
         "刪除"
       ],
-      "Delete ${ policyName }?": [
-        "刪除 ${ policyName }？"
+      "Delete ${ name }?": [
+        "刪除 ${ name }？"
       ],
       "Delete account": [
         "刪除帳號"
@@ -13386,9 +13386,6 @@
       ],
       "Security and privacy": [
         "安全與隱私"
-      ],
-      "Security events": [
-        "安全事件"
       ],
       "Select a plan": [
         "請選擇一個方案"

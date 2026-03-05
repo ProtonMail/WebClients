@@ -510,9 +510,6 @@
       "Disable recovery phrase?": [
         "vô hiệu hóa cụm từ khôi phục?"
       ],
-      "Disable security events": [
-        "Vô hiệu hóa sự kiện bảo mật"
-      ],
       "Discard": [
         "Bỏ"
       ],
@@ -938,6 +935,9 @@
       ],
       "Make key primary": [
         "Đặt làm khóa chính"
+      ],
+      "Manage addresses": [
+        "Quản lý các địa chỉ"
       ],
       "Manage advanced account protections": [
         "Quản lý các biện pháp bảo vệ tài khoản nâng cao"
@@ -7245,9 +7245,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Sau khi rời khỏi gói, người dùng này sẽ được chuyển sang gói ${ BRAND_NAME } không giới hạn với 30 ngày dùng thử miễn phí.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Theo mặc định, chúng tôi cấp ${ formattedStorage } dung lượng lưu trữ cho tài khoản quản trị viên. Có thể phân bổ lại dung lượng lưu trữ cho từng người dùng sau."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Tạo và quản lý thành viên gia đình cũng như phân bổ không gian lưu trữ được chia sẻ giữa ${ DRIVE_APP_NAME } và ${ MAIL_APP_NAME }."
       ],
@@ -9099,9 +9096,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Nếu tạo tài khoản ${ PASS_APP_NAME } với email SimpleLogin, có thể quản lý các biệt danh trực tiếp từ ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Nếu vô hiệu hóa giám sát sự kiện bảo mật, toàn bộ lịch sử cũng sẽ bị xóa. Chắc chắn muốn vô hiệu hóa tính năng này không?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Nếu hạ cấp xuống miễn phí plan, bạn sẽ mất vĩnh viễn những lợi ích này, cho dù sau này có nâng cấp lại."
@@ -14162,9 +14156,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Giám sát hoạt động"
-      ],
       "Enable ${ reason }": [
         "Kích hoạt ${ reason }"
       ],
@@ -20815,9 +20806,6 @@
       "Address added": [
         "Đã thêm địa chỉ"
       ],
-      "Address successfully added": [
-        "Đã thêm địa chỉ thành công"
-      ],
       "Address updated": [
         "Đã cập nhật địa chỉ"
       ],
@@ -21771,9 +21759,6 @@
       "Deep dive into VPN blog posts": [
         "Tìm hiểu sâu về các bài đăng blog VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Xóa ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Xóa ${ value }"
       ],
@@ -21827,9 +21812,6 @@
       ],
       "Device name": [
         "Tên thiết bị"
-      ],
-      "Disable activity monitor?": [
-        "Vô hiệu hóa giám sát hoạt động?"
       ],
       "Disable categories?": [
         "Vô hiệu hóa các danh mục?"
@@ -22526,9 +22508,6 @@
       ],
       "Security and privacy": [
         "Bảo mật và riêng tư"
-      ],
-      "Security events": [
-        "Sự kiện bảo mật"
       ],
       "Security logs": [
         "Nhật ký bảo mật"

@@ -224,6 +224,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Refresh audio and video tracks": [
+        "Ses ve video parçalarını yenile"
+      ],
       "Refresh link": [
         "Bağlantıyı yenile"
       ],
@@ -1585,7 +1588,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -1814,7 +1817,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. ${ digit } rakamı."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -2015,16 +2018,19 @@
         "Ücretli görüşme"
       ],
       "Reconnected successfully": [
-        "Başarıyla yeniden bağlantı kuruldu"
+        "Yeniden bağlandı"
       ],
       "Reconnecting to meeting...": [
-        "Toplantıya yeniden bağlanıyor..."
+        "Görüşmeye yeniden bağlanıyor..."
       ],
       "Recording saved": [
         "Görüşme kaydedildi"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Refresh audio and video tracks": [
+        "Ses ve video parçalarını yenile"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -2147,7 +2153,7 @@
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "Would you like to delete this event?": [
         "Bu etkinliği silmek ister misiniz?"

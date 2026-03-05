@@ -327,6 +327,9 @@
       "Copy addresses": [
         "Kopírovat adresy"
       ],
+      "Copy alias “${ name }”": [
+        "Kopírovat alias \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
@@ -5384,6 +5387,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Pokud je povoleno dodatečné heslo, lze správu aliasů provádět pouze v ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Zatím nemáte žádný kontakt. Začněte vytvořením nového kontaktu"
@@ -13350,14 +13356,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Všechny aliasy"
+      ],
       "Create alias": [
         "Vytvořit alias"
+      ],
+      "Create an alias": [
+        "Vytvořit alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Vygenerujte aliasy za běhu a jednoduše spravujte svoje aliasy a hesla."
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy Hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nový alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Otevřít ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Chraňte svou digitální identitu"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Vyzkoušejte ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otevře ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14795,6 +14833,9 @@
       "Address verification disabled": [
         "Ověření adresy deaktivováno"
       ],
+      "Alias copied to clipboard": [
+        "Alias byl zkopírován do schránky"
+      ],
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
@@ -14890,6 +14931,9 @@
       ],
       "Labels applied.": [
         "Štítky použity."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Mail list unsubscribed": [
         "Odhlášeno z e-mailového seznamu"
