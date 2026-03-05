@@ -4890,6 +4890,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Когда дополнительный пароль включен, управлять псевдонимами можно только в ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пока нет контактов. Начните с создания нового контакта"
       ]
@@ -11915,14 +11918,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Все псевдонимы"
+      ],
       "Create alias": [
         "Создать псевдоним"
+      ],
+      "Create an alias": [
+        "Создать псевдоним"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Создавайте псевдонимы на лету и легко управляйте псевдонимами и паролями."
+      ],
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Псевдонимы Hide-my-email позволяют регистрироваться в Интернете, не сообщая свой адрес электронной почты. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Новый псевдоним"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Открыть ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Защитите свои личные данные в Интернете"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Попробуйте ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Используется на Amazon для покупок и прочего"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(откроет ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13270,6 +13305,9 @@
       "Address verification disabled": [
         "Проверка адреса отключена"
       ],
+      "Alias copied to clipboard": [
+        "Псевдоним скопирован в буфер обмена"
+      ],
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
       ],
@@ -13359,6 +13397,9 @@
       ],
       "Labels applied.": [
         "Ярлыки применены."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
       ],
       "Mail list unsubscribed": [
         "Вы удалились из списка рассылки"
