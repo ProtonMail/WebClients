@@ -1,12 +1,13 @@
 import { put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
 import { requestShare } from '@proton/pass/lib/shares/share.requests';
+import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import {
     itemsDeleteEvent,
     itemsUpdated,
@@ -18,7 +19,6 @@ import {
     sharesEventSync,
 } from '@proton/pass/store/actions';
 import type { ItemsByShareId, ShareItem, SharesState } from '@proton/pass/store/reducers';
-import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '@proton/pass/types';

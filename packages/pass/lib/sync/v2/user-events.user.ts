@@ -1,13 +1,13 @@
 import { call, put } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { getOrganizationSettings } from '@proton/pass/lib/organization/organization.requests';
+import { onOrganizationSettingsUpdated } from '@proton/pass/lib/sync/common/organization';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { setBreaches, setUserAccess } from '@proton/pass/store/actions';
 import { setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import { onOrganizationSettingsUpdated } from '@proton/pass/store/sagas/organization/organization.settings.saga';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type {
     BreachesGetResponse,

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { migrate } from '@proton/pass/lib/events/migrate';
-import { sync } from '@proton/pass/lib/events/sync';
-import { type SyncResult, SyncStrategy } from '@proton/pass/lib/events/types';
+import { migrate } from '@proton/pass/lib/sync/migrate';
+import { sync } from '@proton/pass/lib/sync/sync';
+import { type SyncResult, SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
     aliasSyncStatus,
     bootFailure,

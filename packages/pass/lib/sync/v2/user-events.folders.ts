@@ -1,4 +1,4 @@
-import type { EventProcessor } from '@proton/pass/lib/events/types';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import type { SyncEventShareFolderOutput } from '@proton/pass/types';
 
 /** FIXME: when adding folder support */

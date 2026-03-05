@@ -1,8 +1,8 @@
 import { put, select } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { parseGroupInvite, parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
 import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { selectInvites } from '@proton/pass/store/selectors/invites';

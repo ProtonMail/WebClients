@@ -1,8 +1,8 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '@proton/pass/store/actions';
 import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
