@@ -1,10 +1,11 @@
-import { app, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
+import { app, dialog, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { profiler } from "../profiler/profiler";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -28,6 +29,33 @@ export const setApplicationMenu = () => {
                     label: c("App menu").t`Show logs`,
                     type: "normal",
                     click: () => shell.openPath(app.getPath("logs")),
+                },
+                { type: "separator" },
+                {
+                    label: c("App menu").t`Collect startup performance data`,
+                    type: "normal",
+                    click: () => {
+                        dialog
+                            .showMessageBox({
+                                type: "info",
+                                buttons: [
+                                    c("App menu").t`Restart and profile now`,
+                                    c("App menu").t`Profile on next launch`,
+                                    c("App menu").t`Cancel`,
+                                ],
+                                defaultId: 0,
+                                cancelId: 2,
+                                title: c("App menu").t`Profile app startup`,
+                                message: c("App menu")
+                                    .t`This will measure how long the app takes to start and save a report to your logs folder.`,
+                                detail: c("App menu")
+                                    .t`"Restart and profile now" will restart the app immediately and capture a startup profile.\n\n"Profile on next launch" will profile the next time you open the app. Use this to measure startup speed after a reboot.`,
+                            })
+                            .then(({ response }) => {
+                                if (response === 0) profiler.arm(false);
+                                if (response === 1) profiler.arm(true);
+                            });
+                    },
                 },
                 ...quitMenuProps,
             ],
