@@ -18,7 +18,7 @@ import { produceOAuthFork } from '@proton/shared/lib/authentication/fork';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, type APP_NAMES, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { FlagProvider } from '@proton/unleash';
+import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';

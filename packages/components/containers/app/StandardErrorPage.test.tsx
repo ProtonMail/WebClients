@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import metrics from '@proton/metrics';
-import { FlagContext } from '@proton/unleash';
+import { FlagContext } from '@proton/unleash/proxy';
 
 import StandardErrorPage from './StandardErrorPage';
 
