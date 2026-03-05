@@ -25,6 +25,19 @@ const getSignupTypeQuery = (accountData: AccountData) => {
     }
 };
 
+/**
+ * Returns additional headers for browsers that integrate Pass.
+ * The `x-pm-browser` header identifies the browser.
+ * This will be sent during account creation to inform the backend.
+ */
+const getBrowserHeaders = (): Record<string, string> => {
+    // For helium
+    if ((window as any).chrome?.helium !== undefined) {
+        return { 'x-pm-browser': 'helium' };
+    }
+    return {};
+};
+
 export const handleCreateUser = async ({
     accountData,
     paymentToken,
@@ -70,23 +83,26 @@ export const handleCreateUser = async ({
         >({
             api,
             credentials: { password },
-            config: {
-                output: 'raw',
-                ...withVerificationHeaders(
-                    humanVerificationParameters?.token,
-                    humanVerificationParameters?.tokenType,
-                    queryCreateUser(
-                        {
-                            Type: clientType,
-                            Username: username,
-                            Payload: payload,
-                            ...getTokenPayment(paymentToken),
-                            ...getSignupTypeQuery(accountData),
-                        },
-                        productParam
-                    )
-                ),
-            },
+            config: mergeHeaders(
+                {
+                    output: 'raw',
+                    ...withVerificationHeaders(
+                        humanVerificationParameters?.token,
+                        humanVerificationParameters?.tokenType,
+                        queryCreateUser(
+                            {
+                                Type: clientType,
+                                Username: username,
+                                Payload: payload,
+                                ...getTokenPayment(paymentToken),
+                                ...getSignupTypeQuery(accountData),
+                            },
+                            productParam
+                        )
+                    ),
+                },
+                getBrowserHeaders()
+            ),
         });
 
         const { User } = await response.json();
@@ -127,7 +143,7 @@ export const handleCreateUser = async ({
                         productParam
                     )
                 ),
-                getHVHeadersBasedOnSignupMode(hvMode, paymentToken)
+                { ...getBrowserHeaders(), ...getHVHeadersBasedOnSignupMode(hvMode, paymentToken) }
             ),
         });
         return {
