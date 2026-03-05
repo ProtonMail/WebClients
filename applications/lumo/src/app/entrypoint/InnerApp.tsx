@@ -5,6 +5,7 @@ import {PandocProvider} from '../providers/PandocProvider';
 import {MainLayout} from '../layouts/MainLayout';
 import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
+import {useLumoFlags} from "../hooks/useLumoFlags";
 
 const ConversationPage = lazy(() => import('../layouts/ConversationPage').then((m) => ({default: m.ConversationPage})));
 const ProjectsView = lazy(() => import('../features/projects/ProjectsView').then((m) => ({default: m.ProjectsView})));
@@ -14,6 +15,7 @@ const ProjectDetailView = lazy(() =>
 
 export function InnerApp() {
     const {url} = useRouteMatch(); // either "/guest" or "/u/:sessionId"
+    const {imageTools} = useLumoFlags();
 
     return (
 
@@ -24,7 +26,9 @@ export function InnerApp() {
                         <Switch>
                             <Route exact path="/projects" component={ProjectsView}/>
                             <Route path="/projects/:projectId" component={ProjectDetailView}/>
-                            <Route exact path="/gallery" component={ConversationPage}/>
+                            {imageTools &&
+                                <Route exact path="/gallery" component={ConversationPage}/>
+                            }
                             <Route exact path="/" component={ConversationPage}/>
                             <Route path="/c/:conversationId" component={ConversationPage}/>
                         </Switch>
