@@ -56,6 +56,10 @@ jest.mock('idb', () => ({
     deleteDB: jest.fn(() => Promise.resolve()),
 }));
 
+jest.mock('@proton/encrypted-search/esIDB', () => ({
+    hasESDB: jest.fn(() => false),
+}));
+
 describe('Unsubscribe banner', () => {
     const messageID = 'messageID';
     const toAddressID = 'toAddressID';
