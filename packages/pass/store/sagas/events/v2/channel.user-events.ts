@@ -1,7 +1,7 @@
 import { call, cancelled, delay, put, race, select, take } from 'redux-saga/effects';
 
-import { processUserEvents } from '@proton/pass/lib/events/v2/user-events.processor';
-import { getUserEventsSince } from '@proton/pass/lib/events/v2/user-events.requests';
+import { processUserEvents } from '@proton/pass/lib/sync/v2/user-events.processor';
+import { getUserEventsSince } from '@proton/pass/lib/sync/v2/user-events.requests';
 import { setUserEventID } from '@proton/pass/store/actions';
 import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
 import { selectLatestUserEventId } from '@proton/pass/store/selectors';

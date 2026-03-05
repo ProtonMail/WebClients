@@ -1,8 +1,8 @@
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
+import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     coreEvent,

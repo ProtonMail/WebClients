@@ -3,12 +3,12 @@ import { call, put, select } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShare } from '@proton/pass/lib/shares/share.requests';
+import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { shareCreated, shareDeleted, shareUpdated } from '@proton/pass/store/actions';
-import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareOutput } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';

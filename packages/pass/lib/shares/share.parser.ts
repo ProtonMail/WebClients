@@ -1,7 +1,7 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { SYNC_STRATEGY } from '@proton/pass/lib/events/global';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { Maybe, Share, ShareContent, ShareGetResponse, ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';

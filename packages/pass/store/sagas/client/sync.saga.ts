@@ -1,7 +1,7 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { sync } from '@proton/pass/lib/events/sync';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
+import { sync } from '@proton/pass/lib/sync/sync';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
     getInAppNotifications,
     getUserAccessIntent,

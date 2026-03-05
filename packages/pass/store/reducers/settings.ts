@@ -4,10 +4,10 @@ import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import {
     coreEvent,
     extraPasswordToggle,

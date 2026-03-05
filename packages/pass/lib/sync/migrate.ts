@@ -2,23 +2,23 @@ import { all, call, put, select } from 'redux-saga/effects';
 
 import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { setSyncStrategy } from '@proton/pass/lib/events/global';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
-import type { GroupInvitesGetResponse } from '@proton/pass/lib/events/v1/invite-polling.processor';
+import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
+import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
+import { setSyncStrategy } from '@proton/pass/lib/sync/global';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
+import type { GroupInvitesGetResponse } from '@proton/pass/lib/sync/v1/invite-polling.processor';
 import {
     processGroupInvitePollingEvent,
     processUserInvitePollingEvent,
-} from '@proton/pass/lib/events/v1/invite-polling.processor';
+} from '@proton/pass/lib/sync/v1/invite-polling.processor';
 import {
     processSharePollingError,
     processSharePollingEvent,
     processSharesIncomingEvent,
     processSharesPollingEvent,
-} from '@proton/pass/lib/events/v1/share-polling.processor';
-import { syncV1 } from '@proton/pass/lib/events/v1/sync';
-import { getUserEventLatestID } from '@proton/pass/lib/events/v2/user-events.requests';
-import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
-import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
+} from '@proton/pass/lib/sync/v1/share-polling.processor';
+import { syncV1 } from '@proton/pass/lib/sync/v1/sync';
+import { getUserEventLatestID } from '@proton/pass/lib/sync/v2/user-events.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { notification, setUserAccess, syncMigration } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';

@@ -1,6 +1,6 @@
 import { eventChannel } from 'redux-saga';
 
-import { type EventManagerEvent, eventManager } from '@proton/pass/lib/events/manager/manager';
+import { type EventManagerEvent, eventManager } from '@proton/pass/lib/events/manager';
 import { merge } from '@proton/pass/utils/object/merge';
 
 import type { EventChannel, EventChannelOnError, EventChannelOptions } from './types';

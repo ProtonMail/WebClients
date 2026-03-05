@@ -1,12 +1,12 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
-import { notifyInactiveShares } from '@proton/pass/lib/events/migrate';
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
+import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { syncResult } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';

@@ -1,12 +1,12 @@
 import { all, call } from 'redux-saga/effects';
 
+import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import {
     processGroupInvitesChanged,
     processInvitesChanged,
     processSharesWithInvitesToCreate,
-} from '@proton/pass/lib/events/v2/user-events.invites';
-import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
+} from '@proton/pass/lib/sync/v2/user-events.invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { SyncEventListOutput } from '@proton/pass/types';
 

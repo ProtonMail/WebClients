@@ -2,10 +2,10 @@ import groupBy from 'lodash/groupBy';
 import { call, put } from 'redux-saga/effects';
 
 import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { requestItem } from '@proton/pass/lib/items/item.requests';
+import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { itemsDeleteEvent, itemsUpdated } from '@proton/pass/store/actions';
-import { discardDrafts } from '@proton/pass/store/sagas/items/item-drafts';
 import type { ItemRevision, SyncEventShareItemOutput } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import chunk from '@proton/utils/chunk';

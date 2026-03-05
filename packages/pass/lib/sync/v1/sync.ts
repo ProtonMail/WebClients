@@ -1,11 +1,11 @@
 import { call, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { notifyInactiveShares } from '@proton/pass/lib/events/migrate';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
+import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';

@@ -2,9 +2,9 @@ import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
 import { all, call, cancelled, fork, select, take, takeEvery } from 'redux-saga/effects';
 
-import { NOOP_EVENT } from '@proton/pass/lib/events/manager/manager';
-import { processSharesIncomingEvent, processSharesPollingEvent } from '@proton/pass/lib/events/v1/share-polling.processor';
+import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { getSharesQuery } from '@proton/pass/lib/shares/share.requests';
+import { processSharesIncomingEvent, processSharesPollingEvent } from '@proton/pass/lib/sync/v1/share-polling.processor';
 import { vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { SharesState } from '@proton/pass/store/reducers';
 import { selectShareState } from '@proton/pass/store/selectors';
