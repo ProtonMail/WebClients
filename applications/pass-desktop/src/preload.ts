@@ -1,4 +1,5 @@
 import type { IPCChannelResult, IPCChannels } from 'applications/pass-desktop/src/lib/ipc';
+import type { IpcRendererEvent } from 'electron';
 import { contextBridge, ipcRenderer } from 'electron';
 
 import type { ContextBridgeApi } from '@proton/pass/types';
@@ -13,7 +14,20 @@ const invoke = <T extends keyof IPCChannels, P extends IPCChannels[T]['args'], R
         return res.result;
     });
 
+const handler = <T extends keyof IPCChannels, P extends IPCChannels[T]['args']>(
+    method: T,
+    callback: (...args: P) => void
+): (() => void) => {
+    const handler = (_: IpcRendererEvent, ...args: P) => callback(...args);
+    ipcRenderer.on(method, handler);
+    return () => ipcRenderer.off(method, handler);
+};
+
 const contextBridgeApi: ContextBridgeApi = {
+    /* window */
+    windowShow: () => invoke('window:show'),
+    onWindowHide: (callback) => handler('window:hide', callback),
+
     /* clipboard */
     writeToClipboard: (text) => invoke('clipboard:write', text),
     readFromClipboard: () => invoke('clipboard:read'),
