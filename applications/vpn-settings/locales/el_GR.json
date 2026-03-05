@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Διαγραφή Πύλης"
       ],
+      "Delete gateway": [
+        "Διαγραφή πύλης"
+      ],
       "Delete group": [
         "Διαγραφή ομάδας"
       ],
@@ -298,6 +301,9 @@
       ],
       "Delete policy": [
         "Διαγραφή πολιτικής"
+      ],
+      "Delete token ${ token.Account }": [
+        "Διαγραφή διακριτικού ${ token.Account }"
       ],
       "Delete user": [
         "Διαγραφή χρήστη"
@@ -317,14 +323,14 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
+      "Disable account monitor": [
+        "Απενεργοποίηση παρακολούθησης λογαριασμού"
+      ],
       "Disable recovery phrase": [
         "Απενεργοποίηση φράσης ανάκτησης"
       ],
       "Disable recovery phrase?": [
         "Απενεργοποίηση φράσης ανάκτησης;"
-      ],
-      "Disable security events": [
-        "Απενεργοποίηση συμβάντων ασφαλείας"
       ],
       "Discard": [
         "Απόρριψη"
@@ -601,6 +607,9 @@
       ],
       "Make admin": [
         "Ορισμός ως διαχειριστή"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
       ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
@@ -1816,8 +1825,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Βοηθός Μετεγκατάστασης ${ BRAND_NAME }"
+      ],
+      "App installed": [
+        "Η εφαρμογή εγκαταστάθηκε"
+      ],
       "Authenticate": [
         "Ταυτοποίηση"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Ταυτοποιήστε τον λογαριασμό σας στο Google Workspace"
       ],
       "Calendar": [
         "Ημερολόγιο"
@@ -1839,6 +1857,12 @@
       ],
       "Failed to load OAuth": [
         "Αποτυχία φόρτωσης OAuth"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Εγκατάσταση εφαρμογής"
       ],
       "Install migration app": [
         "Εγκατάσταση εφαρμογής μετεγκατάστασης"
@@ -1895,8 +1919,8 @@
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε."
       ],
       "Transfer errors": [
         "Σφάλματα μεταφοράς"
@@ -1904,14 +1928,23 @@
       "User": [
         "Χρήστης"
       ],
+      "Verify installation": [
+        "Επαλήθευση εγκατάστασης"
+      ],
       "Verify your domain": [
         "Επαληθεύστε τον τομέα σας"
       ],
       "Verify your domain to start a migration": [
         "Επαληθεύστε τον τομέα σας για να ξεκινήσετε τη μετεγκατάσταση"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Δεν καταφέραμε να επαληθεύσουμε την εγκατάσταση, παρακαλούμε ελέγξτε ότι την έχετε εγκαταστήσει στο Google Workspace λογαριασμό σας και προσπαθήστε ξανά."
+      ],
       "What are you migrating?": [
         "Τι μεταφέρετε;"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Πρέπει να δώσετε την άδεια για το ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Αφού αποδεχτείτε τις άδειες, επιστρέψτε εδώ για να συνεχίσετε."
       ]
     },
     "Browser": {
@@ -4898,8 +4931,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Όταν αποχωρήσει από το πλάνο σας, αυτός ο χρήστης θα μετακινηθεί σε ένα πρόγραμμα ${ BRAND_NAME } Unlimited με δωρεάν δοκιμή 30 ημερών.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Αναθέστε χώρο αποθήκευσης στον λογαριασμό διαχειριστή. Μπορείτε να διανείμετε χώρο αποθήκευσης σε επιπλέον χρήστες αργότερα."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Δημιουργήστε και διαχειριστείτε μέλη της οικογένειας και εκχωρήστε τους χώρο αποθήκευσης κοινόχρηστο μεταξύ ${ DRIVE_APP_NAME } και ${ MAIL_APP_NAME }."
@@ -6319,8 +6352,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Απενεργοποιώντας την παρακολούθηση συμβάντων ασφαλείας, θα διαγράψετε επίσης ολόκληρο το ιστορικό σας. Είστε βέβαιοι ότι θέλετε να την απενεργοποιήσετε;"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Απενεργοποιώντας την παρακολούθηση λογαριασμού, θα διαγράψετε επίσης ολόκληρο το ιστορικό σας. Είστε σίγουροι ότι θέλετε να την απενεργοποιήσετε;"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -6722,6 +6755,12 @@
       ],
       "Free trial": [
         "Δωρεάν δοκιμή"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Δεν ήταν δυνατή η διαγραφή της πύλης. Παρακαλούμε προσπαθήστε ξανά"
+      ],
+      "Gateway deleted": [
+        "Η πύλη διαγράφηκε"
       ],
       "Gateway monitor": [
         "Παρακολούθηση πυλών"
@@ -8858,6 +8897,9 @@
       "Emails (last 3 months)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 3 μήνες)"
       ],
+      "Emails (last 6 months)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 6 μήνες)"
+      ],
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
@@ -8980,6 +9022,9 @@
       ],
       "Last 3 months only": [
         "Τελευταίοι 3 μήνες μόνο"
+      ],
+      "Last 6 months only": [
+        "Τελευταίοι 6 μήνες μόνο"
       ],
       "Last month only": [
         "Τελευταίος μήνας μόνο"
@@ -9799,8 +9844,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Παρακολούθηση δραστηριότητας"
+      "Account monitor": [
+        "Παρακολούθηση λογαριασμού"
       ],
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
@@ -14561,9 +14606,6 @@
       "Address added": [
         "Η διεύθυνση προστέθηκε"
       ],
-      "Address successfully added": [
-        "Η διεύθυνση προστέθηκε επιτυχώς"
-      ],
       "Administrator privileges restored": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
@@ -14999,6 +15041,9 @@
       "Account": [
         "Λογαριασμός"
       ],
+      "Account monitor": [
+        "Παρακολούθηση λογαριασμού"
+      ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
@@ -15307,8 +15352,8 @@
       "Delete": [
         "Διαγραφή"
       ],
-      "Delete ${ policyName }?": [
-        "Διαγραφή ${ policyName };"
+      "Delete ${ name }?": [
+        "Διαγραφή ${ name };"
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
@@ -15344,8 +15389,8 @@
       "Device name": [
         "Όνομα συσκευής"
       ],
-      "Disable activity monitor?": [
-        "Να απενεργοποιηθεί η παρακολούθηση δραστηριότητας;"
+      "Disable account monitor?": [
+        "Απενεργοποίηση παρακολούθησης λογαριασμού ;"
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
@@ -15777,9 +15822,6 @@
       ],
       "Security and privacy": [
         "Ασφάλεια και απόρρητο"
-      ],
-      "Security events": [
-        "Συμβάντα ασφαλείας"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
@@ -16874,6 +16916,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Οι διακομιστές σε αυτήν την πύλη θα εισέλθουν σε περίοδο απενεργοποίησης 10 ημερών. Αυτοί οι διακομιστές μπορούν να προστεθούν σε μια νέα Πύλη, αλλά η χώρα τους δεν μπορεί να αλλάξει."
       ],
       "Skip verification?": [
         "Παράλειψη επαλήθευσης;"

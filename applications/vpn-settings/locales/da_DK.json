@@ -314,14 +314,14 @@
       "Disable": [
         "Deaktivér"
       ],
+      "Disable account monitor": [
+        "Deaktivér kontoovervågning"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
       ],
       "Disable recovery phrase?": [
         "Deaktiver gendannelsessætning?"
-      ],
-      "Disable security events": [
-        "Deaktivér sikkerhedsbegivenheder"
       ],
       "Discard": [
         "Kassér"
@@ -595,6 +595,9 @@
       ],
       "Make admin": [
         "Gør til admin"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage advanced account protections": [
         "Administrer avancerede kontobeskyttelser"
@@ -1810,8 +1813,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migreringsassistent"
+      ],
+      "App installed": [
+        "Appen er installeret."
+      ],
       "Authenticate": [
         "Godkend"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Godkend din Google Workspace-konto"
       ],
       "Calendar": [
         "Kalender"
@@ -1833,6 +1845,12 @@
       ],
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app til at kopiere data til ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Installér app"
       ],
       "Install migration app": [
         "Installer migrations app."
@@ -1889,8 +1907,8 @@
       "Sign in to Google Workspace": [
         "Log ind på Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, skal du vende tilbage hertil for at fortsætte. Få mere at vide"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
       ],
       "Transfer errors": [
         "Overførselsfejl"
@@ -1898,14 +1916,23 @@
       "User": [
         "Bruger"
       ],
+      "Verify installation": [
+        "Bekræft installationen"
+      ],
       "Verify your domain": [
         "Bekræft dit domæne"
       ],
       "Verify your domain to start a migration": [
         "Bekræft dit domæne for at starte en migrering"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din Google Workspace-konto, og prøv igen."
+      ],
       "What are you migrating?": [
         "Hvad migrerer du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du skal give tilladelse til, at ${ BRAND_NAME } kan kopiere dine data. Når du har accepteret tilladelserne, så vend tilbage hertil for at fortsætte."
       ]
     },
     "Browser": {
@@ -4859,9 +4886,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Efter at have forladt dit abonnement, vil denne bruger blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement med en 30-dages gratis prøveperiode.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opret og administrer familiemedlemmer, og tildel dem lagerplads, der deles mellem ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
       ],
@@ -6274,8 +6298,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved at slå overvågning af sikkerhedsbegivenheder fra, slettes også hele din historik. Er du sikker på, at du vil deaktivere dette?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved at deaktivere kontoovervågning sletter du også hele din historik. Er du sikker på, at du vil deaktivere den?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -9716,8 +9740,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Aktivitetsovervågning"
+      "Account monitor": [
+        "Kontoovervågning"
       ],
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
@@ -14417,9 +14441,6 @@
       "Address added": [
         "Adresse tilføjet"
       ],
-      "Address successfully added": [
-        "Adressen blev tilføjet"
-      ],
       "Administrator privileges restored": [
         "Administratorrettigheder gendannet"
       ],
@@ -14844,6 +14865,9 @@
       "Access control": [
         "Adgangskontrol"
       ],
+      "Account monitor": [
+        "Kontoovervågning"
+      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -15152,8 +15176,8 @@
       "Delete": [
         "Slet"
       ],
-      "Delete ${ policyName }?": [
-        "Slet ${ policyName }?"
+      "Delete ${ name }?": [
+        "Slet ${ name }?"
       ],
       "Delete account": [
         "Slet konto"
@@ -15189,8 +15213,8 @@
       "Device name": [
         "Enhedsnavn"
       ],
-      "Disable activity monitor?": [
-        "Deaktivér aktivitetsovervågning?"
+      "Disable account monitor?": [
+        "Deaktivér kontoovervågning?"
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -15607,9 +15631,6 @@
       ],
       "Security and privacy": [
         "Sikkerhed og privatliv"
-      ],
-      "Security events": [
-        "Sikkerhedsbegivenheder"
       ],
       "Select a plan": [
         "Vælg et abonnement"
