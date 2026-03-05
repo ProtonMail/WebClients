@@ -12,6 +12,7 @@ import { usePreviewState } from './usePreviewState';
 
 export interface PreviewProps {
     nodeUid: string;
+    revisionUid?: string;
     // Entire list of previewable images in the current view
     previewableNodeUids?: string[];
     drive?: Drive;
@@ -37,6 +38,7 @@ type PhotosProps = {
 export function Preview({
     drive = getDrive(),
     nodeUid,
+    revisionUid,
     previewableNodeUids,
     onNodeChange,
     verifySignatures = true,
@@ -46,6 +48,7 @@ export function Preview({
     const preview = usePreviewState({
         drive,
         nodeUid,
+        revisionUid,
         previewableNodeUids,
         onNodeChange,
         verifySignatures,
