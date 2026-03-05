@@ -7,20 +7,33 @@ import { TimeIntl } from '@proton/components';
 import type { Revision } from '@proton/drive';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
-import { useContextMenuControls } from '../FileBrowser';
+import { useContextMenuControls } from '../../../components/FileBrowser';
+import type { RevisionsProviderState } from '../useRevisionsModalState';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 
 import './RevisionListItem.scss';
 
-const RevisionListItem = ({
+type RevisionActionProps = Pick<
+    RevisionsProviderState,
+    | 'hasPreviewAvailable'
+    | 'isOwner'
+    | 'openRevisionPreview'
+    | 'openRevisionDetails'
+    | 'deleteRevision'
+    | 'restoreRevision'
+    | 'downloadRevision'
+>;
+
+export const RevisionListItem = ({
     revision,
     formatType = 'date',
     isCurrent = false,
+    ...actionProps
 }: {
     revision: Revision;
     formatType?: 'date' | 'time';
     isCurrent?: boolean;
-}) => {
+} & RevisionActionProps) => {
     const contextMenuControls = useContextMenuControls();
     const ref = useRef<HTMLButtonElement>(null);
     const options: Intl.DateTimeFormatOptions =
@@ -43,6 +56,7 @@ const RevisionListItem = ({
                 close={contextMenuControls.close}
                 revision={revision}
                 isCurrent={isCurrent}
+                {...actionProps}
             />
             <li className="revision-list-item mb-4">
                 <TimeIntl className="flex-1" options={options}>
@@ -72,5 +86,3 @@ const RevisionListItem = ({
         </>
     );
 };
-
-export default RevisionListItem;
