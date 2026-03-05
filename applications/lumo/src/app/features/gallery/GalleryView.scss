@@ -246,7 +246,7 @@ $media-expressions;
     gap: 4px;
     padding: 3px 8px 3px 6px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.88);
+    background: var(--background-norm);
     backdrop-filter: blur(6px);
     font-size: 10px;
     font-weight: 700;
