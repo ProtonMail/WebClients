@@ -6,7 +6,12 @@ import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
 
 import useSnooze from './useSnooze';
 
-jest.mock('@proton/unleash');
+jest.mock('@proton/unleash/useFlag', () => {
+    return {
+        useFlag: jest.fn().mockReturnValue(true),
+        useGetFlag: jest.fn().mockReturnValue(() => true),
+    };
+});
 
 describe('useSnooze', () => {
     beforeEach(async () => {

@@ -24,7 +24,7 @@ const defaultProps: Props = {
 };
 
 const mockUseFlag = jest.fn().mockReturnValue(false);
-jest.mock('@proton/unleash', () => ({
+jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: (...args: any[]) => mockUseFlag(...args),
 }));
 

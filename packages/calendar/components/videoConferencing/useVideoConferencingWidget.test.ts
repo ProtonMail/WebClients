@@ -19,7 +19,11 @@ jest.mock('../videoConferencing/useVideoConfTelemetry', () => ({
     }),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => jest.fn().mockReturnValue(true));
+jest.mock('@proton/unleash/useFlag', () => {
+    return {
+        useFlag: jest.fn().mockReturnValue(true),
+    };
+});
 
 describe('useVideoConferencingWidget', () => {
     const createMockEvent = (description: string, location: string): EventModelReadView =>

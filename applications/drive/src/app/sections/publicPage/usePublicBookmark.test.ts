@@ -21,7 +21,7 @@ jest.mock('@proton/drive', () => ({
 
 jest.mock('@proton/hooks/useLoading', () => jest.fn(() => [false, jest.fn((fn: () => Promise<void>) => fn())]));
 
-jest.mock('@proton/unleash/useFlag', () => jest.fn());
+jest.mock('@proton/unleash/useFlag', () => ({ useFlag: jest.fn() }));
 
 jest.mock('@proton/shared/lib/apps/helper', () => ({
     getAppHref: jest.fn(),
