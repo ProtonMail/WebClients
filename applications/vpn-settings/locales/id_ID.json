@@ -320,9 +320,6 @@
       "Disable recovery phrase?": [
         "Nonaktifkan frasa pemulihan?"
       ],
-      "Disable security events": [
-        "Nonaktifkan peristiwa keamanan"
-      ],
       "Discard": [
         "Buang"
       ],
@@ -595,6 +592,9 @@
       ],
       "Make admin": [
         "Jadikan admin"
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
       ],
       "Manage advanced account protections": [
         "Kelola perlindungan akun lanjutan"
@@ -4631,9 +4631,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Setelah meninggalkan paket Anda, pengguna ini akan dipindahkan ke paket ${ BRAND_NAME } Unlimited dengan masa uji coba gratis 30 hari.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Secara bawaan, kami menetapkan penyimpanan sebesar ${ formattedStorage } ke akun administrator. Anda dapat mengelola penyimpanan yang dialokasikan untuk dibagikan ke pengguna tambahan nanti."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Buat dan kelola anggota keluarga dan berikan mereka ruang penyimpanan yang terbagi antara ${ DRIVE_APP_NAME } dan ${ MAIL_APP_NAME }."
       ],
@@ -5983,9 +5980,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Dengan menonaktifkan monitoring peristiwa keamanan, Anda juga akan menghapus semua riwayat. Apakah Anda yakin ingin menonaktifkannya?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
@@ -9356,9 +9350,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor aktivitas"
-      ],
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
       ],
@@ -13893,9 +13884,6 @@
       "Address added": [
         "Alamat ditambahkan"
       ],
-      "Address successfully added": [
-        "Alamat berhasil ditambahkan"
-      ],
       "Administrator privileges restored": [
         "Hak administrator dipulihkan"
       ],
@@ -14599,8 +14587,8 @@
       "Delete": [
         "Hapus"
       ],
-      "Delete ${ policyName }?": [
-        "Hapus ${ policyName }?"
+      "Delete ${ name }?": [
+        "Hapus ${ name }?"
       ],
       "Delete account": [
         "Hapus akun"
@@ -14634,9 +14622,6 @@
       ],
       "Device name": [
         "Nama perangkat"
-      ],
-      "Disable activity monitor?": [
-        "Nonaktifkan monitor aktivitas?"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
@@ -15048,9 +15033,6 @@
       ],
       "Security and privacy": [
         "Keamanan dan privasi"
-      ],
-      "Security events": [
-        "Peristiwa keamanan"
       ],
       "Select a plan": [
         "Pilih paket"

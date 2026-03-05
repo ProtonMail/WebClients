@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Elimina la passarel·la"
       ],
+      "Delete gateway": [
+        "Eliminar la passarel·la"
+      ],
       "Delete group": [
         "Elimina el grup"
       ],
@@ -298,6 +301,9 @@
       ],
       "Delete policy": [
         "Elimina la política"
+      ],
+      "Delete token ${ token.Account }": [
+        "Elimineu el testimoni \"${ token.Account }\""
       ],
       "Delete user": [
         "Elimina un usuari"
@@ -317,14 +323,14 @@
       "Disable": [
         "Desactiva"
       ],
+      "Disable account monitor": [
+        "Desactivar monitor del compte"
+      ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
       ],
       "Disable recovery phrase?": [
         "Voleu desactivar la frase de recuperació?"
-      ],
-      "Disable security events": [
-        "Desactiveu els esdeveniments de seguretat"
       ],
       "Discard": [
         "Descarta"
@@ -601,6 +607,9 @@
       ],
       "Make admin": [
         "Estableix com a administrador"
+      ],
+      "Manage addresses": [
+        "Gestionar adreces"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -1816,8 +1825,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Assistent de migració de ${ BRAND_NAME }"
+      ],
+      "App installed": [
+        "S'ha instal·lat l'aplicació"
+      ],
       "Authenticate": [
         "Autentiqueu-vos"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentiqueu el vostre compte de Google Workspace"
       ],
       "Calendar": [
         "Calendari"
@@ -1839,6 +1857,12 @@
       ],
       "Failed to load OAuth": [
         "No s'ha pogut carregar OAuth"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Instal·lar aplicació"
       ],
       "Install migration app": [
         "Instal·leu l’aplicació de migració"
@@ -1895,8 +1919,8 @@
       "Sign in to Google Workspace": [
         "Inicieu la sessió a Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Per migrar les dades de la vostra organització, cal que instal·leu l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això concedirà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Per saber-ne més"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
       ],
       "Transfer errors": [
         "Errors de transferència"
@@ -1904,14 +1928,23 @@
       "User": [
         "Usuari"
       ],
+      "Verify installation": [
+        "Verifiqueu la instal·lació"
+      ],
       "Verify your domain": [
         "Verifiqueu el vostre domini"
       ],
       "Verify your domain to start a migration": [
         "Verifiqueu el vostre domini per iniciar una migració"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      ],
       "What are you migrating?": [
         "Què esteu migrant?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Cal que concediu permís perquè ${ BRAND_NAME } pugui copiar les vostres dades. Un cop acceptats els permisos, torneu aquí per continuar."
       ]
     },
     "Browser": {
@@ -4898,8 +4931,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Després de deixar el pla, aquest usuari es traslladarà a un pla ${ BRAND_NAME } Unlimited amb una prova gratuïta de 30 dies.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Assigna emmagatzematge al compte de l'administrador. Podeu distribuir l'emmagatzematge per a usuaris addicionals més endavant."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Creeu i gestioneu els membres de la família i assigneu-los espai d'emmagatzematge compartit entre ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
@@ -6319,8 +6352,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "En desactivar la supervisió d'esdeveniments de seguretat, també esborrareu tot l'historial. Segur que voleu desactivar-la?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Si desactiveu el monitor del compte, també s'eliminarà tot el vostre historial. Segur que voleu desactivar-lo?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -6722,6 +6755,12 @@
       ],
       "Free trial": [
         "Prova gratuïta"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "No s'ha pogut eliminar la passarel·la. Torneu-ho a provar"
+      ],
+      "Gateway deleted": [
+        "S'ha eliminat la passarel·la"
       ],
       "Gateway monitor": [
         "Monitor de passarel·la"
@@ -8858,6 +8897,9 @@
       "Emails (last 3 months)": [
         "Correus electrònics (els darrers 3 mesos)"
       ],
+      "Emails (last 6 months)": [
+        "Correus electrònics (dels darrers sis mesos)"
+      ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
@@ -8980,6 +9022,9 @@
       ],
       "Last 3 months only": [
         "Només els darrers 3 mesos"
+      ],
+      "Last 6 months only": [
+        "Només els darrers 6 mesos"
       ],
       "Last month only": [
         "Només el darrer mes"
@@ -9799,8 +9844,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor d'activitats"
+      "Account monitor": [
+        "Monitor del compte"
       ],
       "Enable ${ reason }": [
         "Activa ${ reason }"
@@ -14564,9 +14609,6 @@
       "Address added": [
         "Adreça afegida"
       ],
-      "Address successfully added": [
-        "S\"ha afegit l\"adreça correctament."
-      ],
       "Administrator privileges restored": [
         "S'han restaurat els privilegis de l'administrador"
       ],
@@ -15002,6 +15044,9 @@
       "Account": [
         "Compte"
       ],
+      "Account monitor": [
+        "Monitor del compte"
+      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -15310,8 +15355,8 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete ${ policyName }?": [
-        "Voleu suprimir ${ policyName }?"
+      "Delete ${ name }?": [
+        "Elimina ${ name }?"
       ],
       "Delete account": [
         "Elimina el compte"
@@ -15347,8 +15392,8 @@
       "Device name": [
         "Nom del dispositiu"
       ],
-      "Disable activity monitor?": [
-        "Voleu desactivar el monitor d'activitats?"
+      "Disable account monitor?": [
+        "Voleu desactivar el monitor del compte?"
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
@@ -15780,9 +15825,6 @@
       ],
       "Security and privacy": [
         "Seguretat i privacitat"
-      ],
-      "Security events": [
-        "Esdeveniments de seguretat"
       ],
       "Select a plan": [
         "Seleccioneu un pla"
@@ -16877,6 +16919,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Els servidors d'aquesta passarel·la entraran en un període de desactivació de 10 dies. Podeu afegir aquests servidors a una passarel·la nova, però no en podreu canviar el país."
       ],
       "Skip verification?": [
         "Voleu ometre la verificació?"

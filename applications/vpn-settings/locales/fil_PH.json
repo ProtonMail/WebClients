@@ -320,9 +320,6 @@
       "Disable recovery phrase?": [
         "Huwag paganahin ang parirala ng pag-recover?"
       ],
-      "Disable security events": [
-        "Huwag paganahin ang mga kaganapang pangseguridad"
-      ],
       "Discard": [
         "Itapon"
       ],
@@ -595,6 +592,9 @@
       ],
       "Make admin": [
         "Gawing admin"
+      ],
+      "Manage addresses": [
+        "Pamahalaan ang mga address"
       ],
       "Manage advanced account protections": [
         "Pamahalaan ang mga advanced na proteksyon sa account"
@@ -4662,9 +4662,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Pagkaalis sa plano, ililipat ang user na ito sa ${ BRAND_NAME } Unlimited na plano na may 30-araw na libreng pagsubok.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Bilang default, itinatalaga namin ang ${ formattedStorage } ng storage sa administrator account. Maaaring pamahalaan ang itinalagang storage para ipamahagi sa mga karagdagang user sa ibang pagkakataon."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Gumawa at pamahalaan ang mga miyembro ng pamilya at italaga sa kanila ang espasyo ng storage na naka-share sa pagitan ng ${ DRIVE_APP_NAME } at ${ MAIL_APP_NAME }."
       ],
@@ -6057,9 +6054,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Dalhin ang mga mensahe, contact, at kalendaryo sa ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Sa pamamagitan ng hindi pagpapagana ng pagsubaybay sa mga kaganapang pangseguridad, iki-clear din ang buong kasaysayan. Sigurado ka bang gusto mong huwag paganahin ito?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Sa pag-downgrade sa Free plan, permanenteng mawawala ang mga benepisyong ito, kahit mag-upgrade ka ulit sa hinaharap."
@@ -9466,9 +9460,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor ng aktibidad"
-      ],
       "Enable ${ reason }": [
         "Paganahin ang ${ reason }"
       ],
@@ -14038,9 +14029,6 @@
       "Address added": [
         "Idinagdag ang address"
       ],
-      "Address successfully added": [
-        "Matagumpay na naidagdag ang address"
-      ],
       "Administrator privileges restored": [
         "Naibalik na ang mga pribilehiyo ng administrator"
       ],
@@ -14752,8 +14740,8 @@
       "Delete": [
         "I-delete"
       ],
-      "Delete ${ policyName }?": [
-        "I-delete ang ${ policyName }?"
+      "Delete ${ name }?": [
+        "I-delete ang ${ name }?"
       ],
       "Delete account": [
         "I-delete ang account"
@@ -14788,9 +14776,6 @@
       ],
       "Device name": [
         "Pangalan ng device"
-      ],
-      "Disable activity monitor?": [
-        "Huwag paganahin ang monitor ng aktibidad?"
       ],
       "Disable two-factor authentication": [
         "Huwag paganahin ang two-factor authentication"
@@ -15204,9 +15189,6 @@
       ],
       "Security and privacy": [
         "Seguridad at privacy"
-      ],
-      "Security events": [
-        "Mga kaganapan sa seguridad"
       ],
       "Select a plan": [
         "Pumili ng plano"

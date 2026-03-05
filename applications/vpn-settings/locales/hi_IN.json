@@ -504,6 +504,9 @@
       "Make admin": [
         "एडमिन बनाएं"
       ],
+      "Manage addresses": [
+        "पते प्रबंधित करें"
+      ],
       "Manage folders": [
         "फोल्डर संभाले"
       ],
@@ -3515,9 +3518,6 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "अपने प्लैन छोड़ने के बाद, इस उपयोगकर्ता को ${ BRAND_NAME } Unlimited प्लैन में स्थानांतरित कर दिया जाएगा जिसमें 30 दिनों का मुफ्त ट्रायल* शामिल है"
-      ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "परिवार के सदस्य बनाएं और प्रबंधित करें और और उन में${ DRIVE_APP_NAME } और ${ MAIL_APP_NAME } के बीच साझा स्टोरेज स्थान का आवंटन करें।"
@@ -11362,8 +11362,8 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName } मिटाएं?"
+      "Delete ${ name }?": [
+        "${ name } मिटाएं?"
       ],
       "Delete account": [
         "खाता हटा दो"
@@ -11733,9 +11733,6 @@
       ],
       "Security and privacy": [
         "सुरक्षा व निजता"
-      ],
-      "Security events": [
-        "सुरक्षा घटनाएं"
       ],
       "Select a plan": [
         "एक योजना चुनें"
