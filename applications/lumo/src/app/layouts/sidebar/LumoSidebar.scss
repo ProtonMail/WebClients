@@ -11,6 +11,23 @@ im.$media-expressions: $media-expressions;
 	gap: 8px;
 	box-sizing: border-box;
 
+	// Add V2 list border and text styling
+	ul {
+		border-inline-start: 1px solid var(--border-weak);
+
+		span {
+			&.text-ellipsis {
+				color: var(--text-weak);
+			}
+		}
+	}
+
+	// Add V2 icon styling
+	svg {
+		stroke-width: 0.2px;
+		stroke: currentcolor;
+	}
+
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 	}
@@ -209,24 +226,6 @@ im.$media-expressions: $media-expressions;
 	animation: sidebar-fade-in 0.25s ease-in-out;
 }
 
-// Prevent text reflow during sidebar transitions by maintaining fixed layout
-// Target the ChatHistory container to prevent responsive width changes
-.chat-history-content .chat-history-container {
-	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	block-size: 100%;
-	inline-size: 100%;
-	max-inline-size: 100%;
-	min-inline-size: 235px;
-
-	// Enable scrolling for content overflow
-	overflow: hidden auto;
-
-	// Hardware acceleration for smooth transitions
-	transform: translateZ(0);
-}
-
 // Base sidebar item styling
 .sidebar-item {
 	display: flex;
@@ -368,59 +367,6 @@ im.$media-expressions: $media-expressions;
 	border-radius: 8px;
 }
 
-.sidebar-list-item-content {
-	.shrink-0 {
-		min-inline-size: 1rem;
-		inline-size: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		will-change: transform;
-		backface-visibility: hidden;
-		transform: translateZ(0);
-	}
-
-	.text-ellipsis {
-		transition: opacity 0.15s ease-in-out;
-		will-change: opacity;
-	}
-}
-
-.projects-list {
-	margin-inline-start: 23px;
-}
-
-.projects-text-div {
-	flex: 1;
-	text-align: start;
-	transition: background-color 0.15s ease;
-
-	&:focus {
-		outline: 2px solid var(--focus-outline);
-		outline-offset: -2px;
-	}
-
-	&:hover {
-		background-color: transparent !important;
-	}
-}
-
-.projects-create-button {
-	border-radius: 4px;
-	opacity: 0.6;
-	transition:
-		opacity 0.15s ease,
-		background-color 0.15s ease;
-	block-size: 22px;
-	inline-size: 21px;
-	padding-block-end: 2px;
-
-	&:hover {
-		opacity: 0.6;
-		background-color: #e7e7e7;
-	}
-}
-
 // .user-dropdown-button {
 
 // 	flex-direction: row-reverse;
@@ -504,54 +450,6 @@ im.$media-expressions: $media-expressions;
 		pointer-events: auto;
 
 		// New chat and search sections are now conditionally rendered for mobile guests
-	}
-
-	.projects-header-container {
-		position: relative;
-		border-radius: 8px;
-
-		&:hover {
-			background-color: var(--background-weak);
-			transition: 0.3s all;
-		}
-	}
-
-	.projects-header-button {
-		position: relative;
-		flex: 1;
-	}
-
-	.projects-icon-button {
-		border-radius: 6px;
-		flex-shrink: 0;
-		min-inline-size: 24px;
-		block-size: 24px;
-	}
-
-	.project-sidebar-item {
-		padding-block: 6px;
-		padding-inline: 12px;
-		border-radius: 6px;
-		text-decoration: none;
-		color: var(--text-norm);
-		transition: background-color 0.15s ease;
-		min-block-size: 32px;
-
-		&.is-active {
-			background-color: var(--interaction-default-hover);
-			font-weight: 500;
-		}
-	}
-
-	.project-sidebar-item-see-all {
-		padding-block: 4px;
-		padding-inline: 12px;
-		border-radius: 4px;
-	}
-
-	.projects-empty {
-		color: var(--text-weak);
-		margin-inline-start: 36px;
 	}
 
 	.sidebar-bottom-user-dropdown {
