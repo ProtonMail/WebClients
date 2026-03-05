@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import type { Revision } from '@proton/drive';
 
-import { ContextMenuButton } from '../../sections/ContextMenu';
-import type { RevisionsProviderState } from '../RevisionsProvider';
+import { ContextMenuButton } from '../../../../components/sections/ContextMenu';
+import type { RevisionsProviderState } from '../../useRevisionsModalState';
 
 interface Props {
     revision: Revision;
@@ -11,7 +11,7 @@ interface Props {
     close: () => void;
 }
 
-const RevisionDownloadButton = ({ revision, downloadRevision, close }: Props) => {
+export const RevisionDownloadButton = ({ revision, downloadRevision, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Download`}
@@ -22,5 +22,3 @@ const RevisionDownloadButton = ({ revision, downloadRevision, close }: Props) =>
         />
     );
 };
-
-export default RevisionDownloadButton;

@@ -7,13 +7,13 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
+import { useRevisionsModal } from '../../../modals/RevisionsModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useRenameModalDeprecated } from '../../modals/RenameModal';
-import { useRevisionsModal } from '../../modals/RevisionsModal/RevisionsModal';
 import {
     CopyLinkButton,
     DetailsButton,
@@ -21,10 +21,10 @@ import {
     OpenInDocsButton,
     PreviewButton,
     RenameButton,
-    RevisionsButton,
     ShareLinkButton,
 } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import { RevisionsButton } from '../ContextMenu/buttons/RevisionsButton';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 
 export function DriveItemContextMenu({
@@ -58,7 +58,7 @@ export function DriveItemContextMenu({
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
     const { sharingModal, showSharingModal } = useSharingModal();
 
-    const [revisionsModal, showRevisionsModal] = useRevisionsModal();
+    const { revisionsModal, showRevisionsModal } = useRevisionsModal();
 
     const openInDocs = useOpenInDocs(selectedLink);
 
