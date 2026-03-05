@@ -26,9 +26,9 @@ ArgoCD takes care of orchestrating the deployment process, promoting a new Docke
 
 Each deployment is defined as an `Application` in ArgoCD, the UI helps understanding how many pods are running for a give env and which Docker image is used by the pods.
 
-- ArgoCD application for [Alpha](https://argocd-kwebapizur2.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Beta](https://argocd-kwebapizur2.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Live](https://argocd-kwebapizur2.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&orphaned=false&resource=)
+- ArgoCD application for [Alpha](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&orphaned=false&resource=)
+- ArgoCD application for [Beta](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&orphaned=false&resource=)
+- ArgoCD application for [Live](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&orphaned=false&resource=)
 
 ## Part 4 - Argo Rollout
 
@@ -36,9 +36,9 @@ As the name suggests, Argo Rollout focuses on the rollout process of a new deplo
 
 Argo rollout provides also the capability of rolling back to any previous version, without having to change any code.
 
-- Argo Rollout for [Alpha](https://rollouts-kwebapifra1.protontech.ch/rollouts/rollout/inbox-frontend-calendar-alpha/frontend-calendar-alpha-apache)
-- Argo Rollout for [Beta](https://rollouts-kwebapifra1.protontech.ch/rollouts/rollout/inbox-frontend-calendar-beta/frontend-calendar-beta-apache)
-- Argo Rollout for [Live](https://rollouts-kwebapifra1.protontech.ch/rollouts/rollout/inbox-frontend-calendar-live/frontend-calendar-live-apache)
+- Argo Rollout for [Alpha](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-alpha/frontend-calendar-alpha-apache)
+- Argo Rollout for [Beta](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-beta/frontend-calendar-beta-apache)
+- Argo Rollout for [Live](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-live/frontend-calendar-live-apache)
 
 ## Part 5 - Grafana
 
