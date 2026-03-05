@@ -9,6 +9,5 @@ export {
     getUnleashConfig,
 } from './UnleashFlagProvider';
 export { useUnleashClient, useFlagsStatus } from '@unleash/proxy-client-react';
-export { default as UnleashClient } from './UnleashClient';
 export { setStandaloneUnleashClient, getStandaloneUnleashClient } from './standaloneClient';
 export { getMaxContactsImportConfig } from './helpers/getMaxContactsImportConfig';

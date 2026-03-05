@@ -2,7 +2,7 @@ import 'web-streams-polyfill/polyfill/es5';
 
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import type { UnleashClient } from '@proton/unleash';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 import { streamToBuffer } from '../../utils/stream';
 import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';

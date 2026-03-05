@@ -1,4 +1,4 @@
-import type UnleashClient from './UnleashClient';
+import type { UnleashClient } from './UnleashClient';
 
 let unleashClient: UnleashClient | undefined;
 

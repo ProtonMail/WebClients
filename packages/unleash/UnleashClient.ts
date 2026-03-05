@@ -2,10 +2,8 @@ import { UnleashClient as OriginalUnleashClient } from '@unleash/proxy-client-re
 
 import type { FeatureFlag } from './UnleashFeatureFlags';
 
-class UnleashClient extends OriginalUnleashClient {
+export class UnleashClient extends OriginalUnleashClient {
     isEnabled = (flag: FeatureFlag) => {
         return super.isEnabled(flag);
     };
 }
-
-export default UnleashClient;

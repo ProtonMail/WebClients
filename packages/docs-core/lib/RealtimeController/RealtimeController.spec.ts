@@ -35,7 +35,7 @@ import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketCo
 import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
 import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 
 describe('RealtimeController', () => {
   let controller: RealtimeController

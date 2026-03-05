@@ -1,6 +1,6 @@
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { getTimeoutIntervalsFromUnleash } from '@proton/shared/lib/eventManager/getTimeoutIntervalsFromUnleash';
-import type UnleashClient from '@proton/unleash/UnleashClient';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
 const MIN = INTERVAL_EVENT_TIMER;

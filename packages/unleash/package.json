@@ -6,7 +6,8 @@
         ".": "./index.ts",
         "./useFlag": "./useFlag.ts",
         "./useGetFlag": "./useGetFlag.ts",
-        "./useVariant": "./useVariant.ts"
+        "./useVariant": "./useVariant.ts",
+        "./UnleashClient": "./UnleashClient.ts"
     },
     "scripts": {
         "check-types": "tsc",
