@@ -3,7 +3,7 @@ import type { IDBPDatabase } from 'idb';
 import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 
 import { getContentVersion } from '../../esBuild';
-import type { ESItemCursorResult } from '../interface';
+import { type ESItemCursorResult, READ_BATCH_SIZE } from '../interface';
 
 export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>): Promise<boolean> => {
     const tx = esDB.transaction('content', 'readonly');
@@ -19,7 +19,7 @@ export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>
 
 export async function getOutdatedContentIterator(
     esDB: IDBPDatabase<EncryptedSearchDB>,
-    batchSize: number = 50
+    batchSize = READ_BATCH_SIZE
 ): Promise<ESItemCursorResult[]> {
     const tx = esDB.transaction('content', 'readonly');
     const contentStore = tx.objectStore('content');
