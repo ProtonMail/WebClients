@@ -1,0 +1,69 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.projects-list {
+	margin-inline-start: 23px;
+}
+
+.projects-text-div {
+	flex: 1;
+	text-align: start;
+	transition: background-color 0.15s ease;
+
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: -2px;
+	}
+
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+.projects-create-button {
+	border-radius: 4px;
+	opacity: 0.6;
+	transition:
+		opacity 0.15s ease,
+		background-color 0.15s ease;
+	block-size: 22px;
+	inline-size: 21px;
+	padding-block-end: 2px;
+
+	&:hover {
+		opacity: 0.6;
+		background-color: #e7e7e7;
+	}
+}
+
+@include im.media('<=small') {
+	.projects-header-container {
+		position: relative;
+		border-radius: 8px;
+
+		&:hover {
+			background-color: var(--background-weak);
+			transition: 0.3s all;
+		}
+	}
+
+	.projects-header-button {
+		position: relative;
+		flex: 1;
+	}
+
+	.projects-icon-button {
+		border-radius: 6px;
+		flex-shrink: 0;
+		min-inline-size: 24px;
+		block-size: 24px;
+	}
+
+	.project-sidebar-item-see-all {
+		padding-block: 4px;
+		padding-inline: 12px;
+		border-radius: 4px;
+	}
+}
