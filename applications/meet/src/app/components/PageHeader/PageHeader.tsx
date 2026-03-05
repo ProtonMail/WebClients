@@ -6,13 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
+import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { MeetSignIn } from '../SignIn/SignIn';
 
 import './PageHeader.scss';
@@ -107,19 +107,7 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
                                 />
                             )}
                             {(isJoinPage || isSchedulePage) && (
-                                <Button
-                                    className="action-button w-custom h-custom rounded-full shrink-0 flex items-center justify-center p-0"
-                                    onClick={() => history.push('/dashboard')}
-                                    size="large"
-                                    style={{
-                                        '--w-custom': '2.5rem',
-                                        '--h-custom': '2.5rem',
-                                    }}
-                                    icon
-                                    aria-label={c('Action').t`Close`}
-                                >
-                                    <IcCross className="color-hint" size={4} />
-                                </Button>
+                                <CloseButton onClose={() => history.push('/dashboard')} />
                             )}
                         </div>
                     </div>
