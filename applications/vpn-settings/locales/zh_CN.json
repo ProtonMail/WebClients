@@ -1150,6 +1150,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Delete gateway": [
+        "删除网关"
+      ],
+      "Disable account monitor": [
+        "禁用账户监测"
       ]
     },
     "action": {
@@ -4909,6 +4915,9 @@
       ],
       "You can increase or reduce the storage for this user.": [
         "您可以增加或减少该用户的存储空间。"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "为管理员账户分配存储空间，您可以稍后为其他用户分配存储。"
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -8278,6 +8287,15 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "禁用账户监测后，您的所有历史记录也将被清除。您确定要禁用它吗？"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "网关删除失败，请重试"
+      ],
+      "Gateway deleted": [
+        "网关已删除"
       ]
     },
     "info": {
@@ -9250,6 +9268,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Emails (last 6 months)": [
+        "邮件（过去 6 个月）"
+      ],
+      "Last 6 months only": [
+        "仅过去 6 个月"
       ]
     },
     "label": {
@@ -9699,6 +9723,9 @@
       ],
       "Enable detailed events": [
         "启用详细活动"
+      ],
+      "Account monitor": [
+        "账户监测"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -15828,6 +15855,12 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Account monitor": [
+        "账户监测"
+      ],
+      "Disable account monitor?": [
+        "禁用账户监测？"
       ]
     },
     "Title for payment methods table": {
@@ -16664,6 +16697,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "该网关中的服务器将进入 10 天的停用期。这些服务器可添加至新的网关，但其国家/地区无法更改。"
       ]
     },
     "Warning for domain modal": {
