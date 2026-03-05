@@ -40,7 +40,6 @@ import {
     initializeEncryptedSearch,
     insertMarks,
     refreshESCache,
-    removeESFlags,
     requestPersistence,
     retryAPICalls,
     retryContentIndexing,
@@ -49,9 +48,9 @@ import {
 } from './esHelpers';
 import type { IndexedDBRow } from './esIDB';
 import {
-    checkVersionedESDB,
     contentIndexingProgress,
     deleteESDB,
+    hasESDB,
     metadataIndexingProgress,
     openESDB,
     readAllLastEvents,
@@ -193,9 +192,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
         resetCache();
-        // Note that currently no local storage blobs exist,
-        // however in a legacy version they did
-        removeESFlags(userID);
         setESStatus(() => ({
             ...defaultESStatus,
             isConfigFromESDBLoaded: true,
@@ -518,7 +514,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             return false;
         };
 
-        const esdbExists = await checkVersionedESDB(userID);
+        const esdbExists = await hasESDB(userID);
 
         /*
             There are several cases for this variable:
@@ -663,7 +659,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         void addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
-        const wasESDBCreated = await checkVersionedESDB(userID);
+        const wasESDBCreated = await hasESDB(userID);
 
         // Paginated indexing has the problem that if the user deletes completely some items
         // in pages that have already been queried, all subsequent items are shifted. Therefore,
@@ -1331,7 +1327,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     const initializeES = async () => {
         // Check whether the ES IDB exists for the current user. Nothing else is
         // needed in case it doesn't
-        if (!(await checkVersionedESDB(userID))) {
+        if (!(await hasESDB(userID))) {
             return;
         }
 

@@ -24,7 +24,6 @@ import {
 } from '../constants';
 import {
     contentIndexingProgress,
-    createESDB,
     executeContentOperations,
     executeMetadataOperations,
     initializeConfig,
@@ -70,10 +69,10 @@ export const initializeEncryptedSearch = async ({
     isRefreshed: boolean;
     totalItems: number;
 }) => {
-    let esDB: IDBPDatabase<EncryptedSearchDB>;
+    let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     let generatedIndexKey: GeneratedIndexKey;
     try {
-        esDB = await createESDB(userID);
+        esDB = await openESDB(userID);
         generatedIndexKey = await generateIndexKey();
     } catch (error: any) {
         // In case IndexedDB cannot be initialised, or something is wrong with the index key,

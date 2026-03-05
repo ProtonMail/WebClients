@@ -13,7 +13,7 @@ import {
     testKeywords,
 } from '@proton/encrypted-search/esHelpers';
 import {
-    checkVersionedESDB,
+    hasESDB,
     executeContentOperations,
     metadataIndexingProgress,
     readLastEvent,
@@ -106,7 +106,7 @@ export const getESCallbacks = ({
         // Note that indexing, and therefore an instance of this function,
         // can exist even without an IDB, because we can index in memory only.
         // Therefore, we have to check if an IDB exists before querying it
-        const esdbExists = await checkVersionedESDB(userID);
+        const esdbExists = await hasESDB(userID);
         if (!recoveryPoint && esdbExists) {
             recoveryPoint = await metadataIndexingProgress.readRecoveryPoint(userID);
         }

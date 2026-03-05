@@ -73,5 +73,4 @@ export const resetSort = (history: History) => {
     history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
 };
 
-// Do not prefix with ES: to not be cleared by removeESFlags function
 export const getESFreeBlobKey = (userID: string) => `${userID}:InitialIndexing`;

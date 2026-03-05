@@ -1,5 +1,5 @@
-import { hasReactivatedKey } from '@proton/encrypted-search/esHelpers';
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
+import { hasReactivatedKey } from '@proton/encrypted-search/esHelpers';
 import { openESDB } from '@proton/encrypted-search/esIDB';
 import type { ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search/models';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
