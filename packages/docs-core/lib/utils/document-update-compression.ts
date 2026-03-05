@@ -1,5 +1,5 @@
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { gzipSync, decompressSync } from 'fflate'
 
 export function isCompressedDocumentUpdate(data: Uint8Array<ArrayBuffer>): boolean {

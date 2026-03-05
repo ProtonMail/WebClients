@@ -11,7 +11,7 @@ import type {
   SafeDocsUserState,
   FileMenuAction,
 } from '@proton/docs-shared'
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 
 export interface EditorOrchestratorInterface {
   userAddress: string

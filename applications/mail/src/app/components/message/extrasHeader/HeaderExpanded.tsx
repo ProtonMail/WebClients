@@ -27,7 +27,7 @@ import {
     isInternal,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';

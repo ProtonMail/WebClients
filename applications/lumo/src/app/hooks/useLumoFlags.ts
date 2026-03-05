@@ -1,4 +1,4 @@
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 /**
  * Centralized hook for all Lumo feature flags.

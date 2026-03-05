@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { getLabelNameAnonymised } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import metrics from '@proton/metrics';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { LabelType } from './mailMetricsHelper';
 import { getPageSizeString } from './mailMetricsHelper';

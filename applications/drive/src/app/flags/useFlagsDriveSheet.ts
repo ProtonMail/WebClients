@@ -1,4 +1,4 @@
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import { isDevOrBlack } from '@proton/utils/env';
 
 export function useFlagsDriveSheet() {

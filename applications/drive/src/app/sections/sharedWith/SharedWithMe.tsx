@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { ContactEmailsProvider, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useItemContextMenu } from '../../components/FileBrowser';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';

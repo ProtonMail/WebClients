@@ -1,7 +1,7 @@
 import { selectOrganization, selectUser } from '@proton/account';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const useAssistantFeatureEnabled = () => {
     const accessToAssistant = useFlag('ComposerAssistant');

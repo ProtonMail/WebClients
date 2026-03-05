@@ -16,7 +16,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
 import type { HttpHeaders } from '../Api/Types/HttpHeaders'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'

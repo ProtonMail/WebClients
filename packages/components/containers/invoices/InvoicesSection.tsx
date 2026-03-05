@@ -17,7 +17,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
 import { useEditBillingAddressModal } from '@proton/payments/ui/containers/EditBillingAddress/useEditBillingAddressModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';

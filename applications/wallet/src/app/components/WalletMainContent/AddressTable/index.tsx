@@ -9,7 +9,7 @@ import type {
     WasmApiWalletBitcoinAddress,
 } from '@proton/andromeda';
 import { WasmKeychainKind } from '@proton/andromeda';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SimplePaginator } from '../../../atoms';

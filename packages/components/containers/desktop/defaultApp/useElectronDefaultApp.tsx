@@ -16,7 +16,7 @@ import {
 } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface DefaultAppPromptProps extends ModalProps {
     setDefault: () => void;

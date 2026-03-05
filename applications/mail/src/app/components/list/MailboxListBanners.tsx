@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { useUserSettings } from '@proton/account';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';

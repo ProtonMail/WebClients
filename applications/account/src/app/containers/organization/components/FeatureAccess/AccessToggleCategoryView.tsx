@@ -8,7 +8,7 @@ import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 

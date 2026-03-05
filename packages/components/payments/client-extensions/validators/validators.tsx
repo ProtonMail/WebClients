@@ -31,7 +31,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal';

@@ -7,7 +7,7 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const today = new Date();
 

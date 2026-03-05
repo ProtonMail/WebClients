@@ -69,7 +69,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

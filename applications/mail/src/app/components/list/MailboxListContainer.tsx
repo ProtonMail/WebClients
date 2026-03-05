@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { isInDeletedFolder } from '../../helpers/elements';

@@ -1,5 +1,5 @@
 import Loader from '@proton/components/components/loader/Loader';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useBookingStore } from '../../booking.store';
 import { NoMatch, Reason } from '../NoMatch';

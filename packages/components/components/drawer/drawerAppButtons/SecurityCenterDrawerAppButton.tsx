@@ -6,7 +6,7 @@ import DrawerAppButton from '@proton/components/components/drawer/drawerAppButto
 import { baseUseSelector } from '@proton/react-redux-store';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import SecurityCenterDrawerLogo from '../drawerIcons/SecurityCenterDrawerLogo';

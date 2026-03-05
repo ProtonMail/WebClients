@@ -10,5 +10,3 @@ export const useGetFlag = () => {
         return unleashClient.isEnabled(flag);
     }, []);
 };
-
-export default useGetFlag;

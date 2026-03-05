@@ -22,7 +22,7 @@ import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } f
 import { BitField, type Maybe, OrganizationVaultCreateMode } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';

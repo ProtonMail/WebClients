@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { Cancellable } from '@proton/components';
 import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

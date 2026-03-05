@@ -8,7 +8,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useProtonMeetSpotlight = () => {
     const [user] = useUser();

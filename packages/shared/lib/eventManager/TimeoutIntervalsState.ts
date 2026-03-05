@@ -1,4 +1,4 @@
-import type UnleashClient from '@proton/unleash/UnleashClient';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import type { EventManagerIntervalTypes, EventManagerIntervals } from './eventManagerIntervals';

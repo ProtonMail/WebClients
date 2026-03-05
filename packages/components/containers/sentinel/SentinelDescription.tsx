@@ -7,7 +7,7 @@ import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS, PLAN_NAMES, getPlanName } from '@proton/payments';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
     variant: 'user' | 'organization';

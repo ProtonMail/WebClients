@@ -4,7 +4,7 @@ import Badge from '@proton/components/components/badge/Badge';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';

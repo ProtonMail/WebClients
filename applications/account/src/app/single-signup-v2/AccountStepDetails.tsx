@@ -13,7 +13,7 @@ import { PLANS } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
-import { useVariant } from '@proton/unleash';
+import { useVariant } from '@proton/unleash/useVariant';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

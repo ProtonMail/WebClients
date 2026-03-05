@@ -16,7 +16,7 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { FloatingElements } from '../components/FloatingElements/FloatingElements';
 import { TransferManagerLegacy } from '../components/TransferManager/TransferManager';

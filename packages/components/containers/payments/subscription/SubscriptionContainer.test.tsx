@@ -31,7 +31,7 @@ import {
 } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
@@ -83,7 +83,7 @@ function mockCheckResult(checkData: Partial<SubscriptionEstimation> = {}) {
 function enableSepaFeatureFlag() {
     const sepaFlag: FeatureFlag = 'SepaPayments';
 
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'default');
+    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === sepaFlag);
 }
 

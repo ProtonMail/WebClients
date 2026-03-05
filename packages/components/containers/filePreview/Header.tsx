@@ -19,7 +19,7 @@ import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/l
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 const SHARED_STATUS_TO_COLOR = {

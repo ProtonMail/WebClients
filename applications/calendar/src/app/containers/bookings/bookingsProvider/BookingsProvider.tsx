@@ -14,7 +14,7 @@ import useAllowedProducts from '@proton/components/containers/organization/acces
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTimeGridEventsPerDay';
 import { useCalendarDispatch } from '../../../store/hooks';

@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { useActiveBreakpoint } from '@proton/components';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { isInDeletedFolder } from '../../helpers/elements';

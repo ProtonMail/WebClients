@@ -36,7 +36,7 @@ import { APP_UPSELL_REF_PATH, DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import DrawerAppSection from '../../shared/DrawerAppSection';

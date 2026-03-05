@@ -15,7 +15,7 @@ import { EventManagerV6Provider } from '@proton/components/containers/eventManag
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash';
+import { FlagProvider } from '@proton/unleash/proxy';
 
 import config from '../config';
 import type { AccountStore } from '../store/store';
