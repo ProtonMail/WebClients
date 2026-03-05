@@ -3,6 +3,8 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
+import type { CONTENT_VERSION } from '../esBuild';
+
 export type MigrationToolParams = { user: UserModel; keyPassword: string };
 
 export type CleanTextFn = (text: string, includeQuote: boolean) => string;
@@ -20,6 +22,8 @@ export type EncryptedSearchData = {
 export type ESItemCursorResult = { key: string; value: ESCiphertext };
 
 export type MigrateFn = (data: EncryptedSearchData) => EncryptedSearchData;
+
+export type MigrationMethod = { targetVersion: CONTENT_VERSION; fn: MigrateFn };
 
 export const CONTENT_EXTRACTION_MAX_RETRIES = 5;
 
