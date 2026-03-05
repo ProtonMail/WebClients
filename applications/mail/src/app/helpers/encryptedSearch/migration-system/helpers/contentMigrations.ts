@@ -1,5 +1,5 @@
 import { CONTENT_VERSION } from '../../esBuild';
-import type { CleanTextFn, EncryptedSearchData, MigrateFn } from '../interface';
+import type { CleanTextFn, EncryptedSearchData, MigrationMethod } from '../interface';
 
 const upgradeToVersionOne = (data: EncryptedSearchData): EncryptedSearchData => {
     return {
@@ -28,10 +28,19 @@ const upgradeToBlockquoteFix = (data: EncryptedSearchData, cleanText: CleanTextF
     };
 };
 
-export const getMigrationMap = (cleanText: CleanTextFn): Map<CONTENT_VERSION, MigrateFn> => {
-    return new Map([
-        [CONTENT_VERSION.V1, upgradeToVersionOne],
-        [CONTENT_VERSION.DOM_INDEXING, upgradeToDomIndexing],
-        [CONTENT_VERSION.BLOCKQUOTE_FIX, (data) => upgradeToBlockquoteFix(data, cleanText)],
-    ]);
+export const getMigrationArray = (cleanText: CleanTextFn): MigrationMethod[] => {
+    return [
+        {
+            targetVersion: CONTENT_VERSION.V1,
+            fn: upgradeToVersionOne,
+        },
+        {
+            targetVersion: CONTENT_VERSION.DOM_INDEXING,
+            fn: upgradeToDomIndexing,
+        },
+        {
+            targetVersion: CONTENT_VERSION.BLOCKQUOTE_FIX,
+            fn: (data) => upgradeToBlockquoteFix(data, cleanText),
+        },
+    ];
 };
