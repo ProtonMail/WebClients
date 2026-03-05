@@ -480,6 +480,9 @@
       "Delete record": [
         "Ta bort post"
       ],
+      "Delete token ${ token.Account }": [
+        "Ta bort token ${ token.Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Ta bort token “${ token.Name }“"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Inaktivera"
       ],
+      "Disable account monitor": [
+        "Inaktivera kontoövervakning"
+      ],
       "Disable categories": [
         "Inaktivera kategorier"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Inaktivera återställningsfras?"
-      ],
-      "Disable security events": [
-        "Inaktivera säkerhetshändelser"
       ],
       "Discard": [
         "Avfärda"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Gör nyckel primär"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
       ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
@@ -2649,8 +2655,14 @@
       "Add a custom domain": [
         "Lägg till en anpassad domän"
       ],
+      "App installed": [
+        "App installerad"
+      ],
       "Authenticate": [
         "Autentisera"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentisera ditt Google Workspace-konto"
       ],
       "Calendar": [
         "Kalender"
@@ -2681,6 +2693,9 @@
       ],
       "Finish setting up your business account": [
         "Slutför inställningen av ditt företagskonto"
+      ],
+      "Install app": [
+        "Installera app"
       ],
       "Install migration app": [
         "Installera migreringsappen"
@@ -2752,6 +2767,9 @@
       "User": [
         "Användare"
       ],
+      "Verify installation": [
+        "Verifiera installation"
+      ],
       "Verify your domain": [
         "Verifiera din domän"
       ],
@@ -2760,6 +2778,9 @@
       ],
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
@@ -7469,9 +7490,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Som standard tilldelar vi ${ formattedStorage } lagringsutrymme till administratörskontot. Du kan hantera det tilldelade lagringsutrymmet för att distribueras mellan ytterligare användare senare."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Skapa och hantera familjemedlemmar och tilldela dem lagringsutrymme som delas mellan ${ DRIVE_APP_NAME } och ${ MAIL_APP_NAME }."
       ],
@@ -9389,8 +9407,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Genom att skapa ett ${ PASS_APP_NAME }-konto med din e-post för SimpleLogin kan du hantera dina alias direkt från ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Genom att inaktivera övervakning av säkerhetshändelser kommer du också att rensa hela din historik. Är du säker på att du vill inaktivera detta?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Genom att inaktivera kontoövervakning kommer du också rensa hela din historik. Är du säker på att du vill inaktivera detta?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -9897,6 +9915,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "För en 10-årig versionshistorik, kontakta vårt säljteam."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
@@ -12732,6 +12753,9 @@
       "Allow recovery using a trusted device": [
         "Tillåt återställning med en betrodd enhet"
       ],
+      "Allow secure link sharing": [
+        "Tillåt säker länkdelning"
+      ],
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
@@ -13134,6 +13158,9 @@
       "Emails (last 3 months)": [
         "E-post (senaste 3 månaderna)"
       ],
+      "Emails (last 6 months)": [
+        "E-post (senaste 6 månaderna)"
+      ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
@@ -13358,6 +13385,9 @@
       ],
       "Last 3 months only": [
         "Endast de 3 senaste månaderna"
+      ],
+      "Last 6 months only": [
+        "Endast 6 senaste månaderna"
       ],
       "Last month only": [
         "Endast den senaste månaden"
@@ -14522,8 +14552,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Aktivitetsövervakare"
+      "Account monitor": [
+        "Kontoövervakning"
       ],
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
@@ -21446,9 +21476,6 @@
       "Address added": [
         "Adress tillagd"
       ],
-      "Address successfully added": [
-        "Adress tillagd"
-      ],
       "Address updated": [
         "Adress uppdaterad"
       ],
@@ -22033,6 +22060,9 @@
       "Account keys": [
         "Kontonycklar"
       ],
+      "Account monitor": [
+        "Kontoövervakning"
+      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -22428,9 +22458,6 @@
       "Deep dive into VPN blog posts": [
         "Djupdyk i VPN-blogginlägg"
       ],
-      "Delete ${ policyName }?": [
-        "Ta bort ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
       ],
@@ -22489,8 +22516,8 @@
       "Device name": [
         "Enhetsnamn"
       ],
-      "Disable activity monitor?": [
-        "Inaktivera aktivitetsövervakare?"
+      "Disable account monitor?": [
+        "Inaktivera kontoövervakning?"
       ],
       "Disable categories?": [
         "Inaktivera kategorier?"
@@ -23195,9 +23222,6 @@
       ],
       "Security and privacy": [
         "Säkerhet och integritet"
-      ],
-      "Security events": [
-        "Säkerhetshändelser"
       ],
       "Security logs": [
         "Säkerhetsloggar"

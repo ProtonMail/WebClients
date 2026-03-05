@@ -513,6 +513,9 @@
       "Disable": [
         "გათიშვა"
       ],
+      "Disable account monitor": [
+        "ანგარიშის მონიტორის გამორთვა"
+      ],
       "Disable categories": [
         "კატეგორიების გათიშვა"
       ],
@@ -521,9 +524,6 @@
       ],
       "Disable recovery phrase?": [
         "აღდგენის ფრაზის გამორთვა?"
-      ],
-      "Disable security events": [
-        "უსაფრთხოების მოვლენების გამორთვა"
       ],
       "Discard": [
         "მოცილება"
@@ -959,6 +959,9 @@
       ],
       "Make key primary": [
         "გასაღების ძირითადად დაყენება"
+      ],
+      "Manage addresses": [
+        "მისამართების მართვა"
       ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
@@ -1753,6 +1756,9 @@
         "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
         "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -1785,6 +1791,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -1796,6 +1805,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Address action": {
@@ -2300,6 +2312,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle": {
@@ -2567,6 +2591,9 @@
       "Add a custom domain": [
         "მომხმარებლის დომენის დამატება"
       ],
+      "App installed": [
+        "აპი დაყენებულია"
+      ],
       "Authenticate": [
         "ავთენტიკაცია"
       ],
@@ -2596,6 +2623,9 @@
       ],
       "Failed to load OAuth": [
         "OAuth-ის ჩატვირთვა ჩავარდა"
+      ],
+      "Install app": [
+        "აპის დაყენება"
       ],
       "Install migration app": [
         "მიგრაციის პროგრამის დაყენება"
@@ -2663,6 +2693,9 @@
       ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Verify installation": [
+        "დაყენების გადამოწმება"
       ],
       "Verify your domain": [
         "თქვენი დომენის გადამოწმება"
@@ -7231,9 +7264,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "ნაგულისხმევად საცავის ${ formattedStorage } ადმინისტრატორის ანგარიშს ეკუთვნის. მინიჭებული საცავი მოგვიანებით დამატებით მომხმარებლებს შეგიძლიათ, გადაუნაწილოთ."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "შექმენით და მართეთ ოჯახის წევრები და მიანიჭეთ მათ საცავი, რომელიც გაზიარებულია ${ DRIVE_APP_NAME }-სა და ${ MAIL_APP_NAME }-ს შორის."
       ],
@@ -9101,9 +9131,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }-ის ანგარიშის შექმნით თქვენს SimpleLogin-ის ელფოსტასთან ერთად, თქვენი ფსევდონიმების მართვა პირდაპირ ${ PASS_APP_NAME }-დან შეგიძლიათ."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "უსაფრთხოების მოვლენების გათიშვა თქვენს ისტორიას სრულად გაასუფთავებს. მართლა გნებავთ ამის გათიშვა?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -12294,6 +12321,9 @@
       "Allow recovery using a trusted device": [
         "გაძლევთ აღდგენის საშუალებას სანდო მოწყობილობის გამოყენებით"
       ],
+      "Allow secure link sharing": [
+        "დაცული ბმულის გაზიარების დაშვება"
+      ],
       "Allow sharing outside the organization": [
         "ორგანიზაციის გარეთ გაზიარების დაშვება"
       ],
@@ -12699,6 +12729,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -12920,6 +12953,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -14075,8 +14111,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "აქტივობების მონიტორი"
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
       ],
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
@@ -14381,6 +14417,12 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: შესვლა"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: რეგისტრაცია"
+      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -15828,6 +15870,9 @@
       "Reminder has been sent": [
         "შეხსენება გაგზავნილია"
       ],
+      "The key has been deleted.": [
+        "გასაღების წაიშალა."
+      ],
       "Too many recent API requests": [
         "API-ს მეტისმეტად ბევრი მოთხოვნა"
       ],
@@ -17111,6 +17156,12 @@
       ],
       "Got it": [
         "გავიგე"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -18999,6 +19050,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "ფოტოების სექციის ჩართვა"
+      ],
       "Get updates about comments via email": [
         "კომენტარის განახლებების ელფოსტით მიღება"
       ],
@@ -19090,6 +19144,14 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "გაზიარებულია ${ ownerName }-ის მიერ"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19343,6 +19405,9 @@
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "ორგანიზაციის სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
+      ],
+      "Then ${ priceElement }": [
+        "შემდეგ ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "მაშინ ${ priceWithDiscountPerMonth } თვეში, თუ გამოიწერთ"
@@ -20235,6 +20300,9 @@
       ]
     },
     "Subscription": {
+      "${ trialCycleText } free": [
+        "${ trialCycleText } free"
+      ],
       "Bound to **${ nameToDisplay }**": [
         "მიბმული **${ nameToDisplay }**-ზე"
       ],
@@ -20757,9 +20825,6 @@
       ],
       "Address added": [
         "მისამართი დაემატა"
-      ],
-      "Address successfully added": [
-        "მისამართი წარმატებით დაემატა"
       ],
       "Address updated": [
         "მისამართი განახლებულია"
@@ -21342,6 +21407,9 @@
       "Account keys": [
         "ანგარიშის გასაღებები"
       ],
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
+      ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
@@ -21737,9 +21805,6 @@
       "Deep dive into VPN blog posts": [
         "ჩაეფალით VPN-ის ბლოგის პოსტებში"
       ],
-      "Delete ${ policyName }?": [
-        "წავშალო ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
       ],
@@ -21774,6 +21839,9 @@
       "Delete user?": [
         "წავშალო მომხმარებელი?"
       ],
+      "Delete version history?": [
+        "წავშალო ვერსიის ისტორია?"
+      ],
       "Deny access to user?": [
         "ავუკრძალო წვდომა მომხმარებელს?"
       ],
@@ -21794,9 +21862,6 @@
       ],
       "Device name": [
         "მოწყობილობის სახელი"
-      ],
-      "Disable activity monitor?": [
-        "გამოვრთო აქტივობების მაყურებელი?"
       ],
       "Disable categories?": [
         "გამოვრთო კატეგორიები?"
@@ -22495,9 +22560,6 @@
       ],
       "Security and privacy": [
         "უსაფრთხოება და კონფიდენციალობა"
-      ],
-      "Security events": [
-        "უსაფრთხოების მოვლენები"
       ],
       "Security logs": [
         "უსაფრთხოების ჟურნალი"

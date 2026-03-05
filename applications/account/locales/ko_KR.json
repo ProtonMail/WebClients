@@ -513,9 +513,6 @@
       "Disable recovery phrase?": [
         "복구시점 기록을 중지하시겠어요?"
       ],
-      "Disable security events": [
-        "보안 이벤트 비활성화"
-      ],
       "Discard": [
         "저장 안함"
       ],
@@ -941,6 +938,9 @@
       ],
       "Make key primary": [
         "기본 키로 지정"
+      ],
+      "Manage addresses": [
+        "주소 관리"
       ],
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
@@ -2724,9 +2724,6 @@
       ],
       "Start migration": [
         "이전 시작"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "조직의 데이터를 이전하기 위해, Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 작업 도우미를 설치해야 합니다. 데이터 복사를 위해 ${ BRAND_NAME }에 권한 부여가 필요합니다. 설치 완료 후, 작업을 계속하기 위해 다시 이 탭으로 전환하세요. 더 알아보기"
       ],
       "Transfer errors": [
         "전송 오류"
@@ -7292,9 +7289,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "해당 플랜을 떠나면 이 사용자는 30일 무료 체험이 포함되는 ${ BRAND_NAME } Unlimited 플랜으로 전환됩니다.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "기본적으로는 관리자 계정에 ${ formattedStorage } 저장공간을 자동 할당합니다. 추가 사용자들 사이에 할당된 저장공간을 이후에 관리할 수 있습니다."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "가족 구성원을 생성하고 관리하며 ${ DRIVE_APP_NAME } 및 ${ MAIL_APP_NAME } 간에 공유되는 저장 공간을 할당합니다."
       ],
@@ -9149,9 +9143,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLogin 이메일로 ${ PASS_APP_NAME } 계정을 생성하면, ${ PASS_APP_NAME }에서 별칭을 즉시 관리할 수 있습니다."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "보안 이벤트 모니터링을 비활성화하면 전체 기록이 삭제됩니다. 정말 비활성화하시겠습니까?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
@@ -14206,9 +14197,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "활동 모니터링"
-      ],
       "Enable ${ reason }": [
         "${ reason } 활성화"
       ],
@@ -20977,9 +20965,6 @@
       "Address added": [
         "주소 추가됨"
       ],
-      "Address successfully added": [
-        "주소가 성공적으로 추가되었습니다"
-      ],
       "Address updated": [
         "주소 업데이트됨"
       ],
@@ -21937,9 +21922,6 @@
       "Deep dive into VPN blog posts": [
         "VPN 블로그 게시물 자세히 살펴보기"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName }을(를) 삭제할까요?"
-      ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
       ],
@@ -21993,9 +21975,6 @@
       ],
       "Device name": [
         "장치명"
-      ],
-      "Disable activity monitor?": [
-        "활동 모니터링을 비활성화하시겠습니까?"
       ],
       "Disable categories?": [
         "카테고리를 비활성화하시겠어요?"
@@ -22692,9 +22671,6 @@
       ],
       "Security and privacy": [
         "보안 및 개인정보 보호"
-      ],
-      "Security events": [
-        "보안 이벤트"
       ],
       "Security logs": [
         "보안 로그"

@@ -444,6 +444,9 @@
       "Delete account": [
         "アカウントを削除"
       ],
+      "Delete and confirm": [
+        "削除・確認"
+      ],
       "Delete filter “${ Name }”": [
         "フィルタ「${ Name }」を削除"
       ],
@@ -507,14 +510,14 @@
       "Disable": [
         "無効にする"
       ],
+      "Disable account monitor": [
+        "アカウントモニターを無効化"
+      ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
       ],
       "Disable recovery phrase?": [
         "回復用フレーズを無効にしますか?"
-      ],
-      "Disable security events": [
-        "セキュリティイベントを無効にする"
       ],
       "Discard": [
         "破棄"
@@ -944,6 +947,9 @@
       ],
       "Make key primary": [
         "プライマリー鍵とする"
+      ],
+      "Manage addresses": [
+        "アドレスの管理"
       ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
@@ -2643,6 +2649,9 @@
       "Add a custom domain": [
         "カスタムドメインを追加"
       ],
+      "App installed": [
+        "アプリをインストールしました"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -2672,6 +2681,12 @@
       ],
       "Failed to load OAuth": [
         "OAuthの読み込みに失敗しました"
+      ],
+      "Finish setting up your business account": [
+        "ビジネスアカウントの設定を完了させましょう"
+      ],
+      "Install app": [
+        "アプリをインストール"
       ],
       "Install migration app": [
         "移行アプリをインストール"
@@ -2736,8 +2751,8 @@
       "Start migration": [
         "移行を開始"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistantアプリをインストールする必要があります。これにより、${ BRAND_NAME }はお客様のデータをコピーする権限を得ます。インストールが完了したら、ここに戻って続行してください。詳細はこちら"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistant をインストールする必要があります。これにより、${ BRAND_NAME }にデータをコピーする権限が与えられます。インストールをしてから、ここに戻って続行してください。"
       ],
       "Transfer errors": [
         "転送エラー"
@@ -2756,6 +2771,9 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "${ BRAND_NAME } がデータをコピーすることを許可する必要があります。権限を許可した後、ここに戻って続行してください。"
       ]
     },
     "breadcrumb": {
@@ -5880,6 +5898,9 @@
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "データに関して信頼できるお客様を選んでください。そのお客様は、すでに${ BRAND_NAME }アカウントを所有している必要があります。"
       ],
+      "Contacts": [
+        "連絡先"
+      ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "データが正常に回復されました。既存のデータと暗号化されたファイルを復号化できるようになりました。"
       ],
@@ -5912,6 +5933,9 @@
       ],
       "Emergency contact added": [
         "緊急連絡先が追加されました"
+      ],
+      "Emergency contact enabled": [
+        "緊急時の連絡先を有効にしました"
       ],
       "Emergency contact removed": [
         "緊急連絡先が削除されました"
@@ -6002,6 +6026,9 @@
       ],
       "Requesting access": [
         "アクセスをリクエストしています"
+      ],
+      "Review recovery request": [
+        "復旧リクエストを見る"
       ],
       "Revoke access": [
         "アクセスの失効"
@@ -7316,9 +7343,6 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "プランを離れた後、このユーザーは 30 日の無料トライアル付きの${ BRAND_NAME }無制限プラン*に移行されます。"
-      ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "デフォルトでは、ストレージの ${ formattedStorage } が管理者アカウントに割り当てられます。 割り当てられたストレージを管理して、後で追加のユーザーに分散することができます。"
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "ファミリー メンバーを作成および管理し、${ DRIVE_APP_NAME } と ${ MAIL_APP_NAME } の間で共有されるストレージ スペースをファミリー メンバーに割り当てます。"
@@ -9175,8 +9199,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLoginのメールで${ PASS_APP_NAME }のアカウントを作ることによって、${ PASS_APP_NAME }からエイリアスを直接管理することができます。"
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "セキュリティイベントのモニタリングを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "アカウントモニターを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -9771,6 +9795,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "無効にすると、組織メンバーは保管庫やアイテムを組織内でのみ共有できるようになります。"
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "無効にすると、組織のメンバーはセキュアリンクを作成できなくなります。"
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "有効にすると、組織メンバーは保管庫に加えて個々のアイテムを共有することができます。"
@@ -10966,6 +10993,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "この確認には最大で1時間かかる場合があります。確認が成功した後も、TXTレコードを削除しないでください。ドメインを所有し続けていることを確認するために必要です。"
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "${ rententionLabel }以前のファイルバージョンがすべて削除されます。"
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "これは**${ email }**へのアクセスを拒否します。本当に続けますか？"
       ],
@@ -11250,6 +11280,9 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
+      ],
+      "Version history": [
+        "バージョン履歴"
       ],
       "Version number successfully copied to clipboard": [
         "バージョン番号がクリップボードにコピーされました"
@@ -12468,6 +12501,9 @@
       "Allow recovery using a trusted device": [
         "信頼できるデバイスを使用した回復を許可"
       ],
+      "Allow secure link sharing": [
+        "セキュアリンク共有を許可"
+      ],
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
@@ -12870,6 +12906,9 @@
       "Emails (last 3 months)": [
         "メール (過去 3 か月)"
       ],
+      "Emails (last 6 months)": [
+        "メール (過去 6 か月)"
+      ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
@@ -13094,6 +13133,9 @@
       ],
       "Last 3 months only": [
         "過去 3 か月のみ"
+      ],
+      "Last 6 months only": [
+        "過去 6 か月のみ"
       ],
       "Last month only": [
         "過去 1 か月のみ"
@@ -14246,8 +14288,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "アクティビティモニター"
+      "Account monitor": [
+        "アカウントモニター"
       ],
       "Enable ${ reason }": [
         "${ reason } を有効にする"
@@ -19280,6 +19322,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "写真欄を有効化"
+      ],
       "Get updates about comments via email": [
         "メール経由でコメントの最新情報を受け取る"
       ],
@@ -21031,9 +21076,6 @@
       "Address added": [
         "アドレスが追加されました"
       ],
-      "Address successfully added": [
-        "アドレスが正常に追加されました"
-      ],
       "Address updated": [
         "アドレスを更新しました"
       ],
@@ -21594,6 +21636,9 @@
       "Account keys": [
         "アカウントの鍵"
       ],
+      "Account monitor": [
+        "アカウントモニター"
+      ],
       "Account recovery": [
         "アカウントの回復"
       ],
@@ -21987,9 +22032,6 @@
       "Deep dive into VPN blog posts": [
         "VPNブログ投稿を深掘りする"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName }を削除しますか?"
-      ],
       "Delete ${ value }": [
         "${ value } を削除"
       ],
@@ -22023,6 +22065,9 @@
       "Delete user?": [
         "ユーザーを削除しますか？"
       ],
+      "Delete version history?": [
+        "バージョン履歴を削除しますか？"
+      ],
       "Deny access to user?": [
         "ユーザーのアクセスを拒否しますか？"
       ],
@@ -22043,9 +22088,6 @@
       ],
       "Device name": [
         "デバイス名"
-      ],
-      "Disable activity monitor?": [
-        "アクティビティモニターを無効化しますか？"
       ],
       "Disable categories?": [
         "カテゴリーを無効にしますか？"
@@ -22742,9 +22784,6 @@
       ],
       "Security and privacy": [
         "セキュリティとプライバシー"
-      ],
-      "Security events": [
-        "セキュリティイベント"
       ],
       "Security logs": [
         "セキュリティログ"
