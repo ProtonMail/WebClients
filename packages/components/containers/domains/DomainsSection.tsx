@@ -33,7 +33,7 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useOrganizationModals from '../organization/useOrganizationModals';

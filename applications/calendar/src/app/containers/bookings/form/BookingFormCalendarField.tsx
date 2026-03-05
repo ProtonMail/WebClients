@@ -15,7 +15,7 @@ import {
     getVisualCalendars,
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';

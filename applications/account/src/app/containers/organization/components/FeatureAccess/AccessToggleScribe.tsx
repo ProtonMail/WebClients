@@ -11,7 +11,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 

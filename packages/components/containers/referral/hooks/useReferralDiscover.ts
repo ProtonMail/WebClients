@@ -11,7 +11,7 @@ import useFeature from '@proton/features/useFeature';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) => {
     const [userSettings] = useUserSettings();

@@ -1,4 +1,4 @@
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useCategoryViewExperiment = () => {
     const showCategoryBadges = useFlag('ShowMessageCategory');

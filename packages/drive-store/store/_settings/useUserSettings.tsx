@@ -12,7 +12,7 @@ import type {
     UserSettings,
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { UserSortParams } from './sorting';
 import { getSetting, parseSetting } from './sorting';

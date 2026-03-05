@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { hasLabel, isElementMessage } from '../../../helpers/elements';
 import type { ApplyLabelsParams } from './interface';

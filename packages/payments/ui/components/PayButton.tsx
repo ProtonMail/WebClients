@@ -8,7 +8,7 @@ import { greenlandOfferCountryCodes } from '@proton/components/containers/paymen
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 

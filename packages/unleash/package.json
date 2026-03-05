@@ -2,6 +2,19 @@
     "name": "@proton/unleash",
     "description": "Unleash feature flags",
     "sideEffects": false,
+    "exports": {
+        "./useFlag": "./useFlag.ts",
+        "./useGetFlag": "./useGetFlag.ts",
+        "./useVariant": "./useVariant.ts",
+        "./UnleashClient": "./UnleashClient.ts",
+        "./getMaxContactsImportConfig": "./helpers/getMaxContactsImportConfig.ts",
+        "./getUnleashReadyPromise": "./readyPromise.ts",
+        "./standaloneClient": "./standaloneClient.ts",
+        "./UnleashFlagProvider": "./UnleashFlagProvider.tsx",
+        "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
+        "./Flags": "./UnleashFeatureFlags.ts",
+        "./proxy": "./proxy.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

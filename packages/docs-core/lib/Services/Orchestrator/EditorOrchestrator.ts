@@ -21,8 +21,8 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
-import type UnleashClient from '@proton/unleash/UnleashClient'
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,

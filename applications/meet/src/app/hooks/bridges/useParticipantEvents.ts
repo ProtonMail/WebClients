@@ -6,7 +6,7 @@ import type { Participant } from 'livekit-client';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addEvent } from '@proton/meet/store/slices/meetingState';
 import { ParticipantEvent } from '@proton/meet/types/types';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
 import { useWasmApp } from '../../contexts/WasmContext';

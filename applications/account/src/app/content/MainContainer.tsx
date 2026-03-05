@@ -64,7 +64,7 @@ import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import { recoveryIds } from '../containers/account/recoveryIds';

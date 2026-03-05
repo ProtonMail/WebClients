@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import metrics from '@proton/metrics';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { convertViewToString } from './calendarMetricsHelper';
 

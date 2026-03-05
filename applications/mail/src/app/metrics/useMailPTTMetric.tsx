@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import metrics from '@proton/metrics';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { pathnameToLabelName } from './mailMetricsHelper';
 

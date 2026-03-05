@@ -44,7 +44,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
-import useVariant from '@proton/unleash/useVariant';
+import { useVariant } from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

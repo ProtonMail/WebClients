@@ -5,7 +5,7 @@ import type { ModalProps } from '@proton/components';
 import { useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoading } from '@proton/hooks';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { withHoc } from '../../hooks/withHoc';
 import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';

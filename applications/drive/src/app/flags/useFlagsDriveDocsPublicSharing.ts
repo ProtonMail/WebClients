@@ -1,4 +1,4 @@
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 /**
  * Contains logic relating to allowing public sharing of docs.

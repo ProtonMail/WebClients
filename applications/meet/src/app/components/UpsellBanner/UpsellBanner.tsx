@@ -7,7 +7,7 @@ import { SettingsLink } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { PLANS } from '@proton/payments/core/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { canShowBanner } from '../../utils/canShowBanner';

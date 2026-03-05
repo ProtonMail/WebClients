@@ -111,9 +111,7 @@ interface Props {
     api: Api;
 }
 
-const UnleashFlagProvider = ({ children, api }: Props) => {
+export const UnleashFlagProvider = ({ children, api }: Props) => {
     const unleashConfig: IConfig = getUnleashConfig({ fetch: createCustomFetch(api) });
     return <FlagProvider config={unleashConfig}>{children}</FlagProvider>;
 };
-
-export default UnleashFlagProvider;

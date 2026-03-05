@@ -21,8 +21,7 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
 }));
 
 jest.mock('@proton/unleash/useFlag', () => ({
-    __esModule: true,
-    default: jest.fn(),
+    useFlag: jest.fn(),
 }));
 
 jest.mock('@proton/payments', () => ({
@@ -41,7 +40,7 @@ describe('useVPNDrawer', () => {
         mockUseAllowedProducts = require('@proton/components/containers/organization/accessControl/useAllowedProducts')
             .default as jest.Mock;
         mockUseConfig = require('@proton/components/hooks/useConfig').default as jest.Mock;
-        mockUseFlag = require('@proton/unleash/useFlag').default as jest.Mock;
+        mockUseFlag = require('@proton/unleash/useFlag').useFlag as jest.Mock;
         mockGetIsB2BAudienceFromPlan = require('@proton/payments').getIsB2BAudienceFromPlan as jest.Mock;
     });
 

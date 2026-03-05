@@ -8,7 +8,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 import spotlightVideoConfImg from '@proton/styles/assets/img/illustrations/spotlight-video-conference.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
     isEventCreation: boolean;

@@ -20,7 +20,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';

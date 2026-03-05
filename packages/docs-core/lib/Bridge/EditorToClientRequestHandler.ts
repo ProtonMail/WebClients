@@ -18,7 +18,7 @@ import type { ErrorInfo } from 'react'
 import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/ApplicationEvent'
 import { WordCountEvent } from './Events'
 import type { CustomWindow } from '../Application/Window'
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 
 declare const window: CustomWindow
 

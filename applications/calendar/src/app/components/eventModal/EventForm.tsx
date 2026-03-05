@@ -21,7 +21,7 @@ import {
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';

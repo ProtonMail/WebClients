@@ -5,7 +5,7 @@ import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { useFeature } from '@proton/features';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { NPSApplication } from '../interface';
 import { useNPSEligiblity } from './useNPSEligibility';
@@ -23,7 +23,7 @@ const mockUseUser = useUser as jest.Mock;
 jest.mock('@proton/account/userSettings/hooks');
 const mockUseUserSettings = useUserSettings as jest.Mock;
 
-jest.mock('@proton/unleash');
+jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.Mock;
 
 jest.mock('@proton/features', () => ({

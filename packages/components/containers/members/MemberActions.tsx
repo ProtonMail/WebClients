@@ -18,7 +18,7 @@ import type {
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import { getIsMemberDisabled, getIsMemberEnabled, getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const MagicLinkMemberActions = ({
