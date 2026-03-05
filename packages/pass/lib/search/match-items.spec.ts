@@ -6,7 +6,11 @@ import { searchItems } from './match-items';
 
 const searchAndExpect = (items: ItemRevision[], expected: ItemRevision[]) => (search: string) => {
     const result = searchItems(items, search);
-    expect(result).toEqual(expected);
+    try {
+        expect(result).toEqual(expected);
+    } catch {
+        throw new Error(`Search mismatch failed, "${search}" should have matched ${JSON.stringify(expected, null, 2)}`);
+    }
 };
 
 describe('searchItems', () => {
@@ -137,6 +141,108 @@ describe('searchItems', () => {
                 extraFields: [],
             },
         },
+        {
+            data: {
+                type: 'custom',
+                metadata: {
+                    name: 'Custom item',
+                    note: obfuscate('This is item 6'),
+                    itemUuid: '5',
+                },
+                extraFields: [
+                    {
+                        fieldName: 'custom-hidden-name',
+                        type: 'hidden',
+                        data: { content: obfuscate('custom-hidden-content') },
+                    },
+                    {
+                        fieldName: 'custom-text-name',
+                        type: 'text',
+                        data: { content: obfuscate('custom-text-content') },
+                    },
+                    {
+                        fieldName: 'custom-totp-name',
+                        type: 'totp',
+                        data: { content: obfuscate('custom-totp-content') },
+                    },
+                    {
+                        fieldName: 'custom-timestamp-name',
+                        type: 'timestamp',
+                        data: { content: obfuscate('custom-timestamp-content') },
+                    },
+                ],
+                content: {
+                    sections: [
+                        {
+                            sectionName: 'custom-section-name',
+                            sectionFields: [
+                                {
+                                    fieldName: 'custom-section-hidden-name',
+                                    type: 'hidden',
+                                    data: { content: 'custom-section-hidden-content' },
+                                },
+                                {
+                                    fieldName: 'custom-section-text-name',
+                                    type: 'text',
+                                    data: { content: 'custom-section-text-content' },
+                                },
+                                {
+                                    fieldName: 'custom-section-totp-name',
+                                    type: 'totp',
+                                    data: { content: 'custom-section-totp-content' },
+                                },
+                                {
+                                    fieldName: 'custom-section-timestamp-name',
+                                    type: 'timestamp',
+                                    data: { content: 'custom-section-timestamp-content' },
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+        },
+        {
+            data: {
+                type: 'wifi',
+                metadata: {
+                    name: 'Wifi item',
+                    note: obfuscate('This is item 7'),
+                    itemUuid: '6',
+                },
+                extraFields: [
+                    {
+                        fieldName: 'wifi-text-name',
+                        type: 'text',
+                        data: { content: obfuscate('wifi-text-content') },
+                    },
+                ],
+            },
+        },
+        {
+            data: {
+                type: 'sshKey',
+                metadata: {
+                    name: 'SSH key item',
+                    note: obfuscate('This is item 8'),
+                    itemUuid: '7',
+                },
+                content: {
+                    sections: [
+                        {
+                            sectionName: 'ssh-section-name',
+                            sectionFields: [
+                                {
+                                    fieldName: 'ssh-text-name',
+                                    type: 'text',
+                                    data: { content: 'ssh-text-content' },
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+        },
     ] as ItemRevision[];
 
     it.each([
@@ -156,23 +262,66 @@ describe('searchItems', () => {
                 'street-address',
                 'city',
                 'work-email',
-                '::personal-detail-2::',
-                '::work-detail-1::',
                 'detail-2',
                 'first-section-1::',
                 'second-section',
             ],
             expected: [items[4]],
         },
+        {
+            key: 'custom item',
+            search: [
+                'Custom item',
+                'custom-hidden-name',
+                'custom-text-name',
+                'custom-text-content',
+                'custom-totp-name',
+                'custom-timestamp-name',
+                'custom-section-name',
+                'custom-section-hidden-name',
+                'custom-section-text-name',
+                'custom-section-text-content',
+                'custom-section-totp-name',
+                'custom-section-timestamp-name',
+            ],
+            expected: [items[5]],
+        },
+        {
+            key: 'wifi item',
+            search: ['Wifi item', 'wifi-text-name', 'wifi-text-content'],
+            expected: [items[6]],
+        },
+        {
+            key: 'ssh item',
+            search: ['SSH key item', 'ssh-section-name', 'ssh-text-name', 'ssh-text-content'],
+            expected: [items[7]],
+        },
     ])('should return matching items based on $key', ({ search, expected }) => {
         search.forEach(searchAndExpect(items, expected));
     });
 
     it.each([
-        { key: 'query', search: 'db' },
-        { key: 'otp fields', search: 'otpauth://totp/label?secret=secret&issuer=issuer' },
-        { key: 'otp fields with extra fields', search: 'otpauth://totp/label?secret=extrafieldsecret&issuer=issuer' },
+        { key: 'query', search: ['db'] },
+        {
+            key: 'otp fields',
+            search: [
+                'otpauth://totp/label?secret=secret&issuer=issuer',
+                'otpauth://totp/label?secret=extrafieldsecret&issuer=issuer',
+            ],
+        },
+        { key: 'extra idendity details hidden', search: ['::personal-detail-2::', '::work-detail-1::'] },
+        {
+            key: 'custom non text details',
+            search: [
+                'custom-hidden-content',
+                'custom-totp-content',
+                'custom-timestamp-content',
+                'custom-section-hidden-content',
+                'custom-section-totp-content',
+                'custom-section-timestamp-content',
+            ],
+        },
     ])('should return empty array when no match $key', ({ search }) => {
-        searchAndExpect(items, [])(search);
+        search.forEach(searchAndExpect(items, []));
     });
 });
