@@ -480,6 +480,9 @@
       "Delete record": [
         "Record verwijderen"
       ],
+      "Delete token ${ token.Account }": [
+        "Token \"${ token.Account }\" verwijderen"
+      ],
       "Delete token “${ token.Name }”": [
         "Token \"${ token.Name }\" verwijderen"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Uitschakelen"
       ],
+      "Disable account monitor": [
+        "Accountmonitor uitschakelen"
+      ],
       "Disable categories": [
         "Categorieën uitschakelen"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Herstelzin uitschakelen?"
-      ],
-      "Disable security events": [
-        "Veiligheidsgebeurtenissen uitschakelen"
       ],
       "Discard": [
         "Verwijderen"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Sleutel primair maken"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
       ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
@@ -2676,11 +2682,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migratieassistent"
+      ],
       "Add a custom domain": [
         "Een aangepast domein toevoegen"
       ],
+      "App installed": [
+        "App geïnstalleerd"
+      ],
       "Authenticate": [
         "Authenticeren"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Authentiseer uw Google Workspace-account"
       ],
       "Calendar": [
         "Agenda"
@@ -2711,6 +2726,12 @@
       ],
       "Finish setting up your business account": [
         "Voltooi het instellen van uw zakelijke account"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
+      ],
+      "Install app": [
+        "Installeer app"
       ],
       "Install migration app": [
         "Installeer migratie app"
@@ -2776,14 +2797,17 @@
       "Start migration": [
         "Migratie starten"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Dit geeft ${ BRAND_NAME } toestemming om uw gegevens te kopiëren. Nadat u deze hebt geïnstalleerd, komt u hier terug om verder te gaan. Meer informatie"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Hiermee wordt toestemming verleend aan ${ BRAND_NAME } om uw gegevens te kopiëren. Nadat u de app hebt geïnstalleerd, keert u hier terug om verder te gaan."
       ],
       "Transfer errors": [
         "Overdrachtsfout"
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Verify installation": [
+        "Installatie verifiëren"
       ],
       "Verify your domain": [
         "Verifieer uw domein"
@@ -2794,8 +2818,14 @@
       "Verify your domain to start a migration": [
         "Verifieer uw domein om een migratie te starten"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "We konden de installatie niet verifiëren. Controleer of u deze in uw Google Workspace-account hebt geïnstalleerd en probeer het opnieuw."
+      ],
       "What are you migrating?": [
         "Wat migreert u?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "U dient de toestemming te verlenen aan ${ BRAND_NAME } om uw gegevens te kopiëren. Keer hier terug om verder te gaan nadat u de toestemmingen hebt geaccepteerd."
       ]
     },
     "breadcrumb": {
@@ -7524,8 +7554,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Na het verlaten van uw abonnement zal deze gebruiker worden verplaatst naar een ${ BRAND_NAME } Onbeperkt abonnement met een gratis proefperiode van 30 dagen.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Standaard wijzen we ${ formattedStorage } opslagruimte toe aan het beheerdersaccount. U kunt de toegewezen opslagruimte die moet worden verdeeld onder aanvullende gebruikers later beheren."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Wijs opslag toe aan het beheerdersaccount. U kunt de opslag voor extra gebruikers later verdelen."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Maak gezinsgebruikers aan, beheer ze en wijs opslagruimte toe die wordt gedeeld tussen ${ DRIVE_APP_NAME } en ${ MAIL_APP_NAME }."
@@ -9441,7 +9471,7 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Door een ${ PASS_APP_NAME }-account te maken met uw SimpleLogin e-mailadres, kunt u uw aliassen direct vanuit ${ PASS_APP_NAME } beheren."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Door het uitschakelen van beveiligingsmonitoring wist u ook uw gehele geschiedenis. Weet u zeker dat u dit wilt uitschakelen?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
@@ -10054,6 +10084,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Indien uitgeschakeld, kunnen leden van de organisatie alleen kluizen of items binnen de organisatie delen."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Indien uitgeschakeld, kunnen leden van de organisatie geen beveiligde koppelingen maken."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Als deze optie is ingeschakeld, kunnen leden van de organisatie individuele items delen bovenop de kluizen."
@@ -12822,6 +12855,9 @@
       "Allow recovery using a trusted device": [
         "Herstel toestaan met een vertrouwd apparaat"
       ],
+      "Allow secure link sharing": [
+        "Veilig delen van koppelingen toestaan"
+      ],
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
@@ -13227,6 +13263,9 @@
       "Emails (last 3 months)": [
         "E-mails (laatste 3 maanden)"
       ],
+      "Emails (last 6 months)": [
+        "E-mails (laatste 6 maanden)"
+      ],
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
@@ -13451,6 +13490,9 @@
       ],
       "Last 3 months only": [
         "Alleen de laatste 3 maanden"
+      ],
+      "Last 6 months only": [
+        "Alleen de laatste 6 maanden"
       ],
       "Last month only": [
         "Alleen vorige maand"
@@ -14615,8 +14657,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Activiteitenmonitor"
+      "Account monitor": [
+        "Accountmonitor"
       ],
       "Enable ${ reason }": [
         "${ reason } inschakelen"
@@ -21592,9 +21634,6 @@
       "Address added": [
         "Adres toegevoegd"
       ],
-      "Address successfully added": [
-        "Adres succesvol toegevoegd"
-      ],
       "Address updated": [
         "Adres bijgewerkt"
       ],
@@ -22176,6 +22215,9 @@
       "Account keys": [
         "Accountsleutels"
       ],
+      "Account monitor": [
+        "Accountmonitor"
+      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -22571,9 +22613,6 @@
       "Deep dive into VPN blog posts": [
         "Diep duiken in VPN blog posts"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName } verwijderen?"
-      ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
       ],
@@ -22632,8 +22671,8 @@
       "Device name": [
         "Apparaatnaam"
       ],
-      "Disable activity monitor?": [
-        "Activiteitenmonitor uitschakelen?"
+      "Disable account monitor?": [
+        "Accountmonitor uitschakelen?"
       ],
       "Disable categories?": [
         "Categorieën uitschakelen?"
@@ -23335,9 +23374,6 @@
       ],
       "Security and privacy": [
         "Veiligheid en privacy"
-      ],
-      "Security events": [
-        "Veiligheidsgebeurtenissen"
       ],
       "Security logs": [
         "Beveiligingslogboek"

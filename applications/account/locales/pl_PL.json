@@ -437,9 +437,6 @@
       "Disable recovery phrase?": [
         "Wyłączyć hasło odzyskiwania?"
       ],
-      "Disable security events": [
-        "Wyłącz logi"
-      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -784,6 +781,9 @@
       ],
       "Make admin": [
         "Administrator"
+      ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
       ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
@@ -4062,6 +4062,9 @@
       "Apple TV": [
         "Apple TV"
       ],
+      "Brave": [
+        "Brave"
+      ],
       "Browser": [
         "Przeglądarka"
       ],
@@ -4092,6 +4095,9 @@
       "Download on the Google Play Store": [
         "Pobierz z Google Play"
       ],
+      "Edge": [
+        "Edge"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -4109,6 +4115,9 @@
       ],
       "Installation guide": [
         "Instrukcja instalacji"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone / iPad"
@@ -5782,9 +5791,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Po opuszczeniu planu użytkownik zostanie przeniesiony do 30-dniowej darmowej wersji próbnej planu ${ BRAND_NAME } Unlimited.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Domyślne przypiszemy ${ formattedStorage } przestrzeni dyskowej do konta administratora. Możesz zarządzać przypisaną przestrzenią dyskową w celu rozdysponowania jej wśród dodatkowych użytkowników w późniejszym czasie."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Utwórz, zarządzaj użytkownikami rodziny i przypisuj im przestrzeń dyskową dzieloną pomiędzy usługami ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
@@ -6004,6 +6010,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Coś poszło nie tak z rejestracją klucza bezpieczeństwa. Spróbuj ponownie później."
       ]
@@ -6023,6 +6032,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Włóż klucz bezpieczeństwa do portu USB."
@@ -7576,9 +7588,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Tworząc konto ${ PASS_APP_NAME } z adresem SimpleLogin, możesz zarządzać aliasami bezpośrednio w ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Wyłączenie logów spowoduje usunięcie całej jej historii. Czy na pewno chcesz wyłączyć tę funkcję?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -11862,9 +11871,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor aktywności"
-      ],
       "Enable ${ reason }": [
         "Włącz ${ reason }"
       ],
@@ -17846,9 +17852,6 @@
       "Address added": [
         "Adres został dodany"
       ],
-      "Address successfully added": [
-        "Adres został dodany"
-      ],
       "Administrator privileges restored": [
         "Uprawnienia administratora zostały przywrócone"
       ],
@@ -18703,9 +18706,6 @@
       "Deep dive into VPN blog posts": [
         "Szczegółowa analiza wpisów na blogu VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Usunąć zasadę ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Usuń ${ value }"
       ],
@@ -18751,9 +18751,6 @@
       "Device name": [
         "Nazwa urządzenia"
       ],
-      "Disable activity monitor?": [
-        "Wyłączyć monitor aktywności?"
-      ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
       ],
@@ -18780,6 +18777,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Obniżyć plan do wersji ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "Pobierz ${ app }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
@@ -19335,9 +19335,6 @@
       ],
       "Security and privacy": [
         "Bezpieczeństwo i prywatność"
-      ],
-      "Security events": [
-        "Logi bezpieczeństwa"
       ],
       "Security logs": [
         "Logi bezpieczeństwa"
