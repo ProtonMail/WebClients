@@ -14,6 +14,15 @@ import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/Laz
 
 import './ThinkingPath.scss';
 
+function formatDuration(ms: number): string {
+    const seconds = Math.round(ms / 1000);
+    if (seconds < 1) return '<1s';
+    if (seconds < 60) return `${seconds}s`;
+    const minutes = Math.floor(seconds / 60);
+    const remaining = seconds % 60;
+    return remaining > 0 ? `${minutes}m ${remaining}s` : `${minutes}m`;
+}
+
 /**
  * Get icon name for tool call type.
  */
@@ -82,7 +91,7 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
 }
 
 export type ThinkingStep =
-    | { type: 'reasoning'; content: string; isActive: boolean }
+    | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
     | { type: 'tool_call'; toolCall: ToolCallData; result?: string; isActive: boolean };
 
 interface ThinkingPathProps {
@@ -91,9 +100,12 @@ interface ThinkingPathProps {
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
+const REASONING_PREVIEW_LINES = 6;
+
 const ReasoningStep = ({
     content,
     isActive,
+    durationMs,
     isFirst,
     isLast,
     message,
@@ -101,12 +113,57 @@ const ReasoningStep = ({
 }: {
     content: string;
     isActive: boolean;
+    durationMs?: number;
     isFirst: boolean;
     isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    // When actively streaming, show the last N lines as a live trail
+    if (isActive && !isExpanded) {
+        const lines = content.split('\n').filter((l) => l.trim().length > 0);
+        const visibleLines = lines.slice(-REASONING_PREVIEW_LINES);
+        const hasMore = lines.length > REASONING_PREVIEW_LINES;
+
+        return (
+            <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
+                <div className="thinking-step-icon-container">
+                    <Icon
+                        name="lightbulb"
+                        size={3}
+                        className="thinking-step-icon-badge thinking-step-icon-badge--active"
+                    />
+                </div>
+
+                <div className="thinking-step-content">
+                    <button
+                        className="thinking-stream-header"
+                        onClick={() => setIsExpanded(true)}
+                        type="button"
+                        aria-label={c('collider_2025:Reasoning').t`Expand reasoning`}
+                    >
+                        <span className="thinking-step-label">
+                            {c('collider_2025:Reasoning').t`Thinking...`}
+                        </span>
+                        <Icon name="arrow-up-and-left" size={3} className="thinking-step-chevron" />
+                    </button>
+
+                    <div className="thinking-stream-container">
+                        {hasMore && <div className="thinking-stream-fade" />}
+                        <div className="thinking-stream-lines">
+                            {visibleLines.map((line, i) => (
+                                <p key={i} className="thinking-stream-line">
+                                    {line}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
@@ -126,8 +183,8 @@ const ReasoningStep = ({
                     aria-expanded={isExpanded}
                 >
                     <span className="thinking-step-label">
-                        {isActive
-                            ? c('collider_2025:Reasoning').t`Thinking...`
+                        {durationMs !== undefined
+                            ? c('collider_2025:Reasoning').t`Thought for ${formatDuration(durationMs)}`
                             : c('collider_2025:Reasoning').t`Thought about this`}
                     </span>
                     <Icon
@@ -256,6 +313,9 @@ const ToolCallStep = ({
         hasDetails &&
         (toolCall.name === 'stock' || toolCall.name === 'cryptocurrency' || toolCall.name === 'weather');
 
+    // Image tools render as an inline status row (no accordion)
+    const hasInlineImageStatus = imageToolResult !== null && !isActive;
+
     // Check if the tool call failed
     const hasError = imageToolResult?.error === true;
 
@@ -279,6 +339,29 @@ const ToolCallStep = ({
                     <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
                         <span className="thinking-step-label color-weak">{label}</span>
                         <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
+                    </div>
+                ) : hasInlineImageStatus ? (
+                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
+                        <span
+                            className={clsx(
+                                'thinking-step-label',
+                                hasError ? 'color-danger' : 'color-weak'
+                            )}
+                        >
+                            {label}
+                        </span>
+                        <div className="flex items-center gap-2 shrink-0">
+                            {imageToolResult!.elapsed_ms !== undefined && (
+                                <span className="text-sm color-weak">
+                                    ({(imageToolResult!.elapsed_ms / 1000).toFixed(1)}s)
+                                </span>
+                            )}
+                            {hasError ? (
+                                <IcExclamationCircleFilled size={3} className="color-danger" />
+                            ) : (
+                                <IcCheckmarkCircleFilled size={3} className="color-success" />
+                            )}
+                        </div>
                     </div>
                 ) : hasDetails ? (
                     <>
@@ -459,9 +542,10 @@ export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathPr
                 if (step.type === 'reasoning') {
                     return (
                         <ReasoningStep
-                            key={idx}
+                            key={`reasoning-${idx}-${step.isActive}`}
                             content={step.content}
                             isActive={step.isActive}
+                            durationMs={step.durationMs}
                             isFirst={isFirst}
                             isLast={isLast}
                             message={message}
