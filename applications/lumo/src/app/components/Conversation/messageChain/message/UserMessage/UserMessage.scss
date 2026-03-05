@@ -7,29 +7,24 @@
 	-webkit-line-clamp: 1;
 }
 
-// .user-msg {
-// 	justify-content: flex-end;
-// }
+.user-msg-container {
+	display: block;
+	page-break-inside: auto;
 
-// .user-msg-container {
-// 	// inline-size: 100%;
-// 	border-radius: 0.75rem;
-// 	position: relative;
+	// The bubble background is always the same light lavender regardless of theme,
+	// so text must always be dark — never inherit the theme's light-mode text token.
+	&.markdown-rendering {
+		background-color: #e2e4fb;
+		color: #1c1b4b !important;
 
-// 	&.editing {
-// 		inline-size: 100%;
-// 	}
-// }
+		// Force all descendant text nodes (including those rendered inside
+		// the LazyProgressiveMarkdownRenderer .prose wrapper) to stay dark.
+		* {
+			color: #1c1b4b !important;
+		}
 
-// .user-toolbar {
-// 	position: absolute;
-// 	display: flex;
-// 	align-items: center;
-// 	opacity: 0;
-// 	transition: opacity 0.2s ease-in-out;
-
-// 	&:hover,
-// 	.group-hover\:opacity-100 {
-// 		opacity: 1;
-// 	}
-// }
+		a {
+			color: #4740d4 !important;
+		}
+	}
+}
