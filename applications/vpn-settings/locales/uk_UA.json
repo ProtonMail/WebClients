@@ -498,6 +498,9 @@
       "Make admin": [
         "Зробити адміністратором"
       ],
+      "Manage addresses": [
+        "Керувати адресами"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -3798,9 +3801,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Після виходу з вашого тарифного плану цей користувач буде переміщений на ${ BRAND_NAME } Безлімітний план з 30-денною безплатною пробною версією.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Типово ми призначаємо ${ formattedStorage } сховища для облікового запису адміністратора. Ви можете керувати призначеним сховищем, щоб пізніше розподілити його між іншими користувачами."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Створюйте учасників сімейної групи, керуйте ними та призначайте їм місце у сховищі, спільне для ${ DRIVE_APP_NAME } та ${ MAIL_APP_NAME }."
       ],
@@ -5123,9 +5123,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Вимкнувши моніторинг подій безпеки, ви також очистите всю історію. Ви впевнені, що хочете це вимкнути?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -12605,8 +12602,8 @@
       "Delete": [
         "Видалити"
       ],
-      "Delete ${ policyName }?": [
-        "Видалити ${ policyName }?"
+      "Delete ${ name }?": [
+        "Видалити ${ name }?"
       ],
       "Delete account": [
         "Видалити обліковий запис"
@@ -12979,9 +12976,6 @@
       ],
       "Security and privacy": [
         "Безпека й приватність"
-      ],
-      "Security events": [
-        "Події безпеки"
       ],
       "Select a plan": [
         "Оберіть тарифний план"

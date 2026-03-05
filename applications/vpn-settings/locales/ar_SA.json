@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "حذف البوابة"
       ],
+      "Delete gateway": [
+        "حذف البوابة"
+      ],
       "Delete group": [
         "حذف المجموعة"
       ],
@@ -317,14 +320,14 @@
       "Disable": [
         "تعطيل"
       ],
+      "Disable account monitor": [
+        "تعطيل مراقبة الحساب"
+      ],
       "Disable recovery phrase": [
         "تعطيل عبارة الاسترداد"
       ],
       "Disable recovery phrase?": [
         "تعطيل عبارة الاسترداد؟"
-      ],
-      "Disable security events": [
-        "تعطيل الأحداث الأمنية"
       ],
       "Discard": [
         "تجاهل"
@@ -595,6 +598,9 @@
       ],
       "Make admin": [
         "تعيين كمسؤول"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ],
       "Manage advanced account protections": [
         "إدارة الحماية المتقدمة للحساب"
@@ -1740,11 +1746,6 @@
         "هل تعمل ببيانات حساسة؟"
       ]
     },
-    "BOSS": {
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "لنقل بيانات مؤسستك، تحتاج إلى تثبيت تطبيق ${ BRAND_NAME } Migration Assistant من Google Workspace Marketplace. سيمنح هذا الإذن لـ ${ BRAND_NAME } بنسخ بياناتك. بعد تثبيته، عُد إلى هنا للمتابعة. تعرّف على المزيد"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "تطبيق ${ MAIL_APP_NAME } لسطح المكتب"
@@ -1847,7 +1848,7 @@
         "إغلاق"
       ],
       "Configure your network": [
-        "قم بتكوين شبكتك"
+        "تكوين شبكتك"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "الاستمرار في استخدام ${ MAIL_APP_NAME }."
@@ -1868,7 +1869,7 @@
         "اكتشف الميزات وقم بإعدادها"
       ],
       "Invite your team": [
-        "قم بدعوة فريقك"
+        "ادعُ فريقك"
       ],
       "Manage global VPN permissions": [
         "إدارة أذونات VPN العالمية"
@@ -1880,7 +1881,7 @@
         "ذكِّرني لاحقًا"
       ],
       "Secure your organization": [
-        "أمّن مؤسستك"
+        "قم بتأمين مؤسستك"
       ],
       "Send": [
         "أرسل"
@@ -3171,7 +3172,7 @@
         "اربط نظام إدارة علاقات العملاء (CRM) والموقع الإلكتروني والطابعات والمزيد."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "قم بإنشاء بوابة لمنح المستخدمين إمكانية الوصول إلى موارد تكنولوجيا المعلومات الخاصة بك من خلال خوادم مخصصة."
+        "أنشئ بوابة تتيح للمستخدمين الوصول إلى موارد تكنولوجيا المعلومات الخاصة بك من خلال خوادم مخصصة."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "أنشئ اجتماع Zoom وأضف تفاصيل الانضمام لحدثك بنقرة واحدة."
@@ -3186,7 +3187,7 @@
         "أنشئ سياسات تُحدد من يمكنه الاتصال بالخوادم المشتركة في كل بلد."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "حدد المستخدمين الذين يمكنهم الاتصال بكل موقع من مواقع الخوادم المشتركة التي يزيد عددها عن 120 موقعا."
+        "حدد المستخدمين الذين يمكنهم الاتصال بكل موقع من مواقع الخوادم المشتركة التي يزيد عددها عن 120 موقع."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "الوصول بسهولة إلى بريدك الإلكتروني وتقويمك على سطح المكتب والجوال."
@@ -3234,7 +3235,7 @@
         "ساعد فريقك على تخزين كلمات المرور بشكل آمن لمعلومات العمل والعملاء الحساسة."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "إذا لم تكن قد فعلت ذلك بعد، فقم بتمكين بعض طرق الاسترداد لضمان عدم فقدان الوصول إلى ${ VPN_APP_NAME } مطلقًا."
+        "إذا لم تكن قد قمت بذلك بالفعل، فقم بتمكين بعض طرق الاسترداد للتأكد من أنك لن تفقد الوصول إلى ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "يبدو أن قائمة جهات الاتصال التي تستوردها تحتوي على بعض المجموعات. يرجى مراجعة كيفية استيراد هذه المجموعات."
@@ -4719,8 +4720,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "بعد مغادرة خطتك، سيُنقل هذا المستخدم إلى خطة ${ BRAND_NAME } Unlimited مع فترة تجريبية مجانية لمدة 30 يومًا.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "بشكل افتراضي نقوم بتعيين ${ formattedStorage } من التخزين لحساب المسؤول. يمكنك إدارة التخزين المخصص ليتم توزيعه على مستخدمين إضافيين لاحقًا."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "قم بتخصيص مساحة تخزين لحساب المسؤول. يمكنك توزيع مساحة التخزين على مستخدمين إضافيين لاحقًا."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "أنشئ وأدِر أفراد العائلة وخصص لهم مساحة تخزين مشتركة بين ${ DRIVE_APP_NAME } و ${ MAIL_APP_NAME }."
@@ -6317,8 +6318,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "انقل رسائلك وجهات اتصالك وتقويماتك إلى ${ BRAND_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "من خلال تعطيل مراقبة أحداث الأمان، سوف يتم مسح السجل بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "من خلال تعطيل مراقب الحساب، ستقوم أيضا بمسح سجلك بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "اذا قمت بتخفيض الباقة إلى الباقة المجانية، ستفقد هذه المزايا بشكل دائم، حتى إذا قمت بالترقية مرة أخرى في المستقبل"
@@ -6731,6 +6732,12 @@
       ],
       "Free trial": [
         "فترة تجريبية مجانية"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "تعذّر حذف البوابة. يُرجى المحاولة مرة أخرى."
+      ],
+      "Gateway deleted": [
+        "تم حذف البوابة"
       ],
       "Gateway monitor": [
         "مراقبة البوابة"
@@ -8231,7 +8238,7 @@
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "يمكنك فتح مثيل دردشة واحد فقط في كل مرة. يُرجى إغلاق المحادثات السابقة قبل بدء محادثة جديدة."
+        "لا يمكنك فتح أكثر من محادثة واحدة في نفس الوقت. يرجى إغلاق المحادثات السابقة قبل بدء محادثة جديدة."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "يمكنك تشغيل الإشعارات للحصول على التنبيهات عند وصول رسائل البريد الإلكتروني الجديدة في هذا المجلد."
@@ -8937,6 +8944,9 @@
       "Emails (last 3 months)": [
         "رسائل البريد الإلكتروني (آخر 3 أشهر)"
       ],
+      "Emails (last 6 months)": [
+        "رسائل البريد الإلكتروني (آخر 6 أشهر)"
+      ],
       "Emails (last month)": [
         "رسائل البريد الإلكتروني (الشهر الماضي)"
       ],
@@ -9059,6 +9069,9 @@
       ],
       "Last 3 months only": [
         "آخر 3 أشهر فقط"
+      ],
+      "Last 6 months only": [
+        "آخر 6 أشهر فقط"
       ],
       "Last month only": [
         "الشهر الماضي فقط"
@@ -9744,7 +9757,7 @@
         "الدردشة المباشرة متاحة مع ${ planName }"
       ],
       "Open support form": [
-        "افتح نموذج الدعم"
+        "فتح نموذج الدعم"
       ],
       "Upgrade subscription": [
         "ترقية الاشتراك"
@@ -9882,8 +9895,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "مراقب النشاط"
+      "Account monitor": [
+        "مراقب الحساب"
       ],
       "Enable ${ reason }": [
         "تفعيل ${ reason }"
@@ -14887,9 +14900,6 @@
       "Address added": [
         "تم إضافة العنوان"
       ],
-      "Address successfully added": [
-        "تمت إضافة العنوان بنجاح"
-      ],
       "Administrator privileges restored": [
         "تمت استعادة امتيازات المسؤول"
       ],
@@ -15229,7 +15239,7 @@
     },
     "Themes": {
       "Themes": [
-        "السمات"
+        "المظهر"
       ]
     },
     "Time unit": {
@@ -15326,7 +15336,10 @@
         "التحكم في الوصول"
       ],
       "Account": [
-        "حساب"
+        "الحساب"
+      ],
+      "Account monitor": [
+        "مراقب الحساب"
       ],
       "Account recovery": [
         "استرداد الحساب"
@@ -15641,8 +15654,8 @@
       "Delete": [
         "احذف"
       ],
-      "Delete ${ policyName }?": [
-        "حذف ${ policyName }?"
+      "Delete ${ name }?": [
+        "حذف ${ name }?"
       ],
       "Delete account": [
         "حذف الحساب"
@@ -15682,8 +15695,8 @@
       "Device name": [
         "اسم الجهاز"
       ],
-      "Disable activity monitor?": [
-        "هل تريد تعطيل مراقب النشاط؟"
+      "Disable account monitor?": [
+        "تعطيل مراقبة الحساب؟"
       ],
       "Disable two-factor authentication": [
         "تعطيل المصادقة الثنائية"
@@ -16014,7 +16027,7 @@
         "الهاتف"
       ],
       "Plans": [
-        "خطط"
+        "الباقات"
       ],
       "Preview": [
         "معاينة"
@@ -16120,9 +16133,6 @@
       ],
       "Security and privacy": [
         "الخصوصية والأمن"
-      ],
-      "Security events": [
-        "الأحداث الأمنية"
       ],
       "Select a plan": [
         "اختر الباقة"
@@ -17219,6 +17229,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "التقارير ليست مشفرة من النهاية إلى النهاية، يرجى عدم إرسال أي معلومات حساسة."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "ستدخل الخوادم في هذه البوابة فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذه الخوادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلدها."
       ],
       "Skip verification?": [
         "تخطي التحقق؟"

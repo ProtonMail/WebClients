@@ -3353,6 +3353,9 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
+      "Cannot find move target": [
+        "Finner ikke flyttemålet"
+      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -3441,6 +3444,9 @@
       ],
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
+      ],
+      "Failed to change permissions settings": [
+        "Kunne ikke endre tillatelsesinnstillinger"
       ],
       "Failed to copy photo to album": [
         "Kunne ikke kopiere bildet til albumet"
@@ -5221,11 +5227,26 @@
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can edit and manage access": [
+        "Kan redigere og administrere tilgang"
+      ],
+      "Can view and edit": [
+        "Kan se og redigere"
+      ],
+      "Can view only": [
+        "Kan bare se"
+      ],
       "Can't move a folder into itself": [
         "Kan ikke flytte en mappe inn i seg selv"
       ],
       "Can't rename to same name": [
         "Kan ikke gi nytt navn til samme navn"
+      ],
+      "Can't write into folder": [
+        "Kan ikke skrive inn i mappen"
       ],
       "Canceled": [
         "Avbrutt"
@@ -9474,6 +9495,12 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valgte bilder allerede i \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Innstilling oppdatert. Redaktører kan ikke endre tillatelser eller dele."
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"

@@ -1074,6 +1074,9 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -1102,6 +1105,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -1113,6 +1119,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alarm notification": {
@@ -1353,6 +1362,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle option": {
@@ -6702,6 +6723,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -6794,6 +6818,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -9159,6 +9186,12 @@
       ],
       "Got it": [
         "გავიგე"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
       ],
       "MM/YY": [
         "თთ/წწ"

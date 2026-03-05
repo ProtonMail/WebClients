@@ -5592,7 +5592,7 @@
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduceți codul de verificare. ${ digit } cifre."
+        "Introduceți codul de verificare. Cifra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
@@ -6991,6 +6991,9 @@
       "Emails (last 3 months)": [
         "Mesaje (ultimele 3 luni)"
       ],
+      "Emails (last 6 months)": [
+        "Mesaje (ultimele 6 luni)"
+      ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
@@ -7083,6 +7086,9 @@
       ],
       "Last 3 months only": [
         "Doar ultimele 3 luni"
+      ],
+      "Last 6 months only": [
+        "Doar ultimele 6 luni"
       ],
       "Last month only": [
         "Doar luna trecută"

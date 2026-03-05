@@ -325,6 +325,9 @@
       "Copy addresses": [
         "Copia les adreces"
       ],
+      "Copy alias “${ name }”": [
+        "Copia l'àlies «${ name }»"
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -5303,6 +5306,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Encara no teniu cap contacte. Comenceu creant-ne un de nou."
       ]
@@ -9448,6 +9454,9 @@
       "Emails (last 3 months)": [
         "Correus electrònics (els darrers 3 mesos)"
       ],
+      "Emails (last 6 months)": [
+        "Correus electrònics (dels darrers sis mesos)"
+      ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
@@ -9588,6 +9597,9 @@
       ],
       "Last 3 months only": [
         "Només els darrers 3 mesos"
+      ],
+      "Last 6 months only": [
+        "Només els darrers 6 mesos"
       ],
       "Last month only": [
         "Només el darrer mes"
@@ -12940,14 +12952,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tots els àlies"
+      ],
       "Create alias": [
         "Crea un àlies"
+      ],
+      "Create an alias": [
+        "Crea un àlies"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
+      ],
+      "Hide-my-email aliases": [
+        "Àlies hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nou àlies"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Obri ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Protegiu la vostra identitat en línia"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Proveu ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "S'utilitza a l'Amazon per a fer compres, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(obrirà ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14269,6 +14313,9 @@
       "Address verification disabled": [
         "S'ha desactivat la verificació de l'adreça"
       ],
+      "Alias copied to clipboard": [
+        "L'àlies s'ha copiat al porta-retalls."
+      ],
       "Alias saved and copied": [
         "S'ha desat i copiat l'àlies."
       ],
@@ -14360,6 +14407,9 @@
       ],
       "Labels applied.": [
         "S'han posat les etiquetes."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Mail list unsubscribed": [
         "S'ha cancel·lat la subscripció a la llista de correu"

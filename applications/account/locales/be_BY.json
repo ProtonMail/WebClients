@@ -480,6 +480,9 @@
       "Delete record": [
         "Выдаліць запіс"
       ],
+      "Delete token ${ token.Account }": [
+        "Выдаліць токен ${ token.Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Выдаліць токен “${ token.Name }”"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Адключыць"
       ],
+      "Disable account monitor": [
+        "Адключыць назіранне за ўліковым запісам"
+      ],
       "Disable categories": [
         "Адключыць катэгорыі"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Адключыць фразу аднаўлення?"
-      ],
-      "Disable security events": [
-        "Адключыць падзеі бяспекі"
       ],
       "Discard": [
         "Адхіліць"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Зрабіць ключ асноўным"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ],
       "Manage advanced account protections": [
         "Кіраваць пашыранай абаронай уліковага запісу"
@@ -2708,11 +2714,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
       "Add a custom domain": [
         "Дадаць карыстальніцкі дамен"
       ],
+      "App installed": [
+        "Праграма ўсталявана"
+      ],
       "Authenticate": [
         "Аўтэнтыфікаваць"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Аўтэнтыфікацыя вашага ўліковага запісу Google Workspace"
       ],
       "Calendar": [
         "Каляндар"
@@ -2743,6 +2758,12 @@
       ],
       "Finish setting up your business account": [
         "Завяршэнне наладкі вашага ўліковага запісу для бізнесу"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Праграма Google Marketplace для капіявання даных у ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Усталяваць праграму"
       ],
       "Install migration app": [
         "Усталяваць праграму пераносу"
@@ -2810,14 +2831,17 @@
       "Start migration": [
         "Пачаць перанос"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана. Даведацца больш"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана."
       ],
       "Transfer errors": [
         "Памылкі перадачы"
       ],
       "User": [
         "Карыстальнік"
+      ],
+      "Verify installation": [
+        "Спраўдзіць усталяванне"
       ],
       "Verify your domain": [
         "Спраўдзіць свой дамен"
@@ -2828,8 +2852,14 @@
       "Verify your domain to start a migration": [
         "Спраўдзіце свой дамен, каб пачаць перанос"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Немагчыма спраўдзіць ўусталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
+      ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Вам неабходна даць дазвол для ${ BRAND_NAME } на капіяванне вашых даных. Працягвайце далей пасля таго, як будуць прыняты дазволы."
       ]
     },
     "breadcrumb": {
@@ -7631,8 +7661,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Пасля адмовы ад вашага бягучага тарыфнага плана наступныя карыстальнікі будуць пераведзены на тарыфны план ${ BRAND_NAME } Unlimited з бясплатным пробным перыядам на працягу 30 дзён."
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Прадвызначана ўліковаму запісу адміністратара даступна ${ formattedStorage } сховішча. Вы можаце пазней пераразмеркаваць сховішча паміж дадатковымі карыстальнікамі."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Прызначце сховішча для ўліковага запісу адміністратара. Пазней вы можаце сховішча для дадатковых карыстальнікаў."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Стварайце і кіруйце ўліковымі запісамі ўдзельнікаў сямейнай групы, а таксама прызначайце прастору сховішча абагуленую паміж ${ DRIVE_APP_NAME } і ${ MAIL_APP_NAME }."
@@ -9660,8 +9690,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Адключыўшы назіранне за падзеямі бяспекі, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Адключыўшы назіранне за ўліковым запісам, вы таксама ачысціце ўсю гісторыю. Вы сапраўды хочаце адключыць гэту функцыю?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
@@ -10283,6 +10313,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Удзельнікі арганізацыі змогуць абагульваць сховішчы або элементы толькі ў межах арганізацыі, калі гэты параметр адключаны."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Удзельнікі арганізацыі не змогуць ствараць бяспечныя спасылкі, калі гэта функцыя будзе адключана."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Удзельнікі арганізацыя акрамя сховішчаў будуць здольныя абагульваць індывідуальныя элементы, калі гэты параметр будзе ўключаны"
@@ -13115,6 +13148,9 @@
       "Allow recovery using a trusted device": [
         "Дазволіць аднаўленне з дапамогай даверанай прылады"
       ],
+      "Allow secure link sharing": [
+        "Дазволіць бяспечнае абагульванне спасылкі"
+      ],
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
@@ -13520,6 +13556,9 @@
       "Emails (last 3 months)": [
         "Лісты (за апошнія 3 месяцы)"
       ],
+      "Emails (last 6 months)": [
+        "Лісты (за апошнія 6 месяцаў)"
+      ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
@@ -13744,6 +13783,9 @@
       ],
       "Last 3 months only": [
         "Толькі за апошнія 3 месяцы"
+      ],
+      "Last 6 months only": [
+        "Толькі за апошнія 6 месяцаў"
       ],
       "Last month only": [
         "Толькі за апошні месяц"
@@ -14914,8 +14956,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Манітор актыўнасці"
+      "Account monitor": [
+        "Назіранне за ўліковым запісам"
       ],
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
@@ -22151,9 +22193,6 @@
       "Address added": [
         "Адрас дададзены"
       ],
-      "Address successfully added": [
-        "Адрас паспяхова дададзены"
-      ],
       "Address updated": [
         "Адрас абноўлены"
       ],
@@ -22759,6 +22798,9 @@
       "Account keys": [
         "Ключы ад уліковага запісу"
       ],
+      "Account monitor": [
+        "Назіранне за ўліковым запісам"
+      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -23158,9 +23200,6 @@
       "Deep dive into VPN blog posts": [
         "Пагрузіцеся ў допісы блога аб VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Выдаліць ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
       ],
@@ -23221,8 +23260,8 @@
       "Device name": [
         "Назва прылады"
       ],
-      "Disable activity monitor?": [
-        "Адключыць манітор актыўнасці?"
+      "Disable account monitor?": [
+        "Адключыць назіранне за ўліковым запісам?"
       ],
       "Disable categories?": [
         "Адключыць катэгорыі?"
@@ -23928,9 +23967,6 @@
       ],
       "Security and privacy": [
         "Бяспека і прыватнасць"
-      ],
-      "Security events": [
-        "Бяспечныя падзеі"
       ],
       "Security logs": [
         "Журналы бяспекі"

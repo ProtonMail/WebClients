@@ -856,6 +856,9 @@
       "Delete row": [
         "მწკრივის წაშლა"
       ],
+      "Delete table column": [
+        "ცხრილის სვეტის წაშლა"
+      ],
       "Delete table row": [
         "ცხრილის მწკრივის წაშლა"
       ],
@@ -870,6 +873,9 @@
       ],
       "Formula only": [
         "მხოლოდ ფორმულა"
+      ],
+      "Freeze up to column": [
+        "გაყინვა სვეტამდე"
       ],
       "Freeze up to row": [
         "გაყინვა მწკრივამდე"
@@ -954,6 +960,10 @@
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfRows } row": [
+        "${ numberOfRows } მწკრივი",
+        "${ numberOfRows } მწკრივი"
+      ],
       "above": [
         "ზემოდან"
       ],
@@ -982,6 +992,12 @@
       ]
     },
     "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "ყველა სვეტის წაშლა შეუძლებელია"
+      ],
+      "Cannot delete all rows": [
+        "ყველა მწკრივის წაშლა შეუძლებელია"
+      ],
       "Find in sheet": [
         "ფურცელში ძებნა"
       ]
@@ -1029,6 +1045,9 @@
       ],
       "(Z to A)": [
         "(Z-დან A-მდე)"
+      ],
+      "column ${ columnLetter }": [
+        "სვეტი ${ columnLetter }"
       ],
       "Sort sheet by": [
         "ფურცლების დალაგების პირობა"
@@ -1088,6 +1107,9 @@
       "Make a copy": [
         "ასლის შექმნა"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "Move to folder": [
         "გადატანა საქაღალდეში"
       ],
@@ -1100,14 +1122,23 @@
       "New spreadsheet": [
         "ახალი ელცხრილი"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-ის გახსნა"
+      ],
       "Print": [
         "დაბეჭდვა"
+      ],
+      "See version history": [
+        "ვერსიის ისტორიის ნახვა"
       ],
       "Settings": [
         "მორგება"
       ],
       "Toggle debug mode": [
         "გამართვის რეჟიმის გადართვა"
+      ],
+      "View recent spreadsheets": [
+        "უახლესი ელცხრილების ნახვა"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
@@ -1128,6 +1159,9 @@
       ],
       "Clear formatting": [
         "დაფორმატების მოცილება"
+      ],
+      "Conditional formatting": [
+        "პირობითი დაფორმატება"
       ],
       "Font size": [
         "ფონტის ზომა"
@@ -1224,6 +1258,10 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfRows } row": [
+        "${ numberOfRows } მწკრივი",
+        "${ numberOfRows } მწკრივი"
+      ],
       "above": [
         "ზემოდან"
       ],
@@ -1278,6 +1316,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "სვეტი ${ columnLetter }"
+      ],
       "row ${ rowNumber }": [
         "მწკრივი ${ rowNumber }"
       ],
@@ -1308,6 +1349,9 @@
       ],
       "Custom currency": [
         "მორგებული ვალუტა"
+      ],
+      "Custom number format": [
+        "მორგებული რიცხვის ფორმატი"
       ],
       "Date": [
         "თარიღი"
@@ -1396,8 +1440,14 @@
       "Create a filter": [
         "ფილტრის შექმნა"
       ],
+      "Decrease decimal places": [
+        "ათწილადი ადგილების შემცირება"
+      ],
       "Decrease font size": [
         "ფონტის ზომის შემცირება"
+      ],
+      "Default (${ defaultFont })": [
+        "ნაგულისხმევი (${ defaultFont })"
       ],
       "Fill color": [
         "შევსების ფერი"
@@ -1419,6 +1469,9 @@
       ],
       "Horizontal align": [
         "ჰორიზონტალური სწორება"
+      ],
+      "Increase decimal places": [
+        "ათწილადი ადგილების გაზრდა"
       ],
       "Increase font size": [
         "ფონტის ზომის გაზრდა"
@@ -1497,11 +1550,20 @@
       "Copy": [
         "კოპირება"
       ],
+      "Delete table column": [
+        "ცხრილის სვეტის წაშლა"
+      ],
       "Enter value": [
         "შეიყვანეთ მნიშვნელობა"
       ],
+      "Filter by condition": [
+        "გაფილტვრა პირობით"
+      ],
       "Filter by value": [
         "გაფილტვრა მნიშვნელობით"
+      ],
+      "Insert 1 table column left": [
+        "1 ცხრილის სვეტის ჩასმა მარცხნივ"
       ],
       "Paste": [
         "ჩასმა"
@@ -1536,6 +1598,9 @@
       ],
       "Edit link": [
         "ბმულის ჩასწორება"
+      ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
       ],
       "Link removed": [
         "ბმული წაიშალა"
@@ -1613,6 +1678,9 @@
       "General": [
         "ზოგადი"
       ],
+      "Horizontal Alignment": [
+        "ჰორიზონტალური სწორება"
+      ],
       "Indent": [
         "შეწევა"
       ],
@@ -1649,6 +1717,9 @@
       "Text control": [
         "ტექსტის კონტროლი"
       ],
+      "Thousands separator": [
+        "ათასეულების გამყოფი"
+      ],
       "Type": [
         "ტიპი"
       ],
@@ -1657,6 +1728,9 @@
       ],
       "Unmerge": [
         "შერწყმის გაუქმება"
+      ],
+      "Use 1000 Separator (,)": [
+        "1000 გამყოფის გამოყენება (,)"
       ],
       "Vertical Alignment": [
         "ვერტიკალური სწორება"
@@ -1687,6 +1761,9 @@
       "Enter title": [
         "შეიყვანეთ სათაური"
       ],
+      "Horizontal axis title": [
+        "ჰორიზონტალური ღერძის წარწერა"
+      ],
       "Name": [
         "სახელი"
       ],
@@ -1704,6 +1781,9 @@
       ],
       "Value": [
         "მნიშვნელობა"
+      ],
+      "Vertical axis title": [
+        "ვერტიკალური ღერძის წარწერა"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -1727,6 +1807,9 @@
       ],
       "Color scale": [
         "ფერების შკალა"
+      ],
+      "Conditional formatting": [
+        "პირობითი დაფორმატება"
       ],
       "Delete range": [
         "შუალედის წაშლა"
@@ -1795,6 +1878,9 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "კიდევ ერთი სახელიანი შუალედის დამატება"
+      ],
       "Add another range": [
         "კიდევ ერთი შუალედის დამატება"
       ],
@@ -1838,6 +1924,9 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "კიდევ ერთი სახელიანი შუალედის დამატება"
+      ],
       "Add named range": [
         "სახელიანი შუალედის დამატება"
       ],
@@ -1852,6 +1941,9 @@
       ],
       "Enter a formula": [
         "შეიყვანეთ ფორმულა"
+      ],
+      "Enter text or formula": [
+        "შეიყვანეთ ტექსტი ან ფორმულა"
       ],
       "Name": [
         "სახელი"

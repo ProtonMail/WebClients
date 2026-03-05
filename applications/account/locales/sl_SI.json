@@ -797,6 +797,9 @@
       "Make admin": [
         "Naredite za skrbnika"
       ],
+      "Manage addresses": [
+        "Upravljanje naslovov"
+      ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
       ],
@@ -5505,9 +5508,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Privzeto dodelimo ${ formattedStorage } shrambe upraviteljskemu računu. Kasneje lahko upravljate dodeljeno shrambo, ki jo razdelite med dodatne uporabnike."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Ustvarite in upravljajte družinske člane ter jim dodelite prostor za shranjevanje, ki ga uporabljata ${ DRIVE_APP_NAME } in ${ MAIL_APP_NAME }."
       ],
@@ -7161,9 +7161,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Če onemogočite spremljanje varnostnih dogodkov, boste izbrisali vašo celotno zgodovino. Ste prepričani, da to onemogočite?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
@@ -10017,6 +10014,9 @@
       "Emails (last 3 months)": [
         "E-pošto (zadnje 3 mesece)"
       ],
+      "Emails (last 6 months)": [
+        "E-pošta (samo zadnjih 6 mesecev)"
+      ],
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
       ],
@@ -10178,6 +10178,9 @@
       ],
       "Last 3 months only": [
         "Samo zadnje 3 mesece"
+      ],
+      "Last 6 months only": [
+        "Samo zadnjih 6 mesecev"
       ],
       "Last month only": [
         "Samo zadnji mesec"
@@ -16496,9 +16499,6 @@
       "Address added": [
         "Naslov je dodan"
       ],
-      "Address successfully added": [
-        "Naslov uspešno dodan"
-      ],
       "Administrator privileges restored": [
         "Skrbniške pravice so obnovljene"
       ],
@@ -17312,9 +17312,6 @@
       "Decrypt key": [
         "Dešifriraj ključ"
       ],
-      "Delete ${ policyName }?": [
-        "Izbriši ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Izbriši ${ value }"
       ],
@@ -17804,6 +17801,9 @@
       "Passwords made easy": [
         "Enostavno ustvarjanje gesel"
       ],
+      "Pause list": [
+        "Izključene domene in funkcije"
+      ],
       "Pay invoice": [
         "Plačilo računa"
       ],
@@ -17935,9 +17935,6 @@
       ],
       "Security and privacy": [
         "Varnost in zasebnost"
-      ],
-      "Security events": [
-        "Varnostni dogodki"
       ],
       "Security logs": [
         "Varnostni dnevniki"

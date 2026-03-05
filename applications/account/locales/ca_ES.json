@@ -210,6 +210,9 @@
       "Back": [
         "Torna"
       ],
+      "Back to sign in": [
+        "Torneu a l'inici de sessió"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -477,6 +480,9 @@
       "Delete record": [
         "Suprimeix el registre"
       ],
+      "Delete token ${ token.Account }": [
+        "Elimineu el testimoni \"${ token.Account }\""
+      ],
       "Delete token “${ token.Name }”": [
         "Suprimiu el testimoni \"${ token.Name }\""
       ],
@@ -510,6 +516,9 @@
       "Disable": [
         "Desactiva"
       ],
+      "Disable account monitor": [
+        "Desactivar monitor del compte"
+      ],
       "Disable categories": [
         "Desactiveu les categories"
       ],
@@ -518,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Voleu desactivar la frase de recuperació?"
-      ],
-      "Disable security events": [
-        "Desactiveu els esdeveniments de seguretat"
       ],
       "Discard": [
         "Descarta"
@@ -956,6 +962,9 @@
       ],
       "Make key primary": [
         "Establiu la clau com a primària"
+      ],
+      "Manage addresses": [
+        "Gestionar adreces"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -2673,11 +2682,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Assistent de migració de ${ BRAND_NAME }"
+      ],
       "Add a custom domain": [
         "Afegiu un domini personalitzat"
       ],
+      "App installed": [
+        "S'ha instal·lat l'aplicació"
+      ],
       "Authenticate": [
         "Autentiqueu-vos"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentiqueu el vostre compte de Google Workspace"
       ],
       "Calendar": [
         "Calendari"
@@ -2708,6 +2726,12 @@
       ],
       "Finish setting up your business account": [
         "Acabeu de configurar el vostre compte d'empresa"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Instal·lar aplicació"
       ],
       "Install migration app": [
         "Instal·leu l’aplicació de migració"
@@ -2773,14 +2797,17 @@
       "Start migration": [
         "Inicieu la migració"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Per migrar les dades de la vostra organització, cal que instal·leu l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això concedirà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Per saber-ne més"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
       ],
       "Transfer errors": [
         "Errors de transferència"
       ],
       "User": [
         "Usuari"
+      ],
+      "Verify installation": [
+        "Verifiqueu la instal·lació"
       ],
       "Verify your domain": [
         "Verifiqueu el vostre domini"
@@ -2791,8 +2818,14 @@
       "Verify your domain to start a migration": [
         "Verifiqueu el vostre domini per iniciar una migració"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      ],
       "What are you migrating?": [
         "Què esteu migrant?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Cal que concediu permís perquè ${ BRAND_NAME } pugui copiar les vostres dades. Un cop acceptats els permisos, torneu aquí per continuar."
       ]
     },
     "breadcrumb": {
@@ -7524,8 +7557,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Després de deixar el pla, aquest usuari es traslladarà a un pla ${ BRAND_NAME } Unlimited amb una prova gratuïta de 30 dies.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Assigna emmagatzematge al compte de l'administrador. Podeu distribuir l'emmagatzematge per a usuaris addicionals més endavant."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Creeu i gestioneu els membres de la família i assigneu-los espai d'emmagatzematge compartit entre ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
@@ -9447,8 +9480,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic de SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "En desactivar la supervisió d'esdeveniments de seguretat, també esborrareu tot l'historial. Segur que voleu desactivar-la?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Si desactiveu el monitor del compte, també s'eliminarà tot el vostre historial. Segur que voleu desactivar-lo?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
@@ -10060,6 +10093,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Si ho desactiveu, els membres de l'organització només podran compartir caixes fortes o elements dins de l'organització."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Si es deshabilita, els membres de l'organització no podran crear enllaços segurs."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "En habilitar-ho, els membres de l'organització podran compartir elements individuals, a més de caixes fortes."
@@ -11350,6 +11386,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
+      ],
+      "To continue to ${ product }": [
+        "Per continuar a ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per tal de millorar contínuament els nostres serveis, de vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. Aquesta informació no es comparteix amb serveis de tercers."
@@ -12825,6 +12864,9 @@
       "Allow recovery using a trusted device": [
         "Permet la recuperació amb un dispositiu de confiança"
       ],
+      "Allow secure link sharing": [
+        "Permet compartir enllaços segurs"
+      ],
       "Allow sharing outside the organization": [
         "Permeteu la compartició fora de l'organització"
       ],
@@ -13230,6 +13272,9 @@
       "Emails (last 3 months)": [
         "Correus electrònics (els darrers 3 mesos)"
       ],
+      "Emails (last 6 months)": [
+        "Correus electrònics (dels darrers sis mesos)"
+      ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
@@ -13454,6 +13499,9 @@
       ],
       "Last 3 months only": [
         "Només els darrers 3 mesos"
+      ],
+      "Last 6 months only": [
+        "Només els darrers 6 mesos"
       ],
       "Last month only": [
         "Només el darrer mes"
@@ -14299,6 +14347,9 @@
       "Create an alias": [
         "Crea un àlies"
       ],
+      "Don't have access to your 2FA?": [
+        "No teniu accés al vostre 2FA?"
+      ],
       "Downloads": [
         "Descàrregues"
       ],
@@ -14615,8 +14666,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor d'activitats"
+      "Account monitor": [
+        "Monitor del compte"
       ],
       "Enable ${ reason }": [
         "Activa ${ reason }"
@@ -14941,6 +14992,12 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Inicieu la sessió"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registre"
+      ],
       "${ BRAND_NAME } Account": [
         "Compte de ${ BRAND_NAME }"
       ],
@@ -14950,6 +15007,9 @@
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Creeu un compte de ${ BRAND_NAME } | Recupereu la vostra privacitat."
       ],
+      "Create a new ${ appName } account": [
+        "Crea un compte de ${ appName }"
+      ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Gaudiu de dues setmanes de ${ BRAND_NAME } de franc"
       ],
@@ -14958,6 +15018,18 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Trobeu el vostre nom d'usuari del compte de ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat la contrasenya del vostre compte de ${ BRAND_NAME }? Restabliu-la aquí mitjançant un codi de recuperació, correu electrònic o SMS i recupereu l'accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat el nom d'usuari del vostre compte ${ BRAND_NAME }? Trobeu-lo utilitzant el vostre correu de recuperació o número de telèfon i recupereu l'accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Restabliu la contrasenya del vostre compte de ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Inicieu la sessió per accedir al vostre compte de ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu la sessió al vostre compte ${ BRAND_NAME } per a accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
@@ -21574,9 +21646,6 @@
       "Address added": [
         "Adreça afegida"
       ],
-      "Address successfully added": [
-        "S\"ha afegit l\"adreça correctament."
-      ],
       "Address updated": [
         "S'ha actualitzat l'adreça"
       ],
@@ -22158,6 +22227,9 @@
       "Account keys": [
         "Claus del compte"
       ],
+      "Account monitor": [
+        "Monitor del compte"
+      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -22553,9 +22625,6 @@
       "Deep dive into VPN blog posts": [
         "Anàlisi en profunditat de les nostres publicacions del blog de VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Voleu suprimir ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Elimina ${ value }"
       ],
@@ -22614,8 +22683,8 @@
       "Device name": [
         "Nom del dispositiu"
       ],
-      "Disable activity monitor?": [
-        "Voleu desactivar el monitor d'activitats?"
+      "Disable account monitor?": [
+        "Voleu desactivar el monitor del compte?"
       ],
       "Disable categories?": [
         "Voleu desactivar les categories?"
@@ -23317,9 +23386,6 @@
       ],
       "Security and privacy": [
         "Seguretat i privacitat"
-      ],
-      "Security events": [
-        "Esdeveniments de seguretat"
       ],
       "Security logs": [
         "Registres de seguretat"

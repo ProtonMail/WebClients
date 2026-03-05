@@ -317,14 +317,14 @@
       "Disable": [
         "გათიშვა"
       ],
+      "Disable account monitor": [
+        "ანგარიშის მონიტორის გამორთვა"
+      ],
       "Disable recovery phrase": [
         "აღდგენის ფრაზის გამორთვა"
       ],
       "Disable recovery phrase?": [
         "აღდგენის ფრაზის გამორთვა?"
-      ],
-      "Disable security events": [
-        "უსაფრთხოების მოვლენების გამორთვა"
       ],
       "Discard": [
         "მოცილება"
@@ -601,6 +601,9 @@
       ],
       "Make admin": [
         "ადმინობის მინიჭება"
+      ],
+      "Manage addresses": [
+        "მისამართების მართვა"
       ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
@@ -1197,6 +1200,9 @@
         "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
         "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -1229,6 +1235,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -1240,6 +1249,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Address action": {
@@ -1632,6 +1644,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle": {
@@ -1743,6 +1767,9 @@
       ]
     },
     "BOSS": {
+      "App installed": [
+        "აპი დაყენებულია"
+      ],
       "Authenticate": [
         "ავთენტიკაცია"
       ],
@@ -1766,6 +1793,9 @@
       ],
       "Failed to load OAuth": [
         "OAuth-ის ჩატვირთვა ჩავარდა"
+      ],
+      "Install app": [
+        "აპის დაყენება"
       ],
       "Install migration app": [
         "მიგრაციის პროგრამის დაყენება"
@@ -1824,6 +1854,9 @@
       ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Verify installation": [
+        "დაყენების გადამოწმება"
       ],
       "Verify your domain": [
         "თქვენი დომენის გადამოწმება"
@@ -1936,6 +1969,9 @@
       "Close": [
         "დახურვა"
       ],
+      "Configure your network": [
+        "მოირგეთ თქვენი ქსელი"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
       ],
@@ -1962,6 +1998,9 @@
       ],
       "Remind me later": [
         "შემახსენე მოგვიანებით"
+      ],
+      "Secure your organization": [
+        "დაიცავით თქვენი ორგანიზაცია"
       ],
       "Send": [
         "გაგზავნა"
@@ -4723,9 +4762,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "ნაგულისხმევად საცავის ${ formattedStorage } ადმინისტრატორის ანგარიშს ეკუთვნის. მინიჭებული საცავი მოგვიანებით დამატებით მომხმარებლებს შეგიძლიათ, გადაუნაწილოთ."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "შექმენით და მართეთ ოჯახის წევრები და მიანიჭეთ მათ საცავი, რომელიც გაზიარებულია ${ DRIVE_APP_NAME }-სა და ${ MAIL_APP_NAME }-ს შორის."
       ],
@@ -6118,9 +6154,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "უსაფრთხოების მოვლენების გათიშვა თქვენს ისტორიას სრულად გაასუფთავებს. მართლა გნებავთ ამის გათიშვა?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -8553,6 +8586,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -8672,6 +8708,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -9349,6 +9388,9 @@
     "Live Chat Modal": {
       "Open support form": [
         "მხარდაჭერის ფორმის გახსნა"
+      ],
+      "Upgrade subscription": [
+        "სატარიფო გეგმის აწევა"
       ]
     },
     "Loading info": {
@@ -9473,8 +9515,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "აქტივობების მონიტორი"
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
       ],
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
@@ -9639,6 +9681,12 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: შესვლა"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: რეგისტრაცია"
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
       ]
@@ -11548,6 +11596,12 @@
       "Got it": [
         "გავიგე"
       ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -12915,6 +12969,14 @@
         "გაზიარებულია ${ ownerName }-ის მიერ"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
+      ]
+    },
     "Signup": {
       "1 month": [
         "1 თვე"
@@ -14052,9 +14114,6 @@
       "Address added": [
         "მისამართი დაემატა"
       ],
-      "Address successfully added": [
-        "მისამართი წარმატებით დაემატა"
-      ],
       "Administrator privileges restored": [
         "ადმინისტრატორის პრივილეგიები აღდგენილია"
       ],
@@ -14457,6 +14516,9 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } ორგანიზაციებისთვის"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME }-ის კლიენტები"
+      ],
       "(active)": [
         "(აქტიური)"
       ],
@@ -14486,6 +14548,9 @@
       ],
       "Account": [
         "ანგარიში"
+      ],
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
       ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
@@ -14795,8 +14860,8 @@
       "Delete": [
         "წაშლა"
       ],
-      "Delete ${ policyName }?": [
-        "წავშალო ${ policyName }?"
+      "Delete ${ name }?": [
+        "წავშალო ${ name }?"
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -14832,9 +14897,6 @@
       "Device name": [
         "მოწყობილობის სახელი"
       ],
-      "Disable activity monitor?": [
-        "გამოვრთო აქტივობების მაყურებელი?"
-      ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
       ],
@@ -14846,6 +14908,9 @@
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
+      ],
+      "Dismiss setup checklist": [
+        "მორგების საკონტროლო სიის მოცილება"
       ],
       "Domain names": [
         "დომენის სახელი"
@@ -14915,6 +14980,9 @@
       ],
       "Email categories": [
         "ელფოსტის კატეგორიები"
+      ],
+      "Email subscriptions": [
+        "ელფოსტის გამოწერები"
       ],
       "Enable advanced account protection": [
         "ანგარიშის დამატებითი დაცვის ჩართვა"
@@ -15259,9 +15327,6 @@
       ],
       "Security and privacy": [
         "უსაფრთხოება და კონფიდენციალობა"
-      ],
-      "Security events": [
-        "უსაფრთხოების მოვლენები"
       ],
       "Select a plan": [
         "აირჩეთ გეგმა"

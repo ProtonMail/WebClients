@@ -320,9 +320,6 @@
       "Disable recovery phrase?": [
         "vô hiệu hóa cụm từ khôi phục?"
       ],
-      "Disable security events": [
-        "Vô hiệu hóa sự kiện bảo mật"
-      ],
       "Discard": [
         "Bỏ"
       ],
@@ -595,6 +592,9 @@
       ],
       "Make admin": [
         "Đặt thành quản trị viên"
+      ],
+      "Manage addresses": [
+        "Quản lý các địa chỉ"
       ],
       "Manage advanced account protections": [
         "Quản lý các biện pháp bảo vệ tài khoản nâng cao"
@@ -4677,9 +4677,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Sau khi rời khỏi gói, người dùng này sẽ được chuyển sang gói ${ BRAND_NAME } không giới hạn với 30 ngày dùng thử miễn phí.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Theo mặc định, chúng tôi cấp ${ formattedStorage } dung lượng lưu trữ cho tài khoản quản trị viên. Có thể phân bổ lại dung lượng lưu trữ cho từng người dùng sau."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Tạo và quản lý thành viên gia đình cũng như phân bổ không gian lưu trữ được chia sẻ giữa ${ DRIVE_APP_NAME } và ${ MAIL_APP_NAME }."
       ],
@@ -6032,9 +6029,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Chuyển thư, liên hệ và lịch lên ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Nếu vô hiệu hóa giám sát sự kiện bảo mật, toàn bộ lịch sử cũng sẽ bị xóa. Chắc chắn muốn vô hiệu hóa tính năng này không?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Nếu hạ cấp xuống miễn phí plan, bạn sẽ mất vĩnh viễn những lợi ích này, cho dù sau này có nâng cấp lại."
@@ -9429,9 +9423,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Giám sát hoạt động"
-      ],
       "Enable ${ reason }": [
         "Kích hoạt ${ reason }"
       ],
@@ -13969,9 +13960,6 @@
       "Address added": [
         "Đã thêm địa chỉ"
       ],
-      "Address successfully added": [
-        "Đã thêm địa chỉ thành công"
-      ],
       "Administrator privileges restored": [
         "Đã khôi phục đặc quyền quản trị viên"
       ],
@@ -14687,8 +14675,8 @@
       "Delete": [
         "Xóa"
       ],
-      "Delete ${ policyName }?": [
-        "Xóa ${ policyName }?"
+      "Delete ${ name }?": [
+        "Xóa ${ name }?"
       ],
       "Delete account": [
         "Xóa tài khoản"
@@ -14722,9 +14710,6 @@
       ],
       "Device name": [
         "Tên thiết bị"
-      ],
-      "Disable activity monitor?": [
-        "Vô hiệu hóa giám sát hoạt động?"
       ],
       "Disable two-factor authentication": [
         "Vô hiệu hóa xác thực hai yếu tố"
@@ -15136,9 +15121,6 @@
       ],
       "Security and privacy": [
         "Bảo mật và riêng tư"
-      ],
-      "Security events": [
-        "Sự kiện bảo mật"
       ],
       "Select a plan": [
         "Chọn một gói"

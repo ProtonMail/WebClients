@@ -326,6 +326,9 @@
       "Copy addresses": [
         "Copiere adrese"
       ],
+      "Copy alias “${ name }”": [
+        "Copiază aliasul „${ name }”"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -5344,6 +5347,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Când este activată o parolă suplimentară, gestionarea alias-ului se poate face numai în ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
       ]
@@ -7342,7 +7348,7 @@
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduceți codul de verificare. ${ digit } cifre."
+        "Introduceți codul de verificare. Cifra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
@@ -9602,6 +9608,9 @@
       "Emails (last 3 months)": [
         "Mesaje (ultimele 3 luni)"
       ],
+      "Emails (last 6 months)": [
+        "Mesaje (ultimele 6 luni)"
+      ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
@@ -9742,6 +9751,9 @@
       ],
       "Last 3 months only": [
         "Doar ultimele 3 luni"
+      ],
+      "Last 6 months only": [
+        "Doar ultimele 6 luni"
       ],
       "Last month only": [
         "Doar luna trecută"
@@ -13148,14 +13160,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Toate aliasurile"
+      ],
       "Create alias": [
         "Creare alias"
+      ],
+      "Create an alias": [
+        "Creați un alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Aliasurile hide-my-email vă permit să vă înscrieți pe site-uri online fără a vă partaja adresa reală de e-mail. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Alias nou"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Deschidere ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Protejați-vă identitatea online"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Încercați ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Folosit pentru cumpărături pe Amazon etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(va deschide ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14535,6 +14579,9 @@
       "Address verification disabled": [
         "Verificare adresă dezactivată"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiat în memorie"
+      ],
       "Alias saved and copied": [
         "Alias salvat și copiat"
       ],
@@ -14628,6 +14675,9 @@
       ],
       "Labels applied.": [
         "Etichete aplicate."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
       "Mail list unsubscribed": [
         "Dezabonare de la lista de e-mailuri reușită."

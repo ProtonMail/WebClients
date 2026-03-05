@@ -325,6 +325,9 @@
       "Copy addresses": [
         "Kopiera adresser"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiera alias “${ name }“"
+      ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
       ],
@@ -5294,6 +5297,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "När extralösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ingen kontakt ännu. Börja med att skapa en ny kontakt"
       ]
@@ -9417,6 +9423,9 @@
       "Emails (last 3 months)": [
         "E-post (senaste 3 månaderna)"
       ],
+      "Emails (last 6 months)": [
+        "E-post (senaste 6 månaderna)"
+      ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
@@ -9557,6 +9566,9 @@
       ],
       "Last 3 months only": [
         "Endast de 3 senaste månaderna"
+      ],
+      "Last 6 months only": [
+        "Endast 6 senaste månaderna"
       ],
       "Last month only": [
         "Endast den senaste månaden"
@@ -12906,14 +12918,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alla alias"
+      ],
       "Create alias": [
         "Skapa alias"
+      ],
+      "Create an alias": [
+        "Skapa ett alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generera alias i farten och hantera enkelt dina alias och lösenord."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email-alias låter dig registrera dig för saker online utan att dela din e-postadress. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nytt alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Öppna ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Skydda din identitet online"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prova ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Används på Amazon för shopping etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(kommer öppna ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14235,6 +14279,9 @@
       "Address verification disabled": [
         "Adressverifiering inaktiverad"
       ],
+      "Alias copied to clipboard": [
+        "Alias kopierat till urklipp"
+      ],
       "Alias saved and copied": [
         "Alias sparat och kopierat"
       ],
@@ -14326,6 +14373,9 @@
       ],
       "Labels applied.": [
         "Etiketter tillämpade."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Senast ändrade alias lagrade i ditt äldsta valv"
       ],
       "Mail list unsubscribed": [
         "Avslutad prenumeration från e-postlista"

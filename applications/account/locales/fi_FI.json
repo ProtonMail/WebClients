@@ -454,6 +454,9 @@
       "Delete record": [
         "Poista tapahtuma"
       ],
+      "Delete token ${ token.Account }": [
+        "Poista tunniste ${ token.Account }"
+      ],
       "Delete user": [
         "Poista käyttäjä"
       ],
@@ -483,6 +486,9 @@
       ],
       "Disable": [
         "Poista käytöstä"
+      ],
+      "Disable account monitor": [
+        "Poista tilinvalvonta käytöstä"
       ],
       "Disable categories": [
         "Poista luokat käytöstä"
@@ -900,6 +906,9 @@
       ],
       "Make key primary": [
         "Aseta avain ensisijaiseksi"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
       ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
@@ -6470,8 +6479,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME } Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Oletusarvoisesti ylläpitotilille määriteteään ${ formattedStorage } tallennustilaa. Voit myöhemmin muuttaa tallennustilan jakautumista muille käyttäjille."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Määritä tallennustila ylläpitäjätilille. Voit jakaa tallennustilaa lisäkäyttäjille myöhemmin."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Luo ja hallinnoi perheenjäseniä ja myönnä heille tallennustilaa, joka on jaettu ${ DRIVE_APP_NAME } ja ${ MAIL_APP_NAME } välillä."
@@ -8239,8 +8248,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Luomalla ${ PASS_APP_NAME }-tilin SimpleLogin-sähköpostiosoitteellasi voit hallita aliaksiasi suoraan ${ PASS_APP_NAME }ista."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Turvallisuustapahtumien seurannan käytöstäpoiston yhteydessä tyhjennetään myös koko historiasi. Haluatko varmasti poistaa sen käytöstä?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Tilinvalvonnan käytöstä poistaminen tyhjentää myös koko historiasi. Haluatko varmasti poistaa tämän käytöstä?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -8786,6 +8795,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä organisaation uusi salasana heiltä."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Jos tämä toiminto on poistettu käytöstä, organisaation jäsenet eivät voi luoda suojattuja linkkejä."
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jos pikanäppäimet ovat käytössä, voit käyttää seuraavia näppäimiä pikatoimintoihin tai eri näkymiin siirtymiseen. ${ metaKey } + K on aina käytössä."
@@ -11217,6 +11229,9 @@
       "Allow recovery using a trusted device": [
         "Salli palautus luotettavalla laitteella"
       ],
+      "Allow secure link sharing": [
+        "Salli suojatun linkin jako"
+      ],
       "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
@@ -11598,6 +11613,9 @@
       "Emails (last 3 months)": [
         "Sähköpostit (viimeiset 3 kuukautta)"
       ],
+      "Emails (last 6 months)": [
+        "Sähköpostit (viimeiset 6 kuukautta)"
+      ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
@@ -11795,6 +11813,9 @@
       ],
       "Last 3 months only": [
         "Vain viimeiset 3 kuukautta"
+      ],
+      "Last 6 months only": [
+        "Vain viimeiset 6 kuukautta"
       ],
       "Last month only": [
         "Vain viime kuu"
@@ -12893,6 +12914,9 @@
       ]
     },
     "Log preference": {
+      "Account monitor": [
+        "Tilinvalvonta"
+      ],
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
       ],
@@ -19108,9 +19132,6 @@
       "Address added": [
         "Osoite lisättiin"
       ],
-      "Address successfully added": [
-        "Osoite lisätty onnistuneesti"
-      ],
       "Administrator privileges restored": [
         "Hallintaoikeudet palautettiin"
       ],
@@ -19641,6 +19662,9 @@
       "Account keys": [
         "Tilin avaimet"
       ],
+      "Account monitor": [
+        "Tilinvalvonta"
+      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -19997,9 +20021,6 @@
       "Deep dive into VPN blog posts": [
         "Perehdy VPN- blogipostauksiin"
       ],
-      "Delete ${ policyName }?": [
-        "Poistetaanko ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Poista ${ value }"
       ],
@@ -20054,6 +20075,9 @@
       ],
       "Device name": [
         "Laitteen nimi"
+      ],
+      "Disable account monitor?": [
+        "Poista tilinvalvonta käytöstä?"
       ],
       "Disable categories?": [
         "Poistetaanko luokat käytöstä?"
@@ -20680,9 +20704,6 @@
       ],
       "Security and privacy": [
         "Suojaus ja yksityisyys"
-      ],
-      "Security events": [
-        "Suojaustapahtumat"
       ],
       "Security logs": [
         "Suojauslokit"

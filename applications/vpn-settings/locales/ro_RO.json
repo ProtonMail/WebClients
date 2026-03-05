@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
+      "Delete gateway": [
+        "Ștergere poartă de acces"
+      ],
       "Delete group": [
         "Ștergere grup"
       ],
@@ -298,6 +301,9 @@
       ],
       "Delete policy": [
         "Șterge regulă"
+      ],
+      "Delete token ${ token.Account }": [
+        "Ștergere cod de acces ${ token.Account }"
       ],
       "Delete user": [
         "Ștergere utilizator"
@@ -317,14 +323,14 @@
       "Disable": [
         "Dezactivare"
       ],
+      "Disable account monitor": [
+        "Dezactivare monitorizare cont"
+      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
       "Disable recovery phrase?": [
         "Dezactivați fraza de recuperare?"
-      ],
-      "Disable security events": [
-        "Dezactivare evenimente de securitate"
       ],
       "Discard": [
         "Renunțare"
@@ -601,6 +607,9 @@
       ],
       "Make admin": [
         "Stabilire administrator"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
       ],
       "Manage advanced account protections": [
         "Gestionați protecții avansate cont"
@@ -1832,8 +1841,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
+      "App installed": [
+        "Aplicație instalată"
+      ],
       "Authenticate": [
         "Autentificare"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentificați contul Google Workspace"
       ],
       "Calendar": [
         "Calendar"
@@ -1855,6 +1873,12 @@
       ],
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Instalare aplicație"
       ],
       "Install migration app": [
         "Instalare aplicație de migrare"
@@ -1912,8 +1936,8 @@
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Pentru a vă migra datele organizației, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalare, reveniți aici pentru a continua. Detalii"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Pentru a vă migra datele organizației, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalare, reveniți aici pentru a continua."
       ],
       "Transfer errors": [
         "Erori de transfer."
@@ -1921,14 +1945,23 @@
       "User": [
         "Utilizator"
       ],
+      "Verify installation": [
+        "Verificare instalare"
+      ],
       "Verify your domain": [
         "Verificați-vă domeniul"
       ],
       "Verify your domain to start a migration": [
         "Verificați domeniul pentru a începe o migrare."
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul Google Workspace și reîncercați."
+      ],
       "What are you migrating?": [
         "Ce migrați?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Trebuie să acordați permisiunea ca ${ BRAND_NAME } să vă copieze datele. După acceptarea permisiunilor, reveniți aici pentru a continua."
       ]
     },
     "Browser": {
@@ -4934,8 +4967,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de probare de 30 de zile.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Alocați spațiu de stocare contului de administrator. Puteți distribui spațiul pentru utilizatorii suplimentari mai târziu."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între ${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
@@ -6408,8 +6441,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Prin dezactivarea monitorizării evenimentelor de securitate, vă veți șterge și întregul istoric. O dezactivați?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Prin dezactivarea monitorizării contului, veți șterge și întregul istoric. Sigur doriți să dezactivați acest lucru?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
@@ -6764,7 +6797,7 @@
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduceți codul de verificare. ${ digit } cifre."
+        "Introduceți codul de verificare. Cifra ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Introduceți detaliile contului ${ BRAND_NAME }."
@@ -6816,6 +6849,12 @@
       ],
       "Free trial": [
         "Probare gratuită"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Poarta de acces nu a putut fi ștearsă. Reîncercați."
+      ],
+      "Gateway deleted": [
+        "Poarta de acces s-a șters."
       ],
       "Gateway monitor": [
         "Monitorizare porți de acces"
@@ -8981,6 +9020,9 @@
       "Emails (last 3 months)": [
         "Mesaje (ultimele 3 luni)"
       ],
+      "Emails (last 6 months)": [
+        "Mesaje (ultimele 6 luni)"
+      ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
@@ -9103,6 +9145,9 @@
       ],
       "Last 3 months only": [
         "Doar ultimele 3 luni"
+      ],
+      "Last 6 months only": [
+        "Doar ultimele 6 luni"
       ],
       "Last month only": [
         "Doar luna trecută"
@@ -9925,8 +9970,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitorizare activitate"
+      "Account monitor": [
+        "Monitorizare cont"
       ],
       "Enable ${ reason }": [
         "Activare ${ reason }"
@@ -14790,9 +14835,6 @@
       "Address added": [
         "Adresă adăugată"
       ],
-      "Address successfully added": [
-        "Adresa a fost adăugată."
-      ],
       "Administrator privileges restored": [
         "Privilegiile de administrator s-au restaurat."
       ],
@@ -15234,6 +15276,9 @@
       "Account": [
         "Cont"
       ],
+      "Account monitor": [
+        "Monitorizare cont"
+      ],
       "Account recovery": [
         "Recuperare cont"
       ],
@@ -15544,8 +15589,8 @@
       "Delete": [
         "Ștergere"
       ],
-      "Delete ${ policyName }?": [
-        "Ștergeți ${ policyName }?"
+      "Delete ${ name }?": [
+        "Ștergeți ${ name }?"
       ],
       "Delete account": [
         "Ștergere cont"
@@ -15582,8 +15627,8 @@
       "Device name": [
         "Nume dispozitiv"
       ],
-      "Disable activity monitor?": [
-        "Dezactivați monitorizarea activității?"
+      "Disable account monitor?": [
+        "Dezactivați monitorizarea contului?"
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
@@ -16017,9 +16062,6 @@
       ],
       "Security and privacy": [
         "Securitate și intimitate"
-      ],
-      "Security events": [
-        "Evenimente de securitate"
       ],
       "Select a plan": [
         "Selectare plan"
@@ -17129,6 +17171,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Serverele din această poartă de acces vor intra într-o perioadă de dezactivare de 10 zile. Aceste servere pot fi adăugate la o poartă de acces nouă, dar țara acestora nu poate fi modificată."
       ],
       "Skip verification?": [
         "Ignorați verificarea?"
