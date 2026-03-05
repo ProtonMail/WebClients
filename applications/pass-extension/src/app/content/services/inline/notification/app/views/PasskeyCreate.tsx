@@ -18,6 +18,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -32,7 +33,7 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import type { SelectedItem } from '@proton/pass/types/data/items';
+import type { SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
@@ -75,16 +76,20 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
         run().catch(controller.close);
     }, []);
 
-    return items ? (
+    if (!items) return null;
+
+    const handleUpdate = async ({ itemId, shareId, name }: Pick<LoginItemPreview, 'itemId' | 'shareId' | 'name'>) => {
+        await form.setValues({ selectedItem: { itemId, shareId }, step: 'select', name });
+        form.handleSubmit();
+    };
+
+    const isSelected = ({ itemId, shareId }: UniqueItem) =>
+        itemId === form.values.selectedItem?.itemId && shareId === form.values.selectedItem?.shareId;
+
+    return (
         <>
             {form.values.step === 'select' && (
                 <>
-                    <div className="px-2">
-                        {`${c('Label').t`Passkey`} • ${domain}`}
-                        <span className="block text-xs color-weak">{c('Info')
-                            .t`Select an existing login or create a new one.`}</span>
-                    </div>
-
                     <ScrollableItemsList increaseSurface>
                         {items.map(({ itemId, shareId, url, userIdentifier, name }) => (
                             <ListItem
@@ -93,14 +98,47 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                                 title={name}
                                 subTitle={userIdentifier}
                                 icon={{ type: 'icon', url, icon: 'pass-passkey' }}
-                                onClick={() =>
-                                    form
-                                        .setValues({ selectedItem: { itemId, shareId }, step: 'select', name })
-                                        .then(() => form.handleSubmit())
+                                onClick={() => handleUpdate({ itemId, shareId, name })}
+                                action={
+                                    items.length > 1 && (
+                                        <ButtonLike
+                                            as="div"
+                                            pill
+                                            color="norm"
+                                            size="small"
+                                            loading={loading && isSelected({ itemId, shareId })}
+                                            disabled={loading}
+                                            onClick={() => handleUpdate({ itemId, shareId, name })}
+                                        >
+                                            <span className="text-ellipsis">{c('Action').t`Update`}</span>
+                                        </ButtonLike>
+                                    )
                                 }
                             />
                         ))}
                     </ScrollableItemsList>
+
+                    <div className="flex justify-space-between gap-4">
+                        <Button
+                            pill
+                            color="norm"
+                            type="submit"
+                            size="small"
+                            shape="ghost"
+                            form={formId}
+                            disabled={loading}
+                        >
+                            <span className="text-ellipsis">
+                                {loading ? c('Action').t`Saving passkey...` : c('Action').t`Create new login`}
+                            </span>
+                        </Button>
+
+                        {items.length === 1 && !loading && (
+                            <Button pill color="norm" type="button" size="small" onClick={() => handleUpdate(items[0])}>
+                                <span className="text-ellipsis">{c('Action').t`Update this login`}</span>
+                            </Button>
+                        )}
+                    </div>
                 </>
             )}
 
@@ -137,30 +175,26 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
 
                     <div className="px-2 py-1 text-xs color-weak">{c('Info')
                         .t`A passkey for "${username}" will be saved and available on devices where ${PASS_APP_NAME} is installed.`}</div>
+
+                    <div className="flex justify-space-between">
+                        <Button
+                            pill
+                            color="norm"
+                            type="submit"
+                            className="flex-auto"
+                            form={formId}
+                            loading={loading}
+                            disabled={loading}
+                        >
+                            <span className="text-ellipsis">
+                                {loading ? c('Action').t`Saving passkey...` : c('Action').t`Save passkey`}
+                            </span>
+                        </Button>
+                    </div>
                 </>
             )}
-
-            <div className="flex justify-space-between">
-                <Button
-                    pill
-                    color="norm"
-                    type="submit"
-                    className="flex-auto"
-                    form={formId}
-                    loading={loading}
-                    disabled={loading}
-                >
-                    <span className="text-ellipsis">
-                        {(() => {
-                            if (loading) return c('Action').t`Saving passkey...`;
-                            if (form.values.step === 'select') return c('Action').t`Create new login`;
-                            if (form.values.step === 'passkey') return c('Action').t`Save passkey`;
-                        })()}
-                    </span>
-                </Button>
-            </div>
         </>
-    ) : null;
+    );
 };
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_CREATE }>;
@@ -242,7 +276,6 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     // translator: Shown with error message on passkey registration failure
                     text: c('Error').t`Registration failure: ${message}`,
                 });
-            } finally {
                 setLoading(false);
             }
         },
