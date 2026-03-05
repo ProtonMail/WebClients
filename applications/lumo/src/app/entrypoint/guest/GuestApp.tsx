@@ -23,10 +23,12 @@ import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import { FlagProvider } from '@proton/unleash';
+import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
+import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
 import LumoLoader from '../../components/Loading/LumoLoader';
+import ProtectGuestRouteGuard from '../../components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import config from '../../config';
 import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers';
@@ -36,8 +38,6 @@ import type { LumoStore } from '../../redux/store';
 import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
-import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
-import ProtectGuestRouteGuard from '../../components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import { initializeConsoleOverride } from '../../util/logging';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Router } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
-import { FlagProvider } from '@proton/unleash'
+import { FlagProvider } from '@proton/unleash/proxy'
 
 import {
   ApiProvider,

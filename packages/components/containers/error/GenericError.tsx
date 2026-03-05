@@ -10,8 +10,8 @@ import { HOUR } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import networkErrorImg from '@proton/styles/assets/img/errors/error-network.svg';
+import { FlagContext } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
-import { FlagContext } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
