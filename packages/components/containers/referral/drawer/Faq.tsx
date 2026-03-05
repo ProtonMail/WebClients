@@ -50,6 +50,8 @@ const FAQ = () => {
                 </li>
             </ul>
 
+            <div className="text-sm color-weak my-4">{c('Info')
+                .t`You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.`}</div>
             <Href className="mt-4 text-sm" href={getStaticURL('/legal/terms-referral-program')}>{c('Link')
                 .t`Terms and conditions`}</Href>
         </Details>

@@ -4,6 +4,7 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import { getHasCompletedReferral } from '@proton/components/containers/referral/rewards/helpers';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
 
@@ -30,6 +31,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
         );
     }
 
+    const hasCompletedReferral = getHasCompletedReferral(referrals);
     return (
         <>
             <Table responsive="cards">
@@ -56,6 +58,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
                                         key={`${referral.ReferralID}-reward`}
                                         referral={referral}
                                         hasReachedRewardLimit={hasReachedRewardLimit}
+                                        hasCompletedReferral={hasCompletedReferral}
                                     />,
                                 ]}
                             />
