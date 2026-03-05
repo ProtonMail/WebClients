@@ -878,4 +878,226 @@ describe('useTaxCountry hook', () => {
             });
         });
     });
+
+    describe('Outer state staleness when payment status changes', () => {
+        const chargebeeCardStub = {
+            setCountryCode: jest.fn(),
+            setPostalCode: jest.fn(),
+        };
+
+        it('should call onBillingAddressChange when no paymentFacade is provided', () => {
+            const onBillingAddressChange = jest.fn();
+            const { rerender } = renderHook((props) => useTaxCountry(props), {
+                initialProps: {
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
+                    },
+                    onBillingAddressChange,
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
+                },
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
+
+            rerender({
+                paymentStatus: {
+                    CountryCode: 'CA',
+                    State: 'ON',
+                    ZipCode: 'K1A 0B1',
+                },
+                onBillingAddressChange,
+                zipCodeBackendValid: true,
+                telemetryContext: 'other',
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+            expect(onBillingAddressChange).toHaveBeenCalledWith({
+                CountryCode: 'CA',
+                State: 'ON',
+                ZipCode: 'K1A 0B1',
+            });
+        });
+
+        it('should call onBillingAddressChange when paymentFacade has no checkResult', () => {
+            const onBillingAddressChange = jest.fn();
+            const mockPaymentFacade = {
+                chargebeeCard: chargebeeCardStub,
+            };
+
+            const { rerender } = renderHook((props) => useTaxCountry(props), {
+                initialProps: {
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
+                    },
+                    onBillingAddressChange,
+                    paymentFacade: mockPaymentFacade as any,
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
+                },
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
+
+            rerender({
+                paymentStatus: {
+                    CountryCode: 'CA',
+                    State: 'ON',
+                    ZipCode: 'K1A 0B1',
+                },
+                onBillingAddressChange,
+                paymentFacade: mockPaymentFacade as any,
+                zipCodeBackendValid: true,
+                telemetryContext: 'other',
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+            expect(onBillingAddressChange).toHaveBeenCalledWith({
+                CountryCode: 'CA',
+                State: 'ON',
+                ZipCode: 'K1A 0B1',
+            });
+        });
+
+        it('should call onBillingAddressChange when checkResult billing address differs from new payment status', () => {
+            const onBillingAddressChange = jest.fn();
+            const mockPaymentFacade = {
+                chargebeeCard: chargebeeCardStub,
+                checkResult: {
+                    requestData: {
+                        BillingAddress: {
+                            CountryCode: 'US',
+                            State: 'CA',
+                            ZipCode: '90210',
+                        },
+                    },
+                },
+            };
+
+            const { rerender } = renderHook((props) => useTaxCountry(props), {
+                initialProps: {
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
+                    },
+                    onBillingAddressChange,
+                    paymentFacade: mockPaymentFacade as any,
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
+                },
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
+
+            rerender({
+                paymentStatus: {
+                    CountryCode: 'CA',
+                    State: 'ON',
+                    ZipCode: 'K1A 0B1',
+                },
+                onBillingAddressChange,
+                paymentFacade: mockPaymentFacade as any,
+                zipCodeBackendValid: true,
+                telemetryContext: 'other',
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+            expect(onBillingAddressChange).toHaveBeenCalledWith({
+                CountryCode: 'CA',
+                State: 'ON',
+                ZipCode: 'K1A 0B1',
+            });
+        });
+
+        it('should NOT call onBillingAddressChange when checkResult billing address matches new payment status', () => {
+            const onBillingAddressChange = jest.fn();
+            const newBillingAddress = {
+                CountryCode: 'CA',
+                State: 'ON',
+                ZipCode: 'K1A 0B1',
+            };
+
+            const mockPaymentFacade = {
+                chargebeeCard: chargebeeCardStub,
+                checkResult: {
+                    requestData: {
+                        BillingAddress: newBillingAddress,
+                    },
+                },
+            };
+
+            const { result, rerender } = renderHook((props) => useTaxCountry(props), {
+                initialProps: {
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
+                    },
+                    onBillingAddressChange,
+                    paymentFacade: mockPaymentFacade as any,
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
+                },
+            });
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
+
+            rerender({
+                paymentStatus: newBillingAddress,
+                onBillingAddressChange,
+                paymentFacade: mockPaymentFacade as any,
+                zipCodeBackendValid: true,
+                telemetryContext: 'other',
+            });
+
+            // Local state should be updated
+            expect(result.current.selectedCountryCode).toBe('CA');
+            expect(result.current.federalStateCode).toBe('ON');
+            expect(result.current.zipCode).toBe('K1A 0B1');
+
+            // But onBillingAddressChange should NOT be called because
+            // the outer state (checkResult) already has the correct address
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
+        });
+    });
+
+    describe('billingAddressChangedInModal', () => {
+        it('should update local state and call onBillingAddressChange', () => {
+            const onBillingAddressChange = jest.fn();
+            const { result } = renderHook(() =>
+                useTaxCountry({
+                    onBillingAddressChange,
+                    paymentStatus: {
+                        CountryCode: 'US',
+                        State: 'CA',
+                        ZipCode: '90210',
+                    },
+                    zipCodeBackendValid: true,
+                    telemetryContext: 'other',
+                })
+            );
+
+            const newBillingAddress = {
+                CountryCode: 'DE',
+                State: null,
+                ZipCode: '10115',
+            };
+
+            act(() => {
+                result.current.billingAddressChangedInModal(newBillingAddress);
+            });
+
+            expect(result.current.selectedCountryCode).toBe('DE');
+            expect(result.current.federalStateCode).toBe(null);
+            expect(result.current.zipCode).toBe('10115');
+
+            expect(onBillingAddressChange).toHaveBeenCalledTimes(1);
+            expect(onBillingAddressChange).toHaveBeenCalledWith(newBillingAddress);
+        });
+    });
 });
