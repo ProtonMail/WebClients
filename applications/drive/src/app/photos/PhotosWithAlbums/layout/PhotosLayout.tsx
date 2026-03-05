@@ -805,6 +805,7 @@ export const PhotosLayout = () => {
                             : () =>
                                   showSharingModal({
                                       nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
+                                      drive: getDriveForPhotos(),
                                   })
                     }
                     onDetails={onShowDetails}
