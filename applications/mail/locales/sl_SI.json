@@ -5031,6 +5031,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nimate še nobenega stika. Začnite z ustvarjanjem novega stika."
       ]
@@ -9196,6 +9199,9 @@
       "Emails (last 3 months)": [
         "E-pošto (zadnje 3 mesece)"
       ],
+      "Emails (last 6 months)": [
+        "E-pošta (samo zadnjih 6 mesecev)"
+      ],
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
       ],
@@ -9315,6 +9321,9 @@
       ],
       "Last 3 months only": [
         "Samo zadnje 3 mesece"
+      ],
+      "Last 6 months only": [
+        "Samo zadnjih 6 mesecev"
       ],
       "Last month only": [
         "Samo zadnji mesec"
@@ -12402,14 +12411,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Vsi vzdevki"
+      ],
       "Create alias": [
         "Ustvari vzdevek"
+      ],
+      "Create an alias": [
+        "Ustvari vzdevek"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Ustvarite vzdevke sproti in preprosto upravljajte svoje vzdevke in gesla."
+      ],
+      "Hide-my-email aliases": [
+        "Vzdevki hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email vzdevki vam omogočajo, da se prijavite na straneh v spletu, ne da bi razkrili svoj e-poštni naslov. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nov vzdevek"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Odpri ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Zaščitite svojo spletno identiteto"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Poizkusite ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(bo odprlo ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13742,6 +13783,9 @@
       "Address verification disabled": [
         "Preverjanje naslova onemogočeno"
       ],
+      "Alias copied to clipboard": [
+        "Vzdevek kopiran v odložišče"
+      ],
       "Alias saved and copied": [
         "Vzdevek shranjen in kopiran"
       ],
@@ -13831,6 +13875,9 @@
       ],
       "Labels applied.": [
         "Označeno."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
       ],
       "Mail list unsubscribed": [
         "Poštna lista je bila odjavljena."

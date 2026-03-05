@@ -325,6 +325,9 @@
       "Copy addresses": [
         "Copia indirizzi"
       ],
+      "Copy alias “${ name }”": [
+        "Copia l'alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
@@ -5229,6 +5232,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando è abilitata la password aggiuntiva, la gestione degli alias può essere effettuata solo in ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Non hai ancora alcun contatto. Inizia creandone uno nuovo"
@@ -12793,14 +12799,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tutti gli alias"
+      ],
       "Create alias": [
         "Crea un alias"
+      ],
+      "Create an alias": [
+        "Crea un alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Gestisci facilmente i tuoi alias e le tue password e generane nuovi al volo."
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Gli alias Hide-my-email ti consentono di registrarti ai servizi online senza condividere il tuo indirizzo email. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nuovo alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Apri ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Proteggi la tua identità online"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prova ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Utilizzato su Amazon per acquisti, ecc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(aprirà ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14089,6 +14127,9 @@
       "Address verification disabled": [
         "Verifica dell'indirizzo disabilitata"
       ],
+      "Alias copied to clipboard": [
+        "Alias copiato negli appunti"
+      ],
       "Alias saved and copied": [
         "Alias salvato e copiato"
       ],
@@ -14177,6 +14218,9 @@
       ],
       "Labels applied.": [
         "Etichette applicate."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ultimi alias modificati memorizzati nella cassaforte più vecchia"
       ],
       "Mail list unsubscribed": [
         "Iscrizione alla mailing list annullata"

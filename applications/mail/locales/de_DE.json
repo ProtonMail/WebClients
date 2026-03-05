@@ -325,6 +325,9 @@
       "Copy addresses": [
         "E-Mail-Adressen kopieren"
       ],
+      "Copy alias “${ name }”": [
+        "Alias “${ name }” kopieren"
+      ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
@@ -5303,6 +5306,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Wenn das zusätzliche Passwort aktiviert ist, kann die Alias-Verwaltung nur in ${ PASS_APP_NAME } erfolgen."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Noch keine Kontakte vorhanden. Lege jetzt einen neuen Kontakt an!"
       ]
@@ -9448,6 +9454,9 @@
       "Emails (last 3 months)": [
         "E-Mails (letzte 3 Monate)"
       ],
+      "Emails (last 6 months)": [
+        "E-Mails (letzte 6 Monate)"
+      ],
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
@@ -9588,6 +9597,9 @@
       ],
       "Last 3 months only": [
         "Nur die letzten 3 Monate"
+      ],
+      "Last 6 months only": [
+        "Nur die letzten 6 Monate"
       ],
       "Last month only": [
         "Nur den letzten Monat"
@@ -12940,14 +12952,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alle Aliasse"
+      ],
       "Create alias": [
         "Alias erstellen"
+      ],
+      "Create an alias": [
+        "Alias erstellen"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generiere Aliasse im Handumdrehen und verwalte deine Aliasse und Passwörter ganz einfach."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Mit Hide-my-email-Aliassen kannst du dich online für Dinge anmelden, ohne deine E-Mail-Adresse preiszugeben. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Neuer Alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } öffnen"
+      ],
+      "Protect your online identity": [
+        "Schütze deine Online-Identität"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } ausprobieren"
       ],
       "Used on Amazon for shopping, etc.": [
         "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
       ]
     },
     "Security Center - Action": {
@@ -14269,6 +14313,9 @@
       "Address verification disabled": [
         "Adressüberprüfung deaktiviert"
       ],
+      "Alias copied to clipboard": [
+        "Alias in die Zwischenablage kopiert"
+      ],
       "Alias saved and copied": [
         "Alias gespeichert und kopiert"
       ],
@@ -14360,6 +14407,9 @@
       ],
       "Labels applied.": [
         "Kategorien angewendet."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Zuletzt geänderte Aliasse, die in deinem ältesten Tresor gespeichert sind"
       ],
       "Mail list unsubscribed": [
         "Aus Verteilerliste ausgetragen"

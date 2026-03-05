@@ -324,6 +324,9 @@
       "Copy addresses": [
         "Salin alamat"
       ],
+      "Copy alias “${ name }”": [
+        "Salin alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
@@ -5138,6 +5141,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Saat kata sandi tambahan diaktifkan, pengelolaan alias hanya dapat dilakukan di ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Anda belum memiliki kontak. Mulailah dengan membuat kontak baru"
@@ -12485,14 +12491,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Semua alias"
+      ],
       "Create alias": [
         "Buat alias"
+      ],
+      "Create an alias": [
+        "Buat alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Buat alias di mana saja, dan kelola alias serta kata sandi Anda dengan mudah."
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Alias hide-my-email memungkinkan Anda untuk mendaftar ke berbagai layanan daring tanpa membagikan alamat email asli Anda. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Alias ​​baru"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Buka ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Lindungi identitas daring Anda"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Coba ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Digunakan pada Amazon untuk berbegai keperluan (mis. untuk berjualan)"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(akan membuka ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13726,6 +13764,9 @@
       "Address verification disabled": [
         "Verifikasi alamat dinonaktifkan"
       ],
+      "Alias copied to clipboard": [
+        "Alias disalin ke papan klip"
+      ],
       "Alias saved and copied": [
         "Alias disimpan dan disalin"
       ],
@@ -13812,6 +13853,9 @@
       ],
       "Labels applied.": [
         "Label diterapkan."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Mail list unsubscribed": [
         "Langganan milis dibatalkan"

@@ -324,6 +324,9 @@
       "Copy addresses": [
         "アドレスをコピー"
       ],
+      "Copy alias “${ name }”": [
+        "エイリアス「${ name }」をコピー"
+      ],
       "Copy email to clipboard": [
         "メールをコピー"
       ],
@@ -5262,6 +5265,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
       ]
@@ -9277,6 +9283,9 @@
       "Emails (last 3 months)": [
         "メール (過去 3 か月)"
       ],
+      "Emails (last 6 months)": [
+        "メール (過去 6 か月)"
+      ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
@@ -9417,6 +9426,9 @@
       ],
       "Last 3 months only": [
         "過去 3 か月のみ"
+      ],
+      "Last 6 months only": [
+        "過去 6 か月のみ"
       ],
       "Last month only": [
         "過去 1 か月のみ"
@@ -11858,6 +11870,12 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Remind me later": [
+        "後ほど再通知"
+      ],
+      "Yes, don't show again": [
+        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -12706,14 +12724,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "すべてのエイリアス"
+      ],
       "Create alias": [
         "エイリアスを作成"
+      ],
+      "Create an alias": [
+        "エイリアスを作成"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
+      ],
+      "New alias": [
+        "新しいエイリアス"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を開く"
+      ],
+      "Protect your online identity": [
+        "あなたをオンラインで守る"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } をお試しください"
       ],
       "Used on Amazon for shopping, etc.": [
         "「Amazonでの買い物用」など"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } を開きます)"
       ]
     },
     "Security Center - Action": {
@@ -13972,6 +14022,9 @@
       "Address verification disabled": [
         "アドレス検証を無効にしました"
       ],
+      "Alias copied to clipboard": [
+        "エイリアスがクリップボードにコピーされました"
+      ],
       "Alias saved and copied": [
         "エイリアスを保存してコピーしました"
       ],
@@ -14061,6 +14114,9 @@
       ],
       "Labels applied.": [
         "ラベルが適用されました。"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最も古い保管庫に保存されている、最後に変更されたエイリアス"
       ],
       "Mail list unsubscribed": [
         "メールリストの購読を解除しました"
@@ -14830,6 +14886,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Keep this banner hidden?": [
+        "バナーを非表示にしておきますか？"
       ],
       "Label as": [
         "ラベル付け"

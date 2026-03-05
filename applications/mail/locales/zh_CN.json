@@ -324,6 +324,9 @@
       "Copy addresses": [
         "复制地址"
       ],
+      "Copy alias “${ name }”": [
+        "复制别名“${ name }”"
+      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
@@ -5261,6 +5264,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "页面加载失败，请刷新或检查网络连接。"
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "启用额外密码后，别名管理只能在 ${ PASS_APP_NAME } 中进行。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您还没有任何联系人。首先创建一个新的联系人。"
@@ -11878,6 +11884,12 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Remind me later": [
+        "稍后提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -12726,14 +12738,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "所有别名"
+      ],
       "Create alias": [
         "创建别名"
+      ],
+      "Create an alias": [
+        "创建别名"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "随时生成邮箱别名，轻松管理您的别名和密码。"
+      ],
+      "Hide-my-email aliases": [
+        "个hide-my-email别名"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "您可以使用 hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
+      ],
+      "New alias": [
+        "新增别名"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "打开 ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "保护您的网络身份"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "体验 ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "用于 Amazon 购物等等"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(将会打开 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13997,6 +14041,9 @@
       "Address verification disabled": [
         "地址验证已关闭"
       ],
+      "Alias copied to clipboard": [
+        "已复制别名到剪贴板"
+      ],
       "Alias saved and copied": [
         "别名已保存并复制"
       ],
@@ -14086,6 +14133,9 @@
       ],
       "Labels applied.": [
         "标签已应用。"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最后修改的别名存储在您最早的库中"
       ],
       "Mail list unsubscribed": [
         "邮件订阅已取消订阅"
@@ -14855,6 +14905,9 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Keep this banner hidden?": [
+        "是否隐藏此横幅？"
       ],
       "Label as": [
         "加标签"

@@ -324,6 +324,9 @@
       "Copy addresses": [
         "주소 복사"
       ],
+      "Copy alias “${ name }”": [
+        "별칭 \"${ name }\" 복사"
+      ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
       ],
@@ -5255,6 +5258,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "추가 비밀번호 설정 시, 별칭 관리는 ${ PASS_APP_NAME } 에서만 가능합니다."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "연락처를 가지고 있지 않습니다. 새로운 연락처를 추가해 보세요"
@@ -12700,14 +12706,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "모든 별칭"
+      ],
       "Create alias": [
         "별칭 생성"
+      ],
+      "Create an alias": [
+        "별칭 생성"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "즉석에서 만들어지는 별칭, 그리고 간편한 별칭과 비밀번호의 관리."
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 별칭"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email 별칭은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "새 별칭"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 열기"
+      ],
+      "Protect your online identity": [
+        "나의 온라인 신원 보호"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 체험"
       ],
       "Used on Amazon for shopping, etc.": [
         "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME }을 엽니다)"
       ]
     },
     "Security Center - Action": {
@@ -13961,6 +13999,9 @@
       "Address verification disabled": [
         "주소 인증 비활성화됨"
       ],
+      "Alias copied to clipboard": [
+        "별칭이 클립보드에 복사됨"
+      ],
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
@@ -14050,6 +14091,9 @@
       ],
       "Labels applied.": [
         "라벨 적용됨"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
       "Mail list unsubscribed": [
         "매일 리스트가 구독 취소되었습니다"
