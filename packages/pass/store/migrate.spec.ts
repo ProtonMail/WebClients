@@ -44,7 +44,6 @@ describe('`migrate`', () => {
             organization,
             canUpdate: false,
             settings: INITIAL_ORGANIZATION_SETTINGS,
-            groups: [],
         });
     });
 

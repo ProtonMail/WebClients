@@ -9,7 +9,6 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { InviteGroupField } from '@proton/pass/components/Invite/Steps/InviteGroupField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
-import { useOrganizationGroups } from '@proton/pass/components/Organization/OrganizationProvider';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
@@ -21,8 +20,8 @@ import { ShareRole } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-const createMember = (email: string): InviteFormMemberItem => ({
-    value: { email, role: ShareRole.READ },
+const createMember = (email: string, isGroup: boolean): InviteFormMemberItem => ({
+    value: { email, isGroup, role: ShareRole.READ },
     id: uniqueId(),
 });
 
@@ -46,7 +45,6 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
         const emailField = (fieldRef as MaybeNull<MutableRefObject<HTMLInputElement>>)?.current;
         const scrollTimer = useRef<MaybeNull<NodeJS.Timeout>>(null);
         const share = useSelector(selectShareOrThrow(access.shareId));
-        const groups = useOrganizationGroups();
         const accessTarget = access.itemId ? AccessTarget.Item : AccessTarget.Vault;
 
         const [autocomplete, setAutocomplete] = useState('');
@@ -69,13 +67,13 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
             const value = maybeEmail.trim();
             if ((await PassUI.is_email_valid(value)) && emailField) {
                 emailField.value = '';
-                void onUpdate(members.concat([createMember(value)]));
+                void onUpdate(members.concat([createMember(value, false)]));
             }
         };
 
-        const onRecommendationToggle = (email: string, checked: boolean) => {
+        const onRecommendationToggle = (email: string, isGroup: boolean, checked: boolean) => {
             const update = checked
-                ? members.concat([createMember(email)])
+                ? members.concat([createMember(email, isGroup)])
                 : members.filter(({ value }) => value.email !== email);
 
             if (checked) {
@@ -102,7 +100,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                 .split(/[,;\s\n\t]+/)
                 .map((email) => email.trim())
                 .filter((email) => email.length > 0)
-                .map(createMember);
+                .map((email) => createMember(email, false));
 
             await onUpdate(members.concat(emails));
 
@@ -132,14 +130,12 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                         fieldLoading={fieldLoading}
                         fieldKey="members"
                         fieldRef={fieldRef}
-                        fieldValue={(entry) =>
-                            groups[entry.email] ? <InviteGroupField email={entry.email} /> : entry.email
-                        }
-                        fieldEditable={(entry) => !groups[entry.email]}
+                        fieldValue={(entry) => (entry.isGroup ? <InviteGroupField email={entry.email} /> : entry.email)}
+                        fieldEditable={(entry) => !entry.isGroup}
                         key={`autofocus-email-${autoFocus}`}
                         name="emails"
                         onBlur={onEmailFieldBlur}
-                        onPush={createMember}
+                        onPush={(email) => createMember(email, false)}
                         onReplace={(email, prev) => ({ ...prev, value: { ...prev.value, email } })}
                         placeholder={c('Placeholder').t`Email address`}
                         onPaste={handlePaste}

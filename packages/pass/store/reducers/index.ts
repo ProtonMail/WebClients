@@ -10,6 +10,7 @@ import { access } from './access';
 import alias from './alias';
 import files from './files';
 import filters from './filters';
+import groups from './groups';
 import importReducer from './import';
 import invites from './invites';
 import items from './items';
@@ -39,6 +40,7 @@ export const reducerMap = {
     alias,
     files,
     filters,
+    groups,
     import: importReducer,
     invites,
     items,

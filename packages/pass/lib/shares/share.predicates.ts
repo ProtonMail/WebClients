@@ -21,7 +21,7 @@ export const isShareDeduped =
     <T extends Share>({ shareId }: T) =>
         shareIds.includes(shareId);
 export const isShareVisible = <T extends { flags: number }>(share: T) => !hasBit(share.flags, ShareFlags.HIDDEN);
-export const isGroupShare = <T extends Share>({ groupId }: T) => groupId !== null;
+export const isGroupShare = <T extends Share>(share: T): share is T & { groupId: string } => share.groupId !== null;
 
 /** If the `canAutofill` flag isis not present on the share item, fallback to client
  * side downgrade detection : only allow autofilling from writable shares. */

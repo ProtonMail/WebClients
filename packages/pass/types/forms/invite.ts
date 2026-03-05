@@ -3,7 +3,7 @@ import type { AccessTarget } from '@proton/pass/lib/access/types';
 import type { SelectedItem, SelectedShare, ShareRole } from '@proton/pass/types';
 
 export type InviteFormStep = 'members' | 'permissions' | 'review';
-export type InviteFormMemberValue = { email: string; role: ShareRole };
+export type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean };
 export type InviteFormMemberItem = ListFieldValue<InviteFormMemberValue>;
 
 export type InviteFormValuesBase<T extends AccessTarget = AccessTarget, V = {}> = {
