@@ -50,7 +50,7 @@ jest.mock('@proton/account/addresses/hooks', () => ({
     useAddresses: jest.fn().mockReturnValue([[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
 }));
 
-jest.mock('@proton/unleash', () => ({
+jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn().mockReturnValue(true),
 }));
 

@@ -23,7 +23,7 @@ const mockUseUser = useUser as jest.Mock;
 jest.mock('@proton/account/userSettings/hooks');
 const mockUseUserSettings = useUserSettings as jest.Mock;
 
-jest.mock('@proton/unleash');
+jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.Mock;
 
 jest.mock('@proton/features', () => ({
