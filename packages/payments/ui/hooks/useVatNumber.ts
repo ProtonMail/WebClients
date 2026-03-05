@@ -102,16 +102,13 @@ export const useVatNumber = ({
         onChange?.(value);
     };
 
-    useEffect(
-        function resetVatNumber() {
-            // we don't want to set the VAT number in POST subscription if the country doesn't support VAT IDs or if the
-            // plan is not B2B
-            if (!countriesWithVatId.has(taxCountry.selectedCountryCode) || !isB2BPlan) {
-                handleVatNumberChange('');
-            }
-        },
-        [taxCountry.selectedCountryCode, isB2BPlan]
-    );
+    useEffect(() => {
+        // we don't want to set the VAT number in POST subscription if the country doesn't support VAT IDs or if the
+        // plan is not B2B. However if the vatNumber is already empty, we don't need to trigger an update.
+        if (!!vatNumber && (!countriesWithVatId.has(taxCountry.selectedCountryCode) || !isB2BPlan)) {
+            handleVatNumberChange('');
+        }
+    }, [taxCountry.selectedCountryCode, isB2BPlan]);
 
     const vatUpdatedInModal = async (vatId: string | undefined) => {
         handleVatNumberChange(vatId ?? '');
