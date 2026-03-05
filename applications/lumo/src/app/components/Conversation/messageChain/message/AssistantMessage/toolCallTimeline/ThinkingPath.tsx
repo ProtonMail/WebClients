@@ -184,7 +184,7 @@ const ReasoningStep = ({
                 >
                     <span className="thinking-step-label">
                         {durationMs !== undefined
-                            ? c('collider_2025:Reasoning').t`Thought for ${formatDuration(durationMs)}`
+                            ? c('collider_2025:Reasoning').t`Thought for ` + formatDuration(durationMs)
                             : c('collider_2025:Reasoning').t`Thought about this`}
                     </span>
                     <Icon
