@@ -70,6 +70,11 @@ export const LeaveMeetingPopup = () => {
         handleLeave();
     };
 
+    const handleEndMeetingConfirm = () => {
+        dispatch(setPopupStateValue({ popup: PopUpControls.EndMeeting, value: false }));
+        void withLoadingEndMeeting(handleEndMeeting);
+    };
+
     return (
         <>
             <Button
@@ -146,7 +151,7 @@ export const LeaveMeetingPopup = () => {
             {popupState[PopUpControls.EndMeeting] && (
                 <EndMeetingWarningModal
                     onClose={() => dispatch(setPopupStateValue({ popup: PopUpControls.EndMeeting, value: false }))}
-                    onConfirm={() => withLoadingEndMeeting(handleEndMeeting)}
+                    onConfirm={() => handleEndMeetingConfirm()}
                 />
             )}
         </>
