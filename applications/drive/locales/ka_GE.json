@@ -1281,6 +1281,9 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -1309,6 +1312,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -1320,6 +1326,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -1511,6 +1520,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle option": {
@@ -3264,8 +3285,14 @@
       "Can't find any secure link": [
         "დაცული ბმულები ვერ ვიპოვე"
       ],
+      "Can't retrieve device name": [
+        "მოწყობილობის სახელის მიღება შეუძლებელია"
+      ],
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
+      ],
+      "Cannot find move target": [
+        "გადატანის სამიზნე აღმოჩენილი არაა"
       ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
@@ -3296,6 +3323,9 @@
       ],
       "Could not remove from favorites": [
         "რჩეულებიდან წაშლა სეუძლებელია"
+      ],
+      "Data integrity check failed": [
+        "მონაცემთა მთლიანობის შემოწმება ჩავარდა"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
@@ -5088,6 +5118,9 @@
       "Can edit": [
         "შეუძლია, ჩაასწოროს"
       ],
+      "Can edit and manage access": [
+        "შეუძლია წვდომების ჩასწორება და მართვა"
+      ],
       "Can view and edit": [
         "შეუძლია ნახვა და ჩასწორება"
       ],
@@ -5096,6 +5129,12 @@
       ],
       "Can't move a folder into itself": [
         "საქაღალდეს თავის თავში ვერ გადაიტანთ"
+      ],
+      "Can't rename to same name": [
+        "სახელის გადარქმევა იგივე სახელზე შეუძლებელია"
+      ],
+      "Can't write into folder": [
+        "საქაღალდეში ჩაწერა შეუძლებელია"
       ],
       "Canceled": [
         "გაუქმებულია"
@@ -7023,6 +7062,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -7121,6 +7163,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -9744,6 +9789,12 @@
       "Got it": [
         "გავიგე"
       ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -10481,6 +10532,12 @@
     "sheets_2025:Action": {
       "New spreadsheet": [
         "ახალი ელცხრილი"
+      ],
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
       ]
     },
     "Signing preference for emails": {

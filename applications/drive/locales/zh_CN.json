@@ -3422,6 +3422,9 @@
       "Failed loading group members": [
         "加载群组成员失败"
       ],
+      "Failed to change permissions settings": [
+        "更改权限设置失败"
+      ],
       "Failed to copy photo to album": [
         "无法将照片复制到相册"
       ],
@@ -5140,6 +5143,18 @@
       ],
       "Calendar side panel": [
         "日历侧边栏"
+      ],
+      "Can edit": [
+        "可以编辑"
+      ],
+      "Can edit and manage access": [
+        "可以编辑并管理访问权限"
+      ],
+      "Can view and edit": [
+        "可以查看和编辑"
+      ],
+      "Can view only": [
+        "只能查看"
       ],
       "Can't move a folder into itself": [
         "无法将文件夹移动到其自身内部"
@@ -9255,6 +9270,12 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "所选照片已在“${ albumName }”中"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "设置已更新，编辑者可以更改权限和共享。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "设置已更新，编辑者无法更改权限或共享。"
       ],
       "Share invitation accepted successfully": [
         "已成功接受共享邀请"
