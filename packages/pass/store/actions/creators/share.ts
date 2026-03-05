@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { SyncResult } from '@proton/pass/lib/events/types';
+import type { SyncResult } from '@proton/pass/lib/sync/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';

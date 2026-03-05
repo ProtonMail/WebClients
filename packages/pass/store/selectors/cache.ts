@@ -1,4 +1,4 @@
-import { SyncStrategy } from '@proton/pass/lib/events/types';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { getInitialPATState, reducerMap } from '@proton/pass/store/reducers';
 import { selectSyncStrategy } from '@proton/pass/store/selectors/settings';

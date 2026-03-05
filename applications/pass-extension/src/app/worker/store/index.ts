@@ -13,7 +13,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
-import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
+import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import browser from '@proton/pass/lib/globals/browser';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';

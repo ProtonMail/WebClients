@@ -8,9 +8,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import {
     selectCustomBreaches,

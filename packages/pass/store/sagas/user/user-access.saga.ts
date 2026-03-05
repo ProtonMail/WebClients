@@ -1,8 +1,8 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
-import { SYNC_STRATEGY } from '@proton/pass/lib/events/global';
-import { SyncStrategy } from '@proton/pass/lib/events/types';
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
+import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
+import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import {
     aliasPendingCreate,
