@@ -51,7 +51,6 @@ import {
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
     ReferralInvitesContextProvider,
-    RewardSection,
     SentinelSection,
     SessionRecoverySection,
     SessionsSection,
@@ -89,6 +88,7 @@ import {
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
 import { useCanEnableChat } from '@proton/components/containers/zendesk/useCanEnableChat';
