@@ -1,9 +1,20 @@
-import type { IdentityValues, ItemRevision, ItemType } from '@proton/pass/types';
+import type {
+    DeobfuscatedItemExtraField,
+    ExtraFieldType,
+    ItemContent,
+    ItemExtraField,
+    ItemRevision,
+    ItemType,
+} from '@proton/pass/types';
 import { dynMemo } from '@proton/pass/utils/fp/memo';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import type { FieldMatch, ItemMatch, ItemMatchMap } from './types';
+
+/** We used to match on hidden fields but switched over to only text types */
+const isFieldTypeSearchable = <F extends { type: ExtraFieldType }>(field: F): field is Extract<F, { type: 'text' }> =>
+    field.type === 'text';
 
 const memoNormalize = dynMemo((str: string) => normalize(str, true));
 const memoDeobfuscate = dynMemo(deobfuscate);
@@ -40,6 +51,52 @@ const matchFieldsLazy =
         for (const field of getter(item)) if (matchStr(needle)(field)) return true;
         return false;
     };
+
+/** Matches all fields which are of type string in the item content */
+const matchContentFields = <T extends ItemType>(getter: (item: ItemRevision<T>) => ItemContent<T>): FieldMatch<T> =>
+    matchFieldsLazy(function* (item): IterableIterator<string> {
+        const content = getter(item);
+        for (const key of Object.keys(content) as (keyof ItemContent<T>)[]) {
+            const value = content[key];
+            if (typeof value === 'string') yield value;
+        }
+    });
+
+type ExtraFieldsSources = {
+    obfuscated?: ItemExtraField[];
+    deobfuscated?: DeobfuscatedItemExtraField[][];
+    sections?: { sectionName: string; sectionFields: DeobfuscatedItemExtraField[] }[];
+};
+
+/** Matches all kinds of extra fields */
+const matchExtraFields = <T extends ItemType>(getter: (item: ItemRevision<T>) => ExtraFieldsSources): FieldMatch<T> =>
+    matchFieldsLazy(function* (item): IterableIterator<string> {
+        const { obfuscated = [], deobfuscated = [], sections = [] } = getter(item);
+
+        // Extra fields that each content is obfuscated
+        for (const field of obfuscated) {
+            yield field.fieldName;
+            if (isFieldTypeSearchable(field)) yield memoDeobfuscate(field.data.content);
+        }
+
+        // Group of extra fields that are already deobfuscated
+        for (const group of deobfuscated) {
+            if (group === undefined) continue;
+            for (const field of group) {
+                yield field.fieldName;
+                if (isFieldTypeSearchable(field)) yield field.data.content;
+            }
+        }
+
+        // Sections of extra fields
+        for (const section of sections) {
+            yield section.sectionName;
+            for (const field of section.sectionFields) {
+                yield field.fieldName;
+                if (isFieldTypeSearchable(field)) yield field.data.content;
+            }
+        }
+    });
 
 /** Combines multiple matchers and checks if any of them match the needles.
  * Uses lazy evaluation and early return via `some` for efficiency.
@@ -78,14 +135,7 @@ const matchesLoginItem: ItemMatch<'login'> = combineMatchers<'login'>(
     matchField((item) => memoDeobfuscate(item.data.content.itemUsername)),
     matchField((item) => memoDeobfuscate(item.data.metadata.note)),
     matchFields((item) => item.data.content.urls),
-    matchFieldsLazy(function* matchExtraFields(item): IterableIterator<string> {
-        for (const field of item.data.extraFields) {
-            if (field.type !== 'totp' && field.type !== 'timestamp') {
-                yield field.fieldName;
-                yield memoDeobfuscate(field.data.content);
-            }
-        }
-    })
+    matchExtraFields((item) => ({ obfuscated: item.data.extraFields }))
 );
 
 const matchesAliasItem: ItemMatch<'alias'> = combineMatchers<'alias'>(
@@ -103,41 +153,42 @@ const matchesCreditCardItem: ItemMatch<'creditCard'> = combineMatchers<'creditCa
 const matchesIdentityItem: ItemMatch<'identity'> = combineMatchers<'identity'>(
     matchField((item) => item.data.metadata.name),
     matchField((item) => memoDeobfuscate(item.data.metadata.note)),
-    matchFieldsLazy(function* matchIdentityFields(item): IterableIterator<string> {
-        for (const key of Object.keys(item.data.content) as (keyof IdentityValues)[]) {
-            const value = item.data.content[key];
-            if (typeof value === 'string') yield value;
-            else {
-                switch (key) {
-                    case 'extraAddressDetails':
-                    case 'extraContactDetails':
-                    case 'extraPersonalDetails':
-                    case 'extraWorkDetails': {
-                        for (const field of item.data.content[key]) {
-                            if (field.type !== 'totp' && field.type !== 'timestamp') yield field.data.content;
-                        }
-                        break;
-                    }
-                    case 'extraSections': {
-                        for (const section of item.data.content[key]) {
-                            yield section.sectionName;
-                            for (const field of section.sectionFields) {
-                                if (field.type !== 'totp' && field.type !== 'timestamp') yield field.data.content;
-                            }
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-    })
+    matchContentFields((item) => item.data.content),
+    matchExtraFields((item) => ({
+        obfuscated: item.data.extraFields,
+        deobfuscated: [
+            item.data.content.extraPersonalDetails,
+            item.data.content.extraAddressDetails,
+            item.data.content.extraContactDetails,
+            item.data.content.extraWorkDetails,
+        ],
+        sections: item.data.content?.extraSections,
+    }))
 );
 
-const matchesSSHItem: ItemMatch<'sshKey'> = combineMatchers<'sshKey'>(matchField((item) => item.data.metadata.name));
+const matchesSSHItem: ItemMatch<'sshKey'> = combineMatchers<'sshKey'>(
+    matchField((item) => item.data.metadata.name),
+    matchExtraFields((item) => ({
+        obfuscated: item.data.extraFields,
+        sections: item.data.content?.sections,
+    }))
+);
 
-const matchesWifiItem: ItemMatch<'wifi'> = combineMatchers<'wifi'>(matchField((item) => item.data.metadata.name));
+const matchesWifiItem: ItemMatch<'wifi'> = combineMatchers<'wifi'>(
+    matchField((item) => item.data.metadata.name),
+    matchExtraFields((item) => ({
+        obfuscated: item.data.extraFields,
+        sections: item.data.content?.sections,
+    }))
+);
 
-const matchesCustomItem: ItemMatch<'custom'> = combineMatchers<'custom'>(matchField((item) => item.data.metadata.name));
+const matchesCustomItem: ItemMatch<'custom'> = combineMatchers<'custom'>(
+    matchField((item) => item.data.metadata.name),
+    matchExtraFields((item) => ({
+        obfuscated: item.data.extraFields,
+        sections: item.data.content?.sections,
+    }))
+);
 
 /* Each item should expose its own searching mechanism :
  * we may include/exclude certain fields or add extra criteria
