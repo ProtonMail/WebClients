@@ -114,7 +114,9 @@ export function FolderItemContextMenu({
                 {permissions.canEdit && isOnlyOneFileItem && (
                     <>
                         <RevisionsContextButton
-                            selectedItem={selectedItem}
+                            nodeUid={selectedItem.uid}
+                            rootShareId={selectedItem.rootShareId}
+                            mediaType={selectedItem.mimeType}
                             showRevisionsModal={showRevisionsModal}
                             close={close}
                         />

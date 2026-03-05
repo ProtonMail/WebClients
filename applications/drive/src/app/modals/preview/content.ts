@@ -15,6 +15,7 @@ export enum ContentPreviewMethod {
 
 interface GetFileDownloader {
     getFileDownloader: (nodeUid: string, abortSignal: AbortSignal) => Promise<FileDownloader>;
+    getFileRevisionDownloader?: (nodeRevisionUid: string, abortSignal: AbortSignal) => Promise<FileDownloader>;
 }
 
 interface FileDownloader {
@@ -57,7 +58,12 @@ export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
     return ContentPreviewMethod.Thumbnail;
 }
 
-export async function downloadContent(drive: GetFileDownloader, nodeUid: string, abortSignal: AbortSignal) {
+export async function downloadContent(
+    drive: GetFileDownloader,
+    nodeUid: string,
+    abortSignal: AbortSignal,
+    revisionUid?: string
+) {
     const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
     const stream = await loadCreateReadableStreamWrapper(transformStream.readable);
     const writer = transformStream.writable.getWriter();
@@ -68,7 +74,10 @@ export async function downloadContent(drive: GetFileDownloader, nodeUid: string,
         abort: (reason) => writer.abort(reason),
     });
 
-    const downloader = await drive.getFileDownloader(nodeUid, abortSignal);
+    const downloader =
+        revisionUid && drive.getFileRevisionDownloader
+            ? await drive.getFileRevisionDownloader(revisionUid, abortSignal)
+            : await drive.getFileDownloader(nodeUid, abortSignal);
     const controller = downloader.downloadToStream(wrappedWritable, () => {});
 
     const bufferPromise = streamToBuffer(stream);
