@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CategoryViewToggle } from './CategoryViewToggle';
 

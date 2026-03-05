@@ -34,7 +34,7 @@ import {
     getSpace,
     getStorageUsed,
 } from '@proton/shared/lib/user/storage';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
 

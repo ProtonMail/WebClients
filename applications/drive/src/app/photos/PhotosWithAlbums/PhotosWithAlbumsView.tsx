@@ -7,7 +7,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle } from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';

@@ -22,7 +22,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash';
+import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import config from './config';

@@ -21,7 +21,7 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     VideoConferenceProtonMeetIntegration,

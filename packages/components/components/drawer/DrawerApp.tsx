@@ -11,7 +11,7 @@ import type { CustomAction } from '@proton/components/containers/contacts/widget
 import { useReferralDiscover } from '@proton/components/containers/referral/hooks/useReferralDiscover';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

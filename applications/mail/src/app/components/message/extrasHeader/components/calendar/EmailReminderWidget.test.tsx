@@ -32,7 +32,7 @@ import {
     veventBuilder,
 } from '@proton/testing';
 import { getHandlers } from '@proton/testing/lib/handlers';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/test/render';
 import { refresh } from '../../../../../store/contacts/contactsActions';

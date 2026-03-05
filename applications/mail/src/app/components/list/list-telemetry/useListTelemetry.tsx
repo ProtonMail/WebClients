@@ -3,7 +3,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 

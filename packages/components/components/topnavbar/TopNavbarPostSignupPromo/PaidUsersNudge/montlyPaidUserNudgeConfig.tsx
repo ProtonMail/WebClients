@@ -1,7 +1,7 @@
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments';
-import { APPS } from '@proton/shared/lib/constants';
 import {
+    APPS,
     APP_UPSELL_REF_PATH,
     DRIVE_UPSELL_PATHS,
     MAIL_UPSELL_PATHS,
@@ -10,7 +10,7 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import driveOfferSpotlight from '@proton/styles/assets/img/permanent-offer/drive_offer_spotlight.svg';
 import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_offer_spotlight.svg';
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import type { SupportedPlans } from './helpers/interface';
 

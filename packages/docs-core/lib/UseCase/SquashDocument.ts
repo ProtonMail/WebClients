@@ -23,7 +23,7 @@ import type { SquashVerificationObjectionCallback } from '../Types/SquashVerific
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { compressDocumentUpdate, isDocumentUpdateCompressionEnabled } from '../utils/document-update-compression'
 import type { CacheService } from '../Services/CacheService'

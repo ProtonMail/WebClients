@@ -33,7 +33,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useCbIframe } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';

@@ -20,7 +20,7 @@ import { MetricService } from '../Metrics/MetricService'
 import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(

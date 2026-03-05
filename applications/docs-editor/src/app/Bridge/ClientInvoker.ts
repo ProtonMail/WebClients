@@ -23,7 +23,7 @@ import {
   type EditorEventData,
 } from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {

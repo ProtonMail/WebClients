@@ -18,7 +18,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import ExploreAppsListV2, { getExploreApps } from '../components/ExploreAppsListV2/ExploreAppsListV2';
 import Layout from './Layout';

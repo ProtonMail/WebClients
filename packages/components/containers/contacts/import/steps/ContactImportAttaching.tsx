@@ -25,7 +25,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
-import { getMaxContactsImportConfig } from '@proton/unleash';
+import { getMaxContactsImportConfig } from '@proton/unleash/getMaxContactsImportConfig';
 
 import { getInitialState } from '../initialstate';
 

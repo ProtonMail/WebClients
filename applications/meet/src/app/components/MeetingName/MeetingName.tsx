@@ -7,7 +7,7 @@ import { Dropdown, SettingsLink } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectShowDuration } from '@proton/meet/store/slices';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';

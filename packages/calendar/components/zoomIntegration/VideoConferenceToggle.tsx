@@ -6,7 +6,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { toggleOrganizationSetting } from '../../calendars/actions';
 import { useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';

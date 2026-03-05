@@ -13,7 +13,7 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/payments';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { CANCEL_ROUTE } from './helper';

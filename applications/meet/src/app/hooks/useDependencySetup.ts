@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useGetMeetUserSettings } from '@proton/meet/store/hooks/useMeetUserSettings';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { MeetingListStatus, useMeetingList } from './useMeetingList';
 

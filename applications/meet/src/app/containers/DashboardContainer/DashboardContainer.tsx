@@ -12,7 +12,7 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
 import { CreateRoomModal } from '../../components/CreateRoomModal/CreateRoomModal';

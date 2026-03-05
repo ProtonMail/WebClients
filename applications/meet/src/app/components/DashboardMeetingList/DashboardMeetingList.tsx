@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';

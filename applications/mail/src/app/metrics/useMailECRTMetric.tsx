@@ -1,6 +1,6 @@
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import metrics from '@proton/metrics';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { conversationByID } from '../store/conversations/conversationsSelectors';
 import { useMailStore } from '../store/hooks';

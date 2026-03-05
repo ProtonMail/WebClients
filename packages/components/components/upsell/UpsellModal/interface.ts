@@ -4,7 +4,7 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import type { COUPON_CODES, CYCLE, Currency, PaymentsApi, Plan, PlanIDs, Subscription } from '@proton/payments';
 import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import type useGetFlag from '@proton/unleash/useGetFlag';
+import type {useGetFlag} from '@proton/unleash/useGetFlag';
 
 /**
  * Upsell config passed to the subscription modal

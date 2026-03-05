@@ -9,7 +9,7 @@ import { SquashDocument } from './SquashDocument'
 import type { VerifyCommit } from './VerifyCommit'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { CacheService } from '../Services/CacheService'
 
 jest.mock('@proton/docs-proto', () => ({

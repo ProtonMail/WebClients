@@ -7,7 +7,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { DAY, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { canShowBanner } from '../../utils/canShowBanner';
 import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';

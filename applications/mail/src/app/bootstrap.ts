@@ -29,7 +29,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import logger from '@proton/shared/lib/logger';
 import { appMode } from '@proton/shared/lib/webpack.constants';
-import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';

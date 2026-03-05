@@ -3,7 +3,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
 import type { PostSubscriptionOneDollarOfferState } from '../interface';

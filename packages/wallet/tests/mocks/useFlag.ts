@@ -1,7 +1,7 @@
-import * as useFlagModule from '@proton/unleash/useFlag';
+import * as UseFlagModule from '@proton/unleash/useFlag';
 
 export const mockUseFlag = (flagValue: boolean) => {
-    const spy = vi.spyOn(useFlagModule, 'default');
+    const spy = vi.spyOn(UseFlagModule, 'useFlag');
     spy.mockReturnValue(flagValue);
     return spy;
 };

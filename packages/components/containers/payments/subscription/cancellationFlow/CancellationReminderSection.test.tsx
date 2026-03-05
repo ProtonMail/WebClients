@@ -6,7 +6,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CancellationReminderSection } from './CancellationReminderSection';
 import useCancellationFlow from './useCancellationFlow';

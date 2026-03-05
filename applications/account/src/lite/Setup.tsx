@@ -34,7 +34,9 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { FlagProvider, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
+import { UnleashClient } from '@proton/unleash/UnleashClient';
+import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
+import { FlagProvider } from '@proton/unleash/proxy';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';

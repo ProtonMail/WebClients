@@ -5,7 +5,7 @@ import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';

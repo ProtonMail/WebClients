@@ -14,7 +14,7 @@ import { useLoading } from '@proton/hooks/index';
 import { SECOND } from '@proton/shared/lib/constants';
 import walletDownloadDark from '@proton/styles/assets/img/wallet/wallet-download-dark.png';
 import walletDownload from '@proton/styles/assets/img/wallet/wallet-download.png';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wallet';
 import { useWalletAccountExchangeRate } from '@proton/wallet/store';

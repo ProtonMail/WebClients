@@ -38,7 +38,7 @@ import {
     deserializeAllowedProducts,
     serializeAllowedProducts,
 } from '@proton/shared/lib/organization/accessControl/serialization';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import SettingsSection from '../../account/SettingsSection';
 import MailCalendarIcon from './MailCalendarIcon';

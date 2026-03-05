@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import type { EventModelReadView, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { VideoConferenceLocation } from './VideoConferencingWidget';
 import { VideoConferencingWidget } from './VideoConferencingWidget';

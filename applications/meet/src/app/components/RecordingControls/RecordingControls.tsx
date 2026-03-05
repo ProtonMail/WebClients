@@ -9,7 +9,7 @@ import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';

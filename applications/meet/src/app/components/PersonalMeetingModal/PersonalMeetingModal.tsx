@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';
