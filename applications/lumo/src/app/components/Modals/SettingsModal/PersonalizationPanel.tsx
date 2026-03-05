@@ -267,6 +267,7 @@ const PersonalizationPanel = () => {
                 theme: (userSettings as any)?.theme || 'auto',
                 personalization,
                 featureFlags: (userSettings as any)?.featureFlags || initialFeatureFlags,
+                showGallerySuggestions: (userSettings as any)?.showGallerySuggestions ?? true,
             };
 
             // Directly save to remote API and wait for completion

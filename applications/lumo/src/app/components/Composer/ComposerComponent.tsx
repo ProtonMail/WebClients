@@ -68,6 +68,7 @@ export type ComposerComponentProps = {
     spaceId?: string; // Optional space ID to include space-level attachments
     autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
     autoOpenUpload?: boolean; // Auto-open the file upload dialog on mount
+    canShowLumoUpsellToggle?: boolean;
 };
 
 /**
