@@ -13,9 +13,9 @@ interface LumoPlusLogoInlineProps {
  */
 const LumoPlusLogoInline = ({className, height, withGradient = true, inline = false}: LumoPlusLogoInlineProps) => (
     <svg
-        viewBox="0 0 52 12" fill="none" xmlns="http://www.w3.org/2000/svg"
-        className={className}
+        viewBox="0 0 52 12" fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className={className}
         // preserveAspectRatio="xMidYMid meet"
         style={{display: inline ? 'inline-block' : 'block', height}}
         // onClick={onClick}
