@@ -151,6 +151,7 @@ export default defineConfig(
             'no-await-in-loop': 'off',
             'no-bitwise': 'off',
             'no-console': 'warn',
+            'no-debugger': 'error',
             'no-continue': 'off',
             'no-nested-ternary': 'warn',
             'no-param-reassign': 'off',
