@@ -31,7 +31,7 @@ export const Lobby: FC = () => {
     const sessions = useAvailableSessions();
 
     const history = useHistory<MaybeNull<AuthRouteState>>();
-    const connectivityBar = useLobbyConnectivityBar(status);
+    const connectivityBar = useLobbyConnectivityBar();
 
     const warning = useMemo(() => {
         const err = history.location.state?.error;

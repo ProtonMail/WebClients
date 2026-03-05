@@ -39,7 +39,7 @@ export const Lobby: FC = () => {
     const errored = clientErrored(state.status);
 
     const requestFork = useRequestForkWithPermissions({ autoClose: true });
-    const connectivityBar = useLobbyConnectivityBar(state.status);
+    const connectivityBar = useLobbyConnectivityBar();
 
     const criticalError = state.criticalRuntimeError ? getCriticalRuntimeErrorMessage() : undefined;
     const autoReload = BUILD_TARGET === 'safari' && state.criticalRuntimeError;
