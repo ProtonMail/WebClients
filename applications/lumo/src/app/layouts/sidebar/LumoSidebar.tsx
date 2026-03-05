@@ -91,7 +91,7 @@ const LumoSidebarContent = () => {
                         <GallerySidebarButton showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 )}
-                <div className="sidebar-main-content">
+                <div className={clsx('sidebar-main-content', isCollapsed && 'flex-shrink')}>
                     <div className="sidebar-section">
                         <Suspense fallback={null}>
                             <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
@@ -102,6 +102,14 @@ const LumoSidebarContent = () => {
 
                     <ChatHistorySection searchValue={searchValue} showText={showText} />
                 </div>
+
+                {/* Used to expand the sidebar when the user clicks on the empty space */}
+                {isCollapsed && (
+                    <>
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <div className="flex-1" onClick={toggle}></div>
+                    </>
+                )}
 
                 <div className="sidebar-section sidebar-bottom">
                     <LumoSidebarUpsell collapsed={isCollapsed} />
