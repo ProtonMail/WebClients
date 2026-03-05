@@ -89,7 +89,8 @@ export type ToolName =
     | 'cryptocurrency'
     | 'generate_image'
     | 'describe_image'
-    | 'edit_image';
+    | 'edit_image'
+    | 'web_extract';
 
 /*
  * A generation request in the format that the scheduler backend expects.
